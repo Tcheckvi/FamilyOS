@@ -542,6 +542,316 @@ Automation should support evidence invalidation.
 
 ---
 
+# Phase 5 Ruff Runtime Contract
+
+The initial canonical Ruff integration SHALL implement the existing
+`QualityExecutorPort` through the Quality infrastructure layer. It SHALL remain
+independent of the Plugin Compliance `QualityRuffValidator`; that validator is
+an existing bounded-context workflow whose behavior SHALL remain functional,
+but its class and compliance-specific models SHALL NOT become dependencies of
+the canonical Quality runtime.
+
+## Canonical Ruff Invocation
+
+The initial Quality Ruff adapter SHALL execute Ruff through the active FamilyOS
+Python interpreter rather than relying on a separately resolved `ruff` binary:
+
+```text
+<python executable> -m ruff check <target path> --output-format=json
+```
+
+The Python executable SHALL default to the active interpreter represented by
+`sys.executable`. Execution SHALL occur without shell interpretation.
+
+The target path SHALL come from the governed `QualityTarget` path contract.
+Phase 5 SHALL NOT introduce Quality Profiles, generic execution-context models,
+or tool-specific configuration domain models merely to invoke Ruff.
+
+## Ruff Execution Semantics
+
+Ruff exit status and structured output SHALL be normalized as follows:
+
+```text
+exit 0 + valid JSON     -> PASS
+exit 1 + valid JSON     -> FAIL
+other exit status       -> ERROR
+timeout                 -> ERROR
+process / OS failure    -> ERROR
+invalid Ruff JSON       -> ERROR
+```
+
+`FAIL` means Ruff executed reliably and reported governed lint violations.
+`ERROR` means the check could not reliably execute or conclude. `ERROR` SHALL
+NOT silently become `PASS`.
+
+## Ruff Finding Mapping
+
+Each Ruff violation SHALL become a `QualityFinding`.
+
+The governed FamilyOS rule remains authoritative for Quality semantics:
+
+```text
+QualityFinding.rule_id  = QualityRule.id
+QualityFinding.domain   = QualityRule.domain
+QualityFinding.severity = QualityRule.severity
+QualityFinding.status   = FAIL
+QualityFinding.target   = supplied QualityTarget
+```
+
+The native Ruff rule code, such as `F401`, SHALL NOT be promoted or rewritten
+as a `QLT-RULE-*` identifier. It SHALL be preserved as tool-native information.
+
+The Ruff message SHALL map to the finding message. File path, line, and column
+SHALL be preserved where Ruff supplies them. The initial adapter MAY represent
+that source position through the existing optional finding `location` string;
+Phase 5 SHALL NOT introduce a new source-location domain model.
+
+## Finding and Evidence Identity
+
+Phase 5 SHALL preserve the existing `QLT-FIND-*` and `QLT-EVID-*` identity
+contracts. The initial Ruff adapter SHALL NOT embed random identity generation
+inside Ruff parsing.
+
+Finding and evidence identity creation SHALL be supplied to the adapter through
+small injected factories/callables that return valid `QualityFindingId` and
+`QualityEvidenceId` values. This keeps identity generation testable and avoids
+introducing a generic Quality identity framework before such a framework is
+canonically required.
+
+## Ruff Evidence
+
+The initial Ruff adapter SHALL produce one `QualityEvidence` record for one
+governed Ruff execution. It SHALL NOT require one evidence record per Ruff
+violation.
+
+The evidence SHALL:
+
+* use `STATIC_ANALYSIS` as its Quality evidence type;
+* bind to the supplied `QualityTarget`;
+* bind `rule_id` to the supplied `QualityRule.id`;
+* identify Ruff as the tool;
+* preserve the captured Ruff version when available;
+* preserve machine-readable native execution information in the existing
+  immutable metadata boundary where practical;
+* use the injected timezone-aware clock for `created_at`;
+* use the injected evidence identity factory;
+* remain revision-optional for this initial Phase 5 slice.
+
+Each produced finding SHALL reference the execution evidence identifier through
+its existing `evidence_ids` boundary.
+
+Phase 5 does not close the deferred Quality Evidence freshness or full
+revision-awareness contract. The initial Ruff adapter SHALL NOT depend on Build
+or Testing source-state models merely to populate `revision`.
+
+## Ruff Tool Version
+
+The adapter SHALL attempt to collect the Ruff version using the same active
+Python interpreter:
+
+```text
+<python executable> -m ruff --version
+```
+
+A successful version probe SHALL populate `QualityEvidence.tool_version`.
+
+Failure of the version probe alone SHALL be handled gracefully: the evidence
+MAY use `tool_version=None`, and the normalized check result SHALL retain a
+diagnostic explaining that the Ruff version was unavailable. A version-probe
+failure SHALL NOT erase an otherwise trustworthy Ruff `PASS` or `FAIL`.
+
+Failure to execute the governed Ruff check itself remains `ERROR`.
+
+## Phase 5 Infrastructure Boundary
+
+The initial Ruff implementation MAY introduce a Ruff-specific infrastructure
+adapter and its focused tests.
+
+It SHALL NOT:
+
+* introduce a generic `CommandExecutor` or `ProcessExecutor` abstraction solely
+  for Phase 5;
+* depend on Plugin Compliance runtime models;
+* rewrite or relocate the existing Plugin Compliance Ruff validator;
+* depend on Build or Testing source-state contracts;
+* introduce MyPy, Pytest, Quality Profile, Quality Assessment, Quality Gate,
+  Quality CLI, or CI integration behavior;
+* authorize Phase 6 or any later Quality implementation phase.
+
+The existing Ruff workflow SHALL remain functional after the canonical Quality
+Ruff adapter is introduced.
+
+
+# Phase 6 MyPy Runtime Contract
+
+The initial canonical MyPy integration SHALL implement the existing
+`QualityExecutorPort` through the Quality infrastructure layer. It SHALL remain
+independent of the Plugin Compliance `QualityMypyValidator`; that validator is
+a behavioral precedent only and SHALL NOT become a dependency of the canonical
+Quality runtime.
+
+## Canonical MyPy Invocation
+
+The initial Quality MyPy adapter SHALL execute MyPy through the active FamilyOS
+Python interpreter rather than relying on a separately resolved `mypy` binary:
+
+```text
+<python executable> -m mypy <target path> --output=json
+```
+
+The Python executable SHALL default to `sys.executable`. The governed target
+path SHALL come from `QualityTarget.path`. Execution SHALL not use a shell.
+
+## MyPy Execution Semantics
+
+MyPy newline-delimited JSON output SHALL be normalized as follows:
+
+```text
+exit 0                       -> PASS
+exit 1 with valid findings   -> FAIL
+other exit status            -> ERROR
+timeout                      -> ERROR
+process / OS failure         -> ERROR
+invalid JSON                 -> ERROR
+invalid diagnostic payload   -> ERROR
+protocol inconsistency       -> ERROR
+```
+
+`FAIL` means MyPy executed reliably and reported governed type-checking
+violations. `ERROR` means the execution or protocol result itself is not
+trustworthy.
+
+Exit status `0` SHALL produce no failure findings. Exit status `1` SHALL be
+accepted as `FAIL` only when the diagnostic payload is valid and provides the
+expected type-checking findings.
+
+## Empty Python Target Compatibility
+
+A governed target path that contains no Python source files SHALL preserve the
+existing FamilyOS MyPy behavior rather than invoking MyPy and interpreting its
+fatal no-source exit status as an infrastructure failure.
+
+For this initial Phase 6 adapter only, when the governed target contains no
+`.py` or `.pyi` source files:
+
+* the main MyPy check SHALL NOT be executed;
+* `QualityCheckResult.status` SHALL be `PASS`;
+* no findings SHALL be produced;
+* one `QualityEvidence` record SHALL be produced with result `PASS`;
+* the evidence SHALL retain the canonical `TYPE_VERIFICATION`,
+  `source="quality.mypy"`, and `tool="mypy"` identity;
+* the result SHALL include the diagnostic
+  `No Python source files found; nothing to type-check.`;
+* a MyPy version probe is not required because no governed MyPy execution
+  occurs.
+
+This is a compatibility normalization required to preserve existing MyPy
+behavior. It SHALL NOT establish a general rule that non-applicable Quality
+checks are `PASS`.
+
+The broader Quality model distinguishes `NOT_APPLICABLE` from `SKIPPED`.
+`SKIPPED` is not the semantic for an empty Python target. The initial
+`QualityCheckResult` status model does not expose `NOT_APPLICABLE`, and Phase 6
+SHALL NOT expand that model or implement generic applicability resolution.
+
+Generic applicability and authoritative `NOT_APPLICABLE` result propagation
+remain outside the Phase 6 MyPy adapter boundary.
+
+## MyPy Finding Mapping
+
+Each reliable MyPy diagnostic SHALL become a `QualityFinding`.
+
+FamilyOS finding authority SHALL remain governed by the supplied
+`QualityRule`:
+
+```text
+rule_id   = rule.id
+domain    = rule.domain
+severity  = rule.severity
+status    = FAIL
+message   = MyPy message
+location  = <file>:<line>:<column>
+```
+
+The native MyPy `severity` field SHALL NOT be converted into
+`QualitySeverity`. The governed FamilyOS severity is `rule.severity`.
+
+Native MyPy diagnostic codes such as `return-value` SHALL remain tool-native
+data. They MAY be preserved in Quality Evidence metadata, but SHALL NOT be
+promoted into FamilyOS rule identifiers or independent severity policy.
+
+## MyPy Evidence
+
+One actual governed MyPy execution attempt SHALL produce one
+`QualityEvidence` record.
+
+The evidence SHALL:
+
+* use canonical `TYPE_VERIFICATION` as the evidence type;
+* use `quality.mypy` as the source;
+* identify `mypy` as the tool;
+* retain the supplied Quality rule and optional requirement authority;
+* retain the captured MyPy version when available;
+* preserve exit status, diagnostic count, and native MyPy codes where
+  available as normalized metadata;
+* use `revision=None` initially unless later Quality revision authority is
+  explicitly introduced.
+
+`TYPE_CHECK` SHALL NOT be introduced as a second spelling for the same
+evidence category.
+
+Execution failures that occur after an actual MyPy execution attempt SHALL
+produce `QualityEvidenceResult.ERROR` evidence when enough governed execution
+context exists to do so. A missing `QualityTarget.path` remains a pre-execution
+contract failure and MAY return an `ERROR` result without execution evidence.
+
+## MyPy Tool Version
+
+The adapter SHALL attempt to collect the MyPy version through the same active
+Python interpreter:
+
+```text
+<python executable> -m mypy --version
+```
+
+An available version SHALL be stored in `QualityEvidence.tool_version`.
+Version-probe failure SHALL be non-fatal when the actual MyPy quality result
+remains trustworthy. In that case `tool_version` SHALL be `None` and a
+diagnostic SHALL record that the MyPy version is unavailable.
+
+Failure to execute the governed MyPy check itself remains `ERROR`.
+
+## Phase 6 Infrastructure Boundary
+
+The initial MyPy adapter SHALL follow the established Quality adapter
+construction pattern:
+
+* injected `QualityFindingId` factory;
+* injected `QualityEvidenceId` factory;
+* injected timezone-aware evidence clock;
+* injected monotonic execution clock;
+* configurable Python executable;
+* configurable timeout.
+
+Phase 6 SHALL NOT introduce a generic `CommandExecutor`, `ProcessExecutor`, or
+other generic process framework merely for MyPy.
+
+The current FamilyOS architecture contains no canonical reusable generic
+process abstraction that this slice is required to adopt. Existing bounded
+contexts MAY continue to own their tool-specific subprocess behavior.
+
+Phase 6 SHALL NOT:
+
+* rewrite or relocate the existing Plugin Compliance MyPy validator;
+* create a Quality-to-Plugin dependency;
+* create a Plugin-to-Quality dependency merely for this adapter;
+* authorize Pytest integration or any later Quality runtime phase.
+
+The existing MyPy workflow SHALL remain functional after the canonical Quality
+MyPy adapter is introduced.
+
+---
+
 # Local Quality Automation
 
 Local automation provides rapid developer feedback before remote CI.
@@ -3622,3 +3932,174 @@ Engineering Decision
 ```
 
 Through deterministic execution, normalized evidence, profile-based orchestration, risk-aware validation, CI integration, reliable failure semantics, observability, governance, and continuous improvement, Quality Automation transforms FamilyOS quality assurance from a collection of individual engineering practices into an integrated engineering capability.
+
+---
+
+# Phase 4 Runtime Contract Reconciliation
+
+The initial executable Phase 4 runtime SHALL establish a stable,
+tool-independent verification-adapter boundary without prematurely implementing
+the Ruff, MyPy, Pytest, documentation-validation, Plugin Compliance, or other
+tool adapters governed by later phases.
+
+## Quality Check Identity
+
+Phase 4 SHALL introduce `QualityCheckId` as the stable runtime identity of a
+Quality check.
+
+`QualityCheckId` SHALL:
+
+- be an immutable validated value object;
+- use the governed `QLT-CHECK-*` namespace;
+- follow the same `SPEC-0002`-compatible stable-boundary strategy used by the
+  existing Quality runtime identifiers;
+- require a canonical non-empty suffix;
+- preserve supplied canonical identifiers without inferring semantics from the
+  suffix; and
+- avoid a narrower suffix taxonomy that would reject existing identifiers such
+  as `QLT-CHECK-LINT`, `QLT-CHECK-TYPE`, `QLT-CHECK-UNIT`,
+  `QLT-CHECK-ARCH`, or `QLT-CHECK-DOC`.
+
+The temporary executable or command name SHALL NOT define check identity.
+
+## Normalized Quality Check Result
+
+The initial normalized execution result SHALL be an immutable application-layer
+model named `QualityCheckResult`.
+
+Its initial runtime fields SHALL be:
+
+```text
+check_id
+status
+findings
+evidence
+duration_seconds
+diagnostics
+```
+
+- `check_id` is a `QualityCheckId`;
+- `status` is the existing `QualityStatus`;
+- `findings` is an immutable tuple of `QualityFinding` values;
+- `evidence` is an immutable tuple of `QualityEvidence` values;
+- `duration_seconds` is a non-negative floating-point number of seconds; and
+- `diagnostics` is an immutable tuple of non-empty strings.
+
+A `PASS` result MAY contain zero findings. Phase 4 SHALL NOT invent assessment
+policy that forbids every finding on a `PASS` result.
+
+The normalized check result is an application execution contract. It SHALL NOT
+be promoted into a new Quality domain entity merely because it references
+domain values.
+
+## Check Status Semantics
+
+The initial Phase 4 normalized check result SHALL reuse the established
+`QualityStatus` runtime vocabulary:
+
+```text
+PASS
+WARNING
+FAIL
+ERROR
+SKIPPED
+UNKNOWN
+```
+
+`FAIL` means the check executed reliably and detected a Quality violation.
+`ERROR` means the check could not reliably execute or could not produce a valid
+conclusion. Tool crashes, missing executables, invalid or corrupt native
+results, and timeouts SHALL normally normalize to `ERROR` unless a later
+governed rule explicitly establishes different semantics. `ERROR` SHALL NOT
+silently become `PASS`.
+
+The broader automation documentation also discusses `NOT_APPLICABLE`.
+Phase 4 SHALL NOT silently mutate the established `QualityStatus` vocabulary to
+add that state. `NOT_APPLICABLE` remains available in the distinct
+`QualityEvidenceResult` vocabulary and any future check-status reconciliation
+MUST be explicit.
+
+## Quality Executor Application Port
+
+Phase 4 SHALL introduce a tool-independent Quality Executor application port.
+
+The initial port SHALL use a simple `execute(...) -> QualityCheckResult`
+boundary appropriate to the current FamilyOS application architecture.
+
+The conceptual `prepare()`, `execute()`, `collect()`, and `normalize()` stages
+remain explanatory decomposition only. They SHALL NOT require four public port
+methods.
+
+The initial executor contract SHALL operate only on Quality runtime concepts
+already authorized for the slice. It SHALL NOT introduce a dependency on
+`QualityProfile`, Quality Gate policy, CI-provider configuration, or
+tool-specific configuration merely because those concepts appear in broader
+automation examples.
+
+`QualityRule.executor` remains an opaque logical reference. It SHALL NOT become
+the executor object, callable, subprocess runner, or adapter instance.
+
+## Execution and Normalization Boundary
+
+Tool-specific execution details SHALL remain outside the Quality domain.
+
+Native exit codes, stdout, stderr, reports, metrics, artifacts, timing, and
+other tool representations SHALL not automatically become authoritative
+Quality Evidence.
+
+Later tool adapters SHALL translate native execution state into the normalized
+Quality application contract and canonical Quality Evidence without leaking
+tool or subprocess semantics into the Quality domain.
+
+Phase 4 SHALL define error-normalization behavior at the contract boundary, but
+it SHALL NOT implement a later-phase tool merely to demonstrate the contract.
+
+## Subprocess Boundary
+
+No reusable canonical FamilyOS command/process abstraction has been established
+as a prerequisite for this initial Quality slice.
+
+The Phase 4 subprocess checklist remains conditional on an actual reusable
+command executor being required.
+
+Phase 4 SHALL NOT introduce a generic `CommandExecutor`, `ProcessExecutor`, or
+equivalent abstraction solely to close conditional checklist items.
+
+Concrete adapters introduced by later phases remain responsible for proving
+stdout, stderr, exit-code, duration, timeout, and executable-not-found behavior
+where applicable.
+
+## Tool Version Boundary
+
+`QualityEvidence` already supports descriptive `tool` and `tool_version`
+metadata.
+
+Actual tool-version collection, storage from real adapter execution, and
+graceful unavailable-version handling SHALL remain open until concrete Quality
+tool adapters exist.
+
+## Initial Phase 4 Implementation Boundary
+
+The initial executable Phase 4 slice MAY implement:
+
+- `QualityCheckId`;
+- immutable `QualityCheckResult`;
+- the tool-independent Quality Executor application port;
+- validation and contract tests;
+- architecture-test evolution required to authorize the Phase 4 contract.
+
+The initial executable Phase 4 slice SHALL NOT implement:
+
+- Ruff integration;
+- MyPy integration;
+- Pytest integration;
+- documentation-validator integration;
+- Plugin Compliance integration;
+- Quality Profiles;
+- Quality Assessment;
+- Quality Gates;
+- Quality CLI;
+- CI integration;
+- a generic subprocess framework without demonstrated need;
+- tool-version probing without a concrete adapter; or
+- tool-specific behavior in the Quality domain.

@@ -235,14 +235,14 @@ The actual location must follow FamilyOS repository architecture.
 # Package Structure Checklist
 
 ```text id="impl-package-checklist"
-[ ] Confirm canonical package location
-[ ] Create quality package
-[ ] Create domain package
-[ ] Create application package
-[ ] Create infrastructure package
+[x] Confirm canonical package location
+[x] Create quality package
+[x] Create domain package
+[x] Create application package
+[x] Create infrastructure package
 [ ] Create presentation / CLI integration package
-[ ] Add package exports where appropriate
-[ ] Preserve Clean Architecture dependency direction
+[x] Add package exports where appropriate
+[x] Preserve Clean Architecture dependency direction
 ```
 
 ---
@@ -250,13 +250,13 @@ The actual location must follow FamilyOS repository architecture.
 # Architecture Constraints
 
 ```text id="impl-architecture-constraints"
-[ ] Domain layer has no Ruff-specific dependency
-[ ] Domain layer has no MyPy-specific dependency
-[ ] Domain layer has no Pytest-specific dependency
-[ ] Domain layer has no CI-provider dependency
+[x] Domain layer has no Ruff-specific dependency
+[x] Domain layer has no MyPy-specific dependency
+[x] Domain layer has no Pytest-specific dependency
+[x] Domain layer has no CI-provider dependency
 [ ] Infrastructure depends on application/domain contracts
 [ ] Presentation depends on application services
-[ ] Tool integrations remain adapters
+[x] Tool integrations remain adapters
 ```
 
 ---
@@ -264,9 +264,9 @@ The actual location must follow FamilyOS repository architecture.
 # Architecture Tests
 
 ```text id="impl-architecture-tests"
-[ ] Add import-boundary tests
+[x] Add import-boundary tests
 [ ] Add package dependency tests where tooling exists
-[ ] Add regression test preventing tool-specific domain coupling
+[x] Add regression test preventing tool-specific domain coupling
 ```
 
 ---
@@ -274,10 +274,10 @@ The actual location must follow FamilyOS repository architecture.
 # Phase 1 Exit Criteria
 
 ```text id="impl-phase1-exit"
-[ ] Package architecture established
-[ ] Dependency boundaries validated
-[ ] No unnecessary infrastructure introduced
-[ ] Architecture tests pass
+[x] Package architecture established
+[x] Dependency boundaries validated
+[x] No unnecessary infrastructure introduced
+[x] Architecture tests pass
 ```
 
 ---
@@ -307,10 +307,10 @@ CRITICAL
 Checklist:
 
 ```text id="impl-severity-checklist"
-[ ] Define QualitySeverity
-[ ] Document semantics
+[x] Define QualitySeverity
+[x] Document semantics
 [ ] Add serialization support if required
-[ ] Test all valid values
+[x] Test all valid values
 [ ] Test invalid values
 [ ] Ensure ordering semantics are explicit if supported
 ```
@@ -335,10 +335,10 @@ UNKNOWN
 Checklist:
 
 ```text id="impl-status-checklist"
-[ ] Define QualityStatus
-[ ] Separate execution status from severity
-[ ] Define ERROR semantics
-[ ] Define UNKNOWN semantics
+[x] Define QualityStatus
+[x] Separate execution status from severity
+[x] Define ERROR semantics
+[x] Define UNKNOWN semantics
 [ ] Test serialization
 [ ] Test invalid status rejection
 ```
@@ -367,10 +367,10 @@ GOVERNANCE
 Checklist:
 
 ```text id="impl-domain-checklist"
-[ ] Determine whether enum or extensible identifier is preferable
-[ ] Define initial domains
-[ ] Avoid unnecessary hard-coding of future domains
-[ ] Add validation tests
+[x] Determine whether enum or extensible identifier is preferable
+[x] Define initial domains
+[x] Avoid unnecessary hard-coding of future domains
+[x] Add validation tests
 ```
 
 ---
@@ -392,8 +392,8 @@ metadata
 Checklist:
 
 ```text id="impl-target-checklist"
-[ ] Define QualityTarget
-[ ] Support repository target
+[x] Define QualityTarget
+[x] Support repository target
 [ ] Support file / module target
 [ ] Support plugin target
 [ ] Support documentation target
@@ -425,13 +425,13 @@ evidence_ids
 Checklist:
 
 ```text id="impl-finding-checklist"
-[ ] Define QualityFinding
-[ ] Define stable identifier semantics
-[ ] Define required fields
-[ ] Define optional location
-[ ] Define evidence references
+[x] Define QualityFinding
+[x] Define stable identifier semantics
+[x] Define required fields
+[x] Define optional location
+[x] Define evidence references
 [ ] Define status lifecycle if included initially
-[ ] Add construction tests
+[x] Add construction tests
 [ ] Add serialization tests
 [ ] Add equality / fingerprint tests if applicable
 ```
@@ -458,12 +458,12 @@ verification
 Checklist:
 
 ```text id="impl-requirement-checklist"
-[ ] Define QualityRequirement
-[ ] Define authority field
-[ ] Define mandatory semantics
-[ ] Define applicability representation
-[ ] Define verification expectations
-[ ] Test requirement validation
+[x] Define QualityRequirement
+[x] Define authority field
+[x] Define mandatory semantics
+[x] Define applicability representation
+[x] Define verification expectations
+[x] Test requirement validation
 ```
 
 ---
@@ -486,12 +486,12 @@ executor
 Checklist:
 
 ```text id="impl-rule-checklist"
-[ ] Define QualityRule
-[ ] Require requirement linkage where appropriate
-[ ] Define severity
-[ ] Define executor or adapter reference
-[ ] Avoid embedding tool-specific behavior in domain model
-[ ] Add validation tests
+[x] Define QualityRule
+[x] Require requirement linkage where appropriate
+[x] Define severity
+[x] Define executor or adapter reference
+[x] Avoid embedding tool-specific behavior in domain model
+[x] Add validation tests
 ```
 
 ---
@@ -499,11 +499,11 @@ Checklist:
 # Phase 2 Exit Criteria
 
 ```text id="impl-phase2-exit"
-[ ] Core domain models implemented
-[ ] Domain models independent of tool implementations
-[ ] Unit test coverage established
-[ ] Static analysis passes
-[ ] Domain terminology matches normative framework
+[x] Core domain models implemented
+[x] Domain models independent of tool implementations
+[x] Unit test coverage established
+[x] Static analysis passes
+[x] Domain terminology matches normative framework
 ```
 
 ---
@@ -518,59 +518,116 @@ Implement structured Quality Evidence capable of supporting reproducible finding
 
 # Quality Evidence Model
 
-Suggested initial fields:
+Canonical initial runtime fields:
 
 ```text id="impl-evidence-fields"
 id
 type
 source
 target
-revision
-status
+result
 created_at
+revision
+rule_id
+requirement_id
 tool
 tool_version
 metadata
 artifact
 ```
 
+Phase 3 runtime contract:
+
+* `id` uses immutable `QualityEvidenceId` with the `QLT-EVID-*` namespace.
+* `type` uses immutable validated extensible `QualityEvidenceType`.
+* `target` reuses the existing `QualityTarget`.
+* `result` uses the dedicated closed `QualityEvidenceResult` vocabulary and
+  SHALL NOT reuse `QualityStatus`.
+* `rule_id` and `requirement_id` are optional traceability references.
+* `QLT-CHECK-*` runtime identity and normalized check execution remain Phase 4
+  concerns.
+* Evidence persistence, publication, assessment, gates, aggregation, and
+  provider-specific execution remain outside this Phase 3 domain-model slice.
+
 Checklist:
 
 ```text id="impl-evidence-checklist"
-[ ] Define QualityEvidence
-[ ] Define evidence identity
-[ ] Bind evidence to target
-[ ] Bind evidence to revision where applicable
-[ ] Record source
-[ ] Record verification status
-[ ] Support tool metadata
-[ ] Support machine-readable metadata
-[ ] Test evidence validation
+[x] Define QualityEvidence
+[x] Define evidence identity
+[x] Bind evidence to target
+[x] Bind evidence to revision where applicable
+[x] Record source
+[x] Record verification status
+[x] Support tool metadata
+[x] Support machine-readable metadata
+[x] Test evidence validation
 ```
 
 ---
 
 # Evidence Type
 
-Potential initial types:
+Canonical initial types:
 
 ```text id="impl-evidence-types"
-STATIC_ANALYSIS
-TYPE_CHECK
 TEST
-DOCUMENTATION
-COMPLIANCE
+STATIC_ANALYSIS
+TYPE_VERIFICATION
 ARCHITECTURE
+SECURITY
+DOCUMENTATION
 BUILD
+PERFORMANCE
+COMPATIBILITY
+COMPLIANCE
+OBSERVABILITY
 MANUAL_REVIEW
+METRIC
 ```
+
+`QualityEvidenceType` SHALL be an immutable validated extensible value object,
+not a closed enum and not an arbitrary unvalidated raw string. These values are
+semantic categories rather than new `SPEC-0002` persistent identifier
+namespaces. `TYPE_VERIFICATION` is the canonical spelling; `TYPE_CHECK` is not
+a second runtime alias.
 
 Checklist:
 
 ```text id="impl-evidence-type-checklist"
-[ ] Define initial evidence types
-[ ] Allow future extension
+[x] Define initial evidence types
+[x] Allow future extension
 [ ] Test mapping from adapter results
+```
+
+---
+
+# Evidence Result
+
+Canonical initial result vocabulary:
+
+```text id="impl-evidence-results"
+PASS
+WARNING
+FAIL
+ERROR
+SKIPPED
+NOT_APPLICABLE
+```
+
+`QualityEvidenceResult` is distinct from `QualityStatus`. `UNKNOWN` remains a
+`QualityStatus` concept and SHALL NOT substitute for `NOT_APPLICABLE`.
+
+Malformed or structurally invalid evidence is not represented as a `FAIL` or
+`ERROR` evidence result; it is rejected as invalid evidence.
+
+Checklist:
+
+```text id="impl-evidence-result-checklist"
+[x] Define QualityEvidenceResult
+[x] Keep QualityEvidenceResult distinct from QualityStatus
+[x] Define NOT_APPLICABLE semantics
+[x] Distinguish invalid evidence from FAIL and ERROR
+[x] Test all initial result values
 ```
 
 ---
@@ -589,11 +646,11 @@ Checklist:
 # Evidence Validation
 
 ```text id="impl-evidence-validation"
-[ ] Validate evidence target
-[ ] Validate revision binding
-[ ] Validate required metadata
-[ ] Reject malformed evidence
-[ ] Distinguish invalid from failed evidence
+[x] Validate evidence target
+[x] Validate revision binding
+[x] Validate required metadata
+[x] Reject malformed evidence
+[x] Distinguish invalid from failed evidence
 ```
 
 ---
@@ -612,11 +669,38 @@ Checklist:
 # Phase 3 Exit Criteria
 
 ```text id="impl-phase3-exit"
-[ ] Quality Evidence model implemented
-[ ] Evidence can be produced independently of assessments
+[x] Quality Evidence model implemented
+[x] Evidence can be produced independently of assessments
 [ ] Evidence is revision-aware
-[ ] Evidence validation tests pass
+[x] Evidence validation tests pass
 ```
+
+## Phase 3 Runtime Closure Evidence
+
+The initial executable Quality Evidence domain-model slice is implemented and
+verified by commit `ccd0844`.
+
+This reconciliation intentionally leaves later execution and policy concerns
+open:
+
+- adapter-result mapping remains open until Quality tool adapters exist;
+- freshness and stale-evidence behavior remain open because revision-bearing
+  evidence does not itself define assessment freshness policy;
+- serialization remains open because no canonical serialized representation
+  has been introduced and the JSON/schema items are conditional;
+- `Evidence is revision-aware` remains open until revision freshness/staleness
+  semantics are implemented rather than inferred from the presence of a
+  `revision` field.
+
+Current executable evidence includes 34 Quality Evidence tests, 81 Quality
+domain tests, 6 Quality architecture tests, Ruff PASS, and MyPy PASS across 16
+Quality domain source files. No Phase 4+ Quality models, Quality CLI, tool
+coupling, evidence persistence, serialization, or freshness policy were
+introduced.
+
+This closes only checklist items directly demonstrated by the initial Phase 3
+implementation and does not by itself authorize Phase 4 implementation.
+
 
 ---
 
@@ -625,6 +709,161 @@ Checklist:
 ## Objective
 
 Create a common interface between FamilyOS quality semantics and external quality tools.
+
+---
+
+## Phase 4 Runtime Implementation Contract
+
+The initial executable Phase 4 slice SHALL establish the normalized,
+tool-independent verification-adapter contract before any concrete later-phase
+tool adapter is implemented.
+
+### Quality Check Identity
+
+Phase 4 SHALL introduce immutable `QualityCheckId` using the governed
+`QLT-CHECK-*` namespace and the existing Quality identifier validation
+strategy. It SHALL validate the namespace and canonical non-empty suffix
+without imposing a narrower suffix taxonomy.
+
+Existing examples such as `QLT-CHECK-LINT`, `QLT-CHECK-TYPE`,
+`QLT-CHECK-UNIT`, `QLT-CHECK-ARCH`, and `QLT-CHECK-DOC` SHALL remain valid.
+
+### Initial Normalized Result Contract
+
+`QualityCheckResult` SHALL be an immutable application-layer execution result
+with exactly these initial semantic fields:
+
+```text
+check_id: QualityCheckId
+status: QualityStatus
+findings: tuple[QualityFinding, ...]
+evidence: tuple[QualityEvidence, ...]
+duration_seconds: float
+diagnostics: tuple[str, ...]
+```
+
+`duration_seconds` SHALL be non-negative. Collection fields SHALL be immutable
+tuples. Diagnostic entries SHALL be non-empty strings. A `PASS` result SHALL
+support zero findings.
+
+The initial result SHALL reuse `QualityStatus`. `FAIL` means reliable execution
+that detected a Quality violation. `ERROR` means execution could not reliably
+complete or produce a valid conclusion. Timeout, missing executable, tool
+crash, and corrupt native result SHALL normally normalize to `ERROR`;
+`ERROR` SHALL NOT silently become `PASS`.
+
+The broader automation concept `NOT_APPLICABLE` SHALL NOT be silently added to
+`QualityStatus` during this slice. It remains part of the distinct
+`QualityEvidenceResult` vocabulary pending explicit future reconciliation.
+
+### Initial Executor Port Contract
+
+Phase 4 SHALL introduce a tool-independent Quality Executor application port
+with a simple `execute(...) -> QualityCheckResult` boundary.
+
+The conceptual `prepare() / execute() / collect() / normalize()` sequence does
+not require separate public port methods.
+
+The initial port SHALL use only already-authorized Quality runtime concepts and
+SHALL NOT introduce `QualityProfile`, gate policy, CI-provider configuration,
+or tool-specific configuration.
+
+`QualityRule.executor` remains an opaque logical reference and SHALL NOT become
+the runtime executor object.
+
+### Deferred and Conditional Phase 4 Concerns
+
+No canonical reusable FamilyOS command/process abstraction has been identified
+as a prerequisite for this slice. The subprocess checklist therefore remains
+conditional until a concrete adapter demonstrates the need.
+
+The initial Phase 4 slice SHALL NOT introduce a generic subprocess framework
+solely to close checklist items.
+
+Actual stdout/stderr/exit-code capture, timeout handling,
+executable-not-found handling, and tool-version collection SHALL remain open
+until concrete tool adapters are implemented in their authorized phases.
+
+`QualityEvidence.tool` and `QualityEvidence.tool_version` remain the canonical
+descriptive evidence fields when later adapters provide those values.
+
+This reconciliation authorizes only the initial Phase 4 contract slice. It
+does not by itself authorize Phase 5 Ruff integration or any later Quality
+implementation phase.
+
+---
+
+
+
+
+## Initial Phase 4 Runtime Closure Evidence
+
+The initial Phase 4 Verification Adapter Contract runtime slice is closed by
+commit `d2f530b` (`feat(quality): establish verification adapter contracts`).
+
+Runtime evidence for this closure includes:
+
+- immutable `QualityCheckId` using the governed `QLT-CHECK-*` namespace;
+- immutable application-layer `QualityCheckResult` with the six reconciled
+  normalized result fields;
+- explicit `FAIL` versus `ERROR` contract semantics;
+- support for multiple findings, zero findings on `PASS`, and attached
+  `QualityEvidence`;
+- a tool-independent `QualityExecutorPort` using the authorized
+  `check_id` / `rule` / `target` execution boundary;
+- contract coverage proving explicit check identity preservation;
+- architecture protection against premature later-phase Quality models and
+  tool-specific Quality-domain coupling;
+- 113 targeted Quality tests passing;
+- Ruff validation passing; and
+- MyPy validation passing across 21 Quality source files.
+
+For this initial closure, 14 of the 25 Phase 4 checklist items are satisfied.
+The remaining 11 items intentionally stay open.
+
+Two subprocess-framework items remain conditional because no reusable canonical
+FamilyOS command/process abstraction has been established as a prerequisite.
+FamilyOS SHALL NOT introduce duplicate or generic execution infrastructure
+solely to close those checklist items.
+
+The remaining concrete execution concerns — stdout, stderr, exit-code and
+duration capture, timeout and executable-not-found behavior, and tool-version
+collection/storage/unavailability handling — remain deferred until authorized
+concrete Quality tool adapters demonstrate and implement those behaviors.
+
+`Execution failures normalized` is closed at the stable application-contract
+level: reliable Quality violations map to `FAIL`, while execution that cannot
+reliably complete or conclude maps to `ERROR`. This closure does not claim
+that concrete Ruff, MyPy, Pytest, or other tool failure modes have already been
+executed or normalized by adapters.
+
+This closure establishes only the initial Phase 4 verification-adapter
+contract. It does not, by itself, authorize Phase 5 Ruff integration or any
+later Quality implementation phase.
+
+## Phase 4 Concrete Adapter Reconciliation
+
+Phase 5 Ruff implementation subsequently supplied the concrete execution
+evidence intentionally deferred by the initial Phase 4 contract closure.
+
+The canonical Quality Ruff adapter now captures stdout, stderr, exit status,
+and execution duration; normalizes timeout and process / OS execution failures
+to `ERROR`; probes the Ruff version; stores an available version in
+`QualityEvidence.tool_version`; and preserves an unavailable version as a
+non-fatal diagnostic when the Ruff quality conclusion itself remains
+trustworthy.
+
+The two conditional process-abstraction checklist items are also resolved.
+The reconciliation audit found no canonical reusable FamilyOS
+`CommandExecutor` / `ProcessExecutor` abstraction that the Quality adapter was
+required to reuse. Existing bounded contexts continue to own their
+tool-specific subprocess execution. Phase 5 therefore introduced neither a
+generic process framework nor duplicate canonical execution infrastructure
+solely for Quality.
+
+With this concrete-adapter evidence, all 25 Phase 4 checklist items are
+reconciled as satisfied. This retrospective reconciliation does not broaden
+Phase 4 authority and does not authorize Phase 6 or any later Quality phase.
 
 ---
 
@@ -646,11 +885,11 @@ diagnostics
 Checklist:
 
 ```text id="impl-check-result-checklist"
-[ ] Define normalized check result
-[ ] Separate FAIL from ERROR
-[ ] Support multiple findings
-[ ] Support zero findings on PASS
-[ ] Support evidence attachment
+[x] Define normalized check result
+[x] Separate FAIL from ERROR
+[x] Support multiple findings
+[x] Support zero findings on PASS
+[x] Support evidence attachment
 ```
 
 ---
@@ -670,11 +909,11 @@ or a simpler interface appropriate to the application architecture.
 Checklist:
 
 ```text id="impl-executor-checklist"
-[ ] Define application port for quality executor
-[ ] Keep subprocess behavior in infrastructure
-[ ] Define normalized return model
-[ ] Define error behavior
-[ ] Add contract tests
+[x] Define application port for quality executor
+[x] Keep subprocess behavior in infrastructure
+[x] Define normalized return model
+[x] Define error behavior
+[x] Add contract tests
 ```
 
 ---
@@ -684,14 +923,14 @@ Checklist:
 If a reusable command executor is required:
 
 ```text id="impl-subprocess"
-[ ] Reuse existing FamilyOS process abstraction if available
-[ ] Avoid introducing duplicate execution infrastructure
-[ ] Capture stdout
-[ ] Capture stderr
-[ ] Capture exit code
-[ ] Capture duration
-[ ] Handle timeout
-[ ] Handle executable-not-found
+[x] Reuse existing FamilyOS process abstraction if available
+[x] Avoid introducing duplicate execution infrastructure
+[x] Capture stdout
+[x] Capture stderr
+[x] Capture exit code
+[x] Capture duration
+[x] Handle timeout
+[x] Handle executable-not-found
 ```
 
 ---
@@ -699,9 +938,9 @@ If a reusable command executor is required:
 # Tool Version Collection
 
 ```text id="impl-tool-version"
-[ ] Collect relevant tool version
-[ ] Store version in evidence
-[ ] Handle unavailable version gracefully
+[x] Collect relevant tool version
+[x] Store version in evidence
+[x] Handle unavailable version gracefully
 ```
 
 ---
@@ -709,10 +948,10 @@ If a reusable command executor is required:
 # Phase 4 Exit Criteria
 
 ```text id="impl-phase4-exit"
-[ ] Tool adapter contract stable
-[ ] Execution failures normalized
-[ ] Tool-specific details remain infrastructure concerns
-[ ] Contract tests pass
+[x] Tool adapter contract stable
+[x] Execution failures normalized
+[x] Tool-specific details remain infrastructure concerns
+[x] Contract tests pass
 ```
 
 ---
@@ -725,20 +964,136 @@ Integrate existing Ruff validation into the Quality Framework.
 
 ---
 
+## Phase 5 Runtime Implementation Contract
+
+The initial Ruff integration SHALL implement the existing
+`QualityExecutorPort` in the Quality infrastructure layer while preserving the
+existing Plugin Compliance Ruff validator as a separate bounded-context
+workflow.
+
+The canonical invocation is:
+
+```text
+<python executable> -m ruff check <target path> --output-format=json
+```
+
+with the Python executable defaulting to `sys.executable` and no shell
+interpretation.
+
+Initial normalization is governed as follows:
+
+```text
+exit 0 + valid JSON     -> PASS
+exit 1 + valid JSON     -> FAIL
+other exit status       -> ERROR
+timeout                 -> ERROR
+process / OS failure    -> ERROR
+invalid Ruff JSON       -> ERROR
+```
+
+For each Ruff violation:
+
+* `QualityFinding.rule_id` comes from the supplied `QualityRule.id`;
+* `QualityFinding.domain` comes from the supplied `QualityRule.domain`;
+* `QualityFinding.severity` comes from the supplied `QualityRule.severity`;
+* the finding status is `FAIL`;
+* the Ruff code remains tool-native information and SHALL NOT be promoted to a
+  `QLT-RULE-*` identifier;
+* message, path, line, and column are preserved where available.
+
+Finding and evidence identities SHALL use injected factories/callables that
+return valid `QualityFindingId` and `QualityEvidenceId` values. Phase 5 SHALL
+NOT embed random identity generation inside Ruff parsing or introduce a generic
+Quality identity framework solely for this adapter.
+
+One governed Ruff execution SHALL initially produce one `QualityEvidence`
+record of type `STATIC_ANALYSIS`. The evidence SHALL bind to the supplied
+target and rule, use an injected timezone-aware clock for `created_at`, identify
+Ruff as the tool, and preserve the Ruff version when available. Produced
+findings SHALL reference that evidence identifier.
+
+Revision remains optional in this initial slice. Phase 5 SHALL NOT depend on
+Build or Testing source-state contracts merely to populate Quality Evidence
+revision, and it does not close the deferred evidence freshness or full
+revision-awareness work.
+
+The adapter SHALL attempt:
+
+```text
+<python executable> -m ruff --version
+```
+
+A version-probe failure alone is non-fatal: `tool_version` MAY remain `None`
+and a diagnostic SHALL record the unavailable version without replacing an
+otherwise trustworthy Ruff `PASS` or `FAIL` with `ERROR`.
+
+The initial Phase 5 slice MAY introduce a Ruff-specific infrastructure adapter
+and focused tests. It SHALL NOT introduce a generic process-execution
+framework, depend on Plugin Compliance runtime models, rewrite the existing
+Plugin Compliance Ruff validator, or introduce Phase 6+ behavior.
+
+This contract authorizes only the initial Phase 5 Ruff implementation slice.
+It does not, by itself, authorize Phase 6 MyPy integration or any later Quality
+implementation phase.
+
+## Phase 5 Runtime Closure Evidence
+
+The canonical Ruff runtime slice is implemented by commit `dd5540f`
+(`feat(quality): implement canonical ruff executor`) and its real integration
+coverage is established by commit `1fd8c1a`
+(`test(quality): add real ruff integration coverage`).
+
+Closure evidence includes:
+
+- `RuffQualityExecutor` implementing the existing `QualityExecutorPort` in the
+  Quality infrastructure layer;
+- canonical execution through the active Python interpreter using
+  `python -m ruff check <target path> --output-format=json`;
+- normalized `PASS`, `FAIL`, and `ERROR` semantics with reliable Ruff JSON
+  parsing;
+- governed `QualityFinding` mapping for rule authority, severity, message,
+  path, line, and column while preserving native Ruff rule codes as
+  tool-specific evidence metadata;
+- one governed `STATIC_ANALYSIS` `QualityEvidence` record per Ruff execution
+  attempt, including exit status, violation count, native Ruff codes, and
+  available Ruff tool version;
+- timeout, process / OS failure, invalid JSON, invalid violation payload, and
+  inconsistent Ruff protocol behavior normalized to `ERROR`;
+- non-fatal Ruff-version unavailability represented by `tool_version=None`
+  plus a diagnostic;
+- focused adapter unit coverage;
+- real Ruff integration coverage for both a valid fixture and an invalid
+  `F401` fixture without subprocess mocking;
+- preservation of the pre-existing Plugin Compliance Ruff workflow as an
+  independent bounded-context implementation;
+- 20 tests passing across the canonical Ruff adapter, real integration tests,
+  and Plugin Compliance Ruff regression;
+- 128 targeted Quality tests passing during staged and post-commit validation;
+- Ruff validation passing; and
+- MyPy validation passing across the reconciled Quality source/test scope.
+
+All 20 Phase 5 checklist items are therefore satisfied.
+
+This closure authorizes documentary completion of Phase 5 only. Phase 6 MyPy
+integration and all later Quality phases remain outside this closure and SHALL
+remain open until separately audited and authorized.
+
+---
+
 # Ruff Adapter Checklist
 
 ```text id="impl-ruff"
-[ ] Confirm canonical Ruff command used by FamilyOS
-[ ] Implement Ruff adapter
-[ ] Execute Ruff through infrastructure layer
-[ ] Parse reliable machine-readable output if available
-[ ] Normalize violations into QualityFinding
-[ ] Produce QualityEvidence
-[ ] Distinguish Ruff execution ERROR from lint FAIL
-[ ] Capture Ruff version
-[ ] Add adapter unit tests
-[ ] Add integration tests with valid fixture
-[ ] Add integration tests with invalid fixture
+[x] Confirm canonical Ruff command used by FamilyOS
+[x] Implement Ruff adapter
+[x] Execute Ruff through infrastructure layer
+[x] Parse reliable machine-readable output if available
+[x] Normalize violations into QualityFinding
+[x] Produce QualityEvidence
+[x] Distinguish Ruff execution ERROR from lint FAIL
+[x] Capture Ruff version
+[x] Add adapter unit tests
+[x] Add integration tests with valid fixture
+[x] Add integration tests with invalid fixture
 ```
 
 ---
@@ -746,11 +1101,11 @@ Integrate existing Ruff validation into the Quality Framework.
 # Ruff Finding Mapping
 
 ```text id="impl-ruff-mapping"
-[ ] Map Ruff rule code
-[ ] Map file path
-[ ] Map line / column where available
-[ ] Map message
-[ ] Map QualitySeverity according to governed policy
+[x] Map Ruff rule code
+[x] Map file path
+[x] Map line / column where available
+[x] Map message
+[x] Map QualitySeverity according to governed policy
 ```
 
 ---
@@ -758,15 +1113,78 @@ Integrate existing Ruff validation into the Quality Framework.
 # Phase 5 Exit Criteria
 
 ```text id="impl-phase5-exit"
-[ ] Ruff produces normalized evidence
-[ ] Ruff failures produce structured findings
-[ ] Ruff adapter reproducible
-[ ] Existing Ruff workflow remains functional
+[x] Ruff produces normalized evidence
+[x] Ruff failures produce structured findings
+[x] Ruff adapter reproducible
+[x] Existing Ruff workflow remains functional
 ```
 
 ---
 
 # Phase 6 — MyPy Integration
+
+## Phase 6 MyPy Runtime Contract Reconciliation
+
+The Phase 6 implementation contract is frozen before runtime implementation.
+
+The canonical Quality adapter SHALL implement the existing
+`QualityExecutorPort` in the Quality infrastructure layer and execute MyPy as:
+
+```text
+<active Python executable> -m mypy <target path> --output=json
+```
+
+The runtime SHALL default to `sys.executable`, obtain the governed path from
+`QualityTarget.path`, parse MyPy newline-delimited JSON diagnostics, normalize
+exit status `0` to `PASS`, exit status `1` with reliable findings to `FAIL`,
+and tool/protocol failures to `ERROR`.
+
+### Empty Python Target Compatibility
+
+The existing FamilyOS MyPy behavior for a target containing no `.py` or `.pyi`
+source files SHALL be preserved explicitly. The Phase 6 adapter SHALL detect
+that condition before the main MyPy execution and normalize it as a
+compatibility `PASS` with zero findings, one canonical `TYPE_VERIFICATION`
+evidence record with result `PASS`, and the diagnostic
+`No Python source files found; nothing to type-check.`
+
+The main MyPy check SHALL NOT run for that target, and a version probe is not
+required because no governed MyPy execution occurs.
+
+This narrow compatibility rule SHALL NOT redefine general Quality
+applicability. `SKIPPED` is not the correct semantic, and Phase 6 SHALL NOT add
+`NOT_APPLICABLE` to `QualityCheckResult` or implement generic applicability
+resolution.
+
+`QualityFinding` authority SHALL come from the supplied `QualityRule`:
+`rule.id`, `rule.domain`, and `rule.severity`. Native MyPy severity SHALL NOT
+be converted into FamilyOS `QualitySeverity`. Native MyPy diagnostic codes
+remain tool-specific data and MAY be retained in evidence metadata.
+
+MyPy evidence SHALL use canonical `TYPE_VERIFICATION`,
+`source="quality.mypy"`, and `tool="mypy"`. `TYPE_CHECK` remains non-canonical.
+
+The adapter SHALL probe:
+
+```text
+<active Python executable> -m mypy --version
+```
+
+Available version data SHALL be stored in `tool_version`. Version
+unavailability SHALL remain non-fatal when the actual MyPy quality conclusion
+is trustworthy and SHALL be surfaced through diagnostics.
+
+The adapter SHALL use injected finding/evidence ID factories, a timezone-aware
+evidence clock, a monotonic duration clock, the active Python executable, and
+an infrastructure timeout, following the established Ruff adapter precedent.
+
+No generic process framework, Build/Testing coupling, Plugin Compliance
+dependency, validator relocation, or Phase 7+ implementation is authorized by
+this reconciliation.
+
+All 19 Phase 6 checklist items are satisfied by concrete implementation and
+verification evidence and are now closed. Phase 7 and later phases remain open.
+
 
 ## Objective
 
@@ -777,16 +1195,16 @@ Integrate FamilyOS static typing verification.
 # MyPy Adapter Checklist
 
 ```text id="impl-mypy"
-[ ] Confirm canonical MyPy command
-[ ] Implement MyPy adapter
-[ ] Parse structured output where practical
-[ ] Normalize type errors into findings
-[ ] Produce QualityEvidence
-[ ] Capture MyPy version
-[ ] Distinguish execution ERROR from type FAIL
-[ ] Add passing fixture
-[ ] Add failing fixture
-[ ] Add adapter tests
+[x] Confirm canonical MyPy command
+[x] Implement MyPy adapter
+[x] Parse structured output where practical
+[x] Normalize type errors into findings
+[x] Produce QualityEvidence
+[x] Capture MyPy version
+[x] Distinguish execution ERROR from type FAIL
+[x] Add passing fixture
+[x] Add failing fixture
+[x] Add adapter tests
 ```
 
 ---
@@ -794,12 +1212,12 @@ Integrate FamilyOS static typing verification.
 # MyPy Finding Mapping
 
 ```text id="impl-mypy-mapping"
-[ ] File path
-[ ] Line
-[ ] Column where available
-[ ] MyPy code where available
-[ ] Message
-[ ] Severity mapping
+[x] File path
+[x] Line
+[x] Column where available
+[x] MyPy code where available
+[x] Message
+[x] Severity mapping
 ```
 
 ---
@@ -807,9 +1225,9 @@ Integrate FamilyOS static typing verification.
 # Phase 6 Exit Criteria
 
 ```text id="impl-phase6-exit"
-[ ] MyPy integrated into common quality model
-[ ] Type evidence available
-[ ] Existing MyPy behavior preserved
+[x] MyPy integrated into common quality model
+[x] Type evidence available
+[x] Existing MyPy behavior preserved
 ```
 
 ---
@@ -818,68 +1236,143 @@ Integrate FamilyOS static typing verification.
 
 ## Objective
 
-Integrate FamilyOS testing results as structured quality evidence.
+Integrate FamilyOS testing results as structured quality evidence while preserving
+the Testing Framework as the canonical authority for Pytest execution semantics.
+
+Phase 7 SHALL introduce a Quality-owned Pytest verification adapter without
+creating a runtime dependency from Quality on Testing infrastructure. Existing
+Testing Framework behavior is semantic authority and SHALL be preserved, but
+`PytestRunner` SHALL NOT be reused, moved, or imported into Quality.
+
+---
+
+# Canonical Pytest Runtime Contract
+
+The canonical Quality adapter SHALL be:
+
+```text id="impl-pytest-executor-contract"
+PytestQualityExecutor(QualityExecutorPort)
+```
+
+The canonical invocation SHALL be:
+
+```text id="impl-pytest-command-contract"
+<python executable> -m pytest <target path> --junitxml=<temporary XML report>
+```
+
+Pytest native JUnit XML is the structured transport. The temporary report SHALL
+be adapter-owned and SHALL NOT leave generated artifacts in the repository.
+
+Phase 7 SHALL NOT add `pytest-json-report` merely for structured output, parse
+human terminal output as the authoritative protocol, introduce a generic process
+abstraction, create a Quality dependency on `infrastructure.testing`, move/reuse
+`PytestRunner`, or authorize Phase 8+ runtime work.
+
+---
+
+# Testing Framework Semantic Authority
+
+The existing Testing Framework remains authoritative for aggregate Pytest status
+semantics. Quality SHALL preserve:
+
+```text id="impl-pytest-status-contract"
+Pytest exit 0  -> QualityStatus.PASS
+Pytest exit 1  -> QualityStatus.FAIL
+Pytest exit 2+ -> QualityStatus.ERROR
+```
+
+Established Pytest exit codes are:
+
+```text id="impl-pytest-exit-codes"
+0 = OK
+1 = TESTS_FAILED
+2 = INTERRUPTED
+3 = INTERNAL_ERROR
+4 = USAGE_ERROR
+5 = NO_TESTS_COLLECTED
+6 = MAX_WARNINGS_ERROR
+```
+
+Thus assertion failures and setup/fixture/teardown errors producing exit `1` are
+`FAIL`. Collection errors producing exit `2`, interruption, internal/usage
+errors, no tests collected (`5`), maximum-warning errors (`6`), timeout,
+process-launch failure, and missing/malformed/inconsistent structured output are
+`ERROR`.
+
+A JUnit `<error>` element SHALL NOT override the aggregate exit-code mapping.
 
 ---
 
 # Pytest Adapter Checklist
 
 ```text id="impl-pytest"
-[ ] Confirm canonical Pytest invocation
-[ ] Decide structured report format
-[ ] Implement Pytest adapter
-[ ] Normalize execution state
-[ ] Produce test evidence
-[ ] Capture test counts
-[ ] Capture failure information
-[ ] Capture duration
-[ ] Capture Pytest version
-[ ] Distinguish infrastructure ERROR from test FAIL
-[ ] Add adapter tests
+[x] Confirm canonical Pytest invocation
+[x] Decide structured report format
+[x] Implement Pytest adapter
+[x] Normalize execution state
+[x] Produce test evidence
+[x] Capture test counts
+[x] Capture failure information
+[x] Capture duration
+[x] Capture Pytest version
+[x] Distinguish infrastructure ERROR from test FAIL
+[x] Add adapter tests
 ```
 
 ---
 
 # Test Evidence
 
-Initial evidence may include:
+Canonical evidence SHALL use:
 
-```text id="impl-test-evidence"
-passed
-failed
-skipped
-errors
-duration
+```text id="impl-pytest-evidence-contract"
+type:          TEST
+source:        quality.pytest
+tool:          pytest
+revision:      None
+result:        PASS | FAIL | ERROR
 ```
+
+Evidence metadata SHALL preserve passed, failed, skipped, errors, duration, and
+native exit code. Skipped tests SHALL be represented in evidence counts and do
+not independently cause `FAIL` when the aggregate result passes.
 
 Checklist:
 
 ```text id="impl-test-evidence-checklist"
-[ ] Represent passing suite
-[ ] Represent failing suite
-[ ] Represent collection error
-[ ] Represent skipped tests
-[ ] Preserve Testing Framework semantics
+[x] Represent passing suite
+[x] Represent failing suite
+[x] Represent collection error
+[x] Represent skipped tests
+[x] Preserve Testing Framework semantics
 ```
 
 ---
 
 # Failed Test Findings
 
-Decide whether:
+Initial granularity SHALL be one `QualityFinding` per failed or test-error
+testcase when the aggregate result is `FAIL`.
 
-```text id="impl-test-findings"
-Each failed test
+Each finding SHALL preserve governed Quality authority:
+
+```text id="impl-test-finding-authority"
+rule_id  = rule.id
+domain   = rule.domain
+severity = rule.severity
+status   = QualityStatus.FAIL
 ```
 
-becomes a finding or whether the suite produces aggregated findings initially.
+Canonical `ERROR` results SHALL NOT require synthetic failed-test findings.
+Detailed diagnostics SHALL remain available through result diagnostics and
+Quality evidence.
 
 Checklist:
 
 ```text id="impl-test-findings-checklist"
-[ ] Define initial granularity
-[ ] Avoid excessive finding noise
-[ ] Preserve detailed diagnostics in evidence
+[x] Define initial granularity
+[x] Avoid excessive finding noise
+[x] Preserve detailed diagnostics in evidence
 ```
 
 ---
@@ -887,10 +1380,13 @@ Checklist:
 # Phase 7 Exit Criteria
 
 ```text id="impl-phase7-exit"
-[ ] Pytest evidence integrated
-[ ] Test failures visible in common quality model
-[ ] Testing Framework remains authoritative
+[x] Pytest evidence integrated
+[x] Test failures visible in common quality model
+[x] Testing Framework remains authoritative
 ```
+
+All 22 Phase 7 checklist items are satisfied by concrete implementation and
+verification evidence. Phase 8 and later phases remain open.
 
 ---
 
@@ -918,13 +1414,13 @@ EPIC Metadata
 Checklist:
 
 ```text id="impl-doc-checklist"
-[ ] Identify existing documentation validators
-[ ] Reuse existing validators where available
-[ ] Implement adapter
-[ ] Normalize findings
-[ ] Produce documentation evidence
-[ ] Add fixtures
-[ ] Add integration tests
+[x] Identify existing documentation validators
+[x] Reuse existing validators where available
+[x] Implement adapter
+[x] Normalize findings
+[x] Produce documentation evidence
+[x] Add fixtures
+[x] Add integration tests
 ```
 
 ---
@@ -932,10 +1428,10 @@ Checklist:
 # EPIC Structure Validation
 
 ```text id="impl-epic-structure"
-[ ] Validate required EPIC files
-[ ] Validate duplicate chapter detection
-[ ] Validate empty required file detection
-[ ] Validate expected control artifacts
+[x] Validate required EPIC files
+[x] Validate duplicate chapter detection
+[x] Validate empty required file detection
+[x] Validate expected control artifacts
 ```
 
 ---
@@ -943,10 +1439,10 @@ Checklist:
 # Markdown Validation
 
 ```text id="impl-markdown-validation"
-[ ] Validate code fence closure
-[ ] Validate heading rules where deterministic
-[ ] Validate links where practical
-[ ] Preserve Documentation Framework authority
+[x] Validate code fence closure
+[x] Validate heading rules where deterministic
+[x] Validate links where practical
+[x] Preserve Documentation Framework authority
 ```
 
 ---
@@ -954,12 +1450,131 @@ Checklist:
 # Phase 8 Exit Criteria
 
 ```text id="impl-phase8-exit"
-[ ] Documentation quality can produce common findings
-[ ] Validation works on Quality Framework itself
-[ ] Documentation-specific semantics remain externalized
+[x] Documentation quality can produce common findings
+[x] Validation works on Quality Framework itself
+[x] Documentation-specific semantics remain externalized
 ```
 
 ---
+
+## Phase 8 Closure Evidence
+
+Phase 8 is closed against runtime commit `1944a31`
+(`feat(quality): implement documentation validation runtime`).
+
+Closure evidence:
+
+- Documentation executor unit validation: **19 / 19 PASS**.
+- Real Documentation integration validation: **2 / 2 PASS**.
+- Combined Documentation validation slice: **21 / 21 PASS**.
+- Quality regression at the runtime gate: **186 / 186 PASS**.
+- Ruff validation: **PASS**.
+- MyPy validation: **PASS**.
+- Real canonical EPIC validation on `EPIC-COM-001`: **PASS**, zero violations.
+- Quality Framework self-validation on `EPIC-QLT-001`: execution **PASS**;
+  the validator deterministically reports **32** existing `markdown_heading`
+  documentation violations and normalizes them through the common Quality model.
+- Documentation-specific semantic authority remains with `EPIC-DOC-001`; Quality
+  owns execution orchestration and common finding/evidence normalization only.
+- Documentation semantics are implemented outside the Quality infrastructure package
+  under `familyos_cli.infrastructure.documentation`; the Documents Plugin validator is
+  not used as the Documentation Framework validation engine.
+
+The Phase 8 exit criterion that validation works on the Quality Framework itself is a
+capability/execution criterion; it does **not** assert that the existing
+`EPIC-QLT-001` documentation is conformant. The 32 existing heading violations remain
+a separate documentation-conformance/migration concern. Any later gate that explicitly
+requires Documentation Validation to **PASS** remains open until its own evidence is
+satisfied.
+
+## Canonical Runtime Contract
+
+Phase 8 SHALL integrate documentation validation through a Quality-owned
+`DocumentationQualityExecutor` implementing `QualityExecutorPort`.
+
+EPIC-DOC-001 remains authoritative for documentation-specific semantics.
+The Quality Framework owns execution orchestration and normalization into the
+common Quality model; it SHALL NOT redefine Documentation Framework ownership.
+
+The Documents Plugin `DocumentValidator` is not the Phase 8 validation engine
+and SHALL NOT be used as the Documentation Framework validator.
+
+### Execution Boundary
+
+The executor SHALL validate the local filesystem target identified by
+`QualityTarget.path`.
+
+The initial Phase 8 implementation SHALL be deterministic and local:
+
+- no subprocess-based documentation validator is required;
+- no external Markdown linter dependency is required;
+- PyYAML MAY be used for YAML parsing;
+- external HTTP link verification is outside the initial runtime slice.
+
+A missing `target.path`, an inaccessible validation target, or an unexpected
+validator/infrastructure failure SHALL produce `QualityStatus.ERROR`.
+
+Ordinary documentation violations discovered by a successfully executed
+validator SHALL produce `QualityStatus.FAIL`, not `ERROR`.
+
+### Initial Validation Scope
+
+The initial runtime slice SHALL cover:
+
+- canonical EPIC structure and required control artifacts;
+- required numbered chapter presence and naming consistency;
+- duplicate numbered chapter detection;
+- non-empty required files;
+- `EPIC.yaml` presence and YAML parse validity;
+- basic Markdown structural integrity, including fenced-code-block balance and
+  heading structure;
+- local relative Markdown reference integrity.
+
+Malformed `EPIC.yaml`, a missing required document, an empty required document,
+an invalid canonical name, an unbalanced Markdown fence, or a broken local
+relative reference are documentation violations and therefore SHALL normalize
+to `FAIL` with actionable findings.
+
+### Quality Normalization
+
+The canonical evidence type SHALL be `DOCUMENTATION`.
+The canonical evidence source SHALL be `quality.documentation`.
+The canonical tool identity SHALL be `familyos-documentation-validator`.
+The Quality domain for governed documentation rules SHALL be `QLT-DOM-DOC`.
+
+Each execution SHALL produce one aggregate `DOCUMENTATION` evidence record.
+
+A successful validation with no violations SHALL produce `QualityStatus.PASS`,
+`QualityEvidenceResult.PASS`, and no findings.
+
+A successful validation with one or more documentation violations SHALL produce
+`QualityStatus.FAIL`, `QualityEvidenceResult.FAIL`, and one actionable
+`QualityFinding` per reported violation.
+
+An execution that cannot reliably complete SHALL produce
+`QualityStatus.ERROR`, `QualityEvidenceResult.ERROR` when execution evidence
+can be produced, no synthetic documentation-violation findings, and diagnostic
+information describing the execution failure.
+
+Findings SHALL preserve the governed rule identifier, domain, severity, target,
+location when available, and aggregate evidence identifier.
+
+The evidence revision SHALL preserve `QualityTarget.revision`.
+
+### Ownership and Deferred Scope
+
+EPIC-DOC-001 remains the semantic authority for documentation standards,
+structure, lifecycle, governance, naming, metadata, and reference expectations.
+
+Phase 8 SHALL NOT introduce a generic subprocess abstraction or transfer
+Documentation Framework semantic ownership into Quality.
+
+Full Markdown linting, remote/external URL availability checks, generalized
+schema-validation infrastructure, and broader documentation-policy engines are
+deferred unless separately authorized.
+
+These contract decisions freeze the implementation boundary only. They do not,
+by themselves, satisfy or close any Phase 8 checklist item.
 
 # Phase 9 — Plugin Compliance Integration
 
@@ -972,14 +1587,14 @@ Integrate EPIC-PLUGIN-002 without duplicating its compliance engine.
 # Plugin Compliance Adapter
 
 ```text id="impl-plugin-compliance"
-[ ] Identify authoritative plugin compliance API / service / CLI
-[ ] Define integration boundary
-[ ] Consume plugin compliance result
-[ ] Map compliance evidence
-[ ] Map compliance findings
-[ ] Preserve plugin rule identities
-[ ] Preserve severity semantics
-[ ] Add integration tests
+[x] Identify authoritative plugin compliance API / service / CLI
+[x] Define integration boundary
+[x] Consume plugin compliance result
+[x] Map compliance evidence
+[x] Map compliance findings
+[x] Preserve plugin rule identities
+[x] Preserve severity semantics
+[x] Add integration tests
 ```
 
 ---
@@ -987,9 +1602,9 @@ Integrate EPIC-PLUGIN-002 without duplicating its compliance engine.
 # Official Plugin Target
 
 ```text id="impl-official-plugin"
-[ ] Support official plugin QualityTarget
-[ ] Resolve plugin compliance profile
-[ ] Bind compliance result to plugin revision
+[x] Support official plugin QualityTarget
+[x] Resolve plugin compliance profile
+[x] Bind compliance result to plugin revision
 ```
 
 ---
@@ -997,9 +1612,9 @@ Integrate EPIC-PLUGIN-002 without duplicating its compliance engine.
 # No Duplication Check
 
 ```text id="impl-no-duplication"
-[ ] Quality Framework does not recreate plugin compliance rules
-[ ] Quality Framework does not redefine plugin compliance profiles
-[ ] Quality Framework consumes authoritative plugin compliance output
+[x] Quality Framework does not recreate plugin compliance rules
+[x] Quality Framework does not redefine plugin compliance profiles
+[x] Quality Framework consumes authoritative plugin compliance output
 ```
 
 ---
@@ -1007,9 +1622,252 @@ Integrate EPIC-PLUGIN-002 without duplicating its compliance engine.
 # Phase 9 Exit Criteria
 
 ```text id="impl-phase9-exit"
-[ ] Plugin compliance participates in quality evidence
-[ ] Official plugin assessments can consume compliance state
+[x] Plugin compliance participates in quality evidence
+[x] Official plugin assessments can consume compliance state
 ```
+
+---
+
+
+## Phase 9 Closure Evidence
+
+Phase 9 is closed against runtime commit `e9a034b`
+(`feat(quality): integrate plugin compliance execution`) and real integration
+commit `2dd4b1d`
+(`test(quality): integrate authoritative plugin compliance`).
+
+The governing Phase 9 runtime contract was frozen by commit `82ca5df`
+(`docs(quality): freeze phase 9 plugin compliance contract`).
+
+Closure evidence:
+
+- Focused Plugin Compliance Quality executor unit validation: **21 / 21 PASS**.
+- Real Plugin Compliance Quality integration validation: **2 / 2 PASS**.
+- Quality regression at the integration gate: **211 / 211 PASS**.
+- Ruff validation: **PASS**.
+- MyPy validation: **PASS**.
+- Quality consumes the authoritative
+  `ComplianceEngine.evaluate(ComplianceRequest) -> ComplianceResult` boundary.
+- The governed `official` Plugin Compliance profile is resolved through the
+  existing Plugin Compliance infrastructure; Quality does not recreate or
+  redefine that profile.
+- Real official-plugin integration is demonstrated with `familyos.security`.
+- Real non-compliant integration is demonstrated with the canonical
+  `acme.broken` scenario.
+- Plugin Compliance status is normalized into the common Quality status model
+  without recomputing the authoritative compliance decision.
+- Plugin Compliance findings and evidence participate in the common Quality
+  finding/evidence model while preserving source Plugin rule identity,
+  severity, evidence identity, plugin identity/version, and other governed
+  provenance.
+- `QualityTarget.revision` is bound to normalized Quality evidence without
+  mutating or extending the authoritative `ComplianceResult`.
+- The no-duplication gate confirms that Quality introduces no duplicate Plugin
+  Compliance rule catalog, official profile, validator registry, compliance
+  decision evaluator, or second compliance engine.
+- Official plugin Quality assessments can therefore consume authoritative
+  Plugin Compliance state through the Phase 9 Quality executor boundary.
+
+Phase 9 closes the Plugin Compliance integration slice only. EPIC-PLUGIN-002
+remains authoritative for plugin-specific compliance rules, profiles,
+validators, findings, evidence semantics, severity semantics, and compliance
+decisions. Phase 10 and later Quality Framework behavior remain outside this
+closure and are not authorized or satisfied by Phase 9 completion.
+
+## Phase 9 Runtime Contract Freeze
+
+The Phase 9 runtime integration SHALL consume the existing
+EPIC-PLUGIN-002 Plugin Compliance Framework as an authoritative bounded
+context. Quality SHALL normalize Plugin Compliance output into Quality
+models without recreating Plugin Compliance rules, profiles, validators,
+or compliance-decision semantics.
+
+### Authority and execution boundary
+
+- EPIC-PLUGIN-002 remains authoritative for plugin compliance rules,
+  profiles, validator execution, rule outcomes, finding semantics,
+  evidence semantics, severity semantics, and the overall compliance
+  decision.
+- The authoritative execution API is
+  `ComplianceEngine.evaluate(ComplianceRequest) -> ComplianceResult`.
+- Quality SHALL consume the structured `ComplianceResult`; it SHALL NOT
+  invoke Plugin Compliance validators individually or reproduce the
+  compliance evaluation algorithm.
+- The Plugin Compliance application/CLI surfaces remain consumers of the
+  same engine and are not reimplemented inside Quality.
+
+### Official plugin target and profile
+
+Phase 9 freezes the canonical Quality-side plugin target shape as:
+
+```text
+QualityTarget(
+    target_type="plugin",
+    identifier=<canonical PluginDescriptor.id>,
+    version=<PluginDescriptor.version>,
+    path=<PluginDescriptor.path>,
+    revision=<Quality execution revision, optional>,
+)
+```
+
+- `target_type="plugin"` is the canonical Quality target type for this
+  integration.
+- `identifier` is the canonical plugin identity and SHALL equal the
+  resolved `PluginDescriptor.id`.
+- `version` SHALL represent the resolved `PluginDescriptor.version`.
+- `path` SHALL identify the resolved plugin path used for discovery and
+  execution; path does not replace plugin identity.
+- `revision` belongs to the Quality execution context and is optional.
+- The governed Plugin Compliance profile is identified by `official`.
+- Plugin descriptor discovery and profile resolution remain owned by the
+  existing Plugin Compliance/plugin infrastructure. Quality SHALL NOT
+  recreate `OFFICIAL_PROFILE`, its included rules, mandatory rules,
+  exclusions, or blocking severity threshold.
+- Plugin identity and plugin version returned by `ComplianceResult` SHALL
+  remain traceable in the normalized Quality output.
+
+### Compliance decision normalization
+
+`ComplianceResult.status` is authoritative. Quality SHALL NOT recompute
+compliance from rule evaluations, findings, mandatory flags, or severity
+thresholds.
+
+The Phase 9 status normalization contract is:
+
+```text
+ComplianceStatus.COMPLIANT     -> QualityStatus.PASS
+ComplianceStatus.NON_COMPLIANT -> QualityStatus.FAIL
+ComplianceStatus.INCOMPLETE    -> QualityStatus.WARNING
+ComplianceStatus.ERROR         -> QualityStatus.ERROR
+```
+
+An integration/runtime failure that prevents a reliable Plugin Compliance
+assessment SHALL produce `QualityStatus.ERROR`; it SHALL NOT be
+misrepresented as ordinary plugin non-compliance.
+
+### Finding normalization and rule identity
+
+- Plugin Compliance findings SHALL be normalized into `QualityFinding`
+  values.
+- `QualityFinding.rule_id` SHALL remain the `QualityRule.id` supplied to
+  the Quality executor and therefore remains in the canonical
+  `QLT-RULE-*` namespace.
+- `ComplianceFinding.rule_id` remains the authoritative source Plugin
+  Compliance rule identity and SHALL be preserved explicitly as
+  provenance in normalized output.
+- Quality SHALL NOT rewrite a `PLUGIN-*` rule id into a fabricated
+  `QLT-RULE-*` id, nor create replacement Plugin Compliance rules.
+- Finding message, location, source evidence references, category, source
+  status, source domain, and source Plugin rule id SHALL be preserved
+  directly where the Quality model supports them and otherwise through
+  deterministic metadata or diagnostics.
+- Quality finding identifiers and Quality evidence identifiers remain in
+  their canonical `QLT-*` namespaces; source Plugin identifiers SHALL be
+  preserved as provenance rather than silently rewritten.
+
+### Severity preservation
+
+Plugin Compliance severity and Quality severity are distinct governed
+vocabularies:
+
+```text
+Plugin Compliance: INFO, WARNING, ERROR, CRITICAL
+Quality:           INFO, LOW, MEDIUM, HIGH, CRITICAL
+```
+
+Phase 9 SHALL NOT invent a cross-vocabulary conversion such as
+`WARNING -> MEDIUM` or `ERROR -> HIGH`.
+
+For every normalized `QualityFinding`:
+
+```text
+QualityFinding.severity = QualityRule.severity
+```
+
+The Quality rule supplied to the executor remains authoritative for
+FamilyOS `QualitySeverity`. The original `ComplianceFinding.severity`
+remains authoritative Plugin Compliance provenance and SHALL be preserved
+explicitly in normalized output. Source Plugin severity SHALL NOT alter,
+replace, or feed back into the authoritative Plugin Compliance decision
+or the governed Quality rule severity.
+
+Tests SHALL cover all Plugin Compliance source severity values and prove
+that source severity provenance is preserved independently from
+`QualityRule.severity`.
+
+### Evidence normalization
+
+- `ComplianceEvidence` SHALL be consumed as authoritative source evidence
+  and normalized into `QualityEvidence`.
+- Source evidence identity and provenance SHALL remain traceable,
+  including the Plugin Compliance evidence id, evidence type, source,
+  producer, producer version, plugin id, plugin version, scope, trust
+  level, and collection time where representable.
+- Quality SHALL use its own canonical `QualityEvidenceId` namespace for
+  normalized evidence and SHALL retain source Plugin evidence identifiers
+  as provenance.
+- Plugin Compliance payload content SHALL not be reinterpreted as new
+  compliance policy by Quality.
+- Phase 9 SHALL NOT invent a parallel evidence framework.
+
+### Revision binding
+
+`ComplianceResult` carries plugin identity and plugin version but does not
+define a plugin revision field. Revision binding therefore belongs to the
+Quality execution context:
+
+```text
+authoritative ComplianceResult
+          +
+QualityTarget.revision
+          |
+          v
+normalized QualityEvidence.revision
+```
+
+Quality SHALL bind normalized compliance evidence to
+`QualityTarget.revision` when a revision is supplied. It SHALL NOT mutate
+`ComplianceResult` or imply that Plugin Compliance produced a revision it
+does not own.
+
+### No-duplication invariant
+
+Phase 9 SHALL NOT introduce:
+
+- a duplicate Plugin Compliance rule catalog;
+- a duplicate official compliance profile;
+- a duplicate Plugin Compliance validator registry;
+- a duplicate compliance decision evaluator;
+- a second compliance engine;
+- a generic replacement abstraction that changes EPIC-PLUGIN-002
+  ownership.
+
+The Quality-side implementation is an adapter/normalizer around the
+authoritative Plugin Compliance output.
+
+### Verification contract
+
+Phase 9 implementation evidence SHALL include focused unit tests and real
+integration tests covering at least:
+
+- official profile resolution through Plugin Compliance;
+- compliant official-plugin normalization;
+- non-compliant plugin normalization;
+- incomplete and error status normalization;
+- Plugin rule identity preservation;
+- all Plugin severity normalization cases while preserving source
+  severity provenance;
+- Plugin finding normalization;
+- Plugin evidence normalization and provenance;
+- plugin id/version traceability;
+- `QualityTarget.revision` binding;
+- failure behavior that produces Quality `ERROR`;
+- proof that Quality consumes the authoritative Plugin Compliance engine
+  rather than recreating its rules or profiles.
+
+This contract freezes the intended Phase 9 integration boundary only. It
+does not constitute runtime implementation evidence and does not close
+any Phase 9 checklist item.
 
 ---
 
@@ -1040,13 +1898,13 @@ created_at
 Checklist:
 
 ```text id="impl-assessment-checklist"
-[ ] Define QualityAssessment
-[ ] Define assessment identity
-[ ] Define revision binding
-[ ] Define profile reference
-[ ] Define assessment status
-[ ] Define quality state
-[ ] Add serialization tests
+[x] Define QualityAssessment
+[x] Define assessment identity
+[x] Define revision binding
+[x] Define profile reference
+[x] Define assessment status
+[x] Define quality state
+[x] Add serialization tests
 ```
 
 ---
@@ -1067,9 +1925,9 @@ Add `CONDITIONAL` only when exception/risk semantics are implemented.
 Checklist:
 
 ```text id="impl-quality-state-checklist"
-[ ] Define state semantics
-[ ] Ensure UNKNOWN cannot become PASS
-[ ] Add aggregation tests
+[x] Define state semantics
+[x] Ensure UNKNOWN cannot become PASS
+[x] Add aggregation tests
 ```
 
 ---
@@ -1095,11 +1953,11 @@ Missing required evidence
 Checklist:
 
 ```text id="impl-assessment-aggregation"
-[ ] Implement deterministic aggregation
-[ ] Test all state transitions
-[ ] Test missing evidence
-[ ] Test adapter ERROR
-[ ] Test warning-only case
+[x] Implement deterministic aggregation
+[x] Test all state transitions
+[x] Test missing evidence
+[x] Test adapter ERROR
+[x] Test warning-only case
 ```
 
 ---
@@ -1107,12 +1965,12 @@ Checklist:
 # Assessment Service
 
 ```text id="impl-assessment-service"
-[ ] Define application service
-[ ] Accept target and profile
-[ ] Execute or consume required checks
-[ ] Collect evidence
-[ ] Collect findings
-[ ] Produce assessment
+[x] Define application service
+[x] Accept target and profile
+[x] Execute or consume required checks
+[x] Collect evidence
+[x] Collect findings
+[x] Produce assessment
 ```
 
 ---
@@ -1120,10 +1978,143 @@ Checklist:
 # Phase 10 Exit Criteria
 
 ```text id="impl-phase10-exit"
-[ ] Reproducible QualityAssessment available
-[ ] Assessment requires complete required evidence
-[ ] Assessment tests pass
+[x] Reproducible QualityAssessment available
+[x] Assessment requires complete required evidence
+[x] Assessment tests pass
 ```
+
+---
+
+## Phase 10 Runtime Contract Freeze
+
+Phase 10 SHALL introduce the initial reproducible Quality Assessment model and application aggregation boundary. It SHALL aggregate already-normalized Quality findings, evidence, and check outcomes into a target-level Quality conclusion. It SHALL NOT redefine tool-specific execution semantics established by Phases 4 through 9, and it SHALL NOT implement Quality Profiles, Quality CLI, Quality Gates, exception policy, risk policy, release policy, or later governance capabilities.
+
+### Canonical assessment model
+
+The initial `QualityAssessment` SHALL be an immutable runtime record with these semantic fields:
+
+```text
+id
+target
+revision
+profile
+status
+quality_state
+evidence_ids
+finding_ids
+created_at
+```
+
+- `id` SHALL use a dedicated governed Quality Assessment identity.
+- `target` SHALL be the canonical `QualityTarget`.
+- `revision` SHALL bind to the evaluated target revision when available; Phase 10 SHALL NOT invent a revision.
+- `profile` SHALL be an opaque supplied profile reference. Phase 10 SHALL NOT define `QualityProfile` or Phase 11 profile policy.
+- `status` SHALL preserve assessment execution/completeness status and remain distinct from `quality_state`.
+- `quality_state` SHALL use the closed Phase 10 vocabulary below.
+- `evidence_ids` and `finding_ids` SHALL reference canonical Quality identifiers consumed by the assessment.
+- `created_at` SHALL be supplied explicitly or through an injected clock for reproducible tests.
+
+Serialization SHALL preserve stable field names and canonical values.
+
+### Initial quality-state vocabulary
+
+Phase 10 SHALL define exactly:
+
+```text
+PASS
+PASS_WITH_WARNINGS
+FAIL
+UNKNOWN
+```
+
+`PASS` requires complete required inputs with no blocking or warning condition.
+`PASS_WITH_WARNINGS` requires complete required inputs, no blocking finding, and one or more warning conditions.
+`FAIL` represents a supported blocking Quality conclusion.
+`UNKNOWN` means required inputs are insufficient for a trustworthy PASS/FAIL conclusion.
+
+`UNKNOWN` SHALL never be promoted to `PASS` merely because no blocking finding is present.
+
+`CONDITIONAL` is deferred until governed exception/risk semantics exist.
+
+### Assessment status and adapter ERROR
+
+Phase 10 SHALL preserve canonical `QualityStatus` semantics. Adapter/executor `ERROR` SHALL NOT be collapsed into `FAIL` or `PASS`.
+
+For a required check `QualityStatus.ERROR`, the assessment SHALL preserve `status = QualityStatus.ERROR` and `quality_state = UNKNOWN`. `FAIL` remains reserved for an actual blocking Quality conclusion.
+
+### Deterministic aggregation contract
+
+Initial precedence SHALL be:
+
+```text
+required adapter/check ERROR or missing required evidence
+    -> quality_state UNKNOWN
+otherwise any blocking finding
+    -> quality_state FAIL
+otherwise warning-only condition
+    -> quality_state PASS_WITH_WARNINGS
+otherwise all required checks/evidence complete and PASS
+    -> quality_state PASS
+otherwise
+    -> quality_state UNKNOWN
+```
+
+Completeness SHALL be evaluated before successful PASS. Missing required evidence SHALL produce `UNKNOWN`; absence of evidence is not evidence of success. Required `SKIPPED` or `UNKNOWN` outcomes SHALL not silently become PASS. Equivalent reordered inputs SHALL produce the same conclusion and canonical referenced identifier sets.
+
+Phase 10 SHALL consume canonical Quality models and SHALL NOT reinterpret raw Ruff, MyPy, Pytest, Documentation Validation, or Plugin Compliance payloads.
+
+### Blocking-finding boundary
+
+Phase 10 SHALL NOT invent Phase 11 profile policy or later Quality Gate policy. The assessment boundary SHALL receive explicit governed input identifying blocking findings. It SHALL NOT create an implicit severity threshold or hidden default profile.
+
+### Assessment application service
+
+The Phase 10 application service SHALL accept a canonical `QualityTarget` and opaque profile reference; accept or orchestrate required canonical check results through existing Quality application ports; collect normalized evidence and findings; receive explicit required-input and blocking classification; produce one `QualityAssessment`; preserve target/revision/profile traceability; and use injected identity/time dependencies where needed.
+
+Business aggregation logic SHALL remain outside CLI and infrastructure adapters. Phase 10 MAY consume `QualityCheckResult` objects or execute checks through `QualityExecutorPort`; it SHALL NOT create a second generic process-execution abstraction.
+
+### Reproducibility and verification contract
+
+Implementation evidence SHALL cover assessment identity and immutability, stable serialization, target/revision binding, opaque profile preservation, PASS, PASS_WITH_WARNINGS, FAIL, UNKNOWN from missing evidence, required adapter ERROR producing assessment ERROR plus UNKNOWN quality state, required SKIPPED/UNKNOWN not becoming PASS, warning-only aggregation, blocking aggregation, reordered-input determinism, canonical evidence/finding identifier collection, and proof that raw provider outputs are not reinterpreted.
+
+This contract freezes the Phase 10 runtime boundary only. It does not constitute runtime implementation evidence and does not close any Phase 10 checklist item. Phase 11 Quality Profiles and Phase 12 Quality CLI remain unauthorized and unsatisfied by this contract freeze.
+
+---
+
+
+## Phase 10 Implementation Evidence
+
+Phase 10 is implemented and verified by the following commits:
+
+- `85b409d3ec73ebf9b5fa317cf6dce60282d04e00` — freezes the Phase 10 Quality Assessment runtime contract.
+- `c7f35fe469fac927191d18b9be892c94afd130e3` — establishes `QualityAssessment`, governed assessment identity, the closed assessment-state vocabulary, stable serialization, and the application assessment service.
+- `f8932df3dba59a95adb6cfa8f5d0a0a0ab94d319` — enforces assessment target/revision consistency for consumed canonical evidence and findings.
+- `b021778f1840f7f46fe5d608406e1cb51654e4f7` — hardens required-check aggregation semantics so a required `FAIL` cannot be promoted to `PASS_WITH_WARNINGS` without an explicit blocking conclusion.
+
+Verified Phase 10 runtime evidence:
+
+- focused Quality Assessment service tests: **19 passed**;
+- full Quality regression suite: **230 passed**;
+- Quality architecture tests: **6 passed**;
+- Ruff: **PASS**;
+- MyPy: **PASS** across **29 source files**;
+- `git diff --check`: **PASS**;
+- the assessment service consumes canonical `QualityCheckResult` values and does not reinterpret raw Ruff, MyPy, Pytest, Documentation Validation, or Plugin Compliance provider payloads.
+
+Traceability and aggregation semantics are frozen as follows:
+
+- all consumed evidence and findings must belong to the assessment `QualityTarget`;
+- when consumed evidence carries an explicit revision, that revision must match `QualityTarget.revision`;
+- `QualityEvidence.revision = None` remains valid in Phase 10; generalized evidence freshness/staleness policy remains deferred;
+- only required checks are decision inputs for Phase 10 aggregation; additional supplied canonical results remain traceable through collected evidence/finding identifiers but are non-decisive;
+- required adapter/check `ERROR`, missing required inputs/evidence, required `SKIPPED`/`UNKNOWN`, and a required `FAIL` without an explicitly classified blocking finding produce `UNKNOWN` rather than an unsupported successful or blocking conclusion;
+- an explicitly classified blocking finding from a required check produces `FAIL`;
+- complete warning-only required inputs produce `PASS_WITH_WARNINGS`;
+- complete required `PASS` inputs with no warning or blocking condition produce `PASS`.
+
+The Phase 10 profile field remains an opaque supplied reference. `QualityProfile` and profile policy remain deferred to Phase 11. Quality CLI, Quality Gates, risk, exception, release, observability, metrics, governance, and later Quality Framework capabilities remain outside this closure.
+
+**Phase 10 — Quality Assessment Model: COMPLETE.**
 
 ---
 
@@ -1151,12 +2142,12 @@ severity_policy
 Checklist:
 
 ```text id="impl-profile-checklist"
-[ ] Define QualityProfile
-[ ] Define profile identity
-[ ] Define profile version
-[ ] Define required checks
-[ ] Define applicability
-[ ] Add profile validation
+[x] Define QualityProfile
+[x] Define profile identity
+[x] Define profile version
+[x] Define required checks
+[x] Define applicability
+[x] Add profile validation
 ```
 
 ---
@@ -1210,11 +2201,11 @@ Architecture Checks
 # Profile Tests
 
 ```text id="impl-profile-tests"
-[ ] Valid profile loads
-[ ] Unknown check rejected
-[ ] Duplicate check behavior defined
-[ ] Missing required field rejected
-[ ] Version represented
+[x] Valid profile loads
+[x] Unknown check rejected
+[x] Duplicate check behavior defined
+[x] Missing required field rejected
+[x] Version represented
 ```
 
 ---
@@ -1222,18 +2213,555 @@ Architecture Checks
 # Phase 11 Exit Criteria
 
 ```text id="impl-phase11-exit"
-[ ] Profile resolution works
-[ ] Assessments use profiles
-[ ] Profiles are version-controlled
+[x] Profile resolution works
+[x] Assessments use profiles
+[x] Profiles are version-controlled
 ```
 
 ---
 
+## Phase 11 Runtime Contract
+
+This contract freezes the initial Phase 11 runtime boundary before implementation. It does not constitute runtime implementation evidence and does not close any Phase 11 checklist item.
+
+### Canonical Profile Model
+
+Phase 11 SHALL introduce a canonical immutable `QualityProfile` domain model and a dedicated stable `QualityProfileId`.
+
+The initial profile model SHALL contain, at minimum:
+
+```text id="impl-phase11-profile-runtime-fields"
+id
+version
+target_types
+required_checks
+required_domains
+severity_policy
+```
+
+`QualityProfileId` SHALL use a dedicated governed Quality namespace. The documentary profile identity authority uses the conceptual `QLT-PROFILE-<NAME>` form; Phase 11 SHALL therefore use the `QLT-PROFILE` namespace unless a stronger existing repository authority is discovered before implementation.
+
+`version` SHALL be an explicit non-empty supplied value and SHALL participate in the stable profile reference used by assessments. Phase 11 SHALL NOT invent semantic-version compatibility behavior; broader semantic version governance remains deferred.
+
+`target_types`, `required_checks`, and `required_domains` SHALL be explicit immutable collections. Their canonical representation SHALL be deterministic and SHALL reject invalid member types and duplicate values.
+
+`required_checks` SHALL reference canonical `QualityCheckId` values. `required_domains` SHALL reference canonical `QualityDomain` values. Phase 11 SHALL reuse these existing domain identities rather than introduce parallel check or domain identifiers.
+
+### Applicability and Resolution
+
+Phase 11 SHALL provide deterministic profile applicability and resolution for the initial runtime subset.
+
+Applicability SHALL be based on explicit target-type information supplied by the canonical `QualityTarget`. Phase 11 SHALL NOT infer applicability from undocumented environment state.
+
+The initial resolver SHALL accept governed profile definitions and a target and SHALL return an explicit resolved profile result. Equivalent profile inputs presented in different order SHALL resolve deterministically.
+
+A profile whose `target_types` does not include the target type SHALL NOT silently become applicable.
+
+The initial Phase 11 runtime MAY resolve a single directly applicable profile or a deterministic set of directly applicable profiles, but it SHALL NOT silently implement inheritance, composition, precedence, target overrides, conflict-resolution policy, lifecycle-stage policy, criticality inference, repository-policy discovery, or automatic assignment unless those semantics are separately frozen and tested within Phase 11.
+
+### Effective Requirements
+
+A resolved profile SHALL make the required checks and required domains available to application orchestration without duplicating provider or external framework semantics.
+
+Profiles SHALL select or reference canonical Quality expectations; they SHALL NOT reinterpret raw provider payloads or redefine external framework methodology.
+
+Missing or invalid governed profile configuration SHALL fail explicitly. It SHALL NOT fall back to an undocumented default profile.
+
+### Severity Policy Boundary
+
+`severity_policy` belongs to the Phase 11 profile surface because the canonical Phase 11 checklist names it explicitly.
+
+For the initial runtime, severity policy SHALL be explicit, deterministic, serializable, and preserved as governed profile configuration.
+
+Phase 11 SHALL NOT introduce an implicit rule such as `HIGH` or `CRITICAL` automatically meaning blocking. Any transformation from finding severity to blocking assessment behavior SHALL require explicit governed policy and SHALL remain compatible with the Phase 10 requirement that blocking classification is explicit.
+
+Gate policy, exception policy, risk acceptance, lifecycle transition decisions, and release decisions remain deferred to their dedicated later phases.
+
+### Assessment Integration
+
+Phase 10 intentionally stores `QualityAssessment.profile` as an opaque non-empty string. Phase 11 SHALL preserve the historical assessment boundary while making that reference reproducible from a resolved profile identity and version.
+
+The initial stable assessment profile reference SHALL identify both profile identity and profile version. Phase 11 SHALL NOT embed a mutable `QualityProfile` object directly into `QualityAssessment`.
+
+Assessment orchestration SHALL derive required check identifiers from the resolved profile rather than from an undocumented hard-coded default.
+
+Changing a profile version SHALL be capable of producing a distinct stable profile reference even when the target revision is unchanged.
+
+### Determinism and Validation
+
+Phase 11 implementation evidence SHALL cover:
+
+- profile identity validation;
+- immutable profile structure;
+- non-empty explicit version;
+- deterministic serialization;
+- target-type applicability;
+- canonical `QualityCheckId` references;
+- canonical `QualityDomain` references;
+- duplicate rejection;
+- deterministic resolution under reordered equivalent inputs;
+- explicit invalid/unresolved-profile behavior;
+- stable identity-plus-version assessment reference;
+- severity-policy preservation without implicit blocking semantics;
+- proof that `QualityGate` and Quality CLI remain unimplemented.
+
+### Deferred Profile Capabilities
+
+The broader Quality Profile specification describes inheritance, composition, precedence, overrides, conflict detection, criticality, thresholds, evidence policy, gate policy, exception policy, lifecycle states, registries, automatic assignment, metrics, observability, risk integration, compliance composition, and framework-specific profile specializations.
+
+Those capabilities SHALL NOT be considered implemented merely because the initial `QualityProfile` model exists. They remain deferred unless explicitly implemented and evidenced by a later Phase 11 slice or by the dedicated later Quality Framework phase that owns the behavior.
+
+Phase 12 Quality CLI remains unauthorized by this contract freeze. `QualityGate` remains reserved for later gate phases.
+
+---
+
+## Phase 11 Profile Resolution Contract
+
+This contract freezes the initial Phase 11 profile resolution boundary. It
+authorizes only the minimal deterministic registry/resolver subset required to
+make governed `QualityProfile` values resolvable for a `QualityTarget`. It does
+not constitute implementation evidence and does not close any Phase 11
+checklist item by itself.
+
+### Governed Profile Registry
+
+Phase 11 SHALL introduce a `QualityProfileRegistry` that owns the explicit set
+of governed `QualityProfile` values available to resolution.
+
+The registry SHALL:
+
+- accept canonical `QualityProfile` values only;
+- reject duplicate governed profile identity/version registrations;
+- expose profiles without relying on filesystem, environment, repository,
+  lifecycle, plugin, or network discovery;
+- preserve profile identity and version exactly as supplied;
+- fail explicitly for invalid or unresolved governed profile references;
+- remain independent from domain-specific profile registries.
+
+The registry SHALL NOT become an implicit global catalog of `QualityCheckId`
+values. Phase 11 SHALL NOT invent a closed set of globally known Quality checks
+where no canonical check registry authority currently exists.
+
+### Initial Profile Resolver
+
+Phase 11 SHALL introduce a deterministic `QualityProfileResolver` consuming
+the governed `QualityProfileRegistry` and a canonical `QualityTarget`.
+
+For the initial Phase 11 subset, applicability SHALL be determined only from
+the explicit `QualityTarget.target_type` and the profile's explicit
+`target_types`.
+
+Resolution SHALL produce exactly one applicable canonical `QualityProfile`:
+
+- zero applicable profiles -> resolution failure;
+- exactly one applicable profile -> that profile is returned;
+- more than one applicable profile -> ambiguity failure.
+
+The initial resolver SHALL NOT silently choose among multiple applicable
+profiles. Equivalent governed profile sets registered in different orders
+SHALL produce the same resolution outcome.
+
+### Explicitly Deferred Resolution Semantics
+
+The initial resolver SHALL NOT implement profile inheritance, composition,
+parent traversal, precedence, priority, conflict resolution, target overrides,
+repository-policy discovery, lifecycle-stage selection, criticality inference,
+risk-based selection, plugin classification selection, automatic defaults,
+environment/filesystem discovery, gate selection, exception policy, or release
+policy.
+
+### Unknown Check Boundary
+
+`QualityProfile.required_checks` SHALL continue to use canonical
+`QualityCheckId` values.
+
+A namespace-valid `QualityCheckId` SHALL NOT be treated as globally registered
+merely because its syntax is valid. Conversely, the initial profile resolver
+SHALL NOT reject a check by consulting an invented hard-coded list.
+
+The Phase 11 checklist requirement "Unknown check rejected" therefore requires
+a separately governed validation authority or an explicit supplied set of
+known checks before it can be closed. The registry/resolver slice SHALL NOT
+claim that checklist evidence.
+
+### Assessment Boundary
+
+This registry/resolver slice SHALL NOT modify Phase 10 assessment aggregation.
+A later Phase 11 integration slice SHALL make assessment orchestration derive
+required check identifiers from the resolved profile and SHALL supply a stable
+assessment profile reference containing profile identity and version.
+
+Until that integration slice is explicitly implemented and tested,
+`QualityAssessmentService` SHALL retain its existing Phase 10 contract.
+
+### Architecture Boundary
+
+During this slice:
+
+- `QualityGate` SHALL remain unimplemented;
+- Quality CLI SHALL remain unimplemented;
+- provider-specific execution semantics SHALL remain outside profile
+  resolution;
+- raw provider results SHALL NOT be reinterpreted by profile resolution.
+
+### Required Resolver Evidence
+
+Implementation evidence SHALL include at minimum:
+
+- governed profile registration;
+- duplicate identity/version rejection;
+- deterministic inspectable registry behavior;
+- one applicable profile resolution;
+- zero-applicable-profile explicit failure;
+- multiple-applicable-profile explicit ambiguity failure;
+- deterministic outcome under reordered equivalent registrations;
+- exact target-type applicability;
+- preservation of profile identity and version;
+- proof that no implicit default profile is selected;
+- proof that unknown-check global validation is not invented in this slice;
+- proof that `QualityGate` and Quality CLI remain absent.
+
+## Phase 11 Governed Initial Profiles and Known-Check Validation Contract
+
+This contract freezes the remaining Phase 11 authority required to establish
+version-controlled initial Quality profiles and to reconcile the checklist
+requirement that an unknown check is rejected. It extends the already-frozen
+Phase 11 profile, registry/resolution, and profile-to-assessment contracts
+without changing their existing runtime semantics.
+
+### Quality Check Identity Authority
+
+`QualityCheckId` remains the canonical immutable identity for normalized Quality
+check executions and SHALL continue to use the governed `QLT-CHECK-*`
+namespace established by Phase 4.
+
+The `QLT-CHECK-*` namespace remains extensible. Phase 11 SHALL NOT impose a
+closed global suffix taxonomy, and SHALL NOT reinterpret every syntactically
+valid `QualityCheckId` as a globally registered Quality capability.
+
+Phase 4 examples such as `QLT-CHECK-LINT`, `QLT-CHECK-TYPE`,
+`QLT-CHECK-UNIT`, `QLT-CHECK-ARCH`, and `QLT-CHECK-DOC` remain valid examples
+of the extensible identifier namespace. Their validity does not, by itself,
+make them required or supported by every governed profile.
+
+For the initial Phase 11 governed-profile slice, the following check identities
+are authorized where the corresponding implemented Quality capability is used:
+
+```text
+QLT-CHECK-RUFF
+QLT-CHECK-MYPY
+QLT-CHECK-PYTEST
+QLT-CHECK-DOC
+QLT-CHECK-PLUGIN-COMPLIANCE
+```
+
+These identities are profile-definition identities for the initial governed
+slice. They SHALL NOT invalidate other namespace-valid `QLT-CHECK-*`
+identities used by independently governed execution or test scenarios.
+
+`QualityCheckId` and `QualityRuleId` remain distinct concepts.
+`QLT-RULE-*` identities SHALL NOT be substituted for profile
+`required_checks`.
+
+### Known-Check Validation Boundary
+
+The Phase 11 checklist requirement "Unknown check rejected" SHALL be satisfied
+at the governed profile-definition boundary, not by changing the
+`QualityCheckId` value object and not by introducing a global closed Quality
+check catalog.
+
+A governed profile-definition loader, factory, or equivalent construction
+boundary SHALL validate every `required_checks` entry against an explicit
+supplied or locally owned set of check identities authorized for that governed
+definition set.
+
+A required check that is syntactically valid as a `QualityCheckId` but is not
+present in that governed known-check set SHALL be rejected explicitly.
+
+This validation SHALL NOT imply that the same check identity is globally
+invalid. The generic `QualityProfile` model, `QualityProfileRegistry`, and
+`QualityProfileResolver` SHALL remain capable of representing and resolving
+namespace-valid profiles outside the initial governed definition set when those
+profiles are supplied by another authorized boundary.
+
+The existing behavior proving that a namespace-valid check is not rejected
+merely because no global Quality check catalog exists SHALL therefore remain
+valid.
+
+### Version-Controlled Profile Definitions
+
+The initial FamilyOS Quality profile definitions SHALL live in repository source
+control as explicit deterministic definitions or deterministic construction
+code.
+
+The initial slice SHALL NOT require YAML, JSON, TOML, environment variables,
+repository discovery, network discovery, or provider-native configuration as a
+profile authority.
+
+Each governed profile definition SHALL preserve an explicit
+`QualityProfileId`, explicit version, target types, required checks, required
+domains, and severity policy.
+
+Profile version selection SHALL remain explicit. Phase 11 SHALL NOT introduce
+implicit "latest" selection, semantic-version compatibility resolution,
+fallback versions, environment-selected versions, or mutable in-place profile
+replacement.
+
+A default registry builder MAY register the initial governed definitions in a
+deterministic order. Duplicate profile identity/version registration SHALL
+continue to fail according to the existing `QualityProfileRegistry` contract.
+
+### Initial Governed Profiles
+
+The initial governed profile set SHALL establish these recommended Phase 11
+profiles:
+
+```text
+familyos-repository
+familyos-official-plugin
+familyos-documentation
+```
+
+Their canonical runtime identities SHALL use `QualityProfileId` values in the
+existing `QLT-PROFILE-*` namespace. The exact suffixes SHALL be deterministic
+and human-readable representations of the governed profile names.
+
+The initial profile versions SHALL be explicit supplied values recorded in the
+version-controlled definitions.
+
+The profile definitions SHALL use only check identities backed by already
+authorized Quality capabilities. Phase 11 SHALL NOT invent placeholder
+executors or unsupported check identities merely to mirror aspirational
+documentation text.
+
+The Repository Profile MAY govern the already implemented Ruff, MyPy, Pytest,
+and documentation-validation capabilities.
+
+The Official Plugin Profile MAY govern the applicable already implemented
+repository-quality capabilities together with Plugin Compliance. References in
+the earlier implementation guidance to "Plugin Tests", "Plugin Documentation",
+"Architecture Checks", or "Repository Base" SHALL NOT by themselves authorize
+new check identities, profile inheritance, or new executors.
+
+The Documentation Profile SHALL be limited to already authorized documentation
+Quality capability unless a broader set is separately frozen.
+
+`familyos-release` and `familyos-critical-release` remain later profiles and
+SHALL NOT be introduced by this initial Phase 11 slice.
+
+### Profile Composition and Inheritance
+
+The phrase "Repository Base" in the earlier suggested Official Plugin Profile
+requirements is descriptive guidance only for this initial slice.
+
+Phase 11 SHALL NOT introduce profile inheritance, profile composition, parent
+profiles, transitive required checks, merge semantics, or override semantics
+without a separate explicit contract.
+
+If multiple initial profiles share check identities, those identities SHALL be
+listed explicitly in each deterministic governed definition.
+
+### Applicability and Resolution
+
+Initial governed profile applicability SHALL continue to use only explicit
+`QualityTarget.target_type` information according to the existing
+`QualityProfile.applies_to(...)` and `QualityProfileResolver` contracts.
+
+The governed profile-definition slice SHALL NOT introduce implicit defaults,
+repository-state discovery, environment-based selection, provider-native
+selection, or lifecycle-based selection.
+
+Zero applicable profiles SHALL remain an explicit resolution failure.
+Multiple applicable profiles SHALL remain an explicit ambiguity failure.
+
+The initial governed definitions SHALL therefore use target-type applicability
+that does not create accidental ambiguity for their intended canonical target
+categories.
+
+### Assessment Integration
+
+The existing `QualityProfileAssessmentService` remains the Phase 11
+profile-aware assessment orchestration boundary.
+
+It SHALL continue to resolve one applicable governed `QualityProfile`, pass
+`profile.reference` as the assessment profile reference, derive
+`required_check_ids` from `QualityProfile.required_checks`, preserve explicit
+`blocking_finding_ids`, and delegate aggregation to the existing Phase 10
+`QualityAssessmentService`.
+
+The governed initial-profile slice SHALL NOT duplicate or replace Phase 10
+aggregation semantics.
+
+`severity_policy` SHALL remain preserved profile data and SHALL NOT be
+automatically translated into blocking findings or gate decisions.
+
+`required_domains` SHALL remain explicit profile data and SHALL NOT acquire
+new execution or gate semantics in this slice.
+
+### Required Runtime Evidence
+
+Before this contract can be used to close the remaining Phase 11 checklist
+items, runtime evidence SHALL demonstrate at minimum:
+
+- deterministic construction of the three initial governed profiles;
+- explicit identity and version preservation for every governed profile;
+- deterministic registration of the governed profile set;
+- rejection of duplicate governed profile identity/version registration;
+- rejection of a syntactically valid but unknown required check at the governed
+  profile-definition validation boundary;
+- continued acceptance of namespace-valid `QualityCheckId` values outside that
+  governed validation boundary;
+- successful resolution of each initial profile for its intended explicit
+  target type;
+- explicit failure for unresolved or ambiguous applicability;
+- assessment integration using the resolved profile reference and the
+  profile-owned required check set;
+- preservation of explicit blocking semantics without severity inference; and
+- deterministic serialization or inspection sufficient to prove that the
+  definitions are repository-versioned and reproducible.
+
+### Explicitly Deferred Concerns
+
+This contract does not authorize:
+
+- a global closed Quality check registry or catalog;
+- implicit or environment-selected profile defaults;
+- implicit latest-version selection;
+- profile inheritance or composition;
+- new Architecture, Plugin Tests, or Plugin Documentation executors solely to
+  satisfy suggested profile text;
+- provider-native payload reinterpretation;
+- automatic severity-to-blocking policy;
+- Quality Gates;
+- merge gates;
+- release gates;
+- Quality risk policy;
+- exception policy;
+- profile lifecycle automation;
+- Quality CLI; or
+- CI integration beyond authority already granted by its own implementation
+  phase.
+
+Those concerns remain governed by their dedicated later phases or require a
+separate explicit contract before implementation.
+
+---
+
+## Phase 11 Closure Evidence
+
+Phase 11 — Quality Profiles is closed on the basis of implemented and validated
+runtime evidence. The checklist items above are closed only for the initial
+governed Phase 11 subset authorized by the frozen contracts in this section.
+
+### Runtime Evidence
+
+The canonical profile model and governed runtime are implemented across these
+Phase 11 commits:
+
+```text
+34c8dcc feat(quality): establish quality profile model
+50be26f feat(quality): implement profile registry and resolver
+73afa3e feat(quality): integrate profiles with assessments
+d7b2a01 feat(quality): establish governed initial profiles
+```
+
+The implemented runtime provides:
+
+- immutable `QualityProfile` values;
+- dedicated `QualityProfileId` identity in the `QLT-PROFILE-*` namespace;
+- explicit profile versions participating in stable profile references;
+- canonical `QualityCheckId` required-check references;
+- canonical `QualityDomain` required-domain references;
+- deterministic applicability based on explicit `QualityTarget.target_type`;
+- duplicate validation for profile collections and governed known-check sets;
+- explicit local rejection of unknown required checks at the governed
+  `QualityProfileDefinition` boundary without introducing a global closed check
+  catalog;
+- deterministic `QualityProfileRegistry` inspection and duplicate
+  identity/version rejection;
+- deterministic `QualityProfileResolver` behavior with explicit unresolved and
+  ambiguous-profile failures;
+- `QualityProfileAssessmentService` orchestration deriving
+  `required_check_ids` from the resolved profile and preserving the stable
+  `profile.reference`;
+- explicit blocking semantics preserved from Phase 10 without automatic
+  severity-to-blocking inference; and
+- source-controlled deterministic initial profile definitions.
+
+### Initial Governed Profiles
+
+The version-controlled initial governed set is:
+
+```text
+QLT-PROFILE-REPOSITORY@1.0.0
+  target_type: repository
+  required_checks:
+    QLT-CHECK-RUFF
+    QLT-CHECK-MYPY
+    QLT-CHECK-PYTEST
+    QLT-CHECK-DOC
+
+QLT-PROFILE-OFFICIAL-PLUGIN@1.0.0
+  target_type: plugin
+  required_checks:
+    QLT-CHECK-RUFF
+    QLT-CHECK-MYPY
+    QLT-CHECK-PYTEST
+    QLT-CHECK-DOC
+    QLT-CHECK-PLUGIN-COMPLIANCE
+
+QLT-PROFILE-DOCUMENTATION@1.0.0
+  target_type: documentation
+  required_checks:
+    QLT-CHECK-DOC
+```
+
+For this initial Phase 11 slice, `required_domains` and `severity_policy`
+remain explicit but empty governed profile data. No additional execution,
+blocking, gate, risk, exception, lifecycle, or release semantics are inferred
+from them.
+
+### Validation Evidence
+
+Final Phase 11 reconciliation at commit
+`d7b2a01dd867ef16475f46d14171380fb0295a71` demonstrated:
+
+```text
+Phase 11 focused tests: 60 passed
+Full Quality regression: 296 passed
+Quality architecture tests: 6 passed
+Ruff: PASS
+MyPy: PASS — 38 source files
+Phase 11 checklist obligations: 14 / 14 PASS
+```
+
+The final audit also confirmed:
+
+```text
+QualityGate: absent
+Quality CLI: absent
+Profile inheritance/composition: absent
+Implicit latest-version selection: absent
+Working tree before closure: clean
+```
+
+### Deferred Boundaries
+
+Closing Phase 11 does not authorize or claim implementation of Quality CLI,
+Quality Gates, merge or release gates, risk policy, exception policy, profile
+inheritance or composition, lifecycle automation, automatic latest-version
+selection, provider-native payload reinterpretation, or any other concern
+reserved for Phase 12 or later Quality Framework phases.
+
+---
 # Phase 12 — Quality CLI
 
 ## Objective
 
 Expose the first usable Quality Framework interface through the FamilyOS CLI.
+
+The initial governed runtime subset is closed. Completion and the two deferred
+capabilities are recorded in the Phase 12 Closure Evidence below.
 
 ---
 
@@ -1254,11 +2782,11 @@ familyos quality report
 Responsibilities:
 
 ```text id="impl-cli-check"
-[ ] Resolve target
-[ ] Resolve profile
-[ ] Execute quality checks
-[ ] Display check results
-[ ] Return meaningful exit code
+[x] Resolve target
+[x] Resolve profile
+[x] Execute quality checks
+[x] Display check results
+[x] Return meaningful exit code
 ```
 
 ---
@@ -1268,10 +2796,10 @@ Responsibilities:
 Responsibilities:
 
 ```text id="impl-cli-assess"
-[ ] Produce QualityAssessment
-[ ] Display overall state
+[x] Produce QualityAssessment
+[x] Display overall state
 [ ] Display blocking findings
-[ ] Display evidence summary
+[x] Display evidence summary
 ```
 
 ---
@@ -1281,9 +2809,9 @@ Responsibilities:
 Responsibilities:
 
 ```text id="impl-cli-report"
-[ ] Produce human-readable report
+[x] Produce human-readable report
 [ ] Support structured output where useful
-[ ] Preserve stable field semantics
+[x] Preserve stable field semantics
 ```
 
 ---
@@ -1308,9 +2836,9 @@ ERROR
 Checklist:
 
 ```text id="impl-cli-exit-checklist"
-[ ] Define exit code policy
-[ ] Document it
-[ ] Test it
+[x] Define exit code policy
+[x] Document it
+[x] Test it
 ```
 
 ---
@@ -1318,11 +2846,11 @@ Checklist:
 # CLI Architecture
 
 ```text id="impl-cli-architecture"
-[ ] Follow FamilyOS CLI Architecture
-[ ] Keep business logic out of CLI layer
-[ ] Reuse application services
-[ ] Add command tests
-[ ] Add help text tests where appropriate
+[x] Follow FamilyOS CLI Architecture
+[x] Keep business logic out of CLI layer
+[x] Reuse application services
+[x] Add command tests
+[x] Add help text tests where appropriate
 ```
 
 ---
@@ -1330,10 +2858,914 @@ Checklist:
 # Phase 12 Exit Criteria
 
 ```text id="impl-phase12-exit"
-[ ] Local quality command available
-[ ] Local results match application-layer semantics
-[ ] CLI tests pass
+[x] Local quality command available
+[x] Local results match application-layer semantics
+[x] CLI tests pass
 ```
+
+---
+
+## Phase 12 Quality CLI Contract
+
+This contract freezes the initial runtime boundary for Phase 12 before Quality CLI implementation begins.
+
+### 1. CLI Command Surface
+
+Phase 12 SHALL introduce a top-level Typer sub-application registered as `familyos quality`.
+
+The initial command surface SHALL contain:
+
+```text
+familyos quality check
+familyos quality assess
+familyos quality report
+```
+
+The Quality CLI SHALL follow the existing FamilyOS Typer sub-application architecture. The CLI layer SHALL remain an interface adapter and SHALL NOT become the authority for Quality business semantics.
+
+### 2. Target Construction Boundary
+
+The initial Quality CLI SHALL construct and pass the canonical `QualityTarget` required by the application layer. CLI target input SHALL map explicitly to existing `QualityTarget` fields. Phase 12 SHALL NOT introduce a second CLI-specific Quality target model.
+
+The CLI SHALL NOT infer hidden target semantics from environment state, repository state, CI-provider state, or later lifecycle policy unless separately authorized. Profile applicability SHALL continue to depend on canonical explicit `QualityTarget.target_type` semantics.
+
+### 3. Profile Resolution Boundary
+
+Profile resolution SHALL reuse the governed profile registry and `QualityProfileResolver`.
+
+The CLI SHALL NOT duplicate applicability logic, silently choose a default profile, implement latest-profile selection, or introduce profile inheritance/composition. The resolved profile remains the authority for ordered `required_checks`.
+
+### 4. Quality Execution Orchestration
+
+Phase 12 MAY introduce a narrow application-layer Quality execution orchestration service because no canonical executor dispatcher currently exists.
+
+That service SHALL consume a canonical `QualityTarget`, resolve its governed profile, consume the profile's ordered `required_checks`, resolve an explicit Phase 12 execution binding for each required governed `QualityCheckId`, execute the bound existing `QualityExecutorPort` with the bound `QualityRule`, preserve deterministic profile check ordering, and return normalized `QualityCheckResult` values.
+
+The execution binding SHALL be an application-layer configuration boundary sufficient to satisfy the existing canonical executor contract:
+
+```text
+QualityCheckId + QualityRule + QualityExecutorPort
+```
+
+Each initial binding SHALL explicitly associate exactly one governed check id with the `QualityRule` supplied to execution and the existing executor adapter used for that check. The orchestrator SHALL pass those explicit values to `QualityExecutorPort.execute(check_id=..., rule=..., target=...)`.
+
+Phase 12 SHALL NOT infer a `QualityRule` from the spelling of a `QualityCheckId`, manufacture a rule inside the CLI or executor, treat a test fixture rule id as governed runtime authority, or reinterpret `QualityRule.executor` as an executor instance. `QualityRule.executor` SHALL retain its existing opaque logical-reference semantics.
+
+The Phase 12 execution binding SHALL NOT establish a global Quality Rule Registry, a global check-to-rule taxonomy, an open-ended Quality check catalog, profile inheritance/composition, or later Governance Registry semantics. It is a narrow deterministic runtime wiring boundary for the initial governed checks only.
+
+Executor dispatch, rule binding, and required-check selection are application semantics and SHALL NOT be implemented as business logic inside the Typer command module.
+
+The initial binding set SHALL be explicit and limited to the governed checks already established in Phase 11:
+
+```text
+QLT-CHECK-RUFF
+QLT-CHECK-MYPY
+QLT-CHECK-PYTEST
+QLT-CHECK-DOC
+QLT-CHECK-PLUGIN-COMPLIANCE
+```
+
+A governed required check without a complete execution binding — including a missing rule or unavailable executor — SHALL fail visibly and SHALL NOT silently become SKIPPED or PASS.
+
+The concrete governed `QualityRule` values used by the initial bindings SHALL be explicit runtime configuration and SHALL satisfy the existing `QualityRule` domain contract. Phase 12 SHALL NOT derive their identity from test-only fixtures. If a concrete rule required for an initial binding has not yet been established as governed runtime configuration, implementation of that binding SHALL remain blocked until that rule is explicitly defined within the Phase 12 application configuration boundary without redefining global rule-governance semantics.
+
+#### Governed Initial Phase 12 Rule Definitions
+
+For the initial Phase 12 execution-binding boundary, FamilyOS SHALL establish the following five concrete `QualityRule` values as explicit application-layer runtime configuration. These definitions exist only to provide the rule value required by the already-frozen Phase 12 execution contract. They SHALL NOT constitute a global Quality Rule Registry or a general check-to-rule taxonomy.
+
+The rule identities describe engineering expectations rather than making the current verification tools the semantic owners of those expectations.
+
+| Governed check | Runtime rule | Requirement | Domain | Severity | Description | Executor logical reference |
+| --- | --- | --- | --- | --- | --- | --- |
+| `QLT-CHECK-RUFF` | `QLT-RULE-STA-001` | `None` | `QLT-DOM-MNT` | `MEDIUM` | Python source must satisfy configured static analysis requirements. | `ruff` |
+| `QLT-CHECK-MYPY` | `QLT-RULE-TYP-001` | `QLT-REQ-TYP-001` | `QLT-DOM-COR` | `HIGH` | Public Python interfaces must satisfy configured type verification requirements. | `mypy` |
+| `QLT-CHECK-PYTEST` | `QLT-RULE-TST-001` | `None` | `QLT-DOM-TST` | `CRITICAL` | Required tests selected for the active quality profile must pass. | `pytest` |
+| `QLT-CHECK-DOC` | `QLT-RULE-DOC-001` | `None` | `QLT-DOM-DOC` | `HIGH` | Required canonical documentation must satisfy configured documentation validation requirements. | `documentation` |
+| `QLT-CHECK-PLUGIN-COMPLIANCE` | `QLT-RULE-CPL-001` | `None` | `QLT-DOM-CPL` | `HIGH` | Authoritative plugin compliance evaluation must complete successfully for an applicable plugin target. | `plugin_compliance` |
+
+These Phase 12 definitions are governed runtime wiring values. Similar identifiers or values appearing in executor unit-test fixtures SHALL NOT be treated as their source of authority.
+
+`QLT-RULE-STA-001` represents the tool-independent static-analysis expectation. Ruff is the current execution provider and may be replaced without changing the rule's engineering meaning.
+
+`QLT-RULE-TYP-001` represents the type-verification expectation already associated with `QLT-REQ-TYP-001`. MyPy is the current execution provider and SHALL NOT become the semantic identity of the rule.
+
+`QLT-RULE-TST-001` represents the requirement that the tests selected for the active profile complete successfully. Infrastructure or execution failure remains `ERROR`, not a successful or ordinary failing test conclusion.
+
+`QLT-RULE-DOC-001` represents canonical documentation validation. The documentation executor remains responsible only for normalization and execution; it SHALL NOT redefine the rule at runtime.
+
+`QLT-RULE-CPL-001` is strictly a Quality Framework integration rule governing successful consumption of the authoritative Plugin Compliance evaluation. It SHALL NOT duplicate, replace, reinterpret, or claim ownership of any specialized plugin-compliance rule, profile, finding, evidence, or governance semantics owned by EPIC-PLUGIN-002. The existing Plugin Compliance Framework remains authoritative for the compliance evaluation consumed by the Quality executor.
+
+The `executor` values above are opaque logical references carried by `QualityRule.executor`. They SHALL NOT be interpreted as executor objects, dependency-injection containers, or a general provider registry.
+
+The initial Phase 12 binding configuration SHALL contain exactly these five governed check/rule associations. Adding another association requires explicit contract authority; it SHALL NOT be inferred from an executor implementation, test fixture, check-id spelling, or discovered tool.
+
+No Phase 12 checklist item is closed merely by freezing these rule definitions. Runtime implementation, integration evidence, CLI behavior, exit-code behavior, and Phase 12 exit criteria remain open until independently demonstrated.
+
+### 5. Executor and Normalization Boundary
+
+Existing Quality executors remain authoritative for translating tool-native execution behavior into canonical `QualityCheckResult` values.
+
+The CLI SHALL NOT interpret native Ruff, MyPy, Pytest, Documentation, or Plugin Compliance process exit codes as FamilyOS Quality conclusions. Native execution details SHALL continue to be normalized by the executor boundary.
+
+Phase 12 SHALL NOT introduce a generic FamilyOS command/process abstraction unless separately authorized.
+
+### 6. `quality check` Semantics
+
+`familyos quality check` SHALL construct the canonical target from explicit CLI input, resolve the governed profile, execute the profile's required checks through application-layer orchestration, render each normalized check result, and return a Quality-semantic CLI exit code.
+
+The command SHALL preserve normalized statuses rather than collapsing `WARNING`, `SKIPPED`, `UNKNOWN`, or `ERROR` into an invented PASS/FAIL boolean.
+
+`quality check` SHALL NOT create or evaluate a Quality Gate.
+
+### 7. `quality assess` Semantics
+
+`familyos quality assess` SHALL reuse the same governed execution path and the existing `QualityProfileAssessmentService`.
+
+The resolved profile reference SHALL remain the assessment profile identity and the profile's `required_checks` SHALL remain required-check authority.
+
+The command SHALL render at minimum overall assessment status, target-level quality state, profile reference, blocking findings when supplied by authorized semantics, and an evidence summary.
+
+Phase 12 SHALL NOT infer blocking findings from `severity_policy` and SHALL NOT evaluate Quality Gates.
+
+### 8. `quality report` Semantics
+
+`familyos quality report` SHALL provide a stable presentation of canonical Quality execution and/or assessment information produced by the same application semantics used by `check` and `assess`.
+
+Human-readable output SHALL be supported. Structured output MAY be supported where implemented, but SHALL use an explicit renderer boundary and stable deterministic field semantics. The CLI SHALL NOT expose arbitrary dataclass internals as an accidental serialization contract.
+
+Phase 12 SHALL NOT create persistent report storage, report history, observability pipelines, or governance registries.
+
+### 9. CLI Exit Code Policy
+
+The frozen initial Quality CLI exit codes are:
+
+```text
+0  Quality command completed with a non-failing Quality conclusion.
+1  Quality command completed with a Quality FAIL conclusion.
+2  Quality command could not produce a reliable Quality conclusion because of ERROR, UNKNOWN/incomplete required state, invalid target/profile resolution, unavailable required executor, invalid command input, or equivalent Quality execution failure.
+```
+
+For `quality check`, all required checks PASS or contain only PASS and WARNING => exit 0. A required FAIL => exit 1 unless ERROR, UNKNOWN, missing/incomplete required execution, or equivalent unreliable state requires exit 2. Required ERROR, UNKNOWN, SKIPPED, missing result, unavailable executor, unresolved profile, or ambiguous profile => exit 2.
+
+For `quality assess`, canonical assessment state PASS or PASS_WITH_WARNINGS => exit 0; canonical assessment state FAIL => exit 1; canonical assessment state UNKNOWN, or assessment status ERROR/UNKNOWN => exit 2.
+
+`quality report` SHALL use the same semantic exit policy for the Quality result it evaluates or renders. Pure rendering failures SHALL return exit 2.
+
+Native tool exit codes SHALL NOT leak through as Quality CLI exit codes.
+
+### 10. Rendering Boundary
+
+Human-readable rendering SHALL remain in the CLI/interface layer. Structured rendering, when implemented, SHALL use dedicated CLI rendering code.
+
+Rendering SHALL consume canonical Quality results and SHALL NOT recalculate assessment state, profile applicability, required checks, blocking semantics, or Quality Gate policy.
+
+### 11. CLI Registration and Tests
+
+The Quality command group SHALL be registered through the existing FamilyOS CLI application architecture.
+
+Phase 12 runtime evidence SHALL cover at least: Quality help and command discovery; explicit target construction; governed profile resolution; deterministic required-check execution; unresolved and ambiguous profile failures where applicable; unavailable executor failure; normalized check rendering; assessment/evidence rendering; blocking-finding rendering using existing explicit semantics; exit 0/1/2 behavior; and structured rendering semantics if structured output is implemented.
+
+Application-layer tests SHALL cover execution orchestration independently of Typer.
+
+### 12. Deferred Boundaries
+
+Phase 12 SHALL NOT implement or redefine:
+
+- CI integration;
+- Quality Gate domain models or gate evaluation;
+- merge-gate or release-gate policy;
+- risk-based execution;
+- Quality Exception semantics;
+- Quality Debt management;
+- release Quality policy;
+- Quality observability or metrics;
+- governance registries;
+- framework lifecycle automation;
+- incremental or distributed execution;
+- Quality events or notifications;
+- Quality intelligence or AI-assisted analysis;
+- profile inheritance/composition;
+- implicit default or latest-profile selection;
+- provider-specific CI semantics.
+
+These remain owned by later Quality Framework phases.
+
+### 13. Phase 12 Implementation Gate
+
+Runtime implementation MAY begin only against this frozen Phase 12 contract.
+
+Implementation SHALL remain blocked if a proposed runtime change requires inventing semantics that belong to a later phase or contradict the existing Quality domain, profile, executor, evidence, or assessment contracts.
+
+### 14. Phase 12 Runtime Composition Contract
+
+This contract freezes the narrow runtime-composition boundary required to make
+the already-authorized Phase 12 Quality execution path usable from the FamilyOS
+CLI. It does not expand Quality business semantics and does not authorize any
+later-phase Quality capability.
+
+#### Composition Root
+
+`ApplicationContainer` SHALL remain the canonical runtime composition root for
+the initial Quality CLI path.
+
+Concrete Quality infrastructure executors SHALL be constructed by the bootstrap
+composition layer, not by the Quality application layer and not by the Typer
+command module.
+
+`CommandContext` MAY expose the composed Quality application services required
+by the CLI, following the existing FamilyOS CLI dependency-access pattern. The
+CLI SHALL consume those services and SHALL remain an interface adapter rather
+than becoming a dependency-injection or business-semantics authority.
+
+Phase 12 SHALL NOT introduce a parallel Quality dependency container, service
+locator, provider registry, or general-purpose Quality composition framework.
+
+#### Initial Executor Composition
+
+The Phase 12 composition SHALL use the existing Quality infrastructure
+executors for exactly the five governed initial checks:
+
+```text
+QLT-CHECK-RUFF
+  -> RuffQualityExecutor
+
+QLT-CHECK-MYPY
+  -> MypyQualityExecutor
+
+QLT-CHECK-PYTEST
+  -> PytestQualityExecutor
+
+QLT-CHECK-DOC
+  -> DocumentationQualityExecutor
+
+QLT-CHECK-PLUGIN-COMPLIANCE
+  -> PluginComplianceQualityExecutor
+```
+
+These concrete adapters SHALL be associated with the already-governed Phase 12
+`QualityRule` values through the existing `QualityExecutionBinding` boundary.
+
+The binding set SHALL remain explicit and complete. Runtime composition SHALL
+NOT discover executors dynamically, infer an executor from a check identifier,
+reinterpret `QualityRule.executor` as an object lookup key, or establish a
+global provider registry.
+
+#### Plugin Compliance Composition
+
+`PluginComplianceQualityExecutor` SHALL reuse the existing Plugin Compliance
+runtime authority already composed by `ApplicationContainer`, including the
+canonical `ComplianceEngine` and the existing plugin discovery/loading
+dependencies required by that adapter.
+
+Phase 12 SHALL NOT create a second independent Plugin Compliance policy model,
+rule registry, profile authority, or compliance engine merely for the Quality
+CLI path.
+
+The Quality adapter remains an integration boundary that consumes authoritative
+Plugin Compliance evaluation and normalizes it into Quality execution results.
+
+#### Finding and Evidence Identity Composition
+
+The existing Quality executor contracts require injected callables that produce
+valid `QualityFindingId` and `QualityEvidenceId` values. Phase 12 SHALL satisfy
+that requirement at runtime composition without moving identity generation into
+the executors.
+
+For this initial local runtime boundary, the composition layer MAY create
+ephemeral opaque identifiers using UUID version 4 values under the existing
+canonical namespaces:
+
+```text
+QLT-FIND-<opaque UUID value>
+QLT-EVID-<opaque UUID value>
+```
+
+The resulting values SHALL still be constructed and validated through the
+existing `QualityFindingId` and `QualityEvidenceId` value objects.
+
+This authorization is deliberately narrow:
+
+- generated identities are runtime-local opaque identities;
+- no deterministic identity guarantee is introduced;
+- no persistence, replay, cross-run stability, or ordering semantics are implied;
+- no counter-based identifiers from tests become runtime authority;
+- executors SHALL continue to receive identity factories by injection;
+- Phase 12 SHALL NOT introduce `QualityFindingId.generate()`,
+  `QualityEvidenceId.generate()`, a generic Quality identity service, an
+  identity registry, or a persistence-backed identity allocator.
+
+The UUID mechanism is therefore a composition implementation detail for
+satisfying the already-existing injected-factory contract, not a new Quality
+identity-governance model.
+
+#### Quality Execution Service Composition
+
+The bootstrap layer SHALL construct the governed default
+`QualityProfileRegistry`, the existing `QualityProfileResolver`, the exact
+five-member `QualityExecutionBinding` tuple, and `QualityExecutionService`.
+
+Required-check ordering SHALL continue to come exclusively from the resolved
+`QualityProfile.required_checks`. Binding construction order SHALL NOT become
+execution-order authority.
+
+The application service SHALL remain infrastructure-agnostic. No import from
+`familyos_cli.infrastructure` or `familyos_cli.interfaces` may be introduced
+into the Quality application package.
+
+#### Shared CLI Runtime Boundary
+
+`quality check`, `quality assess`, and `quality report` SHALL reuse the same
+governed runtime composition rather than independently constructing profiles,
+rules, executors, or bindings.
+
+Where assessment is required, the CLI path SHALL reuse the existing Quality
+application assessment services and the same normalized execution results.
+Composition SHALL NOT move assessment aggregation, blocking semantics, exit-code
+policy, or rendering semantics into the bootstrap container.
+
+#### Explicit Non-Goals
+
+This Phase 12 composition contract SHALL NOT introduce:
+
+- Quality Gate models or evaluation;
+- CI integration;
+- merge or release gates;
+- risk-based execution;
+- Quality Exceptions or Quality Debt;
+- Quality observability, metrics, events, or notifications;
+- governance registries;
+- executor discovery or plugin-style Quality provider registration;
+- persistent Quality execution history;
+- persistent Quality identity allocation;
+- profile inheritance, composition, default selection, or latest-version selection;
+- a generic subprocess abstraction solely for Quality;
+- lifecycle, incremental-execution, intelligence, or AI-assisted semantics.
+
+Those capabilities remain owned by later Quality Framework phases.
+
+#### Runtime Composition Implementation Gate
+
+Runtime composition MAY now be implemented only within the boundaries frozen
+above.
+
+Implementation SHALL remain blocked if it requires changing the governed five
+check/rule associations, inventing persistence or identity-governance semantics,
+moving infrastructure dependencies into the application layer, making the CLI
+the composition root, or introducing behavior owned by a later Quality phase.
+
+No Phase 12 checklist item is closed merely by this composition contract freeze.
+Runtime composition, CLI integration, command behavior, exit-code behavior, and
+Phase 12 exit criteria still require independent implementation evidence.
+
+---
+
+### 15. `quality check` Adapter Contract
+
+This contract freezes the first concrete Typer adapter slice for Phase 12. It
+authorizes only `familyos quality check`. It does not by itself authorize or
+claim implementation of `quality assess`, `quality report`, structured report
+formats, Quality Gates, CI integration, or later Quality Framework semantics.
+
+#### Command Registration
+
+Phase 12 SHALL introduce a top-level Typer sub-application named `quality`
+through the existing FamilyOS CLI registration architecture.
+
+The first runtime slice SHALL expose `familyos quality check`.
+
+The command module SHALL remain an interface adapter. It SHALL obtain Quality
+execution through `CommandContext` and SHALL NOT construct executors, governed
+rules, execution bindings, profile registries, or profile resolvers itself.
+
+`quality assess` and `quality report` remain required Phase 12 commands, but
+their runtime adapters remain deferred until separately implemented and tested.
+
+#### Explicit Target Input
+
+The initial `quality check` adapter SHALL accept:
+
+- `--target-type <value>` — required;
+- `--identifier <value>` — required;
+- `--path <value>` — required;
+- `--revision <value>` — optional;
+- `--version <value>` — optional.
+
+The adapter SHALL construct exactly one canonical `QualityTarget` using direct
+one-to-one mapping to `target_type`, `identifier`, `path`, `revision`, and
+`version`. It SHALL NOT introduce a second CLI-specific Quality target model.
+
+The adapter SHALL NOT infer target type, identifier, revision, version, profile,
+repository state, CI state, lifecycle state, or plugin identity from environment
+state. The current working directory SHALL NOT silently become an implicit
+Quality target.
+
+#### Execution Boundary
+
+After target construction the adapter SHALL delegate through
+`CommandContext.quality_execution` to `QualityExecutionService.execute(target)`.
+Profile resolution, governed required-check selection, execution binding, rule
+selection, executor dispatch, and required-check ordering remain application
+and composition responsibilities.
+
+#### Normalized Result Rendering
+
+`quality check` SHALL render normalized `QualityCheckResult` values in the order
+returned by the application service. Human-readable output SHALL expose at
+minimum each check identifier and canonical `QualityStatus`.
+
+The adapter SHALL NOT reinterpret provider-native Ruff, MyPy, Pytest,
+Documentation Validation, or Plugin Compliance output. Structured output remains
+deferred to the separately governed report/rendering boundary.
+
+#### Exit-Code Classification
+
+The complete normalized required-check result set SHALL use this precedence:
+
+1. exit `2` — unreliable or incomplete Quality conclusion;
+2. exit `1` — reliable Quality FAIL conclusion;
+3. exit `0` — non-failing Quality conclusion.
+
+Exit `2` SHALL take precedence over exit `1`.
+
+Any required `ERROR`, `UNKNOWN`, or `SKIPPED` result SHALL return exit `2`.
+Target construction, profile resolution, missing binding/executor, application
+execution, or equivalent failure that prevents a reliable conclusion SHALL also
+return exit `2`.
+
+If no exit-2 condition exists and at least one required result is `FAIL`, the
+command SHALL return exit `1`. If all required results are `PASS` or `WARNING`,
+the command SHALL return exit `0`.
+
+An empty result set SHALL NOT be treated as a successful Quality conclusion;
+it SHALL return exit `2`. Native provider/process exit codes SHALL NOT leak.
+
+#### Error Adaptation
+
+Expected target-validation, profile-resolution, binding, and Quality execution
+failures SHALL become concise user-visible diagnostics and exit `2`. The CLI
+SHALL NOT manufacture PASS, WARNING, SKIPPED, findings, or gate semantics to
+mask such failures.
+
+#### Architectural Update
+
+The existing architecture assertion proving Quality CLI absence is a pre-Phase-12
+guard. Once this adapter is implemented it SHALL be revised to permit the
+authorized Quality command surface while continuing to reject premature later
+Quality models and semantics.
+
+No application-layer Quality module may import `familyos_cli.infrastructure` or
+`familyos_cli.interfaces`.
+
+#### Required Runtime Evidence
+
+Implementation evidence SHALL prove at minimum:
+
+- root help discovers `quality`;
+- `quality check --help` succeeds;
+- target options are explicit and construct the expected `QualityTarget`;
+- execution delegates through `CommandContext.quality_execution`;
+- normalized results preserve application-returned order;
+- PASS-only and PASS+WARNING return `0`;
+- FAIL without unreliable state returns `1`;
+- ERROR takes precedence over FAIL and returns `2`;
+- UNKNOWN, SKIPPED, and empty results return `2`;
+- target/profile/execution failures return `2`;
+- native provider exit codes are not interpreted by the command;
+- no Quality Gate is created or evaluated;
+- `quality assess` and `quality report` are not falsely claimed implemented;
+- Quality application and architecture regression tests remain green.
+
+#### Explicit Non-Goals
+
+This slice SHALL NOT implement `quality assess`, `quality report`, structured
+report serialization, implicit target discovery, implicit profile selection,
+profile inheritance/composition, Quality Gates, severity-to-blocking inference,
+CI integration, merge/release gates, risk, exception, debt, observability,
+metrics, events, notifications, governance registries, persistent Quality
+history, lifecycle automation, incremental execution, intelligence, or
+AI-assisted semantics.
+
+#### Adapter Implementation Gate
+
+`familyos quality check` runtime implementation MAY now begin only against this
+frozen adapter contract. Implementation SHALL remain blocked if it requires
+hidden target inference, business logic in Typer, a second Quality target model,
+provider-native exit-code interpretation, implicit profile policy, Quality Gate
+semantics, or behavior owned by a later phase.
+
+No Phase 12 checklist item is closed merely by freezing this adapter contract.
+CLI runtime behavior, registration, tests, exit-code evidence, and Phase 12 exit
+criteria remain independently open until demonstrated.
+
+---
+
+### 15. Phase 12 Assessment Runtime Composition Contract
+
+This contract freezes the narrow runtime-composition boundary required for the
+authorized `familyos quality assess` path. It extends the existing Phase 12
+runtime composition only far enough to produce a canonical `QualityAssessment`
+from the same normalized execution results used by `quality check`.
+
+It does not introduce Quality Gate, risk, exception, debt, CI, release, or
+persistence semantics.
+
+#### Assessment Orchestration Boundary
+
+The `quality assess` runtime path SHALL:
+
+1. construct one explicit canonical `QualityTarget`;
+2. execute the governed required checks through the existing
+   `QualityExecutionService`;
+3. reuse the governed Quality profile resolution authority already used by
+   execution;
+4. pass the resulting normalized `QualityCheckResult` values to the existing
+   `QualityProfileAssessmentService`;
+5. supply a valid `QualityAssessmentId`;
+6. supply a timezone-aware `created_at`;
+7. supply only explicitly authorized `blocking_finding_ids`;
+8. return the resulting canonical `QualityAssessment` without recalculating its
+   status or `quality_state`.
+
+The CLI adapter SHALL NOT call `QualityAssessmentService` directly when the
+profile-aware service is the applicable orchestration boundary.
+
+#### Shared Governed Profile Authority
+
+Assessment composition SHALL use the same governed initial profile definitions
+and the same profile-resolution semantics as Quality execution.
+
+The runtime SHALL NOT construct an independent assessment-only profile registry,
+select a default or latest profile, duplicate applicability logic, or derive a
+profile from CLI/environment/filesystem heuristics.
+
+`QualityProfile.reference` SHALL remain the assessment profile reference and
+`QualityProfile.required_checks` SHALL remain the required-check authority.
+
+Equivalent target/profile inputs SHALL therefore preserve the Phase 11
+profile-to-assessment contract.
+
+#### Assessment Identity Composition
+
+The bootstrap composition layer MAY satisfy the existing explicit
+`QualityAssessmentId` dependency with an ephemeral opaque UUID version 4 value
+under the canonical assessment namespace:
+
+```text
+QLT-ASMT-<opaque UUID value>
+```
+
+The generated value SHALL be constructed through the existing
+`QualityAssessmentId` value object.
+
+This authorization is runtime composition only. It SHALL NOT establish
+persistent identity allocation, deterministic assessment identity, replay
+identity, ordering semantics, a global Quality identity service, or a new
+domain-level `generate()` API.
+
+#### Assessment Time Composition
+
+The assessment creation time SHALL be supplied through an injected
+timezone-aware clock owned by runtime composition.
+
+The initial local composition MAY use current UTC time, but the application
+assessment services SHALL continue to receive `created_at` explicitly.
+
+Tests SHALL be able to inject or substitute a stable timezone-aware timestamp.
+Naive datetimes, hidden application-layer wall-clock reads, and CLI-owned clock
+policy are not authorized.
+
+#### Blocking Finding Classification
+
+Phase 10 explicit blocking classification remains authoritative.
+
+For the initial Phase 12 `quality assess` runtime path, composition SHALL supply
+an empty `blocking_finding_ids` tuple unless an already-authorized explicit
+blocking classification is provided by an existing semantic authority.
+
+The runtime SHALL NOT infer blocking status from:
+
+- `QualitySeverity`;
+- `QualityProfile.severity_policy`;
+- `QualityStatus.FAIL`;
+- provider-native exit codes or output;
+- check identity;
+- rule identity;
+- CLI options or naming conventions.
+
+Consequently, a normalized required FAIL without explicit blocking
+classification SHALL retain the existing Phase 10 assessment semantics; the
+composition layer SHALL NOT promote it to a blocking assessment conclusion.
+
+Quality Gate policy remains deferred to later phases.
+
+#### Application and Bootstrap Responsibilities
+
+The Quality application layer SHALL remain infrastructure-agnostic.
+
+Any narrow assessment orchestration service introduced for Phase 12 SHALL
+depend only on existing Quality application/domain abstractions. It MAY
+coordinate execution and profile-aware assessment, but SHALL NOT contain Typer
+rendering, CLI exit-code policy, infrastructure construction, or later-phase
+gate semantics.
+
+`ApplicationContainer` SHALL remain the canonical composition root for concrete
+runtime dependencies.
+
+`CommandContext` MAY expose the resulting composed assessment orchestration
+boundary to the CLI using the existing cached dependency-access pattern.
+
+The Typer command SHALL consume that boundary rather than constructing profile
+registries, resolvers, assessment services, identity factories, or clocks.
+
+#### Assessment Result and CLI Semantics
+
+Runtime composition SHALL return the canonical `QualityAssessment` unchanged.
+
+Rendering remains an interface responsibility. The CLI SHALL render at minimum
+the already-frozen Phase 12 assessment information and SHALL NOT recompute
+assessment aggregation.
+
+Exit classification remains the frozen Phase 12 policy:
+
+```text
+PASS or PASS_WITH_WARNINGS -> 0
+FAIL                       -> 1
+UNKNOWN                    -> 2
+assessment ERROR/UNKNOWN   -> 2
+```
+
+If execution or assessment cannot produce a reliable canonical assessment,
+the CLI adapter SHALL use Quality exit code `2`; native provider exit codes
+SHALL NOT leak through.
+
+#### Explicit Non-Goals
+
+This assessment-composition slice SHALL NOT introduce:
+
+- Quality Gate models or evaluation;
+- severity-to-blocking inference;
+- risk-based blocking;
+- Quality Exception or Quality Debt semantics;
+- CI or merge-gate policy;
+- release-gate policy;
+- assessment persistence or history;
+- assessment replay;
+- report persistence;
+- observability or metrics;
+- governance registries;
+- profile inheritance/composition;
+- default/latest profile selection;
+- provider-specific assessment aggregation;
+- structured report serialization beyond separately frozen CLI authority.
+
+#### Assessment Composition Implementation Gate
+
+Runtime implementation MAY proceed only within the boundary frozen above.
+
+Implementation SHALL remain blocked if it requires inventing blocking policy,
+duplicating profile authority, moving infrastructure dependencies into the
+application layer, making the CLI a composition root, introducing persistent
+assessment semantics, or implementing behavior owned by a later Quality phase.
+
+No Phase 12 checklist item is closed merely by this contract freeze.
+Assessment composition, CLI integration, rendering, exit behavior, and Phase 12
+exit criteria still require independent runtime evidence.
+
+---
+
+### Phase 12 `quality assess` CLI Adapter Contract
+
+The `quality assess` command SHALL expose the first canonical CLI adapter for
+profile-aware Quality assessment. This adapter is a Phase 12 interface concern;
+it SHALL NOT introduce Quality Gate, risk, debt, compliance, exception,
+observability, release-gate, notification, intelligence, or other later-phase
+semantics.
+
+#### Command surface
+
+The command SHALL be registered as `familyos quality assess`.
+
+It SHALL accept the same explicit canonical target inputs already authorized
+for `quality check`: `--target-type` (required), `--identifier` (required),
+`--path` (required), `--revision` (optional), and `--version` (optional).
+
+The CLI SHALL map those values directly into one `QualityTarget`. It SHALL NOT
+infer target identity, profile identity, revision, version, path, Quality
+severity, blocking findings, or later-phase policy.
+
+#### Application boundary
+
+The CLI SHALL delegate assessment execution through
+`CommandContext().quality_assessment.execute(target)`, where
+`quality_assessment` exposes the existing `QualityAssessmentExecutionService`.
+
+The CLI SHALL NOT directly compose or invoke the lower-level
+`QualityExecutionService`, `QualityProfileResolver`,
+`QualityProfileAssessmentService`, `QualityAssessmentService`, assessment-ID
+factory, or assessment clock when the profile-aware assessment boundary is
+available.
+
+The application boundary remains responsible for governed profile resolution,
+required-check execution, normalized `QualityCheckResult` production, runtime
+`QualityAssessmentId` creation, timezone-aware assessment time, explicitly
+authorized blocking finding identifiers, and canonical `QualityAssessment`
+production. The CLI SHALL consume that canonical assessment unchanged.
+
+#### Canonical assessment rendering
+
+The initial text rendering SHALL remain narrow and deterministic. It MAY render
+canonical fields already owned by `QualityAssessment`: assessment identifier,
+target identity, revision when present, profile reference, `QualityStatus`,
+`QualityAssessmentState`, evidence identifiers, finding identifiers, and
+creation timestamp.
+
+The adapter SHALL NOT derive or display a Quality Gate decision, risk score,
+quality debt, compliance conclusion, exception decision, release decision,
+notification state, trend, recommendation, or AI-generated interpretation.
+
+The existence of `QualityAssessment.to_dict()` does not by itself authorize a
+new JSON CLI mode in this slice.
+
+#### Exit-code policy
+
+The frozen Phase 12 mapping is: PASS / PASS_WITH_WARNINGS -> 0; FAIL -> 1;
+UNKNOWN -> 2; assessment status ERROR or UNKNOWN -> 2; invalid target, profile
+resolution failure, missing executor, incomplete execution, or expected
+assessment execution error -> 2.
+
+Exit code `2` represents an unreliable, incomplete, erroneous, or unresolved
+Quality conclusion and SHALL take precedence over ordinary Quality failure.
+Native tool exit codes SHALL NOT be leaked as FamilyOS Quality CLI exit codes.
+
+#### Error adaptation
+
+Expected target-construction and assessment-execution failures represented by
+`TypeError` and `ValueError` SHALL be rendered through the existing CLI output
+mechanism and adapted to exit code `2`. Unexpected programming defects SHALL
+NOT be silently converted into a Quality PASS or FAIL conclusion.
+
+#### Test obligations
+
+Runtime implementation SHALL verify help/options, canonical target mapping,
+delegation through `CommandContext.quality_assessment`, PASS -> 0,
+PASS_WITH_WARNINGS -> 0, FAIL -> 1, UNKNOWN -> 2, status ERROR -> 2, status
+UNKNOWN -> 2, expected TypeError/ValueError -> 2, canonical rendering without
+later-phase inference, and that `quality report` remains absent.
+
+#### Phase boundary
+
+Freezing this adapter contract does not satisfy any Phase 12 implementation
+checklist item by itself. No Phase 12 checklist item SHALL be closed until the
+corresponding runtime, CLI, and validation evidence exists.
+
+---
+
+## Phase 12 Closure Evidence
+
+Phase 12 — Quality CLI is closed for the initial governed runtime subset defined
+by its frozen execution, composition, and CLI adapter contracts. Validation on
+2026-09-03 at runtime commit
+`69f67b3a3915572248d5396575bfbc58f65859d7` demonstrates all three Phase 12 exit
+criteria. The checklist records 21 completed items and preserves two deferred
+capabilities as unchecked; this closure does not claim those capabilities.
+
+### Runtime Evidence
+
+The initial execution path and three CLI adapters are implemented in:
+
+```text
+587478a feat(quality): establish phase 12 execution binding foundation
+86566de feat(quality): implement phase 12 execution orchestration
+edf1d6e feat(quality): compose phase 12 runtime execution
+9555bb1 feat(quality): add quality check cli
+58641a9 feat(quality): compose assessment runtime execution
+9b60f56 feat(quality): add quality assess cli
+69f67b3 feat(quality): implement Phase 12 quality report CLI
+```
+
+The implemented runtime provides:
+
+- explicit `QualityTarget` construction from required `--target-type`,
+  `--identifier`, and `--path`, with optional `--revision` and `--version`;
+- governed profile resolution, explicit check/rule/executor bindings, and
+  deterministic required-check execution through `QualityExecutionService`;
+- bootstrap composition of the existing five executor adapters, exposed through
+  `CommandContext` without infrastructure construction in the CLI;
+- canonical assessment execution through `QualityAssessmentExecutionService`,
+  preserving profile references, explicit blocking semantics, and composition
+  ownership of assessment identity and creation time;
+- normalized check rendering, canonical assessment rendering, and deterministic
+  human-readable report fields, including evidence and finding identifiers;
+- Quality-semantic exit codes `0`, `1`, and `2`, with unreliable conclusions
+  taking precedence over ordinary Quality failure; and
+- CLI adaptation of expected target/execution errors, plus report-rendering
+  failures, without introducing a report domain model or persistence.
+
+### Validation Evidence
+
+```text
+Quality regression: 411 passed, 0 failed, 0 skipped
+Quality CLI tests included in that total: 78 passed
+Real application/CLI scenarios: 4 passed, covering 12 command invocations
+Installed command help checks: 3 passed
+Ruff on quality.py and test_quality.py before the runtime commit: PASS
+MyPy on quality.py and test_quality.py before the runtime commit: PASS
+Working tree before documentary closure: clean
+```
+
+The regression scope comprised:
+
+```text
+tests/unit/domain/quality
+tests/unit/application/ports/quality
+tests/unit/application/quality
+tests/unit/infrastructure/quality
+tests/integration/quality
+tests/unit/architecture/quality
+tests/unit/bootstrap/test_quality_runtime_composition.py
+tests/unit/interfaces/cli/commands/test_quality.py
+tests/unit/interfaces/cli/test_context.py
+tests/unit/interfaces/cli/test_app.py
+```
+
+The suite ran with the repository's `.venv/bin/python -m pytest -q` against
+those paths and `.venv/bin` on `PATH`. The first run without that `PATH` setup
+produced 409 passes and two Plugin Compliance integration errors because the
+validators could not locate `ruff` and `mypy`. Correcting the process environment
+produced 411 passes without changing source code or tests. Bytecode and Pytest
+cache writes were disabled; Ruff and MyPy caches used the verification workspace.
+
+Documentary closure validation preserved all 33 canonical EPIC files and the
+frozen contracts. `DocumentationValidator` reported the same 32 pre-existing
+level-one-heading findings before and after the edit, with no new findings.
+Those documentation findings remain open; this CLI runtime closure does not
+claim a passing validation of the entire framework documentation.
+
+The CLI tests cover target mapping, application delegation, normalized and
+canonical rendering, deterministic report field/identifier ordering, optional
+revision/version handling, exit-code precedence, expected error adaptation,
+report-rendering failures, and absence of structured-output options.
+
+### Local Execution Evidence
+
+The installed CLI was exercised with real application services and executors,
+without service or executor substitutes:
+
+| Explicit target | Normalized checks | Assessment status / state | `check` exit | `assess` exit | `report` exit |
+| --- | --- | --- | --- | --- | --- |
+| Valid repository fixture | Ruff, MyPy, Pytest, Documentation: PASS | PASS / PASS | 0 | 0 | 0 |
+| Valid documentation fixture | Documentation: PASS | PASS / PASS | 0 | 0 | 0 |
+| Documentation fixture with a violation | Documentation: FAIL | UNKNOWN / UNKNOWN | 1 | 2 | 2 |
+| Missing documentation directory | Documentation: ERROR | ERROR / UNKNOWN | 2 | 2 | 2 |
+
+The valid fixture declared `README.md` in `EPIC.yaml`, with one canonical control
+document, no numbered documents, a matching structure, one level-one Markdown
+heading, and a single passing Python test. The invalid documentation fixture
+omitted the Markdown heading. Each invocation supplied an explicit target,
+revision, and version. CLI check statuses, assessment status/state, profile
+reference, target fields, and evidence/finding counts matched direct application
+execution. Runtime-generated identifiers and timestamps were not expected to be
+identical across independent executions.
+
+All three installed command help pages returned exit `0`, exposed the five
+authorized target options, and exposed no `--json` or `--format` option.
+
+A required FAIL without explicit blocking classification correctly remains
+UNKNOWN in assessment aggregation and returns exit `2` from `assess` and
+`report`. The canonical assessment FAIL-to-`1` mapping is covered by CLI unit
+tests; the initial composition does not invent blocking findings to force that
+state during real execution.
+
+### Deferred Capabilities and Contract Reconciliation
+
+The two unchecked general checklist items remain deferred:
+
+- **Display blocking findings:** the initial assessment composition supplies
+  `blocking_finding_ids=()`, and the returned `QualityAssessment` exposes finding
+  identifiers without a separate blocking classification. The CLI displays those
+  canonical identifiers. A distinct blocking-finding display needs separately
+  authorized semantic input; severity, check failure, or provider output does
+  not establish that input.
+- **Support structured output where useful:** the frozen `quality report`
+  adapter contract explicitly excludes structured output from the initial
+  runtime. Any extension requires separately frozen format, field, serialization,
+  error, and validation authority. `QualityAssessment.to_dict()` alone does not
+  provide it.
+
+The completed evidence-summary item refers to canonical evidence identifiers
+rendered by the authorized initial adapters; it does not claim evidence detail
+retrieval or persistence.
+
+The `quality assess` adapter contract's earlier test obligation that `quality
+report` remain absent applied to the assess-only implementation slice. The
+subsequently frozen `quality report` adapter contract authorizes the final third
+command. Final command-discovery coverage therefore requires `check`, `assess`,
+and `report` together. Both frozen contracts remain recorded in this checklist.
+
+Closing this initial Phase 12 subset does not authorize CI integration, Quality
+Gate models or evaluation, merge/release policy, risk, debt, exceptions,
+observability, governance registries, lifecycle automation, persistent reports,
+or any other capability deferred by the Phase 12 contracts.
 
 ---
 
@@ -1360,13 +3792,13 @@ The CI pipeline should invoke application capabilities rather than reimplement q
 # CI Checklist
 
 ```text id="impl-ci-checklist"
-[ ] Identify current CI provider/workflow
-[ ] Add Quality Framework command
-[ ] Generate structured report artifact
-[ ] Preserve logs
-[ ] Surface findings clearly
-[ ] Distinguish quality FAIL from automation ERROR
-[ ] Test CI failure behavior
+[x] Identify current CI provider/workflow
+[x] Add Quality Framework command
+[x] Generate structured report artifact
+[x] Preserve logs
+[x] Surface findings clearly
+[x] Distinguish quality FAIL from automation ERROR
+[x] Test CI failure behavior
 ```
 
 ---
@@ -1402,6 +3834,1172 @@ The CI pipeline should invoke application capabilities rather than reimplement q
 
 ---
 
+## Phase 13 Pre-Implementation Review
+
+The initial Phase 13 inspection was completed on 2026-09-03 at
+`8294c5ed1591b28a6256274fa48851f404659bdc`, after closure of the initial Phase 12
+CLI subset. This review records the existing CI boundary, observed integration
+gaps, and the implementation sequence. It does not freeze a new runtime or
+serialization contract and does not claim CI execution of Quality commands.
+
+### Existing CI Boundary
+
+The current provider is GitHub Actions. The canonical workflow is
+`.github/workflows/ci.yml`, named `Canonical CI Validation`, with `push`,
+`pull_request`, `workflow_dispatch`, and scheduled triggers.
+
+The existing jobs are:
+
+- `validate`: locked dependency installation, canonical CI validation, evidence
+  upload, preservation of the validation result, package build, and artifact
+  upload;
+- `cache-free-validation`: uncached validation and build on scheduled/manual
+  runs;
+- `artifact-validation`: transferred package integrity verification against
+  canonical Build Evidence; and
+- `release-handoff`: download of validated package candidates and Build Evidence.
+
+The workflow uses Python 3.13, SHA-pinned actions, read-only repository
+permissions, and `requirements.txt` for dependency installation. Its validation
+entry point is `familyos validation ci --output ci-validation.json`.
+No `familyos quality` invocation is present at this baseline.
+
+`CiValidationResult`, `ci-validation.json`, and canonical Build Evidence already
+have their own contracts and consumers. Their existence does not establish a
+Quality report schema or make the existing validation command equivalent to
+the Phase 12 Quality assessment path. Phase 13 integration must preserve the
+existing mandatory validation, build, artifact-transfer, and publication
+boundaries unless a separate change is explicitly authorized.
+
+### Observed Integration Gaps
+
+#### Repository Documentation Scope
+
+`QLT-PROFILE-REPOSITORY@1.0.0` requires Ruff, MyPy, Pytest, and Documentation.
+The current execution service passes the same canonical target to each binding.
+The initial Documentation executor validates the EPIC inventory selected by
+`QualityTarget.path`; it does not define repository-wide document selection.
+
+The root `EPIC.yaml` at this baseline identifies `EPIC-014`, titled `Official
+Documents Plugin Documentation`. A real invocation of only the Documentation
+Quality executor with a repository target pointing at the checkout root
+produced `QualityStatus.FAIL` and nine findings:
+
+- the manifest has no required `structure` mapping; and
+- eight declared files under
+  `docs/rfcs/RFC-0014-official-documents-plugin/` are absent.
+
+This probe did not execute the complete repository profile or produce a full
+repository assessment. It demonstrates which inventory the current path
+selects. It does not authorize treating that plugin-specific inventory as the
+complete repository documentation scope, rewriting the root manifest, skipping
+the required Documentation check, or selecting a passing EPIC to conceal
+findings. The 32 existing heading findings in `EPIC-QLT-001` are a separate,
+previously recorded documentation-conformance concern.
+
+A repository-target integration therefore needs an explicit documentation
+scope contract under the existing Documentation Framework authority. That
+contract must define selection, target/evidence identity, deterministic
+aggregation, empty or invalid scope behavior, and compatibility with the
+existing EPIC-target executor before runtime changes.
+
+#### Actionable Findings and Execution Diagnostics
+
+`QualityCheckResult` already carries normalized findings, evidence, and
+diagnostics. `QualityFinding` includes the message, location, rule, severity,
+target, and evidence references needed to explain a violation.
+
+The current `QualityAssessmentExecutionService.execute(target)` returns only a
+`QualityAssessment`. The returned assessment contains evidence and finding
+identifiers, without finding messages, locations, or execution diagnostics.
+The initial `quality report` renderer is intentionally restricted to that
+canonical assessment. Serializing only its identifiers would not by itself
+satisfy Phase 13's actionable-failure requirement.
+
+The application output needed by CI must therefore be frozen before extending
+reporting. It must keep normalized execution information and the assessment
+from the same execution, preserve their identity relationships, and avoid a
+second tool execution merely to recover details. This review does not introduce
+a report domain model, persistent repository, or alternative assessment policy.
+
+#### Structured Report Adapter
+
+The initial Phase 12 report contract explicitly excludes structured output.
+Neither `QualityAssessment.to_dict()` nor the existing CI validation JSON format
+supplies the missing public Quality serialization contract.
+
+The next report adapter contract must define the format option and supported
+values, schema version and fields, ordering, optional and empty values,
+diagnostic/finding representation, serialization and output-write failures,
+and preservation of the frozen Quality exit-code policy. Machine-readable
+output and operational diagnostics must have explicitly defined channels so
+that error handling cannot silently produce a malformed report.
+
+### Required Implementation Sequence
+
+Proceed in bounded slices, each with its contract frozen before implementation:
+
+1. Define and verify the repository Documentation target scope, preserving
+   Documentation Framework ownership and the required repository check set.
+2. Define the application output that retains normalized check results and
+   the canonical assessment from one execution; verify evidence/finding
+   correlation and existing assessment semantics.
+3. Define and implement the structured Quality report adapter against that
+   output, with deterministic serialization and explicit failure behavior.
+4. Freeze the CI adapter contract: exact invocation, explicit target and checked
+   revision, report/log artifacts, actionable summary, artifact preservation on
+   failures, and distinction between Quality FAIL and automation ERROR. Preserve
+   existing mandatory validation and build behavior; do not infer merge or
+   release Quality Gate policy from command exit codes.
+5. Implement the workflow integration and verify local/CI semantic equivalence,
+   failure-path artifact handling, and the existing CI policy tests before
+   claiming Phase 13 exit criteria.
+
+The next implementation-design slice is repository Documentation target scope.
+This sequence does not authorize publication, a remote workflow run, new token
+permissions, Quality Gate models, or changes to the already-closed Phase 12
+text-command semantics.
+
+### Review Evidence and Status
+
+Inspection covered the workflow, `ENG-019 — CI/CD Engineering`, Quality
+Automation guidance, the Phase 8 Documentation contract, Phase 11 profiles,
+Phase 12 execution/reporting contracts, current result models, and CLI and
+bootstrap composition.
+
+The existing CI policy tests passed:
+
+```text
+tests/unit/interfaces/cli/test_ci_security_policy.py
+tests/unit/interfaces/cli/test_ci_caching_policy.py
+tests/unit/interfaces/cli/test_ci_artifact_transfer_policy.py
+
+40 passed
+```
+
+Only `Identify current CI provider/workflow` is complete in the Phase 13
+checklist. The remaining implementation items and all Phase 13 exit criteria
+remain open. No workflow, application code, or existing artifact contract was
+changed by this review, and no remote CI result is claimed.
+
+---
+
+## Phase 13 Repository Documentation Scope Contract
+
+This contract freezes the first prerequisite identified by the Phase 13
+pre-implementation review: the Documentation check's explicit scope when the
+composed Quality runtime receives a repository target. It authorizes a narrow
+runtime extension after this contract is recorded; it does not implement CI,
+structured reporting, or documentation-conformance repairs.
+
+### Authority and Scope
+
+`EPIC-DOC-001` remains authoritative for documentation rules and inventory
+semantics. Its `14-Documentation-Repository-Organization.md` places EPICs under
+`docs/epics/`, with one directory per EPIC. The local `EPIC.yaml` and `MANIFEST.md`
+retain ownership of each EPIC's declared document inventory. The Phase 8
+Documentation validation and normalization contract remains authoritative for
+the checks performed inside an EPIC.
+
+This initial repository scope covers the declared inventories of the 17 EPICs
+listed below. It does not claim validation of every document in the checkout,
+or introduce ADR, RFC, SPEC, foundation, guide, or root-control-file validation.
+Those categories require their own explicit scope and compatible validators.
+An EPIC's own declared deliverables remain governed by that EPIC inventory.
+
+The root `EPIC.yaml` describing `EPIC-014` is not the selector for this composed
+repository mode. It remains untouched and can still be checked explicitly
+through the existing direct documentation-target path.
+
+### Explicit Initial Selection
+
+The initial repository Documentation scope SHALL be a source-controlled,
+non-empty tuple of relative POSIX directory paths, in the following order:
+
+```text
+docs/epics/EPIC-BLD-001-build-framework
+docs/epics/EPIC-COM-001-communication-plugin
+docs/epics/EPIC-DOC-001-documentation-framework
+docs/epics/EPIC-DPL-001-documents-plugin-implementation
+docs/epics/EPIC-EDU-001-education-plugin-implementation
+docs/epics/EPIC-ENG-001-engineering-foundation
+docs/epics/EPIC-FIN-001-finance-plugin-implementation
+docs/epics/EPIC-HLT-001-health-plugin-implementation
+docs/epics/EPIC-OBS-001-observability-framework
+docs/epics/EPIC-OPS-001-operations-framework
+docs/epics/EPIC-PLUGIN-001-official-plugin-implementation
+docs/epics/EPIC-PLUGIN-002-plugin-compliance-framework
+docs/epics/EPIC-QLT-001-quality-framework
+docs/epics/EPIC-REL-001-release-framework
+docs/epics/EPIC-SEC-001-security-framework
+docs/epics/EPIC-SPL-001-security-plugin-implementation
+docs/epics/EPIC-TST-001-testing-framework
+```
+
+The selection reflects all 17 tracked, immediate EPIC directories with
+`EPIC.yaml` at baseline `6c1b6102c966b59cb33db6d2432f060a7c4c83d1`. Each inspected
+directory also contains the README, manifest, changelog, and validation control
+files described by the EPIC organization guidance. This inspection establishes
+the initial set; filesystem discovery SHALL NOT replace the runtime tuple.
+
+Runtime selection SHALL NOT depend on a glob, Git subprocess, current working
+directory, root manifest, directory naming heuristic, current validation
+success, or only the directories that happen to exist. An added EPIC requires
+an explicit update of this scope and its configuration tests. A missing selected
+EPIC SHALL remain visible as a missing required documentation artifact.
+
+The tuple MAY be defined as `INITIAL_REPOSITORY_DOCUMENTATION_ROOTS` in a narrow
+`application.quality.initial_repository_documentation_scope` configuration
+module. This is static runtime wiring data, consistent with the existing
+initial rule/profile configuration; it is not a new domain model, global
+documentation registry, profile-selection mechanism, or filesystem resolver.
+
+### Runtime Composition and Compatibility
+
+`ApplicationContainer` SHALL supply the explicit tuple to the existing
+`DocumentationQualityExecutor` used by the `QLT-CHECK-DOC` binding. A narrow
+optional `repository_epic_roots` constructor argument is authorized for that
+purpose. The governed `QLT-RULE-DOC-001`, profile identities and versions, and
+required-check sets SHALL remain unchanged.
+
+The executor SHALL use the configured repository scope only when
+`QualityTarget.target_type == "repository"`. Each relative EPIC root SHALL be
+resolved against that explicit target's `path`, never against the container's
+project root or the process working directory. The original `QualityTarget`
+SHALL pass unchanged through execution and assessment.
+
+For a configured repository invocation, no fallback to the root `EPIC.yaml`,
+another directory, or a smaller passing scope is authorized.
+
+The existing direct EPIC-validation mode SHALL remain available:
+
+- `documentation` targets continue to validate the EPIC at `target.path`;
+- other target types retain their existing Documentation adapter behavior; and
+- a directly constructed Documentation executor without repository scope
+  retains the Phase 8 direct-path behavior, including existing integration
+  fixtures that use a repository-typed target for a single EPIC directory.
+
+The composed repository mode intentionally interprets `path` as the checkout
+root containing the selected EPICs. A small repository fixture containing only
+a root EPIC manifest no longer satisfies this configured repository scope.
+Use an explicit documentation target to validate that single EPIC. CLI options,
+text rendering, exit-code rules, and assessment aggregation are unchanged.
+
+### Documentation Validation Boundary
+
+Repository path resolution and aggregation SHALL remain in
+`infrastructure.documentation`, reusing the existing `DocumentationValidator`.
+A narrow `validate_repository(root, *, epic_roots)` entry point returning the
+existing `DocumentationValidationResult` is authorized. It SHALL call the
+existing single-EPIC validation for the selected roots in their configured
+order; it SHALL NOT duplicate or relax the Phase 8 documentation rules.
+
+The scope SHALL reject non-tuple configuration, non-string entries, an empty
+tuple, empty paths, duplicates, absolute paths, backslashes, empty path
+components, `.` or `..` components, and control characters. Relative roots SHALL
+be immediate child directories under `docs/epics/`. Invalid scope configuration
+SHALL fail explicitly with `TypeError` or `ValueError`, not silently select a
+default scope. Dependency injection in tests MAY supply smaller valid tuples
+without changing the production default set.
+
+Invalid configuration MAY be rejected during construction before execution;
+no execution evidence is required when no validation attempt has occurred.
+
+Resolved selected roots SHALL remain within the explicit repository target.
+A root resolving outside it, including through a symbolic link, SHALL be
+rejected as a scope/execution error. A selected root's absence SHALL NOT remove
+it from the configured iteration. No recursive discovery, network lookup, or
+repository mutation is part of validation.
+
+Within each EPIC, the existing validator retains authority over declared
+deliverables, structure, headings, fences, and relative references. This
+extension does not reinterpret those rules or change their document coverage.
+
+### Deterministic Findings and Evidence
+
+The repository check SHALL return one `QualityCheckResult` for the same
+`QLT-CHECK-DOC` binding. Findings SHALL be ordered first by configured EPIC order,
+then by the existing per-EPIC validator order. They SHALL NOT be deduplicated
+or reordered by severity, message, runtime identifier, or validation outcome.
+
+Each violation SHALL preserve its kind and message at the Documentation layer.
+Its location SHALL be prefixed with the selected relative EPIC directory and
+`/`, preserving the original location suffix, including any line number or
+compound location text. A violation without a location SHALL use the selected
+relative EPIC directory as its location. This gives repository-relative
+provenance without inventing child Quality targets.
+
+Quality normalization remains in `DocumentationQualityExecutor`: one aggregate
+`DOCUMENTATION` evidence record and one canonical finding per violation.
+Every finding and the aggregate evidence SHALL retain the original repository
+target and governed rule association. The evidence revision SHALL match the
+target revision; each finding SHALL retain the supplied rule's domain and
+severity. Existing identity factories remain authoritative, and every finding
+SHALL reference that aggregate evidence identifier.
+
+The evidence source remains `quality.documentation`, and the tool remains
+`familyos-documentation-validator`. For configured repository mode, the metadata
+SHALL contain, in order:
+
+```text
+violations  -> decimal violation count
+scope       -> repository_epics
+epic_roots  -> configured relative roots joined by a single newline
+```
+
+`epic_roots` records the intended selection, including missing roots; it is not
+a claim that every root was successfully validated. Scope metadata SHALL also
+be present on execution-error evidence when such evidence is produced. Direct
+EPIC mode retains its existing metadata contract. These metadata values do not
+establish a public CLI serialization format.
+
+### Failure and Completeness Rules
+
+| Condition | Required behavior |
+| --- | --- |
+| Complete configured scope, no violations | PASS check and PASS aggregate evidence |
+| Ordinary violation in any selected EPIC | Continue through the remaining selected EPICs; FAIL check with all findings and FAIL aggregate evidence |
+| Selected EPIC directory or its `EPIC.yaml` missing | Required-documentation violation, therefore FAIL; never silently omit that root |
+| Missing declared document, malformed EPIC YAML, or invalid document structure | Preserve Phase 8 FAIL normalization |
+| Missing, inaccessible, or non-directory repository target | Preserve Phase 8 ERROR behavior; pre-execution target failures may lack evidence |
+| Invalid scope configuration or an escaping selected root | Explicit configuration/execution failure; CLI exit 2 through existing error adaptation |
+| Unexpected validator/read failure, including permission failure | ERROR, with diagnostic and ERROR evidence when execution was attempted; never present partial validation as a complete PASS or ordinary FAIL |
+
+An unexpected validation failure MAY stop the remaining iteration. The current
+error result need not retain partial findings, but SHALL preserve an explicit
+diagnostic and SHALL NOT claim complete validation. The existing error-evidence
+`violations` value of `0` is not a conformance conclusion when the evidence
+result is ERROR. No synthetic ordinary-violation findings SHALL represent
+infrastructure failures.
+
+The application layer SHALL continue to aggregate the normalized check result
+under the existing assessment rules. A required FAIL without explicit blocking
+classification remains UNKNOWN at assessment level; this scope contract does
+not introduce blocking policy or change the Quality CLI exit mapping.
+
+### Required Runtime Evidence
+
+Runtime implementation SHALL demonstrate:
+
+- exact production tuple and bootstrap injection, with no change to profile,
+  rule, or required-check identities;
+- target-relative resolution independent of working directory and container
+  root, plus selection only for configured repository mode;
+- preserved direct-EPIC behavior and absence of new CLI flags;
+- deterministic multi-EPIC aggregation, including passing and failing fixtures,
+  repeated messages, original location suffixes, and location-free violations;
+- unchanged repository target/revision on evidence and findings, a single
+  aggregate evidence record, and correct finding/evidence correlation;
+- exact scope metadata, including intended selection on error evidence;
+- invalid/empty/duplicate scope rejection, missing selected EPIC detection,
+  escaping-root rejection, and read/validator failures yielding ERROR;
+- an unlisted directory not changing the explicit scope and a failing selected
+  EPIC never being skipped;
+- green Documentation, Quality application, bootstrap/context, CLI, and
+  architecture regressions, with Ruff and MyPy on changed Python files; and
+- a real execution of the configured Documentation binding against the
+  repository, recording actual findings without running all other checks or
+  hardcoding the current repository's violation count as a permanent test oracle.
+
+### Inspection Baseline and Implementation Gate
+
+At `6c1b6102c966b59cb33db6d2432f060a7c4c83d1`, independent execution of the existing
+single-EPIC validator over the 17 selected roots produced 278 findings:
+276 `markdown_heading` and 2 `markdown_fence`. This is a baseline observation,
+not evidence that the scoped repository executor is already implemented or
+that documentation conforms. The nine root-manifest findings from the earlier
+probe and the 32 Quality EPIC heading findings retain their documented scope.
+
+Runtime implementation MAY now proceed within this contract. Its permitted
+scope is static application configuration, repository validation within the
+existing Documentation infrastructure, the existing Documentation Quality
+adapter, bootstrap wiring, and their tests. No Phase 13 runtime checklist item
+is complete merely because this contract is frozen.
+
+The slice SHALL NOT change documentation inventories or standards to obtain a
+PASS, migrate root control documents, add structured CLI output, extend the
+assessment result model, add CI workflow steps, introduce Quality Gate policy,
+or claim conformance repair, publication, or remote CI execution.
+
+---
+
+## Phase 13 Assessment Execution Output Contract
+
+This contract freezes the second application prerequisite from the Phase 13
+pre-implementation review: retaining normalized check results together with
+the canonical assessment produced from the same execution. The inspection
+baseline is `cfb678b1406c8cd6010bcd63a75260547d799296`.
+
+### Application Output and Ownership
+
+Introduce `QualityAssessmentExecutionResult` in
+`application.quality.quality_assessment_execution_result`, exposed through the
+existing Quality application package. Its complete initial shape SHALL be:
+
+```python
+@dataclass(frozen=True, slots=True)
+class QualityAssessmentExecutionResult:
+    assessment: QualityAssessment
+    check_results: tuple[QualityCheckResult, ...]
+```
+
+This is an immutable application output containing existing canonical objects.
+It is not a new Quality domain entity, report schema, persistence record, or
+assessment policy. It SHALL reject an incorrectly typed assessment, a non-tuple
+collection, or a member that is not a `QualityCheckResult` with `TypeError`.
+It SHALL NOT coerce inputs, generate identifiers or timestamps, or copy,
+normalize, deduplicate, reorder, or recalculate the supplied values.
+
+An empty result tuple is representable. Completeness and assessment validity
+remain governed by the existing execution/profile/assessment services. The
+output constructor SHALL NOT duplicate their business validation or reject
+normalized ERROR, UNKNOWN, SKIPPED, or evidence-free results merely because
+they do not express conformance. Consumers requiring a correlated execution
+SHALL obtain the output from the orchestration method below; constructing the
+carrier directly does not execute or validate an assessment.
+
+### One Execution and One Assessment
+
+Add the following method to `QualityAssessmentExecutionService`:
+
+```python
+def execute_with_results(
+    self, target: QualityTarget,
+) -> QualityAssessmentExecutionResult:
+    ...
+```
+
+For each successful invocation, the method SHALL:
+
+1. validate the canonical target before executing checks;
+2. call the existing `QualityExecutionService.execute(target)` exactly once;
+3. obtain one assessment identifier and one creation time from the existing
+   injected factory and clock, after check execution succeeds;
+4. pass that exact returned result tuple and original target to the existing
+   `QualityProfileAssessmentService.assess` exactly once;
+5. continue to supply `blocking_finding_ids=()` under the initial runtime
+   classification contract; and
+6. return the exact canonical assessment produced by that service together
+   with the exact result tuple used to produce it.
+
+The new output SHALL preserve profile execution order, individual check
+statuses, durations, diagnostics, and every finding and evidence object,
+including their existing optional fields, metadata order, and duplicates.
+Messages, locations, rule/domain/severity associations, targets, revisions,
+and evidence references SHALL remain available without a second tool run.
+
+Canonical assessment identifier aggregation remains sorted and unique under
+`QualityAssessmentService`; preserving raw result order and multiplicity does
+not change that aggregation. Existing target/revision consistency checks and
+profile resolution remain authoritative. No additional evidence-reference
+resolution, blocking inference, or status repair is introduced here.
+
+Each method invocation is a fresh execution. The service SHALL NOT cache or
+reuse an earlier invocation's results or assessment. Reading either field of
+the returned output SHALL NOT execute checks, invoke the clock, allocate an
+identifier, or reassess anything.
+
+### Compatibility and Failure Behavior
+
+`execute(target) -> QualityAssessment` SHALL remain available with its existing
+return type and semantics. It SHALL project `.assessment` from one call to
+`execute_with_results(target)`, maintaining one orchestration path.
+
+The existing CLI, `CommandContext`, and bootstrap composition remain compatible
+without source changes. Phase 12 text rendering, command options, explicit
+targets, assessment semantics, and exit codes remain unchanged. In particular,
+a required FAIL without explicit blocking classification still assesses as
+UNKNOWN; retaining the details SHALL NOT promote it to a blocking failure.
+
+Normalized executor ERROR results SHALL remain visible in `check_results` and
+be assessed by the existing policy. Missing evidence and incomplete results
+SHALL retain their original details and completeness semantics.
+
+Invalid targets, profile or binding failures, unexpected executor exceptions,
+invalid factory/clock values, and assessment consistency errors SHALL continue
+to propagate through the existing error boundary. There SHALL be no automatic
+retry, synthetic assessment, fabricated evidence, or partial output presented
+as a complete execution. If execution raises, assessment identity and time
+SHALL NOT be allocated. If a later step raises, no result carrier is returned.
+
+### Required Evidence and Scope
+
+Runtime tests SHALL demonstrate:
+
+- immutable, explicitly typed output, including empty result support;
+- exactly one execution and profile-aware assessment per invocation, preserving
+  the original target, returned tuple, and returned assessment;
+- lossless ordered multi-check results, repeated finding/evidence references,
+  actionable messages/locations, diagnostics, durations, and optional metadata;
+- correlation of the canonical assessment's evidence/finding identifiers with
+  those retained results, preserving the existing sorted-unique aggregation;
+- unchanged PASS, WARNING, FAIL-without-blockers, ERROR, and incomplete/missing
+  evidence behavior, and no implicit blocking classification;
+- fresh independent invocations, failure propagation, and rejection of
+  target/revision mismatches by the existing assessment authority;
+- a composed Documentation execution retaining real normalized findings and
+  evidence with the matching assessment; and
+- existing Quality application, infrastructure, architecture, bootstrap,
+  context, and CLI regressions, with Ruff and MyPy on changed Python files.
+
+Implementation is limited to this application output, the existing assessment
+execution service, the package export, and their tests. No serializer, output
+file, new CLI format/option, workflow step, persistent storage, Quality Gate,
+or change to execution/assessment domain policy is part of this slice.
+Structured reporting requires the next explicit adapter contract. Freezing
+or implementing this output alone does not complete the Phase 13 CI checklist
+or establish a remote CI result.
+
+---
+## Phase 13 Structured Quality Report Adapter Contract
+
+At baseline `251f1302f20cfbd42fd038a661a1df0c893057ab`, the application retains
+normalized checks and their assessment from one execution. This contract
+authorizes the next reporting adapter under ENG-004, ENG-006, ENG-011, ENG-012,
+and the existing Quality execution/assessment authority.
+
+### CLI Extension and Compatibility
+
+Only `familyos quality report` gains `--format text|json` (default `text`) and
+`--output PATH` (optional). Values are case-sensitive. Unsupported formats,
+an empty output path, and `--output` with text format SHALL fail with exit 2
+before application execution. No `--json` alias is introduced. A path equal
+to `-` means stdout, equivalent to omitting `--output`; all other paths are
+resolved normally against the caller's working directory.
+
+The default and explicit text format preserve the complete Phase 12 text
+contract, including delegation through `execute(target)`, rendering, unexpected
+execution exception behavior, and exit semantics. `check` and `assess` are
+unchanged. This additive contract supersedes only the earlier exclusion of
+`--format` for report; historical Phase 12 scope remains documented as such.
+
+JSON mode SHALL construct the same explicit canonical target and invoke
+`CommandContext().quality_assessment.execute_with_results(target)` exactly once.
+It SHALL serialize that returned application output without replaying checks,
+reassessing, allocating identities, reading a clock, or substituting CLI input
+for returned canonical values. A narrow `QualityReportJsonRenderer` belongs in
+`interfaces.cli.rendering.quality_report_json`, following the existing CLI
+rendering boundary. Domain and application models remain unchanged.
+
+### Version 1.0.0 Payload
+
+The top-level object SHALL contain these fields, in this order:
+
+```text
+schema_version: "1.0.0"
+assessment: assessment object
+check_results: array of check objects
+```
+
+Every field below is present, in the order shown. Identifiers and enum values
+are serialized using their canonical strings, without interpretation.
+
+| Object | Fields, in order |
+| --- | --- |
+| target | target_type, identifier, revision, version, path, metadata |
+| assessment | id, target, revision, profile, status, quality_state, evidence_ids, finding_ids, created_at |
+| check | check_id, status, findings, evidence, duration_seconds, diagnostics |
+| finding | id, rule_id, domain, severity, status, message, target, location, evidence_ids |
+| evidence | id, type, source, target, result, created_at, revision, rule_id, requirement_id, tool, tool_version, metadata, artifact |
+
+Nested targets SHALL be complete target objects. Optional scalar fields SHALL
+use JSON null when absent. Tuple collections SHALL become JSON arrays, with
+empty tuples represented as `[]`. Metadata SHALL be an array of two-element
+string arrays, preserving order and repeated keys; it SHALL NOT become a JSON
+object. Times SHALL use the existing aware datetime's `isoformat()` value,
+including its offset. Duration SHALL be a JSON number in seconds.
+
+The adapter SHALL preserve all supplied collection ordering and multiplicity,
+including assessment identifier ordering, repeated normalized findings/evidence,
+diagnostics, and metadata. It SHALL neither reconcile duplicate identifiers nor
+infer blocking classifications, gate decisions, or missing evidence links.
+The application orchestration remains responsible for assessment correlation.
+
+The serialized document SHALL use two-space indentation, Unicode text encoded
+as UTF-8 without a byte-order mark, and one final newline. JSON escaping SHALL
+protect embedded quotes, newlines, and control characters. NaN, positive or
+negative infinity, and strings that cannot encode as valid UTF-8 SHALL fail
+explicitly; they SHALL NOT be replaced, omitted, or emitted as nonstandard JSON.
+Identical supplied objects SHALL render identically. Fresh executions retain
+their independently allocated identifiers and times.
+
+This defines a public adapter schema, independently of domain `to_dict()`
+helpers and the distinct CI Validation artifact. Breaking field or semantic
+changes require an explicit versioned contract; future consumers SHALL check
+the schema version before interpreting it. No deserialization or persistence
+domain is introduced by this slice.
+
+### Output Channels and File Writes
+
+The complete document SHALL be serialized and UTF-8 validated in memory before
+any report output is written. Without a file destination, stdout SHALL contain
+only the report. Ordinary Python stdout emitted while invoking the application
+SHALL be redirected to stderr in JSON mode, preserving diagnostics without
+contaminating JSON. Normalized diagnostics also remain in their check objects.
+
+With a file destination, stdout SHALL be empty. The adapter SHALL write a
+temporary sibling file, close it successfully, and replace the destination
+atomically only after the full write succeeds. The parent directory must already
+exist. Failed writes SHALL remove temporary files when possible and preserve
+an existing destination. No automatic directory creation or dual stdout/file
+report emission is authorized. The adapter SHALL NOT follow a destination-file
+symlink when replacing it. Atomic replacement is not a durability or backup
+guarantee. Filesystem handling remains at the CLI boundary.
+
+An existing artifact preserved after an error is not proof of the current
+execution. CI integration SHALL use a fresh per-run destination and validate
+its report identity/revision before treating it as current evidence.
+
+### Error and Exit Semantics
+
+JSON mode adapts ordinary application, serialization, encoding, and output-write
+exceptions to a plain diagnostic on stderr and exit 2. It SHALL NOT emit a
+fabricated assessment or JSON error envelope. Interrupts and process termination
+are not converted into successful or synthetic results.
+
+Serialization failures leave report stdout and the destination untouched.
+Stream failures may leave a partial stream and SHALL return exit 2; consumers
+must reject incomplete JSON. An output error takes precedence over an otherwise
+successful or failing assessment. A normalized ERROR/UNKNOWN assessment is a
+valid report and SHALL still be written before the frozen exit policy applies.
+
+After successful report output, reuse the Phase 12 assessment exit function:
+ERROR or UNKNOWN assessment status gives 2; otherwise PASS/PASS_WITH_WARNINGS
+state gives 0, FAIL state gives 1, and other states give 2. A required check FAIL
+without explicit blockers still yields an UNKNOWN assessment and exit 2. The
+report retains the check FAIL so CI can distinguish a detected violation from
+an executor ERROR without changing assessment or Quality Gate policy.
+
+### Implementation Evidence
+
+Tests SHALL cover the exact versioned shape and deterministic bytes; optional,
+empty, Unicode, control-character, repeated, and non-finite values; one detailed
+execution; returned-object authority; every existing exit-policy combination;
+pre-execution option validation; clean stdout/stderr separation; normalized and
+unexpected errors; file replacement and preservation on failures; and unchanged
+text/check/assess behavior. Verify the installed CLI on real Documentation
+targets, including a failing target whose JSON remains available with exit 2.
+
+Permitted changes are the report CLI adapter, its renderer and narrow atomic
+writer, related tests, and this contract. No workflow or other domain behavior
+changes belong to this slice. The following CI adapter slice SHALL define the
+exact invocation, checked revision, logs, summaries, artifact retention, and
+observation behavior before modifying the workflow.
+
+---
+
+## Phase 13 Initial CI Adapter Contract
+
+This contract follows the versioned report implementation at
+`47ee2aff5a55c51f762bf0c456f071e12ea8b85d`. ENG-019 and the Quality Automation
+model govern traceability and actionable failures. Phase 15 observation and
+Phase 16 enforcement remain distinct future Quality Gate capabilities.
+
+### Workflow Boundary and Observation
+
+Add an independent `quality-observation` job to `.github/workflows/ci.yml`.
+It SHALL run on the workflow's existing push, pull_request, manual, and scheduled
+events, using the same SHA-pinned checkout/setup/upload actions, Python 3.13,
+locked dependencies, and editable no-dependency installation as current CI.
+The job SHALL have a 30-minute timeout and job-level `continue-on-error: true`.
+Its failing execution step SHALL remain visibly failed; no step-level success
+rewrite or implicit Quality Gate conclusion is authorized.
+
+All four existing jobs, their dependencies, mandatory validation/build behavior,
+failure preservation, artifact identities, triggers, and read-only token
+permissions SHALL remain unchanged. The new job SHALL NOT become a prerequisite
+for those jobs or a required branch-protection check. This is an observation
+integration, not a claim that known documentation findings conform or that
+Quality Gate reliability has already been demonstrated.
+
+### Explicit Source and Invocation
+
+A narrow `scripts/run_quality_ci.py` adapter SHALL accept explicit
+`--repository`, `--expected-revision`, `--output-dir`, and optional `--summary`
+paths/values. This script is CI transport and presentation code; it SHALL NOT
+execute tools independently or reproduce Quality assessment or blocking policy.
+
+The adapter SHALL resolve the repository path, read its actual Git HEAD, and
+require equality with the supplied expected revision. It SHALL reject tracked
+changes and non-ignored untracked files before execution, and verify the same
+HEAD and clean source after execution. The report output directory SHALL be
+outside the target checkout, have an existing parent, and be newly created;
+an existing output directory SHALL fail rather than reuse previous evidence.
+
+Invoke exactly once, as an argument array without a shell:
+
+```text
+familyos quality report
+  --target-type repository
+  --identifier familyos-cli
+  --path <absolute checked checkout>
+  --revision <verified Git HEAD>
+  --format json
+  --output <fresh directory>/quality-report.json
+```
+
+Execution uses the repository as working directory. All profile resolution,
+required-check execution, normalization, and assessment remain in the existing
+application. The adapter SHALL neither retry tools nor select a passing subset.
+
+The workflow SHALL pass `GITHUB_WORKSPACE`, `GITHUB_SHA`, and
+`RUNNER_TEMP/familyos-quality-GITHUB_RUN_ID-GITHUB_RUN_ATTEMPT` through quoted
+shell environment variables. Pull-request execution evaluates the checked merge
+commit when that is what checkout supplies; it SHALL NOT label it as the PR head
+revision. No untrusted PR title, branch, body, or expression is interpolated
+into executable shell source.
+
+### Artifacts and Failure Preservation
+
+The fresh output directory SHALL retain:
+
+```text
+quality-report.json     complete CLI report when produced
+stdout.log              captured CLI stdout bytes
+stderr.log              captured CLI stderr bytes
+execution.json          adapter execution record
+quality-summary.md      human-readable observation summary
+```
+
+The execution record SHALL include `schema_version` (`1.0.0`), checked `revision`
+(null if unavailable), the exact `command` array, `cli_exit_code` (null before
+CLI completion), `adapter_exit_code`, `report_accepted`, and `adapter_error`
+(null when absent). This is operational CI evidence, not a Quality domain entity
+or a substitute assessment. Nonstandard native exit codes remain in the record
+while the adapter returns 2. No synthetic report is created for missing output.
+
+After a valid report is accepted, the adapter SHALL preserve the CLI's 0/1/2 exit
+code. Source mismatch, dirty source, missing executable/report, malformed JSON,
+unsupported schema, inconsistent report identity, or artifact/summary write
+failure SHALL produce adapter exit 2 with an explicit diagnostic. A normalized
+check ERROR and an adapter failure SHALL be distinguishable in the artifacts.
+An UNKNOWN assessment caused by check FAIL retains both facts and CLI exit 2.
+
+Logs, any actual report, and the adapter record/summary SHALL be retained on
+failure whenever the filesystem remains writable. Failure to initialize the
+fresh directory SHALL leave an existing directory untouched and report the
+problem on stderr. No fallback to a previous artifact is permitted.
+
+Upload the directory with an `always()` artifact step, name
+`familyos-quality-observation`, and `if-no-files-found: error`. The workflow
+SHALL retain failure visibility if upload fails. Existing CI artifacts SHALL
+not be renamed, overwritten, or interpreted as Quality report artifacts.
+
+### Report Acceptance and Summary
+
+The CI reader SHALL reject duplicate JSON object keys and nonstandard numeric
+constants, require schema `1.0.0`, and validate the fields used for CI feedback.
+It SHALL require the exact target/revision, the governed repository profile
+reference, and required check identities in profile order, using the existing
+application profile definition as authority instead of a copied check list.
+
+Canonical assessment/evidence/finding identifiers, check statuses, evidence
+results, finding severities, and assessment state SHALL use their existing
+value-object/enum validation. Nested finding/evidence targets and any evidence
+revision SHALL agree with the original target. The assessment's finding and
+evidence identifiers SHALL match the unique identifiers retained by the checks.
+Finding evidence references SHALL resolve to evidence in the report. Invalid
+or incomplete report structure SHALL not become a successful observation.
+These transport checks SHALL NOT reaggregate assessment status or introduce a
+new blocking policy. Normalized ERROR, UNKNOWN, SKIPPED, and evidence-free
+results remain representable under the canonical model.
+
+The summary SHALL identify the checked revision, profile, assessment status and
+state, native and adapter exit codes, every check's status, finding counts,
+and executor diagnostics. Findings SHALL show their identity, rule, severity,
+location, and message. Limit displayed findings to the first 100, and bound
+summary text before HTML escaping to 40,000 characters, explicitly referring to
+the full JSON artifact for omitted details. Untrusted text SHALL be escaped
+inside a preformatted block; it SHALL not generate raw HTML or workflow commands.
+
+When `--summary` is supplied, append the same bounded Markdown to that explicit
+destination (the workflow uses `GITHUB_STEP_SUMMARY`). Uploading to GitHub itself
+is performed only when the workflow runs, not during local implementation.
+The summary destination SHALL be outside both the source checkout and generated
+artifact directory so that feedback cannot overwrite source or report evidence.
+
+### Validation and Completion Boundary
+
+Tests SHALL verify exact invocation and single execution, clean exact-revision
+selection, rejection of changed/stale source, fresh output behavior, all CLI exit
+codes, malformed/missing/inconsistent reports, operational exceptions, preserved
+logs and failure artifacts, summary escaping/bounds, and workflow observation
+and security constraints. Existing canonical CI validation/build/artifact tests
+SHALL remain green. Run a local reproduction against the committed repository
+and record actual full-profile results without hiding known findings.
+
+Runtime and workflow implementation can be verified locally. This alone SHALL
+NOT be recorded as an observed successful remote CI run, an elapsed observation
+period, a governance decision, or satisfaction of Phase 16 enforcement
+preconditions. Remote publication, branch protection, and release remain outside
+this local implementation and await the planned review.
+
+GitHub mechanics were checked against its official
+[variables reference](https://docs.github.com/en/actions/reference/workflows-and-actions/variables),
+[step outcome/conclusion reference](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts),
+and [job-summary reference](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary).
+These provider details do not replace FamilyOS Quality semantic authority.
+
+---
+## Phase 13 MyPy Diagnostic Compatibility Reconciliation
+
+The first complete repository observation at revision
+`0e2d1332671497672433e021a85ac4103607ed58` exposed a valid MyPy diagnostic
+with `column=-1` (`unused-ignore`). MyPy 2.3.0's installed `ErrorInfo` source
+explicitly defines this sentinel as an unknown column. Rejecting it as a
+protocol error hides reliable type-verification findings.
+
+Before the compatibility fix, freeze this narrow clarification of Phase 6:
+
+- A diagnostic with a positive integer line and column `-1` SHALL produce a
+  canonical finding located at `file:line`, without inventing a column.
+- Missing/null columns retain the same existing representation; non-negative
+  integer columns remain verbatim, including zero.
+- Columns below `-1`, booleans, and non-integers remain invalid protocol data.
+- Rule authority, native diagnostic codes, messages, finding/evidence linkage,
+  execution count, exit normalization, and the command scope remain unchanged.
+- A failing MyPy run containing this sentinel SHALL remain FAIL with its
+  findings and TYPE_VERIFICATION evidence, rather than ERROR or PASS.
+
+Verify both native sentinel mapping and malformed-column rejection, then run
+the Quality regression suite. Local generated `build/` output observed during
+the first run is not committed source: the final CI reproduction SHALL also
+use a fresh checkout of the exact committed revision. Do not delete local build
+artifacts or change the governed check scope to hide those findings.
+
+---
+## Phase 13 Local Implementation Evidence
+
+The structured report and CI observation implementation is committed locally in
+`47ee2aff5a55c51f762bf0c456f071e12ea8b85d` and
+`0e2d1332671497672433e021a85ac4103607ed58`. The MyPy compatibility and test-fixture
+corrections are committed in `beb73067e6e7838ac15ae7f3bb21b5c8bbdc48f0`.
+
+The complete public CLI/CI adapter was reproduced on 2026-09-03 in a new local
+checkout of that exact revision, with source imports verified against the new
+checkout and a clean source tree checked before and after execution:
+
+| Check | Actual outcome | Findings |
+| --- | --- | --- |
+| Ruff | PASS | 0 |
+| MyPy | PASS | 0 |
+| Pytest | PASS: 2,642 passed, zero failures/errors/skips | 0 |
+| Repository documentation | FAIL | 278 existing violations |
+
+The adapter accepted the canonical report and preserved its JSON, stdout,
+stderr, execution record, and bounded summary. CLI and adapter exits were both
+2, with assessment UNKNOWN / UNKNOWN: the existing Phase 10 policy does not
+classify these findings as blocking. This is a reliable observation of a
+non-passing documentation state, not an automation error or a successful gate.
+
+The focused corrected scope passed 722 tests, Ruff, and MyPy. Three package-build
+checks initially failed under sandbox network restrictions and passed with
+access to their temporary build dependencies. No assertion was weakened.
+The original checkout also contains ignored historical build output; that output
+was neither deleted nor treated as committed source in the clean reproduction.
+
+The seven CI implementation checklist entries are locally verified. The PR/main
+publication entries and remote CI exit criteria remain open until the workflow
+actually runs after review. No remote run, observation period, branch protection,
+release, or governance approval is claimed by this local evidence.
+
+## Phase 14 Domain Boundary Runtime Contract
+
+This contract is frozen before the first repository architecture implementation.
+The authority is `docs/00-foundation/Engineering-Constitution.md`, Articles I and
+IV, and the established dependency direction in
+`docs/00-foundation/CLI-Architecture.md`. Existing Quality package architecture
+tests already forbid domain dependencies on application, infrastructure, and
+interfaces. The first rule extends that same static dependency boundary across
+the canonical FamilyOS domain tree.
+
+### Identity and Policy
+
+Use requirement `QLT-REQ-ARC-010`, rule `QLT-RULE-ARC-010`, and check
+`QLT-CHECK-ARCHITECTURE`, with domain `QLT-DOM-ARC` and severity HIGH.
+The existing conceptual `QLT-RULE-ARC-001` concerns cross-domain internal
+implementation dependencies and SHALL NOT be repurposed. Rule ownership is the
+Engineering Architecture governance role; this names responsibility, not a
+claimed human approval or approval event.
+
+Store the concrete requirement, rule, canonical relative source root, and
+forbidden module prefixes as explicit application configuration. The source
+root is `src/familyos_cli/domain`; forbidden prefixes are exactly
+`familyos_cli.application`, `familyos_cli.infrastructure`, and
+`familyos_cli.interfaces`, including their submodules. Prefix matching SHALL
+respect module boundaries (`infrastructure_extra` is not `infrastructure`).
+
+The repository profile becomes `QLT-PROFILE-REPOSITORY@1.1.0`, appending this
+check after Ruff, MyPy, Pytest, and Documentation. Register only the new active
+repository version to preserve deterministic automatic resolution. Historical
+1.0.0 reports remain historical evidence, not input claiming the current policy.
+Official Plugin and Documentation profiles retain their current checks and
+versions. Severity policy and required-domain configuration remain unchanged;
+adding a required check SHALL NOT infer a blocking finding or gate decision.
+The existing CI adapter imports the active profile, so it SHALL observe the new
+check through the same public command without copying architecture policy.
+
+### Deterministic Verification
+
+Implement the existing Quality executor port in infrastructure. Inspect `.py`
+and `.pyi` files under the explicit source root, using Python's source encoding
+rules and AST parsing without importing or executing target code. Include imports
+inside functions, conditions, and TYPE_CHECKING blocks. Ignore comments and
+string literals. Dynamic imports and broader cross-domain public-API checks are
+outside this initial static rule and SHALL NOT be claimed as verified.
+
+Resolve absolute imports, `from familyos_cli import infrastructure`, and
+relative imports according to the containing module/package (`__init__.py`
+and `__init__.pyi` represent packages). Report each distinct forbidden module
+per import statement once; preserve separate offending statements. Order by
+repository-relative POSIX path, source line, column, and module. Locations use
+`relative/path:line:column`, with Python AST's column converted to one-based.
+Messages identify the forbidden module; canonical rule/domain/severity and
+original target come from the supplied governed input.
+
+Only repository targets with an existing path and non-empty canonical domain
+source tree are supported. Missing roots, unreadable files, invalid syntax or
+encoding, invalid relative imports escaping the package, and symbolic links in
+the inspected tree SHALL yield ERROR, not an empty PASS. Resolve the target root
+once and reject symbolic links in its source-root components and descendants;
+never silently follow a source link or skip a subtree. Do not execute subprocesses
+or read other repository trees as fallbacks.
+
+A reliable scan produces PASS with zero findings or FAIL with all findings.
+Produce one canonical ARCHITECTURE evidence record with the exact target and
+revision, rule and requirement IDs, source `quality.architecture`, tool
+`python.ast`, and Python version. Metadata records the explicit source root,
+forbidden prefixes, inspected-file count, and violation count. Each finding
+references that evidence. Use injected finding/evidence ID factories, an aware
+clock, and a monotonic duration clock, following existing executor conventions.
+On scan failure produce one ERROR evidence, an explicit diagnostic and error
+kind, and no misleading partial findings or successful-file counts.
+
+### Validation and Boundary
+
+Verify compliant and violating source fixtures, all import forms, exact prefix
+matching, source encoding, deterministic order, finding/evidence linkage,
+missing/empty/malformed/unreadable/symlink sources, and independent target/cwd.
+Verify profile version/check-order changes, exact bootstrap composition, and
+preservation of plugin/documentation behavior. Run existing Quality/CI tests,
+Ruff, MyPy, and the actual committed repository scan. This runtime is observation
+only and does not implement Phase 15 gate evaluation or Phase 16 enforcement.
+
+---
+## Phase 14 Initial Runtime Evidence
+
+The initial architecture rule is implemented in
+`f8b9da164684ad3ccffbcd106e0d63b4a634cfe4`. Its focused Quality/CI regression
+scope passed 678 tests, Ruff, and MyPy on all eight changed Python files.
+The real repository domain scan inspected 100 Python files and produced PASS,
+zero findings, and canonical ARCHITECTURE evidence. This closes the initial
+Phase 14 static-boundary slice only; it does not claim dynamic import analysis
+or every broader architectural invariant in the conceptual roadmap.
+
+## Phase 15 Initial Merge Observation Contract
+
+Freeze this contract before introducing gate models or evaluation. Authority is
+`15-Quality-Gates.md`, especially Policy Separation, Assessment-Driven Gates,
+Unknown Is Not Pass, Gate Freshness, Gate Explainability, and Observe Mode.
+The initial gate is `QLT-GATE-MERGE-001`, policy version `1.0.0`, exclusively
+in OBSERVE mode. It reports a hypothetical progression decision and never
+prevents progression. There is no enforcement switch, override, exception,
+branch-protection change, release decision, or automatic severity threshold.
+
+### Domain Models and Explicit Policy
+
+Introduce immutable QualityGateId, GateDecision, QualityGatePolicy,
+QualityGateCondition, and QualityGate domain values, with validated identifiers,
+non-empty strings, typed immutable collections, and aware evaluation timestamps.
+The initial GateDecision vocabulary is PASS, FAIL, ERROR. CONDITIONAL and
+NOT_APPLICABLE are deferred until their supporting policies exist.
+
+QualityGatePolicy contains the stable gate identity, policy version, authority,
+canonical QualityProfile, accepted check statuses, and accepted assessment
+states. Its reference is `gate_id@version`. Positive accepted statuses can only
+be PASS or WARNING; positive assessment states can only be PASS or
+PASS_WITH_WARNINGS. Empty/duplicate accepted collections and a profile without
+required checks are invalid. OBSERVE is the only supported mode.
+
+The application-owned initial policy references the active repository profile
+1.1.0. It explicitly accepts only PASS for each required check and accepts
+assessment states PASS and PASS_WITH_WARNINGS. Policy configuration remains
+separate from its evaluator; plugin and documentation profiles are not assigned
+a merge gate by this initial policy.
+
+QualityGate retains id, original target, exact revision, policy reference,
+assessment_id (nullable only for unavailable input), decision, blocking_conditions,
+and evaluated_at. Mode is OBSERVE and prevents_progression is always false.
+A condition retains a code, explanation, optional check_id, and canonical
+finding/rule/evidence identifiers. PASS requires no conditions; FAIL or ERROR
+requires at least one. This describes would-block conditions without granting
+this observer enforcement authority.
+
+### Canonical Input Evaluation
+
+An application service evaluates an explicit policy, explicit target, and
+QualityAssessmentExecutionResult (or missing input). It consumes the retained
+assessment and normalized checks once, without rerunning tools or reaggregating
+an alternative assessment. The evaluator receives an injected aware clock.
+Equivalent inputs, policy, and clock produce equal immutable results.
+
+Before a positive decision, require the policy's target type, known revision,
+matching assessment target/revision/profile, assessment time no later than
+evaluation, exact required check identities/order, and non-empty evidence for
+every required check. Finding/evidence targets and supplied revisions must
+match; assessment identifier sets must match retained details; finding evidence
+references must resolve. Repeated identifiers must have identical content;
+conflicting duplicate identities are invalid. Missing or inconsistent inputs
+produce ERROR with explicit conditions. They never become PASS.
+
+Decision precedence is:
+
+1. Missing/inconsistent inputs, any required ERROR/UNKNOWN/SKIPPED check, or
+   ERROR/SKIPPED assessment: ERROR, while retaining actionable failed-check
+   explanations when available.
+2. A reliable required check outside the policy's accepted statuses: FAIL.
+   In particular, a canonical FAIL check with retained evidence yields a
+   would-fail condition even when the Phase 10 assessment is UNKNOWN because
+   no blocking finding classification was supplied. The original assessment
+   stays UNKNOWN; the gate does not mutate or replace it.
+3. A canonical FAIL assessment/state: FAIL with its assessment reference and
+   retained finding/rule/evidence identifiers.
+4. Remaining UNKNOWN or inconsistent assessment status/state: ERROR.
+5. Accepted assessment state with all required checks accepted: PASS.
+
+Accepted assessment combinations are PASS/PASS and WARNING/PASS_WITH_WARNINGS.
+Each failed check condition identifies its check, findings, rules, and evidence.
+An evidence-backed failure without findings is still explainable by its check
+and evidence. Severity is never used to invent blocking findings. The initial
+policy has no age limit or historical baseline: freshness is exact revision,
+explicit source validation by the caller, and non-future assessment time.
+
+### Local and CI Observation Output
+
+Keep the three public Quality CLI contracts and Quality JSON report schema
+1.0.0 unchanged. After accepting the canonical report from its single CLI run,
+the existing CI adapter calls the application evaluator with the explicit
+initial policy and checked target. It also evaluates missing input as ERROR
+when report acquisition failed. No second Quality execution is permitted.
+
+Write a separate UTF-8 `gate-observation.json` with schema_version 1.0.0 and a
+`gate` object containing id, target (the existing target field representation),
+revision, policy, assessment_id, decision, mode, prevents_progression,
+blocking_conditions, and evaluated_at. Condition fields are code, message,
+check_id, finding_ids, rule_ids, and evidence_ids; nullable fields are present.
+A CLI rendering adapter owns this serialization, not domain or CI business logic.
+
+The bounded CI summary includes the policy, OBSERVE mode, would-pass/would-fail
+or evaluation-error label, and condition references, with the same escaping and
+size limits. The workflow's existing whole-directory artifact upload preserves
+the new file. Gate decisions, including ERROR, are observational and do not
+replace canonical CLI/adapter exit codes. Failure to produce the promised gate
+artifact is an automation error (adapter exit 2) with an explicit diagnostic.
+
+### Validation and Actual Completion Limits
+
+Verify model invariants, explicit policy, all decision branches and precedence,
+missing/stale/ambiguous evidence, target/profile/revision consistency, clock
+validation, warning policy behavior, deterministic explanation, and immutable
+inputs. Verify JSON fields, escaping, single CLI execution, preserved native
+exit codes, new artifact retention, and output-failure handling. Replace the
+historical architecture test forbidding a QualityGate model with a Phase 15
+positive model/boundary assertion; retain all dependency direction protections.
+Run the full clean-checkout Quality/CI reproduction after local commit.
+
+Local implementation can close the gate model and deterministic evaluation
+items. Real PR observations, false-positive feedback, reliability metrics, and
+an elapsed observation period remain unfulfilled until remote use. Phase 16
+requires those observations plus governance approval. A local implementation
+and planned review SHALL NOT be represented as those approvals or as completed
+enforcement. Prepare the local review dossier at this boundary.
+
+---
+## Local Review Handoff — Phases 12 through 15
+
+The local implementation checkpoint for review is
+`fa64af399109072f9b3503142a64d64e7d1e6aaf` on
+`feature/quality-runtime-implementation`, verified on 2026-09-03.
+The initial Phase 12 CLI runtime, Phase 13 structured reports/CI adapter,
+Phase 14 domain-boundary check, and Phase 15 observation evaluator are implemented.
+Earlier exclusions describe their original slices; later frozen contracts above
+explicitly authorize the structured report, profile evolution, and gate observer.
+
+### Complete Clean-Checkout Reproduction
+
+The public CLI was invoked once through the CI adapter in a fresh checkout of
+that exact revision. Package imports were verified against that checkout, and
+Git source cleanliness/revision were checked before and after execution.
+
+| Result | Observed outcome |
+| --- | --- |
+| Ruff | PASS, zero findings |
+| MyPy | PASS, zero findings |
+| Pytest | 2,746 passed; zero failed, skipped, or errored |
+| Domain architecture | PASS; 105 files inspected, zero findings |
+| Repository documentation | FAIL; 278 pre-existing findings |
+| Canonical assessment | UNKNOWN / UNKNOWN |
+| Gate policy | QLT-GATE-MERGE-001@1.0.0 |
+| Gate decision | FAIL in OBSERVE mode; prevents_progression=false |
+| Gate explanation | QLT-CHECK-DOC not accepted; references all 278 findings |
+| CLI / adapter exits | 2 / 2 |
+| Report accepted / adapter error | true / null |
+
+The retained artifacts are quality-report.json, gate-observation.json,
+execution.json, stdout.log, stderr.log, and quality-summary.md. The bounded
+summary is 28,393 bytes. The final gate implementation also passed 748 focused
+Quality/CI tests, Ruff, and MyPy on all 16 changed files before commit.
+The documentation report preserves existing findings; no baseline suppression,
+assertion weakening, or successful gate claim was used to obtain this result.
+
+### Remaining Lifecycle Preconditions
+
+Completed Phase 15 checklist items below refer to locally implemented and
+verified behavior. Real PR/main workflow execution, actionable remote summary
+publication, false-positive feedback, reliability measurements, and an elapsed
+observation period remain open. Phase 13 remote exit criteria and Phase 15
+reliability completion are therefore not claimed.
+
+Phase 16 enforcement SHALL wait for its actual preconditions and governance
+approval. Later roadmap phases are not declared implemented or validated by
+this handoff. No remote push, merge, release, branch-protection change, or
+communication to an external reviewer was performed. The review dossier is
+prepared for the user to review with Claude before any such next step.
+
+This documentary handoff does not change runtime code, tests, or the observed
+set of documentation violations. Its evidence remains explicitly bound to the
+runtime checkpoint above and SHALL NOT be reused as a gate PASS for a different
+revision.
+
+## Independent Review Disposition — Phases 12 through 15
+
+The independent static review supplied for checkpoint
+`2b431a323c0140709cb9426b1bf9e04426dceb4c` was verified against the canonical
+contracts, implementation, tests, Git history, and retained observation
+artifacts. The review package is available for this corrected handoff, although
+the reviewer did not have it while preparing the original review. Its statement
+that no commands were rerun remains a limitation of that review, not of the
+implementation evidence or the corrected reproduction.
+
+Disposition of every actionable and optional review observation:
+
+| Review item | Disposition | Repository evidence and action |
+| --- | --- | --- |
+| P2 — MyPy evidence has `revision: null` | Unsupported as a defect; retained as deferred evidence-freshness work | Phase 10 explicitly preserves `QualityEvidence.revision = None`, and Phase 3 revision-awareness remains open. The observed repository report has a canonical revision-bearing target for every evidence item; Ruff, MyPy, and Pytest evidence use `None`, while Documentation and Architecture evidence carry the revision. Phase 13 requires any supplied evidence revision to agree with the target. Changing MyPy alone would create an inconsistent, unguided adapter exception, so no runtime change was made. |
+| P3 — successful atomic output still enters temporary cleanup | Confirmed and corrected | Commit `f00992a791f4ddca6e925f3d03b1a49f6e01c511` limits unlinking to the failure path. Existing success/failure preservation tests remain, and a regression proves that a temporary pathname recreated after successful replacement is not removed. |
+| P4 — post-execution clean-source check converts tool writes to adapter ERROR | Unsupported as a Phase 13 correction; lifecycle risk retained | The frozen Phase 13 contract expressly requires tracked and non-ignored untracked files to be rejected before execution and the same clean source to be verified afterward. `test_source_change_during_execution_rejects_the_report` protects that behavior. A profile tool that dirties the checkout compromises reproducibility and correctly yields an automation ERROR under the current contract. Isolation or a changed cleanliness policy requires separate governance and observation evidence before Phase 16; the suggested assertion weakening was not applied. |
+| P6 — explicit profile field in gate JSON | Unsupported for schema 1.0.0; optional versioned evolution | The frozen Phase 15 schema enumerates the gate fields and does not include `profile`. The accepted Quality report and CI summary expose the assessment profile, and the gate policy pins that profile before evaluation. Adding a field without a versioned contract would silently change a public schema, so no field was added. |
+| Generic rejection of every non-finite future JSON number | Already resolved for schema 1.0.0 | `duration_seconds` is the schema's numeric field and is checked with `math.isfinite`; `test_numeric_overflow_is_rejected` covers `1e999`. Future numeric fields must add validation with their versioned schema rather than speculative generic handling now. |
+| Duplicate repository-scope validation call | Unsupported as a defect | Constructor validation rejects invalid executor configuration early; `DocumentationValidator.validate_repository` also protects its public call boundary. Removing either check would weaken a distinct boundary for negligible benefit. |
+| Literal expected JSON bytes instead of `json.dumps(expected, ...)` | Unsupported as a necessary correction | The test independently constructs and compares the complete semantic payload before checking exact standard-library serialization, Unicode, escaping, final newline, BOM absence, and deterministic repeat rendering. A large duplicated literal would not add material contract coverage. |
+| Family test typing edits in `beb7306` | Confirmed scope note; no correction required | Three Family test fixtures received annotation-only changes as part of the full-repository MyPy reconciliation. They do not alter production behavior or assertions and are retained as disclosed cross-scope validation maintenance. |
+
+The review's remaining limitations are accepted: no remote workflow run or
+elapsed observation period has occurred. This disposition does not authorize a
+push, merge, branch-protection change, external notification, or Phase 16
+enforcement.
+
+---
 # Phase 14 — Architecture Quality Checks
 
 ## Objective
@@ -1424,13 +5022,13 @@ Official plugin structure respected
 Checklist:
 
 ```text id="impl-architecture-rule-checklist"
-[ ] Identify authoritative architecture decisions
-[ ] Define first architecture requirements
-[ ] Implement deterministic validator
-[ ] Produce architecture findings
-[ ] Produce evidence
-[ ] Add compliant fixtures
-[ ] Add violating fixtures
+[x] Identify authoritative architecture decisions
+[x] Define first architecture requirements
+[x] Implement deterministic validator
+[x] Produce architecture findings
+[x] Produce evidence
+[x] Add compliant fixtures
+[x] Add violating fixtures
 ```
 
 ---
@@ -1438,10 +5036,10 @@ Checklist:
 # Architecture Rule Governance
 
 ```text id="impl-architecture-governance"
-[ ] Rule linked to ADR / architecture authority
-[ ] Rule severity defined
-[ ] Rule owner defined
-[ ] Rule rollout starts non-blocking if necessary
+[x] Rule linked to ADR / architecture authority
+[x] Rule severity defined
+[x] Rule owner defined
+[x] Rule rollout starts non-blocking if necessary
 ```
 
 ---
@@ -1449,8 +5047,8 @@ Checklist:
 # Phase 14 Exit Criteria
 
 ```text id="impl-phase14-exit"
-[ ] Initial architecture invariants machine-verifiable
-[ ] No undocumented architecture policy introduced
+[x] Initial architecture invariants machine-verifiable
+[x] No undocumented architecture policy introduced
 ```
 
 ---
@@ -1481,11 +5079,11 @@ evaluated_at
 Checklist:
 
 ```text id="impl-gate-model"
-[ ] Define QualityGate
-[ ] Define GateDecision
-[ ] Define policy representation
-[ ] Define decision explanation
-[ ] Add tests
+[x] Define QualityGate
+[x] Define GateDecision
+[x] Define policy representation
+[x] Define decision explanation
+[x] Add tests
 ```
 
 ---
@@ -1506,8 +5104,8 @@ Initially in observation mode.
 
 ```text id="impl-gate-observe"
 [ ] Gate evaluates PR quality
-[ ] Gate reports would-pass / would-fail
-[ ] Gate does not block merge
+[x] Gate reports would-pass / would-fail
+[x] Gate does not block merge
 [ ] Collect false-positive feedback
 [ ] Collect execution reliability metrics
 ```
@@ -1517,10 +5115,10 @@ Initially in observation mode.
 # Gate Explainability
 
 ```text id="impl-gate-explainability"
-[ ] Gate identifies blocking assessment
-[ ] Gate identifies blocking finding
-[ ] Gate identifies rule
-[ ] Gate identifies evidence
+[x] Gate identifies blocking assessment
+[x] Gate identifies blocking finding
+[x] Gate identifies rule
+[x] Gate identifies evidence
 ```
 
 ---
@@ -1528,8 +5126,8 @@ Initially in observation mode.
 # Phase 15 Exit Criteria
 
 ```text id="impl-phase15-exit"
-[ ] Gate decisions deterministic
-[ ] Gate diagnostics useful
+[x] Gate decisions deterministic
+[x] Gate diagnostics useful
 [ ] Reliability demonstrated before enforcement
 ```
 
@@ -1548,7 +5146,7 @@ Promote trusted merge quality policy into enforcement.
 ```text id="impl-merge-gate-preconditions"
 [ ] Required checks stable
 [ ] False-positive rate acceptable
-[ ] Local reproduction available
+[x] Local reproduction available
 [ ] Assessment semantics stable
 [ ] Gate observation period complete
 [ ] Governance approval obtained
@@ -3159,3 +6757,419 @@ Improve
 ```
 
 Through this sequence, EPIC-QLT-001 can evolve from a normative engineering framework into a practical, reliable, explainable, and continuously improving FamilyOS quality platform without sacrificing simplicity, maintainability, or architectural integrity.
+
+---
+
+## Phase 2 Runtime Contract Reconciliation
+
+The following decisions are prerequisites for implementation of the initial
+Core Quality Domain Models:
+
+- [x] Canonical Quality package architecture established.
+- [x] Core Quality domain remains independent from Ruff, MyPy, Pytest, and CI
+      providers.
+- [x] `QualitySeverity` vocabulary reconciled as `INFO`, `LOW`, `MEDIUM`,
+      `HIGH`, `CRITICAL`.
+- [x] `QualityStatus` vocabulary reconciled as `PASS`, `WARNING`, `FAIL`,
+      `ERROR`, `SKIPPED`, `UNKNOWN`.
+- [x] `WARNING` selected as the canonical runtime status spelling.
+- [x] Existing semantically distinct `WARN` modes/phases are not globally
+      renamed.
+- [x] `ERROR` remains distinct from `FAIL`.
+- [x] `UNKNOWN` cannot silently become `PASS`.
+- [x] `SKIPPED` remains distinct from `UNKNOWN`.
+- [x] Runtime Quality identifiers remain compatible with the FamilyOS
+      identifier specification and existing `QLT-*` namespaces.
+- [x] Phase 2 does not authorize Quality Evidence implementation.
+- [x] Phase 2 does not authorize tool adapters, Quality CLI, CI integration, or
+      Quality gates.
+
+This reconciliation authorizes implementation of the Core Quality Domain
+Models only after the resulting documentation diff is reviewed and accepted.
+
+## Phase 2 Core Model Shape Reconciliation
+
+The Phase 2 implementation contract was reconciled before runtime model
+implementation.
+
+Contract decisions:
+
+- [x] Quality runtime identifier categories preserve `SPEC-0002` stable-boundary
+      validation without inventing a narrower suffix taxonomy.
+- [x] `QualityTarget` initial runtime fields and reproducibility boundary are
+      defined.
+- [x] `QualityFinding` required fields and the Phase 2 opaque Evidence-reference
+      boundary are defined without implementing `QualityEvidence`.
+- [x] `QualityRequirement` authority, mandatory, applicability, and verification
+      representation is defined for the initial runtime.
+- [x] `QualityRule` requirement linkage and opaque executor-reference boundary
+      are defined without implementing the Phase 4 Quality Executor port.
+- [x] Phase 2 models remain tool-independent and do not authorize adapters,
+      Quality CLI, CI integration, Quality gates, profiles, or assessment
+      execution.
+
+These reconciliation records do not close the original Phase 2 implementation
+checklist. `Define QualitySeverity`, `Define QualityStatus`, `Define initial
+domains`, `Define QualityTarget`, `Define QualityFinding`,
+`Define QualityRequirement`, `Define QualityRule`, validation/testing items,
+and the Phase 2 exit criteria remain open until their corresponding runtime
+implementation and verification evidence exist.
+
+Phase 3 `QualityEvidence` implementation remains explicitly open.
+
+## Phase 11 Profile-to-Assessment Integration Contract
+
+This contract freezes the initial Phase 11 boundary by which a resolved canonical
+`QualityProfile` participates in Quality assessment orchestration. It does not
+constitute implementation evidence and does not, by itself, close any remaining
+Phase 11 checklist item.
+
+### Responsibility Boundary
+
+Phase 11 SHALL preserve the Phase 10 `QualityAssessmentService` as the canonical
+assessment aggregation primitive. Profile resolution and profile-derived
+assessment inputs SHALL be orchestrated above that service rather than silently
+mixing profile discovery, provider execution, gate evaluation, risk
+interpretation, and assessment aggregation into one responsibility.
+
+The integration SHALL consume a canonical `QualityTarget`, a governed
+`QualityProfileResolver`, normalized canonical `QualityCheckResult` values, and
+the explicit blocking classification required by the Phase 10 assessment
+contract.
+
+### Profile Resolution
+
+The integration SHALL resolve the applicable canonical `QualityProfile` through
+the governed `QualityProfileResolver`.
+
+The integration SHALL NOT:
+
+- select a default profile when resolution fails;
+- select a preferred or latest profile from an ambiguous result;
+- discover profiles from undocumented environment, filesystem, repository,
+  lifecycle, risk, plugin-classification, or provider state;
+- reinterpret provider-specific output to determine profile applicability.
+
+Zero applicable profiles and ambiguous profile resolution SHALL remain explicit
+failures according to the frozen Phase 11 Profile Resolution Contract.
+
+### Assessment Profile Reference
+
+The resolved profile SHALL supply the assessment profile reference.
+
+The value passed to `QualityAssessment.profile` SHALL be the stable canonical
+`QualityProfile.reference`, containing both profile identity and explicit
+profile version.
+
+For example:
+
+```text
+QLT-PROFILE-REPOSITORY@1
+```
+
+The integration SHALL NOT embed a mutable `QualityProfile` object directly into
+`QualityAssessment`.
+
+Changing the resolved profile version SHALL be capable of producing a distinct
+assessment profile reference even when the target revision and normalized check
+results are otherwise unchanged.
+
+### Required Checks
+
+The resolved profile SHALL be the authoritative Phase 11 source of required
+check identifiers for assessment orchestration.
+
+The integration SHALL derive:
+
+```text
+required_check_ids = resolved_profile.required_checks
+```
+
+and SHALL pass those canonical `QualityCheckId` values to the existing Phase 10
+assessment aggregation boundary.
+
+The integration SHALL NOT maintain an undocumented duplicate list of required
+checks, invent a global Quality check catalog, reinterpret provider-native check
+identities, or silently add/remove required checks.
+
+The existing Phase 11 "Unknown check rejected" checklist requirement remains
+governed by the separately frozen authority boundary: no global
+`QualityCheckId` catalog currently exists, so absence from an invented catalog
+SHALL NOT be treated as invalidity.
+
+### Blocking Classification and Severity Policy
+
+The Phase 10 assessment contract requires explicit blocking classification
+through `blocking_finding_ids`. That explicit input SHALL remain authoritative
+for this initial Phase 11 integration slice.
+
+Although `QualityProfile.severity_policy` is canonical governed profile
+configuration, this integration SHALL NOT automatically translate finding
+severity into blocking classification.
+
+In particular, the implementation SHALL NOT assume that `HIGH`, `CRITICAL`, or
+any other `QualitySeverity` is blocking unless an explicitly governed policy
+boundary authorizes that interpretation.
+
+This preserves the documented separation between profile expectations,
+assessment conclusions, and lifecycle gate decisions. Gate evaluation, risk
+acceptance, exception policy, lifecycle transition policy, and release
+authorization remain deferred to their dedicated later phases.
+
+### Assessment Aggregation
+
+After profile resolution, the integration SHALL delegate assessment aggregation
+to the existing `QualityAssessmentService`.
+
+At minimum, the delegated inputs SHALL preserve:
+
+```text
+profile            = resolved_profile.reference
+required_check_ids = resolved_profile.required_checks
+```
+
+along with the canonical target, normalized check results, explicit
+`blocking_finding_ids`, assessment identity, and creation time required by the
+Phase 10 service.
+
+The integration SHALL NOT duplicate or replace the Phase 10 aggregation
+precedence for required `ERROR`, missing/unknown/skipped required results,
+explicit blocking findings, non-blocking required `FAIL`, warning-only required
+sets, all-pass required sets, or non-required result traceability.
+
+### Determinism and Traceability
+
+Equivalent governed profile sets, equivalent targets, equivalent normalized
+check results, and equivalent explicit blocking inputs SHALL produce equivalent
+profile-derived assessment inputs independent of profile registration order.
+
+The resulting assessment SHALL preserve:
+
+- canonical target identity;
+- target revision;
+- stable profile identity and version through `QualityProfile.reference`;
+- normalized evidence identifiers;
+- normalized finding identifiers;
+- the existing Phase 10 assessment status and quality-state semantics.
+
+No undocumented environment state may participate in the result.
+
+### Initial Runtime Shape
+
+The initial implementation SHOULD introduce a narrow application-layer
+orchestration boundary rather than widening the domain model or introducing a
+later-phase gate abstraction.
+
+That orchestration MAY be represented by a dedicated application service that:
+
+1. resolves exactly one applicable `QualityProfile`;
+2. derives the stable profile reference;
+3. derives required canonical check identifiers;
+4. delegates aggregation to `QualityAssessmentService`;
+5. returns the resulting canonical `QualityAssessment`.
+
+The existing lower-level `QualityAssessmentService.assess(...)` contract MAY
+remain available as the Phase 10 aggregation primitive.
+
+### Required Implementation Evidence
+
+Before the Phase 11 assessment-integration checklist item may be closed,
+implementation evidence SHALL demonstrate at minimum:
+
+- exactly one applicable governed profile is resolved;
+- the assessment stores `resolved_profile.reference`;
+- profile identity and version are both traceable in that reference;
+- `resolved_profile.required_checks` supplies the required assessment check set;
+- a changed profile version can produce a changed assessment profile reference;
+- unresolved profile resolution fails explicitly;
+- ambiguous profile resolution fails explicitly;
+- registration order does not alter deterministic resolution behavior;
+- explicit Phase 10 blocking classification remains preserved;
+- profile `severity_policy` is not silently converted into blocking findings;
+- Phase 10 assessment aggregation semantics remain regression-compatible;
+- no global Quality check catalog is invented;
+- no default profile is introduced;
+- no provider-native result reinterpretation is introduced;
+- `QualityGate` remains unimplemented;
+- Quality CLI remains unimplemented.
+
+### Deferred Boundaries
+
+This contract does not authorize implementation of:
+
+- profile inheritance or composition;
+- profile precedence or conflict resolution;
+- automatic profile assignment;
+- repository-policy discovery;
+- lifecycle-stage profile policy;
+- target criticality inference;
+- risk-driven profile selection;
+- severity-to-blocking inference beyond a separately governed contract;
+- gate evaluation;
+- exception or waiver policy;
+- risk acceptance;
+- merge authorization;
+- release authorization;
+- Quality CLI behavior;
+- Quality observability or metrics.
+
+Those concerns remain deferred to their explicit Phase 11 follow-up slices or
+dedicated later Quality Framework phases.
+
+---
+
+### Phase 12 `quality report` CLI Adapter Contract
+
+The `quality report` command SHALL expose the Phase 12 reporting adapter for stable presentation of canonical Quality assessment information. This adapter is an interface-layer concern and SHALL NOT introduce a new `QualityReport` domain model, persistence model, history model, reporting repository, or later Quality Framework policy.
+
+#### Command Surface
+
+The command SHALL be registered as `familyos quality report`.
+
+It SHALL accept the same explicit canonical target inputs already authorized for `quality check` and `quality assess`: `--target-type` (required), `--identifier` (required), `--path` (required), `--revision` (optional), and `--version` (optional).
+
+The CLI SHALL map those values directly into exactly one canonical `QualityTarget`. It SHALL NOT infer repository state, profile identity, revision, version, target type, Quality severity, blocking state, gate policy, or later lifecycle semantics.
+
+#### Application Boundary
+
+The initial Phase 12 `quality report` adapter SHALL reuse `CommandContext().quality_assessment.execute(target)` and SHALL consume the returned canonical `QualityAssessment`.
+
+The command SHALL NOT directly compose or invoke lower-level execution, profile-resolution, assessment aggregation, identity generation, clock, executor, rule, or binding components where the existing assessment execution boundary is available.
+
+Phase 12 SHALL NOT introduce a new `QualityReport`, `QualityReportId`, `QualityReportService`, report repository, or report persistence abstraction solely to satisfy this CLI slice.
+
+#### Human-Readable Report Rendering
+
+The initial Phase 12 report SHALL support deterministic human-readable output.
+
+The renderer SHALL consume only canonical information already owned by `QualityAssessment` and its canonical `QualityTarget`. It MAY present assessment identifier, target type, target identifier, target path, target revision when present, target version when present, profile reference, canonical `QualityStatus`, canonical `QualityAssessmentState`, evidence identifiers, finding identifiers, and creation timestamp.
+
+The report renderer SHALL preserve stable field meaning and deterministic ordering. It SHALL NOT recalculate assessment status, quality state, profile applicability, required checks, blocking classification, or Quality Gate semantics.
+
+#### Structured Output Boundary
+
+Structured output is NOT part of the initial `quality report` runtime slice.
+
+The existence of `QualityAssessment.to_dict()` does not, by itself, establish a public CLI serialization contract.
+
+Phase 12 MAY add structured output only under separately frozen adapter authority defining at minimum the format option, supported format values, stable field semantics, deterministic serialization, error behavior, and test obligations.
+
+The initial implementation therefore SHALL NOT add `--json`, `--format`, or another structured-output switch.
+
+#### Exit-Code Policy
+
+`quality report` SHALL apply the same frozen Phase 12 Quality-semantic exit policy to the canonical assessment it renders: PASS or PASS_WITH_WARNINGS -> 0; FAIL -> 1; UNKNOWN -> 2; assessment status ERROR or UNKNOWN -> 2.
+
+Exit code `2` SHALL take precedence over ordinary Quality failure when the assessment cannot represent a reliable Quality conclusion.
+
+Expected target-construction or assessment-execution failures represented by `TypeError` or `ValueError` SHALL be adapted to the existing CLI error output mechanism and exit `2`. A report rendering failure SHALL return exit `2`. Native tool or provider exit codes SHALL NOT leak through as FamilyOS Quality CLI exit codes.
+
+#### Rendering Architecture
+
+Human-readable report rendering SHALL remain in the CLI/interface layer. The adapter MAY use a dedicated private report-rendering function in the Quality command module for this initial slice. That renderer SHALL remain presentation logic only and SHALL NOT become a Quality business-semantics authority.
+
+No infrastructure dependency may be introduced into the Quality application package for report rendering.
+
+#### Required Runtime Evidence
+
+Runtime implementation SHALL verify at minimum: `quality report --help`; explicit target options; exact `QualityTarget` construction; delegation through `CommandContext.quality_assessment`; canonical assessment rendering without semantic recomputation; deterministic field order; optional revision/version handling; deterministic evidence/finding rendering; exit 0/1/2 policy; TypeError/ValueError adaptation; absence of structured-output options; absence of new QualityReport domain/application persistence models; and green Quality CLI/application/bootstrap/context/architecture regressions.
+
+#### Explicit Non-Goals
+
+This adapter SHALL NOT introduce a `QualityReport` domain model, report identifiers, report persistence/history, report repositories, JSON or another structured CLI mode in this initial slice, arbitrary dataclass serialization as a public CLI contract, Quality Gate evaluation, risk, debt, compliance ownership, exception, CI/merge/release policy, observability, metrics, events, notifications, governance registries, lifecycle automation, incremental/distributed execution, intelligence, recommendations, or AI-assisted interpretation.
+
+#### Adapter Implementation Gate
+
+`familyos quality report` runtime implementation MAY proceed only against the boundary frozen above.
+
+Implementation SHALL remain blocked if it requires inventing a new report domain model, adding persistence/history semantics, creating a public structured-output contract without separate authority, recomputing Quality business semantics in the CLI, or introducing behavior owned by a later Quality Framework phase.
+
+No Phase 12 checklist item is closed merely by freezing this adapter contract. Runtime behavior, rendering, exit codes, command discovery, regression evidence, and Phase 12 exit criteria remain independently open until demonstrated.
+
+---
+
+## P4 Additive Source Measurement Contract
+
+This observation slice follows the published test-only correction at
+`2e20ab7ea6e638bd49804a80365cdb232eb66574`. It implements the agreed P4
+measurement refinements; it does not approve isolation, a relaxed cleanliness
+policy, observation exit criteria, or Phase 16 enforcement.
+
+### Independent Capture and Frozen Boundaries
+
+Only steps are added to the `quality-observation` job. All four historical
+jobs, the original Quality execution/upload steps, triggers, permissions,
+and mandatory validation/build behavior remain unchanged.
+`scripts.run_quality_ci.checked_revision` keeps its strict before/after checks
+and `--untracked-files=normal`. The Quality CLI is invoked exactly once.
+`execution.json`, `quality-report.json`, and `gate-observation.json` retain
+their frozen 1.0.0 schemas and behavior.
+
+The new `scripts.capture_quality_source` transport captures:
+
+```text
+git rev-parse HEAD
+git status --porcelain=v1 --untracked-files=all
+```
+
+It records exact stdout/stderr bytes, actual return codes (null if unavailable),
+command arguments, UTC start/end timestamps, and digests. Both commands are
+attempted, with a bounded timeout. It never invokes Quality executors or reads
+the contents of modified files. Escaped representations are also emitted in
+job logs, so filenames cannot become workflow commands.
+
+The before step runs immediately before Quality. Its capture failure cannot
+prevent the canonical Quality invocation. The after step is distinct and uses
+`if: always()`, independent of an early adapter exception or failed Quality
+step. This is best effort: forced runner termination, an unavailable checkout,
+or interrupted artifact upload can still make measurements unavailable.
+
+### Additive Evidence
+
+The fresh P4 directory is
+`RUNNER_TEMP/familyos-quality-p4-GITHUB_RUN_ID-GITHUB_RUN_ATTEMPT`, disjoint from
+the checkout and the original Quality artifact directory. This preserves the
+adapter's obligation to create its own fresh directory and leave existing
+evidence untouched. An additional `always()` upload retains it as
+`familyos-quality-source-observation`, with `if-no-files-found: error`.
+No existing artifact is renamed or extended in place.
+
+New sibling files include `head-before`, `status-before`, `head-after`,
+`status-after`, corresponding `.stderr` files, phase records, context, and
+`p4-capture.json`. The latter has its own 1.0.0 schema and identifies the run,
+attempt, event, expected revision, source, environment, captured states,
+eligibility, trigger, reasons, global observation window and attribution.
+Capture identity mismatches and repeated phase writes fail without replacing
+earlier raw evidence. Missing captures are explicitly represented.
+
+The global window conservatively includes capture and CLI overhead. Validated
+report check durations and tool versions may be linked by the report's hash,
+including an explicit report-acceptance flag. Durations have no executor-start
+timestamps and SHALL NOT be converted into an exact timeline or causal claim.
+Attribution remains `unattributed`, with null tool/version/cause, until a
+separate reproduction at the same revision supplies linked evidence.
+
+### Measurement and Governance Dossier
+
+`scripts.summarize_quality_p4` consumes an explicit inventory of all started
+runs/attempts, rejects duplicates, verifies raw capture hashes and identities,
+and recomputes states rather than trusting declared counters.
+Eligible observations have valid before/after captures and the expected clean
+source before execution. A changed HEAD or nonempty after status is a trigger.
+Pre-existing changes are counted separately. Missing, invalid, interrupted or
+lost measurements SHALL NOT be counted as clean or assigned to an executor.
+
+The dossier records trigger/eligible frequency, eligible/started coverage,
+unavailable measurements and reasons, pre-existing changes, unattributed
+incidents, and the tool/version/cause attribution table. A zero eligible
+denominator yields a null frequency, not a zero-percent incident rate.
+The dossier compares worktree/disposable-copy isolation with a separately
+governed cleanliness-policy change, preserving the original failure evidence.
+The responsible human authority owns that decision and observation exit
+criteria; measurement alone grants no enforcement authority.
+
+A real fork PR, successful remote P4 capture/upload, representative sampling,
+the documentation-authority audit and governance approval remain distinct
+evidence requirements. Existing pre-instrumentation runs remain unavailable
+for the P4 frequency denominator, even when adapter acceptance implies a
+successful cleanliness check.
