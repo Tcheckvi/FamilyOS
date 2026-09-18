@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 10 Regression Testing
+## 10 Regression Testing
 
-## Overview
+### Overview
 
 Regression testing protects FamilyOS against the reintroduction of previously detected defects and unintended behavioral changes.
 
@@ -28,7 +28,7 @@ Regression testing is therefore a cross-cutting responsibility across the comple
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of regression testing is to preserve known-good behavior throughout platform evolution.
 
@@ -47,11 +47,11 @@ Regression testing converts past failures into permanent engineering knowledge.
 
 ---
 
-# Regression Testing Principles
+## Regression Testing Principles
 
 FamilyOS regression testing follows several core principles.
 
-## Every Reproduced Defect Should Become Knowledge
+### Every Reproduced Defect Should Become Knowledge
 
 When a defect can be reliably reproduced, the conditions that caused it should normally be captured in an automated test.
 
@@ -59,7 +59,7 @@ This transforms a defect from a one-time incident into a protected behavior.
 
 ---
 
-## Test at the Lowest Effective Level
+### Test at the Lowest Effective Level
 
 A regression test should be implemented at the lowest testing level capable of reliably reproducing the defect.
 
@@ -87,7 +87,7 @@ Higher-level regression tests should be used only when the defect genuinely depe
 
 ---
 
-## Reproduce Before Fixing
+### Reproduce Before Fixing
 
 When practical, the regression test should be written before or alongside the defect fix.
 
@@ -116,7 +116,7 @@ This provides evidence that the test actually protects the defect.
 
 ---
 
-## Protect Behavior, Not Accidental Implementation
+### Protect Behavior, Not Accidental Implementation
 
 Regression tests should preserve the correct externally meaningful behavior.
 
@@ -126,7 +126,7 @@ A refactoring that preserves behavior should not require unrelated regression te
 
 ---
 
-## Keep Regression Tests Deterministic
+### Keep Regression Tests Deterministic
 
 A regression test must reproduce the relevant behavior reliably.
 
@@ -134,7 +134,7 @@ Tests that fail intermittently cannot provide dependable regression protection.
 
 ---
 
-# Regression Sources
+## Regression Sources
 
 Regression tests may originate from many sources.
 
@@ -156,7 +156,7 @@ Every confirmed defect should trigger consideration of appropriate regression co
 
 ---
 
-# Defect Lifecycle Integration
+## Defect Lifecycle Integration
 
 Regression testing should be integrated into the defect resolution lifecycle.
 
@@ -193,7 +193,7 @@ Exceptions should be justified.
 
 ---
 
-# Regression Test Classification
+## Regression Test Classification
 
 Regression describes purpose rather than execution scope.
 
@@ -213,7 +213,7 @@ This allows FamilyOS to preserve the existing testing architecture while still i
 
 ---
 
-# Unit Regression Testing
+## Unit Regression Testing
 
 Unit regression tests are preferred for isolated defects.
 
@@ -240,7 +240,7 @@ The test should reproduce the original failure condition as directly as possible
 
 ---
 
-# Integration Regression Testing
+## Integration Regression Testing
 
 Integration regression tests are appropriate when a defect depends on collaboration between components.
 
@@ -257,7 +257,7 @@ The test should remain focused on the failing integration boundary.
 
 ---
 
-# Contract Regression Testing
+## Contract Regression Testing
 
 Contract regression tests should be added when a defect reveals a missing or incorrectly enforced compatibility rule.
 
@@ -273,7 +273,7 @@ The contract suite should be extended so every future provider or implementation
 
 ---
 
-# Functional Regression Testing
+## Functional Regression Testing
 
 Functional regression tests protect complete user-visible or business behaviors.
 
@@ -289,7 +289,7 @@ Functional regression tests should validate the observable behavior affected by 
 
 ---
 
-# System Regression Testing
+## System Regression Testing
 
 System regression tests are appropriate when a defect requires the assembled platform to reproduce.
 
@@ -306,7 +306,7 @@ System regression tests should be used sparingly because they generally cost mor
 
 ---
 
-# Regression Test Naming
+## Regression Test Naming
 
 Regression tests should describe the protected behavior.
 
@@ -338,7 +338,7 @@ The test should remain understandable even if the issue tracker is unavailable.
 
 ---
 
-# Regression Metadata
+## Regression Metadata
 
 Where useful, regression tests may include metadata linking them to their origin.
 
@@ -355,7 +355,7 @@ Metadata should support traceability without becoming required for understanding
 
 ---
 
-# Minimal Reproduction
+## Minimal Reproduction
 
 A regression test should use the smallest realistic scenario that reproduces the defect.
 
@@ -371,7 +371,7 @@ Unrelated infrastructure should be removed from the test whenever possible.
 
 ---
 
-# Boundary Conditions
+## Boundary Conditions
 
 Many regressions occur at boundary conditions.
 
@@ -392,7 +392,7 @@ Boundary defects should usually be protected through focused tests.
 
 ---
 
-# Data Regression Testing
+## Data Regression Testing
 
 Data-related defects may involve:
 
@@ -419,7 +419,7 @@ These fixtures should be minimal and intentionally maintained.
 
 ---
 
-# Migration Regression Testing
+## Migration Regression Testing
 
 Data or configuration migrations require regression protection.
 
@@ -435,7 +435,7 @@ Migration regressions are particularly important when FamilyOS introduces persis
 
 ---
 
-# Plugin Regression Testing
+## Plugin Regression Testing
 
 Plugins introduce additional regression surfaces.
 
@@ -454,7 +454,7 @@ Official plugins should preserve regression coverage for every confirmed plugin 
 
 ---
 
-# Runtime Regression Testing
+## Runtime Regression Testing
 
 The runtime is a critical integration point.
 
@@ -473,7 +473,7 @@ Runtime regressions should be captured at the narrowest reliable level.
 
 ---
 
-# CLI Regression Testing
+## CLI Regression Testing
 
 CLI regressions may affect:
 
@@ -491,7 +491,7 @@ Exact human-readable output should only be asserted when it is intentionally par
 
 ---
 
-# Event Regression Testing
+## Event Regression Testing
 
 Event-related regressions may involve:
 
@@ -506,7 +506,7 @@ Regression tests should capture the specific event behavior that failed.
 
 ---
 
-# Configuration Regression Testing
+## Configuration Regression Testing
 
 Configuration regressions frequently occur when defaults, precedence, or schemas evolve.
 
@@ -523,7 +523,7 @@ Previously supported configurations should remain testable throughout their defi
 
 ---
 
-# Compatibility Regression Testing
+## Compatibility Regression Testing
 
 Compatibility failures should result in regression protection.
 
@@ -540,7 +540,7 @@ These regression tests should usually become part of the applicable contract sui
 
 ---
 
-# Security Regression Testing
+## Security Regression Testing
 
 Confirmed security defects should receive regression tests whenever safe and technically appropriate.
 
@@ -556,7 +556,7 @@ Security regression tests must avoid introducing unsafe production artifacts or 
 
 ---
 
-# Flaky Defect Regression
+## Flaky Defect Regression
 
 When a defect originally appears intermittently, the underlying cause should be identified before permanent regression coverage is accepted.
 
@@ -566,7 +566,7 @@ The test should isolate the deterministic condition responsible for the failure 
 
 ---
 
-# Regression Test Placement
+## Regression Test Placement
 
 Regression tests should normally reside within the testing level that best represents their behavior.
 
@@ -594,7 +594,7 @@ However, creating a separate directory should not force all regression tests out
 
 ---
 
-# Recommended Classification Strategy
+## Recommended Classification Strategy
 
 FamilyOS should prefer dual classification:
 
@@ -614,7 +614,7 @@ This allows execution by testing level or regression purpose.
 
 ---
 
-# Regression Markers
+## Regression Markers
 
 Regression tests may use:
 
@@ -634,7 +634,7 @@ The exact marker configuration is governed by the FamilyOS testing toolchain.
 
 ---
 
-# Full Regression Suite
+## Full Regression Suite
 
 A full regression suite represents the collection of automated tests protecting established platform behavior.
 
@@ -660,7 +660,7 @@ In practice, the complete automated test suite acts as the primary regression sa
 
 ---
 
-# Targeted Regression Suites
+## Targeted Regression Suites
 
 For faster feedback, FamilyOS may define targeted regression suites based on changed areas.
 
@@ -676,7 +676,7 @@ Targeted execution should supplement rather than permanently replace complete re
 
 ---
 
-# Change-Based Regression Selection
+## Change-Based Regression Selection
 
 Future FamilyOS tooling may select regression tests based on changed components.
 
@@ -704,7 +704,7 @@ Impact analysis must be conservative enough not to omit critical tests.
 
 ---
 
-# Regression Testing in Continuous Integration
+## Regression Testing in Continuous Integration
 
 Regression testing is a core responsibility of CI.
 
@@ -733,7 +733,7 @@ Different pipelines may run different portions depending on context.
 
 ---
 
-# Pull Request Regression Validation
+## Pull Request Regression Validation
 
 Pull requests should execute sufficient regression coverage to detect likely unintended changes.
 
@@ -747,7 +747,7 @@ Critical functional or system tests should also run when affected.
 
 ---
 
-# Release Regression Validation
+## Release Regression Validation
 
 Release candidates require broader regression confidence.
 
@@ -763,7 +763,7 @@ A known failing regression test must not be silently ignored during release appr
 
 ---
 
-# Regression Test Failures
+## Regression Test Failures
 
 A regression test failure indicates one of several possibilities:
 
@@ -778,7 +778,7 @@ Deleting or weakening the test solely to restore a green pipeline is not accepta
 
 ---
 
-# Intentional Behavioral Changes
+## Intentional Behavioral Changes
 
 Sometimes a regression test fails because the expected behavior has intentionally changed.
 
@@ -796,7 +796,7 @@ Regression tests should evolve with intentionally changed requirements.
 
 ---
 
-# Obsolete Regression Tests
+## Obsolete Regression Tests
 
 A regression test may become obsolete when:
 
@@ -811,7 +811,7 @@ Test removal should be intentional.
 
 ---
 
-# Regression Suite Maintenance
+## Regression Suite Maintenance
 
 Regression suites must be actively maintained.
 
@@ -829,7 +829,7 @@ A regression suite that only grows without maintenance eventually becomes expens
 
 ---
 
-# Duplicate Regression Coverage
+## Duplicate Regression Coverage
 
 Multiple tests may protect the same defect at different levels.
 
@@ -843,7 +843,7 @@ Higher-level duplication should exist only when it validates meaningful broader 
 
 ---
 
-# Regression Test Performance
+## Regression Test Performance
 
 Regression suites can become large over time.
 
@@ -862,7 +862,7 @@ Performance optimization must not reduce meaningful coverage solely to improve e
 
 ---
 
-# Regression Test Reliability
+## Regression Test Reliability
 
 Regression tests must be trusted.
 
@@ -879,7 +879,7 @@ Repeatedly flaky regression tests should be treated as engineering defects.
 
 ---
 
-# Historical Fixtures
+## Historical Fixtures
 
 Some regression scenarios require historical representations.
 
@@ -897,7 +897,7 @@ They should not contain production personal data.
 
 ---
 
-# Regression Coverage
+## Regression Coverage
 
 Regression coverage cannot be measured solely through code coverage percentages.
 
@@ -916,7 +916,7 @@ Metrics should guide improvement rather than become arbitrary targets.
 
 ---
 
-# Escaped Regressions
+## Escaped Regressions
 
 An escaped regression is a previously working behavior that breaks without being detected before reaching a later environment or release.
 
@@ -932,7 +932,7 @@ The resulting improvement should strengthen the framework.
 
 ---
 
-# Root Cause and Regression Scope
+## Root Cause and Regression Scope
 
 The regression test should protect the root cause when possible, not merely the visible symptom.
 
@@ -955,7 +955,7 @@ This often produces faster and more durable protection.
 
 ---
 
-# Relationship With Unit Testing
+## Relationship With Unit Testing
 
 Unit tests form the largest and fastest portion of regression protection.
 
@@ -965,7 +965,7 @@ This provides rapid feedback during development.
 
 ---
 
-# Relationship With Integration Testing
+## Relationship With Integration Testing
 
 Integration regression tests protect failures caused by incorrect collaboration between components.
 
@@ -973,7 +973,7 @@ They should remain scoped to the affected boundary rather than unnecessarily exe
 
 ---
 
-# Relationship With Contract Testing
+## Relationship With Contract Testing
 
 Contract regression tests are essential when a defect exposes missing compatibility guarantees.
 
@@ -981,7 +981,7 @@ The relevant contract should be strengthened so future implementations cannot re
 
 ---
 
-# Relationship With Functional Testing
+## Relationship With Functional Testing
 
 Functional regression tests preserve user-visible and business-level behaviors.
 
@@ -989,7 +989,7 @@ They are especially useful when a defect cannot be represented accurately throug
 
 ---
 
-# Relationship With System Testing
+## Relationship With System Testing
 
 System regression tests protect defects requiring complete platform assembly.
 
@@ -997,7 +997,7 @@ Because they are more expensive, they should complement rather than replace lowe
 
 ---
 
-# Relationship With Quality Engineering
+## Relationship With Quality Engineering
 
 Regression testing provides direct evidence of continuous quality improvement.
 
@@ -1023,59 +1023,59 @@ Higher Reliability
 
 ---
 
-# Regression Testing Anti-Patterns
+## Regression Testing Anti-Patterns
 
 The following practices should be avoided.
 
-## Fix Without Test
+### Fix Without Test
 
 A defect may silently return if no permanent automated protection exists.
 
 ---
 
-## Test Only the Symptom
+### Test Only the Symptom
 
 Tests should protect the underlying failure condition where possible.
 
 ---
 
-## Always Use System Tests
+### Always Use System Tests
 
 Regression tests should use the lowest effective testing level.
 
 ---
 
-## Issue Number Only Naming
+### Issue Number Only Naming
 
 Tests must remain understandable without external issue systems.
 
 ---
 
-## Deleting Failing Tests
+### Deleting Failing Tests
 
 A regression test should not be removed merely because it detects an inconvenient failure.
 
 ---
 
-## Excessive Duplication
+### Excessive Duplication
 
 Identical regression scenarios across many levels increase maintenance cost without necessarily increasing confidence.
 
 ---
 
-## Permanent Flakiness
+### Permanent Flakiness
 
 An unreliable regression test cannot reliably protect behavior.
 
 ---
 
-## Production Data Fixtures
+### Production Data Fixtures
 
 Real sensitive data must not be retained as regression fixtures.
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Regression validation participates in FamilyOS quality gates.
 
@@ -1091,7 +1091,7 @@ Critical regression failures must block promotion unless the protected behavior 
 
 ---
 
-# Governance
+## Governance
 
 Regression testing is governed by the FamilyOS Testing Framework and broader engineering governance.
 
@@ -1111,7 +1111,7 @@ Changes to previously supported behavior must respect applicable compatibility a
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 FamilyOS regression testing should evolve with platform maturity.
 
@@ -1132,7 +1132,7 @@ Evolution should improve feedback speed without weakening behavioral protection.
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 A regression testing implementation is aligned with this framework when:
 
@@ -1159,7 +1159,7 @@ A regression testing implementation is aligned with this framework when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 Regression testing transforms past failures into permanent protection for the FamilyOS platform.
 

@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 09 Contract Testing
+## 09 Contract Testing
 
-## Overview
+### Overview
 
 Contract testing validates the explicit compatibility agreements between FamilyOS components, services, plugins, capabilities, adapters, and other architectural participants.
 
@@ -30,7 +30,7 @@ Contract testing therefore protects architectural boundaries from incompatible c
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of contract testing is to detect compatibility violations before they propagate across the FamilyOS ecosystem.
 
@@ -50,7 +50,7 @@ Contract testing is especially important when components have independent develo
 
 ---
 
-# Contract Definition
+## Contract Definition
 
 A contract is an explicit agreement between architectural participants.
 
@@ -81,11 +81,11 @@ Both sides must remain compatible with the agreement.
 
 ---
 
-# Contract Testing Principles
+## Contract Testing Principles
 
 FamilyOS contract testing follows several fundamental principles.
 
-## Contracts Must Be Explicit
+### Contracts Must Be Explicit
 
 Critical architectural expectations should not exist only as undocumented assumptions.
 
@@ -105,7 +105,7 @@ Contract tests then provide executable validation of those definitions.
 
 ---
 
-## Test Compatibility, Not Implementation
+### Test Compatibility, Not Implementation
 
 Contract tests must validate externally relevant behavior.
 
@@ -117,7 +117,7 @@ Such changes should not require consumer contract tests to change.
 
 ---
 
-## Protect Both Sides
+### Protect Both Sides
 
 Contract testing should protect providers and consumers.
 
@@ -129,7 +129,7 @@ The contract becomes the stable boundary between them.
 
 ---
 
-## Fail Early
+### Fail Early
 
 Compatibility violations should be detected as close as possible to the change that introduces them.
 
@@ -137,7 +137,7 @@ Contract tests should therefore participate in development and CI workflows befo
 
 ---
 
-## Prefer Determinism
+### Prefer Determinism
 
 Contract tests must be deterministic and reproducible.
 
@@ -151,11 +151,11 @@ They should not depend unnecessarily on:
 
 ---
 
-# Provider and Consumer Roles
+## Provider and Consumer Roles
 
 Contract testing commonly distinguishes between providers and consumers.
 
-## Provider
+### Provider
 
 The provider exposes functionality or data.
 
@@ -170,7 +170,7 @@ Examples include:
 
 ---
 
-## Consumer
+### Consumer
 
 The consumer depends on the provider's contract.
 
@@ -187,7 +187,7 @@ A single component may act as a provider in one relationship and a consumer in a
 
 ---
 
-# Types of Contracts
+## Types of Contracts
 
 FamilyOS may define multiple categories of contracts.
 
@@ -209,7 +209,7 @@ Each contract type protects a different architectural boundary.
 
 ---
 
-# Interface Contract Testing
+## Interface Contract Testing
 
 Interface contracts define the expected behavior of implementations behind architectural abstractions.
 
@@ -244,7 +244,7 @@ This prevents behavioral differences between adapters that implement the same po
 
 ---
 
-# Repository Contract Testing
+## Repository Contract Testing
 
 Repositories are important architectural boundaries in FamilyOS.
 
@@ -267,7 +267,7 @@ This allows infrastructure implementations to change without changing applicatio
 
 ---
 
-# Capability Contract Testing
+## Capability Contract Testing
 
 Capabilities expose functionality through defined platform interfaces.
 
@@ -300,7 +300,7 @@ This is particularly important when capabilities can be provided dynamically by 
 
 ---
 
-# Plugin Contract Testing
+## Plugin Contract Testing
 
 Plugins interact with the FamilyOS platform through explicit platform contracts.
 
@@ -321,7 +321,7 @@ Official plugins must satisfy all mandatory platform contracts applicable to the
 
 ---
 
-# Contribution Contract Testing
+## Contribution Contract Testing
 
 Plugins may contribute artifacts such as:
 
@@ -349,7 +349,7 @@ Malformed contributions should fail validation before activation.
 
 ---
 
-# Event Contract Testing
+## Event Contract Testing
 
 Events represent contracts between publishers and consumers.
 
@@ -384,7 +384,7 @@ Contract tests should detect changes that would make existing consumers unable t
 
 ---
 
-# Event Schema Evolution
+## Event Schema Evolution
 
 Event schemas require careful compatibility management.
 
@@ -405,7 +405,7 @@ Contract tests should encode the compatibility rules defined by the FamilyOS Eve
 
 ---
 
-# Serialization Contract Testing
+## Serialization Contract Testing
 
 FamilyOS components may exchange serialized representations.
 
@@ -441,7 +441,7 @@ Additional tests should validate compatibility with previously supported represe
 
 ---
 
-# Configuration Contract Testing
+## Configuration Contract Testing
 
 Configuration acts as a contract between configuration producers and consuming components.
 
@@ -460,7 +460,7 @@ Contract tests should ensure that configuration evolution does not silently inva
 
 ---
 
-# Service Contract Testing
+## Service Contract Testing
 
 Application or infrastructure services may expose explicit service interfaces.
 
@@ -477,7 +477,7 @@ Contract tests should focus on these observable guarantees.
 
 ---
 
-# Lifecycle Contract Testing
+## Lifecycle Contract Testing
 
 Components participating in runtime lifecycle management may expose lifecycle contracts.
 
@@ -501,7 +501,7 @@ Lifecycle contracts are particularly important for plugins and infrastructure se
 
 ---
 
-# CLI Contract Testing
+## CLI Contract Testing
 
 The CLI may expose stable user-facing contracts.
 
@@ -520,7 +520,7 @@ Machine-consumed CLI interfaces require stronger compatibility guarantees.
 
 ---
 
-# API Contract Testing
+## API Contract Testing
 
 Where FamilyOS exposes application or network APIs, their contracts should define:
 
@@ -536,7 +536,7 @@ Contract tests should ensure that implementations continue to satisfy published 
 
 ---
 
-# Consumer-Driven Contracts
+## Consumer-Driven Contracts
 
 Some contracts may originate from concrete consumer expectations.
 
@@ -562,7 +562,7 @@ This approach can be valuable when multiple independently evolving consumers dep
 
 ---
 
-# Provider Contract Suites
+## Provider Contract Suites
 
 FamilyOS should prefer reusable provider contract suites where multiple implementations share the same abstraction.
 
@@ -582,7 +582,7 @@ This reduces duplicated tests and prevents semantic drift.
 
 ---
 
-# Contract Fixtures
+## Contract Fixtures
 
 Contract tests may require reusable fixtures that define canonical inputs and outputs.
 
@@ -606,7 +606,7 @@ Contract fixtures should be:
 
 ---
 
-# Golden Contract Fixtures
+## Golden Contract Fixtures
 
 For stable serialized formats, FamilyOS may use golden fixtures representing known valid contract artifacts.
 
@@ -627,7 +627,7 @@ They should not be used indiscriminately for outputs where exact formatting is n
 
 ---
 
-# Schema Validation
+## Schema Validation
 
 Machine-readable schemas should be used where appropriate.
 
@@ -645,7 +645,7 @@ Behavioral contract tests may still be required to verify semantics that schemas
 
 ---
 
-# Contract Versioning
+## Contract Versioning
 
 Contracts that evolve independently should support explicit versioning where necessary.
 
@@ -664,7 +664,7 @@ Version numbers must not be used as a substitute for documented compatibility se
 
 ---
 
-# Backward Compatibility
+## Backward Compatibility
 
 Backward compatibility means that newer providers continue to support valid expectations from older supported consumers.
 
@@ -682,7 +682,7 @@ The exact compatibility window is defined by platform versioning and lifecycle p
 
 ---
 
-# Forward Compatibility
+## Forward Compatibility
 
 Forward compatibility may be required for selected contracts.
 
@@ -698,7 +698,7 @@ Tests should verify it where it forms part of the contract.
 
 ---
 
-# Breaking Changes
+## Breaking Changes
 
 A breaking change is a modification that invalidates a supported contract.
 
@@ -718,7 +718,7 @@ They must not be introduced silently.
 
 ---
 
-# Contract Deprecation
+## Contract Deprecation
 
 Contracts may evolve through controlled deprecation.
 
@@ -743,7 +743,7 @@ Removal should occur only when governance permits it.
 
 ---
 
-# Negative Contract Testing
+## Negative Contract Testing
 
 Contract suites must validate invalid behavior as well as valid behavior.
 
@@ -761,7 +761,7 @@ Providers should reject invalid interactions predictably.
 
 ---
 
-# Error Contracts
+## Error Contracts
 
 Errors may themselves form part of an architectural contract.
 
@@ -778,7 +778,7 @@ Tests should avoid depending on incidental error wording unless exact wording is
 
 ---
 
-# Contract Test Isolation
+## Contract Test Isolation
 
 Contract tests should remain independent from one another.
 
@@ -795,7 +795,7 @@ Contract suites should be executable repeatedly and independently.
 
 ---
 
-# Directory Organization
+## Directory Organization
 
 Contract tests should be clearly classified.
 
@@ -836,7 +836,7 @@ The exact structure may evolve while preserving clear classification.
 
 ---
 
-# Naming Conventions
+## Naming Conventions
 
 Contract tests should clearly identify the contract being protected.
 
@@ -868,7 +868,7 @@ class RepositoryContract:
 
 ---
 
-# Test Markers
+## Test Markers
 
 Contract tests may use explicit markers.
 
@@ -896,7 +896,7 @@ Exact commands remain governed by the FamilyOS testing toolchain.
 
 ---
 
-# Execution Strategy
+## Execution Strategy
 
 Contract tests should execute early enough to detect compatibility problems before expensive higher-level validation.
 
@@ -925,7 +925,7 @@ The exact ordering may vary according to dependency and execution cost.
 
 ---
 
-# Continuous Integration
+## Continuous Integration
 
 Contract tests should be integrated into FamilyOS CI.
 
@@ -942,7 +942,7 @@ Contract failures affecting supported interfaces must block incompatible promoti
 
 ---
 
-# Change Impact Detection
+## Change Impact Detection
 
 Changes to contract-bearing artifacts should trigger relevant contract suites.
 
@@ -961,7 +961,7 @@ Future FamilyOS tooling may automate contract impact analysis.
 
 ---
 
-# Plugin Certification
+## Plugin Certification
 
 Contract testing is a core component of official plugin certification.
 
@@ -978,7 +978,7 @@ A plugin that violates mandatory platform contracts cannot be considered certifi
 
 ---
 
-# Contract Testing and Architecture
+## Contract Testing and Architecture
 
 Contract tests reinforce architectural boundaries.
 
@@ -1003,7 +1003,7 @@ This strengthens FamilyOS architecture governance.
 
 ---
 
-# Relationship With Unit Testing
+## Relationship With Unit Testing
 
 Unit tests validate isolated behavior.
 
@@ -1015,7 +1015,7 @@ Both testing levels are therefore necessary.
 
 ---
 
-# Relationship With Integration Testing
+## Relationship With Integration Testing
 
 Integration testing answers:
 
@@ -1031,7 +1031,7 @@ This can provide faster and more precise feedback.
 
 ---
 
-# Relationship With Functional Testing
+## Relationship With Functional Testing
 
 Functional tests validate meaningful behaviors.
 
@@ -1041,7 +1041,7 @@ A functional test may prove that one workflow succeeds, while contract tests pro
 
 ---
 
-# Relationship With Regression Testing
+## Relationship With Regression Testing
 
 Contract tests provide natural regression protection for architectural boundaries.
 
@@ -1049,7 +1049,7 @@ When a compatibility defect is discovered, the relevant contract suite should be
 
 ---
 
-# Relationship With Versioning
+## Relationship With Versioning
 
 Contract compatibility is closely related to versioning.
 
@@ -1064,23 +1064,23 @@ Contract tests provide evidence for these decisions.
 
 ---
 
-# Contract Testing Anti-Patterns
+## Contract Testing Anti-Patterns
 
 The following practices should be avoided.
 
-## Implicit Contracts
+### Implicit Contracts
 
 Relying on undocumented assumptions makes compatibility impossible to govern reliably.
 
 ---
 
-## Testing Private Implementation
+### Testing Private Implementation
 
 Contract tests should not encode provider internals.
 
 ---
 
-## Overspecified Contracts
+### Overspecified Contracts
 
 A contract that specifies irrelevant implementation details unnecessarily restricts evolution.
 
@@ -1088,7 +1088,7 @@ Only externally meaningful behavior should be protected.
 
 ---
 
-## Schema-Only Confidence
+### Schema-Only Confidence
 
 Schema validation does not necessarily prove behavioral compatibility.
 
@@ -1096,25 +1096,25 @@ Semantic behavior may require executable tests.
 
 ---
 
-## Ignoring Consumers
+### Ignoring Consumers
 
 Provider-defined contracts that ignore actual consumer requirements may provide false confidence.
 
 ---
 
-## Unversioned Breaking Changes
+### Unversioned Breaking Changes
 
 Breaking contract changes must never be introduced silently.
 
 ---
 
-## Exact Error Message Coupling
+### Exact Error Message Coupling
 
 Tests should not depend on incidental wording unless the wording is explicitly contractual.
 
 ---
 
-# Performance Expectations
+## Performance Expectations
 
 Contract tests should generally remain relatively fast.
 
@@ -1130,7 +1130,7 @@ Fast contract feedback allows compatibility validation to occur frequently.
 
 ---
 
-# Reliability Requirements
+## Reliability Requirements
 
 Contract tests must be:
 
@@ -1146,7 +1146,7 @@ A flaky contract test weakens confidence in compatibility guarantees and should 
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Mandatory contract suites may participate in FamilyOS quality gates.
 
@@ -1163,7 +1163,7 @@ A mandatory contract violation must block promotion until resolved or explicitly
 
 ---
 
-# Governance
+## Governance
 
 Contract testing is governed by the FamilyOS Testing Framework and the architectural contracts defined across the platform.
 
@@ -1185,7 +1185,7 @@ Changes to critical contracts must follow the appropriate architectural governan
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 FamilyOS contract testing is expected to evolve as the ecosystem becomes more distributed and extensible.
 
@@ -1208,7 +1208,7 @@ Evolution should strengthen compatibility guarantees without unnecessarily restr
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 A contract testing implementation is aligned with this framework when:
 
@@ -1237,7 +1237,7 @@ A contract testing implementation is aligned with this framework when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 Contract testing protects the agreements that allow independently evolving FamilyOS components to remain compatible.
 

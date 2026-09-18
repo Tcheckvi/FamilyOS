@@ -1,10 +1,10 @@
 # Plugin Compliance Framework
 
-# Revision History
+## Revision History
 
-## EPIC-PLUGIN-002
+### EPIC-PLUGIN-002
 
-## Purpose
+### Purpose
 
 This document records significant revisions to the normative documentation of EPIC-PLUGIN-002 — Plugin Compliance Framework.
 
@@ -21,7 +21,7 @@ Its purpose is to preserve the evolution of the documentation model itself.
 
 ---
 
-# Revision Principle
+## Revision Principle
 
 The governing revision principle is:
 
@@ -33,7 +33,7 @@ Semantic changes should always be recorded.
 
 ---
 
-# Revision Scope
+## Revision Scope
 
 Revision history should capture changes affecting:
 
@@ -59,7 +59,7 @@ Revision history should capture changes affecting:
 
 ---
 
-# Revision Categories
+## Revision Categories
 
 Revisions may be classified as:
 
@@ -78,7 +78,7 @@ A revision may belong to more than one category when appropriate.
 
 ---
 
-# Revision Status
+## Revision Status
 
 Revision entries may use statuses such as:
 
@@ -92,7 +92,7 @@ The initial baseline should be considered approved only after the final framewor
 
 ---
 
-# Revision Record Format
+## Revision Record Format
 
 Future revision entries should ideally include:
 
@@ -113,25 +113,25 @@ This information allows future maintainers to understand why the framework chang
 
 ---
 
-# Revision 0.1
+## Revision 0.1
 
-## Date
+### Date
 
 2026-08
 
-## Framework Version
+### Framework Version
 
 ```text
 1.0.0-draft
 ```
 
-## Status
+### Status
 
 ```text
 DRAFT
 ```
 
-## Category
+### Category
 
 ```text
 FOUNDATIONAL
@@ -139,7 +139,7 @@ ARCHITECTURE
 POLICY
 ```
 
-## Summary
+### Summary
 
 Established the initial EPIC-PLUGIN-002 documentation structure and foundational compliance model.
 
@@ -156,32 +156,32 @@ Defined the initial purpose of the Plugin Compliance Framework as a governed mec
 
 ---
 
-# Revision 0.2
+## Revision 0.2
 
-## Date
+### Date
 
 2026-08
 
-## Framework Version
+### Framework Version
 
 ```text
 1.0.0-draft
 ```
 
-## Status
+### Status
 
 ```text
 DRAFT
 ```
 
-## Category
+### Category
 
 ```text
 ARCHITECTURE
 POLICY
 ```
 
-## Summary
+### Summary
 
 Expanded the framework into a complete compliance architecture.
 
@@ -221,32 +221,32 @@ Compliance Result
 
 ---
 
-# Revision 0.3
+## Revision 0.3
 
-## Date
+### Date
 
 2026-08
 
-## Framework Version
+### Framework Version
 
 ```text
 1.0.0-draft
 ```
 
-## Status
+### Status
 
 ```text
 DRAFT
 ```
 
-## Category
+### Category
 
 ```text
 POLICY
 VALIDATION
 ```
 
-## Summary
+### Summary
 
 Introduced explicit rule, profile, evidence, finding, and status semantics.
 
@@ -288,32 +288,32 @@ ERROR
 
 ---
 
-# Revision 0.4
+## Revision 0.4
 
-## Date
+### Date
 
 2026-08
 
-## Framework Version
+### Framework Version
 
 ```text
 1.0.0-draft
 ```
 
-## Status
+### Status
 
 ```text
 DRAFT
 ```
 
-## Category
+### Category
 
 ```text
 ARCHITECTURE
 LIFECYCLE
 ```
 
-## Summary
+### Summary
 
 Extended the framework into engineering workflows and lifecycle enforcement.
 
@@ -338,25 +338,25 @@ Clarified that compliance determines technical eligibility while certification r
 
 ---
 
-# Revision 0.5
+## Revision 0.5
 
-## Date
+### Date
 
 2026-08
 
-## Framework Version
+### Framework Version
 
 ```text
 1.0.0-draft
 ```
 
-## Status
+### Status
 
 ```text
 DRAFT
 ```
 
-## Category
+### Category
 
 ```text
 GOVERNANCE
@@ -364,7 +364,7 @@ SECURITY
 LIFECYCLE
 ```
 
-## Summary
+### Summary
 
 Added the governance, trust, and long-term evolution model.
 
@@ -393,32 +393,32 @@ Established:
 
 ---
 
-# Revision 0.6
+## Revision 0.6
 
-## Date
+### Date
 
 2026-08
 
-## Framework Version
+### Framework Version
 
 ```text
 1.0.0-draft
 ```
 
-## Status
+### Status
 
 ```text
 DRAFT
 ```
 
-## Category
+### Category
 
 ```text
 LIFECYCLE
 VALIDATION
 ```
 
-## Summary
+### Summary
 
 Completed the delivery, validation, reference, and roadmap architecture.
 
@@ -449,32 +449,32 @@ Defined framework validation and release criteria.
 
 ---
 
-# Revision 0.7
+## Revision 0.7
 
-## Date
+### Date
 
 2026-08
 
-## Framework Version
+### Framework Version
 
 ```text
 1.0.0-draft
 ```
 
-## Status
+### Status
 
 ```text
 DRAFT
 ```
 
-## Category
+### Category
 
 ```text
 GOVERNANCE
 VALIDATION
 ```
 
-## Summary
+### Summary
 
 Added the framework governance and metadata layer.
 
@@ -501,25 +501,25 @@ Established the official deliverable baseline:
 
 ---
 
-# Revision 1.0
+## Revision 1.0
 
-## Date
+### Date
 
 2026-08-07
 
-## Framework Version
+### Framework Version
 
 ```text
 1.0.0
 ```
 
-## Status
+### Status
 
 ```text
 APPROVED
 ```
 
-## Category
+### Category
 
 ```text
 FOUNDATIONAL
@@ -528,7 +528,7 @@ VALIDATION
 EDITORIAL
 ```
 
-## Summary
+### Summary
 
 Completed the initial framework-definition validation of
 EPIC-PLUGIN-002.
@@ -593,7 +593,7 @@ claimed by this approval.
 
 ---
 
-# Initial Architecture Baseline
+## Initial Architecture Baseline
 
 The first documentation baseline defines the Plugin Compliance Framework through the following major concepts:
 
@@ -618,7 +618,7 @@ Framework Lifecycle
 
 ---
 
-# Initial Compliance Domains
+## Initial Compliance Domains
 
 The baseline establishes:
 
@@ -642,7 +642,7 @@ Governance
 
 ---
 
-# Initial Profiles
+## Initial Profiles
 
 The architecture anticipates profiles including:
 
@@ -662,7 +662,7 @@ Their executable implementation follows the roadmap.
 
 ---
 
-# Initial Governance Model
+## Initial Governance Model
 
 The baseline establishes the compliance rule lifecycle:
 
@@ -686,7 +686,7 @@ It also defines explicit governance for:
 
 ---
 
-# Initial Trust Model
+## Initial Trust Model
 
 The baseline establishes that:
 
@@ -708,7 +708,7 @@ Plugins cannot control:
 
 ---
 
-# Initial Certification Boundary
+## Initial Certification Boundary
 
 The baseline establishes:
 
@@ -729,7 +729,7 @@ Compliance and certification remain distinct capabilities.
 
 ---
 
-# Initial Roadmap
+## Initial Roadmap
 
 The initial roadmap defines progression through:
 
@@ -755,7 +755,7 @@ Continuous Compliance
 
 ---
 
-# Compatibility Impact
+## Compatibility Impact
 
 The initial baseline introduces a new framework definition.
 
@@ -772,7 +772,7 @@ Future revisions must explicitly assess compatibility.
 
 ---
 
-# Migration Impact
+## Migration Impact
 
 The initial framework definition does not require migration from a previous compliance framework.
 
@@ -780,7 +780,7 @@ Future breaking revisions must provide migration guidance.
 
 ---
 
-# Implementation Impact
+## Implementation Impact
 
 The baseline creates architecture and implementation requirements for future compliance infrastructure.
 
@@ -801,7 +801,7 @@ Continuous Revalidation
 
 ---
 
-# Documentation Validation Requirement
+## Documentation Validation Requirement
 
 The initial baseline remains in draft revision status until final validation confirms:
 
@@ -818,7 +818,7 @@ Repository diff reviewed
 
 ---
 
-# Approval Transition
+## Approval Transition
 
 After successful framework-definition validation, the baseline may transition from:
 
@@ -843,7 +843,7 @@ The final decision must be recorded in:
 
 ---
 
-# Future Revision Requirements
+## Future Revision Requirements
 
 Future revisions should record changes to:
 
@@ -866,7 +866,7 @@ when those changes materially affect framework interpretation.
 
 ---
 
-# Minor Editorial Revisions
+## Minor Editorial Revisions
 
 Minor changes such as:
 
@@ -879,7 +879,7 @@ may be grouped into one revision entry when they do not alter normative meaning.
 
 ---
 
-# Semantic Revisions
+## Semantic Revisions
 
 Semantic changes should receive explicit entries.
 
@@ -897,7 +897,7 @@ Changing gate semantics
 
 ---
 
-# Superseded Revisions
+## Superseded Revisions
 
 A revision may later become superseded.
 
@@ -907,7 +907,7 @@ The latest framework state should not erase the path that produced it.
 
 ---
 
-# Historical Integrity
+## Historical Integrity
 
 Revision entries must not be rewritten merely to make previous design decisions appear consistent with current architecture.
 
@@ -917,7 +917,7 @@ Corrections to factual mistakes may be added transparently.
 
 ---
 
-# Relationship With CHANGELOG
+## Relationship With CHANGELOG
 
 `CHANGELOG.md` focuses on framework release evolution.
 
@@ -941,7 +941,7 @@ Some important changes may appear in both.
 
 ---
 
-# Relationship With Git
+## Relationship With Git
 
 Git provides exact file-level change history.
 
@@ -953,7 +953,7 @@ A revision entry explains why those edits matter to the framework.
 
 ---
 
-# Relationship With Rule Lifecycle
+## Relationship With Rule Lifecycle
 
 Individual compliance rules may eventually maintain lifecycle metadata independent of this file.
 
@@ -972,7 +972,7 @@ This document records framework-level documentation evolution.
 
 ---
 
-# Relationship With Framework Releases
+## Relationship With Framework Releases
 
 Every stable framework release should correspond to an understandable revision state.
 
@@ -980,7 +980,7 @@ A release should not introduce undocumented normative documentation changes.
 
 ---
 
-# Revision Review
+## Revision Review
 
 Before a major framework release, review whether Revision History accurately captures significant documentation evolution.
 
@@ -999,7 +999,7 @@ If yes, the revision should be documented.
 
 ---
 
-# Initial Revision Summary
+## Initial Revision Summary
 
 The initial EPIC-PLUGIN-002 documentation effort establishes one coherent compliance architecture consisting of:
 
@@ -1032,7 +1032,7 @@ Metadata
 
 ---
 
-# Operational Implementation and Phase 10 Completion — 2026-08-14
+## Operational Implementation and Phase 10 Completion — 2026-08-14
 
 The framework version remains `1.0.0`; this entry records implementation maturity and evidence rather than a new framework-definition release.
 
@@ -1058,7 +1058,7 @@ Merge, Build, Release, and Certification Gates; exception and suppression enforc
 
 ---
 
-# Current Revision State
+## Current Revision State
 
 Current state:
 
@@ -1075,7 +1075,7 @@ Phase 10 CI Integration: COMPLETE
 The initial framework-definition baseline has completed validation and
 is now the approved documentation baseline for EPIC-PLUGIN-002.
 
-# Next Revision Event
+## Next Revision Event
 
 The next revision event should occur when the framework definition
 changes materially or when implementation progress introduces new
@@ -1100,7 +1100,7 @@ Continuous revalidation introduced
 Future revisions must preserve the distinction between documentation
 baseline maturity and operational implementation maturity.
 
-# Final Revision Principle
+## Final Revision Principle
 
 The governing principle of Revision History is:
 

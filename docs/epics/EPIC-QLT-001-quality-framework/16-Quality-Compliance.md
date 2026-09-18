@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 16 Quality Compliance
+## 16 Quality Compliance
 
-## Overview
+### Overview
 
 The FamilyOS Quality Compliance model defines how engineering artifacts, components, plugins, documentation, processes, builds, releases, and other governed targets demonstrate conformity with applicable FamilyOS quality requirements.
 
@@ -50,7 +50,7 @@ quality requirement defined by FamilyOS governance?
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Compliance is to provide a consistent mechanism for demonstrating that FamilyOS engineering work conforms to established requirements.
 
@@ -93,7 +93,7 @@ This converts distributed engineering expectations into governed, verifiable con
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -119,7 +119,7 @@ Decision
 
 ---
 
-# Compliance Definition
+## Compliance Definition
 
 Quality Compliance is the demonstrated conformity of a governed target with applicable FamilyOS quality requirements.
 
@@ -154,7 +154,7 @@ Using which evidence?
 
 ---
 
-# Compliance Target
+## Compliance Target
 
 A Compliance Target is the engineering entity being evaluated.
 
@@ -180,7 +180,7 @@ Every compliance assessment must identify its target explicitly.
 
 ---
 
-# Target Identity
+## Target Identity
 
 A target should have sufficient identity to support reproducible assessment.
 
@@ -198,7 +198,7 @@ For source-controlled targets, the revision should normally be included.
 
 ---
 
-# Compliance Scope
+## Compliance Scope
 
 Compliance scope defines which part of the target is being evaluated.
 
@@ -219,7 +219,7 @@ Partial compliance must not be represented as complete compliance.
 
 ---
 
-# Compliance Authority
+## Compliance Authority
 
 Every compliance requirement must originate from an authoritative source.
 
@@ -243,7 +243,7 @@ The source determines why the requirement exists.
 
 ---
 
-# Requirement Provenance
+## Requirement Provenance
 
 A compliance requirement should preserve provenance.
 
@@ -264,7 +264,7 @@ This creates traceability from implementation rule to architectural decision.
 
 ---
 
-# Compliance Requirement
+## Compliance Requirement
 
 A Compliance Requirement defines a condition that a target must satisfy.
 
@@ -282,7 +282,7 @@ How can conformity be demonstrated?
 
 ---
 
-# Requirement Identity
+## Requirement Identity
 
 Formal requirements should have stable identifiers.
 
@@ -312,7 +312,7 @@ Stable identifiers support:
 
 ---
 
-# Requirement Metadata
+## Requirement Metadata
 
 A compliance requirement may contain:
 
@@ -333,7 +333,7 @@ status
 
 ---
 
-# Requirement Language
+## Requirement Language
 
 Requirements should use precise normative language.
 
@@ -358,7 +358,7 @@ Recommendations may participate in quality assessments without necessarily block
 
 ---
 
-# Mandatory Requirement
+## Mandatory Requirement
 
 A Mandatory Requirement must be satisfied unless an authorized exception explicitly applies.
 
@@ -374,7 +374,7 @@ Satisfied?
 
 ---
 
-# Recommended Requirement
+## Recommended Requirement
 
 A Recommended Requirement represents an expected engineering practice whose absence may not automatically create non-compliance.
 
@@ -390,13 +390,13 @@ depending on policy.
 
 ---
 
-# Optional Requirement
+## Optional Requirement
 
 Optional requirements provide supported capabilities or guidance without affecting compliance when not adopted.
 
 ---
 
-# Compliance Rule
+## Compliance Rule
 
 A Compliance Rule is an executable or reviewable interpretation of a requirement.
 
@@ -414,7 +414,7 @@ One requirement may produce several rules.
 
 ---
 
-# Requirement vs Rule
+## Requirement vs Rule
 
 The distinction is:
 
@@ -433,7 +433,7 @@ Rules define verification logic.
 
 ---
 
-# Rule Identity
+## Rule Identity
 
 Compliance rules should have stable identifiers.
 
@@ -449,7 +449,7 @@ The identifier model should remain consistent across the FamilyOS quality ecosys
 
 ---
 
-# Rule Metadata
+## Rule Metadata
 
 A compliance rule may contain:
 
@@ -468,7 +468,7 @@ version
 
 ---
 
-# Compliance Domain
+## Compliance Domain
 
 Requirements should be organized into meaningful domains.
 
@@ -494,7 +494,7 @@ Domains support modular assessment.
 
 ---
 
-# Engineering Compliance
+## Engineering Compliance
 
 Engineering compliance may verify:
 
@@ -506,7 +506,7 @@ Engineering compliance may verify:
 
 ---
 
-# Architecture Compliance
+## Architecture Compliance
 
 Architecture compliance may verify:
 
@@ -523,7 +523,7 @@ Architecture compliance protects structural integrity.
 
 ---
 
-# Code Compliance
+## Code Compliance
 
 Code compliance may include:
 
@@ -540,7 +540,7 @@ Code compliance should rely heavily on deterministic automation.
 
 ---
 
-# Testing Compliance
+## Testing Compliance
 
 Testing compliance may verify:
 
@@ -557,7 +557,7 @@ The Testing Framework remains authoritative for testing semantics.
 
 ---
 
-# Security Compliance
+## Security Compliance
 
 Security compliance may verify:
 
@@ -574,7 +574,7 @@ Security requirements may use stricter enforcement than general quality requirem
 
 ---
 
-# Documentation Compliance
+## Documentation Compliance
 
 Documentation compliance may verify:
 
@@ -592,7 +592,7 @@ The Documentation Framework remains authoritative for documentation-specific req
 
 ---
 
-# Dependency Compliance
+## Dependency Compliance
 
 Dependency compliance may verify:
 
@@ -604,7 +604,7 @@ Dependency compliance may verify:
 
 ---
 
-# Build Compliance
+## Build Compliance
 
 Build compliance may verify:
 
@@ -618,7 +618,7 @@ Build Configuration
 
 ---
 
-# Release Compliance
+## Release Compliance
 
 Release compliance may verify:
 
@@ -634,7 +634,7 @@ Release Metadata
 
 ---
 
-# Plugin Compliance
+## Plugin Compliance
 
 Plugin compliance is a specialized compliance domain.
 
@@ -653,7 +653,7 @@ The Plugin Compliance Framework provides the authoritative detailed model for pl
 
 ---
 
-# Governance Compliance
+## Governance Compliance
 
 Governance compliance may verify:
 
@@ -667,7 +667,7 @@ Some governance requirements require human evidence.
 
 ---
 
-# Compliance Profile
+## Compliance Profile
 
 A Compliance Profile defines the set of requirements applicable to a class of targets.
 
@@ -689,7 +689,7 @@ Profiles prevent every target from being evaluated against every possible requir
 
 ---
 
-# Profile Identity
+## Profile Identity
 
 Profiles should have stable identities.
 
@@ -707,7 +707,7 @@ Versioning may be applied where profile evolution affects interpretation.
 
 ---
 
-# Base Profile
+## Base Profile
 
 A Base Profile may define requirements common to most FamilyOS engineering targets.
 
@@ -726,7 +726,7 @@ Documentation Metadata
 
 ---
 
-# Specialized Profiles
+## Specialized Profiles
 
 Specialized profiles may extend base requirements.
 
@@ -742,7 +742,7 @@ Security-Sensitive Profile
 
 ---
 
-# Profile Composition
+## Profile Composition
 
 Profiles should support controlled composition.
 
@@ -762,7 +762,7 @@ Composition should avoid duplicated or contradictory requirements.
 
 ---
 
-# Profile Resolution
+## Profile Resolution
 
 The applicable profile may be determined by:
 
@@ -779,7 +779,7 @@ Profile resolution should be deterministic where possible.
 
 ---
 
-# Applicability
+## Applicability
 
 Not every requirement applies to every target.
 
@@ -797,7 +797,7 @@ Plugin targets only.
 
 ---
 
-# Applicability Evaluation
+## Applicability Evaluation
 
 Applicability may produce:
 
@@ -811,7 +811,7 @@ Unknown applicability should be resolved before authoritative compliance is decl
 
 ---
 
-# Conditional Applicability
+## Conditional Applicability
 
 Some requirements apply only when a condition exists.
 
@@ -826,7 +826,7 @@ Conditional applicability should be explicit.
 
 ---
 
-# Applicability Evidence
+## Applicability Evidence
 
 Where applicability is non-trivial, the reason should be recorded.
 
@@ -845,7 +845,7 @@ Target exposes no external API.
 
 ---
 
-# Compliance Verification
+## Compliance Verification
 
 Verification determines whether an applicable requirement is satisfied.
 
@@ -866,7 +866,7 @@ Runtime Verification
 
 ---
 
-# Automated Verification
+## Automated Verification
 
 Automated verification should be preferred when a requirement is:
 
@@ -887,7 +887,7 @@ Naming Convention Valid
 
 ---
 
-# Manual Verification
+## Manual Verification
 
 Manual verification remains appropriate for requirements involving:
 
@@ -903,7 +903,7 @@ Manual verification must still produce structured evidence.
 
 ---
 
-# Hybrid Verification
+## Hybrid Verification
 
 Some requirements require both automation and human review.
 
@@ -921,7 +921,7 @@ Both forms of evidence may be required.
 
 ---
 
-# Verification Method Authority
+## Verification Method Authority
 
 The requirement definition should identify acceptable verification methods.
 
@@ -929,7 +929,7 @@ A team should not replace a required security review with an unrelated successfu
 
 ---
 
-# Compliance Evidence
+## Compliance Evidence
 
 Compliance Evidence demonstrates whether a requirement is satisfied.
 
@@ -950,7 +950,7 @@ Evidence should integrate with the broader Quality Evidence model.
 
 ---
 
-# Evidence Identity
+## Evidence Identity
 
 Formal compliance evidence should be traceable.
 
@@ -964,7 +964,7 @@ The same evidence may support multiple requirements where appropriate.
 
 ---
 
-# Evidence Freshness
+## Evidence Freshness
 
 Compliance evidence must correspond to the relevant target state.
 
@@ -983,7 +983,7 @@ Cannot be assumed.
 
 ---
 
-# Evidence Completeness
+## Evidence Completeness
 
 Compliance cannot be declared when mandatory evidence is missing.
 
@@ -1007,7 +1007,7 @@ A simple percentage must not hide missing mandatory evidence.
 
 ---
 
-# Evidence Validity
+## Evidence Validity
 
 Evidence must be:
 
@@ -1020,7 +1020,7 @@ Invalid evidence should not contribute to compliance.
 
 ---
 
-# Evidence Reuse
+## Evidence Reuse
 
 Evidence may be reused when:
 
@@ -1035,7 +1035,7 @@ Evidence reuse should reduce unnecessary repeated work.
 
 ---
 
-# Evidence Invalidation
+## Evidence Invalidation
 
 Evidence should be invalidated when relevant conditions change.
 
@@ -1049,7 +1049,7 @@ Examples include:
 
 ---
 
-# Compliance Finding
+## Compliance Finding
 
 A Compliance Finding represents detected non-conformity or uncertainty related to a compliance requirement.
 
@@ -1066,7 +1066,7 @@ Status
 
 ---
 
-# Finding Types
+## Finding Types
 
 Compliance findings may include:
 
@@ -1080,7 +1080,7 @@ POLICY_VIOLATION
 
 ---
 
-# Non-Conformity
+## Non-Conformity
 
 A Non-Conformity occurs when an applicable mandatory requirement is demonstrably not satisfied.
 
@@ -1099,7 +1099,7 @@ NON_CONFORMITY
 
 ---
 
-# Missing Evidence
+## Missing Evidence
 
 Missing evidence is different from confirmed non-conformity.
 
@@ -1120,7 +1120,7 @@ The system must preserve this distinction.
 
 ---
 
-# Compliance Severity
+## Compliance Severity
 
 Compliance findings should use the governed FamilyOS severity model.
 
@@ -1138,7 +1138,7 @@ Severity should reflect risk and governance significance.
 
 ---
 
-# Compliance State
+## Compliance State
 
 A baseline Compliance State model may include:
 
@@ -1155,7 +1155,7 @@ These states must remain distinct.
 
 ---
 
-# COMPLIANT
+## COMPLIANT
 
 `COMPLIANT` means:
 
@@ -1165,7 +1165,7 @@ These states must remain distinct.
 
 ---
 
-# COMPLIANT_WITH_EXCEPTIONS
+## COMPLIANT_WITH_EXCEPTIONS
 
 `COMPLIANT_WITH_EXCEPTIONS` means one or more requirements are covered by valid authorized exceptions.
 
@@ -1173,19 +1173,19 @@ The underlying non-conformity must remain visible.
 
 ---
 
-# NON_COMPLIANT
+## NON_COMPLIANT
 
 `NON_COMPLIANT` means at least one applicable mandatory requirement is not satisfied and no valid exception permits conformity.
 
 ---
 
-# INCOMPLETE
+## INCOMPLETE
 
 `INCOMPLETE` means compliance cannot yet be determined because required verification or evidence is missing.
 
 ---
 
-# ERROR
+## ERROR
 
 `ERROR` means the compliance process itself could not be completed reliably.
 
@@ -1200,13 +1200,13 @@ Corrupted Evidence
 
 ---
 
-# NOT_APPLICABLE
+## NOT_APPLICABLE
 
 `NOT_APPLICABLE` applies when a compliance profile or requirement does not apply to the target.
 
 ---
 
-# Unknown Is Not Compliant
+## Unknown Is Not Compliant
 
 A central compliance rule is:
 
@@ -1224,7 +1224,7 @@ This prevents false confidence.
 
 ---
 
-# Compliance Assessment
+## Compliance Assessment
 
 A Compliance Assessment aggregates requirement-level results into a target-level compliance state.
 
@@ -1248,7 +1248,7 @@ Compliance Assessment
 
 ---
 
-# Assessment Identity
+## Assessment Identity
 
 A formal assessment should have a stable identity.
 
@@ -1260,7 +1260,7 @@ QLT-COMP-ASSESS-<IDENTIFIER>
 
 ---
 
-# Assessment Metadata
+## Assessment Metadata
 
 A compliance assessment may contain:
 
@@ -1280,7 +1280,7 @@ timestamp
 
 ---
 
-# Requirement Result
+## Requirement Result
 
 Each requirement should produce a structured result.
 
@@ -1305,7 +1305,7 @@ COMPLIANT
 
 ---
 
-# Assessment Aggregation
+## Assessment Aggregation
 
 Compliance aggregation must preserve mandatory semantics.
 
@@ -1328,7 +1328,7 @@ if Requirement C is mandatory and blocking.
 
 ---
 
-# No Blind Compliance Score
+## No Blind Compliance Score
 
 Compliance must not be represented solely as:
 
@@ -1342,7 +1342,7 @@ Percentages may supplement but never replace authoritative compliance state.
 
 ---
 
-# Domain Compliance State
+## Domain Compliance State
 
 Compliance may be summarized by domain.
 
@@ -1359,7 +1359,7 @@ Overall compliance must preserve blocking domain failures.
 
 ---
 
-# Compliance Matrix
+## Compliance Matrix
 
 A compliance matrix provides structured traceability.
 
@@ -1376,7 +1376,7 @@ The matrix provides direct requirement-to-evidence traceability.
 
 ---
 
-# Compliance Traceability
+## Compliance Traceability
 
 The complete traceability chain should be:
 
@@ -1404,7 +1404,7 @@ This is one of the most important properties of the Quality Compliance model.
 
 ---
 
-# Bidirectional Traceability
+## Bidirectional Traceability
 
 Traceability should work in both directions.
 
@@ -1429,7 +1429,7 @@ Which authority defined it?
 
 ---
 
-# Compliance Exceptions
+## Compliance Exceptions
 
 A Compliance Exception temporarily authorizes deviation from a requirement under controlled conditions.
 
@@ -1449,7 +1449,7 @@ Owner
 
 ---
 
-# Exception Principle
+## Exception Principle
 
 An exception does not mean the requirement is satisfied.
 
@@ -1470,7 +1470,7 @@ The underlying condition remains visible.
 
 ---
 
-# Exception Scope
+## Exception Scope
 
 Exceptions must be narrowly scoped.
 
@@ -1490,7 +1490,7 @@ until migration Y is completed.
 
 ---
 
-# Exception Expiration
+## Exception Expiration
 
 Exceptions should normally expire.
 
@@ -1512,7 +1512,7 @@ Expired exceptions must no longer affect compliance state.
 
 ---
 
-# Exception Renewal
+## Exception Renewal
 
 Renewal should require explicit reassessment.
 
@@ -1520,7 +1520,7 @@ Automatic indefinite renewal undermines governance.
 
 ---
 
-# Exception Ownership
+## Exception Ownership
 
 Every active exception should have an accountable owner.
 
@@ -1528,7 +1528,7 @@ Unowned exceptions should trigger governance review.
 
 ---
 
-# Exception Risk
+## Exception Risk
 
 The exception should identify accepted residual risk.
 
@@ -1550,7 +1550,7 @@ Migration scheduled before v5.2
 
 ---
 
-# Compliance Baseline
+## Compliance Baseline
 
 Legacy systems may require a compliance baseline.
 
@@ -1570,7 +1570,7 @@ This supports incremental migration.
 
 ---
 
-# Baseline Principle
+## Baseline Principle
 
 A baseline is not compliance.
 
@@ -1578,7 +1578,7 @@ It is controlled recognition of existing debt.
 
 ---
 
-# Baseline Growth
+## Baseline Growth
 
 New non-conformities must not silently enter the baseline.
 
@@ -1602,7 +1602,7 @@ The new violation should be evaluated independently.
 
 ---
 
-# Baseline Reduction
+## Baseline Reduction
 
 Compliance improvement should progressively reduce baseline violations.
 
@@ -1618,7 +1618,7 @@ Release 5     0
 
 ---
 
-# Compliance Debt
+## Compliance Debt
 
 Long-lived non-conformity may become Quality Debt.
 
@@ -1633,7 +1633,7 @@ Compliance Debt should remain visible and governed.
 
 ---
 
-# Compliance Regression
+## Compliance Regression
 
 A Compliance Regression occurs when a previously satisfied requirement becomes unsatisfied.
 
@@ -1651,7 +1651,7 @@ Regression should be detected automatically where possible.
 
 ---
 
-# New Requirement vs Regression
+## New Requirement vs Regression
 
 A target may become non-compliant because:
 
@@ -1669,7 +1669,7 @@ These causes must remain distinguishable.
 
 ---
 
-# Compliance Versioning
+## Compliance Versioning
 
 Compliance depends on versioned requirements and profiles.
 
@@ -1685,7 +1685,7 @@ Assessment Time
 
 ---
 
-# Requirement Evolution
+## Requirement Evolution
 
 Requirements may evolve because of:
 
@@ -1700,7 +1700,7 @@ Changes should follow controlled governance.
 
 ---
 
-# Requirement Lifecycle
+## Requirement Lifecycle
 
 A requirement may move through:
 
@@ -1720,7 +1720,7 @@ Historical assessments should preserve the requirement state applicable at the t
 
 ---
 
-# Compliance Profile Evolution
+## Compliance Profile Evolution
 
 Profile changes may add or remove requirements.
 
@@ -1728,7 +1728,7 @@ A new profile version should not silently rewrite historical compliance results.
 
 ---
 
-# Compliance Migration
+## Compliance Migration
 
 When stricter requirements are introduced, migration may use:
 
@@ -1744,7 +1744,7 @@ This mirrors controlled Quality Gate rollout.
 
 ---
 
-# Observe Phase
+## Observe Phase
 
 During observation:
 
@@ -1756,7 +1756,7 @@ This allows impact analysis.
 
 ---
 
-# Warning Phase
+## Warning Phase
 
 During warning:
 
@@ -1766,7 +1766,7 @@ During warning:
 
 ---
 
-# Enforcement Phase
+## Enforcement Phase
 
 During enforcement:
 
@@ -1775,7 +1775,7 @@ During enforcement:
 
 ---
 
-# Compliance Automation
+## Compliance Automation
 
 Compliance should be automated wherever practical.
 
@@ -1803,7 +1803,7 @@ Generate Report
 
 ---
 
-# Compliance Engine
+## Compliance Engine
 
 A future Quality Compliance Engine may conceptually provide:
 
@@ -1817,7 +1817,7 @@ The engine should remain independent from individual CI providers.
 
 ---
 
-# Deterministic Compliance
+## Deterministic Compliance
 
 Where rules are deterministic:
 
@@ -1837,7 +1837,7 @@ This supports reproducibility.
 
 ---
 
-# Compliance Caching
+## Compliance Caching
 
 Compliance results may be cached when:
 
@@ -1850,7 +1850,7 @@ Evidence Valid
 
 ---
 
-# Compliance Invalidation
+## Compliance Invalidation
 
 Cached compliance should be invalidated when:
 
@@ -1863,7 +1863,7 @@ Cached compliance should be invalidated when:
 
 ---
 
-# Incremental Compliance
+## Incremental Compliance
 
 Large repositories may support incremental compliance verification.
 
@@ -1883,7 +1883,7 @@ Incremental evaluation must not omit affected cross-cutting requirements.
 
 ---
 
-# Full Compliance Assessment
+## Full Compliance Assessment
 
 Full assessment should remain available for important boundaries such as:
 
@@ -1894,7 +1894,7 @@ Full assessment should remain available for important boundaries such as:
 
 ---
 
-# Compliance Reporting
+## Compliance Reporting
 
 Every formal assessment should produce a Compliance Report.
 
@@ -1917,7 +1917,7 @@ Timestamp
 
 ---
 
-# Human-Readable Report
+## Human-Readable Report
 
 A human-readable report should answer:
 
@@ -1939,7 +1939,7 @@ What must be remediated?
 
 ---
 
-# Machine-Readable Report
+## Machine-Readable Report
 
 A machine-readable report should support:
 
@@ -1951,7 +1951,7 @@ A machine-readable report should support:
 
 ---
 
-# Compliance Summary
+## Compliance Summary
 
 Example:
 
@@ -1988,7 +1988,7 @@ COMPLIANT_WITH_EXCEPTIONS
 
 ---
 
-# Detailed Finding Report
+## Detailed Finding Report
 
 Example:
 
@@ -2017,7 +2017,7 @@ v5.1.0
 
 ---
 
-# Compliance Observability
+## Compliance Observability
 
 Quality Observability should expose:
 
@@ -2033,7 +2033,7 @@ Compliance Regressions
 
 ---
 
-# Compliance Trend
+## Compliance Trend
 
 A trend may show:
 
@@ -2048,7 +2048,7 @@ This demonstrates progress.
 
 ---
 
-# Requirement Coverage
+## Requirement Coverage
 
 Requirement Coverage may measure how many applicable requirements have valid verification.
 
@@ -2064,7 +2064,7 @@ Coverage is useful only when critical missing requirements remain individually v
 
 ---
 
-# Compliance Dashboard
+## Compliance Dashboard
 
 A dashboard may display:
 
@@ -2101,7 +2101,7 @@ Missing Evidence:
 
 ---
 
-# Compliance Alerts
+## Compliance Alerts
 
 Alerts may be appropriate for:
 
@@ -2117,7 +2117,7 @@ Alerting should remain actionable.
 
 ---
 
-# Compliance Metrics
+## Compliance Metrics
 
 Potential metrics include:
 
@@ -2134,7 +2134,7 @@ Automation Error Rate
 
 ---
 
-# Compliance Rate
+## Compliance Rate
 
 A compliance rate may supplement reporting:
 
@@ -2148,7 +2148,7 @@ It must never replace authoritative compliance state.
 
 ---
 
-# Exception Rate
+## Exception Rate
 
 A growing exception rate may indicate:
 
@@ -2161,7 +2161,7 @@ This should trigger review.
 
 ---
 
-# Compliance Failure Rate
+## Compliance Failure Rate
 
 Repeated failure of the same requirement may indicate systemic problems.
 
@@ -2176,7 +2176,7 @@ The solution may require framework-level improvement rather than individual reme
 
 ---
 
-# Compliance Ownership
+## Compliance Ownership
 
 Every compliance domain should have clear ownership.
 
@@ -2194,7 +2194,7 @@ Evolution
 
 ---
 
-# Requirement Ownership
+## Requirement Ownership
 
 Each requirement should have an accountable authority or domain owner.
 
@@ -2202,7 +2202,7 @@ Orphaned requirements should not remain permanently authoritative.
 
 ---
 
-# Compliance Review
+## Compliance Review
 
 Compliance requirements and profiles should be reviewed periodically.
 
@@ -2226,7 +2226,7 @@ Are important quality risks uncovered?
 
 ---
 
-# Compliance Audit
+## Compliance Audit
 
 A Compliance Audit verifies both target conformity and the integrity of the compliance process.
 
@@ -2245,7 +2245,7 @@ Historical Traceability
 
 ---
 
-# Internal Compliance Audit
+## Internal Compliance Audit
 
 FamilyOS may perform periodic internal audits of:
 
@@ -2258,7 +2258,7 @@ The objective is continuous assurance, not bureaucratic certification.
 
 ---
 
-# External Compliance
+## External Compliance
 
 Future FamilyOS deployments may need to satisfy external standards or regulations.
 
@@ -2278,7 +2278,7 @@ Evidence
 
 ---
 
-# External Requirement Mapping
+## External Requirement Mapping
 
 An external requirement may map to:
 
@@ -2293,7 +2293,7 @@ Mappings should be explicit.
 
 ---
 
-# Regulatory Compliance
+## Regulatory Compliance
 
 If regulatory requirements become applicable, they should be handled through dedicated compliance profiles.
 
@@ -2301,7 +2301,7 @@ Regulatory interpretation should remain under appropriate legal and governance a
 
 ---
 
-# Compliance Certification
+## Compliance Certification
 
 A future FamilyOS capability may produce formal internal certification records for specific target/profile combinations.
 
@@ -2325,7 +2325,7 @@ Certification should always remain revision-bound.
 
 ---
 
-# Certification Expiration
+## Certification Expiration
 
 Certification may become invalid when:
 
@@ -2336,7 +2336,7 @@ Certification may become invalid when:
 
 ---
 
-# Compliance and Quality Gates
+## Compliance and Quality Gates
 
 Compliance State may become a Quality Gate input.
 
@@ -2354,7 +2354,7 @@ The gate remains responsible for progression policy.
 
 ---
 
-# Compliance and Risk
+## Compliance and Risk
 
 Compliance and risk are related but not identical.
 
@@ -2378,7 +2378,7 @@ Both dimensions should remain visible.
 
 ---
 
-# Risk-Based Compliance
+## Risk-Based Compliance
 
 Risk may influence:
 
@@ -2392,7 +2392,7 @@ Risk should not silently redefine mandatory requirements.
 
 ---
 
-# Compliance and Quality Debt
+## Compliance and Quality Debt
 
 Known non-conformity may create Quality Debt when temporarily tolerated.
 
@@ -2410,7 +2410,7 @@ Remediation
 
 ---
 
-# Compliance and Defects
+## Compliance and Defects
 
 A compliance failure may reveal a defect.
 
@@ -2431,7 +2431,7 @@ Not every compliance finding is necessarily a software defect.
 
 ---
 
-# Compliance and Architecture
+## Compliance and Architecture
 
 Architecture compliance converts architectural decisions into enforceable quality expectations.
 
@@ -2439,7 +2439,7 @@ This prevents architecture documentation from becoming purely descriptive.
 
 ---
 
-# Compliance and Documentation
+## Compliance and Documentation
 
 Documentation itself is both:
 
@@ -2457,7 +2457,7 @@ This dual role requires strong versioning and traceability.
 
 ---
 
-# Compliance and Testing
+## Compliance and Testing
 
 Tests may provide evidence for compliance requirements.
 
@@ -2473,13 +2473,13 @@ unless the compliance profile consists exclusively of requirements demonstrated 
 
 ---
 
-# Compliance and Security
+## Compliance and Security
 
 Security compliance should integrate with security-specific requirements while preserving the Quality Framework's common evidence, assessment, severity, and gate concepts.
 
 ---
 
-# Compliance and Build
+## Compliance and Build
 
 Build compliance ensures artifacts are produced according to governed engineering requirements.
 
@@ -2487,7 +2487,7 @@ Build success alone is not sufficient evidence of complete build compliance.
 
 ---
 
-# Compliance and Release
+## Compliance and Release
 
 Release compliance ensures all release-specific mandatory requirements have been demonstrated before official publication.
 
@@ -2495,7 +2495,7 @@ Release compliance may be one of the strongest inputs to the Release Gate.
 
 ---
 
-# Compliance and Official Plugins
+## Compliance and Official Plugins
 
 Official plugins require particularly strong compliance because they represent supported FamilyOS capabilities.
 
@@ -2519,7 +2519,7 @@ Plugin Quality Gate
 
 ---
 
-# Compliance and Governance
+## Compliance and Governance
 
 Quality Governance determines:
 
@@ -2536,7 +2536,7 @@ Compliance operationalizes these governance decisions.
 
 ---
 
-# Compliance and Continuous Improvement
+## Compliance and Continuous Improvement
 
 Compliance data provides important feedback.
 
@@ -2560,7 +2560,7 @@ Improved Requirements and Automation
 
 ---
 
-# Requirement Effectiveness
+## Requirement Effectiveness
 
 A requirement should be reviewed when it:
 
@@ -2574,7 +2574,7 @@ Requirements themselves are subject to quality improvement.
 
 ---
 
-# Compliance Automation Effectiveness
+## Compliance Automation Effectiveness
 
 Automation should be evaluated for:
 
@@ -2589,15 +2589,15 @@ Feedback Latency
 
 ---
 
-# Compliance Anti-Patterns
+## Compliance Anti-Patterns
 
 The FamilyOS Quality Framework rejects several compliance anti-patterns.
 
-## Checkbox Compliance
+### Checkbox Compliance
 
 Passing a checklist without meaningful evidence does not establish compliance.
 
-## Compliance by Declaration
+### Compliance by Declaration
 
 Statements such as:
 
@@ -2607,41 +2607,41 @@ This component follows FamilyOS standards.
 
 are not sufficient evidence.
 
-## Percentage-Only Compliance
+### Percentage-Only Compliance
 
 A high percentage must not hide critical mandatory failures.
 
-## Unknown Equals Compliant
+### Unknown Equals Compliant
 
 Missing evidence must not become approval.
 
-## Permanent Exceptions
+### Permanent Exceptions
 
 Exceptions must not become invisible permanent policy.
 
-## Untraceable Requirements
+### Untraceable Requirements
 
 Requirements must identify their authority.
 
-## Manual Everything
+### Manual Everything
 
 Deterministic requirements should be automated where practical.
 
-## Automation Without Governance
+### Automation Without Governance
 
 Automated rules must still derive from governed requirements.
 
-## Compliance After Development
+### Compliance After Development
 
 Compliance should be integrated into engineering workflows rather than performed only before release.
 
-## Compliance Without Versioning
+### Compliance Without Versioning
 
 Historical conformity must be interpretable against the requirements that existed at the time.
 
 ---
 
-# Initial Compliance Model
+## Initial Compliance Model
 
 An initial FamilyOS implementation may use:
 
@@ -2664,7 +2664,7 @@ ERROR
 
 ---
 
-# Initial Requirements
+## Initial Requirements
 
 Initial compliance requirements should focus on existing deterministic engineering expectations.
 
@@ -2683,7 +2683,7 @@ Documentation Structure Valid
 
 ---
 
-# Initial Profile
+## Initial Profile
 
 A first general engineering profile may conceptually contain:
 
@@ -2699,7 +2699,7 @@ Basic Architecture Validation
 
 ---
 
-# Initial Compliance Flow
+## Initial Compliance Flow
 
 ```text
 Target
@@ -2725,7 +2725,7 @@ Quality Gate
 
 ---
 
-# Initial CLI
+## Initial CLI
 
 A future CLI may conceptually support:
 
@@ -2763,7 +2763,7 @@ COMPLIANT
 
 ---
 
-# Initial Machine-Readable Result
+## Initial Machine-Readable Result
 
 A machine-readable result may conceptually contain:
 
@@ -2781,7 +2781,7 @@ This enables CI integration.
 
 ---
 
-# Compliance Maturity Model
+## Compliance Maturity Model
 
 Quality Compliance may mature through:
 
@@ -2822,7 +2822,7 @@ Continuous Compliance Intelligence
 
 ---
 
-# Continuous Compliance
+## Continuous Compliance
 
 At higher maturity, compliance becomes continuous.
 
@@ -2844,7 +2844,7 @@ This is preferable to periodic large-scale compliance exercises.
 
 ---
 
-# Compliance as Code
+## Compliance as Code
 
 Deterministic compliance requirements should increasingly be represented as version-controlled policy and executable rules.
 
@@ -2862,7 +2862,7 @@ This approach may be described as Compliance as Code.
 
 ---
 
-# Compliance as Code Principle
+## Compliance as Code Principle
 
 Compliance as Code does not mean every compliance decision must be automated.
 
@@ -2877,7 +2877,7 @@ Human judgment remains necessary where appropriate.
 
 ---
 
-# Policy Testing
+## Policy Testing
 
 Compliance rules and profiles should themselves be tested.
 
@@ -2899,7 +2899,7 @@ Expired Exception
 
 ---
 
-# Compliance Framework Testing
+## Compliance Framework Testing
 
 The compliance engine should have:
 
@@ -2913,7 +2913,7 @@ The compliance engine should have:
 
 ---
 
-# Rule False Positive Testing
+## Rule False Positive Testing
 
 Rules should include fixtures demonstrating legitimate patterns that must pass.
 
@@ -2921,7 +2921,7 @@ This reduces unnecessary developer friction.
 
 ---
 
-# Rule False Negative Testing
+## Rule False Negative Testing
 
 Rules should include known invalid fixtures that must fail.
 
@@ -2929,7 +2929,7 @@ This ensures enforcement remains effective.
 
 ---
 
-# Compliance Observability Integration
+## Compliance Observability Integration
 
 Every compliance assessment should contribute structured telemetry.
 
@@ -2944,7 +2944,7 @@ quality.compliance.exception.expired
 
 ---
 
-# Compliance Event
+## Compliance Event
 
 A compliance event may include:
 
@@ -2959,7 +2959,7 @@ timestamp
 
 ---
 
-# Compliance History
+## Compliance History
 
 Historical compliance should support questions such as:
 
@@ -2975,7 +2975,7 @@ Which requirements fail most often?
 
 ---
 
-# Compliance Query Model
+## Compliance Query Model
 
 Future tooling may support:
 
@@ -2995,7 +2995,7 @@ Show requirements failing across multiple targets.
 
 ---
 
-# Compliance Intelligence
+## Compliance Intelligence
 
 At advanced maturity, FamilyOS may derive insights from compliance history.
 
@@ -3012,7 +3012,7 @@ These insights may improve the framework.
 
 ---
 
-# AI-Assisted Compliance
+## AI-Assisted Compliance
 
 AI may assist with:
 
@@ -3024,7 +3024,7 @@ AI may assist with:
 
 ---
 
-# AI Compliance Restrictions
+## AI Compliance Restrictions
 
 AI must not independently:
 
@@ -3042,7 +3042,7 @@ AI-generated conclusions must remain distinguishable from authoritative complian
 
 ---
 
-# Compliance Security
+## Compliance Security
 
 Compliance infrastructure is part of the FamilyOS Quality Control Plane.
 
@@ -3056,7 +3056,7 @@ It must be protected against:
 
 ---
 
-# Compliance Integrity
+## Compliance Integrity
 
 Authoritative compliance results should bind:
 
@@ -3074,7 +3074,7 @@ This protects interpretation.
 
 ---
 
-# Compliance Provenance
+## Compliance Provenance
 
 A compliance result should answer:
 
@@ -3096,7 +3096,7 @@ When was the assessment produced?
 
 ---
 
-# Compliance Immutability
+## Compliance Immutability
 
 Published formal assessments should remain immutable where practical.
 
@@ -3104,7 +3104,7 @@ A changed target should produce a new assessment rather than rewriting historica
 
 ---
 
-# Compliance Retention
+## Compliance Retention
 
 Retention should be proportional to lifecycle significance.
 
@@ -3123,7 +3123,7 @@ Release Compliance Assessment
 
 ---
 
-# Compliance Scalability
+## Compliance Scalability
 
 The model must scale as FamilyOS grows across:
 
@@ -3140,7 +3140,7 @@ Profiles and reusable rules are essential for scalability.
 
 ---
 
-# Requirement Reuse
+## Requirement Reuse
 
 Common requirements should be reusable across profiles.
 
@@ -3158,7 +3158,7 @@ This prevents duplicated policy.
 
 ---
 
-# Domain Ownership Scalability
+## Domain Ownership Scalability
 
 Different domain authorities may maintain their own requirements while sharing the common compliance model.
 
@@ -3184,7 +3184,7 @@ Common Compliance Engine
 
 ---
 
-# Federated Compliance Model
+## Federated Compliance Model
 
 FamilyOS may eventually use a federated model where domain frameworks define their own requirements while the Quality Framework provides:
 
@@ -3201,7 +3201,7 @@ This avoids centralizing every domain rule inside one framework.
 
 ---
 
-# Relationship With Plugin Compliance Framework
+## Relationship With Plugin Compliance Framework
 
 The Plugin Compliance Framework is a specialized implementation of compliance concepts for FamilyOS plugins.
 
@@ -3219,7 +3219,7 @@ The Plugin Compliance Framework provides plugin-specific:
 
 ---
 
-# Relationship With Quality Metrics
+## Relationship With Quality Metrics
 
 Compliance metrics provide quantitative visibility into conformity.
 
@@ -3227,7 +3227,7 @@ Metrics do not replace requirement-level evidence.
 
 ---
 
-# Relationship With Quality Evidence
+## Relationship With Quality Evidence
 
 Quality Evidence is the factual basis for compliance.
 
@@ -3245,7 +3245,7 @@ Compliance Result
 
 ---
 
-# Relationship With Quality Risk
+## Relationship With Quality Risk
 
 Risk determines the significance of compliance failures and may influence enforcement policy.
 
@@ -3253,7 +3253,7 @@ Compliance state and risk state must remain separate.
 
 ---
 
-# Relationship With Defect and Quality Debt Management
+## Relationship With Defect and Quality Debt Management
 
 Non-conformities may produce:
 
@@ -3267,7 +3267,7 @@ depending on their nature and lifecycle.
 
 ---
 
-# Relationship With Quality Reviews and Assessments
+## Relationship With Quality Reviews and Assessments
 
 Compliance Assessment is a specialized assessment focused on conformity with explicit requirements.
 
@@ -3275,19 +3275,19 @@ Broader Quality Assessments may include compliance state as one dimension.
 
 ---
 
-# Relationship With Quality Automation
+## Relationship With Quality Automation
 
 Quality Automation executes machine-verifiable compliance rules and collects evidence.
 
 ---
 
-# Relationship With Quality Observability
+## Relationship With Quality Observability
 
 Quality Observability exposes compliance state, trends, exceptions, regressions, and infrastructure health.
 
 ---
 
-# Relationship With Quality Gates
+## Relationship With Quality Gates
 
 Quality Gates consume compliance state when policy requires conformity before progression.
 
@@ -3305,7 +3305,7 @@ Progression Decision
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Quality Governance determines:
 
@@ -3322,7 +3322,7 @@ Compliance operationalizes these decisions.
 
 ---
 
-# Reference Compliance Flow
+## Reference Compliance Flow
 
 The complete FamilyOS Quality Compliance flow can be represented as:
 
@@ -3376,7 +3376,7 @@ Continuous Improvement
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Compliance enables FamilyOS to move from:
 
@@ -3415,7 +3415,7 @@ This provides substantially stronger engineering assurance.
 
 ---
 
-# Final Quality Compliance Principle
+## Final Quality Compliance Principle
 
 Quality standards become meaningful only when conformity can be demonstrated consistently.
 

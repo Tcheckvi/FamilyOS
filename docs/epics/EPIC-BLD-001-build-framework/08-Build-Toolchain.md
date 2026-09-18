@@ -1,8 +1,8 @@
 # Build Framework
 
-# 08 Build Toolchain
+## 08 Build Toolchain
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the toolchain model used to transform FamilyOS engineering state into validated build artifacts.
 
@@ -18,7 +18,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Build Toolchain model is to ensure that FamilyOS build behavior does not depend on arbitrary or undocumented tooling state.
 
@@ -44,7 +44,7 @@ The objective is to allow tooling to evolve without losing build reliability.
 
 ---
 
-# Toolchain Definition
+## Toolchain Definition
 
 A build toolchain is the collection of software capabilities required to execute, validate, package, and observe a build.
 
@@ -70,7 +70,7 @@ Not every build profile requires every category.
 
 ---
 
-# Toolchain As Build Input
+## Toolchain As Build Input
 
 The toolchain must be considered part of the build input model.
 
@@ -94,7 +94,7 @@ Therefore, significant toolchain state must remain identifiable.
 
 ---
 
-# Toolchain Objectives
+## Toolchain Objectives
 
 The FamilyOS Build Toolchain should provide:
 
@@ -110,7 +110,7 @@ The FamilyOS Build Toolchain should provide:
 
 ---
 
-# Toolchain Principle 1 — Tools Follow Architecture
+## Toolchain Principle 1 — Tools Follow Architecture
 
 Tool selection must follow engineering requirements.
 
@@ -142,7 +142,7 @@ They do not own it.
 
 ---
 
-# Toolchain Principle 2 — Significant Tools Must Be Known
+## Toolchain Principle 2 — Significant Tools Must Be Known
 
 Any tool that can materially affect build output SHOULD have an identifiable version or supported version range.
 
@@ -161,7 +161,7 @@ Unknown tooling weakens reproducibility.
 
 ---
 
-# Toolchain Principle 3 — Tooling Must Be Discoverable
+## Toolchain Principle 3 — Tooling Must Be Discoverable
 
 Canonical build tools must not depend on personal knowledge.
 
@@ -175,7 +175,7 @@ An engineer should be able to determine:
 
 ---
 
-# Toolchain Principle 4 — Tooling Must Be Validated
+## Toolchain Principle 4 — Tooling Must Be Validated
 
 The build process SHOULD validate important tooling prerequisites before execution.
 
@@ -195,7 +195,7 @@ This avoids late failures caused by unsupported tools.
 
 ---
 
-# Toolchain Principle 5 — Local And CI Tooling Should Align
+## Toolchain Principle 5 — Local And CI Tooling Should Align
 
 Local and CI execution should use compatible toolchain semantics.
 
@@ -214,7 +214,7 @@ The effective tooling requirements should not.
 
 ---
 
-# Toolchain Principle 6 — Toolchain Drift Must Be Controlled
+## Toolchain Principle 6 — Toolchain Drift Must Be Controlled
 
 Toolchain drift occurs when different environments silently use different versions or implementations.
 
@@ -232,7 +232,7 @@ Uncontrolled drift is not acceptable.
 
 ---
 
-# Toolchain Principle 7 — Tool Upgrades Are Engineering Changes
+## Toolchain Principle 7 — Tool Upgrades Are Engineering Changes
 
 A toolchain upgrade can change:
 
@@ -248,7 +248,7 @@ Therefore, tool upgrades must be treated as engineering changes rather than rout
 
 ---
 
-# Toolchain Layers
+## Toolchain Layers
 
 The FamilyOS toolchain can be understood through several layers.
 
@@ -271,7 +271,7 @@ Their responsibilities should remain explicit.
 
 ---
 
-# Runtime Layer
+## Runtime Layer
 
 The runtime layer provides the execution environment for build tooling.
 
@@ -288,7 +288,7 @@ The runtime is one of the most important toolchain inputs.
 
 ---
 
-# Runtime Requirements
+## Runtime Requirements
 
 The runtime SHOULD be:
 
@@ -302,7 +302,7 @@ Unsupported runtime versions should fail clearly.
 
 ---
 
-# Multiple Runtime Versions
+## Multiple Runtime Versions
 
 FamilyOS may eventually support multiple runtime versions.
 
@@ -322,7 +322,7 @@ The framework may support several runtime versions while selecting a canonical v
 
 ---
 
-# Dependency Management Layer
+## Dependency Management Layer
 
 Dependency management tooling resolves and installs required packages.
 
@@ -338,7 +338,7 @@ Dependency management behavior directly affects reproducibility.
 
 ---
 
-# Dependency Tool Requirements
+## Dependency Tool Requirements
 
 Dependency tooling should support:
 
@@ -353,7 +353,7 @@ The build process should not depend on manually installed undeclared packages.
 
 ---
 
-# Build Frontend Layer
+## Build Frontend Layer
 
 A build frontend provides a user-facing mechanism for initiating package builds.
 
@@ -373,7 +373,7 @@ The exact implementation may evolve.
 
 ---
 
-# Build Backend Layer
+## Build Backend Layer
 
 The build backend performs package construction according to project metadata.
 
@@ -389,7 +389,7 @@ The backend is a critical build dependency.
 
 ---
 
-# Backend Requirements
+## Backend Requirements
 
 The selected backend should be:
 
@@ -404,7 +404,7 @@ Custom backends should not be introduced without clear justification.
 
 ---
 
-# Packaging Layer
+## Packaging Layer
 
 Packaging tools transform implementation state into distributable package formats.
 
@@ -421,7 +421,7 @@ The toolchain model must remain extensible.
 
 ---
 
-# Packaging Requirements
+## Packaging Requirements
 
 Packaging tooling must support:
 
@@ -434,7 +434,7 @@ Packaging tooling must support:
 
 ---
 
-# Validation Layer
+## Validation Layer
 
 Validation tools determine whether source, configuration, and artifacts satisfy engineering requirements.
 
@@ -450,7 +450,7 @@ Validation tooling forms part of build trust.
 
 ---
 
-# Static Analysis Tools
+## Static Analysis Tools
 
 Static analysis may identify defects before artifact generation.
 
@@ -465,7 +465,7 @@ The Build Framework may invoke static analysis as part of validation profiles.
 
 ---
 
-# Type Validation Tools
+## Type Validation Tools
 
 Static type validation strengthens source correctness.
 
@@ -475,7 +475,7 @@ Type validation remains governed by engineering and testing standards, while the
 
 ---
 
-# Test Tooling
+## Test Tooling
 
 Test tooling may execute:
 
@@ -490,7 +490,7 @@ The Build Toolchain owns how required test tooling becomes available to build va
 
 ---
 
-# Artifact Validation Tools
+## Artifact Validation Tools
 
 Artifacts may require specialized validation.
 
@@ -507,7 +507,7 @@ Artifact validation tools should operate after artifact generation.
 
 ---
 
-# Generation Layer
+## Generation Layer
 
 Generators transform controlled inputs into derived outputs.
 
@@ -523,7 +523,7 @@ Generators are high-impact tooling because they directly create build inputs or 
 
 ---
 
-# Generator Requirements
+## Generator Requirements
 
 Generators SHOULD be:
 
@@ -536,7 +536,7 @@ Generators SHOULD be:
 
 ---
 
-# Generated Output Stability
+## Generated Output Stability
 
 Generator upgrades may alter generated content even when source inputs remain unchanged.
 
@@ -544,7 +544,7 @@ Therefore, generator version changes should be evaluated for artifact impact.
 
 ---
 
-# Documentation Toolchain
+## Documentation Toolchain
 
 Documentation generation may participate in the build lifecycle.
 
@@ -562,7 +562,7 @@ The Build Framework governs execution and artifact production.
 
 ---
 
-# Automation Layer
+## Automation Layer
 
 Automation tooling coordinates build execution in CI or other controlled environments.
 
@@ -578,7 +578,7 @@ Automation tooling should call canonical build interfaces.
 
 ---
 
-# CI Tooling Principle
+## CI Tooling Principle
 
 The preferred relationship is:
 
@@ -598,7 +598,7 @@ Unique Build Implementation
 
 ---
 
-# Supporting Utilities
+## Supporting Utilities
 
 Builds may rely on supporting utilities such as:
 
@@ -612,7 +612,7 @@ If such tools materially affect build output, their assumptions must be document
 
 ---
 
-# Git As Toolchain Component
+## Git As Toolchain Component
 
 Git participates in build context when build identity or source state depends on:
 
@@ -625,7 +625,7 @@ Git should therefore be treated as a relevant supporting tool for traceable buil
 
 ---
 
-# Shell Dependency
+## Shell Dependency
 
 Shell scripts may provide useful orchestration.
 
@@ -642,7 +642,7 @@ Complex build logic should not accumulate indefinitely in shell.
 
 ---
 
-# Tool Installation Model
+## Tool Installation Model
 
 The Build Framework should support a clear method for acquiring required tooling.
 
@@ -662,7 +662,7 @@ The toolchain should not depend on ad hoc manual installation.
 
 ---
 
-# Development Toolchain
+## Development Toolchain
 
 The local development toolchain should enable engineers to:
 
@@ -676,7 +676,7 @@ It should remain close to CI semantics.
 
 ---
 
-# CI Toolchain
+## CI Toolchain
 
 CI should provision tooling from explicit definitions.
 
@@ -694,7 +694,7 @@ A fresh CI environment is especially useful for detecting hidden local dependenc
 
 ---
 
-# Release Candidate Toolchain
+## Release Candidate Toolchain
 
 Release-candidate builds may require stronger toolchain control.
 
@@ -710,7 +710,7 @@ The exact rules should remain aligned with the Release Framework.
 
 ---
 
-# Toolchain Version Policy
+## Toolchain Version Policy
 
 Tool versions may be controlled through:
 
@@ -724,7 +724,7 @@ The appropriate mechanism depends on tool criticality.
 
 ---
 
-# Exact Pinning
+## Exact Pinning
 
 Exact versions improve reproducibility but increase maintenance responsibility.
 
@@ -736,7 +736,7 @@ They are appropriate when:
 
 ---
 
-# Version Ranges
+## Version Ranges
 
 Version ranges provide flexibility.
 
@@ -750,7 +750,7 @@ The tradeoff must be deliberate.
 
 ---
 
-# Toolchain Locking
+## Toolchain Locking
 
 Future FamilyOS build environments may use stronger toolchain locking.
 
@@ -768,7 +768,7 @@ This is a maturity mechanism rather than an immediate universal requirement.
 
 ---
 
-# Toolchain Compatibility Matrix
+## Toolchain Compatibility Matrix
 
 As FamilyOS grows, tool compatibility may need explicit modeling.
 
@@ -788,7 +788,7 @@ A formal matrix should only be introduced when complexity justifies it.
 
 ---
 
-# Toolchain Discovery
+## Toolchain Discovery
 
 Build tooling should support discovering its effective toolchain.
 
@@ -815,7 +815,7 @@ The capability is strategically useful.
 
 ---
 
-# Toolchain Validation Flow
+## Toolchain Validation Flow
 
 The canonical validation flow is:
 
@@ -835,7 +835,7 @@ A mismatch should produce an actionable error.
 
 ---
 
-# Toolchain Failure Classification
+## Toolchain Failure Classification
 
 Possible failure categories include:
 
@@ -851,7 +851,7 @@ Formal machine-readable codes may be introduced later.
 
 ---
 
-# Toolchain Observability
+## Toolchain Observability
 
 Build diagnostics should identify relevant tools.
 
@@ -867,7 +867,7 @@ This improves reproducibility and incident investigation.
 
 ---
 
-# Toolchain Evidence
+## Toolchain Evidence
 
 Toolchain evidence can become part of the Build Evidence model.
 
@@ -888,7 +888,7 @@ Evidence strength depends on profile.
 
 ---
 
-# Toolchain Security
+## Toolchain Security
 
 Build tools execute with access to source and may produce trusted artifacts.
 
@@ -907,7 +907,7 @@ Tool acquisition must remain controlled.
 
 ---
 
-# Tool Source Trust
+## Tool Source Trust
 
 Canonical build tools should come from trusted and documented sources.
 
@@ -915,7 +915,7 @@ Unverified binaries or scripts should not become required build dependencies.
 
 ---
 
-# Tool Integrity
+## Tool Integrity
 
 Future stronger build profiles may verify tooling integrity through:
 
@@ -928,7 +928,7 @@ These controls may be added as FamilyOS supply-chain maturity grows.
 
 ---
 
-# Tool Privileges
+## Tool Privileges
 
 Build tools should operate with minimum required privileges.
 
@@ -942,7 +942,7 @@ This preserves separation of responsibilities.
 
 ---
 
-# Tool Configuration
+## Tool Configuration
 
 Tool configuration is part of the effective toolchain.
 
@@ -962,7 +962,7 @@ Both should remain controlled.
 
 ---
 
-# Shared Tool Configuration
+## Shared Tool Configuration
 
 Where multiple environments use the same tool, configuration should be shared where practical.
 
@@ -979,7 +979,7 @@ This reduces drift.
 
 ---
 
-# Local Overrides
+## Local Overrides
 
 Local overrides may be useful for developer ergonomics.
 
@@ -989,7 +989,7 @@ Overrides that affect trusted build output should be explicit.
 
 ---
 
-# Toolchain Upgrades
+## Toolchain Upgrades
 
 Toolchain upgrades should follow a controlled lifecycle.
 
@@ -1013,7 +1013,7 @@ The depth of review depends on tool significance.
 
 ---
 
-# Runtime Upgrade
+## Runtime Upgrade
 
 A runtime upgrade may affect:
 
@@ -1028,7 +1028,7 @@ Runtime upgrades are therefore high-impact toolchain changes.
 
 ---
 
-# Builder Upgrade
+## Builder Upgrade
 
 A package builder upgrade may affect:
 
@@ -1042,7 +1042,7 @@ Artifacts should be compared when such changes are significant.
 
 ---
 
-# Validation Tool Upgrade
+## Validation Tool Upgrade
 
 Validation tools may introduce:
 
@@ -1055,7 +1055,7 @@ Tool upgrades should not silently alter quality expectations.
 
 ---
 
-# Toolchain Deprecation
+## Toolchain Deprecation
 
 Obsolete tools should be removed from canonical build workflows.
 
@@ -1070,7 +1070,7 @@ Leaving multiple obsolete paths creates toolchain ambiguity.
 
 ---
 
-# Single Toolchain Source Of Truth
+## Single Toolchain Source Of Truth
 
 FamilyOS should avoid maintaining conflicting toolchain definitions.
 
@@ -1095,7 +1095,7 @@ All Execution Environments
 
 ---
 
-# Toolchain And Build Profiles
+## Toolchain And Build Profiles
 
 Different profiles may use different subsets of the toolchain.
 
@@ -1128,7 +1128,7 @@ Profile differences must remain explicit.
 
 ---
 
-# Toolchain And Plugins
+## Toolchain And Plugins
 
 Official plugins may require additional tooling.
 
@@ -1142,7 +1142,7 @@ Plugin-specific tools must not weaken platform toolchain governance.
 
 ---
 
-# Toolchain And Documentation
+## Toolchain And Documentation
 
 Documentation tooling should be integrated through the same principles:
 
@@ -1155,7 +1155,7 @@ Generated documentation should not depend on undocumented local tools.
 
 ---
 
-# Toolchain And Testing
+## Toolchain And Testing
 
 Testing tools are governed primarily by the Testing Framework.
 
@@ -1163,7 +1163,7 @@ The Build Framework ensures that required testing tools are available and correc
 
 ---
 
-# Toolchain And Quality
+## Toolchain And Quality
 
 Quality tools may participate in build gates.
 
@@ -1171,7 +1171,7 @@ The Build Framework must expose their results but should not redefine quality go
 
 ---
 
-# Toolchain And Release
+## Toolchain And Release
 
 The Release Framework may require stronger toolchain controls for official artifacts.
 
@@ -1179,7 +1179,7 @@ The Build Framework should provide enough toolchain evidence to support release 
 
 ---
 
-# Toolchain Portability
+## Toolchain Portability
 
 The Build Framework should avoid unnecessary platform-specific tooling.
 
@@ -1193,7 +1193,7 @@ Portability supports:
 
 ---
 
-# Toolchain Isolation
+## Toolchain Isolation
 
 Build environments should isolate tool versions sufficiently to prevent accidental interference from globally installed tooling.
 
@@ -1205,7 +1205,7 @@ The principle is more important than the specific technology.
 
 ---
 
-# Global Tool Anti-Pattern
+## Global Tool Anti-Pattern
 
 The canonical build should not rely on undocumented globally installed packages.
 
@@ -1219,7 +1219,7 @@ performed months earlier on a developer machine must not be the only reason the 
 
 ---
 
-# CI-Only Tool Anti-Pattern
+## CI-Only Tool Anti-Pattern
 
 Critical tools must not exist only inside CI configuration without local documentation or equivalent setup.
 
@@ -1227,7 +1227,7 @@ Developers should be able to understand the canonical toolchain.
 
 ---
 
-# Latest-Version Anti-Pattern
+## Latest-Version Anti-Pattern
 
 Build definitions should avoid uncontrolled dependencies such as:
 
@@ -1241,7 +1241,7 @@ Tool version strategy must be intentional.
 
 ---
 
-# Hidden Generator Anti-Pattern
+## Hidden Generator Anti-Pattern
 
 Generated output should not depend on unknown local generator versions.
 
@@ -1249,7 +1249,7 @@ Generator identity must remain traceable where output matters.
 
 ---
 
-# Duplicate Tool Anti-Pattern
+## Duplicate Tool Anti-Pattern
 
 FamilyOS should avoid multiple tools solving the same build concern without a clear reason.
 
@@ -1264,7 +1264,7 @@ Tool proliferation increases cognitive and maintenance cost.
 
 ---
 
-# Tool Selection Criteria
+## Tool Selection Criteria
 
 When evaluating a new build tool, FamilyOS should consider:
 
@@ -1284,7 +1284,7 @@ Tool popularity alone is insufficient.
 
 ---
 
-# Tool Introduction Process
+## Tool Introduction Process
 
 A new significant tool should follow:
 
@@ -1308,7 +1308,7 @@ Architectural tools may require ADR governance.
 
 ---
 
-# Tool Removal Process
+## Tool Removal Process
 
 Removing a tool should verify:
 
@@ -1320,7 +1320,7 @@ Removing a tool should verify:
 
 ---
 
-# Toolchain Governance
+## Toolchain Governance
 
 Significant toolchain decisions should remain governed.
 
@@ -1337,7 +1337,7 @@ These may require ADR or RFC treatment.
 
 ---
 
-# Toolchain Debt
+## Toolchain Debt
 
 Toolchain debt includes:
 
@@ -1353,7 +1353,7 @@ Toolchain debt should be tracked and reduced.
 
 ---
 
-# Toolchain Metrics
+## Toolchain Metrics
 
 Potential future toolchain metrics include:
 
@@ -1368,7 +1368,7 @@ Metrics should only be introduced when they support real decisions.
 
 ---
 
-# Toolchain Maintenance
+## Toolchain Maintenance
 
 Toolchain maintenance should be continuous but controlled.
 
@@ -1385,7 +1385,7 @@ Maintenance must not become uncontrolled version churn.
 
 ---
 
-# Toolchain Reproducibility
+## Toolchain Reproducibility
 
 Reproducible builds require sufficient control over toolchain state.
 
@@ -1405,7 +1405,7 @@ This can evolve toward immutable or declarative build environments if needed.
 
 ---
 
-# Toolchain Maturity Model
+## Toolchain Maturity Model
 
 FamilyOS toolchain maturity may progress through:
 
@@ -1443,7 +1443,7 @@ The framework supports this progression without requiring immediate implementati
 
 ---
 
-# Current FamilyOS Toolchain Context
+## Current FamilyOS Toolchain Context
 
 The current FamilyOS engineering environment already uses a coherent Python-oriented toolchain.
 
@@ -1463,7 +1463,7 @@ The framework does not require replacing stable tools merely to achieve architec
 
 ---
 
-# Toolchain Success Criteria
+## Toolchain Success Criteria
 
 The Build Toolchain model is successful when FamilyOS can answer:
 
@@ -1482,45 +1482,45 @@ The Build Toolchain model is successful when FamilyOS can answer:
 
 ---
 
-# Toolchain Invariants
+## Toolchain Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Critical build tools must be identifiable.
 
-## Invariant 2
+### Invariant 2
 
 Required tools must be discoverable from project documentation or configuration.
 
-## Invariant 3
+### Invariant 3
 
 Unsupported critical tool versions must not silently proceed.
 
-## Invariant 4
+### Invariant 4
 
 CI must not invent independent build semantics through different tools.
 
-## Invariant 5
+### Invariant 5
 
 Tool upgrades must remain reviewable.
 
-## Invariant 6
+### Invariant 6
 
 Required tooling must not depend on personal workstation state.
 
-## Invariant 7
+### Invariant 7
 
 Toolchain changes must not bypass validation.
 
-## Invariant 8
+### Invariant 8
 
 Tool privileges must remain proportional to build responsibility.
 
 ---
 
-# Toolchain Summary
+## Toolchain Summary
 
 The canonical FamilyOS Build Toolchain model is:
 
@@ -1546,7 +1546,7 @@ This model transforms tooling from an implicit workstation characteristic into a
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Toolchain is founded on the following rule:
 

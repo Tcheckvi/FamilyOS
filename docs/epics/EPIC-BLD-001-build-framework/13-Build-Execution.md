@@ -1,8 +1,8 @@
 # Build Framework
 
-# 13 Build Execution
+## 13 Build Execution
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS build execution transforms a resolved and validated build context into candidate artifacts.
 
@@ -22,7 +22,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Build Execution model is to define how FamilyOS build operations are initiated, orchestrated, executed, observed, failed, retried, finalized, and integrated with artifact processing.
 
@@ -51,7 +51,7 @@ It establishes requirements for:
 
 ---
 
-# Execution Boundary
+## Execution Boundary
 
 Build execution begins only after required build context has been resolved and validated.
 
@@ -75,7 +75,7 @@ Execution must not silently resolve foundational uncertainty that should have be
 
 ---
 
-# Execution Preconditions
+## Execution Preconditions
 
 Before significant build execution begins, applicable preconditions SHOULD be satisfied.
 
@@ -95,7 +95,7 @@ Invalid preconditions should fail early.
 
 ---
 
-# Execution Request
+## Execution Request
 
 A build execution begins from an explicit request.
 
@@ -119,7 +119,7 @@ The architectural responsibility should remain explicit.
 
 ---
 
-# Build Target
+## Build Target
 
 A build target identifies what is being transformed.
 
@@ -141,7 +141,7 @@ A target must have defined:
 
 ---
 
-# Target Principle
+## Target Principle
 
 A build target should not be inferred accidentally from the current working directory or arbitrary filesystem state.
 
@@ -157,7 +157,7 @@ Build Execution
 
 ---
 
-# Build Profile
+## Build Profile
 
 The build profile defines the purpose and strictness of execution.
 
@@ -184,7 +184,7 @@ They must not redefine foundational build semantics.
 
 ---
 
-# Execution Entry Point
+## Execution Entry Point
 
 FamilyOS SHOULD expose canonical build entry points.
 
@@ -199,7 +199,7 @@ The entry point should delegate to the canonical build architecture rather than 
 
 ---
 
-# Canonical Execution Principle
+## Canonical Execution Principle
 
 The preferred relationship is:
 
@@ -217,7 +217,7 @@ The framework rejects multiple incompatible execution paths for the same build t
 
 ---
 
-# Build Orchestration
+## Build Orchestration
 
 Build orchestration coordinates execution stages.
 
@@ -234,7 +234,7 @@ Orchestration should remain understandable.
 
 ---
 
-# Orchestration Model
+## Orchestration Model
 
 A canonical orchestration sequence may be:
 
@@ -258,7 +258,7 @@ Artifact validation occurs after execution output has been identified.
 
 ---
 
-# Current Execution Contract
+## Current Execution Contract
 
 The current canonical FamilyOS package-build implementation uses one explicit
 application-owned orchestration path for the `familyos-cli-package` target.
@@ -367,7 +367,7 @@ history.
 
 ---
 
-# Current Canonical CLI Contract
+## Current Canonical CLI Contract
 
 The implemented package-build entry point is:
 
@@ -426,7 +426,7 @@ semantics.
 
 ---
 
-# Stage Model
+## Stage Model
 
 Execution SHOULD be divided into logical stages where doing so improves clarity.
 
@@ -445,7 +445,7 @@ Not every build type requires all stages.
 
 ---
 
-# Stage Responsibility
+## Stage Responsibility
 
 Each stage SHOULD have:
 
@@ -458,7 +458,7 @@ This improves diagnosis and future automation.
 
 ---
 
-# Stage Independence
+## Stage Independence
 
 Stages should avoid unnecessary hidden coupling.
 
@@ -474,7 +474,7 @@ Dependencies between stages should be explicit.
 
 ---
 
-# Stage Ordering
+## Stage Ordering
 
 Stage order must be deterministic.
 
@@ -487,7 +487,7 @@ The framework rejects stage sequencing that depends on:
 
 ---
 
-# Execution Context
+## Execution Context
 
 Every stage executes within the resolved Build Context.
 
@@ -511,7 +511,7 @@ Stages should not independently re-resolve critical context unless explicitly re
 
 ---
 
-# Context Stability
+## Context Stability
 
 The effective build context SHOULD remain stable throughout execution.
 
@@ -531,7 +531,7 @@ Mid-build mutation weakens traceability.
 
 ---
 
-# Build Workspace
+## Build Workspace
 
 Execution occurs inside a workspace.
 
@@ -584,7 +584,7 @@ The workspace must not become an unofficial source of truth.
 
 ---
 
-# Workspace Requirements
+## Workspace Requirements
 
 A build workspace SHOULD be:
 
@@ -598,7 +598,7 @@ The workspace must not become an unofficial source of truth.
 
 ---
 
-# Clean Workspace
+## Clean Workspace
 
 High-trust builds SHOULD support execution from a clean workspace.
 
@@ -611,7 +611,7 @@ This helps detect dependence on:
 
 ---
 
-# Workspace Preparation
+## Workspace Preparation
 
 The canonical package-build implementation now stages authoritative build
 inputs after successful effective-configuration validation and before package
@@ -656,7 +656,7 @@ Preparation must not silently alter authoritative source.
 
 ---
 
-# Temporary State
+## Temporary State
 
 Temporary files are expected during execution.
 
@@ -669,7 +669,7 @@ They must remain:
 
 ---
 
-# Intermediate Outputs
+## Intermediate Outputs
 
 Intermediate outputs support later execution stages.
 
@@ -684,7 +684,7 @@ Intermediate outputs are not trusted artifacts.
 
 ---
 
-# Intermediate Output Principle
+## Intermediate Output Principle
 
 The relationship is:
 
@@ -700,7 +700,7 @@ Intermediate state should not be passed directly to the Release Framework.
 
 ---
 
-# Generation Stage
+## Generation Stage
 
 Some builds may generate content before packaging.
 
@@ -716,7 +716,7 @@ Generation must follow the rules defined in the Build Input and Project Structur
 
 ---
 
-# Generation Requirements
+## Generation Requirements
 
 Generation SHOULD be:
 
@@ -756,7 +756,7 @@ A future target that requires generation MUST define:
 
 ---
 
-# Source Mutation
+## Source Mutation
 
 Build execution SHOULD avoid modifying tracked authoritative source.
 
@@ -764,7 +764,7 @@ If generation intentionally updates committed derived files, this must be a docu
 
 ---
 
-# Build Transformation
+## Build Transformation
 
 The transformation stage performs the core build work.
 
@@ -776,7 +776,7 @@ The framework defines behavior, not one universal tool.
 
 ---
 
-# Transformation Requirements
+## Transformation Requirements
 
 The transformation must:
 
@@ -788,7 +788,7 @@ The transformation must:
 
 ---
 
-# Package Assembly
+## Package Assembly
 
 Package assembly determines which source and resource content enters the resulting artifact.
 
@@ -826,7 +826,7 @@ Assembly must prevent accidental inclusion of:
 
 ---
 
-# Inclusion Rules
+## Inclusion Rules
 
 Artifact inclusion should derive from explicit package or build configuration.
 
@@ -834,7 +834,7 @@ The framework rejects packaging-by-accident.
 
 ---
 
-# Exclusion Rules
+## Exclusion Rules
 
 Files that must not enter artifacts include, where applicable:
 
@@ -847,7 +847,7 @@ Files that must not enter artifacts include, where applicable:
 
 ---
 
-# Packaging Stage
+## Packaging Stage
 
 Packaging converts prepared build state into defined artifact formats.
 
@@ -860,7 +860,7 @@ Future components may introduce other artifact formats.
 
 ---
 
-# Packaging Requirements
+## Packaging Requirements
 
 Packaging must produce:
 
@@ -873,7 +873,7 @@ Packaging success alone does not establish artifact trust.
 
 ---
 
-# Multi-Artifact Execution
+## Multi-Artifact Execution
 
 A build may produce several related outputs.
 
@@ -893,7 +893,7 @@ Execution should associate these outputs with the same build identity.
 
 ---
 
-# Artifact Collection
+## Artifact Collection
 
 After transformation, candidate outputs must be collected.
 
@@ -906,7 +906,7 @@ Collection identifies:
 
 ---
 
-# Artifact Collection Principle
+## Artifact Collection Principle
 
 The build should not discover official candidate artifacts by guessing.
 
@@ -920,7 +920,7 @@ Collect Expected Outputs
 
 ---
 
-# Unexpected Output
+## Unexpected Output
 
 Unexpected files may indicate:
 
@@ -933,7 +933,7 @@ Significant unexpected output should be investigated.
 
 ---
 
-# Missing Output
+## Missing Output
 
 If a required artifact is absent, execution cannot be considered complete.
 
@@ -941,7 +941,7 @@ The build must fail or enter an invalid final state.
 
 ---
 
-# Build Execution State Machine
+## Build Execution State Machine
 
 A conceptual execution state model is:
 
@@ -975,7 +975,7 @@ CANCELLED
 
 ---
 
-# State Transition Principle
+## State Transition Principle
 
 State transitions should be explicit enough to support:
 
@@ -988,7 +988,7 @@ The implementation need not initially expose a formal state machine API.
 
 ---
 
-# Successful Execution
+## Successful Execution
 
 Successful execution means:
 
@@ -1006,7 +1006,7 @@ Artifact validation remains required.
 
 ---
 
-# Failed Execution
+## Failed Execution
 
 Execution failure occurs when a required stage cannot complete correctly.
 
@@ -1021,7 +1021,7 @@ Possible causes include:
 
 ---
 
-# Failure Propagation
+## Failure Propagation
 
 Failures must propagate to the overall build result.
 
@@ -1029,7 +1029,7 @@ The framework rejects patterns where errors are logged but ignored and execution
 
 ---
 
-# Failure Context
+## Failure Context
 
 A useful execution failure should identify:
 
@@ -1044,7 +1044,7 @@ A useful execution failure should identify:
 
 ---
 
-# Failure Categories
+## Failure Categories
 
 Possible conceptual categories include:
 
@@ -1062,7 +1062,7 @@ Formal machine-readable codes may be introduced later.
 
 ---
 
-# Exit Codes
+## Exit Codes
 
 Canonical command-line build interfaces SHOULD use meaningful process exit behavior.
 
@@ -1077,7 +1077,7 @@ More detailed exit-code models may be introduced if useful.
 
 ---
 
-# Partial Outputs
+## Partial Outputs
 
 A failed or errored package-build invocation may create or modify files before
 the package frontend terminates unsuccessfully.
@@ -1140,7 +1140,7 @@ policy.
 
 ---
 
-# Cleanup After Failure
+## Cleanup After Failure
 
 Canonical package-build execution now applies explicit failure cleanup to the
 Build-ID-scoped internal workspace.
@@ -1213,7 +1213,7 @@ cancellation, retry, or distributed tracing semantics.
 
 ---
 
-# Cancellation
+## Cancellation
 
 Execution may be cancelled because of:
 
@@ -1263,7 +1263,7 @@ result.
 
 ---
 
-# Cancellation Safety
+## Cancellation Safety
 
 Cancellation must not leave an incomplete build appearing successful or
 trusted.
@@ -1282,7 +1282,7 @@ The current synchronous implementation deliberately does not synthesize a
 `CANCELLED` result when no canonical cancellation boundary exists.
 
 ---
-# Retry Philosophy
+## Retry Philosophy
 
 Retries must be used cautiously.
 
@@ -1299,7 +1299,7 @@ It therefore performs no automatic retries.
 
 ---
 
-# Canonical Retry Policy
+## Canonical Retry Policy
 
 The current canonical retry policy is:
 
@@ -1341,7 +1341,7 @@ Unknown or unclassified failures are therefore non-retryable by default.
 
 ---
 
-# Retry Classification
+## Retry Classification
 
 Potentially retryable failures may include, once explicitly and reliably
 classified:
@@ -1368,7 +1368,7 @@ boundary before automatic retry is permitted.
 
 ---
 
-# Retry Safety
+## Retry Safety
 
 A future retry mechanism must:
 
@@ -1387,7 +1387,7 @@ reliability.
 
 ---
 
-# Retry Transparency
+## Retry Transparency
 
 Retries must be visible in diagnostics and execution evidence.
 
@@ -1400,7 +1400,7 @@ The current canonical package-build runtime performs exactly one packaging
 attempt and therefore emits no retry metadata.
 
 ---
-# Idempotence
+## Idempotence
 
 Where practical, repeated execution of the same build request should not create uncontrolled cumulative effects.
 
@@ -1420,7 +1420,7 @@ subject to controlled non-deterministic metadata.
 
 ---
 
-# Build Side Effects
+## Build Side Effects
 
 Build execution should minimize side effects outside defined workspace and output boundaries.
 
@@ -1434,7 +1434,7 @@ Potential side effects requiring control include:
 
 ---
 
-# Publication Is Not Build Execution
+## Publication Is Not Build Execution
 
 Publishing artifacts to an official registry is not ordinary Build Execution responsibility.
 
@@ -1454,7 +1454,7 @@ This prevents release credentials from becoming ordinary build requirements.
 
 ---
 
-# Concurrency
+## Concurrency
 
 FamilyOS may eventually execute independent build operations concurrently.
 
@@ -1470,13 +1470,13 @@ Potential issues include:
 
 ---
 
-# Concurrent Build Principle
+## Concurrent Build Principle
 
 Independent builds should use isolated build identities and workspaces where concurrency could otherwise create interference.
 
 ---
 
-# Parallel Stage Execution
+## Parallel Stage Execution
 
 Some stages may eventually run in parallel when dependencies permit.
 
@@ -1492,7 +1492,7 @@ Parallel Semantics
 
 ---
 
-# Execution Ordering
+## Execution Ordering
 
 When one stage depends on another, the dependency must be explicit.
 
@@ -1500,7 +1500,7 @@ Parallel execution must not rely on timing assumptions.
 
 ---
 
-# Incremental Execution
+## Incremental Execution
 
 Incremental execution may reuse previous results to reduce build time.
 
@@ -1510,7 +1510,7 @@ It must not alter correctness.
 
 ---
 
-# Incremental Build Principle
+## Incremental Build Principle
 
 The target is:
 
@@ -1524,7 +1524,7 @@ for equivalent build context.
 
 ---
 
-# Incremental Validity
+## Incremental Validity
 
 An incremental step may only be skipped when the build system can establish that relevant inputs have not changed.
 
@@ -1532,7 +1532,7 @@ Future fingerprinting may strengthen this capability.
 
 ---
 
-# Cache Integration
+## Cache Integration
 
 Execution may use caches for:
 
@@ -1545,7 +1545,7 @@ Caching must follow cache safety rules.
 
 ---
 
-# Cache Key Philosophy
+## Cache Key Philosophy
 
 A valid cache key should reflect the state that determines cached output.
 
@@ -1565,7 +1565,7 @@ Incomplete cache identity risks stale reuse.
 
 ---
 
-# Cache Miss
+## Cache Miss
 
 A cache miss must result in correct recomputation.
 
@@ -1573,7 +1573,7 @@ It is not an execution failure.
 
 ---
 
-# Cache Corruption
+## Cache Corruption
 
 Invalid cache state must not silently corrupt candidate artifacts.
 
@@ -1581,7 +1581,7 @@ When detected, the build should discard or invalidate affected cache entries.
 
 ---
 
-# Reproducible Execution
+## Reproducible Execution
 
 Execution SHOULD minimize uncontrolled sources of variability.
 
@@ -1596,7 +1596,7 @@ Potential influences include:
 
 ---
 
-# Time During Execution
+## Time During Execution
 
 Operational timestamps are useful for logs and metrics.
 
@@ -1604,13 +1604,13 @@ Artifact content should avoid unnecessary dependence on wall-clock time if repro
 
 ---
 
-# Ordering
+## Ordering
 
 Generation and packaging should use deterministic ordering where the underlying artifact format is order-sensitive.
 
 ---
 
-# Randomness
+## Randomness
 
 Randomness must not influence trusted artifact content unless explicitly required.
 
@@ -1618,7 +1618,7 @@ If randomness is required, its role should be documented and potentially seeded.
 
 ---
 
-# Network Access
+## Network Access
 
 Execution-time network access should be minimized.
 
@@ -1628,7 +1628,7 @@ This narrows execution variability.
 
 ---
 
-# External Services
+## External Services
 
 A build SHOULD avoid requiring live external services to generate canonical artifacts unless the dependency is architecturally necessary.
 
@@ -1636,7 +1636,7 @@ Remote mutable state weakens reproducibility.
 
 ---
 
-# Execution Observability
+## Execution Observability
 
 The canonical package-build implementation now exposes ordered immutable
 execution-stage observations through its application result.
@@ -1702,7 +1702,7 @@ Useful dimensions include:
 
 ---
 
-# Logging
+## Logging
 
 Execution logs should be:
 
@@ -1713,7 +1713,7 @@ Execution logs should be:
 
 ---
 
-# Log Levels
+## Log Levels
 
 A future execution interface may support levels such as:
 
@@ -1728,7 +1728,7 @@ The exact mechanism is implementation-specific.
 
 ---
 
-# Debug Mode
+## Debug Mode
 
 Debug execution may provide additional diagnostics.
 
@@ -1736,7 +1736,7 @@ Debug mode MUST NOT silently change artifact semantics unless clearly documented
 
 ---
 
-# Quiet Mode
+## Quiet Mode
 
 Automation may request reduced console output.
 
@@ -1744,7 +1744,7 @@ Important failures must remain visible.
 
 ---
 
-# Execution Metrics
+## Execution Metrics
 
 Potential metrics include:
 
@@ -1760,7 +1760,7 @@ Metrics should support decisions rather than create noise.
 
 ---
 
-# Build Duration
+## Build Duration
 
 Build duration should be measured at well-defined boundaries.
 
@@ -1777,7 +1777,7 @@ This helps identify bottlenecks.
 
 ---
 
-# Performance Optimization
+## Performance Optimization
 
 Execution performance should be optimized only after correctness and reproducibility are protected.
 
@@ -1790,7 +1790,7 @@ Potential techniques include:
 
 ---
 
-# Performance Regression
+## Performance Regression
 
 Significant build-time regressions should be investigated when they materially impact developer or CI productivity.
 
@@ -1798,7 +1798,7 @@ The Quality Framework may eventually formalize thresholds.
 
 ---
 
-# Resource Consumption
+## Resource Consumption
 
 Build execution consumes:
 
@@ -1811,7 +1811,7 @@ Resource assumptions should remain reasonable and observable where needed.
 
 ---
 
-# Disk Usage
+## Disk Usage
 
 Large temporary or artifact output may require cleanup controls.
 
@@ -1819,7 +1819,7 @@ Build systems should avoid unbounded accumulation of derived state.
 
 ---
 
-# Execution Security
+## Execution Security
 
 Build execution is security-sensitive because tools and dependencies may execute code with access to source and environment.
 
@@ -1834,7 +1834,7 @@ Security principles include:
 
 ---
 
-# Secret Exposure
+## Secret Exposure
 
 Ordinary build stages SHOULD not require release or production secrets.
 
@@ -1842,7 +1842,7 @@ If a build stage requires a secret, exposure must be limited to that stage.
 
 ---
 
-# Command Injection
+## Command Injection
 
 Build inputs or configuration that reach shell commands must be handled safely.
 
@@ -1850,7 +1850,7 @@ Dynamic shell composition should be minimized.
 
 ---
 
-# Untrusted Input
+## Untrusted Input
 
 External or user-controlled input should not automatically become executable build instructions.
 
@@ -1858,13 +1858,13 @@ Validation boundaries must be explicit.
 
 ---
 
-# Subprocess Execution
+## Subprocess Execution
 
 When build tooling invokes subprocesses, command, arguments, environment, and working directory should remain controlled.
 
 ---
 
-# Environment Propagation
+## Environment Propagation
 
 Child processes should receive only necessary environment state where practical.
 
@@ -1872,7 +1872,7 @@ Blindly propagating all environment variables can expose secrets or create hidde
 
 ---
 
-# File Permissions
+## File Permissions
 
 Generated artifacts should use appropriate filesystem permissions.
 
@@ -1880,7 +1880,7 @@ Build execution must not accidentally produce over-privileged files.
 
 ---
 
-# Artifact Modification After Execution
+## Artifact Modification After Execution
 
 Candidate artifacts may undergo validation and metadata inspection after execution.
 
@@ -1888,7 +1888,7 @@ However, any modification that changes artifact bytes should be treated as part 
 
 ---
 
-# Execution And Artifact Integrity
+## Execution And Artifact Integrity
 
 The flow should be:
 
@@ -1908,7 +1908,7 @@ Integrity data calculated before later mutation would be invalid.
 
 ---
 
-# Execution Finalization
+## Execution Finalization
 
 Canonical package-build execution has an explicit terminal finalization
 boundary.
@@ -1963,7 +1963,7 @@ Those concerns remain separate Build Execution policies.
 
 ---
 
-# Build Result
+## Build Result
 
 Execution should produce a structured conceptual result.
 
@@ -1984,7 +1984,7 @@ Artifact validation later enriches the overall Build Result.
 
 ---
 
-# Stage Result
+## Stage Result
 
 A stage result may conceptually contain:
 
@@ -2003,7 +2003,7 @@ A formal implementation may be introduced when orchestration complexity justifie
 
 ---
 
-# Execution Evidence
+## Execution Evidence
 
 Important execution facts may become build evidence.
 
@@ -2019,7 +2019,7 @@ Raw verbose logs do not necessarily need permanent retention.
 
 ---
 
-# Local Execution
+## Local Execution
 
 Local execution should remain straightforward.
 
@@ -2034,7 +2034,7 @@ Local execution should not require CI-specific infrastructure.
 
 ---
 
-# CI Execution
+## CI Execution
 
 CI should invoke the same canonical build model.
 
@@ -2052,7 +2052,7 @@ CI-specific configuration should remain outside core build semantics.
 
 ---
 
-# Release Candidate Execution
+## Release Candidate Execution
 
 Release-candidate execution SHOULD use stronger controls.
 
@@ -2068,7 +2068,7 @@ Possible requirements include:
 
 ---
 
-# Plugin Build Execution
+## Plugin Build Execution
 
 Plugin builds may include additional stages such as:
 
@@ -2086,7 +2086,7 @@ The canonical execution principles still apply.
 
 ---
 
-# Documentation Build Execution
+## Documentation Build Execution
 
 Documentation builds may execute:
 
@@ -2099,7 +2099,7 @@ Generated documentation can be treated as a candidate artifact where appropriate
 
 ---
 
-# Multi-Target Execution
+## Multi-Target Execution
 
 Future FamilyOS workflows may build multiple targets.
 
@@ -2119,7 +2119,7 @@ Failure semantics should be explicit.
 
 ---
 
-# Fail-Fast Versus Continue
+## Fail-Fast Versus Continue
 
 Multi-target builds may choose between:
 
@@ -2132,7 +2132,7 @@ Release-candidate workflows may prefer stricter failure behavior.
 
 ---
 
-# Execution Dependency Graph
+## Execution Dependency Graph
 
 As build complexity grows, target relationships may form a graph.
 
@@ -2150,7 +2150,7 @@ Simple linear execution remains preferred while sufficient.
 
 ---
 
-# Build Execution API
+## Build Execution API
 
 A future internal build API may eventually expose operations such as:
 
@@ -2168,7 +2168,7 @@ It defines the conceptual separation.
 
 ---
 
-# CLI Execution Interface
+## CLI Execution Interface
 
 A future CLI may expose build capabilities such as:
 
@@ -2182,7 +2182,7 @@ These examples are illustrative, not yet normative interface requirements.
 
 ---
 
-# Execution Documentation
+## Execution Documentation
 
 Canonical execution must be documented.
 
@@ -2197,7 +2197,7 @@ Documentation should state:
 
 ---
 
-# Execution Change Management
+## Execution Change Management
 
 Changes to execution behavior may affect:
 
@@ -2210,7 +2210,7 @@ They must be reviewed according to impact.
 
 ---
 
-# Low-Risk Execution Changes
+## Low-Risk Execution Changes
 
 Examples may include:
 
@@ -2220,7 +2220,7 @@ Examples may include:
 
 ---
 
-# High-Risk Execution Changes
+## High-Risk Execution Changes
 
 Examples include:
 
@@ -2235,7 +2235,7 @@ These may require architectural review.
 
 ---
 
-# Execution Governance
+## Execution Governance
 
 Significant execution architecture changes may require:
 
@@ -2249,7 +2249,7 @@ Governance must remain proportional.
 
 ---
 
-# Execution Technical Debt
+## Execution Technical Debt
 
 Execution debt includes:
 
@@ -2265,55 +2265,55 @@ This debt should be reduced continuously.
 
 ---
 
-# Execution Anti-Pattern — Build By Shell History
+## Execution Anti-Pattern — Build By Shell History
 
 A canonical build must not depend on a developer remembering previous commands.
 
 ---
 
-# Execution Anti-Pattern — CI-Only Build
+## Execution Anti-Pattern — CI-Only Build
 
 A build that can only be reproduced inside one CI workflow is too tightly coupled to automation infrastructure.
 
 ---
 
-# Execution Anti-Pattern — Ignored Failure
+## Execution Anti-Pattern — Ignored Failure
 
 Required stage failures must not be swallowed.
 
 ---
 
-# Execution Anti-Pattern — Output Mutation After Trust
+## Execution Anti-Pattern — Output Mutation After Trust
 
 Artifacts must not be changed after integrity and validation are finalized without invalidating prior trust.
 
 ---
 
-# Execution Anti-Pattern — Hidden Network Calls
+## Execution Anti-Pattern — Hidden Network Calls
 
 Canonical artifact generation should not unexpectedly depend on live remote services.
 
 ---
 
-# Execution Anti-Pattern — Shared Mutable Workspace
+## Execution Anti-Pattern — Shared Mutable Workspace
 
 Concurrent builds should not accidentally overwrite each other's state.
 
 ---
 
-# Execution Anti-Pattern — Unbounded Retry
+## Execution Anti-Pattern — Unbounded Retry
 
 Repeated retry of deterministic failures hides defects and wastes resources.
 
 ---
 
-# Execution Anti-Pattern — Packaging And Publishing Combined
+## Execution Anti-Pattern — Packaging And Publishing Combined
 
 Official publication must remain in Release Framework scope.
 
 ---
 
-# Execution Maturity Model
+## Execution Maturity Model
 
 FamilyOS build execution maturity may evolve through:
 
@@ -2356,7 +2356,7 @@ Each level should solve real engineering needs.
 
 ---
 
-# Execution Success Criteria
+## Execution Success Criteria
 
 The Build Execution model is successful when FamilyOS can answer:
 
@@ -2377,53 +2377,53 @@ The Build Execution model is successful when FamilyOS can answer:
 
 ---
 
-# Execution Invariants
+## Execution Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Build execution must begin from a resolved and validated context.
 
-## Invariant 2
+### Invariant 2
 
 Required execution-stage failure must prevent successful build completion.
 
-## Invariant 3
+### Invariant 3
 
 Execution output must not automatically be considered trusted.
 
-## Invariant 4
+### Invariant 4
 
 Temporary and intermediate state must remain distinguishable from candidate artifacts.
 
-## Invariant 5
+### Invariant 5
 
 Canonical build execution must not rely on undocumented prior shell actions.
 
-## Invariant 6
+### Invariant 6
 
 CI must invoke canonical build semantics rather than implement a separate build.
 
-## Invariant 7
+### Invariant 7
 
 Artifact publication must remain outside ordinary Build Execution.
 
-## Invariant 8
+### Invariant 8
 
 Execution should not unexpectedly mutate authoritative source.
 
-## Invariant 9
+### Invariant 9
 
 Retries must not hide deterministic engineering failures.
 
-## Invariant 10
+### Invariant 10
 
 Execution behavior must remain observable and explainable.
 
 ---
 
-# Execution Model Summary
+## Execution Model Summary
 
 The canonical FamilyOS Build Execution flow is:
 
@@ -2461,7 +2461,7 @@ This model makes execution an explicit transformation stage within the larger Bu
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Execution model is founded on the following rule:
 

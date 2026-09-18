@@ -16,7 +16,7 @@ A consistent toolchain improves:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Toolchain definition within the Engineering Foundation is to establish how engineering tools are selected, integrated, and maintained.
 
@@ -31,9 +31,9 @@ The toolchain must support the complete engineering lifecycle:
 
 ---
 
-# Toolchain Principles
+## Toolchain Principles
 
-## Principle 1 — Tools Serve Engineering Goals
+### Principle 1 — Tools Serve Engineering Goals
 
 Tools are not objectives by themselves.
 
@@ -48,7 +48,7 @@ A tool should exist because it supports an engineering need.
 
 ---
 
-## Principle 2 — Automation First
+### Principle 2 — Automation First
 
 The toolchain should automate repetitive and error-prone activities whenever practical.
 
@@ -65,7 +65,7 @@ Automation improves consistency and reduces manual mistakes.
 
 ---
 
-## Principle 3 — Reproducibility
+### Principle 3 — Reproducibility
 
 Engineering activities should produce predictable results.
 
@@ -80,7 +80,7 @@ A contributor should be able to reproduce engineering results reliably.
 
 ---
 
-## Principle 4 — Developer Experience
+### Principle 4 — Developer Experience
 
 Tools should improve the contributor experience.
 
@@ -95,7 +95,7 @@ Complexity introduced by tools should be justified by engineering benefits.
 
 ---
 
-## Principle 5 — Integration Over Isolation
+### Principle 5 — Integration Over Isolation
 
 Tools should work together as part of a coherent engineering ecosystem.
 
@@ -110,7 +110,7 @@ The toolchain should connect:
 
 ---
 
-# Toolchain Layers
+## Toolchain Layers
 
 The FamilyOS toolchain is organized into engineering layers.
 
@@ -136,7 +136,7 @@ Each layer contributes to a specific engineering responsibility while remaining 
 
 ---
 
-# Development Tools
+## Development Tools
 
 Development tools support daily engineering activities.
 
@@ -151,7 +151,7 @@ The development environment should remain aligned with repository standards.
 
 ---
 
-# Code Quality Tools
+## Code Quality Tools
 
 Code quality tools support engineering consistency.
 
@@ -166,7 +166,7 @@ These tools help detect issues early.
 
 ---
 
-# Testing Tools
+## Testing Tools
 
 Testing tools provide confidence in software behavior.
 
@@ -182,7 +182,7 @@ Reference:
 
 ---
 
-# Documentation Tools
+## Documentation Tools
 
 Documentation tools support knowledge management.
 
@@ -199,7 +199,7 @@ Reference:
 
 ---
 
-# Automation Tools
+## Automation Tools
 
 Automation tools reduce repetitive engineering work.
 
@@ -212,7 +212,7 @@ They support:
 
 ---
 
-# Build Tools
+## Build Tools
 
 Build tools ensure software can be constructed consistently.
 
@@ -229,7 +229,7 @@ Reference:
 
 ---
 
-# Release Tools
+## Release Tools
 
 Release tools support controlled delivery.
 
@@ -246,41 +246,41 @@ Reference:
 
 ---
 
-# Tool Selection Criteria
+## Tool Selection Criteria
 
 Tools should be evaluated according to:
 
-## Technical Fit
+### Technical Fit
 
 Does the tool support FamilyOS architecture and workflows?
 
 ---
 
-## Maintainability
+### Maintainability
 
 Can the tool be maintained over time?
 
 ---
 
-## Integration Capability
+### Integration Capability
 
 Can the tool integrate with existing engineering processes?
 
 ---
 
-## Community and Stability
+### Community and Stability
 
 Is the tool reliable and actively supported?
 
 ---
 
-## Operational Cost
+### Operational Cost
 
 Does the engineering value justify the operational complexity introduced?
 
 ---
 
-# Toolchain Configuration
+## Toolchain Configuration
 
 Tool configurations should be:
 
@@ -293,7 +293,7 @@ Hidden or undocumented configurations create engineering risks.
 
 ---
 
-# Toolchain Lifecycle
+## Toolchain Lifecycle
 
 Engineering tools have a managed lifecycle.
 
@@ -322,7 +322,7 @@ Tool lifecycle management helps maintain a coherent, reliable, and sustainable e
 
 ---
 
-# Toolchain Evolution
+## Toolchain Evolution
 
 The toolchain evolves as FamilyOS matures.
 
@@ -341,7 +341,7 @@ Major changes may require:
 
 ---
 
-# Relationship With Engineering Workflow
+## Relationship With Engineering Workflow
 
 The toolchain supports every workflow phase.
 
@@ -366,7 +366,7 @@ Release
 
 ---
 
-# Governance
+## Governance
 
 Toolchain decisions should follow engineering governance rules.
 
@@ -376,7 +376,7 @@ Major toolchain changes should remain traceable through ADRs, RFCs, and engineer
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The Toolchain is successful when:
 
@@ -388,7 +388,7 @@ The Toolchain is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Toolchain provides the operational capabilities required to transform engineering principles into practical workflows.
 

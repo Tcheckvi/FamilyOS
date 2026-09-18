@@ -19,7 +19,7 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 EPIC-OPS-001 defines the canonical FamilyOS Operations Framework.
 
@@ -47,7 +47,7 @@ Operations are part of the engineering lifecycle.
 
 ---
 
-# 2. Framework Intent
+## 2. Framework Intent
 
 The intent of EPIC-OPS-001 is to establish a stable operational foundation capable of supporting FamilyOS as the platform evolves from local development environments toward increasingly complex runtime and deployment models.
 
@@ -80,7 +80,7 @@ It defines operational contracts before prescribing particular infrastructure te
 
 ---
 
-# 3. Historical Release
+## 3. Historical Release
 
 EPIC-OPS-001 was historically completed and published as:
 
@@ -107,7 +107,7 @@ The historical release remains authoritative evidence of the original framework 
 
 ---
 
-# 4. Historical Documentation Model
+## 4. Historical Documentation Model
 
 The historical EPIC used the compact FamilyOS framework-documentation model.
 
@@ -140,7 +140,7 @@ These numbered documents constitute the historical normative framework baseline.
 
 ---
 
-# 5. Normalized Documentation Model
+## 5. Normalized Documentation Model
 
 Post-release normalization adds the canonical FamilyOS control-document layer without replacing the historical numbered documents.
 
@@ -180,11 +180,11 @@ The addition of these documents does not create a new framework version.
 
 ---
 
-# 6. Canonical Document Inventory
+## 6. Canonical Document Inventory
 
 The complete normalized EPIC consists of the following seventeen files.
 
-## 6.1 Numbered Framework Documents
+### 6.1 Numbered Framework Documents
 
 ```text
 00-EPIC.md
@@ -199,7 +199,7 @@ The complete normalized EPIC consists of the following seventeen files.
 09-Validation-and-Release.md
 ```
 
-## 6.2 Control Documents
+### 6.2 Control Documents
 
 ```text
 EPIC-OPS-001.md
@@ -211,7 +211,7 @@ VALIDATION.md
 Revision-History.md
 ```
 
-## 6.3 Canonical Contract
+### 6.3 Canonical Contract
 
 ```text
 Canonical Range:      00-09
@@ -224,39 +224,39 @@ The filesystem inventory and `EPIC.yaml` SHALL agree with this contract.
 
 ---
 
-# 7. Framework Objectives
+## 7. Framework Objectives
 
 EPIC-OPS-001 establishes the following objectives.
 
-## 7.1 Operational Consistency
+### 7.1 Operational Consistency
 
 FamilyOS operational behavior SHOULD follow explicit and repeatable processes rather than undocumented operator knowledge.
 
-## 7.2 Runtime Control
+### 7.2 Runtime Control
 
 Runtime environments and services SHALL have explicit lifecycle, configuration, health, readiness, and dependency expectations.
 
-## 7.3 Recoverability
+### 7.3 Recoverability
 
 Operational failure SHALL be treated as an expected engineering condition.
 
 Recovery mechanisms SHALL therefore be designed, documented, and validated.
 
-## 7.4 Reliability
+### 7.4 Reliability
 
 Capacity, performance, and reliability SHALL be treated as operational engineering concerns rather than incidental runtime properties.
 
-## 7.5 Operational Security
+### 7.5 Operational Security
 
 Operational processes SHALL preserve FamilyOS security boundaries.
 
 Operational convenience SHALL NOT bypass security controls.
 
-## 7.6 Evidence
+### 7.6 Evidence
 
 Important operational actions and validation activities SHOULD produce evidence appropriate to their impact.
 
-## 7.7 Automation
+### 7.7 Automation
 
 Repeatable operational activities SHOULD be automatable where automation improves consistency, safety, traceability, or reliability.
 
@@ -264,7 +264,7 @@ Automation SHALL remain subject to validation and security controls.
 
 ---
 
-# 8. Operations Principles
+## 8. Operations Principles
 
 The framework is governed by a set of foundational principles.
 
@@ -287,7 +287,7 @@ These principles establish the behavioral foundation for FamilyOS operations.
 
 ---
 
-# 9. Operations Architecture
+## 9. Operations Architecture
 
 The Operations Framework separates operational concerns into explicit domains.
 
@@ -315,7 +315,7 @@ This prevents infrastructure-specific implementation details from becoming the f
 
 ---
 
-# 10. Runtime Management
+## 10. Runtime Management
 
 Runtime operation SHALL have explicit state.
 
@@ -341,7 +341,7 @@ Ambiguous runtime state SHOULD be avoided.
 
 ---
 
-# 11. Service Management
+## 11. Service Management
 
 FamilyOS services SHALL have defined operational lifecycle expectations.
 
@@ -382,7 +382,7 @@ The operational meaning of service state SHALL remain explicit.
 
 ---
 
-# 12. Configuration Management
+## 12. Configuration Management
 
 Operational configuration SHALL be controlled.
 
@@ -402,7 +402,7 @@ Configuration mechanisms SHALL NOT become an uncontrolled path around architectu
 
 ---
 
-# 13. Health and Readiness
+## 13. Health and Readiness
 
 Health and readiness are distinct concepts.
 
@@ -424,7 +424,7 @@ Health and readiness mechanisms SHOULD provide sufficient evidence for operation
 
 ---
 
-# 14. Dependency Management
+## 14. Dependency Management
 
 Runtime dependencies SHALL be treated explicitly.
 
@@ -447,7 +447,7 @@ Where practical, degradation and recovery strategies SHOULD be defined.
 
 ---
 
-# 15. Incident Response
+## 15. Incident Response
 
 Operational incidents SHALL be handled through a structured process appropriate to their severity.
 
@@ -484,7 +484,7 @@ High-impact incidents SHOULD have explicit ownership.
 
 ---
 
-# 16. Recovery
+## 16. Recovery
 
 Recovery is not complete merely because a process or service has restarted.
 
@@ -511,7 +511,7 @@ Recovered = Restored + Validated
 
 ---
 
-# 17. Rollback
+## 17. Rollback
 
 Rollback is an operational recovery mechanism.
 
@@ -530,7 +530,7 @@ State compatibility, configuration compatibility, data compatibility, and depend
 
 ---
 
-# 18. Capacity
+## 18. Capacity
 
 Capacity planning SHOULD be evidence-based.
 
@@ -554,7 +554,7 @@ Operational complexity SHOULD remain proportional to demonstrated need.
 
 ---
 
-# 19. Performance
+## 19. Performance
 
 Performance is an operational property requiring measurable expectations.
 
@@ -575,7 +575,7 @@ A single metric SHALL NOT automatically define operational health.
 
 ---
 
-# 20. Reliability
+## 20. Reliability
 
 Reliability concerns the ability of FamilyOS systems to provide expected behavior over time and under expected operating conditions.
 
@@ -595,7 +595,7 @@ Reliability mechanisms SHALL remain compatible with security, quality, and relea
 
 ---
 
-# 21. Operational Security
+## 21. Operational Security
 
 Operations SHALL preserve the security boundaries established by the FamilyOS Security Framework.
 
@@ -616,7 +616,7 @@ Operations defines how those requirements are respected during runtime operation
 
 ---
 
-# 22. Operational Governance
+## 22. Operational Governance
 
 Operational governance defines who may perform operational actions, under which conditions, and with what evidence.
 
@@ -634,7 +634,7 @@ The rigor of governance SHOULD be proportional to operational impact.
 
 ---
 
-# 23. Automation
+## 23. Automation
 
 Automation SHOULD reduce:
 
@@ -674,7 +674,7 @@ High-impact automation SHOULD fail safely.
 
 ---
 
-# 24. Operational Evidence
+## 24. Operational Evidence
 
 Operational evidence may include:
 
@@ -697,7 +697,7 @@ Observability mechanisms remain governed by EPIC-OBS-001.
 
 ---
 
-# 25. Framework Integration
+## 25. Framework Integration
 
 Operations does not operate independently from the wider FamilyOS engineering architecture.
 
@@ -720,7 +720,7 @@ It SHALL NOT redefine authoritative contracts owned by another framework.
 
 ---
 
-# 26. Testing Integration
+## 26. Testing Integration
 
 Operational mechanisms SHOULD be testable.
 
@@ -740,7 +740,7 @@ Testing authority remains with EPIC-TST-001.
 
 ---
 
-# 27. Quality Integration
+## 27. Quality Integration
 
 Operational quality includes more than successful execution.
 
@@ -759,7 +759,7 @@ Quality authority remains with EPIC-QLT-001.
 
 ---
 
-# 28. Build Integration
+## 28. Build Integration
 
 Operations consumes artifacts produced through the FamilyOS Build Framework.
 
@@ -769,7 +769,7 @@ Build authority remains with EPIC-BLD-001.
 
 ---
 
-# 29. Release Integration
+## 29. Release Integration
 
 Operational deployment and runtime transition SHALL remain compatible with release governance.
 
@@ -787,7 +787,7 @@ Release authority remains with EPIC-REL-001.
 
 ---
 
-# 30. Observability Integration
+## 30. Observability Integration
 
 Operational decisions depend on trustworthy observability.
 
@@ -804,7 +804,7 @@ EPIC-OBS-001 remains authoritative for observability architecture and telemetry 
 
 ---
 
-# 31. Security Integration
+## 31. Security Integration
 
 Operations consumes security policies and controls established by EPIC-SEC-001.
 
@@ -822,7 +822,7 @@ Operations SHALL implement or consume those controls without redefining their au
 
 ---
 
-# 32. Infrastructure Neutrality
+## 32. Infrastructure Neutrality
 
 EPIC-OPS-001 does not require a particular:
 
@@ -840,7 +840,7 @@ This separation protects the framework from unnecessary technology coupling.
 
 ---
 
-# 33. Proportional Complexity
+## 33. Proportional Complexity
 
 FamilyOS SHALL avoid operational infrastructure that exceeds demonstrated requirements.
 
@@ -875,7 +875,7 @@ Operational sophistication SHOULD increase as operational requirements justify i
 
 ---
 
-# 34. Failure Model
+## 34. Failure Model
 
 Operational failure SHALL be expected.
 
@@ -899,7 +899,7 @@ The framework requires controlled detection, response, recovery, and validation 
 
 ---
 
-# 35. Safe Failure
+## 35. Safe Failure
 
 Where practical, operational mechanisms SHOULD fail safely.
 
@@ -917,7 +917,7 @@ Failing visibly and safely is preferable to silently entering an unknown operati
 
 ---
 
-# 36. Operational State
+## 36. Operational State
 
 Operational state SHOULD be explicit and understandable.
 
@@ -941,7 +941,7 @@ State models SHOULD remain as simple as practical while preserving operational m
 
 ---
 
-# 37. Validation Philosophy
+## 37. Validation Philosophy
 
 Operational validation establishes evidence that the system satisfies the required operational contracts.
 
@@ -962,7 +962,7 @@ Validation SHALL distinguish evidence from assumption.
 
 ---
 
-# 38. Repository Validation
+## 38. Repository Validation
 
 The normalized EPIC repository SHALL validate:
 
@@ -980,7 +980,7 @@ The normalized control documents SHALL describe the current repository state wit
 
 ---
 
-# 39. Quality Gates
+## 39. Quality Gates
 
 Current repository revalidation requires the standard FamilyOS engineering quality gates.
 
@@ -997,7 +997,7 @@ All required gates SHALL pass before post-release normalization is declared vali
 
 ---
 
-# 40. Historical Integrity
+## 40. Historical Integrity
 
 The historical release contract is:
 
@@ -1016,7 +1016,7 @@ It SHALL NOT alter the historical release object.
 
 ---
 
-# 41. Post-Release Normalization
+## 41. Post-Release Normalization
 
 The current activity adds the missing control-document layer.
 
@@ -1035,7 +1035,7 @@ This activity is therefore classified as post-release normalization and revalida
 
 ---
 
-# 42. Revalidation Requirements
+## 42. Revalidation Requirements
 
 Post-release revalidation SHALL establish:
 
@@ -1056,7 +1056,7 @@ Post-release revalidation SHALL establish:
 
 ---
 
-# 43. Numbered-Document Preservation
+## 43. Numbered-Document Preservation
 
 During control-document normalization, the historical numbered documents SHALL remain unchanged unless an independently justified corrective change is explicitly reviewed.
 
@@ -1079,7 +1079,7 @@ This preserves historical semantic integrity.
 
 ---
 
-# 44. Machine-Readable Contract
+## 44. Machine-Readable Contract
 
 `EPIC.yaml` is the machine-readable control contract for the normalized repository state.
 
@@ -1104,11 +1104,11 @@ Markdown control documents SHALL remain semantically consistent with this contra
 
 ---
 
-# 45. Closure Model
+## 45. Closure Model
 
 EPIC closure has two distinct dimensions.
 
-## 45.1 Historical Framework Closure
+### 45.1 Historical Framework Closure
 
 The framework itself was completed and released at:
 
@@ -1118,7 +1118,7 @@ v5.1.0-operations-framework
 
 This historical closure is already established.
 
-## 45.2 Current Repository Revalidation
+### 45.2 Current Repository Revalidation
 
 The normalized control-document layer requires current repository revalidation.
 
@@ -1128,7 +1128,7 @@ This distinction prevents historical facts from being rewritten merely because g
 
 ---
 
-# 46. Current Revalidation State
+## 46. Current Revalidation State
 
 At creation of the normalized control-document layer, the expected machine-readable state is:
 
@@ -1147,7 +1147,7 @@ These repository-validation states have now been replaced with validated states 
 
 ---
 
-# 47. Completion Criteria
+## 47. Completion Criteria
 
 Post-release normalization is complete when:
 
@@ -1167,7 +1167,7 @@ Post-release normalization is complete when:
 
 ---
 
-# 48. Final Target State
+## 48. Final Target State
 
 After successful normalization and revalidation, the expected state is:
 
@@ -1194,7 +1194,7 @@ EPIC Closed:              True
 
 ---
 
-# 49. Final Statement
+## 49. Final Statement
 
 EPIC-OPS-001 establishes the canonical FamilyOS Operations Framework.
 

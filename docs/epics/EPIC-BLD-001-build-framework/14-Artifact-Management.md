@@ -1,8 +1,8 @@
 # Build Framework
 
-# 14 Artifact Management
+## 14 Artifact Management
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS build artifacts are identified, classified, validated, described, stored, traced, and handed off to downstream engineering processes.
 
@@ -18,7 +18,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The Artifact Management model defines how FamilyOS handles outputs generated through Build Execution.
 
@@ -45,7 +45,7 @@ The objective is to ensure that build outputs remain controlled from creation th
 
 ---
 
-# Artifact Definition
+## Artifact Definition
 
 A FamilyOS artifact is a build output with explicit engineering meaning.
 
@@ -68,7 +68,7 @@ A raw generated file may become an artifact only after the build system identifi
 
 ---
 
-# Artifact Versus Raw Output
+## Artifact Versus Raw Output
 
 Build execution can produce many files.
 
@@ -101,7 +101,7 @@ Only explicitly classified outputs should participate in artifact trust.
 
 ---
 
-# Artifact Principle 1 — Artifacts Must Be Explicit
+## Artifact Principle 1 — Artifacts Must Be Explicit
 
 FamilyOS should not determine important artifacts through guesswork.
 
@@ -127,7 +127,7 @@ Find Whatever Looks Important
 
 ---
 
-# Artifact Principle 2 — Artifacts Must Have Identity
+## Artifact Principle 2 — Artifacts Must Have Identity
 
 Every significant artifact SHOULD have sufficient identity to distinguish it from unrelated outputs.
 
@@ -145,7 +145,7 @@ The exact identity model depends on artifact class.
 
 ---
 
-# Artifact Principle 3 — Artifact Origin Must Be Traceable
+## Artifact Principle 3 — Artifact Origin Must Be Traceable
 
 A trusted artifact should be traceable to the build that produced it.
 
@@ -165,7 +165,7 @@ Artifact origin must not rely solely on a filename.
 
 ---
 
-# Artifact Principle 4 — Integrity Must Be Verifiable
+## Artifact Principle 4 — Integrity Must Be Verifiable
 
 Important artifacts SHOULD support integrity verification.
 
@@ -185,7 +185,7 @@ Integrity information helps detect accidental or unauthorized modification.
 
 ---
 
-# Artifact Principle 5 — Validation State Must Be Explicit
+## Artifact Principle 5 — Validation State Must Be Explicit
 
 A generated artifact is not automatically trusted.
 
@@ -202,7 +202,7 @@ This prevents downstream systems from confusing artifact existence with artifact
 
 ---
 
-# Artifact Principle 6 — Trusted Artifacts Must Be Immutable In Practice
+## Artifact Principle 6 — Trusted Artifacts Must Be Immutable In Practice
 
 Once an artifact has been validated and declared trusted, its bytes should not be modified without invalidating the previous trust state.
 
@@ -222,7 +222,7 @@ New Artifact State Required
 
 ---
 
-# Artifact Principle 7 — Artifact Metadata Must Be Controlled
+## Artifact Principle 7 — Artifact Metadata Must Be Controlled
 
 Artifact metadata is part of artifact identity and traceability.
 
@@ -230,7 +230,7 @@ Metadata must not be generated from uncontrolled state.
 
 ---
 
-# Artifact Principle 8 — Artifact Storage Must Preserve Identity
+## Artifact Principle 8 — Artifact Storage Must Preserve Identity
 
 Moving an artifact between storage locations must not make its identity ambiguous.
 
@@ -238,7 +238,7 @@ The artifact should remain identifiable independently from its path.
 
 ---
 
-# Artifact Principle 9 — Artifact Handoff Must Be Explicit
+## Artifact Principle 9 — Artifact Handoff Must Be Explicit
 
 The Release Framework should receive an explicit artifact set.
 
@@ -246,7 +246,7 @@ It should not search arbitrary build directories for candidate files.
 
 ---
 
-# Artifact Principle 10 — Artifact Management Must Remain Tool-Independent
+## Artifact Principle 10 — Artifact Management Must Remain Tool-Independent
 
 The artifact model must remain valid even when package formats, registries, or storage mechanisms change.
 
@@ -254,7 +254,7 @@ FamilyOS defines artifact semantics before choosing artifact infrastructure.
 
 ---
 
-# Artifact Classes
+## Artifact Classes
 
 FamilyOS may produce multiple artifact classes.
 
@@ -275,7 +275,7 @@ Not all artifact classes require identical handling.
 
 ---
 
-# Primary Artifacts
+## Primary Artifacts
 
 Primary artifacts are the main distributable outputs of a build.
 
@@ -290,7 +290,7 @@ Primary artifacts are typically the outputs most likely to proceed toward releas
 
 ---
 
-# Secondary Artifacts
+## Secondary Artifacts
 
 Secondary artifacts support the primary build output.
 
@@ -306,7 +306,7 @@ Secondary artifacts may be required for release evidence or operational support.
 
 ---
 
-# Evidence Artifacts
+## Evidence Artifacts
 
 Some build evidence may itself be represented as an artifact.
 
@@ -322,7 +322,7 @@ Evidence artifacts should remain associated with the build that generated them.
 
 ---
 
-# Intermediate Outputs
+## Intermediate Outputs
 
 Intermediate outputs are not trusted artifacts.
 
@@ -337,7 +337,7 @@ They exist only to support execution.
 
 ---
 
-# Temporary Outputs
+## Temporary Outputs
 
 Temporary outputs exist only during build execution or diagnostics.
 
@@ -345,7 +345,7 @@ They should remain disposable.
 
 ---
 
-# Artifact Lifecycle
+## Artifact Lifecycle
 
 The canonical artifact lifecycle is:
 
@@ -375,7 +375,7 @@ The lifecycle separates artifact creation from artifact trust.
 
 ---
 
-# Phase 1 — Artifact Generation
+## Phase 1 — Artifact Generation
 
 Artifact generation occurs during Build Execution.
 
@@ -385,7 +385,7 @@ It must not yet be assumed valid.
 
 ---
 
-# Phase 2 — Artifact Discovery
+## Phase 2 — Artifact Discovery
 
 Discovery determines which expected outputs were actually created.
 
@@ -403,7 +403,7 @@ Missing required outputs should fail the build.
 
 ---
 
-# Phase 3 — Artifact Classification
+## Phase 3 — Artifact Classification
 
 Artifact classification assigns semantic type.
 
@@ -422,7 +422,7 @@ A formal enumeration may be introduced later.
 
 ---
 
-# Phase 4 — Artifact Identification
+## Phase 4 — Artifact Identification
 
 Identification establishes sufficient identity for future reference.
 
@@ -442,7 +442,7 @@ The exact implementation is not yet prescribed.
 
 ---
 
-# Phase 5 — Artifact Validation
+## Phase 5 — Artifact Validation
 
 Artifact validation confirms that the output satisfies its applicable requirements.
 
@@ -460,7 +460,7 @@ Validation may include:
 
 ---
 
-# Phase 6 — Artifact Metadata
+## Phase 6 — Artifact Metadata
 
 Metadata is associated with the artifact after or during generation.
 
@@ -468,7 +468,7 @@ The metadata model must support traceability.
 
 ---
 
-# Phase 7 — Integrity Establishment
+## Phase 7 — Integrity Establishment
 
 Integrity information should be calculated from the final candidate bytes.
 
@@ -486,7 +486,7 @@ No later mutation should occur without recalculation and revalidation.
 
 ---
 
-# Phase 8 — Trust Declaration
+## Phase 8 — Trust Declaration
 
 A candidate artifact becomes trusted only after all required conditions succeed.
 
@@ -506,7 +506,7 @@ Trusted Artifact
 
 ---
 
-# Phase 9 — Storage Or Handoff
+## Phase 9 — Storage Or Handoff
 
 Trusted artifacts may then be:
 
@@ -517,7 +517,7 @@ Trusted artifacts may then be:
 
 ---
 
-# Phase 10 — Retention Or Retirement
+## Phase 10 — Retention Or Retirement
 
 Artifacts eventually reach an end-of-life state.
 
@@ -533,7 +533,7 @@ Detailed release retention policy remains outside Build Framework ownership.
 
 ---
 
-# Artifact Identity Model
+## Artifact Identity Model
 
 Artifact identity should allow FamilyOS to answer:
 
@@ -551,7 +551,7 @@ Has its content changed?
 
 ---
 
-# Artifact Name
+## Artifact Name
 
 Artifact name should reflect its logical component.
 
@@ -567,7 +567,7 @@ Naming conventions should remain aligned with project and release conventions.
 
 ---
 
-# Artifact Type
+## Artifact Type
 
 Artifact type defines the technical class of the output.
 
@@ -583,7 +583,7 @@ Type determines applicable validation.
 
 ---
 
-# Artifact Version Context
+## Artifact Version Context
 
 Artifacts may carry version information.
 
@@ -593,7 +593,7 @@ The Build Framework ensures that version context used during build is explicit a
 
 ---
 
-# Build Association
+## Build Association
 
 Every trusted artifact SHOULD be associated with the Build ID that produced it.
 
@@ -617,7 +617,7 @@ Build
 
 ---
 
-# Source Association
+## Source Association
 
 A build may associate artifacts with:
 
@@ -629,7 +629,7 @@ Release-oriented artifacts should use stronger source identity than ordinary loc
 
 ---
 
-# Artifact Checksum
+## Artifact Checksum
 
 A checksum provides content-based integrity identity.
 
@@ -639,7 +639,7 @@ The exact algorithm should be governed if standardized.
 
 ---
 
-# Artifact Naming
+## Artifact Naming
 
 Artifact filenames should be predictable.
 
@@ -655,7 +655,7 @@ The Build Framework should respect ecosystem-standard naming when available.
 
 ---
 
-# Artifact Naming Principle
+## Artifact Naming Principle
 
 FamilyOS should not invent custom naming conventions when an artifact ecosystem already defines a reliable standard.
 
@@ -663,7 +663,7 @@ For Python packaging, ecosystem conventions should be preserved.
 
 ---
 
-# Artifact Metadata Model
+## Artifact Metadata Model
 
 Artifact metadata may include:
 
@@ -689,7 +689,7 @@ Metadata may be maintained in associated evidence.
 
 ---
 
-# Embedded Metadata
+## Embedded Metadata
 
 Some metadata belongs inside the artifact format.
 
@@ -704,7 +704,7 @@ Embedded metadata should follow ecosystem standards.
 
 ---
 
-# External Metadata
+## External Metadata
 
 Additional Build Framework metadata may remain outside artifact bytes.
 
@@ -720,7 +720,7 @@ This avoids modifying standardized artifact formats unnecessarily.
 
 ---
 
-# Metadata Source Of Truth
+## Metadata Source Of Truth
 
 Artifact metadata must be derived from controlled sources.
 
@@ -735,7 +735,7 @@ Canonical ownership must be clear.
 
 ---
 
-# Metadata Consistency
+## Metadata Consistency
 
 Metadata should be validated across related sources.
 
@@ -753,7 +753,7 @@ Mismatch should fail trusted artifact creation.
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Artifact integrity confirms whether artifact bytes remain unchanged.
 
@@ -763,7 +763,7 @@ It proves content stability relative to a recorded digest.
 
 ---
 
-# Integrity Model
+## Integrity Model
 
 ```text
 Artifact
@@ -785,7 +785,7 @@ Compare With Digest
 
 ---
 
-# Integrity And Trust
+## Integrity And Trust
 
 Artifact trust requires more than checksum validity.
 
@@ -807,7 +807,7 @@ A malicious artifact can still have a valid checksum if the checksum was generat
 
 ---
 
-# Artifact Validation
+## Artifact Validation
 
 Artifact validation is defined in greater detail in `15-Build-Validation.md`.
 
@@ -815,7 +815,7 @@ Artifact Management defines how validation state is attached to outputs.
 
 ---
 
-# Artifact Validation States
+## Artifact Validation States
 
 A conceptual state model may include:
 
@@ -837,7 +837,7 @@ A formal state model may be introduced later.
 
 ---
 
-# Trusted Artifact
+## Trusted Artifact
 
 A trusted artifact is one that satisfies the applicable build-profile trust requirements.
 
@@ -845,7 +845,7 @@ This may mean different things depending on intended use.
 
 ---
 
-# Development Artifact Trust
+## Development Artifact Trust
 
 A development artifact may be trusted for:
 
@@ -857,7 +857,7 @@ It may not satisfy release-candidate requirements.
 
 ---
 
-# CI Artifact Trust
+## CI Artifact Trust
 
 A CI artifact may be trusted for:
 
@@ -869,7 +869,7 @@ Its evidence requirements may be stronger than local builds.
 
 ---
 
-# Release Candidate Artifact Trust
+## Release Candidate Artifact Trust
 
 A release candidate artifact SHOULD satisfy the strongest applicable Build Framework controls.
 
@@ -885,7 +885,7 @@ Possible requirements include:
 
 ---
 
-# Artifact Set
+## Artifact Set
 
 A build may produce multiple artifacts that form one logical set.
 
@@ -906,7 +906,7 @@ The set should share one build association.
 
 ---
 
-# Artifact Set Identity
+## Artifact Set Identity
 
 A Build ID may serve as the common identity binding multiple artifacts together.
 
@@ -914,7 +914,7 @@ A future explicit Artifact Set ID may be introduced if required.
 
 ---
 
-# Artifact Relationships
+## Artifact Relationships
 
 Artifacts may relate to one another.
 
@@ -946,7 +946,7 @@ These relationships should remain explicit where useful.
 
 ---
 
-# Artifact Dependency
+## Artifact Dependency
 
 One artifact may become input to another build.
 
@@ -966,7 +966,7 @@ Upstream artifact trust must not be assumed blindly.
 
 ---
 
-# Artifact Output Locations
+## Artifact Output Locations
 
 Artifacts should be written into predictable locations.
 
@@ -982,7 +982,7 @@ The principle is predictable discovery.
 
 ---
 
-# Output Directory Requirements
+## Output Directory Requirements
 
 An artifact output directory should be:
 
@@ -993,7 +993,7 @@ An artifact output directory should be:
 
 ---
 
-# Profile-Specific Output
+## Profile-Specific Output
 
 Different profiles may use logically distinct output spaces.
 
@@ -1009,7 +1009,7 @@ This reduces accidental overwrite and ambiguity.
 
 ---
 
-# Artifact Storage
+## Artifact Storage
 
 The Build Framework distinguishes artifact generation from long-term storage.
 
@@ -1024,7 +1024,7 @@ The framework does not require a dedicated artifact registry at current maturity
 
 ---
 
-# Local Artifact Storage
+## Local Artifact Storage
 
 Local artifacts may remain temporary.
 
@@ -1032,7 +1032,7 @@ Developers should be able to clean them safely.
 
 ---
 
-# CI Artifact Storage
+## CI Artifact Storage
 
 CI may retain artifacts for:
 
@@ -1045,7 +1045,7 @@ CI storage duration is an implementation policy.
 
 ---
 
-# Release Candidate Storage
+## Release Candidate Storage
 
 Release candidate artifacts should be stored in a way that preserves:
 
@@ -1057,7 +1057,7 @@ Promotion should use the same validated bytes.
 
 ---
 
-# Rebuild Versus Promote
+## Rebuild Versus Promote
 
 A critical artifact principle is:
 
@@ -1089,7 +1089,7 @@ This strengthens release confidence.
 
 ---
 
-# Artifact Promotion
+## Artifact Promotion
 
 Promotion changes artifact lifecycle status, not artifact content.
 
@@ -1107,7 +1107,7 @@ The Release Framework owns promotion policy.
 
 ---
 
-# Artifact Immutability
+## Artifact Immutability
 
 Promotion should preserve artifact bytes.
 
@@ -1115,7 +1115,7 @@ If content changes, a new build and validation cycle is required.
 
 ---
 
-# Artifact Retention
+## Artifact Retention
 
 Artifact retention may vary by profile.
 
@@ -1139,7 +1139,7 @@ Retention requirements should remain proportional.
 
 ---
 
-# Artifact Deletion
+## Artifact Deletion
 
 Deletion must not destroy required release or audit evidence.
 
@@ -1149,7 +1149,7 @@ Specific retention periods belong to operational or release policy.
 
 ---
 
-# Artifact Cleanup
+## Artifact Cleanup
 
 Build cleanup should remove obsolete derived output without touching authoritative source.
 
@@ -1162,7 +1162,7 @@ A clean command may remove:
 
 ---
 
-# Artifact Repository Cleanliness
+## Artifact Repository Cleanliness
 
 Generated artifacts should not normally be committed to source control unless explicitly required.
 
@@ -1170,7 +1170,7 @@ Version control should represent source and configuration, not routine distribut
 
 ---
 
-# Version-Controlled Artifacts
+## Version-Controlled Artifacts
 
 Some generated assets may intentionally be committed.
 
@@ -1180,7 +1180,7 @@ Routine package artifacts should normally remain outside source control.
 
 ---
 
-# Artifact Manifest
+## Artifact Manifest
 
 A build may generate an artifact manifest.
 
@@ -1203,7 +1203,7 @@ This can strengthen artifact discovery and handoff.
 
 ---
 
-# Manifest Benefits
+## Manifest Benefits
 
 A manifest provides:
 
@@ -1216,7 +1216,7 @@ A formal manifest is a maturity capability, not necessarily an immediate require
 
 ---
 
-# Artifact Evidence
+## Artifact Evidence
 
 Artifact-specific evidence may include:
 
@@ -1231,7 +1231,7 @@ Evidence should remain linked to artifact identity.
 
 ---
 
-# Artifact Provenance
+## Artifact Provenance
 
 Provenance describes where and how an artifact was produced.
 
@@ -1252,13 +1252,13 @@ Future FamilyOS maturity may introduce formal provenance attestations.
 
 ---
 
-# Provenance Principle
+## Provenance Principle
 
 Provenance should evolve from existing Build Evidence rather than become a disconnected parallel system.
 
 ---
 
-# Artifact Signing
+## Artifact Signing
 
 Artifact signing may eventually provide cryptographic authenticity.
 
@@ -1278,7 +1278,7 @@ Signing should be introduced when FamilyOS release and distribution requirements
 
 ---
 
-# Signing Boundary
+## Signing Boundary
 
 Artifact signing may belong partly to the Release Framework because signing may represent official release authority.
 
@@ -1286,7 +1286,7 @@ The Build Framework should prepare compatible artifact identity and integrity me
 
 ---
 
-# Artifact Security
+## Artifact Security
 
 Artifact management must protect against:
 
@@ -1298,7 +1298,7 @@ Artifact management must protect against:
 
 ---
 
-# Secret Leakage Validation
+## Secret Leakage Validation
 
 Artifacts SHOULD be checked where practical to ensure they do not contain:
 
@@ -1312,7 +1312,7 @@ The specific validation mechanism may evolve.
 
 ---
 
-# Artifact Substitution Risk
+## Artifact Substitution Risk
 
 A trusted artifact should remain bound to its integrity information.
 
@@ -1320,7 +1320,7 @@ Downstream processes should not substitute another file with the same filename.
 
 ---
 
-# Artifact Path Security
+## Artifact Path Security
 
 Artifact names and paths should be handled safely.
 
@@ -1328,7 +1328,7 @@ Build tooling should avoid path traversal or uncontrolled path construction from
 
 ---
 
-# Artifact Permissions
+## Artifact Permissions
 
 Generated artifact file permissions should be appropriate for distribution.
 
@@ -1336,7 +1336,7 @@ Unexpected executable permissions or overly broad permissions should be avoided.
 
 ---
 
-# Artifact Observability
+## Artifact Observability
 
 The build system should report artifact information such as:
 
@@ -1351,7 +1351,7 @@ This improves transparency.
 
 ---
 
-# Artifact Metrics
+## Artifact Metrics
 
 Potential artifact metrics include:
 
@@ -1365,7 +1365,7 @@ Metrics should be introduced only when useful.
 
 ---
 
-# Artifact Size
+## Artifact Size
 
 Unexpected artifact size growth may indicate:
 
@@ -1377,7 +1377,7 @@ Size can therefore be a useful diagnostic indicator.
 
 ---
 
-# Artifact Comparison
+## Artifact Comparison
 
 Future build tooling may compare artifacts across builds.
 
@@ -1393,7 +1393,7 @@ This may support reproducibility analysis.
 
 ---
 
-# Reproducible Artifact Comparison
+## Reproducible Artifact Comparison
 
 A stronger build system may evaluate:
 
@@ -1411,7 +1411,7 @@ Differences should be explainable.
 
 ---
 
-# Artifact Validation For Python Packages
+## Artifact Validation For Python Packages
 
 For Python artifacts, validation may eventually include:
 
@@ -1427,7 +1427,7 @@ The exact implementation belongs to Build Validation.
 
 ---
 
-# Wheel Artifacts
+## Wheel Artifacts
 
 Wheel artifacts are important current FamilyOS package outputs.
 
@@ -1441,7 +1441,7 @@ Wheel-specific concerns may include:
 
 ---
 
-# Source Distribution Artifacts
+## Source Distribution Artifacts
 
 Source distributions may require validation of:
 
@@ -1454,7 +1454,7 @@ A source distribution is not automatically equivalent to the repository state.
 
 ---
 
-# Plugin Artifacts
+## Plugin Artifacts
 
 Official plugin artifacts may require additional metadata and compliance evidence.
 
@@ -1472,7 +1472,7 @@ Compliance Evidence
 
 ---
 
-# Documentation Artifacts
+## Documentation Artifacts
 
 Documentation artifacts may include:
 
@@ -1485,7 +1485,7 @@ Where treated as formal artifacts, the same identity and traceability principles
 
 ---
 
-# Validation Report Artifacts
+## Validation Report Artifacts
 
 Validation reports may be retained as supporting evidence.
 
@@ -1498,7 +1498,7 @@ They should clearly reference:
 
 ---
 
-# Artifact And Dependency Management
+## Artifact And Dependency Management
 
 Artifact metadata may expose runtime dependency requirements.
 
@@ -1506,7 +1506,7 @@ These should remain consistent with canonical dependency declarations.
 
 ---
 
-# Artifact And Configuration
+## Artifact And Configuration
 
 Artifact identity may depend on build configuration.
 
@@ -1520,7 +1520,7 @@ Relevant configuration should remain traceable.
 
 ---
 
-# Artifact And Toolchain
+## Artifact And Toolchain
 
 Toolchain changes may alter artifact bytes or metadata.
 
@@ -1528,7 +1528,7 @@ Important artifacts should therefore be associated with the relevant toolchain c
 
 ---
 
-# Artifact And Environment
+## Artifact And Environment
 
 Platform-specific artifacts may require environment identity.
 
@@ -1536,7 +1536,7 @@ Purely platform-independent artifacts may require less environment metadata.
 
 ---
 
-# Artifact And Testing
+## Artifact And Testing
 
 Some artifact validations may use the Testing Framework.
 
@@ -1550,7 +1550,7 @@ Testing policy remains owned by EPIC-TST-001.
 
 ---
 
-# Artifact And Quality
+## Artifact And Quality
 
 Artifact quality may contribute to Quality Framework assessments.
 
@@ -1563,7 +1563,7 @@ Relevant evidence may include:
 
 ---
 
-# Artifact And Release
+## Artifact And Release
 
 The Build Framework provides the Release Framework with trusted candidate artifacts.
 
@@ -1585,7 +1585,7 @@ The Release Framework then decides whether promotion is authorized.
 
 ---
 
-# Release Handoff Contract
+## Release Handoff Contract
 
 A conceptual release handoff may be:
 
@@ -1604,7 +1604,7 @@ A formal schema may be introduced later.
 
 ---
 
-# Artifact Promotion Invariant
+## Artifact Promotion Invariant
 
 The artifact promoted by Release should be the artifact validated by Build.
 
@@ -1612,7 +1612,7 @@ This is one of the strongest artifact integrity rules in the framework.
 
 ---
 
-# Artifact Rebuild Risk
+## Artifact Rebuild Risk
 
 Rebuilding after approval can introduce:
 
@@ -1625,7 +1625,7 @@ Promotion of validated bytes should therefore be preferred.
 
 ---
 
-# Artifact Governance
+## Artifact Governance
 
 Significant artifact-model changes may require formal review.
 
@@ -1641,7 +1641,7 @@ Examples include:
 
 ---
 
-# Artifact Versioning
+## Artifact Versioning
 
 Artifact version semantics must align with Release Framework policies.
 
@@ -1649,7 +1649,7 @@ The Build Framework should not invent independent versioning systems.
 
 ---
 
-# Artifact Format Evolution
+## Artifact Format Evolution
 
 Artifact formats may evolve.
 
@@ -1663,7 +1663,7 @@ Format changes should consider:
 
 ---
 
-# Artifact Deprecation
+## Artifact Deprecation
 
 Obsolete artifact types should be retired explicitly.
 
@@ -1676,7 +1676,7 @@ A transition may include:
 
 ---
 
-# Artifact Technical Debt
+## Artifact Technical Debt
 
 Artifact debt includes:
 
@@ -1692,49 +1692,49 @@ This debt should be reduced.
 
 ---
 
-# Artifact Anti-Pattern — Filename Equals Identity
+## Artifact Anti-Pattern — Filename Equals Identity
 
 A filename alone is not sufficient identity for high-trust artifacts.
 
 ---
 
-# Artifact Anti-Pattern — Build Directory Equals Artifact Set
+## Artifact Anti-Pattern — Build Directory Equals Artifact Set
 
 Everything inside a build directory must not automatically be treated as an artifact.
 
 ---
 
-# Artifact Anti-Pattern — Mutation After Validation
+## Artifact Anti-Pattern — Mutation After Validation
 
 A validated artifact must not be modified without revalidation.
 
 ---
 
-# Artifact Anti-Pattern — Manual Release Replacement
+## Artifact Anti-Pattern — Manual Release Replacement
 
 A release workflow must not replace validated artifacts manually with newly generated files.
 
 ---
 
-# Artifact Anti-Pattern — Untracked Metadata
+## Artifact Anti-Pattern — Untracked Metadata
 
 Artifact metadata must not live only in developer notes or chat messages.
 
 ---
 
-# Artifact Anti-Pattern — Secret Inclusion
+## Artifact Anti-Pattern — Secret Inclusion
 
 Artifacts must not contain local secrets or credentials.
 
 ---
 
-# Artifact Anti-Pattern — Rebuild At Every Stage
+## Artifact Anti-Pattern — Rebuild At Every Stage
 
 CI, release approval, and publication should not independently rebuild the same logical release artifact without strong reason.
 
 ---
 
-# Artifact Maturity Model
+## Artifact Maturity Model
 
 FamilyOS Artifact Management may evolve through:
 
@@ -1782,7 +1782,7 @@ Each maturity level should solve real engineering needs.
 
 ---
 
-# Artifact Success Criteria
+## Artifact Success Criteria
 
 The Artifact Management model is successful when FamilyOS can answer:
 
@@ -1803,53 +1803,53 @@ The Artifact Management model is successful when FamilyOS can answer:
 
 ---
 
-# Artifact Invariants
+## Artifact Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Raw build output is not automatically an artifact.
 
-## Invariant 2
+### Invariant 2
 
 Every trusted artifact must have identifiable origin.
 
-## Invariant 3
+### Invariant 3
 
 Required artifacts must be explicitly expected.
 
-## Invariant 4
+### Invariant 4
 
 Artifacts must pass applicable validation before trust.
 
-## Invariant 5
+### Invariant 5
 
 Integrity data must correspond to final artifact bytes.
 
-## Invariant 6
+### Invariant 6
 
 Trusted artifacts must not be mutated silently.
 
-## Invariant 7
+### Invariant 7
 
 Temporary outputs must remain distinguishable from trusted artifacts.
 
-## Invariant 8
+### Invariant 8
 
 Release handoff must use explicit artifact references.
 
-## Invariant 9
+### Invariant 9
 
 The artifact promoted downstream should match the artifact validated upstream.
 
-## Invariant 10
+### Invariant 10
 
 Artifact metadata must remain consistent with authoritative project state.
 
 ---
 
-# Artifact Management Flow
+## Artifact Management Flow
 
 The canonical FamilyOS artifact flow is:
 
@@ -1881,7 +1881,7 @@ This flow turns generated files into controlled engineering assets.
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Artifact Management model is founded on the following rule:
 

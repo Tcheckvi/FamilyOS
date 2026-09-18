@@ -13,7 +13,7 @@
 
 ---
 
-# Purpose
+## Purpose
 
 This manifest defines the official content structure of EPIC-PLUGIN-001.
 
@@ -22,7 +22,7 @@ FamilyOS plugins.
 
 ---
 
-# Included Documents
+## Included Documents
 
 | Document | Description |
 |---|---|
@@ -36,7 +36,7 @@ FamilyOS plugins.
 
 ---
 
-# Architectural References
+## Architectural References
 
 | Reference | Description |
 |---|---|
@@ -45,7 +45,7 @@ FamilyOS plugins.
 
 ---
 
-# Plugin References
+## Plugin References
 
 | Reference | Description |
 |---|---|
@@ -58,7 +58,7 @@ FamilyOS plugins.
 
 ---
 
-# Implementation Model
+## Implementation Model
 
 Official plugins SHALL provide:
 
@@ -75,7 +75,7 @@ Official plugins SHALL provide:
 
 ---
 
-# Quality Requirements
+## Quality Requirements
 
 All implementations must satisfy:
 
@@ -87,7 +87,7 @@ All implementations must satisfy:
 
 ---
 
-# Governance
+## Governance
 
 Changes to this EPIC must follow the FamilyOS documentation governance process.
 
@@ -101,7 +101,7 @@ All modifications must preserve:
 
 ---
 
-# Canonical Structure
+## Canonical Structure
 
 ```text
 Numbered Documents: 0
@@ -109,7 +109,7 @@ Control Documents:  7
 Canonical Files:    7
 ```
 
-# Historical Baseline
+## Historical Baseline
 
 The canonical repository baseline for this EPIC directory is:
 

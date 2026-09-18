@@ -1,8 +1,8 @@
 # Build Framework
 
-# 09 Build Environment Management
+## 09 Build Environment Management
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS build environments are identified, prepared, validated, isolated, maintained, and governed.
 
@@ -33,7 +33,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The Build Environment Management model establishes the engineering expectations required to make build execution predictable across:
 
@@ -56,7 +56,7 @@ The framework defines how build environments participate in:
 
 ---
 
-# Environment Definition
+## Environment Definition
 
 A build environment is the effective runtime context in which a build executes.
 
@@ -84,7 +84,7 @@ Relevant dimensions must nevertheless remain identifiable.
 
 ---
 
-# Environment As Build Context
+## Environment As Build Context
 
 The environment is part of the effective build context.
 
@@ -110,7 +110,7 @@ Environment management therefore contributes directly to reproducibility.
 
 ---
 
-# Environment Objectives
+## Environment Objectives
 
 FamilyOS build environments should be:
 
@@ -127,7 +127,7 @@ FamilyOS build environments should be:
 
 ---
 
-# Environment Principle 1 — Environment Assumptions Must Be Explicit
+## Environment Principle 1 — Environment Assumptions Must Be Explicit
 
 A canonical build must not depend on undocumented environment assumptions.
 
@@ -144,7 +144,7 @@ Unknown assumptions produce fragile builds.
 
 ---
 
-# Environment Principle 2 — Environment Differences Must Be Controlled
+## Environment Principle 2 — Environment Differences Must Be Controlled
 
 FamilyOS does not require every developer and CI runner to use an identical physical machine.
 
@@ -162,7 +162,7 @@ Equivalent Build Semantics
 
 ---
 
-# Environment Principle 3 — Unsupported Environments Must Fail Explicitly
+## Environment Principle 3 — Unsupported Environments Must Fail Explicitly
 
 An unsupported environment must not silently continue.
 
@@ -184,7 +184,7 @@ This prevents undefined behavior.
 
 ---
 
-# Environment Principle 4 — Local And CI Environments Must Remain Comparable
+## Environment Principle 4 — Local And CI Environments Must Remain Comparable
 
 Developer and CI environments may differ in implementation.
 
@@ -201,7 +201,7 @@ Canonical Environment Requirements
 
 ---
 
-# Environment Principle 5 — Isolation Should Reduce Hidden State
+## Environment Principle 5 — Isolation Should Reduce Hidden State
 
 Environment isolation can reduce contamination from unrelated software.
 
@@ -218,7 +218,7 @@ Isolation should be introduced where it improves reliability or security.
 
 ---
 
-# Environment Principle 6 — Environment State Must Not Become Authoritative Engineering State
+## Environment Principle 6 — Environment State Must Not Become Authoritative Engineering State
 
 Installed packages, caches, shell configuration, and host-specific files are not authoritative substitutes for repository definitions.
 
@@ -236,7 +236,7 @@ It must not replace it.
 
 ---
 
-# Environment Categories
+## Environment Categories
 
 FamilyOS recognizes several conceptual environment categories.
 
@@ -254,7 +254,7 @@ These environments may share most of their tooling while applying different leve
 
 ---
 
-# Development Environment
+## Development Environment
 
 The development environment supports everyday engineering work.
 
@@ -270,7 +270,7 @@ Development environments may allow more flexibility than release-candidate envir
 
 ---
 
-# Development Environment Requirements
+## Development Environment Requirements
 
 A development environment SHOULD provide:
 
@@ -285,7 +285,7 @@ Local flexibility must not become hidden canonical behavior.
 
 ---
 
-# Virtual Environments
+## Virtual Environments
 
 For Python development, virtual environments provide practical dependency and tool isolation.
 
@@ -305,7 +305,7 @@ This reduces accidental dependence on globally installed packages.
 
 ---
 
-# Virtual Environment Requirements
+## Virtual Environment Requirements
 
 Virtual environments SHOULD:
 
@@ -318,7 +318,7 @@ A fresh virtual environment should be able to reconstruct a valid development en
 
 ---
 
-# Validation Environment
+## Validation Environment
 
 A validation environment is optimized for engineering verification.
 
@@ -335,7 +335,7 @@ The validation environment may be local or automated.
 
 ---
 
-# Validation Environment Objective
+## Validation Environment Objective
 
 The objective is to answer:
 
@@ -347,7 +347,7 @@ This environment may apply stricter controls than routine development.
 
 ---
 
-# CI Environment
+## CI Environment
 
 CI provides an independently provisioned execution context.
 
@@ -371,7 +371,7 @@ This helps expose hidden local dependencies.
 
 ---
 
-# CI Environment Requirements
+## CI Environment Requirements
 
 CI environments SHOULD provide:
 
@@ -385,7 +385,7 @@ CI environments SHOULD provide:
 
 ---
 
-# Ephemeral CI Environments
+## Ephemeral CI Environments
 
 Ephemeral CI runners provide an important property:
 
@@ -399,7 +399,7 @@ However, CI alone does not guarantee reproducibility if dependencies or external
 
 ---
 
-# Release Candidate Environment
+## Release Candidate Environment
 
 Release-candidate builds may require the strongest environment controls.
 
@@ -416,7 +416,7 @@ Possible requirements include:
 
 ---
 
-# Release Environment Principle
+## Release Environment Principle
 
 A release-candidate environment should minimize unnecessary variability.
 
@@ -432,7 +432,7 @@ Trusted Release Candidate Artifact
 
 ---
 
-# Future Controlled Build Environment
+## Future Controlled Build Environment
 
 FamilyOS may eventually introduce more strongly controlled builders.
 
@@ -449,7 +449,7 @@ They are not required for initial Build Framework maturity.
 
 ---
 
-# Operating System Context
+## Operating System Context
 
 Operating system behavior may influence builds through:
 
@@ -464,7 +464,7 @@ If multiple operating systems are supported, their build semantics must be inten
 
 ---
 
-# Platform Compatibility
+## Platform Compatibility
 
 The framework should distinguish:
 
@@ -484,7 +484,7 @@ The distinction should be explicit.
 
 ---
 
-# Hardware Architecture
+## Hardware Architecture
 
 Hardware architecture may affect:
 
@@ -499,7 +499,7 @@ Future components may require explicit architecture-aware build profiles.
 
 ---
 
-# Runtime Environment
+## Runtime Environment
 
 The runtime environment is a critical build dimension.
 
@@ -514,7 +514,7 @@ Runtime management should define:
 
 ---
 
-# Runtime Validation
+## Runtime Validation
 
 Before canonical execution, the environment SHOULD verify runtime compatibility.
 
@@ -532,7 +532,7 @@ Proceed / Fail
 
 ---
 
-# Dependency Environment
+## Dependency Environment
 
 Installed dependency state must correspond to declared project requirements.
 
@@ -540,7 +540,7 @@ The environment must avoid situations where the build succeeds only because an u
 
 ---
 
-# Dependency Environment Validation
+## Dependency Environment Validation
 
 Useful checks may include:
 
@@ -553,7 +553,7 @@ The exact implementation may vary by build profile.
 
 ---
 
-# Toolchain Environment
+## Toolchain Environment
 
 Required build tools must be available within the environment.
 
@@ -570,7 +570,7 @@ Missing tools should fail before dependent stages begin.
 
 ---
 
-# Filesystem Environment
+## Filesystem Environment
 
 The filesystem provides:
 
@@ -584,7 +584,7 @@ Filesystem assumptions must be portable where practical.
 
 ---
 
-# Filesystem Requirements
+## Filesystem Requirements
 
 Builds should avoid depending on:
 
@@ -597,7 +597,7 @@ Paths should normally resolve from controlled roots.
 
 ---
 
-# Filesystem Permissions
+## Filesystem Permissions
 
 The environment must have sufficient permissions to perform required operations.
 
@@ -617,7 +617,7 @@ Maximum Available Permissions
 
 ---
 
-# Temporary Storage
+## Temporary Storage
 
 Build operations may require temporary storage.
 
@@ -632,7 +632,7 @@ Temporary paths should not influence artifact output unnecessarily.
 
 ---
 
-# Environment Variables
+## Environment Variables
 
 Environment variables can affect build behavior.
 
@@ -648,7 +648,7 @@ Their use must remain explicit.
 
 ---
 
-# Environment Variable Categories
+## Environment Variable Categories
 
 Environment variables may be classified as:
 
@@ -663,7 +663,7 @@ Different categories require different handling.
 
 ---
 
-# Configuration Variables
+## Configuration Variables
 
 Configuration variables influence build behavior.
 
@@ -671,7 +671,7 @@ Where they materially affect trusted output, their values or effective state sho
 
 ---
 
-# Context Variables
+## Context Variables
 
 Context variables may expose information such as:
 
@@ -683,7 +683,7 @@ They may support observability without changing artifact semantics.
 
 ---
 
-# Secret Variables
+## Secret Variables
 
 Secret variables require strict handling.
 
@@ -695,7 +695,7 @@ They MUST NOT:
 
 ---
 
-# Infrastructure Variables
+## Infrastructure Variables
 
 Infrastructure variables may describe:
 
@@ -707,7 +707,7 @@ The build should avoid letting provider-specific details alter canonical semanti
 
 ---
 
-# Locale
+## Locale
 
 Locale can affect:
 
@@ -721,7 +721,7 @@ Where locale materially affects output, it should be controlled.
 
 ---
 
-# Timezone
+## Timezone
 
 Timezone may influence:
 
@@ -734,7 +734,7 @@ Canonical artifact generation should avoid uncontrolled timezone-dependent outpu
 
 ---
 
-# Clock And Time
+## Clock And Time
 
 Build systems often introduce timestamps.
 
@@ -751,7 +751,7 @@ Artifact timestamps should be controlled if they affect reproducibility.
 
 ---
 
-# Network Environment
+## Network Environment
 
 Network access may be required for:
 
@@ -764,7 +764,7 @@ Network dependency introduces mutable external state.
 
 ---
 
-# Network Principle
+## Network Principle
 
 A build should not rely on unrestricted network access unless required.
 
@@ -780,7 +780,7 @@ Controlled Access
 
 ---
 
-# Offline Build Capability
+## Offline Build Capability
 
 FamilyOS may eventually support stronger offline or partially offline builds.
 
@@ -794,7 +794,7 @@ It is a maturity objective rather than an immediate universal requirement.
 
 ---
 
-# Proxy And Corporate Network Considerations
+## Proxy And Corporate Network Considerations
 
 Different developer environments may operate behind proxies or restricted networks.
 
@@ -802,7 +802,7 @@ Build architecture should keep network configuration separate from canonical art
 
 ---
 
-# Environment Discovery
+## Environment Discovery
 
 Before execution, the build system may discover relevant environment properties.
 
@@ -821,7 +821,7 @@ This improves diagnostics.
 
 ---
 
-# Environment Validation Flow
+## Environment Validation Flow
 
 The canonical validation flow is:
 
@@ -839,7 +839,7 @@ Build-Ready Environment
 
 ---
 
-# Environment Requirements Contract
+## Environment Requirements Contract
 
 A build target may conceptually define an environment contract.
 
@@ -859,13 +859,13 @@ The contract may initially exist in documentation and configuration rather than 
 
 ---
 
-# Environment Profiles
+## Environment Profiles
 
 Different build profiles may impose different requirements.
 
 ---
 
-# Development Environment Profile
+## Development Environment Profile
 
 A development profile may allow:
 
@@ -878,7 +878,7 @@ It must still use supported runtime and tooling.
 
 ---
 
-# CI Environment Profile
+## CI Environment Profile
 
 A CI profile may require:
 
@@ -890,7 +890,7 @@ A CI profile may require:
 
 ---
 
-# Release Candidate Environment Profile
+## Release Candidate Environment Profile
 
 A release candidate may require:
 
@@ -903,7 +903,7 @@ A release candidate may require:
 
 ---
 
-# Plugin Build Environment
+## Plugin Build Environment
 
 Plugin builds should reuse canonical FamilyOS environment requirements.
 
@@ -911,7 +911,7 @@ Plugin-specific build needs should be declared rather than assumed.
 
 ---
 
-# Documentation Build Environment
+## Documentation Build Environment
 
 Documentation generation may require additional tools.
 
@@ -919,7 +919,7 @@ Those tools must participate in the same environment validation principles.
 
 ---
 
-# Environment Reproducibility
+## Environment Reproducibility
 
 Environment reproducibility can exist at several levels.
 
@@ -944,7 +944,7 @@ FamilyOS can progress through these levels incrementally.
 
 ---
 
-# Environment Definition
+## Environment Definition
 
 A reproducible environment should derive from explicit definitions rather than manual installation history.
 
@@ -960,7 +960,7 @@ Validated Environment
 
 ---
 
-# Environment Provisioning
+## Environment Provisioning
 
 Provisioning may include:
 
@@ -974,7 +974,7 @@ Provisioning should be repeatable.
 
 ---
 
-# Provisioning And Build Separation
+## Provisioning And Build Separation
 
 Environment provisioning and build execution are related but distinct.
 
@@ -992,7 +992,7 @@ This separation improves diagnosis.
 
 ---
 
-# Environment Drift
+## Environment Drift
 
 Environment drift occurs when actual environment state diverges from documented or declared requirements.
 
@@ -1008,7 +1008,7 @@ Drift should be detected where it materially affects build trust.
 
 ---
 
-# Local Drift
+## Local Drift
 
 Developer environments naturally accumulate state.
 
@@ -1021,7 +1021,7 @@ The framework should reduce the impact of this through:
 
 ---
 
-# CI Drift
+## CI Drift
 
 CI drift may occur through changes in:
 
@@ -1035,7 +1035,7 @@ CI dependencies must therefore be explicit enough to remain reviewable.
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 Isolation reduces accidental interaction between build and host state.
 
@@ -1051,7 +1051,7 @@ Isolation strength should remain proportional to risk.
 
 ---
 
-# Isolation And Reproducibility
+## Isolation And Reproducibility
 
 Isolation improves reproducibility by shrinking the amount of uncontrolled state.
 
@@ -1065,7 +1065,7 @@ Smaller Effective Build State
 
 ---
 
-# Isolation And Security
+## Isolation And Security
 
 Isolation also reduces the security impact of compromised tooling or dependencies.
 
@@ -1075,7 +1075,7 @@ This should be introduced when justified by risk.
 
 ---
 
-# Clean Environment Principle
+## Clean Environment Principle
 
 A canonical build SHOULD be reproducible from a clean environment.
 
@@ -1095,7 +1095,7 @@ If the build only succeeds after historical local state accumulates, environment
 
 ---
 
-# Environment Cleanup
+## Environment Cleanup
 
 Local or automated environments may require cleanup.
 
@@ -1110,7 +1110,7 @@ Cleanup must not remove authoritative definitions.
 
 ---
 
-# Cache Management
+## Cache Management
 
 Caches can improve environment performance.
 
@@ -1124,7 +1124,7 @@ Caches must remain optional optimizations.
 
 ---
 
-# Cache Principle
+## Cache Principle
 
 The build should remain correct when the cache is absent.
 
@@ -1136,7 +1136,7 @@ Cache Missing → Still Correct
 
 ---
 
-# Environment State Recording
+## Environment State Recording
 
 For significant builds, relevant environment information may become build evidence.
 
@@ -1152,7 +1152,7 @@ Evidence should not include secrets.
 
 ---
 
-# Environment Fingerprinting
+## Environment Fingerprinting
 
 Future FamilyOS builds may use environment fingerprints.
 
@@ -1171,7 +1171,7 @@ It is not required immediately.
 
 ---
 
-# Environment Observability
+## Environment Observability
 
 Environment-related failures should be easy to diagnose.
 
@@ -1184,7 +1184,7 @@ A useful diagnostic should explain:
 
 ---
 
-# Environment Failure Categories
+## Environment Failure Categories
 
 Possible conceptual categories include:
 
@@ -1203,7 +1203,7 @@ Machine-readable codes may be introduced later.
 
 ---
 
-# Environment Security
+## Environment Security
 
 Build environments interact with untrusted or semi-trusted inputs such as dependencies and generated code.
 
@@ -1218,7 +1218,7 @@ Security considerations include:
 
 ---
 
-# Secret Isolation
+## Secret Isolation
 
 Secrets should only be exposed to build stages that require them.
 
@@ -1236,7 +1236,7 @@ Release publication credentials belong downstream.
 
 ---
 
-# Environment Permissions
+## Environment Permissions
 
 Build processes should not run with administrator or root privileges unless clearly required.
 
@@ -1244,7 +1244,7 @@ Excessive privileges increase supply-chain risk.
 
 ---
 
-# Environment And Artifact Integrity
+## Environment And Artifact Integrity
 
 A compromised or uncontrolled environment can affect artifact integrity.
 
@@ -1262,7 +1262,7 @@ Artifact Trust
 
 ---
 
-# Environment And Build Evidence
+## Environment And Build Evidence
 
 The build evidence model may reference:
 
@@ -1277,7 +1277,7 @@ This supports later investigation.
 
 ---
 
-# Environment And Release
+## Environment And Release
 
 The Release Framework may impose stronger environment requirements for official artifact production.
 
@@ -1285,7 +1285,7 @@ The Build Framework should support these requirements without embedding release 
 
 ---
 
-# Environment And Testing
+## Environment And Testing
 
 The Testing Framework may require specific test environments.
 
@@ -1293,7 +1293,7 @@ The Build Framework ensures those requirements can be provisioned and validated 
 
 ---
 
-# Environment And Quality
+## Environment And Quality
 
 Environment consistency may become a measurable quality concern.
 
@@ -1308,7 +1308,7 @@ The Quality Framework governs formal metric use.
 
 ---
 
-# Environment And Documentation
+## Environment And Documentation
 
 Environment setup must be documented sufficiently for engineers to reconstruct supported workflows.
 
@@ -1322,7 +1322,7 @@ Documentation should explain:
 
 ---
 
-# Environment Automation
+## Environment Automation
 
 Environment provisioning should become increasingly automated as the platform matures.
 
@@ -1344,7 +1344,7 @@ Automation should preserve transparency.
 
 ---
 
-# Environment Portability
+## Environment Portability
 
 The build environment should avoid unnecessary dependence on a specific workstation or automation provider.
 
@@ -1357,7 +1357,7 @@ Portable requirements improve:
 
 ---
 
-# Provider Independence
+## Provider Independence
 
 CI provider-specific mechanisms should remain at the integration boundary.
 
@@ -1365,7 +1365,7 @@ The canonical build environment model should not depend entirely on one vendor's
 
 ---
 
-# Containerization
+## Containerization
 
 Containers may eventually provide stronger environment reproducibility.
 
@@ -1387,7 +1387,7 @@ Containers should be introduced only when they solve actual FamilyOS needs.
 
 ---
 
-# Immutable Environments
+## Immutable Environments
 
 Future high-trust builds may use immutable environment definitions.
 
@@ -1397,7 +1397,7 @@ However, immutability is a maturity mechanism, not a prerequisite for a well-des
 
 ---
 
-# Environment Governance
+## Environment Governance
 
 Significant environment changes may require architectural review.
 
@@ -1412,7 +1412,7 @@ Examples include:
 
 ---
 
-# Runtime Upgrade Governance
+## Runtime Upgrade Governance
 
 Runtime upgrades deserve particular care.
 
@@ -1428,7 +1428,7 @@ Such upgrades should be validated across the engineering platform.
 
 ---
 
-# Environment Technical Debt
+## Environment Technical Debt
 
 Environment debt includes:
 
@@ -1444,7 +1444,7 @@ This debt should be reduced continuously.
 
 ---
 
-# Environment Anti-Pattern — Works Only On One Machine
+## Environment Anti-Pattern — Works Only On One Machine
 
 The framework explicitly rejects:
 
@@ -1458,13 +1458,13 @@ The build must be reproducible from documented requirements.
 
 ---
 
-# Environment Anti-Pattern — Global Dependency Reliance
+## Environment Anti-Pattern — Global Dependency Reliance
 
 The build must not depend on globally installed packages that are absent from declared environment requirements.
 
 ---
 
-# Environment Anti-Pattern — CI Magic
+## Environment Anti-Pattern — CI Magic
 
 Build success must not depend on undocumented software preinstalled on a CI runner.
 
@@ -1472,7 +1472,7 @@ Required environment state must be explicit.
 
 ---
 
-# Environment Anti-Pattern — Secret-Coupled Build
+## Environment Anti-Pattern — Secret-Coupled Build
 
 Ordinary packaging should not require production or release secrets.
 
@@ -1480,7 +1480,7 @@ This weakens isolation and separation of duties.
 
 ---
 
-# Environment Anti-Pattern — Environment-Specific Build Logic
+## Environment Anti-Pattern — Environment-Specific Build Logic
 
 Avoid logic such as:
 
@@ -1500,7 +1500,7 @@ Canonical semantics should not.
 
 ---
 
-# Environment Anti-Pattern — Unbounded Environment Variables
+## Environment Anti-Pattern — Unbounded Environment Variables
 
 Critical build behavior must not be distributed across dozens of undocumented environment variables.
 
@@ -1508,7 +1508,7 @@ Configuration should remain structured and inspectable.
 
 ---
 
-# Environment Success Criteria
+## Environment Success Criteria
 
 The Build Environment Management model is successful when FamilyOS can answer:
 
@@ -1527,53 +1527,53 @@ The Build Environment Management model is successful when FamilyOS can answer:
 
 ---
 
-# Environment Invariants
+## Environment Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Canonical build requirements must not depend on undocumented machine state.
 
-## Invariant 2
+### Invariant 2
 
 Unsupported runtime or toolchain state must fail explicitly.
 
-## Invariant 3
+### Invariant 3
 
 Declared dependencies remain authoritative over historical installed state.
 
-## Invariant 4
+### Invariant 4
 
 Local and CI builds must use compatible environment semantics.
 
-## Invariant 5
+### Invariant 5
 
 Caches must not become mandatory hidden inputs.
 
-## Invariant 6
+### Invariant 6
 
 Secrets must not become ordinary build configuration.
 
-## Invariant 7
+### Invariant 7
 
 Build environments must use only necessary privileges.
 
-## Invariant 8
+### Invariant 8
 
 Release credentials must remain separated from ordinary build execution.
 
-## Invariant 9
+### Invariant 9
 
 A clean environment must be capable of reconstructing the canonical build context.
 
-## Invariant 10
+### Invariant 10
 
 Material environment differences must remain explainable.
 
 ---
 
-# Environment Maturity Model
+## Environment Maturity Model
 
 FamilyOS build environment maturity may evolve through:
 
@@ -1616,7 +1616,7 @@ Each level should be adopted only when it provides useful engineering value.
 
 ---
 
-# Environment Model Summary
+## Environment Model Summary
 
 The canonical Build Environment Management flow is:
 
@@ -1640,7 +1640,7 @@ This transforms the environment from an implicit background condition into a man
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Environment Management model is founded on the following rule:
 

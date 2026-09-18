@@ -18,7 +18,7 @@ It must be created through:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Philosophy within the Engineering Foundation is to define the strategic role of quality.
 
@@ -32,9 +32,9 @@ Quality exists to ensure that FamilyOS remains:
 
 ---
 
-# Quality Philosophy Principles
+## Quality Philosophy Principles
 
-## Principle 1 — Quality Is Designed
+### Principle 1 — Quality Is Designed
 
 Quality begins before implementation.
 
@@ -49,7 +49,7 @@ Quality should be built into solutions from the beginning.
 
 ---
 
-## Principle 2 — Quality Is Everyone's Responsibility
+### Principle 2 — Quality Is Everyone's Responsibility
 
 Quality is not owned by a single role.
 
@@ -63,7 +63,7 @@ Every contributor contributes to quality through:
 
 ---
 
-## Principle 3 — Prevention Over Correction
+### Principle 3 — Prevention Over Correction
 
 Engineering practices should prevent problems before they reach later stages.
 
@@ -77,7 +77,7 @@ Prevention is supported by:
 
 ---
 
-## Principle 4 — Continuous Validation
+### Principle 4 — Continuous Validation
 
 Quality must be continuously evaluated.
 
@@ -93,7 +93,7 @@ Continuous validation provides early feedback.
 
 ---
 
-## Principle 5 — Measurable Quality
+### Principle 5 — Measurable Quality
 
 Quality should be observable.
 
@@ -109,7 +109,7 @@ Metrics should support improvement, not create unnecessary bureaucracy.
 
 ---
 
-## Principle 6 — Sustainable Quality
+### Principle 6 — Sustainable Quality
 
 Quality decisions must consider long-term impact.
 
@@ -123,7 +123,7 @@ Short-term solutions that create future instability should be avoided.
 
 ---
 
-# Quality Lifecycle
+## Quality Lifecycle
 
 Quality follows a continuous engineering lifecycle.
 
@@ -150,7 +150,7 @@ Quality is continuously refined rather than verified only at the end of developm
 
 ---
 
-# Quality Across the Engineering Lifecycle
+## Quality Across the Engineering Lifecycle
 
 Quality applies throughout every engineering activity.
 
@@ -180,7 +180,7 @@ Quality remains a continuous responsibility rather than a separate engineering p
 
 ---
 
-# Quality and Architecture
+## Quality and Architecture
 
 Architecture strongly influences quality.
 
@@ -199,7 +199,7 @@ Reference:
 
 ---
 
-# Quality and Development
+## Quality and Development
 
 Development practices directly affect quality.
 
@@ -217,7 +217,7 @@ Reference:
 
 ---
 
-# Quality and Testing
+## Quality and Testing
 
 Testing provides evidence that quality expectations are satisfied.
 
@@ -234,7 +234,7 @@ Reference:
 
 ---
 
-# Quality and Automation
+## Quality and Automation
 
 Automation strengthens quality by providing consistent validation.
 
@@ -248,7 +248,7 @@ Automation may support:
 
 ---
 
-# Quality and Documentation
+## Quality and Documentation
 
 Documentation contributes to quality by preserving knowledge.
 
@@ -265,7 +265,7 @@ Reference:
 
 ---
 
-# Quality and Technical Debt
+## Quality and Technical Debt
 
 Quality management includes controlling technical debt.
 
@@ -280,7 +280,7 @@ Ignoring technical debt decreases future engineering capacity.
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Quality gates provide controlled validation points.
 
@@ -294,7 +294,7 @@ Quality gates should provide confidence without creating unnecessary friction.
 
 ---
 
-# Quality Metrics
+## Quality Metrics
 
 Quality should be assessed using meaningful engineering indicators.
 
@@ -310,7 +310,7 @@ Metrics should guide engineering decisions rather than become objectives themsel
 
 ---
 
-# Quality Evolution
+## Quality Evolution
 
 Quality practices must evolve with FamilyOS maturity.
 
@@ -325,7 +325,7 @@ Changes should follow engineering governance.
 
 ---
 
-# Governance
+## Governance
 
 Quality decisions should remain aligned with:
 
@@ -338,7 +338,7 @@ Major changes affecting quality objectives, validation strategy, or engineering 
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Quality Philosophy is successful when:
 
@@ -350,7 +350,7 @@ Quality Philosophy is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Quality Philosophy establishes quality as a continuous engineering capability of FamilyOS.
 

@@ -1,8 +1,8 @@
 # Release Framework
 
-# 01 Context
+## 01 Context
 
-## Overview
+### Overview
 
 The FamilyOS engineering platform has progressively established a set of foundational capabilities covering architecture, implementation, testing, quality, documentation, plugins, compliance, and build engineering.
 
@@ -18,7 +18,7 @@ The framework establishes the engineering context required to transform validate
 
 ---
 
-# Engineering Context
+## Engineering Context
 
 FamilyOS is evolving from a software project into a structured engineering platform.
 
@@ -43,7 +43,7 @@ The platform requires a formal release engineering model.
 
 ---
 
-# Current Engineering Chain
+## Current Engineering Chain
 
 FamilyOS already establishes several stages before release.
 
@@ -111,7 +111,7 @@ These questions define the release engineering domain.
 
 ---
 
-# Build and Release Are Different Responsibilities
+## Build and Release Are Different Responsibilities
 
 One of the central architectural decisions behind EPIC-REL-001 is the explicit separation between build engineering and release engineering.
 
@@ -157,7 +157,7 @@ Therefore:
 
 ---
 
-# Existing Release Practices
+## Existing Release Practices
 
 FamilyOS already performs several release-related activities.
 
@@ -182,7 +182,7 @@ The Release Framework must convert those practices into explicit, reusable engin
 
 ---
 
-# Problem Statement
+## Problem Statement
 
 Without a formal Release Framework, release operations risk becoming inconsistent as the platform expands.
 
@@ -209,7 +209,7 @@ These risks increase as the number of contributors, release targets, automation 
 
 ---
 
-# Why Release Engineering Must Be Formalized Early
+## Why Release Engineering Must Be Formalized Early
 
 Release engineering becomes more difficult to introduce after many incompatible release patterns already exist.
 
@@ -225,7 +225,7 @@ Automation is therefore only safe when the underlying release model is already w
 
 ---
 
-# Platform Growth Context
+## Platform Growth Context
 
 FamilyOS is designed as an extensible ecosystem rather than a single monolithic executable.
 
@@ -253,11 +253,11 @@ At the same time, it must preserve a common governance foundation.
 
 ---
 
-# Release Complexity
+## Release Complexity
 
 Release complexity emerges from several interacting concerns.
 
-## Source State
+### Source State
 
 The release must originate from a known source state.
 
@@ -274,7 +274,7 @@ Without source identity, release reconstruction becomes unreliable.
 
 ---
 
-## Artifact State
+### Artifact State
 
 The exact artifacts being released must be known.
 
@@ -282,7 +282,7 @@ Different artifacts produced from different source or configuration states must 
 
 ---
 
-## Validation State
+### Validation State
 
 The framework must determine which validation evidence applies to the candidate.
 
@@ -299,7 +299,7 @@ Evidence may include:
 
 ---
 
-## Version State
+### Version State
 
 The intended version must be consistent with:
 
@@ -312,7 +312,7 @@ The intended version must be consistent with:
 
 ---
 
-## Publication State
+### Publication State
 
 The framework must know whether a candidate is:
 
@@ -328,7 +328,7 @@ Without explicit state semantics, release recovery becomes difficult.
 
 ---
 
-# Repository State as Release Evidence
+## Repository State as Release Evidence
 
 The Git repository is a central element of FamilyOS release traceability.
 
@@ -354,7 +354,7 @@ The Release Framework therefore treats repository state verification as a first-
 
 ---
 
-# Git Tags as Release Anchors
+## Git Tags as Release Anchors
 
 FamilyOS already uses annotated Git tags to identify significant completed engineering milestones.
 
@@ -389,7 +389,7 @@ A release tag must therefore be associated with:
 
 ---
 
-# Version Proliferation Risk
+## Version Proliferation Risk
 
 As FamilyOS grows, multiple subsystems may introduce versions.
 
@@ -417,7 +417,7 @@ It must also prevent unnecessary version proliferation where a shared version is
 
 ---
 
-# Release Candidate Problem
+## Release Candidate Problem
 
 A release candidate must represent a stable object of validation.
 
@@ -437,7 +437,7 @@ This relationship is essential for trustworthy promotion.
 
 ---
 
-# Evidence Fragmentation Problem
+## Evidence Fragmentation Problem
 
 FamilyOS already produces evidence across several engineering systems.
 
@@ -461,7 +461,7 @@ The Release Framework introduces release readiness as the aggregation point for 
 
 ---
 
-# Manual Release Risk
+## Manual Release Risk
 
 Manual release operations are not inherently invalid.
 
@@ -494,7 +494,7 @@ The second should be progressively eliminated.
 
 ---
 
-# Automation Risk
+## Automation Risk
 
 Release automation also creates risks.
 
@@ -513,7 +513,7 @@ The framework therefore requires automation to implement release architecture ra
 
 ---
 
-# Partial Release Failure
+## Partial Release Failure
 
 Release operations frequently interact with multiple systems.
 
@@ -559,7 +559,7 @@ The Release Framework must define how such states are detected, represented, and
 
 ---
 
-# Immutability Requirement
+## Immutability Requirement
 
 Published release identity must remain trustworthy.
 
@@ -583,7 +583,7 @@ rather than silently replacing existing content.
 
 ---
 
-# Security Context
+## Security Context
 
 Release infrastructure is a security-sensitive part of the software supply chain.
 
@@ -606,7 +606,7 @@ Release security must therefore be integrated into architecture and governance.
 
 ---
 
-# Provenance Context
+## Provenance Context
 
 Consumers and maintainers may need to determine where a release originated.
 
@@ -635,7 +635,7 @@ EPIC-REL-001 establishes the architecture without requiring premature implementa
 
 ---
 
-# Documentation Context
+## Documentation Context
 
 Release documentation has two different audiences.
 
@@ -655,7 +655,7 @@ The Release Framework must therefore integrate with the Documentation Framework 
 
 ---
 
-# Plugin Release Context
+## Plugin Release Context
 
 Official FamilyOS plugins introduce additional release complexity.
 
@@ -676,7 +676,7 @@ Common release semantics should remain reusable across the ecosystem.
 
 ---
 
-# Emergency Release Context
+## Emergency Release Context
 
 Not all releases can follow normal planning timelines.
 
@@ -699,7 +699,7 @@ A faster release path must remain:
 
 ---
 
-# Rollback Context
+## Rollback Context
 
 The ability to release software creates a corresponding need to recover from defective releases.
 
@@ -730,7 +730,7 @@ depending on system characteristics.
 
 ---
 
-# Observability Context
+## Observability Context
 
 Release workflows must be understandable while they execute and after they complete.
 
@@ -754,7 +754,7 @@ It also allows automation to determine whether a release is truly complete.
 
 ---
 
-# Governance Context
+## Governance Context
 
 As long as releases are performed by a small number of maintainers, release authority may appear obvious.
 
@@ -774,7 +774,7 @@ The exact implementation may evolve over time, but the responsibility model must
 
 ---
 
-# Compliance Context
+## Compliance Context
 
 Release engineering sits at the boundary between development activity and distributed platform state.
 
@@ -798,7 +798,7 @@ EPIC-REL-001 must provide a mechanism for these requirements to become release g
 
 ---
 
-# Release Evidence Model
+## Release Evidence Model
 
 Release decisions should produce evidence that survives individual terminal sessions or CI/CD executions.
 
@@ -828,7 +828,7 @@ The architectural requirement is that sufficient evidence exists to establish re
 
 ---
 
-# Historical Reconstruction
+## Historical Reconstruction
 
 One of the long-term requirements of the framework is the ability to answer historical questions.
 
@@ -848,7 +848,7 @@ Historical reconstruction is essential for maintenance, debugging, compliance, i
 
 ---
 
-# Release Maturity Model
+## Release Maturity Model
 
 The Release Framework must support progressive maturity.
 
@@ -883,35 +883,35 @@ The framework defines the target architecture while allowing implementation to e
 
 ---
 
-# Constraints
+## Constraints
 
 The Release Framework must operate within several constraints.
 
-## C1 — Architecture Before Automation
+### C1 — Architecture Before Automation
 
 The release model must be defined before substantial release automation is introduced.
 
 ---
 
-## C2 — Compatibility With Existing Git Workflows
+### C2 — Compatibility With Existing Git Workflows
 
 The framework must preserve the useful release conventions already established within FamilyOS while making them explicit and governable.
 
 ---
 
-## C3 — No Build Duplication
+### C3 — No Build Duplication
 
 Release engineering must consume Build Framework outputs rather than reimplement build responsibilities.
 
 ---
 
-## C4 — Evidence Reuse
+### C4 — Evidence Reuse
 
 Testing, quality, compliance, security, and documentation evidence should be reused rather than unnecessarily recomputed by independent release systems.
 
 ---
 
-## C5 — Incremental Adoption
+### C5 — Incremental Adoption
 
 The framework must support gradual implementation.
 
@@ -919,19 +919,19 @@ Not every advanced release capability must exist immediately.
 
 ---
 
-## C6 — Automation Independence
+### C6 — Automation Independence
 
 Normative release semantics must not depend on a single CI/CD vendor, hosting platform, package registry, or automation tool.
 
 ---
 
-## C7 — Ecosystem Extensibility
+### C7 — Ecosystem Extensibility
 
 The framework must support future FamilyOS components without requiring fundamental redesign.
 
 ---
 
-# Architectural Drivers
+## Architectural Drivers
 
 The primary drivers for EPIC-REL-001 are:
 
@@ -952,11 +952,11 @@ Each design decision in the Release Framework should strengthen one or more of t
 
 ---
 
-# Key Questions the Framework Must Resolve
+## Key Questions the Framework Must Resolve
 
 EPIC-REL-001 must provide clear answers to the following questions.
 
-## Release Identity
+### Release Identity
 
 What constitutes an official FamilyOS release?
 
@@ -964,7 +964,7 @@ How is a release uniquely identified?
 
 ---
 
-## Versioning
+### Versioning
 
 How are release versions selected?
 
@@ -972,37 +972,37 @@ What do major, minor, patch, and pre-release identifiers mean?
 
 ---
 
-## Readiness
+### Readiness
 
 What evidence is required before release approval?
 
 ---
 
-## Candidates
+### Candidates
 
 How is a release candidate created and kept stable during qualification?
 
 ---
 
-## Artifacts
+### Artifacts
 
 How are release artifacts identified and connected to build outputs?
 
 ---
 
-## Provenance
+### Provenance
 
 How can a release be traced back to its source and build context?
 
 ---
 
-## Validation
+### Validation
 
 What checks must occur against the final candidate?
 
 ---
 
-## Tagging
+### Tagging
 
 When is a Git tag created?
 
@@ -1010,37 +1010,37 @@ What does an official tag guarantee?
 
 ---
 
-## Publishing
+### Publishing
 
 When does a validated candidate become officially published?
 
 ---
 
-## Distribution
+### Distribution
 
 How does a published release become available to consumers?
 
 ---
 
-## Recovery
+### Recovery
 
 What happens if publication fails or the release is defective?
 
 ---
 
-## Governance
+### Governance
 
 Who may approve, publish, withdraw, or supersede releases?
 
 ---
 
-## Evidence
+### Evidence
 
 What information must survive after the release process completes?
 
 ---
 
-# Desired Future State
+## Desired Future State
 
 The target FamilyOS release workflow is conceptually:
 
@@ -1103,7 +1103,7 @@ Each significant transition has explicit criteria and evidence.
 
 ---
 
-# Success Conditions
+## Success Conditions
 
 The Release Framework succeeds when FamilyOS can release components without depending on undocumented individual knowledge.
 
@@ -1137,7 +1137,7 @@ If these questions can be answered consistently and objectively, the release eng
 
 ---
 
-# Context Summary
+## Context Summary
 
 FamilyOS already possesses many of the engineering capabilities required to create reliable software.
 

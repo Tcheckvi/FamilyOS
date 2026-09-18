@@ -1,8 +1,8 @@
 # Release Framework
 
-# 24 Release Risk Management
+## 24 Release Risk Management
 
-## Overview
+### Overview
 
 Release risk management is the capability to identify, assess, control, monitor, and reduce the risks introduced by FamilyOS releases.
 
@@ -35,7 +35,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of release risk management is to establish a consistent model for evaluating and governing release-related risk.
 
@@ -67,7 +67,7 @@ Risk management must support engineering judgment rather than replace it.
 
 ---
 
-# Release Risk Principle
+## Release Risk Principle
 
 Release risk is determined by both the probability of failure and the consequences of failure.
 
@@ -94,7 +94,7 @@ The framework therefore combines:
 
 ---
 
-# Risk Management Lifecycle
+## Risk Management Lifecycle
 
 Release risk management must operate throughout the release lifecycle.
 
@@ -130,7 +130,7 @@ Risk management must begin before release readiness review.
 
 ---
 
-# Risk Identification
+## Risk Identification
 
 Risk identification determines what could go wrong because of the release.
 
@@ -158,7 +158,7 @@ It should not attempt to enumerate every theoretically possible event.
 
 ---
 
-# Risk Statement
+## Risk Statement
 
 Significant risks should be expressed clearly.
 
@@ -186,7 +186,7 @@ Clear risk statements improve mitigation quality.
 
 ---
 
-# Risk Categories
+## Risk Categories
 
 FamilyOS release risks should be classified consistently.
 
@@ -214,7 +214,7 @@ Additional categories may be introduced when required.
 
 ---
 
-# Functional Risk
+## Functional Risk
 
 Functional risk concerns incorrect or degraded business behavior.
 
@@ -230,7 +230,7 @@ Functional risk is primarily mitigated through testing, staged delivery, and run
 
 ---
 
-# Quality Risk
+## Quality Risk
 
 Quality risk concerns broader software quality characteristics.
 
@@ -246,7 +246,7 @@ Quality risk is governed jointly with the FamilyOS Quality Framework.
 
 ---
 
-# Security Risk
+## Security Risk
 
 Security risk concerns changes that may weaken the security posture.
 
@@ -264,7 +264,7 @@ High or critical security risks require explicit security evaluation.
 
 ---
 
-# Data Risk
+## Data Risk
 
 Data risk concerns loss, corruption, unauthorized exposure, or inconsistent state.
 
@@ -280,7 +280,7 @@ Data risk must receive heightened attention because software rollback may not re
 
 ---
 
-# Migration Risk
+## Migration Risk
 
 Migration risk concerns changes to persistent structures or state.
 
@@ -302,7 +302,7 @@ Migration risk should consider:
 
 ---
 
-# Dependency Risk
+## Dependency Risk
 
 Dependency risk concerns internal or external dependencies.
 
@@ -318,7 +318,7 @@ Dependency risk must include both technical compatibility and supportability.
 
 ---
 
-# Compatibility Risk
+## Compatibility Risk
 
 Compatibility risk concerns interaction between versions or components.
 
@@ -334,7 +334,7 @@ Compatibility risk is especially important during rolling or progressive deploym
 
 ---
 
-# Configuration Risk
+## Configuration Risk
 
 Configuration risk concerns changes in runtime behavior caused by configuration.
 
@@ -350,7 +350,7 @@ Configuration-only changes must still be considered release changes when they ma
 
 ---
 
-# Deployment Risk
+## Deployment Risk
 
 Deployment risk concerns failure of the release activation process.
 
@@ -367,7 +367,7 @@ Deployment risk must be evaluated independently from application-code risk.
 
 ---
 
-# Infrastructure Risk
+## Infrastructure Risk
 
 Infrastructure risk concerns changes to the environment supporting FamilyOS.
 
@@ -384,7 +384,7 @@ Infrastructure changes can create release failures even when the application art
 
 ---
 
-# Plugin Risk
+## Plugin Risk
 
 FamilyOS is a plugin-oriented platform.
 
@@ -402,7 +402,7 @@ Plugin risk should be evaluated independently from core platform risk where appr
 
 ---
 
-# Observability Risk
+## Observability Risk
 
 Observability risk concerns insufficient ability to detect or understand release failures.
 
@@ -419,7 +419,7 @@ A release can be technically correct but operationally unsafe if it cannot be ob
 
 ---
 
-# Recovery Risk
+## Recovery Risk
 
 Recovery risk concerns the inability to restore a safe state after failure.
 
@@ -435,7 +435,7 @@ Recovery risk is a primary production release risk.
 
 ---
 
-# Compliance Risk
+## Compliance Risk
 
 Compliance risk concerns violation of applicable release controls.
 
@@ -451,7 +451,7 @@ Compliance risk must be explicitly represented rather than hidden within general
 
 ---
 
-# Operational Risk
+## Operational Risk
 
 Operational risk concerns the ability of people and processes to manage the release safely.
 
@@ -468,7 +468,7 @@ Operational context can significantly change the risk of an otherwise identical 
 
 ---
 
-# Risk Factors
+## Risk Factors
 
 The following factors should increase release risk where applicable:
 
@@ -491,7 +491,7 @@ Risk classification should consider the complete change, not only code size.
 
 ---
 
-# Risk Classification
+## Risk Classification
 
 FamilyOS releases should use a simple standardized risk classification.
 
@@ -510,7 +510,7 @@ Individual risks may also receive separate severity levels.
 
 ---
 
-# Low Risk
+## Low Risk
 
 A low-risk release typically has:
 
@@ -526,7 +526,7 @@ Examples may include minor documentation or low-impact configuration changes.
 
 ---
 
-# Medium Risk
+## Medium Risk
 
 A medium-risk release may include:
 
@@ -540,7 +540,7 @@ It requires normal production release controls and explicit readiness review.
 
 ---
 
-# High Risk
+## High Risk
 
 A high-risk release may include:
 
@@ -556,7 +556,7 @@ High-risk releases require stronger validation and operational controls.
 
 ---
 
-# Critical Risk
+## Critical Risk
 
 A critical-risk release may affect:
 
@@ -571,7 +571,7 @@ Critical-risk releases require explicit senior authorization and enhanced deploy
 
 ---
 
-# Likelihood Assessment
+## Likelihood Assessment
 
 Likelihood describes how probable a failure is.
 
@@ -598,7 +598,7 @@ Likelihood must not be determined solely by intuition.
 
 ---
 
-# Impact Assessment
+## Impact Assessment
 
 Impact describes the consequence if the risk occurs.
 
@@ -625,7 +625,7 @@ Impact analysis should consider:
 
 ---
 
-# Risk Matrix
+## Risk Matrix
 
 A risk matrix may combine likelihood and impact.
 
@@ -647,7 +647,7 @@ The important requirement is consistent application.
 
 ---
 
-# Risk Score
+## Risk Score
 
 Where useful, FamilyOS may use a numeric score.
 
@@ -666,7 +666,7 @@ A score without an understandable risk statement provides weak decision support.
 
 ---
 
-# Risk Register
+## Risk Register
 
 Significant release risks should be recorded in a release risk register.
 
@@ -690,7 +690,7 @@ The risk register should focus on material risks rather than administrative volu
 
 ---
 
-# Risk Ownership
+## Risk Ownership
 
 Every significant release risk must have an owner.
 
@@ -708,7 +708,7 @@ It establishes accountability for management of the risk.
 
 ---
 
-# Risk Mitigation
+## Risk Mitigation
 
 Mitigation reduces likelihood, impact, or both.
 
@@ -731,7 +731,7 @@ Mitigation must be specific enough to verify.
 
 ---
 
-# Preventive Controls
+## Preventive Controls
 
 Preventive controls reduce the likelihood of a failure.
 
@@ -748,7 +748,7 @@ Preventive controls should act before production impact occurs.
 
 ---
 
-# Detective Controls
+## Detective Controls
 
 Detective controls reduce time to discovery.
 
@@ -765,7 +765,7 @@ Detective controls become especially important where failure cannot be fully pre
 
 ---
 
-# Corrective Controls
+## Corrective Controls
 
 Corrective controls reduce the impact or duration of failure.
 
@@ -782,7 +782,7 @@ A mature release strategy combines preventive, detective, and corrective control
 
 ---
 
-# Residual Risk
+## Residual Risk
 
 Mitigation does not eliminate all risk.
 
@@ -812,7 +812,7 @@ The correct question is:
 
 ---
 
-# Risk Acceptance
+## Risk Acceptance
 
 Residual risk may be accepted when:
 
@@ -827,7 +827,7 @@ It must not be inferred from silence.
 
 ---
 
-# Risk Acceptance Record
+## Risk Acceptance Record
 
 A risk acceptance record should include:
 
@@ -846,7 +846,7 @@ Temporary acceptance should include an expiration or review condition.
 
 ---
 
-# Unacceptable Risk
+## Unacceptable Risk
 
 Some release risks must block deployment.
 
@@ -863,7 +863,7 @@ Release velocity must not override unacceptable risk.
 
 ---
 
-# Risk Escalation
+## Risk Escalation
 
 Risks should be escalated when:
 
@@ -879,7 +879,7 @@ Escalation should identify the decision required.
 
 ---
 
-# Risk-Based Release Controls
+## Risk-Based Release Controls
 
 Release controls should increase with risk.
 
@@ -917,7 +917,7 @@ This avoids applying the same level of process to every change.
 
 ---
 
-# Release Readiness Integration
+## Release Readiness Integration
 
 Risk management is a required part of release readiness.
 
@@ -938,7 +938,7 @@ A release with unknown critical risks is not ready.
 
 ---
 
-# Release Gate Integration
+## Release Gate Integration
 
 Risk may participate in automated or manual release gates.
 
@@ -957,7 +957,7 @@ Human judgment remains necessary for risk acceptance.
 
 ---
 
-# Change Size Risk
+## Change Size Risk
 
 Large releases increase uncertainty.
 
@@ -975,7 +975,7 @@ Small releases are not automatically low risk, but they are generally easier to 
 
 ---
 
-# Blast Radius
+## Blast Radius
 
 Blast radius describes how much of the system or user population may be affected by failure.
 
@@ -992,7 +992,7 @@ Reducing blast radius is one of the strongest release risk controls.
 
 ---
 
-# Progressive Delivery as Risk Control
+## Progressive Delivery as Risk Control
 
 Progressive delivery limits exposure.
 
@@ -1019,7 +1019,7 @@ Progression should depend on observable evidence.
 
 ---
 
-# Feature Flags as Risk Control
+## Feature Flags as Risk Control
 
 Feature flags may separate deployment from feature activation.
 
@@ -1036,7 +1036,7 @@ They are not a substitute for testing.
 
 ---
 
-# Rollback as Risk Control
+## Rollback as Risk Control
 
 Rollback reduces the potential duration of release failure.
 
@@ -1053,7 +1053,7 @@ A release with simple rollback has a different risk profile from an otherwise id
 
 ---
 
-# Forward Recovery Risk
+## Forward Recovery Risk
 
 Some releases cannot be rolled back safely.
 
@@ -1071,7 +1071,7 @@ Forward-only recovery must be explicitly recognized before deployment.
 
 ---
 
-# Migration Risk Controls
+## Migration Risk Controls
 
 High-risk migrations should use controls such as:
 
@@ -1087,7 +1087,7 @@ Destructive migration steps should occur only after compatibility windows where 
 
 ---
 
-# Data Risk Controls
+## Data Risk Controls
 
 Data risk controls may include:
 
@@ -1103,7 +1103,7 @@ A release should never assume data can simply be recreated unless that assumptio
 
 ---
 
-# Dependency Risk Controls
+## Dependency Risk Controls
 
 Dependency risk may be reduced through:
 
@@ -1118,7 +1118,7 @@ External dependencies should be treated as independent sources of failure.
 
 ---
 
-# Security Risk Controls
+## Security Risk Controls
 
 Security risk mitigation may include:
 
@@ -1134,7 +1134,7 @@ Critical security risk must not be normalized as routine release debt.
 
 ---
 
-# Plugin Risk Controls
+## Plugin Risk Controls
 
 Plugin release risk may be reduced through:
 
@@ -1150,7 +1150,7 @@ Plugin architecture should limit failure propagation wherever possible.
 
 ---
 
-# Observability as Risk Control
+## Observability as Risk Control
 
 Observability reduces uncertainty.
 
@@ -1167,7 +1167,7 @@ It reduces the risk of prolonged or misunderstood failure.
 
 ---
 
-# Operational Timing Risk
+## Operational Timing Risk
 
 Release timing may affect risk.
 
@@ -1185,7 +1185,7 @@ However, timing context should be included in risk assessment.
 
 ---
 
-# Human Factors
+## Human Factors
 
 Release risk is influenced by human factors.
 
@@ -1202,7 +1202,7 @@ Critical releases should minimize unnecessary human complexity.
 
 ---
 
-# Automation Risk
+## Automation Risk
 
 Automation reduces manual error but can amplify mistakes rapidly.
 
@@ -1218,7 +1218,7 @@ Automation must not bypass release governance.
 
 ---
 
-# Unknown Risk
+## Unknown Risk
 
 Some uncertainty cannot be eliminated.
 
@@ -1242,7 +1242,7 @@ They must not be silently interpreted as low risk.
 
 ---
 
-# Risk During Release
+## Risk During Release
 
 Risk assessment does not end at deployment authorization.
 
@@ -1262,7 +1262,7 @@ The release process must be able to pause or stop when risk increases.
 
 ---
 
-# Dynamic Risk Reassessment
+## Dynamic Risk Reassessment
 
 Risk should be reassessed when:
 
@@ -1277,7 +1277,7 @@ Dynamic reassessment supports evidence-based release control.
 
 ---
 
-# Post-Release Risk
+## Post-Release Risk
 
 A release may remain risky after successful deployment.
 
@@ -1293,7 +1293,7 @@ These risks must remain tracked until resolved.
 
 ---
 
-# Risk Closure
+## Risk Closure
 
 A risk should be closed only when:
 
@@ -1306,7 +1306,7 @@ Closing a release does not automatically close every associated risk.
 
 ---
 
-# Risk Evidence
+## Risk Evidence
 
 Risk decisions should be supported by evidence.
 
@@ -1325,7 +1325,7 @@ Risk assessment should become more evidence-based as FamilyOS matures.
 
 ---
 
-# Historical Risk Data
+## Historical Risk Data
 
 Historical release outcomes should inform future risk classification.
 
@@ -1346,7 +1346,7 @@ Historical evidence improves calibration.
 
 ---
 
-# Risk Metrics
+## Risk Metrics
 
 Useful release risk metrics include:
 
@@ -1364,7 +1364,7 @@ Metrics should improve risk prediction and control.
 
 ---
 
-# Risk Trends
+## Risk Trends
 
 Trend analysis may reveal systemic issues.
 
@@ -1380,7 +1380,7 @@ Trends should feed framework improvement.
 
 ---
 
-# Risk Review
+## Risk Review
 
 High-risk and critical releases should receive explicit risk review.
 
@@ -1397,7 +1397,7 @@ The review should remain concise and decision-oriented.
 
 ---
 
-# Release Risk Register Example
+## Release Risk Register Example
 
 A conceptual record may look like:
 
@@ -1428,7 +1428,7 @@ The exact implementation may be machine-readable.
 
 ---
 
-# Risk Status
+## Risk Status
 
 Risk records should use explicit states.
 
@@ -1447,7 +1447,7 @@ A risk should never disappear merely because it is inconvenient to track.
 
 ---
 
-# Risk and Compliance
+## Risk and Compliance
 
 Risk management and compliance are related but different.
 
@@ -1467,7 +1467,7 @@ Both models must remain explicit.
 
 ---
 
-# Risk and Release Metrics
+## Risk and Release Metrics
 
 Release metrics provide historical evidence for risk management.
 
@@ -1483,7 +1483,7 @@ Risk classification should improve as empirical evidence accumulates.
 
 ---
 
-# Risk and Observability
+## Risk and Observability
 
 Release observability supports real-time risk evaluation.
 
@@ -1498,7 +1498,7 @@ Insufficient observability increases uncertainty and therefore increases release
 
 ---
 
-# Risk and Quality
+## Risk and Quality
 
 The Quality Framework helps identify and reduce quality-related release risks.
 
@@ -1513,7 +1513,7 @@ Quality debt may increase release risk even when a specific release contains few
 
 ---
 
-# Risk and Testing
+## Risk and Testing
 
 Testing reduces uncertainty about release behavior.
 
@@ -1529,7 +1529,7 @@ Missing required tests should increase residual risk.
 
 ---
 
-# Risk and Build
+## Risk and Build
 
 The Build Framework reduces risks related to:
 
@@ -1542,7 +1542,7 @@ Untrusted or non-reproducible artifacts significantly increase release risk.
 
 ---
 
-# Governance
+## Governance
 
 Release risk management is governed by the FamilyOS Release Framework.
 
@@ -1560,7 +1560,7 @@ Risk governance must remain proportional to release complexity.
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Release risk management must evolve based on actual outcomes.
 
@@ -1585,19 +1585,19 @@ Improvement may include:
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices are prohibited or strongly discouraged.
 
-## No Explicit Risk Assessment
+### No Explicit Risk Assessment
 
 Assuming that passing tests means a release has no meaningful risk.
 
-## Risk by Change Size Only
+### Risk by Change Size Only
 
 Treating small code changes as automatically low risk.
 
-## Generic Risk Statements
+### Generic Risk Statements
 
 Using statements such as:
 
@@ -1607,39 +1607,39 @@ Something may go wrong.
 
 without describing cause and impact.
 
-## Risk Without Owner
+### Risk Without Owner
 
 Recording a risk without anyone responsible for managing it.
 
-## Risk Without Mitigation
+### Risk Without Mitigation
 
 Documenting high risk but taking no action.
 
-## Silent Risk Acceptance
+### Silent Risk Acceptance
 
 Proceeding despite known significant risk without explicit approval.
 
-## Zero-Risk Requirement
+### Zero-Risk Requirement
 
 Blocking all change unless every uncertainty is eliminated.
 
 Software releases always contain some residual risk.
 
-## Numerical Score Worship
+### Numerical Score Worship
 
 Allowing a calculated score to replace engineering judgment.
 
-## Outdated Risk Registers
+### Outdated Risk Registers
 
 Keeping risks that no longer correspond to the actual release state.
 
-## Hiding Unknowns
+### Hiding Unknowns
 
 Treating uncertain or missing information as low risk.
 
 ---
 
-# Required Outcomes
+## Required Outcomes
 
 Implementation of this framework section must ensure that:
 
@@ -1659,7 +1659,7 @@ Implementation of this framework section must ensure that:
 
 ---
 
-# Final Release Risk Management Principle
+## Final Release Risk Management Principle
 
 Release engineering cannot eliminate uncertainty.
 

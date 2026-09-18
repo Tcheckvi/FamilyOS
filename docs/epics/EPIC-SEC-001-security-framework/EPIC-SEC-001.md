@@ -17,7 +17,7 @@
 
 ---
 
-# Overview
+## Overview
 
 EPIC-SEC-001 establishes the authoritative **FamilyOS Security Framework**.
 
@@ -59,7 +59,7 @@ The framework is designed to make FamilyOS security:
 
 ---
 
-# Historical Framework Model
+## Historical Framework Model
 
 EPIC-SEC-001 was originally authored using the historical compact framework documentation model.
 
@@ -83,7 +83,7 @@ The absence of modern control documents in the historical release SHALL NOT be i
 
 ---
 
-# Historical Publication
+## Historical Publication
 
 Version `5.0.0` was historically published under:
 
@@ -115,7 +115,7 @@ Post-release normalization SHALL NOT:
 
 ---
 
-# Historical Tag Object
+## Historical Tag Object
 
 The annotated historical tag is:
 
@@ -133,7 +133,7 @@ The local and authoritative remote tag SHALL continue to resolve to this commit.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of EPIC-SEC-001 is to establish the canonical FamilyOS security foundation.
 
@@ -174,7 +174,7 @@ The framework enables FamilyOS to answer questions such as:
 
 ---
 
-# Security Problem Statement
+## Security Problem Statement
 
 FamilyOS handles information and capabilities that may become increasingly sensitive as the platform evolves.
 
@@ -205,7 +205,7 @@ EPIC-SEC-001 establishes shared security semantics for the entire FamilyOS engin
 
 ---
 
-# Security Principles
+## Security Principles
 
 The framework is founded on the following core principles:
 
@@ -229,7 +229,7 @@ These principles apply throughout the complete security lifecycle.
 
 ---
 
-# Deny by Default
+## Deny by Default
 
 Access SHOULD be denied unless explicitly permitted.
 
@@ -249,7 +249,7 @@ until sufficient security evidence establishes otherwise.
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Subjects, services, plugins, automation, and operational identities SHOULD receive only the capabilities required for their legitimate responsibilities.
 
@@ -263,7 +263,7 @@ Privileges SHOULD be:
 
 ---
 
-# Explicit Trust
+## Explicit Trust
 
 Trust SHALL NOT be inferred merely from location, naming, implementation origin, or prior behavior.
 
@@ -281,7 +281,7 @@ Examples include:
 
 ---
 
-# Threat-Driven Security
+## Threat-Driven Security
 
 Security requirements SHOULD correspond to meaningful threats.
 
@@ -300,7 +300,7 @@ Security controls should solve identifiable security problems rather than exist 
 
 ---
 
-# Data Protection
+## Data Protection
 
 Data protection SHALL be proportional to sensitivity, value, and risk.
 
@@ -317,7 +317,7 @@ The framework establishes security expectations for:
 
 ---
 
-# Secret Safety
+## Secret Safety
 
 Secrets SHALL NOT be treated as ordinary configuration.
 
@@ -343,7 +343,7 @@ Secrets SHOULD be:
 
 ---
 
-# Cryptographic Soundness
+## Cryptographic Soundness
 
 Cryptography SHALL use accepted algorithms, implementations, parameters, and key-management practices.
 
@@ -358,7 +358,7 @@ The framework discourages:
 
 ---
 
-# Plugin-Aware Security
+## Plugin-Aware Security
 
 Plugins are security-sensitive extension points.
 
@@ -379,7 +379,7 @@ Official plugin status SHALL NOT automatically bypass security controls.
 
 ---
 
-# Security Observability
+## Security Observability
 
 Security-relevant actions SHOULD generate sufficient structured evidence to support:
 
@@ -394,7 +394,7 @@ Observability SHALL respect data-minimization and privacy constraints.
 
 ---
 
-# Testable Security
+## Testable Security
 
 Security requirements SHOULD be testable where practical.
 
@@ -411,7 +411,7 @@ Examples include:
 
 ---
 
-# Automatable Security
+## Automatable Security
 
 Repeatable security checks SHOULD be automated when reliable automation is practical.
 
@@ -421,7 +421,7 @@ Automation SHALL NOT silently convert unresolved security findings into successf
 
 ---
 
-# Security Architecture
+## Security Architecture
 
 The Security Architecture defines how security responsibilities are distributed across FamilyOS.
 
@@ -447,7 +447,7 @@ Security controls may exist at multiple boundaries.
 
 ---
 
-# Identity
+## Identity
 
 Identity answers:
 
@@ -470,7 +470,7 @@ Identity SHALL remain distinguishable from authorization.
 
 ---
 
-# Authentication
+## Authentication
 
 Authentication establishes confidence in an asserted identity.
 
@@ -487,7 +487,7 @@ Authentication success alone SHALL NOT automatically grant unrestricted access.
 
 ---
 
-# Authorization
+## Authorization
 
 Authorization determines whether an authenticated or otherwise identified subject may perform a specific action.
 
@@ -517,7 +517,7 @@ The exact executable model may evolve.
 
 ---
 
-# Permissions
+## Permissions
 
 Permissions SHOULD use stable, explicit semantics.
 
@@ -533,7 +533,7 @@ Permission semantics SHALL remain governed across:
 
 ---
 
-# Data Security
+## Data Security
 
 The Security Framework governs the protection of FamilyOS information.
 
@@ -553,7 +553,7 @@ Security measures SHOULD reflect actual sensitivity and risk.
 
 ---
 
-# Secret Management
+## Secret Management
 
 Secret-management architecture SHOULD provide controlled acquisition and use of sensitive credentials.
 
@@ -561,7 +561,7 @@ Applications SHOULD depend on secret-provider abstractions where appropriate rat
 
 ---
 
-# Cryptography
+## Cryptography
 
 Cryptographic requirements may apply to:
 
@@ -578,7 +578,7 @@ The framework integrates release cryptography with EPIC-REL-001.
 
 ---
 
-# Threat Model
+## Threat Model
 
 Threat modeling identifies possible security failures before they become implementation defects.
 
@@ -606,7 +606,7 @@ Threat models SHOULD remain proportional to system criticality.
 
 ---
 
-# Risk Model
+## Risk Model
 
 Security risk reflects the likelihood and impact of undesirable security outcomes.
 
@@ -624,7 +624,7 @@ Critical risks SHOULD normally block release or activation until remediated or e
 
 ---
 
-# Trust Model
+## Trust Model
 
 Trust boundaries define where security assumptions change.
 
@@ -641,7 +641,7 @@ Crossing a trust boundary SHOULD trigger appropriate validation and authorizatio
 
 ---
 
-# Security Controls
+## Security Controls
 
 Security controls implement or enforce security requirements.
 
@@ -664,7 +664,7 @@ A control SHOULD have sufficiently explicit:
 
 ---
 
-# Security Compliance
+## Security Compliance
 
 Compliance determines whether applicable security controls and requirements are satisfied.
 
@@ -683,7 +683,7 @@ Compliance does not replace security architecture.
 
 ---
 
-# Security Validation
+## Security Validation
 
 Security validation determines whether applicable security requirements have been evaluated adequately.
 
@@ -709,7 +709,7 @@ Validation SHOULD remain proportional to change scope and risk.
 
 ---
 
-# Security Evidence
+## Security Evidence
 
 Security decisions SHOULD rely on trustworthy evidence.
 
@@ -729,7 +729,7 @@ Absence of required evidence SHALL NOT automatically be interpreted as success.
 
 ---
 
-# Release Security
+## Release Security
 
 Security validation integrates with EPIC-REL-001 — Release Framework.
 
@@ -753,7 +753,7 @@ Security SHALL NOT create a competing independent release lifecycle.
 
 ---
 
-# Security Release Gates
+## Security Release Gates
 
 Release security gates may consider:
 
@@ -771,7 +771,7 @@ A mandatory gate failure SHOULD normally prevent ordinary release progression.
 
 ---
 
-# Security Exceptions
+## Security Exceptions
 
 Exceptions SHALL remain explicit.
 
@@ -789,7 +789,7 @@ An exception SHALL NOT rewrite historical evidence to make a failed check appear
 
 ---
 
-# Framework Relationships
+## Framework Relationships
 
 EPIC-SEC-001 depends on and integrates with other FamilyOS engineering frameworks.
 
@@ -817,7 +817,7 @@ Each framework retains its own responsibilities.
 
 ---
 
-# Testing Boundary
+## Testing Boundary
 
 EPIC-TST-001 owns testing architecture and testing practices.
 
@@ -825,7 +825,7 @@ Security defines security-specific requirements and consumes testing capabilitie
 
 ---
 
-# Quality Boundary
+## Quality Boundary
 
 EPIC-QLT-001 owns the general quality model, quality evidence, quality gates, metrics, and quality governance.
 
@@ -833,7 +833,7 @@ Security findings may become Quality Framework evidence.
 
 ---
 
-# Build Boundary
+## Build Boundary
 
 EPIC-BLD-001 owns build execution, build environments, dependency preparation, artifact production, and Build Evidence.
 
@@ -841,7 +841,7 @@ Security applies security constraints to build and supply-chain behavior.
 
 ---
 
-# Release Boundary
+## Release Boundary
 
 EPIC-REL-001 owns the canonical release lifecycle and publication model.
 
@@ -849,7 +849,7 @@ Security provides release-security requirements and gates.
 
 ---
 
-# Observability Boundary
+## Observability Boundary
 
 EPIC-OBS-001 owns the general observability framework.
 
@@ -857,7 +857,7 @@ Security consumes observability capabilities for security evidence and operation
 
 ---
 
-# Plugin Compliance Boundary
+## Plugin Compliance Boundary
 
 EPIC-PLUGIN-002 owns plugin compliance semantics.
 
@@ -867,7 +867,7 @@ Plugin compliance may consume security requirements and security evidence.
 
 ---
 
-# Canonical Historical Documents
+## Canonical Historical Documents
 
 The historical framework consists of:
 
@@ -892,7 +892,7 @@ Historical count:
 
 ---
 
-# Current Control Documents
+## Current Control Documents
 
 The normalized current repository representation adds:
 
@@ -924,7 +924,7 @@ Current canonical repository representation:
 
 ---
 
-# Historical vs Current Structure
+## Historical vs Current Structure
 
 The distinction SHALL remain explicit.
 
@@ -948,7 +948,7 @@ The current structure SHALL NOT be retroactively attributed to the historical re
 
 ---
 
-# Post-Release Normalization
+## Post-Release Normalization
 
 The current activity introduces the standard FamilyOS control-document model around the historically published Security Framework.
 
@@ -966,7 +966,7 @@ Normalization SHALL preserve historical publication truth.
 
 ---
 
-# Current Revalidation
+## Current Revalidation
 
 The normalized representation requires evidence-based revalidation.
 
@@ -997,7 +997,7 @@ Required validation includes:
 
 ---
 
-# Evidence Rule
+## Evidence Rule
 
 The revalidation model is:
 
@@ -1025,7 +1025,7 @@ Only actual evidence may convert pending validation state to validated state.
 
 ---
 
-# Current Framework State
+## Current Framework State
 
 Historical framework state:
 
@@ -1052,7 +1052,7 @@ Final Revalidation:      Validated
 
 ---
 
-# Completion Conditions
+## Completion Conditions
 
 The current normalization may be declared validated only when:
 
@@ -1075,7 +1075,7 @@ The current normalization may be declared validated only when:
 
 ---
 
-# Final State
+## Final State
 
 ```text
 EPIC:                    EPIC-SEC-001

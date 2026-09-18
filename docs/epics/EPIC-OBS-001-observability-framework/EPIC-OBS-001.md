@@ -17,7 +17,7 @@
 
 ---
 
-# Overview
+## Overview
 
 EPIC-OBS-001 establishes the authoritative **FamilyOS Observability Framework**.
 
@@ -61,7 +61,7 @@ The framework is designed to make FamilyOS behavior:
 
 ---
 
-# Historical Framework Model
+## Historical Framework Model
 
 EPIC-OBS-001 was originally authored using the historical compact FamilyOS framework documentation model.
 
@@ -85,7 +85,7 @@ The absence of modern control documents in the historical release SHALL NOT be i
 
 ---
 
-# Historical Publication
+## Historical Publication
 
 Version `4.9.0` was historically published under:
 
@@ -117,7 +117,7 @@ Post-release normalization SHALL NOT:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of EPIC-OBS-001 is to establish the canonical FamilyOS observability foundation.
 
@@ -161,7 +161,7 @@ The framework enables FamilyOS to answer questions such as:
 
 ---
 
-# Observability Problem Statement
+## Observability Problem Statement
 
 FamilyOS may progressively contain:
 
@@ -195,7 +195,7 @@ EPIC-OBS-001 establishes shared observability semantics for the entire FamilyOS 
 
 ---
 
-# Observability Principles
+## Observability Principles
 
 The framework is founded on several core principles.
 
@@ -221,7 +221,7 @@ These principles apply throughout the complete observability lifecycle.
 
 ---
 
-# Useful Before Extensive
+## Useful Before Extensive
 
 Observability SHOULD prioritize actionable information over raw telemetry volume.
 
@@ -231,7 +231,7 @@ Signals SHOULD help answer meaningful engineering and operational questions.
 
 ---
 
-# Structured Before Free-Form
+## Structured Before Free-Form
 
 Where practical, telemetry SHOULD use structured data rather than rely entirely on unstructured text.
 
@@ -249,7 +249,7 @@ Free-form messages may still provide human-readable context.
 
 ---
 
-# Correlatable by Default
+## Correlatable by Default
 
 Related telemetry SHOULD be correlatable.
 
@@ -268,7 +268,7 @@ Correlation allows individual signals to be reconstructed into a broader executi
 
 ---
 
-# Context-Rich Observability
+## Context-Rich Observability
 
 Useful telemetry SHOULD contain sufficient context to understand what occurred.
 
@@ -290,7 +290,7 @@ Context SHALL remain proportional and privacy-aware.
 
 ---
 
-# Privacy-Aware Observability
+## Privacy-Aware Observability
 
 Observability SHALL NOT assume that all available information should be recorded.
 
@@ -309,7 +309,7 @@ Data minimization applies to telemetry.
 
 ---
 
-# Security-Aware Observability
+## Security-Aware Observability
 
 Observability can provide important security evidence.
 
@@ -327,7 +327,7 @@ Security-sensitive telemetry SHALL itself be protected appropriately.
 
 ---
 
-# Failure Visibility
+## Failure Visibility
 
 Failures SHOULD be observable.
 
@@ -346,7 +346,7 @@ Useful failure telemetry may identify:
 
 ---
 
-# Explicit Health
+## Explicit Health
 
 Health and readiness SHALL have explicit semantics.
 
@@ -372,7 +372,7 @@ Health states SHOULD reflect meaningful operational conditions.
 
 ---
 
-# Vendor Neutrality
+## Vendor Neutrality
 
 The framework SHALL avoid binding FamilyOS observability semantics to one telemetry vendor or backend.
 
@@ -382,7 +382,7 @@ Adapters may connect canonical FamilyOS telemetry to external observability plat
 
 ---
 
-# Testability
+## Testability
 
 Observability behavior SHOULD be testable without requiring production telemetry infrastructure.
 
@@ -400,7 +400,7 @@ Tests may validate:
 
 ---
 
-# Automation
+## Automation
 
 Repeatable observability validation SHOULD be automated where practical.
 
@@ -416,7 +416,7 @@ Automation may verify:
 
 ---
 
-# Observability Architecture
+## Observability Architecture
 
 The Observability Architecture defines how telemetry flows through FamilyOS.
 
@@ -442,7 +442,7 @@ This architecture separates application semantics from telemetry infrastructure.
 
 ---
 
-# Observability API
+## Observability API
 
 Components SHOULD depend on stable observability abstractions.
 
@@ -460,7 +460,7 @@ Application code SHOULD avoid depending directly on vendor-specific telemetry AP
 
 ---
 
-# Canonical Telemetry Model
+## Canonical Telemetry Model
 
 A canonical telemetry record may include:
 
@@ -487,7 +487,7 @@ The model SHOULD remain extensible.
 
 ---
 
-# Logging
+## Logging
 
 Logging provides discrete records describing significant events.
 
@@ -503,7 +503,7 @@ Logging SHALL NOT become the default storage mechanism for arbitrary application
 
 ---
 
-# Log Levels
+## Log Levels
 
 Typical severity semantics may include:
 
@@ -522,7 +522,7 @@ Severity SHOULD communicate operational significance rather than developer prefe
 
 ---
 
-# Metrics
+## Metrics
 
 Metrics represent measurable system characteristics over time.
 
@@ -542,7 +542,7 @@ Metrics SHOULD use stable names and meaningful dimensions.
 
 ---
 
-# Metric Cardinality
+## Metric Cardinality
 
 Metric labels SHALL be designed carefully.
 
@@ -560,7 +560,7 @@ Dimensions SHOULD remain bounded where practical.
 
 ---
 
-# Tracing
+## Tracing
 
 Tracing represents causal or temporal relationships across operations.
 
@@ -580,7 +580,7 @@ Tracing can help explain distributed or layered execution.
 
 ---
 
-# Span Context
+## Span Context
 
 A span may contain:
 
@@ -598,7 +598,7 @@ Span attributes SHALL follow privacy and security constraints.
 
 ---
 
-# Events
+## Events
 
 Structured events may represent significant domain or operational transitions.
 
@@ -617,7 +617,7 @@ Event naming SHOULD be stable and governed.
 
 ---
 
-# Health
+## Health
 
 Health describes whether a component is functioning adequately.
 
@@ -634,7 +634,7 @@ Exact state semantics SHALL remain explicit.
 
 ---
 
-# Readiness
+## Readiness
 
 Readiness answers whether a component is able to accept or perform intended work.
 
@@ -650,7 +650,7 @@ Examples:
 
 ---
 
-# Liveness
+## Liveness
 
 Liveness indicates whether a process or component remains alive enough to continue execution.
 
@@ -658,7 +658,7 @@ Liveness SHALL NOT be treated as equivalent to readiness or full health.
 
 ---
 
-# Diagnostics
+## Diagnostics
 
 Diagnostics provide deeper information for troubleshooting.
 
@@ -676,7 +676,7 @@ Diagnostic interfaces SHALL avoid exposing secrets or unnecessary sensitive info
 
 ---
 
-# Alerting
+## Alerting
 
 Alerts identify conditions requiring attention.
 
@@ -694,7 +694,7 @@ Alerting SHOULD optimize for useful action rather than maximum alert volume.
 
 ---
 
-# Alert Severity
+## Alert Severity
 
 Alert severity SHOULD reflect:
 
@@ -710,7 +710,7 @@ Severity models SHOULD remain explicit and stable.
 
 ---
 
-# Observability Data
+## Observability Data
 
 Observability data may include:
 
@@ -727,7 +727,7 @@ Telemetry SHALL have appropriate ownership and governance.
 
 ---
 
-# Correlation
+## Correlation
 
 Correlation connects telemetry related to the same execution context.
 
@@ -747,7 +747,7 @@ Identifiers SHOULD be propagated consistently where relevant.
 
 ---
 
-# Correlation Boundary
+## Correlation Boundary
 
 Correlation SHALL remain useful without becoming a privacy liability.
 
@@ -755,7 +755,7 @@ Identifiers SHOULD avoid embedding unnecessary personal or secret data.
 
 ---
 
-# Time
+## Time
 
 Reliable timestamps are essential to observability.
 
@@ -771,7 +771,7 @@ Where ordering matters, systems SHOULD account for:
 
 ---
 
-# Retention
+## Retention
 
 Telemetry retention SHOULD reflect:
 
@@ -786,7 +786,7 @@ Not all telemetry requires indefinite retention.
 
 ---
 
-# Data Minimization
+## Data Minimization
 
 Telemetry SHOULD contain the minimum information reasonably required for its observability purpose.
 
@@ -794,7 +794,7 @@ Observability SHALL NOT become an uncontrolled duplicate data store.
 
 ---
 
-# Security and Privacy
+## Security and Privacy
 
 Observability intersects with Security.
 
@@ -818,7 +818,7 @@ The framework SHALL therefore integrate:
 
 ---
 
-# Secret Redaction
+## Secret Redaction
 
 Secrets SHALL NOT be intentionally emitted into telemetry.
 
@@ -835,7 +835,7 @@ Redaction and filtering MAY provide additional protection but SHALL NOT replace 
 
 ---
 
-# Personally Sensitive Data
+## Personally Sensitive Data
 
 FamilyOS may handle personal or family-sensitive information.
 
@@ -843,7 +843,7 @@ Telemetry SHOULD avoid storing such information unless required for a legitimate
 
 ---
 
-# Observability Governance
+## Observability Governance
 
 Governance defines:
 
@@ -861,7 +861,7 @@ Observability governance SHOULD prevent uncontrolled fragmentation.
 
 ---
 
-# Implementation
+## Implementation
 
 The framework provides implementation direction while remaining technology-neutral.
 
@@ -882,7 +882,7 @@ These concepts may evolve as implementation progresses.
 
 ---
 
-# Automation
+## Automation
 
 Observability automation may include:
 
@@ -899,7 +899,7 @@ Automation SHALL produce evidence rather than silently mask telemetry failures.
 
 ---
 
-# Testing
+## Testing
 
 Observability features SHOULD be testable.
 
@@ -917,7 +917,7 @@ EPIC-TST-001 remains authoritative for general testing architecture.
 
 ---
 
-# Quality
+## Quality
 
 EPIC-QLT-001 remains authoritative for the general Quality Framework.
 
@@ -931,7 +931,7 @@ Observability may supply evidence including:
 
 ---
 
-# Build
+## Build
 
 EPIC-BLD-001 remains authoritative for build engineering.
 
@@ -944,7 +944,7 @@ Observability may provide build-related evidence such as:
 
 ---
 
-# Release
+## Release
 
 EPIC-REL-001 remains authoritative for release engineering.
 
@@ -959,7 +959,7 @@ Observability may provide release evidence regarding:
 
 ---
 
-# Security
+## Security
 
 EPIC-SEC-001 remains authoritative for the Security Framework.
 
@@ -973,7 +973,7 @@ Observability provides signals that Security may consume for:
 
 ---
 
-# Framework Boundaries
+## Framework Boundaries
 
 The Observability Framework owns:
 
@@ -999,7 +999,7 @@ It does not own:
 
 ---
 
-# Canonical Historical Documents
+## Canonical Historical Documents
 
 The historical Observability Framework consists of:
 
@@ -1024,7 +1024,7 @@ Historical count:
 
 ---
 
-# Current Control Documents
+## Current Control Documents
 
 The normalized repository representation adds:
 
@@ -1046,7 +1046,7 @@ Control count:
 
 ---
 
-# Current Canonical Repository Structure
+## Current Canonical Repository Structure
 
 The normalized current repository contains:
 
@@ -1066,7 +1066,7 @@ Canonical range:
 
 ---
 
-# Historical vs Current Structure
+## Historical vs Current Structure
 
 Historical publication:
 
@@ -1088,7 +1088,7 @@ The current control-document layer SHALL NOT be retroactively attributed to the 
 
 ---
 
-# Historical Tag Integrity
+## Historical Tag Integrity
 
 Historical tag:
 
@@ -1108,7 +1108,7 @@ Post-release normalization SHALL be represented by a later commit.
 
 ---
 
-# Post-Release Normalization
+## Post-Release Normalization
 
 The current activity adds standard FamilyOS framework control documents around the historically published Observability Framework.
 
@@ -1125,7 +1125,7 @@ It does not redefine version `4.9.0`.
 
 ---
 
-# Current Revalidation
+## Current Revalidation
 
 The normalized repository representation requires evidence-based revalidation.
 
@@ -1151,7 +1151,7 @@ Required checks include:
 
 ---
 
-# Evidence Rule
+## Evidence Rule
 
 Validation SHALL follow:
 
@@ -1169,7 +1169,7 @@ A validation requirement SHALL NOT become `PASS` merely because it is documented
 
 ---
 
-# Current Framework State
+## Current Framework State
 
 Historical framework state:
 
@@ -1214,7 +1214,7 @@ Final Revalidation:      Validated
 
 ---
 
-# Completion Conditions
+## Completion Conditions
 
 The normalized representation may be considered validated only when:
 
@@ -1241,7 +1241,7 @@ The normalized representation may be considered validated only when:
 
 ---
 
-# Final State
+## Final State
 
 ```text
 EPIC:                    EPIC-OBS-001

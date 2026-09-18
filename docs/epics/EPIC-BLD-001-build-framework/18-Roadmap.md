@@ -1,8 +1,8 @@
 # Build Framework
 
-# 18 Roadmap
+## 18 Roadmap
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the roadmap through which FamilyOS build engineering can evolve from its current foundation toward a mature, reproducible, traceable, automated, and supply-chain-aware build capability.
 
@@ -26,7 +26,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Build Roadmap is to provide a structured evolution path for EPIC-BLD-001.
 
@@ -47,7 +47,7 @@ The roadmap guides implementation without requiring all future-state capabilitie
 
 ---
 
-# Roadmap Philosophy
+## Roadmap Philosophy
 
 FamilyOS follows the progression:
 
@@ -77,7 +77,7 @@ Supply-chain assurance without stable artifact identity creates unnecessary comp
 
 ---
 
-# Roadmap Objectives
+## Roadmap Objectives
 
 The Build Framework roadmap aims to progressively establish:
 
@@ -98,7 +98,7 @@ The Build Framework roadmap aims to progressively establish:
 
 ---
 
-# Roadmap Model
+## Roadmap Model
 
 The roadmap is organized into eight maturity phases.
 
@@ -124,9 +124,9 @@ These phases describe engineering maturity rather than fixed calendar releases.
 
 ---
 
-# Phase 1 — Build Foundation
+## Phase 1 — Build Foundation
 
-## Objective
+### Objective
 
 Establish the normative Build Framework and define the canonical concepts required for future implementation.
 
@@ -134,7 +134,7 @@ This phase focuses on architecture and documentation before additional build inf
 
 ---
 
-## Capabilities
+### Capabilities
 
 Phase 1 establishes:
 
@@ -155,7 +155,7 @@ Phase 1 establishes:
 
 ---
 
-## Primary Deliverables
+### Primary Deliverables
 
 The principal deliverable is the complete EPIC-BLD-001 documentation set.
 
@@ -172,15 +172,15 @@ Revision-History.md
 
 ---
 
-## Success Criteria
+### Success Criteria
 
 Phase 1 is complete when FamilyOS has an internally consistent and validated normative Build Framework.
 
 ---
 
-# Phase 2 — Build Standardization
+## Phase 2 — Build Standardization
 
-## Objective
+### Objective
 
 Translate the Build Framework architecture into consistent everyday engineering workflows.
 
@@ -188,7 +188,7 @@ The objective is to eliminate unnecessary variation between developers and build
 
 ---
 
-## Capabilities
+### Capabilities
 
 Phase 2 may establish:
 
@@ -203,7 +203,7 @@ Phase 2 may establish:
 
 ---
 
-## Canonical Build Interface
+### Canonical Build Interface
 
 FamilyOS should progressively expose one primary build interface.
 
@@ -219,7 +219,7 @@ The exact interface must be defined during implementation.
 
 ---
 
-## Standard Local Build
+### Standard Local Build
 
 The local build workflow should become:
 
@@ -237,7 +237,7 @@ This reduces dependence on developer-specific procedures.
 
 ---
 
-## Build Output Standardization
+### Build Output Standardization
 
 Output locations should become predictable.
 
@@ -251,15 +251,15 @@ or another governed canonical output location.
 
 ---
 
-## Success Criteria
+### Success Criteria
 
 Phase 2 is complete when developers can execute the same documented build workflow from supported environments and obtain equivalent candidate outputs.
 
 ---
 
-# Phase 3 — Build Validation
+## Phase 3 — Build Validation
 
-## Objective
+### Objective
 
 Introduce systematic validation around build inputs, execution, and artifacts.
 
@@ -277,7 +277,7 @@ Build Validated
 
 ---
 
-## Capabilities
+### Capabilities
 
 Phase 3 may introduce:
 
@@ -293,7 +293,7 @@ Phase 3 may introduce:
 
 ---
 
-# Pre-Build Validation
+## Pre-Build Validation
 
 Builds should increasingly validate:
 
@@ -305,7 +305,7 @@ Builds should increasingly validate:
 
 ---
 
-# Post-Build Validation
+## Post-Build Validation
 
 Candidate artifacts should increasingly be checked for:
 
@@ -317,7 +317,7 @@ Candidate artifacts should increasingly be checked for:
 
 ---
 
-# Clean Installation Validation
+## Clean Installation Validation
 
 A high-value milestone is:
 
@@ -335,15 +335,15 @@ This provides assurance beyond source-level testing.
 
 ---
 
-## Success Criteria
+### Success Criteria
 
 Phase 3 is complete when a successful canonical build is followed by repeatable automated validation of the actual produced artifacts.
 
 ---
 
-# Phase 4 — Build Automation
+## Phase 4 — Build Automation
 
-## Objective
+### Objective
 
 Execute canonical build and validation processes automatically through CI.
 
@@ -353,7 +353,7 @@ It is to make CI a controlled execution environment for the Build Framework.
 
 ---
 
-## Capabilities
+### Capabilities
 
 Phase 4 may establish:
 
@@ -369,7 +369,7 @@ Phase 4 may establish:
 
 ---
 
-# CI Pipeline Foundation
+## CI Pipeline Foundation
 
 A target pipeline may resemble:
 
@@ -395,7 +395,7 @@ Independent validation stages may later run in parallel.
 
 ---
 
-# Local And CI Alignment
+## Local And CI Alignment
 
 A major milestone is:
 
@@ -409,21 +409,21 @@ at the semantic level.
 
 ---
 
-# CI Artifact Collection
+## CI Artifact Collection
 
 CI should explicitly collect generated artifact sets rather than discover them indirectly.
 
 ---
 
-## Success Criteria
+### Success Criteria
 
 Phase 4 is complete when a fresh CI environment can execute the canonical FamilyOS build and artifact-validation workflow without relying on undocumented runner state.
 
 ---
 
-# Phase 5 — Artifact Trust
+## Phase 5 — Artifact Trust
 
-## Objective
+### Objective
 
 Strengthen the distinction between generated output and trusted artifact.
 
@@ -431,7 +431,7 @@ This phase formalizes artifact identity, integrity, metadata, and evidence.
 
 ---
 
-## Capabilities
+### Capabilities
 
 Phase 5 may introduce:
 
@@ -445,7 +445,7 @@ Phase 5 may introduce:
 
 ---
 
-# Build Identity
+## Build Identity
 
 Each significant automated build should become uniquely identifiable.
 
@@ -462,7 +462,7 @@ Build ID
 
 ---
 
-# Artifact Manifest
+## Artifact Manifest
 
 A manifest may explicitly enumerate:
 
@@ -475,7 +475,7 @@ A manifest may explicitly enumerate:
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Cryptographic digests should increasingly protect artifact identity.
 
@@ -493,7 +493,7 @@ Trusted Artifact
 
 ---
 
-# Evidence Bundle
+## Evidence Bundle
 
 A standard evidence bundle may contain:
 
@@ -509,15 +509,15 @@ Checksums
 
 ---
 
-## Success Criteria
+### Success Criteria
 
 Phase 5 is complete when FamilyOS can identify and verify the origin and integrity of significant build artifacts.
 
 ---
 
-# Phase 6 — Reproducibility And Traceability
+## Phase 6 — Reproducibility And Traceability
 
-## Objective
+### Objective
 
 Strengthen the ability to reconstruct and compare FamilyOS builds.
 
@@ -525,7 +525,7 @@ This phase moves the platform from repeatable procedure toward stronger reproduc
 
 ---
 
-## Capabilities
+### Capabilities
 
 Phase 6 may establish:
 
@@ -538,7 +538,7 @@ Phase 6 may establish:
 
 ---
 
-# Reproducible Dependency State
+## Reproducible Dependency State
 
 Dependency resolution should become increasingly deterministic.
 
@@ -554,13 +554,13 @@ Known Dependency Graph
 
 ---
 
-# Reproducible Toolchain
+## Reproducible Toolchain
 
 Critical build tools should increasingly have controlled version identity.
 
 ---
 
-# Reproducible Environment
+## Reproducible Environment
 
 Environment setup may evolve from:
 
@@ -584,7 +584,7 @@ The technology should be selected only when necessary.
 
 ---
 
-# Build Context Fingerprint
+## Build Context Fingerprint
 
 A future build context fingerprint may represent:
 
@@ -600,7 +600,7 @@ This may support artifact comparison and safe caching.
 
 ---
 
-# Reproducibility Testing
+## Reproducibility Testing
 
 CI may periodically execute equivalent builds and compare outputs.
 
@@ -620,15 +620,15 @@ Differences should be categorized and explainable.
 
 ---
 
-## Success Criteria
+### Success Criteria
 
 Phase 6 is complete when FamilyOS can reconstruct important build contexts with low uncontrolled variability and explain meaningful artifact differences.
 
 ---
 
-# Phase 7 — Release Integration
+## Phase 7 — Release Integration
 
-## Objective
+### Objective
 
 Establish a strong artifact handoff contract between EPIC-BLD-001 and EPIC-REL-001.
 
@@ -636,7 +636,7 @@ The key objective is to ensure that official releases promote validated artifact
 
 ---
 
-## Capabilities
+### Capabilities
 
 Phase 7 may establish:
 
@@ -649,7 +649,7 @@ Phase 7 may establish:
 
 ---
 
-# Build Once, Promote
+## Build Once, Promote
 
 The target release model is:
 
@@ -669,7 +669,7 @@ Release
 
 ---
 
-# Release Candidate Handoff
+## Release Candidate Handoff
 
 The Build Framework may provide:
 
@@ -686,13 +686,13 @@ Release Candidate Handoff
 
 ---
 
-# Integrity Across Handoff
+## Integrity Across Handoff
 
 The Release Framework should verify that candidate artifact bytes match Build Framework integrity information.
 
 ---
 
-# Rebuild Avoidance
+## Rebuild Avoidance
 
 The release workflow should avoid:
 
@@ -710,15 +710,15 @@ unless reproducible rebuild is itself an intentionally governed release model.
 
 ---
 
-## Success Criteria
+### Success Criteria
 
 Phase 7 is complete when the Release Framework can consume and promote the exact trusted artifacts produced and validated by the Build Framework.
 
 ---
 
-# Phase 8 — Supply Chain Assurance
+## Phase 8 — Supply Chain Assurance
 
-## Objective
+### Objective
 
 Introduce stronger software supply-chain assurance when FamilyOS maturity and risk justify it.
 
@@ -728,7 +728,7 @@ It is not an immediate infrastructure requirement.
 
 ---
 
-## Potential Capabilities
+### Potential Capabilities
 
 Phase 8 may eventually introduce:
 
@@ -744,7 +744,7 @@ Phase 8 may eventually introduce:
 
 ---
 
-# Artifact Provenance
+## Artifact Provenance
 
 Formal provenance may describe:
 
@@ -763,7 +763,7 @@ This may eventually use industry standards if appropriate.
 
 ---
 
-# Artifact Signing
+## Artifact Signing
 
 Signing may provide cryptographic assurance that an artifact was approved by an authorized FamilyOS release process.
 
@@ -774,7 +774,7 @@ Signing architecture must preserve separation between:
 
 ---
 
-# Software Bill Of Materials
+## Software Bill Of Materials
 
 A future SBOM capability may describe artifact dependency composition.
 
@@ -788,7 +788,7 @@ An SBOM should only be introduced when its operational value is clear.
 
 ---
 
-# Provenance Attestations
+## Provenance Attestations
 
 Future builds may generate machine-verifiable attestations describing how artifacts were produced.
 
@@ -796,7 +796,7 @@ This should extend the existing Build Evidence model.
 
 ---
 
-# Trusted Builders
+## Trusted Builders
 
 High-trust releases may eventually use controlled build workers with stronger isolation and environment identity.
 
@@ -804,13 +804,13 @@ Such infrastructure should only be adopted when required by platform risk or dis
 
 ---
 
-## Success Criteria
+### Success Criteria
 
 Phase 8 is complete when FamilyOS can cryptographically and operationally demonstrate strong software supply-chain assurance for its official artifacts.
 
 ---
 
-# Cross-Phase Capabilities
+## Cross-Phase Capabilities
 
 Some capabilities evolve continuously across all roadmap phases.
 
@@ -826,7 +826,7 @@ These include:
 
 ---
 
-# Documentation Roadmap
+## Documentation Roadmap
 
 Build documentation should evolve together with implementation.
 
@@ -842,7 +842,7 @@ Implementation must not outrun documentation permanently.
 
 ---
 
-# Testing Roadmap
+## Testing Roadmap
 
 Build implementation should gain tests appropriate to its complexity.
 
@@ -859,7 +859,7 @@ Testing requirements remain aligned with EPIC-TST-001.
 
 ---
 
-# Quality Roadmap
+## Quality Roadmap
 
 The Quality Framework may progressively evaluate:
 
@@ -874,7 +874,7 @@ Metrics should become formal only when useful.
 
 ---
 
-# Security Roadmap
+## Security Roadmap
 
 Build security should strengthen progressively.
 
@@ -894,7 +894,7 @@ Later stages may add:
 
 ---
 
-# Observability Roadmap
+## Observability Roadmap
 
 Build observability may evolve from simple console output toward structured build results.
 
@@ -914,7 +914,7 @@ Build Evidence
 
 ---
 
-# Developer Experience Roadmap
+## Developer Experience Roadmap
 
 Developer experience should improve throughout the roadmap.
 
@@ -932,7 +932,7 @@ Advanced build maturity should not make ordinary development unnecessarily compl
 
 ---
 
-# Governance Roadmap
+## Governance Roadmap
 
 Governance may evolve from documentation-driven control toward selective automation.
 
@@ -950,7 +950,7 @@ Automation should only enforce stable and well-understood rules.
 
 ---
 
-# Build Framework Implementation Priorities
+## Build Framework Implementation Priorities
 
 The implementation sequence SHOULD prioritize high-value capabilities before advanced infrastructure.
 
@@ -973,7 +973,7 @@ A practical priority order is:
 
 ---
 
-# Priority 1 — Canonical Build Command
+## Priority 1 — Canonical Build Command
 
 The most important implementation capability is a single documented build path.
 
@@ -981,7 +981,7 @@ Without it, downstream automation remains fragmented.
 
 ---
 
-# Priority 2 — Environment Reproduction
+## Priority 2 — Environment Reproduction
 
 A fresh supported environment must be able to execute the build.
 
@@ -989,43 +989,43 @@ This removes workstation-specific dependency.
 
 ---
 
-# Priority 3 — Dependency Reproducibility
+## Priority 3 — Dependency Reproducibility
 
 Dependency resolution must become sufficiently controlled to support reliable builds.
 
 ---
 
-# Priority 4 — Artifact Validation
+## Priority 4 — Artifact Validation
 
 FamilyOS should validate the artifact itself, not only the source used to generate it.
 
 ---
 
-# Priority 5 — CI Consistency
+## Priority 5 — CI Consistency
 
 CI should independently execute the canonical build.
 
 ---
 
-# Priority 6 — Evidence
+## Priority 6 — Evidence
 
 Evidence becomes more valuable after execution and validation have stabilized.
 
 ---
 
-# Priority 7 — Strong Reproducibility
+## Priority 7 — Strong Reproducibility
 
 Stronger environment and artifact reproducibility should follow only after canonical build semantics are stable.
 
 ---
 
-# Priority 8 — Supply Chain Infrastructure
+## Priority 8 — Supply Chain Infrastructure
 
 Signing, provenance services, or dedicated artifact infrastructure should come last unless risk changes require earlier adoption.
 
 ---
 
-# Roadmap Dependencies
+## Roadmap Dependencies
 
 The Build Framework roadmap depends on several existing FamilyOS foundations.
 
@@ -1061,7 +1061,7 @@ Release Capability
 
 ---
 
-# Relationship With Release Roadmap
+## Relationship With Release Roadmap
 
 Build and Release roadmaps should evolve together.
 
@@ -1081,7 +1081,7 @@ The Release Framework must not compensate indefinitely for weak artifact identit
 
 ---
 
-# Roadmap Decision Gates
+## Roadmap Decision Gates
 
 Progress to higher maturity should be driven by evidence.
 
@@ -1103,7 +1103,7 @@ How will the capability be maintained?
 
 ---
 
-# Infrastructure Gate
+## Infrastructure Gate
 
 Advanced infrastructure should only be introduced when:
 
@@ -1123,7 +1123,7 @@ This is especially important for:
 
 ---
 
-# Roadmap Flexibility
+## Roadmap Flexibility
 
 The roadmap is directional, not rigid.
 
@@ -1135,7 +1135,7 @@ The important requirement is architectural consistency.
 
 ---
 
-# Roadmap Review
+## Roadmap Review
 
 The roadmap should be reviewed when:
 
@@ -1149,7 +1149,7 @@ The roadmap should be reviewed when:
 
 ---
 
-# Roadmap Change Governance
+## Roadmap Change Governance
 
 Major roadmap changes may require:
 
@@ -1162,7 +1162,7 @@ Routine implementation sequencing changes do not necessarily require formal arch
 
 ---
 
-# Deferred Capabilities
+## Deferred Capabilities
 
 The following capabilities should generally remain deferred until justified:
 
@@ -1181,7 +1181,7 @@ They are deferred until actual platform needs make them valuable.
 
 ---
 
-# Non-Goals Of The Roadmap
+## Non-Goals Of The Roadmap
 
 The roadmap does not attempt to:
 
@@ -1197,7 +1197,7 @@ Its purpose is to provide strategic sequencing.
 
 ---
 
-# Roadmap Risk — Over-Engineering
+## Roadmap Risk — Over-Engineering
 
 The most important roadmap risk is building infrastructure ahead of need.
 
@@ -1213,7 +1213,7 @@ The roadmap therefore favors incremental capability.
 
 ---
 
-# Roadmap Risk — Under-Engineering
+## Roadmap Risk — Under-Engineering
 
 The opposite risk is remaining with informal builds too long.
 
@@ -1229,7 +1229,7 @@ The roadmap balances both risks.
 
 ---
 
-# Roadmap Risk — Automation Before Architecture
+## Roadmap Risk — Automation Before Architecture
 
 Automating inconsistent build behavior can make inconsistency harder to remove.
 
@@ -1237,13 +1237,13 @@ Therefore architecture and standardization precede automation.
 
 ---
 
-# Roadmap Risk — CI Lock-In
+## Roadmap Risk — CI Lock-In
 
 Build semantics must remain independent from CI provider-specific implementation.
 
 ---
 
-# Roadmap Risk — Rebuilding During Release
+## Roadmap Risk — Rebuilding During Release
 
 Rebuilding artifacts downstream weakens traceability.
 
@@ -1251,7 +1251,7 @@ Phase 7 explicitly addresses this risk.
 
 ---
 
-# Roadmap Risk — Evidence Without Action
+## Roadmap Risk — Evidence Without Action
 
 Collecting extensive build data without using it creates maintenance cost.
 
@@ -1265,7 +1265,7 @@ Evidence should support:
 
 ---
 
-# Roadmap Risk — Permanent Transitional State
+## Roadmap Risk — Permanent Transitional State
 
 Temporary migration paths should not become permanent architecture.
 
@@ -1273,7 +1273,7 @@ Each transition should have an intended stable destination.
 
 ---
 
-# Maturity Assessment
+## Maturity Assessment
 
 FamilyOS may periodically evaluate Build Framework maturity using questions such as:
 
@@ -1301,7 +1301,7 @@ Can the build context be reconstructed?
 
 ---
 
-# Maturity Levels
+## Maturity Levels
 
 A simplified maturity model is:
 
@@ -1318,7 +1318,7 @@ Maturity 8 — Supply-Chain Assured
 
 ---
 
-# Roadmap Exit State
+## Roadmap Exit State
 
 The long-term target state is:
 
@@ -1344,7 +1344,7 @@ This represents mature Build Framework operation.
 
 ---
 
-# Roadmap Success Criteria
+## Roadmap Success Criteria
 
 The Build Roadmap is successful when it enables FamilyOS to evolve without losing architectural discipline and when each new level of build maturity produces measurable engineering value.
 
@@ -1365,7 +1365,7 @@ In the mature target state:
 
 ---
 
-# Roadmap Summary
+## Roadmap Summary
 
 The FamilyOS Build Framework roadmap can be summarized as:
 
@@ -1391,7 +1391,7 @@ Each phase converts another source of build uncertainty into explicit engineerin
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Roadmap is founded on the following rule:
 

@@ -17,7 +17,7 @@ Dependency Management defines how FamilyOS controls and evolves its dependencies
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Dependency Management is to ensure that dependencies are:
 
@@ -31,9 +31,9 @@ Dependencies should support the architecture rather than define it.
 
 ---
 
-# Dependency Management Principles
+## Dependency Management Principles
 
-## Principle 1 — Explicit Dependencies
+### Principle 1 — Explicit Dependencies
 
 Every dependency must have a clear purpose.
 
@@ -47,7 +47,7 @@ Hidden or unnecessary dependencies increase complexity.
 
 ---
 
-## Principle 2 — Minimize Dependency Complexity
+### Principle 2 — Minimize Dependency Complexity
 
 FamilyOS should avoid unnecessary dependency growth.
 
@@ -59,7 +59,7 @@ Before adding a dependency, contributors should evaluate:
 
 ---
 
-## Principle 3 — Stable Dependency Foundations
+### Principle 3 — Stable Dependency Foundations
 
 Dependencies should be selected with long-term stability in mind.
 
@@ -74,7 +74,7 @@ Short-term convenience should not outweigh long-term sustainability.
 
 ---
 
-## Principle 4 — Controlled Evolution
+### Principle 4 — Controlled Evolution
 
 Dependencies must evolve through controlled processes.
 
@@ -89,7 +89,7 @@ Dependency updates are engineering changes, not simple replacements.
 
 ---
 
-## Principle 5 — Security Awareness
+### Principle 5 — Security Awareness
 
 Dependencies are part of the FamilyOS security surface.
 
@@ -102,7 +102,7 @@ Dependency management should consider:
 
 ---
 
-# Dependency Categories
+## Dependency Categories
 
 FamilyOS dependencies are categorized as follows.
 
@@ -126,7 +126,7 @@ Each category has distinct engineering responsibilities and lifecycle requiremen
 
 ---
 
-# Runtime Dependencies
+## Runtime Dependencies
 
 Runtime dependencies are required for application execution.
 
@@ -138,7 +138,7 @@ They directly affect:
 
 ---
 
-# Development Dependencies
+## Development Dependencies
 
 Development dependencies support engineering activities.
 
@@ -153,7 +153,7 @@ They should improve engineering productivity without introducing unnecessary com
 
 ---
 
-# Testing Dependencies
+## Testing Dependencies
 
 Testing dependencies support validation.
 
@@ -169,7 +169,7 @@ Reference:
 
 ---
 
-# Build Dependencies
+## Build Dependencies
 
 Build dependencies support:
 
@@ -183,7 +183,7 @@ Reference:
 
 ---
 
-# Tooling Dependencies
+## Tooling Dependencies
 
 Tooling dependencies support the engineering environment.
 
@@ -195,7 +195,7 @@ They should remain aligned with:
 
 ---
 
-# Internal Dependencies
+## Internal Dependencies
 
 FamilyOS components may depend on internal modules and plugins.
 
@@ -207,7 +207,7 @@ Internal dependencies should respect:
 
 ---
 
-# Dependency Selection Process
+## Dependency Selection Process
 
 Before introducing a dependency, contributors should evaluate:
 
@@ -234,7 +234,7 @@ Only validated dependencies should become part of the engineering platform.
 
 ---
 
-# Dependency Lifecycle
+## Dependency Lifecycle
 
 Every dependency should have a managed lifecycle.
 
@@ -264,7 +264,7 @@ Lifecycle management ensures that obsolete, insecure, or unsupported dependencie
 
 ---
 
-# Dependency Version Management
+## Dependency Version Management
 
 Dependency versions should be:
 
@@ -280,7 +280,7 @@ Version changes should consider:
 
 ---
 
-# Dependency Updates
+## Dependency Updates
 
 Dependency updates should follow engineering workflows.
 
@@ -293,7 +293,7 @@ An update may require:
 
 ---
 
-# Dependency and Architecture
+## Dependency and Architecture
 
 Dependencies must support architectural principles.
 
@@ -307,7 +307,7 @@ Dependency direction must remain intentional.
 
 ---
 
-# Dependency and Build Systems
+## Dependency and Build Systems
 
 Build processes rely on controlled dependencies.
 
@@ -323,7 +323,7 @@ Reference:
 
 ---
 
-# Dependency and Release Management
+## Dependency and Release Management
 
 Dependency changes may affect releases.
 
@@ -339,7 +339,7 @@ Reference:
 
 ---
 
-# Dependency Documentation
+## Dependency Documentation
 
 Important dependency decisions should remain documented.
 
@@ -357,7 +357,7 @@ Possible artifacts:
 
 ---
 
-# Dependency Maintenance
+## Dependency Maintenance
 
 Dependencies should be periodically reviewed.
 
@@ -370,7 +370,7 @@ Maintenance activities include:
 
 ---
 
-# Governance
+## Governance
 
 Dependency decisions follow engineering governance rules.
 
@@ -380,7 +380,7 @@ Architecturally significant dependency changes should be supported by ADRs or RF
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Dependency Management is successful when:
 
@@ -392,7 +392,7 @@ Dependency Management is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Dependency Management provides the engineering discipline required to evolve the FamilyOS ecosystem safely.
 

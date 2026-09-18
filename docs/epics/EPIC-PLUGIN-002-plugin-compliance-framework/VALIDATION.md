@@ -1,10 +1,10 @@
 # Plugin Compliance Framework
 
-# VALIDATION
+## VALIDATION
 
-## EPIC-PLUGIN-002
+### EPIC-PLUGIN-002
 
-## Purpose
+### Purpose
 
 This document records the validation model and validation evidence for EPIC-PLUGIN-002 — Plugin Compliance Framework.
 
@@ -22,7 +22,7 @@ A check must not be marked as passed merely because the corresponding requiremen
 
 ---
 
-# Validation Principle
+## Validation Principle
 
 The governing validation principle is:
 
@@ -42,7 +42,7 @@ These states are not interchangeable.
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 This validation record covers the EPIC-PLUGIN-002 documentation baseline and establishes the validation structure for future implementation.
 
@@ -56,7 +56,7 @@ The documentation baseline contains:
 
 ---
 
-# Validation Status Model
+## Validation Status Model
 
 Validation items use the following states:
 
@@ -70,29 +70,29 @@ BLOCKED
 
 Definitions:
 
-## PENDING
+### PENDING
 
 The validation has not yet been executed or sufficient evidence has not yet been recorded.
 
-## PASS
+### PASS
 
 The validation was executed successfully and supporting evidence exists.
 
-## FAIL
+### FAIL
 
 The validation was executed and did not satisfy the requirement.
 
-## NOT_APPLICABLE
+### NOT_APPLICABLE
 
 The validation does not apply to the current maturity stage.
 
-## BLOCKED
+### BLOCKED
 
 The validation cannot currently be completed because a prerequisite is unavailable.
 
 ---
 
-# Evidence Principle
+## Evidence Principle
 
 Every `PASS` should be supported by at least one of:
 
@@ -107,7 +107,7 @@ Assertions without evidence remain `PENDING`.
 
 ---
 
-# Current Maturity
+## Current Maturity
 
 The current EPIC maturity target is:
 
@@ -121,7 +121,7 @@ Executable framework validation becomes applicable as implementation progresses.
 
 ---
 
-# Required Deliverables
+## Required Deliverables
 
 The expected deliverable inventory is:
 
@@ -166,7 +166,7 @@ Expected total:
 
 ---
 
-# Deliverable Presence Validation
+## Deliverable Presence Validation
 
 Status:
 
@@ -198,7 +198,7 @@ Result:
 PASS
 ```
 
-# Deliverable Count Validation
+## Deliverable Count Validation
 
 Status:
 
@@ -214,7 +214,7 @@ Observed baseline:
 
 The actual file inventory matches the 30 required deliverables declared by the framework manifest and EPIC metadata.
 
-# Empty File Validation
+## Empty File Validation
 
 Status:
 
@@ -230,7 +230,7 @@ Observed result:
 
 No required framework-definition deliverable is empty.
 
-# File Size Inspection
+## File Size Inspection
 
 Status:
 
@@ -258,7 +258,7 @@ File size alone is not a quality metric.
 
 ---
 
-# Directory Structure Validation
+## Directory Structure Validation
 
 Status:
 
@@ -276,7 +276,7 @@ The framework directory contains the complete required baseline:
 
 No required file is missing and no unexpected file is part of the baseline inventory.
 
-# Numbered Document Sequence Validation
+## Numbered Document Sequence Validation
 
 Status:
 
@@ -300,7 +300,7 @@ Observed count:
 
 The numbered framework-document sequence is complete and contains no gap or duplicate number.
 
-# Primary Heading Validation
+## Primary Heading Validation
 
 Status:
 
@@ -324,7 +324,7 @@ For `00-EPIC.md`, the canonical second heading is:
 
 For numbered documents `01` through `23`, the second heading matches the corresponding document number and title.
 
-# Framework Identity Validation
+## Framework Identity Validation
 
 Status:
 
@@ -339,7 +339,7 @@ EPIC ID: EPIC-PLUGIN-002
 Title:   Plugin Compliance Framework
 ```
 
-# EPIC Metadata Validation
+## EPIC Metadata Validation
 
 Status:
 
@@ -359,7 +359,7 @@ deliverable_count: 30
 
 The declared deliverable list contains exactly 30 entries.
 
-# YAML Syntax Validation
+## YAML Syntax Validation
 
 Status:
 
@@ -388,7 +388,7 @@ Result:
 EPIC.yaml validation: PASS
 ```
 
-# Manifest Consistency Validation
+## Manifest Consistency Validation
 
 Status:
 
@@ -414,7 +414,7 @@ reviewed RFC references
 clean repository diff check
 ```
 
-# README Validation
+## README Validation
 
 Status:
 
@@ -446,7 +446,7 @@ Framework Status
 
 ---
 
-# Manifest Validation
+## Manifest Validation
 
 Status:
 
@@ -470,7 +470,7 @@ Versioning
 
 ---
 
-# Changelog Validation
+## Changelog Validation
 
 Status:
 
@@ -482,7 +482,7 @@ PENDING
 
 ---
 
-# Revision History Validation
+## Revision History Validation
 
 Status:
 
@@ -494,7 +494,7 @@ PENDING
 
 ---
 
-# Terminology Validation
+## Terminology Validation
 
 Status:
 
@@ -524,7 +524,7 @@ This validation requires cross-document review.
 
 ---
 
-# Rule Outcome Validation
+## Rule Outcome Validation
 
 Status:
 
@@ -546,7 +546,7 @@ Any competing stable rule-outcome model requires resolution.
 
 ---
 
-# Severity Validation
+## Severity Validation
 
 Status:
 
@@ -567,7 +567,7 @@ Severity must remain distinct from rule outcome.
 
 ---
 
-# Compliance Status Validation
+## Compliance Status Validation
 
 Status:
 
@@ -588,7 +588,7 @@ Any conflicting stable overall-status model must be resolved.
 
 ---
 
-# Semantic Boundary Validation
+## Semantic Boundary Validation
 
 Status:
 
@@ -610,7 +610,7 @@ Certification Eligibility != Certification
 
 ---
 
-# Architecture Flow Validation
+## Architecture Flow Validation
 
 Status:
 
@@ -655,7 +655,7 @@ Documents may provide more detailed flows but must not contradict this model.
 
 ---
 
-# Rule Model Validation
+## Rule Model Validation
 
 Status:
 
@@ -682,7 +682,7 @@ References
 
 ---
 
-# Rule Lifecycle Validation
+## Rule Lifecycle Validation
 
 Status:
 
@@ -701,7 +701,7 @@ RETIRED
 
 ---
 
-# Profile Model Validation
+## Profile Model Validation
 
 Status:
 
@@ -720,7 +720,7 @@ Confirm that profiles:
 
 ---
 
-# Validation Engine Architecture Review
+## Validation Engine Architecture Review
 
 Status:
 
@@ -748,7 +748,7 @@ Compliance Result
 
 ---
 
-# Evidence Model Review
+## Evidence Model Review
 
 Status:
 
@@ -773,7 +773,7 @@ Invalidation
 
 ---
 
-# Finding Model Review
+## Finding Model Review
 
 Status:
 
@@ -796,7 +796,7 @@ Exception state
 
 ---
 
-# Reporting Architecture Review
+## Reporting Architecture Review
 
 Status:
 
@@ -810,7 +810,7 @@ No renderer should independently recompute compliance status.
 
 ---
 
-# Gate Architecture Review
+## Gate Architecture Review
 
 Status:
 
@@ -832,7 +832,7 @@ and produce a lifecycle decision without redefining underlying compliance rules.
 
 ---
 
-# Certification Boundary Review
+## Certification Boundary Review
 
 Status:
 
@@ -852,7 +852,7 @@ and that the compliance framework provides technical certification eligibility r
 
 ---
 
-# Governance Review
+## Governance Review
 
 Status:
 
@@ -877,7 +877,7 @@ Confirm that governance covers:
 
 ---
 
-# Security and Trust Review
+## Security and Trust Review
 
 Status:
 
@@ -900,7 +900,7 @@ from control by the plugin being evaluated.
 
 ---
 
-# Reference Validation
+## Reference Validation
 
 Status:
 
@@ -934,7 +934,7 @@ RFC-0015
 
 The previously ambiguous Plugin Implementation Strategy reference was aligned to `ADR-0013`.
 
-# Internal Link Validation
+## Internal Link Validation
 
 Status:
 
@@ -948,7 +948,7 @@ A repository-standard Markdown link checker should be preferred if available.
 
 ---
 
-# Markdown Structure Validation
+## Markdown Structure Validation
 
 Status:
 
@@ -968,7 +968,7 @@ The Documentation Framework remains authoritative for exact Markdown standards.
 
 ---
 
-# Duplicate Content Review
+## Duplicate Content Review
 
 Status:
 
@@ -988,7 +988,7 @@ Validation should detect:
 
 ---
 
-# Repository Status Validation
+## Repository Status Validation
 
 Status:
 
@@ -1004,7 +1004,7 @@ Repository inspection confirmed that the only untracked content before staging i
 
 Temporary repair files and accidental root-level files were removed before baseline closure.
 
-# Diff Validation
+## Diff Validation
 
 Status:
 
@@ -1026,7 +1026,7 @@ No output
 
 No whitespace errors were reported.
 
-# Documentation Framework Compliance
+## Documentation Framework Compliance
 
 Status:
 
@@ -1048,7 +1048,7 @@ Relevant areas include:
 
 ---
 
-# Implementation Validation
+## Implementation Validation
 
 Status:
 
@@ -1064,7 +1064,7 @@ Executable compliance framework implementation validation becomes applicable whe
 
 ---
 
-# Ruff Validation
+## Ruff Validation
 
 Status:
 
@@ -1078,7 +1078,7 @@ When implementation begins, Ruff must pass according to repository policy.
 
 ---
 
-# MyPy Validation
+## MyPy Validation
 
 Status:
 
@@ -1092,7 +1092,7 @@ When implementation begins, MyPy must pass according to repository policy.
 
 ---
 
-# Pytest Validation
+## Pytest Validation
 
 Status:
 
@@ -1106,7 +1106,7 @@ When implementation begins, Pytest must cover the compliance architecture approp
 
 ---
 
-# Future Rule Tests
+## Future Rule Tests
 
 Status:
 
@@ -1127,7 +1127,7 @@ where those states are meaningful for the rule.
 
 ---
 
-# Future Profile Tests
+## Future Profile Tests
 
 Status:
 
@@ -1146,7 +1146,7 @@ Future tests must cover:
 
 ---
 
-# Future Validation Engine Tests
+## Future Validation Engine Tests
 
 Status:
 
@@ -1168,7 +1168,7 @@ Future tests must cover:
 
 ---
 
-# Future Evidence Tests
+## Future Evidence Tests
 
 Status:
 
@@ -1188,7 +1188,7 @@ Future tests must cover:
 
 ---
 
-# Future Security Tests
+## Future Security Tests
 
 Status:
 
@@ -1208,7 +1208,7 @@ Future adversarial validation should include:
 
 ---
 
-# Official Plugin Pilot
+## Official Plugin Pilot
 
 Status:
 
@@ -1234,7 +1234,7 @@ GitHub Actions run `31749853569` uploaded structured evidence showing all seven 
 
 ---
 
-# Operational Validation
+## Operational Validation
 
 Status:
 
@@ -1257,7 +1257,7 @@ Blocking semantics are reliable
 
 ---
 
-# Future Release Enforcement Validation
+## Future Release Enforcement Validation
 
 Status:
 
@@ -1276,7 +1276,7 @@ Release enforcement requires stronger evidence, including:
 
 ---
 
-# Future Certification Validation
+## Future Certification Validation
 
 Status:
 
@@ -1295,7 +1295,7 @@ Certification readiness requires:
 
 ---
 
-# Validation Matrix
+## Validation Matrix
 
 | Validation Area                    | Current Status |
 | ---------------------------------- | -------------- |
@@ -1334,7 +1334,7 @@ Certification readiness requires:
 
 ---
 
-# Framework-Definition Exit Criteria
+## Framework-Definition Exit Criteria
 
 The framework-definition milestone may be validated when:
 
@@ -1359,7 +1359,7 @@ The framework-definition milestone may be validated when:
 
 ---
 
-# Operational Exit Criteria
+## Operational Exit Criteria
 
 Operational validation is intentionally separate.
 
@@ -1403,7 +1403,7 @@ Operational Exit Criteria result:
 12/12 SATISFIED
 ```
 
-## Phase 10 — CI Integration Validation
+### Phase 10 — CI Integration Validation
 
 Phase 10 exit criteria are independently supported:
 
@@ -1422,7 +1422,7 @@ This completion does not implement Merge, Build, Release, or Certification Gates
 
 ---
 
-# Enforcement Exit Criteria
+## Enforcement Exit Criteria
 
 Blocking enforcement requires additional assurance:
 
@@ -1438,7 +1438,7 @@ Blocking enforcement requires additional assurance:
 
 ---
 
-# Certification Exit Criteria
+## Certification Exit Criteria
 
 Certification readiness requires:
 
@@ -1454,7 +1454,7 @@ Certification readiness requires:
 
 ---
 
-# Validation Record Template
+## Validation Record Template
 
 After executing the final documentation validation, results should be recorded using entries such as:
 
@@ -1476,7 +1476,7 @@ Failed validations should preserve the failure evidence until resolved.
 
 ---
 
-# Final Validation Status
+## Final Validation Status
 
 The framework-definition validation status is:
 
@@ -1515,7 +1515,7 @@ git diff --check:            PASS
 
 Operational implementation validation remains separate from framework-definition validation. The current operational evidence and its 12/12 result are recorded above without changing the historical framework-definition baseline.
 
-# Validation Summary
+## Validation Summary
 
 EPIC-PLUGIN-002 has completed its initial framework-definition validation.
 
@@ -1561,7 +1561,7 @@ The repository now demonstrates the initial compliance runtime and Canonical CI 
 
 Implementation-specific validation remains required as later enforcement capabilities are introduced. Release gates, certification integration, third-party validation, and continuous compliance are not claimed here.
 
-# Final Validation Principle
+## Final Validation Principle
 
 The governing principle of this validation record is:
 

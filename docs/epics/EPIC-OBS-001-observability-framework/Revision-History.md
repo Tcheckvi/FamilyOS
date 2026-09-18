@@ -17,7 +17,7 @@ The revision history distinguishes between:
 
 ---
 
-# Current EPIC State
+## Current EPIC State
 
 | Field                         | Value                                      |
 | ----------------------------- | ------------------------------------------ |
@@ -39,11 +39,11 @@ The revision history distinguishes between:
 
 ---
 
-# 1. Revision Principles
+## 1. Revision Principles
 
 The Observability Framework revision history follows several foundational principles.
 
-## Historical Integrity
+### Historical Integrity
 
 Historical publication state SHALL remain identifiable and immutable.
 
@@ -63,7 +63,7 @@ Later normalization commits SHALL NOT replace that historical publication identi
 
 ---
 
-## Explicit Evolution
+### Explicit Evolution
 
 Material changes to the Observability Framework SHOULD remain traceable.
 
@@ -89,7 +89,7 @@ This includes changes affecting:
 
 ---
 
-## Evidence-Based Validation
+### Evidence-Based Validation
 
 Validation state SHALL follow evidence.
 
@@ -109,7 +109,7 @@ Record
 
 ---
 
-## Structural Truth
+### Structural Truth
 
 The repository history SHALL preserve the difference between:
 
@@ -127,7 +127,7 @@ The current seven control documents SHALL NOT be retroactively attributed to the
 
 ---
 
-# 2. Framework Version
+## 2. Framework Version
 
 The historically published Observability Framework version is:
 
@@ -141,7 +141,7 @@ Post-release repository normalization does not by itself require a new semantic 
 
 ---
 
-# 3. Framework Version vs Repository History
+## 3. Framework Version vs Repository History
 
 Framework version:
 
@@ -165,7 +165,7 @@ A later repository-normalization commit may have a different Git identity while 
 
 ---
 
-# 4. Historical Documentation Model
+## 4. Historical Documentation Model
 
 The original Observability Framework used the compact FamilyOS framework documentation model.
 
@@ -182,7 +182,7 @@ The historical release therefore consisted only of the ten numbered framework do
 
 ---
 
-# 5. Historical Numbered Documents
+## 5. Historical Numbered Documents
 
 The historical release contained:
 
@@ -203,7 +203,7 @@ These documents form the historical normative framework baseline.
 
 ---
 
-# 6. Historical Publication
+## 6. Historical Publication
 
 EPIC-OBS-001 version `4.9.0` was historically published under:
 
@@ -231,7 +231,7 @@ Immutable
 
 ---
 
-# 7. Historical Tag Evidence
+## 7. Historical Tag Evidence
 
 The historical tag exists as an annotated Git tag.
 
@@ -247,7 +247,7 @@ This relationship SHALL remain unchanged through normalization.
 
 ---
 
-# 8. Historical Tag Immutability
+## 8. Historical Tag Immutability
 
 Post-release normalization SHALL NOT:
 
@@ -260,7 +260,7 @@ Post-release normalization SHALL NOT:
 
 ---
 
-# 9. Observability Framework Foundation
+## 9. Observability Framework Foundation
 
 Version `4.9.0` established the canonical FamilyOS Observability Framework.
 
@@ -289,7 +289,7 @@ The release defines:
 
 ---
 
-# 10. Observability Principles Revision
+## 10. Observability Principles Revision
 
 Version `4.9.0` establishes principles including:
 
@@ -313,7 +313,7 @@ These principles represent the foundational observability posture.
 
 ---
 
-# 11. Structured Telemetry Revision
+## 11. Structured Telemetry Revision
 
 The framework establishes structured telemetry as the preferred model where practical.
 
@@ -331,7 +331,7 @@ Free-form text may supplement structured fields.
 
 ---
 
-# 12. Correlation Revision
+## 12. Correlation Revision
 
 Version `4.9.0` establishes correlation as a first-class capability.
 
@@ -351,7 +351,7 @@ Related signals SHOULD remain reconstructable into a meaningful execution story.
 
 ---
 
-# 13. Context Revision
+## 13. Context Revision
 
 Telemetry SHOULD contain sufficient context to explain observed behavior.
 
@@ -372,7 +372,7 @@ Context SHALL remain proportional and privacy-aware.
 
 ---
 
-# 14. Privacy Revision
+## 14. Privacy Revision
 
 Observability is explicitly privacy-aware.
 
@@ -388,7 +388,7 @@ Telemetry SHOULD avoid unnecessary exposure of:
 
 ---
 
-# 15. Security Revision
+## 15. Security Revision
 
 Observability may provide important security evidence.
 
@@ -405,7 +405,7 @@ Telemetry itself SHALL remain subject to security controls.
 
 ---
 
-# 16. Observability Architecture Revision
+## 16. Observability Architecture Revision
 
 Version `4.9.0` establishes a layered architecture.
 
@@ -431,7 +431,7 @@ This architecture separates application semantics from vendor-specific telemetry
 
 ---
 
-# 17. Vendor-Neutrality Revision
+## 17. Vendor-Neutrality Revision
 
 The framework establishes vendor neutrality as an architectural expectation.
 
@@ -441,7 +441,7 @@ Adapters MAY connect FamilyOS abstractions to external systems.
 
 ---
 
-# 18. Logging Revision
+## 18. Logging Revision
 
 Logging guidance covers:
 
@@ -457,7 +457,7 @@ Logging SHALL NOT become an uncontrolled persistence mechanism for arbitrary Fam
 
 ---
 
-# 19. Log Severity Revision
+## 19. Log Severity Revision
 
 Representative log severities may include:
 
@@ -474,7 +474,7 @@ Severity SHOULD communicate operational significance.
 
 ---
 
-# 20. Metrics Revision
+## 20. Metrics Revision
 
 Version `4.9.0` establishes canonical metric guidance.
 
@@ -492,7 +492,7 @@ Metrics may represent:
 
 ---
 
-# 21. Metric Cardinality Revision
+## 21. Metric Cardinality Revision
 
 The framework explicitly recognizes metric cardinality as an operational concern.
 
@@ -508,7 +508,7 @@ Dimensions SHOULD remain bounded where practical.
 
 ---
 
-# 22. Tracing Revision
+## 22. Tracing Revision
 
 Tracing represents causal and temporal relationships between operations.
 
@@ -526,7 +526,7 @@ Tracing SHOULD support diagnosis across FamilyOS layers without unnecessary vend
 
 ---
 
-# 23. Span Revision
+## 23. Span Revision
 
 A span may contain:
 
@@ -544,7 +544,7 @@ Span attributes SHALL remain security- and privacy-aware.
 
 ---
 
-# 24. Event Revision
+## 24. Event Revision
 
 Structured events may represent significant operational transitions.
 
@@ -563,7 +563,7 @@ Stable event names improve automation, testing, and diagnosis.
 
 ---
 
-# 25. Health Revision
+## 25. Health Revision
 
 Version `4.9.0` establishes explicit health semantics.
 
@@ -580,7 +580,7 @@ Health SHOULD communicate meaningful operational status.
 
 ---
 
-# 26. Readiness Revision
+## 26. Readiness Revision
 
 Readiness is distinct from process existence.
 
@@ -594,7 +594,7 @@ A component may be running but unable to perform intended work because:
 
 ---
 
-# 27. Liveness Revision
+## 27. Liveness Revision
 
 Liveness indicates whether a process or subsystem remains alive enough to continue execution.
 
@@ -602,7 +602,7 @@ Liveness SHALL NOT automatically imply readiness or full health.
 
 ---
 
-# 28. Diagnostics Revision
+## 28. Diagnostics Revision
 
 The framework establishes diagnostics as a deeper troubleshooting capability.
 
@@ -620,7 +620,7 @@ Diagnostics SHALL avoid unnecessary secret or private-data exposure.
 
 ---
 
-# 29. Alerting Revision
+## 29. Alerting Revision
 
 Alerts SHOULD correspond to meaningful, actionable conditions.
 
@@ -636,7 +636,7 @@ Alerting guidance includes:
 
 ---
 
-# 30. Alert Ownership Revision
+## 30. Alert Ownership Revision
 
 Alerts SHOULD have identifiable ownership or routing expectations.
 
@@ -644,7 +644,7 @@ Unowned alerts create ambiguity and reduce operational usefulness.
 
 ---
 
-# 31. Observability Data Revision
+## 31. Observability Data Revision
 
 Version `4.9.0` establishes observability data as governed operational data.
 
@@ -660,7 +660,7 @@ It may include:
 
 ---
 
-# 32. Time Revision
+## 32. Time Revision
 
 Telemetry relies on coherent time representation.
 
@@ -674,7 +674,7 @@ Systems SHOULD account for:
 
 ---
 
-# 33. Retention Revision
+## 33. Retention Revision
 
 Telemetry retention SHOULD remain proportional to:
 
@@ -687,7 +687,7 @@ Telemetry retention SHOULD remain proportional to:
 
 ---
 
-# 34. Data Minimization Revision
+## 34. Data Minimization Revision
 
 Observability SHOULD capture only information necessary for legitimate operational purposes.
 
@@ -695,7 +695,7 @@ Telemetry SHALL NOT become a secondary uncontrolled copy of FamilyOS domain data
 
 ---
 
-# 35. Secret Protection Revision
+## 35. Secret Protection Revision
 
 Secrets SHALL NOT intentionally appear in telemetry.
 
@@ -715,7 +715,7 @@ Redaction may provide defense in depth but SHALL NOT replace safe instrumentatio
 
 ---
 
-# 36. Governance Revision
+## 36. Governance Revision
 
 Version `4.9.0` establishes observability governance covering:
 
@@ -732,7 +732,7 @@ Version `4.9.0` establishes observability governance covering:
 
 ---
 
-# 37. Implementation Revision
+## 37. Implementation Revision
 
 The framework provides implementation direction without binding FamilyOS to one telemetry vendor.
 
@@ -753,7 +753,7 @@ Exact implementation remains an engineering concern.
 
 ---
 
-# 38. Automation Revision
+## 38. Automation Revision
 
 Observability automation may validate:
 
@@ -770,7 +770,7 @@ Automation SHOULD expose failures explicitly.
 
 ---
 
-# 39. Testing Boundary Revision
+## 39. Testing Boundary Revision
 
 EPIC-TST-001 remains authoritative for general testing architecture.
 
@@ -778,7 +778,7 @@ EPIC-OBS-001 defines observability-specific testing expectations.
 
 ---
 
-# 40. Quality Boundary Revision
+## 40. Quality Boundary Revision
 
 EPIC-QLT-001 remains authoritative for general quality governance.
 
@@ -792,7 +792,7 @@ Observability may provide evidence including:
 
 ---
 
-# 41. Build Boundary Revision
+## 41. Build Boundary Revision
 
 EPIC-BLD-001 remains authoritative for build engineering.
 
@@ -800,7 +800,7 @@ Observability may instrument build activities but SHALL NOT redefine the build l
 
 ---
 
-# 42. Release Boundary Revision
+## 42. Release Boundary Revision
 
 EPIC-REL-001 remains authoritative for release engineering.
 
@@ -808,7 +808,7 @@ Observability may supply deployment, rollback, publication, and verification tel
 
 ---
 
-# 43. Security Boundary Revision
+## 43. Security Boundary Revision
 
 EPIC-SEC-001 remains authoritative for security architecture and security policy.
 
@@ -816,7 +816,7 @@ Observability supplies security-relevant signals but SHALL NOT redefine the Secu
 
 ---
 
-# 44. Historical Validation State
+## 44. Historical Validation State
 
 The historical numbered framework contains pre-publication states such as:
 
@@ -832,7 +832,7 @@ They SHALL NOT automatically be interpreted as the current normalized control-la
 
 ---
 
-# 45. Historical `00-EPIC.md` State
+## 45. Historical `00-EPIC.md` State
 
 The historical `00-EPIC.md` records:
 
@@ -848,7 +848,7 @@ They are preserved as historical evidence.
 
 ---
 
-# 46. Historical `09-Validation-and-Release.md` State
+## 46. Historical `09-Validation-and-Release.md` State
 
 The historical validation document includes:
 
@@ -863,7 +863,7 @@ It SHALL NOT automatically determine the current normalized repository state.
 
 ---
 
-# 47. Historical Release Completion
+## 47. Historical Release Completion
 
 Version `4.9.0` was historically completed and published under:
 
@@ -881,7 +881,7 @@ The framework is therefore historically published.
 
 ---
 
-# 48. Post-Release Governance Evolution
+## 48. Post-Release Governance Evolution
 
 After publication, the FamilyOS framework-governance model evolved.
 
@@ -901,7 +901,7 @@ EPIC-OBS-001 did not contain this control layer in its historical publication.
 
 ---
 
-# 49. Post-Release Normalization
+## 49. Post-Release Normalization
 
 The current normalization adds:
 
@@ -927,7 +927,7 @@ These documents improve:
 
 ---
 
-# 50. Current Repository Structure
+## 50. Current Repository Structure
 
 The normalized repository contains:
 
@@ -947,7 +947,7 @@ Current canonical range remains:
 
 ---
 
-# 51. Historical vs Current Structure
+## 51. Historical vs Current Structure
 
 Historical release:
 
@@ -969,7 +969,7 @@ The current state SHALL NOT be retroactively attributed to the historical public
 
 ---
 
-# 52. Machine-Readable Normalization
+## 52. Machine-Readable Normalization
 
 The current normalization introduces:
 
@@ -993,7 +993,7 @@ It records:
 
 ---
 
-# 53. Manifest Normalization
+## 53. Manifest Normalization
 
 The normalization introduces:
 
@@ -1005,7 +1005,7 @@ as the authoritative current repository inventory.
 
 ---
 
-# 54. Validation Normalization
+## 54. Validation Normalization
 
 The normalization introduces:
 
@@ -1019,7 +1019,7 @@ It distinguishes historical publication evidence from current repository evidenc
 
 ---
 
-# 55. Changelog Normalization
+## 55. Changelog Normalization
 
 The normalization introduces:
 
@@ -1035,7 +1035,7 @@ to preserve:
 
 ---
 
-# 56. README Normalization
+## 56. README Normalization
 
 The normalization introduces:
 
@@ -1049,7 +1049,7 @@ It does not replace the normative numbered framework documents.
 
 ---
 
-# 57. EPIC Control Summary
+## 57. EPIC Control Summary
 
 The normalization introduces:
 
@@ -1061,7 +1061,7 @@ as the consolidated control-level summary.
 
 ---
 
-# 58. Current Validation State
+## 58. Current Validation State
 
 Current repository revalidation state:
 
@@ -1074,7 +1074,7 @@ This state SHALL remain pending until actual repository validation evidence is r
 
 ---
 
-# 59. Current Revalidation Scope
+## 59. Current Revalidation Scope
 
 Current revalidation includes:
 
@@ -1120,7 +1120,7 @@ Final Repository Cleanliness
 
 ---
 
-# 60. Validation Evidence Policy
+## 60. Validation Evidence Policy
 
 The required validation sequence is:
 
@@ -1138,7 +1138,7 @@ Historical validation evidence does not automatically prove the current normaliz
 
 ---
 
-# 61. Historical Evidence Already Observed
+## 61. Historical Evidence Already Observed
 
 The following historical evidence has already been observed:
 
@@ -1155,7 +1155,7 @@ Remote tag integrity remains subject to final current revalidation.
 
 ---
 
-# 62. Current Repository Evidence
+## 62. Current Repository Evidence
 
 Current repository validation evidence remains to be collected after all seven control documents are present and synchronized.
 
@@ -1168,11 +1168,11 @@ Final Revalidation:     Validated
 
 ---
 
-# 63. Revision Classification
+## 63. Revision Classification
 
 Future Observability Framework changes may be classified as follows.
 
-## Editorial
+### Editorial
 
 Examples:
 
@@ -1189,7 +1189,7 @@ Usually none
 
 ---
 
-## Repository Normalization
+### Repository Normalization
 
 Examples:
 
@@ -1209,7 +1209,7 @@ when normative observability semantics remain unchanged.
 
 ---
 
-## Compatible Semantic Change
+### Compatible Semantic Change
 
 Examples:
 
@@ -1228,7 +1228,7 @@ subject to FamilyOS governance.
 
 ---
 
-## Breaking Semantic Change
+### Breaking Semantic Change
 
 Examples:
 
@@ -1247,7 +1247,7 @@ subject to governance.
 
 ---
 
-# 64. Historical State Policy
+## 64. Historical State Policy
 
 Historical lifecycle states may remain when clearly identified as historical.
 
@@ -1265,7 +1265,7 @@ They SHALL NOT automatically be interpreted as active current repository states.
 
 ---
 
-# 65. Current State Policy
+## 65. Current State Policy
 
 Current control documents SHALL distinguish:
 
@@ -1285,7 +1285,7 @@ Only current normalized repository revalidation remains pending.
 
 ---
 
-# 66. Repository Completion Conditions
+## 66. Repository Completion Conditions
 
 Current normalization becomes technically validated only when:
 
@@ -1310,7 +1310,7 @@ Current normalization becomes technically validated only when:
 
 ---
 
-# 67. Post-Release Correction Conditions
+## 67. Post-Release Correction Conditions
 
 The normalization workflow becomes fully complete when:
 
@@ -1325,7 +1325,7 @@ The normalization workflow becomes fully complete when:
 
 ---
 
-# 68. Future Observability Framework Evolution
+## 68. Future Observability Framework Evolution
 
 Future revisions may introduce:
 
@@ -1347,7 +1347,7 @@ Future revisions SHALL preserve historical version `4.9.0` publication evidence.
 
 ---
 
-# 69. Current Revision State
+## 69. Current Revision State
 
 ```text id="rh54ob"
 EPIC:                    EPIC-OBS-001
@@ -1378,7 +1378,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 70. Current Validation Evidence Status
+## 70. Current Validation Evidence Status
 
 Historical publication evidence has been established.
 
@@ -1394,7 +1394,7 @@ Until current evidence is complete, this revision history SHALL NOT claim final 
 
 ---
 
-# 71. Final Revision Principle
+## 71. Final Revision Principle
 
 EPIC-OBS-001 version `4.9.0` established the canonical FamilyOS Observability Framework.
 

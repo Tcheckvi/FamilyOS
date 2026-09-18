@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 23 Implementation Checklist
+## 23 Implementation Checklist
 
-## Overview
+### Overview
 
 The FamilyOS Testing Framework defines the architecture, principles, execution model, automation strategy, governance, lifecycle, and validation requirements for testing across the FamilyOS engineering platform.
 
@@ -26,7 +26,7 @@ The checklist supports:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to provide the operational implementation checklist for EPIC-TST-001.
 
@@ -61,7 +61,7 @@ The checklist provides the final traceability layer between framework requiremen
 
 ---
 
-# Checklist Status Model
+## Checklist Status Model
 
 Each item may use the following states:
 
@@ -79,7 +79,7 @@ A capability should only be marked `[x]` when sufficient implementation and vali
 
 ---
 
-# Completion Principle
+## Completion Principle
 
 The governing checklist principle is:
 
@@ -89,9 +89,9 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 1. Framework Documentation
+## 1. Framework Documentation
 
-## Core Documentation
+### Core Documentation
 
 * [ ] EPIC-TST-001 overview exists.
 * [ ] Testing Framework context is documented.
@@ -120,7 +120,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 2. Documentation Integrity
+## 2. Documentation Integrity
 
 * [ ] All required framework files exist.
 * [ ] Required framework files are non-empty.
@@ -135,7 +135,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 3. Test Repository Structure
+## 3. Test Repository Structure
 
 * [ ] Repository contains an official test root.
 * [ ] Unit tests have an understood location.
@@ -152,7 +152,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 4. Test Discovery
+## 4. Test Discovery
 
 * [ ] Test discovery works from the repository root.
 * [ ] Test naming conventions are recognized by the test runner.
@@ -165,7 +165,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 5. Test Naming
+## 5. Test Naming
 
 * [ ] Test names communicate meaningful behavior.
 * [ ] Test names distinguish relevant conditions where necessary.
@@ -176,7 +176,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 6. Unit Testing
+## 6. Unit Testing
 
 * [ ] Core domain logic has unit-level validation.
 * [ ] Application behavior suitable for unit testing is covered.
@@ -193,7 +193,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 7. Integration Testing
+## 7. Integration Testing
 
 * [ ] Important integration boundaries are identified.
 * [ ] Persistence integrations are tested where applicable.
@@ -209,7 +209,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 8. Functional Testing
+## 8. Functional Testing
 
 * [ ] Important capability-level workflows are identified.
 * [ ] Functional tests validate behavior rather than implementation details.
@@ -220,7 +220,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 9. System Testing
+## 9. System Testing
 
 * [ ] System-level scenarios are defined where justified.
 * [ ] System tests validate significant platform behavior.
@@ -232,7 +232,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 10. Contract Testing
+## 10. Contract Testing
 
 * [ ] Important public contracts are identified.
 * [ ] Contract tests exist for relevant plugin interfaces.
@@ -245,7 +245,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 11. Regression Testing
+## 11. Regression Testing
 
 * [ ] Significant corrected defects receive regression tests where appropriate.
 * [ ] Regression tests fail against the known defective behavior.
@@ -257,7 +257,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 12. Test Data
+## 12. Test Data
 
 * [ ] Tests primarily use synthetic or controlled data.
 * [ ] Production personal data is not required for routine testing.
@@ -270,7 +270,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 13. Fixtures
+## 13. Fixtures
 
 * [ ] Fixtures have clear responsibilities.
 * [ ] Fixture scopes are appropriate.
@@ -285,7 +285,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 14. Mocks and Test Doubles
+## 14. Mocks and Test Doubles
 
 * [ ] Test doubles are used only where appropriate.
 * [ ] Mocks do not replace all meaningful integration validation.
@@ -298,7 +298,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 15. Test Isolation
+## 15. Test Isolation
 
 * [ ] Tests do not rely on previous test execution.
 * [ ] Shared mutable global state is avoided.
@@ -313,7 +313,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 16. Determinism
+## 16. Determinism
 
 * [ ] Repeated equivalent executions produce consistent outcomes.
 * [ ] Random behavior is controlled where necessary.
@@ -326,7 +326,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 17. Test Ordering
+## 17. Test Ordering
 
 * [ ] Tests do not depend on fixed execution order.
 * [ ] Test suites can execute in subsets.
@@ -336,7 +336,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 18. Coverage
+## 18. Coverage
 
 * [ ] Coverage tooling is configured where coverage is part of current framework implementation.
 * [ ] Coverage reports can be generated.
@@ -350,7 +350,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 19. Targeted Test Execution
+## 19. Targeted Test Execution
 
 * [ ] Individual tests can be executed.
 * [ ] Individual test files can be executed.
@@ -361,7 +361,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 20. Full-Suite Execution
+## 20. Full-Suite Execution
 
 * [ ] Complete applicable repository tests can execute as one validation suite.
 * [ ] Full-suite execution succeeds in supported environments.
@@ -371,7 +371,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 21. Execution Profiles
+## 21. Execution Profiles
 
 * [ ] Developer execution profile is defined.
 * [ ] Pull request execution profile is defined.
@@ -384,7 +384,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 22. Test Markers and Categories
+## 22. Test Markers and Categories
 
 * [ ] Official markers have defined semantics where markers are used.
 * [ ] Markers are registered with the test runner where required.
@@ -396,7 +396,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 23. Execution Performance
+## 23. Execution Performance
 
 * [ ] Full-suite execution duration can be measured.
 * [ ] Test-category duration can be measured where useful.
@@ -409,7 +409,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 24. Parallel Execution
+## 24. Parallel Execution
 
 * [ ] Parallel execution is used only where test isolation supports it.
 * [ ] Parallel workers do not share unsafe mutable resources.
@@ -421,7 +421,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 25. Test Sharding
+## 25. Test Sharding
 
 * [ ] Sharding requirements are justified before adoption.
 * [ ] Every required test belongs to a shard where sharding is implemented.
@@ -432,7 +432,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 26. Timeout Management
+## 26. Timeout Management
 
 * [ ] Potentially blocking tests use appropriate timeouts where justified.
 * [ ] CI stages have reasonable execution timeouts.
@@ -443,7 +443,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 27. Reporting
+## 27. Reporting
 
 * [x] Test execution produces a concise summary.
 * [x] Passed tests are counted.
@@ -459,7 +459,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 28. Structured Reporting
+## 28. Structured Reporting
 
 * [ ] Machine-readable test reporting exists where CI requires it.
 * [ ] Structured reports include test identifiers.
@@ -472,7 +472,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 29. Logging
+## 29. Logging
 
 * [ ] Successful test execution avoids unnecessary log flooding.
 * [ ] Relevant logs are available on failure.
@@ -483,7 +483,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 30. Test Artifacts
+## 30. Test Artifacts
 
 * [ ] Diagnostic test artifacts are generated only where useful.
 * [ ] Artifacts use meaningful names.
@@ -495,7 +495,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 31. Test Observability
+## 31. Test Observability
 
 * [ ] Full-suite health is observable.
 * [ ] Failure trends can be reviewed where historical data exists.
@@ -508,7 +508,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 32. Flaky Tests
+## 32. Flaky Tests
 
 * [ ] Flaky tests are treated as defects.
 * [ ] Known flaky tests are identifiable.
@@ -520,7 +520,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 33. Quarantine
+## 33. Quarantine
 
 * [ ] Quarantine is used only as a temporary mechanism.
 * [ ] Every quarantined test has a reason.
@@ -534,7 +534,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 34. Skipped Tests
+## 34. Skipped Tests
 
 * [ ] Every intentional skip has an understandable reason.
 * [ ] Unexpected skips remain visible.
@@ -545,7 +545,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 35. CI Integration
+## 35. CI Integration
 
 * [ ] CI automatically executes testing for relevant changes.
 * [ ] CI environment is reproducible enough for diagnosis.
@@ -558,7 +558,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 36. Pull Request Validation
+## 36. Pull Request Validation
 
 * [ ] Pull requests trigger appropriate tests automatically.
 * [ ] Validation applies to current pull request source state.
@@ -569,7 +569,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 37. Protected Branch Validation
+## 37. Protected Branch Validation
 
 * [ ] Protected branches have defined testing requirements.
 * [ ] Required testing status checks are enabled where supported.
@@ -580,7 +580,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 38. Scheduled Validation
+## 38. Scheduled Validation
 
 * [ ] Scheduled testing is used where change-triggered validation is insufficient.
 * [ ] Full-suite scheduled validation exists where selective testing requires a safety net.
@@ -590,7 +590,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 39. Dependency Validation
+## 39. Dependency Validation
 
 * [ ] Dependency changes trigger testing.
 * [ ] Runtime-version changes trigger broad validation.
@@ -600,7 +600,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 40. CI Caching
+## 40. CI Caching
 
 * [ ] CI caches are used only where they improve meaningful performance.
 * [ ] Cache keys account for relevant dependencies.
@@ -610,7 +610,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 41. CI Parallelization
+## 41. CI Parallelization
 
 * [ ] Independent CI stages execute in parallel where beneficial.
 * [ ] Dependent stages preserve required ordering.
@@ -620,7 +620,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 42. Compatibility Matrices
+## 42. Compatibility Matrices
 
 * [ ] Supported compatibility dimensions are explicitly defined.
 * [ ] Matrix testing covers required supported combinations.
@@ -631,7 +631,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 43. Automation Security
+## 43. Automation Security
 
 * [ ] CI secrets are managed securely.
 * [ ] Secrets are not committed to source control.
@@ -643,7 +643,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 44. Testing Gates
+## 44. Testing Gates
 
 * [x] Testing gate architecture is implemented where required.
 * [ ] Gate inputs are explicitly defined.
@@ -657,7 +657,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 45. Pull Request Testing Gate
+## 45. Pull Request Testing Gate
 
 * [ ] Required pull request tests feed the gate.
 * [ ] Required failed tests produce gate failure.
@@ -667,7 +667,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 46. Regression Gate
+## 46. Regression Gate
 
 * [ ] Required regression tests participate in applicable gates.
 * [ ] Critical historical defect protection cannot be silently omitted.
@@ -675,7 +675,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 47. Contract Gate
+## 47. Contract Gate
 
 * [ ] Required contract tests participate in applicable gates.
 * [ ] Incompatible contract changes produce gate failure.
@@ -684,7 +684,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 48. Coverage Gate
+## 48. Coverage Gate
 
 * [ ] Coverage gate exists only where explicitly required.
 * [ ] Coverage threshold or regression rule is documented.
@@ -694,7 +694,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 49. Performance Gate
+## 49. Performance Gate
 
 * [ ] Performance gates are introduced only for stable benchmarks.
 * [ ] Performance baselines are defined.
@@ -705,7 +705,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 50. Gate Exceptions
+## 50. Gate Exceptions
 
 * [ ] Gate waivers are exceptional.
 * [ ] Every waiver has an explicit reason.
@@ -717,7 +717,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 51. Testing Governance
+## 51. Testing Governance
 
 * [ ] Testing Framework ownership is identified.
 * [ ] Shared testing infrastructure ownership is identified.
@@ -730,7 +730,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 52. Test Lifecycle
+## 52. Test Lifecycle
 
 * [ ] Tests are created for meaningful behavior or risk.
 * [ ] New tests are reviewed.
@@ -744,7 +744,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 53. Test Debt
+## 53. Test Debt
 
 * [ ] Missing validation is tracked where material.
 * [ ] Weak or obsolete tests can be identified.
@@ -755,7 +755,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 54. Testing Framework Lifecycle
+## 54. Testing Framework Lifecycle
 
 * [ ] Current framework lifecycle stage is identifiable.
 * [ ] Framework changes are categorized by impact.
@@ -769,7 +769,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 55. Framework Versioning
+## 55. Framework Versioning
 
 * [ ] Testing Framework version is identifiable where versioning is used.
 * [ ] Significant normative changes are historically traceable.
@@ -779,7 +779,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 56. Framework Migration
+## 56. Framework Migration
 
 * [ ] Breaking changes define affected areas.
 * [ ] Migration plan exists where required.
@@ -790,7 +790,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-# 57. Framework Self-Validation
+## 57. Framework Self-Validation
 
 * [ ] Shared test helpers have tests where justified.
 * [ ] Shared fixtures are validated.
@@ -802,7 +802,7 @@ Documentation alone is not sufficient for implementation-oriented items.
 
 ---
 
-## Canonical Pytest Result Pipeline — Implementation Evidence
+### Canonical Pytest Result Pipeline — Implementation Evidence
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -866,7 +866,7 @@ stale-evidence protection, full reporting observability, or completion of the
 Testing Framework as a whole.
 
 ---
-# 58. Security and Privacy Validation
+## 58. Security and Privacy Validation
 
 * [ ] Tests do not expose repository secrets.
 * [ ] CI logs do not expose protected credentials.
@@ -878,7 +878,7 @@ Testing Framework as a whole.
 
 ---
 
-# 59. Official Plugin Testing
+## 59. Official Plugin Testing
 
 * [ ] Every official plugin has an appropriate test suite.
 * [ ] Plugin capabilities are tested.
@@ -893,7 +893,7 @@ Testing Framework as a whole.
 
 ---
 
-# 60. Shared Platform Testing
+## 60. Shared Platform Testing
 
 * [ ] Shared runtime changes trigger broad tests.
 * [ ] Shared capability changes trigger affected plugin tests.
@@ -903,7 +903,7 @@ Testing Framework as a whole.
 
 ---
 
-# 61. Developer Experience
+## 61. Developer Experience
 
 * [ ] Developers can discover how to run tests.
 * [ ] Developers can run targeted tests easily.
@@ -916,7 +916,7 @@ Testing Framework as a whole.
 
 ---
 
-# 62. Local and CI Consistency
+## 62. Local and CI Consistency
 
 * [ ] Core validation commands are reusable locally and in CI where practical.
 * [ ] Local test configuration matches CI semantics sufficiently.
@@ -926,7 +926,7 @@ Testing Framework as a whole.
 
 ---
 
-# 63. Release Testing
+## 63. Release Testing
 
 * [ ] Release validation profile is defined.
 * [ ] Required test categories for release are identified.
@@ -940,7 +940,7 @@ Testing Framework as a whole.
 
 ---
 
-# 64. Release Testing Gate
+## 64. Release Testing Gate
 
 * [ ] Release testing requirements are explicit.
 * [ ] Missing mandatory release testing prevents normal release progression.
@@ -951,7 +951,7 @@ Testing Framework as a whole.
 
 ---
 
-# 65. Observability Maturity
+## 65. Observability Maturity
 
 * [ ] Current test health can be evaluated.
 * [ ] Flaky-test trends can be evaluated.
@@ -964,7 +964,7 @@ Testing Framework as a whole.
 
 ---
 
-# 66. Roadmap Alignment
+## 66. Roadmap Alignment
 
 * [ ] Current implementation stage is identifiable.
 * [ ] Foundational capabilities precede advanced optimization.
@@ -977,7 +977,7 @@ Testing Framework as a whole.
 
 ---
 
-# 67. Validation Model
+## 67. Validation Model
 
 * [ ] Structural validation can be performed.
 * [ ] Behavioral validation can be performed.
@@ -991,7 +991,7 @@ Testing Framework as a whole.
 
 ---
 
-# 68. Positive Validation
+## 68. Positive Validation
 
 * [ ] Valid framework configuration produces successful validation.
 * [ ] Valid tests are discovered.
@@ -1002,7 +1002,7 @@ Testing Framework as a whole.
 
 ---
 
-# 69. Negative Validation
+## 69. Negative Validation
 
 * [ ] Deliberate test failure is detected.
 * [ ] Invalid configuration is detected.
@@ -1014,7 +1014,7 @@ Testing Framework as a whole.
 
 ---
 
-# 70. Isolation Validation
+## 70. Isolation Validation
 
 * [ ] Representative tests succeed when executed individually.
 * [ ] Representative tests succeed in subsets.
@@ -1024,7 +1024,7 @@ Testing Framework as a whole.
 
 ---
 
-# 71. Determinism Validation
+## 71. Determinism Validation
 
 * [ ] Repeated representative runs produce consistent outcomes.
 * [ ] Known sources of randomness are controlled.
@@ -1034,7 +1034,7 @@ Testing Framework as a whole.
 
 ---
 
-# 72. Reporting Validation
+## 72. Reporting Validation
 
 * [ ] Controlled failures produce actionable failure reports.
 * [ ] Controlled skips appear in summaries.
@@ -1045,7 +1045,7 @@ Testing Framework as a whole.
 
 ---
 
-# 73. Gate Validation
+## 73. Gate Validation
 
 * [ ] PASS behavior has been demonstrated.
 * [ ] FAIL behavior has been demonstrated.
@@ -1056,7 +1056,7 @@ Testing Framework as a whole.
 
 ---
 
-# 74. Governance Validation
+## 74. Governance Validation
 
 * [ ] Testing owners are identifiable.
 * [ ] Known flaky tests have owners.
@@ -1067,7 +1067,7 @@ Testing Framework as a whole.
 
 ---
 
-# 75. Framework Documentation Validation
+## 75. Framework Documentation Validation
 
 * [ ] All EPIC-TST-001 documents are present.
 * [ ] No required EPIC-TST-001 document is unintentionally empty.
@@ -1080,7 +1080,7 @@ Testing Framework as a whole.
 
 ---
 
-# 76. EPIC Structural Completion
+## 76. EPIC Structural Completion
 
 * [ ] `00-EPIC.md` is complete.
 * [ ] `01-Context.md` is complete.
@@ -1109,7 +1109,7 @@ Testing Framework as a whole.
 
 ---
 
-# 77. Framework Baseline Acceptance
+## 77. Framework Baseline Acceptance
 
 The Testing Framework documentation baseline may be accepted when all of the following are true:
 
@@ -1130,7 +1130,7 @@ The Testing Framework documentation baseline may be accepted when all of the fol
 
 ---
 
-# 78. Operational Acceptance
+## 78. Operational Acceptance
 
 The Testing Framework implementation may be considered operational when:
 
@@ -1147,7 +1147,7 @@ The Testing Framework implementation may be considered operational when:
 
 ---
 
-# 79. Future Maturity Items
+## 79. Future Maturity Items
 
 The following capabilities may remain future roadmap objectives until repository scale justifies them:
 
@@ -1166,7 +1166,7 @@ These items should not block the initial Testing Framework baseline unless expli
 
 ---
 
-# 80. Final EPIC Completion Review
+## 80. Final EPIC Completion Review
 
 Before declaring EPIC-TST-001 complete, perform a final review confirming:
 
@@ -1206,7 +1206,7 @@ Final review should confirm that there are no known structural gaps that prevent
 
 ---
 
-# Recommended Final Validation Commands
+## Recommended Final Validation Commands
 
 The exact commands depend on repository tooling, but the final framework review should normally include checks equivalent to:
 
@@ -1234,7 +1234,7 @@ Where repository-specific validation scripts exist, they should also be executed
 
 ---
 
-# Final Validation Evidence
+## Final Validation Evidence
 
 The final EPIC completion evidence should include, where applicable:
 
@@ -1256,7 +1256,7 @@ EPIC-TST-001 Validation Evidence
 
 ---
 
-# Completion Record
+## Completion Record
 
 When the Testing Framework baseline is accepted, the project should record:
 
@@ -1271,7 +1271,7 @@ This creates a stable baseline for future framework evolution.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 This implementation checklist is effective when:
 
@@ -1286,7 +1286,7 @@ This implementation checklist is effective when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 The Testing Framework is complete only when its architecture can be translated into real, observable engineering behavior.
 
