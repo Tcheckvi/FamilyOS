@@ -1,12 +1,12 @@
 # RFC-0017: AI Reasoning, Planning and Agent Coordination
 
 > **Identifier:** RFC-0017
-> **Status:** Draft
+> **Status:** Accepted
 > **Filed:** 2026-09-18
 
 ## Status
 
-Canonical RFC draft. `RFC-0017` is filed under `docs/rfcs/` after independent review and explicit human filing authorization. It remains Draft and is not accepted or implementation-authorizing. It depends on `ADR-0014` being accepted before this RFC may advance beyond Draft; every boundary decision in that ADR is treated here as a fixed constraint, not an open question.
+Accepted. `RFC-0017` was filed under `docs/rfcs/` after independent review, and is formally accepted through explicit human acceptance decision, following the acceptance of `ADR-0014`; every boundary decision in that ADR remains a fixed constraint, not an open question. Acceptance does not authorize implementation; runtime implementation remains a separate, explicitly governed step.
 
 ## Summary
 
@@ -106,7 +106,7 @@ This RFC, if formally accepted (post-C1, following the sequencing decided in the
 - Has been reviewed against the final, ratified companion ADR (not this draft).
 - Has an accompanying implementation plan that respects Engineering Constitution Article III (no infrastructure built before concrete governed need).
 
-This canonical filing remains Draft. Filing and review do not by themselves make the RFC actionable; acceptance through the repository's RFC workflow remains required.
+This RFC is Accepted, following the ratified companion `ADR-0014`. Acceptance alone does not make this RFC actionable; an accompanying implementation plan respecting Engineering Constitution Article III remains required, and runtime implementation itself remains a separate, explicitly governed step.
 
 ## Future Work
 
