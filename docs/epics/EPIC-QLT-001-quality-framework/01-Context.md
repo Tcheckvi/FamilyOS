@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 01 Context
+## 01 Context
 
-## Context
+### Context
 
 FamilyOS is evolving from a collection of engineering components into a structured software platform composed of a core architecture, domain capabilities, official plugins, engineering frameworks, specifications, automation mechanisms, and governance rules.
 
@@ -16,7 +16,7 @@ The Quality Framework establishes the engineering context in which quality is de
 
 ---
 
-# Background
+## Background
 
 The early stages of FamilyOS development focused primarily on establishing the fundamental architecture of the platform.
 
@@ -55,7 +55,7 @@ The Quality Framework exists to address these broader concerns.
 
 ---
 
-# Platform Evolution
+## Platform Evolution
 
 FamilyOS is designed as a long-lived and extensible platform.
 
@@ -96,7 +96,7 @@ Quality management therefore becomes increasingly important as the ecosystem exp
 
 ---
 
-# Engineering Complexity
+## Engineering Complexity
 
 Software quality becomes more difficult to maintain as engineering complexity increases.
 
@@ -157,7 +157,7 @@ The Quality Framework must provide a coherent approach across all these dimensio
 
 ---
 
-# The Quality Problem
+## The Quality Problem
 
 Quality cannot be reliably achieved through isolated engineering practices.
 
@@ -210,7 +210,7 @@ Engineering Decisions
 
 ---
 
-# Quality Fragmentation
+## Quality Fragmentation
 
 Without a common framework, quality responsibilities can become fragmented across tools and teams.
 
@@ -256,7 +256,7 @@ The Quality Framework establishes a common conceptual layer above individual too
 
 ---
 
-# Quality Is Broader Than Testing
+## Quality Is Broader Than Testing
 
 Testing is a critical engineering discipline.
 
@@ -290,7 +290,7 @@ It does not replace the Quality Framework.
 
 ---
 
-# Quality Is Broader Than Code
+## Quality Is Broader Than Code
 
 FamilyOS quality cannot be limited to source code.
 
@@ -327,7 +327,7 @@ The Quality Framework must therefore evaluate the complete engineering system.
 
 ---
 
-# Existing Engineering Foundations
+## Existing Engineering Foundations
 
 FamilyOS already establishes several engineering foundations that contribute directly to quality.
 
@@ -369,7 +369,7 @@ Instead, it establishes the mechanisms required to interpret their outputs as qu
 
 ---
 
-# Relationship With the Engineering Foundation
+## Relationship With the Engineering Foundation
 
 The Engineering Foundation defines how FamilyOS engineering activities are structured.
 
@@ -393,7 +393,7 @@ The Quality Framework establishes how the quality of that environment and its ou
 
 ---
 
-# Relationship With the Testing Framework
+## Relationship With the Testing Framework
 
 The Testing Framework is one of the primary evidence providers for the Quality Framework.
 
@@ -425,7 +425,7 @@ This separation preserves clear responsibilities between verification and qualit
 
 ---
 
-# Relationship With the Documentation Framework
+## Relationship With the Documentation Framework
 
 Documentation contributes directly to engineering quality.
 
@@ -447,7 +447,7 @@ The Quality Framework defines how documentation quality contributes to the overa
 
 ---
 
-# Relationship With the Build Framework
+## Relationship With the Build Framework
 
 Build processes transform source artifacts into executable or distributable artifacts.
 
@@ -468,7 +468,7 @@ The Quality Framework evaluates their quality implications.
 
 ---
 
-# Relationship With the Release Framework
+## Relationship With the Release Framework
 
 Release decisions require confidence.
 
@@ -502,7 +502,7 @@ The Quality Framework determines whether defined quality expectations have been 
 
 ---
 
-# Relationship With Plugin Compliance
+## Relationship With Plugin Compliance
 
 FamilyOS official plugins operate within explicit architectural and engineering constraints.
 
@@ -528,7 +528,7 @@ Plugin compliance therefore becomes a specialized application of the broader qua
 
 ---
 
-# Current Quality Mechanisms
+## Current Quality Mechanisms
 
 FamilyOS already uses several mechanisms that contribute to engineering quality.
 
@@ -555,7 +555,7 @@ The Quality Framework provides the architecture required to connect them.
 
 ---
 
-# From Tools to Quality Capabilities
+## From Tools to Quality Capabilities
 
 Quality must not be defined by specific tools.
 
@@ -613,7 +613,7 @@ This prevents the quality architecture from becoming permanently coupled to spec
 
 ---
 
-# Quality Requirements
+## Quality Requirements
 
 Quality must begin with explicit requirements.
 
@@ -641,7 +641,7 @@ Without explicit requirements, quality becomes subjective.
 
 ---
 
-# Quality Rules
+## Quality Rules
 
 Quality requirements must be translated into enforceable rules where practical.
 
@@ -663,7 +663,7 @@ Rules create a bridge between engineering expectations and automated verificatio
 
 ---
 
-# Quality Checks
+## Quality Checks
 
 Quality checks execute quality rules.
 
@@ -692,7 +692,7 @@ Each check produces quality evidence.
 
 ---
 
-# Quality Evidence
+## Quality Evidence
 
 Evidence represents the observable result of quality verification.
 
@@ -714,7 +714,7 @@ The Quality Framework must progressively standardize how quality evidence is rep
 
 ---
 
-# Quality Findings
+## Quality Findings
 
 A quality finding represents a detected quality concern.
 
@@ -750,7 +750,7 @@ This structure enables findings to participate in governance and quality reporti
 
 ---
 
-# Quality Severity
+## Quality Severity
 
 Not every quality finding has the same impact.
 
@@ -774,7 +774,7 @@ Severity allows quality decisions to consider risk rather than treating every fi
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Quality gates define decision boundaries.
 
@@ -804,7 +804,7 @@ They must not depend on undocumented assumptions.
 
 ---
 
-# Quality Metrics
+## Quality Metrics
 
 Metrics provide measurable information about engineering quality.
 
@@ -827,7 +827,7 @@ Metrics must support engineering decisions rather than exist only for reporting 
 
 ---
 
-# Quality Trends
+## Quality Trends
 
 A single metric value provides limited context.
 
@@ -849,7 +849,7 @@ Trends can reveal gradual degradation that individual measurements may not expos
 
 ---
 
-# Quality Risk
+## Quality Risk
 
 Quality management is closely connected to risk management.
 
@@ -872,7 +872,7 @@ Quality controls should become stronger as risk increases.
 
 ---
 
-# Technical Debt Context
+## Technical Debt Context
 
 Technical debt is one of the primary long-term threats to platform sustainability.
 
@@ -896,7 +896,7 @@ The Quality Framework must make significant quality debt visible and manageable.
 
 ---
 
-# Quality Debt
+## Quality Debt
 
 Quality debt extends the concept of technical debt.
 
@@ -920,7 +920,7 @@ Quality debt should be tracked according to risk and remediation priority.
 
 ---
 
-# Architecture Drift
+## Architecture Drift
 
 Architecture drift occurs when implementation progressively diverges from intended architecture.
 
@@ -939,7 +939,7 @@ The Quality Framework must therefore encourage automated architecture verificati
 
 ---
 
-# Regression Risk
+## Regression Risk
 
 Every engineering change introduces the possibility of regression.
 
@@ -970,7 +970,7 @@ Quality Gates
 
 ---
 
-# Release Uncertainty
+## Release Uncertainty
 
 A release should not depend primarily on subjective confidence.
 
@@ -1004,7 +1004,7 @@ This transforms release confidence into evidence-based engineering confidence.
 
 ---
 
-# Operational Feedback
+## Operational Feedback
 
 Quality does not end when software is released.
 
@@ -1043,7 +1043,7 @@ This feedback loop enables continuous improvement.
 
 ---
 
-# Human Factors
+## Human Factors
 
 Engineering quality depends on both systems and people.
 
@@ -1062,7 +1062,7 @@ The framework must therefore prioritize clear and actionable feedback.
 
 ---
 
-# Automation Context
+## Automation Context
 
 Manual quality verification does not scale effectively with platform growth.
 
@@ -1094,7 +1094,7 @@ Automation should be introduced whenever verification can be performed reliably 
 
 ---
 
-# Continuous Integration Context
+## Continuous Integration Context
 
 Continuous Integration provides a natural execution environment for quality verification.
 
@@ -1121,7 +1121,7 @@ Quality governance remains defined by the framework.
 
 ---
 
-# Local Quality Feedback
+## Local Quality Feedback
 
 Quality verification should not exist only in CI.
 
@@ -1145,7 +1145,7 @@ This reduces unnecessary CI failures and improves developer feedback speed.
 
 ---
 
-# Quality Ownership
+## Quality Ownership
 
 Quality is a shared engineering responsibility.
 
@@ -1169,7 +1169,7 @@ The framework establishes common expectations across these responsibilities.
 
 ---
 
-# Governance Context
+## Governance Context
 
 Quality rules must themselves be governed.
 
@@ -1197,7 +1197,7 @@ The Quality Framework must define mechanisms for:
 
 ---
 
-# Quality Baselines
+## Quality Baselines
 
 The framework must support quality baselines.
 
@@ -1217,7 +1217,7 @@ The objective should be to prevent new degradation while progressively reducing 
 
 ---
 
-# Incremental Adoption
+## Incremental Adoption
 
 The Quality Framework must support incremental adoption.
 
@@ -1245,7 +1245,7 @@ This allows the platform to strengthen quality controls without blocking enginee
 
 ---
 
-# Scalability Context
+## Scalability Context
 
 FamilyOS quality mechanisms must scale with the ecosystem.
 
@@ -1272,7 +1272,7 @@ Scalability is an architectural requirement of the quality system.
 
 ---
 
-# Traceability Context
+## Traceability Context
 
 As quality systems become more complex, traceability becomes essential.
 
@@ -1300,7 +1300,7 @@ Traceability therefore forms a core requirement of the framework.
 
 ---
 
-# Explainability Context
+## Explainability Context
 
 Quality decisions must remain understandable.
 
@@ -1320,7 +1320,7 @@ Explainability improves both compliance and developer experience.
 
 ---
 
-# Quality Data
+## Quality Data
 
 Quality mechanisms generate engineering data.
 
@@ -1351,7 +1351,7 @@ Quality data becomes increasingly important as FamilyOS moves toward continuous 
 
 ---
 
-# Quality Observability Context
+## Quality Observability Context
 
 A mature engineering platform should provide visibility into its own quality state.
 
@@ -1373,7 +1373,7 @@ This requires quality observability as a first-class engineering capability.
 
 ---
 
-# AI Context
+## AI Context
 
 FamilyOS includes an AI-oriented architecture and may progressively use AI to support engineering activities.
 
@@ -1397,7 +1397,7 @@ It must not become an opaque source of quality authority.
 
 ---
 
-# Compliance Context
+## Compliance Context
 
 FamilyOS operates with multiple internal engineering requirements.
 
@@ -1418,7 +1418,7 @@ This enables quality and compliance to operate as connected engineering capabili
 
 ---
 
-# Long-Term Engineering Context
+## Long-Term Engineering Context
 
 FamilyOS is intended to remain maintainable over long periods of continuous evolution.
 
@@ -1443,7 +1443,7 @@ The Quality Framework exists to protect these properties as the ecosystem grows.
 
 ---
 
-# Strategic Need
+## Strategic Need
 
 Without a unified Quality Framework, FamilyOS risks accumulating disconnected quality mechanisms.
 
@@ -1491,7 +1491,7 @@ This transformation is the strategic reason for EPIC-QLT-001.
 
 ---
 
-# Desired Quality State
+## Desired Quality State
 
 The desired FamilyOS quality state is one in which significant engineering changes can be evaluated consistently.
 
@@ -1519,7 +1519,7 @@ These questions must be answerable through explicit and traceable engineering me
 
 ---
 
-# Context Summary
+## Context Summary
 
 FamilyOS has reached a level of architectural and engineering maturity where isolated quality practices are no longer sufficient.
 

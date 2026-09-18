@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 03 Testing Principles
+## 03 Testing Principles
 
-## Introduction
+### Introduction
 
 The FamilyOS Testing Framework is governed by a set of explicit testing principles.
 
@@ -27,7 +27,7 @@ They describe the expected engineering behavior of the testing system rather tha
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Testing Principles is to establish a common testing philosophy for FamilyOS.
 
@@ -48,7 +48,7 @@ The Testing Framework must prevent testing from becoming an accumulation of isol
 
 ---
 
-# Governing Principle
+## Governing Principle
 
 The governing principle of the FamilyOS Testing Framework is:
 
@@ -60,7 +60,7 @@ It must not create confidence that cannot be justified by evidence.
 
 ---
 
-# Testing Is An Engineering Capability
+## Testing Is An Engineering Capability
 
 Testing is a permanent engineering capability.
 
@@ -86,7 +86,7 @@ Testability must therefore influence:
 
 ---
 
-# Testability By Design
+## Testability By Design
 
 FamilyOS components should be designed so that important behavior can be tested without unnecessary environmental complexity.
 
@@ -106,7 +106,7 @@ Testing difficulty should therefore be treated as an engineering signal.
 
 ---
 
-# Test The Contract
+## Test The Contract
 
 Tests should validate meaningful behavior and contracts.
 
@@ -134,7 +134,7 @@ Implementation-detail tests may be appropriate when those details are themselves
 
 ---
 
-# Test At The Appropriate Level
+## Test At The Appropriate Level
 
 Every behavior should be tested at the lowest testing level capable of validating it correctly.
 
@@ -170,7 +170,7 @@ Testing level must therefore match the behavior being validated.
 
 ---
 
-# Layered Confidence
+## Layered Confidence
 
 FamilyOS uses multiple testing levels because no single test type can provide sufficient confidence.
 
@@ -199,7 +199,7 @@ Confidence emerges from the combination of appropriate evidence.
 
 ---
 
-# Fast Feedback
+## Fast Feedback
 
 Testing should provide feedback as early as practical.
 
@@ -229,7 +229,7 @@ Release Validation
 
 ---
 
-# Determinism
+## Determinism
 
 Tests must be deterministic whenever the behavior being tested is deterministic.
 
@@ -249,7 +249,7 @@ Unexpected result variation undermines trust in the testing system.
 
 ---
 
-# Flaky Tests Are Defects
+## Flaky Tests Are Defects
 
 A flaky test is a test that produces inconsistent results without a meaningful change in system behavior.
 
@@ -272,7 +272,7 @@ Flaky tests should be repaired, isolated, or temporarily governed through an exp
 
 ---
 
-# Repeatability
+## Repeatability
 
 Tests should be repeatable.
 
@@ -291,7 +291,7 @@ Repeatability requires control over:
 
 ---
 
-# Isolation
+## Isolation
 
 Tests should minimize unintended dependency on other tests.
 
@@ -312,7 +312,7 @@ Isolation improves:
 
 ---
 
-# Independent Failure
+## Independent Failure
 
 One failing test should not unnecessarily prevent unrelated tests from executing.
 
@@ -324,7 +324,7 @@ Exceptions may exist for prerequisite validation or catastrophic environment fai
 
 ---
 
-# Explicit Dependencies
+## Explicit Dependencies
 
 Every meaningful test dependency should be visible.
 
@@ -343,7 +343,7 @@ Hidden dependencies make tests difficult to reproduce and reason about.
 
 ---
 
-# Controlled External Systems
+## Controlled External Systems
 
 Tests should not rely on uncontrolled external systems unless the testing level explicitly requires real external integration.
 
@@ -361,7 +361,7 @@ When external integration is not the subject of the test, appropriate test doubl
 
 ---
 
-# Real Integration Where It Matters
+## Real Integration Where It Matters
 
 Test doubles must not eliminate the behavior that a test is intended to validate.
 
@@ -373,7 +373,7 @@ The governing question is:
 
 ---
 
-# Prefer Stable Test Doubles
+## Prefer Stable Test Doubles
 
 When test doubles are appropriate, they should be:
 
@@ -387,7 +387,7 @@ Test doubles should not reproduce entire production systems unnecessarily.
 
 ---
 
-# No Mocking Without Purpose
+## No Mocking Without Purpose
 
 Mocking is not an objective.
 
@@ -407,7 +407,7 @@ Use a test double when isolation or control provides meaningful value.
 
 ---
 
-# Assertions Must Be Meaningful
+## Assertions Must Be Meaningful
 
 Every assertion must represent a meaningful expectation.
 
@@ -422,7 +422,7 @@ A failure should communicate what expected behavior was violated.
 
 ---
 
-# Failure Messages Must Be Actionable
+## Failure Messages Must Be Actionable
 
 A failed test should help identify:
 
@@ -435,7 +435,7 @@ Test reporting must reduce diagnostic cost.
 
 ---
 
-# One Primary Reason To Fail
+## One Primary Reason To Fail
 
 A test should normally focus on one primary behavioral expectation.
 
@@ -447,7 +447,7 @@ Tests that validate unrelated behaviors should be split.
 
 ---
 
-# Clear Arrange Act Assert Structure
+## Clear Arrange Act Assert Structure
 
 Tests should make their logical structure understandable.
 
@@ -469,7 +469,7 @@ The objective is clarity, not rigid syntax.
 
 ---
 
-# Descriptive Test Names
+## Descriptive Test Names
 
 Test names should communicate behavior.
 
@@ -487,7 +487,7 @@ Naming standards may vary by testing style, but ambiguity should be avoided.
 
 ---
 
-# Tests Are Production Engineering Assets
+## Tests Are Production Engineering Assets
 
 Test code must be maintained with engineering discipline.
 
@@ -504,7 +504,7 @@ Low-quality test code eventually reduces the reliability of the entire engineeri
 
 ---
 
-# Avoid Test Duplication
+## Avoid Test Duplication
 
 Repeated test setup and duplicated scenarios should be reduced when abstraction improves clarity.
 
@@ -516,7 +516,7 @@ The preferred principle is:
 
 ---
 
-# Prefer Explicit Tests Over Clever Tests
+## Prefer Explicit Tests Over Clever Tests
 
 Testing infrastructure should optimize for readability.
 
@@ -526,7 +526,7 @@ A developer investigating a failing test should be able to understand it quickly
 
 ---
 
-# Test Data Must Be Intentional
+## Test Data Must Be Intentional
 
 Test data must exist for a reason.
 
@@ -542,7 +542,7 @@ Large datasets should not be introduced without a clear testing objective.
 
 ---
 
-# Minimal Test Data
+## Minimal Test Data
 
 Prefer the smallest data set that proves the behavior.
 
@@ -557,7 +557,7 @@ Representative large-scale datasets remain appropriate for performance and syste
 
 ---
 
-# Boundary Testing
+## Boundary Testing
 
 Important boundaries must be tested deliberately.
 
@@ -577,7 +577,7 @@ Boundary behavior must not be left to accidental coverage.
 
 ---
 
-# Negative Testing
+## Negative Testing
 
 FamilyOS tests must validate failure behavior where failure is meaningful.
 
@@ -594,7 +594,7 @@ Testing only successful paths does not provide sufficient evidence.
 
 ---
 
-# Error Behavior Is A Contract
+## Error Behavior Is A Contract
 
 Errors are observable system behavior.
 
@@ -610,7 +610,7 @@ Tests should avoid depending on unstable wording unless exact wording is contrac
 
 ---
 
-# Regression Protection
+## Regression Protection
 
 Every significant defect should lead to a regression test when the defect can be reproduced through automated testing.
 
@@ -636,7 +636,7 @@ A regression test proves both that the defect existed and that it remains fixed.
 
 ---
 
-# Tests Must Fail Before The Fix Where Practical
+## Tests Must Fail Before The Fix Where Practical
 
 When adding a regression test, engineers should confirm that the test detects the original defect whenever practical.
 
@@ -644,7 +644,7 @@ A test that passes before the fix may not provide meaningful regression protecti
 
 ---
 
-# Coverage Is Evidence, Not Quality
+## Coverage Is Evidence, Not Quality
 
 Coverage metrics provide information about test execution.
 
@@ -661,7 +661,7 @@ FamilyOS therefore treats coverage as one testing signal rather than an independ
 
 ---
 
-# Coverage Must Be Interpretable
+## Coverage Must Be Interpretable
 
 Coverage reports should help identify untested risk.
 
@@ -671,7 +671,7 @@ Coverage goals should support engineering confidence.
 
 ---
 
-# Risk-Based Testing
+## Risk-Based Testing
 
 Testing effort should reflect engineering risk.
 
@@ -688,7 +688,7 @@ Low-risk implementation details may require less extensive validation.
 
 ---
 
-# Critical Paths Require Stronger Evidence
+## Critical Paths Require Stronger Evidence
 
 Critical platform paths should receive stronger testing.
 
@@ -707,7 +707,7 @@ The exact required testing levels should be defined by relevant policies and pro
 
 ---
 
-# Security Testing Is Integrated
+## Security Testing Is Integrated
 
 Security-related testing should not exist as an isolated afterthought.
 
@@ -725,7 +725,7 @@ The Security Architecture remains authoritative for security requirements.
 
 ---
 
-# Compatibility Testing
+## Compatibility Testing
 
 FamilyOS evolves through versions.
 
@@ -742,7 +742,7 @@ Compatibility claims require explicit evidence.
 
 ---
 
-# Migration Testing
+## Migration Testing
 
 Changes that modify persistent structures or contracts should include migration validation where relevant.
 
@@ -756,7 +756,7 @@ Migration tests should verify:
 
 ---
 
-# Tests Must Be Version-Aware
+## Tests Must Be Version-Aware
 
 Some behavior is valid only for specific platform or contract versions.
 
@@ -766,7 +766,7 @@ Hidden version assumptions create fragile validation.
 
 ---
 
-# Parallel-Safe Testing
+## Parallel-Safe Testing
 
 Tests should support parallel execution whenever their semantics permit it.
 
@@ -783,7 +783,7 @@ Tests that require serialization must declare that requirement.
 
 ---
 
-# Execution Performance Matters
+## Execution Performance Matters
 
 Test performance affects developer behavior.
 
@@ -801,7 +801,7 @@ Performance optimization must not weaken correctness.
 
 ---
 
-# Fast Tests Must Remain Fast
+## Fast Tests Must Remain Fast
 
 Fast test suites should have explicit performance expectations.
 
@@ -811,7 +811,7 @@ Testing levels should therefore preserve their expected feedback characteristics
 
 ---
 
-# No Silent Test Skipping
+## No Silent Test Skipping
 
 Tests must not be silently skipped.
 
@@ -823,7 +823,7 @@ A permanently irrelevant test should be removed rather than indefinitely skipped
 
 ---
 
-# Expected Failures Must Be Governed
+## Expected Failures Must Be Governed
 
 Known failing tests must not become normal background noise.
 
@@ -845,7 +845,7 @@ PASS
 
 ---
 
-# Quarantine Is Temporary
+## Quarantine Is Temporary
 
 A quarantine mechanism may be used for unstable tests when necessary to protect engineering flow.
 
@@ -860,7 +860,7 @@ Every quarantined test should have:
 
 ---
 
-# Local And CI Semantics Must Match
+## Local And CI Semantics Must Match
 
 Local test execution and CI test execution should use equivalent testing semantics.
 
@@ -878,7 +878,7 @@ A test that passes locally and fails systematically in CI because of uncontrolle
 
 ---
 
-# One Canonical Test Meaning
+## One Canonical Test Meaning
 
 A test result must mean the same thing across consumers.
 
@@ -894,7 +894,7 @@ Tool-specific states may be normalized into a canonical testing result model.
 
 ---
 
-# Testing Produces Evidence
+## Testing Produces Evidence
 
 Test execution produces engineering evidence.
 
@@ -919,7 +919,7 @@ This evidence may later be consumed by:
 
 ---
 
-# Evidence Must Be Traceable
+## Evidence Must Be Traceable
 
 Testing evidence should be traceable to the code and environment that produced it.
 
@@ -936,7 +936,7 @@ High-assurance workflows may require stronger provenance.
 
 ---
 
-# Test Results Are Immutable Historical Facts
+## Test Results Are Immutable Historical Facts
 
 A recorded test result describes what happened during a specific execution.
 
@@ -946,7 +946,7 @@ Historical results may be superseded by newer evidence but should remain disting
 
 ---
 
-# Test Retry Does Not Erase Failure
+## Test Retry Does Not Erase Failure
 
 Retry may be useful for diagnosing infrastructure instability.
 
@@ -956,7 +956,7 @@ Repeated retry dependence should trigger investigation.
 
 ---
 
-# Infrastructure Failures Are Distinct
+## Infrastructure Failures Are Distinct
 
 A test failure and a testing-infrastructure failure are not equivalent.
 
@@ -972,7 +972,7 @@ The reporting model should preserve this distinction.
 
 ---
 
-# Test Failures Must Be Classified Appropriately
+## Test Failures Must Be Classified Appropriately
 
 Testing infrastructure should support useful failure categories when possible.
 
@@ -992,7 +992,7 @@ Exact classifications belong to the reporting architecture.
 
 ---
 
-# Timeouts Are Required For Potentially Unbounded Tests
+## Timeouts Are Required For Potentially Unbounded Tests
 
 Tests that could hang indefinitely must have appropriate timeout protection.
 
@@ -1002,7 +1002,7 @@ A timeout is an engineering failure signal, not merely an execution inconvenienc
 
 ---
 
-# Time Must Be Controllable
+## Time Must Be Controllable
 
 Tests that depend on time should avoid uncontrolled wall-clock behavior.
 
@@ -1017,7 +1017,7 @@ Sleeping for arbitrary periods should be avoided when deterministic synchronizat
 
 ---
 
-# Randomness Must Be Reproducible
+## Randomness Must Be Reproducible
 
 Tests using randomness should make failures reproducible.
 
@@ -1031,7 +1031,7 @@ Randomized or property-based tests must preserve enough information to reproduce
 
 ---
 
-# Property-Based Testing
+## Property-Based Testing
 
 Property-based testing may be used when behavior is better expressed through invariants than through manually enumerated examples.
 
@@ -1041,7 +1041,7 @@ Failures must remain reproducible.
 
 ---
 
-# Parameterized Testing
+## Parameterized Testing
 
 Parameterized tests are appropriate when the same behavioral rule should be validated across multiple representative inputs.
 
@@ -1051,7 +1051,7 @@ A large data matrix that obscures failure intent should be split or reorganized.
 
 ---
 
-# Snapshot Testing Requires Discipline
+## Snapshot Testing Requires Discipline
 
 Snapshot tests may be appropriate for structured outputs.
 
@@ -1063,7 +1063,7 @@ Snapshot changes should be understandable in code review.
 
 ---
 
-# Golden Files Are Contracts
+## Golden Files Are Contracts
 
 Golden files should be treated as explicit expected outputs.
 
@@ -1078,7 +1078,7 @@ Blind regeneration is not sufficient validation.
 
 ---
 
-# Database Tests Must Control State
+## Database Tests Must Control State
 
 Tests involving persistence must control database state.
 
@@ -1093,7 +1093,7 @@ Shared long-lived mutable test databases should be avoided.
 
 ---
 
-# Filesystem Tests Must Be Isolated
+## Filesystem Tests Must Be Isolated
 
 Filesystem tests should use controlled temporary locations.
 
@@ -1108,7 +1108,7 @@ Cleanup must be reliable.
 
 ---
 
-# Network Tests Must Be Explicit
+## Network Tests Must Be Explicit
 
 Any test requiring network access must declare that dependency.
 
@@ -1118,7 +1118,7 @@ Unexpected external network access from ordinary unit tests should be treated as
 
 ---
 
-# Secret Safety
+## Secret Safety
 
 Tests must not expose production secrets.
 
@@ -1133,7 +1133,7 @@ Logs and failure reports must avoid leaking sensitive data.
 
 ---
 
-# Privacy-Aware Test Data
+## Privacy-Aware Test Data
 
 Test data should avoid unnecessary use of real personal information.
 
@@ -1143,7 +1143,7 @@ Any use of production-derived data requires appropriate governance.
 
 ---
 
-# Reusable Fixtures Must Remain Understandable
+## Reusable Fixtures Must Remain Understandable
 
 Fixtures reduce setup duplication.
 
@@ -1158,7 +1158,7 @@ A fixture should have:
 
 ---
 
-# Fixture Scope Must Match Need
+## Fixture Scope Must Match Need
 
 Fixtures should use the narrowest practical scope.
 
@@ -1175,7 +1175,7 @@ Broad fixture scope increases shared state risk.
 
 ---
 
-# Shared Utilities Must Have Stable Contracts
+## Shared Utilities Must Have Stable Contracts
 
 Common testing utilities should be treated as reusable infrastructure.
 
@@ -1190,7 +1190,7 @@ Breaking shared testing utilities can invalidate large portions of the test suit
 
 ---
 
-# Testing Framework Must Not Duplicate Domain Logic
+## Testing Framework Must Not Duplicate Domain Logic
 
 Tests should validate domain behavior.
 
@@ -1202,7 +1202,7 @@ Expected values should be derived independently where possible.
 
 ---
 
-# Tests Must Remain Understandable During Failure
+## Tests Must Remain Understandable During Failure
 
 The most important moment for test readability is when something breaks.
 
@@ -1216,7 +1216,7 @@ A testing abstraction is successful only if engineers can still understand:
 
 ---
 
-# Test Maintenance Is Continuous
+## Test Maintenance Is Continuous
 
 Tests evolve with the platform.
 
@@ -1234,7 +1234,7 @@ Testing debt is engineering debt.
 
 ---
 
-# Obsolete Tests Must Be Removed
+## Obsolete Tests Must Be Removed
 
 A test that validates behavior no longer supported should be removed or explicitly migrated.
 
@@ -1244,7 +1244,7 @@ Historical behavior belongs in version history, not necessarily in the current e
 
 ---
 
-# Review Tests With Production Code
+## Review Tests With Production Code
 
 Changes to production behavior should normally include corresponding test review.
 
@@ -1259,7 +1259,7 @@ Code review should ask:
 
 ---
 
-# Tests Are Part Of The Definition Of Done
+## Tests Are Part Of The Definition Of Done
 
 Where behavior requires testing, implementation is not complete until appropriate tests exist and pass.
 
@@ -1267,7 +1267,7 @@ The exact required test scope may vary by component and risk.
 
 ---
 
-# No Testing Theater
+## No Testing Theater
 
 Tests must exist to provide evidence.
 
@@ -1283,7 +1283,7 @@ Examples include:
 
 ---
 
-# Automation First
+## Automation First
 
 Repeatable validation should be automated whenever practical.
 
@@ -1297,7 +1297,7 @@ Manual validation must not silently replace required automated regression protec
 
 ---
 
-# Manual Testing Must Be Explicit
+## Manual Testing Must Be Explicit
 
 When manual testing is required, the process should identify:
 
@@ -1312,7 +1312,7 @@ Manual validation should remain auditable when used for governed lifecycle decis
 
 ---
 
-# Exploratory Testing Is Valuable
+## Exploratory Testing Is Valuable
 
 Exploratory testing complements automated testing.
 
@@ -1327,7 +1327,7 @@ Exploratory testing does not replace deterministic regression suites.
 
 ---
 
-# Test Automation Must Serve Engineering
+## Test Automation Must Serve Engineering
 
 Automation is valuable when it improves:
 
@@ -1341,7 +1341,7 @@ Automation that adds complexity without meaningful validation value should be re
 
 ---
 
-# Testing Must Integrate With Architecture
+## Testing Must Integrate With Architecture
 
 The Testing Framework must respect FamilyOS architectural boundaries.
 
@@ -1351,7 +1351,7 @@ Architecture-specific testing requirements belong to appropriate testing profile
 
 ---
 
-# Testing Must Integrate With Plugins
+## Testing Must Integrate With Plugins
 
 Official and third-party plugins require consistent testing expectations.
 
@@ -1368,7 +1368,7 @@ The Plugin Architecture remains authoritative for plugin contracts.
 
 ---
 
-# Testing Must Integrate With Quality
+## Testing Must Integrate With Quality
 
 Testing produces evidence consumed by quality evaluation.
 
@@ -1390,7 +1390,7 @@ These responsibilities must remain separate.
 
 ---
 
-# Testing Must Integrate With Compliance
+## Testing Must Integrate With Compliance
 
 The Plugin Compliance Framework may consume test evidence.
 
@@ -1402,7 +1402,7 @@ Compliance determines whether required testing evidence is sufficient for a comp
 
 ---
 
-# Testing Must Integrate With Build
+## Testing Must Integrate With Build
 
 Build workflows may consume testing results as validation evidence.
 
@@ -1412,7 +1412,7 @@ The Build Framework determines how test evidence contributes to artifact readine
 
 ---
 
-# Testing Must Integrate With Release
+## Testing Must Integrate With Release
 
 Release workflows may require stronger testing profiles.
 
@@ -1424,7 +1424,7 @@ Release governance makes release decisions.
 
 ---
 
-# Testing Must Integrate With Documentation
+## Testing Must Integrate With Documentation
 
 Testing standards, strategies, contracts, and exceptions must remain documented according to the Documentation Framework.
 
@@ -1432,7 +1432,7 @@ Documentation should explain testing expectations without duplicating executable
 
 ---
 
-# Testing Must Integrate With Governance
+## Testing Must Integrate With Governance
 
 Changes to testing policy must be governed.
 
@@ -1449,7 +1449,7 @@ Governance protects consistency across the ecosystem.
 
 ---
 
-# Testing Policies Must Be Versioned
+## Testing Policies Must Be Versioned
 
 Testing requirements evolve.
 
@@ -1459,7 +1459,7 @@ Historical validation should remain interpretable in the context of the policy t
 
 ---
 
-# Exceptions Must Be Explicit
+## Exceptions Must Be Explicit
 
 A component that cannot satisfy a testing requirement may require an exception.
 
@@ -1476,7 +1476,7 @@ An exception should identify:
 
 ---
 
-# Suppressions Must Remain Visible
+## Suppressions Must Remain Visible
 
 When a test result or finding is suppressed for presentation purposes, the underlying evidence must remain visible to governed systems.
 
@@ -1484,7 +1484,7 @@ Suppression must not rewrite history.
 
 ---
 
-# Testing Gates Must Be Evidence-Based
+## Testing Gates Must Be Evidence-Based
 
 A testing gate should consume test evidence and policy.
 
@@ -1508,7 +1508,7 @@ Gate logic should remain explicit.
 
 ---
 
-# Fail Closed At High Assurance Boundaries
+## Fail Closed At High Assurance Boundaries
 
 At high-assurance lifecycle points, missing required testing evidence should not be interpreted as success.
 
@@ -1522,7 +1522,7 @@ The exact gate policy belongs to the relevant lifecycle framework.
 
 ---
 
-# Developer Experience Matters
+## Developer Experience Matters
 
 Testing should help developers.
 
@@ -1538,7 +1538,7 @@ Poor developer experience reduces testing adoption and therefore reduces platfor
 
 ---
 
-# Simple Commands
+## Simple Commands
 
 Common testing operations should be accessible through simple, documented commands.
 
@@ -1546,7 +1546,7 @@ Developers should not need deep knowledge of CI internals to reproduce standard 
 
 ---
 
-# Diagnostics Before Enforcement
+## Diagnostics Before Enforcement
 
 Before strong blocking gates are introduced, test failures must be sufficiently actionable.
 
@@ -1554,7 +1554,7 @@ Enforcement without useful diagnostics creates friction rather than quality.
 
 ---
 
-# No Hidden Policy
+## No Hidden Policy
 
 Testing policy must not exist only inside CI scripts or fixture implementations.
 
@@ -1564,7 +1564,7 @@ Executable automation should implement policy rather than invent it.
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Testing should improve based on evidence.
 
@@ -1585,7 +1585,7 @@ They must not replace engineering judgment.
 
 ---
 
-# Testing Metrics Must Not Become Targets Without Context
+## Testing Metrics Must Not Become Targets Without Context
 
 When a metric becomes an isolated target, teams may optimize the number rather than the outcome.
 
@@ -1599,7 +1599,7 @@ Metrics should be interpreted as signals.
 
 ---
 
-# Historical Testing Evidence
+## Historical Testing Evidence
 
 Important historical test results should remain available when they support:
 
@@ -1613,7 +1613,7 @@ Retention policy belongs to the appropriate infrastructure and governance framew
 
 ---
 
-# Testing Evidence Has Context
+## Testing Evidence Has Context
 
 A test result is meaningful only with sufficient context.
 
@@ -1634,7 +1634,7 @@ may be insufficient for a governed decision.
 
 ---
 
-# Testing Maturity
+## Testing Maturity
 
 The Testing Framework should evolve progressively.
 
@@ -1665,7 +1665,7 @@ It must not be confused with individual test results.
 
 ---
 
-# Principle Precedence
+## Principle Precedence
 
 When testing principles appear to conflict, use the following precedence:
 
@@ -1682,7 +1682,7 @@ Convenience must not override correctness.
 
 ---
 
-# Principle Application
+## Principle Application
 
 Not every principle applies equally to every test.
 
@@ -1698,7 +1698,7 @@ The testing level defines how the principle should be applied.
 
 ---
 
-# Principle Review
+## Principle Review
 
 Testing principles should be reviewed when:
 
@@ -1714,7 +1714,7 @@ Changes must remain governed and versioned.
 
 ---
 
-# Testing Principles Summary
+## Testing Principles Summary
 
 The FamilyOS Testing Framework establishes the following core expectations:
 
@@ -1749,7 +1749,7 @@ Testing metrics inform improvement rather than replace judgment.
 
 ---
 
-# Testing Principles Invariants
+## Testing Principles Invariants
 
 The Testing Framework establishes the following invariants:
 
@@ -1776,7 +1776,7 @@ The Testing Framework establishes the following invariants:
 
 ---
 
-# Final Testing Principle
+## Final Testing Principle
 
 The final testing principle of FamilyOS is:
 

@@ -17,7 +17,7 @@ The revision history distinguishes between:
 
 ---
 
-# Current EPIC State
+## Current EPIC State
 
 | Field                         | Value                                      |
 | ----------------------------- | ------------------------------------------ |
@@ -39,11 +39,11 @@ The revision history distinguishes between:
 
 ---
 
-# 1. Revision Principles
+## 1. Revision Principles
 
 The Security Framework revision history follows several foundational principles.
 
-## Historical Integrity
+### Historical Integrity
 
 Historical publication state SHALL remain identifiable and immutable.
 
@@ -63,7 +63,7 @@ Later normalization commits SHALL NOT replace that historical publication identi
 
 ---
 
-## Explicit Evolution
+### Explicit Evolution
 
 Material changes to the Security Framework SHOULD remain traceable.
 
@@ -89,7 +89,7 @@ This includes changes affecting:
 
 ---
 
-## Evidence-Based Validation
+### Evidence-Based Validation
 
 Validation state SHALL follow evidence.
 
@@ -109,7 +109,7 @@ Record
 
 ---
 
-## Structural Truth
+### Structural Truth
 
 The repository history SHALL preserve the difference between:
 
@@ -127,7 +127,7 @@ The current seven control documents SHALL NOT be retroactively attributed to the
 
 ---
 
-# 2. Framework Version
+## 2. Framework Version
 
 The historically published Security Framework version is:
 
@@ -141,7 +141,7 @@ Post-release repository normalization does not by itself require a new framework
 
 ---
 
-# 3. Framework Version vs Repository History
+## 3. Framework Version vs Repository History
 
 Framework version:
 
@@ -165,7 +165,7 @@ A later repository normalization commit may have a different Git identity while 
 
 ---
 
-# 4. Historical Documentation Model
+## 4. Historical Documentation Model
 
 The original Security Framework used the compact FamilyOS framework documentation model.
 
@@ -182,7 +182,7 @@ The historical release therefore consisted only of the ten numbered framework do
 
 ---
 
-# 5. Historical Numbered Documents
+## 5. Historical Numbered Documents
 
 The historical release contained:
 
@@ -203,7 +203,7 @@ These documents form the historical normative framework baseline.
 
 ---
 
-# 6. Historical Publication
+## 6. Historical Publication
 
 EPIC-SEC-001 version `5.0.0` was historically published under:
 
@@ -231,7 +231,7 @@ Immutable
 
 ---
 
-# 7. Historical Tag Evidence
+## 7. Historical Tag Evidence
 
 The historical tag exists as an annotated Git tag.
 
@@ -247,7 +247,7 @@ This relationship SHALL remain unchanged through normalization.
 
 ---
 
-# 8. Historical Tag Immutability
+## 8. Historical Tag Immutability
 
 Post-release normalization SHALL NOT:
 
@@ -260,7 +260,7 @@ Post-release normalization SHALL NOT:
 
 ---
 
-# 9. Security Framework Foundation
+## 9. Security Framework Foundation
 
 Version `5.0.0` established the canonical FamilyOS Security Framework.
 
@@ -286,7 +286,7 @@ The release defines:
 
 ---
 
-# 10. Security Principles Revision
+## 10. Security Principles Revision
 
 Version `5.0.0` establishes the following foundational principles:
 
@@ -310,7 +310,7 @@ These principles represent the foundational normative security posture.
 
 ---
 
-# 11. Deny-by-Default Revision
+## 11. Deny-by-Default Revision
 
 The framework establishes deny-by-default behavior.
 
@@ -328,7 +328,7 @@ Denied
 
 ---
 
-# 12. Least-Privilege Revision
+## 12. Least-Privilege Revision
 
 The framework establishes least privilege for:
 
@@ -343,7 +343,7 @@ Privileges SHOULD remain explicit, scoped, reviewable, and revocable.
 
 ---
 
-# 13. Explicit Trust Revision
+## 13. Explicit Trust Revision
 
 Trust SHALL rely on explicit evidence rather than implicit assumptions.
 
@@ -358,7 +358,7 @@ Examples include:
 
 ---
 
-# 14. Identity Revision
+## 14. Identity Revision
 
 The framework establishes identity as a first-class concept.
 
@@ -376,7 +376,7 @@ Identity SHALL remain distinct from authentication and authorization.
 
 ---
 
-# 15. Authentication Revision
+## 15. Authentication Revision
 
 Authentication establishes confidence in an asserted identity.
 
@@ -384,7 +384,7 @@ Version `5.0.0` explicitly avoids equating authentication success with unrestric
 
 ---
 
-# 16. Authorization Revision
+## 16. Authorization Revision
 
 Authorization determines whether an identified subject may perform an operation.
 
@@ -406,7 +406,7 @@ Authorization SHALL remain explicit and governable.
 
 ---
 
-# 17. Data Protection Revision
+## 17. Data Protection Revision
 
 Version `5.0.0` establishes security expectations for:
 
@@ -421,7 +421,7 @@ Version `5.0.0` establishes security expectations for:
 
 ---
 
-# 18. Secret Management Revision
+## 18. Secret Management Revision
 
 Secrets are treated as security-sensitive objects distinct from ordinary configuration.
 
@@ -437,7 +437,7 @@ Examples include:
 
 ---
 
-# 19. Cryptography Revision
+## 19. Cryptography Revision
 
 The framework establishes expectations for sound cryptographic engineering.
 
@@ -453,7 +453,7 @@ Custom cryptographic primitives are discouraged.
 
 ---
 
-# 20. Threat Model Revision
+## 20. Threat Model Revision
 
 Version `5.0.0` establishes threat modeling as a permanent security-design mechanism.
 
@@ -479,7 +479,7 @@ Residual Risk
 
 ---
 
-# 21. Risk Revision
+## 21. Risk Revision
 
 Security risk influences:
 
@@ -496,7 +496,7 @@ Critical unresolved risk SHOULD normally prevent ordinary release progression.
 
 ---
 
-# 22. Trust Model Revision
+## 22. Trust Model Revision
 
 The framework establishes explicit trust boundaries.
 
@@ -513,7 +513,7 @@ Service → Protected Data
 
 ---
 
-# 23. Security Control Revision
+## 23. Security Control Revision
 
 Security controls may be:
 
@@ -536,7 +536,7 @@ A control SHOULD identify:
 
 ---
 
-# 24. Compliance Revision
+## 24. Compliance Revision
 
 Security compliance is defined as evidence-based evaluation of applicable requirements and controls.
 
@@ -544,7 +544,7 @@ Compliance SHALL NOT treat documentation intent alone as proof that a control is
 
 ---
 
-# 25. Implementation Revision
+## 25. Implementation Revision
 
 The framework provides implementation direction without binding FamilyOS to a single security vendor or toolchain.
 
@@ -560,7 +560,7 @@ Implementation areas may include:
 
 ---
 
-# 26. Automation Revision
+## 26. Automation Revision
 
 Security automation may include:
 
@@ -577,7 +577,7 @@ Automation SHALL expose failures rather than silently convert them into success.
 
 ---
 
-# 27. Plugin Security Revision
+## 27. Plugin Security Revision
 
 Plugins are treated as important trust boundaries.
 
@@ -596,7 +596,7 @@ Official plugin status SHALL NOT imply unrestricted trust.
 
 ---
 
-# 28. Validation Revision
+## 28. Validation Revision
 
 Security validation is evidence-based.
 
@@ -615,7 +615,7 @@ Potential evidence includes:
 
 ---
 
-# 29. Release Security Revision
+## 29. Release Security Revision
 
 The framework integrates security with the FamilyOS Release Framework.
 
@@ -637,7 +637,7 @@ EPIC-REL-001 remains authoritative for the general release lifecycle.
 
 ---
 
-# 30. Testing Boundary Revision
+## 30. Testing Boundary Revision
 
 EPIC-TST-001 remains authoritative for general testing architecture.
 
@@ -645,7 +645,7 @@ Security defines security-specific testing requirements and consumes Testing Fra
 
 ---
 
-# 31. Quality Boundary Revision
+## 31. Quality Boundary Revision
 
 EPIC-QLT-001 remains authoritative for quality governance and general quality-gate semantics.
 
@@ -653,7 +653,7 @@ Security findings may become quality evidence.
 
 ---
 
-# 32. Build Boundary Revision
+## 32. Build Boundary Revision
 
 EPIC-BLD-001 remains authoritative for build engineering.
 
@@ -668,7 +668,7 @@ Security adds constraints related to:
 
 ---
 
-# 33. Release Boundary Revision
+## 33. Release Boundary Revision
 
 EPIC-REL-001 owns release lifecycle semantics.
 
@@ -676,7 +676,7 @@ EPIC-SEC-001 provides security requirements and evidence consumed by release dec
 
 ---
 
-# 34. Observability Boundary Revision
+## 34. Observability Boundary Revision
 
 EPIC-OBS-001 remains authoritative for general observability.
 
@@ -691,7 +691,7 @@ Security may consume observability evidence for:
 
 ---
 
-# 35. Plugin Compliance Boundary Revision
+## 35. Plugin Compliance Boundary Revision
 
 EPIC-PLUGIN-002 remains authoritative for plugin compliance.
 
@@ -699,7 +699,7 @@ Security requirements may become plugin compliance criteria.
 
 ---
 
-# 36. Post-Release Governance Evolution
+## 36. Post-Release Governance Evolution
 
 After the publication of version `5.0.0`, the FamilyOS framework governance model evolved.
 
@@ -719,7 +719,7 @@ EPIC-SEC-001 did not contain this layer in its historical publication.
 
 ---
 
-# 37. Post-Release Normalization
+## 37. Post-Release Normalization
 
 The current normalization adds:
 
@@ -745,7 +745,7 @@ These control documents improve:
 
 ---
 
-# 38. Current Repository Structure
+## 38. Current Repository Structure
 
 The normalized current repository contains:
 
@@ -765,7 +765,7 @@ Current canonical range remains:
 
 ---
 
-# 39. Historical vs Current Structure
+## 39. Historical vs Current Structure
 
 Historical release:
 
@@ -787,7 +787,7 @@ The second state SHALL NOT be attributed retroactively to the first.
 
 ---
 
-# 40. Machine-Readable Normalization
+## 40. Machine-Readable Normalization
 
 The current normalization introduces:
 
@@ -812,7 +812,7 @@ It records:
 
 ---
 
-# 41. Manifest Normalization
+## 41. Manifest Normalization
 
 The normalization introduces:
 
@@ -826,7 +826,7 @@ It establishes the current expected seventeen-file repository structure.
 
 ---
 
-# 42. Validation Normalization
+## 42. Validation Normalization
 
 The normalization introduces:
 
@@ -840,7 +840,7 @@ It distinguishes historical publication evidence from current repository evidenc
 
 ---
 
-# 43. Changelog Normalization
+## 43. Changelog Normalization
 
 The normalization introduces:
 
@@ -856,7 +856,7 @@ to preserve:
 
 ---
 
-# 44. README Normalization
+## 44. README Normalization
 
 The normalization introduces:
 
@@ -870,7 +870,7 @@ It does not replace the normative numbered framework documents.
 
 ---
 
-# 45. EPIC Control Summary
+## 45. EPIC Control Summary
 
 The normalization introduces:
 
@@ -882,7 +882,7 @@ as the consolidated control-level summary of the framework.
 
 ---
 
-# 46. Current Validation State
+## 46. Current Validation State
 
 Current revalidation state:
 
@@ -895,7 +895,7 @@ This state SHALL remain pending until actual repository validation evidence is r
 
 ---
 
-# 47. Current Revalidation Scope
+## 47. Current Revalidation Scope
 
 The current revalidation includes:
 
@@ -933,7 +933,7 @@ Final Repository Cleanliness
 
 ---
 
-# 48. Validation Evidence Policy
+## 48. Validation Evidence Policy
 
 The required validation sequence is:
 
@@ -951,7 +951,7 @@ Historical validation evidence does not automatically prove the current normaliz
 
 ---
 
-# 49. Historical Evidence Already Observed
+## 49. Historical Evidence Already Observed
 
 The following historical evidence has already been observed:
 
@@ -969,7 +969,7 @@ These findings describe the historical publication only.
 
 ---
 
-# 50. Current Repository Evidence
+## 50. Current Repository Evidence
 
 Current repository validation evidence remains to be collected after all seven control documents are present and synchronized.
 
@@ -982,11 +982,11 @@ Final Revalidation:     Validated
 
 ---
 
-# 51. Revision Classification
+## 51. Revision Classification
 
 Future Security Framework changes may be classified as follows.
 
-## Editorial
+### Editorial
 
 Examples:
 
@@ -1003,7 +1003,7 @@ Usually none
 
 ---
 
-## Repository Normalization
+### Repository Normalization
 
 Examples:
 
@@ -1023,7 +1023,7 @@ when normative framework semantics remain unchanged.
 
 ---
 
-## Compatible Semantic Change
+### Compatible Semantic Change
 
 Examples:
 
@@ -1042,7 +1042,7 @@ subject to FamilyOS release governance.
 
 ---
 
-## Breaking Semantic Change
+### Breaking Semantic Change
 
 Examples:
 
@@ -1062,7 +1062,7 @@ subject to governance.
 
 ---
 
-# 52. Historical State Policy
+## 52. Historical State Policy
 
 Historical lifecycle states may remain when clearly identified as historical.
 
@@ -1080,7 +1080,7 @@ They SHALL NOT be interpreted as the current control-document lifecycle state af
 
 ---
 
-# 53. Current State Policy
+## 53. Current State Policy
 
 Current control documents SHALL distinguish:
 
@@ -1100,7 +1100,7 @@ Only current repository revalidation remains pending.
 
 ---
 
-# 54. Historical `00-EPIC.md` State
+## 54. Historical `00-EPIC.md` State
 
 The historical `00-EPIC.md` records:
 
@@ -1119,7 +1119,7 @@ The new control layer provides the current lifecycle truth without rewriting his
 
 ---
 
-# 55. Current Control State
+## 55. Current Control State
 
 The normalized control state is:
 
@@ -1136,7 +1136,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 56. Repository Completion Conditions
+## 56. Repository Completion Conditions
 
 Current normalization becomes technically complete when:
 
@@ -1158,7 +1158,7 @@ Current normalization becomes technically complete when:
 
 ---
 
-# 57. Post-Release Correction Conditions
+## 57. Post-Release Correction Conditions
 
 The normalization workflow becomes fully complete when:
 
@@ -1173,7 +1173,7 @@ The normalization workflow becomes fully complete when:
 
 ---
 
-# 58. Future Security Framework Evolution
+## 58. Future Security Framework Evolution
 
 Future revisions may introduce:
 
@@ -1196,7 +1196,7 @@ Future revisions SHALL preserve historical version `5.0.0` publication evidence.
 
 ---
 
-# 59. Current Revision State
+## 59. Current Revision State
 
 ```text
 EPIC:                    EPIC-SEC-001
@@ -1227,7 +1227,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 60. Current Validation Evidence Status
+## 60. Current Validation Evidence Status
 
 Historical publication evidence has been established.
 
@@ -1243,7 +1243,7 @@ Until current evidence is complete, this revision history SHALL NOT claim final 
 
 ---
 
-# 61. Final Revision Principle
+## 61. Final Revision Principle
 
 EPIC-SEC-001 version `5.0.0` established the canonical FamilyOS Security Framework.
 

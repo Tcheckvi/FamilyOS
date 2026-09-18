@@ -1,8 +1,8 @@
 # Security Framework
 
-# 09 Validation and Release
+## 09 Validation and Release
 
-## Overview
+### Overview
 
 Security validation and release governance establish the final assurance mechanisms required before FamilyOS software, plugins, artifacts, configurations, or platform changes are considered eligible for release.
 
@@ -22,7 +22,7 @@ Security readiness requires explicit validation.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to establish the FamilyOS requirements for:
 
@@ -53,7 +53,7 @@ The objective is to ensure that every FamilyOS release preserves the security gu
 
 ---
 
-# Security Validation Objectives
+## Security Validation Objectives
 
 Security validation MUST provide sufficient confidence that:
 
@@ -74,7 +74,7 @@ Validation SHOULD be proportional to release risk.
 
 ---
 
-# Validation Model
+## Validation Model
 
 The FamilyOS security validation model is:
 
@@ -111,7 +111,7 @@ Every significant release SHOULD follow this model.
 
 ---
 
-# Validation Principles
+## Validation Principles
 
 Security validation MUST follow several principles.
 
@@ -129,7 +129,7 @@ Validation MUST NOT depend exclusively on informal confidence or individual memo
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 The validation scope MUST correspond to the actual release scope.
 
@@ -151,7 +151,7 @@ The scope SHOULD identify security-sensitive changes explicitly.
 
 ---
 
-# Change-Based Validation
+## Change-Based Validation
 
 Not every release requires identical security validation.
 
@@ -174,7 +174,7 @@ Changes affecting security-critical components SHOULD trigger stronger validatio
 
 ---
 
-# Security-Critical Changes
+## Security-Critical Changes
 
 Security-critical changes include modifications to:
 
@@ -195,7 +195,7 @@ Such changes SHOULD receive explicit security review.
 
 ---
 
-# Validation Planning
+## Validation Planning
 
 Security validation SHOULD be planned before release execution.
 
@@ -214,7 +214,7 @@ For significant releases, validation requirements SHOULD be known before the fin
 
 ---
 
-# Validation Layers
+## Validation Layers
 
 Security validation SHOULD occur at multiple engineering layers.
 
@@ -244,7 +244,7 @@ Earlier validation reduces the probability of discovering critical issues during
 
 ---
 
-# Developer Security Validation
+## Developer Security Validation
 
 Developers SHOULD validate security-sensitive changes before integration.
 
@@ -262,7 +262,7 @@ Local validation SHOULD provide rapid feedback.
 
 ---
 
-# Pull Request Security Validation
+## Pull Request Security Validation
 
 Pull requests SHOULD trigger security validation appropriate to the changed components.
 
@@ -279,7 +279,7 @@ Security failures SHOULD be visible during review.
 
 ---
 
-# Continuous Integration Validation
+## Continuous Integration Validation
 
 CI SHOULD automate repeatable security validation.
 
@@ -317,7 +317,7 @@ Required security validation MUST NOT be silently skipped.
 
 ---
 
-# Security Test Validation
+## Security Test Validation
 
 Security-related tests MUST pass before release unless an approved exception explicitly permits otherwise.
 
@@ -338,7 +338,7 @@ Negative security tests are particularly important.
 
 ---
 
-# Negative Security Validation
+## Negative Security Validation
 
 FamilyOS MUST verify that prohibited behavior fails correctly.
 
@@ -367,7 +367,7 @@ Successful-path testing alone is insufficient.
 
 ---
 
-# Authentication Validation
+## Authentication Validation
 
 Authentication validation SHOULD verify:
 
@@ -384,7 +384,7 @@ Security-sensitive authentication changes SHOULD receive regression testing.
 
 ---
 
-# Authorization Validation
+## Authorization Validation
 
 Authorization validation MUST verify both allowed and denied operations.
 
@@ -403,7 +403,7 @@ Unknown authorization states SHOULD result in denial.
 
 ---
 
-# Data Protection Validation
+## Data Protection Validation
 
 Data-protection validation SHOULD verify:
 
@@ -419,7 +419,7 @@ Validation SHOULD reflect the classification of the affected information.
 
 ---
 
-# Secret Validation
+## Secret Validation
 
 Release validation MUST verify that production secrets have not been unintentionally included in release materials.
 
@@ -436,7 +436,7 @@ Detected real secrets MUST be treated as potentially compromised.
 
 ---
 
-# Secret Scanning
+## Secret Scanning
 
 Automated secret scanning SHOULD be integrated into engineering workflows.
 
@@ -462,7 +462,7 @@ A secret removed from the latest revision MAY still require rotation if it previ
 
 ---
 
-# Cryptographic Validation
+## Cryptographic Validation
 
 Cryptographic validation SHOULD verify:
 
@@ -479,7 +479,7 @@ Deprecated cryptography SHOULD fail applicable validation gates.
 
 ---
 
-# Key and Credential Validation
+## Key and Credential Validation
 
 Security validation SHOULD verify that release processes do not expose:
 
@@ -493,7 +493,7 @@ Production credentials MUST remain appropriately isolated.
 
 ---
 
-# Dependency Validation
+## Dependency Validation
 
 Dependencies MUST be evaluated before release according to their security risk.
 
@@ -510,7 +510,7 @@ Critical dependency vulnerabilities SHOULD block release unless explicitly gover
 
 ---
 
-# Transitive Dependencies
+## Transitive Dependencies
 
 Security validation SHOULD consider transitive dependencies where tooling and risk justify it.
 
@@ -520,7 +520,7 @@ Dependency visibility SHOULD therefore extend beyond explicitly declared top-lev
 
 ---
 
-# Supply Chain Validation
+## Supply Chain Validation
 
 FamilyOS release validation SHOULD protect the software supply chain.
 
@@ -538,7 +538,7 @@ Supply chain trust MUST be evidence-based.
 
 ---
 
-# Plugin Security Validation
+## Plugin Security Validation
 
 Plugins MUST satisfy applicable security requirements before release.
 
@@ -558,7 +558,7 @@ Official plugin status MUST NOT bypass validation.
 
 ---
 
-# Plugin Capability Validation
+## Plugin Capability Validation
 
 Declared plugin capabilities SHOULD match actual behavior.
 
@@ -573,7 +573,7 @@ Validation SHOULD identify:
 
 ---
 
-# Plugin Compliance Validation
+## Plugin Compliance Validation
 
 Plugin security validation MUST integrate with EPIC-PLUGIN-002 — Plugin Compliance Framework.
 
@@ -583,7 +583,7 @@ A non-compliant security-critical plugin SHOULD block release.
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Security configuration MUST be validated before production release.
 
@@ -601,7 +601,7 @@ Development defaults MUST NOT silently become production configuration.
 
 ---
 
-# Infrastructure Validation
+## Infrastructure Validation
 
 Where infrastructure is part of the release scope, validation SHOULD verify:
 
@@ -617,7 +617,7 @@ Infrastructure security MUST be considered part of release security.
 
 ---
 
-# Build Validation
+## Build Validation
 
 Security release validation depends on a trustworthy build.
 
@@ -633,7 +633,7 @@ The Security Framework integrates with EPIC-BLD-001 — Build Framework for thes
 
 ---
 
-# Build Environment Security
+## Build Environment Security
 
 The build environment SHOULD be protected against unauthorized modification.
 
@@ -648,7 +648,7 @@ Untrusted code MUST NOT automatically receive privileged release credentials.
 
 ---
 
-# Artifact Validation
+## Artifact Validation
 
 Release artifacts MUST correspond to the intended release source.
 
@@ -664,7 +664,7 @@ Release artifacts SHOULD NOT contain unnecessary development files, secrets, or 
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Important artifacts SHOULD have cryptographic integrity information.
 
@@ -684,7 +684,7 @@ Consumers or deployment processes SHOULD be able to verify integrity where requi
 
 ---
 
-# Artifact Signing
+## Artifact Signing
 
 High-trust release artifacts MAY be digitally signed.
 
@@ -700,7 +700,7 @@ A signature MUST NOT be trusted solely because it is cryptographically valid; th
 
 ---
 
-# Provenance
+## Provenance
 
 FamilyOS SHOULD maintain sufficient provenance to determine how an artifact was produced.
 
@@ -718,7 +718,7 @@ Provenance strengthens supply chain assurance.
 
 ---
 
-# Release Traceability
+## Release Traceability
 
 A FamilyOS release SHOULD be traceable across:
 
@@ -748,7 +748,7 @@ Security-relevant evidence SHOULD be associated with the corresponding release.
 
 ---
 
-# Security Evidence
+## Security Evidence
 
 Release security decisions MUST rely on sufficient evidence.
 
@@ -768,7 +768,7 @@ Evidence SHOULD be reproducible where practical.
 
 ---
 
-# Evidence Completeness
+## Evidence Completeness
 
 Security evidence SHOULD demonstrate that all mandatory validation categories applicable to the release have been evaluated.
 
@@ -788,7 +788,7 @@ Absence of evidence MUST NOT automatically be interpreted as successful validati
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Security evidence itself MUST be protected from unauthorized modification.
 
@@ -804,7 +804,7 @@ Evidence integrity is necessary for trustworthy release decisions.
 
 ---
 
-# Evidence Retention
+## Evidence Retention
 
 Security release evidence SHOULD be retained according to FamilyOS governance requirements.
 
@@ -820,7 +820,7 @@ Evidence SHOULD be associated with a specific release whenever possible.
 
 ---
 
-# Validation Status
+## Validation Status
 
 A security validation MAY produce statuses such as:
 
@@ -836,7 +836,7 @@ Status semantics MUST remain consistent.
 
 ---
 
-# PASS
+## PASS
 
 PASS indicates that:
 
@@ -849,7 +849,7 @@ PASS allows progression to release authorization.
 
 ---
 
-# FAIL
+## FAIL
 
 FAIL indicates that one or more blocking security conditions are unsatisfied.
 
@@ -857,7 +857,7 @@ A failed security validation MUST prevent ordinary release progression.
 
 ---
 
-# PASS WITH EXCEPTION
+## PASS WITH EXCEPTION
 
 PASS_WITH_EXCEPTION MAY be used when an approved security exception permits release despite a known deviation.
 
@@ -867,7 +867,7 @@ This status MUST NOT be used to bypass unreviewed failures.
 
 ---
 
-# INCOMPLETE
+## INCOMPLETE
 
 INCOMPLETE indicates that required validation or evidence is missing.
 
@@ -875,7 +875,7 @@ An incomplete security assessment MUST NOT be interpreted as PASS.
 
 ---
 
-# Release Security Gate
+## Release Security Gate
 
 The release security gate evaluates whether the release satisfies mandatory security conditions.
 
@@ -904,7 +904,7 @@ The result MUST be explicit.
 
 ---
 
-# Baseline Release Gate
+## Baseline Release Gate
 
 A standard FamilyOS security release gate SHOULD require:
 
@@ -923,7 +923,7 @@ Specific releases MAY impose additional requirements.
 
 ---
 
-# Release Blocking Criteria
+## Release Blocking Criteria
 
 A release SHOULD be blocked when conditions include:
 
@@ -941,7 +941,7 @@ Blocking criteria SHOULD remain explicit and objective.
 
 ---
 
-# Critical Findings
+## Critical Findings
 
 Unresolved critical findings MUST normally block release.
 
@@ -957,7 +957,7 @@ Exceptions for critical findings SHOULD be extremely rare and require explicit g
 
 ---
 
-# High-Severity Findings
+## High-Severity Findings
 
 High-severity findings SHOULD normally block release.
 
@@ -972,7 +972,7 @@ Convenience alone is not sufficient justification.
 
 ---
 
-# Medium and Low Findings
+## Medium and Low Findings
 
 Medium and low findings MAY be permitted depending on risk.
 
@@ -987,7 +987,7 @@ Accumulation of lower-severity findings SHOULD be considered during release asse
 
 ---
 
-# Security Exceptions
+## Security Exceptions
 
 Release security exceptions MUST follow the exception-management requirements defined by the Security Framework.
 
@@ -1005,7 +1005,7 @@ An exception MUST identify:
 
 ---
 
-# Release Authorization
+## Release Authorization
 
 Passing automated gates does not necessarily constitute final release authorization.
 
@@ -1022,7 +1022,7 @@ The authorized release MUST correspond to the validated artifact.
 
 ---
 
-# Release Decision
+## Release Decision
 
 The final security release decision SHOULD be one of:
 
@@ -1036,7 +1036,7 @@ The decision SHOULD be recorded for significant releases.
 
 ---
 
-# Separation of Duties
+## Separation of Duties
 
 High-risk releases MAY require separation between:
 
@@ -1050,7 +1050,7 @@ The level of separation SHOULD reflect actual release risk.
 
 ---
 
-# Release Identity
+## Release Identity
 
 Every release SHOULD have a stable identity.
 
@@ -1066,7 +1066,7 @@ The release identity MUST allow validation evidence to be connected to the exact
 
 ---
 
-# Git Tag Security
+## Git Tag Security
 
 Git tags used as authoritative release references SHOULD be protected according to release importance.
 
@@ -1078,7 +1078,7 @@ Tags MUST NOT be moved silently after release.
 
 ---
 
-# Version Integrity
+## Version Integrity
 
 The declared release version MUST match the version embedded in relevant artifacts and release metadata.
 
@@ -1086,7 +1086,7 @@ Version mismatches SHOULD fail release validation.
 
 ---
 
-# Release Documentation
+## Release Documentation
 
 Security-relevant release documentation SHOULD include:
 
@@ -1101,7 +1101,7 @@ Documentation MUST follow EPIC-DOC-001 — Documentation Framework.
 
 ---
 
-# Release Manifest
+## Release Manifest
 
 A release manifest MAY provide a structured inventory of the release.
 
@@ -1123,7 +1123,7 @@ The manifest SHOULD be generated or verified from authoritative release informat
 
 ---
 
-# Security Release Record
+## Security Release Record
 
 A significant FamilyOS release SHOULD have a security release record.
 
@@ -1162,7 +1162,7 @@ This record provides concise security assurance evidence.
 
 ---
 
-# Release Automation
+## Release Automation
 
 Security release validation SHOULD be automated where practical.
 
@@ -1177,7 +1177,7 @@ Automation MUST NOT allow mandatory checks to disappear silently.
 
 ---
 
-# Release Pipeline Security
+## Release Pipeline Security
 
 The release pipeline itself is security-sensitive.
 
@@ -1193,7 +1193,7 @@ Unauthorized modification of the release pipeline MUST be treated as a significa
 
 ---
 
-# Protected Release Credentials
+## Protected Release Credentials
 
 Release credentials SHOULD be:
 
@@ -1207,7 +1207,7 @@ Long-lived unrestricted publication credentials SHOULD be avoided.
 
 ---
 
-# Release Environment
+## Release Environment
 
 Release operations SHOULD execute in a controlled environment.
 
@@ -1223,7 +1223,7 @@ Release environments SHOULD be reproducible where practical.
 
 ---
 
-# Emergency Releases
+## Emergency Releases
 
 FamilyOS MAY require emergency releases for urgent security remediation.
 
@@ -1241,7 +1241,7 @@ Deferred validation MUST be completed afterward where applicable.
 
 ---
 
-# Security Hotfixes
+## Security Hotfixes
 
 Security hotfixes SHOULD remain narrowly scoped.
 
@@ -1255,7 +1255,7 @@ Narrow scope reduces:
 
 ---
 
-# Rollback Readiness
+## Rollback Readiness
 
 Security release planning SHOULD consider rollback before deployment.
 
@@ -1271,7 +1271,7 @@ Rollback MUST NOT restore known compromised security material.
 
 ---
 
-# Security Rollback
+## Security Rollback
 
 Rollback MAY be required when:
 
@@ -1285,7 +1285,7 @@ The rollback target MUST itself represent an acceptable trusted state.
 
 ---
 
-# Credential and Key Considerations During Rollback
+## Credential and Key Considerations During Rollback
 
 Rollback MUST NOT blindly restore revoked or compromised credentials.
 
@@ -1307,7 +1307,7 @@ Software rollback alone may not fully restore security.
 
 ---
 
-# Post-Release Validation
+## Post-Release Validation
 
 Security responsibilities continue after release.
 
@@ -1325,7 +1325,7 @@ Post-release checks SHOULD focus on risks that cannot be fully validated before 
 
 ---
 
-# Runtime Security Observation
+## Runtime Security Observation
 
 Security observability SHOULD provide evidence that released controls remain operational.
 
@@ -1343,7 +1343,7 @@ Runtime observation MUST integrate with the FamilyOS Observability Framework.
 
 ---
 
-# Configuration Drift
+## Configuration Drift
 
 A secure release can become insecure because of post-release configuration changes.
 
@@ -1360,7 +1360,7 @@ Material drift SHOULD trigger security review or remediation.
 
 ---
 
-# Newly Discovered Vulnerabilities
+## Newly Discovered Vulnerabilities
 
 A release that was secure at publication MAY later become affected by newly discovered vulnerabilities.
 
@@ -1375,7 +1375,7 @@ Release security status is therefore not permanently static.
 
 ---
 
-# Release Revocation
+## Release Revocation
 
 A release MAY need to be deprecated or revoked for security reasons.
 
@@ -1391,7 +1391,7 @@ Revocation SHOULD be communicated and traceable.
 
 ---
 
-# Security Validation Failure Handling
+## Security Validation Failure Handling
 
 When security validation fails:
 
@@ -1423,7 +1423,7 @@ Failed checks MUST NOT simply be rerun until ignored or hidden.
 
 ---
 
-# Revalidation
+## Revalidation
 
 Any remediation affecting a failed security control MUST be revalidated.
 
@@ -1438,7 +1438,7 @@ A fix is not complete until appropriate validation confirms it.
 
 ---
 
-# Validation Evidence Traceability
+## Validation Evidence Traceability
 
 Security evidence SHOULD connect directly to:
 
@@ -1458,7 +1458,7 @@ This relationship allows future reconstruction of release security state.
 
 ---
 
-# Validation and Testing Framework
+## Validation and Testing Framework
 
 Security validation MUST integrate with EPIC-TST-001 — Testing Framework.
 
@@ -1474,7 +1474,7 @@ EPIC-SEC-001 defines the security-specific expectations applied through those me
 
 ---
 
-# Validation and Quality Framework
+## Validation and Quality Framework
 
 Security validation MUST integrate with EPIC-QLT-001 — Quality Framework.
 
@@ -1484,7 +1484,7 @@ Security quality gates SHOULD participate in overall release readiness.
 
 ---
 
-# Validation and Build Framework
+## Validation and Build Framework
 
 Security validation MUST integrate with EPIC-BLD-001 — Build Framework.
 
@@ -1494,7 +1494,7 @@ Security validation MUST ensure that the artifact being released corresponds to 
 
 ---
 
-# Validation and Release Framework
+## Validation and Release Framework
 
 EPIC-REL-001 — Release Framework defines the broader FamilyOS release lifecycle.
 
@@ -1523,7 +1523,7 @@ Security validation MUST NOT create an unrelated parallel release process.
 
 ---
 
-# Validation and Documentation Framework
+## Validation and Documentation Framework
 
 Security validation evidence and release documentation MUST follow EPIC-DOC-001 — Documentation Framework.
 
@@ -1538,7 +1538,7 @@ Security release evidence SHOULD be understandable by future maintainers.
 
 ---
 
-# Validation and Plugin Compliance
+## Validation and Plugin Compliance
 
 EPIC-PLUGIN-002 — Plugin Compliance Framework provides plugin-specific compliance mechanisms.
 
@@ -1548,7 +1548,7 @@ Security controls remain authoritative for security requirements while plugin co
 
 ---
 
-# Validation and Observability
+## Validation and Observability
 
 The FamilyOS Observability Framework provides runtime evidence after release.
 
@@ -1558,7 +1558,7 @@ Post-release observability then confirms whether security assumptions remain val
 
 ---
 
-# Validation Governance
+## Validation Governance
 
 Security validation rules MUST be governed.
 
@@ -1574,7 +1574,7 @@ Governance SHOULD prevent:
 
 ---
 
-# Validation Exceptions
+## Validation Exceptions
 
 Validation exceptions MUST remain visible.
 
@@ -1592,7 +1592,7 @@ This preserves evidence integrity.
 
 ---
 
-# Release Security Metrics
+## Release Security Metrics
 
 FamilyOS MAY track security release metrics such as:
 
@@ -1608,7 +1608,7 @@ Metrics SHOULD support improvement rather than encourage bypassing controls.
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Release validation SHOULD evolve based on:
 
@@ -1624,7 +1624,7 @@ Every significant security failure SHOULD be considered as potential input for i
 
 ---
 
-# Validation Invariants
+## Validation Invariants
 
 The following invariants apply across FamilyOS:
 
@@ -1646,7 +1646,7 @@ The following invariants apply across FamilyOS:
 
 ---
 
-# Canonical Security Release Flow
+## Canonical Security Release Flow
 
 The canonical FamilyOS security release process is:
 
@@ -1706,7 +1706,7 @@ This flow ensures that security assurance continues from source change through r
 
 ---
 
-# Release Readiness Model
+## Release Readiness Model
 
 A FamilyOS release is security-ready only when:
 
@@ -1739,7 +1739,7 @@ No individual validation mechanism is sufficient on its own.
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 The FamilyOS Security Validation and Release model enables:
 
@@ -1762,7 +1762,7 @@ The FamilyOS Security Validation and Release model enables:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS security validation and release governance are based on the following principle:
 

@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 11 Test Data and Fixtures
+## 11 Test Data and Fixtures
 
-## Overview
+### Overview
 
 Test data and fixtures provide the controlled inputs, state, environments, and reusable setup required to execute FamilyOS tests reliably.
 
@@ -23,7 +23,7 @@ The objective is to provide tests with the minimum deterministic context require
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the FamilyOS test data and fixture strategy is to ensure that tests are supported by consistent, controlled, and reusable validation environments.
 
@@ -42,11 +42,11 @@ Fixtures should simplify test setup without obscuring what the test is actually 
 
 ---
 
-# Test Data Principles
+## Test Data Principles
 
 FamilyOS test data follows several fundamental principles.
 
-## Deterministic
+### Deterministic
 
 Given the same test and configuration, the same test data should produce the same expected result.
 
@@ -54,7 +54,7 @@ Test data should not depend on uncontrolled randomness or mutable external sourc
 
 ---
 
-## Minimal
+### Minimal
 
 Test data should contain only what is necessary to exercise the behavior under test.
 
@@ -62,7 +62,7 @@ Large datasets should not be used when a small representative dataset provides e
 
 ---
 
-## Explicit
+### Explicit
 
 Important test inputs should be visible from the test or clearly identifiable through well-named fixtures.
 
@@ -70,7 +70,7 @@ Fixtures must not hide critical behavioral conditions.
 
 ---
 
-## Synthetic
+### Synthetic
 
 Synthetic data should be preferred over copied production data.
 
@@ -83,7 +83,7 @@ This reduces:
 
 ---
 
-## Representative
+### Representative
 
 Synthetic does not mean unrealistic.
 
@@ -91,7 +91,7 @@ Test data should model the relevant characteristics of actual FamilyOS usage whe
 
 ---
 
-## Isolated
+### Isolated
 
 Each test should control the state it depends on.
 
@@ -99,7 +99,7 @@ Data created by one test must not become an implicit dependency of another.
 
 ---
 
-# Fixture Principles
+## Fixture Principles
 
 Fixtures provide reusable setup and teardown behavior.
 
@@ -117,7 +117,7 @@ Fixtures should support tests rather than becoming a second hidden application f
 
 ---
 
-# Fixture Scope
+## Fixture Scope
 
 Fixture scope should match the lifetime required by the test.
 
@@ -134,7 +134,7 @@ Broader fixture scopes can improve performance but introduce greater risk of sha
 
 ---
 
-# Function-Scoped Fixtures
+## Function-Scoped Fixtures
 
 Function-scoped fixtures provide the strongest default isolation.
 
@@ -155,7 +155,7 @@ This should be the default for mutable domain objects.
 
 ---
 
-# Module and Session Fixtures
+## Module and Session Fixtures
 
 Broader fixtures may be appropriate for expensive immutable resources.
 
@@ -171,7 +171,7 @@ Shared fixtures must not allow tests to modify state in ways that affect other t
 
 ---
 
-# Fixture Composition
+## Fixture Composition
 
 Fixtures should be composable.
 
@@ -200,7 +200,7 @@ Deep and difficult-to-understand dependency chains should be avoided.
 
 ---
 
-# Fixture Naming
+## Fixture Naming
 
 Fixture names should communicate what they provide.
 
@@ -229,7 +229,7 @@ Names should reflect role and state.
 
 ---
 
-# Fixture Factories
+## Fixture Factories
 
 Factories are preferable when tests need multiple variants of similar objects.
 
@@ -255,7 +255,7 @@ A test can then construct only the variation it requires.
 
 ---
 
-# Builder Patterns
+## Builder Patterns
 
 For complex domain objects, builders may improve readability.
 
@@ -277,7 +277,7 @@ They must not hide domain rules that the test should explicitly validate.
 
 ---
 
-# Default Test Objects
+## Default Test Objects
 
 Default test objects should represent simple valid states.
 
@@ -295,7 +295,7 @@ Tests requiring those conditions should request them explicitly.
 
 ---
 
-# Valid Test Data
+## Valid Test Data
 
 Valid test data should satisfy the normal domain or schema constraints.
 
@@ -312,7 +312,7 @@ Valid fixtures should serve as known-good references.
 
 ---
 
-# Invalid Test Data
+## Invalid Test Data
 
 Invalid test data is equally important.
 
@@ -332,7 +332,7 @@ This improves failure diagnosis.
 
 ---
 
-# Boundary Test Data
+## Boundary Test Data
 
 Boundary test data should represent significant limits and edge conditions.
 
@@ -353,7 +353,7 @@ Boundary data should be created purposefully rather than accidentally.
 
 ---
 
-# Random Test Data
+## Random Test Data
 
 Uncontrolled random data should not be used as a default testing strategy.
 
@@ -375,7 +375,7 @@ Randomized testing may still be useful for specialized property-based or fuzz te
 
 ---
 
-# Time-Based Test Data
+## Time-Based Test Data
 
 Tests that depend on current time should use controlled clocks.
 
@@ -399,7 +399,7 @@ This makes expected behavior reproducible.
 
 ---
 
-# Date and Time Zones
+## Date and Time Zones
 
 Where date or time behavior matters, test data should explicitly include timezone information.
 
@@ -415,7 +415,7 @@ Timezone-sensitive tests must not depend implicitly on the host machine timezone
 
 ---
 
-# Identifier Strategy
+## Identifier Strategy
 
 Test identifiers should be deterministic and meaningful.
 
@@ -435,7 +435,7 @@ When isolation requires uniqueness, deterministic namespaces or temporary resour
 
 ---
 
-# Personal Data
+## Personal Data
 
 FamilyOS may process sensitive family information.
 
@@ -455,7 +455,7 @@ Synthetic examples should be used instead.
 
 ---
 
-# Production Data
+## Production Data
 
 Production data must not be copied into routine automated test suites.
 
@@ -465,7 +465,7 @@ Such datasets must remain separate from normal source-controlled fixtures unless
 
 ---
 
-# Secrets
+## Secrets
 
 Test fixtures must never contain real secrets.
 
@@ -482,7 +482,7 @@ Tests requiring credentials should use dedicated test credentials, ephemeral sec
 
 ---
 
-# Filesystem Fixtures
+## Filesystem Fixtures
 
 Tests interacting with files should use temporary directories.
 
@@ -502,7 +502,7 @@ Tests should not write into repository directories or user home directories unle
 
 ---
 
-# Temporary Directories
+## Temporary Directories
 
 Temporary directories provide isolation for:
 
@@ -517,7 +517,7 @@ Temporary resources should be cleaned automatically after execution.
 
 ---
 
-# Database Fixtures
+## Database Fixtures
 
 Database tests require strong isolation.
 
@@ -534,7 +534,7 @@ The chosen strategy should match the realism required by the testing level.
 
 ---
 
-# Database Seeding
+## Database Seeding
 
 Database fixtures should seed only the records required by the test.
 
@@ -560,7 +560,7 @@ Large global seed datasets should be avoided because they create hidden dependen
 
 ---
 
-# Repository Fixtures
+## Repository Fixtures
 
 Repository fixtures should make state explicit.
 
@@ -576,7 +576,7 @@ Avoid generic fixtures that silently preload many unrelated objects.
 
 ---
 
-# Runtime Fixtures
+## Runtime Fixtures
 
 Runtime tests may require configured FamilyOS runtime instances.
 
@@ -593,7 +593,7 @@ The runtime should be created fresh for each relevant test unless safe reuse has
 
 ---
 
-# Plugin Fixtures
+## Plugin Fixtures
 
 Plugin testing may require fixtures representing different plugin states.
 
@@ -611,7 +611,7 @@ Fixtures should focus on the specific contract or lifecycle behavior being teste
 
 ---
 
-# Plugin Package Fixtures
+## Plugin Package Fixtures
 
 Some tests may need temporary plugin package structures.
 
@@ -630,7 +630,7 @@ Shared static plugin fixtures may be used when they represent canonical compatib
 
 ---
 
-# Capability Fixtures
+## Capability Fixtures
 
 Capability fixtures may provide:
 
@@ -644,7 +644,7 @@ Capability fixtures should preserve the public capability contract.
 
 ---
 
-# Contribution Fixtures
+## Contribution Fixtures
 
 FamilyOS plugins may contribute:
 
@@ -660,7 +660,7 @@ Contract fixtures should remain versioned where their format evolves.
 
 ---
 
-# Event Fixtures
+## Event Fixtures
 
 Event testing may require canonical events.
 
@@ -679,7 +679,7 @@ Events should use fixed timestamps and identifiers unless uniqueness is necessar
 
 ---
 
-# Configuration Fixtures
+## Configuration Fixtures
 
 Configuration tests should use explicit temporary configuration sources.
 
@@ -697,7 +697,7 @@ Configuration fixtures should be small enough that their purpose is immediately 
 
 ---
 
-# Serialization Fixtures
+## Serialization Fixtures
 
 Serialized representations may be maintained when format compatibility matters.
 
@@ -714,7 +714,7 @@ These fixtures should be treated as contract artifacts when backward compatibili
 
 ---
 
-# Golden Files
+## Golden Files
 
 Golden files represent known expected output.
 
@@ -732,7 +732,7 @@ Minor incidental formatting should not become a contractual requirement accident
 
 ---
 
-# Snapshot Testing
+## Snapshot Testing
 
 Snapshot testing may be used selectively.
 
@@ -748,7 +748,7 @@ Large snapshots that reviewers routinely approve without understanding are an an
 
 ---
 
-# Fixture Data Files
+## Fixture Data Files
 
 Static fixture files should be organized clearly.
 
@@ -769,7 +769,7 @@ Fixtures specific to one testing level may also reside close to that level.
 
 ---
 
-# Fixture Ownership
+## Fixture Ownership
 
 Fixtures should have clear ownership based on their use.
 
@@ -784,7 +784,7 @@ Global fixture directories should not become dumping grounds.
 
 ---
 
-# Shared Fixtures
+## Shared Fixtures
 
 Shared fixtures should exist only when multiple tests genuinely need the same setup semantics.
 
@@ -794,7 +794,7 @@ Duplication can sometimes be preferable to inappropriate abstraction.
 
 ---
 
-# conftest.py Usage
+## conftest.py Usage
 
 Pytest `conftest.py` files should be scoped carefully.
 
@@ -818,7 +818,7 @@ Root-level fixtures should provide genuinely universal test infrastructure.
 
 ---
 
-# Autouse Fixtures
+## Autouse Fixtures
 
 Autouse fixtures should be used sparingly.
 
@@ -834,7 +834,7 @@ Business or scenario setup should normally remain explicit.
 
 ---
 
-# Fixture Side Effects
+## Fixture Side Effects
 
 Fixtures should minimize side effects.
 
@@ -853,7 +853,7 @@ Cleanup should occur even when the test fails.
 
 ---
 
-# Environment Variable Fixtures
+## Environment Variable Fixtures
 
 Tests requiring environment variables should use controlled patching.
 
@@ -872,7 +872,7 @@ Tests must not depend on environment variables already present on the developer 
 
 ---
 
-# Working Directory Fixtures
+## Working Directory Fixtures
 
 Tests should avoid implicit dependence on the current working directory.
 
@@ -880,7 +880,7 @@ Where working directory behavior is being tested, it should be changed explicitl
 
 ---
 
-# Network Fixtures
+## Network Fixtures
 
 Normal tests should not depend on uncontrolled network resources.
 
@@ -895,7 +895,7 @@ External network access may be blocked globally during most automated test execu
 
 ---
 
-# External Service Fixtures
+## External Service Fixtures
 
 External service fixtures should expose deterministic behavior.
 
@@ -911,7 +911,7 @@ The fake should model the contract relevant to the test, not attempt to recreate
 
 ---
 
-# Fixture Cleanup
+## Fixture Cleanup
 
 Every fixture that allocates a resource must define a reliable cleanup strategy.
 
@@ -930,7 +930,7 @@ Cleanup should occur regardless of test success or failure.
 
 ---
 
-# Yield Fixtures
+## Yield Fixtures
 
 Pytest yield fixtures provide a clear setup and cleanup pattern.
 
@@ -951,7 +951,7 @@ Cleanup logic should remain robust even if partial setup fails.
 
 ---
 
-# Resource Leaks
+## Resource Leaks
 
 Test suites should detect or prevent resource leaks where practical.
 
@@ -969,7 +969,7 @@ Resource leaks can create order-dependent failures and unstable CI behavior.
 
 ---
 
-# Parallel Execution
+## Parallel Execution
 
 Fixtures must support parallel test execution where possible.
 
@@ -985,7 +985,7 @@ Parallel-safe fixtures should generate isolated resources for each worker.
 
 ---
 
-# Stable Ordering
+## Stable Ordering
 
 Fixture data should not rely on undefined ordering.
 
@@ -995,7 +995,7 @@ Otherwise assertions should compare order-independent representations when appro
 
 ---
 
-# Factory Libraries
+## Factory Libraries
 
 FamilyOS may introduce internal factory utilities for frequently created test objects.
 
@@ -1011,7 +1011,7 @@ Factories should not become complex alternate constructors that bypass domain in
 
 ---
 
-# Object Mother Pattern
+## Object Mother Pattern
 
 A centralized object-mother pattern may simplify complex test data, but it carries risks of hidden assumptions and overly broad defaults.
 
@@ -1019,7 +1019,7 @@ FamilyOS should prefer focused factories and builders unless a centralized patte
 
 ---
 
-# Property-Based Data
+## Property-Based Data
 
 Property-based testing can generate broad input coverage.
 
@@ -1031,7 +1031,7 @@ Property-based strategies should follow domain constraints rather than generate 
 
 ---
 
-# Fuzz Data
+## Fuzz Data
 
 Fuzz testing may use large or random input spaces for parsers, schemas, serialization, security-sensitive surfaces, or resilience validation.
 
@@ -1041,7 +1041,7 @@ Interesting failures discovered through fuzzing should become deterministic regr
 
 ---
 
-# Test Data Versioning
+## Test Data Versioning
 
 Test fixtures representing public or persistent formats should be versioned appropriately.
 
@@ -1057,7 +1057,7 @@ Version labels should make historical compatibility explicit.
 
 ---
 
-# Historical Fixtures
+## Historical Fixtures
 
 Historical fixtures protect compatibility with previously supported formats.
 
@@ -1074,7 +1074,7 @@ Historical fixtures should be retained for as long as their corresponding compat
 
 ---
 
-# Fixture Documentation
+## Fixture Documentation
 
 Most fixtures should be understandable through naming and code.
 
@@ -1090,7 +1090,7 @@ Documentation should not compensate for unnecessarily complex fixture design.
 
 ---
 
-# Test Data Review
+## Test Data Review
 
 Test data changes should receive the same engineering review as test logic.
 
@@ -1106,7 +1106,7 @@ Changes to golden or historical fixtures deserve particular attention.
 
 ---
 
-# Fixture Performance
+## Fixture Performance
 
 Fixtures can dominate test execution time.
 
@@ -1124,7 +1124,7 @@ Performance optimization must not sacrifice isolation.
 
 ---
 
-# Fixture Layering
+## Fixture Layering
 
 Fixture complexity should reflect test level.
 
@@ -1149,7 +1149,7 @@ System-level fixtures may provision complete runtime environments.
 
 ---
 
-# Test Harnesses
+## Test Harnesses
 
 When setup becomes genuinely complex, FamilyOS may provide reusable test harnesses.
 
@@ -1167,7 +1167,7 @@ It should not hide the behavior being validated.
 
 ---
 
-# Test Harness Example
+## Test Harness Example
 
 A plugin test harness might conceptually provide:
 
@@ -1184,7 +1184,7 @@ The harness centralizes infrastructure while preserving behavioral intent.
 
 ---
 
-# Test Data Security
+## Test Data Security
 
 Test data must follow FamilyOS security principles.
 
@@ -1200,7 +1200,7 @@ Security reviews may include test assets when sensitive domains are involved.
 
 ---
 
-# Test Data Privacy
+## Test Data Privacy
 
 FamilyOS handles family-oriented domains that may eventually include highly sensitive information.
 
@@ -1210,7 +1210,7 @@ A test does not need a real person's information to represent realistic domain b
 
 ---
 
-# Test Data Retention
+## Test Data Retention
 
 Temporary test data should be discarded after execution.
 
@@ -1220,7 +1220,7 @@ Obsolete compatibility fixtures should be removed only after their support requi
 
 ---
 
-# CI Environment Fixtures
+## CI Environment Fixtures
 
 CI test infrastructure should create the same logical fixture conditions available locally.
 
@@ -1230,7 +1230,7 @@ Environment-specific fixture behavior should be minimized.
 
 ---
 
-# Local and CI Consistency
+## Local and CI Consistency
 
 A test that passes locally should behave equivalently in CI when executed under supported environments.
 
@@ -1245,7 +1245,7 @@ Fixture design should prevent hidden dependence on:
 
 ---
 
-# Failure Diagnostics
+## Failure Diagnostics
 
 Fixture failures should be distinguishable from behavioral test failures.
 
@@ -1260,71 +1260,71 @@ Fixtures should fail early when their prerequisites cannot be established.
 
 ---
 
-# Fixture Anti-Patterns
+## Fixture Anti-Patterns
 
 The following practices should be avoided.
 
-## Giant Global Fixtures
+### Giant Global Fixtures
 
 A fixture that creates most of the platform for every test makes dependencies unclear and execution expensive.
 
 ---
 
-## Hidden Test Data
+### Hidden Test Data
 
 Critical values should not be buried deep inside generic fixtures.
 
 ---
 
-## Shared Mutable State
+### Shared Mutable State
 
 Tests should not mutate state that other tests depend on.
 
 ---
 
-## Real Production Data
+### Real Production Data
 
 Normal automated test suites should use synthetic data.
 
 ---
 
-## Random Everything
+### Random Everything
 
 Randomized values make diagnosis harder when uniqueness is not required.
 
 ---
 
-## Deep Fixture Chains
+### Deep Fixture Chains
 
 Long dependency graphs make tests difficult to understand.
 
 ---
 
-## Autouse Business Setup
+### Autouse Business Setup
 
 Scenario-specific setup should not happen invisibly.
 
 ---
 
-## Fixture Logic Testing the Application
+### Fixture Logic Testing the Application
 
 Fixtures should prepare state, not reproduce application behavior that the test is meant to validate.
 
 ---
 
-## Uncontrolled Environment State
+### Uncontrolled Environment State
 
 Tests must not depend on whatever configuration happens to exist on the execution machine.
 
 ---
 
-## Manual Cleanup
+### Manual Cleanup
 
 Cleanup should be automated and reliable.
 
 ---
 
-# Relationship With Unit Testing
+## Relationship With Unit Testing
 
 Unit testing relies on small, explicit fixtures.
 
@@ -1332,7 +1332,7 @@ Unit fixtures should minimize infrastructure and provide focused domain objects 
 
 ---
 
-# Relationship With Integration Testing
+## Relationship With Integration Testing
 
 Integration fixtures provide controlled real interactions.
 
@@ -1348,7 +1348,7 @@ Integration fixtures must preserve the boundary being validated.
 
 ---
 
-# Relationship With Functional Testing
+## Relationship With Functional Testing
 
 Functional fixtures provide enough application context to execute complete behavior through supported interfaces.
 
@@ -1356,7 +1356,7 @@ They should avoid exposing unnecessary internal implementation details.
 
 ---
 
-# Relationship With System Testing
+## Relationship With System Testing
 
 System testing may require complete disposable environments.
 
@@ -1364,7 +1364,7 @@ System fixtures should automate setup, execution context, and teardown.
 
 ---
 
-# Relationship With Contract Testing
+## Relationship With Contract Testing
 
 Contract fixtures define canonical valid and invalid representations.
 
@@ -1374,7 +1374,7 @@ Changes to them should be governed carefully.
 
 ---
 
-# Relationship With Regression Testing
+## Relationship With Regression Testing
 
 Regression tests may introduce fixtures reproducing historical failures.
 
@@ -1382,7 +1382,7 @@ Such fixtures should capture the smallest data state required to preserve the re
 
 ---
 
-# Relationship With Mocks and Test Doubles
+## Relationship With Mocks and Test Doubles
 
 Fixtures frequently provide test doubles.
 
@@ -1392,7 +1392,7 @@ Fixtures should make substituted dependencies explicit.
 
 ---
 
-# Quality Requirements
+## Quality Requirements
 
 FamilyOS test data and fixtures must be:
 
@@ -1410,7 +1410,7 @@ Fixture quality is part of test quality.
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Fixture-related defects may affect applicable quality gates.
 
@@ -1426,7 +1426,7 @@ Critical violations must be resolved before release promotion.
 
 ---
 
-# Governance
+## Governance
 
 Test data and fixture practices are governed by the FamilyOS Testing Framework and broader engineering governance.
 
@@ -1446,7 +1446,7 @@ Sensitive test data must additionally comply with applicable security and privac
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 FamilyOS test data infrastructure should evolve with platform complexity.
 
@@ -1468,7 +1468,7 @@ Evolution should reduce setup complexity while preserving visibility, isolation,
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 A FamilyOS test data and fixture implementation is aligned with this framework when:
 
@@ -1498,7 +1498,7 @@ A FamilyOS test data and fixture implementation is aligned with this framework w
 
 ---
 
-# Final Principle
+## Final Principle
 
 Test data and fixtures define the environment in which FamilyOS test results become trustworthy.
 

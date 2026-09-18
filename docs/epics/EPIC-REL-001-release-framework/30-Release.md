@@ -1,8 +1,8 @@
 # Release Framework
 
-# 30 Release
+## 30 Release
 
-## Overview
+### Overview
 
 This document defines the final release model for EPIC-REL-001 — Release Framework.
 
@@ -29,7 +29,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to establish the final release procedure for EPIC-REL-001.
 
@@ -53,7 +53,7 @@ This document is the transition point between framework construction and framewo
 
 ---
 
-# Release Scope
+## Release Scope
 
 The release governed by this document includes the complete EPIC-REL-001 Release Framework.
 
@@ -79,7 +79,7 @@ The released framework must represent one coherent repository state.
 
 ---
 
-# Release Objective
+## Release Objective
 
 The objective of the EPIC-REL-001 release is to establish the Release Framework as an official FamilyOS engineering foundation.
 
@@ -105,7 +105,7 @@ Future FamilyOS releases should progressively align with this framework.
 
 ---
 
-# Release Eligibility
+## Release Eligibility
 
 EPIC-REL-001 becomes eligible for release only when all mandatory framework requirements are satisfied.
 
@@ -127,7 +127,7 @@ It does not itself constitute release authorization.
 
 ---
 
-# Canonical Release State
+## Canonical Release State
 
 The framework release must correspond to one exact source-control state.
 
@@ -159,7 +159,7 @@ The exact commit and tag must define the official state.
 
 ---
 
-# Release Preconditions
+## Release Preconditions
 
 Before final release preparation begins, the following conditions should be satisfied:
 
@@ -180,7 +180,7 @@ If these conditions are not satisfied, release preparation should stop.
 
 ---
 
-# Final Structural Review
+## Final Structural Review
 
 The framework inventory must be reviewed one final time.
 
@@ -210,7 +210,7 @@ The canonical inventory should be compared with the framework manifest.
 
 ---
 
-# Numbering Verification
+## Numbering Verification
 
 Numbered documents must be checked for uniqueness.
 
@@ -228,7 +228,7 @@ Release publication must not proceed with conflicting canonical document numbers
 
 ---
 
-# Content Verification
+## Content Verification
 
 Final content review should confirm that documents are substantive and not placeholders.
 
@@ -246,7 +246,7 @@ A non-empty file is not automatically release-ready.
 
 ---
 
-# Placeholder Detection
+## Placeholder Detection
 
 Where practical, the framework should be checked for unresolved markers such as:
 
@@ -264,7 +264,7 @@ Therefore, detected occurrences require review rather than unconditional automat
 
 ---
 
-# Cross-Document Review
+## Cross-Document Review
 
 The final release review must ensure that all major release concepts remain consistent across the framework.
 
@@ -285,7 +285,7 @@ Conflicting normative rules must be resolved before release.
 
 ---
 
-# Framework Relationship Review
+## Framework Relationship Review
 
 The Release Framework must be aligned with existing FamilyOS foundations.
 
@@ -304,7 +304,7 @@ The Release Framework must not silently redefine responsibilities owned by those
 
 ---
 
-# Final Validation
+## Final Validation
 
 `28-Validation.md` defines the formal validation model.
 
@@ -340,7 +340,7 @@ must not be published as complete.
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Final release evidence should include or reference:
 
@@ -358,7 +358,7 @@ Evidence must correspond to the actual state being released.
 
 ---
 
-# Metadata Synchronization
+## Metadata Synchronization
 
 All release-related metadata must describe the same framework state.
 
@@ -378,7 +378,7 @@ Where present, these must be synchronized before release.
 
 ---
 
-# EPIC Metadata
+## EPIC Metadata
 
 The EPIC metadata should identify at least:
 
@@ -394,7 +394,7 @@ The release state should no longer indicate an earlier incomplete lifecycle stat
 
 ---
 
-# Manifest Synchronization
+## Manifest Synchronization
 
 The framework manifest should reflect the final canonical inventory.
 
@@ -409,7 +409,7 @@ The manifest becomes part of release evidence.
 
 ---
 
-# Changelog Preparation
+## Changelog Preparation
 
 The changelog should record the framework release.
 
@@ -425,7 +425,7 @@ The changelog should describe the framework as released, not as planned.
 
 ---
 
-# Revision History
+## Revision History
 
 Revision history should record the framework's transition to its official release version.
 
@@ -442,7 +442,7 @@ The release entry should correspond to the final release tag.
 
 ---
 
-# Validation Status Artifact
+## Validation Status Artifact
 
 If a dedicated validation status file exists, it must be updated before release.
 
@@ -459,7 +459,7 @@ The exact format is governed by FamilyOS documentation conventions.
 
 ---
 
-# Release Version
+## Release Version
 
 The framework must receive an explicit version.
 
@@ -477,7 +477,7 @@ The version must remain consistent across:
 
 ---
 
-# Version Consistency
+## Version Consistency
 
 The final release validation should reject inconsistent states such as:
 
@@ -494,7 +494,7 @@ If separate version dimensions exist, they must be clearly documented.
 
 ---
 
-# Release Commit
+## Release Commit
 
 The final release should correspond to a dedicated commit or a clearly identifiable final framework commit.
 
@@ -510,7 +510,7 @@ The exact commit convention should follow FamilyOS repository standards.
 
 ---
 
-# Pre-Commit Verification
+## Pre-Commit Verification
 
 Before creating the final commit:
 
@@ -526,7 +526,7 @@ Unexpected modifications must be investigated.
 
 ---
 
-# Commit Review
+## Commit Review
 
 After committing, verify:
 
@@ -547,7 +547,7 @@ A dirty working tree should be investigated before final release.
 
 ---
 
-# Release Tag
+## Release Tag
 
 The official framework release must be associated with an immutable annotated Git tag.
 
@@ -562,7 +562,7 @@ The exact tag name must follow the active FamilyOS versioning strategy.
 
 ---
 
-# Tag Verification
+## Tag Verification
 
 Before publishing the tag, verify:
 
@@ -576,7 +576,7 @@ The release tag must not be created from an unintended commit.
 
 ---
 
-# Tag Immutability
+## Tag Immutability
 
 Once published, an official release tag must not be silently reassigned.
 
@@ -599,7 +599,7 @@ rather than mutating the previous release identity.
 
 ---
 
-# Remote Publication
+## Remote Publication
 
 The release commit and release tag should be pushed to the canonical remote.
 
@@ -614,7 +614,7 @@ Publication should occur only after local release verification succeeds.
 
 ---
 
-# Remote Verification
+## Remote Verification
 
 After push, verify that:
 
@@ -627,7 +627,7 @@ Release completion should not rely solely on the push command returning without 
 
 ---
 
-# Release Notes
+## Release Notes
 
 Where a formal release entry is published, release notes should summarize the significance of EPIC-REL-001.
 
@@ -647,7 +647,7 @@ The release notes should remain concise and link back to canonical framework doc
 
 ---
 
-# Framework Release Evidence
+## Framework Release Evidence
 
 The final framework release should be traceable through a minimal evidence chain:
 
@@ -671,7 +671,7 @@ This proves both content completion and repository publication.
 
 ---
 
-# Release Acceptance
+## Release Acceptance
 
 The Release Framework is officially accepted when all mandatory release conditions are met.
 
@@ -692,7 +692,7 @@ Only then should the EPIC lifecycle state be considered complete.
 
 ---
 
-# Framework Status Transition
+## Framework Status Transition
 
 The framework lifecycle may transition conceptually through:
 
@@ -718,7 +718,7 @@ The essential requirement is that the final state accurately reflects release co
 
 ---
 
-# Post-Release Verification
+## Post-Release Verification
 
 After publication, the framework should undergo a final verification.
 
@@ -735,7 +735,7 @@ This confirms that the publication operation did not create inconsistencies.
 
 ---
 
-# Post-Release Repository Check
+## Post-Release Repository Check
 
 A final repository check may include:
 
@@ -755,7 +755,7 @@ The output should show:
 
 ---
 
-# Release Failure
+## Release Failure
 
 If release publication fails, the process must stop and determine the actual repository state.
 
@@ -774,7 +774,7 @@ First determine what succeeded and what did not.
 
 ---
 
-# Failed Tag Publication
+## Failed Tag Publication
 
 If the branch push succeeds but tag push fails:
 
@@ -793,7 +793,7 @@ There is normally no reason to create a different release commit solely because 
 
 ---
 
-# Incorrect Local Tag
+## Incorrect Local Tag
 
 If an unpublished local tag points to the wrong commit, it may be corrected before publication according to Git governance.
 
@@ -803,7 +803,7 @@ A corrective version should normally be created.
 
 ---
 
-# Release Rollback
+## Release Rollback
 
 The Release Framework itself is documentation and governance content.
 
@@ -820,7 +820,7 @@ Historical released versions should remain traceable.
 
 ---
 
-# Normative Correction
+## Normative Correction
 
 Material normative corrections should receive a new version.
 
@@ -837,7 +837,7 @@ Silent modification of released normative behavior should be avoided.
 
 ---
 
-# Editorial Correction
+## Editorial Correction
 
 Minor editorial corrections may follow the applicable FamilyOS documentation versioning policy.
 
@@ -852,7 +852,7 @@ The distinction between editorial and normative change must remain clear.
 
 ---
 
-# Release Closure
+## Release Closure
 
 After successful release, the EPIC should be formally closed.
 
@@ -873,7 +873,7 @@ Unfinished future capabilities should be tracked as roadmap items rather than le
 
 ---
 
-# Deferred Implementation
+## Deferred Implementation
 
 EPIC-REL-001 defines the Release Framework architecture and governance.
 
@@ -893,7 +893,7 @@ It does not require every roadmap stage to be complete.
 
 ---
 
-# Release Framework Baseline
+## Release Framework Baseline
 
 The released framework becomes the baseline for future FamilyOS release engineering work.
 
@@ -914,7 +914,7 @@ This prevents release engineering from evolving through disconnected local conve
 
 ---
 
-# Relationship With Future EPICs
+## Relationship With Future EPICs
 
 Future EPICs may implement capabilities defined by the Release Framework.
 
@@ -931,7 +931,7 @@ Such EPICs should reference EPIC-REL-001 rather than redefine release governance
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 The Build Framework creates trusted artifacts.
 
@@ -954,7 +954,7 @@ Both frameworks together establish reproducible delivery.
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 Testing produces release confidence evidence.
 
@@ -964,7 +964,7 @@ The release of EPIC-REL-001 formalizes this integration.
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 Quality defines expectations and quality gates.
 
@@ -972,7 +972,7 @@ The Release Framework determines how those outcomes participate in production au
 
 ---
 
-# Relationship With Plugin Compliance Framework
+## Relationship With Plugin Compliance Framework
 
 Plugin compliance determines whether plugins satisfy platform compliance requirements.
 
@@ -982,7 +982,7 @@ This separation must remain explicit.
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 The Documentation Framework governs how the Release Framework itself is structured, maintained, versioned, and evolved as engineering documentation.
 
@@ -990,7 +990,7 @@ EPIC-REL-001 must therefore remain compliant with canonical FamilyOS documentati
 
 ---
 
-# Release Governance
+## Release Governance
 
 The release of EPIC-REL-001 is governed by the same principles it introduces:
 
@@ -1006,7 +1006,7 @@ This provides a practical demonstration that the framework can govern itself.
 
 ---
 
-# Release Checklist
+## Release Checklist
 
 Before final publication:
 
@@ -1041,7 +1041,7 @@ All mandatory items must be satisfied before formal closure.
 
 ---
 
-# Final Release Verification
+## Final Release Verification
 
 After publication:
 
@@ -1059,7 +1059,7 @@ This completes the release procedure.
 
 ---
 
-# Release Outcomes
+## Release Outcomes
 
 Successful release of EPIC-REL-001 must establish:
 
@@ -1080,7 +1080,7 @@ These outcomes become part of the permanent FamilyOS engineering platform.
 
 ---
 
-# Strategic Impact
+## Strategic Impact
 
 The Release Framework closes a critical gap between engineering work and controlled production change.
 
@@ -1118,7 +1118,7 @@ This transforms release activity from an isolated operational event into a gover
 
 ---
 
-# Final Release Principle
+## Final Release Principle
 
 EPIC-REL-001 must conclude by applying its own philosophy.
 

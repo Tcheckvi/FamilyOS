@@ -1,8 +1,8 @@
 # Release Framework
 
-# 04 Release Architecture
+## 04 Release Architecture
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines a release architecture that governs how FamilyOS moves from validated engineering outputs to officially identifiable, publishable, traceable, and recoverable releases.
 
@@ -31,7 +31,7 @@ It defines what responsibilities must exist before defining which tools execute 
 
 ---
 
-# Architectural Objective
+## Architectural Objective
 
 The objective of the Release Architecture is to establish a reusable release model that can support:
 
@@ -49,7 +49,7 @@ The architecture must remain valid as FamilyOS evolves.
 
 ---
 
-# Architectural Boundary
+## Architectural Boundary
 
 The Release Framework begins when sufficiently validated engineering outputs are available for release qualification.
 
@@ -79,7 +79,7 @@ Instead, it integrates evidence produced by other FamilyOS frameworks.
 
 ---
 
-# Upstream Inputs
+## Upstream Inputs
 
 The Release Architecture consumes inputs from several engineering domains.
 
@@ -103,7 +103,7 @@ The Release Framework consumes their results as release evidence.
 
 ---
 
-# Downstream Outputs
+## Downstream Outputs
 
 The Release Architecture produces controlled release outputs.
 
@@ -125,7 +125,7 @@ These may include:
 
 ---
 
-# Canonical Release Architecture
+## Canonical Release Architecture
 
 The conceptual architecture is:
 
@@ -200,7 +200,7 @@ This architecture describes responsibilities, not necessarily separate software 
 
 ---
 
-# Architectural Domains
+## Architectural Domains
 
 The Release Architecture is divided into several domains.
 
@@ -227,7 +227,7 @@ Each domain has a specific responsibility.
 
 ---
 
-# Release Preparation Domain
+## Release Preparation Domain
 
 The Release Preparation domain prepares a change set for release qualification.
 
@@ -250,7 +250,7 @@ It is a release-ready input for formal readiness evaluation.
 
 ---
 
-# Release Readiness Domain
+## Release Readiness Domain
 
 The Release Readiness domain determines whether a proposed release has sufficient evidence to become a release candidate.
 
@@ -277,7 +277,7 @@ Readiness must remain separate from publication.
 
 ---
 
-# Release Candidate Domain
+## Release Candidate Domain
 
 The Release Candidate domain defines the exact object submitted for final release validation.
 
@@ -301,7 +301,7 @@ A candidate must be stable enough that validation results remain meaningful.
 
 ---
 
-# Candidate Identity
+## Candidate Identity
 
 Each release candidate should have a distinct identity.
 
@@ -319,7 +319,7 @@ Candidate identity must distinguish different candidate states.
 
 ---
 
-# Release Validation Domain
+## Release Validation Domain
 
 The Release Validation domain validates the actual candidate intended for publication.
 
@@ -343,7 +343,7 @@ Release validation must not rely solely on assumptions about previous pipeline s
 
 ---
 
-# Versioning Domain
+## Versioning Domain
 
 The Versioning domain determines valid release identifiers.
 
@@ -362,7 +362,7 @@ The versioning system must provide stable meaning across FamilyOS releases.
 
 ---
 
-# Repository State Domain
+## Repository State Domain
 
 The Repository State domain ensures that release identity maps correctly to repository state.
 
@@ -395,7 +395,7 @@ This relationship must remain traceable.
 
 ---
 
-# Artifact Domain
+## Artifact Domain
 
 The Artifact domain represents the exact files or packages included in a release.
 
@@ -414,7 +414,7 @@ Each artifact should have sufficient identity.
 
 ---
 
-# Artifact Inventory
+## Artifact Inventory
 
 A release should be able to describe its artifact set.
 
@@ -433,7 +433,7 @@ Artifact inventories enable verification and recovery.
 
 ---
 
-# Artifact Identity
+## Artifact Identity
 
 Artifact identity should not depend solely on filenames.
 
@@ -451,7 +451,7 @@ This provides stronger traceability than filename matching alone.
 
 ---
 
-# Provenance Domain
+## Provenance Domain
 
 The Provenance domain establishes the origin of release artifacts.
 
@@ -483,7 +483,7 @@ The architecture supports progressive provenance maturity.
 
 ---
 
-# Evidence Domain
+## Evidence Domain
 
 The Release Evidence domain aggregates information required to justify and reconstruct release decisions.
 
@@ -509,7 +509,7 @@ The Release Framework provides the logical aggregation boundary.
 
 ---
 
-# Governance Domain
+## Governance Domain
 
 The Governance domain controls release authority.
 
@@ -532,7 +532,7 @@ A user or automation token may technically have permission to publish while stil
 
 ---
 
-# Approval Architecture
+## Approval Architecture
 
 Approval may exist at multiple points.
 
@@ -554,7 +554,7 @@ The architecture allows profiles to combine or automate approvals where policy p
 
 ---
 
-# Exception Architecture
+## Exception Architecture
 
 Release exceptions must be explicit.
 
@@ -577,7 +577,7 @@ It does not silently redefine release policy.
 
 ---
 
-# Publication Domain
+## Publication Domain
 
 The Publication domain transitions an approved candidate into an official published release.
 
@@ -595,7 +595,7 @@ Publication operations create externally visible side effects and therefore requ
 
 ---
 
-# Publication Boundary
+## Publication Boundary
 
 Publication represents an important architectural boundary.
 
@@ -615,7 +615,7 @@ Therefore, destructive or externally visible operations should occur as late as 
 
 ---
 
-# Distribution Domain
+## Distribution Domain
 
 Distribution is separate from publication.
 
@@ -645,7 +645,7 @@ This distinction supports future staged release models.
 
 ---
 
-# Channel Architecture
+## Channel Architecture
 
 Release channels represent controlled availability or stability classifications.
 
@@ -673,7 +673,7 @@ Channels must remain explicit and governed.
 
 ---
 
-# Promotion Architecture
+## Promotion Architecture
 
 Promotion changes release availability or stability state.
 
@@ -691,7 +691,7 @@ The system should avoid unnecessary artifact rebuilding between promotion stages
 
 ---
 
-# Observability Domain
+## Observability Domain
 
 The Observability domain makes release state understandable.
 
@@ -714,7 +714,7 @@ Observability supports humans, automation, and governance.
 
 ---
 
-# Release Events
+## Release Events
 
 The architecture may eventually expose release lifecycle events.
 
@@ -739,7 +739,7 @@ These event names are conceptual and not yet an implementation contract.
 
 ---
 
-# Recovery Domain
+## Recovery Domain
 
 The Recovery domain handles defective, interrupted, or failed releases.
 
@@ -758,7 +758,7 @@ Recovery must account for already completed external side effects.
 
 ---
 
-# Failure State Architecture
+## Failure State Architecture
 
 A release may fail at multiple stages.
 
@@ -779,7 +779,7 @@ The architecture must preserve enough state to determine the appropriate recover
 
 ---
 
-# Partial Publication Architecture
+## Partial Publication Architecture
 
 A release may interact with multiple publication targets.
 
@@ -798,7 +798,7 @@ The release evidence model should preserve per-target publication state.
 
 ---
 
-# Release State Model
+## Release State Model
 
 The Release Architecture requires explicit lifecycle states.
 
@@ -840,7 +840,7 @@ The authoritative lifecycle is defined in `05-Release-Lifecycle.md`.
 
 ---
 
-# Release Entity Model
+## Release Entity Model
 
 The Release Framework may eventually implement explicit domain entities.
 
@@ -863,7 +863,7 @@ These concepts should remain separate even if early tooling represents them usin
 
 ---
 
-# Release Identity Model
+## Release Identity Model
 
 A release identity may combine:
 
@@ -881,7 +881,7 @@ The framework should avoid creating unnecessarily complex identifiers.
 
 ---
 
-# Release Manifest
+## Release Manifest
 
 A future release may use a machine-readable manifest.
 
@@ -913,7 +913,7 @@ The final schema, if introduced, must be governed separately.
 
 ---
 
-# Architectural Separation of Concerns
+## Architectural Separation of Concerns
 
 The Release Architecture must prevent responsibility duplication.
 
@@ -943,7 +943,7 @@ The Release Framework consumes outputs from these domains without redefining the
 
 ---
 
-# Architecture vs Workflow
+## Architecture vs Workflow
 
 Release architecture defines stable responsibilities.
 
@@ -963,7 +963,7 @@ This distinction allows workflows to evolve while preserving architectural requi
 
 ---
 
-# Architecture vs Automation
+## Architecture vs Automation
 
 Release automation implements architecture.
 
@@ -981,7 +981,7 @@ The architectural requirement remains valid even if the implementation changes.
 
 ---
 
-# Architecture vs Governance
+## Architecture vs Governance
 
 Architecture defines where authority is required.
 
@@ -1001,7 +1001,7 @@ This separation allows governance models to evolve independently.
 
 ---
 
-# Architecture vs Policy
+## Architecture vs Policy
 
 Architecture defines capabilities and boundaries.
 
@@ -1021,7 +1021,7 @@ Policies may vary by release profile.
 
 ---
 
-# Architecture vs Release Profile
+## Architecture vs Release Profile
 
 A release profile specializes the common architecture.
 
@@ -1047,7 +1047,7 @@ Profiles must preserve common release semantics.
 
 ---
 
-# Framework Release Architecture
+## Framework Release Architecture
 
 The current FamilyOS engineering frameworks themselves use a release workflow.
 
@@ -1077,7 +1077,7 @@ This workflow represents an early practical implementation of the broader Releas
 
 ---
 
-# Plugin Release Architecture
+## Plugin Release Architecture
 
 A plugin release may require additional information.
 
@@ -1103,7 +1103,7 @@ The common release domains remain reusable.
 
 ---
 
-# Platform Release Architecture
+## Platform Release Architecture
 
 A platform release may aggregate multiple components.
 
@@ -1127,7 +1127,7 @@ The framework must support aggregation without requiring all components to use i
 
 ---
 
-# Release Dependency Architecture
+## Release Dependency Architecture
 
 Some releases may depend on other releases.
 
@@ -1142,7 +1142,7 @@ These relationships should eventually become explicit release metadata.
 
 ---
 
-# Compatibility Architecture
+## Compatibility Architecture
 
 Compatibility evaluation may exist as part of readiness or candidate validation.
 
@@ -1165,7 +1165,7 @@ The Release Framework coordinates their release impact.
 
 ---
 
-# Security Architecture
+## Security Architecture
 
 Release security applies across architectural boundaries.
 
@@ -1187,7 +1187,7 @@ Security requirements must be layered rather than concentrated in a single relea
 
 ---
 
-# Trust Boundaries
+## Trust Boundaries
 
 Release architecture introduces several trust boundaries.
 
@@ -1217,7 +1217,7 @@ Crossing a trust boundary may require:
 
 ---
 
-# Release Control Plane
+## Release Control Plane
 
 At higher maturity, FamilyOS may introduce a logical release control plane.
 
@@ -1250,7 +1250,7 @@ This is a future architecture direction, not an immediate implementation require
 
 ---
 
-# Release Data Plane
+## Release Data Plane
 
 The release data plane represents the actual artifacts and metadata transferred during publication and distribution.
 
@@ -1268,7 +1268,7 @@ Control and data responsibilities should remain conceptually distinct.
 
 ---
 
-# Policy Evaluation Layer
+## Policy Evaluation Layer
 
 A future release architecture may contain a policy evaluation layer.
 
@@ -1290,7 +1290,7 @@ This layer could integrate with future FamilyOS governance tooling.
 
 ---
 
-# Release Orchestrator
+## Release Orchestrator
 
 A future Release Orchestrator may coordinate release operations.
 
@@ -1314,7 +1314,7 @@ It must execute framework-defined rules.
 
 ---
 
-# CLI Architecture
+## CLI Architecture
 
 A future FamilyOS CLI release interface may expose release operations.
 
@@ -1336,7 +1336,7 @@ The CLI would be an interface to the release architecture, not the release archi
 
 ---
 
-# Evidence Storage Architecture
+## Evidence Storage Architecture
 
 Release evidence may initially exist across existing systems.
 
@@ -1354,7 +1354,7 @@ The framework must avoid requiring a specific storage technology prematurely.
 
 ---
 
-# Artifact Storage Architecture
+## Artifact Storage Architecture
 
 Published artifacts may reside in:
 
@@ -1369,7 +1369,7 @@ The Release Framework must treat these as publication targets behind common rele
 
 ---
 
-# Authoritative Release State
+## Authoritative Release State
 
 The architecture must eventually define what constitutes the authoritative release state.
 
@@ -1386,7 +1386,7 @@ No single technical provider should become implicitly authoritative without expl
 
 ---
 
-# Architecture for Idempotency
+## Architecture for Idempotency
 
 Release operations should be designed to recognize existing state.
 
@@ -1409,7 +1409,7 @@ This improves safe retry behavior.
 
 ---
 
-# Architecture for Dry Runs
+## Architecture for Dry Runs
 
 Where practical, release tooling should support validation before external side effects.
 
@@ -1427,7 +1427,7 @@ This allows failures to occur before publication.
 
 ---
 
-# Architecture for Atomicity
+## Architecture for Atomicity
 
 Perfect atomic publication may not always be possible.
 
@@ -1447,7 +1447,7 @@ Stateless multi-step publication without recovery is unacceptable for mature rel
 
 ---
 
-# Architecture for Recovery
+## Architecture for Recovery
 
 Recovery should use recorded release state.
 
@@ -1471,7 +1471,7 @@ Recovery must not depend only on operator memory.
 
 ---
 
-# Architecture for Auditability
+## Architecture for Auditability
 
 Significant release decisions should be reconstructable.
 
@@ -1489,27 +1489,27 @@ Auditability supports both security and governance.
 
 ---
 
-# Architecture for Scalability
+## Architecture for Scalability
 
 The architecture should support growth across several dimensions.
 
-## More Releases
+### More Releases
 
 Release frequency may increase.
 
-## More Components
+### More Components
 
 The number of independently releasable components may increase.
 
-## More Contributors
+### More Contributors
 
 Release responsibility may be distributed among more maintainers.
 
-## More Targets
+### More Targets
 
 Artifacts may be published to multiple systems.
 
-## More Policies
+### More Policies
 
 Security, compliance, and compatibility requirements may become more sophisticated.
 
@@ -1517,7 +1517,7 @@ The architecture must scale without becoming dependent on one maintainer's opera
 
 ---
 
-# Architecture for Extensibility
+## Architecture for Extensibility
 
 Future capabilities should integrate through stable architectural interfaces.
 
@@ -1536,7 +1536,7 @@ These capabilities should extend existing domains rather than create unrelated r
 
 ---
 
-# Minimal Initial Architecture
+## Minimal Initial Architecture
 
 The Release Framework can begin with a relatively small implementation.
 
@@ -1562,7 +1562,7 @@ This is sufficient to establish disciplined release behavior while more advanced
 
 ---
 
-# Intermediate Architecture
+## Intermediate Architecture
 
 A more mature implementation may add:
 
@@ -1579,7 +1579,7 @@ publication verification
 
 ---
 
-# Advanced Architecture
+## Advanced Architecture
 
 A mature FamilyOS release platform may eventually provide:
 
@@ -1601,89 +1601,89 @@ The architecture defined in EPIC-REL-001 must support this progression without f
 
 ---
 
-# Architectural Invariants
+## Architectural Invariants
 
 The following invariants are mandatory.
 
-## A1 — Release and build responsibilities remain separate.
+### A1 — Release and build responsibilities remain separate.
 
-## A2 — Every release maps to an identifiable source state.
+### A2 — Every release maps to an identifiable source state.
 
-## A3 — Every release candidate has sufficient identity for validation.
+### A3 — Every release candidate has sufficient identity for validation.
 
-## A4 — Release validation applies to the intended candidate.
+### A4 — Release validation applies to the intended candidate.
 
-## A5 — Published release identity remains stable.
+### A5 — Published release identity remains stable.
 
-## A6 — Version and repository release anchors remain consistent.
+### A6 — Version and repository release anchors remain consistent.
 
-## A7 — Release authority remains governed.
+### A7 — Release authority remains governed.
 
-## A8 — Publication side effects remain observable.
+### A8 — Publication side effects remain observable.
 
-## A9 — Partial failure can be represented.
+### A9 — Partial failure can be represented.
 
-## A10 — Recovery remains possible through explicit release state.
+### A10 — Recovery remains possible through explicit release state.
 
-## A11 — Evidence survives beyond transient execution where required.
+### A11 — Evidence survives beyond transient execution where required.
 
-## A12 — Implementation technology does not redefine release semantics.
+### A12 — Implementation technology does not redefine release semantics.
 
 ---
 
-# Architectural Anti-Patterns
+## Architectural Anti-Patterns
 
 The following patterns conflict with this architecture.
 
-## Build Equals Release
+### Build Equals Release
 
 Treating successful artifact generation as automatic release approval.
 
 ---
 
-## Tag as Entire Release Model
+### Tag as Entire Release Model
 
 Using tag creation as the only definition of release state.
 
 ---
 
-## Unidentified Candidate
+### Unidentified Candidate
 
 Validating artifacts without establishing which exact candidate they belong to.
 
 ---
 
-## Pipeline-Owned Policy
+### Pipeline-Owned Policy
 
 Allowing CI/CD YAML to become the only source of release rules.
 
 ---
 
-## Mutable Published Artifacts
+### Mutable Published Artifacts
 
 Replacing release content under an existing official version.
 
 ---
 
-## Hidden Publication State
+### Hidden Publication State
 
 Publishing to multiple systems without recording which operations completed.
 
 ---
 
-## Monolithic Release Script
+### Monolithic Release Script
 
 Combining readiness, validation, approval, versioning, tagging, publishing, and recovery into one opaque script with no explicit state boundaries.
 
 ---
 
-## Provider-Locked Semantics
+### Provider-Locked Semantics
 
 Defining the meaning of a FamilyOS release solely according to a hosting provider's release object.
 
 ---
 
-# Architectural Decision Criteria
+## Architectural Decision Criteria
 
 Future release design decisions should be evaluated against the following questions:
 
@@ -1713,7 +1713,7 @@ A design that repeatedly fails these criteria should be reconsidered.
 
 ---
 
-# Relationship With Subsequent Documents
+## Relationship With Subsequent Documents
 
 This architecture provides the structural foundation for the rest of EPIC-REL-001.
 
@@ -1783,7 +1783,7 @@ The following documents refine specific architectural domains:
 
 ---
 
-# Target Architectural State
+## Target Architectural State
 
 The target FamilyOS release architecture is one in which the complete release chain is explicit:
 
@@ -1823,7 +1823,7 @@ No significant stage should exist only as undocumented operator knowledge.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Architecture establishes the structural foundation required to convert validated engineering outputs into trustworthy official releases.
 

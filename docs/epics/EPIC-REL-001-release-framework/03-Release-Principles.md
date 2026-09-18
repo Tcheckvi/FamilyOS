@@ -1,8 +1,8 @@
 # Release Framework
 
-# 03 Release Principles
+## 03 Release Principles
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines a set of release engineering principles that govern how FamilyOS prepares, qualifies, approves, versions, tags, publishes, distributes, observes, and recovers releases.
 
@@ -14,7 +14,7 @@ Any release implementation, workflow, policy, automation, or future release orch
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Release Principles is to establish durable engineering rules that prevent release behavior from becoming dependent on:
 
@@ -33,7 +33,7 @@ The principles provide a stable reference against which release architecture and
 
 ---
 
-# Principle Model
+## Principle Model
 
 The FamilyOS Release Framework distinguishes between:
 
@@ -75,7 +75,7 @@ The principles must remain stable unless the Release Framework itself is intenti
 
 ---
 
-# P1 — A Build Is Not a Release
+## P1 — A Build Is Not a Release
 
 A successful build MUST NOT automatically be interpreted as an official release.
 
@@ -110,7 +110,7 @@ Release automation MUST preserve this distinction.
 
 ---
 
-# P2 — Every Official Release Must Have an Explicit Identity
+## P2 — Every Official Release Must Have an Explicit Identity
 
 Every official FamilyOS release MUST have an unambiguous release identity.
 
@@ -129,7 +129,7 @@ The same official release identity MUST NOT intentionally refer to materially di
 
 ---
 
-# P3 — Every Release Must Be Traceable to Source
+## P3 — Every Release Must Be Traceable to Source
 
 An official release MUST be traceable to the controlled source state from which it originated.
 
@@ -167,7 +167,7 @@ A release whose source cannot be reasonably identified MUST NOT be considered fu
 
 ---
 
-# P4 — Release Validation Must Apply to the Actual Candidate
+## P4 — Release Validation Must Apply to the Actual Candidate
 
 Validation evidence MUST correspond to the actual release candidate intended for publication.
 
@@ -194,7 +194,7 @@ unless A and B are demonstrably equivalent under the applicable release rules.
 
 ---
 
-# P5 — Release Readiness Must Be Evidence-Based
+## P5 — Release Readiness Must Be Evidence-Based
 
 Release readiness MUST be based on explicit evidence.
 
@@ -224,7 +224,7 @@ The required evidence depends on release type and risk.
 
 ---
 
-# P6 — Release Promotion Must Be Explicit
+## P6 — Release Promotion Must Be Explicit
 
 Movement between release states MUST be deliberate.
 
@@ -252,7 +252,7 @@ State transitions must have defined entry criteria where relevant.
 
 ---
 
-# P7 — Published Release Artifacts Must Be Immutable
+## P7 — Published Release Artifacts Must Be Immutable
 
 An artifact officially published under a release identity SHOULD be treated as immutable.
 
@@ -274,7 +274,7 @@ If a distribution system technically permits artifact replacement, FamilyOS rele
 
 ---
 
-# P8 — Version Meaning Must Be Stable
+## P8 — Version Meaning Must Be Stable
 
 Versions MUST follow consistent semantics.
 
@@ -286,7 +286,7 @@ The framework MUST prevent version identifiers from becoming merely chronologica
 
 ---
 
-# P9 — Release Tags Must Be Stable Anchors
+## P9 — Release Tags Must Be Stable Anchors
 
 Official release tags MUST identify a specific repository state.
 
@@ -308,7 +308,7 @@ This relationship is fundamental to historical release reconstruction.
 
 ---
 
-# P10 — Repository State Must Be Verified Before Release
+## P10 — Repository State Must Be Verified Before Release
 
 The repository state relevant to a release MUST be verified before final release operations.
 
@@ -328,7 +328,7 @@ However, repository assumptions MUST NOT remain implicit.
 
 ---
 
-# P11 — Release Automation Must Be Deterministic Where Practical
+## P11 — Release Automation Must Be Deterministic Where Practical
 
 Repeatable release operations SHOULD produce consistent behavior when given equivalent controlled inputs.
 
@@ -345,7 +345,7 @@ Where nondeterminism cannot be eliminated, it SHOULD be observable and documente
 
 ---
 
-# P12 — Release Automation Must Fail Safely
+## P12 — Release Automation Must Fail Safely
 
 Release automation MUST treat failure as a first-class state.
 
@@ -369,7 +369,7 @@ unknown final release state
 
 ---
 
-# P13 — Automation Must Not Override Governance
+## P13 — Automation Must Not Override Governance
 
 Automation executes release policy.
 
@@ -387,7 +387,7 @@ The fact that a task can be automated does not imply that it should execute with
 
 ---
 
-# P14 — Manual Steps Must Be Governed
+## P14 — Manual Steps Must Be Governed
 
 Manual release operations MAY remain part of the release process.
 
@@ -406,7 +406,7 @@ Undocumented manual dependency is the problem.
 
 ---
 
-# P15 — Release Authority Must Be Explicit
+## P15 — Release Authority Must Be Explicit
 
 The framework MUST define who or what has authority to perform sensitive release actions.
 
@@ -426,7 +426,7 @@ Authority must be governed rather than assumed.
 
 ---
 
-# P16 — Least Privilege Applies to Release Systems
+## P16 — Least Privilege Applies to Release Systems
 
 Release automation and maintainers SHOULD receive only the permissions necessary for their responsibilities.
 
@@ -448,7 +448,7 @@ may represent separate responsibilities.
 
 ---
 
-# P17 — Release Credentials Must Be Protected
+## P17 — Release Credentials Must Be Protected
 
 Release credentials MUST NOT be embedded directly in:
 
@@ -469,7 +469,7 @@ Release credentials should be:
 
 ---
 
-# P18 — Release Security Is End-to-End
+## P18 — Release Security Is End-to-End
 
 Security MUST be considered across the complete release path.
 
@@ -497,7 +497,7 @@ Weak integrity guarantees at any stage may compromise the final release.
 
 ---
 
-# P19 — Release Evidence Must Be Durable
+## P19 — Release Evidence Must Be Durable
 
 Critical release evidence SHOULD survive beyond an individual CI job or terminal session.
 
@@ -520,7 +520,7 @@ The evidence must remain available for the period required by FamilyOS governanc
 
 ---
 
-# P20 — Historical Releases Must Be Reconstructable
+## P20 — Historical Releases Must Be Reconstructable
 
 FamilyOS SHOULD preserve enough release information to reconstruct significant historical releases.
 
@@ -549,7 +549,7 @@ Historical reconstruction supports:
 
 ---
 
-# P21 — Release Documentation Is Part of Release Readiness
+## P21 — Release Documentation Is Part of Release Readiness
 
 Required release documentation MUST be prepared before a release is considered complete.
 
@@ -569,7 +569,7 @@ It must not describe only an earlier planned release state.
 
 ---
 
-# P22 — Changelog and Release Notes Serve Different Purposes
+## P22 — Changelog and Release Notes Serve Different Purposes
 
 The Release Framework MUST distinguish between changelog information and release notes.
 
@@ -583,7 +583,7 @@ They must not be treated as interchangeable concepts.
 
 ---
 
-# P23 — Release Risk Must Influence Release Controls
+## P23 — Release Risk Must Influence Release Controls
 
 Release controls SHOULD be proportional to release risk.
 
@@ -602,7 +602,7 @@ Core release invariants must still remain satisfied.
 
 ---
 
-# P24 — Exceptions Must Be Explicit
+## P24 — Exceptions Must Be Explicit
 
 A mandatory release rule MAY only be bypassed through an explicitly governed exception when the applicable policy permits it.
 
@@ -620,7 +620,7 @@ Silent exceptions are prohibited.
 
 ---
 
-# P25 — Emergency Releases Must Remain Controlled
+## P25 — Emergency Releases Must Remain Controlled
 
 Emergency releases MAY use an accelerated lifecycle.
 
@@ -641,7 +641,7 @@ Emergency release processes should be defined before emergencies occur.
 
 ---
 
-# P26 — Publication Must Be Verifiable
+## P26 — Publication Must Be Verifiable
 
 A release workflow MUST distinguish between attempted publication and verified publication.
 
@@ -661,7 +661,7 @@ Post-publication verification SHOULD confirm relevant release state.
 
 ---
 
-# P27 — Partial Publication Must Be Detectable
+## P27 — Partial Publication Must Be Detectable
 
 When release publication spans multiple systems, partial failure must be expected.
 
@@ -684,7 +684,7 @@ Partial publication MUST NOT be silently reported as full success.
 
 ---
 
-# P28 — Recovery Is Part of Release Design
+## P28 — Recovery Is Part of Release Design
 
 Rollback and recovery MUST NOT be designed only after release failures occur.
 
@@ -704,7 +704,7 @@ The appropriate strategy depends on release characteristics.
 
 ---
 
-# P29 — Rollback Must Not Be Assumed Safe
+## P29 — Rollback Must Not Be Assumed Safe
 
 The existence of an older version does not automatically make rollback safe.
 
@@ -721,7 +721,7 @@ Release planning should explicitly determine whether rollback is valid.
 
 ---
 
-# P30 — Forward Recovery Is a First-Class Strategy
+## P30 — Forward Recovery Is a First-Class Strategy
 
 When rollback is unsafe or impossible, the framework MUST support forward recovery.
 
@@ -731,7 +731,7 @@ Forward recovery must remain governed and traceable.
 
 ---
 
-# P31 — Release State Must Be Observable
+## P31 — Release State Must Be Observable
 
 The release system SHOULD expose clear information about current release state.
 
@@ -755,7 +755,7 @@ The principle is that release state must not depend on interpretation of unrelat
 
 ---
 
-# P32 — Release Failures Must Be Diagnosable
+## P32 — Release Failures Must Be Diagnosable
 
 A failed release operation SHOULD provide sufficient diagnostic information to determine:
 
@@ -771,7 +771,7 @@ Failure messages that only indicate generic failure without state information ar
 
 ---
 
-# P33 — Release Metrics Must Support Improvement
+## P33 — Release Metrics Must Support Improvement
 
 FamilyOS MAY measure release performance and reliability.
 
@@ -794,7 +794,7 @@ Relevant metrics may include:
 
 ---
 
-# P34 — Release Profiles Must Extend Common Semantics
+## P34 — Release Profiles Must Extend Common Semantics
 
 Different release types may use different release profiles.
 
@@ -813,7 +813,7 @@ They MUST NOT redefine fundamental release concepts inconsistently.
 
 ---
 
-# P35 — Platform and Component Releases Must Remain Distinguishable
+## P35 — Platform and Component Releases Must Remain Distinguishable
 
 FamilyOS may contain both platform-level and component-level releases.
 
@@ -825,7 +825,7 @@ The relationship between them must remain explicit.
 
 ---
 
-# P36 — Compatibility Must Be Considered Before Release
+## P36 — Compatibility Must Be Considered Before Release
 
 Where compatibility matters, release readiness MUST evaluate it.
 
@@ -843,7 +843,7 @@ A release known to introduce compatibility changes must communicate those change
 
 ---
 
-# P37 — Release Channels Must Have Clear Semantics
+## P37 — Release Channels Must Have Clear Semantics
 
 If FamilyOS uses release channels, every channel MUST have a defined purpose.
 
@@ -858,7 +858,7 @@ Channels must not create ambiguity around the meaning of versions.
 
 ---
 
-# P38 — Promotion Must Not Rebuild Without Explicit Reason
+## P38 — Promotion Must Not Rebuild Without Explicit Reason
 
 Where practical, a release candidate should be promoted using the same validated artifacts.
 
@@ -883,7 +883,7 @@ If rebuilding is required, the new artifacts must receive appropriate validation
 
 ---
 
-# P39 — Release Artifacts Must Be Identifiable
+## P39 — Release Artifacts Must Be Identifiable
 
 Release artifacts SHOULD have sufficient metadata to determine:
 
@@ -897,7 +897,7 @@ Artifact identity must remain distinct from simple filename coincidence.
 
 ---
 
-# P40 — Provenance Should Strengthen Over Time
+## P40 — Provenance Should Strengthen Over Time
 
 FamilyOS SHOULD progressively improve release provenance.
 
@@ -923,7 +923,7 @@ The Release Framework should permit stronger provenance mechanisms without break
 
 ---
 
-# P41 — Tooling Must Implement the Framework
+## P41 — Tooling Must Implement the Framework
 
 Release tooling exists to implement release rules.
 
@@ -935,7 +935,7 @@ This principle protects architectural authority.
 
 ---
 
-# P42 — Release Semantics Must Be Tool-Independent
+## P42 — Release Semantics Must Be Tool-Independent
 
 FamilyOS release concepts MUST NOT depend fundamentally on a specific vendor.
 
@@ -953,7 +953,7 @@ must remain meaningful independently of GitHub, GitLab, CI/CD providers, registr
 
 ---
 
-# P43 — Policy Should Become Machine-Evaluable Where Practical
+## P43 — Policy Should Become Machine-Evaluable Where Practical
 
 Objective release rules SHOULD become automatable where practical.
 
@@ -973,7 +973,7 @@ Human-readable policy must remain authoritative and understandable.
 
 ---
 
-# P44 — Human Judgment Must Remain Visible
+## P44 — Human Judgment Must Remain Visible
 
 When release decisions depend on judgment, that judgment SHOULD be explicit.
 
@@ -989,7 +989,7 @@ Automation should not silently convert judgment into hidden defaults.
 
 ---
 
-# P45 — Release Workflows Must Be Idempotent Where Possible
+## P45 — Release Workflows Must Be Idempotent Where Possible
 
 Where technically practical, retrying a release operation should not produce unintended duplicate or contradictory state.
 
@@ -1004,7 +1004,7 @@ Idempotency reduces recovery risk after interrupted workflows.
 
 ---
 
-# P46 — External Side Effects Must Be Deliberate
+## P46 — External Side Effects Must Be Deliberate
 
 Release operations that modify external systems SHOULD occur only after applicable local and candidate validation has passed.
 
@@ -1020,7 +1020,7 @@ The framework should perform low-risk validation before high-impact side effects
 
 ---
 
-# P47 — Release Completion Must Be Explicit
+## P47 — Release Completion Must Be Explicit
 
 A release is not complete merely because its primary artifact was published.
 
@@ -1037,7 +1037,7 @@ The framework must provide a clear definition of release completion.
 
 ---
 
-# P48 — Release History Must Not Be Rewritten Casually
+## P48 — Release History Must Not Be Rewritten Casually
 
 Published historical release records SHOULD remain stable.
 
@@ -1062,7 +1062,7 @@ This principle protects long-term trust.
 
 ---
 
-# P49 — Framework Rules Must Be Internally Consistent
+## P49 — Framework Rules Must Be Internally Consistent
 
 The Release Framework itself must avoid contradictory requirements.
 
@@ -1079,7 +1079,7 @@ Cross-references may summarize those rules but must not redefine them inconsiste
 
 ---
 
-# P50 — The Release Framework Must Govern Its Own Release
+## P50 — The Release Framework Must Govern Its Own Release
 
 EPIC-REL-001 must eventually apply its own principles to its completion and publication.
 
@@ -1107,11 +1107,11 @@ This establishes the Release Framework through the release discipline it defines
 
 ---
 
-# Principle Categories
+## Principle Categories
 
 The principles can be grouped into the following domains.
 
-## Identity and Traceability
+### Identity and Traceability
 
 ```text
 P2
@@ -1125,7 +1125,7 @@ P48
 
 ---
 
-## Validation and Readiness
+### Validation and Readiness
 
 ```text
 P1
@@ -1140,7 +1140,7 @@ P47
 
 ---
 
-## Governance
+### Governance
 
 ```text
 P13
@@ -1154,7 +1154,7 @@ P44
 
 ---
 
-## Automation
+### Automation
 
 ```text
 P11
@@ -1169,7 +1169,7 @@ P46
 
 ---
 
-## Security and Integrity
+### Security and Integrity
 
 ```text
 P7
@@ -1181,7 +1181,7 @@ P40
 
 ---
 
-## Recovery and Operations
+### Recovery and Operations
 
 ```text
 P28
@@ -1193,7 +1193,7 @@ P32
 
 ---
 
-## Ecosystem Evolution
+### Ecosystem Evolution
 
 ```text
 P34
@@ -1206,7 +1206,7 @@ P50
 
 ---
 
-# Principle Evaluation Model
+## Principle Evaluation Model
 
 Release architecture decisions should be evaluated against these principles.
 
@@ -1234,7 +1234,7 @@ If a mechanism repeatedly conflicts with the principles, the mechanism should be
 
 ---
 
-# Principle Precedence
+## Principle Precedence
 
 Release principles define the general release engineering direction.
 
@@ -1246,7 +1246,7 @@ Implementation behavior MUST NOT silently override normative framework rules.
 
 ---
 
-# Minimum Release Principle Set
+## Minimum Release Principle Set
 
 Regardless of release type or profile, every official FamilyOS release must preserve the following minimum properties:
 
@@ -1267,11 +1267,11 @@ A release process that cannot provide these fundamental properties should be con
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices conflict with the Release Principles.
 
-## Tag-and-Hope
+### Tag-and-Hope
 
 ```text
 work completed
@@ -1284,61 +1284,61 @@ without explicit readiness and validation.
 
 ---
 
-## Rebuild-after-Validation
+### Rebuild-after-Validation
 
 Validating one artifact set and publishing a materially different rebuilt set without renewed qualification.
 
 ---
 
-## Mutable Release Identity
+### Mutable Release Identity
 
 Replacing published artifacts while keeping the same official version identity.
 
 ---
 
-## Hidden Release Authority
+### Hidden Release Authority
 
 Allowing an automation token or maintainer account to publish releases without explicit governance simply because the permission exists.
 
 ---
 
-## Terminal-Memory Release
+### Terminal-Memory Release
 
 Depending on the operator remembering the correct sequence of commands.
 
 ---
 
-## Partial-Success Blindness
+### Partial-Success Blindness
 
 Treating a multi-system release as successful when only some publication steps completed.
 
 ---
 
-## Pipeline-as-Policy
+### Pipeline-as-Policy
 
 Allowing CI/CD configuration to become the only definition of release behavior.
 
 ---
 
-## Version Guessing
+### Version Guessing
 
 Selecting a release version manually without defined version semantics.
 
 ---
 
-## Evidence-by-Assumption
+### Evidence-by-Assumption
 
 Assuming validation exists because the project normally runs tests.
 
 ---
 
-## Rollback Assumption
+### Rollback Assumption
 
 Declaring a release recoverable without evaluating whether reversal is actually safe.
 
 ---
 
-# Expected Engineering Effect
+## Expected Engineering Effect
 
 Applying these principles should progressively transform FamilyOS releases from operator-driven procedures into governed engineering workflows.
 
@@ -1364,7 +1364,7 @@ The Release Framework should mature without losing transparency.
 
 ---
 
-# Principle Compliance
+## Principle Compliance
 
 A FamilyOS release implementation is aligned with EPIC-REL-001 when it:
 
@@ -1390,7 +1390,7 @@ Violations of core invariants must remain visible as implementation gaps rather 
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Principles establish the permanent behavioral foundation of release engineering.
 

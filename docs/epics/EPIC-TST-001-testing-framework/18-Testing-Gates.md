@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 18 Testing Gates
+## 18 Testing Gates
 
-## Overview
+### Overview
 
 Testing provides evidence.
 
@@ -27,7 +27,7 @@ It is a policy-driven decision based on trustworthy testing evidence.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the official FamilyOS Testing Gate model.
 
@@ -53,7 +53,7 @@ The objective is to ensure that FamilyOS engineering progression is based on exp
 
 ---
 
-# Core Principle
+## Core Principle
 
 The FamilyOS Testing Framework follows this principle:
 
@@ -63,7 +63,7 @@ Testing gates convert validation results into engineering policy.
 
 ---
 
-# Gate Model
+## Gate Model
 
 A testing gate can be represented as:
 
@@ -94,7 +94,7 @@ The gate decision should be deterministic whenever the underlying policy and evi
 
 ---
 
-# Testing Gate Responsibilities
+## Testing Gate Responsibilities
 
 Testing gates are responsible for answering questions such as:
 
@@ -114,7 +114,7 @@ It evaluates their evidence.
 
 ---
 
-# Gate Inputs
+## Gate Inputs
 
 A testing gate may consume multiple evidence sources.
 
@@ -143,7 +143,7 @@ Requirements depend on the protected lifecycle boundary.
 
 ---
 
-# Mandatory Evidence
+## Mandatory Evidence
 
 Gate inputs must distinguish between:
 
@@ -159,7 +159,7 @@ Informational evidence provides context for engineering review.
 
 ---
 
-# Gate Result States
+## Gate Result States
 
 A testing gate should have explicit states.
 
@@ -182,7 +182,7 @@ These states must have clearly defined semantics.
 
 ---
 
-# PASS
+## PASS
 
 A gate passes when:
 
@@ -194,7 +194,7 @@ A pass represents permission to progress through the protected testing boundary.
 
 ---
 
-# FAIL
+## FAIL
 
 A gate fails when one or more mandatory testing requirements are not satisfied.
 
@@ -211,7 +211,7 @@ Failure should block the protected action.
 
 ---
 
-# INCOMPLETE
+## INCOMPLETE
 
 A gate may be incomplete when required evidence cannot yet be evaluated.
 
@@ -226,7 +226,7 @@ Incomplete must not be interpreted as pass.
 
 ---
 
-# BLOCKED
+## BLOCKED
 
 A gate may be blocked when external conditions prevent evaluation.
 
@@ -240,7 +240,7 @@ The distinction between blocked and failed can improve diagnosis.
 
 ---
 
-# WAIVED
+## WAIVED
 
 A gate may support explicit waiver under governed exceptional circumstances.
 
@@ -250,7 +250,7 @@ It should remain visible as an exception to standard policy.
 
 ---
 
-# Gate Hierarchy
+## Gate Hierarchy
 
 FamilyOS may define testing gates at multiple lifecycle levels.
 
@@ -276,7 +276,7 @@ Each level may impose increasingly strict requirements.
 
 ---
 
-# Developer Gate
+## Developer Gate
 
 A developer-level gate may define the minimum validation expected before a change is considered locally ready.
 
@@ -291,7 +291,7 @@ The developer gate may remain primarily procedural rather than repository-enforc
 
 ---
 
-# Pull Request Gate
+## Pull Request Gate
 
 The pull request gate protects integration.
 
@@ -308,7 +308,7 @@ A pull request should not become merge-eligible while mandatory testing conditio
 
 ---
 
-# Protected Branch Gate
+## Protected Branch Gate
 
 Protected branch gates provide stronger repository protection.
 
@@ -324,7 +324,7 @@ Protected branch policy should prevent accidental bypass of testing requirements
 
 ---
 
-# Release Candidate Gate
+## Release Candidate Gate
 
 Release candidates require broader confidence.
 
@@ -341,7 +341,7 @@ The gate should verify that the candidate is suitable for final release evaluati
 
 ---
 
-# Release Gate
+## Release Gate
 
 The release gate is the strongest testing boundary.
 
@@ -362,7 +362,7 @@ The release gate may consider:
 
 ---
 
-# Gate Composition
+## Gate Composition
 
 A gate may consist of several subordinate checks.
 
@@ -382,7 +382,7 @@ The parent gate passes only when all mandatory child conditions are satisfied.
 
 ---
 
-# Test Category Gates
+## Test Category Gates
 
 Different testing categories may have dedicated gate rules.
 
@@ -399,7 +399,7 @@ Category gates improve policy clarity.
 
 ---
 
-# Unit Test Gate
+## Unit Test Gate
 
 A unit-test gate normally requires:
 
@@ -411,7 +411,7 @@ Unit tests typically form one of the earliest automated gates because they provi
 
 ---
 
-# Integration Test Gate
+## Integration Test Gate
 
 Integration gates verify interaction between components.
 
@@ -427,7 +427,7 @@ Integration gates may execute later than unit gates because their execution cost
 
 ---
 
-# Contract Test Gate
+## Contract Test Gate
 
 Contract testing gates protect published interfaces.
 
@@ -437,7 +437,7 @@ A contract gate should block incompatible changes when those changes violate req
 
 ---
 
-# Regression Gate
+## Regression Gate
 
 Regression gates ensure that previously known defects remain protected.
 
@@ -445,7 +445,7 @@ When a defect has been fixed and an appropriate regression test exists, that tes
 
 ---
 
-# System Test Gate
+## System Test Gate
 
 System-level gates may protect high-confidence lifecycle stages.
 
@@ -457,7 +457,7 @@ These gates may be too expensive for every small change but can be mandatory for
 
 ---
 
-# Coverage Gate
+## Coverage Gate
 
 Coverage may be included in gate evaluation where explicitly governed.
 
@@ -475,7 +475,7 @@ Coverage gates should be used to protect against significant loss of validation 
 
 ---
 
-# Coverage Regression Gate
+## Coverage Regression Gate
 
 A coverage regression gate may compare current coverage against an accepted baseline.
 
@@ -498,7 +498,7 @@ This can be more meaningful than a single global threshold.
 
 ---
 
-# Performance Gate
+## Performance Gate
 
 Performance gates may be used where stable benchmarks exist.
 
@@ -514,7 +514,7 @@ Performance gates should only be used when measurements are sufficiently stable 
 
 ---
 
-# Performance Tolerance
+## Performance Tolerance
 
 Performance gates must include realistic tolerance.
 
@@ -537,7 +537,7 @@ Natural environmental noise must be considered.
 
 ---
 
-# Flaky Test Gate Policy
+## Flaky Test Gate Policy
 
 Flaky tests require special treatment.
 
@@ -558,7 +558,7 @@ These states may produce different gate outcomes depending on criticality.
 
 ---
 
-# Flaky Test Blocking
+## Flaky Test Blocking
 
 Critical flaky tests may justify blocking progression because they undermine confidence in the protected behavior.
 
@@ -568,7 +568,7 @@ There must be no universal assumption that flakiness is acceptable.
 
 ---
 
-# Retry-Aware Gates
+## Retry-Aware Gates
 
 Retries must remain visible to gate logic where retries are enabled.
 
@@ -592,7 +592,7 @@ The difference indicates instability.
 
 ---
 
-# Skip Gate Policy
+## Skip Gate Policy
 
 Skipped tests require explicit gate semantics.
 
@@ -610,7 +610,7 @@ Gate policy should distinguish acceptable and unacceptable reasons.
 
 ---
 
-# Mandatory Test Skips
+## Mandatory Test Skips
 
 A mandatory test that is skipped unexpectedly should normally prevent a gate from passing.
 
@@ -618,7 +618,7 @@ This protects against false confidence caused by incomplete execution.
 
 ---
 
-# Quarantine Gate Policy
+## Quarantine Gate Policy
 
 Quarantined tests may be excluded from ordinary mandatory success calculations only under explicit policy.
 
@@ -633,7 +633,7 @@ Quarantine must never become invisible.
 
 ---
 
-# Quarantine Limit
+## Quarantine Limit
 
 FamilyOS may define limits for acceptable quarantine.
 
@@ -648,7 +648,7 @@ Exact thresholds may evolve.
 
 ---
 
-# Execution Completeness
+## Execution Completeness
 
 A gate must verify not only test success but execution completeness.
 
@@ -671,7 +671,7 @@ The missing test matters.
 
 ---
 
-# Discovery Completeness
+## Discovery Completeness
 
 Unexpected changes in discovered test counts may indicate:
 
@@ -684,7 +684,7 @@ Gate logic may compare discovered tests against expectations where useful.
 
 ---
 
-# Missing Test Stage
+## Missing Test Stage
 
 If a mandatory CI stage never executed, the gate should not pass.
 
@@ -698,7 +698,7 @@ Absence of evidence is not evidence of success.
 
 ---
 
-# Report Completeness
+## Report Completeness
 
 Gates relying on structured reports must verify that required reports are:
 
@@ -709,7 +709,7 @@ Gates relying on structured reports must verify that required reports are:
 
 ---
 
-# Source Revision Integrity
+## Source Revision Integrity
 
 Gate evidence must correspond to the exact source state being evaluated.
 
@@ -717,7 +717,7 @@ A passing test result from an older commit must not automatically satisfy a gate
 
 ---
 
-# Stale Gate Evidence
+## Stale Gate Evidence
 
 If the source changes after validation, relevant gate evidence may become stale.
 
@@ -725,7 +725,7 @@ CI and repository protection should require fresh validation where applicable.
 
 ---
 
-# Gate Automation
+## Gate Automation
 
 Testing gates should be automated where practical.
 
@@ -740,7 +740,7 @@ Automation is particularly important for pull request and branch protection.
 
 ---
 
-# Gate as Code
+## Gate as Code
 
 Where supported, gate policies should be represented in version-controlled configuration or code.
 
@@ -755,7 +755,7 @@ Gate definitions are part of the FamilyOS engineering platform.
 
 ---
 
-# Gate Evaluation Order
+## Gate Evaluation Order
 
 Gate checks may be evaluated progressively.
 
@@ -787,7 +787,7 @@ Ordering should optimize clarity and efficiency.
 
 ---
 
-# Fail-Fast Gate Evaluation
+## Fail-Fast Gate Evaluation
 
 A gate may terminate evaluation when a decisive blocking condition is found.
 
@@ -806,7 +806,7 @@ However, collecting additional diagnostics may still be useful in some contexts.
 
 ---
 
-# Aggregate Evaluation
+## Aggregate Evaluation
 
 Some gates evaluate multiple independent jobs.
 
@@ -826,7 +826,7 @@ A failure in any mandatory child job should affect the aggregate decision.
 
 ---
 
-# Quality Gate Integration
+## Quality Gate Integration
 
 Testing gates are part of the broader FamilyOS quality model.
 
@@ -846,7 +846,7 @@ The Quality Framework coordinates broader engineering quality decisions.
 
 ---
 
-# Gate Severity
+## Gate Severity
 
 Testing conditions may have different severity.
 
@@ -867,7 +867,7 @@ Severity must be defined explicitly rather than inferred ad hoc.
 
 ---
 
-# Warning Gates
+## Warning Gates
 
 Some conditions may generate a warning without blocking progression.
 
@@ -883,7 +883,7 @@ Repeated warnings may eventually justify stricter policy.
 
 ---
 
-# Hard Gates
+## Hard Gates
 
 Hard gates block progression automatically when conditions fail.
 
@@ -899,7 +899,7 @@ Hard gates should be used for conditions where bypass would create unacceptable 
 
 ---
 
-# Soft Gates
+## Soft Gates
 
 Soft gates provide decision support but may allow progression.
 
@@ -917,7 +917,7 @@ Soft gates can later evolve into hard gates as measurement quality improves.
 
 ---
 
-# Progressive Enforcement
+## Progressive Enforcement
 
 FamilyOS gate maturity may evolve progressively.
 
@@ -940,7 +940,7 @@ This progression can help introduce new quality policies without destabilizing d
 
 ---
 
-# Gate Ownership
+## Gate Ownership
 
 Every testing gate should have identifiable ownership.
 
@@ -957,7 +957,7 @@ Ownerless gates tend to become outdated or ignored.
 
 ---
 
-# Component Ownership
+## Component Ownership
 
 Where gates fail because of component-specific tests, the responsible engineering area should be identifiable.
 
@@ -965,7 +965,7 @@ This improves remediation speed.
 
 ---
 
-# Gate Failure Reporting
+## Gate Failure Reporting
 
 A failed gate should explain:
 
@@ -984,7 +984,7 @@ is insufficient.
 
 ---
 
-# Gate Diagnostics
+## Gate Diagnostics
 
 Useful gate diagnostics may include:
 
@@ -1009,7 +1009,7 @@ Diagnostics should remain concise but actionable.
 
 ---
 
-# Gate Traceability
+## Gate Traceability
 
 Gate decisions should be traceable to:
 
@@ -1023,7 +1023,7 @@ This is especially important for release decisions.
 
 ---
 
-# Historical Gate Results
+## Historical Gate Results
 
 Historical gate data may support analysis of:
 
@@ -1037,7 +1037,7 @@ Gate history should be retained when it provides meaningful operational value.
 
 ---
 
-# Gate Bypass
+## Gate Bypass
 
 Mandatory testing gates should not be casually bypassed.
 
@@ -1045,7 +1045,7 @@ If bypass is technically supported, it must remain exceptional and governed.
 
 ---
 
-# Exception Policy
+## Exception Policy
 
 A testing gate exception should require:
 
@@ -1059,7 +1059,7 @@ An exception must be traceable.
 
 ---
 
-# Emergency Exceptions
+## Emergency Exceptions
 
 Emergency changes may occasionally require expedited progression.
 
@@ -1074,7 +1074,7 @@ Emergency does not mean ungoverned.
 
 ---
 
-# Waiver Expiration
+## Waiver Expiration
 
 Waivers should not remain open indefinitely.
 
@@ -1087,7 +1087,7 @@ Where possible, they should define:
 
 ---
 
-# No Silent Bypass
+## No Silent Bypass
 
 A bypassed testing gate must not appear identical to a normal pass.
 
@@ -1107,7 +1107,7 @@ must remain distinguishable.
 
 ---
 
-# Release Gate Evidence
+## Release Gate Evidence
 
 Release gate decisions should retain durable evidence.
 
@@ -1124,7 +1124,7 @@ This allows future traceability of release confidence.
 
 ---
 
-# Plugin Gates
+## Plugin Gates
 
 FamilyOS official plugins may have plugin-specific gates.
 
@@ -1142,7 +1142,7 @@ Plugin gates should align with the common FamilyOS testing model.
 
 ---
 
-# Shared Platform Gates
+## Shared Platform Gates
 
 Changes to shared FamilyOS frameworks may require broader gates.
 
@@ -1168,7 +1168,7 @@ High-impact platform changes require broader confidence than isolated component 
 
 ---
 
-# Dependency Change Gates
+## Dependency Change Gates
 
 Dependency changes may require dedicated gate evaluation.
 
@@ -1184,7 +1184,7 @@ Dependency upgrades can create broad behavior changes despite minimal source mod
 
 ---
 
-# Test Framework Change Gates
+## Test Framework Change Gates
 
 Changes to the Testing Framework itself require special care.
 
@@ -1203,7 +1203,7 @@ Such changes should receive broad validation.
 
 ---
 
-# Gate Reliability
+## Gate Reliability
 
 A gate must be trustworthy.
 
@@ -1221,7 +1221,7 @@ Both reduce confidence in engineering governance.
 
 ---
 
-# False Positives
+## False Positives
 
 False-positive passes are particularly dangerous because they create false confidence.
 
@@ -1237,7 +1237,7 @@ Testing gate design should prioritize preventing false acceptance.
 
 ---
 
-# False Negatives
+## False Negatives
 
 False-negative failures reduce productivity.
 
@@ -1252,7 +1252,7 @@ False negatives should be investigated rather than normalized through repeated r
 
 ---
 
-# Gate Performance
+## Gate Performance
 
 Gate evaluation itself should remain efficient.
 
@@ -1262,7 +1262,7 @@ It should not unnecessarily duplicate expensive test execution.
 
 ---
 
-# Gate Observability
+## Gate Observability
 
 Gate health should be observable.
 
@@ -1280,7 +1280,7 @@ This allows the gate system itself to improve over time.
 
 ---
 
-# Gate Policy Versioning
+## Gate Policy Versioning
 
 Gate policies evolve.
 
@@ -1290,7 +1290,7 @@ This helps explain why the same evidence may produce different decisions at diff
 
 ---
 
-# Gate Evolution
+## Gate Evolution
 
 Testing gates should evolve as FamilyOS matures.
 
@@ -1306,7 +1306,7 @@ Gate evolution should be deliberate and evidence-based.
 
 ---
 
-# Testing Debt and Gates
+## Testing Debt and Gates
 
 Not every testing weakness can immediately become a hard gate.
 
@@ -1334,65 +1334,65 @@ This supports sustainable quality improvement.
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following gate practices are discouraged or prohibited.
 
-## Gate Without Defined Evidence
+### Gate Without Defined Evidence
 
 A gate must specify what it evaluates.
 
 ---
 
-## Gate Based Only on Test Count
+### Gate Based Only on Test Count
 
 Test quantity alone does not demonstrate sufficient validation.
 
 ---
 
-## Hidden Gate Conditions
+### Hidden Gate Conditions
 
 Developers must be able to understand why a gate passes or fails.
 
 ---
 
-## Stale Evidence
+### Stale Evidence
 
 Old test results must not satisfy current-source validation requirements.
 
 ---
 
-## Automatic Retry Until Pass
+### Automatic Retry Until Pass
 
 Repeated execution must not be used to manufacture a successful gate result.
 
 ---
 
-## Invisible Skips
+### Invisible Skips
 
 Mandatory skipped tests must remain visible.
 
 ---
 
-## Permanent Waivers
+### Permanent Waivers
 
 Exceptions should not become a normal operating state.
 
 ---
 
-## Unowned Gates
+### Unowned Gates
 
 Every enforced policy must have responsible ownership.
 
 ---
 
-## Unstable Performance Gates
+### Unstable Performance Gates
 
 Performance thresholds should not block changes when measurement noise is too high to support reliable decisions.
 
 ---
 
-## Gate Proliferation
+### Gate Proliferation
 
 Too many overlapping gates can create unnecessary complexity.
 
@@ -1400,7 +1400,7 @@ Each gate should protect a clear engineering boundary.
 
 ---
 
-# Governance
+## Governance
 
 Testing gates are governed by the FamilyOS Testing Framework and broader FamilyOS engineering governance.
 
@@ -1419,7 +1419,7 @@ must follow the appropriate governance process.
 
 ---
 
-# Relationship With Test Reporting
+## Relationship With Test Reporting
 
 Testing gates consume evidence produced according to:
 
@@ -1431,7 +1431,7 @@ Reliable reporting is therefore a prerequisite for reliable gates.
 
 ---
 
-# Relationship With Automation and CI
+## Relationship With Automation and CI
 
 Automated enforcement of testing gates depends on:
 
@@ -1443,7 +1443,7 @@ CI provides the execution environment and integration points through which gate 
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 Testing gates provide testing-specific quality signals.
 
@@ -1459,7 +1459,7 @@ Testing gates are therefore one layer of the wider quality governance system.
 
 ---
 
-# Relationship With Governance and Test Lifecycle
+## Relationship With Governance and Test Lifecycle
 
 Testing gates themselves require lifecycle governance.
 
@@ -1479,7 +1479,7 @@ This lifecycle is defined further in:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The FamilyOS Testing Gate model is considered effective when:
 
@@ -1500,7 +1500,7 @@ The FamilyOS Testing Gate model is considered effective when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 Tests determine what happened.
 

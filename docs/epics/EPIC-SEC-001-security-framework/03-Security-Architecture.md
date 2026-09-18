@@ -1,8 +1,8 @@
 # Security Framework
 
-# 03 Security Architecture
+## 03 Security Architecture
 
-## Overview
+### Overview
 
 The FamilyOS Security Architecture defines the structural security model used to protect the platform, its users, family data, services, plugins, infrastructure, and operational environments.
 
@@ -16,7 +16,7 @@ The Security Architecture provides the structural foundation required to impleme
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Security Architecture is to define how FamilyOS translates security principles into enforceable architectural structures.
 
@@ -41,7 +41,7 @@ The architecture ensures that security is part of the platform structure rather 
 
 ---
 
-# Architectural Objectives
+## Architectural Objectives
 
 The FamilyOS Security Architecture MUST support the following objectives:
 
@@ -62,7 +62,7 @@ Security controls MUST remain compatible with the modular and extensible archite
 
 ---
 
-# Security Architecture Model
+## Security Architecture Model
 
 FamilyOS uses a layered security architecture.
 
@@ -98,7 +98,7 @@ A weakness in one layer MUST NOT automatically result in unrestricted access to 
 
 ---
 
-# Defense in Depth
+## Defense in Depth
 
 Defense in depth is a fundamental architectural requirement.
 
@@ -137,7 +137,7 @@ Each stage reduces the probability that a failure at another stage produces a co
 
 ---
 
-# Trust Model
+## Trust Model
 
 FamilyOS MUST operate according to explicit trust relationships.
 
@@ -154,7 +154,7 @@ Every meaningful security relationship MUST have a defined trust basis.
 
 ---
 
-# Trust Boundaries
+## Trust Boundaries
 
 A trust boundary exists whenever information, commands, identities, or capabilities move between components with different security assumptions.
 
@@ -197,7 +197,7 @@ Crossing a trust boundary MUST trigger appropriate security controls.
 
 ---
 
-# Zero-Trust Principles
+## Zero-Trust Principles
 
 FamilyOS security architecture SHOULD apply zero-trust principles where appropriate.
 
@@ -220,7 +220,7 @@ Trust SHOULD be continuously justified rather than permanently inherited.
 
 ---
 
-# Security Domains
+## Security Domains
 
 FamilyOS separates security responsibilities into logical security domains.
 
@@ -248,7 +248,7 @@ Security domains MAY share common platform services but MUST preserve their indi
 
 ---
 
-# Identity Architecture
+## Identity Architecture
 
 Identity provides the basis for security decisions involving users, services, plugins, devices, and system actors.
 
@@ -270,7 +270,7 @@ Identity information MUST be treated as security-sensitive data.
 
 ---
 
-# Authentication Architecture
+## Authentication Architecture
 
 Authentication establishes whether an actor is the identity it claims to represent.
 
@@ -303,7 +303,7 @@ Authentication success MUST NOT itself imply authorization.
 
 ---
 
-# Authorization Architecture
+## Authorization Architecture
 
 Authorization determines whether an authenticated actor may perform a requested operation.
 
@@ -341,7 +341,7 @@ The default outcome SHOULD be denial when authorization cannot be determined rel
 
 ---
 
-# Least Privilege Architecture
+## Least Privilege Architecture
 
 Every actor and component MUST receive only the permissions necessary to perform its intended responsibilities.
 
@@ -369,7 +369,7 @@ Temporary privilege elevation SHOULD be preferred over permanent broad privilege
 
 ---
 
-# Capability Security
+## Capability Security
 
 FamilyOS uses capabilities as important architectural units of functionality.
 
@@ -406,7 +406,7 @@ Capability security MUST remain compatible with the FamilyOS plugin architecture
 
 ---
 
-# Application Security Layer
+## Application Security Layer
 
 The application layer is responsible for enforcing security rules close to business operations.
 
@@ -426,7 +426,7 @@ Critical authorization MUST NOT depend exclusively on user-interface restriction
 
 ---
 
-# Domain Security
+## Domain Security
 
 Domain logic MUST preserve security invariants.
 
@@ -446,7 +446,7 @@ Critical invariants SHOULD remain enforceable inside the domain boundary wheneve
 
 ---
 
-# Plugin Security Architecture
+## Plugin Security Architecture
 
 Plugins extend FamilyOS capabilities and therefore represent an important security boundary.
 
@@ -467,7 +467,7 @@ The architecture SHOULD treat plugin privileges as explicitly granted capabiliti
 
 ---
 
-# Official Plugin Security
+## Official Plugin Security
 
 Official plugins are trusted to a higher operational degree only after satisfying defined governance and compliance requirements.
 
@@ -487,7 +487,7 @@ Trust in official plugins MUST remain evidence-based.
 
 ---
 
-# Third-Party Plugin Security
+## Third-Party Plugin Security
 
 Third-party plugins MUST be treated as potentially untrusted extensions.
 
@@ -509,7 +509,7 @@ Third-party code MUST NOT automatically inherit the privileges of the FamilyOS r
 
 ---
 
-# Data Security Architecture
+## Data Security Architecture
 
 FamilyOS manages information that may be highly sensitive to families.
 
@@ -541,7 +541,7 @@ Security controls MUST remain appropriate at every stage.
 
 ---
 
-# Data Classification
+## Data Classification
 
 Security controls SHOULD be driven by data sensitivity.
 
@@ -569,7 +569,7 @@ Higher sensitivity MUST result in stronger protection where appropriate.
 
 ---
 
-# Data at Rest
+## Data at Rest
 
 Sensitive data stored persistently MUST receive appropriate protection.
 
@@ -586,7 +586,7 @@ Plaintext storage of secrets or highly sensitive credentials MUST be prohibited.
 
 ---
 
-# Data in Transit
+## Data in Transit
 
 Sensitive information transmitted across trust boundaries MUST use secure communication mechanisms.
 
@@ -600,7 +600,7 @@ Insecure transport protocols MUST NOT be used for sensitive FamilyOS communicati
 
 ---
 
-# Data in Use
+## Data in Use
 
 Data may remain sensitive while being processed.
 
@@ -616,7 +616,7 @@ Sensitive values MUST NOT be included in diagnostic output unless explicitly req
 
 ---
 
-# Cryptographic Architecture
+## Cryptographic Architecture
 
 Cryptographic operations MUST be centralized or governed sufficiently to prevent inconsistent security practices.
 
@@ -634,7 +634,7 @@ Custom cryptographic algorithms MUST NOT be introduced where established and rev
 
 ---
 
-# Key Management
+## Key Management
 
 Cryptographic keys MUST be treated as high-value security assets.
 
@@ -655,7 +655,7 @@ A compromise of one key SHOULD NOT unnecessarily compromise unrelated security d
 
 ---
 
-# Secrets Architecture
+## Secrets Architecture
 
 Secrets include:
 
@@ -690,7 +690,7 @@ Secret values SHOULD remain outside ordinary application configuration whenever 
 
 ---
 
-# Configuration Security
+## Configuration Security
 
 Configuration can materially affect system security.
 
@@ -712,7 +712,7 @@ Secure defaults SHOULD be used wherever possible.
 
 ---
 
-# Infrastructure Security Architecture
+## Infrastructure Security Architecture
 
 Infrastructure security protects the runtime environment supporting FamilyOS.
 
@@ -731,7 +731,7 @@ Infrastructure MUST be hardened according to its exposure and security role.
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 Development, testing, staging, and production environments SHOULD be logically separated.
 
@@ -754,7 +754,7 @@ Production privileges MUST remain independently controlled.
 
 ---
 
-# Network Security
+## Network Security
 
 Network access SHOULD follow least-access principles.
 
@@ -770,7 +770,7 @@ Network boundaries SHOULD reinforce application and infrastructure security cont
 
 ---
 
-# Dependency and Supply Chain Security
+## Dependency and Supply Chain Security
 
 Dependencies introduce external code into the FamilyOS trust model.
 
@@ -791,7 +791,7 @@ Dependency trust MUST NOT be assumed solely because a package exists in a public
 
 ---
 
-# Build Security
+## Build Security
 
 The build process forms part of the security architecture.
 
@@ -810,7 +810,7 @@ The Security Framework therefore integrates directly with EPIC-BLD-001 — Build
 
 ---
 
-# Release Security
+## Release Security
 
 Security requirements MUST remain enforceable during release preparation and distribution.
 
@@ -829,7 +829,7 @@ The Security Framework integrates with EPIC-REL-001 — Release Framework for re
 
 ---
 
-# Security Observability
+## Security Observability
 
 Security architecture MUST provide sufficient visibility to identify relevant security events.
 
@@ -850,7 +850,7 @@ Security observability MUST integrate with the FamilyOS Observability Framework.
 
 ---
 
-# Security Logging
+## Security Logging
 
 Security logs MUST provide enough context to support investigation without unnecessarily exposing sensitive data.
 
@@ -873,7 +873,7 @@ Highly sensitive data SHOULD be redacted, masked, or excluded.
 
 ---
 
-# Audit Architecture
+## Audit Architecture
 
 Auditability is required for important security operations.
 
@@ -890,7 +890,7 @@ Audit records SHOULD be protected against unauthorized modification.
 
 ---
 
-# Detection Architecture
+## Detection Architecture
 
 FamilyOS SHOULD support detection of security-relevant anomalies.
 
@@ -908,7 +908,7 @@ Detection mechanisms SHOULD produce actionable security events rather than uncon
 
 ---
 
-# Security Failure Model
+## Security Failure Model
 
 Security controls MUST fail safely.
 
@@ -931,7 +931,7 @@ Security failures MUST NOT silently downgrade protection.
 
 ---
 
-# Failure Containment
+## Failure Containment
 
 Security architecture MUST attempt to limit the impact of compromised components.
 
@@ -951,7 +951,7 @@ The compromise of one component SHOULD NOT automatically compromise the entire F
 
 ---
 
-# Secure Error Handling
+## Secure Error Handling
 
 Errors MUST NOT disclose unnecessary security-sensitive information.
 
@@ -968,7 +968,7 @@ Detailed diagnostics MAY be retained in protected operational logs when required
 
 ---
 
-# Recovery Architecture
+## Recovery Architecture
 
 Security architecture MUST support recovery from security incidents.
 
@@ -987,7 +987,7 @@ Recovery MUST restore both functionality and security guarantees.
 
 ---
 
-# Backup Security
+## Backup Security
 
 Backups MUST receive security protections appropriate to the data they contain.
 
@@ -1004,7 +1004,7 @@ A secure production environment MUST NOT be undermined by poorly protected backu
 
 ---
 
-# Security Control Placement
+## Security Control Placement
 
 Controls SHOULD be positioned at the layer where they provide the strongest enforceable guarantee.
 
@@ -1035,7 +1035,7 @@ Duplicated controls MAY be appropriate when they provide meaningful defense in d
 
 ---
 
-# Policy Enforcement Points
+## Policy Enforcement Points
 
 FamilyOS SHOULD define explicit Policy Enforcement Points.
 
@@ -1054,7 +1054,7 @@ Policy decisions MUST be deterministic and auditable where security impact is si
 
 ---
 
-# Policy Decision Architecture
+## Policy Decision Architecture
 
 A policy decision may follow:
 
@@ -1085,7 +1085,7 @@ Policy enforcement and policy decision responsibilities SHOULD remain clearly se
 
 ---
 
-# Security Architecture and Clean Architecture
+## Security Architecture and Clean Architecture
 
 FamilyOS follows Clean Architecture principles.
 
@@ -1112,7 +1112,7 @@ Infrastructure-specific security mechanisms SHOULD be accessed through defined a
 
 ---
 
-# Security Architecture and DDD
+## Security Architecture and DDD
 
 Security rules SHOULD align with domain boundaries.
 
@@ -1130,7 +1130,7 @@ Security architecture MUST avoid creating a single unrestricted global security 
 
 ---
 
-# Security Architecture and Plugins
+## Security Architecture and Plugins
 
 The plugin architecture MUST integrate security through explicit contracts.
 
@@ -1160,7 +1160,7 @@ Plugin registration MUST NOT imply unrestricted execution authority.
 
 ---
 
-# Security Architecture and Compliance
+## Security Architecture and Compliance
 
 Security architecture MUST produce evidence that can be evaluated by the FamilyOS compliance mechanisms.
 
@@ -1179,7 +1179,7 @@ The Security Framework therefore integrates with EPIC-PLUGIN-002 — Plugin Comp
 
 ---
 
-# Security Architecture and Testing
+## Security Architecture and Testing
 
 Security controls MUST be testable.
 
@@ -1200,7 +1200,7 @@ Security testing MUST integrate with EPIC-TST-001 — Testing Framework.
 
 ---
 
-# Security Architecture and Quality
+## Security Architecture and Quality
 
 Security is a quality attribute of the FamilyOS platform.
 
@@ -1219,7 +1219,7 @@ The architecture integrates with EPIC-QLT-001 — Quality Framework.
 
 ---
 
-# Security Architecture and Documentation
+## Security Architecture and Documentation
 
 Security architecture decisions MUST be documented sufficiently to remain understandable and auditable.
 
@@ -1237,7 +1237,7 @@ Security documentation MUST follow EPIC-DOC-001 — Documentation Framework.
 
 ---
 
-# Security Architecture and Observability
+## Security Architecture and Observability
 
 Security telemetry MUST use the common observability foundations of FamilyOS wherever possible.
 
@@ -1254,7 +1254,7 @@ Security observability MUST NOT create an isolated monitoring architecture when 
 
 ---
 
-# Security Architecture Governance
+## Security Architecture Governance
 
 Material security architecture changes MUST be governed.
 
@@ -1272,7 +1272,7 @@ High-impact changes MUST NOT bypass established engineering governance.
 
 ---
 
-# Security Architecture Review
+## Security Architecture Review
 
 Security architecture SHOULD be reviewed periodically and when significant changes occur.
 
@@ -1292,7 +1292,7 @@ Reviews SHOULD produce traceable outcomes.
 
 ---
 
-# Architecture Exceptions
+## Architecture Exceptions
 
 Security architecture exceptions MUST be explicit.
 
@@ -1310,7 +1310,7 @@ Permanent undocumented security exceptions are prohibited.
 
 ---
 
-# Security Architecture Evidence
+## Security Architecture Evidence
 
 Architecture compliance SHOULD be demonstrable through evidence.
 
@@ -1336,7 +1336,7 @@ Security claims SHOULD be supported by verifiable evidence rather than assumptio
 
 ---
 
-# Security Architecture Lifecycle
+## Security Architecture Lifecycle
 
 Security architecture evolves with the platform.
 
@@ -1369,7 +1369,7 @@ Security architecture MUST remain a continuous engineering responsibility.
 
 ---
 
-# Architectural Security Invariants
+## Architectural Security Invariants
 
 The following invariants apply across FamilyOS:
 
@@ -1388,7 +1388,7 @@ The following invariants apply across FamilyOS:
 
 ---
 
-# Relationship With Other FamilyOS Frameworks
+## Relationship With Other FamilyOS Frameworks
 
 The Security Architecture operates as part of the broader FamilyOS engineering foundation.
 
@@ -1413,7 +1413,7 @@ It defines the security responsibilities that integrate with them.
 
 ---
 
-# Target Security Architecture
+## Target Security Architecture
 
 The target architecture for FamilyOS is:
 
@@ -1459,7 +1459,7 @@ This architecture provides a unified security model while preserving modularity 
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 The Security Architecture enables FamilyOS to achieve:
 
@@ -1480,7 +1480,7 @@ The Security Architecture enables FamilyOS to achieve:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS security architecture is based on the following principle:
 

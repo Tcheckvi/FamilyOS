@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 20 Roadmap
+## 20 Roadmap
 
-## Overview
+### Overview
 
 The FamilyOS Quality Framework Roadmap defines the progressive implementation, adoption, automation, integration, governance, and long-term evolution of quality capabilities across the FamilyOS engineering ecosystem.
 
@@ -40,7 +40,7 @@ The roadmap therefore prioritizes engineering leverage, deterministic behavior, 
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this roadmap is to define:
 
@@ -77,45 +77,45 @@ Continuous Improvement
 
 ---
 
-# Roadmap Principles
+## Roadmap Principles
 
 The Quality Framework roadmap follows several principles.
 
-## Foundation Before Automation
+### Foundation Before Automation
 
 Quality semantics must be understood before they are automated.
 
-## Determinism Before Intelligence
+### Determinism Before Intelligence
 
 Deterministic quality controls should be implemented before AI-assisted interpretation.
 
-## Evidence Before Governance Decisions
+### Evidence Before Governance Decisions
 
 Quality decisions should rely on observable evidence.
 
-## Observation Before Enforcement
+### Observation Before Enforcement
 
 New quality controls should generally be observed before becoming blocking.
 
-## Prevention Before Correction
+### Prevention Before Correction
 
 The framework should progressively shift quality investment toward preventing defects.
 
-## Incremental Adoption
+### Incremental Adoption
 
 Quality capabilities should be introduced progressively rather than through a single large transformation.
 
-## Risk-Based Prioritization
+### Risk-Based Prioritization
 
 Capabilities addressing high-impact systemic risks should receive priority.
 
-## Integration Over Duplication
+### Integration Over Duplication
 
 Existing FamilyOS frameworks should provide domain-specific capabilities rather than duplicate them inside the Quality Framework.
 
 ---
 
-# Strategic Direction
+## Strategic Direction
 
 The long-term objective is to establish FamilyOS as an engineering system where quality is continuously:
 
@@ -133,7 +133,7 @@ Quality should become part of normal engineering execution rather than a separat
 
 ---
 
-# Roadmap Horizon
+## Roadmap Horizon
 
 The roadmap is organized into progressive implementation phases.
 
@@ -157,9 +157,9 @@ Several phases may overlap once their prerequisites are sufficiently stable.
 
 ---
 
-# Phase 0 — Framework Foundation
+## Phase 0 — Framework Foundation
 
-## Objective
+### Objective
 
 Establish the normative Quality Framework documentation and architectural model.
 
@@ -167,7 +167,7 @@ This phase defines the common language required by all future quality capabiliti
 
 ---
 
-# Phase 0 Scope
+## Phase 0 Scope
 
 The foundation includes:
 
@@ -194,7 +194,7 @@ Framework Lifecycle
 
 ---
 
-# Phase 0 Deliverables
+## Phase 0 Deliverables
 
 Primary deliverables include:
 
@@ -225,7 +225,7 @@ The exact numbering should remain synchronized with the canonical EPIC manifest.
 
 ---
 
-# Phase 0 Exit Criteria
+## Phase 0 Exit Criteria
 
 Phase 0 is complete when:
 
@@ -245,9 +245,9 @@ Future implementation has an authoritative architectural foundation.
 
 ---
 
-# Phase 1 — Quality Model
+## Phase 1 — Quality Model
 
-## Objective
+### Objective
 
 Introduce machine-readable representations of the core Quality Framework concepts.
 
@@ -255,7 +255,7 @@ The initial implementation should remain intentionally small.
 
 ---
 
-# Phase 1 Core Models
+## Phase 1 Core Models
 
 Initial models may include:
 
@@ -272,7 +272,7 @@ QualityAssessment
 
 ---
 
-# Quality Finding Model
+## Quality Finding Model
 
 A first `QualityFinding` model may conceptually contain:
 
@@ -288,7 +288,7 @@ evidence
 
 ---
 
-# Quality Severity Model
+## Quality Severity Model
 
 The common severity model should become a reusable FamilyOS type.
 
@@ -306,7 +306,7 @@ Exact semantics should remain governed by the Quality Framework.
 
 ---
 
-# Quality Status Model
+## Quality Status Model
 
 A common quality status may include:
 
@@ -322,7 +322,7 @@ This should not be confused with severity.
 
 ---
 
-# Quality Target Model
+## Quality Target Model
 
 A target identifies what is being evaluated.
 
@@ -341,7 +341,7 @@ configuration
 
 ---
 
-# Phase 1 Architecture
+## Phase 1 Architecture
 
 The implementation should preserve Clean Architecture boundaries.
 
@@ -359,7 +359,7 @@ The exact repository location should follow FamilyOS project architecture.
 
 ---
 
-# Phase 1 Tests
+## Phase 1 Tests
 
 Initial tests should cover:
 
@@ -374,15 +374,15 @@ Identity Stability
 
 ---
 
-# Phase 1 Exit Criteria
+## Phase 1 Exit Criteria
 
 Phase 1 is complete when core quality concepts have stable, tested, implementation-level representations.
 
 ---
 
-# Phase 2 — Deterministic Verification
+## Phase 2 — Deterministic Verification
 
-## Objective
+### Objective
 
 Create deterministic quality checks that transform engineering state into structured findings.
 
@@ -390,7 +390,7 @@ The first checks should target existing FamilyOS engineering rules.
 
 ---
 
-# Initial Verification Domains
+## Initial Verification Domains
 
 Priority domains include:
 
@@ -406,7 +406,7 @@ Configuration
 
 ---
 
-# Existing Tool Integration
+## Existing Tool Integration
 
 The Quality Framework should initially integrate existing tools rather than replace them.
 
@@ -423,7 +423,7 @@ Documentation Validation
 
 ---
 
-# Verification Adapter Model
+## Verification Adapter Model
 
 Existing tools should be normalized through adapters.
 
@@ -441,19 +441,19 @@ Quality Finding
 
 ---
 
-# Ruff Adapter
+## Ruff Adapter
 
 Ruff results may become structured quality findings.
 
 ---
 
-# MyPy Adapter
+## MyPy Adapter
 
 Static typing failures may become typed quality findings.
 
 ---
 
-# Pytest Adapter
+## Pytest Adapter
 
 Test execution results may contribute:
 
@@ -468,7 +468,7 @@ where applicable.
 
 ---
 
-# Plugin Compliance Adapter
+## Plugin Compliance Adapter
 
 The Plugin Compliance Framework should remain authoritative for plugin-specific rules.
 
@@ -476,27 +476,27 @@ The Quality Framework should consume its results rather than duplicate its logic
 
 ---
 
-# Documentation Adapter
+## Documentation Adapter
 
 Documentation validation results should integrate with the common quality model.
 
 ---
 
-# Phase 2 Exit Criteria
+## Phase 2 Exit Criteria
 
 Phase 2 is complete when major deterministic FamilyOS verification mechanisms can produce normalized quality findings.
 
 ---
 
-# Phase 3 — Quality Evidence
+## Phase 3 — Quality Evidence
 
-## Objective
+### Objective
 
 Establish structured evidence supporting quality findings and assessments.
 
 ---
 
-# Evidence Sources
+## Evidence Sources
 
 Initial evidence sources may include:
 
@@ -512,7 +512,7 @@ Git Revision
 
 ---
 
-# Evidence Identity
+## Evidence Identity
 
 Evidence should bind to:
 
@@ -528,7 +528,7 @@ where practical.
 
 ---
 
-# Evidence Storage
+## Evidence Storage
 
 Initial evidence may remain:
 
@@ -542,7 +542,7 @@ A centralized evidence service is not initially required.
 
 ---
 
-# Evidence Format
+## Evidence Format
 
 Structured formats such as JSON should be preferred for machine-readable evidence.
 
@@ -550,7 +550,7 @@ Human-readable reports may be generated from the same data.
 
 ---
 
-# Evidence Validation
+## Evidence Validation
 
 Evidence validation should detect:
 
@@ -564,21 +564,21 @@ Unsupported Format
 
 ---
 
-# Phase 3 Exit Criteria
+## Phase 3 Exit Criteria
 
 Phase 3 is complete when important quality claims can be traced to structured evidence.
 
 ---
 
-# Phase 4 — Quality Assessment
+## Phase 4 — Quality Assessment
 
-## Objective
+### Objective
 
 Aggregate findings and evidence into target-level quality assessments.
 
 ---
 
-# Assessment Engine
+## Assessment Engine
 
 A minimal assessment engine should:
 
@@ -600,7 +600,7 @@ Produce Assessment
 
 ---
 
-# Assessment Output
+## Assessment Output
 
 An assessment may contain:
 
@@ -617,7 +617,7 @@ timestamp
 
 ---
 
-# Assessment Profiles
+## Assessment Profiles
 
 Initial profiles may include:
 
@@ -632,7 +632,7 @@ Profiles should reuse domain frameworks where appropriate.
 
 ---
 
-# Assessment Determinism
+## Assessment Determinism
 
 Equivalent inputs should produce equivalent assessment outcomes.
 
@@ -640,21 +640,21 @@ This should become a major test requirement.
 
 ---
 
-# Phase 4 Exit Criteria
+## Phase 4 Exit Criteria
 
 Phase 4 is complete when FamilyOS can produce reproducible target-level quality assessments.
 
 ---
 
-# Phase 5 — Quality Automation
+## Phase 5 — Quality Automation
 
-## Objective
+### Objective
 
 Integrate quality verification into normal engineering workflows.
 
 ---
 
-# Local Automation
+## Local Automation
 
 Developers should be able to execute quality verification locally.
 
@@ -666,7 +666,7 @@ familyos quality check
 
 ---
 
-# CI Automation
+## CI Automation
 
 Quality checks should execute automatically during relevant CI workflows.
 
@@ -681,7 +681,7 @@ Release
 
 ---
 
-# Automation Priority
+## Automation Priority
 
 The first automated checks should be:
 
@@ -696,7 +696,7 @@ Slow or noisy checks should not become early blocking controls.
 
 ---
 
-# Automation Reliability
+## Automation Reliability
 
 Before enforcement, automation should demonstrate:
 
@@ -709,7 +709,7 @@ Predictable Runtime
 
 ---
 
-# Failure Semantics
+## Failure Semantics
 
 Automation should distinguish:
 
@@ -724,21 +724,21 @@ This prevents infrastructure problems from being misreported as product quality 
 
 ---
 
-# Phase 5 Exit Criteria
+## Phase 5 Exit Criteria
 
 Phase 5 is complete when core quality verification executes automatically and reliably across the engineering lifecycle.
 
 ---
 
-# Phase 6 — Quality Gates
+## Phase 6 — Quality Gates
 
-## Objective
+### Objective
 
 Convert trusted quality assessments into controlled lifecycle progression decisions.
 
 ---
 
-# Initial Gates
+## Initial Gates
 
 Initial gates should focus on high-value boundaries.
 
@@ -753,7 +753,7 @@ Official Plugin Compliance Gate
 
 ---
 
-# Gate Introduction Strategy
+## Gate Introduction Strategy
 
 Each significant gate should progress through:
 
@@ -767,7 +767,7 @@ ENFORCE
 
 ---
 
-# Merge Gate
+## Merge Gate
 
 A merge gate may require:
 
@@ -783,7 +783,7 @@ Exact policy should remain governed.
 
 ---
 
-# Release Gate
+## Release Gate
 
 Release gates may require stronger evidence than merge gates.
 
@@ -799,7 +799,7 @@ No Unaccepted Critical Risk
 
 ---
 
-# Gate Override
+## Gate Override
 
 Override support should not be implemented without:
 
@@ -812,21 +812,21 @@ Traceability
 
 ---
 
-# Phase 6 Exit Criteria
+## Phase 6 Exit Criteria
 
 Phase 6 is complete when trusted quality state can govern important engineering progression boundaries.
 
 ---
 
-# Phase 7 — Quality Observability
+## Phase 7 — Quality Observability
 
-## Objective
+### Objective
 
 Make quality state, trends, failures, debt, risk, and governance visible over time.
 
 ---
 
-# Initial Observability
+## Initial Observability
 
 Initial observability may be report-based.
 
@@ -843,13 +843,13 @@ Risk Summary
 
 ---
 
-# Historical Data
+## Historical Data
 
 Quality results should progressively retain sufficient history to support trend analysis.
 
 ---
 
-# Initial Trends
+## Initial Trends
 
 Priority trends include:
 
@@ -865,7 +865,7 @@ CI Duration
 
 ---
 
-# Quality Dashboard
+## Quality Dashboard
 
 A future dashboard may expose:
 
@@ -880,7 +880,7 @@ Release Readiness
 
 ---
 
-# Alerting
+## Alerting
 
 Alerting should initially focus only on actionable conditions.
 
@@ -895,21 +895,21 @@ Major Quality Regression
 
 ---
 
-# Phase 7 Exit Criteria
+## Phase 7 Exit Criteria
 
 Phase 7 is complete when quality state can be understood historically rather than only through isolated CI executions.
 
 ---
 
-# Phase 8 — Governance Integration
+## Phase 8 — Governance Integration
 
-## Objective
+### Objective
 
 Integrate quality policy, ownership, risk, debt, exceptions, and lifecycle authority into the engineering system.
 
 ---
 
-# Governance Registry
+## Governance Registry
 
 A future governance registry may represent:
 
@@ -926,37 +926,37 @@ Risks
 
 ---
 
-# Ownership
+## Ownership
 
 Critical quality artifacts should have explicit owners.
 
 ---
 
-# Exception Management
+## Exception Management
 
 Exceptions should become structured, searchable, and expiration-aware.
 
 ---
 
-# Risk Acceptance
+## Risk Acceptance
 
 Risk acceptance should become traceable and authority-aware.
 
 ---
 
-# Quality Debt Governance
+## Quality Debt Governance
 
 Quality Debt should integrate with planning and prioritization.
 
 ---
 
-# Policy as Code
+## Policy as Code
 
 Deterministic policy should increasingly become version-controlled configuration.
 
 ---
 
-# Governance Audit
+## Governance Audit
 
 Automated validation should detect:
 
@@ -970,21 +970,21 @@ Conflicting Policy
 
 ---
 
-# Phase 8 Exit Criteria
+## Phase 8 Exit Criteria
 
 Phase 8 is complete when quality authority and policy are explicit, traceable, and integrated with automation.
 
 ---
 
-# Phase 9 — Continuous Improvement
+## Phase 9 — Continuous Improvement
 
-## Objective
+### Objective
 
 Transform accumulated quality evidence into systematic engineering improvement.
 
 ---
 
-# Improvement Inputs
+## Improvement Inputs
 
 Inputs include:
 
@@ -1003,19 +1003,19 @@ Developer Feedback
 
 ---
 
-# Improvement Backlog
+## Improvement Backlog
 
 Significant systemic improvements should become explicit engineering work.
 
 ---
 
-# Root Cause Analysis
+## Root Cause Analysis
 
 Repeated or high-impact problems should trigger structured root cause analysis.
 
 ---
 
-# Defect Prevention
+## Defect Prevention
 
 Important defects should result in preventive mechanisms where practical.
 
@@ -1031,7 +1031,7 @@ Automation
 
 ---
 
-# Quality Retrospectives
+## Quality Retrospectives
 
 Periodic quality retrospectives should examine:
 
@@ -1045,27 +1045,27 @@ What Should Change
 
 ---
 
-# Improvement Validation
+## Improvement Validation
 
 Improvements should be measured against baselines where practical.
 
 ---
 
-# Phase 9 Exit Criteria
+## Phase 9 Exit Criteria
 
 Phase 9 is complete when quality evidence systematically changes engineering practices rather than only reporting problems.
 
 ---
 
-# Phase 10 — Quality Intelligence
+## Phase 10 — Quality Intelligence
 
-## Objective
+### Objective
 
 Introduce advanced analytical and AI-assisted quality capabilities after deterministic foundations are mature.
 
 ---
 
-# Quality Intelligence Scope
+## Quality Intelligence Scope
 
 Potential capabilities include:
 
@@ -1081,7 +1081,7 @@ Historical Correlation
 
 ---
 
-# AI-Assisted Quality Analysis
+## AI-Assisted Quality Analysis
 
 AI may assist engineers by analyzing large volumes of quality evidence.
 
@@ -1089,7 +1089,7 @@ It should initially remain advisory.
 
 ---
 
-# AI Finding Explanation
+## AI Finding Explanation
 
 AI may generate explanations such as:
 
@@ -1105,7 +1105,7 @@ Suggested Investigation
 
 ---
 
-# AI Root Cause Assistance
+## AI Root Cause Assistance
 
 AI may correlate:
 
@@ -1123,7 +1123,7 @@ These hypotheses require verification.
 
 ---
 
-# Predictive Quality
+## Predictive Quality
 
 Future capabilities may identify deteriorating quality before explicit failure occurs.
 
@@ -1141,7 +1141,7 @@ Predicted Testing Infrastructure Risk
 
 ---
 
-# Predictive Risk
+## Predictive Risk
 
 Historical evidence may help identify areas likely to accumulate:
 
@@ -1154,7 +1154,7 @@ Release Problems
 
 ---
 
-# AI Governance
+## AI Governance
 
 AI-assisted quality decisions must remain:
 
@@ -1169,13 +1169,13 @@ AI must not silently become authoritative.
 
 ---
 
-# Phase 10 Exit Criteria
+## Phase 10 Exit Criteria
 
 Phase 10 is mature when AI improves engineering understanding without replacing deterministic quality authority.
 
 ---
 
-# Cross-Phase Dependency Model
+## Cross-Phase Dependency Model
 
 The phases have intentional dependencies.
 
@@ -1205,7 +1205,7 @@ Skipping foundational layers should be avoided.
 
 ---
 
-# Parallel Development
+## Parallel Development
 
 Some capabilities may develop in parallel.
 
@@ -1223,7 +1223,7 @@ However, semantic dependencies must remain respected.
 
 ---
 
-# Immediate Implementation Priorities
+## Immediate Implementation Priorities
 
 The first implementation priorities should focus on high engineering leverage.
 
@@ -1244,7 +1244,7 @@ Recommended order:
 
 ---
 
-# Priority 1 — Core Domain Models
+## Priority 1 — Core Domain Models
 
 Implement the minimal quality domain vocabulary.
 
@@ -1252,31 +1252,31 @@ Avoid premature abstraction.
 
 ---
 
-# Priority 2 — Tool Adapters
+## Priority 2 — Tool Adapters
 
 Normalize existing verification rather than recreating Ruff, MyPy, Pytest, or plugin compliance logic.
 
 ---
 
-# Priority 3 — Structured Findings
+## Priority 3 — Structured Findings
 
 Ensure every integrated verification mechanism can produce a common finding model.
 
 ---
 
-# Priority 4 — Evidence
+## Priority 4 — Evidence
 
 Bind quality findings to reproducible evidence.
 
 ---
 
-# Priority 5 — Assessment Engine
+## Priority 5 — Assessment Engine
 
 Provide target-level quality state.
 
 ---
 
-# Priority 6 — Quality CLI
+## Priority 6 — Quality CLI
 
 Expose quality capabilities through the FamilyOS CLI.
 
@@ -1292,7 +1292,7 @@ familyos quality report
 
 ---
 
-# Priority 7 — CI Integration
+## Priority 7 — CI Integration
 
 Use the same quality application layer locally and in CI.
 
@@ -1300,36 +1300,36 @@ Avoid separate local and CI semantics.
 
 ---
 
-# Priority 8 — Quality Profiles
+## Priority 8 — Quality Profiles
 
 Introduce target-specific quality policies.
 
 ---
 
-# Priority 9 — Quality Gates
+## Priority 9 — Quality Gates
 
 Use trusted assessments to govern progression.
 
 ---
 
-# Priority 10 — Historical Reporting
+## Priority 10 — Historical Reporting
 
 Retain enough quality history to support meaningful trend analysis.
 
 ---
 
-# CLI Roadmap
+## CLI Roadmap
 
 The FamilyOS Quality CLI may evolve progressively.
 
-## Initial
+### Initial
 
 ```text
 familyos quality check
 familyos quality report
 ```
 
-## Intermediate
+### Intermediate
 
 ```text
 familyos quality assess
@@ -1338,7 +1338,7 @@ familyos quality findings
 familyos quality compliance
 ```
 
-## Advanced
+### Advanced
 
 ```text
 familyos quality risk
@@ -1350,7 +1350,7 @@ familyos quality framework
 
 ---
 
-# Reporting Roadmap
+## Reporting Roadmap
 
 Reporting may evolve through:
 
@@ -1368,7 +1368,7 @@ Dashboards
 
 ---
 
-# Evidence Roadmap
+## Evidence Roadmap
 
 Evidence may evolve through:
 
@@ -1388,7 +1388,7 @@ A centralized evidence store should only be introduced when operational need jus
 
 ---
 
-# Automation Roadmap
+## Automation Roadmap
 
 Automation should progress from:
 
@@ -1408,7 +1408,7 @@ Continuous Quality Monitoring
 
 ---
 
-# Governance Roadmap
+## Governance Roadmap
 
 Governance should progress from:
 
@@ -1428,7 +1428,7 @@ Automated Governance Validation
 
 ---
 
-# Observability Roadmap
+## Observability Roadmap
 
 Observability should progress from:
 
@@ -1448,7 +1448,7 @@ Prediction
 
 ---
 
-# Quality Metrics Roadmap
+## Quality Metrics Roadmap
 
 Metrics should initially remain minimal.
 
@@ -1468,7 +1468,7 @@ Additional metrics should be introduced only when they support decisions.
 
 ---
 
-# Quality Debt Roadmap
+## Quality Debt Roadmap
 
 Quality Debt management should evolve through:
 
@@ -1488,7 +1488,7 @@ Trend Analysis
 
 ---
 
-# Quality Risk Roadmap
+## Quality Risk Roadmap
 
 Risk management should evolve through:
 
@@ -1508,7 +1508,7 @@ Predictive Risk
 
 ---
 
-# Quality Gate Roadmap
+## Quality Gate Roadmap
 
 Gate maturity should progress through:
 
@@ -1528,7 +1528,7 @@ Risk-Adaptive Gate
 
 ---
 
-# Compliance Roadmap
+## Compliance Roadmap
 
 Compliance should evolve through:
 
@@ -1548,7 +1548,7 @@ Continuous Compliance
 
 ---
 
-# Plugin Quality Roadmap
+## Plugin Quality Roadmap
 
 Official plugins provide an important early integration target.
 
@@ -1567,7 +1567,7 @@ This creates a practical proving ground for broader quality architecture.
 
 ---
 
-# Documentation Quality Roadmap
+## Documentation Quality Roadmap
 
 Documentation quality should progressively integrate:
 
@@ -1582,7 +1582,7 @@ Traceability Validation
 
 ---
 
-# Testing Quality Roadmap
+## Testing Quality Roadmap
 
 Testing quality should progressively expose:
 
@@ -1599,7 +1599,7 @@ The Testing Framework remains authoritative for testing semantics.
 
 ---
 
-# Architecture Quality Roadmap
+## Architecture Quality Roadmap
 
 Architecture quality may progressively integrate:
 
@@ -1614,7 +1614,7 @@ Architecture Decisions
 
 ---
 
-# Build Quality Roadmap
+## Build Quality Roadmap
 
 Build quality may progressively expose:
 
@@ -1628,7 +1628,7 @@ Build Performance
 
 ---
 
-# Release Quality Roadmap
+## Release Quality Roadmap
 
 Release quality should eventually aggregate:
 
@@ -1647,7 +1647,7 @@ into release readiness.
 
 ---
 
-# Security Quality Integration
+## Security Quality Integration
 
 Security-specific quality controls should remain aligned with Security Architecture and future security frameworks.
 
@@ -1655,7 +1655,7 @@ The Quality Framework should consume authoritative security findings rather than
 
 ---
 
-# Developer Experience Roadmap
+## Developer Experience Roadmap
 
 Quality engineering must remain usable.
 
@@ -1671,7 +1671,7 @@ Consistent Local / CI Behavior
 
 ---
 
-# Feedback Latency Objective
+## Feedback Latency Objective
 
 A strategic objective is to move important feedback earlier.
 
@@ -1691,7 +1691,7 @@ The earlier a deterministic defect can be detected reliably, the earlier it shou
 
 ---
 
-# Performance Roadmap
+## Performance Roadmap
 
 Quality automation performance should be continuously optimized.
 
@@ -1709,7 +1709,7 @@ Performance optimization must not silently reduce quality coverage.
 
 ---
 
-# Reliability Roadmap
+## Reliability Roadmap
 
 Quality tooling should progressively become a trusted engineering dependency.
 
@@ -1725,7 +1725,7 @@ Stable Interfaces
 
 ---
 
-# Scalability Roadmap
+## Scalability Roadmap
 
 As FamilyOS grows, the Quality Framework should support:
 
@@ -1742,7 +1742,7 @@ without requiring linear increases in manual governance effort.
 
 ---
 
-# Configuration Roadmap
+## Configuration Roadmap
 
 Quality configuration should evolve toward:
 
@@ -1760,7 +1760,7 @@ Configuration should not permit arbitrary weakening of mandatory quality policy.
 
 ---
 
-# Quality Platform
+## Quality Platform
 
 At higher maturity, quality capabilities may form a dedicated internal Quality Platform.
 
@@ -1791,7 +1791,7 @@ This platform should emerge incrementally rather than be built prematurely.
 
 ---
 
-# Quality API
+## Quality API
 
 A future internal API may expose:
 
@@ -1809,7 +1809,7 @@ The API should share domain semantics with the CLI.
 
 ---
 
-# Event Integration
+## Event Integration
 
 Future quality events may include:
 
@@ -1827,7 +1827,7 @@ These may integrate with the FamilyOS Event Architecture.
 
 ---
 
-# Notification Integration
+## Notification Integration
 
 Important quality events may eventually integrate with the Notification Architecture.
 
@@ -1842,7 +1842,7 @@ Critical Risk Escalation
 
 ---
 
-# AI Integration Roadmap
+## AI Integration Roadmap
 
 AI integration should follow:
 
@@ -1864,7 +1864,7 @@ AI should not be introduced before the evidence model is sufficiently reliable.
 
 ---
 
-# Data Requirements for Quality Intelligence
+## Data Requirements for Quality Intelligence
 
 Advanced quality intelligence requires high-quality historical data.
 
@@ -1887,7 +1887,7 @@ Poor data quality will produce poor analytical results.
 
 ---
 
-# Roadmap Governance
+## Roadmap Governance
 
 The roadmap itself should be governed.
 
@@ -1906,7 +1906,7 @@ Changes should remain consistent with the Quality Framework vision.
 
 ---
 
-# Roadmap Review
+## Roadmap Review
 
 The roadmap should be reviewed periodically.
 
@@ -1928,7 +1928,7 @@ Which planned capabilities are no longer necessary?
 
 ---
 
-# Roadmap Progress
+## Roadmap Progress
 
 Progress should be evaluated by capability maturity rather than file count or implementation volume.
 
@@ -1947,7 +1947,7 @@ protected by reliable quality evidence and gates.
 
 ---
 
-# Capability Status
+## Capability Status
 
 Roadmap capabilities may use:
 
@@ -1963,7 +1963,7 @@ DEPRECATED
 
 ---
 
-# Implementation Checklist
+## Implementation Checklist
 
 A high-level implementation sequence is:
 
@@ -2002,7 +2002,7 @@ A high-level implementation sequence is:
 
 ---
 
-# Near-Term Outcome
+## Near-Term Outcome
 
 The near-term Quality Framework should provide:
 
@@ -2024,7 +2024,7 @@ This creates the minimum viable quality platform.
 
 ---
 
-# Medium-Term Outcome
+## Medium-Term Outcome
 
 The medium-term system should provide:
 
@@ -2046,7 +2046,7 @@ Governed Exceptions
 
 ---
 
-# Long-Term Outcome
+## Long-Term Outcome
 
 The long-term system should provide:
 
@@ -2066,7 +2066,7 @@ Explainable AI Assistance
 
 ---
 
-# Quality Maturity Roadmap
+## Quality Maturity Roadmap
 
 The overall maturity progression can be summarized as:
 
@@ -2112,7 +2112,7 @@ Predictive Quality Intelligence
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 The Engineering Foundation defines how FamilyOS engineering operates.
 
@@ -2120,7 +2120,7 @@ The Quality Framework roadmap progressively adds measurable assurance to those p
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 The Testing Framework provides testing semantics and mechanisms.
 
@@ -2128,7 +2128,7 @@ The Quality Framework consumes testing evidence and integrates it into broader q
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 The Documentation Framework provides documentation requirements and validation.
 
@@ -2136,85 +2136,85 @@ The Quality Framework integrates documentation quality into overall engineering 
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 Build verification becomes an important source of quality evidence and release readiness.
 
 ---
 
-# Relationship With Release Framework
+## Relationship With Release Framework
 
 The Release Framework provides lifecycle boundaries where advanced Quality Gates become particularly important.
 
 ---
 
-# Relationship With Plugin Compliance Framework
+## Relationship With Plugin Compliance Framework
 
 Plugin Compliance provides one of the earliest mature compliance domains for integration with the Quality Framework.
 
 ---
 
-# Relationship With Quality Metrics
+## Relationship With Quality Metrics
 
 The roadmap progressively moves metrics from isolated measurements toward decision-supporting quality intelligence.
 
 ---
 
-# Relationship With Quality Evidence
+## Relationship With Quality Evidence
 
 Structured evidence is a prerequisite for reliable assessment, gates, governance, and intelligence.
 
 ---
 
-# Relationship With Quality Risk
+## Relationship With Quality Risk
 
 Risk management becomes progressively integrated with assessment and progression decisions.
 
 ---
 
-# Relationship With Quality Debt
+## Relationship With Quality Debt
 
 Quality Debt evolves from manual tracking toward measurable and governed remediation.
 
 ---
 
-# Relationship With Quality Automation
+## Relationship With Quality Automation
 
 Automation transforms the Quality Framework from documentation into an active engineering capability.
 
 ---
 
-# Relationship With Quality Observability
+## Relationship With Quality Observability
 
 Observability provides the historical information necessary for improvement and prediction.
 
 ---
 
-# Relationship With Quality Gates
+## Relationship With Quality Gates
 
 Quality Gates represent a major maturity transition from reporting quality to governing engineering progression.
 
 ---
 
-# Relationship With Quality Compliance
+## Relationship With Quality Compliance
 
 Compliance provides deterministic evaluation of authoritative requirements.
 
 ---
 
-# Relationship With Continuous Improvement
+## Relationship With Continuous Improvement
 
 Continuous Improvement ensures that roadmap capabilities evolve based on actual engineering outcomes.
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Quality Governance determines the authority, ownership, and policy governing roadmap implementation.
 
 ---
 
-# Relationship With Quality Framework Lifecycle
+## Relationship With Quality Framework Lifecycle
 
 The Framework Lifecycle governs how roadmap capabilities move from:
 
@@ -2234,53 +2234,53 @@ RETIRED
 
 ---
 
-# Roadmap Anti-Patterns
+## Roadmap Anti-Patterns
 
 The FamilyOS Quality Framework rejects several roadmap anti-patterns.
 
-## Big-Bang Quality Platform
+### Big-Bang Quality Platform
 
 Do not attempt to implement the complete quality architecture at once.
 
-## Automation Before Semantics
+### Automation Before Semantics
 
 Do not automate rules that are not clearly understood.
 
-## AI Before Evidence
+### AI Before Evidence
 
 Do not build quality intelligence on unreliable or unstructured data.
 
-## Gates Before Reliability
+### Gates Before Reliability
 
 Do not make unstable checks blocking.
 
-## Metrics Before Purpose
+### Metrics Before Purpose
 
 Do not create metrics without decisions they support.
 
-## Dashboard Before Data
+### Dashboard Before Data
 
 Do not prioritize visual presentation over trustworthy quality state.
 
-## Governance Before Need
+### Governance Before Need
 
 Do not create unnecessary bureaucracy before real governance problems exist.
 
-## Duplicate Framework Logic
+### Duplicate Framework Logic
 
 Do not reimplement Testing, Documentation, Build, Release, Security, or Plugin Compliance semantics inside the Quality Framework.
 
-## Permanent Pilot
+### Permanent Pilot
 
 Capabilities should eventually mature, change, or retire.
 
-## Roadmap Rigidity
+### Roadmap Rigidity
 
 The roadmap should guide implementation without preventing evidence-based reprioritization.
 
 ---
 
-# Reference Roadmap
+## Reference Roadmap
 
 The complete FamilyOS Quality Framework roadmap can be represented as:
 
@@ -2324,7 +2324,7 @@ Predictive Quality Engineering
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The Quality Framework Roadmap enables FamilyOS to move from:
 
@@ -2361,7 +2361,7 @@ quality problems before they become failures.
 
 ---
 
-# Final Roadmap Principle
+## Final Roadmap Principle
 
 The Quality Framework should grow only as fast as FamilyOS can keep its quality semantics reliable, understandable, testable, and governable.
 
@@ -2395,7 +2395,7 @@ Through incremental implementation, reuse of existing engineering frameworks, de
 
 ---
 
-## Phase 2 Runtime Vocabulary Reconciliation
+### Phase 2 Runtime Vocabulary Reconciliation
 
 Before implementation of the Core Quality Domain Models, the initial runtime
 vocabulary is reconciled as follows:

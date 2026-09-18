@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 05 Compliance Domains
+## 05 Compliance Domains
 
-## Introduction
+### Introduction
 
 The Plugin Compliance Framework organizes plugin conformance into explicit compliance domains.
 
@@ -22,7 +22,7 @@ They also help prevent the compliance framework from becoming a flat and unstruc
 
 ---
 
-# Domain Model
+## Domain Model
 
 The initial compliance domain model is:
 
@@ -50,7 +50,7 @@ A rule may consume evidence produced by another domain, but its ownership must r
 
 ---
 
-# Domain Principles
+## Domain Principles
 
 Every compliance domain should:
 
@@ -69,7 +69,7 @@ They translate those requirements into plugin-specific compliance concerns.
 
 ---
 
-# Identity Domain
+## Identity Domain
 
 The Identity domain validates whether a plugin has a valid and stable identity within the FamilyOS ecosystem.
 
@@ -90,7 +90,7 @@ A plugin without a valid identity cannot reliably participate in compliance, lif
 
 ---
 
-# Identity Evidence
+## Identity Evidence
 
 Identity evidence may originate from:
 
@@ -115,7 +115,7 @@ Identity evidence should remain stable enough to support historical traceability
 
 ---
 
-# Metadata Domain
+## Metadata Domain
 
 The Metadata domain validates descriptive and declarative plugin information required by FamilyOS.
 
@@ -139,7 +139,7 @@ Metadata compliance is primarily declarative but may require cross-validation ag
 
 ---
 
-# Metadata Consistency
+## Metadata Consistency
 
 Metadata must not merely be syntactically valid.
 
@@ -162,7 +162,7 @@ The same principle applies to contributions, dependencies, compatibility, and li
 
 ---
 
-# Structure Domain
+## Structure Domain
 
 The Structure domain validates the physical and logical organization of plugin packages.
 
@@ -184,7 +184,7 @@ Structural compliance simplifies tooling and reduces implicit discovery behavior
 
 ---
 
-# Structural Stability
+## Structural Stability
 
 The platform should prefer explicit plugin structure over heuristic discovery.
 
@@ -202,7 +202,7 @@ Structural rules should remain conservative and should not constrain implementat
 
 ---
 
-# Architecture Domain
+## Architecture Domain
 
 The Architecture domain verifies that plugins respect FamilyOS architectural boundaries.
 
@@ -224,7 +224,7 @@ Architectural compliance protects the platform from extension-driven erosion.
 
 ---
 
-# Architectural Evidence
+## Architectural Evidence
 
 Architecture evidence may be generated from:
 
@@ -241,7 +241,7 @@ Human architectural review may remain necessary for requirements that cannot be 
 
 ---
 
-# Capabilities Domain
+## Capabilities Domain
 
 The Capabilities domain validates the capabilities declared and implemented by a plugin.
 
@@ -261,7 +261,7 @@ Capability compliance ensures that the runtime can interact with plugin behavior
 
 ---
 
-# Capability Contract Integrity
+## Capability Contract Integrity
 
 A capability implementation must conform to the contract it declares.
 
@@ -284,7 +284,7 @@ A plugin must not expose behavior under a capability identifier while violating 
 
 ---
 
-# Contributions Domain
+## Contributions Domain
 
 The Contributions domain validates extension objects contributed by plugins to the FamilyOS ecosystem.
 
@@ -304,7 +304,7 @@ Every contribution type must have an explicit contract.
 
 ---
 
-# Contribution Validation
+## Contribution Validation
 
 Contribution validation may verify:
 
@@ -322,7 +322,7 @@ Contribution compliance prevents uncontrolled extension mechanisms from bypassin
 
 ---
 
-# Dependencies Domain
+## Dependencies Domain
 
 The Dependencies domain validates relationships between a plugin and external or internal dependencies.
 
@@ -342,7 +342,7 @@ Typical validation areas include:
 
 ---
 
-# Dependency Boundaries
+## Dependency Boundaries
 
 Plugins must not depend on unsupported FamilyOS internal modules.
 
@@ -374,7 +374,7 @@ Internal coupling weakens compatibility and makes platform evolution unsafe.
 
 ---
 
-# Configuration Domain
+## Configuration Domain
 
 The Configuration domain validates plugin configuration contracts.
 
@@ -393,7 +393,7 @@ Configuration must be explicit and validated rather than relying on undocumented
 
 ---
 
-# Configuration Safety
+## Configuration Safety
 
 Sensitive configuration must be handled according to FamilyOS security and configuration architecture requirements.
 
@@ -408,7 +408,7 @@ Configuration compliance protects both reliability and security.
 
 ---
 
-# Security Domain
+## Security Domain
 
 The Security domain validates plugin conformance with platform security requirements.
 
@@ -429,7 +429,7 @@ Security requirements may include non-overridable mandatory rules.
 
 ---
 
-# Security Enforcement
+## Security Enforcement
 
 Security-critical rules may have stronger enforcement semantics than ordinary compliance requirements.
 
@@ -452,7 +452,7 @@ The exact enforcement policy is governed by the compliance profile and security 
 
 ---
 
-# Testing Domain
+## Testing Domain
 
 The Testing domain validates whether a plugin provides sufficient verification evidence.
 
@@ -473,7 +473,7 @@ The required test depth depends on plugin classification and functionality.
 
 ---
 
-# Testing Evidence
+## Testing Evidence
 
 Testing evidence should be reusable where trustworthy.
 
@@ -494,7 +494,7 @@ Compliance should avoid duplicating test execution when valid evidence already e
 
 ---
 
-# Quality Domain
+## Quality Domain
 
 The Quality domain validates plugin conformance with FamilyOS engineering quality expectations.
 
@@ -514,7 +514,7 @@ The compliance framework determines which quality requirements apply to a plugin
 
 ---
 
-# Quality Evidence
+## Quality Evidence
 
 Quality evidence may come from:
 
@@ -529,7 +529,7 @@ Evidence must retain sufficient provenance to be trusted during compliance evalu
 
 ---
 
-# Documentation Domain
+## Documentation Domain
 
 The Documentation domain validates whether a plugin provides the documentation required for its classification and lifecycle stage.
 
@@ -552,7 +552,7 @@ Documentation requirements originate from the FamilyOS Documentation Framework.
 
 ---
 
-# Documentation Completeness
+## Documentation Completeness
 
 Documentation compliance should evaluate required information rather than mere file presence whenever practical.
 
@@ -572,7 +572,7 @@ Human review may remain appropriate for content quality.
 
 ---
 
-# Compatibility Domain
+## Compatibility Domain
 
 The Compatibility domain verifies whether the plugin targets supported FamilyOS contracts and environments.
 
@@ -590,7 +590,7 @@ Compatibility must be explicitly represented.
 
 ---
 
-# Compatibility Matrix
+## Compatibility Matrix
 
 The framework may eventually support compatibility models such as:
 
@@ -606,7 +606,7 @@ Compatibility claims should be supported by explicit declarations and verificati
 
 ---
 
-# Lifecycle Domain
+## Lifecycle Domain
 
 The Lifecycle domain validates plugin behavior across supported lifecycle stages.
 
@@ -628,7 +628,7 @@ Applicability depends on plugin classification and architecture.
 
 ---
 
-# Lifecycle Validation
+## Lifecycle Validation
 
 Lifecycle compliance may require:
 
@@ -644,7 +644,7 @@ Lifecycle behavior must not create hidden persistent platform state outside supp
 
 ---
 
-# Governance Domain
+## Governance Domain
 
 The Governance domain validates requirements that exist because a plugin participates in a governed ecosystem.
 
@@ -663,7 +663,7 @@ Governance rules may be more relevant to official and certified plugins than dev
 
 ---
 
-# Cross-Domain Evidence
+## Cross-Domain Evidence
 
 Some evidence sources support multiple domains.
 
@@ -688,7 +688,7 @@ The framework should reuse such evidence rather than generate redundant copies.
 
 ---
 
-# Cross-Domain Rules
+## Cross-Domain Rules
 
 A requirement may touch several domains.
 
@@ -712,7 +712,7 @@ This maintains rule catalog clarity.
 
 ---
 
-# Domain Ownership
+## Domain Ownership
 
 Every domain should eventually have an explicit governance owner.
 
@@ -731,7 +731,7 @@ It defines accountability for the meaning of domain requirements.
 
 ---
 
-# Domain Applicability
+## Domain Applicability
 
 Not all domains necessarily apply equally to every plugin.
 
@@ -769,7 +769,7 @@ The final applicability model belongs to compliance profiles.
 
 ---
 
-# Domain Maturity
+## Domain Maturity
 
 Compliance domains may mature incrementally.
 
@@ -795,7 +795,7 @@ The framework should represent domain maturity without weakening the visibility 
 
 ---
 
-# Domain Extension
+## Domain Extension
 
 Future platform evolution may require additional compliance domains.
 
@@ -814,7 +814,7 @@ New domains must follow the same governance, rule identity, evidence, and report
 
 ---
 
-# Domain Reporting
+## Domain Reporting
 
 Compliance reports should group findings by domain.
 
@@ -840,7 +840,7 @@ The canonical result must still preserve individual rule outcomes.
 
 ---
 
-# Domain-Level Status
+## Domain-Level Status
 
 The framework may derive domain-level summaries.
 
@@ -857,7 +857,7 @@ Domain-level status must be derived from rule outcomes and must not override the
 
 ---
 
-# Domain Interactions
+## Domain Interactions
 
 Compliance domains form a connected system.
 
@@ -906,7 +906,7 @@ This diagram illustrates relationships, not a mandatory validation order.
 
 ---
 
-# Initial Domain Baseline
+## Initial Domain Baseline
 
 EPIC-PLUGIN-002 establishes the following initial baseline:
 
@@ -934,7 +934,7 @@ The important requirement is stable domain ownership.
 
 ---
 
-# Domain Invariants
+## Domain Invariants
 
 The Compliance Domain model establishes the following invariants:
 
@@ -951,7 +951,7 @@ The Compliance Domain model establishes the following invariants:
 
 ---
 
-# Domain Summary
+## Domain Summary
 
 The Compliance Domain model transforms a broad concept of plugin quality into explicit areas of responsibility.
 
@@ -995,7 +995,7 @@ The exact rules applicable to a plugin are determined by its compliance profile.
 
 ---
 
-# Final Domain Principle
+## Final Domain Principle
 
 The governing principle of the compliance domain model is:
 

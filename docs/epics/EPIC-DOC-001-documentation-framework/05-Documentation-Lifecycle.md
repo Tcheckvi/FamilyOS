@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 05 Documentation Lifecycle
+## 05 Documentation Lifecycle
 
-## Purpose
+### Purpose
 
 The Documentation Lifecycle defines the complete lifecycle management process applied to FamilyOS documentation artifacts.
 
@@ -16,7 +16,7 @@ The lifecycle ensures that documentation remains:
 
 Documentation lifecycle management treats documentation as a continuously evolving engineering asset.
 
-## Lifecycle Overview
+### Lifecycle Overview
 
 Every official FamilyOS documentation artifact follows a controlled lifecycle:
 
@@ -31,9 +31,9 @@ Every official FamilyOS documentation artifact follows a controlled lifecycle:
 
 Each lifecycle stage defines expected activities and quality requirements.
 
-# Planning Phase
+## Planning Phase
 
-## Purpose
+### Purpose
 
 The planning phase identifies documentation requirements before creation begins.
 
@@ -44,7 +44,7 @@ Planning ensures that documentation work is aligned with:
 - implementation activities,
 - release expectations.
 
-## Planning Activities
+### Planning Activities
 
 Planning SHOULD define:
 
@@ -55,7 +55,7 @@ Planning SHOULD define:
 - dependencies,
 - validation requirements.
 
-## Planning Outputs
+### Planning Outputs
 
 The planning phase produces:
 
@@ -63,13 +63,13 @@ The planning phase produces:
 - required artifacts,
 - delivery expectations.
 
-# Creation Phase
+## Creation Phase
 
-## Purpose
+### Purpose
 
 The creation phase transforms knowledge, decisions, and requirements into structured documentation.
 
-## Creation Principles
+### Creation Principles
 
 Documentation authors MUST:
 
@@ -78,7 +78,7 @@ Documentation authors MUST:
 - respect naming conventions,
 - maintain technical accuracy.
 
-## Creation Sources
+### Creation Sources
 
 Documentation MAY be created from:
 
@@ -89,7 +89,7 @@ Documentation MAY be created from:
 - operational knowledge,
 - user requirements.
 
-## Documentation Structure
+### Documentation Structure
 
 Created documents SHOULD include:
 
@@ -99,9 +99,9 @@ Created documents SHOULD include:
 - references,
 - revision information when required.
 
-# Review Phase
+## Review Phase
 
-## Purpose
+### Purpose
 
 The review phase ensures that documentation quality meets FamilyOS expectations.
 
@@ -112,7 +112,7 @@ Documentation review verifies that information is:
 - complete,
 - consistent.
 
-## Review Participants
+### Review Participants
 
 Reviews MAY involve:
 
@@ -121,11 +121,11 @@ Reviews MAY involve:
 - architects,
 - domain specialists.
 
-## Review Criteria
+### Review Criteria
 
 Reviewers SHOULD verify:
 
-### Technical Accuracy
+#### Technical Accuracy
 
 The document correctly describes:
 
@@ -134,7 +134,7 @@ The document correctly describes:
 - requirements,
 - constraints.
 
-### Structural Compliance
+#### Structural Compliance
 
 The document follows:
 
@@ -142,11 +142,11 @@ The document follows:
 - naming conventions,
 - formatting rules.
 
-### Terminology Compliance
+#### Terminology Compliance
 
 The document uses approved FamilyOS vocabulary.
 
-### Reference Quality
+#### Reference Quality
 
 References are:
 
@@ -154,13 +154,13 @@ References are:
 - relevant,
 - traceable.
 
-# Validation Phase
+## Validation Phase
 
-## Purpose
+### Purpose
 
 Validation confirms that documentation satisfies required quality standards.
 
-## Validation Activities
+### Validation Activities
 
 Validation MAY include:
 
@@ -170,7 +170,7 @@ Validation MAY include:
 - metadata validation,
 - automated documentation checks.
 
-## Validation Results
+### Validation Results
 
 Validation results SHOULD be recorded for official artifacts.
 
@@ -181,13 +181,13 @@ Examples:
 - EPIC validation,
 - release documentation validation.
 
-# Publication Phase
+## Publication Phase
 
-## Purpose
+### Purpose
 
 Publication makes approved documentation available to its intended audience.
 
-## Publication Requirements
+### Publication Requirements
 
 Before publication, documentation MUST:
 
@@ -195,19 +195,19 @@ Before publication, documentation MUST:
 - contain required metadata,
 - follow repository organization rules.
 
-## Published Documentation
+### Published Documentation
 
 Published documentation becomes part of the official FamilyOS knowledge base.
 
 Published documents MUST remain discoverable and traceable.
 
-# Maintenance Phase
+## Maintenance Phase
 
-## Purpose
+### Purpose
 
 Maintenance keeps documentation synchronized with system evolution.
 
-## Maintenance Activities
+### Maintenance Activities
 
 Maintenance SHOULD identify:
 
@@ -216,7 +216,7 @@ Maintenance SHOULD identify:
 - obsolete examples,
 - missing updates.
 
-## Update Triggers
+### Update Triggers
 
 Documentation MUST be reviewed when:
 
@@ -226,17 +226,17 @@ Documentation MUST be reviewed when:
 - specifications change,
 - release behavior changes.
 
-## Maintenance Responsibility
+### Maintenance Responsibility
 
 Document owners and maintainers share responsibility for documentation accuracy.
 
-# Evolution Phase
+## Evolution Phase
 
-## Purpose
+### Purpose
 
 Evolution allows documentation to improve as FamilyOS grows.
 
-## Evolution Activities
+### Evolution Activities
 
 Documentation evolution MAY include:
 
@@ -246,7 +246,7 @@ Documentation evolution MAY include:
 - improved navigation,
 - terminology updates.
 
-## Evolution Principles
+### Evolution Principles
 
 Changes SHOULD preserve:
 
@@ -254,13 +254,13 @@ Changes SHOULD preserve:
 - compatibility,
 - traceability.
 
-# Retirement Phase
+## Retirement Phase
 
-## Purpose
+### Purpose
 
 Retirement manages documentation that is no longer actively maintained.
 
-## Retirement Rules
+### Retirement Rules
 
 A retired document MUST:
 
@@ -270,7 +270,7 @@ A retired document MUST:
 
 Retired identifiers MUST NOT be reused.
 
-## Archived Documentation
+### Archived Documentation
 
 Archived documentation preserves historical knowledge.
 
@@ -280,7 +280,7 @@ Archived documents MAY remain accessible for:
 - historical analysis,
 - migration reference.
 
-# Lifecycle Governance
+## Lifecycle Governance
 
 The Documentation Lifecycle is governed by:
 
@@ -295,7 +295,7 @@ Lifecycle changes MUST preserve:
 - knowledge continuity,
 - ecosystem consistency.
 
-# Completion Criteria
+## Completion Criteria
 
 A documentation artifact is considered lifecycle-complete when:
 
@@ -307,11 +307,11 @@ A documentation artifact is considered lifecycle-complete when:
 
 The Documentation Lifecycle ensures that FamilyOS documentation remains a reliable foundation for long-term platform evolution.
 cat > docs/epics/EPIC-DOC-001-documentation-framework/06-Documentation-Templates.md <<'EOF'
-# Documentation Framework
+## Documentation Framework
 
-# 06 Documentation Templates
+## 06 Documentation Templates
 
-## Purpose
+### Purpose
 
 Documentation templates define the standard structures used to create consistent FamilyOS documentation artifacts.
 
@@ -325,7 +325,7 @@ Templates provide:
 
 Templates are reusable foundations and MUST follow Documentation Standards.
 
-## Template Principles
+### Template Principles
 
 FamilyOS documentation templates are based on the following principles:
 
@@ -337,7 +337,7 @@ FamilyOS documentation templates are based on the following principles:
 
 Templates MUST provide structure without restricting meaningful documentation content.
 
-## Template Categories
+### Template Categories
 
 FamilyOS defines templates for different documentation artifact types.
 
@@ -350,9 +350,9 @@ Supported template categories include:
 - guide templates,
 - reference templates.
 
-# RFC Template
+## RFC Template
 
-## Purpose
+### Purpose
 
 RFC templates define the structure for technical proposals.
 
@@ -365,7 +365,7 @@ RFC documents describe:
 - implementation approach,
 - validation strategy.
 
-## Standard RFC Structure
+### Standard RFC Structure
 
 ```text
 README.md

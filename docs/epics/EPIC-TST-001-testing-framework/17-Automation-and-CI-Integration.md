@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 17 Automation and CI Integration
+## 17 Automation and CI Integration
 
-## Overview
+### Overview
 
 Automated testing is a core capability of the FamilyOS engineering platform.
 
@@ -28,7 +28,7 @@ The objective is to create an automated validation system that protects FamilyOS
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the official FamilyOS approach to automated test execution and continuous integration integration.
 
@@ -57,7 +57,7 @@ The objective is to ensure that testing becomes an integral and enforceable part
 
 ---
 
-# Core Principle
+## Core Principle
 
 The FamilyOS Testing Framework follows this principle:
 
@@ -69,23 +69,23 @@ However, repeatable engineering validation should not depend unnecessarily on in
 
 ---
 
-# Automation Principles
+## Automation Principles
 
 FamilyOS test automation follows several fundamental principles.
 
-## Repeatability
+### Repeatability
 
 Automated tests should execute consistently whenever the same validation conditions are provided.
 
 ---
 
-## Reproducibility
+### Reproducibility
 
 CI environments should make failures reproducible locally whenever practical.
 
 ---
 
-## Determinism
+### Determinism
 
 Automated validation must minimize nondeterministic behavior.
 
@@ -93,37 +93,37 @@ Unreliable automation weakens confidence in the complete engineering process.
 
 ---
 
-## Fast Feedback
+### Fast Feedback
 
 Validation should detect problems as close as possible to the change that introduced them.
 
 ---
 
-## Progressive Confidence
+### Progressive Confidence
 
 Automation should execute increasingly comprehensive validation as changes progress through the lifecycle.
 
 ---
 
-## Visibility
+### Visibility
 
 Automation results must remain visible and understandable.
 
 ---
 
-## Enforcement
+### Enforcement
 
 Mandatory validation must be enforceable where engineering policy requires it.
 
 ---
 
-## Efficiency
+### Efficiency
 
 Automation should use compute resources responsibly without sacrificing necessary validation.
 
 ---
 
-# Automation Model
+## Automation Model
 
 The FamilyOS automated validation model can be represented as:
 
@@ -153,7 +153,7 @@ The exact stages may vary according to execution context.
 
 ---
 
-# Continuous Integration
+## Continuous Integration
 
 Continuous integration is the practice of validating changes frequently as they are integrated into the repository.
 
@@ -172,7 +172,7 @@ CI provides a shared validation environment independent of individual developer 
 
 ---
 
-# CI Responsibilities
+## CI Responsibilities
 
 The CI system may be responsible for:
 
@@ -192,7 +192,7 @@ The exact responsibilities depend on the pipeline and lifecycle stage.
 
 ---
 
-# CI Pipeline Architecture
+## CI Pipeline Architecture
 
 A conceptual FamilyOS CI pipeline may follow:
 
@@ -225,7 +225,7 @@ Pipeline stages should reflect increasing validation cost and confidence.
 
 ---
 
-# Validation Stages
+## Validation Stages
 
 CI pipelines should organize validation into meaningful stages.
 
@@ -263,7 +263,7 @@ Execution scope should reflect the purpose of the pipeline.
 
 ---
 
-# Early Validation
+## Early Validation
 
 Cheap validation should generally execute before expensive validation.
 
@@ -292,7 +292,7 @@ This allows obvious problems to terminate validation before expensive resources 
 
 ---
 
-# Static Validation Integration
+## Static Validation Integration
 
 Testing automation operates alongside other engineering validation capabilities.
 
@@ -310,7 +310,7 @@ A successful test suite does not compensate for failed mandatory static validati
 
 ---
 
-# Test Execution Profiles
+## Test Execution Profiles
 
 CI should use explicitly defined test execution profiles.
 
@@ -332,7 +332,7 @@ Each profile should define:
 
 ---
 
-# Fast Validation Profile
+## Fast Validation Profile
 
 The fast validation profile provides rapid feedback.
 
@@ -347,7 +347,7 @@ This profile should execute frequently.
 
 ---
 
-# Pull Request Validation
+## Pull Request Validation
 
 Pull requests should automatically execute validation appropriate to integration risk.
 
@@ -379,7 +379,7 @@ Required validation must succeed before merge when repository policy demands it.
 
 ---
 
-# Protected Branch Validation
+## Protected Branch Validation
 
 Protected branches require strong confidence.
 
@@ -396,7 +396,7 @@ Protected branch failures should be visible and investigated promptly.
 
 ---
 
-# Full Validation Profile
+## Full Validation Profile
 
 A complete validation profile may execute a broader test set than routine pull request validation.
 
@@ -419,7 +419,7 @@ Full validation may be triggered:
 
 ---
 
-# Release Validation Profile
+## Release Validation Profile
 
 Release validation should provide the strongest automated confidence required by the FamilyOS lifecycle.
 
@@ -443,7 +443,7 @@ Release validation results should be retained as engineering evidence.
 
 ---
 
-# Automated Triggers
+## Automated Triggers
 
 CI validation may be triggered by repository events.
 
@@ -463,7 +463,7 @@ Triggers should correspond to meaningful engineering events.
 
 ---
 
-# Push Validation
+## Push Validation
 
 Push-based validation may provide early feedback before pull request integration.
 
@@ -471,7 +471,7 @@ The scope may be smaller than protected-branch validation to preserve fast feedb
 
 ---
 
-# Pull Request Triggers
+## Pull Request Triggers
 
 Pull request validation should rerun when relevant source changes occur.
 
@@ -479,7 +479,7 @@ A pull request should not remain approved based on validation performed against 
 
 ---
 
-# Merge Validation
+## Merge Validation
 
 Where repository architecture requires it, merged source may be validated again after integration.
 
@@ -487,7 +487,7 @@ This can identify interaction problems that did not exist on an isolated feature
 
 ---
 
-# Scheduled Validation
+## Scheduled Validation
 
 Some validation may execute on a schedule.
 
@@ -511,7 +511,7 @@ Scheduled validation complements change-triggered CI.
 
 ---
 
-# Manual CI Triggers
+## Manual CI Triggers
 
 Some workflows may support manually triggered validation.
 
@@ -527,7 +527,7 @@ Manual workflows must not replace mandatory automated triggers.
 
 ---
 
-# Change-Based Test Selection
+## Change-Based Test Selection
 
 CI may select tests based on changed code.
 
@@ -549,7 +549,7 @@ However, selective CI testing must remain conservative enough to avoid hidden va
 
 ---
 
-# Dependency-Aware Selection
+## Dependency-Aware Selection
 
 More advanced test selection may consider:
 
@@ -563,7 +563,7 @@ A change in a shared framework component may require significantly broader valid
 
 ---
 
-# Full-Suite Safety Net
+## Full-Suite Safety Net
 
 Selective execution must never permanently eliminate complete validation.
 
@@ -576,7 +576,7 @@ FamilyOS should preserve regular full-suite execution as a safety mechanism agai
 
 ---
 
-# CI Environment
+## CI Environment
 
 CI environments should be predictable and reproducible.
 
@@ -593,7 +593,7 @@ Uncontrolled CI environment drift increases test instability.
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 CI jobs should avoid relying on mutable shared state.
 
@@ -608,7 +608,7 @@ Isolation reduces:
 
 ---
 
-# Environment Parity
+## Environment Parity
 
 Local and CI environments should remain sufficiently aligned to support failure reproduction.
 
@@ -618,7 +618,7 @@ However, differences affecting application behavior should be documented and con
 
 ---
 
-# Dependency Installation
+## Dependency Installation
 
 Dependency installation should be deterministic.
 
@@ -628,7 +628,7 @@ Uncontrolled installation of latest dependency versions can create unrelated fai
 
 ---
 
-# Dependency Caching
+## Dependency Caching
 
 Caching may reduce CI execution time.
 
@@ -643,7 +643,7 @@ Caching should improve performance without compromising correctness.
 
 ---
 
-# Cache Safety
+## Cache Safety
 
 Caches must be invalidated when their underlying inputs change.
 
@@ -658,7 +658,7 @@ Cache keys should consider relevant inputs such as:
 
 ---
 
-# Test Data Preparation
+## Test Data Preparation
 
 CI should generate or provision required test data predictably.
 
@@ -673,7 +673,7 @@ CI should not depend on uncontrolled production data.
 
 ---
 
-# Service Dependencies
+## Service Dependencies
 
 Integration and system tests may require services such as:
 
@@ -686,7 +686,7 @@ These dependencies should be provisioned in controlled test configurations.
 
 ---
 
-# External Services
+## External Services
 
 Real external services should be minimized in normal CI validation.
 
@@ -702,7 +702,7 @@ Where real external integration is necessary, tests should be explicitly categor
 
 ---
 
-# Secrets in CI
+## Secrets in CI
 
 Some integration tests may require credentials.
 
@@ -719,7 +719,7 @@ Testing requirements do not override FamilyOS security principles.
 
 ---
 
-# Parallel Execution
+## Parallel Execution
 
 CI may execute tests in parallel to reduce total validation duration.
 
@@ -740,7 +740,7 @@ Parallelism requires reliable test isolation.
 
 ---
 
-# Pipeline Parallelism
+## Pipeline Parallelism
 
 Independent CI stages may execute simultaneously.
 
@@ -757,7 +757,7 @@ Dependent stages should begin only after required predecessors succeed.
 
 ---
 
-# Test Sharding
+## Test Sharding
 
 Large test suites may be divided across multiple CI workers.
 
@@ -776,7 +776,7 @@ Sharding should seek balanced execution time.
 
 ---
 
-# Matrix Testing
+## Matrix Testing
 
 CI matrices may validate multiple supported environments.
 
@@ -799,7 +799,7 @@ Matrix scope should reflect officially supported compatibility requirements.
 
 ---
 
-# Compatibility Cost
+## Compatibility Cost
 
 Compatibility matrices can multiply execution cost quickly.
 
@@ -815,7 +815,7 @@ Different compatibility scopes may be assigned to:
 
 ---
 
-# Fail-Fast Behavior
+## Fail-Fast Behavior
 
 CI may stop dependent validation after critical earlier failures.
 
@@ -845,7 +845,7 @@ Fail-fast behavior can reduce unnecessary compute consumption.
 
 ---
 
-# Diagnostic Completeness
+## Diagnostic Completeness
 
 Fail-fast must not eliminate useful independent diagnostics when broader information would materially reduce debugging time.
 
@@ -858,7 +858,7 @@ The appropriate strategy depends on:
 
 ---
 
-# CI Failure Classification
+## CI Failure Classification
 
 CI failures should be distinguishable by type.
 
@@ -878,7 +878,7 @@ This distinction improves diagnosis and historical observability.
 
 ---
 
-# Infrastructure Failures
+## Infrastructure Failures
 
 Infrastructure failures should not automatically be interpreted as application defects.
 
@@ -894,7 +894,7 @@ CI infrastructure reliability is part of the automated testing system.
 
 ---
 
-# Retry Policy
+## Retry Policy
 
 CI-level retries should be used carefully.
 
@@ -906,7 +906,7 @@ A test that fails and succeeds only after retry must remain observable as unstab
 
 ---
 
-# Timeout Policy
+## Timeout Policy
 
 CI jobs and test stages should use reasonable timeout limits.
 
@@ -916,7 +916,7 @@ Timeouts should be defined according to expected execution behavior rather than 
 
 ---
 
-# Test Reporting Integration
+## Test Reporting Integration
 
 CI should preserve test reporting requirements defined by:
 
@@ -938,7 +938,7 @@ CI reports may include:
 
 ---
 
-# Artifact Collection
+## Artifact Collection
 
 CI may retain test artifacts for diagnosis.
 
@@ -954,7 +954,7 @@ Artifact collection should remain controlled.
 
 ---
 
-# Artifact Upload on Failure
+## Artifact Upload on Failure
 
 Some diagnostic artifacts may only need retention when validation fails.
 
@@ -962,7 +962,7 @@ This reduces storage consumption while preserving debugging evidence.
 
 ---
 
-# Quality Gate Integration
+## Quality Gate Integration
 
 Automated test execution feeds Testing Gates.
 
@@ -993,7 +993,7 @@ Testing gates are defined further in:
 
 ---
 
-# Required Status Checks
+## Required Status Checks
 
 Repository governance may designate specific CI validations as required status checks.
 
@@ -1011,7 +1011,7 @@ Only after all required checks succeed may progression be permitted.
 
 ---
 
-# Branch Protection
+## Branch Protection
 
 CI testing can participate directly in repository branch protection.
 
@@ -1026,7 +1026,7 @@ Testing therefore becomes enforceable repository policy rather than optional dev
 
 ---
 
-# Stale Validation
+## Stale Validation
 
 Validation should correspond to the current source state.
 
@@ -1036,7 +1036,7 @@ CI systems should ensure that required validation applies to the revision being 
 
 ---
 
-# Merge Queue Integration
+## Merge Queue Integration
 
 Repositories using merge queues may require validation against the prospective integrated state.
 
@@ -1044,7 +1044,7 @@ This helps detect conflicts between independently successful changes.
 
 ---
 
-# Automation and Regression Testing
+## Automation and Regression Testing
 
 Regression tests should automatically execute at appropriate lifecycle stages.
 
@@ -1054,7 +1054,7 @@ This ensures that known defects remain protected against recurrence.
 
 ---
 
-# Contract Testing Automation
+## Contract Testing Automation
 
 Contract tests are particularly suitable for CI automation.
 
@@ -1070,7 +1070,7 @@ Contract failures should block incompatible changes according to governance poli
 
 ---
 
-# Plugin Validation
+## Plugin Validation
 
 FamilyOS official plugins should participate in automated validation.
 
@@ -1088,7 +1088,7 @@ A plugin change should trigger the validation necessary to protect its supported
 
 ---
 
-# Shared Framework Validation
+## Shared Framework Validation
 
 Changes to shared framework components may affect many plugins and domains.
 
@@ -1107,7 +1107,7 @@ A narrow test selection may be insufficient for high-impact framework changes.
 
 ---
 
-# Documentation-Driven Validation
+## Documentation-Driven Validation
 
 Where documentation or specifications define executable contracts, CI may verify consistency between:
 
@@ -1120,7 +1120,7 @@ This supports FamilyOS specification-driven engineering principles.
 
 ---
 
-# Generated Artifact Validation
+## Generated Artifact Validation
 
 CI should validate generated artifacts where they form part of the repository contract.
 
@@ -1133,7 +1133,7 @@ Possible checks include:
 
 ---
 
-# Database Migration Automation
+## Database Migration Automation
 
 If FamilyOS introduces persistent data migrations, CI should validate migration behavior.
 
@@ -1149,7 +1149,7 @@ Migration tests may belong to extended or release validation profiles.
 
 ---
 
-# Performance Test Automation
+## Performance Test Automation
 
 Performance testing may be integrated into CI selectively.
 
@@ -1165,7 +1165,7 @@ Performance automation must account for environment variability.
 
 ---
 
-# Performance Regression Gates
+## Performance Regression Gates
 
 Stable benchmarks may eventually support performance-related gates.
 
@@ -1175,7 +1175,7 @@ Normal execution noise must not cause frequent false failures.
 
 ---
 
-# Scheduled Full Validation
+## Scheduled Full Validation
 
 A scheduled full validation pipeline provides a safety net against validation gaps.
 
@@ -1198,7 +1198,7 @@ This is particularly useful when pull request validation uses selective executio
 
 ---
 
-# Dependency Update Validation
+## Dependency Update Validation
 
 Automated dependency updates should trigger appropriate testing.
 
@@ -1208,7 +1208,7 @@ CI should validate supported dependency modifications before integration.
 
 ---
 
-# Toolchain Update Validation
+## Toolchain Update Validation
 
 Changes to testing tools, linters, type checkers, build systems, or runtime versions should receive broad validation.
 
@@ -1222,7 +1222,7 @@ Toolchain updates may affect:
 
 ---
 
-# CI Configuration as Code
+## CI Configuration as Code
 
 CI configuration should be version-controlled where supported.
 
@@ -1238,7 +1238,7 @@ Automation configuration is part of the engineering system and should be treated
 
 ---
 
-# CI Configuration Testing
+## CI Configuration Testing
 
 Significant CI logic should itself be validated where practical.
 
@@ -1253,7 +1253,7 @@ Validation may include:
 
 ---
 
-# Automation Ownership
+## Automation Ownership
 
 CI pipelines require clear ownership.
 
@@ -1269,7 +1269,7 @@ Without ownership, automation degradation can persist indefinitely.
 
 ---
 
-# CI Reliability
+## CI Reliability
 
 A reliable CI system should produce trustworthy results.
 
@@ -1285,7 +1285,7 @@ Engineers should not routinely need to rerun pipelines simply to obtain a valid 
 
 ---
 
-# CI Health Metrics
+## CI Health Metrics
 
 Useful CI health indicators may include:
 
@@ -1301,7 +1301,7 @@ These metrics can help distinguish product problems from automation problems.
 
 ---
 
-# Pipeline Duration
+## Pipeline Duration
 
 CI duration affects developer productivity.
 
@@ -1315,7 +1315,7 @@ Pipeline performance should therefore be monitored.
 
 ---
 
-# Pipeline Optimization
+## Pipeline Optimization
 
 Optimization may include:
 
@@ -1331,7 +1331,7 @@ Optimization must not create validation gaps.
 
 ---
 
-# Queue Time
+## Queue Time
 
 Total feedback time includes more than test execution.
 
@@ -1353,7 +1353,7 @@ A fast test suite can still produce slow developer feedback if CI infrastructure
 
 ---
 
-# Cancellation Strategy
+## Cancellation Strategy
 
 Obsolete CI executions may be cancelled when newer revisions make them irrelevant.
 
@@ -1363,7 +1363,7 @@ Cancellation can conserve CI capacity.
 
 ---
 
-# Automation Security
+## Automation Security
 
 CI environments must follow FamilyOS security standards.
 
@@ -1379,7 +1379,7 @@ Untrusted source changes must not gain inappropriate access to protected credent
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 CI workflows should receive only the permissions required for their responsibilities.
 
@@ -1387,7 +1387,7 @@ Testing jobs generally should not receive production-level privileges.
 
 ---
 
-# Untrusted Contributions
+## Untrusted Contributions
 
 Where external or untrusted contributions are supported, CI must account for the security risks of executing untrusted code.
 
@@ -1395,7 +1395,7 @@ Sensitive credentials must not be exposed to such executions.
 
 ---
 
-# Supply Chain Considerations
+## Supply Chain Considerations
 
 CI dependencies and automation actions form part of the software supply chain.
 
@@ -1409,7 +1409,7 @@ Testing automation must not become an uncontrolled execution path into the repos
 
 ---
 
-# CI Cost Management
+## CI Cost Management
 
 Automated validation consumes compute resources.
 
@@ -1428,7 +1428,7 @@ The goal is efficient confidence.
 
 ---
 
-# Cost Optimization Principles
+## Cost Optimization Principles
 
 Automation cost may be controlled through:
 
@@ -1443,7 +1443,7 @@ Cost reduction must not compromise mandatory validation.
 
 ---
 
-# Local and CI Consistency
+## Local and CI Consistency
 
 Developers should have local commands corresponding closely to CI validation.
 
@@ -1461,7 +1461,7 @@ This improves failure reproduction and reduces CI-only debugging.
 
 ---
 
-# Single Source of Validation Logic
+## Single Source of Validation Logic
 
 Where practical, local and CI execution should reuse the same underlying validation commands.
 
@@ -1469,7 +1469,7 @@ Duplicating validation logic between local scripts and CI configuration increase
 
 ---
 
-# Automation Failure Response
+## Automation Failure Response
 
 When automated validation fails:
 
@@ -1483,7 +1483,7 @@ Repeated blind reruns are not an acceptable long-term response.
 
 ---
 
-# Bypassing CI
+## Bypassing CI
 
 Mandatory CI validation should not be bypassed casually.
 
@@ -1493,7 +1493,7 @@ Bypasses should remain exceptional.
 
 ---
 
-# Automation Exceptions
+## Automation Exceptions
 
 Some tests may not be suitable for normal CI execution.
 
@@ -1510,7 +1510,7 @@ Tests excluded from normal CI must have an alternative lifecycle location.
 
 ---
 
-# Manual Testing Relationship
+## Manual Testing Relationship
 
 Automation does not eliminate manual testing.
 
@@ -1525,7 +1525,7 @@ Automated and manual testing are complementary.
 
 ---
 
-# CI as Engineering Infrastructure
+## CI as Engineering Infrastructure
 
 Continuous integration should be treated as engineering infrastructure.
 
@@ -1543,7 +1543,7 @@ A CI pipeline is not merely a collection of shell commands.
 
 ---
 
-# Automation Maturity Model
+## Automation Maturity Model
 
 FamilyOS test automation may evolve progressively.
 
@@ -1580,77 +1580,77 @@ FamilyOS should evolve automation maturity according to platform needs.
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following automation practices are discouraged or prohibited.
 
-## CI Only After Merge
+### CI Only After Merge
 
 Testing exclusively after integration detects defects too late.
 
 ---
 
-## Manual-Only Validation
+### Manual-Only Validation
 
 Repeatable mandatory validation should not depend entirely on manual execution.
 
 ---
 
-## Running Expensive Tests First
+### Running Expensive Tests First
 
 Cheap validation should normally execute before expensive validation.
 
 ---
 
-## Hidden CI Failures
+### Hidden CI Failures
 
 Failures must remain visible.
 
 ---
 
-## Blind Retries
+### Blind Retries
 
 Repeated reruns must not replace diagnosis.
 
 ---
 
-## Unlimited Matrices
+### Unlimited Matrices
 
 Compatibility matrices must be governed to prevent uncontrolled cost growth.
 
 ---
 
-## Unsafe Caching
+### Unsafe Caching
 
 Caching must not produce stale or incorrect validation results.
 
 ---
 
-## Environment Drift
+### Environment Drift
 
 CI environments must not evolve unpredictably.
 
 ---
 
-## Secrets in Logs
+### Secrets in Logs
 
 Automation must never expose protected credentials through test diagnostics.
 
 ---
 
-## Permanent Disabled Jobs
+### Permanent Disabled Jobs
 
 Mandatory validation must not be silently disabled because it is inconvenient or unreliable.
 
 ---
 
-## CI Configuration Without Ownership
+### CI Configuration Without Ownership
 
 Automation must have responsible maintainers.
 
 ---
 
-# Governance
+## Governance
 
 Automation and CI integration are governed by the FamilyOS Testing Framework and the broader FamilyOS Engineering Platform.
 
@@ -1670,7 +1670,7 @@ must follow appropriate engineering governance.
 
 ---
 
-# Relationship With Test Execution
+## Relationship With Test Execution
 
 This document operationalizes the execution model defined in:
 
@@ -1684,7 +1684,7 @@ This document defines how those execution principles are embedded into automated
 
 ---
 
-# Relationship With Reporting
+## Relationship With Reporting
 
 Automated validation depends directly on the reporting requirements defined in:
 
@@ -1696,7 +1696,7 @@ CI must produce sufficient evidence for engineers and automated gates to interpr
 
 ---
 
-# Relationship With Testing Gates
+## Relationship With Testing Gates
 
 Automation provides the execution mechanism used by:
 
@@ -1708,7 +1708,7 @@ Testing gates convert validation evidence into explicit engineering progression 
 
 ---
 
-# Relationship With Governance and Lifecycle
+## Relationship With Governance and Lifecycle
 
 Automation evolves together with the FamilyOS Testing Framework.
 
@@ -1735,7 +1735,7 @@ and:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 FamilyOS automation and CI integration is considered effective when:
 
@@ -1756,7 +1756,7 @@ FamilyOS automation and CI integration is considered effective when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Testing Framework treats automated validation as a permanent part of the engineering lifecycle.
 

@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 08 Validation Engine
+## 08 Validation Engine
 
-## Introduction
+### Introduction
 
 The Validation Engine is the execution core of the FamilyOS Plugin Compliance Framework.
 
@@ -26,7 +26,7 @@ The engine must remain deterministic, explainable, extensible, and independent f
 
 ---
 
-# Purpose
+## Purpose
 
 The Validation Engine exists to provide one authoritative mechanism for evaluating plugin compliance.
 
@@ -44,7 +44,7 @@ Compliance semantics must not.
 
 ---
 
-# Execution Model
+## Execution Model
 
 The high-level execution model is:
 
@@ -89,7 +89,7 @@ Each stage must have explicit contracts and failure semantics.
 
 ---
 
-# Validation Request
+## Validation Request
 
 Every engine execution begins with a validation request.
 
@@ -112,7 +112,7 @@ Defaults may be resolved through governed framework configuration.
 
 ---
 
-# Plugin Target
+## Plugin Target
 
 The plugin target identifies the object being evaluated.
 
@@ -129,7 +129,7 @@ The target abstraction should prevent validators from depending directly on one 
 
 ---
 
-# Validation Context Construction
+## Validation Context Construction
 
 The engine must construct an explicit Validation Context before evaluating rules.
 
@@ -155,7 +155,7 @@ This context becomes part of the final compliance result.
 
 ---
 
-# Context Validation
+## Context Validation
 
 The engine must validate its own context before compliance evaluation begins.
 
@@ -172,7 +172,7 @@ Context failures must be reported separately from plugin compliance failures.
 
 ---
 
-# Profile Resolution
+## Profile Resolution
 
 The Validation Engine delegates profile selection to the Profile Resolver.
 
@@ -203,7 +203,7 @@ The resolved profile must be recorded in the result.
 
 ---
 
-# Rule Resolution
+## Rule Resolution
 
 Once a profile is resolved, the engine determines the Effective Rule Set.
 
@@ -227,7 +227,7 @@ Deprecated rules may participate when required by profile or compatibility polic
 
 ---
 
-# Applicability Resolution
+## Applicability Resolution
 
 A rule included by the profile may still be contextually not applicable.
 
@@ -247,7 +247,7 @@ They must not disappear from traceability.
 
 ---
 
-# Rule Dependency Graph
+## Rule Dependency Graph
 
 Rules may depend on prerequisite rules.
 
@@ -276,7 +276,7 @@ The dependency graph supports:
 
 ---
 
-# Dependency Validation
+## Dependency Validation
 
 The engine must validate the rule graph itself.
 
@@ -293,7 +293,7 @@ They must not be reported as plugin failures.
 
 ---
 
-# Validation Planning
+## Validation Planning
 
 The engine generates a Validation Plan from the Effective Rule Set.
 
@@ -327,7 +327,7 @@ Validation Plan
 
 ---
 
-# Validation Plan
+## Validation Plan
 
 A conceptual plan may contain:
 
@@ -348,7 +348,7 @@ The plan should be inspectable for debugging and audit purposes.
 
 ---
 
-# Validator Selection
+## Validator Selection
 
 Rules do not directly execute themselves.
 
@@ -370,7 +370,7 @@ Validator reuse reduces unnecessary repeated analysis.
 
 ---
 
-# Validator Registry
+## Validator Registry
 
 Validators must be resolved through a governed Validator Registry.
 
@@ -391,7 +391,7 @@ Rules should reference logical validator identities rather than concrete impleme
 
 ---
 
-# Validator Contract
+## Validator Contract
 
 Every validator must conform to a stable contract.
 
@@ -427,7 +427,7 @@ Validators must never directly declare overall plugin compliance.
 
 ---
 
-# Validator Status
+## Validator Status
 
 Validator execution status should remain separate from rule outcome.
 
@@ -452,7 +452,7 @@ means the validator executed successfully and demonstrated a compliance violatio
 
 ---
 
-# Validator Errors
+## Validator Errors
 
 A validator crash or infrastructure failure must not be interpreted as rule failure automatically.
 
@@ -480,7 +480,7 @@ depending on the failure semantics.
 
 ---
 
-# Evidence Collection
+## Evidence Collection
 
 Validators produce or consume evidence.
 
@@ -499,7 +499,7 @@ Every evidence item must preserve provenance.
 
 ---
 
-# Evidence Store
+## Evidence Store
 
 The engine should expose an Evidence Store abstraction.
 
@@ -521,7 +521,7 @@ The abstraction allows future persistence or distributed evidence systems.
 
 ---
 
-# Evidence Deduplication
+## Evidence Deduplication
 
 Equivalent evidence should not be collected repeatedly.
 
@@ -546,7 +546,7 @@ Evidence reuse improves performance and consistency.
 
 ---
 
-# Evidence Freshness
+## Evidence Freshness
 
 Before evidence is reused, the engine must verify that it matches the current validation context.
 
@@ -563,7 +563,7 @@ Invalid or stale evidence must be rejected or explicitly downgraded according to
 
 ---
 
-# Trusted External Evidence
+## Trusted External Evidence
 
 The engine may consume evidence produced outside the immediate execution.
 
@@ -580,7 +580,7 @@ External evidence must pass provenance and compatibility validation.
 
 ---
 
-# Rule Evaluation
+## Rule Evaluation
 
 Once required evidence is available, each applicable rule is evaluated.
 
@@ -600,7 +600,7 @@ The evaluator must remain independent from report formatting.
 
 ---
 
-# Rule Evaluator
+## Rule Evaluator
 
 The Rule Evaluator determines whether the requirement is satisfied.
 
@@ -619,7 +619,7 @@ The Rule Evaluator translates those observations into compliance outcomes.
 
 ---
 
-# Canonical Rule Outcomes
+## Canonical Rule Outcomes
 
 The engine should converge on a small canonical set of rule outcomes.
 
@@ -639,7 +639,7 @@ This keeps status and severity orthogonal.
 
 ---
 
-# Prerequisite Failure Handling
+## Prerequisite Failure Handling
 
 If a prerequisite rule fails, dependent rules should not automatically generate duplicate failures.
 
@@ -658,7 +658,7 @@ This reduces compliance noise.
 
 ---
 
-# Finding Generation
+## Finding Generation
 
 The engine generates findings from rule outcomes according to compliance policy.
 
@@ -685,7 +685,7 @@ Findings must reference the originating rule and relevant evidence.
 
 ---
 
-# Finding Normalization
+## Finding Normalization
 
 All validators must ultimately produce findings through the same normalized Finding Model.
 
@@ -697,7 +697,7 @@ The canonical finding remains framework-owned.
 
 ---
 
-# Severity Resolution
+## Severity Resolution
 
 Rule severity is defined by the rule.
 
@@ -717,7 +717,7 @@ The engine must not mutate the original rule severity.
 
 ---
 
-# Mandatory Rule Handling
+## Mandatory Rule Handling
 
 Mandatory rules require special decision semantics.
 
@@ -737,7 +737,7 @@ Governed exceptions may alter this only when the rule's exception policy permits
 
 ---
 
-# Exception Evaluation
+## Exception Evaluation
 
 Exceptions must be resolved before final decision derivation.
 
@@ -754,7 +754,7 @@ Invalid or expired exceptions must not influence compliance status.
 
 ---
 
-# Suppression Evaluation
+## Suppression Evaluation
 
 Suppressions may affect finding presentation or workflow handling.
 
@@ -777,7 +777,7 @@ Finding Remains Traceable
 
 ---
 
-# Compliance Decision
+## Compliance Decision
 
 After all applicable rule outcomes are resolved, the engine derives the overall Compliance Result.
 
@@ -801,7 +801,7 @@ The algorithm must be documented and deterministic.
 
 ---
 
-# Overall Compliance States
+## Overall Compliance States
 
 A compact overall status model is preferred.
 
@@ -814,25 +814,25 @@ INCOMPLETE
 ERROR
 ```
 
-## COMPLIANT
+### COMPLIANT
 
 All required blocking rules are satisfied according to the active profile.
 
-## NON_COMPLIANT
+### NON_COMPLIANT
 
 One or more blocking requirements are violated.
 
-## INCOMPLETE
+### INCOMPLETE
 
 Required compliance decisions could not be completed because evidence or required validation is missing.
 
-## ERROR
+### ERROR
 
 The framework encountered a failure severe enough to prevent a reliable compliance decision.
 
 ---
 
-# Status Precedence
+## Status Precedence
 
 When multiple conditions exist, precedence must be explicit.
 
@@ -854,7 +854,7 @@ The engine must not derive status through undocumented heuristics.
 
 ---
 
-# Deterministic Execution
+## Deterministic Execution
 
 The engine must produce equivalent semantic results for equivalent validation contexts.
 
@@ -873,7 +873,7 @@ It must not change outcome semantics.
 
 ---
 
-# Parallel Execution
+## Parallel Execution
 
 Independent validators may execute concurrently.
 
@@ -895,7 +895,7 @@ The engine must ensure deterministic aggregation regardless of execution order.
 
 ---
 
-# Concurrency Safety
+## Concurrency Safety
 
 Parallel validation requires:
 
@@ -911,7 +911,7 @@ It must not leak into compliance semantics.
 
 ---
 
-# Finding Ordering
+## Finding Ordering
 
 Reports should produce stable finding order.
 
@@ -933,7 +933,7 @@ Stable ordering improves:
 
 ---
 
-# Incremental Validation
+## Incremental Validation
 
 The engine should support future incremental execution.
 
@@ -951,7 +951,7 @@ The engine must always prefer correctness over optimization.
 
 ---
 
-# Invalidation
+## Invalidation
 
 Evidence must be invalidated when relevant context changes.
 
@@ -975,7 +975,7 @@ Invalidation rules should themselves be explicit.
 
 ---
 
-# Execution Modes
+## Execution Modes
 
 The engine may support execution modes such as:
 
@@ -999,7 +999,7 @@ The active profile still determines required assurance.
 
 ---
 
-# Fast Execution
+## Fast Execution
 
 FAST mode may prioritize validators that are:
 
@@ -1012,7 +1012,7 @@ If required profile rules remain unevaluated, the result must be `INCOMPLETE` ra
 
 ---
 
-# Full Execution
+## Full Execution
 
 FULL mode attempts to evaluate all rules required by the profile.
 
@@ -1028,7 +1028,7 @@ FULL mode is suitable for release preparation.
 
 ---
 
-# Certification Execution
+## Certification Execution
 
 CERTIFICATION mode may require stronger evidence provenance and forbid certain shortcuts.
 
@@ -1044,7 +1044,7 @@ Certification mode still produces compliance evidence rather than certification 
 
 ---
 
-# Manual Review Integration
+## Manual Review Integration
 
 The engine must support rules requiring manual review.
 
@@ -1069,7 +1069,7 @@ Until required review evidence exists, affected rules remain `NOT_EVALUATED`.
 
 ---
 
-# Cancellation
+## Cancellation
 
 Validation execution may support cancellation.
 
@@ -1081,7 +1081,7 @@ Partial evidence may be retained if clearly marked.
 
 ---
 
-# Timeouts
+## Timeouts
 
 Validators may require execution timeouts.
 
@@ -1093,7 +1093,7 @@ Affected rules should become `ERROR` or `NOT_EVALUATED` according to policy.
 
 ---
 
-# Retry Policy
+## Retry Policy
 
 Some validator failures may be retryable.
 
@@ -1105,7 +1105,7 @@ The final result should preserve retry diagnostics where relevant.
 
 ---
 
-# Engine Diagnostics
+## Engine Diagnostics
 
 The engine should produce diagnostic information separate from compliance findings.
 
@@ -1122,7 +1122,7 @@ This separation helps determine whether the plugin or the compliance infrastruct
 
 ---
 
-# Audit Trail
+## Audit Trail
 
 Every validation execution should produce enough metadata for audit.
 
@@ -1148,7 +1148,7 @@ This metadata may be embedded in the structured Compliance Result.
 
 ---
 
-# Evaluation Identity
+## Evaluation Identity
 
 Every complete validation run should receive a unique Evaluation ID.
 
@@ -1164,7 +1164,7 @@ It identifies an execution instance, not a plugin identity.
 
 ---
 
-# Result Immutability
+## Result Immutability
 
 A finalized Compliance Result should be treated as immutable.
 
@@ -1181,7 +1181,7 @@ Historical results remain interpretable in their original context.
 
 ---
 
-# Engine Extension Points
+## Engine Extension Points
 
 The Validation Engine may expose governed extension points for:
 
@@ -1199,7 +1199,7 @@ Extensions must not be allowed to redefine:
 
 ---
 
-# Plugin Isolation
+## Plugin Isolation
 
 The plugin under evaluation must not be able to control compliance execution.
 
@@ -1215,7 +1215,7 @@ This preserves the compliance trust boundary.
 
 ---
 
-# Engine API Boundary
+## Engine API Boundary
 
 The engine should expose a stable service interface.
 
@@ -1237,7 +1237,7 @@ Consumers should depend on these service contracts rather than engine internals.
 
 ---
 
-# CLI Consumer
+## CLI Consumer
 
 The CLI should invoke the Validation Engine and render its structured result.
 
@@ -1252,7 +1252,7 @@ Its responsibility is user interaction and presentation.
 
 ---
 
-# CI Consumer
+## CI Consumer
 
 CI should invoke the same engine interface.
 
@@ -1271,7 +1271,7 @@ Exact exit-code semantics belong to CLI and CI integration specifications.
 
 ---
 
-# Release Consumer
+## Release Consumer
 
 Release workflows may require a specific profile and execution mode.
 
@@ -1288,7 +1288,7 @@ It does not independently reinterpret rule outcomes.
 
 ---
 
-# Certification Consumer
+## Certification Consumer
 
 Certification infrastructure consumes structured compliance evidence.
 
@@ -1304,7 +1304,7 @@ Certification remains a separate governance layer.
 
 ---
 
-# Performance Objectives
+## Performance Objectives
 
 The engine should be designed to scale with increasing:
 
@@ -1326,7 +1326,7 @@ No optimization may weaken compliance correctness.
 
 ---
 
-# Observability
+## Observability
 
 The engine should expose operational telemetry for its own execution.
 
@@ -1344,7 +1344,7 @@ Operational observability is distinct from plugin compliance reporting.
 
 ---
 
-# Engine Testing
+## Engine Testing
 
 The Validation Engine itself requires extensive tests.
 
@@ -1367,7 +1367,7 @@ Compliance infrastructure must meet at least the quality level expected from the
 
 ---
 
-# Reference Execution Flow
+## Reference Execution Flow
 
 The complete reference execution is:
 
@@ -1424,7 +1424,7 @@ This sequence defines conceptual responsibility, not necessarily strict physical
 
 ---
 
-# Engine Invariants
+## Engine Invariants
 
 The Validation Engine establishes the following invariants:
 
@@ -1449,7 +1449,7 @@ The Validation Engine establishes the following invariants:
 
 ---
 
-# Engine Summary
+## Engine Summary
 
 The Validation Engine transforms a plugin and a governed compliance context into a reproducible compliance result.
 
@@ -1475,7 +1475,7 @@ The engine provides the operational foundation required to make FamilyOS plugin 
 
 ---
 
-# Final Engine Principle
+## Final Engine Principle
 
 The governing principle of the Validation Engine is:
 

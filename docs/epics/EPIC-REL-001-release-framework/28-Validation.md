@@ -1,8 +1,8 @@
 # Release Framework
 
-# 28 Validation
+## 28 Validation
 
-## Overview
+### Overview
 
 Validation defines how the FamilyOS Release Framework is verified as complete, coherent, enforceable, and ready to govern production releases.
 
@@ -21,7 +21,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the validation model for EPIC-REL-001.
 
@@ -44,41 +44,41 @@ Validation must produce explicit evidence.
 
 ---
 
-# Validation Objectives
+## Validation Objectives
 
 The Release Framework validation process must establish confidence in several dimensions.
 
-## Structural Completeness
+### Structural Completeness
 
 All required framework documents and metadata artifacts must exist.
 
-## Content Completeness
+### Content Completeness
 
 The documents must collectively cover the required release engineering domains.
 
-## Internal Consistency
+### Internal Consistency
 
 Requirements across documents must not contradict one another.
 
-## Traceability
+### Traceability
 
 Release requirements must be traceable to their governing framework concepts.
 
-## Enforceability
+### Enforceability
 
 Mandatory requirements must be expressible as procedures, gates, checks, or governance decisions.
 
-## Integrability
+### Integrability
 
 The Release Framework must integrate correctly with adjacent FamilyOS frameworks.
 
-## Operational Applicability
+### Operational Applicability
 
 The framework must support real release workflows rather than remain purely theoretical.
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 Validation applies to the complete EPIC-REL-001 Release Framework.
 
@@ -105,7 +105,7 @@ Validation should also consider relationships with external engineering foundati
 
 ---
 
-# Validation Levels
+## Validation Levels
 
 Release Framework validation should operate at several levels.
 
@@ -129,7 +129,7 @@ Each level verifies a different class of risk.
 
 ---
 
-# Level 1 — Structure Validation
+## Level 1 — Structure Validation
 
 Structure validation confirms that the expected Release Framework artifacts exist.
 
@@ -147,7 +147,7 @@ A structural validation failure means the framework is incomplete regardless of 
 
 ---
 
-# Expected Document Inventory
+## Expected Document Inventory
 
 The canonical Release Framework inventory should be explicitly defined.
 
@@ -171,7 +171,7 @@ The validation process must use the canonical inventory rather than rely on memo
 
 ---
 
-# Empty File Validation
+## Empty File Validation
 
 Required framework documents must not be empty.
 
@@ -189,7 +189,7 @@ Content validation must follow.
 
 ---
 
-# Naming Validation
+## Naming Validation
 
 Documents must follow established FamilyOS naming conventions.
 
@@ -205,7 +205,7 @@ Naming consistency improves discoverability and automation.
 
 ---
 
-# Level 2 — Document Validation
+## Level 2 — Document Validation
 
 Each framework document must be validated independently.
 
@@ -224,7 +224,7 @@ Documents should not contain unresolved placeholders unless explicitly permitted
 
 ---
 
-# Heading Validation
+## Heading Validation
 
 Important framework documents should follow a predictable heading model.
 
@@ -242,7 +242,7 @@ The goal is consistency across the framework.
 
 ---
 
-# Language Validation
+## Language Validation
 
 The canonical FamilyOS engineering documentation language must be respected.
 
@@ -252,7 +252,7 @@ Mixed-language normative content should be avoided unless explicitly required.
 
 ---
 
-# Terminology Validation
+## Terminology Validation
 
 Core terms must have consistent meaning across all Release Framework documents.
 
@@ -277,7 +277,7 @@ Terminology drift creates governance ambiguity.
 
 ---
 
-# Normative Language Validation
+## Normative Language Validation
 
 Mandatory rules must be distinguishable from recommendations.
 
@@ -304,7 +304,7 @@ Documents should avoid ambiguous requirements when release blocking behavior dep
 
 ---
 
-# Level 3 — Cross-Document Validation
+## Level 3 — Cross-Document Validation
 
 The Release Framework must be internally coherent.
 
@@ -323,7 +323,7 @@ Contradictions must be resolved before framework completion.
 
 ---
 
-# Lifecycle Consistency Validation
+## Lifecycle Consistency Validation
 
 All documents must reflect the same overall release lifecycle.
 
@@ -364,7 +364,7 @@ Documents may focus on different stages, but they must not define incompatible l
 
 ---
 
-# Release State Validation
+## Release State Validation
 
 Release states must be defined consistently.
 
@@ -392,7 +392,7 @@ What matters is that the framework exposes one coherent release state system.
 
 ---
 
-# Gate Consistency Validation
+## Gate Consistency Validation
 
 Release gate definitions must align with other framework requirements.
 
@@ -429,7 +429,7 @@ No mandatory framework requirement should be unintentionally omitted from the ap
 
 ---
 
-# Evidence Consistency Validation
+## Evidence Consistency Validation
 
 Release evidence requirements should use a coherent evidence model.
 
@@ -449,7 +449,7 @@ Evidence references should be authoritative and traceable.
 
 ---
 
-# Risk and Compliance Consistency
+## Risk and Compliance Consistency
 
 Risk management and compliance must remain distinct but compatible.
 
@@ -463,7 +463,7 @@ Validation should confirm that:
 
 ---
 
-# Rollback and Deployment Consistency
+## Rollback and Deployment Consistency
 
 Deployment and rollback rules must be compatible.
 
@@ -480,7 +480,7 @@ A deployment strategy without a recovery strategy is incomplete.
 
 ---
 
-# Observability and Verification Consistency
+## Observability and Verification Consistency
 
 Post-deployment verification must rely on observability capabilities defined by the framework.
 
@@ -498,7 +498,7 @@ Required verification must not depend on signals that the framework never requir
 
 ---
 
-# Metric Definition Validation
+## Metric Definition Validation
 
 Release metrics must have clear definitions.
 
@@ -514,7 +514,7 @@ Ambiguous metrics should not be used as governance indicators.
 
 ---
 
-# Level 4 — Framework Integration Validation
+## Level 4 — Framework Integration Validation
 
 The Release Framework depends on other FamilyOS engineering frameworks.
 
@@ -541,7 +541,7 @@ The Release Framework must consume these capabilities rather than redefine them 
 
 ---
 
-# Build Framework Integration Validation
+## Build Framework Integration Validation
 
 Validation should confirm that the Release Framework relies on the Build Framework for:
 
@@ -555,7 +555,7 @@ The Release Framework should govern artifact promotion and release use, not rede
 
 ---
 
-# Testing Framework Integration Validation
+## Testing Framework Integration Validation
 
 Validation should confirm that the Release Framework consumes:
 
@@ -569,7 +569,7 @@ The Release Framework must not redefine testing architecture.
 
 ---
 
-# Quality Framework Integration Validation
+## Quality Framework Integration Validation
 
 Validation should confirm alignment with:
 
@@ -583,7 +583,7 @@ Release quality requirements must remain compatible with the Quality Framework.
 
 ---
 
-# Plugin Compliance Integration Validation
+## Plugin Compliance Integration Validation
 
 Plugin releases must integrate Plugin Compliance Framework outcomes.
 
@@ -603,7 +603,7 @@ Release authorization remains a separate concern.
 
 ---
 
-# Documentation Framework Integration Validation
+## Documentation Framework Integration Validation
 
 Release documentation requirements should follow FamilyOS documentation standards.
 
@@ -618,7 +618,7 @@ Validation should verify:
 
 ---
 
-# Security Integration Validation
+## Security Integration Validation
 
 Release validation must include applicable security controls.
 
@@ -634,7 +634,7 @@ Critical security requirements must not be optional through accidental framework
 
 ---
 
-# Level 5 — Operational Validation
+## Level 5 — Operational Validation
 
 Operational validation determines whether the Release Framework can govern an actual release.
 
@@ -644,7 +644,7 @@ The objective is to validate behavior, not merely documentation.
 
 ---
 
-# Representative Release Scenario
+## Representative Release Scenario
 
 A validation scenario may follow:
 
@@ -683,7 +683,7 @@ The framework must provide clear guidance at every stage.
 
 ---
 
-# Failure Scenario Validation
+## Failure Scenario Validation
 
 The framework must also be tested against failure.
 
@@ -712,7 +712,7 @@ If the framework provides no clear decision path, validation fails.
 
 ---
 
-# Migration Scenario Validation
+## Migration Scenario Validation
 
 A release containing a database migration should be used as a high-risk validation scenario.
 
@@ -729,7 +729,7 @@ This validates cross-domain completeness.
 
 ---
 
-# Plugin Release Scenario Validation
+## Plugin Release Scenario Validation
 
 A representative plugin release should verify:
 
@@ -747,7 +747,7 @@ This confirms that the Release Framework correctly supports the FamilyOS plugin 
 
 ---
 
-# Emergency Release Scenario Validation
+## Emergency Release Scenario Validation
 
 The framework must support urgent corrective releases without eliminating essential controls.
 
@@ -765,7 +765,7 @@ Emergency must mean accelerated, not uncontrolled.
 
 ---
 
-# Rollback Scenario Validation
+## Rollback Scenario Validation
 
 A rollback simulation should verify that the framework identifies:
 
@@ -781,7 +781,7 @@ A rollback process that cannot prove restoration is incomplete.
 
 ---
 
-# Compliance Scenario Validation
+## Compliance Scenario Validation
 
 A compliance failure scenario should verify fail-closed behavior.
 
@@ -807,7 +807,7 @@ through missing data.
 
 ---
 
-# Unknown State Validation
+## Unknown State Validation
 
 The framework must correctly represent uncertainty.
 
@@ -826,7 +826,7 @@ This is a critical validation property.
 
 ---
 
-# Automation Validation
+## Automation Validation
 
 As automation is introduced, automated release controls must themselves be validated.
 
@@ -843,7 +843,7 @@ Automation must fail safely.
 
 ---
 
-# Policy Validation
+## Policy Validation
 
 Release policies should be tested against known examples.
 
@@ -865,7 +865,7 @@ must not permit production promotion.
 
 ---
 
-# Release Manifest Validation
+## Release Manifest Validation
 
 A structured release manifest should eventually receive schema validation.
 
@@ -887,7 +887,7 @@ Invalid manifests must fail early.
 
 ---
 
-# Version Validation
+## Version Validation
 
 Release versions must comply with the FamilyOS versioning model.
 
@@ -903,7 +903,7 @@ A release must not expose conflicting versions across its artifacts.
 
 ---
 
-# Tag Validation
+## Tag Validation
 
 Production release tags should be verified for:
 
@@ -916,7 +916,7 @@ Tag mutation after release publication must be treated as a governance violation
 
 ---
 
-# Artifact Validation
+## Artifact Validation
 
 Release artifact validation should verify:
 
@@ -930,7 +930,7 @@ The deployed artifact must match the approved artifact.
 
 ---
 
-# Documentation Validation
+## Documentation Validation
 
 Release-related documentation should be checked for:
 
@@ -945,7 +945,7 @@ Documentation gaps must be visible before release approval.
 
 ---
 
-# Readiness Validation
+## Readiness Validation
 
 Release readiness validation should confirm all applicable readiness requirements.
 
@@ -969,7 +969,7 @@ The applicable profile must determine required conditions.
 
 ---
 
-# Approval Validation
+## Approval Validation
 
 Approval evidence should be validated for:
 
@@ -984,7 +984,7 @@ Approval of an earlier artifact must not automatically approve a changed artifac
 
 ---
 
-# Deployment Validation
+## Deployment Validation
 
 Deployment validation should confirm:
 
@@ -999,7 +999,7 @@ The framework must distinguish deployment completion from release acceptance.
 
 ---
 
-# Post-Deployment Validation
+## Post-Deployment Validation
 
 Post-deployment validation should confirm:
 
@@ -1016,7 +1016,7 @@ Final release success requires runtime evidence.
 
 ---
 
-# Rollback Validation
+## Rollback Validation
 
 Rollback validation should verify:
 
@@ -1032,7 +1032,7 @@ The rollback process should be testable in non-production environments where pra
 
 ---
 
-# Recovery Validation
+## Recovery Validation
 
 Recovery validation must verify the actual restored state.
 
@@ -1050,7 +1050,7 @@ Recovery is complete only when the restored state is acceptable.
 
 ---
 
-# Evidence Validation
+## Evidence Validation
 
 Release evidence itself must be validated.
 
@@ -1066,7 +1066,7 @@ Evidence from a different release must not satisfy the current release.
 
 ---
 
-# Traceability Validation
+## Traceability Validation
 
 The framework should eventually support end-to-end traceability such as:
 
@@ -1102,7 +1102,7 @@ Broken traceability links should be identifiable.
 
 ---
 
-# Risk Validation
+## Risk Validation
 
 Risk management validation should confirm:
 
@@ -1117,7 +1117,7 @@ Critical unknown risks must not silently pass readiness.
 
 ---
 
-# Compliance Validation
+## Compliance Validation
 
 Compliance validation should determine an explicit state.
 
@@ -1134,7 +1134,7 @@ The state must be derived from required controls and evidence.
 
 ---
 
-# Observability Validation
+## Observability Validation
 
 Release observability should itself be tested.
 
@@ -1151,7 +1151,7 @@ Missing required telemetry should be detected before it becomes an incident.
 
 ---
 
-# Metrics Validation
+## Metrics Validation
 
 Release metrics should be validated for:
 
@@ -1165,7 +1165,7 @@ Metrics should never silently convert unavailable data into zero.
 
 ---
 
-# Validation Automation
+## Validation Automation
 
 The long-term goal is to automate as much framework validation as practical.
 
@@ -1188,7 +1188,7 @@ Automation should produce an explicit validation result.
 
 ---
 
-# Validation Status
+## Validation Status
 
 The Release Framework should expose a final validation status.
 
@@ -1201,25 +1201,25 @@ FAIL
 PENDING
 ```
 
-## PASS
+### PASS
 
 All mandatory validation requirements are satisfied.
 
-## PASS_WITH_FINDINGS
+### PASS_WITH_FINDINGS
 
 The framework is valid, but non-blocking improvement findings remain.
 
-## FAIL
+### FAIL
 
 One or more mandatory validation requirements are not satisfied.
 
-## PENDING
+### PENDING
 
 Validation is incomplete.
 
 ---
 
-# Validation Findings
+## Validation Findings
 
 Validation findings should be categorized by severity.
 
@@ -1237,7 +1237,7 @@ Critical and high findings should generally block framework completion unless ex
 
 ---
 
-# Finding Record
+## Finding Record
 
 A validation finding may include:
 
@@ -1256,7 +1256,7 @@ Findings should remain traceable until resolved or accepted.
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 A final validation checklist should include at minimum:
 
@@ -1290,7 +1290,7 @@ This checklist forms the minimum final review.
 
 ---
 
-# Repository Validation
+## Repository Validation
 
 Repository-level validation should also confirm that the framework can be represented cleanly in source control.
 
@@ -1309,7 +1309,7 @@ Validation commands should be reproducible.
 
 ---
 
-# Suggested Structural Validation Commands
+## Suggested Structural Validation Commands
 
 A repository validation sequence may include commands conceptually similar to:
 
@@ -1331,7 +1331,7 @@ Repository-specific validation scripts may replace manual commands later.
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Completion of EPIC-REL-001 should produce validation evidence.
 
@@ -1350,7 +1350,7 @@ The evidence should be stored or referenced through the canonical validation art
 
 ---
 
-# Validation Ownership
+## Validation Ownership
 
 The Release Framework must have an identifiable validation owner.
 
@@ -1365,7 +1365,7 @@ Validation ownership may be shared with framework governance where appropriate.
 
 ---
 
-# Validation Review
+## Validation Review
 
 Final validation should be reviewed before the Release Framework is declared complete.
 
@@ -1382,7 +1382,7 @@ The review should focus on material issues.
 
 ---
 
-# Framework Acceptance
+## Framework Acceptance
 
 The Release Framework may be accepted when:
 
@@ -1400,7 +1400,7 @@ Acceptance criteria may evolve with governance.
 
 ---
 
-# Validation and Versioning
+## Validation and Versioning
 
 Validation applies to a specific framework version.
 
@@ -1424,7 +1424,7 @@ Material normative changes do.
 
 ---
 
-# Continuous Validation
+## Continuous Validation
 
 As the Release Framework becomes automated, validation should become continuous.
 
@@ -1439,7 +1439,7 @@ This reduces validation drift.
 
 ---
 
-# Validation Drift
+## Validation Drift
 
 Validation drift occurs when the documented framework and actual release behavior diverge.
 
@@ -1455,7 +1455,7 @@ Periodic validation must identify this drift.
 
 ---
 
-# Validation and Continuous Improvement
+## Validation and Continuous Improvement
 
 Validation findings should feed framework evolution.
 
@@ -1472,45 +1472,45 @@ Validation is therefore both an acceptance mechanism and an improvement mechanis
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices are prohibited or strongly discouraged.
 
-## File Presence Equals Validation
+### File Presence Equals Validation
 
 Treating existing Markdown files as proof that the framework is complete.
 
-## Size-Based Validation Only
+### Size-Based Validation Only
 
 Assuming large documents are automatically high quality.
 
-## Independent Document Review Only
+### Independent Document Review Only
 
 Validating documents individually while ignoring cross-document contradictions.
 
-## Manual Success Assumption
+### Manual Success Assumption
 
 Declaring the framework valid without explicit validation evidence.
 
-## Missing Operational Scenarios
+### Missing Operational Scenarios
 
 Validating theory without checking whether real release situations can be governed.
 
-## Ignoring Unknown States
+### Ignoring Unknown States
 
 Treating missing evidence as successful validation.
 
-## Validation Without Findings
+### Validation Without Findings
 
 Silently fixing or ignoring issues without maintaining traceability where findings matter.
 
-## Never Revalidating
+### Never Revalidating
 
 Assuming a framework remains valid after major architectural changes.
 
 ---
 
-# Required Outcomes
+## Required Outcomes
 
 Implementation of this validation model must ensure that:
 
@@ -1530,7 +1530,7 @@ Implementation of this validation model must ensure that:
 
 ---
 
-# Final Validation Principle
+## Final Validation Principle
 
 The Release Framework cannot govern production change reliably unless the framework itself has been validated.
 

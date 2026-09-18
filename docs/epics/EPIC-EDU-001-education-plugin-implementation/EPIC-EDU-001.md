@@ -16,13 +16,13 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 EPIC-EDU-001 records the completed implementation of the official FamilyOS Education Plugin and establishes the governance record that was not present at the historical implementation release.
 
 This EPIC does not rewrite the historical release. It documents and validates the already completed implementation represented by `v3.4.0-education-plugin-implementation`.
 
-# 2. Historical Baselines
+## 2. Historical Baselines
 
 The Education Plugin documentation baseline is:
 
@@ -38,13 +38,13 @@ Commit: `3584d9391d214d5003fc5a906c6705e62df54f51`
 
 No EPIC-EDU-001 document existed at the implementation tag.
 
-# 3. Source RFC
+## 3. Source RFC
 
 The implementation is governed by RFC-0013 — Education Plugin.
 
 The RFC documentation defines Education architecture, domain, generation, policies, rules, and validation semantics.
 
-# 4. Implementation Scope
+## 4. Implementation Scope
 
 The historical implementation contains the official Education Plugin under:
 
@@ -63,7 +63,7 @@ The implementation includes:
 - Education templates;
 - course, learner, record, and aggregate validation.
 
-# 5. Validation Scope
+## 5. Validation Scope
 
 Repository evidence includes dedicated unit and runtime tests for:
 
@@ -81,7 +81,7 @@ Repository evidence includes dedicated unit and runtime tests for:
 - capability runtime behavior;
 - contribution behavior.
 
-# 6. Historical Integrity
+## 6. Historical Integrity
 
 EPIC-EDU-001 must preserve:
 
@@ -92,13 +92,13 @@ EPIC-EDU-001 must preserve:
 
 The retrospective EPIC must not move, replace, or reinterpret historical tags.
 
-# 7. Governance Model
+## 7. Governance Model
 
 This directory contains seven control documents and no numbered documents.
 
 The historical implementation remains authoritative evidence of implementation completion.
 
-# 8. Completion
+## 8. Completion
 
 EPIC-EDU-001 is considered complete when:
 
@@ -110,7 +110,7 @@ EPIC-EDU-001 is considered complete when:
 - the final repository state is clean;
 - closure metadata records the completed state.
 
-# 9. References
+## 9. References
 
 - RFC-0013 — Education Plugin
 - `v2.5.0-education-plugin`

@@ -1,10 +1,10 @@
 # Health, Diagnostics, and Alerting
 
-# EPIC-OBS-001
+## EPIC-OBS-001
 
-## Health, Diagnostics, and Alerting
+### Health, Diagnostics, and Alerting
 
-## Overview
+### Overview
 
 This document defines the FamilyOS foundation for:
 
@@ -30,7 +30,7 @@ Alerts communicate significant conditions requiring action.
 
 ---
 
-# Objectives
+## Objectives
 
 The health, diagnostics, and alerting model must:
 
@@ -47,7 +47,7 @@ The health, diagnostics, and alerting model must:
 
 ---
 
-# Health Model
+## Health Model
 
 Health represents the current ability of a component or system to perform its intended responsibilities.
 
@@ -64,7 +64,7 @@ These states provide a consistent vocabulary across the platform.
 
 ---
 
-# HEALTHY
+## HEALTHY
 
 A component is `HEALTHY` when it can perform its intended responsibilities within expected operating conditions.
 
@@ -81,7 +81,7 @@ It describes the current operational capability of the component.
 
 ---
 
-# DEGRADED
+## DEGRADED
 
 A component is `DEGRADED` when it remains operational but some capability, dependency, or performance characteristic is impaired.
 
@@ -97,7 +97,7 @@ Degraded operation SHOULD remain visible before it becomes a complete failure.
 
 ---
 
-# UNHEALTHY
+## UNHEALTHY
 
 A component is `UNHEALTHY` when it cannot reliably perform an essential responsibility.
 
@@ -113,7 +113,7 @@ An unhealthy state SHOULD provide enough context to identify the failing operati
 
 ---
 
-# UNKNOWN
+## UNKNOWN
 
 A component is `UNKNOWN` when its health cannot currently be determined reliably.
 
@@ -128,7 +128,7 @@ Examples:
 
 ---
 
-# Health State Ordering
+## Health State Ordering
 
 For aggregation purposes, FamilyOS conceptually treats health severity as:
 
@@ -148,7 +148,7 @@ The meaning of each state must remain stable.
 
 ---
 
-# Health Checks
+## Health Checks
 
 A health check evaluates a specific operational condition.
 
@@ -171,7 +171,7 @@ Health checks SHOULD NOT perform expensive or destructive operations merely to p
 
 ---
 
-# Health Check Result
+## Health Check Result
 
 A conceptual health result may contain:
 
@@ -190,7 +190,7 @@ The result should contain enough information for interpretation while remaining 
 
 ---
 
-# Health Aggregation
+## Health Aggregation
 
 Multiple health checks may contribute to component or system health.
 
@@ -216,7 +216,7 @@ Aggregation rules MUST be deterministic.
 
 ---
 
-# Critical and Optional Dependencies
+## Critical and Optional Dependencies
 
 Not all dependencies have equal operational importance.
 
@@ -243,7 +243,7 @@ The classification must be defined by architecture rather than decided dynamical
 
 ---
 
-# Health and Plugins
+## Health and Plugins
 
 Plugins SHOULD expose health information when they depend on runtime resources or external systems whose availability affects their capabilities.
 
@@ -261,7 +261,7 @@ A plugin SHOULD NOT report itself as healthy when an essential dependency preven
 
 ---
 
-# Health and Startup
+## Health and Startup
 
 FamilyOS may evaluate health during startup.
 
@@ -281,7 +281,7 @@ A component should not report operational readiness before required initializati
 
 ---
 
-# Readiness and Health
+## Readiness and Health
 
 Readiness and health are related but not identical.
 
@@ -299,7 +299,7 @@ Future implementations MAY expose separate readiness semantics where required.
 
 ---
 
-# Liveness
+## Liveness
 
 Liveness answers whether a running process or component is still capable of making progress.
 
@@ -311,7 +311,7 @@ They MUST NOT depend unnecessarily on every external dependency.
 
 ---
 
-# Health Signal Stability
+## Health Signal Stability
 
 Health checks should avoid rapid oscillation between states.
 
@@ -326,7 +326,7 @@ These mechanisms must not hide persistent failures.
 
 ---
 
-# Diagnostics Model
+## Diagnostics Model
 
 Diagnostics provide deeper evidence for understanding abnormal system behavior.
 
@@ -352,7 +352,7 @@ Diagnostics SHOULD be used when normal telemetry is insufficient to explain a co
 
 ---
 
-# Diagnostic Information
+## Diagnostic Information
 
 Diagnostic information may include:
 
@@ -371,7 +371,7 @@ Diagnostics MUST NOT become an unrestricted dump of internal memory or family da
 
 ---
 
-# Diagnostic Levels
+## Diagnostic Levels
 
 FamilyOS may conceptually support diagnostic detail levels such as:
 
@@ -388,7 +388,7 @@ The implementation does not need to support multiple levels initially unless a c
 
 ---
 
-# Diagnostic Safety
+## Diagnostic Safety
 
 Diagnostics MUST protect:
 
@@ -403,7 +403,7 @@ Diagnostic convenience does not override security or privacy.
 
 ---
 
-# Diagnostic Context
+## Diagnostic Context
 
 A diagnostic record SHOULD identify the relevant operational context.
 
@@ -424,7 +424,7 @@ This allows diagnostic information to connect with other observability signals.
 
 ---
 
-# Diagnostic Snapshots
+## Diagnostic Snapshots
 
 Future implementations MAY support diagnostic snapshots.
 
@@ -446,7 +446,7 @@ Snapshots MUST be filtered before persistence or export.
 
 ---
 
-# Diagnostic Failure
+## Diagnostic Failure
 
 Diagnostic mechanisms can themselves fail.
 
@@ -456,7 +456,7 @@ Instead, FamilyOS should preserve the original operational result and record tha
 
 ---
 
-# Alerting Model
+## Alerting Model
 
 An alert represents an operational condition requiring attention.
 
@@ -482,7 +482,7 @@ Action
 
 ---
 
-# Alerts Are Not Logs
+## Alerts Are Not Logs
 
 A log event records something that happened.
 
@@ -514,7 +514,7 @@ This distinction prevents unnecessary operational noise.
 
 ---
 
-# Alert Sources
+## Alert Sources
 
 Alerts may eventually be derived from:
 
@@ -532,7 +532,7 @@ The alerting layer SHOULD consume standardized observability contracts.
 
 ---
 
-# Alert Severity
+## Alert Severity
 
 FamilyOS conceptually defines alert severity independently from log severity.
 
@@ -551,7 +551,7 @@ Additional severity levels SHOULD only be introduced if actual operational requi
 
 ---
 
-# Alert Structure
+## Alert Structure
 
 A conceptual alert may contain:
 
@@ -571,7 +571,7 @@ Alerts SHOULD describe the operational condition rather than expose raw private 
 
 ---
 
-# Alert Lifecycle
+## Alert Lifecycle
 
 Alerts have a lifecycle.
 
@@ -593,7 +593,7 @@ However, alert state SHOULD be distinguishable from individual alert events.
 
 ---
 
-# Alert Deduplication
+## Alert Deduplication
 
 Repeated observations of the same condition SHOULD NOT create uncontrolled duplicate alerts.
 
@@ -612,7 +612,7 @@ Alert identity and deduplication mechanisms may evolve with the Operations Frame
 
 ---
 
-# Alert Noise
+## Alert Noise
 
 Alert fatigue reduces operational reliability.
 
@@ -624,7 +624,7 @@ An alert should ideally correspond to a condition for which a person or automate
 
 ---
 
-# Recovery Signals
+## Recovery Signals
 
 FamilyOS SHOULD detect recovery when an alerting condition no longer exists.
 
@@ -646,7 +646,7 @@ Recovery is operational evidence and SHOULD be observable.
 
 ---
 
-# Health-to-Alert Relationship
+## Health-to-Alert Relationship
 
 Health state changes may trigger alert evaluation.
 
@@ -666,7 +666,7 @@ Alert policies determine whether a state transition requires action.
 
 ---
 
-# Metrics-to-Alert Relationship
+## Metrics-to-Alert Relationship
 
 Metrics may drive threshold-based or trend-based alerts.
 
@@ -686,7 +686,7 @@ Thresholds SHOULD be configurable without changing metric semantics.
 
 ---
 
-# Trace-to-Diagnostic Relationship
+## Trace-to-Diagnostic Relationship
 
 Tracing can identify where an operation failed.
 
@@ -709,7 +709,7 @@ This supports targeted investigation instead of broad diagnostic collection.
 
 ---
 
-# Correlation
+## Correlation
 
 Health, diagnostics, and alerts SHOULD participate in the same correlation model as logs and traces where applicable.
 
@@ -741,7 +741,7 @@ without manually reconstructing unrelated evidence.
 
 ---
 
-# Vendor Neutrality
+## Vendor Neutrality
 
 FamilyOS MUST NOT require a specific monitoring or alerting vendor at the architectural level.
 
@@ -768,7 +768,7 @@ External systems remain replaceable.
 
 ---
 
-# Local Development
+## Local Development
 
 Health and diagnostics MUST remain useful during local development.
 
@@ -786,7 +786,7 @@ This supports development and automated testing.
 
 ---
 
-# Testability
+## Testability
 
 Health behavior SHOULD be deterministic enough for automated tests.
 
@@ -807,7 +807,7 @@ Tests SHOULD NOT require external monitoring infrastructure.
 
 ---
 
-# Plugin Compliance
+## Plugin Compliance
 
 Future Plugin Compliance rules MAY verify that applicable plugins:
 
@@ -824,7 +824,7 @@ Requirements should remain proportional to plugin behavior.
 
 ---
 
-# Automation
+## Automation
 
 Standardized health and alert contracts enable future automation.
 
@@ -843,7 +843,7 @@ Automation SHOULD consume structured state rather than parse human-readable mess
 
 ---
 
-# Minimal Initial Implementation
+## Minimal Initial Implementation
 
 FamilyOS SHOULD initially implement only the essential mechanisms.
 
@@ -867,7 +867,7 @@ A complete monitoring or incident-management system is not required by EPIC-OBS-
 
 ---
 
-# Evolution Path
+## Evolution Path
 
 The expected progression is:
 
@@ -893,7 +893,7 @@ Complexity should only be introduced when concrete operational requirements just
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 This part of the Observability Framework is successful when FamilyOS can:
 
@@ -911,7 +911,7 @@ This part of the Observability Framework is successful when FamilyOS can:
 
 ---
 
-# Conclusion
+## Conclusion
 
 Health, diagnostics, and alerting extend FamilyOS observability beyond telemetry collection.
 

@@ -1,6 +1,6 @@
 # Release Framework
 
-# Changelog
+## Changelog
 
 This document records the evolution of **EPIC-REL-001 — Release Framework**.
 
@@ -8,9 +8,9 @@ The changelog preserves the historical development of the framework and provides
 
 ---
 
-# Unreleased
+## Unreleased
 
-## Added
+### Added
 
 * Final validation evidence for EPIC-REL-001.
 * Final repository-state verification.
@@ -18,14 +18,14 @@ The changelog preserves the historical development of the framework and provides
 * Official annotated release tag publication.
 * Authoritative remote publication verification.
 
-## Changed
+### Changed
 
 * Final control-document alignment completed and validated.
 * Framework lifecycle status is `completed`; historical publication and remote verification have been completed.
 
 ---
 
-# 4.8.0 — Release Framework
+## 4.8.0 — Release Framework
 
 Status:
 
@@ -59,9 +59,9 @@ PENDING
 
 ---
 
-## Added
+### Added
 
-### Canonical Release Framework
+#### Canonical Release Framework
 
 Established **EPIC-REL-001 — Release Framework** as the official FamilyOS release engineering foundation.
 
@@ -106,7 +106,7 @@ This establishes **32 canonical numbered documents**.
 
 ---
 
-### Release Principles
+#### Release Principles
 
 Defined the fundamental FamilyOS release principles, including:
 
@@ -124,7 +124,7 @@ Defined the fundamental FamilyOS release principles, including:
 
 ---
 
-### Release Architecture
+#### Release Architecture
 
 Defined the architectural boundaries of FamilyOS release engineering.
 
@@ -159,7 +159,7 @@ Defined separation between:
 
 ---
 
-### Release Lifecycle
+#### Release Lifecycle
 
 Established the canonical release lifecycle:
 
@@ -199,7 +199,7 @@ Established explicit lifecycle transitions, gates, evidence requirements, and fa
 
 ---
 
-### Versioning Strategy
+#### Versioning Strategy
 
 Established semantic versioning as the default FamilyOS release version model:
 
@@ -226,7 +226,7 @@ Established release candidate formats such as:
 
 ---
 
-### Release Types and Channels
+#### Release Types and Channels
 
 Defined release types including:
 
@@ -253,7 +253,7 @@ Established the distinction between immutable release versions and mutable distr
 
 ---
 
-### Release Profiles
+#### Release Profiles
 
 Established the Release Profile concept.
 
@@ -271,7 +271,7 @@ Release Profiles allow specialized validation, governance, publication, and reco
 
 ---
 
-### Release Planning
+#### Release Planning
 
 Defined release planning requirements covering:
 
@@ -291,7 +291,7 @@ Defined release planning requirements covering:
 
 ---
 
-### Release Readiness
+#### Release Readiness
 
 Introduced the formal **Release Readiness Gate**.
 
@@ -325,7 +325,7 @@ as an evidence-based release gate.
 
 ---
 
-### Release Candidates
+#### Release Candidates
 
 Introduced formal Release Candidate identity and lifecycle management.
 
@@ -346,7 +346,7 @@ Established the principle that material candidate changes require renewed qualif
 
 ---
 
-### Artifacts and Provenance
+#### Artifacts and Provenance
 
 Defined the FamilyOS Release Artifact model.
 
@@ -400,7 +400,7 @@ Defined future provenance maturity capabilities including:
 
 ---
 
-### Release Validation
+#### Release Validation
 
 Established formal validation of the exact Release Candidate.
 
@@ -444,7 +444,7 @@ as a fundamental Release Framework invariant.
 
 ---
 
-### Release Automation
+#### Release Automation
 
 Established Release Automation architecture.
 
@@ -468,7 +468,7 @@ Defined a future Release Orchestrator architecture without making it mandatory f
 
 ---
 
-### CI/CD Integration
+#### CI/CD Integration
 
 Defined provider-independent CI/CD integration.
 
@@ -492,7 +492,7 @@ Defined:
 
 ---
 
-### Changelog and Release Notes
+#### Changelog and Release Notes
 
 Defined separate responsibilities for:
 
@@ -530,7 +530,7 @@ Defined release note expectations covering:
 
 ---
 
-### Tagging and Repository State
+#### Tagging and Repository State
 
 Formalized repository requirements for official FamilyOS releases.
 
@@ -564,7 +564,7 @@ Defined:
 
 ---
 
-### Publishing and Distribution
+#### Publishing and Distribution
 
 Defined Publishing and Distribution as distinct lifecycle concerns.
 
@@ -591,7 +591,7 @@ Established the principle:
 
 ---
 
-### Rollback and Recovery
+#### Rollback and Recovery
 
 Established rollback and recovery as first-class release architecture concerns.
 
@@ -610,7 +610,7 @@ Established the principle that recovery begins from actual observed state.
 
 ---
 
-### Release Security
+#### Release Security
 
 Established complete Release Security architecture.
 
@@ -646,7 +646,7 @@ These advanced capabilities are not mandatory for the initial framework release.
 
 ---
 
-### Release Observability
+#### Release Observability
 
 Established release observability requirements across the complete lifecycle.
 
@@ -679,7 +679,7 @@ release.withdrawn
 
 ---
 
-### Release Governance
+#### Release Governance
 
 Established formal Release Governance.
 
@@ -711,7 +711,7 @@ Defined approval binding, risk acceptance, exceptions, emergency governance, wit
 
 ---
 
-### Release Compliance
+#### Release Compliance
 
 Established Release Compliance architecture.
 
@@ -728,7 +728,7 @@ Defined:
 
 ---
 
-### Release Metrics
+#### Release Metrics
 
 Established a release measurement model covering:
 
@@ -747,7 +747,7 @@ Metrics are intended to improve release engineering without incentivizing bypass
 
 ---
 
-### Release Risk Management
+#### Release Risk Management
 
 Established release risk management covering:
 
@@ -765,7 +765,7 @@ Established explicit relationships between risk and governance authority.
 
 ---
 
-### Framework Lifecycle
+#### Framework Lifecycle
 
 Established a lifecycle for the Release Framework itself:
 
@@ -804,7 +804,7 @@ Established framework self-application and bootstrap principles.
 
 ---
 
-### Roadmap
+#### Roadmap
 
 Established a maturity roadmap toward:
 
@@ -825,7 +825,7 @@ Future capabilities are explicitly separated from current mandatory implementati
 
 ---
 
-### References
+#### References
 
 Established reference relationships with:
 
@@ -848,7 +848,7 @@ External standards remain advisory unless explicitly adopted through FamilyOS go
 
 ---
 
-### Framework Validation
+#### Framework Validation
 
 Defined the final validation model for EPIC-REL-001.
 
@@ -871,7 +871,7 @@ Blocking findings allowed for final closure:
 
 ---
 
-### Implementation Checklist
+#### Implementation Checklist
 
 Added a comprehensive final implementation checklist.
 
@@ -897,9 +897,9 @@ This allows the foundational framework to be released with disciplined manual re
 
 ---
 
-## Changed
+### Changed
 
-### Canonical Structure Migration
+#### Canonical Structure Migration
 
 Replaced the inherited generic Engineering Foundation-style numbered structure with a dedicated Release Framework architecture.
 
@@ -939,7 +939,7 @@ It has been replaced by the canonical release-specific `00–31` structure.
 
 ---
 
-### Release Discipline
+#### Release Discipline
 
 Formalized existing FamilyOS release practices around:
 
@@ -955,7 +955,7 @@ These practices are now part of a reusable Release Framework rather than isolate
 
 ---
 
-### Framework Integration
+#### Framework Integration
 
 Expanded Release Framework integration with:
 
@@ -970,7 +970,7 @@ Expanded Release Framework integration with:
 
 ---
 
-### Implementation Maturity
+#### Implementation Maturity
 
 Clarified that the initial framework operates at:
 
@@ -994,7 +994,7 @@ while advanced automation remains roadmap work.
 
 ---
 
-## Removed
+### Removed
 
 * Removed the duplicate canonical `01` numbering model.
 * Removed generic Engineering Foundation-derived documents from the active canonical Release Framework sequence.
@@ -1007,7 +1007,7 @@ while advanced automation remains roadmap work.
 
 ---
 
-## Security
+### Security
 
 * Added explicit release credential protection.
 * Prohibited release credentials from repository content.
@@ -1024,7 +1024,7 @@ while advanced automation remains roadmap work.
 
 ---
 
-# Release Preparation
+## Release Preparation
 
 The intended release identity for this framework milestone is:
 
@@ -1046,7 +1046,7 @@ These values remain release intent until final repository validation and publica
 
 ---
 
-# Final Closure Requirements
+## Final Closure Requirements
 
 Before version `4.8.0` can be considered officially released, the following must be verified:
 
@@ -1069,7 +1069,7 @@ Working Tree              CLEAN
 
 ---
 
-# Repository Integrity Target
+## Repository Integrity Target
 
 At final closure, the expected repository relationship is:
 
@@ -1085,7 +1085,7 @@ All three must resolve to the final Release Framework release commit.
 
 ---
 
-# Publication Rule
+## Publication Rule
 
 The presence of this changelog entry does not itself prove that version `4.8.0` has been released.
 
@@ -1109,7 +1109,7 @@ clean final repository state
 
 ---
 
-# Final Statement
+## Final Statement
 
 Version **4.8.0** establishes the first canonical **FamilyOS Release Framework**.
 

@@ -16,7 +16,7 @@
 
 ---
 
-# Executive Summary
+## Executive Summary
 
 EPIC-DOC-001 establishes the canonical Documentation Framework for the FamilyOS ecosystem.
 
@@ -30,7 +30,7 @@ The Documentation Framework provides the common rules required to ensure that en
 
 ---
 
-# Vision
+## Vision
 
 The FamilyOS Documentation Framework establishes a reliable and scalable engineering knowledge system.
 
@@ -49,7 +49,7 @@ Documentation SHALL evolve together with the software system and engineering pro
 
 ---
 
-# Context
+## Context
 
 FamilyOS is designed as a long-lived platform composed of multiple domains, plugins, frameworks, specifications, architectural decisions, operational capabilities, and engineering processes.
 
@@ -74,7 +74,7 @@ EPIC-DOC-001 establishes the documentation foundation required to prevent these 
 
 ---
 
-# Problem Statement
+## Problem Statement
 
 FamilyOS requires a canonical documentation system capable of preserving engineering knowledge across the complete platform lifecycle.
 
@@ -103,7 +103,7 @@ Without these rules, documentation quality and repository consistency cannot be 
 
 ---
 
-# Objectives
+## Objectives
 
 EPIC-DOC-001 SHALL establish the canonical FamilyOS Documentation Framework.
 
@@ -132,7 +132,7 @@ The framework SHALL:
 
 ---
 
-# Scope
+## Scope
 
 EPIC-DOC-001 governs engineering documentation maintained within the FamilyOS repository and associated engineering lifecycle.
 
@@ -174,7 +174,7 @@ The framework applies to documentation associated with:
 
 ---
 
-# Out of Scope
+## Out of Scope
 
 EPIC-DOC-001 does not define the business behavior of individual FamilyOS domains.
 
@@ -193,15 +193,15 @@ Instead, EPIC-DOC-001 defines how those documentation artifacts SHALL be structu
 
 ---
 
-# Documentation Principles
+## Documentation Principles
 
-## Documentation Is an Engineering Artifact
+### Documentation Is an Engineering Artifact
 
 Documentation SHALL be treated with the same engineering discipline applied to source code and other repository artifacts.
 
 ---
 
-## Single Source of Truth
+### Single Source of Truth
 
 Canonical information SHOULD have one authoritative repository location.
 
@@ -209,13 +209,13 @@ Duplicate normative definitions SHOULD be avoided.
 
 ---
 
-## Explicit Ownership
+### Explicit Ownership
 
 Documentation SHALL have identifiable ownership or an explicitly governed maintenance responsibility.
 
 ---
 
-## Traceability
+### Traceability
 
 Important documentation SHALL be traceable to relevant engineering context, including where applicable:
 
@@ -230,13 +230,13 @@ Important documentation SHALL be traceable to relevant engineering context, incl
 
 ---
 
-## Maintainability
+### Maintainability
 
 Documentation SHALL be structured so that contributors can safely understand, review, update, and validate it.
 
 ---
 
-## Version Control
+### Version Control
 
 Canonical FamilyOS documentation SHALL be maintained under version control.
 
@@ -244,23 +244,23 @@ Repository history SHALL provide durable evidence of documentation evolution.
 
 ---
 
-## Validation
+### Validation
 
 Documentation SHALL be subject to appropriate structural, semantic, and repository validation.
 
 ---
 
-## Evolution
+### Evolution
 
 The Documentation Framework SHALL support controlled evolution without losing historical traceability.
 
 ---
 
-# Documentation Architecture
+## Documentation Architecture
 
 The FamilyOS documentation architecture organizes engineering knowledge into multiple complementary layers.
 
-## Strategic Documentation Layer
+### Strategic Documentation Layer
 
 This layer describes high-level direction and engineering intent.
 
@@ -273,7 +273,7 @@ Typical artifacts include:
 
 ---
 
-## Governance Documentation Layer
+### Governance Documentation Layer
 
 This layer defines engineering rules and decision structures.
 
@@ -287,7 +287,7 @@ Typical artifacts include:
 
 ---
 
-## Specification Documentation Layer
+### Specification Documentation Layer
 
 This layer defines expected behavior and technical contracts.
 
@@ -301,7 +301,7 @@ Typical artifacts include:
 
 ---
 
-## Implementation Documentation Layer
+### Implementation Documentation Layer
 
 This layer supports practical engineering execution.
 
@@ -316,7 +316,7 @@ Typical artifacts include:
 
 ---
 
-# Canonical Document Set
+## Canonical Document Set
 
 EPIC-DOC-001 uses the following canonical numbered-document structure:
 
@@ -361,7 +361,7 @@ The framework contains:
 
 ---
 
-# Control Documents
+## Control Documents
 
 The canonical framework control-document set is:
 
@@ -386,7 +386,7 @@ The complete canonical framework target is therefore:
 
 ---
 
-# Documentation Lifecycle
+## Documentation Lifecycle
 
 Documentation SHALL progress through a controlled lifecycle.
 
@@ -416,7 +416,7 @@ Lifecycle transitions SHALL preserve traceability and SHALL NOT silently destroy
 
 ---
 
-# Documentation Governance
+## Documentation Governance
 
 Documentation governance SHALL define:
 
@@ -433,7 +433,7 @@ Governance rules SHOULD scale according to the importance and risk of the docume
 
 ---
 
-# Documentation Quality
+## Documentation Quality
 
 Canonical FamilyOS documentation SHOULD satisfy the following quality properties:
 
@@ -452,7 +452,7 @@ Documentation quality SHALL be evaluated through defined quality gates and valid
 
 ---
 
-# Documentation Automation
+## Documentation Automation
 
 The framework SHOULD enable automation where automation improves reliability or reduces repetitive manual work.
 
@@ -472,7 +472,7 @@ Automation SHALL support the documentation lifecycle rather than replace enginee
 
 ---
 
-# Repository Organization
+## Repository Organization
 
 Documentation SHALL be organized predictably within the FamilyOS repository.
 
@@ -495,7 +495,7 @@ Actual repository structure SHALL remain governed by the canonical repository ar
 
 ---
 
-# Review and Maintenance
+## Review and Maintenance
 
 Documentation SHALL remain maintainable after initial publication.
 
@@ -514,7 +514,7 @@ Documentation changes SHALL remain reviewable through repository history.
 
 ---
 
-# Migration and Deprecation
+## Migration and Deprecation
 
 The framework SHALL provide controlled mechanisms for documentation migration and deprecation.
 
@@ -529,7 +529,7 @@ Deprecated documentation SHALL clearly communicate its state and SHOULD identify
 
 ---
 
-# Metrics
+## Metrics
 
 Documentation metrics MAY be used to evaluate framework health.
 
@@ -548,11 +548,11 @@ Metrics SHALL support engineering decisions and SHALL NOT become substitutes for
 
 ---
 
-# Validation Model
+## Validation Model
 
 EPIC-DOC-001 SHALL be validated at multiple levels.
 
-## Structural Validation
+### Structural Validation
 
 Validation SHALL verify:
 
@@ -563,7 +563,7 @@ Validation SHALL verify:
 * absence of unintended duplicates;
 * absence of unexpected empty canonical documents.
 
-## Semantic Validation
+### Semantic Validation
 
 Validation SHALL verify consistency between:
 
@@ -579,17 +579,17 @@ Validation SHALL verify consistency between:
 * metrics;
 * release requirements.
 
-## Repository Validation
+### Repository Validation
 
 Repository validation SHALL verify that the framework is compatible with the current FamilyOS repository state and engineering quality requirements.
 
-## Release Validation
+### Release Validation
 
 Release validation SHALL verify that the framework satisfies its defined release-readiness criteria.
 
 ---
 
-# Release Model
+## Release Model
 
 The Documentation Framework defines version `1.0.0` as its initial framework baseline.
 
@@ -601,7 +601,7 @@ If historical release evidence already exists, it SHALL remain immutable and the
 
 ---
 
-# Acceptance Criteria
+## Acceptance Criteria
 
 EPIC-DOC-001 is considered structurally normalized when:
 
@@ -620,7 +620,7 @@ EPIC-DOC-001 is considered structurally normalized when:
 
 ---
 
-# Current Revalidation State
+## Current Revalidation State
 
 The numbered-document structure has been normalized toward the canonical `00-23` sequence.
 
@@ -639,7 +639,7 @@ Until that revalidation is complete, repository validation and final revalidatio
 
 ---
 
-# Deliverables
+## Deliverables
 
 The EPIC-DOC-001 canonical deliverables consist of:
 
@@ -669,7 +669,7 @@ Revision-History.md
 
 ---
 
-# Definition of Done
+## Definition of Done
 
 EPIC-DOC-001 reaches final validated closure when:
 
@@ -687,7 +687,7 @@ EPIC-DOC-001 reaches final validated closure when:
 
 ---
 
-# Summary
+## Summary
 
 EPIC-DOC-001 establishes documentation as a governed engineering capability within FamilyOS.
 

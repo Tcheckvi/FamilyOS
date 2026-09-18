@@ -1,8 +1,8 @@
 # Engineering Foundation
 
-# 04 Repository Architecture
+## 04 Repository Architecture
 
-## Context
+### Context
 
 The FamilyOS repository is the central workspace where software, documentation, specifications, automation, and engineering processes are maintained.
 
@@ -12,7 +12,7 @@ Repository architecture defines how engineering assets are organized, discovered
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Repository Architecture is to ensure that the FamilyOS repository remains:
 
@@ -26,9 +26,9 @@ The repository structure should reflect the architecture of the platform itself.
 
 ---
 
-# Repository Architecture Principles
+## Repository Architecture Principles
 
-## Principle 1 — Clear Separation Of Responsibilities
+### Principle 1 — Clear Separation Of Responsibilities
 
 Repository organization must separate different types of concerns.
 
@@ -45,7 +45,7 @@ Each area must have a clear ownership and purpose.
 
 ---
 
-## Principle 2 — Discoverability
+### Principle 2 — Discoverability
 
 Repository organization must allow contributors to quickly find:
 
@@ -59,7 +59,7 @@ A well-structured repository reduces onboarding effort.
 
 ---
 
-## Principle 3 — Explicit Organization
+### Principle 3 — Explicit Organization
 
 Important repository structures must be intentional.
 
@@ -67,7 +67,7 @@ Folders should represent meaningful engineering concepts rather than temporary d
 
 ---
 
-## Principle 4 — Scalable Growth
+### Principle 4 — Scalable Growth
 
 The repository must support future expansion.
 
@@ -82,7 +82,7 @@ Examples:
 
 ---
 
-# Repository Organization Model
+## Repository Organization Model
 
 The FamilyOS repository follows a layered organization model.
 
@@ -118,7 +118,7 @@ Repository
 
 ---
 
-# Source Code Organization
+## Source Code Organization
 
 The source code structure must reflect application architecture.
 
@@ -137,7 +137,7 @@ Source organization follows:
 
 ---
 
-# Documentation Organization
+## Documentation Organization
 
 Documentation is treated as a first-class repository artifact.
 
@@ -155,7 +155,7 @@ Reference:
 
 ---
 
-# Test Organization
+## Test Organization
 
 Tests are organized according to software responsibilities.
 
@@ -172,35 +172,35 @@ Reference:
 
 ---
 
-# Engineering Artifacts
+## Engineering Artifacts
 
 The repository contains engineering artifacts including:
 
-## ADRs
+### ADRs
 
 Architecture decisions.
 
 ---
 
-## RFCs
+### RFCs
 
 Technical proposals.
 
 ---
 
-## Specifications
+### Specifications
 
 Formal requirements and contracts.
 
 ---
 
-## EPICs
+### EPICs
 
 Large engineering initiatives.
 
 ---
 
-# Repository Ownership
+## Repository Ownership
 
 Repository areas should have clear ownership.
 
@@ -216,7 +216,7 @@ Example:
 
 ---
 
-# Repository Evolution
+## Repository Evolution
 
 Repository changes should follow controlled evolution.
 
@@ -229,7 +229,7 @@ Changes affecting structure should consider:
 
 ---
 
-# Architectural Constraints
+## Architectural Constraints
 
 Repository organization shall preserve:
 
@@ -242,7 +242,7 @@ Structural changes should not introduce ambiguity or duplicate responsibilities.
 
 ---
 
-# Repository Validation
+## Repository Validation
 
 Repository health should be verified through:
 
@@ -253,41 +253,41 @@ Repository health should be verified through:
 
 ---
 
-# Relationship With Engineering Domains
+## Relationship With Engineering Domains
 
 Repository Architecture supports:
 
-## Development Workflow
+### Development Workflow
 
 Provides the workspace where development activities occur.
 
 ---
 
-## Testing Framework
+### Testing Framework
 
 Provides organization for validation artifacts.
 
 ---
 
-## Documentation Framework
+### Documentation Framework
 
 Provides location and structure for knowledge artifacts.
 
 ---
 
-## Build Framework
+### Build Framework
 
 Provides inputs required for software construction.
 
 ---
 
-## Release Framework
+### Release Framework
 
 Provides traceable release artifacts.
 
 ---
 
-# Governance
+## Governance
 
 Repository architecture changes should be reviewed when they impact:
 
@@ -304,7 +304,7 @@ Major structural changes may require:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Repository Architecture is successful when:
 
@@ -316,7 +316,7 @@ Repository Architecture is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Repository Architecture provides the structural foundation that allows FamilyOS engineering activities to scale.
 

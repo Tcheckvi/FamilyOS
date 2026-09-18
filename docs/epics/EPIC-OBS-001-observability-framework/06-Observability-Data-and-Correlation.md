@@ -1,10 +1,10 @@
 # Observability Data and Correlation
 
-# EPIC-OBS-001
+## EPIC-OBS-001
 
-## Observability Data and Correlation
+### Observability Data and Correlation
 
-## Overview
+### Overview
 
 This document defines how FamilyOS structures, identifies, correlates, propagates, stores, and manages observability data.
 
@@ -16,7 +16,7 @@ The objective is to allow runtime evidence from logs, metrics, traces, health ch
 
 ---
 
-# Objectives
+## Objectives
 
 The observability data and correlation model must:
 
@@ -33,7 +33,7 @@ The observability data and correlation model must:
 
 ---
 
-# Observability Data
+## Observability Data
 
 Observability data is information generated to describe the operational behavior of FamilyOS.
 
@@ -53,7 +53,7 @@ These signals have different structures but SHOULD share common contextual conce
 
 ---
 
-# Common Context
+## Common Context
 
 FamilyOS SHOULD define a common observability context.
 
@@ -76,7 +76,7 @@ The context should contain only identifiers relevant to the current execution.
 
 ---
 
-# Correlation Identifier
+## Correlation Identifier
 
 A `correlation_id` connects runtime evidence belonging to the same broader logical activity.
 
@@ -97,7 +97,7 @@ A correlation identifier MUST NOT encode private family information.
 
 ---
 
-# Trace Identifier
+## Trace Identifier
 
 A `trace_id` identifies a traced execution path.
 
@@ -115,7 +115,7 @@ A single correlation context may therefore include multiple traces when work is 
 
 ---
 
-# Operation Identifier
+## Operation Identifier
 
 An `operation_id` MAY identify a specific logical operation.
 
@@ -131,7 +131,7 @@ An operation identifier SHOULD NOT automatically become a metric dimension becau
 
 ---
 
-# Workflow Identifier
+## Workflow Identifier
 
 Long-running FamilyOS workflows may use:
 
@@ -160,7 +160,7 @@ The workflow identifier provides continuity beyond individual execution traces.
 
 ---
 
-# Component Identity
+## Component Identity
 
 Signals SHOULD identify their source when this information provides operational value.
 
@@ -178,7 +178,7 @@ Component names SHOULD use stable engineering identifiers rather than runtime-sp
 
 ---
 
-# Plugin Identity
+## Plugin Identity
 
 Plugin-generated signals SHOULD identify the responsible plugin where applicable.
 
@@ -194,7 +194,7 @@ Plugins MUST NOT invent incompatible correlation mechanisms when platform contex
 
 ---
 
-# Capability Identity
+## Capability Identity
 
 Capability execution MAY include a stable capability identifier.
 
@@ -208,7 +208,7 @@ This enables operational analysis without exposing the content processed by the 
 
 ---
 
-# Correlation Context Creation
+## Correlation Context Creation
 
 A correlation context SHOULD be created at the earliest meaningful execution boundary when one does not already exist.
 
@@ -234,7 +234,7 @@ Existing valid context SHOULD normally be propagated rather than replaced.
 
 ---
 
-# Context Propagation
+## Context Propagation
 
 Correlation context SHOULD follow the logical execution path.
 
@@ -258,7 +258,7 @@ Components should not require callers to manually reconstruct correlation metada
 
 ---
 
-# Context Boundaries
+## Context Boundaries
 
 Context propagation must be explicit at architectural boundaries.
 
@@ -277,7 +277,7 @@ Internal implementation details do not necessarily require independent correlati
 
 ---
 
-# Asynchronous Context
+## Asynchronous Context
 
 Asynchronous work requires context to survive beyond the original call stack.
 
@@ -308,7 +308,7 @@ Sensitive execution state must not be copied merely for observability convenienc
 
 ---
 
-# External Integration Context
+## External Integration Context
 
 FamilyOS may interact with external systems.
 
@@ -324,7 +324,7 @@ FamilyOS may map internal and external correlation identifiers when isolation is
 
 ---
 
-# Correlation and Logs
+## Correlation and Logs
 
 Structured logs SHOULD include applicable correlation context.
 
@@ -342,7 +342,7 @@ This allows related log events to be queried as a logical group.
 
 ---
 
-# Correlation and Traces
+## Correlation and Traces
 
 Tracing inherently uses execution identifiers.
 
@@ -363,7 +363,7 @@ Observability Context
 
 ---
 
-# Correlation and Metrics
+## Correlation and Metrics
 
 Metrics require special treatment.
 
@@ -390,7 +390,7 @@ Detailed correlation remains available through logs and traces.
 
 ---
 
-# Correlation and Health
+## Correlation and Health
 
 Health results MAY include component or dependency identifiers.
 
@@ -400,7 +400,7 @@ Correlation identifiers are therefore only appropriate when a health result rela
 
 ---
 
-# Correlation and Diagnostics
+## Correlation and Diagnostics
 
 Diagnostic records SHOULD include correlation context when they are generated as part of an investigation or failed operation.
 
@@ -420,7 +420,7 @@ to remain connected.
 
 ---
 
-# Correlation and Alerts
+## Correlation and Alerts
 
 Alerts SHOULD identify the component and condition responsible for the alert.
 
@@ -430,7 +430,7 @@ An alert SHOULD NOT depend on a single transient correlation identifier for its 
 
 ---
 
-# Event Time
+## Event Time
 
 Observability records SHOULD contain reliable event timestamps where applicable.
 
@@ -448,7 +448,7 @@ The distinction becomes important if telemetry pipelines become distributed.
 
 ---
 
-# Time Representation
+## Time Representation
 
 Internal observability timestamps SHOULD use a consistent unambiguous representation.
 
@@ -458,7 +458,7 @@ Presentation systems may convert timestamps into local time for human consumptio
 
 ---
 
-# Duration
+## Duration
 
 Durations SHOULD be represented independently from wall-clock timestamps.
 
@@ -474,7 +474,7 @@ Clock adjustments must not create invalid execution durations.
 
 ---
 
-# Data Classification
+## Data Classification
 
 Observability data SHOULD be classified according to its sensitivity.
 
@@ -496,7 +496,7 @@ Sensitive and restricted data SHOULD normally be excluded from telemetry entirel
 
 ---
 
-# Data Minimization
+## Data Minimization
 
 FamilyOS applies data minimization to observability.
 
@@ -522,7 +522,7 @@ document_content = "<private family information>"
 
 ---
 
-# Identifiers and Privacy
+## Identifiers and Privacy
 
 Identifiers can themselves become sensitive.
 
@@ -539,7 +539,7 @@ The exact mechanism depends on the security and privacy architecture.
 
 ---
 
-# Schema Evolution
+## Schema Evolution
 
 Observability data schemas will evolve.
 
@@ -564,7 +564,7 @@ Removing or redefining established fields may require explicit versioning.
 
 ---
 
-# Event Versioning
+## Event Versioning
 
 Important structured event contracts MAY include a schema version.
 
@@ -581,7 +581,7 @@ Not every internal debug signal requires formal versioning.
 
 ---
 
-# Data Lifecycle
+## Data Lifecycle
 
 Persisted observability data has a lifecycle.
 
@@ -605,7 +605,7 @@ Each stage must preserve security and privacy requirements.
 
 ---
 
-# Collection
+## Collection
 
 Collection mechanisms SHOULD accept standardized FamilyOS signals.
 
@@ -623,7 +623,7 @@ Collector
 
 ---
 
-# Processing
+## Processing
 
 Observability processing MAY perform operations such as:
 
@@ -639,7 +639,7 @@ Processing MUST NOT silently change the semantic meaning of a signal.
 
 ---
 
-# Storage
+## Storage
 
 The framework does not mandate persistent telemetry storage.
 
@@ -656,7 +656,7 @@ Local development environments may use transient or in-memory storage.
 
 ---
 
-# Retention
+## Retention
 
 Observability data SHOULD have explicit retention policies when persisted.
 
@@ -672,7 +672,7 @@ Indefinite retention SHOULD NOT be the default.
 
 ---
 
-# Deletion
+## Deletion
 
 Expired observability data SHOULD be deleted according to applicable retention policy.
 
@@ -680,7 +680,7 @@ Deletion mechanisms must include derived or replicated telemetry where required 
 
 ---
 
-# Integrity
+## Integrity
 
 Operational evidence should remain trustworthy.
 
@@ -690,7 +690,7 @@ The strength of those controls should be proportional to the evidence requiremen
 
 ---
 
-# Availability
+## Availability
 
 Loss of observability data should not normally cause failure of unrelated FamilyOS business operations.
 
@@ -705,7 +705,7 @@ Required availability levels should therefore be defined according to the consum
 
 ---
 
-# Correlation Failure
+## Correlation Failure
 
 If correlation context cannot be propagated, the operation SHOULD normally continue when safe.
 
@@ -715,7 +715,7 @@ It MUST NOT fabricate a relationship between unrelated operations.
 
 ---
 
-# Context Validation
+## Context Validation
 
 Incoming correlation context SHOULD be validated.
 
@@ -725,7 +725,7 @@ External correlation identifiers should be treated as untrusted input.
 
 ---
 
-# Testability
+## Testability
 
 FamilyOS SHOULD provide deterministic mechanisms for testing correlation.
 
@@ -746,7 +746,7 @@ Correlation behavior should not require external telemetry infrastructure to tes
 
 ---
 
-# Minimal Correlation Model
+## Minimal Correlation Model
 
 The initial implementation SHOULD remain small.
 
@@ -764,7 +764,7 @@ Additional identifiers should be introduced only when concrete requirements just
 
 ---
 
-# Minimal Data Pipeline
+## Minimal Data Pipeline
 
 The initial observability data flow may remain entirely local.
 
@@ -782,7 +782,7 @@ Persistent external telemetry infrastructure is not required to complete the fir
 
 ---
 
-# Future Evolution
+## Future Evolution
 
 The architecture can later evolve toward:
 
@@ -808,7 +808,7 @@ This evolution must preserve the FamilyOS contracts defined at the application b
 
 ---
 
-# Operational Query Model
+## Operational Query Model
 
 A mature implementation should eventually make it possible to start with one operational identifier and reconstruct related evidence.
 
@@ -830,7 +830,7 @@ It turns isolated telemetry into connected runtime evidence.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 This part of the Observability Framework is successful when FamilyOS can:
 
@@ -849,7 +849,7 @@ This part of the Observability Framework is successful when FamilyOS can:
 
 ---
 
-# Conclusion
+## Conclusion
 
 Observability signals have limited value when they exist as isolated records.
 

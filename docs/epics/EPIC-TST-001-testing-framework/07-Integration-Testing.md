@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 07 Integration Testing
+## 07 Integration Testing
 
-## Overview
+### Overview
 
 Integration testing validates that multiple FamilyOS components collaborate correctly across defined architectural boundaries.
 
@@ -28,7 +28,7 @@ The objective is not merely to verify that components can communicate, but to ve
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of integration testing is to validate interactions between components that have already been tested independently.
 
@@ -50,11 +50,11 @@ Integration testing therefore acts as the verification layer between isolated un
 
 ---
 
-# Integration Testing Principles
+## Integration Testing Principles
 
 FamilyOS integration testing follows several fundamental principles.
 
-## Test Real Interactions
+### Test Real Interactions
 
 Integration tests should exercise meaningful interactions between real components whenever practical.
 
@@ -64,7 +64,7 @@ Mocks should therefore be used only at boundaries that are intentionally exclude
 
 ---
 
-## Validate Architectural Contracts
+### Validate Architectural Contracts
 
 Integration tests must verify the contracts defined between architectural components.
 
@@ -81,7 +81,7 @@ A successful interaction that violates an architectural contract is not consider
 
 ---
 
-## Keep Integration Scope Explicit
+### Keep Integration Scope Explicit
 
 Every integration test must have a clearly defined integration boundary.
 
@@ -97,7 +97,7 @@ Uncontrolled integration scope creates tests that are difficult to understand, d
 
 ---
 
-## Prefer Deterministic Environments
+### Prefer Deterministic Environments
 
 Integration tests must produce reproducible results.
 
@@ -116,7 +116,7 @@ Required infrastructure should be isolated and controlled whenever possible.
 
 ---
 
-## Preserve Failure Locality
+### Preserve Failure Locality
 
 Integration tests should remain narrow enough that failures can be diagnosed efficiently.
 
@@ -126,7 +126,7 @@ Tests that exercise the entire platform without clear boundaries belong to highe
 
 ---
 
-# Integration Testing Scope
+## Integration Testing Scope
 
 Integration testing covers interactions between two or more architectural components.
 
@@ -176,13 +176,13 @@ The exact integration boundary depends on the behavior under test.
 
 ---
 
-# Layer Integration
+## Layer Integration
 
 FamilyOS follows architectural separation between domain, application, infrastructure, runtime, presentation, and plugin concerns.
 
 Integration tests must verify that these layers collaborate correctly without weakening their boundaries.
 
-## Domain and Application Integration
+### Domain and Application Integration
 
 Tests may verify that application services correctly orchestrate domain behavior.
 
@@ -199,7 +199,7 @@ The domain itself should remain independent from infrastructure concerns.
 
 ---
 
-## Application and Infrastructure Integration
+### Application and Infrastructure Integration
 
 Application components frequently depend on ports implemented by infrastructure adapters.
 
@@ -218,7 +218,7 @@ The test should focus on compatibility between the application-facing contract a
 
 ---
 
-## Runtime Integration
+### Runtime Integration
 
 Runtime integration tests verify that runtime components correctly assemble and execute platform capabilities.
 
@@ -237,7 +237,7 @@ Runtime integration is particularly important because many FamilyOS components a
 
 ---
 
-# Repository Integration Testing
+## Repository Integration Testing
 
 Repository integration tests validate concrete repository implementations against their defined interfaces and expected semantics.
 
@@ -259,7 +259,7 @@ It should prove that the repository implementation behaves according to the doma
 
 ---
 
-# Persistence Integration
+## Persistence Integration
 
 Persistence integration testing validates interactions with actual persistence technologies or controlled equivalents.
 
@@ -280,7 +280,7 @@ Shared mutable test databases should be avoided whenever possible.
 
 ---
 
-# Plugin Integration Testing
+## Plugin Integration Testing
 
 Plugins are a major architectural extension mechanism in FamilyOS.
 
@@ -303,7 +303,7 @@ For official plugins, integration tests should additionally verify compliance wi
 
 ---
 
-# Capability Integration Testing
+## Capability Integration Testing
 
 Capabilities expose platform functionality through explicit contracts.
 
@@ -322,7 +322,7 @@ Capability integration tests are especially important when implementations are p
 
 ---
 
-# Contribution Integration Testing
+## Contribution Integration Testing
 
 FamilyOS plugins may contribute platform artifacts such as:
 
@@ -346,7 +346,7 @@ Tests should also verify rejection of malformed or incompatible contributions.
 
 ---
 
-# Configuration Integration Testing
+## Configuration Integration Testing
 
 Configuration often crosses multiple architectural layers.
 
@@ -366,7 +366,7 @@ Temporary or explicitly constructed configuration sources should be preferred.
 
 ---
 
-# Event Integration Testing
+## Event Integration Testing
 
 Event-driven interactions require dedicated integration validation.
 
@@ -387,7 +387,7 @@ Where asynchronous behavior exists, deterministic synchronization mechanisms sho
 
 ---
 
-# CLI Integration Testing
+## CLI Integration Testing
 
 CLI integration tests validate interactions between command-line entry points and underlying application or runtime components.
 
@@ -405,7 +405,7 @@ CLI integration tests should focus on the integration boundary rather than dupli
 
 ---
 
-# External Service Integration
+## External Service Integration
 
 Some FamilyOS components may integrate with external services.
 
@@ -433,7 +433,7 @@ Live external integration tests should be explicitly classified and isolated fro
 
 ---
 
-# Integration Test Doubles
+## Integration Test Doubles
 
 Test doubles remain useful in integration testing, but their use must preserve the interaction being tested.
 
@@ -452,7 +452,7 @@ For example, when testing a repository implementation, mocking the repository it
 
 ---
 
-# Integration Fixtures
+## Integration Fixtures
 
 Integration fixtures establish controlled environments for component interaction.
 
@@ -480,7 +480,7 @@ Fixture design is further defined by the FamilyOS test data and fixture strategy
 
 ---
 
-# Test Isolation
+## Test Isolation
 
 Integration tests must remain isolated from one another.
 
@@ -504,7 +504,7 @@ Tests should be executable:
 
 ---
 
-# Integration Test Structure
+## Integration Test Structure
 
 Integration tests should follow the same behavioral clarity expected from unit tests.
 
@@ -527,7 +527,7 @@ Implementation details unrelated to the contract should remain hidden behind fix
 
 ---
 
-# Directory Organization
+## Directory Organization
 
 Integration tests should be clearly separated from unit and higher-level tests.
 
@@ -562,7 +562,7 @@ The exact structure may evolve with the platform, but test classification must r
 
 ---
 
-# Naming Conventions
+## Naming Conventions
 
 Integration test names should describe the interaction and expected result.
 
@@ -586,7 +586,7 @@ Names should communicate the integration contract rather than internal implement
 
 ---
 
-# Markers and Classification
+## Markers and Classification
 
 Integration tests should be identifiable through directory structure, test metadata, or test markers.
 
@@ -616,7 +616,7 @@ The exact commands are governed by the FamilyOS testing toolchain configuration.
 
 ---
 
-# Execution Strategy
+## Execution Strategy
 
 Integration tests are generally more expensive than unit tests.
 
@@ -635,7 +635,7 @@ Critical integration tests may be included in mandatory quality gates.
 
 ---
 
-# Performance Expectations
+## Performance Expectations
 
 Integration tests should remain efficient enough to provide useful engineering feedback.
 
@@ -652,7 +652,7 @@ Performance optimization must not compromise test realism or architectural valid
 
 ---
 
-# Failure Diagnostics
+## Failure Diagnostics
 
 Integration test failures should provide enough information to identify the failing boundary.
 
@@ -671,7 +671,7 @@ Diagnostic output must never expose secrets or sensitive data.
 
 ---
 
-# Negative Integration Testing
+## Negative Integration Testing
 
 Integration testing must also verify failure scenarios.
 
@@ -691,17 +691,17 @@ Negative tests ensure that architectural boundaries fail predictably and safely.
 
 ---
 
-# Integration Test Anti-Patterns
+## Integration Test Anti-Patterns
 
 The following patterns should be avoided.
 
-## Mocking Every Dependency
+### Mocking Every Dependency
 
 This removes the integration behavior that the test is intended to validate.
 
 ---
 
-## Testing the Entire Platform
+### Testing the Entire Platform
 
 An integration test should have a bounded scope.
 
@@ -709,37 +709,37 @@ Complete platform workflows belong to functional or system testing.
 
 ---
 
-## Shared Mutable State
+### Shared Mutable State
 
 Tests that depend on shared databases, files, registries, or runtime instances create order-dependent failures.
 
 ---
 
-## External Network Dependency
+### External Network Dependency
 
 Normal integration tests should not require uncontrolled network access.
 
 ---
 
-## Arbitrary Waiting
+### Arbitrary Waiting
 
 Using fixed sleeps to wait for asynchronous behavior creates slow and unreliable tests.
 
 ---
 
-## Hidden Environment Dependencies
+### Hidden Environment Dependencies
 
 Tests must not depend on developer-specific environment variables, installed services, or filesystem state.
 
 ---
 
-## Duplicate Unit Coverage
+### Duplicate Unit Coverage
 
 Integration tests should validate interactions, not repeat every isolated behavior already covered by unit tests.
 
 ---
 
-# Integration Testing and Continuous Integration
+## Integration Testing and Continuous Integration
 
 Integration tests are a core component of the FamilyOS CI strategy.
 
@@ -756,7 +756,7 @@ Integration test failures affecting mandatory architectural contracts must block
 
 ---
 
-# Integration Testing and Plugin Certification
+## Integration Testing and Plugin Certification
 
 Official FamilyOS plugins require stronger integration guarantees.
 
@@ -775,7 +775,7 @@ The exact certification requirements are defined by the plugin certification arc
 
 ---
 
-# Relationship With Unit Testing
+## Relationship With Unit Testing
 
 Unit testing and integration testing serve complementary purposes.
 
@@ -793,7 +793,7 @@ Likewise, integration testing should not replace focused unit testing.
 
 ---
 
-# Relationship With Contract Testing
+## Relationship With Contract Testing
 
 Contract testing validates the formal compatibility expectations between providers and consumers.
 
@@ -805,7 +805,7 @@ Both testing levels are required where architectural contracts are significant.
 
 ---
 
-# Relationship With Functional and System Testing
+## Relationship With Functional and System Testing
 
 Integration tests validate bounded component interactions.
 
@@ -832,7 +832,7 @@ Each level increases the scope of the tested system while generally increasing e
 
 ---
 
-# Relationship With Regression Testing
+## Relationship With Regression Testing
 
 Integration tests become part of the regression suite when they protect previously validated integration behavior.
 
@@ -842,7 +842,7 @@ This ensures that the same integration failure cannot silently reappear.
 
 ---
 
-# Quality Requirements
+## Quality Requirements
 
 FamilyOS integration tests must be:
 
@@ -860,7 +860,7 @@ Tests that repeatedly produce nondeterministic results must be treated as engine
 
 ---
 
-# Governance
+## Governance
 
 Integration testing practices are governed by the FamilyOS Testing Framework.
 
@@ -878,7 +878,7 @@ Major changes to integration testing architecture should be documented through t
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 The FamilyOS integration testing strategy is expected to evolve with the platform.
 
@@ -899,7 +899,7 @@ Evolution must preserve deterministic execution, architectural clarity, and deve
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 An integration testing implementation is considered aligned with this framework when:
 
@@ -923,7 +923,7 @@ An integration testing implementation is considered aligned with this framework 
 
 ---
 
-# Final Principle
+## Final Principle
 
 Integration testing protects the architectural relationships that allow FamilyOS to operate as a coherent platform.
 

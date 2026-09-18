@@ -1,10 +1,10 @@
 # Operations Framework
 
-# EPIC-OPS-001
+## EPIC-OPS-001
 
-## Context and Vision
+### Context and Vision
 
-## Overview
+### Overview
 
 EPIC-OPS-001 — Operations Framework establishes the operational foundation for the FamilyOS ecosystem.
 
@@ -39,7 +39,7 @@ Its objective is to establish the architectural rules required for safe, reliabl
 
 ---
 
-# Context
+## Context
 
 FamilyOS is evolving from a software project into a platform composed of interacting capabilities, plugins, services, repositories, integrations, configuration, security controls, and automation.
 
@@ -80,7 +80,7 @@ EPIC-OPS-001 defines how FamilyOS prepares for and responds to these realities.
 
 ---
 
-# Engineering to Operations
+## Engineering to Operations
 
 FamilyOS engineering frameworks establish a lifecycle that reaches the release boundary.
 
@@ -110,7 +110,7 @@ Operations therefore completes the engineering feedback loop.
 
 ---
 
-# Operational Vision
+## Operational Vision
 
 The FamilyOS operational vision is:
 
@@ -122,7 +122,7 @@ The goal is controlled failure and predictable recovery.
 
 ---
 
-# Operational Mission
+## Operational Mission
 
 The Operations Framework exists to ensure that FamilyOS can answer:
 
@@ -158,7 +158,7 @@ A system that cannot answer these questions is difficult to operate reliably.
 
 ---
 
-# Operations as an Engineering Capability
+## Operations as an Engineering Capability
 
 Operations is not defined as a separate downstream team responsibility.
 
@@ -182,7 +182,7 @@ Developers designing FamilyOS capabilities should consider how those capabilitie
 
 ---
 
-# Operability
+## Operability
 
 Operability describes how effectively a system can be operated.
 
@@ -201,7 +201,7 @@ Operability should be considered an architectural quality.
 
 ---
 
-# Operational Simplicity
+## Operational Simplicity
 
 FamilyOS SHOULD prefer simple operational models.
 
@@ -229,7 +229,7 @@ rather than introducing infrastructure for hypothetical future scale.
 
 ---
 
-# Scope
+## Scope
 
 EPIC-OPS-001 covers the operational architecture of FamilyOS.
 
@@ -255,7 +255,7 @@ The scope includes:
 
 ---
 
-# Out of Scope
+## Out of Scope
 
 EPIC-OPS-001 does not require immediate implementation of:
 
@@ -275,7 +275,7 @@ Such capabilities may be introduced later if FamilyOS operational requirements j
 
 ---
 
-# Relationship With Existing Frameworks
+## Relationship With Existing Frameworks
 
 The Operations Framework consumes existing FamilyOS engineering foundations.
 
@@ -305,7 +305,7 @@ Operations is therefore an integration point for several existing platform capab
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 The Engineering Foundation defines how FamilyOS software is designed and developed.
 
@@ -324,7 +324,7 @@ Examples include:
 
 ---
 
-# Relationship With Testing
+## Relationship With Testing
 
 The Testing Framework validates expected software behavior before release.
 
@@ -344,7 +344,7 @@ Operational validation does not replace functional testing.
 
 ---
 
-# Relationship With Quality
+## Relationship With Quality
 
 The Quality Framework establishes quality expectations and evidence.
 
@@ -364,7 +364,7 @@ Recovery Evidence
 
 ---
 
-# Relationship With Build
+## Relationship With Build
 
 The Build Framework produces controlled artifacts.
 
@@ -390,7 +390,7 @@ Runtime identity should remain traceable to the released artifact.
 
 ---
 
-# Relationship With Release
+## Relationship With Release
 
 The Release Framework defines controlled publication and release decisions.
 
@@ -414,7 +414,7 @@ Release and operations must remain connected through artifact identity and evide
 
 ---
 
-# Relationship With Observability
+## Relationship With Observability
 
 The Observability Framework is a fundamental dependency of operations.
 
@@ -448,7 +448,7 @@ Operations MUST NOT create a competing telemetry architecture.
 
 ---
 
-# Relationship With Security
+## Relationship With Security
 
 The Security Framework establishes trust, authorization, data protection, security controls, and security evidence.
 
@@ -470,7 +470,7 @@ Such actions should remain subject to applicable security controls.
 
 ---
 
-# Relationship With Plugin Architecture
+## Relationship With Plugin Architecture
 
 FamilyOS plugins may introduce operational behavior.
 
@@ -487,7 +487,7 @@ The Operations Framework defines common expectations for operationally relevant 
 
 ---
 
-# Runtime Model
+## Runtime Model
 
 The FamilyOS runtime should be understood as a collection of operational units.
 
@@ -510,7 +510,7 @@ Operational architecture should reflect actual deployment architecture.
 
 ---
 
-# Operational Unit
+## Operational Unit
 
 An operational unit is a component for which meaningful operational state can be evaluated.
 
@@ -527,7 +527,7 @@ Operational units should only be introduced where they provide useful management
 
 ---
 
-# Runtime State
+## Runtime State
 
 Operational units may expose state such as:
 
@@ -546,7 +546,7 @@ Not every component requires every state.
 
 ---
 
-# Desired State and Actual State
+## Desired State and Actual State
 
 Operations distinguishes between:
 
@@ -571,7 +571,7 @@ This difference creates an operational condition requiring evaluation.
 
 ---
 
-# Operational Control Loop
+## Operational Control Loop
 
 The conceptual operational loop is:
 
@@ -596,7 +596,7 @@ Human control remains appropriate where risk or complexity requires it.
 
 ---
 
-# Runtime Lifecycle
+## Runtime Lifecycle
 
 Operational units may follow:
 
@@ -622,7 +622,7 @@ Lifecycle transitions should be predictable.
 
 ---
 
-# Startup
+## Startup
 
 Startup SHOULD validate critical runtime requirements before declaring readiness.
 
@@ -639,7 +639,7 @@ Startup must not claim readiness prematurely.
 
 ---
 
-# Readiness
+## Readiness
 
 Readiness answers:
 
@@ -651,7 +651,7 @@ A process may be running but not ready.
 
 ---
 
-# Liveness
+## Liveness
 
 Liveness answers:
 
@@ -661,7 +661,7 @@ Liveness and readiness should remain conceptually distinct.
 
 ---
 
-# Health
+## Health
 
 Health represents the operational condition of a component.
 
@@ -678,7 +678,7 @@ Health semantics should remain explicit.
 
 ---
 
-# Degraded Operation
+## Degraded Operation
 
 FamilyOS SHOULD support controlled degradation where appropriate.
 
@@ -696,7 +696,7 @@ Failure isolation is preferable to unnecessary platform-wide failure.
 
 ---
 
-# Dependency Model
+## Dependency Model
 
 Runtime components may depend on:
 
@@ -712,7 +712,7 @@ Dependencies should be explicit where operationally relevant.
 
 ---
 
-# Critical Dependencies
+## Critical Dependencies
 
 A critical dependency is required for an operational unit to perform its essential responsibility.
 
@@ -728,7 +728,7 @@ or prevent startup.
 
 ---
 
-# Optional Dependencies
+## Optional Dependencies
 
 An optional dependency may allow degraded operation.
 
@@ -744,7 +744,7 @@ rather than complete platform failure.
 
 ---
 
-# Dependency Failure Isolation
+## Dependency Failure Isolation
 
 Failures should be contained where architecture allows.
 
@@ -768,7 +768,7 @@ unless the failed component is genuinely critical.
 
 ---
 
-# Runtime Configuration
+## Runtime Configuration
 
 Operational configuration determines runtime behavior.
 
@@ -784,7 +784,7 @@ Invalid critical configuration should fail predictably.
 
 ---
 
-# Configuration Drift
+## Configuration Drift
 
 Configuration drift occurs when actual operational configuration differs unexpectedly from intended configuration.
 
@@ -794,7 +794,7 @@ As operational maturity grows, configuration should become increasingly reproduc
 
 ---
 
-# Environment Model
+## Environment Model
 
 FamilyOS may eventually operate across environments such as:
 
@@ -811,7 +811,7 @@ Environment-specific differences should be intentional.
 
 ---
 
-# Environment Parity
+## Environment Parity
 
 Perfect parity is not always practical.
 
@@ -821,7 +821,7 @@ Important differences should be documented or represented explicitly in configur
 
 ---
 
-# Reliability
+## Reliability
 
 Reliability describes the ability of FamilyOS to perform expected functions over time.
 
@@ -843,7 +843,7 @@ Reliability cannot be created by monitoring alone.
 
 ---
 
-# Reliability Engineering
+## Reliability Engineering
 
 FamilyOS SHOULD improve reliability by:
 
@@ -856,7 +856,7 @@ FamilyOS SHOULD improve reliability by:
 
 ---
 
-# Reliability Targets
+## Reliability Targets
 
 Formal service-level objectives are not required immediately.
 
@@ -872,7 +872,7 @@ Targets should be based on actual user and platform needs.
 
 ---
 
-# Performance
+## Performance
 
 Operational performance concerns include:
 
@@ -886,7 +886,7 @@ Performance should be measured before significant optimization.
 
 ---
 
-# Performance Baselines
+## Performance Baselines
 
 FamilyOS MAY establish baselines for important operations.
 
@@ -904,7 +904,7 @@ Baselines should remain reproducible where possible.
 
 ---
 
-# Capacity
+## Capacity
 
 Capacity describes the resources available to support expected workloads.
 
@@ -922,7 +922,7 @@ Capacity management should remain proportional to actual deployment scale.
 
 ---
 
-# Resource Exhaustion
+## Resource Exhaustion
 
 FamilyOS should fail predictably when resources become constrained.
 
@@ -938,7 +938,7 @@ Unlimited resource consumption should be avoided.
 
 ---
 
-# Incident
+## Incident
 
 An incident is an operational condition that causes or threatens meaningful degradation of FamilyOS.
 
@@ -956,7 +956,7 @@ Not every warning is an incident.
 
 ---
 
-# Incident Lifecycle
+## Incident Lifecycle
 
 A conceptual incident lifecycle is:
 
@@ -980,7 +980,7 @@ The process should remain proportional to incident severity.
 
 ---
 
-# Incident Severity
+## Incident Severity
 
 FamilyOS may use a lightweight severity model:
 
@@ -995,7 +995,7 @@ Severity should reflect operational impact and urgency.
 
 ---
 
-# Incident Evidence
+## Incident Evidence
 
 Useful incident evidence may include:
 
@@ -1015,7 +1015,7 @@ Evidence must respect security and privacy requirements.
 
 ---
 
-# Recovery
+## Recovery
 
 Recovery restores an operational unit to an acceptable state after failure.
 
@@ -1033,7 +1033,7 @@ Recovery procedures should be explicit for significant failure modes.
 
 ---
 
-# Recovery Verification
+## Recovery Verification
 
 Recovery is not complete merely because an action executed successfully.
 
@@ -1053,7 +1053,7 @@ Recovery Confirmed
 
 ---
 
-# Rollback
+## Rollback
 
 Rollback is one possible recovery mechanism.
 
@@ -1063,7 +1063,7 @@ Operations executes or coordinates rollback when runtime conditions justify it.
 
 ---
 
-# Backup and Restore
+## Backup and Restore
 
 Where FamilyOS stores persistent information, backup and restore capabilities may become operational requirements.
 
@@ -1081,7 +1081,7 @@ Recoverable Backup
 
 ---
 
-# Recovery Objectives
+## Recovery Objectives
 
 As operational requirements mature, FamilyOS MAY define:
 
@@ -1092,7 +1092,7 @@ Formal objectives should only be introduced where meaningful business or family 
 
 ---
 
-# Operational Security
+## Operational Security
 
 Operational interfaces and actions can affect platform security.
 
@@ -1110,7 +1110,7 @@ Recovery Operation
 
 ---
 
-# Operational Access
+## Operational Access
 
 Operational access should follow:
 
@@ -1128,7 +1128,7 @@ Administrative convenience must not silently bypass security boundaries.
 
 ---
 
-# Operational Data Protection
+## Operational Data Protection
 
 Operational evidence may itself contain sensitive information.
 
@@ -1141,7 +1141,7 @@ Logs, diagnostics, incident reports, and configuration snapshots SHOULD respect:
 
 ---
 
-# Operational Observability
+## Operational Observability
 
 Operations consumes:
 
@@ -1159,7 +1159,7 @@ Telemetry should support operational decisions rather than exist merely because 
 
 ---
 
-# Alerting
+## Alerting
 
 Alerts SHOULD represent conditions requiring attention or action.
 
@@ -1183,7 +1183,7 @@ Excessive alerts reduce operational effectiveness.
 
 ---
 
-# Automation
+## Automation
 
 Repetitive and deterministic operational procedures SHOULD be candidates for automation.
 
@@ -1201,7 +1201,7 @@ Automation should reduce error without obscuring system behavior.
 
 ---
 
-# Safe Automation
+## Safe Automation
 
 Operational automation must define:
 
@@ -1216,7 +1216,7 @@ Automation without predictable failure behavior creates operational risk.
 
 ---
 
-# Human Control
+## Human Control
 
 Not every operational decision should be automated.
 
@@ -1232,7 +1232,7 @@ FamilyOS should automate deterministic mechanics while preserving human judgment
 
 ---
 
-# Operational Evidence
+## Operational Evidence
 
 Operational actions SHOULD produce sufficient evidence to answer:
 
@@ -1254,7 +1254,7 @@ Evidence should remain structured where practical.
 
 ---
 
-# Change Awareness
+## Change Awareness
 
 Operational diagnosis requires understanding recent change.
 
@@ -1270,7 +1270,7 @@ Many operational failures occur near change boundaries.
 
 ---
 
-# Operational Governance
+## Operational Governance
 
 Operational governance defines how significant operational decisions are controlled.
 
@@ -1287,7 +1287,7 @@ Governance should remain lightweight until operational complexity requires expan
 
 ---
 
-# Operational Ownership
+## Operational Ownership
 
 Operationally significant capabilities SHOULD have identifiable ownership.
 
@@ -1307,7 +1307,7 @@ The conceptual ownership model still remains useful.
 
 ---
 
-# Documentation
+## Documentation
 
 Operational documentation should focus on actionable knowledge.
 
@@ -1323,7 +1323,7 @@ Documentation that merely repeats implementation details should be avoided.
 
 ---
 
-# Runbooks
+## Runbooks
 
 A runbook describes a repeatable operational procedure.
 
@@ -1345,43 +1345,43 @@ Runbooks should be introduced for meaningful operational procedures rather than 
 
 ---
 
-# Operational Anti-Patterns
+## Operational Anti-Patterns
 
 FamilyOS SHOULD avoid several common operational anti-patterns.
 
-## Manual-Only Operation
+### Manual-Only Operation
 
 Critical repetitive procedures should not depend indefinitely on undocumented manual steps.
 
-## Hidden Configuration
+### Hidden Configuration
 
 Operational behavior should not depend on unknown local state.
 
-## Restart as Universal Recovery
+### Restart as Universal Recovery
 
 Restarting may temporarily hide root causes.
 
 It should not replace diagnosis.
 
-## Alert Everything
+### Alert Everything
 
 Excessive alerting creates noise and reduces response quality.
 
-## Monitor Without Action
+### Monitor Without Action
 
 Telemetry without an operational purpose creates cost without reliability.
 
-## Automation Without Verification
+### Automation Without Verification
 
 An automated action is incomplete until its result can be verified.
 
-## Production-Only Knowledge
+### Production-Only Knowledge
 
 Critical operational behavior should not be discoverable only after production failure.
 
 ---
 
-# Failure as a Design Input
+## Failure as a Design Input
 
 FamilyOS SHOULD assume that:
 
@@ -1405,7 +1405,7 @@ Operational architecture exists because failure is normal in real systems.
 
 ---
 
-# Graceful Failure
+## Graceful Failure
 
 Where possible, FamilyOS should transform uncontrolled failure into controlled state.
 
@@ -1423,7 +1423,7 @@ Known Operational State
 
 ---
 
-# Recovery Over Perfection
+## Recovery Over Perfection
 
 The framework does not assume every failure can be prevented.
 
@@ -1443,7 +1443,7 @@ Reliable recovery is often more valuable than attempting to eliminate every poss
 
 ---
 
-# Operational Maturity
+## Operational Maturity
 
 FamilyOS operational maturity should evolve incrementally.
 
@@ -1470,7 +1470,7 @@ FamilyOS does not need to reach the highest level for every capability.
 
 ---
 
-# Initial Operational Target
+## Initial Operational Target
 
 The initial operational target is deliberately modest.
 
@@ -1494,7 +1494,7 @@ This provides a strong foundation without excessive infrastructure.
 
 ---
 
-# Future Evolution
+## Future Evolution
 
 The Operations Framework may later support:
 
@@ -1511,7 +1511,7 @@ These capabilities should be introduced only when concrete operational needs jus
 
 ---
 
-# Design Constraints
+## Design Constraints
 
 EPIC-OPS-001 adopts the following constraints:
 
@@ -1535,7 +1535,7 @@ Make Recovery Verifiable
 
 ---
 
-# Framework Boundaries
+## Framework Boundaries
 
 EPIC-OPS-001 defines operational architecture.
 
@@ -1553,7 +1553,7 @@ Instead, it connects these foundations at runtime.
 
 ---
 
-# Operational Foundation
+## Operational Foundation
 
 The complete conceptual foundation is:
 
@@ -1581,7 +1581,7 @@ Engineering Improvement
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The Operations Framework succeeds when FamilyOS has clear answers for:
 
@@ -1617,7 +1617,7 @@ How does runtime experience improve engineering?
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After EPIC-OPS-001, FamilyOS should possess a coherent operational model that is:
 
@@ -1637,7 +1637,7 @@ The framework establishes the bridge between released FamilyOS software and sust
 
 ---
 
-# Conclusion
+## Conclusion
 
 EPIC-OPS-001 establishes operations as the final part of the FamilyOS engineering lifecycle rather than an activity performed after engineering is complete.
 

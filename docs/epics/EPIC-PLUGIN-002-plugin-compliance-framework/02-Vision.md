@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 02 Vision
+## 02 Vision
 
-## Introduction
+### Introduction
 
 The vision of the FamilyOS Plugin Compliance Framework is to make plugin conformance explicit, measurable, reproducible, and enforceable across the entire plugin ecosystem.
 
@@ -16,7 +16,7 @@ The long-term objective is to make that answer deterministic, evidence-based, an
 
 ---
 
-# Vision Statement
+## Vision Statement
 
 The Plugin Compliance Framework establishes a future in which every FamilyOS plugin can be evaluated automatically against a versioned set of platform requirements.
 
@@ -45,7 +45,7 @@ This model transforms compliance from an informal engineering judgment into a go
 
 ---
 
-# Strategic Vision
+## Strategic Vision
 
 FamilyOS must support ecosystem growth without sacrificing platform integrity.
 
@@ -66,7 +66,7 @@ The compliance framework provides the mechanism for maintaining this balance.
 
 ---
 
-# Compliance as Code
+## Compliance as Code
 
 The long-term model for FamilyOS plugin compliance is Compliance as Code.
 
@@ -102,7 +102,7 @@ This enables compliance requirements to participate directly in engineering work
 
 ---
 
-# Declarative Compliance Model
+## Declarative Compliance Model
 
 Compliance rules should be declarative wherever practical.
 
@@ -127,7 +127,7 @@ This separation allows the compliance engine and compliance policy to evolve ind
 
 ---
 
-# Versioned Rule Catalog
+## Versioned Rule Catalog
 
 FamilyOS should maintain an authoritative catalog of plugin compliance rules.
 
@@ -162,7 +162,7 @@ Stable rule identifiers enable:
 
 ---
 
-# Compliance Domains
+## Compliance Domains
 
 The vision is to organize rules into explicit compliance domains.
 
@@ -192,7 +192,7 @@ A plugin compliance decision is derived from the combined evaluation of applicab
 
 ---
 
-# Validation Engine
+## Validation Engine
 
 The framework should provide a dedicated validation engine capable of evaluating plugins against the active compliance rule set.
 
@@ -223,7 +223,7 @@ They must not define the rules by which their own compliance is determined.
 
 ---
 
-# Deterministic Validation
+## Deterministic Validation
 
 Determinism is a core property of the target architecture.
 
@@ -251,7 +251,7 @@ Rules that inherently require human judgment must be identified explicitly rathe
 
 ---
 
-# Evidence-Based Compliance
+## Evidence-Based Compliance
 
 Every meaningful compliance decision should be supported by evidence.
 
@@ -289,7 +289,7 @@ Compliance decisions without traceable evidence should be avoided.
 
 ---
 
-# Evidence Model
+## Evidence Model
 
 The framework should establish a normalized evidence model.
 
@@ -308,7 +308,7 @@ This enables compliance reports to explain not only the final status but also wh
 
 ---
 
-# Compliance Findings
+## Compliance Findings
 
 Failed or partially satisfied rules should generate structured findings.
 
@@ -332,7 +332,7 @@ Findings should be stable enough to support automation and sufficiently descript
 
 ---
 
-# Severity Model
+## Severity Model
 
 Not every compliance finding has the same impact.
 
@@ -358,7 +358,7 @@ The exact severity semantics must be formally governed.
 
 ---
 
-# Progressive Compliance
+## Progressive Compliance
 
 Compliance should support progressive maturity rather than only a binary pass-or-fail model.
 
@@ -386,7 +386,7 @@ This allows developers to receive useful compliance feedback before a plugin rea
 
 ---
 
-# Plugin Classification Profiles
+## Plugin Classification Profiles
 
 Compliance requirements should be evaluated through classification-aware profiles.
 
@@ -415,7 +415,7 @@ The underlying rules remain centrally governed.
 
 ---
 
-# Compliance Profiles
+## Compliance Profiles
 
 A compliance profile represents a defined set of requirements for a specific plugin context.
 
@@ -434,7 +434,7 @@ This allows FamilyOS to maintain one authoritative rule catalog while supporting
 
 ---
 
-# Developer Experience Vision
+## Developer Experience Vision
 
 Compliance must improve developer experience rather than merely introduce additional gates.
 
@@ -471,7 +471,7 @@ Developers should not need to wait until release preparation to discover fundame
 
 ---
 
-# CLI Vision
+## CLI Vision
 
 The FamilyOS CLI should eventually expose plugin compliance operations.
 
@@ -490,7 +490,7 @@ The framework vision requires only that compliance capabilities be accessible th
 
 ---
 
-# CI Integration Vision
+## CI Integration Vision
 
 Compliance validation should become a first-class CI capability.
 
@@ -525,7 +525,7 @@ Compliance should reuse existing evidence where possible instead of unnecessaril
 
 ---
 
-# Build and Release Integration
+## Build and Release Integration
 
 Compliance must participate in build and release decisions.
 
@@ -557,7 +557,7 @@ The required profile may vary according to release type and plugin classificatio
 
 ---
 
-# Certification Readiness
+## Certification Readiness
 
 The compliance framework should produce evidence that can be consumed by a separate certification process.
 
@@ -582,7 +582,7 @@ This establishes a clean boundary between technical conformance and ecosystem ap
 
 ---
 
-# Continuous Revalidation
+## Continuous Revalidation
 
 Compliance is contextual and can change over time.
 
@@ -602,7 +602,7 @@ This prevents compliance from becoming a one-time historical assertion.
 
 ---
 
-# Compliance Drift Detection
+## Compliance Drift Detection
 
 A previously compliant plugin may drift out of compliance without direct source changes.
 
@@ -633,7 +633,7 @@ This capability becomes increasingly important as the ecosystem grows.
 
 ---
 
-# Machine-Readable Reporting
+## Machine-Readable Reporting
 
 Compliance results must be suitable for automated consumers.
 
@@ -651,7 +651,7 @@ Human-readable reports remain important, but they should be projections of struc
 
 ---
 
-# Human-Readable Reporting
+## Human-Readable Reporting
 
 Developers and reviewers require clear explanations.
 
@@ -671,7 +671,7 @@ The framework must serve both machines and humans.
 
 ---
 
-# Auditability
+## Auditability
 
 Compliance decisions must be traceable.
 
@@ -690,7 +690,7 @@ This traceability is required for trustworthy certification and long-term ecosys
 
 ---
 
-# Extensibility of the Framework
+## Extensibility of the Framework
 
 The compliance framework itself must be extensible.
 
@@ -709,7 +709,7 @@ Framework extensibility must remain governed to prevent fragmented compliance be
 
 ---
 
-# Separation of Policy and Mechanism
+## Separation of Policy and Mechanism
 
 The architecture should separate compliance policy from compliance execution.
 
@@ -735,7 +735,7 @@ This separation allows requirements to evolve without unnecessarily coupling the
 
 ---
 
-# Single Source of Compliance Truth
+## Single Source of Compliance Truth
 
 FamilyOS should maintain one authoritative interpretation of plugin compliance.
 
@@ -761,7 +761,7 @@ This prevents compliance fragmentation.
 
 ---
 
-# Architecture Vision
+## Architecture Vision
 
 The long-term conceptual architecture is:
 
@@ -795,7 +795,7 @@ This architecture keeps policy, execution, reporting, and consumers clearly sepa
 
 ---
 
-# Target Ecosystem State
+## Target Ecosystem State
 
 The mature FamilyOS plugin ecosystem should provide predictable answers to the following questions:
 
@@ -815,7 +815,7 @@ The Plugin Compliance Framework owns the transition from contract validation to 
 
 ---
 
-# Long-Term Outcome
+## Long-Term Outcome
 
 The long-term outcome of EPIC-PLUGIN-002 is not merely a compliance command or a collection of validators.
 
@@ -833,7 +833,7 @@ This capability provides the foundation required for:
 
 ---
 
-# Vision Summary
+## Vision Summary
 
 The Plugin Compliance Framework establishes a future where plugin compliance is:
 
@@ -853,7 +853,7 @@ The framework transforms compliance into a first-class FamilyOS engineering capa
 
 ---
 
-# Final Vision Principle
+## Final Vision Principle
 
 The long-term vision of EPIC-PLUGIN-002 is summarized by one principle:
 
