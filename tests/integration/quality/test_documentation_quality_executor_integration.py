@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import UTC, datetime
 from itertools import count
 from pathlib import Path
+from shutil import copytree
 
 from familyos_cli.application.quality.initial_repository_documentation_scope import (
     INITIAL_REPOSITORY_DOCUMENTATION_ROOTS,
@@ -95,23 +96,35 @@ def test_real_canonical_epic_produces_documentation_pass() -> None:
     assert result.duration_seconds >= 0.0
 
 
-def test_quality_framework_self_validation_produces_real_findings() -> None:
+def test_documentation_executor_produces_real_findings_for_invalid_fixture(
+    tmp_path: Path,
+) -> None:
+    invalid_epic = tmp_path / "EPIC-COM-001-invalid-fixture"
+    copytree(_PASS_EPIC, invalid_epic)
+
+    readme = invalid_epic / "README.md"
+    readme.write_text(
+        readme.read_text(encoding="utf-8")
+        + "\n# Intentional duplicate top-level heading\n",
+        encoding="utf-8",
+    )
+
     rule = _rule()
     target = _target(
-        _QUALITY_EPIC,
-        identifier="EPIC-QLT-001",
-        revision="integration-self-validation-revision",
+        invalid_epic,
+        identifier="EPIC-COM-001-INVALID-FIXTURE",
+        revision="integration-invalid-fixture-revision",
     )
 
     result = _executor().execute(
-        check_id=QualityCheckId("QLT-CHECK-DOC-INTEGRATION-SELF"),
+        check_id=QualityCheckId("QLT-CHECK-DOC-INTEGRATION-INVALID"),
         rule=rule,
         target=target,
     )
 
     assert result.status is QualityStatus.FAIL
     assert result.diagnostics == ()
-    assert len(result.findings) == 32
+    assert len(result.findings) == 1
     assert len(result.evidence) == 1
 
     evidence = result.evidence[0]
@@ -119,24 +132,24 @@ def test_quality_framework_self_validation_produces_real_findings() -> None:
     assert evidence.type.value == "DOCUMENTATION"
     assert evidence.source == "quality.documentation"
     assert evidence.tool == "familyos-documentation-validator"
-    assert evidence.revision == "integration-self-validation-revision"
+    assert evidence.revision == "integration-invalid-fixture-revision"
     assert evidence.rule_id == rule.id
     assert evidence.requirement_id == rule.requirement_id
-    assert ("violations", "32") in evidence.metadata
+    assert ("violations", "1") in evidence.metadata
 
     evidence_id = str(evidence.id)
+    finding = result.findings[0]
 
-    assert all(finding.rule_id == rule.id for finding in result.findings)
-    assert all(finding.domain == rule.domain for finding in result.findings)
-    assert all(finding.severity == rule.severity for finding in result.findings)
-    assert all(finding.status is QualityStatus.FAIL for finding in result.findings)
-    assert all(finding.target == target for finding in result.findings)
-    assert all(finding.evidence_ids == (evidence_id,) for finding in result.findings)
-    assert all(
-        finding.message.startswith("Markdown document must contain exactly one level-one heading")
-        for finding in result.findings
+    assert finding.rule_id == rule.id
+    assert finding.domain == rule.domain
+    assert finding.severity == rule.severity
+    assert finding.status is QualityStatus.FAIL
+    assert finding.target == target
+    assert finding.evidence_ids == (evidence_id,)
+    assert finding.message.startswith(
+        "Markdown document must contain exactly one level-one heading"
     )
-    assert all(finding.location is not None for finding in result.findings)
+    assert finding.location == "README.md"
     assert result.duration_seconds >= 0.0
 
 
