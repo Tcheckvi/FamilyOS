@@ -1,0 +1,36 @@
+{
+  "record_type": "FINAL_GLOBAL_GOVERNANCE_CLOSURE",
+  "closure_date_utc": "2026-09-18",
+  "status": "CLOSED",
+  "overall_status": "PASS",
+  "all_c1_through_c11_pass": true,
+  "all_c1_through_c11_blocker_free": true,
+  "canonical_scorecard_sha256": "2519d8f228a7fe0142b4e644b8f38adc7deec71ad33190680d68080b8787f750",
+  "c1": {
+    "qualifying_run_population": 70,
+    "elapsed_seconds": 1235616,
+    "distinct_utc_dates": 13,
+    "maximum_single_utc_date_share_percent": 22.85714286
+  },
+  "c6": {
+    "live_qualifying_run_denominator": 70,
+    "false_negative_threshold_formula": "max(5, ceil(25% of qualifying runs))",
+    "derived_required_false_negative_samples": 18,
+    "false_negative_sampled_runs": 18,
+    "false_negative_gap": 0
+  },
+  "immutable_archive": {
+    "path": "/Users/tcheckvi/Documents/Codex/2026-09-03/si/outputs/quality-observation-governance-2026-09-18-final-global-closure-archive-v1",
+    "manifest_path": "/Users/tcheckvi/Documents/Codex/2026-09-03/si/outputs/quality-observation-governance-2026-09-18-final-global-closure-archive-v1/MANIFEST.sha256",
+    "manifest_sha256": "1c198f327ec9f600abcb6509092fb8cbb7a92f6102f0e9c856e5e26afa5dffb0",
+    "failed_partial_packages_preserved": true
+  },
+  "scorecard_change_surface_2026_09_18": {
+    "semantic_leaf_path_count": 9,
+    "composition": "8 governed C1 paths + $.overall_status"
+  },
+  "scorecard_as_of_freshness_correction_requires_separate_authorization": true,
+  "global_pass_confirmed": true,
+  "global_closure_complete": true,
+  "next": "ARCHIVE_COMPLETE_NO_FURTHER_ACTION_REQUIRED"
+}
