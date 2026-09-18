@@ -1,0 +1,26 @@
+[project]
+name = "familyos-pilot0"
+version = "0.1.0"
+description = "FamilyOS Pilot 0 evidence-gathering product surface (M1: minimal skeleton, synthetic data only)."
+requires-python = ">=3.13"
+readme = "README.md"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
