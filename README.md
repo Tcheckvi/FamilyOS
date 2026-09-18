@@ -27,7 +27,7 @@ performs any external action.
   the gateway and returns a candidate proposal. It never writes, confirms, or
   executes anything.
 
-### M2 — first synthetic end-to-end vertical slice (current)
+### M2 — first synthetic end-to-end vertical slice — done
 
 M2 adds the confirmation/timeline/audit boundary on top of M1's extraction
 boundary: `propose()` still never writes; only an explicit, single-use
@@ -59,6 +59,37 @@ entry. `discard` writes nothing.
   replay rejection, duplicate/idempotency, and audit-trail correlation
   tests, all synthetic.
 
+### M3 — first real Model Gateway provider, synthetic-only (current)
+
+M3 adds the first real (non-fake) `ModelGatewayPort` implementation, behind
+Privacy Gate A, with synthetic data only. It does not touch M2's
+confirmation/timeline/audit boundary at all -- only the extraction step
+gains a second, real gateway option alongside `FakeModelGateway`.
+
+- `src/familyos_pilot0/openai_gateway.py` — `OpenAIModelGateway`, calling
+  the official OpenAI Python SDK's Responses API with Structured Outputs
+  (strict JSON schema, manually written -- not a pydantic model, to keep
+  this module's own public surface small even though `openai` already
+  depends on pydantic transitively). Uses `store=False` explicitly, no
+  hosted tools (no function calling, web search, or file search), an
+  explicit timeout, and the SDK's own bounded retry behavior for
+  transport/rate-limit/server failures (no hand-rolled retry loop).
+  Provider/parse/refusal/timeout failures convert to typed
+  `ModelGatewayError` subclasses (`errors.py`); this module never falls
+  back to `FakeModelGateway` and never logs prompt or model output content.
+- `src/familyos_pilot0/errors.py` — extended with `ModelGatewayError` and
+  four subclasses (`ModelGatewayTimeoutError`, `ModelGatewayRefusalError`,
+  `ModelGatewayResponseParseError`, `ModelGatewayProviderError`).
+- `tests/test_openai_gateway.py` — provider contract tests against a
+  fake/stub OpenAI client (no network): successful mapping, `store=false`
+  and strict-schema request shape, no hosted tools, refusal handling,
+  malformed/missing output, timeout, and other provider errors.
+- `tests/live_smoke/test_openai_live_smoke.py` — a single, **opt-in,
+  disabled-by-default** live-call test. Skipped automatically unless both
+  `FAMILYOS_PILOT0_ALLOW_LIVE_OPENAI_SYNTHETIC=1` and `OPENAI_API_KEY` are
+  present, and even then sends only a hard-coded synthetic fixture, never
+  arbitrary input.
+
 ## What this package does not contain
 
 No general workflow engine, no capability registry, no general
@@ -67,14 +98,18 @@ database framework (SQLite via the standard library only), no deployment
 stack, no remote/CI setup, and no import of any `familyos_cli` module. No
 multi-approver enforcement (M2 captures `required_approver_refs` on the
 identity object only — it is not persisted or audited, and nothing gates
-on it). No M3 work (real provider connection, real family onboarding,
-production confirmation-link transport).
+on it). No hosted OpenAI tools, no prompt/output logging, no real family
+data, no real family onboarding, no production confirmation-link transport,
+no M4 work.
 
 ## Privacy
 
-M1 and M2 use synthetic data only. No external model provider is connected
-anywhere in this package, so Privacy Gate A (provider retention/training/
-data-location review) remains untriggered. Privacy Gate A must pass before
-any later work connects a real provider to anything beyond synthetic/test
-data. Privacy Gate B must pass before any real family is onboarded. Neither
-gate applies to this package's current scope.
+M1 and M2 use synthetic data only and connect no external provider. M3
+introduces the first real provider connection (OpenAI), still
+synthetic-data-only under Privacy Gate A: `store=False` is always passed,
+no hosted tools are enabled, and no prompt/output content is logged.
+Privacy Gate A's current assessment is `PASS_FOR_SYNTHETIC_ONLY_PENDING_
+ACCOUNT_CONFIGURATION_CHECK` -- see the M3 package review document for the
+independently-verified facts behind that assessment. Privacy Gate B (real
+family data, real onboarding) remains blocked and is not addressed by any
+file in this package.

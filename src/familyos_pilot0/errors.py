@@ -1,8 +1,8 @@
-"""Domain-specific errors for Pilot 0 M2.
+"""Domain-specific errors for Pilot 0 M2/M3.
 
-Explicit, typed failures rather than raw storage exceptions leaking out of
-the vertical slice -- consistent with preferring explicit failure over
-silent corruption.
+Explicit, typed failures rather than raw storage/provider exceptions leaking
+out of the vertical slice -- consistent with preferring explicit failure
+over silent corruption.
 """
 
 from __future__ import annotations
@@ -54,3 +54,33 @@ class ConfirmationScopeMismatchError(Pilot0Error):
     scope-mismatched attempt from silently burning a token that its
     legitimate holder could otherwise still use correctly.
     """
+
+
+class ModelGatewayError(Pilot0Error):
+    """Base class for all real-provider Model Gateway failures (M3).
+
+    Error messages on all subclasses are metadata-only (exception type,
+    field names, status categories) and MUST NOT embed the actual prompt or
+    model output content -- the same "never log content" boundary applies
+    to error messages, not only to logging calls.
+    """
+
+
+class ModelGatewayTimeoutError(ModelGatewayError):
+    """The provider call did not complete within the configured timeout."""
+
+
+class ModelGatewayRefusalError(ModelGatewayError):
+    """The model explicitly refused to produce a structured extraction."""
+
+
+class ModelGatewayResponseParseError(ModelGatewayError):
+    """The provider's response could not be parsed into a
+    ``GatewayExtractionResult`` (missing/malformed structured output)."""
+
+
+class ModelGatewayProviderError(ModelGatewayError):
+    """A provider/transport-level failure not covered by a more specific
+    error above (connection failure, rate limit, server error, or any other
+    provider API error), surfaced after the SDK's own bounded retry
+    behavior for retryable failure classes has been exhausted."""

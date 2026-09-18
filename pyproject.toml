@@ -1,9 +1,12 @@
 [project]
 name = "familyos-pilot0"
 version = "0.1.0"
-description = "FamilyOS Pilot 0 evidence-gathering product surface (M1: minimal skeleton, synthetic data only)."
+description = "FamilyOS Pilot 0 evidence-gathering product surface (M1-M3: synthetic vertical slice plus first real Model Gateway provider)."
 requires-python = ">=3.13"
 readme = "README.md"
+dependencies = [
+    "openai==3.16.1",
+]
 
 [tool.ruff]
 line-length = 100
