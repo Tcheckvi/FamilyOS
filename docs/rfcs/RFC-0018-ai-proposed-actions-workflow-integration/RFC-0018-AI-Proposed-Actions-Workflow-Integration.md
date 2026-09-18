@@ -1,12 +1,12 @@
 # RFC-0018: AI Proposed Actions and Workflow Human-Interaction Integration
 
 > **Identifier:** RFC-0018
-> **Status:** Draft
+> **Status:** Accepted
 > **Filed:** 2026-09-18
 
 ## Status
 
-Canonical RFC draft. `RFC-0018` is filed under `docs/rfcs/` after independent review and explicit human filing authorization. It remains Draft and is not accepted or implementation-authorizing. It depends on `ADR-0014` being accepted before this RFC may advance beyond Draft, and it is designed to compose with `RFC-0017`.
+Canonical RFC accepted. `RFC-0018` is filed under `docs/rfcs/` after independent review, explicit human filing authorization, and explicit human acceptance. Its governing `ADR-0014` is Accepted, and this RFC is designed to compose with Accepted `RFC-0017`. Acceptance records the architectural and governance decision; it does not by itself authorize implementation, runtime changes, merge, release, or any AI-GOV-FOLLOWUP-001 work.
 
 ## Summary
 
@@ -124,7 +124,7 @@ An apparently-automated recurring action (e.g. "pay this fixed subscription ever
 
 ## Acceptance Criteria
 
-This canonical filing remains Draft. Filing and review do not by themselves make the RFC actionable; acceptance through the repository's RFC workflow remains required. An accepted version would become actionable only once reviewed against the ratified companion ADR and once Security/Identity's concrete authorization mechanism (referenced but not assumed here) has a documented shape to integrate with.
+This canonical RFC is Accepted. Acceptance records the reviewed architecture and governance decision, but it does not by itself authorize implementation or make the RFC operationally actionable. Any later implementation must remain separately authorized and must first have a documented concrete Security/Identity authorization mechanism shape to integrate with, consistent with the ratified companion ADR and this RFC's boundary protections.
 
 ## Future Work
 
