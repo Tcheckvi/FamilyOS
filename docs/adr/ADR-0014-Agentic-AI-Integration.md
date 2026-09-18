@@ -8,13 +8,13 @@
 | Title | Agentic AI Integration within the Canonical FamilyOS Architecture |
 | Category | Architecture Decision Record |
 | Version | 1.0.0 |
-| Status | Draft |
+| Status | Accepted |
 | Date | 2026-09-18 |
 | Authors | FamilyOS Architecture Team |
 
 ## Status
 
-Canonical draft. `ADR-0014` is filed in `docs/adr/` after independent review and explicit human filing authorization. Filing does not constitute acceptance and does not authorize implementation.
+Accepted. `ADR-0014` was filed in `docs/adr/` after independent review, and is formally accepted through explicit human acceptance decision. Acceptance fixes the architectural boundaries in the Decision section as durable constraints for RFC-0017, RFC-0018, and future companion RFCs/SPECs. Acceptance does not authorize implementation; runtime implementation remains a separate, explicitly governed step.
 
 ## Context
 
