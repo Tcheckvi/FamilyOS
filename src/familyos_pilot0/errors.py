@@ -99,3 +99,18 @@ class MinorDataRejectedError(PrivacyBoundaryError):
 
 class PrivacyPayloadError(PrivacyBoundaryError):
     """Raised when a bounded privacy payload cannot be constructed."""
+
+class ProposalError(Pilot0Error):
+    """Base error for non-authoritative event proposal handling."""
+
+
+class ProposalValidationError(ProposalError):
+    """Raised when a proposal or bounded provenance record is invalid."""
+
+
+class ProposalDecisionError(ProposalError):
+    """Raised when a human proposal decision is invalid."""
+
+
+class ProposalTerminalStateError(ProposalDecisionError):
+    """Raised when a terminal proposal decision is replayed or contradicted."""

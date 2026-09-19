@@ -167,3 +167,91 @@ class ConfirmationTokenStore:
             )
         record.redeemed = True
         return record.token
+
+
+def confirm_event_proposal(proposal: object) -> object:
+    """Confirm a pending proposal without performing a durable write."""
+
+    from dataclasses import replace
+
+    from familyos_pilot0.errors import (
+        ProposalTerminalStateError,
+        ProposalValidationError,
+    )
+    from familyos_pilot0.proposal import EventProposal, ProposalState
+
+    if not isinstance(proposal, EventProposal):
+        raise ProposalValidationError("event proposal is required")
+    if proposal.state is not ProposalState.PENDING:
+        raise ProposalTerminalStateError(
+            f"cannot confirm proposal in terminal state {proposal.state.value}"
+        )
+    return replace(proposal, state=ProposalState.CONFIRMED)
+
+
+def edit_event_proposal(
+    proposal: object,
+    *,
+    event_title: str | None = None,
+    event_start_iso: str | None = None,
+) -> object:
+    """Apply an explicit human edit to a pending proposal."""
+
+    from dataclasses import replace
+
+    from familyos_pilot0.errors import (
+        ProposalDecisionError,
+        ProposalTerminalStateError,
+        ProposalValidationError,
+    )
+    from familyos_pilot0.proposal import EventProposal, ProposalState
+
+    if not isinstance(proposal, EventProposal):
+        raise ProposalValidationError("event proposal is required")
+    if proposal.state is not ProposalState.PENDING:
+        raise ProposalTerminalStateError(
+            f"cannot edit proposal in terminal state {proposal.state.value}"
+        )
+
+    new_title = proposal.event_title if event_title is None else event_title.strip()
+    new_start = (
+        proposal.event_start_iso if event_start_iso is None else event_start_iso.strip()
+    )
+
+    if not new_title:
+        raise ProposalValidationError("event_title must remain non-blank")
+    if not new_start:
+        raise ProposalValidationError("event_start_iso must remain non-blank")
+    if (
+        new_title == proposal.event_title
+        and new_start == proposal.event_start_iso
+    ):
+        raise ProposalDecisionError("an edit must change at least one proposal field")
+
+    return replace(
+        proposal,
+        event_title=new_title,
+        event_start_iso=new_start,
+        state=ProposalState.EDITED,
+        human_adjusted=True,
+    )
+
+
+def discard_event_proposal(proposal: object) -> object:
+    """Discard a pending proposal without creating durable family state."""
+
+    from dataclasses import replace
+
+    from familyos_pilot0.errors import (
+        ProposalTerminalStateError,
+        ProposalValidationError,
+    )
+    from familyos_pilot0.proposal import EventProposal, ProposalState
+
+    if not isinstance(proposal, EventProposal):
+        raise ProposalValidationError("event proposal is required")
+    if proposal.state is not ProposalState.PENDING:
+        raise ProposalTerminalStateError(
+            f"cannot discard proposal in terminal state {proposal.state.value}"
+        )
+    return replace(proposal, state=ProposalState.DISCARDED)
