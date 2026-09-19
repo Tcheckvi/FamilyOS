@@ -84,3 +84,18 @@ class ModelGatewayProviderError(ModelGatewayError):
     error above (connection failure, rate limit, server error, or any other
     provider API error), surfaced after the SDK's own bounded retry
     behavior for retryable failure classes has been exhausted."""
+
+class PrivacyBoundaryError(Pilot0Error):
+    """Base error for Pilot 0 privacy-boundary violations."""
+
+
+class ConsentRequiredError(PrivacyBoundaryError):
+    """Raised when active, purpose-bound adult consent is unavailable."""
+
+
+class MinorDataRejectedError(PrivacyBoundaryError):
+    """Raised when the first-slice input is known to contain minor data."""
+
+
+class PrivacyPayloadError(PrivacyBoundaryError):
+    """Raised when a bounded privacy payload cannot be constructed."""
