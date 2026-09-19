@@ -114,3 +114,10 @@ class ProposalDecisionError(ProposalError):
 
 class ProposalTerminalStateError(ProposalDecisionError):
     """Raised when a terminal proposal decision is replayed or contradicted."""
+
+class ControlledExecutionError(Exception):
+    """Base error for controlled-execution readiness failures."""
+
+
+class ControlledExecutionValidationError(ControlledExecutionError):
+    """Raised when controlled-execution input is structurally invalid."""
