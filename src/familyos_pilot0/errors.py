@@ -121,3 +121,10 @@ class ControlledExecutionError(Exception):
 
 class ControlledExecutionValidationError(ControlledExecutionError):
     """Raised when controlled-execution input is structurally invalid."""
+
+class FirstRealDataSliceReadinessError(Exception):
+    """Base error for M8 first-real-data-slice readiness failures."""
+
+
+class FirstRealDataSliceValidationError(FirstRealDataSliceReadinessError):
+    """Raised when an M8 readiness input is structurally invalid."""
