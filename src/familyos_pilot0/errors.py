@@ -128,3 +128,10 @@ class FirstRealDataSliceReadinessError(Exception):
 
 class FirstRealDataSliceValidationError(FirstRealDataSliceReadinessError):
     """Raised when an M8 readiness input is structurally invalid."""
+
+class ExecutionAuthorizationReadinessError(Exception):
+    """Base error for M9 execution-authorization readiness failures."""
+
+
+class ExecutionAuthorizationValidationError(ExecutionAuthorizationReadinessError):
+    """Raised when an M9 authorization-readiness input is invalid."""
