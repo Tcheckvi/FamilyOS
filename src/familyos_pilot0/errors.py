@@ -135,3 +135,6 @@ class ExecutionAuthorizationReadinessError(Exception):
 
 class ExecutionAuthorizationValidationError(ExecutionAuthorizationReadinessError):
     """Raised when an M9 authorization-readiness input is invalid."""
+
+class ControlledExecutionProviderError(ControlledExecutionError):
+    """Reserved for a separately authorized M10 provider execution."""
