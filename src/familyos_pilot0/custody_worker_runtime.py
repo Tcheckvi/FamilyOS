@@ -20,6 +20,13 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Final, cast
 
+from familyos_pilot0.custody_rollback_contracts import (
+    ExternalRollbackAnchor,
+    RollbackCheckpoint,
+    StoreIdentity,
+    require_anchor_advancement,
+    require_store_checkpoint_match,
+)
 from familyos_pilot0.custody_worker_contracts import (
     KeyRef,
     ReplayClaim,
@@ -80,8 +87,16 @@ class AuthoritativeClaimStore:
         self,
         root: Path,
         *,
+        store_identity: StoreIdentity,
+        rollback_anchor: ExternalRollbackAnchor,
         fault_injector: Callable[[str], None] | None = None,
     ) -> None:
+        if type(store_identity) is not StoreIdentity:
+            raise TypeError("store_identity must be an exact StoreIdentity")
+        if not isinstance(rollback_anchor, ExternalRollbackAnchor):
+            raise TypeError("rollback_anchor must implement ExternalRollbackAnchor")
+        self._store_identity = store_identity
+        self._rollback_anchor = rollback_anchor
         if not isinstance(root, Path):
             raise TypeError("root must be a pathlib.Path")
         self._root = root
@@ -111,8 +126,7 @@ class AuthoritativeClaimStore:
     @staticmethod
     def _claim_key(authorization_id: str, operation_id: str) -> str:
         payload = (
-            f"{len(authorization_id)}:{authorization_id}"
-            f"{len(operation_id)}:{operation_id}"
+            f"{len(authorization_id)}:{authorization_id}{len(operation_id)}:{operation_id}"
         ).encode()
         return hashlib.sha256(payload).hexdigest()
 
@@ -195,24 +209,16 @@ class AuthoritativeClaimStore:
             raise RuntimeClaimStoreError("stored claim_generation must be an exact int")
         if not isinstance(state, str):
             raise RuntimeClaimStoreError("stored state must be a string")
-        if not isinstance(resources, list) or not all(
-            isinstance(item, str) for item in resources
-        ):
+        if not isinstance(resources, list) or not all(isinstance(item, str) for item in resources):
             raise RuntimeClaimStoreError(
                 "stored non_key_resources_consumed must be an array of strings"
             )
         if type(key_use_intent_durable) is not bool:
-            raise RuntimeClaimStoreError(
-                "stored key_use_intent_durable must be an exact bool"
-            )
+            raise RuntimeClaimStoreError("stored key_use_intent_durable must be an exact bool")
         if not isinstance(context_digest, str):
             raise RuntimeClaimStoreError("stored context_digest must be a string")
-        if signing_request_digest is not None and not isinstance(
-            signing_request_digest, str
-        ):
-            raise RuntimeClaimStoreError(
-                "stored signing_request_digest must be a string or null"
-            )
+        if signing_request_digest is not None and not isinstance(signing_request_digest, str):
+            raise RuntimeClaimStoreError("stored signing_request_digest must be a string or null")
 
         try:
             return ReplayClaim(
@@ -240,10 +246,7 @@ class AuthoritativeClaimStore:
             return None
 
         claim = self._deserialize_claim(raw)
-        if (
-            claim.authorization_id != authorization_id
-            or claim.operation_id != operation_id
-        ):
+        if claim.authorization_id != authorization_id or claim.operation_id != operation_id:
             raise RuntimeClaimStoreError("stored claim key does not match claim identity")
         return claim
 
@@ -257,8 +260,7 @@ class AuthoritativeClaimStore:
             None if current is None else current.state
         )
         payload = (
-            json.dumps(document, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
-            + "\n"
+            json.dumps(document, sort_keys=True, separators=(",", ":"), ensure_ascii=True) + "\n"
         ).encode("utf-8")
 
         fd = -1
@@ -314,10 +316,12 @@ class AuthoritativeClaimStore:
     ) -> None:
         document = self._read_document_locked()
         claims = self._claims_mapping(document)
-        claims[self._claim_key(claim.authorization_id, claim.operation_id)] = (
-            self._serialize_claim(claim)
+        claims[self._claim_key(claim.authorization_id, claim.operation_id)] = self._serialize_claim(
+            claim
         )
+        expected_rollback_checkpoint = self._require_rollback_match_locked()
         self._durable_write_document(document, current=current)
+        self._advance_rollback_anchor_locked(expected_rollback_checkpoint)
 
     @staticmethod
     def _require_identity(
@@ -372,6 +376,7 @@ class AuthoritativeClaimStore:
     ) -> ReplayClaim:
         """Durably reserve one operation and bind its admitted context digest."""
         with self._locked():
+            self._require_rollback_match_locked()
             current = self._load_claim_locked(authorization_id, operation_id)
             if current is not None:
                 raise ClaimConflictError("operation already has authoritative claim state")
@@ -400,6 +405,7 @@ class AuthoritativeClaimStore:
     ) -> ReplayClaim:
         """Durably bind the exact signing-request digest before signer execution."""
         with self._locked():
+            self._require_rollback_match_locked()
             current = self._load_claim_locked(authorization_id, operation_id)
             if current is None:
                 raise ClaimConflictError("authoritative reservation is missing")
@@ -438,6 +444,7 @@ class AuthoritativeClaimStore:
             raise TypeError("terminal_state must be an exact ReplayClaimState")
 
         with self._locked():
+            self._require_rollback_match_locked()
             current = self._load_claim_locked(authorization_id, operation_id)
             if current is None:
                 raise ClaimConflictError("authoritative claim is missing")
@@ -487,6 +494,7 @@ class AuthoritativeClaimStore:
     ) -> ReplayClaim | None:
         """Load authoritative state; caller-created claims are not accepted."""
         with self._locked():
+            self._require_rollback_match_locked()
             return self._load_claim_locked(authorization_id, operation_id)
 
     def claim_for_signer(
@@ -499,6 +507,7 @@ class AuthoritativeClaimStore:
     ) -> ReplayClaim:
         """Reload authoritative key-use intent for the irreversible signer boundary."""
         with self._locked():
+            self._require_rollback_match_locked()
             claim = self._load_claim_locked(authorization_id, operation_id)
             if claim is None:
                 raise ClaimConflictError("authoritative claim is missing")
@@ -528,6 +537,7 @@ class AuthoritativeClaimStore:
     ) -> ReplayClaim:
         """Reload authoritative SPENT_CLEAN state for release validation."""
         with self._locked():
+            self._require_rollback_match_locked()
             claim = self._load_claim_locked(authorization_id, operation_id)
             if claim is None:
                 raise ClaimConflictError("authoritative claim is missing")
@@ -555,6 +565,7 @@ class AuthoritativeClaimStore:
     ) -> ReplayClaim | None:
         """Recover in-flight claims fail-closed and persist the stricter state."""
         with self._locked():
+            self._require_rollback_match_locked()
             current = self._load_claim_locked(authorization_id, operation_id)
             if current is None:
                 return None
@@ -575,6 +586,139 @@ class AuthoritativeClaimStore:
             )
             self._store_claim_locked(claim, current=current)
             return claim
+
+    @staticmethod
+    def expected_empty_rollback_checkpoint(
+        store_identity: StoreIdentity,
+    ) -> RollbackCheckpoint:
+        """Return the externally provisioned checkpoint for an empty store."""
+        if type(store_identity) is not StoreIdentity:
+            raise TypeError("store_identity must be an exact StoreIdentity")
+        return AuthoritativeClaimStore._rollback_checkpoint_for_document_static(
+            store_identity,
+            {},
+        )
+
+    @staticmethod
+    def _rollback_store_generation(document: object) -> int:
+        """Derive a monotonic store generation from durable claim state."""
+
+        def visit(value: object) -> int:
+            if type(value) is dict:
+                mapping = value
+                subtotal = 0
+                if "claim_generation" in mapping:
+                    generation = mapping["claim_generation"]
+                    if type(generation) is not int or generation < 0:
+                        raise RuntimeClaimStoreError(
+                            "claim_generation must be a non-negative exact int"
+                        )
+                    subtotal += generation + 1
+
+                for key, child in mapping.items():
+                    if key != "claim_generation":
+                        subtotal += visit(child)
+                return subtotal
+
+            if type(value) is list:
+                return sum(visit(child) for child in value)
+
+            return 0
+
+        return visit(document)
+
+    @staticmethod
+    def _rollback_checkpoint_for_document_static(
+        store_identity: StoreIdentity,
+        document: object,
+    ) -> RollbackCheckpoint:
+        """Build the deterministic checkpoint for one durable store document."""
+        if type(store_identity) is not StoreIdentity:
+            raise TypeError("store_identity must be an exact StoreIdentity")
+
+        generation = AuthoritativeClaimStore._rollback_store_generation(document)
+        canonical_payload = {
+            "domain": "familyos.custody.rollback-checkpoint.v1",
+            "store_instance_id": store_identity.store_instance_id,
+            "store_epoch": store_identity.store_epoch,
+            "document": document,
+        }
+        try:
+            canonical_bytes = json.dumps(
+                canonical_payload,
+                ensure_ascii=True,
+                separators=(",", ":"),
+                sort_keys=True,
+            ).encode("utf-8")
+        except (TypeError, ValueError) as exc:
+            raise RuntimeClaimStoreError(
+                "authoritative store document is not canonically serializable"
+            ) from exc
+
+        return RollbackCheckpoint(
+            identity=store_identity,
+            store_generation=generation,
+            store_root_digest=hashlib.sha256(canonical_bytes).hexdigest(),
+        )
+
+    def _rollback_checkpoint_for_document(
+        self,
+        document: object,
+    ) -> RollbackCheckpoint:
+        return self._rollback_checkpoint_for_document_static(
+            self._store_identity,
+            document,
+        )
+
+    def _read_rollback_document_locked(self) -> object:
+        """Read the exact durable JSON document used for rollback admission."""
+        if not self._claims_path.exists():
+            return {}
+
+        try:
+            document = json.loads(self._claims_path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise RuntimeClaimStoreError(
+                "cannot read authoritative store for rollback verification"
+            ) from exc
+
+        if type(document) is not dict:
+            raise RuntimeClaimStoreError("authoritative store document must be a JSON object")
+        return document
+
+    def _current_rollback_checkpoint_locked(self) -> RollbackCheckpoint:
+        return self._rollback_checkpoint_for_document(self._read_rollback_document_locked())
+
+    def _require_rollback_match_locked(self) -> RollbackCheckpoint:
+        """Deny store admission unless durable state exactly matches the anchor."""
+        observed = self._current_rollback_checkpoint_locked()
+        trusted = self._rollback_anchor.read_checkpoint()
+        require_store_checkpoint_match(
+            observed=observed,
+            trusted=trusted,
+        )
+        return observed
+
+    def _advance_rollback_anchor_locked(
+        self,
+        expected_current: RollbackCheckpoint,
+    ) -> RollbackCheckpoint:
+        """Advance the anchor only after the new store state is durable."""
+        candidate = self._current_rollback_checkpoint_locked()
+        require_anchor_advancement(
+            current=expected_current,
+            candidate=candidate,
+        )
+        self._rollback_anchor.advance_checkpoint(
+            expected_current=expected_current,
+            candidate=candidate,
+        )
+        trusted_after = self._rollback_anchor.read_checkpoint()
+        require_store_checkpoint_match(
+            observed=candidate,
+            trusted=trusted_after,
+        )
+        return candidate
 
 
 class RuntimeFactConstructor:
@@ -605,9 +749,7 @@ class RuntimeFactConstructor:
             final_payload_digest=final_payload_digest,
             signature_sha256=signature_sha256,
             signature_verified=signature_verified,
-            elapsed_at_signature_completion_seconds=(
-                elapsed_at_signature_completion_seconds
-            ),
+            elapsed_at_signature_completion_seconds=(elapsed_at_signature_completion_seconds),
             signer_reaped=signer_reaped,
             custody_postconditions_verified=custody_postconditions_verified,
             evidence_sealed=evidence_sealed,
