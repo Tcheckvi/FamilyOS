@@ -1,6 +1,6 @@
 # Security Framework
 
-# Changelog
+## Changelog
 
 This document records the evolution of **EPIC-SEC-001 — Security Framework**.
 
@@ -8,9 +8,9 @@ It preserves the historical development of the framework and provides a structur
 
 ---
 
-# Unreleased
+## Unreleased
 
-## Added
+### Added
 
 * Standardized EPIC control-document layer.
 * Machine-readable `EPIC.yaml`.
@@ -20,7 +20,7 @@ It preserves the historical development of the framework and provides a structur
 * Human-readable `README.md`.
 * Canonical control summary in `EPIC-SEC-001.md`.
 
-## Changed
+### Changed
 
 * Normalized the current repository representation from the historical compact documentation model to the current FamilyOS controlled EPIC model.
 * Distinguished the historical ten-document release structure from the current seventeen-file repository representation.
@@ -29,7 +29,7 @@ It preserves the historical development of the framework and provides a structur
 * Added explicit post-release revalidation state.
 * Added explicit repository-structure and validation contracts.
 
-## Validation
+### Validation
 
 Current normalized repository state:
 
@@ -42,9 +42,9 @@ No current PASS result is recorded until supported by actual repository executio
 
 ---
 
-# 5.0.0 — Security Framework
+## 5.0.0 — Security Framework
 
-## Historical Status
+### Historical Status
 
 ```text
 PUBLISHED
@@ -70,7 +70,7 @@ IMMUTABLE
 
 ---
 
-# Historical Documentation Model
+## Historical Documentation Model
 
 The original Security Framework release used the compact FamilyOS framework documentation model.
 
@@ -89,9 +89,9 @@ This historical fact SHALL remain preserved.
 
 ---
 
-# Added in 5.0.0
+## Added in 5.0.0
 
-## Security Framework Foundation
+### Security Framework Foundation
 
 Established **EPIC-SEC-001 — Security Framework** as the canonical FamilyOS security engineering foundation.
 
@@ -117,7 +117,7 @@ The framework introduced a dedicated security model covering:
 
 ---
 
-# Canonical Historical Documents
+## Canonical Historical Documents
 
 The historical release established the following numbered-document structure:
 
@@ -142,7 +142,7 @@ Historical numbered-document count:
 
 ---
 
-# Security Principles
+## Security Principles
 
 Version `5.0.0` established the foundational FamilyOS Security Principles.
 
@@ -166,7 +166,7 @@ Proportionality
 
 ---
 
-# Deny by Default
+## Deny by Default
 
 The framework established deny-by-default behavior as a canonical security expectation.
 
@@ -174,7 +174,7 @@ Absence of an explicit allow decision SHOULD normally result in denial rather th
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 The framework established least privilege as a permanent engineering requirement.
 
@@ -182,7 +182,7 @@ Subjects, services, plugins, and automation should receive only those capabiliti
 
 ---
 
-# Explicit Trust
+## Explicit Trust
 
 Version `5.0.0` established explicit trust as a foundational security concept.
 
@@ -198,7 +198,7 @@ Trust decisions SHOULD rely on evidence such as:
 
 ---
 
-# Threat-Driven Security
+## Threat-Driven Security
 
 The framework established threat modeling as a security-design mechanism.
 
@@ -206,7 +206,7 @@ Security controls SHOULD correspond to real threats, attack paths, misuse cases,
 
 ---
 
-# Security Architecture
+## Security Architecture
 
 The release introduced the canonical Security Architecture.
 
@@ -232,7 +232,7 @@ The architecture established explicit separation between security responsibiliti
 
 ---
 
-# Identity
+## Identity
 
 The framework established identity as a first-class security concept.
 
@@ -251,7 +251,7 @@ Identity SHALL remain distinguishable from authorization.
 
 ---
 
-# Authentication
+## Authentication
 
 Version `5.0.0` defined authentication as the process of establishing confidence in an asserted identity.
 
@@ -259,7 +259,7 @@ Authentication alone does not automatically imply permission to perform arbitrar
 
 ---
 
-# Authorization
+## Authorization
 
 The framework established explicit authorization semantics.
 
@@ -281,7 +281,7 @@ Authorization decisions SHOULD remain explicit, traceable, and governed.
 
 ---
 
-# Permissions
+## Permissions
 
 Version `5.0.0` established stable permission semantics as an important security requirement.
 
@@ -289,7 +289,7 @@ Permissions SHOULD express explicit capabilities rather than rely on implicit im
 
 ---
 
-# Data Protection
+## Data Protection
 
 The framework introduced canonical expectations for protecting FamilyOS data.
 
@@ -307,7 +307,7 @@ Areas include:
 
 ---
 
-# Secret Management
+## Secret Management
 
 Secrets were established as security-sensitive objects distinct from ordinary configuration.
 
@@ -324,7 +324,7 @@ Secrets SHOULD remain protected throughout storage, use, logging, and release wo
 
 ---
 
-# Cryptography
+## Cryptography
 
 Version `5.0.0` established expectations for sound cryptographic engineering.
 
@@ -341,7 +341,7 @@ Custom cryptographic primitives are strongly discouraged.
 
 ---
 
-# Threat Model
+## Threat Model
 
 The framework introduced a canonical threat-oriented model.
 
@@ -367,7 +367,7 @@ Residual Risk
 
 ---
 
-# Risk Management
+## Risk Management
 
 Security risk was established as a governed engineering concern.
 
@@ -384,7 +384,7 @@ Risk may influence:
 
 ---
 
-# Trust Model
+## Trust Model
 
 Version `5.0.0` established trust boundaries and trust assumptions as explicit security concepts.
 
@@ -403,7 +403,7 @@ Crossing a trust boundary SHOULD trigger appropriate security evaluation.
 
 ---
 
-# Security Controls
+## Security Controls
 
 The framework introduced a structured control model.
 
@@ -427,7 +427,7 @@ A control SHOULD identify:
 
 ---
 
-# Security Compliance
+## Security Compliance
 
 Version `5.0.0` established security compliance as an evidence-based evaluation of applicable security requirements and controls.
 
@@ -443,7 +443,7 @@ Compliance may consume:
 
 ---
 
-# Implementation Direction
+## Implementation Direction
 
 The framework established implementation guidance while remaining technology-neutral.
 
@@ -460,7 +460,7 @@ Potential implementation areas include:
 
 ---
 
-# Security Automation
+## Security Automation
 
 Version `5.0.0` established automation as an important security capability.
 
@@ -479,7 +479,7 @@ Automation SHALL NOT convert unresolved findings into successful validation with
 
 ---
 
-# Plugin Security
+## Plugin Security
 
 The framework recognized plugins as important trust boundaries.
 
@@ -498,7 +498,7 @@ Official plugin status SHALL NOT imply unrestricted trust.
 
 ---
 
-# Security Validation
+## Security Validation
 
 Version `5.0.0` established evidence-based security validation.
 
@@ -517,7 +517,7 @@ Security validation may consume:
 
 ---
 
-# Release Security
+## Release Security
 
 The framework integrated security into the FamilyOS release lifecycle.
 
@@ -539,7 +539,7 @@ EPIC-REL-001 remains authoritative for the general release lifecycle.
 
 ---
 
-# Security Gates
+## Security Gates
 
 Security gates may evaluate:
 
@@ -558,7 +558,7 @@ Blocking security findings SHOULD normally prevent ordinary release progression 
 
 ---
 
-# Security Exceptions
+## Security Exceptions
 
 The framework established explicit governance requirements for security exceptions.
 
@@ -576,7 +576,7 @@ Exceptions SHALL NOT alter historical evidence to make a failed security require
 
 ---
 
-# Testing Integration
+## Testing Integration
 
 EPIC-SEC-001 integrates with the FamilyOS Testing Framework.
 
@@ -592,7 +592,7 @@ Security-specific requirements may be implemented using testing capabilities suc
 
 ---
 
-# Quality Integration
+## Quality Integration
 
 The framework integrates security evidence with the FamilyOS Quality Framework.
 
@@ -606,7 +606,7 @@ Security findings may contribute to:
 
 ---
 
-# Build Integration
+## Build Integration
 
 Security integrates with the FamilyOS Build Framework through:
 
@@ -621,7 +621,7 @@ A successful build does not automatically establish security readiness.
 
 ---
 
-# Release Integration
+## Release Integration
 
 EPIC-SEC-001 integrates with the Release Framework through security evidence and release gates.
 
@@ -629,7 +629,7 @@ Security does not replace the release lifecycle.
 
 ---
 
-# Observability Integration
+## Observability Integration
 
 The framework integrates with the Observability Framework.
 
@@ -645,7 +645,7 @@ Security may consume observability for:
 
 ---
 
-# Plugin Compliance Integration
+## Plugin Compliance Integration
 
 Security requirements may become inputs to plugin-compliance decisions.
 
@@ -653,7 +653,7 @@ Plugin Compliance remains governed separately by its canonical FamilyOS framewor
 
 ---
 
-# Historical Release Completion
+## Historical Release Completion
 
 Version `5.0.0` was historically completed and published under:
 
@@ -671,7 +671,7 @@ The release is therefore historically published.
 
 ---
 
-# Historical Tag Integrity
+## Historical Tag Integrity
 
 The historical release tag SHALL remain immutable.
 
@@ -689,7 +689,7 @@ Current corrections belong to later forward repository history.
 
 ---
 
-# Post-Release Normalization
+## Post-Release Normalization
 
 After historical publication, the FamilyOS framework-governance model evolved.
 
@@ -719,7 +719,7 @@ This changes the current repository representation to:
 
 ---
 
-# Historical vs Current Repository State
+## Historical vs Current Repository State
 
 Historical release:
 
@@ -743,7 +743,7 @@ The second structure SHALL NOT be retroactively attributed to the historical rel
 
 ---
 
-# Current Revalidation
+## Current Revalidation
 
 The normalized repository representation requires current evidence-based revalidation.
 
@@ -776,7 +776,7 @@ Final Repository State
 
 ---
 
-# Validation Evidence Policy
+## Validation Evidence Policy
 
 The required model is:
 
@@ -804,7 +804,7 @@ No current validation check SHALL be declared successful without actual evidence
 
 ---
 
-# Current Normalization State
+## Current Normalization State
 
 ```text
 Framework Version:       5.0.0
@@ -832,7 +832,7 @@ Final Revalidation:      Validated
 
 ---
 
-# Future Changes
+## Future Changes
 
 Future Security Framework revisions may introduce:
 
@@ -854,7 +854,7 @@ Such changes SHALL follow normal framework versioning and release governance rat
 
 ---
 
-# Final Changelog Principle
+## Final Changelog Principle
 
 The canonical historical statement for EPIC-SEC-001 is:
 

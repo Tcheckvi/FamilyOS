@@ -10,7 +10,7 @@ This document identifies the authoritative references connected to the Engineeri
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this reference document is to provide:
 
@@ -24,11 +24,11 @@ Referenced documents remain the authoritative sources for their respective domai
 
 ---
 
-# Reference Classification
+## Reference Classification
 
 Engineering references are divided into two categories.
 
-## Normative References
+### Normative References
 
 Normative references define mandatory engineering rules, requirements, or governance.
 
@@ -45,7 +45,7 @@ Examples include:
 
 ---
 
-## Informative References
+### Informative References
 
 Informative references provide additional context, guidance, examples, or background information.
 
@@ -53,7 +53,7 @@ They support engineering understanding but do not establish mandatory requiremen
 
 ---
 
-# Normative Reference Hierarchy
+## Normative Reference Hierarchy
 
 When multiple documents address the same engineering topic, the following precedence applies.
 
@@ -86,9 +86,9 @@ Lower-level documents must not contradict higher-level engineering authority.
 
 ---
 
-# FamilyOS Foundation References
+## FamilyOS Foundation References
 
-## FamilyOS Foundation
+### FamilyOS Foundation
 
 Purpose:
 
@@ -106,9 +106,9 @@ docs/foundation/FND-000-familyos-foundation/
 
 ---
 
-# Documentation References
+## Documentation References
 
-## Documentation Framework
+### Documentation Framework
 
 Purpose:
 
@@ -126,9 +126,9 @@ EPIC-DOC-001 — Documentation Framework
 
 ---
 
-# Architecture References
+## Architecture References
 
-## Architecture Principles
+### Architecture Principles
 
 Purpose:
 
@@ -146,7 +146,7 @@ Architecture Principles
 
 ---
 
-## Architecture Decision Records
+### Architecture Decision Records
 
 Purpose:
 
@@ -164,9 +164,9 @@ ADR Documents
 
 ---
 
-# Engineering References
+## Engineering References
 
-## Engineering Foundation
+### Engineering Foundation
 
 Purpose:
 
@@ -184,7 +184,7 @@ EPIC-ENG-001 — Engineering Foundation
 
 ---
 
-## Engineering Platform
+### Engineering Platform
 
 Purpose:
 
@@ -202,9 +202,9 @@ Engineering Platform Documentation
 
 ---
 
-# Testing References
+## Testing References
 
-## Testing Framework
+### Testing Framework
 
 Purpose:
 
@@ -222,9 +222,9 @@ EPIC-TST-001 — Testing Framework
 
 ---
 
-# Quality References
+## Quality References
 
-## Quality Framework
+### Quality Framework
 
 Purpose:
 
@@ -242,9 +242,9 @@ EPIC-QLT-001 — Quality Framework
 
 ---
 
-# Build References
+## Build References
 
-## Build Framework
+### Build Framework
 
 Purpose:
 
@@ -262,9 +262,9 @@ EPIC-BLD-001 — Build Framework
 
 ---
 
-# Release References
+## Release References
 
-## Release Framework
+### Release Framework
 
 Purpose:
 
@@ -282,9 +282,9 @@ EPIC-REL-001 — Release Framework
 
 ---
 
-# Plugin References
+## Plugin References
 
-## Plugin Architecture
+### Plugin Architecture
 
 Purpose:
 
@@ -302,9 +302,9 @@ Plugin Architecture Documentation
 
 ---
 
-# Specification References
+## Specification References
 
-## Specifications
+### Specifications
 
 Purpose:
 
@@ -322,9 +322,9 @@ SPEC Documents
 
 ---
 
-# Governance References
+## Governance References
 
-## Technical Governance
+### Technical Governance
 
 Purpose:
 
@@ -342,7 +342,7 @@ Technical Governance
 
 ---
 
-# Engineering Reference Model
+## Engineering Reference Model
 
 The engineering ecosystem can be represented as follows.
 
@@ -365,7 +365,7 @@ This model illustrates how engineering disciplines relate to the Engineering Fou
 
 ---
 
-# Reference Maintenance
+## Reference Maintenance
 
 Engineering references should remain:
 
@@ -378,7 +378,7 @@ Broken or outdated references reduce engineering confidence and knowledge qualit
 
 ---
 
-# Reference Governance
+## Reference Governance
 
 Reference changes follow Technical Governance.
 
@@ -396,7 +396,7 @@ Major structural changes may require:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The reference model is successful when:
 
@@ -407,7 +407,7 @@ The reference model is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The Engineering Foundation reference model establishes the authoritative relationships between engineering artifacts across FamilyOS.
 

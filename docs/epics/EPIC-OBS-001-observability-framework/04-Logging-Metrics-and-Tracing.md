@@ -1,10 +1,10 @@
 # Observability Framework
 
-# EPIC-OBS-001
+## EPIC-OBS-001
 
-# 04 Logging, Metrics, and Tracing
+## 04 Logging, Metrics, and Tracing
 
-## Overview
+### Overview
 
 Logging, metrics, and tracing are the three primary telemetry capabilities used by the FamilyOS Observability Framework to explain runtime behavior.
 
@@ -24,7 +24,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the FamilyOS model for:
 
@@ -50,7 +50,7 @@ The objective is to ensure that runtime signals remain consistent, actionable, a
 
 ---
 
-# Signal Model
+## Signal Model
 
 The three primary observability signals provide different views of runtime behavior.
 
@@ -72,7 +72,7 @@ These signals should be designed to complement one another.
 
 ---
 
-# Signal Relationship
+## Signal Relationship
 
 A single runtime operation may generate all three signals.
 
@@ -93,7 +93,7 @@ This enables both high-level monitoring and detailed diagnosis.
 
 ---
 
-# Logging
+## Logging
 
 Logging records discrete runtime events.
 
@@ -110,7 +110,7 @@ Production logging should not rely primarily on free-form console output.
 
 ---
 
-# Structured Logging
+## Structured Logging
 
 Structured logs represent event information using stable fields.
 
@@ -139,7 +139,7 @@ Structured logs improve:
 
 ---
 
-# Log Event Naming
+## Log Event Naming
 
 Log events should use stable semantic names.
 
@@ -158,7 +158,7 @@ Event names should describe what occurred rather than contain arbitrary human pr
 
 ---
 
-# Log Messages
+## Log Messages
 
 Structured event names should be accompanied by concise human-readable messages where useful.
 
@@ -177,7 +177,7 @@ The event name supports machine processing.
 
 ---
 
-# Logging Severity
+## Logging Severity
 
 FamilyOS should use a common severity model.
 
@@ -195,7 +195,7 @@ Severity must have consistent semantics.
 
 ---
 
-# DEBUG
+## DEBUG
 
 `DEBUG` is intended for detailed diagnostic information.
 
@@ -209,7 +209,7 @@ DEBUG telemetry may be disabled or sampled heavily in production.
 
 ---
 
-# INFO
+## INFO
 
 `INFO` represents expected significant runtime activity.
 
@@ -225,7 +225,7 @@ INFO should not be used for every trivial internal operation.
 
 ---
 
-# WARNING
+## WARNING
 
 `WARNING` represents abnormal behavior that does not yet constitute complete failure.
 
@@ -240,7 +240,7 @@ Warnings should support operational awareness.
 
 ---
 
-# ERROR
+## ERROR
 
 `ERROR` indicates an operation failed or produced an unacceptable result.
 
@@ -255,7 +255,7 @@ Errors should include enough context for diagnosis.
 
 ---
 
-# CRITICAL
+## CRITICAL
 
 `CRITICAL` indicates severe platform or security impact.
 
@@ -270,7 +270,7 @@ CRITICAL events should be rare and operationally actionable.
 
 ---
 
-# Exception Logging
+## Exception Logging
 
 Exceptions must be logged carefully.
 
@@ -292,7 +292,7 @@ Sensitive information must be removed before storage or export.
 
 ---
 
-# Duplicate Exception Logging
+## Duplicate Exception Logging
 
 The same exception should not be repeatedly logged at every architectural layer without additional value.
 
@@ -315,7 +315,7 @@ A preferred model is:
 
 ---
 
-# Logging Context
+## Logging Context
 
 Logs should include context necessary to identify the operation.
 
@@ -337,7 +337,7 @@ Not every field is required for every event.
 
 ---
 
-# Sensitive Logging
+## Sensitive Logging
 
 Logs must never become uncontrolled stores of FamilyOS domain data.
 
@@ -356,7 +356,7 @@ Operational metadata should be preferred.
 
 ---
 
-# Log Redaction
+## Log Redaction
 
 When potentially sensitive values may enter logging paths, redaction must occur before export.
 
@@ -378,7 +378,7 @@ or be omitted entirely.
 
 ---
 
-# Metrics
+## Metrics
 
 Metrics provide quantitative views of runtime behavior.
 
@@ -395,7 +395,7 @@ Metrics should represent stable operational concepts.
 
 ---
 
-# Metric Types
+## Metric Types
 
 FamilyOS may use common metric types such as:
 
@@ -410,7 +410,7 @@ The specific telemetry implementation may use equivalent concepts.
 
 ---
 
-# Counters
+## Counters
 
 Counters represent monotonically increasing event counts.
 
@@ -427,7 +427,7 @@ Counters are useful for calculating rates.
 
 ---
 
-# Gauges
+## Gauges
 
 Gauges represent values that may increase or decrease.
 
@@ -444,7 +444,7 @@ Gauge semantics must be clearly defined.
 
 ---
 
-# Histograms
+## Histograms
 
 Histograms represent distributions.
 
@@ -466,7 +466,7 @@ Histograms support percentile analysis.
 
 ---
 
-# Metric Naming
+## Metric Naming
 
 Metric names should be:
 
@@ -481,7 +481,7 @@ Avoid names based on internal class names unless those names represent stable ar
 
 ---
 
-# Metric Units
+## Metric Units
 
 Metric units must be explicit.
 
@@ -499,7 +499,7 @@ A metric must not require operators to guess whether duration is measured in mil
 
 ---
 
-# Metric Dimensions
+## Metric Dimensions
 
 Metrics may include dimensions or labels.
 
@@ -519,7 +519,7 @@ Dimensions should support operational analysis.
 
 ---
 
-# Cardinality
+## Cardinality
 
 Metric dimensions must be carefully controlled.
 
@@ -535,7 +535,7 @@ These values should generally not be used as metric labels.
 
 ---
 
-# Cardinality Principle
+## Cardinality Principle
 
 The governing rule is:
 
@@ -545,7 +545,7 @@ Unique operation context belongs primarily in logs and traces.
 
 ---
 
-# Metric Examples
+## Metric Examples
 
 Useful FamilyOS metrics may include:
 
@@ -563,7 +563,7 @@ Exact naming conventions may evolve.
 
 ---
 
-# Business Metrics
+## Business Metrics
 
 Operational observability and business analytics are separate concerns.
 
@@ -581,7 +581,7 @@ Operational usefulness does not override privacy.
 
 ---
 
-# Tracing
+## Tracing
 
 Tracing records execution paths across components.
 
@@ -596,7 +596,7 @@ Tracing is particularly useful when FamilyOS operations involve:
 
 ---
 
-# Trace Structure
+## Trace Structure
 
 A trace contains one or more spans.
 
@@ -616,7 +616,7 @@ The trace reconstructs execution flow.
 
 ---
 
-# Span Model
+## Span Model
 
 A span may contain:
 
@@ -636,7 +636,7 @@ Spans should represent meaningful operational boundaries.
 
 ---
 
-# Root Span
+## Root Span
 
 A root span represents the beginning of a traceable operation.
 
@@ -653,7 +653,7 @@ The root span establishes correlation context.
 
 ---
 
-# Child Spans
+## Child Spans
 
 Child spans represent significant work performed during an operation.
 
@@ -670,7 +670,7 @@ Tracing every function call should be avoided.
 
 ---
 
-# Trace Context
+## Trace Context
 
 Trace context must propagate across supported component boundaries.
 
@@ -696,7 +696,7 @@ This preserves end-to-end execution relationships.
 
 ---
 
-# Asynchronous Trace Propagation
+## Asynchronous Trace Propagation
 
 Trace propagation should work across asynchronous execution where technically possible.
 
@@ -711,7 +711,7 @@ The causal relationship should remain visible even when execution is not synchro
 
 ---
 
-# Trace Attributes
+## Trace Attributes
 
 Trace attributes may include:
 
@@ -730,7 +730,7 @@ Sensitive domain content should not be used as trace attributes.
 
 ---
 
-# Trace Events
+## Trace Events
 
 Spans may contain important events.
 
@@ -747,7 +747,7 @@ These events should add diagnostic value.
 
 ---
 
-# Trace Status
+## Trace Status
 
 Spans should expose outcome semantics.
 
@@ -764,7 +764,7 @@ The meaning must remain consistent.
 
 ---
 
-# Trace Sampling
+## Trace Sampling
 
 Full tracing of every operation may not be practical.
 
@@ -784,7 +784,7 @@ Sampling must be intentional.
 
 ---
 
-# Error Sampling
+## Error Sampling
 
 Failures should generally receive stronger trace retention than successful routine operations.
 
@@ -806,7 +806,7 @@ This improves diagnostic value.
 
 ---
 
-# Sampling Transparency
+## Sampling Transparency
 
 Operators must understand when tracing is sampled.
 
@@ -816,7 +816,7 @@ Sampling configuration should itself be observable and documented.
 
 ---
 
-# Correlation Across Signals
+## Correlation Across Signals
 
 Logs, metrics, and traces should support cross-signal analysis.
 
@@ -842,7 +842,7 @@ This is a core FamilyOS observability capability.
 
 ---
 
-# Log and Trace Correlation
+## Log and Trace Correlation
 
 Logs generated inside traced operations should include:
 
@@ -860,7 +860,7 @@ This allows operators to move from a log entry to a trace.
 
 ---
 
-# Metric and Release Correlation
+## Metric and Release Correlation
 
 Metrics should support release comparison where practical.
 
@@ -876,7 +876,7 @@ This supports release regression analysis.
 
 ---
 
-# Metrics and Traces
+## Metrics and Traces
 
 Metrics can identify that a problem exists.
 
@@ -898,7 +898,7 @@ The two capabilities should be used together.
 
 ---
 
-# Common Operational Context
+## Common Operational Context
 
 A shared observability context may include:
 
@@ -918,7 +918,7 @@ Each telemetry signal should use relevant fields consistently.
 
 ---
 
-# Correlation ID
+## Correlation ID
 
 A correlation ID may represent a logical operation across systems.
 
@@ -928,7 +928,7 @@ The semantics must be documented.
 
 ---
 
-# Request ID
+## Request ID
 
 Request IDs identify individual requests where applicable.
 
@@ -938,7 +938,7 @@ They should generally not become metric dimensions.
 
 ---
 
-# Operation ID
+## Operation ID
 
 Long-running operations may use an operation identifier.
 
@@ -953,7 +953,7 @@ Operation IDs support long-running workflow correlation.
 
 ---
 
-# Plugin Logging
+## Plugin Logging
 
 Plugins must use FamilyOS logging conventions.
 
@@ -973,7 +973,7 @@ Plugins should not create independent incompatible log formats.
 
 ---
 
-# Plugin Metrics
+## Plugin Metrics
 
 Plugins may emit metrics through approved observability interfaces.
 
@@ -988,7 +988,7 @@ The platform should be able to distinguish plugin telemetry from core telemetry.
 
 ---
 
-# Plugin Tracing
+## Plugin Tracing
 
 Plugin execution should participate in existing traces where appropriate.
 
@@ -1011,7 +1011,7 @@ Plugins should not create unrelated trace roots when a parent context already ex
 
 ---
 
-# Dependency Telemetry
+## Dependency Telemetry
 
 External dependencies should produce consistent telemetry.
 
@@ -1029,7 +1029,7 @@ Traces should represent external calls as spans where appropriate.
 
 ---
 
-# Database Telemetry
+## Database Telemetry
 
 Database observability may include:
 
@@ -1045,7 +1045,7 @@ Raw SQL containing private data must be handled carefully.
 
 ---
 
-# CLI Logging
+## CLI Logging
 
 CLI operations may emit structured logs.
 
@@ -1063,7 +1063,7 @@ User-entered command arguments must be evaluated for sensitive content before lo
 
 ---
 
-# Background Task Telemetry
+## Background Task Telemetry
 
 Background tasks should expose:
 
@@ -1085,7 +1085,7 @@ for traceability.
 
 ---
 
-# Scheduled Job Metrics
+## Scheduled Job Metrics
 
 Scheduled operations may expose metrics such as:
 
@@ -1099,7 +1099,7 @@ These metrics help detect silent background failures.
 
 ---
 
-# Release Telemetry
+## Release Telemetry
 
 Release operations should produce coordinated signals.
 
@@ -1125,7 +1125,7 @@ Traces may represent complex automated release workflows.
 
 ---
 
-# Security Telemetry
+## Security Telemetry
 
 Security-relevant logs and metrics must use stricter controls.
 
@@ -1140,7 +1140,7 @@ Sensitive security telemetry may require restricted access and retention.
 
 ---
 
-# Privacy Boundaries
+## Privacy Boundaries
 
 Observability must not expose FamilyOS private domain content merely to simplify debugging.
 
@@ -1162,7 +1162,7 @@ Exceptions require explicit governance.
 
 ---
 
-# Data Minimization
+## Data Minimization
 
 Each telemetry field should have an operational purpose.
 
@@ -1178,7 +1178,7 @@ it should not automatically be collected.
 
 ---
 
-# Retention
+## Retention
 
 Logs, metrics, and traces may require different retention strategies.
 
@@ -1205,7 +1205,7 @@ The actual periods are governed separately.
 
 ---
 
-# Retention and Sensitivity
+## Retention and Sensitivity
 
 More sensitive telemetry may require shorter retention or stronger access controls.
 
@@ -1219,7 +1219,7 @@ Retention decisions must consider:
 
 ---
 
-# Telemetry Volume
+## Telemetry Volume
 
 The framework must control signal volume.
 
@@ -1235,7 +1235,7 @@ Excess telemetry can reduce observability quality by creating noise.
 
 ---
 
-# Logging Noise
+## Logging Noise
 
 Repeated routine events should not overwhelm meaningful signals.
 
@@ -1245,7 +1245,7 @@ Logging strategy should prioritize operationally significant boundaries.
 
 ---
 
-# Metric Noise
+## Metric Noise
 
 Metrics that are never used or interpreted should be reconsidered.
 
@@ -1261,7 +1261,7 @@ Possible purposes include:
 
 ---
 
-# Trace Noise
+## Trace Noise
 
 Tracing extremely small internal operations may create excessive complexity.
 
@@ -1276,7 +1276,7 @@ Examples include:
 
 ---
 
-# Performance
+## Performance
 
 Telemetry must have bounded runtime overhead.
 
@@ -1292,7 +1292,7 @@ Critical business execution should not depend on successful telemetry export in 
 
 ---
 
-# Telemetry Failure
+## Telemetry Failure
 
 Telemetry systems may fail.
 
@@ -1314,7 +1314,7 @@ The telemetry failure should itself become observable where possible.
 
 ---
 
-# Buffering
+## Buffering
 
 Collectors or exporters may temporarily buffer telemetry.
 
@@ -1324,7 +1324,7 @@ Unbounded telemetry buffering can become an availability risk.
 
 ---
 
-# Dropped Telemetry
+## Dropped Telemetry
 
 When telemetry is dropped because of overload or backend failure, the platform should expose that condition where possible.
 
@@ -1339,7 +1339,7 @@ Missing evidence should be explainable.
 
 ---
 
-# Time Synchronization
+## Time Synchronization
 
 Telemetry correlation depends on accurate timestamps.
 
@@ -1351,7 +1351,7 @@ UTC should be preferred for stored operational timestamps.
 
 ---
 
-# Timestamp Precision
+## Timestamp Precision
 
 Timestamp precision should match operational need.
 
@@ -1361,7 +1361,7 @@ Consistency is more important than unnecessary precision.
 
 ---
 
-# OpenTelemetry Alignment
+## OpenTelemetry Alignment
 
 Where practical, FamilyOS should remain compatible with open telemetry conventions and industry-standard semantic models.
 
@@ -1375,7 +1375,7 @@ The framework should preserve:
 
 ---
 
-# Observability Interfaces
+## Observability Interfaces
 
 FamilyOS may expose abstractions conceptually similar to:
 
@@ -1389,7 +1389,7 @@ Application components should depend on these abstractions rather than on vendor
 
 ---
 
-# Dependency Inversion
+## Dependency Inversion
 
 The preferred dependency direction is:
 
@@ -1410,7 +1410,7 @@ This preserves FamilyOS architectural independence.
 
 ---
 
-# Testing Logging
+## Testing Logging
 
 Logging behavior should be testable where operationally significant.
 
@@ -1425,7 +1425,7 @@ Tests should not unnecessarily lock implementation to exact human-readable messa
 
 ---
 
-# Testing Metrics
+## Testing Metrics
 
 Metric tests may verify:
 
@@ -1439,7 +1439,7 @@ Metrics are part of the runtime contract where used by operational controls.
 
 ---
 
-# Testing Tracing
+## Testing Tracing
 
 Tracing tests may verify:
 
@@ -1453,7 +1453,7 @@ Tracing must remain testable without requiring external telemetry infrastructure
 
 ---
 
-# Validation
+## Validation
 
 Logging, metrics, and tracing should be validated through representative operational scenarios.
 
@@ -1485,7 +1485,7 @@ Correlation must remain possible.
 
 ---
 
-# Observability Quality
+## Observability Quality
 
 Good telemetry should answer operational questions efficiently.
 
@@ -1503,7 +1503,7 @@ Telemetry that cannot support meaningful questions should be reconsidered.
 
 ---
 
-# Governance
+## Governance
 
 Logging, metrics, and tracing conventions are governed by the FamilyOS Observability Framework.
 
@@ -1521,7 +1521,7 @@ Individual components may add domain-specific telemetry where justified.
 
 ---
 
-# Evolution
+## Evolution
 
 Telemetry models will evolve as FamilyOS grows.
 
@@ -1538,53 +1538,53 @@ Such changes must be governed because operational tooling may depend on them.
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices are prohibited or strongly discouraged.
 
-## Print-Based Production Logging
+### Print-Based Production Logging
 
 Using arbitrary `print` output as the primary production logging model.
 
-## Logging Secrets
+### Logging Secrets
 
 Recording passwords, tokens, private keys, or credentials.
 
-## Logging Domain Payloads by Default
+### Logging Domain Payloads by Default
 
 Persisting private FamilyOS business data for convenience.
 
-## Unique IDs as Metric Labels
+### Unique IDs as Metric Labels
 
 Using correlation IDs, user IDs, or document IDs as high-cardinality metric dimensions.
 
-## Metric Without Unit
+### Metric Without Unit
 
 Creating measurements whose unit cannot be determined.
 
-## Duplicate Exception Logging
+### Duplicate Exception Logging
 
 Recording the same failure at every layer without additional diagnostic value.
 
-## Trace Every Function
+### Trace Every Function
 
 Creating spans for trivial internal function calls.
 
-## Vendor-Specific Application Coupling
+### Vendor-Specific Application Coupling
 
 Embedding telemetry vendor APIs directly throughout business logic.
 
-## Missing Release Context
+### Missing Release Context
 
 Running production telemetry without being able to identify the active release.
 
-## Silent Telemetry Loss
+### Silent Telemetry Loss
 
 Dropping observability data without any indication that collection is degraded.
 
 ---
 
-# Required Outcomes
+## Required Outcomes
 
 Implementation of this framework section must ensure that:
 
@@ -1605,7 +1605,7 @@ Implementation of this framework section must ensure that:
 
 ---
 
-# Final Logging, Metrics, and Tracing Principle
+## Final Logging, Metrics, and Tracing Principle
 
 Logging, metrics, and tracing provide different perspectives on the same runtime system.
 

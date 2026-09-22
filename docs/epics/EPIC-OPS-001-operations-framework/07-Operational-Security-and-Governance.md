@@ -1,10 +1,10 @@
 # Operations Framework
 
-# EPIC-OPS-001
+## EPIC-OPS-001
 
-## Operational Security and Governance
+### Operational Security and Governance
 
-## Overview
+### Overview
 
 This document defines the operational security and governance model for the FamilyOS Operations Framework.
 
@@ -33,7 +33,7 @@ The purpose of this document is to define how those controls apply specifically 
 
 ---
 
-# Objectives
+## Objectives
 
 Operational security and governance must ensure that:
 
@@ -51,7 +51,7 @@ Operational security and governance must ensure that:
 
 ---
 
-# Security Boundary
+## Security Boundary
 
 The operational boundary is a privileged security boundary.
 
@@ -77,7 +77,7 @@ Operational tooling MUST NOT implicitly become a trusted bypass around this sequ
 
 ---
 
-# Relationship With EPIC-SEC-001
+## Relationship With EPIC-SEC-001
 
 EPIC-SEC-001 remains authoritative for:
 
@@ -108,7 +108,7 @@ Applies Controls at Runtime
 
 ---
 
-# Operational Trust Model
+## Operational Trust Model
 
 Operational actions should never be trusted merely because they originate from an administrative interface.
 
@@ -132,7 +132,7 @@ Administrative origin is not equivalent to authorization.
 
 ---
 
-# Operational Actors
+## Operational Actors
 
 Operational actors may include:
 
@@ -156,7 +156,7 @@ Every actor should operate under an identifiable authority appropriate to its re
 
 ---
 
-# Human Actors
+## Human Actors
 
 Human operational access SHOULD use authenticated identities.
 
@@ -166,7 +166,7 @@ Human actions that materially affect runtime state should be attributable where 
 
 ---
 
-# Machine Actors
+## Machine Actors
 
 Automation and services may perform operational actions.
 
@@ -182,7 +182,7 @@ Automation MUST NOT automatically inherit unrestricted administrative privilege.
 
 ---
 
-# Authentication
+## Authentication
 
 Privileged operational interfaces MUST require authentication when exposed beyond a trusted local development boundary.
 
@@ -192,7 +192,7 @@ Operations should consume those mechanisms rather than implement competing ident
 
 ---
 
-# Authentication Context
+## Authentication Context
 
 Operational actions may require contextual information such as:
 
@@ -209,7 +209,7 @@ Only context required for security and governance should be retained.
 
 ---
 
-# Authorization
+## Authorization
 
 Authorization determines whether an authenticated actor may perform a requested operational action.
 
@@ -231,7 +231,7 @@ Default-deny behavior SHOULD apply to privileged operations where practical.
 
 ---
 
-# Operational Permissions
+## Operational Permissions
 
 Operational permissions should correspond to meaningful actions.
 
@@ -271,7 +271,7 @@ Permissions should not become unnecessarily granular before concrete requirement
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Operational actors SHOULD receive only the authority required for their responsibilities.
 
@@ -295,7 +295,7 @@ Full Administrator
 
 ---
 
-# Privilege Separation
+## Privilege Separation
 
 High-risk operations MAY require stronger permissions than ordinary operational observation.
 
@@ -325,7 +325,7 @@ Change Security Configuration
 
 ---
 
-# Read and Write Separation
+## Read and Write Separation
 
 Operational interfaces SHOULD distinguish observational access from state-changing access where meaningful.
 
@@ -345,7 +345,7 @@ Write operations generally require stronger authorization.
 
 ---
 
-# High-Risk Operational Actions
+## High-Risk Operational Actions
 
 Examples of high-risk operations include:
 
@@ -363,7 +363,7 @@ Such actions require stronger safeguards.
 
 ---
 
-# High-Risk Action Flow
+## High-Risk Action Flow
 
 A high-risk action SHOULD follow:
 
@@ -387,7 +387,7 @@ Evidence
 
 ---
 
-# Human Approval
+## Human Approval
 
 Human approval SHOULD remain available for actions whose consequences are:
 
@@ -402,7 +402,7 @@ Automation should not remove meaningful decision boundaries merely because execu
 
 ---
 
-# Dual Control
+## Dual Control
 
 FamilyOS does not initially require mandatory dual-control procedures.
 
@@ -412,7 +412,7 @@ Such controls should only be introduced when justified by actual risk.
 
 ---
 
-# Operational Interfaces
+## Operational Interfaces
 
 Operational interfaces may include:
 
@@ -434,7 +434,7 @@ All interfaces that perform equivalent privileged actions SHOULD ultimately enfo
 
 ---
 
-# CLI Security
+## CLI Security
 
 CLI commands may provide privileged operational capabilities.
 
@@ -451,7 +451,7 @@ CLI implementations SHOULD consider:
 
 ---
 
-# API Security
+## API Security
 
 Operational APIs MUST enforce security at the server-side boundary.
 
@@ -459,7 +459,7 @@ Client-side hiding or interface restrictions do not constitute authorization.
 
 ---
 
-# Administrative UI Security
+## Administrative UI Security
 
 Administrative user interfaces should act as clients of secured operational services.
 
@@ -479,7 +479,7 @@ Runtime Control
 
 ---
 
-# Environment Targeting
+## Environment Targeting
 
 Operational actions MUST clearly identify their intended environment where multiple environments exist.
 
@@ -495,7 +495,7 @@ Operational tooling should reduce environment ambiguity.
 
 ---
 
-# Environment Visibility
+## Environment Visibility
 
 High-risk interfaces SHOULD make environment identity obvious.
 
@@ -512,7 +512,7 @@ The goal is to reduce accidental cross-environment operations.
 
 ---
 
-# Production Operations
+## Production Operations
 
 Production-equivalent environments SHOULD receive stronger controls than local development environments.
 
@@ -529,7 +529,7 @@ Security should remain proportional to actual deployment risk.
 
 ---
 
-# Development Operations
+## Development Operations
 
 Local development SHOULD remain efficient.
 
@@ -539,7 +539,7 @@ However, development convenience must not silently become production architectur
 
 ---
 
-# Operational Secrets
+## Operational Secrets
 
 Operations may require access to credentials and secrets.
 
@@ -555,7 +555,7 @@ Secret management remains governed by EPIC-SEC-001.
 
 ---
 
-# Secret References
+## Secret References
 
 Operational configuration SHOULD prefer secret references over embedded secret values.
 
@@ -571,7 +571,7 @@ Runtime Value
 
 ---
 
-# Secret Exposure Prevention
+## Secret Exposure Prevention
 
 Secrets MUST NOT appear intentionally in:
 
@@ -588,7 +588,7 @@ Where accidental exposure occurs, the event should be treated according to Secur
 
 ---
 
-# Secret Rotation
+## Secret Rotation
 
 Credential rotation is an operational security procedure.
 
@@ -612,7 +612,7 @@ The exact ordering may differ depending on credential semantics.
 
 ---
 
-# Compromised Credentials
+## Compromised Credentials
 
 Suspected credential compromise may require:
 
@@ -634,7 +634,7 @@ Availability concerns must not prevent necessary security containment.
 
 ---
 
-# Configuration Security
+## Configuration Security
 
 Operational configuration can change security posture.
 
@@ -652,7 +652,7 @@ Such changes require appropriate validation.
 
 ---
 
-# Configuration Change Control
+## Configuration Change Control
 
 A security-sensitive configuration change SHOULD follow:
 
@@ -674,7 +674,7 @@ Evidence
 
 ---
 
-# Configuration Integrity
+## Configuration Integrity
 
 FamilyOS SHOULD be able to determine whether critical operational configuration is valid.
 
@@ -682,7 +682,7 @@ Future implementations may additionally support integrity verification for prote
 
 ---
 
-# Configuration Drift
+## Configuration Drift
 
 Unexpected configuration drift may create security and reliability risks.
 
@@ -704,7 +704,7 @@ may be introduced.
 
 ---
 
-# Operational Evidence Security
+## Operational Evidence Security
 
 Operational evidence can contain sensitive information about FamilyOS architecture and runtime behavior.
 
@@ -722,7 +722,7 @@ Evidence must therefore be protected appropriately.
 
 ---
 
-# Evidence Classification
+## Evidence Classification
 
 Operational evidence MAY be classified according to sensitivity.
 
@@ -742,7 +742,7 @@ Formal classification should only be introduced where it improves protection or 
 
 ---
 
-# Evidence Access
+## Evidence Access
 
 Access to operational evidence SHOULD reflect its sensitivity.
 
@@ -760,7 +760,7 @@ Security Incident Evidence
 
 ---
 
-# Evidence Minimization
+## Evidence Minimization
 
 Operational evidence SHOULD contain only information useful for legitimate operational purposes.
 
@@ -774,7 +774,7 @@ Minimum Necessary Evidence
 
 ---
 
-# Evidence Retention
+## Evidence Retention
 
 Retention should balance:
 
@@ -788,7 +788,7 @@ Indefinite retention is not the default.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Significant operational actions SHOULD produce trustworthy evidence of their execution and outcome.
 
@@ -803,7 +803,7 @@ These capabilities are not required prematurely.
 
 ---
 
-# Audit Trail
+## Audit Trail
 
 An audit trail records significant actions affecting protected runtime state.
 
@@ -829,7 +829,7 @@ Not every read operation requires audit logging.
 
 ---
 
-# Audit Event
+## Audit Event
 
 A conceptual audit event may contain:
 
@@ -848,7 +848,7 @@ Sensitive payload values should be excluded.
 
 ---
 
-# Audit Quality
+## Audit Quality
 
 Audit evidence should answer:
 
@@ -868,7 +868,7 @@ where those questions are relevant to the operation.
 
 ---
 
-# Operational Privacy
+## Operational Privacy
 
 FamilyOS operations may expose information belonging to family members.
 
@@ -876,7 +876,7 @@ Operational tooling MUST avoid treating private domain data as ordinary diagnost
 
 ---
 
-# Privacy by Operational Design
+## Privacy by Operational Design
 
 Operational interfaces should prefer:
 
@@ -895,7 +895,7 @@ Private Content
 
 ---
 
-# Diagnostic Data
+## Diagnostic Data
 
 Diagnostic information SHOULD be designed to reveal system behavior without exposing unnecessary domain data.
 
@@ -910,7 +910,7 @@ is generally preferable to logging the document contents.
 
 ---
 
-# Personal Data in Incidents
+## Personal Data in Incidents
 
 Incident records SHOULD avoid copying private user content unless strictly required for investigation.
 
@@ -918,7 +918,7 @@ Where sensitive evidence is required, access and retention should be controlled.
 
 ---
 
-# Backup Security
+## Backup Security
 
 Backups may contain some of the most sensitive information managed by FamilyOS.
 
@@ -933,7 +933,7 @@ Backup operations MUST therefore consider:
 
 ---
 
-# Backup Access
+## Backup Access
 
 Permission to operate FamilyOS does not automatically imply permission to access raw backup contents.
 
@@ -941,7 +941,7 @@ Backup access SHOULD remain independently controlled where practical.
 
 ---
 
-# Backup Encryption
+## Backup Encryption
 
 Backup encryption SHOULD follow EPIC-SEC-001 cryptographic requirements where confidentiality protection is necessary.
 
@@ -949,7 +949,7 @@ Operations must not invent independent cryptographic mechanisms.
 
 ---
 
-# Restore Authorization
+## Restore Authorization
 
 Restore is a privileged operation because it can replace active state.
 
@@ -959,7 +959,7 @@ High-impact restore may additionally require human approval.
 
 ---
 
-# Restore Integrity
+## Restore Integrity
 
 Before restoring protected data, FamilyOS SHOULD verify that the selected recovery source is appropriate and sufficiently trustworthy.
 
@@ -967,7 +967,7 @@ After restoration, data and runtime integrity must be validated.
 
 ---
 
-# Release Security
+## Release Security
 
 Operational deployment consumes artifacts approved by the Release Framework.
 
@@ -985,13 +985,13 @@ Runtime
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Where artifact-integrity mechanisms are provided by Build, Release, or Security frameworks, operations SHOULD verify them before activation.
 
 ---
 
-# Rollback Security
+## Rollback Security
 
 Rollback must target a known approved artifact or configuration state.
 
@@ -999,7 +999,7 @@ An incident does not justify deploying an unknown artifact merely because it app
 
 ---
 
-# Plugin Operational Security
+## Plugin Operational Security
 
 Plugins represent important operational trust boundaries.
 
@@ -1015,7 +1015,7 @@ These operations must respect plugin permissions and Security Framework controls
 
 ---
 
-# Plugin Isolation
+## Plugin Isolation
 
 A compromised or malfunctioning plugin SHOULD be isolatable where architecture permits.
 
@@ -1033,7 +1033,7 @@ Validate Core Runtime
 
 ---
 
-# Plugin Privileges
+## Plugin Privileges
 
 Operational tooling MUST NOT silently expand plugin privileges.
 
@@ -1041,7 +1041,7 @@ Plugin permissions remain governed by the appropriate FamilyOS plugin and securi
 
 ---
 
-# External Integration Security
+## External Integration Security
 
 Operational management of external integrations may include:
 
@@ -1056,7 +1056,7 @@ These controls can affect trust boundaries.
 
 ---
 
-# Integration Disablement
+## Integration Disablement
 
 FamilyOS SHOULD support controlled disablement of risky or failing integrations where architecture permits.
 
@@ -1064,7 +1064,7 @@ This may be necessary for both incident containment and security response.
 
 ---
 
-# Operational Network Security
+## Operational Network Security
 
 Where FamilyOS exposes operational interfaces over a network, those interfaces SHOULD be protected according to their risk.
 
@@ -1080,7 +1080,7 @@ The framework remains infrastructure-neutral.
 
 ---
 
-# Remote Administration
+## Remote Administration
 
 Remote administrative capabilities create additional attack surface.
 
@@ -1090,7 +1090,7 @@ A local-only operational interface is preferable when remote administration prov
 
 ---
 
-# Threat Model Integration
+## Threat Model Integration
 
 Operational capabilities SHOULD be included in FamilyOS threat modeling.
 
@@ -1120,7 +1120,7 @@ Operational Denial of Service
 
 ---
 
-# Threat-Driven Controls
+## Threat-Driven Controls
 
 Operational controls should respond to meaningful threats rather than accumulate without justification.
 
@@ -1140,7 +1140,7 @@ Evidence
 
 ---
 
-# Break-Glass Access
+## Break-Glass Access
 
 Emergency access may eventually be required for severe operational conditions.
 
@@ -1157,7 +1157,7 @@ If introduced, it SHOULD include:
 
 ---
 
-# Emergency Does Not Mean Uncontrolled
+## Emergency Does Not Mean Uncontrolled
 
 The governing principle is:
 
@@ -1165,7 +1165,7 @@ The governing principle is:
 
 ---
 
-# Operational Governance
+## Operational Governance
 
 Operational governance defines how important runtime decisions are controlled.
 
@@ -1179,7 +1179,7 @@ Governance should remain proportional to:
 
 ---
 
-# Governance Objectives
+## Governance Objectives
 
 Governance should help ensure:
 
@@ -1201,7 +1201,7 @@ without creating unnecessary bureaucracy.
 
 ---
 
-# Governance Levels
+## Governance Levels
 
 A lightweight governance model may distinguish:
 
@@ -1219,7 +1219,7 @@ The exact labels need not become implementation types unless useful.
 
 ---
 
-# Routine Operations
+## Routine Operations
 
 Routine operations may include:
 
@@ -1232,7 +1232,7 @@ These should require minimal governance.
 
 ---
 
-# Controlled Operations
+## Controlled Operations
 
 Controlled operations may include:
 
@@ -1245,7 +1245,7 @@ These require appropriate authorization and verification.
 
 ---
 
-# High-Risk Operations
+## High-Risk Operations
 
 High-risk operations may include:
 
@@ -1258,7 +1258,7 @@ These may require additional approval.
 
 ---
 
-# Emergency Operations
+## Emergency Operations
 
 Emergency operations prioritize containment and recovery while preserving minimum necessary security controls.
 
@@ -1266,7 +1266,7 @@ Emergency procedures should be predefined where possible.
 
 ---
 
-# Change Governance
+## Change Governance
 
 Operational changes SHOULD be deliberate.
 
@@ -1292,7 +1292,7 @@ The process may be automated for low-risk deterministic changes.
 
 ---
 
-# Change Scope
+## Change Scope
 
 Operational change may include:
 
@@ -1309,7 +1309,7 @@ Not every runtime event is a governed change.
 
 ---
 
-# Change Reversibility
+## Change Reversibility
 
 Before high-risk changes, operators SHOULD understand whether the action is:
 
@@ -1325,7 +1325,7 @@ Irreversible changes require stronger caution.
 
 ---
 
-# Change Verification
+## Change Verification
 
 Change completion requires verification of resulting state.
 
@@ -1343,7 +1343,7 @@ Expected State?
 
 ---
 
-# Operational Ownership
+## Operational Ownership
 
 Operationally significant components SHOULD have identifiable ownership.
 
@@ -1365,7 +1365,7 @@ The model remains valuable as the project grows.
 
 ---
 
-# Separation of Duties
+## Separation of Duties
 
 Strict separation of duties is not required for every FamilyOS deployment.
 
@@ -1385,7 +1385,7 @@ where organizational scale or risk requires it.
 
 ---
 
-# Automation Governance
+## Automation Governance
 
 Automation is an operational actor.
 
@@ -1409,7 +1409,7 @@ Evidence
 
 ---
 
-# Automation Scope
+## Automation Scope
 
 Automation SHOULD be narrowly scoped to its intended function.
 
@@ -1427,7 +1427,7 @@ restore_backup
 
 ---
 
-# Automation Guardrails
+## Automation Guardrails
 
 Operational automation SHOULD define:
 
@@ -1441,7 +1441,7 @@ Operational automation SHOULD define:
 
 ---
 
-# Automation Failure
+## Automation Failure
 
 Automation failure must remain visible.
 
@@ -1449,7 +1449,7 @@ Automation MUST NOT repeatedly execute privileged actions indefinitely without e
 
 ---
 
-# Automated Security Actions
+## Automated Security Actions
 
 Security-related automation may perform actions such as:
 
@@ -1461,7 +1461,7 @@ Such automation requires particularly clear conditions and bounded authority.
 
 ---
 
-# Incident Governance
+## Incident Governance
 
 During incidents, governance should support rapid but controlled action.
 
@@ -1471,7 +1471,7 @@ They do not justify unknown or unauditable actions.
 
 ---
 
-# Incident Authority
+## Incident Authority
 
 Incident responders SHOULD know which actions they are authorized to perform.
 
@@ -1479,7 +1479,7 @@ Ambiguous authority during an incident can delay containment or cause unsafe int
 
 ---
 
-# Incident Evidence Access
+## Incident Evidence Access
 
 Incident responders may require temporary access to sensitive evidence.
 
@@ -1492,7 +1492,7 @@ Such access should remain:
 
 ---
 
-# Post-Incident Governance
+## Post-Incident Governance
 
 Significant incidents SHOULD review whether:
 
@@ -1504,7 +1504,7 @@ Significant incidents SHOULD review whether:
 
 ---
 
-# Compliance Integration
+## Compliance Integration
 
 Operational controls may contribute to FamilyOS compliance evidence.
 
@@ -1528,7 +1528,7 @@ Compliance evidence should reuse existing framework artifacts where possible.
 
 ---
 
-# Policy as Code
+## Policy as Code
 
 Operational governance rules MAY eventually be represented as executable policy.
 
@@ -1548,7 +1548,7 @@ Policy automation should only be introduced when requirements are stable enough 
 
 ---
 
-# Governance Automation
+## Governance Automation
 
 Stable governance checks SHOULD be candidates for automation.
 
@@ -1564,7 +1564,7 @@ Human approval should remain where judgment is necessary.
 
 ---
 
-# Security Validation
+## Security Validation
 
 Operational security controls SHOULD be validated through testing.
 
@@ -1580,7 +1580,7 @@ Tests may include:
 
 ---
 
-# Negative Testing
+## Negative Testing
 
 Security testing should include prohibited behavior.
 
@@ -1606,7 +1606,7 @@ REDACT / DENY
 
 ---
 
-# Governance Validation
+## Governance Validation
 
 Governance validation may verify that:
 
@@ -1618,7 +1618,7 @@ Governance validation may verify that:
 
 ---
 
-# Security Failure Behavior
+## Security Failure Behavior
 
 When an operational security check fails, FamilyOS SHOULD fail safely.
 
@@ -1642,7 +1642,7 @@ Continue Anyway
 
 ---
 
-# Authorization Failure
+## Authorization Failure
 
 Authorization failure MUST NOT partially execute the protected operation.
 
@@ -1660,7 +1660,7 @@ No State Change
 
 ---
 
-# Governance Failure
+## Governance Failure
 
 If required governance conditions cannot be satisfied for a high-risk operation, the default should be to stop rather than silently downgrade safeguards.
 
@@ -1668,7 +1668,7 @@ Emergency procedures, if available, should be explicit.
 
 ---
 
-# Security Observability
+## Security Observability
 
 Operational security events should integrate with the Observability Framework.
 
@@ -1698,7 +1698,7 @@ Event design must avoid exposing protected information.
 
 ---
 
-# Security Alerting
+## Security Alerting
 
 Alerts should focus on actionable security conditions.
 
@@ -1714,7 +1714,7 @@ Not every security event requires an alert.
 
 ---
 
-# Operational Governance Evidence
+## Operational Governance Evidence
 
 Governance evidence may need to demonstrate:
 
@@ -1734,7 +1734,7 @@ Evidence depth should correspond to operational risk.
 
 ---
 
-# Minimal Initial Security Model
+## Minimal Initial Security Model
 
 The first Operations implementation SHOULD avoid creating a large administration subsystem.
 
@@ -1758,7 +1758,7 @@ This is sufficient to establish the correct architecture.
 
 ---
 
-# Minimal Initial Governance
+## Minimal Initial Governance
 
 Initial governance SHOULD focus on:
 
@@ -1773,7 +1773,7 @@ Complex approval workflows are not required initially.
 
 ---
 
-# Future Security Evolution
+## Future Security Evolution
 
 Future operational maturity may introduce:
 
@@ -1790,7 +1790,7 @@ These capabilities should be driven by concrete requirements.
 
 ---
 
-# Future Governance Evolution
+## Future Governance Evolution
 
 Governance may evolve from:
 
@@ -1808,129 +1808,129 @@ without changing the fundamental operational model.
 
 ---
 
-# Security Invariants
+## Security Invariants
 
-## Invariant 1 — No Implicit Administrative Trust
+### Invariant 1 — No Implicit Administrative Trust
 
 Operational access does not bypass authentication and authorization merely because it is administrative.
 
-## Invariant 2 — Least Privilege
+### Invariant 2 — Least Privilege
 
 Operational actors receive only the permissions required for their responsibilities.
 
-## Invariant 3 — Secrets Remain Protected
+### Invariant 3 — Secrets Remain Protected
 
 Operational interfaces and evidence must not intentionally expose secret values.
 
-## Invariant 4 — High-Risk Actions Are Controlled
+### Invariant 4 — High-Risk Actions Are Controlled
 
 Destructive and security-sensitive operations require safeguards proportional to their impact.
 
-## Invariant 5 — Security Failure Prevents Protected Action
+### Invariant 5 — Security Failure Prevents Protected Action
 
 Failed authorization or required security validation must prevent protected state change.
 
-## Invariant 6 — Automation Has Bounded Authority
+### Invariant 6 — Automation Has Bounded Authority
 
 Automated operational actors must not possess unrestricted authority without necessity.
 
-## Invariant 7 — Emergency Access Remains Accountable
+### Invariant 7 — Emergency Access Remains Accountable
 
 Emergency procedures may accelerate action but must not eliminate accountability.
 
-## Invariant 8 — Operational Evidence Is Protected
+### Invariant 8 — Operational Evidence Is Protected
 
 Sensitive operational evidence must receive appropriate access and retention controls.
 
 ---
 
-# Governance Invariants
+## Governance Invariants
 
-## Invariant 1 — Significant Change Is Intentional
+### Invariant 1 — Significant Change Is Intentional
 
 Operational changes affecting protected environments should be deliberate and attributable where necessary.
 
-## Invariant 2 — Environment Is Explicit
+### Invariant 2 — Environment Is Explicit
 
 Significant actions should target an unambiguous environment.
 
-## Invariant 3 — Verification Is Required
+### Invariant 3 — Verification Is Required
 
 A governed operational action is not complete until its result has been evaluated.
 
-## Invariant 4 — Governance Is Proportional
+### Invariant 4 — Governance Is Proportional
 
 Low-risk actions must not accumulate unnecessary bureaucracy.
 
-## Invariant 5 — Existing Frameworks Remain Authoritative
+### Invariant 5 — Existing Frameworks Remain Authoritative
 
 Operations must not create competing security, release, observability, or compliance architectures.
 
 ---
 
-# Operational Security Anti-Patterns
+## Operational Security Anti-Patterns
 
 FamilyOS MUST avoid several security anti-patterns.
 
-## Admin Means Trusted
+### Admin Means Trusted
 
 Administrative interfaces must not automatically bypass security.
 
-## Shared Root Credential
+### Shared Root Credential
 
 All operational actors should not depend indefinitely on one unrestricted shared credential.
 
-## Secrets in Logs
+### Secrets in Logs
 
 Operational convenience never justifies intentional secret logging.
 
-## Production Debug Bypass
+### Production Debug Bypass
 
 Temporary diagnostic mechanisms must not become permanent security bypasses.
 
-## Unlimited Automation Privilege
+### Unlimited Automation Privilege
 
 Automation should not receive full administrative authority merely for convenience.
 
-## Emergency Without Evidence
+### Emergency Without Evidence
 
 Emergency response should not become invisible operational activity.
 
-## Restore Without Authorization
+### Restore Without Authorization
 
 Recovery urgency does not make destructive restore safe by default.
 
 ---
 
-# Governance Anti-Patterns
+## Governance Anti-Patterns
 
-## Process for Process Sake
+### Process for Process Sake
 
 Governance must reduce operational risk, not simply create paperwork.
 
-## Approval Everywhere
+### Approval Everywhere
 
 Routine low-risk operations should not require unnecessary approval chains.
 
-## No Ownership
+### No Ownership
 
 Significant operational components should not become nobody's responsibility.
 
-## Change Without Verification
+### Change Without Verification
 
 A successful command is not proof of a successful operational change.
 
-## Unrecorded High-Risk Change
+### Unrecorded High-Risk Change
 
 Important runtime changes should not depend solely on human memory.
 
-## Governance Outside Automation
+### Governance Outside Automation
 
 Automated operations must follow the same governance principles as manual operations.
 
 ---
 
-# Reference Privileged Operation Flow
+## Reference Privileged Operation Flow
 
 ```text
 Operational Request
@@ -1962,7 +1962,7 @@ Assess Operational Risk
 
 ---
 
-# Reference Security Failure Flow
+## Reference Security Failure Flow
 
 ```text
 Operational Request
@@ -1982,7 +1982,7 @@ Alert if Actionable
 
 ---
 
-# Reference Emergency Flow
+## Reference Emergency Flow
 
 ```text
 Critical Incident
@@ -2010,7 +2010,7 @@ Normal Access Sufficient?
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Operational security and governance are successful when FamilyOS can demonstrate that:
 
@@ -2029,7 +2029,7 @@ Operational security and governance are successful when FamilyOS can demonstrate
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After implementation, FamilyOS operational control should evolve from:
 
@@ -2061,7 +2061,7 @@ This establishes a secure operational control boundary without requiring excessi
 
 ---
 
-# Conclusion
+## Conclusion
 
 Operational capabilities are powerful because they can directly alter the state of FamilyOS.
 

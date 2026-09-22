@@ -16,7 +16,7 @@
 
 ---
 
-# Changelog Policy
+## Changelog Policy
 
 This changelog records significant changes to the canonical FamilyOS Build Framework.
 
@@ -34,7 +34,7 @@ Post-release corrections SHALL be recorded separately and SHALL NOT move or recr
 
 ---
 
-# Current Version
+## Current Version
 
 ```text
 Framework Version:       1.0.0
@@ -56,7 +56,7 @@ The canonical Build Framework documentation is complete and the current reposito
 
 ---
 
-# Post-Framework Implementation — Dependency Reproducibility Baseline
+## Post-Framework Implementation — Dependency Reproducibility Baseline
 
 Commit `113148e` established the first incremental technical implementation slice under the completed Build Framework documentation baseline.
 
@@ -94,7 +94,7 @@ CI, artifact integrity and hashes, SBOM generation, provenance, vulnerability sc
 
 ---
 
-# Post-Framework Implementation — Canonical CI Validation Baseline
+## Post-Framework Implementation — Canonical CI Validation Baseline
 
 Commit `504bd19` established the second incremental technical implementation slice after the Dependency Reproducibility Baseline.
 
@@ -123,7 +123,7 @@ Build execution, candidate artifacts, artifact validation, artifact integrity, f
 
 ---
 
-# Post-Framework Reconciliation — Local Developer Workflow
+## Post-Framework Reconciliation — Local Developer Workflow
 
 The repository root now documents the implemented Python 3.13 local developer
 workflow. The guide establishes the discoverable controlled bootstrap,
@@ -142,7 +142,7 @@ historical tag `v4.7.0-build-framework`.
 
 ---
 
-# Post-Framework Implementation — Canonical Package Build
+## Post-Framework Implementation — Canonical Package Build
 
 The first Canonical Package Build slice introduces `familyos build` as the
 repository-owned public package-build contract. The command follows the
@@ -174,7 +174,7 @@ integrity, Build ID, Build Evidence, CI build invocation, release handoff, and
 publication remained future work. The framework remains version `1.0.0`, and
 historical tag `v4.7.0-build-framework` remains unchanged.
 
-## Level 14 Artifact Discovery — 2026-08-14
+### Level 14 Artifact Discovery — 2026-08-14
 
 Added application-owned discovery of the current Python package output set.
 The execution adapter now reports all direct files created or replaced in the
@@ -188,7 +188,7 @@ trust, Build Evidence, CI build invocation, release, and publication remain
 open. Framework version `1.0.0` and historical tag
 `v4.7.0-build-framework` are unchanged.
 
-## CI Package Build Integration — 2026-08-14
+### CI Package Build Integration — 2026-08-14
 
 Status: REMOTELY VERIFIED.
 
@@ -214,7 +214,7 @@ versions target Node.js 20 and were forced to Node.js 24. Action updates are
 outside this evidence slice. Framework version `1.0.0` and historical tag
 `v4.7.0-build-framework` are unchanged.
 
-## Python Package Structural Validation — 2026-08-14
+### Python Package Structural Validation — 2026-08-14
 
 The canonical `familyos build` application flow now validates the exact wheel
 and source-distribution candidates returned by successful Artifact Discovery.
@@ -240,7 +240,7 @@ Level 27 artifact validation remains open until a later remote workflow run
 provides direct evidence. Framework version `1.0.0` and historical tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Remote Structural-Validation Evidence Reconciliation — 2026-08-14
+### Remote Structural-Validation Evidence Reconciliation — 2026-08-14
 
 This is a documentation/checklist-only reconciliation. It introduces no new
 technical validation behavior; it records remote execution of the structural
@@ -265,7 +265,7 @@ recorded GitHub Actions Node.js 20 deprecation warning recurred in this run;
 that maintenance debt is unchanged and is not duplicated here. Framework
 version `1.0.0` and historical tag `v4.7.0-build-framework` are unchanged.
 
-## Python Package Content and Metadata Validation — 2026-08-14
+### Python Package Content and Metadata Validation — 2026-08-14
 
 The existing application-owned Python package validator now parses emitted
 `Requires-Python` and `Requires-Dist` metadata using the standards-compliant
@@ -295,7 +295,7 @@ workflow is unchanged; remote evidence for this increment requires a later
 committed run. Framework version `1.0.0` and historical tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Python Package Functional Validation — 2026-08-14
+### Python Package Functional Validation — 2026-08-14
 
 The existing canonical build use case now supports explicit opt-in wheel
 functional validation after successful Artifact Discovery and static package
@@ -324,7 +324,7 @@ provenance, trust, signing, release, publication, promotion, or deployment
 capability is introduced. Framework version `1.0.0` and historical tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Python Source Distribution Rebuildability — 2026-08-14
+### Python Source Distribution Rebuildability — 2026-08-14
 
 The canonical production adapter continues to invoke pypa/build without
 explicit distribution flags. That frontend behavior intentionally creates the
@@ -353,7 +353,7 @@ provenance, trust, signing, release, publication, promotion, or deployment
 capability is introduced. Framework version `1.0.0` and historical tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Isolated Build-Backend Dependency Version Determinism — 2026-08-14
+### Isolated Build-Backend Dependency Version Determinism — 2026-08-14
 
 The production package adapter now supplies pypa/build with the absolute
 repository `requirements.txt` path through
@@ -385,9 +385,9 @@ unchanged.
 
 ---
 
-# Historical Publication
+## Historical Publication
 
-## Version 1.0.0
+### Version 1.0.0
 
 **Framework:** Build Framework
 **EPIC:** EPIC-BLD-001
@@ -415,9 +415,9 @@ Post-release documentation normalization does not modify this historical referen
 
 ---
 
-# Version 1.0.0 — Framework Baseline
+## Version 1.0.0 — Framework Baseline
 
-## Added
+### Added
 
 The initial canonical Build Framework established:
 
@@ -446,7 +446,7 @@ The initial canonical Build Framework established:
 
 ---
 
-# Canonical Structure
+## Canonical Structure
 
 Version `1.0.0` defines exactly:
 
@@ -507,7 +507,7 @@ Revision-History.md
 
 ---
 
-# Architecture Baseline
+## Architecture Baseline
 
 The Build Framework established the canonical build flow:
 
@@ -533,7 +533,7 @@ Artifact trust depends on controlled and validated build conditions.
 
 ---
 
-# Artifact Trust Model
+## Artifact Trust Model
 
 The framework establishes explicit separation between:
 
@@ -563,7 +563,7 @@ Trusted artifacts depend on appropriate evidence including:
 
 ---
 
-# Framework Boundaries
+## Framework Boundaries
 
 EPIC-BLD-001 defines Build Framework responsibilities without absorbing responsibilities belonging to adjacent engineering frameworks.
 
@@ -592,7 +592,7 @@ The Release Framework owns release-domain responsibilities such as:
 
 ---
 
-# Validation Model
+## Validation Model
 
 The framework establishes evidence-based validation.
 
@@ -614,7 +614,7 @@ Only actual validation evidence may convert an applicable validation state to PA
 
 ---
 
-# Post-Release Revalidation
+## Post-Release Revalidation
 
 Following historical publication, EPIC-BLD-001 underwent canonical documentation normalization and repository revalidation.
 
@@ -632,9 +632,9 @@ The work preserved:
 
 ---
 
-# Post-Release Normalization
+## Post-Release Normalization
 
-## Changed
+### Changed
 
 The current canonical representation was normalized to improve:
 
@@ -650,7 +650,7 @@ The current canonical representation was normalized to improve:
 
 ---
 
-# YAML Normalization
+## YAML Normalization
 
 `EPIC.yaml` was normalized as a single valid machine-readable YAML document.
 
@@ -688,7 +688,7 @@ YAML / Filesystem Contract: PASS
 
 ---
 
-# Structural Revalidation
+## Structural Revalidation
 
 The current canonical repository representation was checked for:
 
@@ -715,7 +715,7 @@ Canonical Document References: PASS
 
 ---
 
-# Placeholder Revalidation
+## Placeholder Revalidation
 
 Documentation was checked for unresolved blocking placeholder markers.
 
@@ -734,7 +734,7 @@ Placeholder Validation: PASS
 
 ---
 
-# Join Defect Revalidation
+## Join Defect Revalidation
 
 Documentation normalization checked for accidental word joins introduced during transformations.
 
@@ -748,11 +748,11 @@ Join Defect Validation: PASS
 
 ---
 
-# Repository Quality Revalidation
+## Repository Quality Revalidation
 
 The current repository state was validated using the canonical engineering quality tools.
 
-## Ruff
+### Ruff
 
 Executed validation result:
 
@@ -768,7 +768,7 @@ Ruff: PASS
 
 ---
 
-## MyPy
+### MyPy
 
 Executed validation result:
 
@@ -784,7 +784,7 @@ MyPy: PASS — 527 source files
 
 ---
 
-## Pytest
+### Pytest
 
 Executed validation result:
 
@@ -800,7 +800,7 @@ Pytest: PASS — 1243 tests
 
 ---
 
-## Git Diff Validation
+### Git Diff Validation
 
 Executed:
 
@@ -818,7 +818,7 @@ DiffCheck: PASS
 
 ---
 
-# Quality Gate Summary
+## Quality Gate Summary
 
 Current executed quality evidence:
 
@@ -837,7 +837,7 @@ AUTOMATED QUALITY GATES: PASS
 
 ---
 
-# Historical Tag Revalidation
+## Historical Tag Revalidation
 
 The historical publication tag remains:
 
@@ -861,7 +861,7 @@ Historical Tag Integrity: PASS
 
 ---
 
-# Revalidation Outcome
+## Revalidation Outcome
 
 The current canonical Build Framework state satisfies the executed revalidation checks.
 
@@ -887,7 +887,7 @@ EPIC-BLD-001 REVALIDATION: PASS
 
 ---
 
-# Historical Integrity
+## Historical Integrity
 
 The post-release normalization SHALL NOT alter the historical release tag.
 
@@ -909,7 +909,7 @@ This preserves both historical provenance and current canonical correctness.
 
 ---
 
-# Release State
+## Release State
 
 The Build Framework is not awaiting its original release.
 
@@ -926,7 +926,7 @@ The current work represents post-release normalization and revalidation rather t
 
 ---
 
-# Validation State
+## Validation State
 
 The current authoritative validation state is:
 
@@ -953,7 +953,7 @@ because actual validation evidence has been obtained and recorded.
 
 ---
 
-# Current Canonical State
+## Current Canonical State
 
 ```text
 EPIC:                   EPIC-BLD-001
@@ -978,7 +978,7 @@ Historical Tag Policy:  Immutable
 
 ---
 
-# Final Changelog State
+## Final Changelog State
 
 EPIC-BLD-001 version `1.0.0` remains the completed canonical FamilyOS Build Framework.
 
@@ -1002,7 +1002,7 @@ Revalidation Result:    PASS
 
 ---
 
-# Minimal Build Context — Source Revision Capture — 2026-08-15
+## Minimal Build Context — Source Revision Capture — 2026-08-15
 
 Implemented the first concrete source-state portion of Build Context. The
 canonical package-build flow now captures source state exactly once before
@@ -1024,7 +1024,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Minimal Build Identity — 2026-08-15
+## Minimal Build Identity — 2026-08-15
 
 Implemented provider-neutral identity for canonical package-build executions.
 
@@ -1057,7 +1057,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Minimal Artifact Identity — 2026-08-16
+## Minimal Artifact Identity — 2026-08-16
 
 Implemented explicit identity metadata for structurally valid canonical package
 artifacts.
@@ -1095,7 +1095,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Minimal Artifact Integrity — 2026-08-16
+## Minimal Artifact Integrity — 2026-08-16
 
 Implemented minimal cryptographic integrity metadata for canonical package
 artifacts.
@@ -1133,7 +1133,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Minimal Artifact Manifest — 2026-08-21
+## Minimal Artifact Manifest — 2026-08-21
 
 Implemented minimal structured Artifact Manifest metadata for canonical package
 builds.
@@ -1168,7 +1168,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Build Validation Orchestration — 2026-08-21
+## Build Validation Orchestration — 2026-08-21
 
 Implemented the first explicit Build Validation orchestration layer for
 canonical package-build results.
@@ -1204,7 +1204,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Build Dependency Validation Integration — 2026-08-21
+## Build Dependency Validation Integration — 2026-08-21
 
 Integrated existing canonical dependency-validation results into Build
 Validation orchestration.
@@ -1238,7 +1238,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Build Toolchain Validation Integration — 2026-08-21
+## Build Toolchain Validation Integration — 2026-08-21
 
 Integrated explicit Build Toolchain validation into Build Validation
 orchestration.
@@ -1264,7 +1264,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Build Environment Validation Integration — 2026-08-21
+## Build Environment Validation Integration — 2026-08-21
 
 Integrated explicit Build Environment validation into Build Validation
 orchestration.
@@ -1290,7 +1290,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Build Input Validation Integration — 2026-08-21
+## Build Input Validation Integration — 2026-08-21
 
 Integrated explicit Build Input validation into Build Validation orchestration.
 
@@ -1317,7 +1317,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Build Configuration Validation Integration — 2026-08-21
+## Build Configuration Validation Integration — 2026-08-21
 
 Integrated explicit Build Configuration validation into Build Validation
 orchestration.
@@ -1344,7 +1344,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Minimum Build Evidence Integration — 2026-08-21
+## Minimum Build Evidence Integration — 2026-08-21
 
 Added a concrete immutable `BuildEvidence` aggregate and
 `BuildEvidenceFactory`.
@@ -1377,7 +1377,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Build Evidence Validation Integration — 2026-08-21
+## Build Evidence Validation Integration — 2026-08-21
 
 Integrated concrete `BuildEvidence` into Build Validation.
 
@@ -1403,7 +1403,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# CI Build Evidence Collection — 2026-08-22
+## CI Build Evidence Collection — 2026-08-22
 
 Added persistent canonical Build Evidence collection to the GitHub Actions
 package-build path.
@@ -1438,7 +1438,7 @@ publication tag `v4.7.0-build-framework` remain unchanged.
 
 ---
 
-# Local Developer Cleanup Completion — 2026-08-22
+## Local Developer Cleanup Completion — 2026-08-22
 
 Completed the remaining Local Developer Workflow cleanup documentation.
 
@@ -1474,7 +1474,7 @@ Framework version `1.0.0` and immutable historical publication tag
 
 ---
 
-# Artifact Output Classification Completion — 2026-08-22
+## Artifact Output Classification Completion — 2026-08-22
 
 Completed the remaining Artifact Discovery output-classification work.
 
@@ -1499,7 +1499,7 @@ Framework version `1.0.0` and immutable historical publication tag
 
 ---
 
-# Artifact Integrity Lifecycle Completion — 2026-08-22
+## Artifact Integrity Lifecycle Completion — 2026-08-22
 
 Completed the remaining Artifact Integrity lifecycle requirements.
 
@@ -1529,7 +1529,7 @@ Framework version `1.0.0` and immutable historical publication tag
 
 ---
 
-# Artifact Manifest Completion Reconciliation — 2026-08-22
+## Artifact Manifest Completion Reconciliation — 2026-08-22
 
 Reconciled Level 18 — Artifact Manifest with the implemented Build Evidence
 association.
@@ -1554,7 +1554,7 @@ Framework version `1.0.0` and immutable historical publication tag
 
 ---
 
-# CI Permissions Security Contract Completion — 2026-08-25
+## CI Permissions Security Contract Completion — 2026-08-25
 
 Completed Level 28 — CI Permissions.
 
@@ -1582,7 +1582,7 @@ Level 28 is complete at 9/9.
 
 ---
 
-# CI Caching Completion — 2026-08-25
+## CI Caching Completion — 2026-08-25
 
 Completed Level 29 — CI Caching.
 
@@ -1618,11 +1618,11 @@ Level 29 — CI Caching is complete at 8/8.
 Framework version `1.0.0` and immutable historical publication tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Level 30 — Artifact Transfer Across CI Jobs
+### Level 30 — Artifact Transfer Across CI Jobs
 
 Completed canonical artifact transfer across CI jobs.
 
-### Added
+#### Added
 
 * Added a distinct downstream `artifact-validation` CI job.
 * Added canonical package-candidate transfer through
@@ -1636,7 +1636,7 @@ Completed canonical artifact transfer across CI jobs.
 * Added structural and behavioral artifact-transfer CI contracts.
 * Added explicit no-downstream-rebuild enforcement.
 
-### Validation
+#### Validation
 
 * Canonical package artifacts are built once in the producer job.
 * Downstream validation consumes the transferred artifact bytes.
@@ -1649,11 +1649,11 @@ Completed canonical artifact transfer across CI jobs.
 
 Level 30 — Artifact Transfer Across CI Jobs is complete.
 
-## Level 31 — Build-Once-Promote
+### Level 31 — Build-Once-Promote
 
 Completed canonical Build-to-Release handoff semantics.
 
-### Added
+#### Added
 
 * Added explicit Release handoff eligibility to the canonical Build
   Result.
@@ -1669,7 +1669,7 @@ Completed canonical Build-to-Release handoff semantics.
   authority substitution, digest recalculation, and Build-owned release
   publication.
 
-### Validation
+#### Validation
 
 * Trusted artifact eligibility requires successful execution and Build
   Validation with matching Build IDs.
@@ -1687,7 +1687,7 @@ Completed canonical Build-to-Release handoff semantics.
 
 Level 31 — Build-Once-Promote is complete at 9/9.
 
-## Level 40 — Reproducibility Baseline Progress — 2026-08-26
+### Level 40 — Reproducibility Baseline Progress — 2026-08-26
 
 Advanced the Level 40 reproducibility baseline by controlling unnecessary
 wall-clock influence at the canonical Python package-builder boundary.
@@ -1722,7 +1722,7 @@ Level 40 currently stands at 5/11.
 Framework version `1.0.0` and immutable historical publication tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Level 40 — Existing Reproducibility Contract Closures — 2026-08-26
+### Level 40 — Existing Reproducibility Contract Closures — 2026-08-26
 
 Closed three Level 40 reproducibility requirements using existing canonical
 Build behavior and focused validation evidence.
@@ -1750,7 +1750,7 @@ dependency.
 Framework version `1.0.0` and immutable historical publication tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Level 40 — Random Artifact Isolation — 2026-08-26
+### Level 40 — Random Artifact Isolation — 2026-08-26
 
 Validated that random canonical Build identity does not influence trusted
 package artifact content.
@@ -1776,7 +1776,7 @@ Level 40 advances from 8/11 to 9/11.
 Framework version `1.0.0` and immutable historical publication tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Level 40 — Canonical Source Identity Closure — 2026-08-26
+### Level 40 — Canonical Source Identity Closure — 2026-08-26
 
 Closed the Level 40 canonical source identity requirement using existing
 Build architecture and focused validation evidence.
@@ -1808,7 +1808,7 @@ network dependency.
 Framework version `1.0.0` and immutable historical publication tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Level 40 — Network Dependency Closure — 2026-08-26
+### Level 40 — Network Dependency Closure — 2026-08-26
 
 Closed the final Level 40 reproducibility requirement by validating that
 network dependency is constrained by repository-owned dependency authority.
@@ -1840,7 +1840,7 @@ complete.
 Framework version `1.0.0` and immutable historical publication tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Level 41 — Build Context Fingerprint — 2026-08-26
+### Level 41 — Build Context Fingerprint — 2026-08-26
 
 Implemented canonical Build Context fingerprinting for reproducibility and
 future cache-oriented identity.
@@ -1870,7 +1870,7 @@ Level 41 — Build Context Fingerprint is complete at 10/10.
 Framework version 1.0.0 and immutable historical publication tag
 v4.7.0-build-framework remain unchanged.
 
-## Level 42 — Reproducibility Testing — 2026-08-26
+### Level 42 — Reproducibility Testing — 2026-08-26
 
 Implemented canonical artifact reproducibility comparison for equivalent Build
 Contexts.
@@ -1897,7 +1897,7 @@ Level 42 — Reproducibility Testing is complete at 9/9.
 Framework version 1.0.0 and immutable historical publication tag
 v4.7.0-build-framework remain unchanged.
 
-## Level 43 — Supply Chain Evidence — 2026-08-26
+### Level 43 — Supply Chain Evidence — 2026-08-26
 
 Established the current canonical Build provenance boundary.
 
@@ -1938,7 +1938,7 @@ explicit architectural deferral to Level 46.
 Framework version 1.0.0 and immutable historical publication tag
 `v4.7.0-build-framework` remain unchanged.
 
-## Level 44 — SBOM Evaluation — 2026-08-26
+### Level 44 — SBOM Evaluation — 2026-08-26
 
 Completed the architectural evaluation of Software Bill of Materials
 generation.
@@ -1975,7 +1975,7 @@ Framework version 1.0.0 and immutable historical publication tag
 `v4.7.0-build-framework` remain unchanged.
 
 
-## Level 45 — Artifact Signing Evaluation — 2026-08-26
+### Level 45 — Artifact Signing Evaluation — 2026-08-26
 
 Artifact Signing Evaluation was completed without introducing signing
 implementation or a new trust claim.
@@ -2001,7 +2001,7 @@ authority.
 **Artifact Signing Adoption: Deferred by Governance.**
 
 
-## Level 46 — Controlled Builder Evaluation — 2026-08-26
+### Level 46 — Controlled Builder Evaluation — 2026-08-26
 
 Controlled Builder Evaluation was completed without introducing new build
 infrastructure.
@@ -2033,7 +2033,7 @@ Context, and Build Evidence semantics.
 **Controlled Builder Adoption: Deferred Until Demonstrated Need.**
 
 
-## Level 47 — Artifact Registry Evaluation — 2026-08-26
+### Level 47 — Artifact Registry Evaluation — 2026-08-26
 
 Artifact Registry Evaluation was completed without introducing persistent
 registry infrastructure or package publication behavior.
@@ -2064,7 +2064,7 @@ than rebuilding them.
 
 **Artifact Registry Adoption: Deferred Until Release Distribution Requires Persistent Artifact Storage.**
 
-## Level 48 — Remote Build Execution Evaluation — 2026-08-26
+### Level 48 — Remote Build Execution Evaluation — 2026-08-26
 
 Completed Level 48 — Remote Build Execution Evaluation.
 
@@ -2101,7 +2101,7 @@ cache, dependency, or CI execution authority was introduced by this Level.
 
 Level 48 is complete at 8/8.
 
-## Level 49 — Performance Optimization — 2026-08-26
+### Level 49 — Performance Optimization — 2026-08-26
 
 Completed Level 49 — Performance Optimization.
 
@@ -2135,7 +2135,7 @@ Decision:
 
 Level 49 is complete at 11/11.
 
-## Level 50 — Final Build Framework Implementation Validation — 2026-08-26
+### Level 50 — Final Build Framework Implementation Validation — 2026-08-26
 
 Completed the final implementation validation of EPIC-BLD-001.
 

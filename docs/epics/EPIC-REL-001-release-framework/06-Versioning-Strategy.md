@@ -1,8 +1,8 @@
 # Release Framework
 
-# 06 Versioning Strategy
+## 06 Versioning Strategy
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines the versioning strategy used to identify and order official FamilyOS releases.
 
@@ -23,7 +23,7 @@ The FamilyOS versioning strategy must remain predictable, explicit, automation-f
 
 ---
 
-# Purpose
+## Purpose
 
 The Versioning Strategy establishes:
 
@@ -46,7 +46,7 @@ The strategy prevents arbitrary version selection and inconsistent release ident
 
 ---
 
-# Versioning Principle
+## Versioning Principle
 
 Every official FamilyOS release MUST have an explicit version identity.
 
@@ -62,7 +62,7 @@ The same version MUST NOT identify materially different official releases.
 
 ---
 
-# Canonical Version Model
+## Canonical Version Model
 
 FamilyOS adopts a semantic version structure as its default release versioning model.
 
@@ -82,7 +82,7 @@ The three components communicate different types of evolution.
 
 ---
 
-# Major Version
+## Major Version
 
 The `MAJOR` component represents significant platform evolution.
 
@@ -115,7 +115,7 @@ PATCH = 0
 
 ---
 
-# Minor Version
+## Minor Version
 
 The `MINOR` component represents backward-compatible feature or capability evolution within a major release line.
 
@@ -145,7 +145,7 @@ PATCH = 0
 
 ---
 
-# Patch Version
+## Patch Version
 
 The `PATCH` component represents backward-compatible corrections or limited maintenance evolution.
 
@@ -170,7 +170,7 @@ Example:
 
 ---
 
-# Version Ordering
+## Version Ordering
 
 Versions follow numeric ordering.
 
@@ -194,7 +194,7 @@ Automation MUST NOT rely on lexical string ordering where that could produce inc
 
 ---
 
-# Pre-Release Versions
+## Pre-Release Versions
 
 FamilyOS may use pre-release identifiers before stable publication.
 
@@ -216,7 +216,7 @@ Pre-release versions represent a release line that has not yet reached final sta
 
 ---
 
-# Pre-Release Ordering
+## Pre-Release Ordering
 
 Within a target version, maturity normally progresses as:
 
@@ -245,7 +245,7 @@ A stable version has higher release maturity than its associated pre-release ver
 
 ---
 
-# Alpha Releases
+## Alpha Releases
 
 Alpha releases represent early pre-release states.
 
@@ -267,7 +267,7 @@ Example:
 
 ---
 
-# Beta Releases
+## Beta Releases
 
 Beta releases represent more mature pre-release states.
 
@@ -286,7 +286,7 @@ Example:
 
 ---
 
-# Release Candidates
+## Release Candidates
 
 Release candidate versions use:
 
@@ -316,7 +316,7 @@ change required
 
 ---
 
-# Stable Releases
+## Stable Releases
 
 A stable release omits the pre-release suffix.
 
@@ -330,7 +330,7 @@ A stable release represents an officially qualified release intended for normal 
 
 ---
 
-# Release Candidate to Stable Promotion
+## Release Candidate to Stable Promotion
 
 The preferred model is:
 
@@ -350,7 +350,7 @@ If material changes occur, renewed candidate validation is required.
 
 ---
 
-# Build Metadata
+## Build Metadata
 
 Where technically useful, version identifiers MAY include build metadata.
 
@@ -373,7 +373,7 @@ Official public release identity should remain as simple as practical.
 
 ---
 
-# Version Domain
+## Version Domain
 
 A version is meaningful within a defined release domain.
 
@@ -395,7 +395,7 @@ Independent versioning should only be introduced where it provides clear enginee
 
 ---
 
-# Platform Version
+## Platform Version
 
 The FamilyOS platform version identifies an official integrated platform release.
 
@@ -418,7 +418,7 @@ The platform version is the primary high-level release identity where applicable
 
 ---
 
-# Component Version
+## Component Version
 
 A component MAY have an independent version when its lifecycle requires independent release identity.
 
@@ -434,7 +434,7 @@ Component versioning MUST remain compatible with the platform release model.
 
 ---
 
-# Avoiding Version Proliferation
+## Avoiding Version Proliferation
 
 FamilyOS SHOULD avoid creating independent versions merely because an asset can technically be versioned.
 
@@ -451,7 +451,7 @@ A component should receive an independent version only when it has a meaningful 
 
 ---
 
-# Plugin Versioning
+## Plugin Versioning
 
 Official plugins MAY use semantic versions independently from the platform.
 
@@ -476,7 +476,7 @@ The precise compatibility format may be defined by plugin metadata specification
 
 ---
 
-# Framework Versioning
+## Framework Versioning
 
 FamilyOS engineering frameworks may be released using platform milestone versions or independently tracked framework versions according to repository governance.
 
@@ -492,7 +492,7 @@ The suffix communicates the release subject.
 
 ---
 
-# Versioned Tag Pattern
+## Versioned Tag Pattern
 
 A canonical FamilyOS tag pattern may use:
 
@@ -518,7 +518,7 @@ The versioning strategy governs the numeric version semantics.
 
 ---
 
-# Version and Tag Separation
+## Version and Tag Separation
 
 A version and a Git tag are related but distinct concepts.
 
@@ -544,7 +544,7 @@ The framework MUST NOT treat the entire tag string as the version value when rel
 
 ---
 
-# Version Uniqueness
+## Version Uniqueness
 
 An official version MUST be unique within its release domain.
 
@@ -564,7 +564,7 @@ Reusing an official version for different content is prohibited.
 
 ---
 
-# Version Immutability
+## Version Immutability
 
 Once an official version is published, its meaning MUST remain stable.
 
@@ -588,7 +588,7 @@ artifact silently replaced
 
 ---
 
-# Version Intent
+## Version Intent
 
 Version selection begins before final release publication.
 
@@ -610,7 +610,7 @@ This is not yet an official release version until release identity is finalized.
 
 ---
 
-# Tentative Version
+## Tentative Version
 
 A tentative version MAY change before release candidate creation.
 
@@ -632,7 +632,7 @@ Tentative versions must not be confused with published versions.
 
 ---
 
-# Candidate Version
+## Candidate Version
 
 Candidate versions identify specific release candidates.
 
@@ -646,7 +646,7 @@ Candidate numbering SHOULD increase monotonically for the same target stable ver
 
 ---
 
-# Final Version
+## Final Version
 
 The final release version becomes authoritative when the release reaches the release identity stage.
 
@@ -664,7 +664,7 @@ final version
 
 ---
 
-# Version Calculation
+## Version Calculation
 
 Version calculation may initially remain a governed manual process.
 
@@ -685,7 +685,7 @@ Final authority remains defined by governance.
 
 ---
 
-# Change Classification
+## Change Classification
 
 Version decisions should consider the nature of changes.
 
@@ -717,7 +717,7 @@ Security, documentation, and internal changes may map according to compatibility
 
 ---
 
-# Breaking Changes
+## Breaking Changes
 
 A breaking change is one that invalidates a supported compatibility expectation.
 
@@ -734,7 +734,7 @@ Breaking changes SHOULD normally require a major version increment.
 
 ---
 
-# Compatible Features
+## Compatible Features
 
 New backward-compatible functionality SHOULD normally require a minor version increment.
 
@@ -748,7 +748,7 @@ Examples include:
 
 ---
 
-# Compatible Fixes
+## Compatible Fixes
 
 Backward-compatible corrections SHOULD normally require a patch increment.
 
@@ -762,7 +762,7 @@ Examples include:
 
 ---
 
-# Security Releases
+## Security Releases
 
 Security releases follow normal version semantics unless security policy requires exceptional treatment.
 
@@ -790,7 +790,7 @@ Security urgency does not eliminate versioning rules.
 
 ---
 
-# Emergency Releases
+## Emergency Releases
 
 Emergency releases SHOULD use the next valid version according to change impact.
 
@@ -807,7 +807,7 @@ critical issue
 
 ---
 
-# Maintenance Releases
+## Maintenance Releases
 
 Maintenance releases normally use patch increments within an active release line.
 
@@ -823,7 +823,7 @@ If FamilyOS later maintains multiple supported major or minor lines, each line m
 
 ---
 
-# Hotfix Versioning
+## Hotfix Versioning
 
 A hotfix is operationally urgent but does not require a special incompatible version syntax.
 
@@ -845,7 +845,7 @@ except where a pre-release workflow specifically requires such metadata.
 
 ---
 
-# Documentation-Only Releases
+## Documentation-Only Releases
 
 Documentation-only changes may still require a new official version if they are independently published as part of the repository release history.
 
@@ -855,7 +855,7 @@ A patch increment is generally appropriate when the change does not alter softwa
 
 ---
 
-# Framework Release Versions
+## Framework Release Versions
 
 Major framework completion milestones may intentionally use minor or major platform sequence increments according to FamilyOS repository release strategy.
 
@@ -865,7 +865,7 @@ However, version increments must remain systematic and documented.
 
 ---
 
-# Version Sequence Integrity
+## Version Sequence Integrity
 
 Version history MUST remain monotonic within a release domain.
 
@@ -888,7 +888,7 @@ for a single forward-moving canonical release line unless `4.8.x` is an explicit
 
 ---
 
-# Parallel Maintenance Lines
+## Parallel Maintenance Lines
 
 Future FamilyOS maturity may require parallel maintenance.
 
@@ -905,7 +905,7 @@ Release metadata must make branch lineage explicit.
 
 ---
 
-# Branch and Version Relationship
+## Branch and Version Relationship
 
 The Versioning Strategy does not require one specific branch model.
 
@@ -925,7 +925,7 @@ Branch names do not replace versions.
 
 ---
 
-# Version and Compatibility
+## Version and Compatibility
 
 Version changes SHOULD communicate compatibility expectations.
 
@@ -946,7 +946,7 @@ This is a contract expectation, not a guarantee that every change has identical 
 
 ---
 
-# Version and Release Type
+## Version and Release Type
 
 Release type and version are separate concepts.
 
@@ -970,7 +970,7 @@ The version provides identity and compatibility semantics.
 
 ---
 
-# Version and Channel
+## Version and Channel
 
 Release channel is also separate from version.
 
@@ -992,7 +992,7 @@ A channel must not replace version identity.
 
 ---
 
-# Version and Build Identity
+## Version and Build Identity
 
 Build identity is distinct from release version.
 
@@ -1012,7 +1012,7 @@ The Release Framework must preserve the exact build chosen for release.
 
 ---
 
-# Version and Artifact Identity
+## Version and Artifact Identity
 
 Artifacts should encode or expose release version where appropriate.
 
@@ -1029,7 +1029,7 @@ Artifact metadata and provenance should also establish version relationship.
 
 ---
 
-# Version and Release Notes
+## Version and Release Notes
 
 Release notes MUST reference the corresponding official release version.
 
@@ -1045,7 +1045,7 @@ Final release notes should describe the final official version.
 
 ---
 
-# Version and Changelog
+## Version and Changelog
 
 The changelog should record versions consistently.
 
@@ -1061,7 +1061,7 @@ The version referenced must match the actual release identity.
 
 ---
 
-# Version Validation
+## Version Validation
 
 Before official release identity is established, version validation should verify:
 
@@ -1079,7 +1079,7 @@ Additional checks may be introduced as release automation matures.
 
 ---
 
-# Invalid Version Examples
+## Invalid Version Examples
 
 Examples that should normally be rejected include:
 
@@ -1109,7 +1109,7 @@ when no governed pre-release identifier permits it.
 
 ---
 
-# Version Parsing
+## Version Parsing
 
 Automation SHOULD use a structured version parser rather than ad hoc string splitting.
 
@@ -1127,7 +1127,7 @@ This reduces errors in ordering and validation.
 
 ---
 
-# Version Source of Truth
+## Version Source of Truth
 
 FamilyOS should eventually define an authoritative source for the intended software version.
 
@@ -1144,7 +1144,7 @@ The architectural requirement is that conflicting version declarations be detect
 
 ---
 
-# Single Source of Version Truth
+## Single Source of Version Truth
 
 Where possible, the same canonical version value SHOULD drive:
 
@@ -1160,7 +1160,7 @@ Duplicated manually maintained versions create release risk.
 
 ---
 
-# Derived Version Data
+## Derived Version Data
 
 Some release information may be derived from the canonical version.
 
@@ -1178,7 +1178,7 @@ Derived values SHOULD be generated where practical instead of independently ente
 
 ---
 
-# Version Governance
+## Version Governance
 
 Version policy changes are governed Release Framework changes.
 
@@ -1194,7 +1194,7 @@ Such changes must be documented and versioned.
 
 ---
 
-# Version Authority
+## Version Authority
 
 The authority to finalize an official version is defined by Release Governance.
 
@@ -1204,7 +1204,7 @@ Automation MUST NOT silently choose a version outside applicable policy.
 
 ---
 
-# Version Reservation
+## Version Reservation
 
 At higher release maturity, FamilyOS MAY reserve a version during candidate preparation.
 
@@ -1214,7 +1214,7 @@ A reservation is not equivalent to official publication.
 
 ---
 
-# Concurrent Release Risk
+## Concurrent Release Risk
 
 Parallel release work may create conflicts such as:
 
@@ -1227,7 +1227,7 @@ Future release orchestration should detect and prevent conflicting final publica
 
 ---
 
-# Version Provenance
+## Version Provenance
 
 Release evidence SHOULD record:
 
@@ -1243,7 +1243,7 @@ This improves historical reconstruction.
 
 ---
 
-# Version Migration
+## Version Migration
 
 If FamilyOS ever changes versioning strategies, migration must preserve historical version interpretation.
 
@@ -1263,7 +1263,7 @@ new policy
 
 ---
 
-# Version Deprecation
+## Version Deprecation
 
 Versions themselves are historical identifiers and should not be deleted.
 
@@ -1280,7 +1280,7 @@ but its identity remains valid.
 
 ---
 
-# Version Support Status
+## Version Support Status
 
 Support status is independent from version identity.
 
@@ -1301,7 +1301,7 @@ A future support policy may define maintenance windows.
 
 ---
 
-# Version Aliases
+## Version Aliases
 
 Human-friendly aliases such as:
 
@@ -1321,7 +1321,7 @@ Official version identities are immutable historical anchors.
 
 ---
 
-# Stable Alias
+## Stable Alias
 
 A `stable` alias may move from:
 
@@ -1341,7 +1341,7 @@ This does not change either release identity.
 
 ---
 
-# Latest Alias
+## Latest Alias
 
 The concept of `latest` must be used carefully.
 
@@ -1355,51 +1355,51 @@ Any implementation MUST define which meaning applies.
 
 ---
 
-# Version Invariants
+## Version Invariants
 
 The following invariants apply.
 
-## VSN1 — Every official release has a version.
+### VSN1 — Every official release has a version.
 
-## VSN2 — Official versions are unique within their release domain.
+### VSN2 — Official versions are unique within their release domain.
 
-## VSN3 — Published versions are immutable.
+### VSN3 — Published versions are immutable.
 
-## VSN4 — Version ordering is deterministic.
+### VSN4 — Version ordering is deterministic.
 
-## VSN5 — Version increments follow documented semantics.
+### VSN5 — Version increments follow documented semantics.
 
-## VSN6 — Candidate versions remain distinguishable from stable versions.
+### VSN6 — Candidate versions remain distinguishable from stable versions.
 
-## VSN7 — Version identity remains distinct from Git tag identity.
+### VSN7 — Version identity remains distinct from Git tag identity.
 
-## VSN8 — Component versioning must not create hidden compatibility ambiguity.
+### VSN8 — Component versioning must not create hidden compatibility ambiguity.
 
-## VSN9 — Version reuse is prohibited.
+### VSN9 — Version reuse is prohibited.
 
-## VSN10 — Corrective releases receive new versions.
+### VSN10 — Corrective releases receive new versions.
 
-## VSN11 — Version changes are traceable in release evidence.
+### VSN11 — Version changes are traceable in release evidence.
 
-## VSN12 — Version semantics are tool-independent.
+### VSN12 — Version semantics are tool-independent.
 
 ---
 
-# Versioning Anti-Patterns
+## Versioning Anti-Patterns
 
-## Arbitrary Increment
+### Arbitrary Increment
 
 Choosing the next number without considering release semantics.
 
 ---
 
-## Version Reuse
+### Version Reuse
 
 Publishing different content under an existing version.
 
 ---
 
-## Tag-as-Version Confusion
+### Tag-as-Version Confusion
 
 Treating:
 
@@ -1415,43 +1415,43 @@ as the semantic version instead of:
 
 ---
 
-## Candidate Mutation
+### Candidate Mutation
 
 Changing release contents while preserving the same candidate identifier without revalidation.
 
 ---
 
-## Hidden Component Version
+### Hidden Component Version
 
 Publishing independently evolving components without explicit component version identity.
 
 ---
 
-## Version Explosion
+### Version Explosion
 
 Introducing independent versions for every internal artifact without lifecycle justification.
 
 ---
 
-## Filename Authority
+### Filename Authority
 
 Treating a filename as the authoritative version source.
 
 ---
 
-## Mutable Stable Version
+### Mutable Stable Version
 
 Replacing artifacts under an already published stable version.
 
 ---
 
-## Unordered Labels
+### Unordered Labels
 
 Using version names that cannot be reliably compared or ordered.
 
 ---
 
-# Current FamilyOS Mapping
+## Current FamilyOS Mapping
 
 The current FamilyOS engineering milestone strategy already uses release tags similar to:
 
@@ -1483,7 +1483,7 @@ provided release validation confirms that this version remains correct according
 
 ---
 
-# Future Automation Example
+## Future Automation Example
 
 A future version check may conceptually produce:
 
@@ -1504,7 +1504,7 @@ This is an implementation target rather than a required current interface.
 
 ---
 
-# Versioning Maturity
+## Versioning Maturity
 
 FamilyOS versioning may mature through the following stages.
 
@@ -1533,7 +1533,7 @@ Release orchestration with version reservation
 
 ---
 
-# Relationship With Release Lifecycle
+## Relationship With Release Lifecycle
 
 Version state evolves across the lifecycle.
 
@@ -1561,7 +1561,7 @@ This model prevents tentative version planning from being confused with official
 
 ---
 
-# Relationship With Release Types and Channels
+## Relationship With Release Types and Channels
 
 `07-Release-Types-and-Channels.md` defines whether a release is:
 
@@ -1579,7 +1579,7 @@ The two concerns must remain coordinated but distinct.
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 `10-Release-Candidates.md` defines candidate stability and identity.
 
@@ -1592,7 +1592,7 @@ Candidate versioning defined here provides a standard mechanism such as:
 
 ---
 
-# Relationship With Tagging
+## Relationship With Tagging
 
 `16-Tagging-and-Repository-State.md` defines how the release version becomes anchored to Git repository state.
 
@@ -1608,13 +1608,13 @@ Git Commit
 
 ---
 
-# Relationship With Changelog and Release Notes
+## Relationship With Changelog and Release Notes
 
 `15-Changelog-and-Release-Notes.md` must use the final version identity consistently across all release communication.
 
 ---
 
-# Minimum Versioning Requirements
+## Minimum Versioning Requirements
 
 At minimum, every FamilyOS official release process must verify:
 
@@ -1633,7 +1633,7 @@ They should become automated over time.
 
 ---
 
-# Target Versioning State
+## Target Versioning State
 
 The target FamilyOS versioning model is one in which version selection becomes predictable and verifiable.
 
@@ -1653,7 +1653,7 @@ without requiring maintainers to reconstruct prior version logic manually.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Versioning Strategy establishes versions as stable engineering identities rather than arbitrary labels.
 

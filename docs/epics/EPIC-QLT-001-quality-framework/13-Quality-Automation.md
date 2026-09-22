@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 13 Quality Automation
+## 13 Quality Automation
 
-## Overview
+### Overview
 
 The FamilyOS Quality Automation model defines how repeatable quality activities are automated across development, testing, integration, build, release, documentation, compliance, and governance workflows.
 
@@ -34,7 +34,7 @@ Its purpose is to automate deterministic and repeatable verification so that eng
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Automation is to make FamilyOS quality assurance:
 
@@ -85,7 +85,7 @@ Engineering Feedback
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -103,7 +103,7 @@ Human judgment remains essential where evaluation requires:
 
 ---
 
-# Automation Scope
+## Automation Scope
 
 Quality Automation may apply to:
 
@@ -126,7 +126,7 @@ Automation should span the complete engineering lifecycle.
 
 ---
 
-# Automation Layers
+## Automation Layers
 
 FamilyOS Quality Automation may operate through several layers:
 
@@ -152,7 +152,7 @@ Different layers optimize for different feedback requirements.
 
 ---
 
-# Automation Architecture
+## Automation Architecture
 
 A conceptual architecture is:
 
@@ -182,7 +182,7 @@ This separates policy from tooling.
 
 ---
 
-# Policy and Tool Separation
+## Policy and Tool Separation
 
 Quality policy must not depend directly on a specific tool.
 
@@ -214,7 +214,7 @@ They do not define the complete Quality Framework.
 
 ---
 
-# Automation Rule
+## Automation Rule
 
 An Automation Rule represents an executable quality expectation.
 
@@ -247,7 +247,7 @@ ruff
 
 ---
 
-# Automation Identity
+## Automation Identity
 
 Automated checks should have stable identities independent of temporary command names.
 
@@ -271,7 +271,7 @@ Stable identity enables:
 
 ---
 
-# Automation Executor
+## Automation Executor
 
 An executor performs a quality check.
 
@@ -292,7 +292,7 @@ The Quality Framework should interact with executors through normalized interfac
 
 ---
 
-# Executor Contract
+## Executor Contract
 
 A conceptual executor contract may be:
 
@@ -311,7 +311,7 @@ The important principle is separation between execution and quality interpretati
 
 ---
 
-# Executor Input
+## Executor Input
 
 An executor may receive:
 
@@ -328,7 +328,7 @@ Inputs should be explicit enough to reproduce execution.
 
 ---
 
-# Executor Output
+## Executor Output
 
 Raw executor output may contain:
 
@@ -346,7 +346,7 @@ Raw output should not automatically become authoritative Quality Evidence.
 
 ---
 
-# Result Normalization
+## Result Normalization
 
 Different tools produce different result formats.
 
@@ -369,7 +369,7 @@ Normalization enables unified assessment.
 
 ---
 
-# Normalized Result
+## Normalized Result
 
 A normalized result may contain:
 
@@ -392,7 +392,7 @@ This creates a common automation language.
 
 ---
 
-# Check Status
+## Check Status
 
 A baseline check status model may include:
 
@@ -409,25 +409,25 @@ These states must remain semantically distinct.
 
 ---
 
-# PASS
+## PASS
 
 `PASS` means the check executed successfully and its required condition was satisfied.
 
 ---
 
-# FAIL
+## FAIL
 
 `FAIL` means the check executed correctly but detected a quality violation.
 
 ---
 
-# WARNING
+## WARNING
 
 `WARNING` means the check identified a non-blocking condition.
 
 ---
 
-# ERROR
+## ERROR
 
 `ERROR` means the check itself could not reliably execute or produce a valid conclusion.
 
@@ -444,7 +444,7 @@ Corrupt Result
 
 ---
 
-# SKIPPED
+## SKIPPED
 
 `SKIPPED` means the check was intentionally not executed.
 
@@ -452,7 +452,7 @@ The reason should be recorded.
 
 ---
 
-# NOT_APPLICABLE
+## NOT_APPLICABLE
 
 `NOT_APPLICABLE` means the check does not apply to the evaluated target.
 
@@ -460,7 +460,7 @@ This is different from skipping a required check.
 
 ---
 
-# Automation Evidence
+## Automation Evidence
 
 Every significant automated check should generate Quality Evidence.
 
@@ -484,7 +484,7 @@ This supports reproducibility and auditability.
 
 ---
 
-# Evidence Generation
+## Evidence Generation
 
 The automation pipeline should automatically convert successful execution into structured evidence.
 
@@ -504,7 +504,7 @@ Manual transcription should be avoided.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Automation evidence should preserve enough information to detect invalid or stale results.
 
@@ -522,7 +522,7 @@ This prevents inappropriate evidence reuse.
 
 ---
 
-# Evidence Freshness
+## Evidence Freshness
 
 Automated evidence is valid only for the relevant target state.
 
@@ -542,7 +542,317 @@ Automation should support evidence invalidation.
 
 ---
 
-# Local Quality Automation
+## Phase 5 Ruff Runtime Contract
+
+The initial canonical Ruff integration SHALL implement the existing
+`QualityExecutorPort` through the Quality infrastructure layer. It SHALL remain
+independent of the Plugin Compliance `QualityRuffValidator`; that validator is
+an existing bounded-context workflow whose behavior SHALL remain functional,
+but its class and compliance-specific models SHALL NOT become dependencies of
+the canonical Quality runtime.
+
+### Canonical Ruff Invocation
+
+The initial Quality Ruff adapter SHALL execute Ruff through the active FamilyOS
+Python interpreter rather than relying on a separately resolved `ruff` binary:
+
+```text
+<python executable> -m ruff check <target path> --output-format=json
+```
+
+The Python executable SHALL default to the active interpreter represented by
+`sys.executable`. Execution SHALL occur without shell interpretation.
+
+The target path SHALL come from the governed `QualityTarget` path contract.
+Phase 5 SHALL NOT introduce Quality Profiles, generic execution-context models,
+or tool-specific configuration domain models merely to invoke Ruff.
+
+### Ruff Execution Semantics
+
+Ruff exit status and structured output SHALL be normalized as follows:
+
+```text
+exit 0 + valid JSON     -> PASS
+exit 1 + valid JSON     -> FAIL
+other exit status       -> ERROR
+timeout                 -> ERROR
+process / OS failure    -> ERROR
+invalid Ruff JSON       -> ERROR
+```
+
+`FAIL` means Ruff executed reliably and reported governed lint violations.
+`ERROR` means the check could not reliably execute or conclude. `ERROR` SHALL
+NOT silently become `PASS`.
+
+### Ruff Finding Mapping
+
+Each Ruff violation SHALL become a `QualityFinding`.
+
+The governed FamilyOS rule remains authoritative for Quality semantics:
+
+```text
+QualityFinding.rule_id  = QualityRule.id
+QualityFinding.domain   = QualityRule.domain
+QualityFinding.severity = QualityRule.severity
+QualityFinding.status   = FAIL
+QualityFinding.target   = supplied QualityTarget
+```
+
+The native Ruff rule code, such as `F401`, SHALL NOT be promoted or rewritten
+as a `QLT-RULE-*` identifier. It SHALL be preserved as tool-native information.
+
+The Ruff message SHALL map to the finding message. File path, line, and column
+SHALL be preserved where Ruff supplies them. The initial adapter MAY represent
+that source position through the existing optional finding `location` string;
+Phase 5 SHALL NOT introduce a new source-location domain model.
+
+### Finding and Evidence Identity
+
+Phase 5 SHALL preserve the existing `QLT-FIND-*` and `QLT-EVID-*` identity
+contracts. The initial Ruff adapter SHALL NOT embed random identity generation
+inside Ruff parsing.
+
+Finding and evidence identity creation SHALL be supplied to the adapter through
+small injected factories/callables that return valid `QualityFindingId` and
+`QualityEvidenceId` values. This keeps identity generation testable and avoids
+introducing a generic Quality identity framework before such a framework is
+canonically required.
+
+### Ruff Evidence
+
+The initial Ruff adapter SHALL produce one `QualityEvidence` record for one
+governed Ruff execution. It SHALL NOT require one evidence record per Ruff
+violation.
+
+The evidence SHALL:
+
+* use `STATIC_ANALYSIS` as its Quality evidence type;
+* bind to the supplied `QualityTarget`;
+* bind `rule_id` to the supplied `QualityRule.id`;
+* identify Ruff as the tool;
+* preserve the captured Ruff version when available;
+* preserve machine-readable native execution information in the existing
+  immutable metadata boundary where practical;
+* use the injected timezone-aware clock for `created_at`;
+* use the injected evidence identity factory;
+* remain revision-optional for this initial Phase 5 slice.
+
+Each produced finding SHALL reference the execution evidence identifier through
+its existing `evidence_ids` boundary.
+
+Phase 5 does not close the deferred Quality Evidence freshness or full
+revision-awareness contract. The initial Ruff adapter SHALL NOT depend on Build
+or Testing source-state models merely to populate `revision`.
+
+### Ruff Tool Version
+
+The adapter SHALL attempt to collect the Ruff version using the same active
+Python interpreter:
+
+```text
+<python executable> -m ruff --version
+```
+
+A successful version probe SHALL populate `QualityEvidence.tool_version`.
+
+Failure of the version probe alone SHALL be handled gracefully: the evidence
+MAY use `tool_version=None`, and the normalized check result SHALL retain a
+diagnostic explaining that the Ruff version was unavailable. A version-probe
+failure SHALL NOT erase an otherwise trustworthy Ruff `PASS` or `FAIL`.
+
+Failure to execute the governed Ruff check itself remains `ERROR`.
+
+### Phase 5 Infrastructure Boundary
+
+The initial Ruff implementation MAY introduce a Ruff-specific infrastructure
+adapter and its focused tests.
+
+It SHALL NOT:
+
+* introduce a generic `CommandExecutor` or `ProcessExecutor` abstraction solely
+  for Phase 5;
+* depend on Plugin Compliance runtime models;
+* rewrite or relocate the existing Plugin Compliance Ruff validator;
+* depend on Build or Testing source-state contracts;
+* introduce MyPy, Pytest, Quality Profile, Quality Assessment, Quality Gate,
+  Quality CLI, or CI integration behavior;
+* authorize Phase 6 or any later Quality implementation phase.
+
+The existing Ruff workflow SHALL remain functional after the canonical Quality
+Ruff adapter is introduced.
+
+
+## Phase 6 MyPy Runtime Contract
+
+The initial canonical MyPy integration SHALL implement the existing
+`QualityExecutorPort` through the Quality infrastructure layer. It SHALL remain
+independent of the Plugin Compliance `QualityMypyValidator`; that validator is
+a behavioral precedent only and SHALL NOT become a dependency of the canonical
+Quality runtime.
+
+### Canonical MyPy Invocation
+
+The initial Quality MyPy adapter SHALL execute MyPy through the active FamilyOS
+Python interpreter rather than relying on a separately resolved `mypy` binary:
+
+```text
+<python executable> -m mypy <target path> --output=json
+```
+
+The Python executable SHALL default to `sys.executable`. The governed target
+path SHALL come from `QualityTarget.path`. Execution SHALL not use a shell.
+
+### MyPy Execution Semantics
+
+MyPy newline-delimited JSON output SHALL be normalized as follows:
+
+```text
+exit 0                       -> PASS
+exit 1 with valid findings   -> FAIL
+other exit status            -> ERROR
+timeout                      -> ERROR
+process / OS failure         -> ERROR
+invalid JSON                 -> ERROR
+invalid diagnostic payload   -> ERROR
+protocol inconsistency       -> ERROR
+```
+
+`FAIL` means MyPy executed reliably and reported governed type-checking
+violations. `ERROR` means the execution or protocol result itself is not
+trustworthy.
+
+Exit status `0` SHALL produce no failure findings. Exit status `1` SHALL be
+accepted as `FAIL` only when the diagnostic payload is valid and provides the
+expected type-checking findings.
+
+### Empty Python Target Compatibility
+
+A governed target path that contains no Python source files SHALL preserve the
+existing FamilyOS MyPy behavior rather than invoking MyPy and interpreting its
+fatal no-source exit status as an infrastructure failure.
+
+For this initial Phase 6 adapter only, when the governed target contains no
+`.py` or `.pyi` source files:
+
+* the main MyPy check SHALL NOT be executed;
+* `QualityCheckResult.status` SHALL be `PASS`;
+* no findings SHALL be produced;
+* one `QualityEvidence` record SHALL be produced with result `PASS`;
+* the evidence SHALL retain the canonical `TYPE_VERIFICATION`,
+  `source="quality.mypy"`, and `tool="mypy"` identity;
+* the result SHALL include the diagnostic
+  `No Python source files found; nothing to type-check.`;
+* a MyPy version probe is not required because no governed MyPy execution
+  occurs.
+
+This is a compatibility normalization required to preserve existing MyPy
+behavior. It SHALL NOT establish a general rule that non-applicable Quality
+checks are `PASS`.
+
+The broader Quality model distinguishes `NOT_APPLICABLE` from `SKIPPED`.
+`SKIPPED` is not the semantic for an empty Python target. The initial
+`QualityCheckResult` status model does not expose `NOT_APPLICABLE`, and Phase 6
+SHALL NOT expand that model or implement generic applicability resolution.
+
+Generic applicability and authoritative `NOT_APPLICABLE` result propagation
+remain outside the Phase 6 MyPy adapter boundary.
+
+### MyPy Finding Mapping
+
+Each reliable MyPy diagnostic SHALL become a `QualityFinding`.
+
+FamilyOS finding authority SHALL remain governed by the supplied
+`QualityRule`:
+
+```text
+rule_id   = rule.id
+domain    = rule.domain
+severity  = rule.severity
+status    = FAIL
+message   = MyPy message
+location  = <file>:<line>:<column>
+```
+
+The native MyPy `severity` field SHALL NOT be converted into
+`QualitySeverity`. The governed FamilyOS severity is `rule.severity`.
+
+Native MyPy diagnostic codes such as `return-value` SHALL remain tool-native
+data. They MAY be preserved in Quality Evidence metadata, but SHALL NOT be
+promoted into FamilyOS rule identifiers or independent severity policy.
+
+### MyPy Evidence
+
+One actual governed MyPy execution attempt SHALL produce one
+`QualityEvidence` record.
+
+The evidence SHALL:
+
+* use canonical `TYPE_VERIFICATION` as the evidence type;
+* use `quality.mypy` as the source;
+* identify `mypy` as the tool;
+* retain the supplied Quality rule and optional requirement authority;
+* retain the captured MyPy version when available;
+* preserve exit status, diagnostic count, and native MyPy codes where
+  available as normalized metadata;
+* use `revision=None` initially unless later Quality revision authority is
+  explicitly introduced.
+
+`TYPE_CHECK` SHALL NOT be introduced as a second spelling for the same
+evidence category.
+
+Execution failures that occur after an actual MyPy execution attempt SHALL
+produce `QualityEvidenceResult.ERROR` evidence when enough governed execution
+context exists to do so. A missing `QualityTarget.path` remains a pre-execution
+contract failure and MAY return an `ERROR` result without execution evidence.
+
+### MyPy Tool Version
+
+The adapter SHALL attempt to collect the MyPy version through the same active
+Python interpreter:
+
+```text
+<python executable> -m mypy --version
+```
+
+An available version SHALL be stored in `QualityEvidence.tool_version`.
+Version-probe failure SHALL be non-fatal when the actual MyPy quality result
+remains trustworthy. In that case `tool_version` SHALL be `None` and a
+diagnostic SHALL record that the MyPy version is unavailable.
+
+Failure to execute the governed MyPy check itself remains `ERROR`.
+
+### Phase 6 Infrastructure Boundary
+
+The initial MyPy adapter SHALL follow the established Quality adapter
+construction pattern:
+
+* injected `QualityFindingId` factory;
+* injected `QualityEvidenceId` factory;
+* injected timezone-aware evidence clock;
+* injected monotonic execution clock;
+* configurable Python executable;
+* configurable timeout.
+
+Phase 6 SHALL NOT introduce a generic `CommandExecutor`, `ProcessExecutor`, or
+other generic process framework merely for MyPy.
+
+The current FamilyOS architecture contains no canonical reusable generic
+process abstraction that this slice is required to adopt. Existing bounded
+contexts MAY continue to own their tool-specific subprocess behavior.
+
+Phase 6 SHALL NOT:
+
+* rewrite or relocate the existing Plugin Compliance MyPy validator;
+* create a Quality-to-Plugin dependency;
+* create a Plugin-to-Quality dependency merely for this adapter;
+* authorize Pytest integration or any later Quality runtime phase.
+
+The existing MyPy workflow SHALL remain functional after the canonical Quality
+MyPy adapter is introduced.
+
+---
+
+## Local Quality Automation
 
 Local automation provides rapid developer feedback before remote CI.
 
@@ -559,7 +869,7 @@ Local automation should be easy to execute.
 
 ---
 
-# Local Quality Command
+## Local Quality Command
 
 FamilyOS may eventually expose a unified command such as:
 
@@ -585,7 +895,7 @@ The exact CLI design belongs to implementation planning.
 
 ---
 
-# Fast Local Validation
+## Fast Local Validation
 
 Local validation should optimize for feedback speed.
 
@@ -603,7 +913,7 @@ Expensive validation may remain in CI.
 
 ---
 
-# Full Local Validation
+## Full Local Validation
 
 Developers should also be able to execute a comprehensive profile locally where practical.
 
@@ -617,7 +927,7 @@ A local full run should approximate CI behavior closely.
 
 ---
 
-# Environment Consistency
+## Environment Consistency
 
 Local and CI automation should minimize environmental differences.
 
@@ -635,7 +945,7 @@ Different execution environments may exist, but quality policy should remain con
 
 ---
 
-# Pre-Commit Automation
+## Pre-Commit Automation
 
 Pre-commit validation may execute very fast checks.
 
@@ -650,7 +960,7 @@ Pre-commit hooks should not become so slow that developers routinely bypass them
 
 ---
 
-# Commit-Time Automation
+## Commit-Time Automation
 
 Some checks may validate:
 
@@ -663,7 +973,7 @@ Commit-time automation should remain deterministic.
 
 ---
 
-# Pull Request Automation
+## Pull Request Automation
 
 Pull requests are a major Quality Automation boundary.
 
@@ -689,7 +999,7 @@ Merge Decision
 
 ---
 
-# Pull Request Feedback
+## Pull Request Feedback
 
 Automation should provide actionable feedback.
 
@@ -719,7 +1029,7 @@ Use the public capability contract.
 
 ---
 
-# Fast Failure
+## Fast Failure
 
 When a deterministic blocking failure is discovered, automation may stop expensive downstream work where appropriate.
 
@@ -735,7 +1045,7 @@ This reduces CI cost.
 
 ---
 
-# Parallel Execution
+## Parallel Execution
 
 Independent quality checks may execute in parallel.
 
@@ -753,7 +1063,7 @@ Parallelization can reduce feedback time significantly.
 
 ---
 
-# Dependency-Aware Execution
+## Dependency-Aware Execution
 
 Some checks depend on others.
 
@@ -771,7 +1081,7 @@ The automation engine should model these dependencies explicitly.
 
 ---
 
-# Quality Automation Graph
+## Quality Automation Graph
 
 The complete automation pipeline can be modeled as a directed graph.
 
@@ -797,7 +1107,7 @@ Independent nodes may execute concurrently.
 
 ---
 
-# Check Dependency
+## Check Dependency
 
 A quality check may define:
 
@@ -822,7 +1132,7 @@ This enables composable automation.
 
 ---
 
-# Incremental Automation
+## Incremental Automation
 
 Not every change requires every quality check.
 
@@ -842,7 +1152,7 @@ without executing unrelated expensive runtime tests when policy permits.
 
 ---
 
-# Impact Analysis
+## Impact Analysis
 
 Incremental execution requires reliable impact analysis.
 
@@ -861,7 +1171,7 @@ Incorrect impact analysis may create false confidence.
 
 ---
 
-# Conservative Impact Analysis
+## Conservative Impact Analysis
 
 When impact cannot be determined reliably, the system should prefer broader validation.
 
@@ -877,7 +1187,7 @@ rather than skipping potentially relevant checks.
 
 ---
 
-# Change Classification
+## Change Classification
 
 Automation may classify changes such as:
 
@@ -896,7 +1206,7 @@ Classification may influence Quality Profile resolution.
 
 ---
 
-# Risk-Based Automation
+## Risk-Based Automation
 
 Automation depth should reflect risk.
 
@@ -920,7 +1230,7 @@ Risk-based execution should remain policy-driven.
 
 ---
 
-# Profile-Based Automation
+## Profile-Based Automation
 
 Quality Profiles determine applicable checks.
 
@@ -950,7 +1260,7 @@ Documentation Validation
 
 ---
 
-# Automation Composition
+## Automation Composition
 
 Profiles should compose reusable checks rather than duplicate pipelines.
 
@@ -970,7 +1280,7 @@ This supports scalable quality policy.
 
 ---
 
-# Static Analysis Automation
+## Static Analysis Automation
 
 Static analysis should be fully automated where possible.
 
@@ -985,7 +1295,7 @@ These checks provide fast deterministic feedback.
 
 ---
 
-# Lint Automation
+## Lint Automation
 
 Lint automation may validate:
 
@@ -998,7 +1308,7 @@ Lint failures should produce structured findings.
 
 ---
 
-# Type Checking Automation
+## Type Checking Automation
 
 Type checking verifies static type expectations.
 
@@ -1016,7 +1326,7 @@ Type checking is one quality signal, not proof of correctness.
 
 ---
 
-# Test Automation
+## Test Automation
 
 Testing is one of the primary Quality Automation domains.
 
@@ -1037,13 +1347,13 @@ Regression Tests
 
 ---
 
-# Unit Test Automation
+## Unit Test Automation
 
 Unit tests should provide rapid feedback and are strong candidates for local and PR execution.
 
 ---
 
-# Integration Test Automation
+## Integration Test Automation
 
 Integration tests validate collaboration between components.
 
@@ -1058,7 +1368,7 @@ Automation should make required environments reproducible.
 
 ---
 
-# Regression Automation
+## Regression Automation
 
 Every corrected significant defect should be evaluated for regression automation.
 
@@ -1076,7 +1386,7 @@ Automated Protection
 
 ---
 
-# Flaky Test Automation
+## Flaky Test Automation
 
 Automation should identify flaky tests rather than repeatedly hiding them through retries.
 
@@ -1086,7 +1396,7 @@ They must not convert instability into false PASS results.
 
 ---
 
-# Flaky Test Detection
+## Flaky Test Detection
 
 Potential signals include:
 
@@ -1100,7 +1410,7 @@ Repeated inconsistency should create a Quality Finding or Quality Debt item.
 
 ---
 
-# Architecture Automation
+## Architecture Automation
 
 Architecture rules should be automated where deterministic.
 
@@ -1115,7 +1425,7 @@ Architecture automation converts architectural principles into executable contro
 
 ---
 
-# Architecture Rule Example
+## Architecture Rule Example
 
 Conceptually:
 
@@ -1132,7 +1442,7 @@ Create Architecture Finding.
 
 ---
 
-# Documentation Automation
+## Documentation Automation
 
 Documentation quality should also participate in automation.
 
@@ -1153,7 +1463,7 @@ Automation supports the Documentation Framework.
 
 ---
 
-# Documentation Structure Validation
+## Documentation Structure Validation
 
 An EPIC may require files such as:
 
@@ -1169,7 +1479,7 @@ Automated validation can detect missing required artifacts.
 
 ---
 
-# Documentation Link Validation
+## Documentation Link Validation
 
 Broken internal documentation references should be detected automatically where practical.
 
@@ -1177,7 +1487,7 @@ This prevents documentation architecture from degrading silently.
 
 ---
 
-# Documentation Metadata Validation
+## Documentation Metadata Validation
 
 Automation may verify:
 
@@ -1191,7 +1501,7 @@ Metadata validation improves documentation traceability.
 
 ---
 
-# Dependency Automation
+## Dependency Automation
 
 Dependency quality automation may include:
 
@@ -1208,7 +1518,7 @@ Domain-specific policy may be provided by security or dependency frameworks.
 
 ---
 
-# Dependency Drift
+## Dependency Drift
 
 Automation should detect unexpected dependency drift.
 
@@ -1224,7 +1534,7 @@ Finding
 
 ---
 
-# Security Automation
+## Security Automation
 
 Security automation may include:
 
@@ -1238,7 +1548,7 @@ Security automation supplements, but does not replace, security review.
 
 ---
 
-# Secret Detection
+## Secret Detection
 
 Secret detection should prevent accidental credentials from entering the repository.
 
@@ -1246,7 +1556,7 @@ Detected secrets should be treated carefully because reports may themselves cont
 
 ---
 
-# Compliance Automation
+## Compliance Automation
 
 Compliance rules should be automated where deterministic.
 
@@ -1266,7 +1576,7 @@ Quality Assessment
 
 ---
 
-# Build Automation
+## Build Automation
 
 Build automation should verify that FamilyOS can produce expected artifacts reliably.
 
@@ -1282,13 +1592,13 @@ Reproducibility
 
 ---
 
-# Build Reproducibility
+## Build Reproducibility
 
 Where reproducibility is required, automation should verify that equivalent inputs produce equivalent artifacts or equivalent normalized outputs.
 
 ---
 
-# Packaging Automation
+## Packaging Automation
 
 Packaging checks may validate:
 
@@ -1302,7 +1612,7 @@ Packaging failures should be detected before release.
 
 ---
 
-# Release Automation
+## Release Automation
 
 Release automation should consume existing quality evidence rather than independently reinvent quality verification.
 
@@ -1322,7 +1632,7 @@ Release Automation
 
 ---
 
-# Release Automation Principle
+## Release Automation Principle
 
 A release pipeline must not manufacture confidence.
 
@@ -1330,7 +1640,7 @@ It should prove that the candidate satisfies already-defined quality expectation
 
 ---
 
-# Configuration Automation
+## Configuration Automation
 
 Configuration validation may verify:
 
@@ -1343,7 +1653,7 @@ Configuration failures can create significant runtime risk despite correct code.
 
 ---
 
-# Repository Automation
+## Repository Automation
 
 Repository-level validation may check:
 
@@ -1359,7 +1669,7 @@ This protects repository architecture.
 
 ---
 
-# Generated Artifact Validation
+## Generated Artifact Validation
 
 Generated files should be validated for consistency with their source definitions where appropriate.
 
@@ -1377,7 +1687,7 @@ Consistency Validation
 
 ---
 
-# Drift Detection
+## Drift Detection
 
 Automation may detect drift between:
 
@@ -1390,7 +1700,7 @@ Drift detection is an important long-term quality capability.
 
 ---
 
-# Quality Gate Automation
+## Quality Gate Automation
 
 Quality Gates should be automatically evaluated when their required evidence is available.
 
@@ -1408,7 +1718,7 @@ Gate logic should remain deterministic wherever policy permits.
 
 ---
 
-# Merge Gate Automation
+## Merge Gate Automation
 
 A merge gate may require:
 
@@ -1423,7 +1733,7 @@ The exact requirements depend on branch and profile policy.
 
 ---
 
-# Release Gate Automation
+## Release Gate Automation
 
 Release gates may require stronger conditions:
 
@@ -1437,7 +1747,7 @@ Release Documentation Complete
 
 ---
 
-# Gate Failure Explanation
+## Gate Failure Explanation
 
 Automated gate failures must be explainable.
 
@@ -1464,7 +1774,7 @@ QLT-EVID-71A4
 
 ---
 
-# Automation Orchestration
+## Automation Orchestration
 
 Quality automation requires orchestration.
 
@@ -1483,7 +1793,7 @@ Reporting
 
 ---
 
-# Orchestrator Principle
+## Orchestrator Principle
 
 The orchestrator coordinates quality execution.
 
@@ -1493,7 +1803,7 @@ Policy remains defined through Quality Requirements, Rules, Profiles, and Gates.
 
 ---
 
-# Automation Configuration
+## Automation Configuration
 
 Automation configuration should be version-controlled.
 
@@ -1509,7 +1819,7 @@ Configuration changes are quality changes and should be reviewed accordingly.
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Invalid quality automation configuration must fail visibly.
 
@@ -1525,7 +1835,7 @@ It must not silently disable the rule.
 
 ---
 
-# Configuration Drift
+## Configuration Drift
 
 Local and CI configuration should be compared where practical.
 
@@ -1533,7 +1843,7 @@ Unexpected differences may invalidate reproducibility.
 
 ---
 
-# Automation Versioning
+## Automation Versioning
 
 Quality automation components should be versioned.
 
@@ -1551,7 +1861,7 @@ Historical evidence must remain interpretable relative to the versions that prod
 
 ---
 
-# Tool Versioning
+## Tool Versioning
 
 Tool versions can affect results.
 
@@ -1571,7 +1881,7 @@ This supports reproducibility and troubleshooting.
 
 ---
 
-# Automation Upgrade
+## Automation Upgrade
 
 Tool upgrades should be treated as controlled quality changes.
 
@@ -1587,7 +1897,7 @@ Upgrade impact should be evaluated.
 
 ---
 
-# Automation Failure
+## Automation Failure
 
 Automation infrastructure can fail independently of the code under evaluation.
 
@@ -1605,7 +1915,7 @@ These must remain distinguishable from quality failures.
 
 ---
 
-# Infrastructure Failure vs Quality Failure
+## Infrastructure Failure vs Quality Failure
 
 Conceptually:
 
@@ -1621,7 +1931,7 @@ Conflating these states produces incorrect engineering conclusions.
 
 ---
 
-# Retry Policy
+## Retry Policy
 
 Retries may be appropriate for transient infrastructure failures.
 
@@ -1629,7 +1939,7 @@ They should not automatically hide deterministic quality failures.
 
 ---
 
-# Timeout Policy
+## Timeout Policy
 
 Checks should have explicit timeout behavior where appropriate.
 
@@ -1643,7 +1953,7 @@ unless the quality rule explicitly defines timeout as a failure condition.
 
 ---
 
-# Cancellation
+## Cancellation
 
 Superseded CI runs may be cancelled to conserve resources.
 
@@ -1651,7 +1961,7 @@ Cancellation should produce a distinct state rather than incomplete PASS evidenc
 
 ---
 
-# Automation Performance
+## Automation Performance
 
 Quality automation must itself satisfy performance expectations.
 
@@ -1670,7 +1980,7 @@ Slow automation encourages bypass behavior.
 
 ---
 
-# Feedback Latency
+## Feedback Latency
 
 The time between engineering change and quality feedback should be minimized.
 
@@ -1688,7 +1998,7 @@ Fast feedback reduces remediation cost.
 
 ---
 
-# Quality Automation Budget
+## Quality Automation Budget
 
 Automation may use execution budgets.
 
@@ -1709,7 +2019,7 @@ Exact targets belong to operational policy.
 
 ---
 
-# Check Tiering
+## Check Tiering
 
 Checks may be grouped into execution tiers.
 
@@ -1733,7 +2043,7 @@ This balances speed and assurance.
 
 ---
 
-# Quality Feedback Pyramid
+## Quality Feedback Pyramid
 
 A useful model is:
 
@@ -1753,7 +2063,7 @@ Fast checks should provide the majority of routine feedback.
 
 ---
 
-# Caching
+## Caching
 
 Quality automation may cache valid results.
 
@@ -1768,7 +2078,7 @@ Caching must not compromise correctness.
 
 ---
 
-# Evidence-Aware Caching
+## Evidence-Aware Caching
 
 Cached quality results should only be reused when relevant inputs are unchanged.
 
@@ -1784,7 +2094,7 @@ Rule Version
 
 ---
 
-# Cache Invalidation
+## Cache Invalidation
 
 When correctness is uncertain:
 
@@ -1798,7 +2108,7 @@ Quality confidence takes priority over optimization.
 
 ---
 
-# Selective Test Execution
+## Selective Test Execution
 
 Automation may eventually select tests based on change impact.
 
@@ -1816,7 +2126,7 @@ This can improve performance substantially.
 
 ---
 
-# Full Test Safety Net
+## Full Test Safety Net
 
 Selective testing should be complemented by periodic or milestone-based full execution.
 
@@ -1824,7 +2134,7 @@ This protects against imperfect dependency analysis.
 
 ---
 
-# Parallel Quality Jobs
+## Parallel Quality Jobs
 
 Independent checks may execute in separate CI jobs.
 
@@ -1842,7 +2152,7 @@ Their results can later be aggregated into one assessment.
 
 ---
 
-# Aggregation
+## Aggregation
 
 An automation aggregator may collect distributed results.
 
@@ -1862,7 +2172,7 @@ The aggregator should verify completeness before producing an authoritative asse
 
 ---
 
-# Partial Automation Results
+## Partial Automation Results
 
 If required jobs are missing, the assessment should be:
 
@@ -1882,7 +2192,7 @@ Missing jobs must not be interpreted as successful checks.
 
 ---
 
-# Automation Observability
+## Automation Observability
 
 The automation system must itself be observable.
 
@@ -1902,7 +2212,7 @@ This connects Quality Automation with Quality Observability.
 
 ---
 
-# Automation Health
+## Automation Health
 
 The framework may define automation health states such as:
 
@@ -1917,7 +2227,7 @@ An unreliable quality system should reduce confidence in generated assessments.
 
 ---
 
-# Automation Reliability
+## Automation Reliability
 
 Quality automation is part of the quality control plane.
 
@@ -1932,7 +2242,7 @@ A pipeline that frequently fails for unrelated infrastructure reasons creates:
 
 ---
 
-# Automation Trust
+## Automation Trust
 
 Engineers should trust that:
 
@@ -1952,7 +2262,7 @@ Trust is destroyed when:
 
 ---
 
-# Fail-Open vs Fail-Closed
+## Fail-Open vs Fail-Closed
 
 Automation policy should explicitly define failure behavior.
 
@@ -1980,7 +2290,7 @@ Behavior must be governed by risk.
 
 ---
 
-# Quality Automation Security
+## Quality Automation Security
 
 Quality automation itself requires security controls.
 
@@ -1996,7 +2306,7 @@ Automation infrastructure must be treated as trusted engineering infrastructure.
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Quality automation jobs should receive only required permissions.
 
@@ -2012,7 +2322,7 @@ This reduces automation risk.
 
 ---
 
-# Secret Management
+## Secret Management
 
 Secrets required by automation should not be stored directly in repository configuration.
 
@@ -2025,7 +2335,7 @@ Secret access should be:
 
 ---
 
-# Untrusted Code
+## Untrusted Code
 
 Automation executing untrusted changes should not automatically receive privileged credentials.
 
@@ -2033,7 +2343,7 @@ This is particularly important for external contribution workflows.
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Quality and build artifacts should be protected from unauthorized modification.
 
@@ -2041,7 +2351,7 @@ Evidence should correspond to the actual artifact evaluated.
 
 ---
 
-# Automation Audit Trail
+## Automation Audit Trail
 
 Significant automation decisions should be reconstructable.
 
@@ -2063,7 +2373,7 @@ Why did the gate pass?
 
 ---
 
-# Automation Reporting
+## Automation Reporting
 
 Automation should provide both machine-readable and human-readable results.
 
@@ -2078,7 +2388,7 @@ Human-readable output supports engineers.
 
 ---
 
-# Console Reporting
+## Console Reporting
 
 Console output should prioritize actionable information.
 
@@ -2097,7 +2407,7 @@ Plugin implementation may not depend on internal core module.
 
 ---
 
-# Structured Reporting
+## Structured Reporting
 
 Structured formats may include:
 
@@ -2112,7 +2422,7 @@ External formats may be adapted into the FamilyOS model.
 
 ---
 
-# Report Stability
+## Report Stability
 
 Machine-readable report schemas should be versioned.
 
@@ -2120,7 +2430,7 @@ Automation consumers should not depend on unstable output formats.
 
 ---
 
-# Automation Metrics
+## Automation Metrics
 
 Possible Quality Automation metrics include:
 
@@ -2137,7 +2447,7 @@ Manual Check Count
 
 ---
 
-# Automation Coverage
+## Automation Coverage
 
 Automation Coverage measures how much of the defined quality control surface is automated.
 
@@ -2155,7 +2465,7 @@ This should not be confused with test coverage.
 
 ---
 
-# Manual Quality Burden
+## Manual Quality Burden
 
 A useful metric may track the number of recurring manual quality checks.
 
@@ -2169,7 +2479,7 @@ Automation
 
 ---
 
-# Automation Debt
+## Automation Debt
 
 Missing or inadequate quality automation may create Quality Debt.
 
@@ -2184,7 +2494,7 @@ Automation debt should be prioritized according to risk and repetition cost.
 
 ---
 
-# Automation Candidate Identification
+## Automation Candidate Identification
 
 A recurring manual activity is a strong automation candidate when it is:
 
@@ -2200,7 +2510,7 @@ Not every manual activity should be automated.
 
 ---
 
-# Automation ROI
+## Automation ROI
 
 Automation should provide meaningful engineering value.
 
@@ -2219,7 +2529,7 @@ Automation should not exist merely because it is technically possible.
 
 ---
 
-# Automation Maintenance Cost
+## Automation Maintenance Cost
 
 Every automated control introduces maintenance cost.
 
@@ -2236,7 +2546,7 @@ Automation design should therefore favor simplicity and composability.
 
 ---
 
-# Automation Duplication
+## Automation Duplication
 
 Different tools should not repeatedly verify the same condition without justification.
 
@@ -2250,7 +2560,7 @@ Overlap may still be appropriate for critical defense-in-depth scenarios.
 
 ---
 
-# Automation Ownership
+## Automation Ownership
 
 Every significant automated quality capability should have an owner.
 
@@ -2267,7 +2577,7 @@ Unowned automation eventually becomes unreliable automation.
 
 ---
 
-# Rule Ownership
+## Rule Ownership
 
 Quality rules should also have clear ownership.
 
@@ -2277,7 +2587,7 @@ The rule owner governs its meaning.
 
 ---
 
-# Tool Ownership
+## Tool Ownership
 
 Tool integration ownership includes responsibility for:
 
@@ -2293,7 +2603,7 @@ This separates tool maintenance from quality policy ownership.
 
 ---
 
-# Automation Change Management
+## Automation Change Management
 
 Changes to automation can alter engineering acceptance criteria.
 
@@ -2311,7 +2621,7 @@ must be treated as quality policy changes where applicable.
 
 ---
 
-# Automation Review
+## Automation Review
 
 Significant automation changes should receive review.
 
@@ -2329,7 +2639,7 @@ Does it alter gate behavior?
 
 ---
 
-# Rule Rollout
+## Rule Rollout
 
 New automated rules may require controlled rollout.
 
@@ -2347,7 +2657,7 @@ This is particularly useful when introducing rules into legacy areas.
 
 ---
 
-# Observe Mode
+## Observe Mode
 
 In `OBSERVE` mode, the rule collects data without affecting progression.
 
@@ -2359,7 +2669,7 @@ This helps estimate:
 
 ---
 
-# Warning Mode
+## Warning Mode
 
 In `WARN` mode, findings are visible but non-blocking.
 
@@ -2367,13 +2677,13 @@ This allows teams to begin remediation before enforcement.
 
 ---
 
-# Enforcement Mode
+## Enforcement Mode
 
 In `ENFORCE` mode, applicable failures affect assessments or gates according to policy.
 
 ---
 
-# Baseline-Aware Automation
+## Baseline-Aware Automation
 
 Legacy violations may be baselined while new violations are blocked.
 
@@ -2391,7 +2701,7 @@ Automation should detect baseline growth.
 
 ---
 
-# Baseline Fingerprinting
+## Baseline Fingerprinting
 
 Baseline entries should use stable fingerprints where possible.
 
@@ -2409,7 +2719,7 @@ New Violation
 
 ---
 
-# Baseline Retirement
+## Baseline Retirement
 
 When a baselined issue is fixed, its baseline entry should be removed.
 
@@ -2417,7 +2727,7 @@ Baselines should shrink over time.
 
 ---
 
-# Suppression Automation
+## Suppression Automation
 
 Rule suppressions should be machine-readable and traceable where practical.
 
@@ -2435,7 +2745,7 @@ This prevents invisible permanent suppression.
 
 ---
 
-# Expired Suppression
+## Expired Suppression
 
 Automation should detect expired suppressions.
 
@@ -2449,7 +2759,7 @@ Original Rule Active
 
 ---
 
-# Quality Exception Integration
+## Quality Exception Integration
 
 Formal Quality Exceptions should integrate with automation.
 
@@ -2465,7 +2775,7 @@ Invalid exceptions must not suppress findings.
 
 ---
 
-# Exception-Aware Automation
+## Exception-Aware Automation
 
 Conceptually:
 
@@ -2481,7 +2791,7 @@ The underlying deviation must remain visible.
 
 ---
 
-# Automation and Risk
+## Automation and Risk
 
 Automation should consume risk context where policy requires.
 
@@ -2503,7 +2813,7 @@ Assessment and gate policy determine contextual consequence.
 
 ---
 
-# Automation and Defects
+## Automation and Defects
 
 Repeated automation findings may create managed defects.
 
@@ -2523,7 +2833,7 @@ Not every transient failure should become a permanent defect record.
 
 ---
 
-# Automation and Quality Debt
+## Automation and Quality Debt
 
 Persistent accepted automation failures may become Quality Debt.
 
@@ -2541,7 +2851,7 @@ Planned Remediation
 
 ---
 
-# Automation and Reviews
+## Automation and Reviews
 
 Automation should support human review by removing repetitive deterministic checks.
 
@@ -2569,7 +2879,7 @@ This division improves review quality.
 
 ---
 
-# Automation and Assessments
+## Automation and Assessments
 
 Automation provides structured inputs to Quality Assessments.
 
@@ -2585,7 +2895,7 @@ Automation should not bypass assessment semantics.
 
 ---
 
-# Automation and Governance
+## Automation and Governance
 
 Governance defines:
 
@@ -2600,7 +2910,7 @@ Automation operationalizes governance.
 
 ---
 
-# Automation and Compliance
+## Automation and Compliance
 
 Compliance automation should expose rule-level results.
 
@@ -2618,7 +2928,7 @@ The result may then become Quality Evidence.
 
 ---
 
-# Automation and Documentation
+## Automation and Documentation
 
 Documentation should describe:
 
@@ -2632,7 +2942,7 @@ Automation without understandable documentation creates operational friction.
 
 ---
 
-# Automation Discoverability
+## Automation Discoverability
 
 Engineers should be able to determine:
 
@@ -2650,7 +2960,7 @@ This information should be easy to discover.
 
 ---
 
-# Automation Developer Experience
+## Automation Developer Experience
 
 Quality automation should support developers rather than surprise them.
 
@@ -2668,7 +2978,7 @@ Poor automation creates resistance to quality controls.
 
 ---
 
-# Actionable Failures
+## Actionable Failures
 
 Every automated failure should ideally answer:
 
@@ -2688,7 +2998,7 @@ What should I do next?
 
 ---
 
-# Noise Reduction
+## Noise Reduction
 
 Automation should minimize low-value noise.
 
@@ -2707,7 +3017,7 @@ over large volumes of irrelevant output.
 
 ---
 
-# False Positive Management
+## False Positive Management
 
 Automated rules producing frequent false positives should be reviewed.
 
@@ -2722,7 +3032,7 @@ Repeated manual suppression is not a sustainable solution.
 
 ---
 
-# False Negative Management
+## False Negative Management
 
 False negatives are particularly dangerous because they create false confidence.
 
@@ -2730,7 +3040,7 @@ Incidents and escaped defects should evaluate whether automation should have det
 
 ---
 
-# Automation Effectiveness
+## Automation Effectiveness
 
 Automation effectiveness can be evaluated through:
 
@@ -2745,7 +3055,7 @@ Feedback Time
 
 ---
 
-# Automation Calibration
+## Automation Calibration
 
 Rules and checks should evolve based on actual engineering outcomes.
 
@@ -2763,7 +3073,7 @@ Automated Prevention
 
 ---
 
-# Automation Learning Loop
+## Automation Learning Loop
 
 The desired loop is:
 
@@ -2785,7 +3095,7 @@ This is a central mechanism of continuous quality improvement.
 
 ---
 
-# Automation Resilience
+## Automation Resilience
 
 Quality automation should tolerate expected infrastructure variability without compromising correctness.
 
@@ -2799,7 +3109,7 @@ Resilience mechanisms may include:
 
 ---
 
-# Automation Recovery
+## Automation Recovery
 
 When quality infrastructure fails, engineers should be able to:
 
@@ -2817,7 +3127,7 @@ Recovery must not require manual fabrication of PASS evidence.
 
 ---
 
-# Automation Disaster Scenario
+## Automation Disaster Scenario
 
 If central quality infrastructure is unavailable, governance should define fallback behavior.
 
@@ -2833,7 +3143,7 @@ unless an authorized emergency process exists.
 
 ---
 
-# Emergency Quality Process
+## Emergency Quality Process
 
 Emergency processes may allow manual verification under exceptional conditions.
 
@@ -2848,7 +3158,7 @@ Emergency processes must not become normal workflow.
 
 ---
 
-# Quality Automation API
+## Quality Automation API
 
 A future Quality Platform may expose an automation API.
 
@@ -2865,7 +3175,7 @@ The exact API belongs to future implementation design.
 
 ---
 
-# Quality Automation Events
+## Quality Automation Events
 
 Automation may emit events such as:
 
@@ -2882,7 +3192,7 @@ These events may support observability and integrations.
 
 ---
 
-# Event Integrity
+## Event Integrity
 
 Quality events should reference stable identities.
 
@@ -2904,7 +3214,7 @@ communication-plugin
 
 ---
 
-# Automation Storage
+## Automation Storage
 
 Automation may require storage for:
 
@@ -2918,7 +3228,7 @@ Storage should support retention and traceability requirements.
 
 ---
 
-# Automation Retention
+## Automation Retention
 
 Retention may vary by artifact.
 
@@ -2936,7 +3246,7 @@ Governance should define authoritative retention policy.
 
 ---
 
-# Automation Data Volume
+## Automation Data Volume
 
 Quality automation can generate substantial data.
 
@@ -2953,7 +3263,7 @@ Not all data requires permanent retention.
 
 ---
 
-# Automation Scalability
+## Automation Scalability
 
 As FamilyOS grows, automation should scale across:
 
@@ -2970,7 +3280,7 @@ Scalability must be considered in architecture.
 
 ---
 
-# Distributed Automation
+## Distributed Automation
 
 Future FamilyOS development may require distributed execution.
 
@@ -2988,7 +3298,7 @@ Execution location must not redefine quality semantics.
 
 ---
 
-# Automation Determinism
+## Automation Determinism
 
 Where practical, identical inputs should produce equivalent quality conclusions.
 
@@ -3007,7 +3317,7 @@ Non-determinism should be treated as a quality concern.
 
 ---
 
-# Reproducibility
+## Reproducibility
 
 A developer should ideally be able to reproduce a CI quality failure locally or in an equivalent controlled environment.
 
@@ -3015,7 +3325,7 @@ Reproducibility reduces remediation time.
 
 ---
 
-# Environment Capture
+## Environment Capture
 
 Evidence may capture relevant environment information such as:
 
@@ -3030,7 +3340,7 @@ Only information relevant to reproducibility should be retained.
 
 ---
 
-# Cross-Platform Automation
+## Cross-Platform Automation
 
 If FamilyOS supports multiple platforms, quality automation should verify relevant platform combinations.
 
@@ -3038,7 +3348,7 @@ The required matrix should remain proportional to actual support policy.
 
 ---
 
-# Matrix Testing
+## Matrix Testing
 
 Automation may execute combinations such as:
 
@@ -3054,7 +3364,7 @@ The exact matrix belongs to compatibility and release policy.
 
 ---
 
-# Matrix Explosion
+## Matrix Explosion
 
 Combinatorial test matrices can become expensive.
 
@@ -3068,7 +3378,7 @@ Coverage strategy must remain explicit.
 
 ---
 
-# Automation Governance Model
+## Automation Governance Model
 
 Quality Automation governance should define:
 
@@ -3085,7 +3395,7 @@ This prevents uncontrolled changes to quality enforcement.
 
 ---
 
-# Automation Policy Change
+## Automation Policy Change
 
 A change that weakens enforcement should receive particular scrutiny.
 
@@ -3102,7 +3412,7 @@ Such changes should require explicit justification.
 
 ---
 
-# Automation Audit
+## Automation Audit
 
 Periodic automation audits may verify:
 
@@ -3115,7 +3425,7 @@ Periodic automation audits may verify:
 
 ---
 
-# Quality Control Plane
+## Quality Control Plane
 
 The automation system forms part of the FamilyOS Quality Control Plane.
 
@@ -3139,55 +3449,55 @@ Compromise of this control plane can compromise engineering confidence.
 
 ---
 
-# Automation Anti-Patterns
+## Automation Anti-Patterns
 
 The Quality Automation model rejects several anti-patterns.
 
-## Automation Without Requirement
+### Automation Without Requirement
 
 A tool should not be added merely because it exists.
 
 Every significant check should serve a quality objective.
 
-## Tool Defines Policy
+### Tool Defines Policy
 
 Tool configuration must implement policy, not replace architectural quality reasoning.
 
-## Silent Skip
+### Silent Skip
 
 Required checks must never disappear silently.
 
-## Error Equals Pass
+### Error Equals Pass
 
 Infrastructure failure is not quality success.
 
-## Retry Until Green
+### Retry Until Green
 
 Repeated execution must not hide deterministic or flaky failures.
 
-## Permanent Suppression
+### Permanent Suppression
 
 Suppressions require governance and should be minimized.
 
-## Stale Evidence Reuse
+### Stale Evidence Reuse
 
 Evidence must correspond to relevant target state.
 
-## CI-Only Reproducibility
+### CI-Only Reproducibility
 
 Developers should be able to reproduce important failures where practical.
 
-## Automation Without Ownership
+### Automation Without Ownership
 
 Unowned quality automation becomes unreliable.
 
-## Maximum Automation at Any Cost
+### Maximum Automation at Any Cost
 
 Automation must remain economically justified and maintainable.
 
 ---
 
-# Initial Automation Model
+## Initial Automation Model
 
 An initial FamilyOS Quality Automation implementation may begin with:
 
@@ -3217,7 +3527,7 @@ This is sufficient to establish a strong automation foundation.
 
 ---
 
-# Initial Quality Command
+## Initial Quality Command
 
 A future initial interface may conceptually provide:
 
@@ -3243,7 +3553,7 @@ The exact command and output format should be defined during implementation.
 
 ---
 
-# Initial CI Pipeline
+## Initial CI Pipeline
 
 A practical first CI model may be:
 
@@ -3269,7 +3579,7 @@ As the Quality Framework matures, additional checks can be integrated.
 
 ---
 
-# Automation Evolution
+## Automation Evolution
 
 Quality Automation should evolve incrementally.
 
@@ -3293,7 +3603,7 @@ Automating unstable policy too early can create unnecessary maintenance.
 
 ---
 
-# Automation Maturity Model
+## Automation Maturity Model
 
 Quality Automation may mature through:
 
@@ -3334,7 +3644,7 @@ Continuous Quality Control Plane
 
 ---
 
-# Continuous Quality Automation
+## Continuous Quality Automation
 
 At high maturity, FamilyOS quality automation becomes continuously integrated into engineering work.
 
@@ -3362,7 +3672,7 @@ Quality becomes part of the engineering runtime rather than an external verifica
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 The Testing Framework defines:
 
@@ -3385,7 +3695,7 @@ The frameworks therefore complement each other.
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 The Documentation Framework defines documentation standards and lifecycle.
 
@@ -3393,7 +3703,7 @@ Quality Automation executes deterministic documentation validation and converts 
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 The Build Framework defines build behavior.
 
@@ -3401,7 +3711,7 @@ Quality Automation verifies build quality and collects build evidence.
 
 ---
 
-# Relationship With Release Framework
+## Relationship With Release Framework
 
 The Release Framework defines release lifecycle.
 
@@ -3409,7 +3719,7 @@ Quality Automation supplies the evidence and gate evaluation required for contro
 
 ---
 
-# Relationship With Plugin Compliance Framework
+## Relationship With Plugin Compliance Framework
 
 The Plugin Compliance Framework defines plugin compliance rules.
 
@@ -3417,7 +3727,7 @@ Quality Automation executes or integrates compliance validation and provides nor
 
 ---
 
-# Relationship With Quality Evidence
+## Relationship With Quality Evidence
 
 Automation is a primary producer of Quality Evidence.
 
@@ -3431,7 +3741,7 @@ Evidence must remain traceable to the execution that produced it.
 
 ---
 
-# Relationship With Quality Metrics
+## Relationship With Quality Metrics
 
 Automation produces measurable operational information.
 
@@ -3448,7 +3758,7 @@ These metrics support Quality Metrics and Observability.
 
 ---
 
-# Relationship With Quality Risk
+## Relationship With Quality Risk
 
 Risk determines automation depth and enforcement strength.
 
@@ -3464,7 +3774,7 @@ Higher-risk targets may require stronger automated assurance.
 
 ---
 
-# Relationship With Quality Debt
+## Relationship With Quality Debt
 
 Missing automation may become Quality Debt.
 
@@ -3472,7 +3782,7 @@ Repeated automation failures may also reveal existing quality debt.
 
 ---
 
-# Relationship With Quality Reviews
+## Relationship With Quality Reviews
 
 Automation handles deterministic verification.
 
@@ -3490,7 +3800,7 @@ Quality Assessment
 
 ---
 
-# Relationship With Quality Gates
+## Relationship With Quality Gates
 
 Automation provides gate inputs.
 
@@ -3508,7 +3818,7 @@ Gate
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Governance defines which automated controls are authoritative, mandatory, optional, or informational.
 
@@ -3516,7 +3826,7 @@ Automation must enforce governance without silently redefining it.
 
 ---
 
-# Reference Automation Flow
+## Reference Automation Flow
 
 The complete FamilyOS Quality Automation flow can be represented as:
 
@@ -3566,7 +3876,7 @@ Continuous Improvement
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Automation enables FamilyOS to move from:
 
@@ -3595,7 +3905,7 @@ This creates a scalable quality system.
 
 ---
 
-# Final Automation Principle
+## Final Automation Principle
 
 Automation is not the objective of the Quality Framework.
 
@@ -3622,3 +3932,174 @@ Engineering Decision
 ```
 
 Through deterministic execution, normalized evidence, profile-based orchestration, risk-aware validation, CI integration, reliable failure semantics, observability, governance, and continuous improvement, Quality Automation transforms FamilyOS quality assurance from a collection of individual engineering practices into an integrated engineering capability.
+
+---
+
+## Phase 4 Runtime Contract Reconciliation
+
+The initial executable Phase 4 runtime SHALL establish a stable,
+tool-independent verification-adapter boundary without prematurely implementing
+the Ruff, MyPy, Pytest, documentation-validation, Plugin Compliance, or other
+tool adapters governed by later phases.
+
+### Quality Check Identity
+
+Phase 4 SHALL introduce `QualityCheckId` as the stable runtime identity of a
+Quality check.
+
+`QualityCheckId` SHALL:
+
+- be an immutable validated value object;
+- use the governed `QLT-CHECK-*` namespace;
+- follow the same `SPEC-0002`-compatible stable-boundary strategy used by the
+  existing Quality runtime identifiers;
+- require a canonical non-empty suffix;
+- preserve supplied canonical identifiers without inferring semantics from the
+  suffix; and
+- avoid a narrower suffix taxonomy that would reject existing identifiers such
+  as `QLT-CHECK-LINT`, `QLT-CHECK-TYPE`, `QLT-CHECK-UNIT`,
+  `QLT-CHECK-ARCH`, or `QLT-CHECK-DOC`.
+
+The temporary executable or command name SHALL NOT define check identity.
+
+### Normalized Quality Check Result
+
+The initial normalized execution result SHALL be an immutable application-layer
+model named `QualityCheckResult`.
+
+Its initial runtime fields SHALL be:
+
+```text
+check_id
+status
+findings
+evidence
+duration_seconds
+diagnostics
+```
+
+- `check_id` is a `QualityCheckId`;
+- `status` is the existing `QualityStatus`;
+- `findings` is an immutable tuple of `QualityFinding` values;
+- `evidence` is an immutable tuple of `QualityEvidence` values;
+- `duration_seconds` is a non-negative floating-point number of seconds; and
+- `diagnostics` is an immutable tuple of non-empty strings.
+
+A `PASS` result MAY contain zero findings. Phase 4 SHALL NOT invent assessment
+policy that forbids every finding on a `PASS` result.
+
+The normalized check result is an application execution contract. It SHALL NOT
+be promoted into a new Quality domain entity merely because it references
+domain values.
+
+### Check Status Semantics
+
+The initial Phase 4 normalized check result SHALL reuse the established
+`QualityStatus` runtime vocabulary:
+
+```text
+PASS
+WARNING
+FAIL
+ERROR
+SKIPPED
+UNKNOWN
+```
+
+`FAIL` means the check executed reliably and detected a Quality violation.
+`ERROR` means the check could not reliably execute or could not produce a valid
+conclusion. Tool crashes, missing executables, invalid or corrupt native
+results, and timeouts SHALL normally normalize to `ERROR` unless a later
+governed rule explicitly establishes different semantics. `ERROR` SHALL NOT
+silently become `PASS`.
+
+The broader automation documentation also discusses `NOT_APPLICABLE`.
+Phase 4 SHALL NOT silently mutate the established `QualityStatus` vocabulary to
+add that state. `NOT_APPLICABLE` remains available in the distinct
+`QualityEvidenceResult` vocabulary and any future check-status reconciliation
+MUST be explicit.
+
+### Quality Executor Application Port
+
+Phase 4 SHALL introduce a tool-independent Quality Executor application port.
+
+The initial port SHALL use a simple `execute(...) -> QualityCheckResult`
+boundary appropriate to the current FamilyOS application architecture.
+
+The conceptual `prepare()`, `execute()`, `collect()`, and `normalize()` stages
+remain explanatory decomposition only. They SHALL NOT require four public port
+methods.
+
+The initial executor contract SHALL operate only on Quality runtime concepts
+already authorized for the slice. It SHALL NOT introduce a dependency on
+`QualityProfile`, Quality Gate policy, CI-provider configuration, or
+tool-specific configuration merely because those concepts appear in broader
+automation examples.
+
+`QualityRule.executor` remains an opaque logical reference. It SHALL NOT become
+the executor object, callable, subprocess runner, or adapter instance.
+
+### Execution and Normalization Boundary
+
+Tool-specific execution details SHALL remain outside the Quality domain.
+
+Native exit codes, stdout, stderr, reports, metrics, artifacts, timing, and
+other tool representations SHALL not automatically become authoritative
+Quality Evidence.
+
+Later tool adapters SHALL translate native execution state into the normalized
+Quality application contract and canonical Quality Evidence without leaking
+tool or subprocess semantics into the Quality domain.
+
+Phase 4 SHALL define error-normalization behavior at the contract boundary, but
+it SHALL NOT implement a later-phase tool merely to demonstrate the contract.
+
+### Subprocess Boundary
+
+No reusable canonical FamilyOS command/process abstraction has been established
+as a prerequisite for this initial Quality slice.
+
+The Phase 4 subprocess checklist remains conditional on an actual reusable
+command executor being required.
+
+Phase 4 SHALL NOT introduce a generic `CommandExecutor`, `ProcessExecutor`, or
+equivalent abstraction solely to close conditional checklist items.
+
+Concrete adapters introduced by later phases remain responsible for proving
+stdout, stderr, exit-code, duration, timeout, and executable-not-found behavior
+where applicable.
+
+### Tool Version Boundary
+
+`QualityEvidence` already supports descriptive `tool` and `tool_version`
+metadata.
+
+Actual tool-version collection, storage from real adapter execution, and
+graceful unavailable-version handling SHALL remain open until concrete Quality
+tool adapters exist.
+
+### Initial Phase 4 Implementation Boundary
+
+The initial executable Phase 4 slice MAY implement:
+
+- `QualityCheckId`;
+- immutable `QualityCheckResult`;
+- the tool-independent Quality Executor application port;
+- validation and contract tests;
+- architecture-test evolution required to authorize the Phase 4 contract.
+
+The initial executable Phase 4 slice SHALL NOT implement:
+
+- Ruff integration;
+- MyPy integration;
+- Pytest integration;
+- documentation-validator integration;
+- Plugin Compliance integration;
+- Quality Profiles;
+- Quality Assessment;
+- Quality Gates;
+- Quality CLI;
+- CI integration;
+- a generic subprocess framework without demonstrated need;
+- tool-version probing without a concrete adapter; or
+- tool-specific behavior in the Quality domain.

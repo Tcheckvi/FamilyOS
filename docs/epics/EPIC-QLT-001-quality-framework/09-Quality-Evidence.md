@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 09 Quality Evidence
+## 09 Quality Evidence
 
-## Overview
+### Overview
 
 The FamilyOS Quality Evidence model defines how quality verification results are represented, preserved, traced, interpreted, and reused across the engineering lifecycle.
 
@@ -29,7 +29,7 @@ The Quality Evidence model ensures that quality decisions are based on structure
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Evidence is to make engineering quality demonstrable.
 
@@ -67,7 +67,7 @@ This creates a durable link between verification activity and engineering decisi
 
 ---
 
-# Evidence Principle
+## Evidence Principle
 
 The foundational principle is:
 
@@ -88,7 +88,7 @@ The strength of a quality decision depends on:
 
 ---
 
-# Evidence Definition
+## Evidence Definition
 
 Quality Evidence is a structured record representing the result of an engineering verification activity.
 
@@ -116,7 +116,7 @@ Evidence must contain enough information to explain what was verified and what w
 
 ---
 
-# Evidence Identity
+## Evidence Identity
 
 Every authoritative evidence record should have a stable unique identifier.
 
@@ -147,7 +147,7 @@ Evidence identifiers must support:
 
 ---
 
-# Evidence Metadata
+## Evidence Metadata
 
 A Quality Evidence record may include:
 
@@ -177,7 +177,7 @@ Required metadata should depend on evidence context.
 
 ---
 
-# Evidence Type
+## Evidence Type
 
 Evidence should be classified by type.
 
@@ -201,9 +201,46 @@ METRIC
 
 The evidence type helps determine interpretation and reporting behavior.
 
+### Initial Runtime Evidence Type Contract
+
+For the initial executable Quality Evidence runtime, `QualityEvidenceType`
+SHALL be represented as an immutable, validated, extensible value object.
+
+It SHALL NOT be modeled as a closed enum because the Quality Evidence model
+explicitly allows additional evidence categories to emerge as the framework
+evolves. It SHALL also not be accepted as an arbitrary unvalidated raw string.
+
+The initial canonical values are:
+
+```text
+TEST
+STATIC_ANALYSIS
+TYPE_VERIFICATION
+ARCHITECTURE
+SECURITY
+DOCUMENTATION
+BUILD
+PERFORMANCE
+COMPATIBILITY
+COMPLIANCE
+OBSERVABILITY
+MANUAL_REVIEW
+METRIC
+```
+
+These values are semantic evidence categories. They are not persistent
+`SPEC-0002` entity identifiers and no `QLT-EVID-TYPE-*` namespace is introduced
+by this phase.
+
+`TYPE_VERIFICATION` is the canonical initial spelling. `TYPE_CHECK` SHALL NOT
+be introduced as a second runtime spelling for the same evidence category.
+
+Additional evidence types MAY be introduced through controlled framework
+evolution without changing the representation strategy.
+
 ---
 
-# Evidence Source
+## Evidence Source
 
 The source identifies the system or process that produced the evidence.
 
@@ -237,7 +274,7 @@ This preserves tool independence.
 
 ---
 
-# Evidence Target
+## Evidence Target
 
 Every evidence record must identify what was evaluated.
 
@@ -271,7 +308,7 @@ Evidence without a clear target is difficult to interpret.
 
 ---
 
-# Evidence Scope
+## Evidence Scope
 
 The evidence scope determines how broadly the result applies.
 
@@ -299,7 +336,7 @@ Scope prevents evidence from being incorrectly generalized.
 
 ---
 
-# Evidence Rule Reference
+## Evidence Rule Reference
 
 Where applicable, evidence should reference the Quality Rule that generated it.
 
@@ -322,7 +359,33 @@ Evidence may also reference the originating requirement.
 
 ---
 
-# Evidence Check Reference
+### Initial Runtime Traceability Contract
+
+The initial executable `QualityEvidence` model SHALL use the existing
+`QualityTarget` domain model for target binding.
+
+Evidence identity SHALL use a dedicated immutable `QualityEvidenceId` with the
+canonical `QLT-EVID-*` namespace. Its stable-boundary validation SHALL follow
+the same `SPEC-0002`-compatible strategy used by the existing Quality runtime
+identifier value objects: validate the category namespace and canonical
+non-empty suffix without inventing a narrower suffix taxonomy that rejects
+existing Quality Evidence identifiers.
+
+A `QualityRuleId` MAY be recorded when the evidence is produced for a governed
+Quality Rule. A `QualityRequirementId` MAY additionally be recorded for direct
+requirement traceability. These references are optional because the normative
+Evidence model also supports evidence classes such as measurement,
+operational, review, and governance evidence that are not necessarily produced
+by a single executable rule.
+
+The `QLT-CHECK-*` examples below remain conceptual execution-mechanism
+references in Phase 3. Phase 3 SHALL NOT introduce a `QualityCheckId` runtime
+contract merely from those examples. Normalized check execution and executor
+contracts belong to Phase 4 — Verification Adapter Contracts.
+
+---
+
+## Evidence Check Reference
 
 Evidence should identify the execution mechanism.
 
@@ -345,7 +408,7 @@ Evidence
 
 ---
 
-# Evidence Result
+## Evidence Result
 
 Evidence should use standardized result semantics.
 
@@ -362,9 +425,43 @@ NOT_APPLICABLE
 
 The result meaning must remain stable across evidence providers.
 
+### Initial Runtime Evidence Result Contract
+
+The result of an evidence record is not the same concept as the broader
+`QualityStatus` model.
+
+The initial executable Quality Evidence runtime SHALL therefore define a
+dedicated closed `QualityEvidenceResult` vocabulary:
+
+```text
+PASS
+WARNING
+FAIL
+ERROR
+SKIPPED
+NOT_APPLICABLE
+```
+
+`QualityEvidenceResult` SHALL remain distinct from `QualityStatus`.
+
+In particular:
+
+* `NOT_APPLICABLE` means that the evaluated rule does not apply to the target;
+* `UNKNOWN`, which belongs to `QualityStatus`, is not a substitute for
+  `NOT_APPLICABLE`;
+* `FAIL` means that verification executed successfully and found
+  non-compliance;
+* `ERROR` means that verification could not complete successfully;
+* structurally invalid or malformed evidence is neither `FAIL` nor `ERROR` as
+  an evidence result. Invalid evidence fails the evidence contract itself and
+  must be rejected before it can participate in authoritative assessment.
+
+The canonical field name for this concept in `QualityEvidence` SHALL be
+`result`, not `status`.
+
 ---
 
-# PASS Evidence
+## PASS Evidence
 
 PASS evidence confirms that a check was successfully executed and the evaluated rule was satisfied.
 
@@ -374,7 +471,7 @@ Its meaning is limited to the evidence scope.
 
 ---
 
-# FAIL Evidence
+## FAIL Evidence
 
 FAIL evidence confirms that the verification executed successfully and identified non-compliance.
 
@@ -382,7 +479,7 @@ FAIL evidence should normally generate or reference one or more findings.
 
 ---
 
-# WARNING Evidence
+## WARNING Evidence
 
 WARNING evidence identifies a non-blocking concern.
 
@@ -390,7 +487,7 @@ Warnings remain part of the historical quality state and should not disappear me
 
 ---
 
-# ERROR Evidence
+## ERROR Evidence
 
 ERROR evidence means the verification could not complete successfully.
 
@@ -406,7 +503,7 @@ An error must never be treated as successful evidence.
 
 ---
 
-# SKIPPED Evidence
+## SKIPPED Evidence
 
 SKIPPED evidence indicates that a check was intentionally not executed.
 
@@ -421,7 +518,7 @@ Check disabled in FAST execution mode
 
 ---
 
-# NOT_APPLICABLE Evidence
+## NOT_APPLICABLE Evidence
 
 NOT_APPLICABLE indicates that the rule does not apply to the target.
 
@@ -429,7 +526,7 @@ This is distinct from skipped execution.
 
 ---
 
-# Evidence Timestamp
+## Evidence Timestamp
 
 Every evidence record should include the time at which the observation was produced.
 
@@ -449,7 +546,7 @@ may no longer be sufficient for authoritative decisions.
 
 ---
 
-# Evidence Revision
+## Evidence Revision
 
 Evidence should identify the source revision where practical.
 
@@ -466,7 +563,7 @@ This creates a stable relationship between evidence and evaluated state.
 
 ---
 
-# Evidence Freshness
+## Evidence Freshness
 
 Quality gates may define freshness requirements.
 
@@ -483,7 +580,7 @@ Old evidence may still be useful historically but not sufficient for current app
 
 ---
 
-# Evidence Expiration
+## Evidence Expiration
 
 Some evidence may have explicit expiration semantics.
 
@@ -498,7 +595,7 @@ Expiration must be based on engineering justification rather than arbitrary age.
 
 ---
 
-# Evidence Environment
+## Evidence Environment
 
 Verification results may depend on the execution environment.
 
@@ -522,7 +619,7 @@ This is especially important for:
 
 ---
 
-# Evidence Tool Version
+## Evidence Tool Version
 
 Tool version can affect results.
 
@@ -540,7 +637,7 @@ Historical evidence should preserve tool version where changes may affect semant
 
 ---
 
-# Evidence Configuration
+## Evidence Configuration
 
 Evidence should identify significant configuration.
 
@@ -558,7 +655,7 @@ This improves reproducibility.
 
 ---
 
-# Evidence Artifact
+## Evidence Artifact
 
 Evidence may reference an artifact.
 
@@ -576,7 +673,7 @@ Artifacts should be referenced rather than embedded when large.
 
 ---
 
-# Evidence Details
+## Evidence Details
 
 Evidence may include explanatory details.
 
@@ -598,7 +695,7 @@ Details should remain structured where practical.
 
 ---
 
-# Evidence Payload
+## Evidence Payload
 
 Some evidence requires a structured payload.
 
@@ -617,7 +714,7 @@ The exact serialization format remains an implementation concern.
 
 ---
 
-# Evidence Categories
+## Evidence Categories
 
 Evidence may be grouped into broader categories:
 
@@ -633,7 +730,7 @@ Each category has different trust characteristics.
 
 ---
 
-# Verification Evidence
+## Verification Evidence
 
 Verification Evidence results from direct checks against defined rules.
 
@@ -649,7 +746,7 @@ This is usually highly structured and automatable.
 
 ---
 
-# Measurement Evidence
+## Measurement Evidence
 
 Measurement Evidence represents quantitative observations.
 
@@ -664,7 +761,7 @@ Measurement evidence generally feeds metrics and threshold evaluation.
 
 ---
 
-# Review Evidence
+## Review Evidence
 
 Review Evidence comes from structured human evaluation.
 
@@ -679,7 +776,7 @@ Manual evidence must still remain explicit and traceable.
 
 ---
 
-# Operational Evidence
+## Operational Evidence
 
 Operational Evidence originates from runtime systems.
 
@@ -695,7 +792,7 @@ Operational evidence provides information that pre-release verification cannot f
 
 ---
 
-# Governance Evidence
+## Governance Evidence
 
 Governance Evidence supports procedural or approval requirements.
 
@@ -711,7 +808,7 @@ Governance evidence must identify responsible actors and decisions.
 
 ---
 
-# Automated Evidence
+## Automated Evidence
 
 Automated evidence is generated without manual interpretation during execution.
 
@@ -726,7 +823,7 @@ Automated evidence should be preferred where verification can be performed relia
 
 ---
 
-# Manual Evidence
+## Manual Evidence
 
 Manual evidence remains necessary where engineering judgment is required.
 
@@ -745,7 +842,7 @@ Manual evidence must not be an undocumented approval.
 
 ---
 
-# Hybrid Evidence
+## Hybrid Evidence
 
 Some assessments may combine automated and manual evidence.
 
@@ -763,7 +860,7 @@ The source of each evidence component must remain distinguishable.
 
 ---
 
-# Evidence Quality
+## Evidence Quality
 
 Evidence itself has quality characteristics.
 
@@ -782,7 +879,7 @@ Weak evidence reduces decision confidence.
 
 ---
 
-# Evidence Relevance
+## Evidence Relevance
 
 Evidence must directly support the requirement or rule being evaluated.
 
@@ -802,7 +899,7 @@ Evidence must match the quality claim.
 
 ---
 
-# Evidence Completeness
+## Evidence Completeness
 
 An assessment may require several evidence sources.
 
@@ -822,7 +919,7 @@ Missing evidence should remain visible.
 
 ---
 
-# Evidence Accuracy
+## Evidence Accuracy
 
 Evidence must accurately represent the observed result.
 
@@ -832,7 +929,7 @@ Evidence adapters must therefore be tested.
 
 ---
 
-# Evidence Reproducibility
+## Evidence Reproducibility
 
 Equivalent evaluations should produce comparable evidence.
 
@@ -848,7 +945,7 @@ The necessary context must be recorded where relevant.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Authoritative evidence must be protected against silent modification.
 
@@ -864,7 +961,7 @@ Evidence integrity is fundamental to trustworthy governance.
 
 ---
 
-# Evidence Immutability
+## Evidence Immutability
 
 Published evidence should be treated as immutable where practical.
 
@@ -882,7 +979,7 @@ Historical evidence should remain preserved.
 
 ---
 
-# Evidence Hashing
+## Evidence Hashing
 
 Artifacts may use cryptographic hashes to support integrity verification.
 
@@ -900,7 +997,7 @@ Hashing may become particularly useful for release and compliance evidence.
 
 ---
 
-# Evidence Chain
+## Evidence Chain
 
 Multiple evidence records may form an evidence chain.
 
@@ -922,7 +1019,7 @@ This creates end-to-end traceability.
 
 ---
 
-# Evidence Lineage
+## Evidence Lineage
 
 Evidence lineage describes how evidence was produced or derived.
 
@@ -942,7 +1039,7 @@ Each transformation should remain identifiable.
 
 ---
 
-# Raw Evidence
+## Raw Evidence
 
 Raw evidence is the direct output from an execution provider.
 
@@ -957,7 +1054,7 @@ Raw evidence may be preserved for detailed debugging.
 
 ---
 
-# Normalized Evidence
+## Normalized Evidence
 
 Normalized evidence maps provider-specific data into the FamilyOS Quality Evidence model.
 
@@ -975,7 +1072,7 @@ Normalization enables cross-tool consistency.
 
 ---
 
-# Derived Evidence
+## Derived Evidence
 
 Derived evidence is calculated from one or more existing evidence records.
 
@@ -990,7 +1087,7 @@ Derived evidence must reference its sources.
 
 ---
 
-# Evidence Aggregation
+## Evidence Aggregation
 
 Evidence may be aggregated at higher scopes.
 
@@ -1010,7 +1107,7 @@ Aggregation logic must not hide important failures.
 
 ---
 
-# Evidence Aggregation Rules
+## Evidence Aggregation Rules
 
 Aggregation must respect result severity.
 
@@ -1034,7 +1131,7 @@ Exact semantics belong to the assessment model.
 
 ---
 
-# Evidence Set
+## Evidence Set
 
 A Quality Evidence Set groups related evidence for a specific assessment.
 
@@ -1054,7 +1151,7 @@ Evidence sets improve lifecycle traceability.
 
 ---
 
-# Evidence Bundle
+## Evidence Bundle
 
 A portable Evidence Bundle may contain:
 
@@ -1071,7 +1168,7 @@ Evidence bundles may support release audits and offline validation.
 
 ---
 
-# Evidence Manifest
+## Evidence Manifest
 
 An evidence manifest may list all records and artifacts included in a bundle.
 
@@ -1091,7 +1188,7 @@ The manifest helps verify completeness.
 
 ---
 
-# Evidence Store
+## Evidence Store
 
 The architecture may introduce a Quality Evidence Store.
 
@@ -1107,7 +1204,7 @@ Its responsibilities may include:
 
 ---
 
-# Evidence Storage Model
+## Evidence Storage Model
 
 Evidence storage may distinguish:
 
@@ -1122,7 +1219,7 @@ Large artifacts may use external artifact storage while metadata remains central
 
 ---
 
-# Evidence Retention
+## Evidence Retention
 
 Not all evidence requires permanent retention.
 
@@ -1138,7 +1235,7 @@ Release evidence may require longer retention than routine development evidence.
 
 ---
 
-# Evidence Lifecycle
+## Evidence Lifecycle
 
 Evidence may follow a lifecycle such as:
 
@@ -1158,7 +1255,7 @@ The exact lifecycle may vary by evidence type.
 
 ---
 
-# Evidence Validation
+## Evidence Validation
 
 Evidence should be validated before becoming authoritative.
 
@@ -1176,7 +1273,7 @@ Invalid evidence must not silently participate in quality gates.
 
 ---
 
-# Evidence Publication
+## Evidence Publication
 
 Publication marks evidence as available for assessment.
 
@@ -1186,7 +1283,7 @@ Published evidence should be treated as authoritative for its scope.
 
 ---
 
-# Evidence Supersession
+## Evidence Supersession
 
 New evidence may supersede earlier evidence.
 
@@ -1206,7 +1303,7 @@ Supersession must not delete historical state.
 
 ---
 
-# Evidence Archival
+## Evidence Archival
 
 Older evidence may be archived while preserving traceability.
 
@@ -1219,7 +1316,7 @@ Archived evidence should remain retrievable when required for:
 
 ---
 
-# Evidence and Findings
+## Evidence and Findings
 
 Evidence may generate findings.
 
@@ -1235,7 +1332,7 @@ A finding should reference the evidence that supports it.
 
 ---
 
-# Evidence and Metrics
+## Evidence and Metrics
 
 Evidence may contain or produce metrics.
 
@@ -1251,7 +1348,7 @@ The metric should preserve the evidence reference.
 
 ---
 
-# Evidence and Assessments
+## Evidence and Assessments
 
 Assessments consume evidence.
 
@@ -1269,7 +1366,7 @@ Assessment logic determines whether evidence is sufficient and compliant.
 
 ---
 
-# Evidence and Gates
+## Evidence and Gates
 
 Quality Gates must rely on defined evidence requirements.
 
@@ -1289,7 +1386,7 @@ A gate should not depend on undocumented manual assumptions.
 
 ---
 
-# Required Evidence
+## Required Evidence
 
 Quality Profiles may define required evidence.
 
@@ -1310,7 +1407,7 @@ Missing required evidence must be visible.
 
 ---
 
-# Optional Evidence
+## Optional Evidence
 
 Optional evidence may strengthen confidence without being mandatory.
 
@@ -1324,7 +1421,7 @@ for a component without explicit performance thresholds.
 
 ---
 
-# Informational Evidence
+## Informational Evidence
 
 Informational evidence may support observability and analysis without affecting gate results.
 
@@ -1336,7 +1433,7 @@ Examples:
 
 ---
 
-# Evidence Sufficiency
+## Evidence Sufficiency
 
 A quality decision must consider whether available evidence is sufficient.
 
@@ -1353,7 +1450,7 @@ The presence of some evidence does not imply sufficient evidence.
 
 ---
 
-# Evidence Coverage
+## Evidence Coverage
 
 Evidence coverage describes how much of the required quality model has supporting evidence.
 
@@ -1376,7 +1473,7 @@ It must not be confused with test coverage.
 
 ---
 
-# Missing Evidence Findings
+## Missing Evidence Findings
 
 Missing required evidence may itself generate a finding.
 
@@ -1397,7 +1494,7 @@ This makes evidence completeness enforceable.
 
 ---
 
-# Stale Evidence
+## Stale Evidence
 
 Evidence may become stale when the target changes.
 
@@ -1417,7 +1514,7 @@ Freshness logic should consider actual change impact where practical.
 
 ---
 
-# Evidence Reuse
+## Evidence Reuse
 
 Evidence reuse may improve performance.
 
@@ -1433,7 +1530,7 @@ Reuse is only safe when:
 
 ---
 
-# Evidence Cache
+## Evidence Cache
 
 A Quality Evidence Cache may reduce repeated execution.
 
@@ -1453,7 +1550,7 @@ Cache reuse must be deterministic and auditable.
 
 ---
 
-# Cache Invalidation
+## Cache Invalidation
 
 Cached evidence must be invalidated when relevant inputs change.
 
@@ -1470,7 +1567,7 @@ Incorrect cache reuse creates false confidence.
 
 ---
 
-# Evidence Provenance
+## Evidence Provenance
 
 Every authoritative record should expose provenance.
 
@@ -1494,7 +1591,7 @@ This is fundamental to auditability.
 
 ---
 
-# Evidence Trust Level
+## Evidence Trust Level
 
 The framework may eventually classify evidence trust.
 
@@ -1518,7 +1615,7 @@ Trust classification should only be introduced if it provides practical value.
 
 ---
 
-# Third-Party Evidence
+## Third-Party Evidence
 
 Some evidence may originate outside FamilyOS-controlled tooling.
 
@@ -1540,7 +1637,7 @@ External evidence should not automatically receive the same trust as internally 
 
 ---
 
-# Human Review Evidence
+## Human Review Evidence
 
 Human review records must identify:
 
@@ -1568,7 +1665,7 @@ The reviewer identity must be appropriate to the governance context.
 
 ---
 
-# Review Evidence Expiration
+## Review Evidence Expiration
 
 Some human reviews may remain valid until material changes occur.
 
@@ -1584,7 +1681,7 @@ This may be preferable to arbitrary time-based expiration.
 
 ---
 
-# Operational Evidence
+## Operational Evidence
 
 Runtime evidence can reveal defects that pre-release checks missed.
 
@@ -1602,7 +1699,7 @@ Operational evidence should feed quality findings and continuous improvement.
 
 ---
 
-# Incident Evidence
+## Incident Evidence
 
 An incident may become structured quality evidence.
 
@@ -1622,7 +1719,7 @@ This evidence can inform reliability and quality debt analysis.
 
 ---
 
-# Evidence and Root Cause
+## Evidence and Root Cause
 
 Evidence may support root cause investigations.
 
@@ -1644,7 +1741,7 @@ This supports systemic learning.
 
 ---
 
-# Evidence for Quality Debt
+## Evidence for Quality Debt
 
 Quality debt should have supporting evidence.
 
@@ -1660,7 +1757,7 @@ Debt without evidence becomes difficult to manage objectively.
 
 ---
 
-# Evidence for Exceptions
+## Evidence for Exceptions
 
 Exceptions require evidence too.
 
@@ -1676,7 +1773,7 @@ This ensures that exceptions remain reasoned decisions.
 
 ---
 
-# Exception Evidence
+## Exception Evidence
 
 An exception record may include:
 
@@ -1695,7 +1792,7 @@ The exception becomes governance evidence.
 
 ---
 
-# Evidence for Baselines
+## Evidence for Baselines
 
 Quality baselines require evidence establishing the accepted state.
 
@@ -1713,7 +1810,7 @@ This distinguishes historical debt from new regressions.
 
 ---
 
-# Baseline Evidence Snapshot
+## Baseline Evidence Snapshot
 
 A baseline snapshot may contain:
 
@@ -1727,7 +1824,7 @@ This enables future regression comparison.
 
 ---
 
-# Evidence for Release Decisions
+## Evidence for Release Decisions
 
 Release decisions require a durable evidence set.
 
@@ -1748,7 +1845,7 @@ This allows the release to be reconstructed later.
 
 ---
 
-# Release Evidence Integrity
+## Release Evidence Integrity
 
 Release evidence should ideally be tied to the exact released artifacts.
 
@@ -1768,7 +1865,7 @@ This prevents ambiguity about which artifact was verified.
 
 ---
 
-# Evidence Reporting
+## Evidence Reporting
 
 Reports should summarize evidence without destroying detail.
 
@@ -1787,7 +1884,7 @@ The summary should link to detailed evidence when necessary.
 
 ---
 
-# Evidence Drill-Down
+## Evidence Drill-Down
 
 Engineers should be able to move from a high-level result to detailed evidence.
 
@@ -1807,7 +1904,7 @@ This supports diagnosis and trust.
 
 ---
 
-# Machine-Readable Evidence
+## Machine-Readable Evidence
 
 Evidence should eventually have a machine-readable format.
 
@@ -1824,7 +1921,7 @@ The machine-readable model must preserve semantic consistency.
 
 ---
 
-# Human-Readable Evidence
+## Human-Readable Evidence
 
 Human-readable evidence should prioritize clarity.
 
@@ -1846,7 +1943,7 @@ Raw tool output alone is usually insufficient.
 
 ---
 
-# Evidence Serialization
+## Evidence Serialization
 
 Potential serialization formats may include:
 
@@ -1862,7 +1959,7 @@ The framework should normalize these formats rather than force all providers to 
 
 ---
 
-# Evidence Interoperability
+## Evidence Interoperability
 
 External evidence standards may be supported through adapters.
 
@@ -1890,7 +1987,7 @@ Interoperability should preserve original details when useful.
 
 ---
 
-# Evidence Schema
+## Evidence Schema
 
 The framework may define a canonical evidence schema.
 
@@ -1917,7 +2014,7 @@ The actual schema should evolve through formal implementation and specification 
 
 ---
 
-# Schema Versioning
+## Schema Versioning
 
 Evidence schema versions must be explicit.
 
@@ -1937,7 +2034,7 @@ Breaking schema changes must consider:
 
 ---
 
-# Evidence Compatibility
+## Evidence Compatibility
 
 Historical evidence must remain readable after framework evolution.
 
@@ -1952,7 +2049,7 @@ Loss of historical evidence interpretability should be avoided.
 
 ---
 
-# Evidence Security
+## Evidence Security
 
 Evidence may contain sensitive engineering information.
 
@@ -1967,7 +2064,7 @@ Access control may therefore be required for some evidence classes.
 
 ---
 
-# Evidence Data Minimization
+## Evidence Data Minimization
 
 Evidence should include enough information to support decisions without unnecessarily storing sensitive data.
 
@@ -1975,7 +2072,7 @@ Operational evidence should avoid collecting personal or family data unless requ
 
 ---
 
-# Evidence Confidentiality
+## Evidence Confidentiality
 
 Some evidence may require restricted access.
 
@@ -1991,7 +2088,7 @@ Confidentiality must not compromise the ability to verify quality decisions.
 
 ---
 
-# Evidence Authenticity
+## Evidence Authenticity
 
 For high-assurance workflows, FamilyOS may eventually require proof that evidence originated from an authorized execution environment.
 
@@ -2006,7 +2103,7 @@ These mechanisms may become relevant for release security.
 
 ---
 
-# Evidence Tampering
+## Evidence Tampering
 
 The Quality Framework must assume that quality infrastructure itself can be a target for accidental or intentional manipulation.
 
@@ -2024,7 +2121,7 @@ Governance and repository protection should support integrity.
 
 ---
 
-# Evidence Failure Modes
+## Evidence Failure Modes
 
 Common evidence failure modes include:
 
@@ -2040,7 +2137,7 @@ The framework must define visible handling for each.
 
 ---
 
-# Conflicting Evidence
+## Conflicting Evidence
 
 Different checks may produce conflicting results.
 
@@ -2060,7 +2157,7 @@ The assessment layer should interpret the conflict.
 
 ---
 
-# Evidence Conflict Resolution
+## Evidence Conflict Resolution
 
 Conflict resolution may consider:
 
@@ -2075,7 +2172,7 @@ Unresolved conflicts should remain visible.
 
 ---
 
-# Evidence Error Handling
+## Evidence Error Handling
 
 Evidence processing failures must be explicit.
 
@@ -2093,7 +2190,7 @@ Invalid evidence must not participate silently in authoritative assessments.
 
 ---
 
-# Evidence Quality Metrics
+## Evidence Quality Metrics
 
 The framework may observe evidence system health.
 
@@ -2111,7 +2208,7 @@ These metrics help improve quality infrastructure.
 
 ---
 
-# Evidence Completeness Metric
+## Evidence Completeness Metric
 
 A possible metric is:
 
@@ -2127,7 +2224,7 @@ This may support quality assessment but should not hide the importance of specif
 
 ---
 
-# Evidence Freshness Metric
+## Evidence Freshness Metric
 
 A freshness metric may indicate age since last valid verification.
 
@@ -2145,7 +2242,7 @@ This may support governance and release readiness.
 
 ---
 
-# Evidence Reliability Metrics
+## Evidence Reliability Metrics
 
 Evidence provider reliability may be measured through:
 
@@ -2160,7 +2257,7 @@ Unreliable providers should not silently degrade assurance.
 
 ---
 
-# Evidence and Developer Experience
+## Evidence and Developer Experience
 
 Evidence should help engineers rather than overwhelm them.
 
@@ -2176,7 +2273,7 @@ Engineers should not need to manually combine dozens of raw reports.
 
 ---
 
-# Evidence Deduplication
+## Evidence Deduplication
 
 Multiple tools may produce duplicate evidence for the same underlying issue.
 
@@ -2197,7 +2294,7 @@ Both evidence sources should remain referenced.
 
 ---
 
-# Evidence Correlation
+## Evidence Correlation
 
 Evidence correlation may connect related signals.
 
@@ -2217,7 +2314,7 @@ It must not automatically imply causation.
 
 ---
 
-# Evidence Graph
+## Evidence Graph
 
 As the framework matures, evidence relationships may form a graph.
 
@@ -2255,7 +2352,7 @@ This graph can provide powerful traceability.
 
 ---
 
-# Evidence Querying
+## Evidence Querying
 
 The framework should eventually allow queries such as:
 
@@ -2275,7 +2372,7 @@ Structured evidence makes these queries possible.
 
 ---
 
-# Evidence Indexing
+## Evidence Indexing
 
 Useful indexes may include:
 
@@ -2294,7 +2391,7 @@ Efficient indexing becomes important as evidence volume grows.
 
 ---
 
-# Evidence Scalability
+## Evidence Scalability
 
 Large repositories may produce thousands or millions of evidence records.
 
@@ -2311,7 +2408,7 @@ Scalability must not require abandoning traceability.
 
 ---
 
-# Evidence Sampling
+## Evidence Sampling
 
 Sampling may be appropriate for high-volume runtime observations.
 
@@ -2321,7 +2418,7 @@ The evidence model must distinguish sampled observations from complete verificat
 
 ---
 
-# Evidence Confidence
+## Evidence Confidence
 
 Some evidence may have confidence characteristics.
 
@@ -2342,7 +2439,7 @@ Confidence modeling should only be introduced where it materially improves decis
 
 ---
 
-# Evidence and AI
+## Evidence and AI
 
 AI may assist with evidence interpretation.
 
@@ -2358,7 +2455,7 @@ AI must not modify authoritative evidence.
 
 ---
 
-# AI-Generated Evidence
+## AI-Generated Evidence
 
 AI-generated conclusions should not automatically be treated as authoritative Quality Evidence.
 
@@ -2372,7 +2469,7 @@ unless supported by deterministic verification or governed review.
 
 ---
 
-# Evidence Explainability
+## Evidence Explainability
 
 Every quality decision should be explainable through evidence.
 
@@ -2400,7 +2497,7 @@ This is the target explainability model.
 
 ---
 
-# Evidence Auditability
+## Evidence Auditability
 
 An audit should be able to reconstruct:
 
@@ -2422,7 +2519,7 @@ This requirement applies especially to releases and governed exceptions.
 
 ---
 
-# Evidence for Historical Reconstruction
+## Evidence for Historical Reconstruction
 
 Historical quality state should be reconstructable where retained evidence exists.
 
@@ -2438,45 +2535,114 @@ This improves long-term engineering knowledge.
 
 ---
 
-# Evidence Anti-Patterns
+## Evidence Anti-Patterns
 
 The Quality Evidence model rejects several anti-patterns.
 
-## Raw Output as the Only Evidence
+### Raw Output as the Only Evidence
 
 Raw tool output is often insufficient for durable quality reasoning.
 
-## Evidence Without Target
+### Evidence Without Target
 
 A result must identify what was evaluated.
 
-## Evidence Without Revision
+### Evidence Without Revision
 
 Authoritative evidence should identify the evaluated source or artifact state where relevant.
 
-## Silent Evidence Mutation
+### Silent Evidence Mutation
 
 Published evidence must not be rewritten without traceability.
 
-## Missing Evidence Treated as PASS
+### Missing Evidence Treated as PASS
 
 Absence of evidence is not proof of quality.
 
-## Stale Evidence Reuse
+### Stale Evidence Reuse
 
 Old evidence must not be reused against changed targets without validation.
 
-## Untraceable Manual Approval
+### Untraceable Manual Approval
 
 Human decisions must produce explicit review evidence.
 
-## Evidence Without Rule Context
+### Evidence Without Rule Context
 
 Quality evidence should connect to the requirement or rule it supports.
 
 ---
 
-# Initial FamilyOS Evidence Model
+## Initial Executable Quality Evidence Boundary
+
+The first executable `QualityEvidence` domain model SHALL remain smaller than
+the complete lifecycle model described throughout this document.
+
+Its initial domain responsibilities are:
+
+```text
+QualityEvidenceId
+QualityEvidenceType
+QualityEvidenceResult
+QualityEvidence
+```
+
+The initial `QualityEvidence` record SHALL provide the following semantic
+fields:
+
+```text
+id
+type
+source
+target
+result
+created_at
+revision
+rule_id
+requirement_id
+tool
+tool_version
+metadata
+artifact
+```
+
+Runtime interpretation:
+
+* `id` is a `QualityEvidenceId`;
+* `type` is a `QualityEvidenceType`;
+* `source` identifies the capability, system, process, or producer responsible
+  for the observation and must be a non-empty tool-independent string;
+* `target` is the existing immutable `QualityTarget`;
+* `result` is a `QualityEvidenceResult`;
+* `created_at` is a timezone-aware timestamp;
+* `revision` is optional only when revision binding is genuinely not
+  applicable; when supplied it must be a non-empty canonical string;
+* `rule_id` is an optional `QualityRuleId`;
+* `requirement_id` is an optional `QualityRequirementId`;
+* `tool` and `tool_version` are optional descriptive provider metadata and do
+  not make the domain model tool-specific;
+* `metadata` is immutable machine-readable descriptive metadata;
+* `artifact` is an optional non-empty artifact reference, not an embedded
+  large artifact payload.
+
+The model SHALL be immutable and SHALL reject malformed required values at the
+domain boundary.
+
+The initial runtime model SHALL NOT own:
+
+* evidence persistence or publication;
+* evidence supersession or archival lifecycle;
+* freshness policy or assessment sufficiency decisions;
+* Quality Gate evaluation;
+* tool execution;
+* normalized Quality Check execution contracts;
+* Ruff, MyPy, Pytest, or other provider-specific behavior;
+* evidence aggregation;
+* advanced provenance, signing, attestation, or storage.
+
+Those concerns remain governed by their later implementation phases.
+
+## Initial FamilyOS Evidence Model
 
 An initial implementation may focus on a minimal evidence structure:
 
@@ -2503,7 +2669,7 @@ More advanced provenance and storage capabilities may evolve later.
 
 ---
 
-# Initial Evidence Providers
+## Initial Evidence Providers
 
 Early providers may include:
 
@@ -2521,7 +2687,7 @@ These providers already align with major FamilyOS engineering workflows.
 
 ---
 
-# Initial Evidence Flow
+## Initial Evidence Flow
 
 A practical initial flow may be:
 
@@ -2543,7 +2709,7 @@ Later stages may introduce centralized assessment and persistence.
 
 ---
 
-# Evidence Maturity Model
+## Evidence Maturity Model
 
 Evidence capabilities may mature progressively.
 
@@ -2586,7 +2752,7 @@ The framework must support this evolution incrementally.
 
 ---
 
-# Reference Evidence Flow
+## Reference Evidence Flow
 
 The complete evidence lifecycle can be represented as:
 
@@ -2624,7 +2790,7 @@ This flow forms the factual backbone of the FamilyOS Quality Framework.
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The Quality Evidence model enables FamilyOS to move from:
 
@@ -2652,7 +2818,7 @@ This distinction is fundamental to mature engineering governance.
 
 ---
 
-# Final Evidence Principle
+## Final Evidence Principle
 
 Quality evidence must make confidence explainable.
 

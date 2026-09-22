@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 15 Quality Gates
+## 15 Quality Gates
 
-## Overview
+### Overview
 
 The FamilyOS Quality Gates model defines the controlled decision points that determine whether an engineering artifact, change, component, plugin, build, release candidate, or other governed target may progress through the FamilyOS engineering lifecycle.
 
@@ -38,7 +38,7 @@ May this target proceed to the next governed lifecycle state?
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Gates is to prevent engineering progression when required quality conditions are not satisfied.
 
@@ -73,7 +73,7 @@ CONDITIONAL
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -91,7 +91,7 @@ Quality Gates must be:
 
 ---
 
-# Gate Definition
+## Gate Definition
 
 A Quality Gate is a policy-controlled decision mechanism applied at a defined engineering lifecycle boundary.
 
@@ -115,7 +115,7 @@ Gate Policy
 
 ---
 
-# Gate Identity
+## Gate Identity
 
 Formal Quality Gates should have stable identities.
 
@@ -144,7 +144,7 @@ Stable identities support:
 
 ---
 
-# Gate Metadata
+## Gate Metadata
 
 A Quality Gate definition may contain:
 
@@ -180,7 +180,7 @@ evidence
 
 ---
 
-# Gate Boundary
+## Gate Boundary
 
 Every gate exists at a specific lifecycle boundary.
 
@@ -220,7 +220,7 @@ The gate must clearly identify which transition it controls.
 
 ---
 
-# Gate Target
+## Gate Target
 
 Gate targets may include:
 
@@ -243,7 +243,7 @@ Gate policy must be appropriate to the target.
 
 ---
 
-# Gate Scope
+## Gate Scope
 
 A gate may evaluate the complete target or a defined quality scope.
 
@@ -261,7 +261,7 @@ This gate should not be interpreted as proving complete release quality.
 
 ---
 
-# Gate Decision
+## Gate Decision
 
 A baseline decision model may include:
 
@@ -277,7 +277,7 @@ These states must remain semantically distinct.
 
 ---
 
-# PASS
+## PASS
 
 `PASS` means all mandatory progression conditions are satisfied.
 
@@ -285,7 +285,7 @@ The target may proceed through the controlled lifecycle boundary.
 
 ---
 
-# FAIL
+## FAIL
 
 `FAIL` means one or more blocking conditions are not satisfied.
 
@@ -293,7 +293,7 @@ Progression must stop unless an explicitly governed exception or override mechan
 
 ---
 
-# CONDITIONAL
+## CONDITIONAL
 
 `CONDITIONAL` means progression is permitted only under explicitly recorded conditions.
 
@@ -308,7 +308,7 @@ Conditional progression must remain traceable.
 
 ---
 
-# ERROR
+## ERROR
 
 `ERROR` means the gate could not reliably evaluate its policy.
 
@@ -325,7 +325,7 @@ An `ERROR` must never silently become `PASS`.
 
 ---
 
-# NOT_APPLICABLE
+## NOT_APPLICABLE
 
 `NOT_APPLICABLE` means the gate does not apply to the target or transition.
 
@@ -333,7 +333,7 @@ This state should be derived explicitly rather than assumed.
 
 ---
 
-# Gate Status vs Gate Decision
+## Gate Status vs Gate Decision
 
 Execution status and gate decision should remain distinct.
 
@@ -361,7 +361,7 @@ This distinction prevents infrastructure failures from being confused with quali
 
 ---
 
-# Gate Policy
+## Gate Policy
 
 Gate Policy defines the conditions required for progression.
 
@@ -382,7 +382,7 @@ Gate Policy should be version-controlled.
 
 ---
 
-# Policy Separation
+## Policy Separation
 
 Gate implementation must not silently define policy.
 
@@ -402,7 +402,7 @@ It does not invent policy.
 
 ---
 
-# Gate Inputs
+## Gate Inputs
 
 A gate may consume:
 
@@ -422,7 +422,7 @@ The applicable policy determines which inputs are authoritative.
 
 ---
 
-# Assessment-Driven Gates
+## Assessment-Driven Gates
 
 Where possible, gates should consume normalized Quality Assessments rather than directly interpret every raw tool result.
 
@@ -450,7 +450,7 @@ This preserves separation between verification and progression policy.
 
 ---
 
-# Gate Preconditions
+## Gate Preconditions
 
 Before evaluating a gate, required preconditions should be satisfied.
 
@@ -469,7 +469,7 @@ Missing preconditions should normally prevent authoritative PASS.
 
 ---
 
-# Gate Completeness
+## Gate Completeness
 
 A gate must verify that all required inputs are present.
 
@@ -491,7 +491,7 @@ unless policy explicitly states that security assessment is not required.
 
 ---
 
-# Unknown Is Not Pass
+## Unknown Is Not Pass
 
 A central Quality Gate rule is:
 
@@ -515,7 +515,7 @@ This applies to:
 
 ---
 
-# Gate Freshness
+## Gate Freshness
 
 Gate inputs must correspond to the relevant target revision.
 
@@ -535,7 +535,7 @@ The gate should reject or invalidate it according to policy.
 
 ---
 
-# Gate Fingerprint
+## Gate Fingerprint
 
 A gate evaluation may use a fingerprint based on:
 
@@ -551,7 +551,7 @@ This supports reproducibility.
 
 ---
 
-# Gate Reproducibility
+## Gate Reproducibility
 
 Given equivalent authoritative inputs and policy, a deterministic gate should produce the same decision.
 
@@ -567,7 +567,7 @@ Same Decision
 
 ---
 
-# Gate Explainability
+## Gate Explainability
 
 Every non-trivial gate decision must be explainable.
 
@@ -603,7 +603,7 @@ without actionable context.
 
 ---
 
-# Gate Traceability
+## Gate Traceability
 
 A gate decision should trace through the complete quality chain.
 
@@ -627,7 +627,7 @@ This creates auditability.
 
 ---
 
-# Gate Types
+## Gate Types
 
 FamilyOS may support several gate types:
 
@@ -651,7 +651,7 @@ Not every project or target requires every gate.
 
 ---
 
-# Developer Gate
+## Developer Gate
 
 A Developer Gate provides rapid local validation before work progresses.
 
@@ -671,7 +671,7 @@ They may be advisory or mandatory depending on workflow.
 
 ---
 
-# Commit Gate
+## Commit Gate
 
 A Commit Gate may validate conditions required before accepting a commit into a governed workflow.
 
@@ -689,7 +689,7 @@ Commit gates should remain lightweight.
 
 ---
 
-# Pull Request Gate
+## Pull Request Gate
 
 A Pull Request Gate evaluates whether a change is ready for formal integration review.
 
@@ -705,7 +705,7 @@ Required Review Assigned
 
 ---
 
-# Merge Gate
+## Merge Gate
 
 The Merge Gate controls integration into a protected branch.
 
@@ -730,7 +730,7 @@ PASS
 
 ---
 
-# Merge Gate Flow
+## Merge Gate Flow
 
 ```text
 Pull Request
@@ -752,7 +752,7 @@ CONDITIONAL ──→ Governed Decision
 
 ---
 
-# Architecture Gate
+## Architecture Gate
 
 An Architecture Gate may apply to significant architectural changes.
 
@@ -769,7 +769,7 @@ The gate may require formal Architecture Review.
 
 ---
 
-# Plugin Gate
+## Plugin Gate
 
 A Plugin Gate determines whether a plugin satisfies applicable FamilyOS plugin requirements.
 
@@ -787,7 +787,7 @@ The Plugin Compliance Framework remains authoritative for plugin-specific compli
 
 ---
 
-# Build Gate
+## Build Gate
 
 A Build Gate determines whether source may progress into an authoritative build artifact.
 
@@ -802,7 +802,7 @@ Required Tests PASS
 
 ---
 
-# Artifact Gate
+## Artifact Gate
 
 An Artifact Gate evaluates a produced artifact.
 
@@ -817,7 +817,7 @@ Potential checks include:
 
 ---
 
-# Compliance Gate
+## Compliance Gate
 
 A Compliance Gate requires satisfaction of an applicable compliance profile.
 
@@ -835,7 +835,7 @@ Compliance failures may block progression independently of general code quality.
 
 ---
 
-# Documentation Gate
+## Documentation Gate
 
 Documentation Gates may control:
 
@@ -854,7 +854,7 @@ No Blocking Documentation Findings
 
 ---
 
-# Release Candidate Gate
+## Release Candidate Gate
 
 A Release Candidate Gate determines whether a build is sufficiently complete to enter final release validation.
 
@@ -870,7 +870,7 @@ No Critical Findings
 
 ---
 
-# Release Gate
+## Release Gate
 
 The Release Gate is one of the strongest FamilyOS quality boundaries.
 
@@ -895,7 +895,7 @@ Required Reviews
 
 ---
 
-# Release Gate Principle
+## Release Gate Principle
 
 A release should not be approved merely because:
 
@@ -907,7 +907,7 @@ Release progression should require sufficient evidence that the complete applica
 
 ---
 
-# Release Gate Example
+## Release Gate Example
 
 ```text
 FamilyOS Release Gate
@@ -942,7 +942,7 @@ PASS
 
 ---
 
-# Deployment Gate
+## Deployment Gate
 
 Where deployment is part of FamilyOS lifecycle governance, a Deployment Gate may verify:
 
@@ -956,7 +956,7 @@ Deployment policy belongs primarily to deployment and release architecture.
 
 ---
 
-# Post-Release Gate
+## Post-Release Gate
 
 Some environments may require post-release validation before a release is considered fully accepted.
 
@@ -973,7 +973,7 @@ This should be proportional to operational needs.
 
 ---
 
-# Gate Strength
+## Gate Strength
 
 Not all gates require the same strictness.
 
@@ -990,7 +990,7 @@ Gate strength affects enforcement and exception requirements.
 
 ---
 
-# Advisory Gate
+## Advisory Gate
 
 An advisory gate reports quality state without blocking progression.
 
@@ -1004,7 +1004,7 @@ Advisory gates must be clearly labeled.
 
 ---
 
-# Standard Gate
+## Standard Gate
 
 A Standard Gate blocks defined quality violations but permits governed warnings and exceptions.
 
@@ -1012,7 +1012,7 @@ This may be appropriate for routine integration.
 
 ---
 
-# Strict Gate
+## Strict Gate
 
 A Strict Gate requires stronger evidence and allows fewer deviations.
 
@@ -1024,7 +1024,7 @@ This may apply to:
 
 ---
 
-# Critical Gate
+## Critical Gate
 
 A Critical Gate protects high-risk lifecycle transitions.
 
@@ -1038,7 +1038,7 @@ Critical gates should generally fail closed when required quality state is unava
 
 ---
 
-# Gate Profiles
+## Gate Profiles
 
 Gate requirements may be defined through profiles.
 
@@ -1056,7 +1056,7 @@ Profiles prevent duplicated policy.
 
 ---
 
-# Profile Composition
+## Profile Composition
 
 Gate profiles may compose requirements.
 
@@ -1074,7 +1074,7 @@ This enables scalable governance.
 
 ---
 
-# Risk-Based Gates
+## Risk-Based Gates
 
 Gate strictness should be proportional to risk.
 
@@ -1096,7 +1096,7 @@ Strict Merge Gate
 
 ---
 
-# Change-Based Gate Resolution
+## Change-Based Gate Resolution
 
 The applicable gate profile may depend on change classification.
 
@@ -1114,7 +1114,7 @@ Gate Profile
 
 ---
 
-# Domain Gate Conditions
+## Domain Gate Conditions
 
 Gate policy may evaluate individual quality domains.
 
@@ -1131,7 +1131,7 @@ This preserves multidimensional quality.
 
 ---
 
-# Blocking Domain
+## Blocking Domain
 
 Some domains may be blocking regardless of aggregate score.
 
@@ -1149,7 +1149,7 @@ The gate must still fail if security is mandatory.
 
 ---
 
-# No Blind Aggregation
+## No Blind Aggregation
 
 Quality Gates must not use blind averaging.
 
@@ -1167,7 +1167,7 @@ Blocking conditions remain explicit.
 
 ---
 
-# Severity-Based Gate Policy
+## Severity-Based Gate Policy
 
 Gate behavior may depend on finding severity.
 
@@ -1191,7 +1191,7 @@ Exact behavior belongs to the applicable Quality Profile and Gate Policy.
 
 ---
 
-# Risk-Based Gate Policy
+## Risk-Based Gate Policy
 
 Risk may influence progression independently of finding severity.
 
@@ -1212,7 +1212,7 @@ Risk is therefore a first-class gate input where applicable.
 
 ---
 
-# Defect-Based Gate Policy
+## Defect-Based Gate Policy
 
 Open defects may affect gates according to:
 
@@ -1227,7 +1227,7 @@ A Critical unresolved release defect should normally block release.
 
 ---
 
-# Quality Debt and Gates
+## Quality Debt and Gates
 
 Quality Debt does not automatically block progression.
 
@@ -1253,7 +1253,7 @@ New Critical Architecture Debt
 
 ---
 
-# Debt Budget
+## Debt Budget
 
 A future gate policy may define Quality Debt budgets.
 
@@ -1271,7 +1271,7 @@ Debt budgets should support improvement rather than normalize uncontrolled debt.
 
 ---
 
-# Baseline-Aware Gates
+## Baseline-Aware Gates
 
 Legacy systems may require baseline-aware gates.
 
@@ -1289,7 +1289,7 @@ This enables incremental quality improvement.
 
 ---
 
-# Baseline Growth
+## Baseline Growth
 
 A baseline-aware gate must prevent silent baseline growth.
 
@@ -1313,7 +1313,7 @@ unless explicitly governed otherwise.
 
 ---
 
-# Exception-Aware Gates
+## Exception-Aware Gates
 
 Quality Gates may recognize valid Quality Exceptions.
 
@@ -1331,7 +1331,7 @@ The exception does not erase the underlying quality condition.
 
 ---
 
-# Exception Validation
+## Exception Validation
 
 Before accepting an exception, the gate should verify:
 
@@ -1349,7 +1349,7 @@ Invalid exceptions must not alter gate decisions.
 
 ---
 
-# Expired Exception
+## Expired Exception
 
 An expired exception is no longer authoritative.
 
@@ -1367,7 +1367,7 @@ Gate FAIL
 
 ---
 
-# Conditional Gate Decision
+## Conditional Gate Decision
 
 A gate may return `CONDITIONAL` when progression depends on active conditions.
 
@@ -1386,7 +1386,7 @@ Remove deprecated dependency before expiration.
 
 ---
 
-# Conditions Must Be Explicit
+## Conditions Must Be Explicit
 
 Conditional progression must record:
 
@@ -1400,7 +1400,7 @@ Invisible conditions are not acceptable governance.
 
 ---
 
-# Gate Override
+## Gate Override
 
 Manual override should be exceptional.
 
@@ -1419,7 +1419,7 @@ Expiration where applicable
 
 ---
 
-# Override Principle
+## Override Principle
 
 An override changes the progression decision.
 
@@ -1445,7 +1445,7 @@ This distinction is essential.
 
 ---
 
-# Override Authority
+## Override Authority
 
 Override authority should be proportional to gate criticality.
 
@@ -1453,7 +1453,7 @@ A developer should not be able to unilaterally override a Critical Release Gate 
 
 ---
 
-# Override Auditability
+## Override Auditability
 
 Every override must remain visible in:
 
@@ -1464,7 +1464,7 @@ Every override must remain visible in:
 
 ---
 
-# Emergency Gate Process
+## Emergency Gate Process
 
 Exceptional operational circumstances may require emergency progression.
 
@@ -1484,7 +1484,7 @@ Emergency procedures must not become routine bypass mechanisms.
 
 ---
 
-# Gate Bypass
+## Gate Bypass
 
 Uncontrolled gate bypass is prohibited.
 
@@ -1500,7 +1500,7 @@ These actions undermine the Quality Framework.
 
 ---
 
-# Bypass Detection
+## Bypass Detection
 
 Quality Observability should detect bypass indicators where practical.
 
@@ -1515,7 +1515,7 @@ Override Without Authority
 
 ---
 
-# Gate Configuration
+## Gate Configuration
 
 Gate configuration should be:
 
@@ -1539,7 +1539,7 @@ The exact format belongs to implementation design.
 
 ---
 
-# Gate Configuration Validation
+## Gate Configuration Validation
 
 Invalid gate configuration must fail visibly.
 
@@ -1556,7 +1556,7 @@ Invalid configuration must not disable enforcement silently.
 
 ---
 
-# Gate Versioning
+## Gate Versioning
 
 Gate policies should be versioned.
 
@@ -1576,7 +1576,7 @@ This supports historical reconstruction.
 
 ---
 
-# Policy Evolution
+## Policy Evolution
 
 Gate policy will evolve as FamilyOS matures.
 
@@ -1591,7 +1591,7 @@ Policy evolution should follow controlled change management.
 
 ---
 
-# Gate Policy Rollout
+## Gate Policy Rollout
 
 New gate requirements may use staged rollout:
 
@@ -1607,7 +1607,7 @@ This allows teams to understand impact before strict enforcement.
 
 ---
 
-# Observe Mode
+## Observe Mode
 
 In Observe Mode, the gate calculates what its decision would be without blocking progression.
 
@@ -1615,7 +1615,7 @@ This supports policy calibration.
 
 ---
 
-# Warning Mode
+## Warning Mode
 
 In Warning Mode, failures are visible but temporarily non-blocking.
 
@@ -1623,13 +1623,13 @@ Warnings should identify future enforcement expectations.
 
 ---
 
-# Enforcement Mode
+## Enforcement Mode
 
 In Enforcement Mode, the gate decision controls progression.
 
 ---
 
-# Gate Automation
+## Gate Automation
 
 Quality Gates should be automated wherever their policy is deterministic.
 
@@ -1649,7 +1649,7 @@ Human authority remains necessary for some reviews, exceptions, and overrides.
 
 ---
 
-# Gate Engine
+## Gate Engine
 
 A future Quality Gate Engine may conceptually provide:
 
@@ -1663,7 +1663,7 @@ The engine should remain independent of individual CI platforms.
 
 ---
 
-# CI Integration
+## CI Integration
 
 CI may invoke Quality Gates at relevant workflow boundaries.
 
@@ -1687,7 +1687,7 @@ The Quality Framework remains the policy authority.
 
 ---
 
-# Repository Protection
+## Repository Protection
 
 Protected branches should use gate decisions where supported.
 
@@ -1701,7 +1701,7 @@ Repository settings should reflect Quality Governance.
 
 ---
 
-# Local Gate Evaluation
+## Local Gate Evaluation
 
 Developers may benefit from evaluating gates locally before remote CI.
 
@@ -1717,7 +1717,7 @@ The exact CLI belongs to future implementation.
 
 ---
 
-# Gate Prediction
+## Gate Prediction
 
 Local evaluation may be predictive rather than authoritative when it lacks:
 
@@ -1729,7 +1729,7 @@ The distinction should be explicit.
 
 ---
 
-# Gate Caching
+## Gate Caching
 
 Gate decisions may be reusable only when all relevant inputs remain unchanged.
 
@@ -1745,7 +1745,7 @@ Required Reviews
 
 ---
 
-# Gate Invalidation
+## Gate Invalidation
 
 A previous PASS should be invalidated when relevant state changes.
 
@@ -1759,7 +1759,7 @@ Examples include:
 
 ---
 
-# Gate Race Conditions
+## Gate Race Conditions
 
 Concurrent engineering activity may create race conditions.
 
@@ -1777,7 +1777,7 @@ The gate must ensure the evaluated revision matches the progressed revision.
 
 ---
 
-# Time-of-Check vs Time-of-Use
+## Time-of-Check vs Time-of-Use
 
 Quality Gates should minimize the gap between:
 
@@ -1797,7 +1797,7 @@ Revision binding is essential.
 
 ---
 
-# Gate Evidence
+## Gate Evidence
 
 Each significant gate evaluation should produce evidence.
 
@@ -1818,7 +1818,7 @@ Authority
 
 ---
 
-# Gate History
+## Gate History
 
 Gate history supports:
 
@@ -1839,7 +1839,7 @@ v4.3.1  PASS
 
 ---
 
-# Gate Metrics
+## Gate Metrics
 
 Potential metrics include:
 
@@ -1857,7 +1857,7 @@ Metrics should support improvement rather than encourage artificial pass rates.
 
 ---
 
-# Gate Pass Rate
+## Gate Pass Rate
 
 A high gate pass rate is not automatically evidence of high quality.
 
@@ -1871,7 +1871,7 @@ Interpretation requires additional signals.
 
 ---
 
-# Gate Failure Rate
+## Gate Failure Rate
 
 A high gate failure rate may indicate:
 
@@ -1884,7 +1884,7 @@ Observability should support diagnosis.
 
 ---
 
-# Gate Override Rate
+## Gate Override Rate
 
 A growing override rate is an important governance signal.
 
@@ -1901,7 +1901,7 @@ Repeated overrides require review.
 
 ---
 
-# Gate Error Rate
+## Gate Error Rate
 
 Gate evaluation errors should be rare.
 
@@ -1909,7 +1909,7 @@ A high error rate indicates unreliable quality infrastructure.
 
 ---
 
-# Gate Latency
+## Gate Latency
 
 Gate decisions should be fast once required inputs are available.
 
@@ -1919,7 +1919,7 @@ Most latency should occur in evidence generation and validation.
 
 ---
 
-# Gate Observability
+## Gate Observability
 
 Quality Gates should expose:
 
@@ -1938,7 +1938,7 @@ This integrates with Quality Observability.
 
 ---
 
-# Gate Alerts
+## Gate Alerts
 
 Important gate events may generate alerts.
 
@@ -1955,7 +1955,7 @@ Alerting should remain risk-based.
 
 ---
 
-# Gate Security
+## Gate Security
 
 Quality Gates are part of the FamilyOS Quality Control Plane.
 
@@ -1971,7 +1971,7 @@ Threats include:
 
 ---
 
-# Gate Authorization
+## Gate Authorization
 
 Only authorized actors should be able to:
 
@@ -1986,7 +1986,7 @@ Authorization requirements should be proportional to risk.
 
 ---
 
-# Gate Integrity
+## Gate Integrity
 
 Gate decisions should be bound to:
 
@@ -1999,7 +1999,7 @@ This reduces the risk of applying valid decisions to invalid targets.
 
 ---
 
-# Gate Provenance
+## Gate Provenance
 
 An authoritative gate decision should answer:
 
@@ -2019,7 +2019,7 @@ Which authority?
 
 ---
 
-# Gate Immutability
+## Gate Immutability
 
 Published formal gate decisions should be immutable where practical.
 
@@ -2041,7 +2041,7 @@ The original failure remains historical evidence.
 
 ---
 
-# Gate Retention
+## Gate Retention
 
 Important gate decisions should be retained according to lifecycle significance.
 
@@ -2049,7 +2049,7 @@ Release Gate evidence generally requires longer retention than routine local dev
 
 ---
 
-# Gate Audit
+## Gate Audit
 
 Periodic gate audits may verify:
 
@@ -2064,7 +2064,7 @@ Gate Evidence Is Complete
 
 ---
 
-# Gate Effectiveness
+## Gate Effectiveness
 
 A gate is effective when it prevents unacceptable progression without creating unnecessary friction.
 
@@ -2081,7 +2081,7 @@ Engineering Feedback
 
 ---
 
-# False Blocking
+## False Blocking
 
 A gate may block progression incorrectly because of:
 
@@ -2094,7 +2094,7 @@ False blocking should be tracked and corrected.
 
 ---
 
-# False Passing
+## False Passing
 
 False passing is more dangerous.
 
@@ -2114,7 +2114,7 @@ Significant escapes should analyze gate effectiveness.
 
 ---
 
-# Gate Calibration
+## Gate Calibration
 
 Gate policy should evolve based on evidence.
 
@@ -2134,7 +2134,7 @@ Gate Improvement
 
 ---
 
-# Gate Review
+## Gate Review
 
 Gate policies should be reviewed periodically.
 
@@ -2156,7 +2156,7 @@ Are some gates redundant?
 
 ---
 
-# Gate Simplification
+## Gate Simplification
 
 Quality Gates should remain understandable.
 
@@ -2171,7 +2171,7 @@ Policy should favor:
 
 ---
 
-# Gate Composition
+## Gate Composition
 
 Complex lifecycle boundaries may combine several sub-gates.
 
@@ -2191,7 +2191,7 @@ The aggregate decision must preserve blocking semantics.
 
 ---
 
-# Sub-Gate Failure
+## Sub-Gate Failure
 
 If a mandatory sub-gate fails:
 
@@ -2205,7 +2205,7 @@ unless an authorized exception explicitly changes the decision.
 
 ---
 
-# Independent Gates
+## Independent Gates
 
 Some gates should remain independent.
 
@@ -2215,7 +2215,7 @@ Gate composition should reflect actual lifecycle risk.
 
 ---
 
-# Quality Gate Matrix
+## Quality Gate Matrix
 
 A conceptual gate matrix may be:
 
@@ -2234,7 +2234,7 @@ Exact policy remains configurable.
 
 ---
 
-# Gate Ownership
+## Gate Ownership
 
 Every formal gate should have an owner.
 
@@ -2249,7 +2249,7 @@ Ownership includes responsibility for:
 
 ---
 
-# Gate Authority
+## Gate Authority
 
 Gate ownership and override authority are not necessarily identical.
 
@@ -2267,7 +2267,7 @@ This separation may improve governance.
 
 ---
 
-# Gate Documentation
+## Gate Documentation
 
 Every formal gate should document:
 
@@ -2287,7 +2287,7 @@ Engineers should understand gates before encountering failures.
 
 ---
 
-# Gate Discoverability
+## Gate Discoverability
 
 A developer should be able to determine:
 
@@ -2307,7 +2307,7 @@ How are exceptions handled?
 
 ---
 
-# Actionable Gate Failure
+## Actionable Gate Failure
 
 A good gate failure provides:
 
@@ -2336,7 +2336,7 @@ Remove dependency on internal core implementation.
 
 ---
 
-# Gate Developer Experience
+## Gate Developer Experience
 
 Quality Gates should encourage earlier quality verification.
 
@@ -2354,7 +2354,7 @@ rather than discovering all problems only at the final gate.
 
 ---
 
-# Shift-Left Gate Strategy
+## Shift-Left Gate Strategy
 
 Where possible, conditions enforced later should also be detectable earlier.
 
@@ -2372,7 +2372,7 @@ This reduces expensive late remediation.
 
 ---
 
-# Gate Duplication
+## Gate Duplication
 
 Repeatedly executing identical expensive validation at every gate may be unnecessary.
 
@@ -2384,7 +2384,7 @@ Evidence reuse is appropriate when:
 
 ---
 
-# Gate Defense in Depth
+## Gate Defense in Depth
 
 Some critical validations may intentionally repeat at multiple boundaries.
 
@@ -2400,47 +2400,47 @@ This may be justified when risk warrants defense in depth.
 
 ---
 
-# Quality Gate Anti-Patterns
+## Quality Gate Anti-Patterns
 
 The FamilyOS Quality Framework rejects several gate anti-patterns.
 
-## Green CI Equals Release Approval
+### Green CI Equals Release Approval
 
 CI success alone does not necessarily represent complete release quality.
 
-## Gate Without Policy
+### Gate Without Policy
 
 A gate must have explicit progression conditions.
 
-## Gate Without Evidence
+### Gate Without Evidence
 
 Authoritative progression decisions require authoritative inputs.
 
-## Unknown Equals Pass
+### Unknown Equals Pass
 
 Missing information must not become implicit approval.
 
-## Blind Quality Score
+### Blind Quality Score
 
 High aggregate scores must not hide blocking failures.
 
-## Silent Bypass
+### Silent Bypass
 
 Required gates must not be bypassed invisibly.
 
-## Permanent Exception
+### Permanent Exception
 
 Exceptions require scope, authority, and lifecycle.
 
-## Untraceable Override
+### Untraceable Override
 
 Overrides must remain auditable.
 
-## Stale Gate Result
+### Stale Gate Result
 
 A PASS from another revision must not authorize current progression.
 
-## Gate Everywhere
+### Gate Everywhere
 
 Not every lifecycle transition requires the strongest possible gate.
 
@@ -2448,7 +2448,7 @@ Quality control must remain proportional.
 
 ---
 
-# Initial Gate Model
+## Initial Gate Model
 
 An initial FamilyOS Quality Gate implementation may contain:
 
@@ -2466,7 +2466,7 @@ This is sufficient to establish basic enforcement.
 
 ---
 
-# Initial Merge Gate
+## Initial Merge Gate
 
 A practical initial Merge Gate may require:
 
@@ -2491,7 +2491,7 @@ As the Quality Framework matures, additional domains can be integrated.
 
 ---
 
-# Initial Release Gate
+## Initial Release Gate
 
 A practical initial Release Gate may require:
 
@@ -2520,7 +2520,7 @@ Critical Risks:
 
 ---
 
-# Initial Gate Flow
+## Initial Gate Flow
 
 ```text
 Engineering Target
@@ -2544,7 +2544,7 @@ Allow or Block Progression
 
 ---
 
-# Gate Maturity Model
+## Gate Maturity Model
 
 Quality Gates may mature through:
 
@@ -2585,7 +2585,7 @@ Adaptive Evidence-Based Quality Control
 
 ---
 
-# Adaptive Gates
+## Adaptive Gates
 
 At high maturity, gate profiles may adapt according to:
 
@@ -2603,7 +2603,7 @@ It must not become opaque probabilistic approval.
 
 ---
 
-# AI-Assisted Gate Analysis
+## AI-Assisted Gate Analysis
 
 AI may assist with:
 
@@ -2616,7 +2616,7 @@ AI must not independently override authoritative gate policy.
 
 ---
 
-# AI Gate Restrictions
+## AI Gate Restrictions
 
 AI must not autonomously:
 
@@ -2632,7 +2632,7 @@ unless future governance explicitly defines a controlled authoritative mechanism
 
 ---
 
-# Relationship With Quality Requirements
+## Relationship With Quality Requirements
 
 Quality Requirements define the conditions FamilyOS expects.
 
@@ -2640,7 +2640,7 @@ Quality Gates determine whether unmet requirements prevent progression.
 
 ---
 
-# Relationship With Quality Evidence
+## Relationship With Quality Evidence
 
 Quality Evidence provides the factual basis for assessment.
 
@@ -2648,7 +2648,7 @@ Gates should rely on validated evidence through authoritative assessments.
 
 ---
 
-# Relationship With Quality Metrics
+## Relationship With Quality Metrics
 
 Metrics may influence gate policy where explicitly defined.
 
@@ -2664,7 +2664,7 @@ unless policy maps that metric to a progression condition.
 
 ---
 
-# Relationship With Quality Risk
+## Relationship With Quality Risk
 
 Risk is a first-class input to strict gates.
 
@@ -2672,7 +2672,7 @@ A gate may block progression even when deterministic checks pass if residual ris
 
 ---
 
-# Relationship With Defect and Quality Debt Management
+## Relationship With Defect and Quality Debt Management
 
 Defects and Quality Debt may influence gate decisions according to severity, risk, age, and target criticality.
 
@@ -2680,7 +2680,7 @@ Not every open defect or debt item should automatically block progression.
 
 ---
 
-# Relationship With Quality Reviews and Assessments
+## Relationship With Quality Reviews and Assessments
 
 Quality Assessments answer:
 
@@ -2710,7 +2710,7 @@ Progression Decision
 
 ---
 
-# Relationship With Quality Automation
+## Relationship With Quality Automation
 
 Quality Automation executes deterministic checks and may automatically evaluate gates.
 
@@ -2718,7 +2718,7 @@ Automation operationalizes Gate Policy.
 
 ---
 
-# Relationship With Quality Observability
+## Relationship With Quality Observability
 
 Quality Observability exposes:
 
@@ -2733,7 +2733,7 @@ Gate behavior becomes a major source of quality telemetry.
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Quality Governance defines:
 
@@ -2750,7 +2750,7 @@ Quality Gates are therefore one of the primary enforcement mechanisms of Quality
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 Testing produces evidence consumed by assessments and gates.
 
@@ -2760,7 +2760,7 @@ Quality Gates determine when testing state blocks lifecycle progression.
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 Documentation validation may participate in:
 
@@ -2772,7 +2772,7 @@ Normative documentation may require stricter gate policy.
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 Build Gates ensure that build progression satisfies required quality conditions.
 
@@ -2780,7 +2780,7 @@ Build evidence may also feed Release Gates.
 
 ---
 
-# Relationship With Release Framework
+## Relationship With Release Framework
 
 The Release Framework defines release lifecycle transitions.
 
@@ -2788,13 +2788,13 @@ Quality Gates provide the quality enforcement mechanism at those transitions.
 
 ---
 
-# Relationship With Plugin Compliance Framework
+## Relationship With Plugin Compliance Framework
 
 Plugin Compliance results may become mandatory inputs to Plugin Gates and Release Gates for official plugins.
 
 ---
 
-# Reference Gate Flow
+## Reference Gate Flow
 
 The complete FamilyOS Quality Gate flow can be represented as:
 
@@ -2844,7 +2844,7 @@ Continuous Improvement
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Gates enable FamilyOS to move from:
 
@@ -2879,7 +2879,7 @@ This creates controlled engineering progression.
 
 ---
 
-# Final Quality Gate Principle
+## Final Quality Gate Principle
 
 Quality information has limited protective value if unacceptable engineering states can progress without control.
 

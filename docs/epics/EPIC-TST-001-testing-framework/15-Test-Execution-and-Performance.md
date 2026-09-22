@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 15 Test Execution and Performance
+## 15 Test Execution and Performance
 
-## Overview
+### Overview
 
 Test execution is the operational process through which the FamilyOS Testing Framework transforms test definitions into measurable evidence about the state of the platform.
 
@@ -29,7 +29,7 @@ The Testing Framework therefore defines principles for balancing test coverage, 
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the official FamilyOS approach to test execution and testing performance.
 
@@ -57,11 +57,11 @@ The objective is to provide the fastest reliable feedback compatible with the le
 
 ---
 
-# Test Execution Principles
+## Test Execution Principles
 
 FamilyOS test execution follows several fundamental principles.
 
-## Reliability Before Speed
+### Reliability Before Speed
 
 Execution performance must never be improved by reducing test reliability.
 
@@ -80,7 +80,7 @@ A slower deterministic test suite is more valuable than a faster unreliable one.
 
 ---
 
-## Fast Feedback
+### Fast Feedback
 
 Developers should receive relevant feedback as early as possible.
 
@@ -96,7 +96,7 @@ Fast feedback reduces:
 
 ---
 
-## Reproducibility
+### Reproducibility
 
 The same test executed against the same code, configuration, fixtures, and dependencies should produce the same result.
 
@@ -112,7 +112,7 @@ Execution behavior must not depend unnecessarily on:
 
 ---
 
-## Isolation
+### Isolation
 
 Tests should execute independently whenever technically possible.
 
@@ -122,7 +122,7 @@ Tests must not intentionally leave persistent state that modifies the behavior o
 
 ---
 
-## Observable Execution
+### Observable Execution
 
 Test execution must produce enough information to understand:
 
@@ -136,7 +136,7 @@ Test execution must produce enough information to understand:
 
 ---
 
-## Proportional Execution
+### Proportional Execution
 
 Not every engineering action requires execution of every test.
 
@@ -148,7 +148,7 @@ A release candidate requires significantly broader validation.
 
 ---
 
-# Execution Model
+## Execution Model
 
 The FamilyOS test execution model is organized around progressively broader validation scopes.
 
@@ -180,7 +180,7 @@ This layered execution model prevents expensive validation from becoming the onl
 
 ---
 
-# Local Test Execution
+## Local Test Execution
 
 Developers must be able to execute tests locally.
 
@@ -200,7 +200,7 @@ Local execution must remain sufficiently close to automated execution to avoid s
 
 ---
 
-# Targeted Test Execution
+## Targeted Test Execution
 
 Targeted execution is the preferred mechanism during active development.
 
@@ -221,7 +221,7 @@ Targeted execution accelerates the development feedback loop without replacing b
 
 ---
 
-# Full Test Suite Execution
+## Full Test Suite Execution
 
 The complete applicable test suite provides repository-level confidence.
 
@@ -241,7 +241,7 @@ The complete suite must remain executable as a coherent validation mechanism eve
 
 ---
 
-# Test Execution Order
+## Test Execution Order
 
 Tests must not depend on a specific execution order unless an exceptional test scenario explicitly requires ordered behavior.
 
@@ -278,7 +278,7 @@ Where workflows require multiple sequential operations, those operations should 
 
 ---
 
-# Deterministic Execution
+## Deterministic Execution
 
 Deterministic execution is a mandatory objective.
 
@@ -303,7 +303,7 @@ Time-dependent tests should use controllable time abstractions rather than relyi
 
 ---
 
-# Test Isolation
+## Test Isolation
 
 Every test should establish the state it requires.
 
@@ -332,7 +332,7 @@ Shared mutable state should be avoided.
 
 ---
 
-# Parallel Test Execution
+## Parallel Test Execution
 
 Parallel execution may be used to reduce total test-suite duration.
 
@@ -352,7 +352,7 @@ Parallel execution should be introduced only where the suite demonstrates suffic
 
 ---
 
-# Test Sharding
+## Test Sharding
 
 Large test suites may be divided into independently executable groups.
 
@@ -375,7 +375,7 @@ Shard design should seek reasonably balanced execution time rather than simply e
 
 ---
 
-# Selective Test Execution
+## Selective Test Execution
 
 Selective execution reduces unnecessary validation cost by identifying tests relevant to a change.
 
@@ -395,7 +395,7 @@ It must not eliminate mandatory full-suite validation at lifecycle stages requir
 
 ---
 
-# Test Markers and Categories
+## Test Markers and Categories
 
 Tests may be categorized to support execution policies.
 
@@ -421,7 +421,7 @@ Execution policies should determine which categories are required for each lifec
 
 ---
 
-# Fast Test Suite
+## Fast Test Suite
 
 A fast validation suite should provide high-value feedback for normal development activities.
 
@@ -439,7 +439,7 @@ It should be possible to execute frequently without significantly interrupting d
 
 ---
 
-# Extended Test Suite
+## Extended Test Suite
 
 Some tests inherently require more execution time or infrastructure.
 
@@ -459,7 +459,7 @@ They must not simply disappear from the engineering lifecycle because they are e
 
 ---
 
-# Slow Test Management
+## Slow Test Management
 
 Slow tests must be visible.
 
@@ -482,7 +482,7 @@ The first question should be whether the execution cost can be reduced while pre
 
 ---
 
-# Execution Time Budgets
+## Execution Time Budgets
 
 The Testing Framework may define execution-time expectations for different validation layers.
 
@@ -503,7 +503,7 @@ The important requirement is that execution duration remains measurable and gove
 
 ---
 
-# Performance Baselines
+## Performance Baselines
 
 Test-suite performance should be evaluated against historical baselines.
 
@@ -523,7 +523,7 @@ Performance regressions should be investigated when they materially affect engin
 
 ---
 
-# Test Duration Tracking
+## Test Duration Tracking
 
 Execution duration should be observable at multiple levels.
 
@@ -546,7 +546,7 @@ Without measurement, test-suite performance degradation can remain unnoticed unt
 
 ---
 
-# Timeout Management
+## Timeout Management
 
 Tests that interact with asynchronous operations, processes, infrastructure, or external systems should use bounded execution where appropriate.
 
@@ -560,7 +560,7 @@ Repeated timeout failures indicate that the underlying test or system behavior r
 
 ---
 
-# Avoiding Real Waiting
+## Avoiding Real Waiting
 
 Tests should avoid real-time waiting whenever possible.
 
@@ -585,7 +585,7 @@ Real waiting increases suite duration and frequently introduces flaky behavior.
 
 ---
 
-# Resource Management
+## Resource Management
 
 Tests may consume resources such as:
 
@@ -605,7 +605,7 @@ Resource leaks can create failures that appear unrelated to the test responsible
 
 ---
 
-# Temporary Resources
+## Temporary Resources
 
 Temporary test resources should be created in isolated locations and removed automatically.
 
@@ -623,7 +623,7 @@ Tests should use framework-provided temporary-resource mechanisms whenever avail
 
 ---
 
-# External Dependency Execution
+## External Dependency Execution
 
 Tests depending on external systems require special execution policies.
 
@@ -642,7 +642,7 @@ Tests requiring real external systems should be explicitly categorized and execu
 
 ---
 
-# CI Test Execution
+## CI Test Execution
 
 Continuous integration is a primary execution environment for the FamilyOS Testing Framework.
 
@@ -673,7 +673,7 @@ The exact pipeline may evolve, but test execution should preserve progressively 
 
 ---
 
-# Fail-Fast Strategy
+## Fail-Fast Strategy
 
 Fail-fast execution can reduce wasted computation when an early failure invalidates subsequent stages.
 
@@ -705,7 +705,7 @@ The pipeline should choose the appropriate behavior according to validation cost
 
 ---
 
-# Failure Reproduction
+## Failure Reproduction
 
 CI failures must be reproducible locally whenever practical.
 
@@ -722,7 +722,7 @@ A CI-only failure that cannot be reproduced should be treated as an engineering 
 
 ---
 
-# Retry Policy
+## Retry Policy
 
 Automatic retries must be used cautiously.
 
@@ -739,7 +739,7 @@ If retries are used for infrastructure-related reasons, retry behavior must rema
 
 ---
 
-# Flaky Test Execution
+## Flaky Test Execution
 
 Flaky tests damage confidence in the complete test system.
 
@@ -757,7 +757,7 @@ Permanent acceptance of flaky tests is not compatible with the FamilyOS quality 
 
 ---
 
-# Quarantine
+## Quarantine
 
 Temporary quarantine may be used when a test is known to be unstable and its instability would otherwise block unrelated development.
 
@@ -774,7 +774,7 @@ Quarantine must never become a permanent alternative to repairing tests.
 
 ---
 
-# Execution Reporting
+## Execution Reporting
 
 Every significant test execution should produce a clear result.
 
@@ -801,7 +801,7 @@ Where relevant, reports may also include:
 
 ---
 
-# Skipped Tests
+## Skipped Tests
 
 Skipped tests must remain visible.
 
@@ -819,7 +819,7 @@ Unexplained or permanent skips should be reviewed.
 
 ---
 
-# Performance Optimization Strategy
+## Performance Optimization Strategy
 
 Test execution optimization should follow a disciplined sequence.
 
@@ -846,7 +846,7 @@ Optimization should be evidence-based rather than speculative.
 
 ---
 
-# Optimization Techniques
+## Optimization Techniques
 
 Appropriate optimization techniques may include:
 
@@ -866,7 +866,7 @@ Every optimization must preserve test correctness and independence.
 
 ---
 
-# Fixture Performance
+## Fixture Performance
 
 Fixtures can become a major source of execution cost.
 
@@ -886,7 +886,7 @@ Isolation remains the primary requirement.
 
 ---
 
-# Test Data Performance
+## Test Data Performance
 
 Large test datasets should be used only where they contribute meaningful validation value.
 
@@ -904,7 +904,7 @@ Using production-scale data for ordinary unit tests creates unnecessary executio
 
 ---
 
-# Performance Tests
+## Performance Tests
 
 Performance tests evaluate characteristics of the FamilyOS platform itself rather than only the speed of the test suite.
 
@@ -932,7 +932,7 @@ Both questions may be important, but they require different validation approache
 
 ---
 
-# Performance Test Stability
+## Performance Test Stability
 
 Performance results are sensitive to execution environments.
 
@@ -953,7 +953,7 @@ Performance comparisons should therefore avoid treating uncontrolled developer-m
 
 ---
 
-# Benchmarking
+## Benchmarking
 
 Benchmarks should measure clearly defined operations.
 
@@ -970,7 +970,7 @@ Benchmark results should be compared against meaningful baselines rather than is
 
 ---
 
-# Performance Regression Detection
+## Performance Regression Detection
 
 A performance regression occurs when an operation becomes materially slower or more resource-intensive without an accepted reason.
 
@@ -996,13 +996,13 @@ Performance gates must not be so sensitive that normal environmental noise creat
 
 ---
 
-# Execution Profiles
+## Execution Profiles
 
 FamilyOS may define standardized execution profiles.
 
 For example:
 
-## Developer Profile
+### Developer Profile
 
 Optimized for rapid local feedback.
 
@@ -1012,7 +1012,7 @@ May include:
 * relevant integration tests;
 * affected regression tests.
 
-## Pull Request Profile
+### Pull Request Profile
 
 Optimized for change validation.
 
@@ -1024,13 +1024,13 @@ May include:
 * relevant functional tests;
 * regression tests.
 
-## Full Validation Profile
+### Full Validation Profile
 
 Optimized for repository-wide confidence.
 
 May include all mandatory automated test categories.
 
-## Release Profile
+### Release Profile
 
 Optimized for release confidence.
 
@@ -1046,7 +1046,7 @@ Execution profiles should be explicitly defined rather than relying on informal 
 
 ---
 
-# Execution Performance and Quality Gates
+## Execution Performance and Quality Gates
 
 Execution performance may itself become part of engineering quality governance.
 
@@ -1063,7 +1063,7 @@ These signals should support engineering decisions rather than encouraging artif
 
 ---
 
-# Developer Experience
+## Developer Experience
 
 The test system is part of the developer experience.
 
@@ -1083,7 +1083,7 @@ The preferred interface should therefore remain simple even when the underlying 
 
 ---
 
-# Scaling the Test Suite
+## Scaling the Test Suite
 
 FamilyOS is expected to evolve across:
 
@@ -1119,11 +1119,11 @@ The framework must avoid reaching a state where repository validation becomes so
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices are discouraged or prohibited.
 
-## Always Running Everything Locally
+### Always Running Everything Locally
 
 Executing the entire suite after every small modification can unnecessarily slow development.
 
@@ -1131,37 +1131,37 @@ Use targeted execution during active development and broader validation at appro
 
 ---
 
-## Never Running the Full Suite
+### Never Running the Full Suite
 
 Selective testing does not eliminate the need for repository-wide validation.
 
 ---
 
-## Hidden Test Dependencies
+### Hidden Test Dependencies
 
 Tests must not rely on state produced by previously executed tests.
 
 ---
 
-## Uncontrolled Parallelism
+### Uncontrolled Parallelism
 
 Increasing worker count without understanding shared resources can introduce nondeterministic failures.
 
 ---
 
-## Permanent Retries
+### Permanent Retries
 
 Retries must not become a mechanism for accepting flaky tests.
 
 ---
 
-## Arbitrary Sleeps
+### Arbitrary Sleeps
 
 Real waiting should not replace deterministic synchronization.
 
 ---
 
-## Ignoring Slow Tests
+### Ignoring Slow Tests
 
 Execution-time regressions accumulate gradually.
 
@@ -1169,13 +1169,13 @@ Slow tests must remain measurable.
 
 ---
 
-## Disabling Tests for Speed
+### Disabling Tests for Speed
 
 Performance optimization must not be achieved by silently removing required validation.
 
 ---
 
-# Governance
+## Governance
 
 Test execution policies are governed by the FamilyOS Testing Framework.
 
@@ -1196,7 +1196,7 @@ Significant changes should be documented and reviewed through the appropriate Fa
 
 ---
 
-# Relationship With Other Testing Documents
+## Relationship With Other Testing Documents
 
 This document complements the other Testing Framework specifications.
 
@@ -1219,7 +1219,7 @@ Together these documents define both what FamilyOS tests and how those tests are
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The FamilyOS test execution model is considered effective when:
 
@@ -1238,7 +1238,7 @@ The FamilyOS test execution model is considered effective when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Testing Framework treats test execution as part of the engineering architecture rather than as a simple command that runs tests.
 

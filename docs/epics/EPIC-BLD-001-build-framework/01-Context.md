@@ -1,8 +1,8 @@
 # Build Framework
 
-# 01 Context
+## 01 Context
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework establishes the context in which build engineering becomes a formal and governed capability of the FamilyOS Engineering Platform.
 
@@ -43,7 +43,7 @@ The purpose of this document is to define why FamilyOS requires a dedicated Buil
 
 ---
 
-# Background
+## Background
 
 Early-stage software projects can often rely on simple development procedures.
 
@@ -107,7 +107,7 @@ This evolution requires build engineering to become explicit rather than implici
 
 ---
 
-# Current Situation
+## Current Situation
 
 FamilyOS already possesses many of the foundations required for disciplined build engineering.
 
@@ -154,7 +154,7 @@ The framework therefore consolidates build-related responsibilities into a singl
 
 ---
 
-# Problem Statement
+## Problem Statement
 
 The central problem addressed by EPIC-BLD-001 is:
 
@@ -204,13 +204,13 @@ These questions define the engineering context of the Build Framework.
 
 ---
 
-# Build Framework Motivation
+## Build Framework Motivation
 
 The Build Framework is motivated by the need to prevent several classes of engineering instability.
 
 ---
 
-## Uncontrolled Build Behavior
+### Uncontrolled Build Behavior
 
 Without a common framework, different contributors or automation systems may use different build procedures.
 
@@ -236,7 +236,7 @@ The Build Framework establishes common semantics.
 
 ---
 
-## Hidden Environment Dependency
+### Hidden Environment Dependency
 
 A build may accidentally depend on properties of the machine executing it.
 
@@ -258,7 +258,7 @@ The Build Framework requires significant build influences to become explicit whe
 
 ---
 
-## Dependency Drift
+### Dependency Drift
 
 Dependencies may change independently from the FamilyOS source code.
 
@@ -282,7 +282,7 @@ Dependency governance is therefore a fundamental build responsibility.
 
 ---
 
-## Toolchain Drift
+### Toolchain Drift
 
 Build results may depend on:
 
@@ -300,7 +300,7 @@ The Build Framework therefore treats toolchain information as part of build cont
 
 ---
 
-## Configuration Drift
+### Configuration Drift
 
 Build behavior often depends on configuration.
 
@@ -321,7 +321,7 @@ FamilyOS therefore requires build configuration to be explicit and governable.
 
 ---
 
-## Artifact Ambiguity
+### Artifact Ambiguity
 
 A generated file is not automatically a trusted artifact.
 
@@ -339,7 +339,7 @@ Artifact identity and provenance are therefore core concerns.
 
 ---
 
-## Local and CI Divergence
+### Local and CI Divergence
 
 A common engineering failure mode occurs when local development and CI use different build semantics.
 
@@ -371,7 +371,7 @@ FamilyOS must reduce semantic divergence between local and automated build execu
 
 ---
 
-## Build and Release Coupling
+### Build and Release Coupling
 
 Another risk is treating successful build completion as automatic release authorization.
 
@@ -389,7 +389,7 @@ The Release Framework determines whether that artifact should become an official
 
 ---
 
-# Strategic Context
+## Strategic Context
 
 The Build Framework is part of a broader transition in FamilyOS engineering maturity.
 
@@ -420,7 +420,7 @@ This approach allows FamilyOS to evolve without relying on undocumented organiza
 
 ---
 
-# Engineering Platform Context
+## Engineering Platform Context
 
 The Build Framework participates in the FamilyOS Engineering Platform.
 
@@ -442,7 +442,7 @@ These frameworks collectively govern how engineering work moves from design to d
 
 ---
 
-# Engineering Flow Context
+## Engineering Flow Context
 
 At a high level, FamilyOS engineering follows a controlled progression.
 
@@ -470,7 +470,7 @@ Instead, it forms the transformation stage through which validated engineering s
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 EPIC-ENG-001 — Engineering Foundation establishes the fundamental engineering environment in which the Build Framework operates.
 
@@ -507,7 +507,7 @@ The Build Framework must remain consistent with the Engineering Foundation.
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 EPIC-TST-001 — Testing Framework defines how FamilyOS verifies implementation behavior and engineering expectations.
 
@@ -544,7 +544,7 @@ The Build Framework owns how required test results participate in build validati
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 EPIC-QLT-001 — Quality Framework defines the broader quality model applied across FamilyOS engineering.
 
@@ -570,7 +570,7 @@ Instead, it implements build-specific quality mechanisms where necessary.
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 Documentation influences build engineering in two directions.
 
@@ -592,7 +592,7 @@ The Build Framework therefore interacts with documentation both as engineering g
 
 ---
 
-# Relationship With Plugin Architecture
+## Relationship With Plugin Architecture
 
 The FamilyOS plugin ecosystem introduces additional build requirements.
 
@@ -611,7 +611,7 @@ The Build Framework must therefore support modular artifact production without i
 
 ---
 
-# Relationship With Plugin Compliance
+## Relationship With Plugin Compliance
 
 The Plugin Compliance Framework establishes rules under which plugins are assessed against FamilyOS requirements.
 
@@ -635,7 +635,7 @@ The exact integration may evolve, but build tooling must remain compatible with 
 
 ---
 
-# Relationship With Release Framework
+## Relationship With Release Framework
 
 EPIC-REL-001 — Release Framework is the principal downstream consumer of Build Framework outputs.
 
@@ -667,7 +667,7 @@ The Build Framework therefore ends where release authority begins.
 
 ---
 
-# Relationship With Security Architecture
+## Relationship With Security Architecture
 
 Build systems are security-sensitive because they participate directly in the software supply chain.
 
@@ -689,7 +689,7 @@ The Build Framework must remain aligned with FamilyOS Security Architecture and 
 
 ---
 
-# Why Build Is A Separate Framework
+## Why Build Is A Separate Framework
 
 Build engineering could theoretically remain part of the Engineering Foundation.
 
@@ -699,49 +699,49 @@ A dedicated framework provides several advantages.
 
 ---
 
-## Clear Ownership
+### Clear Ownership
 
 Build-specific decisions can be governed independently from general development conventions.
 
 ---
 
-## Architectural Clarity
+### Architectural Clarity
 
 The transformation from source to artifact becomes an explicit architecture.
 
 ---
 
-## Stronger Reproducibility
+### Stronger Reproducibility
 
 Reproducibility becomes a first-class engineering objective rather than an incidental property.
 
 ---
 
-## Better Traceability
+### Better Traceability
 
 Artifacts can be associated with their source, dependencies, configuration, and validation evidence.
 
 ---
 
-## Automation Readiness
+### Automation Readiness
 
 The build model can be consistently used by local workflows, CI systems, and release processes.
 
 ---
 
-## Release Separation
+### Release Separation
 
 Build trust and release approval remain distinct concerns.
 
 ---
 
-## Supply Chain Foundation
+### Supply Chain Foundation
 
 The framework creates the structural basis for progressively stronger software supply-chain assurance.
 
 ---
 
-# Build As An Engineering Capability
+## Build As An Engineering Capability
 
 FamilyOS treats build engineering as a capability rather than as a command.
 
@@ -781,7 +781,7 @@ The Build Framework defines engineering semantics.
 
 ---
 
-# Build Context Model
+## Build Context Model
 
 A build is always executed within a context.
 
@@ -827,7 +827,7 @@ The more completely this context is understood, the more explainable the resulti
 
 ---
 
-# Build Input Context
+## Build Input Context
 
 Build inputs are broader than source code.
 
@@ -855,7 +855,7 @@ The Build Framework must therefore treat inputs systematically.
 
 ---
 
-# Repository Context
+## Repository Context
 
 FamilyOS uses the repository as the primary controlled source of engineering state.
 
@@ -884,7 +884,7 @@ Uncontrolled external state should be minimized.
 
 ---
 
-# Environment Context
+## Environment Context
 
 A build environment consists of the runtime conditions under which build execution occurs.
 
@@ -905,7 +905,7 @@ It requires differences that affect build semantics to be controlled or understo
 
 ---
 
-# Local Development Context
+## Local Development Context
 
 Developers require build operations that are:
 
@@ -921,7 +921,7 @@ Local execution should remain an important engineering capability.
 
 ---
 
-# Continuous Integration Context
+## Continuous Integration Context
 
 CI provides a more controlled environment for standardized execution.
 
@@ -938,7 +938,7 @@ CI must implement the Build Framework rather than create an independent build mo
 
 ---
 
-# Release Preparation Context
+## Release Preparation Context
 
 Release preparation may require stricter build controls than normal development.
 
@@ -956,7 +956,7 @@ These requirements belong to the intersection between Build and Release.
 
 ---
 
-# Artifact Context
+## Artifact Context
 
 Artifacts are the primary outputs of the Build Framework.
 
@@ -992,7 +992,7 @@ The Build Framework governs the early stages of this lifecycle.
 
 ---
 
-# Evidence Context
+## Evidence Context
 
 A trusted artifact requires more than artifact bytes.
 
@@ -1017,7 +1017,7 @@ Evidence requirements may become stronger as the engineering platform matures.
 
 ---
 
-# Reproducibility Context
+## Reproducibility Context
 
 Perfect bit-for-bit reproducibility may not always be immediately achievable or necessary.
 
@@ -1029,7 +1029,7 @@ Over time this can progress toward stronger reproducibility guarantees.
 
 ---
 
-# Determinism Context
+## Determinism Context
 
 Determinism concerns whether identical controlled inputs produce predictable outputs.
 
@@ -1048,7 +1048,7 @@ The framework requires these influences to be controlled where they materially a
 
 ---
 
-# Traceability Context
+## Traceability Context
 
 Traceability allows FamilyOS to answer:
 
@@ -1073,7 +1073,7 @@ This relationship is essential for:
 
 ---
 
-# Software Supply Chain Context
+## Software Supply Chain Context
 
 The Build Framework exists within the FamilyOS software supply chain.
 
@@ -1105,7 +1105,7 @@ The Build Framework therefore acts as one of the central assurance boundaries in
 
 ---
 
-# Governance Context
+## Governance Context
 
 Build systems tend to accumulate complexity over time.
 
@@ -1138,7 +1138,7 @@ Governance effort should remain proportional to the importance of the change.
 
 ---
 
-# Build Complexity Risk
+## Build Complexity Risk
 
 One of the strategic risks of build engineering is over-engineering.
 
@@ -1169,7 +1169,7 @@ Architecture should remain scalable without forcing premature infrastructure.
 
 ---
 
-# Simplicity Context
+## Simplicity Context
 
 Simplicity is particularly important because build systems affect every contributor.
 
@@ -1188,7 +1188,7 @@ Build complexity must justify itself through clear engineering value.
 
 ---
 
-# Maintainability Context
+## Maintainability Context
 
 The Build Framework must remain maintainable across long-term platform evolution.
 
@@ -1210,7 +1210,7 @@ Build knowledge should remain represented in:
 
 ---
 
-# Developer Experience Context
+## Developer Experience Context
 
 Build engineering directly affects developer productivity.
 
@@ -1229,7 +1229,7 @@ Clear and predictable build behavior improves both.
 
 ---
 
-# Automation Context
+## Automation Context
 
 Automation is necessary for scale, but automation itself is not the objective.
 
@@ -1251,7 +1251,7 @@ Automating an undefined or inconsistent process simply reproduces inconsistency 
 
 ---
 
-# Observability Context
+## Observability Context
 
 Build failures can consume significant engineering time when diagnostic information is weak.
 
@@ -1277,7 +1277,7 @@ Observability must remain useful without exposing sensitive information.
 
 ---
 
-# Security Context
+## Security Context
 
 The build process may interact with security-sensitive information such as:
 
@@ -1296,7 +1296,7 @@ Security-sensitive capabilities should follow least-privilege principles.
 
 ---
 
-# Quality Context
+## Quality Context
 
 Build quality must be evaluated through evidence rather than assumption.
 
@@ -1321,7 +1321,7 @@ Artifact Trust
 
 ---
 
-# Failure Context
+## Failure Context
 
 Build failure is not itself undesirable.
 
@@ -1350,7 +1350,7 @@ The framework therefore treats failure handling as part of build design.
 
 ---
 
-# Change Context
+## Change Context
 
 FamilyOS will evolve.
 
@@ -1373,7 +1373,7 @@ while allowing specific implementation technologies to evolve.
 
 ---
 
-# Build Maturity Context
+## Build Maturity Context
 
 FamilyOS build maturity can progress incrementally.
 
@@ -1418,49 +1418,49 @@ The framework provides a stable architecture through which this progression can 
 
 ---
 
-# Constraints
+## Constraints
 
 The Build Framework must operate within several important constraints.
 
-## Architectural Consistency
+### Architectural Consistency
 
 Build architecture must remain aligned with FamilyOS architectural principles.
 
-## Engineering Simplicity
+### Engineering Simplicity
 
 Build infrastructure must not become more complex than necessary.
 
-## Incremental Adoption
+### Incremental Adoption
 
 The framework must allow gradual implementation.
 
-## Tool Independence
+### Tool Independence
 
 Core build concepts should not depend unnecessarily on a single tool.
 
-## Local Usability
+### Local Usability
 
 Developers must retain practical local build workflows.
 
-## Automation Compatibility
+### Automation Compatibility
 
 The same model must support CI and future automation.
 
-## Governance
+### Governance
 
 Significant build evolution must remain controlled.
 
-## Traceability
+### Traceability
 
 Trusted artifacts must progressively become more traceable.
 
-## Security
+### Security
 
 Build processes must not weaken FamilyOS security boundaries.
 
 ---
 
-# Assumptions
+## Assumptions
 
 EPIC-BLD-001 currently assumes that:
 
@@ -1477,39 +1477,39 @@ These assumptions may be revisited through governance when the platform architec
 
 ---
 
-# Risks
+## Risks
 
 Several risks motivate continued governance of the Build Framework.
 
-## Build Fragmentation
+### Build Fragmentation
 
 Multiple independent build mechanisms could emerge.
 
-## Environment Drift
+### Environment Drift
 
 Developer and CI environments could diverge.
 
-## Dependency Instability
+### Dependency Instability
 
 Uncontrolled dependency resolution could reduce reproducibility.
 
-## Toolchain Drift
+### Toolchain Drift
 
 Tool versions could silently influence build results.
 
-## Artifact Ambiguity
+### Artifact Ambiguity
 
 Artifacts could become disconnected from source and validation evidence.
 
-## Excessive Complexity
+### Excessive Complexity
 
 Build infrastructure could outgrow actual engineering needs.
 
-## Hidden CI Logic
+### Hidden CI Logic
 
 Critical build behavior could exist only inside automation configuration.
 
-## Weak Release Boundary
+### Weak Release Boundary
 
 Build completion could be confused with release authorization.
 
@@ -1517,7 +1517,7 @@ The framework is designed to reduce these risks systematically.
 
 ---
 
-# Expected Contextual Outcome
+## Expected Contextual Outcome
 
 After implementation of EPIC-BLD-001, FamilyOS should be able to move from:
 
@@ -1557,7 +1557,7 @@ This transformation is the principal contextual justification for the framework.
 
 ---
 
-# Framework Boundary
+## Framework Boundary
 
 The Build Framework begins when engineering state is ready to participate in controlled artifact production.
 
@@ -1581,7 +1581,7 @@ This boundary is one of the core architectural separations of the FamilyOS Engin
 
 ---
 
-# Strategic Principle
+## Strategic Principle
 
 The Build Framework exists because FamilyOS cannot rely indefinitely on the assumption that:
 
@@ -1605,7 +1605,7 @@ and why that artifact can be trusted."
 
 ---
 
-# Final Statement
+## Final Statement
 
 EPIC-BLD-001 formalizes build engineering as a permanent capability of the FamilyOS Engineering Platform.
 

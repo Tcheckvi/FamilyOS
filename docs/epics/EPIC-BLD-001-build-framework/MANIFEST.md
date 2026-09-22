@@ -18,7 +18,7 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 This manifest defines the authoritative canonical document inventory for:
 
@@ -41,7 +41,7 @@ The physical repository inventory and `EPIC.yaml` SHALL remain consistent with t
 
 ---
 
-# 2. Canonical Directory
+## 2. Canonical Directory
 
 The canonical framework directory is:
 
@@ -53,7 +53,7 @@ All canonical Build Framework documents defined by this manifest SHALL exist dir
 
 ---
 
-# 3. Canonical Structure
+## 3. Canonical Structure
 
 EPIC-BLD-001 contains two document classes:
 
@@ -93,7 +93,7 @@ Therefore, the complete canonical inventory is:
 
 ---
 
-# 4. Numbered Document Inventory
+## 4. Numbered Document Inventory
 
 | No. | Document                                   | Purpose                                                                                                                             |
 | --: | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -124,7 +124,7 @@ Therefore, the complete canonical inventory is:
 
 ---
 
-# 5. Control Document Inventory
+## 5. Control Document Inventory
 
 The Build Framework contains exactly seven canonical control documents.
 
@@ -144,7 +144,7 @@ They are not optional metadata.
 
 ---
 
-# 6. Complete Canonical Inventory
+## 6. Complete Canonical Inventory
 
 The complete canonical inventory is:
 
@@ -193,7 +193,7 @@ Canonical Range:     00 → 23
 
 ---
 
-# 7. Structural Requirements
+## 7. Structural Requirements
 
 The canonical Build Framework SHALL satisfy all of the following:
 
@@ -218,7 +218,7 @@ Any violation SHALL be treated as a structural integrity finding until resolved 
 
 ---
 
-# 8. Numbering Integrity
+## 8. Numbering Integrity
 
 The numbered sequence SHALL be continuous:
 
@@ -261,7 +261,7 @@ Additional numbered documents SHALL NOT be introduced without a governed framewo
 
 ---
 
-# 9. Control Document Integrity
+## 9. Control Document Integrity
 
 The required control documents are:
 
@@ -285,7 +285,7 @@ A missing control document invalidates the canonical inventory.
 
 ---
 
-# 10. File Completeness
+## 10. File Completeness
 
 Every canonical file SHALL:
 
@@ -300,7 +300,7 @@ Placeholder-only files do not satisfy canonical completeness.
 
 ---
 
-# 11. Canonical Ownership
+## 11. Canonical Ownership
 
 The Build Framework owns detailed engineering guidance for:
 
@@ -331,7 +331,7 @@ These responsibilities SHALL remain coherent across the numbered and control doc
 
 ---
 
-# 12. Framework Boundaries
+## 12. Framework Boundaries
 
 EPIC-BLD-001 operates within the broader FamilyOS engineering architecture.
 
@@ -353,7 +353,7 @@ The Build Framework SHALL NOT silently absorb responsibilities owned by those sp
 
 ---
 
-# 13. Build and Release Boundary
+## 13. Build and Release Boundary
 
 The Build Framework owns the transformation of controlled engineering state into validated build artifacts and associated evidence.
 
@@ -375,7 +375,7 @@ The Build Framework SHALL NOT treat artifact generation alone as release publica
 
 ---
 
-# 14. Build Trust Model
+## 14. Build Trust Model
 
 The canonical Build Framework distinguishes between:
 
@@ -395,7 +395,7 @@ Artifact trust requires controlled production conditions, validation, traceabili
 
 ---
 
-# 15. Build Evidence
+## 15. Build Evidence
 
 Build Evidence may include:
 
@@ -417,7 +417,7 @@ Evidence requirements SHALL remain aligned with Build Validation and release han
 
 ---
 
-# 16. Repository Inventory Contract
+## 16. Repository Inventory Contract
 
 The physical repository SHALL match this manifest.
 
@@ -447,7 +447,7 @@ Unexpected Files: 0
 
 ---
 
-# 17. EPIC.yaml Synchronization
+## 17. EPIC.yaml Synchronization
 
 `EPIC.yaml` SHALL declare the same canonical structure:
 
@@ -473,7 +473,7 @@ physical repository inventory
 
 ---
 
-# 18. Validation Authority
+## 18. Validation Authority
 
 This manifest defines structure.
 
@@ -501,7 +501,7 @@ Only evidence from actual execution SHALL be used to convert pending engineering
 
 ---
 
-# 19. Revalidation State
+## 19. Revalidation State
 
 The Build Framework has a historical published baseline.
 
@@ -528,7 +528,7 @@ The historical publication itself is not invalidated by this revalidation proces
 
 ---
 
-# 20. Historical Tag Immutability
+## 20. Historical Tag Immutability
 
 The historical publication tag is:
 
@@ -544,7 +544,7 @@ Corrections after historical publication SHALL be represented by subsequent comm
 
 ---
 
-# 21. Legacy File Policy
+## 21. Legacy File Policy
 
 Legacy, temporary, migration, backup, or duplicate framework files SHALL NOT remain in the canonical baseline unless explicitly governed.
 
@@ -566,7 +566,7 @@ The canonical inventory SHALL remain explicit and inspectable.
 
 ---
 
-# 22. Duplicate Responsibility Policy
+## 22. Duplicate Responsibility Policy
 
 Documents that duplicate canonical responsibilities SHOULD NOT coexist indefinitely.
 
@@ -583,7 +583,7 @@ One framework responsibility SHOULD have one clear canonical documentation owner
 
 ---
 
-# 23. Naming Requirements
+## 23. Naming Requirements
 
 Canonical filenames SHALL remain stable unless a governed structure change explicitly requires renaming.
 
@@ -601,7 +601,7 @@ Uncoordinated renaming SHALL be treated as an integrity defect.
 
 ---
 
-# 24. Reference Integrity
+## 24. Reference Integrity
 
 Local references between Build Framework documents SHALL resolve to existing canonical files.
 
@@ -617,7 +617,7 @@ Reference integrity SHALL be recorded in `VALIDATION.md`.
 
 ---
 
-# 25. Semantic Integrity
+## 25. Semantic Integrity
 
 Structural completeness alone is insufficient.
 
@@ -642,7 +642,7 @@ Semantic contradictions SHALL be resolved before final revalidation is declared 
 
 ---
 
-# 26. Governance Integrity
+## 26. Governance Integrity
 
 Governance responsibilities SHALL remain aligned across:
 
@@ -661,7 +661,7 @@ A control document SHALL NOT silently redefine authority established by the norm
 
 ---
 
-# 27. Change Control
+## 27. Change Control
 
 Any modification to the canonical inventory SHALL evaluate:
 
@@ -679,7 +679,7 @@ Structural changes SHALL be explicit and reviewable.
 
 ---
 
-# 28. Validation Procedure
+## 28. Validation Procedure
 
 The canonical inventory SHOULD be validated programmatically.
 
@@ -720,7 +720,7 @@ Empty Required Files:  0
 
 ---
 
-# 29. Canonical Validation Commands
+## 29. Canonical Validation Commands
 
 Repository validation may include commands such as:
 
@@ -739,7 +739,7 @@ Actual execution results belong in `VALIDATION.md`.
 
 ---
 
-# 30. Structural Acceptance Criteria
+## 30. Structural Acceptance Criteria
 
 The manifest contract is satisfied when:
 
@@ -758,7 +758,7 @@ Repository-level confirmation of these conditions SHALL be recorded in `VALIDATI
 
 ---
 
-# 31. Canonical Manifest Summary
+## 31. Canonical Manifest Summary
 
 ```text
 EPIC:                 EPIC-BLD-001
@@ -781,7 +781,7 @@ Validation Evidence:  VALIDATION.md
 
 ---
 
-# 32. Final Manifest Principle
+## 32. Final Manifest Principle
 
 The Build Framework cannot be governed reliably if its canonical structure is ambiguous.
 

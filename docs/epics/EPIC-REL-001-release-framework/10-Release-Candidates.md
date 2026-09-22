@@ -1,8 +1,8 @@
 # Release Framework
 
-# 10 Release Candidates
+## 10 Release Candidates
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines a Release Candidate as the exact release configuration submitted for final release qualification.
 
@@ -27,7 +27,7 @@ Its purpose is to ensure that the object being validated is the same object ulti
 
 ---
 
-# Purpose
+## Purpose
 
 The Release Candidate model establishes:
 
@@ -49,7 +49,7 @@ The model prevents release validation from being applied to an ambiguous or chan
 
 ---
 
-# Candidate Principle
+## Candidate Principle
 
 The central principle is:
 
@@ -81,7 +81,7 @@ as one coherent release object.
 
 ---
 
-# Lifecycle Position
+## Lifecycle Position
 
 Release Candidate creation occurs after Release Readiness.
 
@@ -105,7 +105,7 @@ Candidate creation establishes a stronger release identity boundary.
 
 ---
 
-# Candidate Definition
+## Candidate Definition
 
 A Release Candidate is a stable configuration of release-relevant inputs and outputs intended for final qualification.
 
@@ -134,7 +134,7 @@ The semantics must remain available.
 
 ---
 
-# Candidate Identity
+## Candidate Identity
 
 Every formal candidate SHOULD have an unambiguous candidate identifier.
 
@@ -156,7 +156,7 @@ Candidate identity must distinguish materially different candidate configuration
 
 ---
 
-# Candidate Numbering
+## Candidate Numbering
 
 Candidate numbers SHOULD normally increase monotonically.
 
@@ -174,7 +174,7 @@ A candidate identifier SHOULD NOT be reused for a materially different candidate
 
 ---
 
-# Candidate and Target Version
+## Candidate and Target Version
 
 The candidate version identifies a pre-release form of the intended stable version.
 
@@ -192,7 +192,7 @@ The candidate and stable release belong to the same intended release line.
 
 ---
 
-# Candidate Creation Preconditions
+## Candidate Creation Preconditions
 
 A candidate SHOULD only be created after applicable Release Readiness requirements pass.
 
@@ -210,7 +210,7 @@ Typical preconditions include:
 
 ---
 
-# Candidate Creation Gate
+## Candidate Creation Gate
 
 The transition:
 
@@ -233,7 +233,7 @@ This gate marks the beginning of final candidate qualification.
 
 ---
 
-# Candidate Source Revision
+## Candidate Source Revision
 
 A candidate MUST map to a specific controlled source revision.
 
@@ -253,7 +253,7 @@ A moving branch name alone is insufficient candidate identity.
 
 ---
 
-# Candidate Branch Context
+## Candidate Branch Context
 
 A branch may provide useful lineage.
 
@@ -273,7 +273,7 @@ Branches may continue moving after candidate creation.
 
 ---
 
-# Candidate Build Identity
+## Candidate Build Identity
 
 Where build artifacts exist, the candidate should identify the build that produced them.
 
@@ -291,7 +291,7 @@ This allows the release system to distinguish multiple builds from the same deve
 
 ---
 
-# Candidate Artifact Set
+## Candidate Artifact Set
 
 The candidate must identify the exact artifact set intended for validation.
 
@@ -310,7 +310,7 @@ Final release validation should operate on this exact set where practical.
 
 ---
 
-# Candidate Artifact Identity
+## Candidate Artifact Identity
 
 Artifacts should be identifiable through sufficient metadata.
 
@@ -328,7 +328,7 @@ Filenames alone should not be the only identity mechanism where stronger evidenc
 
 ---
 
-# Candidate Dependency State
+## Candidate Dependency State
 
 A candidate should preserve or reference its relevant dependency state.
 
@@ -344,7 +344,7 @@ A material dependency change may invalidate candidate evidence.
 
 ---
 
-# Candidate Configuration State
+## Candidate Configuration State
 
 Release-relevant configuration must remain identifiable.
 
@@ -361,7 +361,7 @@ A candidate cannot be considered stable if its artifact-producing configuration 
 
 ---
 
-# Candidate Documentation State
+## Candidate Documentation State
 
 Release documentation associated with the candidate should be sufficiently mature for final validation.
 
@@ -380,7 +380,7 @@ Material changes must remain consistent with the actual release.
 
 ---
 
-# Candidate Provenance
+## Candidate Provenance
 
 Candidate provenance should establish the relationship:
 
@@ -398,7 +398,7 @@ The Release Framework must make it possible to reconstruct this relationship.
 
 ---
 
-# Candidate Evidence
+## Candidate Evidence
 
 A candidate may accumulate evidence such as:
 
@@ -418,7 +418,7 @@ Evidence must identify the candidate to which it applies.
 
 ---
 
-# Candidate Stability
+## Candidate Stability
 
 Once final validation begins, the candidate should be treated as stable.
 
@@ -432,7 +432,7 @@ However, the default response to material change should be creation of a new can
 
 ---
 
-# Candidate Freeze
+## Candidate Freeze
 
 Candidate creation usually establishes a candidate freeze.
 
@@ -450,7 +450,7 @@ It means that corrections require controlled requalification.
 
 ---
 
-# Material Change
+## Material Change
 
 A material candidate change is one that can alter release behavior, compatibility, artifact identity, security, or validation conclusions.
 
@@ -469,7 +469,7 @@ Material changes require renewed qualification.
 
 ---
 
-# Non-Material Change
+## Non-Material Change
 
 Some changes may be non-material to the candidate.
 
@@ -484,7 +484,7 @@ Whether a change is material depends on release policy and context.
 
 ---
 
-# Candidate Mutation Rule
+## Candidate Mutation Rule
 
 The safest rule is:
 
@@ -508,7 +508,7 @@ source correction
 
 ---
 
-# Candidate Invalidation
+## Candidate Invalidation
 
 A candidate becomes invalid when its validated identity no longer corresponds to the intended release.
 
@@ -525,7 +525,7 @@ Possible invalidation triggers include:
 
 ---
 
-# Partial Evidence Invalidation
+## Partial Evidence Invalidation
 
 Not every change must necessarily invalidate every evidence domain.
 
@@ -544,7 +544,7 @@ A mature system should support dependency-aware evidence invalidation.
 
 ---
 
-# Full Candidate Invalidation
+## Full Candidate Invalidation
 
 Full invalidation is appropriate when:
 
@@ -558,7 +558,7 @@ This normally requires new candidate identity.
 
 ---
 
-# Candidate Iteration
+## Candidate Iteration
 
 A release may produce several candidates.
 
@@ -586,7 +586,7 @@ It must remain traceable.
 
 ---
 
-# Candidate Rejection
+## Candidate Rejection
 
 A candidate may be rejected due to:
 
@@ -603,7 +603,7 @@ Rejected candidates must not be promoted as stable releases.
 
 ---
 
-# Rejected Candidate History
+## Rejected Candidate History
 
 A rejected candidate MAY remain part of engineering history.
 
@@ -618,7 +618,7 @@ It must not be confused with an official stable release.
 
 ---
 
-# Candidate Withdrawal
+## Candidate Withdrawal
 
 A candidate may be withdrawn before final publication.
 
@@ -634,7 +634,7 @@ Candidate withdrawal is distinct from withdrawing an already published release.
 
 ---
 
-# Candidate Promotion
+## Candidate Promotion
 
 Candidate promotion occurs when a candidate satisfies final release requirements and progresses toward stable identity.
 
@@ -654,7 +654,7 @@ Promotion should preserve the validated candidate contents where practical.
 
 ---
 
-# Promote, Do Not Rebuild
+## Promote, Do Not Rebuild
 
 The preferred model is:
 
@@ -672,7 +672,7 @@ This provides stronger confidence that published artifacts are the ones actually
 
 ---
 
-# Rebuild Before Stable Release
+## Rebuild Before Stable Release
 
 Sometimes a rebuild may be unavoidable.
 
@@ -692,7 +692,7 @@ The stable release must not inherit evidence blindly from artifacts A.
 
 ---
 
-# Candidate-to-Stable Equivalence
+## Candidate-to-Stable Equivalence
 
 The strongest candidate promotion model is:
 
@@ -708,7 +708,7 @@ This provides direct artifact identity continuity.
 
 ---
 
-# Candidate Version Promotion
+## Candidate Version Promotion
 
 A candidate such as:
 
@@ -728,7 +728,7 @@ The stable version is a distinct release identity, but it should represent the s
 
 ---
 
-# Candidate Tags
+## Candidate Tags
 
 FamilyOS MAY use candidate Git tags where useful.
 
@@ -745,7 +745,7 @@ Official stable tagging rules are defined separately.
 
 ---
 
-# Candidate Tag Immutability
+## Candidate Tag Immutability
 
 If candidate tags are used as validation anchors, they SHOULD be treated as immutable.
 
@@ -755,7 +755,7 @@ A changed candidate should receive a new tag.
 
 ---
 
-# Candidate Branches
+## Candidate Branches
 
 A dedicated release candidate branch MAY be used.
 
@@ -771,7 +771,7 @@ Candidate identity must not depend solely on a mutable branch reference.
 
 ---
 
-# Candidate Manifest
+## Candidate Manifest
 
 A future FamilyOS release implementation may define a machine-readable candidate manifest.
 
@@ -800,7 +800,7 @@ This is illustrative rather than a current schema requirement.
 
 ---
 
-# Candidate Fingerprint
+## Candidate Fingerprint
 
 A future implementation MAY derive a candidate fingerprint from critical candidate inputs.
 
@@ -822,7 +822,7 @@ This could help detect accidental mutation.
 
 ---
 
-# Candidate Storage
+## Candidate Storage
 
 Candidate metadata may initially exist in:
 
@@ -838,7 +838,7 @@ The semantic model must remain independent from storage technology.
 
 ---
 
-# Candidate Retention
+## Candidate Retention
 
 Candidate retention policy may vary.
 
@@ -848,7 +848,7 @@ Intermediate failed candidates may use shorter retention depending on governance
 
 ---
 
-# Final Candidate
+## Final Candidate
 
 The Final Candidate is the candidate that successfully passes final validation and receives release approval.
 
@@ -864,7 +864,7 @@ The stable release should trace back to `4.8.0-rc.3`.
 
 ---
 
-# Candidate Validation Scope
+## Candidate Validation Scope
 
 The applicable validation scope is determined by release profile.
 
@@ -891,7 +891,7 @@ artifact validation
 
 ---
 
-# Candidate Security
+## Candidate Security
 
 Candidate handling is part of release security.
 
@@ -907,7 +907,7 @@ High-risk release candidates may require stronger controls.
 
 ---
 
-# Candidate Access Control
+## Candidate Access Control
 
 Candidate publication or promotion authority may differ from candidate creation authority.
 
@@ -926,7 +926,7 @@ This supports least privilege.
 
 ---
 
-# Candidate Risk
+## Candidate Risk
 
 A candidate may reveal new release risks during validation.
 
@@ -942,7 +942,7 @@ Candidate risk changes may invalidate approval assumptions.
 
 ---
 
-# Candidate and Release Notes
+## Candidate and Release Notes
 
 Release notes must eventually describe the Final Candidate accurately.
 
@@ -962,7 +962,7 @@ without documentation being updated accordingly.
 
 ---
 
-# Candidate and Changelog
+## Candidate and Changelog
 
 The changelog entry should reflect the final release scope.
 
@@ -970,7 +970,7 @@ Changes removed from later candidates should not remain represented as released 
 
 ---
 
-# Candidate and Known Issues
+## Candidate and Known Issues
 
 Known issues discovered during candidate qualification must be classified.
 
@@ -988,7 +988,7 @@ The final candidate must have an explicit known-issue state.
 
 ---
 
-# Candidate and Compatibility
+## Candidate and Compatibility
 
 Compatibility validation should apply to the actual candidate.
 
@@ -996,7 +996,7 @@ A compatibility result from an earlier candidate may not remain valid after mate
 
 ---
 
-# Candidate and Security Validation
+## Candidate and Security Validation
 
 Security validation should identify the candidate being assessed.
 
@@ -1004,7 +1004,7 @@ If candidate contents change materially, affected security evidence must be refr
 
 ---
 
-# Candidate and Compliance
+## Candidate and Compliance
 
 Compliance evaluation should likewise identify candidate scope.
 
@@ -1019,7 +1019,7 @@ For plugin candidates, this may include:
 
 ---
 
-# Candidate and Build Framework
+## Candidate and Build Framework
 
 EPIC-BLD-001 provides build outputs.
 
@@ -1039,7 +1039,7 @@ Release Candidate
 
 ---
 
-# Candidate and Testing Framework
+## Candidate and Testing Framework
 
 EPIC-TST-001 provides testing evidence.
 
@@ -1047,7 +1047,7 @@ The candidate model ensures that relevant test evidence applies to the correct r
 
 ---
 
-# Candidate and Quality Framework
+## Candidate and Quality Framework
 
 EPIC-QLT-001 provides quality evidence.
 
@@ -1055,7 +1055,7 @@ Quality status must correspond to the candidate or its source/artifact state.
 
 ---
 
-# Candidate and Documentation Framework
+## Candidate and Documentation Framework
 
 EPIC-DOC-001 governs documentation quality and structure.
 
@@ -1063,7 +1063,7 @@ Candidate documentation is part of final release qualification where required.
 
 ---
 
-# Candidate and Release Validation
+## Candidate and Release Validation
 
 `12-Release-Validation.md` defines how the candidate is finally qualified.
 
@@ -1083,7 +1083,7 @@ Release Validation
 
 ---
 
-# Candidate and Governance
+## Candidate and Governance
 
 Release Governance defines:
 
@@ -1095,7 +1095,7 @@ Release Governance defines:
 
 ---
 
-# Candidate and Observability
+## Candidate and Observability
 
 Candidate lifecycle should be observable.
 
@@ -1115,7 +1115,7 @@ These event names are conceptual.
 
 ---
 
-# Candidate and Auditability
+## Candidate and Auditability
 
 A candidate record should eventually allow maintainers to answer:
 
@@ -1137,7 +1137,7 @@ Why was it rejected or promoted?
 
 ---
 
-# Candidate Status Model
+## Candidate Status Model
 
 A future candidate status model may include:
 
@@ -1156,7 +1156,7 @@ These states complement the broader Release Lifecycle.
 
 ---
 
-# Candidate Validation Failure
+## Candidate Validation Failure
 
 When validation fails, the candidate should not silently return to development.
 
@@ -1174,7 +1174,7 @@ Next Candidate   required
 
 ---
 
-# Candidate Reuse
+## Candidate Reuse
 
 A previously rejected candidate SHOULD NOT later be silently reclassified as valid without renewed qualification.
 
@@ -1184,7 +1184,7 @@ The evidence must remain explicit.
 
 ---
 
-# Candidate Idempotency
+## Candidate Idempotency
 
 Candidate creation tooling should avoid accidentally creating duplicate or conflicting candidate identities.
 
@@ -1198,7 +1198,7 @@ should result in verification or blocking, not silent overwrite.
 
 ---
 
-# Candidate Concurrency
+## Candidate Concurrency
 
 Parallel release work may attempt to create candidate identities simultaneously.
 
@@ -1213,7 +1213,7 @@ Candidate numbering may require coordination or reservation.
 
 ---
 
-# Candidate Provenance Verification
+## Candidate Provenance Verification
 
 Before final validation begins, the system should be able to establish:
 
@@ -1228,7 +1228,7 @@ This ensures validation starts from a trusted candidate state.
 
 ---
 
-# Candidate Checksums
+## Candidate Checksums
 
 Where release artifacts are files or packages, checksums SHOULD be used as candidate integrity evidence where practical.
 
@@ -1246,7 +1246,7 @@ The exact integrity mechanism is defined further in `11-Artifacts-and-Provenance
 
 ---
 
-# Candidate Reproducibility
+## Candidate Reproducibility
 
 Where the Build Framework supports reproducibility, a candidate may be independently rebuilt and compared.
 
@@ -1262,7 +1262,7 @@ Reproducibility is not a prerequisite for every current release profile, but the
 
 ---
 
-# Candidate Minimal Model
+## Candidate Minimal Model
 
 At minimum, a formal candidate should identify:
 
@@ -1279,7 +1279,7 @@ Without these elements, final validation may become ambiguous.
 
 ---
 
-# Framework Candidate Example
+## Framework Candidate Example
 
 A Release Framework candidate may conceptually be:
 
@@ -1309,7 +1309,7 @@ Target Stable:
 
 ---
 
-# Plugin Candidate Example
+## Plugin Candidate Example
 
 A plugin candidate may be:
 
@@ -1336,7 +1336,7 @@ Finance Plugin 3.0.0
 
 ---
 
-# Platform Candidate Example
+## Platform Candidate Example
 
 A platform candidate may aggregate multiple component states.
 
@@ -1364,7 +1364,7 @@ Aggregation must remain explicit.
 
 ---
 
-# Candidate Promotion Checklist
+## Candidate Promotion Checklist
 
 Before candidate promotion, the release process should verify:
 
@@ -1382,87 +1382,87 @@ approval granted
 
 ---
 
-# Candidate Invariants
+## Candidate Invariants
 
 The following invariants apply.
 
-## RCAND1 — Every formal release candidate has an explicit identity.
+### RCAND1 — Every formal release candidate has an explicit identity.
 
-## RCAND2 — Every candidate maps to a controlled source state.
+### RCAND2 — Every candidate maps to a controlled source state.
 
-## RCAND3 — Candidate validation applies to the exact candidate.
+### RCAND3 — Candidate validation applies to the exact candidate.
 
-## RCAND4 — Material candidate changes require renewed qualification.
+### RCAND4 — Material candidate changes require renewed qualification.
 
-## RCAND5 — Candidate identifiers are not reused for materially different contents.
+### RCAND5 — Candidate identifiers are not reused for materially different contents.
 
-## RCAND6 — Candidate evidence identifies the candidate it supports.
+### RCAND6 — Candidate evidence identifies the candidate it supports.
 
-## RCAND7 — Rejected candidates must not be silently promoted.
+### RCAND7 — Rejected candidates must not be silently promoted.
 
-## RCAND8 — Final stable release must trace back to a qualified candidate where candidate workflow is used.
+### RCAND8 — Final stable release must trace back to a qualified candidate where candidate workflow is used.
 
-## RCAND9 — Candidate artifacts should remain stable during final validation.
+### RCAND9 — Candidate artifacts should remain stable during final validation.
 
-## RCAND10 — Candidate promotion should reuse validated artifacts where practical.
+### RCAND10 — Candidate promotion should reuse validated artifacts where practical.
 
-## RCAND11 — Candidate history must remain sufficiently traceable.
+### RCAND11 — Candidate history must remain sufficiently traceable.
 
-## RCAND12 — Candidate semantics must remain tool-independent.
+### RCAND12 — Candidate semantics must remain tool-independent.
 
 ---
 
-# Candidate Anti-Patterns
+## Candidate Anti-Patterns
 
-## Moving Candidate
+### Moving Candidate
 
 Validating a branch name whose underlying commit continues changing.
 
 ---
 
-## Candidate-by-Filename
+### Candidate-by-Filename
 
 Assuming a package is the intended candidate solely because its filename contains the expected version.
 
 ---
 
-## Reused RC Identifier
+### Reused RC Identifier
 
 Replacing the contents of `rc.1` while keeping the same candidate identity.
 
 ---
 
-## Validation Drift
+### Validation Drift
 
 Using validation results from one candidate to approve another.
 
 ---
 
-## Rebuild-and-Publish
+### Rebuild-and-Publish
 
 Validating candidate artifacts and then publishing newly rebuilt artifacts without equivalence verification.
 
 ---
 
-## Candidate Without Source
+### Candidate Without Source
 
 Creating a candidate that cannot be traced to a specific source revision.
 
 ---
 
-## Candidate Without Artifact Inventory
+### Candidate Without Artifact Inventory
 
 Publishing multiple release artifacts without identifying which ones belonged to the qualified candidate.
 
 ---
 
-## Silent Rejection Recovery
+### Silent Rejection Recovery
 
 Fixing defects after candidate failure without recording a new candidate or renewed validation.
 
 ---
 
-# Minimum Candidate Process
+## Minimum Candidate Process
 
 At minimum, FamilyOS candidate qualification should follow:
 
@@ -1484,7 +1484,7 @@ promote or reject
 
 ---
 
-# Target Candidate Experience
+## Target Candidate Experience
 
 At higher maturity, a maintainer should be able to inspect a candidate and receive:
 
@@ -1518,7 +1518,7 @@ Status               VALIDATED
 
 ---
 
-# Candidate Maturity
+## Candidate Maturity
 
 FamilyOS candidate handling may mature through:
 
@@ -1550,7 +1550,7 @@ policy-driven candidate promotion
 
 ---
 
-# Relationship With Release Readiness
+## Relationship With Release Readiness
 
 `09-Release-Readiness.md` determines whether a release may become a candidate.
 
@@ -1558,37 +1558,37 @@ This document defines the candidate created after that decision.
 
 ---
 
-# Relationship With Artifacts and Provenance
+## Relationship With Artifacts and Provenance
 
 `11-Artifacts-and-Provenance.md` defines the deeper identity, integrity, and provenance model for candidate artifacts.
 
 ---
 
-# Relationship With Release Validation
+## Relationship With Release Validation
 
 `12-Release-Validation.md` defines how the exact candidate is qualified for approval.
 
 ---
 
-# Relationship With Versioning
+## Relationship With Versioning
 
 `06-Versioning-Strategy.md` defines candidate version syntax and stable target version semantics.
 
 ---
 
-# Relationship With Tagging
+## Relationship With Tagging
 
 `16-Tagging-and-Repository-State.md` defines final official release anchors and any candidate tag policies.
 
 ---
 
-# Relationship With Publishing
+## Relationship With Publishing
 
 `17-Publishing-and-Distribution.md` defines how a validated and approved candidate becomes published.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Candidate model establishes the exact engineering object on which final release confidence is built.
 

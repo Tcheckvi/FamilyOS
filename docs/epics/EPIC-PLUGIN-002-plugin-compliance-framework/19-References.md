@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 19 References
+## 19 References
 
-## Introduction
+### Introduction
 
 The Plugin Compliance Framework depends on a broad set of FamilyOS architectural, engineering, governance, and plugin ecosystem foundations.
 
@@ -14,7 +14,7 @@ The compliance framework does not replace these sources of authority.
 
 ---
 
-# Reference Principle
+## Reference Principle
 
 The governing reference principle is:
 
@@ -26,9 +26,9 @@ It does not redefine foundational architecture, testing, quality, documentation,
 
 ---
 
-# Engineering Foundation
+## Engineering Foundation
 
-## EPIC-ENG-001 — Engineering Foundation
+### EPIC-ENG-001 — Engineering Foundation
 
 The Engineering Foundation defines the general engineering model within which the Plugin Compliance Framework operates.
 
@@ -48,9 +48,9 @@ Plugin compliance should align with these platform-wide engineering expectations
 
 ---
 
-# Documentation Framework
+## Documentation Framework
 
-## EPIC-DOC-001 — Documentation Framework
+### EPIC-DOC-001 — Documentation Framework
 
 The Documentation Framework defines FamilyOS documentation architecture and standards.
 
@@ -68,9 +68,9 @@ Documentation-specific standards remain authoritative within EPIC-DOC-001.
 
 ---
 
-# Testing Framework
+## Testing Framework
 
-## EPIC-TST-001 — Testing Framework
+### EPIC-TST-001 — Testing Framework
 
 The Testing Framework defines how FamilyOS testing is structured, governed, executed, and integrated into engineering workflows.
 
@@ -88,9 +88,9 @@ Relevant concerns include:
 
 ---
 
-# Quality Framework
+## Quality Framework
 
-## EPIC-QLT-001 — Quality Framework
+### EPIC-QLT-001 — Quality Framework
 
 The Quality Framework defines platform-wide quality expectations.
 
@@ -107,9 +107,9 @@ Quality semantics remain owned by EPIC-QLT-001.
 
 ---
 
-# Plugin Architecture
+## Plugin Architecture
 
-## FamilyOS Plugin Architecture
+### FamilyOS Plugin Architecture
 
 The Plugin Architecture is one of the primary normative sources for EPIC-PLUGIN-002.
 
@@ -129,9 +129,9 @@ The Compliance Framework verifies conformance to these contracts.
 
 ---
 
-# Official Plugins Architecture
+## Official Plugins Architecture
 
-## ADR-0007 — Official Plugins Architecture
+### ADR-0007 — Official Plugins Architecture
 
 ADR-0007 defines the architecture and governance principles for official FamilyOS plugins.
 
@@ -147,9 +147,9 @@ Relevant areas include:
 
 ---
 
-# Plugin Implementation Strategy
+## Plugin Implementation Strategy
 
-## ADR-0013 — Official Plugin Implementation Strategy
+### ADR-0013 — Official Plugin Implementation Strategy
 
 Where applicable, this architectural decision provides implementation constraints and patterns for official plugins.
 
@@ -157,9 +157,9 @@ Compliance rules may reference requirements established by this strategy when th
 
 ---
 
-# Specification-Driven Architecture
+## Specification-Driven Architecture
 
-## ADR-0008 — Specification-Driven Platform
+### ADR-0008 — Specification-Driven Platform
 
 The specification-driven platform approach influences how compliance requirements should be represented.
 
@@ -175,9 +175,9 @@ The Compliance-as-Code direction of EPIC-PLUGIN-002 aligns strongly with this mo
 
 ---
 
-# Normative Validation Architecture
+## Normative Validation Architecture
 
-## ADR-0009 — Normative Validation Architecture
+### ADR-0009 — Normative Validation Architecture
 
 The Normative Validation Architecture provides important context for the distinction between:
 
@@ -190,9 +190,9 @@ EPIC-PLUGIN-002 extends these concepts specifically into plugin compliance.
 
 ---
 
-# Plugin Domain Maturity
+## Plugin Domain Maturity
 
-## ADR-0010 — Official-Plugin Domain Maturity Review
+### ADR-0010 — Official-Plugin Domain Maturity Review
 
 Domain maturity review contributes to understanding the level of engineering assurance expected from official plugins.
 
@@ -202,9 +202,9 @@ Maturity assessment itself should remain distinct from ordinary rule evaluation 
 
 ---
 
-# Plugin Certification
+## Plugin Certification
 
-## ADR-0011 — Official-Plugin Certification Process
+### ADR-0011 — Official-Plugin Certification Process
 
 The Official-Plugin Certification Process defines the broader certification context into which EPIC-PLUGIN-002 integrates.
 
@@ -226,7 +226,7 @@ Certification provides a broader governed trust decision.
 
 ---
 
-# Official Plugin RFCs
+## Official Plugin RFCs
 
 The official plugin RFCs define domain-specific plugin behavior and contracts.
 
@@ -247,9 +247,9 @@ Domain-specific business correctness remains owned by the corresponding domain s
 
 ---
 
-# Security Architecture
+## Security Architecture
 
-## FamilyOS Security Architecture
+### FamilyOS Security Architecture
 
 The Security Architecture defines security principles and boundaries relevant to plugin compliance.
 
@@ -268,9 +268,9 @@ Security architecture remains the authoritative source for security meaning.
 
 ---
 
-# Configuration Architecture
+## Configuration Architecture
 
-## FamilyOS Configuration Architecture
+### FamilyOS Configuration Architecture
 
 The Configuration Architecture defines how configuration should be represented and consumed across FamilyOS.
 
@@ -285,9 +285,9 @@ Plugin compliance may validate:
 
 ---
 
-# Runtime Architecture
+## Runtime Architecture
 
-## FamilyOS Runtime Architecture
+### FamilyOS Runtime Architecture
 
 The Runtime Architecture defines plugin execution boundaries and supported runtime contracts.
 
@@ -302,7 +302,7 @@ Relevant compliance areas include:
 
 ---
 
-# Capability Architecture
+## Capability Architecture
 
 The FamilyOS capability model defines explicit interfaces through which plugins expose supported behavior.
 
@@ -318,7 +318,7 @@ Capability contracts remain authoritative.
 
 ---
 
-# Contribution Architecture
+## Contribution Architecture
 
 The contribution system defines the mechanisms through which plugins register platform extensions.
 
@@ -337,7 +337,7 @@ The Compliance Framework verifies that plugin contributions follow supported con
 
 ---
 
-# Dependency Architecture
+## Dependency Architecture
 
 FamilyOS architecture establishes allowed dependency relationships.
 
@@ -352,9 +352,9 @@ Plugin compliance may validate:
 
 ---
 
-# Release Strategy
+## Release Strategy
 
-## FamilyOS Release Strategy
+### FamilyOS Release Strategy
 
 Release strategy influences compliance gates and release-grade evidence requirements.
 
@@ -374,9 +374,9 @@ Compliance provides release eligibility evidence.
 
 ---
 
-# Build Framework
+## Build Framework
 
-## EPIC-BLD-001 — Build Framework
+### EPIC-BLD-001 — Build Framework
 
 The Build Framework is expected to define how FamilyOS creates reproducible artifacts.
 
@@ -391,9 +391,9 @@ Plugin compliance integrates with build workflows through:
 
 ---
 
-# Release Framework
+## Release Framework
 
-## EPIC-REL-001 — Release Framework
+### EPIC-REL-001 — Release Framework
 
 The Release Framework is expected to define:
 
@@ -408,9 +408,9 @@ EPIC-PLUGIN-002 provides plugin-specific compliance evidence that the Release Fr
 
 ---
 
-# Governance Architecture
+## Governance Architecture
 
-## FamilyOS Governance Architecture
+### FamilyOS Governance Architecture
 
 Governance architecture influences:
 
@@ -426,9 +426,9 @@ Compliance governance must integrate with the broader FamilyOS governance model.
 
 ---
 
-# Documentation Architecture
+## Documentation Architecture
 
-## FamilyOS Documentation Architecture
+### FamilyOS Documentation Architecture
 
 The Documentation Architecture defines how FamilyOS documentation is organized and governed.
 
@@ -436,7 +436,7 @@ Compliance documentation requirements should align with this architecture rather
 
 ---
 
-# Repository Architecture
+## Repository Architecture
 
 Repository structure and conventions may influence:
 
@@ -450,9 +450,9 @@ Repository-level rules should remain aligned with the authoritative engineering 
 
 ---
 
-# Engineering Constitution
+## Engineering Constitution
 
-## FamilyOS Engineering Constitution
+### FamilyOS Engineering Constitution
 
 The Engineering Constitution represents a high-level normative source for platform engineering behavior.
 
@@ -462,9 +462,9 @@ Where a compliance rule derives directly from constitutional engineering require
 
 ---
 
-# Naming Conventions
+## Naming Conventions
 
-## docs/04-reference/Naming-Conventions.md
+### docs/04-reference/Naming-Conventions.md
 
 Naming conventions may influence compliance requirements concerning:
 
@@ -480,9 +480,9 @@ Where naming conventions are normative, compliance can automate their validation
 
 ---
 
-# Reserved Words
+## Reserved Words
 
-## docs/04-reference/Reserved-Words.md
+### docs/04-reference/Reserved-Words.md
 
 Reserved names may participate in structural or identity compliance validation.
 
@@ -490,9 +490,9 @@ The compliance system should consume the authoritative reserved-word definitions
 
 ---
 
-# Glossary
+## Glossary
 
-## docs/04-reference/Glossary.md
+### docs/04-reference/Glossary.md
 
 The FamilyOS glossary provides authoritative terminology used across EPIC-PLUGIN-002.
 
@@ -500,17 +500,17 @@ Compliance documentation and tooling should use established platform language co
 
 ---
 
-# Acronyms
+## Acronyms
 
-## docs/04-reference/Acronyms.md
+### docs/04-reference/Acronyms.md
 
 Framework documentation should follow the official acronym definitions where applicable.
 
 ---
 
-# Language Reference
+## Language Reference
 
-## docs/04-reference/Language.md
+### docs/04-reference/Language.md
 
 The Language reference influences normative documentation language and terminology.
 
@@ -528,9 +528,9 @@ when normative semantics are intended.
 
 ---
 
-# Specification Registry
+## Specification Registry
 
-## docs/06-specifications/
+### docs/06-specifications/
 
 Formal specifications may define machine-readable or normative contracts consumed by the compliance framework.
 
@@ -548,7 +548,7 @@ Compliance Report Schema
 
 ---
 
-# Plugin Metadata Schema
+## Plugin Metadata Schema
 
 The official plugin metadata schema is a critical compliance dependency.
 
@@ -556,7 +556,7 @@ Metadata rules should validate against the authoritative schema rather than reim
 
 ---
 
-# Plugin Manifest
+## Plugin Manifest
 
 The plugin manifest provides primary evidence for:
 
@@ -572,7 +572,7 @@ Manifest compliance is therefore foundational to many rule domains.
 
 ---
 
-# Plugin SDK
+## Plugin SDK
 
 The FamilyOS Plugin SDK defines supported extension interfaces available to plugin authors.
 
@@ -582,7 +582,7 @@ The SDK remains authoritative for its public API contracts.
 
 ---
 
-# FamilyOS CLI Architecture
+## FamilyOS CLI Architecture
 
 The CLI Architecture defines how compliance commands should integrate into the standard FamilyOS command surface.
 
@@ -590,7 +590,7 @@ EPIC-PLUGIN-002 may introduce compliance capabilities, but command implementatio
 
 ---
 
-# CI and Engineering Toolchain
+## CI and Engineering Toolchain
 
 The existing engineering toolchain provides important compliance evidence sources.
 
@@ -608,7 +608,7 @@ The Compliance Framework consumes and interprets their results according to plug
 
 ---
 
-# Pytest
+## Pytest
 
 Pytest provides testing evidence.
 
@@ -625,7 +625,7 @@ Compliance does not redefine what a Pytest failure means.
 
 ---
 
-# Ruff
+## Ruff
 
 Ruff provides static-analysis and formatting-related evidence according to FamilyOS engineering configuration.
 
@@ -633,7 +633,7 @@ Compliance may require successful Ruff validation for specific plugin profiles.
 
 ---
 
-# MyPy
+## MyPy
 
 MyPy provides type-checking evidence.
 
@@ -641,7 +641,7 @@ Compliance may require MyPy success according to FamilyOS quality and plugin pro
 
 ---
 
-# External Standards
+## External Standards
 
 EPIC-PLUGIN-002 may eventually integrate with external standards for areas such as:
 
@@ -663,7 +663,7 @@ Any external standard adoption should be governed explicitly before becoming nor
 
 ---
 
-# SARIF
+## SARIF
 
 SARIF may become useful as a reporting projection for compliance findings.
 
@@ -673,7 +673,7 @@ It must not replace the canonical FamilyOS Compliance Result model.
 
 ---
 
-# SBOM Integration
+## SBOM Integration
 
 A future Software Bill of Materials integration may provide evidence for:
 
@@ -686,7 +686,7 @@ SBOM semantics should remain owned by the relevant supply-chain architecture or 
 
 ---
 
-# Attestation Standards
+## Attestation Standards
 
 Future attestation standards may strengthen:
 
@@ -699,7 +699,7 @@ These should extend the Evidence Model without changing the principle that evide
 
 ---
 
-# Reference Hierarchy
+## Reference Hierarchy
 
 Where multiple references apply, compliance rules should respect the FamilyOS normative hierarchy.
 
@@ -728,7 +728,7 @@ Implementation behavior must not override higher-level policy.
 
 ---
 
-# Conflict Resolution
+## Conflict Resolution
 
 If two authoritative references appear to conflict, the compliance framework must not invent its own interpretation silently.
 
@@ -743,7 +743,7 @@ Only then should the corresponding compliance rule be activated or changed.
 
 ---
 
-# Reference Traceability
+## Reference Traceability
 
 Every active compliance rule should eventually be able to identify its authoritative references.
 
@@ -762,7 +762,7 @@ This relationship improves transparency and auditability.
 
 ---
 
-# Reference Stability
+## Reference Stability
 
 References may evolve.
 
@@ -777,7 +777,7 @@ A rule must not silently change meaning because a referenced document was rewrit
 
 ---
 
-# Future Reference Documents
+## Future Reference Documents
 
 EPIC-PLUGIN-002 is expected to produce or depend on future detailed implementation specifications.
 
@@ -799,7 +799,7 @@ These documents should refine this EPIC without contradicting its foundational a
 
 ---
 
-# Reference Governance
+## Reference Governance
 
 References used by active rules should be governed.
 
@@ -815,7 +815,7 @@ Possible outcomes include:
 
 ---
 
-# References Summary
+## References Summary
 
 The Plugin Compliance Framework sits at the intersection of multiple FamilyOS engineering foundations.
 
@@ -846,7 +846,7 @@ The Compliance Framework translates these authoritative requirements into verifi
 
 ---
 
-# Final Reference Principle
+## Final Reference Principle
 
 The governing principle of references within EPIC-PLUGIN-002 is:
 

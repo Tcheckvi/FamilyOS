@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 21 References
+## 21 References
 
-## Overview
+### Overview
 
 This document identifies the authoritative FamilyOS references that define, constrain, support, or complement the Quality Framework.
 
@@ -34,7 +34,7 @@ The references defined here provide the context required to understand how quali
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to:
 
@@ -52,7 +52,7 @@ The Quality Framework should not accumulate references that provide no direct en
 
 ---
 
-# Reference Principles
+## Reference Principles
 
 FamilyOS references should remain:
 
@@ -68,7 +68,7 @@ The Quality Framework should reference authoritative sources instead of copying 
 
 ---
 
-# Normative and Informative References
+## Normative and Informative References
 
 References are divided conceptually into two categories.
 
@@ -88,7 +88,7 @@ Not every referenced document creates mandatory Quality Framework behavior.
 
 ---
 
-# Normative Reference
+## Normative Reference
 
 A Normative Reference defines authoritative expectations that may influence:
 
@@ -106,7 +106,7 @@ When a normative reference conflicts with lower-level quality configuration, the
 
 ---
 
-# Informative Reference
+## Informative Reference
 
 An Informative Reference helps explain or contextualize quality engineering but does not independently define mandatory compliance.
 
@@ -119,7 +119,7 @@ Examples may include:
 
 ---
 
-# Reference Authority
+## Reference Authority
 
 Every significant reference should have an understood authority level.
 
@@ -145,7 +145,7 @@ This hierarchy should remain aligned with FamilyOS Engineering and Documentation
 
 ---
 
-# FamilyOS Engineering Constitution
+## FamilyOS Engineering Constitution
 
 The Engineering Constitution establishes the highest-level engineering principles governing FamilyOS.
 
@@ -168,7 +168,7 @@ The Quality Framework operationalizes many of these principles through evidence,
 
 ---
 
-# Engineering Foundation
+## Engineering Foundation
 
 The Engineering Foundation defines the general engineering model used by FamilyOS.
 
@@ -211,7 +211,7 @@ The Quality Framework specializes the general quality principles defined by the 
 
 ---
 
-# Architecture Foundation
+## Architecture Foundation
 
 The FamilyOS architecture foundation defines structural principles and system boundaries that quality mechanisms must preserve.
 
@@ -247,7 +247,7 @@ These documents provide architectural intent that may later become Quality Requi
 
 ---
 
-# Architecture Decisions
+## Architecture Decisions
 
 Approved ADRs are important normative references.
 
@@ -268,7 +268,7 @@ The Quality Framework should not reinterpret an ADR beyond its approved semantic
 
 ---
 
-# Official Plugins Architecture
+## Official Plugins Architecture
 
 `ADR-0007 — Official Plugins Architecture` is particularly relevant.
 
@@ -288,7 +288,7 @@ The Plugin Compliance Framework remains the specialized enforcement layer for pl
 
 ---
 
-# Testing Framework
+## Testing Framework
 
 Primary reference:
 
@@ -333,7 +333,7 @@ Consumes Testing Evidence and Determines Quality Impact
 
 ---
 
-# Testing and Quality Relationship
+## Testing and Quality Relationship
 
 The Testing Framework answers questions such as:
 
@@ -361,7 +361,7 @@ Is testing quality degrading?
 
 ---
 
-# Documentation Framework
+## Documentation Framework
 
 Primary reference:
 
@@ -396,7 +396,7 @@ The Documentation Framework is authoritative for documentation-specific quality 
 
 ---
 
-# Documentation and Quality Relationship
+## Documentation and Quality Relationship
 
 The Documentation Framework defines:
 
@@ -423,7 +423,7 @@ Quality Gates
 
 ---
 
-# Build Framework
+## Build Framework
 
 Primary reference:
 
@@ -448,7 +448,7 @@ The Build Framework remains authoritative for build semantics.
 
 ---
 
-# Release Framework
+## Release Framework
 
 Primary reference:
 
@@ -472,7 +472,7 @@ The Quality Framework supplies quality state and evidence used by Release Gates.
 
 ---
 
-# Release and Quality Relationship
+## Release and Quality Relationship
 
 The relationship is:
 
@@ -496,7 +496,7 @@ Quality Governance controls quality semantics.
 
 ---
 
-# Plugin Compliance Framework
+## Plugin Compliance Framework
 
 Primary reference:
 
@@ -535,7 +535,7 @@ Relevant documents include:
 
 ---
 
-# Plugin Compliance and Quality Relationship
+## Plugin Compliance and Quality Relationship
 
 The Plugin Compliance Framework specializes compliance for plugins.
 
@@ -569,7 +569,7 @@ The two frameworks should integrate without duplicating responsibilities.
 
 ---
 
-# Security Architecture
+## Security Architecture
 
 Primary reference:
 
@@ -593,7 +593,7 @@ It should not independently redefine security architecture.
 
 ---
 
-# Security Plugin RFC
+## Security Plugin RFC
 
 Relevant reference:
 
@@ -605,7 +605,7 @@ Security plugin behavior and contracts may create plugin-specific quality and co
 
 ---
 
-# Health Plugin RFC
+## Health Plugin RFC
 
 Relevant reference:
 
@@ -617,7 +617,7 @@ Quality requirements may consume defined contracts and architecture without dupl
 
 ---
 
-# Finance Plugin RFC
+## Finance Plugin RFC
 
 Relevant reference:
 
@@ -629,7 +629,7 @@ Finance-related capabilities may require elevated correctness, data integrity, a
 
 ---
 
-# Education Plugin RFC
+## Education Plugin RFC
 
 Relevant reference:
 
@@ -639,7 +639,7 @@ RFC-0013 — Education Plugin
 
 ---
 
-# Documents Plugin RFC
+## Documents Plugin RFC
 
 Relevant reference:
 
@@ -651,7 +651,7 @@ Document-related behavior may integrate with the Documentation Framework and Qua
 
 ---
 
-# Communication Plugin RFC
+## Communication Plugin RFC
 
 Relevant reference:
 
@@ -669,7 +669,7 @@ Communication capabilities may introduce quality concerns around:
 
 ---
 
-# Official Plugin RFC Sequence
+## Official Plugin RFC Sequence
 
 The official plugin RFC sequence is:
 
@@ -691,7 +691,7 @@ Quality Profiles and compliance should remain capable of applying consistent cro
 
 ---
 
-# Specifications Framework
+## Specifications Framework
 
 Relevant FamilyOS specifications include:
 
@@ -708,7 +708,7 @@ Specifications may provide normative requirements consumed by Quality Compliance
 
 ---
 
-# Specification Traceability
+## Specification Traceability
 
 A specification requirement may become:
 
@@ -728,7 +728,7 @@ The Quality Framework should preserve this provenance.
 
 ---
 
-# FamilyOS Reference Documentation
+## FamilyOS Reference Documentation
 
 The FamilyOS reference directory provides common terminology and conventions.
 
@@ -747,7 +747,7 @@ These are important for consistency across quality documentation and implementat
 
 ---
 
-# Glossary
+## Glossary
 
 `Glossary.md` should remain the authoritative reference for shared FamilyOS terminology where terms are defined globally.
 
@@ -755,7 +755,7 @@ Quality-specific terms may be introduced by this framework and later promoted in
 
 ---
 
-# Acronyms
+## Acronyms
 
 `Acronyms.md` provides shared acronym definitions.
 
@@ -763,7 +763,7 @@ New quality acronyms should avoid conflicting definitions.
 
 ---
 
-# Language
+## Language
 
 `Language.md` defines language conventions used across FamilyOS documentation.
 
@@ -771,7 +771,7 @@ Quality documentation should follow those conventions.
 
 ---
 
-# Naming Conventions
+## Naming Conventions
 
 `Naming-Conventions.md` defines shared naming rules.
 
@@ -791,7 +791,7 @@ The final identifier scheme should be aligned before implementation.
 
 ---
 
-# Reserved Words
+## Reserved Words
 
 `Reserved-Words.md` should be consulted when introducing:
 
@@ -804,7 +804,7 @@ This avoids semantic conflicts across FamilyOS.
 
 ---
 
-# Reference Index
+## Reference Index
 
 `Reference-Index.md` provides discoverability for shared FamilyOS references.
 
@@ -812,7 +812,7 @@ The Quality Framework should eventually be indexed there.
 
 ---
 
-# Repository Architecture
+## Repository Architecture
 
 The Quality Framework must remain compatible with FamilyOS repository architecture.
 
@@ -831,7 +831,7 @@ Quality verification should validate repository expectations rather than invent 
 
 ---
 
-# Development Workflow
+## Development Workflow
 
 The FamilyOS Development Workflow is an important Quality Framework input.
 
@@ -851,7 +851,7 @@ Quality Gates should map to actual engineering lifecycle boundaries.
 
 ---
 
-# Coding Standards
+## Coding Standards
 
 FamilyOS Coding Standards may generate executable quality rules.
 
@@ -869,7 +869,7 @@ Tools such as Ruff and MyPy implement portions of these expectations.
 
 ---
 
-# Toolchain
+## Toolchain
 
 The Engineering Toolchain is an important implementation reference.
 
@@ -887,7 +887,7 @@ Tool-specific behavior should not replace Quality Framework semantics.
 
 ---
 
-# Environment Management
+## Environment Management
 
 Quality verification should remain compatible with FamilyOS environment management.
 
@@ -903,7 +903,7 @@ Reproducibility
 
 ---
 
-# Dependency Management
+## Dependency Management
 
 Dependency policy influences:
 
@@ -919,7 +919,7 @@ Quality checks may verify dependency state while the Engineering Foundation rema
 
 ---
 
-# Configuration Management
+## Configuration Management
 
 Configuration quality may depend on:
 
@@ -936,7 +936,7 @@ The Quality Framework may consume configuration validation evidence.
 
 ---
 
-# Framework Lifecycle
+## Framework Lifecycle
 
 The broader FamilyOS Framework Lifecycle is an important reference for the Quality Framework Lifecycle.
 
@@ -944,7 +944,7 @@ Quality-specific lifecycle rules should specialize rather than contradict the br
 
 ---
 
-# Governance Architecture
+## Governance Architecture
 
 `Governance-Architecture.md` provides broader governance principles.
 
@@ -961,7 +961,7 @@ Escalation
 
 ---
 
-# Observability Architecture
+## Observability Architecture
 
 `Observability-Architecture.md` provides platform-wide observability principles.
 
@@ -969,7 +969,7 @@ Quality Observability specializes these concepts for engineering quality data.
 
 ---
 
-# Event Architecture
+## Event Architecture
 
 `Event-Architecture.md` is relevant if Quality Automation and Quality Observability emit structured events such as:
 
@@ -984,7 +984,7 @@ Quality events must conform to FamilyOS event architecture.
 
 ---
 
-# Notification Architecture
+## Notification Architecture
 
 `Notification-Architecture.md` becomes relevant when significant quality conditions generate notifications.
 
@@ -999,7 +999,7 @@ Critical Risk
 
 ---
 
-# CLI Architecture
+## CLI Architecture
 
 `CLI-Architecture.md` governs future quality CLI integration.
 
@@ -1017,13 +1017,13 @@ must follow FamilyOS CLI architecture and command conventions.
 
 ---
 
-# API Architecture
+## API Architecture
 
 If a future Quality Platform exposes APIs, they should comply with `API-Architecture.md`.
 
 ---
 
-# Integration Architecture
+## Integration Architecture
 
 Cross-framework quality integrations should follow `Integration-Architecture.md`.
 
@@ -1038,7 +1038,7 @@ Examples include integration with:
 
 ---
 
-# Runtime Architecture
+## Runtime Architecture
 
 Runtime quality mechanisms must remain compatible with `Runtime-Architecture.md`.
 
@@ -1046,7 +1046,7 @@ The Quality Framework should not introduce a parallel runtime model.
 
 ---
 
-# Infrastructure Architecture
+## Infrastructure Architecture
 
 Quality Automation infrastructure should align with `Infrastructure-Architecture.md`.
 
@@ -1063,13 +1063,13 @@ Reliability
 
 ---
 
-# Deployment Architecture
+## Deployment Architecture
 
 Deployment-related Quality Gates should align with `Deployment-Architecture.md`.
 
 ---
 
-# Generation Architecture
+## Generation Architecture
 
 Quality automation may validate generated artifacts.
 
@@ -1077,7 +1077,7 @@ Any quality integration with generators should follow `Generation-Architecture.m
 
 ---
 
-# Identity Architecture
+## Identity Architecture
 
 Quality evidence, approvals, risk acceptance, exceptions, and overrides may require identity.
 
@@ -1085,7 +1085,7 @@ Such identity semantics should follow `Identity-Architecture.md`.
 
 ---
 
-# Domain Architecture
+## Domain Architecture
 
 Quality domains must not conflict with FamilyOS domain architecture.
 
@@ -1093,7 +1093,7 @@ The Quality Framework is a cross-cutting engineering framework, not a business d
 
 ---
 
-# Application Architecture
+## Application Architecture
 
 Quality application services should follow `Application-Architecture.md`.
 
@@ -1108,7 +1108,7 @@ CLI / Presentation
 
 ---
 
-# Clean Architecture
+## Clean Architecture
 
 The existing FamilyOS engineering approach favors Clean Architecture.
 
@@ -1130,7 +1130,7 @@ Application / Domain Contracts
 
 ---
 
-# Domain-Driven Design
+## Domain-Driven Design
 
 Where appropriate, Quality Framework implementation should use explicit domain language.
 
@@ -1149,21 +1149,21 @@ These concepts should remain semantically stable.
 
 ---
 
-# Quality Tools
+## Quality Tools
 
 Current tooling provides important implementation references.
 
-## Ruff
+### Ruff
 
 Ruff provides Python linting and static checks.
 
 Quality integration should normalize its results into the FamilyOS Quality model.
 
-## MyPy
+### MyPy
 
 MyPy provides static type verification.
 
-## Pytest
+### Pytest
 
 Pytest provides test execution and test evidence.
 
@@ -1173,7 +1173,7 @@ They are not themselves the Quality Framework.
 
 ---
 
-# Git
+## Git
 
 Git provides revision identity and historical context required by:
 
@@ -1189,7 +1189,7 @@ Quality evidence should bind to Git revision where appropriate.
 
 ---
 
-# CI Systems
+## CI Systems
 
 CI systems provide execution infrastructure.
 
@@ -1199,7 +1199,7 @@ Quality semantics should therefore live outside provider-specific configuration 
 
 ---
 
-# External Standards
+## External Standards
 
 The initial Quality Framework is primarily governed by FamilyOS internal engineering requirements.
 
@@ -1219,7 +1219,7 @@ External standards should only become normative when explicitly adopted by Famil
 
 ---
 
-# ISO/IEC 25010
+## ISO/IEC 25010
 
 ISO/IEC 25010 may provide informative quality model concepts.
 
@@ -1240,7 +1240,7 @@ FamilyOS may use compatible concepts without requiring direct certification.
 
 ---
 
-# ISO 9001
+## ISO 9001
 
 General quality management principles from ISO 9001 may provide informative context for:
 
@@ -1253,7 +1253,7 @@ This does not imply FamilyOS certification.
 
 ---
 
-# OWASP
+## OWASP
 
 OWASP materials may provide informative and security-specific reference guidance.
 
@@ -1261,7 +1261,7 @@ Security Frameworks and Architecture should determine which OWASP guidance becom
 
 ---
 
-# NIST
+## NIST
 
 NIST guidance may become relevant for security, risk, or software supply chain practices.
 
@@ -1269,7 +1269,7 @@ Any adoption should be explicit.
 
 ---
 
-# SLSA
+## SLSA
 
 Supply-chain security concepts such as SLSA may become relevant for:
 
@@ -1283,7 +1283,7 @@ This should remain a future integration unless formally adopted.
 
 ---
 
-# SARIF
+## SARIF
 
 SARIF may be useful as an interoperability format for static analysis findings.
 
@@ -1291,7 +1291,7 @@ The Quality Framework may support SARIF adapters while preserving the internal F
 
 ---
 
-# JUnit XML
+## JUnit XML
 
 JUnit XML may be used as an interoperability format for test results.
 
@@ -1299,7 +1299,7 @@ Quality Evidence should normalize it into FamilyOS semantics.
 
 ---
 
-# JSON
+## JSON
 
 JSON is a likely machine-readable format for:
 
@@ -1314,7 +1314,7 @@ The exact schemas should be versioned.
 
 ---
 
-# YAML
+## YAML
 
 YAML may be appropriate for:
 
@@ -1329,7 +1329,7 @@ where human-editable configuration is required.
 
 ---
 
-# Reference Stability
+## Reference Stability
 
 References should remain stable enough to support long-lived traceability.
 
@@ -1337,7 +1337,7 @@ When referenced artifacts move or are renamed, the Quality Framework should upda
 
 ---
 
-# Reference Versioning
+## Reference Versioning
 
 Where semantics depend on a specific version, the reference should identify that version.
 
@@ -1352,7 +1352,7 @@ Version coupling should be minimized where possible.
 
 ---
 
-# Reference Drift
+## Reference Drift
 
 Reference Drift occurs when a referenced artifact changes while dependent quality semantics remain based on older assumptions.
 
@@ -1370,7 +1370,7 @@ Cross-framework changes should therefore trigger impact analysis.
 
 ---
 
-# Reference Validation
+## Reference Validation
 
 Automated documentation validation should eventually verify:
 
@@ -1383,7 +1383,7 @@ Deprecated Reference Is Visible
 
 ---
 
-# Broken Reference
+## Broken Reference
 
 Broken normative references should produce Quality Findings.
 
@@ -1404,7 +1404,7 @@ Governance / Traceability Finding
 
 ---
 
-# Deprecated Reference
+## Deprecated Reference
 
 References to deprecated frameworks should be reviewed.
 
@@ -1412,7 +1412,7 @@ They may remain valid temporarily during migration.
 
 ---
 
-# Retired Reference
+## Retired Reference
 
 Active quality policy should not normally depend on retired authoritative artifacts.
 
@@ -1420,7 +1420,7 @@ If required for historical interpretation, the historical context should remain 
 
 ---
 
-# Reference Ownership
+## Reference Ownership
 
 Each framework owner is responsible for maintaining the validity of references from their framework where feasible.
 
@@ -1428,7 +1428,7 @@ Cross-framework ownership may require coordination.
 
 ---
 
-# Cross-Framework Traceability
+## Cross-Framework Traceability
 
 FamilyOS should eventually support traceability such as:
 
@@ -1450,7 +1450,7 @@ This is a strategic Quality Governance capability.
 
 ---
 
-# Reference Registry
+## Reference Registry
 
 A future internal registry may maintain:
 
@@ -1468,7 +1468,7 @@ This may support automated traceability validation.
 
 ---
 
-# Reference Categories
+## Reference Categories
 
 A conceptual classification may include:
 
@@ -1486,7 +1486,7 @@ EXTERNAL_STANDARD
 
 ---
 
-# Foundation References
+## Foundation References
 
 Foundation references define broad FamilyOS principles.
 
@@ -1501,7 +1501,7 @@ Governance Architecture
 
 ---
 
-# Framework References
+## Framework References
 
 Framework references define specialized engineering capabilities.
 
@@ -1517,7 +1517,7 @@ Plugin Compliance Framework
 
 ---
 
-# Decision References
+## Decision References
 
 Decision references include:
 
@@ -1530,7 +1530,7 @@ They establish significant architectural or capability decisions.
 
 ---
 
-# Specification References
+## Specification References
 
 Specifications define precise normative contracts.
 
@@ -1538,7 +1538,7 @@ These are particularly important for compliance and compatibility.
 
 ---
 
-# Tool References
+## Tool References
 
 Tool references explain implementation mechanisms.
 
@@ -1546,13 +1546,13 @@ They should remain subordinate to quality policy.
 
 ---
 
-# External References
+## External References
 
 External standards and formats should remain informative until explicitly adopted as normative FamilyOS requirements.
 
 ---
 
-# Reference Priority
+## Reference Priority
 
 When implementation questions arise, engineers should prefer:
 
@@ -1574,7 +1574,7 @@ depending on the nature of the question.
 
 ---
 
-# Conflict Resolution
+## Conflict Resolution
 
 If references appear to conflict:
 
@@ -1594,7 +1594,7 @@ Conflicts should not be resolved silently by tool behavior.
 
 ---
 
-# Cross-Framework Conflict
+## Cross-Framework Conflict
 
 A conflict between two FamilyOS frameworks should trigger governance review.
 
@@ -1614,7 +1614,7 @@ The Quality Framework should not independently override the Testing Framework.
 
 ---
 
-# Reference Maintenance
+## Reference Maintenance
 
 References should be reviewed during:
 
@@ -1629,7 +1629,7 @@ Retirement
 
 ---
 
-# Reference Audit
+## Reference Audit
 
 A periodic reference audit may check:
 
@@ -1643,7 +1643,7 @@ Duplicated Requirements
 
 ---
 
-# Reference Quality Metrics
+## Reference Quality Metrics
 
 Potential metrics may include:
 
@@ -1658,7 +1658,7 @@ These should remain simple and actionable.
 
 ---
 
-# Reference Automation
+## Reference Automation
 
 Future automation may:
 
@@ -1670,7 +1670,7 @@ Future automation may:
 
 ---
 
-# Reference Graph
+## Reference Graph
 
 A future reference graph may represent:
 
@@ -1702,7 +1702,7 @@ This would provide strong governance traceability.
 
 ---
 
-# AI-Assisted Reference Analysis
+## AI-Assisted Reference Analysis
 
 AI may assist with:
 
@@ -1715,7 +1715,7 @@ AI must not determine normative authority independently.
 
 ---
 
-# Historical References
+## Historical References
 
 Older or superseded documents may remain relevant for historical understanding.
 
@@ -1725,7 +1725,7 @@ Historical references must not silently become current authority.
 
 ---
 
-# Reference Archival
+## Reference Archival
 
 Retired references may be archived while preserving access for:
 
@@ -1735,7 +1735,7 @@ Retired references may be archived while preserving access for:
 
 ---
 
-# Reference Documentation Pattern
+## Reference Documentation Pattern
 
 Where practical, FamilyOS framework documents should use a consistent reference structure.
 
@@ -1754,7 +1754,7 @@ This improves discoverability.
 
 ---
 
-# Quality Framework Primary Reference Set
+## Quality Framework Primary Reference Set
 
 The primary FamilyOS reference set for the Quality Framework is:
 
@@ -1796,7 +1796,7 @@ These references represent the immediate architectural ecosystem surrounding the
 
 ---
 
-# Secondary Reference Set
+## Secondary Reference Set
 
 Secondary references include:
 
@@ -1812,7 +1812,7 @@ These become normative only when explicitly adopted.
 
 ---
 
-# Reference Dependency Model
+## Reference Dependency Model
 
 The Quality Framework dependency relationship can be represented as:
 
@@ -1847,7 +1847,7 @@ The Quality Framework dependency relationship can be represented as:
 
 ---
 
-# Reference Responsibility Model
+## Reference Responsibility Model
 
 The Quality Framework should follow this responsibility rule:
 
@@ -1877,7 +1877,7 @@ Quality Framework
 
 ---
 
-# Avoiding Semantic Duplication
+## Avoiding Semantic Duplication
 
 The Quality Framework must not duplicate specialized domain standards unnecessarily.
 
@@ -1903,45 +1903,45 @@ This keeps FamilyOS modular.
 
 ---
 
-# Reference Anti-Patterns
+## Reference Anti-Patterns
 
 The Quality Framework rejects several reference anti-patterns.
 
-## Untraceable Requirement
+### Untraceable Requirement
 
 A mandatory Quality Requirement should have identifiable authority.
 
-## Copy Instead of Reference
+### Copy Instead of Reference
 
 Do not duplicate complete framework semantics unnecessarily.
 
-## Tool Documentation as Policy
+### Tool Documentation as Policy
 
 Tool behavior should not replace FamilyOS authority.
 
-## Outdated Reference
+### Outdated Reference
 
 Deprecated or retired documents should not silently govern active quality behavior.
 
-## Ambiguous Authority
+### Ambiguous Authority
 
 References should make clear whether they are normative or informative.
 
-## Reference Explosion
+### Reference Explosion
 
 Do not reference documents that provide no meaningful quality context.
 
-## Broken Cross-Framework Links
+### Broken Cross-Framework Links
 
 Important references should be validated.
 
-## Hidden External Standard
+### Hidden External Standard
 
 External requirements should not become mandatory without explicit adoption.
 
 ---
 
-# Initial Reference Management
+## Initial Reference Management
 
 The initial implementation can remain documentation-based.
 
@@ -1959,7 +1959,7 @@ Important references are manually reviewed.
 
 ---
 
-# Future Reference Management
+## Future Reference Management
 
 As FamilyOS matures, reference management may evolve toward:
 
@@ -1977,7 +1977,7 @@ Cross-Framework Impact Analysis
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 A strong reference model enables FamilyOS to move from:
 
@@ -2004,7 +2004,7 @@ This provides significantly stronger engineering traceability.
 
 ---
 
-# Final Reference Principle
+## Final Reference Principle
 
 The Quality Framework must remain deeply integrated with the FamilyOS engineering ecosystem without becoming a duplicate of that ecosystem.
 

@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 18 Documentation Deprecation Policy
+## 18 Documentation Deprecation Policy
 
-## Context
+### Context
 
 FamilyOS documentation evolves continuously as architecture, specifications, and engineering practices mature.
 
@@ -18,17 +18,17 @@ Documentation deprecation provides a controlled method to retire outdated docume
 
 ---
 
-# Documentation Deprecation Principles
+## Documentation Deprecation Principles
 
 FamilyOS documentation deprecation follows these principles.
 
-## Preservation
+### Preservation
 
 Deprecated documentation must remain accessible for historical reference.
 
 ---
 
-## Transparency
+### Transparency
 
 Users must understand:
 
@@ -38,19 +38,19 @@ Users must understand:
 
 ---
 
-## Controlled Transition
+### Controlled Transition
 
 Deprecation must provide enough time for contributors and consumers to migrate.
 
 ---
 
-## No Silent Removal
+### No Silent Removal
 
 Official documentation must not disappear without a documented lifecycle transition.
 
 ---
 
-# Deprecation Lifecycle
+## Deprecation Lifecycle
 
 The deprecation lifecycle is:
 
@@ -72,7 +72,7 @@ Archived
 
 ---
 
-# Active State
+## Active State
 
 An active document is:
 
@@ -82,7 +82,7 @@ An active document is:
 
 ---
 
-# Deprecated State
+## Deprecated State
 
 A deprecated document is:
 
@@ -92,7 +92,7 @@ A deprecated document is:
 
 ---
 
-# Archived State
+## Archived State
 
 An archived document is:
 
@@ -102,11 +102,11 @@ An archived document is:
 
 ---
 
-# Deprecation Triggers
+## Deprecation Triggers
 
 A document may be deprecated when:
 
-## Replacement Exists
+### Replacement Exists
 
 Example:
 
@@ -115,7 +115,7 @@ Example:
 
 ---
 
-## Information Becomes Obsolete
+### Information Becomes Obsolete
 
 Example:
 
@@ -125,7 +125,7 @@ Example:
 
 ---
 
-## Duplicate Information Exists
+### Duplicate Information Exists
 
 Example:
 
@@ -133,7 +133,7 @@ Example:
 
 ---
 
-## Standards Change
+### Standards Change
 
 Example:
 
@@ -142,7 +142,7 @@ Example:
 
 ---
 
-# Deprecation Proposal
+## Deprecation Proposal
 
 A deprecation proposal must include:
 
@@ -156,7 +156,7 @@ deprecation:
 
 ---
 
-# Deprecation Review
+## Deprecation Review
 
 Deprecation requires review.
 
@@ -169,7 +169,7 @@ Reviewers verify:
 
 ---
 
-# Deprecation Notice Requirements
+## Deprecation Notice Requirements
 
 Deprecated documents must contain a notice.
 
@@ -190,7 +190,7 @@ See migration guide.
 
 ---
 
-# Reference Management
+## Reference Management
 
 Before archival:
 
@@ -200,7 +200,7 @@ Before archival:
 
 ---
 
-# Deprecation Timeline
+## Deprecation Timeline
 
 Recommended process:
 
@@ -226,7 +226,7 @@ Archive
 
 ---
 
-# Migration Support
+## Migration Support
 
 Deprecated documents should provide:
 
@@ -236,7 +236,7 @@ Deprecated documents should provide:
 
 ---
 
-# Archived Documentation Rules
+## Archived Documentation Rules
 
 Archived documents must:
 
@@ -256,7 +256,7 @@ document:
 
 ---
 
-# Deprecation and Versioning
+## Deprecation and Versioning
 
 Deprecation events must be versioned.
 
@@ -275,7 +275,7 @@ Deprecated
 
 ---
 
-# Automation Support
+## Automation Support
 
 Future automation may detect:
 
@@ -286,7 +286,7 @@ Future automation may detect:
 
 ---
 
-# Governance Rules
+## Governance Rules
 
 The following rules apply:
 
@@ -298,7 +298,7 @@ The following rules apply:
 
 ---
 
-# Integration With Release Management
+## Integration With Release Management
 
 Deprecation should be communicated through:
 
@@ -308,7 +308,7 @@ Deprecation should be communicated through:
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
 Documentation Deprecation Policy integrates with:
 
@@ -320,7 +320,7 @@ Documentation Deprecation Policy integrates with:
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 Documentation deprecation is compliant when:
 

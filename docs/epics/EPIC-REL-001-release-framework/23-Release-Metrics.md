@@ -1,8 +1,8 @@
 # Release Framework
 
-# 23 Release Metrics
+## 23 Release Metrics
 
-## Overview
+### Overview
 
 Release metrics provide the quantitative evidence required to evaluate the effectiveness, reliability, safety, efficiency, and maturity of the FamilyOS release process.
 
@@ -34,7 +34,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of release metrics is to establish a consistent measurement model for the FamilyOS Release Framework.
 
@@ -64,7 +64,7 @@ Metrics must provide meaningful insight into both individual releases and the re
 
 ---
 
-# Release Metrics Principle
+## Release Metrics Principle
 
 Release metrics should measure outcomes rather than activity alone.
 
@@ -113,41 +113,41 @@ A metric that is collected but never used should be reconsidered.
 
 ---
 
-# Metrics Objectives
+## Metrics Objectives
 
 Release metrics must support several objectives.
 
-## Visibility
+### Visibility
 
 Provide a measurable view of release performance.
 
-## Reliability
+### Reliability
 
 Identify whether releases are becoming safer and more predictable.
 
-## Efficiency
+### Efficiency
 
 Identify unnecessary delays or friction in the release lifecycle.
 
-## Risk Detection
+### Risk Detection
 
 Expose increasing release instability or control failures.
 
-## Governance
+### Governance
 
 Provide evidence for release framework oversight.
 
-## Improvement
+### Improvement
 
 Guide engineering investment toward the most significant release weaknesses.
 
-## Comparability
+### Comparability
 
 Allow meaningful comparison across time, release types, and platform components.
 
 ---
 
-# Metric Categories
+## Metric Categories
 
 FamilyOS release metrics are organized into several categories.
 
@@ -176,7 +176,7 @@ No single metric should be treated as the sole indicator of release performance.
 
 ---
 
-# Release Frequency
+## Release Frequency
 
 Release frequency measures how often releases reach a defined environment.
 
@@ -203,7 +203,7 @@ These represent different operational realities.
 
 ---
 
-# Release Frequency Interpretation
+## Release Frequency Interpretation
 
 Higher release frequency is not inherently better.
 
@@ -224,7 +224,7 @@ Release frequency must therefore be interpreted alongside reliability metrics.
 
 ---
 
-# Release Lead Time
+## Release Lead Time
 
 Release lead time measures the time required for a change to progress through the release process.
 
@@ -252,7 +252,7 @@ The metric definition must therefore always specify its boundaries.
 
 ---
 
-# Change-to-Production Lead Time
+## Change-to-Production Lead Time
 
 A useful release metric is the time between a release-ready change and successful production deployment.
 
@@ -276,7 +276,7 @@ This metric helps identify friction in:
 
 ---
 
-# Release Queue Time
+## Release Queue Time
 
 Queue time measures how long a release waits between stages.
 
@@ -294,7 +294,7 @@ Queue time should be distinguished from active processing time.
 
 ---
 
-# Release Cycle Time
+## Release Cycle Time
 
 Release cycle time measures the complete duration of a release execution.
 
@@ -311,7 +311,7 @@ The exact lifecycle boundaries must be defined consistently.
 
 ---
 
-# Deployment Duration
+## Deployment Duration
 
 Deployment duration measures how long it takes to activate a release in a target environment.
 
@@ -333,7 +333,7 @@ This metric may help identify:
 
 ---
 
-# Release Success Rate
+## Release Success Rate
 
 Release success rate measures the proportion of releases that complete without requiring significant corrective action.
 
@@ -360,7 +360,7 @@ A production release should normally require:
 
 ---
 
-# Deployment Success Rate
+## Deployment Success Rate
 
 Deployment success rate measures the percentage of deployments that complete successfully.
 
@@ -379,7 +379,7 @@ A deployment can succeed while the release later fails runtime verification.
 
 ---
 
-# Release Failure Rate
+## Release Failure Rate
 
 Release failure rate measures the proportion of releases that fail defined release criteria.
 
@@ -411,7 +411,7 @@ Categorization supports root-cause analysis.
 
 ---
 
-# Change Failure Rate
+## Change Failure Rate
 
 Change failure rate measures the proportion of production changes that cause degraded service, incident response, rollback, or corrective release.
 
@@ -430,7 +430,7 @@ This metric is especially useful for evaluating release reliability over time.
 
 ---
 
-# Rollback Rate
+## Rollback Rate
 
 Rollback rate measures how frequently releases require rollback.
 
@@ -451,7 +451,7 @@ The important question is why rollback was required and whether the recovery mec
 
 ---
 
-# Rollback Success Rate
+## Rollback Success Rate
 
 Rollback success rate measures whether rollback operations successfully restore an acceptable platform state.
 
@@ -468,7 +468,7 @@ A decreasing rollback success rate is a significant release engineering risk.
 
 ---
 
-# Mean Time to Rollback
+## Mean Time to Rollback
 
 Mean Time to Rollback measures the time between rollback authorization and restoration of the previous release state.
 
@@ -487,7 +487,7 @@ It should not be confused with overall recovery time.
 
 ---
 
-# Mean Time to Recovery
+## Mean Time to Recovery
 
 Mean Time to Recovery measures the time required to restore acceptable platform operation after a release-related failure.
 
@@ -512,7 +512,7 @@ Shorter recovery time generally indicates stronger operational resilience.
 
 ---
 
-# Mean Time to Detect
+## Mean Time to Detect
 
 Mean Time to Detect measures how long it takes to identify a release-related failure.
 
@@ -536,7 +536,7 @@ A long detection time may indicate:
 
 ---
 
-# Mean Time to Decision
+## Mean Time to Decision
 
 Release incidents may also measure the time required to decide whether to continue, pause, rollback, or recover.
 
@@ -558,7 +558,7 @@ Long decision times may indicate:
 
 ---
 
-# Release Readiness Metrics
+## Release Readiness Metrics
 
 Release readiness metrics measure whether releases are sufficiently prepared before deployment.
 
@@ -583,7 +583,7 @@ Interpretation requires context.
 
 ---
 
-# Gate Pass Rate
+## Gate Pass Rate
 
 Each release gate may expose its own pass rate.
 
@@ -602,7 +602,7 @@ Repeated failure of the same gate should trigger process improvement.
 
 ---
 
-# First-Pass Release Rate
+## First-Pass Release Rate
 
 First-pass release rate measures how often a release candidate passes all required gates without rework.
 
@@ -624,7 +624,7 @@ Low first-pass rate may indicate:
 
 ---
 
-# Release Rework Rate
+## Release Rework Rate
 
 Release rework rate measures how often release candidates require changes after entering the formal release process.
 
@@ -641,7 +641,7 @@ High rework indicates inefficiency earlier in the engineering lifecycle.
 
 ---
 
-# Quality Metrics
+## Quality Metrics
 
 Release metrics should incorporate quality outcomes.
 
@@ -662,7 +662,7 @@ Quality metrics should distinguish between:
 
 ---
 
-# Escaped Defects
+## Escaped Defects
 
 Escaped defects are defects discovered after release that should ideally have been detected earlier.
 
@@ -683,7 +683,7 @@ This metric helps evaluate the effectiveness of:
 
 ---
 
-# Severity Distribution
+## Severity Distribution
 
 Defects should also be measured by severity.
 
@@ -702,7 +702,7 @@ Release metrics must therefore avoid relying solely on raw defect counts.
 
 ---
 
-# Security Metrics
+## Security Metrics
 
 Security-related release metrics may include:
 
@@ -718,7 +718,7 @@ Security metrics should measure control effectiveness rather than encourage team
 
 ---
 
-# Compliance Metrics
+## Compliance Metrics
 
 Release compliance metrics may include:
 
@@ -734,7 +734,7 @@ Repeated exceptions against the same control should be treated as a process sign
 
 ---
 
-# Exception Metrics
+## Exception Metrics
 
 Useful exception metrics include:
 
@@ -749,7 +749,7 @@ Long-lived exceptions may indicate that temporary risk acceptance has become per
 
 ---
 
-# Observability Metrics
+## Observability Metrics
 
 Release observability effectiveness should itself be measured.
 
@@ -768,7 +768,7 @@ Observability coverage should focus on critical release paths.
 
 ---
 
-# Alert Quality Metrics
+## Alert Quality Metrics
 
 Useful alert quality measurements include:
 
@@ -785,7 +785,7 @@ High-quality alerts should support timely decisions.
 
 ---
 
-# Recovery Observability Metrics
+## Recovery Observability Metrics
 
 Recovery visibility may be measured through:
 
@@ -799,7 +799,7 @@ Critical recovery operations should remain observable from start to completion.
 
 ---
 
-# Automation Metrics
+## Automation Metrics
 
 Release automation maturity should be measurable.
 
@@ -822,7 +822,7 @@ Automation must therefore be evaluated together with reliability.
 
 ---
 
-# Manual Intervention Rate
+## Manual Intervention Rate
 
 Manual intervention rate measures how frequently releases require unplanned human correction.
 
@@ -844,7 +844,7 @@ High rates may indicate:
 
 ---
 
-# Emergency Release Rate
+## Emergency Release Rate
 
 Emergency release rate measures the proportion of releases performed through emergency procedures.
 
@@ -866,7 +866,7 @@ A consistently high emergency release rate may indicate:
 
 ---
 
-# Hotfix Rate
+## Hotfix Rate
 
 Hotfix rate measures how frequently corrective production releases are needed.
 
@@ -883,7 +883,7 @@ Hotfixes should be categorized by root cause when possible.
 
 ---
 
-# Release Stability
+## Release Stability
 
 Release stability measures how long releases operate without release-related failure.
 
@@ -899,7 +899,7 @@ This helps distinguish technically successful deployment from sustained operatio
 
 ---
 
-# Stabilization Metrics
+## Stabilization Metrics
 
 The stabilization window may generate metrics such as:
 
@@ -913,7 +913,7 @@ These metrics help evaluate whether post-deployment observation is effective.
 
 ---
 
-# Progressive Delivery Metrics
+## Progressive Delivery Metrics
 
 Canary and phased deployments may require additional metrics.
 
@@ -931,7 +931,7 @@ Progressive delivery metrics should measure whether staged exposure reduces prod
 
 ---
 
-# Migration Metrics
+## Migration Metrics
 
 Release migrations should expose relevant measurements.
 
@@ -949,7 +949,7 @@ High-risk migrations may require more detailed operational metrics.
 
 ---
 
-# Plugin Release Metrics
+## Plugin Release Metrics
 
 FamilyOS plugin releases may be measured independently.
 
@@ -967,7 +967,7 @@ These metrics can identify weaknesses isolated to the plugin ecosystem.
 
 ---
 
-# Platform Release Metrics
+## Platform Release Metrics
 
 Core FamilyOS platform releases should maintain separate metrics when their risk differs significantly from plugin releases.
 
@@ -977,7 +977,7 @@ Metrics should not combine fundamentally different release types without clear s
 
 ---
 
-# Release Type Segmentation
+## Release Type Segmentation
 
 Metrics should be filterable by release type.
 
@@ -998,7 +998,7 @@ Segmentation prevents misleading aggregate results.
 
 ---
 
-# Environment Segmentation
+## Environment Segmentation
 
 Metrics should also be segmented by environment.
 
@@ -1015,7 +1015,7 @@ A high deployment failure rate in an experimental development environment does n
 
 ---
 
-# Risk Segmentation
+## Risk Segmentation
 
 Release risk level should be available as a metric dimension.
 
@@ -1038,7 +1038,7 @@ Higher-risk releases may legitimately have different control and performance cha
 
 ---
 
-# Trend Analysis
+## Trend Analysis
 
 Individual release metrics are useful.
 
@@ -1059,7 +1059,7 @@ Trends help distinguish isolated incidents from systemic deterioration.
 
 ---
 
-# Baselines
+## Baselines
 
 Metrics should establish historical baselines.
 
@@ -1076,7 +1076,7 @@ provides more information than the current value alone.
 
 ---
 
-# Targets
+## Targets
 
 Some release metrics may have explicit targets.
 
@@ -1096,7 +1096,7 @@ For example, a rollback target must never discourage necessary rollback.
 
 ---
 
-# Thresholds
+## Thresholds
 
 Operational thresholds may trigger review.
 
@@ -1111,7 +1111,7 @@ Thresholds should trigger investigation rather than automatic blame.
 
 ---
 
-# Metric Ownership
+## Metric Ownership
 
 Every significant metric should have an owner.
 
@@ -1127,7 +1127,7 @@ Metrics without ownership tend to become stale or misleading.
 
 ---
 
-# Metric Definition
+## Metric Definition
 
 Each metric should have a formal definition.
 
@@ -1148,7 +1148,7 @@ This prevents inconsistent interpretation.
 
 ---
 
-# Metric Consistency
+## Metric Consistency
 
 The same metric name must not represent different formulas across teams.
 
@@ -1164,7 +1164,7 @@ If another measurement is needed, it should use a different name.
 
 ---
 
-# Data Quality
+## Data Quality
 
 Release metrics depend on reliable underlying data.
 
@@ -1182,7 +1182,7 @@ It must not silently become a successful measurement.
 
 ---
 
-# Missing Metric Data
+## Missing Metric Data
 
 The framework should distinguish between:
 
@@ -1214,7 +1214,7 @@ means the evidence is incomplete.
 
 ---
 
-# Metric Sources
+## Metric Sources
 
 Release metrics may be derived from:
 
@@ -1233,7 +1233,7 @@ Authoritative automated sources should be preferred.
 
 ---
 
-# Release Metrics Record
+## Release Metrics Record
 
 A release metrics record may contain:
 
@@ -1257,7 +1257,7 @@ This record forms the basis for broader analytics.
 
 ---
 
-# Release Scorecards
+## Release Scorecards
 
 A release scorecard may summarize important metrics for a specific release.
 
@@ -1282,7 +1282,7 @@ Detailed evidence should remain available through references.
 
 ---
 
-# Framework Scorecard
+## Framework Scorecard
 
 The Release Framework may also maintain a periodic scorecard.
 
@@ -1304,7 +1304,7 @@ This provides a balanced view of framework health.
 
 ---
 
-# Release Health Index
+## Release Health Index
 
 FamilyOS may define a composite release health index if there is a clear operational need.
 
@@ -1318,7 +1318,7 @@ Individual underlying metrics must always remain accessible.
 
 ---
 
-# DORA-Inspired Metrics
+## DORA-Inspired Metrics
 
 FamilyOS may use industry-standard delivery metrics where useful.
 
@@ -1343,7 +1343,7 @@ Industry metrics should therefore complement rather than replace the FamilyOS re
 
 ---
 
-# Metrics and Developer Behavior
+## Metrics and Developer Behavior
 
 Metrics influence behavior.
 
@@ -1361,7 +1361,7 @@ The Release Framework must therefore evaluate metrics for behavioral side effect
 
 ---
 
-# Metrics Are Not Individual Performance Scores
+## Metrics Are Not Individual Performance Scores
 
 Release metrics should not be used as simplistic individual developer productivity measurements.
 
@@ -1379,7 +1379,7 @@ The framework should use release metrics primarily to improve systems and proces
 
 ---
 
-# Metrics Review
+## Metrics Review
 
 Release metrics should be reviewed periodically.
 
@@ -1398,7 +1398,7 @@ The purpose is to identify actionable improvement opportunities.
 
 ---
 
-# Incident Correlation
+## Incident Correlation
 
 Release metrics should correlate release failures with incident data where possible.
 
@@ -1414,7 +1414,7 @@ This helps determine the operational impact of release behavior.
 
 ---
 
-# Root-Cause Categories
+## Root-Cause Categories
 
 Failed releases should be categorized by root cause where possible.
 
@@ -1437,7 +1437,7 @@ Root-cause trends help guide investment.
 
 ---
 
-# Unknown Root Causes
+## Unknown Root Causes
 
 The framework must preserve:
 
@@ -1453,7 +1453,7 @@ Unknown classifications should later be refined when evidence becomes available.
 
 ---
 
-# Release Prediction
+## Release Prediction
 
 Historical release metrics may eventually support predictive analysis.
 
@@ -1471,7 +1471,7 @@ They must not automatically authorize or block releases without governed decisio
 
 ---
 
-# Metrics Automation
+## Metrics Automation
 
 Metrics collection should be automated wherever practical.
 
@@ -1502,7 +1502,7 @@ Manual metric collection should be minimized because it is:
 
 ---
 
-# Metrics API and Machine Readability
+## Metrics API and Machine Readability
 
 Where appropriate, release metrics should be available in machine-readable form.
 
@@ -1522,7 +1522,7 @@ Machine-readable metrics enable automation and future analytics.
 
 ---
 
-# Metrics Retention
+## Metrics Retention
 
 Historical release metrics should be retained according to the FamilyOS evidence and operational data retention policies.
 
@@ -1540,7 +1540,7 @@ Aggregated metrics may have different retention requirements from detailed opera
 
 ---
 
-# Release Metrics and Compliance
+## Release Metrics and Compliance
 
 Some metrics may themselves provide compliance evidence.
 
@@ -1556,7 +1556,7 @@ However, a metric summary must not replace detailed evidence when the detailed e
 
 ---
 
-# Release Metrics and Observability
+## Release Metrics and Observability
 
 Release observability is a major source of runtime metrics.
 
@@ -1588,7 +1588,7 @@ Release Improvement
 
 ---
 
-# Release Metrics and Rollback
+## Release Metrics and Rollback
 
 Rollback metrics evaluate both release failure and recovery capability.
 
@@ -1608,7 +1608,7 @@ Together they provide more insight than rollback count alone.
 
 ---
 
-# Release Metrics and Quality
+## Release Metrics and Quality
 
 Quality metrics should be connected to release outcomes.
 
@@ -1624,7 +1624,7 @@ can reveal whether pre-release quality controls effectively predict production s
 
 ---
 
-# Release Metrics and Testing
+## Release Metrics and Testing
 
 Testing metrics may help explain release performance.
 
@@ -1642,7 +1642,7 @@ The Release Framework consumes the release-relevant subset.
 
 ---
 
-# Release Metrics and Build
+## Release Metrics and Build
 
 Build metrics relevant to release include:
 
@@ -1657,7 +1657,7 @@ The Build Framework remains the authority for detailed build metrics.
 
 ---
 
-# Governance Metrics
+## Governance Metrics
 
 Release governance may use metrics such as:
 
@@ -1672,7 +1672,7 @@ These measurements help identify governance friction or weakness.
 
 ---
 
-# Release Maturity Metrics
+## Release Maturity Metrics
 
 Release maturity should be evaluated across multiple dimensions.
 
@@ -1692,7 +1692,7 @@ A mature release framework should improve across these dimensions without sacrif
 
 ---
 
-# Maturity Levels
+## Maturity Levels
 
 A conceptual release metrics maturity model may include:
 
@@ -1717,53 +1717,53 @@ Maturity should evolve incrementally.
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices are prohibited or strongly discouraged.
 
-## Measuring Only Release Frequency
+### Measuring Only Release Frequency
 
 Optimizing deployment volume while ignoring reliability and quality.
 
-## Treating Rollback as Failure of the Team
+### Treating Rollback as Failure of the Team
 
 Discouraging safe recovery behavior to improve metrics.
 
-## Measuring Activity Instead of Outcomes
+### Measuring Activity Instead of Outcomes
 
 Counting meetings, tickets, or manual steps as primary evidence of release performance.
 
-## Metrics Without Definitions
+### Metrics Without Definitions
 
 Using the same metric name with inconsistent calculations.
 
-## Missing Segmentation
+### Missing Segmentation
 
 Combining production, development, plugin, and platform releases into misleading aggregates.
 
-## Hidden Missing Data
+### Hidden Missing Data
 
 Treating unavailable metric data as zero or success.
 
-## Metric Gaming
+### Metric Gaming
 
 Changing behavior primarily to improve measured values rather than actual release quality.
 
-## Excessive Metrics
+### Excessive Metrics
 
 Collecting large numbers of measurements that do not support decisions.
 
-## Individual Productivity Scoring
+### Individual Productivity Scoring
 
 Using release-system metrics as simplistic developer performance rankings.
 
-## Static Metrics
+### Static Metrics
 
 Never reviewing whether metrics remain useful as FamilyOS evolves.
 
 ---
 
-# Required Outcomes
+## Required Outcomes
 
 Implementation of this framework section must ensure that:
 
@@ -1782,7 +1782,7 @@ Implementation of this framework section must ensure that:
 
 ---
 
-# Final Release Metrics Principle
+## Final Release Metrics Principle
 
 A reliable release system must understand not only what happened during one release, but how release behavior evolves over time.
 

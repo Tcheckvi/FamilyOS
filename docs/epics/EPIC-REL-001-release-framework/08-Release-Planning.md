@@ -1,8 +1,8 @@
 # Release Framework
 
-# 08 Release Planning
+## 08 Release Planning
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines Release Planning as the structured activity that converts release intent into a concrete, reviewable, and executable release plan.
 
@@ -28,7 +28,7 @@ A release that is not adequately planned may still technically be publishable, b
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Release Planning is to establish a controlled release scope before candidate qualification begins.
 
@@ -51,7 +51,7 @@ The output of planning should provide enough information for Release Preparation
 
 ---
 
-# Planning Principle
+## Planning Principle
 
 The central planning principle is:
 
@@ -73,7 +73,7 @@ Planning provides structure, not guaranteed publication.
 
 ---
 
-# Planning Lifecycle Position
+## Planning Lifecycle Position
 
 Release Planning primarily operates during:
 
@@ -101,7 +101,7 @@ Release Readiness
 
 ---
 
-# Release Intent
+## Release Intent
 
 Every planned release should begin with a clear release intent.
 
@@ -126,7 +126,7 @@ A release without clear intent risks accumulating unrelated changes and becoming
 
 ---
 
-# Release Scope
+## Release Scope
 
 Release scope identifies exactly what is intended to change.
 
@@ -146,7 +146,7 @@ The scope should be specific enough to determine applicable release requirements
 
 ---
 
-# Scope Example
+## Scope Example
 
 A framework release scope may be:
 
@@ -169,7 +169,7 @@ This scope is materially different from a full FamilyOS platform release.
 
 ---
 
-# Scope Boundaries
+## Scope Boundaries
 
 A release plan should identify both:
 
@@ -200,7 +200,7 @@ artifact signing implementation
 
 ---
 
-# Scope Stability
+## Scope Stability
 
 Release scope may evolve during planning.
 
@@ -223,7 +223,7 @@ release scope and profile must be reassessed
 
 ---
 
-# Release Type Selection
+## Release Type Selection
 
 Planning must identify the applicable release type.
 
@@ -249,7 +249,7 @@ Release type influences:
 
 ---
 
-# Target Channel Selection
+## Target Channel Selection
 
 Where channels are applicable, planning should identify the intended channel.
 
@@ -269,7 +269,7 @@ A release targeting `stable` should normally require stronger readiness than one
 
 ---
 
-# Release Profile Selection
+## Release Profile Selection
 
 Planning should select or determine the applicable release profile.
 
@@ -299,7 +299,7 @@ plugin-release
 
 ---
 
-# Version Intent
+## Version Intent
 
 Release Planning should establish an intended version.
 
@@ -325,7 +325,7 @@ Version intent provides a basis for:
 
 ---
 
-# Version Decision Inputs
+## Version Decision Inputs
 
 Version intent should consider:
 
@@ -340,7 +340,7 @@ A version must not be selected simply because it appears numerically convenient.
 
 ---
 
-# Version Reassessment
+## Version Reassessment
 
 If release scope changes materially, version intent must be reassessed.
 
@@ -363,7 +363,7 @@ Uncontrolled version changes after candidate validation are not.
 
 ---
 
-# Release Dependency Planning
+## Release Dependency Planning
 
 A release may depend on other components or releases.
 
@@ -382,7 +382,7 @@ Release Planning should identify dependencies early enough for readiness evaluat
 
 ---
 
-# Dependency Categories
+## Dependency Categories
 
 Dependencies may be classified as:
 
@@ -399,7 +399,7 @@ These categories may require different release controls.
 
 ---
 
-# Release Dependency Example
+## Release Dependency Example
 
 A plugin release may require:
 
@@ -421,7 +421,7 @@ This dependency context must be known before stable publication.
 
 ---
 
-# Dependency Risk
+## Dependency Risk
 
 Mutable or externally controlled dependencies introduce release risk.
 
@@ -438,7 +438,7 @@ Where possible, release inputs should be locked or recorded.
 
 ---
 
-# Compatibility Planning
+## Compatibility Planning
 
 Release Planning must identify compatibility concerns relevant to the scope.
 
@@ -457,7 +457,7 @@ If compatibility is affected, the release plan should identify required validati
 
 ---
 
-# Breaking Change Planning
+## Breaking Change Planning
 
 Known breaking changes must be explicitly identified during planning.
 
@@ -474,7 +474,7 @@ Breaking changes must not be discovered only during final publication.
 
 ---
 
-# Validation Planning
+## Validation Planning
 
 Planning should identify which validation applies.
 
@@ -501,7 +501,7 @@ It defines what must eventually be satisfied.
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 Validation should be proportional to release scope and risk.
 
@@ -532,7 +532,7 @@ Platform Release
 
 ---
 
-# Evidence Planning
+## Evidence Planning
 
 Planning should identify the evidence expected before approval.
 
@@ -551,7 +551,7 @@ Evidence requirements should not be invented after release execution has already
 
 ---
 
-# Documentation Planning
+## Documentation Planning
 
 Release documentation must be planned as part of the release.
 
@@ -571,7 +571,7 @@ Documentation readiness is part of release readiness.
 
 ---
 
-# Changelog Planning
+## Changelog Planning
 
 The release plan should determine:
 
@@ -584,7 +584,7 @@ The changelog should reflect the actual release scope.
 
 ---
 
-# Release Notes Planning
+## Release Notes Planning
 
 Release notes should begin before final publication.
 
@@ -604,7 +604,7 @@ Planning should identify whether release notes must include:
 
 ---
 
-# Publication Planning
+## Publication Planning
 
 The release plan should identify expected publication targets.
 
@@ -624,7 +624,7 @@ Not every release requires every target.
 
 ---
 
-# Publication Target Ownership
+## Publication Target Ownership
 
 Each publication target should have defined ownership.
 
@@ -645,7 +645,7 @@ A release plan should expose missing ownership before publication begins.
 
 ---
 
-# Publication Ordering
+## Publication Ordering
 
 Where multiple targets exist, planning should define expected ordering.
 
@@ -669,7 +669,7 @@ Publication order should minimize unsafe partial states.
 
 ---
 
-# Distribution Planning
+## Distribution Planning
 
 Where publication and distribution are separate, planning should identify:
 
@@ -684,7 +684,7 @@ Future platform releases may use staged distribution.
 
 ---
 
-# Release Timing
+## Release Timing
 
 Release Planning may identify intended release timing.
 
@@ -701,7 +701,7 @@ Timing must not weaken validation requirements.
 
 ---
 
-# Release Freeze
+## Release Freeze
 
 Some releases may require a release freeze.
 
@@ -720,7 +720,7 @@ Freeze policies should be proportional to release complexity.
 
 ---
 
-# Candidate Planning
+## Candidate Planning
 
 Release Planning should determine how candidate identity will be created.
 
@@ -740,7 +740,7 @@ Candidate strategy should be known before final qualification begins.
 
 ---
 
-# Artifact Planning
+## Artifact Planning
 
 The expected artifact set should be defined.
 
@@ -759,7 +759,7 @@ Planning should identify which artifacts are authoritative.
 
 ---
 
-# Artifact Reuse Strategy
+## Artifact Reuse Strategy
 
 The release plan should determine whether candidate artifacts will be promoted unchanged to stable.
 
@@ -775,7 +775,7 @@ Where rebuilding is necessary, the plan must identify renewed validation require
 
 ---
 
-# Provenance Planning
+## Provenance Planning
 
 Planning should identify required provenance depth.
 
@@ -797,7 +797,7 @@ More mature releases may require:
 
 ---
 
-# Security Planning
+## Security Planning
 
 Release security considerations must be identified during planning.
 
@@ -815,7 +815,7 @@ Security must not be introduced only at final publication.
 
 ---
 
-# Credential Planning
+## Credential Planning
 
 If release publication requires credentials, planning should determine:
 
@@ -830,7 +830,7 @@ Credentials should follow least-privilege principles.
 
 ---
 
-# Governance Planning
+## Governance Planning
 
 Planning must identify governance requirements.
 
@@ -856,7 +856,7 @@ Their responsibilities must still remain explicit.
 
 ---
 
-# Release Owner
+## Release Owner
 
 Every significant release SHOULD have a release owner.
 
@@ -875,7 +875,7 @@ Release ownership does not necessarily grant publication authority.
 
 ---
 
-# Technical Owners
+## Technical Owners
 
 Components involved in a release may have technical owners responsible for validating domain-specific concerns.
 
@@ -890,7 +890,7 @@ Planning should identify required ownership early.
 
 ---
 
-# Approval Planning
+## Approval Planning
 
 Planning should determine which approvals may be required.
 
@@ -908,7 +908,7 @@ Approval requirements should not be discovered only after a candidate is ready t
 
 ---
 
-# Exception Planning
+## Exception Planning
 
 Known required exceptions should be identified as early as possible.
 
@@ -923,7 +923,7 @@ Planning must not assume an exception will automatically be approved.
 
 ---
 
-# Risk Planning
+## Risk Planning
 
 Release Planning must identify known risks.
 
@@ -945,7 +945,7 @@ Risks should be evaluated before readiness.
 
 ---
 
-# Risk Record
+## Risk Record
 
 A release risk record may include:
 
@@ -962,7 +962,7 @@ The exact representation may evolve.
 
 ---
 
-# High-Risk Release Indicators
+## High-Risk Release Indicators
 
 Indicators may include:
 
@@ -979,7 +979,7 @@ High-risk releases should receive stronger planning and validation.
 
 ---
 
-# Recovery Planning
+## Recovery Planning
 
 Recovery must be considered before publication.
 
@@ -1001,7 +1001,7 @@ How are consumers informed?
 
 ---
 
-# Rollback Feasibility
+## Rollback Feasibility
 
 Rollback feasibility should be explicitly classified.
 
@@ -1026,7 +1026,7 @@ This prevents false assumptions during incidents.
 
 ---
 
-# Post-Release Planning
+## Post-Release Planning
 
 A release may require post-release actions.
 
@@ -1044,7 +1044,7 @@ These activities must be included before release completion is declared.
 
 ---
 
-# Release Communication Planning
+## Release Communication Planning
 
 Significant releases may require communication to:
 
@@ -1058,7 +1058,7 @@ Planning should identify the appropriate audience and communication artifacts.
 
 ---
 
-# Planning for Known Issues
+## Planning for Known Issues
 
 Known non-blocking issues should be identified before publication.
 
@@ -1074,7 +1074,7 @@ Known issues must not remain hidden simply because they do not block publication
 
 ---
 
-# Planning for Deprecation
+## Planning for Deprecation
 
 If a release deprecates functionality, planning should include:
 
@@ -1088,7 +1088,7 @@ Deprecation is part of release communication and lifecycle management.
 
 ---
 
-# Planning for Removal
+## Planning for Removal
 
 Removing previously supported behavior requires stronger planning.
 
@@ -1105,7 +1105,7 @@ Removal should normally be treated as compatibility-impacting.
 
 ---
 
-# Release Planning Record
+## Release Planning Record
 
 A future machine-readable release plan may contain:
 
@@ -1134,7 +1134,7 @@ The format is illustrative rather than normative.
 
 ---
 
-# Minimum Planning Record
+## Minimum Planning Record
 
 At minimum, a release plan should identify:
 
@@ -1152,7 +1152,7 @@ recovery strategy
 
 ---
 
-# Planning Checklist
+## Planning Checklist
 
 Before progressing from `PLANNED` toward `PREPARED`, the following questions should be answerable.
 
@@ -1188,7 +1188,7 @@ How will recovery work?
 
 ---
 
-# Entry Criteria for Planning
+## Entry Criteria for Planning
 
 Release Planning may begin when:
 
@@ -1201,7 +1201,7 @@ A fully completed implementation is not required to begin planning.
 
 ---
 
-# Exit Criteria for Planning
+## Exit Criteria for Planning
 
 Planning is sufficiently complete when the release can transition toward `PREPARED`.
 
@@ -1219,7 +1219,7 @@ At minimum:
 
 ---
 
-# Planning Reassessment
+## Planning Reassessment
 
 Planning must be revisited when material assumptions change.
 
@@ -1240,7 +1240,7 @@ A release plan is a controlled artifact, not a static assumption.
 
 ---
 
-# Planning and Change Control
+## Planning and Change Control
 
 Once a release reaches advanced qualification stages, changes to the release plan become increasingly sensitive.
 
@@ -1267,7 +1267,7 @@ This creates progressive release stabilization.
 
 ---
 
-# Planning and Release Freeze
+## Planning and Release Freeze
 
 A release freeze represents a point where certain changes are no longer accepted without explicit requalification.
 
@@ -1285,7 +1285,7 @@ Any accepted fix produces renewed candidate validation.
 
 ---
 
-# Planning and Automation
+## Planning and Automation
 
 Release Planning should remain human-readable even when automation is introduced.
 
@@ -1302,7 +1302,7 @@ Automation should not hide release intent.
 
 ---
 
-# Planning and CI/CD
+## Planning and CI/CD
 
 CI/CD may consume release planning metadata to determine:
 
@@ -1316,7 +1316,7 @@ CI/CD should implement the plan rather than become the only place where the plan
 
 ---
 
-# Planning and Governance
+## Planning and Governance
 
 Release Governance defines who may approve or modify protected aspects of the plan.
 
@@ -1331,7 +1331,7 @@ Examples include:
 
 ---
 
-# Planning and Compliance
+## Planning and Compliance
 
 Compliance evaluation may eventually verify that required planning fields exist.
 
@@ -1349,93 +1349,93 @@ Planning completeness may itself become a release gate.
 
 ---
 
-# Planning Invariants
+## Planning Invariants
 
 The following invariants apply.
 
-## RP1 — Every significant release has explicit intent.
+### RP1 — Every significant release has explicit intent.
 
-## RP2 — Release scope is known before formal qualification.
+### RP2 — Release scope is known before formal qualification.
 
-## RP3 — Release type is identified.
+### RP3 — Release type is identified.
 
-## RP4 — Version intent exists before candidate finalization.
+### RP4 — Version intent exists before candidate finalization.
 
-## RP5 — Required validation is identified before readiness evaluation.
+### RP5 — Required validation is identified before readiness evaluation.
 
-## RP6 — Applicable dependencies are known.
+### RP6 — Applicable dependencies are known.
 
-## RP7 — Major compatibility impact is identified.
+### RP7 — Major compatibility impact is identified.
 
-## RP8 — Required documentation is planned.
+### RP8 — Required documentation is planned.
 
-## RP9 — Publication targets are known before publication.
+### RP9 — Publication targets are known before publication.
 
-## RP10 — Significant release risks are identified.
+### RP10 — Significant release risks are identified.
 
-## RP11 — Recovery is considered before release.
+### RP11 — Recovery is considered before release.
 
-## RP12 — Material scope change triggers planning reassessment.
+### RP12 — Material scope change triggers planning reassessment.
 
 ---
 
-# Planning Anti-Patterns
+## Planning Anti-Patterns
 
-## Release by Momentum
+### Release by Momentum
 
 Publishing simply because development work appears finished.
 
 ---
 
-## Undefined Scope
+### Undefined Scope
 
 Allowing unrelated changes to enter the release candidate without review.
 
 ---
 
-## Version Last-Minute Guessing
+### Version Last-Minute Guessing
 
 Choosing the version immediately before tagging.
 
 ---
 
-## Validation Discovery
+### Validation Discovery
 
 Discovering required tests only after the release candidate is created.
 
 ---
 
-## Publication Discovery
+### Publication Discovery
 
 Determining publication targets during release execution.
 
 ---
 
-## No Recovery Plan
+### No Recovery Plan
 
 Assuming a defective release can always be reverted later.
 
 ---
 
-## Documentation After Release
+### Documentation After Release
 
 Treating release notes and migration guidance as optional post-release work.
 
 ---
 
-## Hidden Dependencies
+### Hidden Dependencies
 
 Depending on components whose versions or state are not recorded.
 
 ---
 
-## Unowned Release
+### Unowned Release
 
 Beginning release execution without clear responsibility.
 
 ---
 
-# Current FamilyOS Framework Planning Mapping
+## Current FamilyOS Framework Planning Mapping
 
 The current Release Framework work itself can be mapped to Release Planning.
 
@@ -1466,7 +1466,7 @@ The final version and tag remain subject to final repository validation.
 
 ---
 
-# Current Scope Model
+## Current Scope Model
 
 For EPIC-REL-001, the canonical numbered scope is:
 
@@ -1509,7 +1509,7 @@ Control documents complete the release framework package.
 
 ---
 
-# Target Planning Experience
+## Target Planning Experience
 
 At higher maturity, a FamilyOS maintainer should be able to initiate planning and receive a structured view such as:
 
@@ -1536,7 +1536,7 @@ This reduces reliance on individual memory.
 
 ---
 
-# Relationship With Release Readiness
+## Relationship With Release Readiness
 
 Release Planning defines what must be true.
 
@@ -1558,7 +1558,7 @@ The next document, `09-Release-Readiness.md`, defines this evaluation model.
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 Planning determines the intended candidate strategy.
 
@@ -1566,7 +1566,7 @@ Candidate creation freezes the exact object that will be validated.
 
 ---
 
-# Relationship With Release Risk Management
+## Relationship With Release Risk Management
 
 Planning identifies risk.
 
@@ -1574,7 +1574,7 @@ Planning identifies risk.
 
 ---
 
-# Relationship With Governance
+## Relationship With Governance
 
 Planning identifies required authority.
 
@@ -1582,7 +1582,7 @@ Planning identifies required authority.
 
 ---
 
-# Relationship With Publishing
+## Relationship With Publishing
 
 Planning defines intended publication.
 
@@ -1590,7 +1590,7 @@ Planning defines intended publication.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Planning model ensures that releases begin as deliberate engineering activities rather than terminal procedures.
 

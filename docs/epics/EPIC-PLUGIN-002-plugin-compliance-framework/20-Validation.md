@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 20 Validation
+## 20 Validation
 
-## Introduction
+### Introduction
 
 The Plugin Compliance Framework must itself be validated before it can be trusted to evaluate plugins.
 
@@ -17,7 +17,7 @@ The objective is to demonstrate that EPIC-PLUGIN-002 forms a coherent, testable,
 
 ---
 
-# Validation Principle
+## Validation Principle
 
 The governing validation principle is:
 
@@ -27,7 +27,7 @@ Validation must therefore produce explicit evidence rather than rely on informal
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 Framework validation covers:
 
@@ -50,7 +50,7 @@ Framework validation covers:
 
 ---
 
-# Documentation Validation
+## Documentation Validation
 
 The documentation set must be structurally complete.
 
@@ -86,7 +86,7 @@ Future framework packaging may add metadata and supporting files.
 
 ---
 
-# Empty File Validation
+## Empty File Validation
 
 No required normative framework document should be empty.
 
@@ -102,7 +102,7 @@ A non-empty file is not sufficient proof of documentation quality, but it is a m
 
 ---
 
-# Heading Validation
+## Heading Validation
 
 Framework documents should have predictable primary headings.
 
@@ -117,7 +117,7 @@ This helps detect accidental document corruption or incomplete generation.
 
 ---
 
-# Markdown Validation
+## Markdown Validation
 
 Documentation should follow the FamilyOS Documentation Framework.
 
@@ -133,7 +133,7 @@ Automated Markdown validation should be used where supported.
 
 ---
 
-# Terminology Validation
+## Terminology Validation
 
 Key terms must retain consistent meanings across the framework.
 
@@ -158,7 +158,7 @@ Terminology drift can create implementation ambiguity.
 
 ---
 
-# Semantic Separation Validation
+## Semantic Separation Validation
 
 The framework must preserve several critical semantic separations.
 
@@ -198,7 +198,7 @@ These boundaries are foundational.
 
 ---
 
-# Architecture Validation
+## Architecture Validation
 
 The Compliance Architecture should be reviewed against its declared invariants.
 
@@ -233,7 +233,7 @@ No implementation component should bypass this model without an explicit archite
 
 ---
 
-# Boundary Validation
+## Boundary Validation
 
 Validation must confirm separation between:
 
@@ -247,7 +247,7 @@ These boundaries reduce semantic and security risk.
 
 ---
 
-# Rule Model Validation
+## Rule Model Validation
 
 The Rule Model must ensure that active rules have sufficient metadata.
 
@@ -270,7 +270,7 @@ Rules missing required semantics should fail rule-catalog validation.
 
 ---
 
-# Rule Identity Validation
+## Rule Identity Validation
 
 Rule IDs must be:
 
@@ -282,7 +282,7 @@ Duplicate Rule IDs must be treated as framework configuration errors.
 
 ---
 
-# Rule Lifecycle Validation
+## Rule Lifecycle Validation
 
 Rule lifecycle transitions should be valid.
 
@@ -298,7 +298,7 @@ Invalid transitions should be rejected.
 
 ---
 
-# Rule Dependency Validation
+## Rule Dependency Validation
 
 Rule dependency graphs must be validated for:
 
@@ -311,7 +311,7 @@ Circular dependencies must prevent activation of the affected policy set.
 
 ---
 
-# Rule Test Validation
+## Rule Test Validation
 
 Every automated active rule should have tests proving expected behavior.
 
@@ -328,7 +328,7 @@ Additional boundary cases should be added where relevant.
 
 ---
 
-# Profile Validation
+## Profile Validation
 
 Profiles must be validated for:
 
@@ -346,7 +346,7 @@ Invalid profiles must not be selectable.
 
 ---
 
-# Profile Resolution Validation
+## Profile Resolution Validation
 
 The Profile Resolver requires tests for:
 
@@ -361,7 +361,7 @@ A resolution failure must not silently fall back to a weaker profile.
 
 ---
 
-# Mandatory Rule Validation
+## Mandatory Rule Validation
 
 Tests must prove that ordinary profile configuration cannot remove mandatory rules.
 
@@ -378,7 +378,7 @@ or equivalent framework-defined behavior.
 
 ---
 
-# Validation Engine Tests
+## Validation Engine Tests
 
 The Validation Engine requires extensive unit and integration testing.
 
@@ -400,7 +400,7 @@ Core areas include:
 
 ---
 
-# Determinism Validation
+## Determinism Validation
 
 Given equivalent validation input, the engine should produce equivalent semantic output.
 
@@ -417,7 +417,7 @@ Timestamps and execution durations may differ.
 
 ---
 
-# Parallel Execution Validation
+## Parallel Execution Validation
 
 If validators run concurrently, tests must confirm that parallel execution does not alter semantics.
 
@@ -433,7 +433,7 @@ for canonical rule outcomes and final status.
 
 ---
 
-# Error Propagation Validation
+## Error Propagation Validation
 
 The framework must test distinction between:
 
@@ -451,7 +451,7 @@ These states must produce different outcomes.
 
 ---
 
-# Evidence Model Validation
+## Evidence Model Validation
 
 Evidence infrastructure requires tests for:
 
@@ -471,7 +471,7 @@ Evidence is part of the compliance trust boundary.
 
 ---
 
-# Evidence Freshness Tests
+## Evidence Freshness Tests
 
 Tests should verify that stale evidence is rejected after relevant changes.
 
@@ -493,7 +493,7 @@ when those dimensions affect the evidence.
 
 ---
 
-# Evidence Trust Tests
+## Evidence Trust Tests
 
 The framework must verify that a plugin cannot self-declare evidence as trusted.
 
@@ -507,7 +507,7 @@ must not override actual provenance evaluation.
 
 ---
 
-# Evidence Conflict Tests
+## Evidence Conflict Tests
 
 Conflicting evidence must remain visible.
 
@@ -515,7 +515,7 @@ Tests should ensure the framework does not automatically select the most favorab
 
 ---
 
-# Secret Redaction Validation
+## Secret Redaction Validation
 
 Evidence and reporting tests must verify that secrets are never included in ordinary output.
 
@@ -523,7 +523,7 @@ Test fixtures may deliberately contain fake secrets to prove redaction behavior.
 
 ---
 
-# Findings Validation
+## Findings Validation
 
 Finding tests should cover:
 
@@ -540,7 +540,7 @@ Finding tests should cover:
 
 ---
 
-# Severity Validation
+## Severity Validation
 
 Severity semantics must remain globally consistent.
 
@@ -556,7 +556,7 @@ Severity must not be used as a substitute for rule outcome.
 
 ---
 
-# Compliance Status Validation
+## Compliance Status Validation
 
 The decision engine should be tested across all canonical states:
 
@@ -571,7 +571,7 @@ Each state must have deterministic derivation rules.
 
 ---
 
-# Non-Compliant Tests
+## Non-Compliant Tests
 
 Tests should verify that blocking failed rules produce:
 
@@ -583,7 +583,7 @@ under profiles where they are blocking.
 
 ---
 
-# Incomplete Tests
+## Incomplete Tests
 
 Tests should verify that required missing evidence does not produce PASS.
 
@@ -597,7 +597,7 @@ or a more specific governed incomplete state if later introduced.
 
 ---
 
-# Error Status Tests
+## Error Status Tests
 
 Framework infrastructure failures severe enough to prevent a reliable decision should produce:
 
@@ -609,7 +609,7 @@ They should not be disguised as plugin non-compliance.
 
 ---
 
-# Exception Validation
+## Exception Validation
 
 Exception handling must be tested for:
 
@@ -624,7 +624,7 @@ Exceptions must remain visible in final results.
 
 ---
 
-# Suppression Validation
+## Suppression Validation
 
 Suppressions require tests proving that:
 
@@ -636,7 +636,7 @@ Suppressions require tests proving that:
 
 ---
 
-# Reporting Validation
+## Reporting Validation
 
 All renderers must be tested against canonical Compliance Results.
 
@@ -651,7 +651,7 @@ Renderers must not derive contradictory statuses.
 
 ---
 
-# Machine Schema Validation
+## Machine Schema Validation
 
 Machine-readable reports should validate against an explicit schema.
 
@@ -666,7 +666,7 @@ Tests should include:
 
 ---
 
-# Cross-Renderer Semantic Validation
+## Cross-Renderer Semantic Validation
 
 A single Compliance Result rendered in multiple formats should preserve:
 
@@ -685,7 +685,7 @@ Meaning must not.
 
 ---
 
-# Gate Validation
+## Gate Validation
 
 Every gate policy requires tests.
 
@@ -702,7 +702,7 @@ Core cases include:
 
 ---
 
-# Release Gate Validation
+## Release Gate Validation
 
 The Release Gate should be tested against:
 
@@ -715,7 +715,7 @@ The Release Gate should be tested against:
 
 ---
 
-# Certification Gate Validation
+## Certification Gate Validation
 
 Certification gate tests should verify:
 
@@ -730,7 +730,7 @@ Passing compliance alone must not imply certification.
 
 ---
 
-# Certification Boundary Validation
+## Certification Boundary Validation
 
 Tests should prove that the compliance engine cannot directly produce a certification decision such as:
 
@@ -744,7 +744,7 @@ The compliance engine may produce only certification-related technical eligibili
 
 ---
 
-# Governance Validation
+## Governance Validation
 
 Governance artifacts should be validated for:
 
@@ -759,7 +759,7 @@ Governance artifacts should be validated for:
 
 ---
 
-# Governance CI Validation
+## Governance CI Validation
 
 Changes to structured compliance policy should themselves pass CI.
 
@@ -786,7 +786,7 @@ Impact Analysis
 
 ---
 
-# Security Validation
+## Security Validation
 
 Security tests must validate the compliance trust boundary.
 
@@ -803,7 +803,7 @@ Important scenarios include:
 
 ---
 
-# Tamper Detection Validation
+## Tamper Detection Validation
 
 When critical compliance policy integrity cannot be established, the framework must produce:
 
@@ -817,7 +817,7 @@ It must not issue a normal compliant result.
 
 ---
 
-# Runtime Isolation Validation
+## Runtime Isolation Validation
 
 Where plugin code is executed, test environments should validate:
 
@@ -831,7 +831,7 @@ Isolation capability may mature incrementally, but its behavior must be testable
 
 ---
 
-# Official Plugin Pilot Validation
+## Official Plugin Pilot Validation
 
 The framework should be validated against real official plugins.
 
@@ -848,7 +848,7 @@ Pilot validation should include representative plugins with:
 
 ---
 
-# Pilot Candidate Set
+## Pilot Candidate Set
 
 A representative baseline may include:
 
@@ -865,7 +865,7 @@ The exact pilot set may evolve.
 
 ---
 
-# Pilot Validation Objectives
+## Pilot Validation Objectives
 
 The pilot should measure:
 
@@ -881,7 +881,7 @@ Rules producing unstable or misleading results should not become blocking.
 
 ---
 
-# Regression Validation
+## Regression Validation
 
 Once a rule or engine behavior becomes stable, regression tests should protect it.
 
@@ -891,7 +891,7 @@ The compliance framework must avoid reintroducing previously corrected semantic 
 
 ---
 
-# Performance Validation
+## Performance Validation
 
 Compliance validation must remain practical for development and CI.
 
@@ -907,7 +907,7 @@ Performance limits should not encourage weakening validation.
 
 ---
 
-# Scale Validation
+## Scale Validation
 
 As the rule catalog grows, tests should confirm that the engine can handle increasing:
 
@@ -921,7 +921,7 @@ The framework should avoid algorithms that scale poorly without justification.
 
 ---
 
-# Repository-Wide Validation
+## Repository-Wide Validation
 
 FamilyOS may eventually run compliance validation across all supported official plugins.
 
@@ -942,7 +942,7 @@ Aggregate success must not hide per-plugin failures.
 
 ---
 
-# Documentation-to-Implementation Traceability
+## Documentation-to-Implementation Traceability
 
 Implementation should be traceable to framework documentation.
 
@@ -963,7 +963,7 @@ This helps prevent architecture drift.
 
 ---
 
-# Specification Validation
+## Specification Validation
 
 Detailed schemas and specifications introduced after this EPIC should be validated against the framework principles.
 
@@ -971,7 +971,7 @@ A specification that contradicts foundational EPIC invariants requires an explic
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 Before declaring the framework operational, FamilyOS should verify:
 
@@ -1000,7 +1000,7 @@ Not every future roadmap capability is required for the initial operational base
 
 ---
 
-# Operational Baseline Criteria
+## Operational Baseline Criteria
 
 The initial framework may be declared operational when:
 
@@ -1017,7 +1017,7 @@ The initial framework may be declared operational when:
 
 ---
 
-# Full Framework Completion Criteria
+## Full Framework Completion Criteria
 
 EPIC-PLUGIN-002 documentation may be considered complete before every advanced roadmap feature is implemented.
 
@@ -1035,7 +1035,7 @@ All Future Capabilities Implemented
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Framework validation should produce its own evidence.
 
@@ -1053,7 +1053,7 @@ This evidence should support release decisions for the compliance framework itse
 
 ---
 
-# Quality Requirements
+## Quality Requirements
 
 The compliance implementation should satisfy FamilyOS engineering quality requirements.
 
@@ -1071,7 +1071,7 @@ Additional security and architecture tests should be added specifically for comp
 
 ---
 
-# Validation Failure Handling
+## Validation Failure Handling
 
 A failed framework validation must block the affected framework release or enforcement stage.
 
@@ -1097,7 +1097,7 @@ A compliance framework must not knowingly publish invalid policy.
 
 ---
 
-# Validation Ownership
+## Validation Ownership
 
 Framework validation is shared across relevant governance owners.
 
@@ -1114,7 +1114,7 @@ The framework should not depend on one individual reviewer for all assurance.
 
 ---
 
-# Validation Review
+## Validation Review
 
 Major framework releases should receive explicit review covering:
 
@@ -1130,7 +1130,7 @@ Automated validation is necessary but not sufficient for major policy evolution.
 
 ---
 
-# Historical Validation
+## Historical Validation
 
 Validation records should remain associated with the framework version they verified.
 
@@ -1140,41 +1140,41 @@ Historical validation must not be rewritten to imply current compliance.
 
 ---
 
-# Validation Anti-Patterns
+## Validation Anti-Patterns
 
 The framework must avoid several validation anti-patterns.
 
-## Self-Assertion
+### Self-Assertion
 
 Do not declare the framework correct merely because it runs.
 
-## Test Count as Quality
+### Test Count as Quality
 
 A large number of passing tests does not prove semantic completeness.
 
-## Documentation Presence Only
+### Documentation Presence Only
 
 Do not treat non-empty files as proof that documentation is coherent.
 
-## Pilot-Free Enforcement
+### Pilot-Free Enforcement
 
 Do not make broad new rules blocking without validating them against real plugins.
 
-## Infrastructure Errors as Plugin Failures
+### Infrastructure Errors as Plugin Failures
 
 Do not hide framework defects by blaming evaluated plugins.
 
-## Unreviewed Policy Activation
+### Unreviewed Policy Activation
 
 Do not activate compliance requirements without governance validation.
 
-## Historical Rewrite
+### Historical Rewrite
 
 Do not modify old results after semantics change.
 
 ---
 
-# Validation Invariants
+## Validation Invariants
 
 The Framework Validation model establishes the following invariants:
 
@@ -1201,7 +1201,7 @@ The Framework Validation model establishes the following invariants:
 
 ---
 
-# Reference Validation Flow
+## Reference Validation Flow
 
 The complete validation model is:
 
@@ -1243,7 +1243,7 @@ This sequence provides progressively stronger confidence in the framework.
 
 ---
 
-# Validation Summary
+## Validation Summary
 
 The Plugin Compliance Framework must demonstrate the same properties it expects from the plugins it evaluates:
 
@@ -1273,7 +1273,7 @@ Operational Compliance Framework
 
 ---
 
-# Final Validation Principle
+## Final Validation Principle
 
 The governing principle of EPIC-PLUGIN-002 validation is:
 

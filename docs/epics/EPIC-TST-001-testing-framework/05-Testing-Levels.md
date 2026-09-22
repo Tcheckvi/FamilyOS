@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 05 Testing Levels
+## 05 Testing Levels
 
-## Introduction
+### Introduction
 
 The FamilyOS Testing Framework defines a layered testing model.
 
@@ -27,7 +27,7 @@ They must not collapse into one undifferentiated test suite.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the canonical FamilyOS testing levels and the responsibility of each level.
 
@@ -60,7 +60,7 @@ They do not automatically replace the primary level classification.
 
 ---
 
-# Governing Principle
+## Governing Principle
 
 The governing principle for testing levels is:
 
@@ -78,7 +78,7 @@ Higher levels are required when behavior depends on real collaboration or assemb
 
 ---
 
-# Testing Level Model
+## Testing Level Model
 
 The canonical testing-level progression is:
 
@@ -110,7 +110,7 @@ Required levels depend on:
 
 ---
 
-# Testing Level Responsibility
+## Testing Level Responsibility
 
 Each level answers a different question.
 
@@ -135,9 +135,9 @@ Testing confidence emerges from the combination of these answers.
 
 ---
 
-# Unit Testing
+## Unit Testing
 
-## Definition
+### Definition
 
 Unit testing validates isolated behavior within the smallest practical engineering boundary.
 
@@ -157,7 +157,7 @@ The exact unit boundary depends on architecture.
 
 ---
 
-# Unit Testing Objective
+## Unit Testing Objective
 
 Unit tests should provide fast and precise evidence that local behavior is correct.
 
@@ -172,7 +172,7 @@ Diagnostic Precision
 
 ---
 
-# Unit Test Boundary
+## Unit Test Boundary
 
 Conceptually:
 
@@ -190,7 +190,7 @@ External dependencies should normally be absent or controlled.
 
 ---
 
-# Unit Test Characteristics
+## Unit Test Characteristics
 
 A strong unit test is typically:
 
@@ -206,7 +206,7 @@ A strong unit test is typically:
 
 ---
 
-# Unit Test Dependencies
+## Unit Test Dependencies
 
 Unit tests may use:
 
@@ -221,7 +221,7 @@ The chosen dependency strategy must preserve the behavior being tested.
 
 ---
 
-# Unit Test Examples
+## Unit Test Examples
 
 Examples include validating:
 
@@ -236,7 +236,7 @@ Examples include validating:
 
 ---
 
-# Unit Test Anti-Patterns
+## Unit Test Anti-Patterns
 
 Unit tests should avoid unnecessary dependence on:
 
@@ -250,7 +250,7 @@ If these dependencies are required, the test may belong to a higher level.
 
 ---
 
-# Unit Testing Success Criteria
+## Unit Testing Success Criteria
 
 Unit testing is effective when:
 
@@ -262,9 +262,9 @@ Unit testing is effective when:
 
 ---
 
-# Integration Testing
+## Integration Testing
 
-## Definition
+### Definition
 
 Integration testing validates real collaboration between multiple components.
 
@@ -274,7 +274,7 @@ The focus is on the interaction boundary.
 
 ---
 
-# Integration Testing Objective
+## Integration Testing Objective
 
 Integration tests answer:
 
@@ -291,7 +291,7 @@ Examples include collaboration between:
 
 ---
 
-# Integration Boundary
+## Integration Boundary
 
 Conceptually:
 
@@ -309,7 +309,7 @@ The interaction being validated must remain real.
 
 ---
 
-# Integration Test Characteristics
+## Integration Test Characteristics
 
 Integration tests are typically:
 
@@ -323,7 +323,7 @@ They should still be deterministic where possible.
 
 ---
 
-# Integration Test Infrastructure
+## Integration Test Infrastructure
 
 Integration testing may require:
 
@@ -339,7 +339,7 @@ Infrastructure should remain controlled and reproducible.
 
 ---
 
-# Integration Test Isolation
+## Integration Test Isolation
 
 Integration tests should avoid unintended shared state.
 
@@ -355,7 +355,7 @@ Parallel execution should remain safe where supported.
 
 ---
 
-# Integration Test Examples
+## Integration Test Examples
 
 Examples include:
 
@@ -367,7 +367,7 @@ Examples include:
 
 ---
 
-# Integration Test Anti-Patterns
+## Integration Test Anti-Patterns
 
 An integration test should not mock away every interaction it claims to validate.
 
@@ -386,7 +386,7 @@ does not provide meaningful repository integration evidence.
 
 ---
 
-# Integration Testing Success Criteria
+## Integration Testing Success Criteria
 
 Integration testing is effective when:
 
@@ -397,9 +397,9 @@ Integration testing is effective when:
 
 ---
 
-# Contract Testing
+## Contract Testing
 
-## Definition
+### Definition
 
 Contract testing validates explicit agreements across architectural boundaries.
 
@@ -417,7 +417,7 @@ A contract may define:
 
 ---
 
-# Contract Testing Objective
+## Contract Testing Objective
 
 Contract tests answer:
 
@@ -425,7 +425,7 @@ Contract tests answer:
 
 ---
 
-# Contract Boundary
+## Contract Boundary
 
 Conceptually:
 
@@ -443,7 +443,7 @@ The contract itself is the validation subject.
 
 ---
 
-# Provider Contract Testing
+## Provider Contract Testing
 
 Provider tests validate that an implementation satisfies the contract it exposes.
 
@@ -457,7 +457,7 @@ Examples include:
 
 ---
 
-# Consumer Contract Testing
+## Consumer Contract Testing
 
 Consumer tests validate assumptions that a consumer makes about a provider.
 
@@ -467,7 +467,7 @@ The consumer must not silently rely on undocumented behavior.
 
 ---
 
-# Plugin Contract Testing
+## Plugin Contract Testing
 
 Plugin contracts are especially important in FamilyOS.
 
@@ -483,7 +483,7 @@ Contract tests may validate:
 
 ---
 
-# Schema Contract Testing
+## Schema Contract Testing
 
 Schema-driven contracts may validate:
 
@@ -499,7 +499,7 @@ Schema validation may be static or executable.
 
 ---
 
-# Versioned Contract Testing
+## Versioned Contract Testing
 
 Contracts may evolve across versions.
 
@@ -514,7 +514,7 @@ Hidden version assumptions are not acceptable.
 
 ---
 
-# Contract Test Independence
+## Contract Test Independence
 
 Contract tests should avoid depending on unrelated system behavior.
 
@@ -524,7 +524,7 @@ Functional behavior beyond the contract belongs to other testing levels.
 
 ---
 
-# Contract Testing Success Criteria
+## Contract Testing Success Criteria
 
 Contract testing is effective when:
 
@@ -535,9 +535,9 @@ Contract testing is effective when:
 
 ---
 
-# Functional Testing
+## Functional Testing
 
-## Definition
+### Definition
 
 Functional testing validates a complete capability from an externally meaningful perspective.
 
@@ -547,7 +547,7 @@ It does not primarily focus on how internal components collaborate.
 
 ---
 
-# Functional Testing Objective
+## Functional Testing Objective
 
 Functional tests answer:
 
@@ -555,7 +555,7 @@ Functional tests answer:
 
 ---
 
-# Functional Boundary
+## Functional Boundary
 
 Conceptually:
 
@@ -571,7 +571,7 @@ Observable Functional Result
 
 ---
 
-# Functional Test Scope
+## Functional Test Scope
 
 Functional tests may cross:
 
@@ -586,7 +586,7 @@ They should remain focused on one coherent capability.
 
 ---
 
-# Functional Test Examples
+## Functional Test Examples
 
 Examples include:
 
@@ -598,7 +598,7 @@ Examples include:
 
 ---
 
-# Functional Testing Perspective
+## Functional Testing Perspective
 
 Functional testing should prioritize externally meaningful behavior.
 
@@ -606,7 +606,7 @@ It should avoid overasserting internal implementation details.
 
 ---
 
-# Functional Test Infrastructure
+## Functional Test Infrastructure
 
 Functional tests may require broader infrastructure than integration tests.
 
@@ -614,7 +614,7 @@ However, infrastructure should remain minimal relative to the capability being v
 
 ---
 
-# Functional Testing Success Criteria
+## Functional Testing Success Criteria
 
 Functional testing is effective when:
 
@@ -625,9 +625,9 @@ Functional testing is effective when:
 
 ---
 
-# System Testing
+## System Testing
 
-## Definition
+### Definition
 
 System testing validates the assembled FamilyOS system or a production-like system boundary.
 
@@ -635,7 +635,7 @@ It provides the broadest behavioral confidence among the primary testing levels.
 
 ---
 
-# System Testing Objective
+## System Testing Objective
 
 System tests answer:
 
@@ -643,7 +643,7 @@ System tests answer:
 
 ---
 
-# System Boundary
+## System Boundary
 
 Conceptually:
 
@@ -669,7 +669,7 @@ Observable System Result
 
 ---
 
-# System Test Scope
+## System Test Scope
 
 System testing may include:
 
@@ -683,7 +683,7 @@ System testing may include:
 
 ---
 
-# System Test Characteristics
+## System Test Characteristics
 
 System tests are generally:
 
@@ -697,7 +697,7 @@ They should therefore be used intentionally.
 
 ---
 
-# System Test Environment
+## System Test Environment
 
 System testing may require a production-like environment.
 
@@ -707,7 +707,7 @@ The environment should reproduce relevant behavior while remaining controlled.
 
 ---
 
-# System Test Examples
+## System Test Examples
 
 Examples include:
 
@@ -719,7 +719,7 @@ Examples include:
 
 ---
 
-# System Testing Success Criteria
+## System Testing Success Criteria
 
 System testing is effective when:
 
@@ -730,7 +730,7 @@ System testing is effective when:
 
 ---
 
-# Testing Level Comparison
+## Testing Level Comparison
 
 The canonical comparison is:
 
@@ -746,7 +746,7 @@ These characteristics are directional rather than absolute.
 
 ---
 
-# Testing Level Selection
+## Testing Level Selection
 
 The correct level should be selected based on the behavior being validated.
 
@@ -799,7 +799,7 @@ Is assembled-system behavior required?
 
 ---
 
-# Avoid Duplicate Assurance
+## Avoid Duplicate Assurance
 
 The same behavior should not be redundantly tested at every level without a reason.
 
@@ -811,7 +811,7 @@ Higher-level tests should validate additional behavior.
 
 ---
 
-# Complementary Assurance
+## Complementary Assurance
 
 Different levels should complement each other.
 
@@ -838,7 +838,7 @@ Together these provide layered confidence.
 
 ---
 
-# Testing Level Ownership
+## Testing Level Ownership
 
 Ownership follows architectural responsibility.
 
@@ -852,7 +852,7 @@ Ownership must remain explicit.
 
 ---
 
-# Testing Levels And Risk
+## Testing Levels And Risk
 
 Risk influences required depth.
 
@@ -870,7 +870,7 @@ Risk-based testing should strengthen confidence without creating indiscriminate 
 
 ---
 
-# Critical Path Testing
+## Critical Path Testing
 
 Critical paths should normally include strong low-level tests plus selected higher-level validation.
 
@@ -893,7 +893,7 @@ The exact combination depends on risk and lifecycle policy.
 
 ---
 
-# Regression Testing Across Levels
+## Regression Testing Across Levels
 
 Regression is not a separate execution layer.
 
@@ -913,7 +913,7 @@ System Regression
 
 ---
 
-# Security Testing Across Levels
+## Security Testing Across Levels
 
 Security testing may also occur across multiple levels.
 
@@ -929,7 +929,7 @@ Security testing objectives do not replace level semantics.
 
 ---
 
-# Performance Testing Across Levels
+## Performance Testing Across Levels
 
 Performance testing may target:
 
@@ -942,7 +942,7 @@ The testing level should still describe the scope of the behavior being measured
 
 ---
 
-# Compatibility Testing Across Levels
+## Compatibility Testing Across Levels
 
 Compatibility may be validated at:
 
@@ -953,7 +953,7 @@ Compatibility may be validated at:
 
 ---
 
-# Migration Testing Across Levels
+## Migration Testing Across Levels
 
 Migration validation often requires integration or system testing.
 
@@ -963,7 +963,7 @@ The level depends on the migration behavior being validated.
 
 ---
 
-# Test Level Naming
+## Test Level Naming
 
 Testing-level names must remain semantically stable.
 
@@ -985,7 +985,7 @@ Stable terminology is required for reliable reporting and governance.
 
 ---
 
-# Test Level Metadata
+## Test Level Metadata
 
 Executable tests may eventually expose metadata describing their level.
 
@@ -1005,7 +1005,7 @@ The metadata must reflect actual semantics.
 
 ---
 
-# Mixed-Level Tests
+## Mixed-Level Tests
 
 A test that spans multiple concerns should be classified by its dominant validation boundary.
 
@@ -1015,7 +1015,7 @@ Mixed-level ambiguity should trigger design review.
 
 ---
 
-# Test Suite Organization
+## Test Suite Organization
 
 Test suites should reflect testing levels where practical.
 
@@ -1036,7 +1036,7 @@ Semantic clarity remains mandatory.
 
 ---
 
-# Unit Suite Expectations
+## Unit Suite Expectations
 
 The unit suite should generally be:
 
@@ -1048,7 +1048,7 @@ The unit suite should generally be:
 
 ---
 
-# Integration Suite Expectations
+## Integration Suite Expectations
 
 The integration suite should:
 
@@ -1059,7 +1059,7 @@ The integration suite should:
 
 ---
 
-# Contract Suite Expectations
+## Contract Suite Expectations
 
 The contract suite should:
 
@@ -1070,7 +1070,7 @@ The contract suite should:
 
 ---
 
-# Functional Suite Expectations
+## Functional Suite Expectations
 
 The functional suite should:
 
@@ -1080,7 +1080,7 @@ The functional suite should:
 
 ---
 
-# System Suite Expectations
+## System Suite Expectations
 
 The system suite should:
 
@@ -1091,7 +1091,7 @@ The system suite should:
 
 ---
 
-# Local Execution Expectations
+## Local Execution Expectations
 
 Developers should normally run:
 
@@ -1113,7 +1113,7 @@ System tests may require heavier environments.
 
 ---
 
-# Pull Request Expectations
+## Pull Request Expectations
 
 Pull request validation may require:
 
@@ -1129,7 +1129,7 @@ Exact policy belongs to the testing profile and lifecycle gate.
 
 ---
 
-# Release Expectations
+## Release Expectations
 
 Release validation may require broader evidence.
 
@@ -1147,7 +1147,7 @@ depending on the release profile.
 
 ---
 
-# Plugin Testing Levels
+## Plugin Testing Levels
 
 Plugin testing follows the same model.
 
@@ -1165,7 +1165,7 @@ Official plugin policy may require a subset or all of these.
 
 ---
 
-# Plugin Unit Tests
+## Plugin Unit Tests
 
 Plugin unit tests validate:
 
@@ -1178,7 +1178,7 @@ Plugin unit tests validate:
 
 ---
 
-# Plugin Integration Tests
+## Plugin Integration Tests
 
 Plugin integration tests validate:
 
@@ -1190,7 +1190,7 @@ Plugin integration tests validate:
 
 ---
 
-# Plugin Contract Tests
+## Plugin Contract Tests
 
 Plugin contract tests validate:
 
@@ -1202,7 +1202,7 @@ Plugin contract tests validate:
 
 ---
 
-# Plugin Functional Tests
+## Plugin Functional Tests
 
 Plugin functional tests validate meaningful plugin capabilities.
 
@@ -1210,7 +1210,7 @@ Examples include executing an official plugin use case through application-level
 
 ---
 
-# Plugin System Tests
+## Plugin System Tests
 
 Plugin system tests validate the plugin inside the assembled FamilyOS runtime.
 
@@ -1218,7 +1218,7 @@ These tests should be reserved for behavior that cannot be proven at lower level
 
 ---
 
-# Testing Level Evidence
+## Testing Level Evidence
 
 Testing evidence must identify its level.
 
@@ -1237,7 +1237,7 @@ Without level information, downstream interpretation may become ambiguous.
 
 ---
 
-# Quality Consumption
+## Quality Consumption
 
 The Quality Framework may evaluate testing evidence by level.
 
@@ -1249,7 +1249,7 @@ It does not redefine them.
 
 ---
 
-# Compliance Consumption
+## Compliance Consumption
 
 The Plugin Compliance Framework may require specific test levels.
 
@@ -1269,7 +1269,7 @@ Testing defines what those levels mean.
 
 ---
 
-# Build Consumption
+## Build Consumption
 
 The Build Framework may require particular testing levels before artifact production.
 
@@ -1277,7 +1277,7 @@ Build policy must reference canonical testing semantics.
 
 ---
 
-# Release Consumption
+## Release Consumption
 
 The Release Framework may require broader testing evidence before release.
 
@@ -1285,7 +1285,7 @@ Release gates must not invent alternative meanings for testing levels.
 
 ---
 
-# Certification Consumption
+## Certification Consumption
 
 Certification may require stronger level coverage and trusted execution provenance.
 
@@ -1293,7 +1293,7 @@ The testing-level semantics remain unchanged.
 
 ---
 
-# Testing Level Governance
+## Testing Level Governance
 
 Changes to the meaning of a testing level are framework changes.
 
@@ -1308,7 +1308,7 @@ Examples include:
 
 ---
 
-# Introducing New Testing Levels
+## Introducing New Testing Levels
 
 A new primary testing level should only be introduced when existing levels cannot express a meaningful and recurring validation boundary.
 
@@ -1316,7 +1316,7 @@ New names should not be introduced merely for organizational preference.
 
 ---
 
-# Specialized Testing Categories
+## Specialized Testing Categories
 
 FamilyOS may define specialized categories such as:
 
@@ -1339,7 +1339,7 @@ They may exist within one or more primary levels.
 
 ---
 
-# Level And Category Separation
+## Level And Category Separation
 
 For example:
 
@@ -1371,7 +1371,7 @@ This separation prevents terminology confusion.
 
 ---
 
-# Testing Level Invariants
+## Testing Level Invariants
 
 The Testing Framework establishes the following invariants:
 
@@ -1398,7 +1398,7 @@ The Testing Framework establishes the following invariants:
 
 ---
 
-# Testing Level Selection Summary
+## Testing Level Selection Summary
 
 The selection rule can be summarized as:
 
@@ -1431,7 +1431,7 @@ System
 
 ---
 
-# Final Testing Level Principle
+## Final Testing Level Principle
 
 The governing testing-level principle is:
 

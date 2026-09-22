@@ -1,8 +1,8 @@
 # Release Framework
 
-# 07 Release Types and Channels
+## 07 Release Types and Channels
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines a classification model for FamilyOS releases.
 
@@ -26,7 +26,7 @@ A release channel describes the availability or stability path through which the
 
 ---
 
-# Purpose
+## Purpose
 
 The Release Types and Channels model establishes:
 
@@ -47,7 +47,7 @@ The model prevents release classifications from becoming informal or inconsisten
 
 ---
 
-# Release Type vs Release Channel
+## Release Type vs Release Channel
 
 Release type and release channel MUST NOT be treated as interchangeable.
 
@@ -77,7 +77,7 @@ The channel explains how the release is exposed and what stability expectation a
 
 ---
 
-# Canonical Release Type Model
+## Canonical Release Type Model
 
 FamilyOS recognizes the following high-level release types:
 
@@ -102,9 +102,9 @@ Secondary attributes MAY provide additional context.
 
 ---
 
-# Development Release
+## Development Release
 
-## Definition
+### Definition
 
 A Development Release is intended for engineering validation, internal testing, or early integration.
 
@@ -121,7 +121,7 @@ Development releases MUST NOT be represented as stable releases.
 
 ---
 
-# Development Release Expectations
+## Development Release Expectations
 
 Typical expectations include:
 
@@ -138,7 +138,7 @@ Development releases may be frequent and highly automated.
 
 ---
 
-# Development Release Versioning
+## Development Release Versioning
 
 Development releases may use pre-release identifiers or internal build metadata.
 
@@ -154,9 +154,9 @@ The exact syntax must remain compatible with the Versioning Strategy.
 
 ---
 
-# Preview Release
+## Preview Release
 
-## Definition
+### Definition
 
 A Preview Release is intended to expose upcoming FamilyOS functionality before stable release.
 
@@ -172,7 +172,7 @@ Preview releases provide stronger expectations than development releases but rem
 
 ---
 
-# Preview Release Expectations
+## Preview Release Expectations
 
 A Preview Release SHOULD generally have:
 
@@ -187,9 +187,9 @@ Preview releases SHOULD clearly communicate that compatibility may still change.
 
 ---
 
-# Feature Release
+## Feature Release
 
-## Definition
+### Definition
 
 A Feature Release introduces meaningful backward-compatible functionality.
 
@@ -214,7 +214,7 @@ Feature releases may include:
 
 ---
 
-# Feature Release Expectations
+## Feature Release Expectations
 
 A stable Feature Release should normally satisfy the complete applicable release lifecycle.
 
@@ -231,9 +231,9 @@ This includes:
 
 ---
 
-# Maintenance Release
+## Maintenance Release
 
-## Definition
+### Definition
 
 A Maintenance Release corrects or improves an existing supported release line without intentionally introducing major compatibility changes.
 
@@ -258,7 +258,7 @@ Example:
 
 ---
 
-# Maintenance Release Expectations
+## Maintenance Release Expectations
 
 Maintenance releases may use a reduced release profile when risk is lower.
 
@@ -273,9 +273,9 @@ However, they must still preserve:
 
 ---
 
-# Security Release
+## Security Release
 
-## Definition
+### Definition
 
 A Security Release addresses one or more security concerns.
 
@@ -294,7 +294,7 @@ The version increment depends on actual compatibility impact.
 
 ---
 
-# Security Release Characteristics
+## Security Release Characteristics
 
 Security releases may require:
 
@@ -309,7 +309,7 @@ Security releases may require:
 
 ---
 
-# Security Release Disclosure
+## Security Release Disclosure
 
 Security-sensitive information SHOULD remain appropriately restricted until the intended disclosure point.
 
@@ -317,9 +317,9 @@ The Release Framework must support release coordination without requiring premat
 
 ---
 
-# Emergency Release
+## Emergency Release
 
-## Definition
+### Definition
 
 An Emergency Release is an accelerated release performed to address severe operational, security, integrity, or platform-impacting conditions.
 
@@ -334,7 +334,7 @@ Examples include:
 
 ---
 
-# Emergency Release Principle
+## Emergency Release Principle
 
 The governing rule is:
 
@@ -356,7 +356,7 @@ recovery
 
 ---
 
-# Emergency Release Process
+## Emergency Release Process
 
 An emergency profile may compress normal lifecycle stages.
 
@@ -384,9 +384,9 @@ verify
 
 ---
 
-# Framework Release
+## Framework Release
 
-## Definition
+### Definition
 
 A Framework Release publishes a major FamilyOS engineering framework or framework revision.
 
@@ -405,7 +405,7 @@ Framework releases primarily publish architectural and governance documentation.
 
 ---
 
-# Framework Release Characteristics
+## Framework Release Characteristics
 
 Framework releases typically require:
 
@@ -423,7 +423,7 @@ Framework releases typically require:
 
 ---
 
-# Current Framework Release Model
+## Current Framework Release Model
 
 A FamilyOS framework release may currently follow:
 
@@ -449,9 +449,9 @@ This is a valid release profile under EPIC-REL-001.
 
 ---
 
-# Plugin Release
+## Plugin Release
 
-## Definition
+### Definition
 
 A Plugin Release publishes an official FamilyOS plugin or plugin revision.
 
@@ -468,7 +468,7 @@ A plugin release may require:
 
 ---
 
-# Plugin Release Identity
+## Plugin Release Identity
 
 A plugin release may use independent component versioning.
 
@@ -488,9 +488,9 @@ The precise compatibility contract may be governed by plugin specifications.
 
 ---
 
-# Platform Release
+## Platform Release
 
-## Definition
+### Definition
 
 A Platform Release represents an integrated FamilyOS platform state.
 
@@ -508,7 +508,7 @@ Platform releases typically carry the strongest ecosystem-wide release significa
 
 ---
 
-# Platform Release Expectations
+## Platform Release Expectations
 
 Platform releases SHOULD normally use the complete stable release profile.
 
@@ -524,9 +524,9 @@ They may require:
 
 ---
 
-# Documentation Release
+## Documentation Release
 
-## Definition
+### Definition
 
 A Documentation Release publishes documentation changes as an official versioned release.
 
@@ -543,7 +543,7 @@ A documentation release may use a lightweight profile when no executable artifac
 
 ---
 
-# Documentation Release Requirements
+## Documentation Release Requirements
 
 Documentation-only status does not eliminate release discipline.
 
@@ -558,7 +558,7 @@ A Documentation Release still requires:
 
 ---
 
-# Composite Release Types
+## Composite Release Types
 
 A release may have overlapping characteristics.
 
@@ -582,7 +582,7 @@ In such cases, the strictest applicable requirements SHOULD normally apply.
 
 ---
 
-# Primary Release Type
+## Primary Release Type
 
 For automation and governance, every release SHOULD identify one primary type.
 
@@ -598,7 +598,7 @@ This reduces ambiguity while allowing additional release attributes.
 
 ---
 
-# Release Type Attributes
+## Release Type Attributes
 
 Future machine-readable release metadata may represent type as attributes instead of one rigid enumeration.
 
@@ -616,7 +616,7 @@ The architecture permits either approach.
 
 ---
 
-# Release Channels
+## Release Channels
 
 A Release Channel represents a controlled availability or stability classification.
 
@@ -634,7 +634,7 @@ Additional specialized channels MAY be introduced through governance if needed.
 
 ---
 
-# Development Channel
+## Development Channel
 
 The Development Channel exposes highly current engineering builds or releases.
 
@@ -649,7 +649,7 @@ The Development Channel provides minimal stability expectations.
 
 ---
 
-# Development Channel Properties
+## Development Channel Properties
 
 Typical properties include:
 
@@ -665,7 +665,7 @@ Consumers MUST NOT assume long-term compatibility.
 
 ---
 
-# Preview Channel
+## Preview Channel
 
 The Preview Channel exposes functionality before final candidate qualification.
 
@@ -680,7 +680,7 @@ Preview releases SHOULD be coherent enough for external or broader internal eval
 
 ---
 
-# Candidate Channel
+## Candidate Channel
 
 The Candidate Channel exposes release candidates that are close to stable qualification.
 
@@ -700,7 +700,7 @@ Example:
 
 ---
 
-# Stable Channel
+## Stable Channel
 
 The Stable Channel represents the default officially supported release path.
 
@@ -717,7 +717,7 @@ Consumers may reasonably expect:
 
 ---
 
-# Maintenance Channel
+## Maintenance Channel
 
 The Maintenance Channel may expose supported releases from an older release line.
 
@@ -735,7 +735,7 @@ This supports parallel maintenance without confusing older supported releases wi
 
 ---
 
-# Channel vs Version
+## Channel vs Version
 
 Channels MUST NOT replace version identity.
 
@@ -755,7 +755,7 @@ It is a mutable reference to an explicit version such as:
 
 ---
 
-# Channel Aliases
+## Channel Aliases
 
 Channel implementations may use aliases such as:
 
@@ -773,7 +773,7 @@ Official versions remain immutable historical identities.
 
 ---
 
-# Channel Promotion
+## Channel Promotion
 
 Promotion moves a validated release or artifact set to a higher-stability channel.
 
@@ -793,7 +793,7 @@ Promotion SHOULD use the same validated artifacts where practical.
 
 ---
 
-# Promotion Principle
+## Promotion Principle
 
 The governing principle is:
 
@@ -803,7 +803,7 @@ A channel promotion SHOULD NOT introduce materially different artifacts without 
 
 ---
 
-# Promotion Gate
+## Promotion Gate
 
 A channel promotion may require:
 
@@ -827,7 +827,7 @@ Stable Channel
 
 ---
 
-# Promotion Evidence
+## Promotion Evidence
 
 A promotion should record:
 
@@ -843,7 +843,7 @@ timestamp
 
 ---
 
-# Channel Demotion
+## Channel Demotion
 
 A release MAY be removed from a higher-stability channel when problems are discovered.
 
@@ -861,7 +861,7 @@ This must not erase the underlying release history.
 
 ---
 
-# Channel Rollback
+## Channel Rollback
 
 Channel aliases may be redirected to a previous valid release as part of recovery.
 
@@ -883,7 +883,7 @@ Both explicit versions remain part of release history.
 
 ---
 
-# Release Type and Channel Compatibility
+## Release Type and Channel Compatibility
 
 Not every release type belongs in every channel.
 
@@ -916,7 +916,7 @@ Actual policy may refine these mappings.
 
 ---
 
-# Invalid Type and Channel Combinations
+## Invalid Type and Channel Combinations
 
 Examples that should normally be rejected include:
 
@@ -937,7 +937,7 @@ The release system should validate type-channel compatibility.
 
 ---
 
-# Release Maturity
+## Release Maturity
 
 Release channels communicate maturity.
 
@@ -967,7 +967,7 @@ stable
 
 ---
 
-# Release Type and Risk
+## Release Type and Risk
 
 Release type contributes to risk assessment.
 
@@ -991,7 +991,7 @@ Risk remains an independent release dimension.
 
 ---
 
-# Release Type and Validation
+## Release Type and Validation
 
 Different release types may require different validation profiles.
 
@@ -1022,7 +1022,7 @@ Platform Release
 
 ---
 
-# Release Type and Governance
+## Release Type and Governance
 
 Governance intensity may vary by type.
 
@@ -1043,7 +1043,7 @@ The exact authority model is defined in Release Governance.
 
 ---
 
-# Release Type and Documentation
+## Release Type and Documentation
 
 Every release type must define applicable communication requirements.
 
@@ -1062,7 +1062,7 @@ Not every type requires every document.
 
 ---
 
-# Release Type and Recovery
+## Release Type and Recovery
 
 Recovery expectations differ by release type.
 
@@ -1086,7 +1086,7 @@ Recovery must remain type-aware.
 
 ---
 
-# Stable Release Requirements
+## Stable Release Requirements
 
 A release entering the Stable Channel MUST normally satisfy:
 
@@ -1106,7 +1106,7 @@ Stable qualification must remain stronger than lower-maturity channels.
 
 ---
 
-# Preview Release Requirements
+## Preview Release Requirements
 
 A Preview Release SHOULD normally satisfy:
 
@@ -1123,7 +1123,7 @@ Stricter requirements may apply depending on audience.
 
 ---
 
-# Candidate Release Requirements
+## Candidate Release Requirements
 
 A Candidate Release SHOULD normally satisfy:
 
@@ -1139,7 +1139,7 @@ known issue assessment
 
 ---
 
-# Development Release Requirements
+## Development Release Requirements
 
 Development releases may use reduced controls.
 
@@ -1153,7 +1153,7 @@ A development artifact should ideally identify:
 
 ---
 
-# Channel Mutability
+## Channel Mutability
 
 Channels are mutable references.
 
@@ -1183,7 +1183,7 @@ without changing either release.
 
 ---
 
-# Stable Channel Update
+## Stable Channel Update
 
 A new stable release normally causes:
 
@@ -1201,7 +1201,7 @@ The previous release may become superseded.
 
 ---
 
-# Maintenance Channel Update
+## Maintenance Channel Update
 
 A maintenance channel may independently progress:
 
@@ -1223,7 +1223,7 @@ remains unchanged.
 
 ---
 
-# Channel Naming
+## Channel Naming
 
 Channel names SHOULD be simple, stable, and descriptive.
 
@@ -1248,7 +1248,7 @@ production-maybe
 
 ---
 
-# Latest Alias
+## Latest Alias
 
 A generic `latest` alias MAY exist.
 
@@ -1264,7 +1264,7 @@ is preferable to ambiguous behavior.
 
 ---
 
-# Current Alias
+## Current Alias
 
 A `current` alias MAY identify the currently recommended release.
 
@@ -1272,7 +1272,7 @@ It must resolve to an explicit immutable release version.
 
 ---
 
-# Security Channel
+## Security Channel
 
 FamilyOS SHOULD NOT automatically require a separate permanent security channel.
 
@@ -1282,7 +1282,7 @@ A specialized security channel may be introduced only if a real distribution nee
 
 ---
 
-# Emergency Channel
+## Emergency Channel
 
 An emergency release SHOULD NOT require a permanent emergency channel.
 
@@ -1292,7 +1292,7 @@ Once qualified, an emergency patch may enter the stable channel normally.
 
 ---
 
-# Release Profiles
+## Release Profiles
 
 Release types should map to reusable release profiles.
 
@@ -1321,7 +1321,7 @@ A profile may define:
 
 ---
 
-# Profile Inheritance
+## Profile Inheritance
 
 Specialized release profiles SHOULD reuse common requirements.
 
@@ -1341,7 +1341,7 @@ It should not redefine core release semantics.
 
 ---
 
-# Profile Composition
+## Profile Composition
 
 Where practical, release characteristics may compose rather than create endless unique profiles.
 
@@ -1359,7 +1359,7 @@ This provides flexibility without profile explosion.
 
 ---
 
-# Channel Configuration
+## Channel Configuration
 
 Future FamilyOS release tooling may represent channel configuration in machine-readable form.
 
@@ -1384,7 +1384,7 @@ This example is conceptual.
 
 ---
 
-# Promotion Policy
+## Promotion Policy
 
 A future promotion policy may express requirements such as:
 
@@ -1402,7 +1402,7 @@ Machine-readable policy should reflect documented framework rules.
 
 ---
 
-# Type Policy Example
+## Type Policy Example
 
 A future plugin release profile may conceptually define:
 
@@ -1420,7 +1420,7 @@ Again, the syntax is illustrative.
 
 ---
 
-# Release Type Detection
+## Release Type Detection
 
 Automation MAY infer a likely release type from changed components.
 
@@ -1442,7 +1442,7 @@ Inference MUST NOT silently override explicit release intent when ambiguity exis
 
 ---
 
-# Channel Promotion Without Rebuild
+## Channel Promotion Without Rebuild
 
 The preferred promotion flow is:
 
@@ -1476,7 +1476,7 @@ unless Artifact B is separately qualified.
 
 ---
 
-# Channel Provenance
+## Channel Provenance
 
 Release evidence should record channel history where relevant.
 
@@ -1504,7 +1504,7 @@ restored
 
 ---
 
-# Channel Observability
+## Channel Observability
 
 Consumers and operators should be able to determine:
 
@@ -1520,7 +1520,7 @@ Channel state should not require interpretation of unrelated repository activity
 
 ---
 
-# Release Type Observability
+## Release Type Observability
 
 Release history should identify release purpose.
 
@@ -1541,7 +1541,7 @@ This improves historical understanding.
 
 ---
 
-# Release Channel Governance
+## Release Channel Governance
 
 Governance must define who may:
 
@@ -1556,7 +1556,7 @@ Higher-stability channels SHOULD generally require stronger authority.
 
 ---
 
-# Channel Protection
+## Channel Protection
 
 Stable channel mutation is a sensitive release operation.
 
@@ -1570,7 +1570,7 @@ Where supported, stable channel updates should be protected through:
 
 ---
 
-# Channel Recovery
+## Channel Recovery
 
 If a stable release is defective, recovery may involve:
 
@@ -1596,7 +1596,7 @@ stable → corrected version
 
 ---
 
-# Channel History
+## Channel History
 
 Mutable channel aliases should have recoverable history where practical.
 
@@ -1609,53 +1609,53 @@ This supports determining:
 
 ---
 
-# Release Type Invariants
+## Release Type Invariants
 
 The following invariants apply.
 
-## RT1 — Every official release has a clearly defined release purpose.
+### RT1 — Every official release has a clearly defined release purpose.
 
-## RT2 — Release type does not replace version identity.
+### RT2 — Release type does not replace version identity.
 
-## RT3 — Emergency status does not bypass core release invariants.
+### RT3 — Emergency status does not bypass core release invariants.
 
-## RT4 — Security release type does not automatically determine semantic version increment.
+### RT4 — Security release type does not automatically determine semantic version increment.
 
-## RT5 — Specialized release types must preserve common release semantics.
+### RT5 — Specialized release types must preserve common release semantics.
 
-## RT6 — Platform and component releases remain distinguishable.
+### RT6 — Platform and component releases remain distinguishable.
 
-## RT7 — Stable releases require stronger qualification than development releases.
-
----
-
-# Release Channel Invariants
-
-## RC1 — Every channel has explicit semantics.
-
-## RC2 — Channels are mutable references, not immutable release identities.
-
-## RC3 — Stable channel promotion requires applicable release qualification.
-
-## RC4 — Promotion should reuse validated artifacts where practical.
-
-## RC5 — Channel demotion must preserve release history.
-
-## RC6 — Channel aliases must resolve to explicit versions.
-
-## RC7 — Channel state must be observable.
+### RT7 — Stable releases require stronger qualification than development releases.
 
 ---
 
-# Anti-Patterns
+## Release Channel Invariants
 
-## Stable by Naming
+### RC1 — Every channel has explicit semantics.
+
+### RC2 — Channels are mutable references, not immutable release identities.
+
+### RC3 — Stable channel promotion requires applicable release qualification.
+
+### RC4 — Promotion should reuse validated artifacts where practical.
+
+### RC5 — Channel demotion must preserve release history.
+
+### RC6 — Channel aliases must resolve to explicit versions.
+
+### RC7 — Channel state must be observable.
+
+---
+
+## Anti-Patterns
+
+### Stable by Naming
 
 Calling an artifact `stable` without performing stable release qualification.
 
 ---
 
-## Channel Equals Version
+### Channel Equals Version
 
 Using:
 
@@ -1667,43 +1667,43 @@ as the only release identity.
 
 ---
 
-## Emergency Bypass
+### Emergency Bypass
 
 Publishing unvalidated artifacts because the release is urgent.
 
 ---
 
-## Security Version Guessing
+### Security Version Guessing
 
 Automatically incrementing patch solely because a release fixes a security issue.
 
 ---
 
-## Profile Explosion
+### Profile Explosion
 
 Creating a unique release process for every component without reusing common architecture.
 
 ---
 
-## Rebuild Promotion
+### Rebuild Promotion
 
 Rebuilding artifacts during channel promotion without renewed qualification.
 
 ---
 
-## Hidden Channel Mutation
+### Hidden Channel Mutation
 
 Changing stable or maintenance aliases without recording the transition.
 
 ---
 
-## Undefined Preview
+### Undefined Preview
 
 Publishing unstable artifacts publicly without defining their support and compatibility expectations.
 
 ---
 
-# Minimum Release Classification
+## Minimum Release Classification
 
 At minimum, every official FamilyOS release should identify:
 
@@ -1725,7 +1725,7 @@ Channel: Stable
 
 ---
 
-# Current FamilyOS Framework Mapping
+## Current FamilyOS Framework Mapping
 
 The current FamilyOS framework completion workflow maps naturally to:
 
@@ -1756,7 +1756,7 @@ subject to final release validation and repository state.
 
 ---
 
-# Target Release Classification State
+## Target Release Classification State
 
 At higher maturity, FamilyOS should be able to describe a release using structured information such as:
 
@@ -1775,7 +1775,7 @@ This enables consistent policy evaluation.
 
 ---
 
-# Relationship With Versioning
+## Relationship With Versioning
 
 `06-Versioning-Strategy.md` defines the immutable release version.
 
@@ -1795,7 +1795,7 @@ Complete Release Classification
 
 ---
 
-# Relationship With Release Lifecycle
+## Relationship With Release Lifecycle
 
 Release types may select different lifecycle profiles.
 
@@ -1821,7 +1821,7 @@ Lifecycle state and channel must not be treated as identical concepts.
 
 ---
 
-# Relationship With Release Planning
+## Relationship With Release Planning
 
 Release Planning determines:
 
@@ -1834,7 +1834,7 @@ These decisions influence all subsequent release gates.
 
 ---
 
-# Relationship With Release Readiness
+## Relationship With Release Readiness
 
 Release Readiness evaluates the requirements associated with the selected release type and target channel.
 
@@ -1842,13 +1842,13 @@ A stable platform release therefore requires a different readiness set from an i
 
 ---
 
-# Relationship With Release Governance
+## Relationship With Release Governance
 
 Release Governance defines the authority required to create, promote, demote, withdraw, or supersede releases across channels.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Types and Channels model establishes a consistent classification system for release purpose, maturity, stability, and distribution.
 

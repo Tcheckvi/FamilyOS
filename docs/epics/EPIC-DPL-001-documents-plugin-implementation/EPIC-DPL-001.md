@@ -16,7 +16,7 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 EPIC-DPL-001 records the completed implementation of the official FamilyOS Documents Plugin and establishes the governance record that was not present at the historical implementation release.
 
@@ -24,7 +24,7 @@ This EPIC does not reuse `EPIC-DOC-001`, which is reserved for the Documentation
 
 This EPIC does not rewrite the historical release. It documents and validates the already completed implementation represented by `v3.5.0-documents-plugin`.
 
-# 2. Historical Baselines
+## 2. Historical Baselines
 
 The Documents Plugin documentation baseline is:
 
@@ -40,13 +40,13 @@ Commit: `935865417f851f15fc617a56da8d5230c0361f41`
 
 No dedicated Documents Plugin implementation EPIC existed at the implementation tag.
 
-# 3. Source RFC
+## 3. Source RFC
 
 The implementation is governed by RFC-0014 — Documents Plugin.
 
 The repository contains both the original Documents Plugin RFC material and the later official Documents Plugin documentation set.
 
-# 4. Implementation Scope
+## 4. Implementation Scope
 
 The historical implementation contains the official Documents Plugin under:
 
@@ -65,7 +65,7 @@ The implementation includes:
 - rules and rule set;
 - validation models and validator.
 
-# 5. Validation Scope
+## 5. Validation Scope
 
 Repository evidence includes dedicated unit and runtime tests for:
 
@@ -83,7 +83,7 @@ Repository evidence includes dedicated unit and runtime tests for:
 - capability runtime behavior;
 - contribution runtime behavior.
 
-# 6. Identifier Governance
+## 6. Identifier Governance
 
 `EPIC-DOC-001` is already assigned to the FamilyOS Documentation Framework.
 
@@ -93,7 +93,7 @@ The Documents Plugin implementation therefore uses:
 
 This avoids identifier collision while preserving the established Documentation Framework identity.
 
-# 7. Historical Integrity
+## 7. Historical Integrity
 
 EPIC-DPL-001 must preserve:
 
@@ -103,13 +103,13 @@ EPIC-DPL-001 must preserve:
 - the absence of a dedicated Documents Plugin EPIC at the historical implementation release;
 - the separate identity of `EPIC-DOC-001`.
 
-# 8. Governance Model
+## 8. Governance Model
 
 This directory contains seven control documents and no numbered documents.
 
 The historical implementation remains authoritative evidence of implementation completion.
 
-# 9. Completion
+## 9. Completion
 
 EPIC-DPL-001 is considered complete when:
 
@@ -121,7 +121,7 @@ EPIC-DPL-001 is considered complete when:
 - the final repository state is clean;
 - closure metadata records the completed state.
 
-# 10. References
+## 10. References
 
 - RFC-0014 — Documents Plugin
 - `v2.6.0-documents-plugin`

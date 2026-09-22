@@ -17,7 +17,7 @@
 
 ---
 
-# Overview
+## Overview
 
 EPIC-REL-001 establishes the authoritative **FamilyOS Release Framework**.
 
@@ -60,7 +60,7 @@ The Release Framework treats a release as a governed lifecycle rather than a sin
 
 ---
 
-# Problem Statement
+## Problem Statement
 
 A software release can appear successful while still failing to provide trustworthy release state.
 
@@ -97,7 +97,7 @@ EPIC-REL-001 establishes the architecture required to answer these questions con
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of EPIC-REL-001 is to establish the canonical FamilyOS release engineering model.
 
@@ -131,7 +131,7 @@ Failure, withdrawal, rollback, and recovery may introduce governed alternative t
 
 ---
 
-# Objectives
+## Objectives
 
 EPIC-REL-001 aims to:
 
@@ -166,7 +166,7 @@ EPIC-REL-001 aims to:
 
 ---
 
-# Scope
+## Scope
 
 The Release Framework includes:
 
@@ -211,7 +211,7 @@ The Release Framework includes:
 
 ---
 
-# Non-Goals
+## Non-Goals
 
 EPIC-REL-001 does not own:
 
@@ -231,71 +231,71 @@ The Release Framework integrates with these frameworks without absorbing their p
 
 ---
 
-# Release Principles
+## Release Principles
 
 The framework follows several foundational principles.
 
-## Release Identity Must Be Explicit
+### Release Identity Must Be Explicit
 
 Every official release must have an identifiable release identity.
 
 ---
 
-## Release Candidates Must Be Stable
+### Release Candidates Must Be Stable
 
 The object being validated must remain traceable to the object considered for approval and publication.
 
 ---
 
-## Validation Must Precede Privileged Publication
+### Validation Must Precede Privileged Publication
 
 Protected publication actions should occur only after applicable validation and governance requirements are satisfied.
 
 ---
 
-## Publication Must Be Verifiable
+### Publication Must Be Verifiable
 
 Attempted publication is not equivalent to verified publication.
 
 ---
 
-## Publication and Distribution Are Distinct
+### Publication and Distribution Are Distinct
 
 A release may be published without immediately being distributed to every consumer-facing channel.
 
 ---
 
-## Artifact Identity Must Be Preserved
+### Artifact Identity Must Be Preserved
 
 Validated artifacts should not be silently replaced by newly rebuilt artifacts during publication.
 
 ---
 
-## Historical Release State Must Be Preserved
+### Historical Release State Must Be Preserved
 
 Official release tags and publication records should remain immutable.
 
 ---
 
-## Partial Failure Must Remain Visible
+### Partial Failure Must Remain Visible
 
 Partial publication must not be represented as complete success.
 
 ---
 
-## Release Authority Must Be Governed
+### Release Authority Must Be Governed
 
 Validation authority, approval authority, and publication authority should remain appropriately separated.
 
 ---
 
-## Recovery Must Be Designed Before Failure
+### Recovery Must Be Designed Before Failure
 
 Rollback and recovery requirements belong to the release architecture, not only incident response.
 
 ---
 
-# Canonical Release Model
+## Canonical Release Model
 
 The canonical model is:
 
@@ -329,7 +329,7 @@ Completed Release
 
 ---
 
-# Release Lifecycle
+## Release Lifecycle
 
 The framework defines explicit lifecycle states.
 
@@ -371,7 +371,7 @@ The precise executable state model may evolve while preserving these responsibil
 
 ---
 
-# Versioning
+## Versioning
 
 The framework defines predictable release identity through governed versioning.
 
@@ -394,7 +394,7 @@ For EPIC-REL-001 itself, the historically published framework version is:
 
 ---
 
-# Release Types
+## Release Types
 
 Release types may include:
 
@@ -419,7 +419,7 @@ Different types may require different:
 
 ---
 
-# Release Channels
+## Release Channels
 
 Channels may represent stability or exposure levels.
 
@@ -436,7 +436,7 @@ Channel semantics should remain explicit and governed.
 
 ---
 
-# Release Planning
+## Release Planning
 
 Release Planning establishes:
 
@@ -457,7 +457,7 @@ Planning does not itself make a release ready.
 
 ---
 
-# Release Readiness
+## Release Readiness
 
 Readiness determines whether the release has satisfied the applicable preconditions required to progress.
 
@@ -479,7 +479,7 @@ Readiness is distinct from publication.
 
 ---
 
-# Release Candidates
+## Release Candidates
 
 A Release Candidate is a sufficiently stable release identity suitable for qualification.
 
@@ -500,7 +500,7 @@ The validated candidate must remain traceable through publication.
 
 ---
 
-# Artifacts
+## Artifacts
 
 Release artifacts are the objects intended to represent or accompany the release.
 
@@ -520,7 +520,7 @@ Artifact identity and integrity must remain traceable.
 
 ---
 
-# Provenance
+## Provenance
 
 Release provenance explains where the release and its artifacts came from.
 
@@ -539,7 +539,7 @@ It may include:
 
 ---
 
-# Release Validation
+## Release Validation
 
 Release Validation evaluates the exact candidate intended for approval and publication.
 
@@ -558,7 +558,7 @@ It consumes their evidence within a release decision.
 
 ---
 
-# Release Approval
+## Release Approval
 
 Approval is a governed decision authorizing progression beyond validation.
 
@@ -575,7 +575,7 @@ Approval and validation SHOULD remain distinguishable.
 
 ---
 
-# Official Release Identity
+## Official Release Identity
 
 An official release identity may include:
 
@@ -592,7 +592,7 @@ For Git-based framework publication, a release tag provides an important officia
 
 ---
 
-# Tagging
+## Tagging
 
 Official Git release tags should:
 
@@ -613,7 +613,7 @@ is the historical official publication tag.
 
 ---
 
-# Publication
+## Publication
 
 Publication transitions an approved release into authoritative external release state.
 
@@ -631,7 +631,7 @@ Publication may involve multiple targets.
 
 ---
 
-# Publication Verification
+## Publication Verification
 
 Publication is not complete merely because a command reports success.
 
@@ -647,7 +647,7 @@ remote dereferenced tag target
 
 ---
 
-# Partial Publication
+## Partial Publication
 
 If some mandatory publication targets succeed and others fail, the release is in a partial publication state.
 
@@ -657,7 +657,7 @@ Recovery should begin from the actual observed publication state.
 
 ---
 
-# Distribution
+## Distribution
 
 Distribution determines how published release material reaches consumers.
 
@@ -674,7 +674,7 @@ Distribution is not identical to publication.
 
 ---
 
-# Rollback
+## Rollback
 
 Rollback transitions consumers or operational state away from a defective release where applicable.
 
@@ -684,7 +684,7 @@ Published history should remain auditable.
 
 ---
 
-# Recovery
+## Recovery
 
 Recovery handles failed or partial release execution.
 
@@ -702,7 +702,7 @@ Recovery SHOULD preserve evidence of what actually happened.
 
 ---
 
-# Release Security
+## Release Security
 
 Release security applies to:
 
@@ -721,7 +721,7 @@ Privileged publication authority should remain strongly protected.
 
 ---
 
-# Release Observability
+## Release Observability
 
 Release state should be observable.
 
@@ -741,7 +741,7 @@ Relevant signals may include:
 
 ---
 
-# Release Governance
+## Release Governance
 
 Release Governance defines:
 
@@ -760,7 +760,7 @@ Automation SHALL execute governed release policy rather than inventing policy.
 
 ---
 
-# Release Compliance
+## Release Compliance
 
 Release compliance evaluates whether required controls and evidence have been satisfied.
 
@@ -776,7 +776,7 @@ Compliance may include:
 
 ---
 
-# Release Metrics
+## Release Metrics
 
 Release metrics may measure:
 
@@ -794,7 +794,7 @@ Metrics should support improvement rather than replace engineering judgment.
 
 ---
 
-# Release Risk
+## Release Risk
 
 Release risk management identifies and governs risks such as:
 
@@ -814,7 +814,7 @@ Risk acceptance should remain explicit.
 
 ---
 
-# Release Automation
+## Release Automation
 
 Automation may progressively implement:
 
@@ -834,7 +834,7 @@ Automation must preserve governance and candidate identity.
 
 ---
 
-# CI/CD Integration
+## CI/CD Integration
 
 CI/CD may execute release workflow stages.
 
@@ -854,7 +854,7 @@ Untrusted pull-request workflows should not normally receive stable publication 
 
 ---
 
-# Build / Release Boundary
+## Build / Release Boundary
 
 The Build Framework primarily owns:
 
@@ -894,7 +894,7 @@ Official Release
 
 ---
 
-# Testing / Release Boundary
+## Testing / Release Boundary
 
 The Testing Framework owns testing architecture and execution semantics.
 
@@ -904,7 +904,7 @@ A release may require successful testing without redefining the tests themselves
 
 ---
 
-# Quality / Release Boundary
+## Quality / Release Boundary
 
 The Quality Framework owns quality rules, quality evidence, assessments, metrics, gates, and quality governance.
 
@@ -912,7 +912,7 @@ Release consumes applicable quality evidence when making release decisions.
 
 ---
 
-# Security / Release Boundary
+## Security / Release Boundary
 
 The Security Framework owns general security architecture.
 
@@ -920,7 +920,7 @@ Release owns release-specific security application including publication credent
 
 ---
 
-# Operations / Release Boundary
+## Operations / Release Boundary
 
 Release publication and runtime deployment are distinct.
 
@@ -930,7 +930,7 @@ The Operations Framework owns runtime operations and service management.
 
 ---
 
-# Canonical Documentation
+## Canonical Documentation
 
 EPIC-REL-001 contains exactly **32 numbered documents**:
 
@@ -993,7 +993,7 @@ Canonical total:
 
 ---
 
-# Canonical Structure
+## Canonical Structure
 
 The machine-readable structure is:
 
@@ -1009,7 +1009,7 @@ structure:
 
 ---
 
-# Framework Relationships
+## Framework Relationships
 
 EPIC-REL-001 depends on foundational engineering frameworks including:
 
@@ -1027,7 +1027,7 @@ It integrates with:
 
 ---
 
-# Historical Publication
+## Historical Publication
 
 EPIC-REL-001 version `4.8.0` was historically completed and published under:
 
@@ -1047,7 +1047,7 @@ It SHALL NOT be moved to a later post-release correction commit.
 
 ---
 
-# Historical Tag Object
+## Historical Tag Object
 
 The annotated Git tag object observed during the audit is:
 
@@ -1065,7 +1065,7 @@ The dereferenced commit is the authoritative historical publication commit.
 
 ---
 
-# Historical Tag Policy
+## Historical Tag Policy
 
 Post-release corrections SHALL NOT:
 
@@ -1080,7 +1080,7 @@ Corrections belong to later forward Git history.
 
 ---
 
-# Post-Release Revalidation
+## Post-Release Revalidation
 
 The current activity is a post-release revalidation of the canonical documentation state.
 
@@ -1101,7 +1101,7 @@ Its purpose is to:
 
 ---
 
-# Revalidation Evidence Policy
+## Revalidation Evidence Policy
 
 Only actual evidence may convert a current validation requirement from pending to passed.
 
@@ -1120,7 +1120,7 @@ Historical execution does not automatically prove the current state.
 
 ---
 
-# Current Canonical State
+## Current Canonical State
 
 ```text
 EPIC:                   EPIC-REL-001
@@ -1145,7 +1145,7 @@ Final Revalidation:     Validated
 
 ---
 
-# Current Validation Requirements
+## Current Validation Requirements
 
 The current revalidation must still produce current evidence for:
 
@@ -1185,7 +1185,7 @@ VALIDATION.md
 
 ---
 
-# Completion Criteria
+## Completion Criteria
 
 EPIC-REL-001 is structurally complete when:
 
@@ -1220,9 +1220,9 @@ Current repository revalidation is complete when:
 
 ---
 
-# Risks
+## Risks
 
-## Candidate Mutation
+### Candidate Mutation
 
 A candidate may change after validation.
 
@@ -1232,7 +1232,7 @@ Bind validation and publication to explicit candidate identity.
 
 ---
 
-## Version Collision
+### Version Collision
 
 An intended version or tag may already exist.
 
@@ -1242,7 +1242,7 @@ Check authoritative repository and publication state before final release identi
 
 ---
 
-## Artifact Substitution
+### Artifact Substitution
 
 Artifacts may be rebuilt during publication.
 
@@ -1252,7 +1252,7 @@ Prefer promotion of exact validated artifact bytes.
 
 ---
 
-## Partial Publication
+### Partial Publication
 
 Some targets may succeed while others fail.
 
@@ -1262,7 +1262,7 @@ Track per-target publication state and support recovery.
 
 ---
 
-## Unverified Publication
+### Unverified Publication
 
 A successful command may be mistaken for successful publication.
 
@@ -1272,7 +1272,7 @@ Verify authoritative publication targets.
 
 ---
 
-## Excessive Publication Authority
+### Excessive Publication Authority
 
 Ordinary CI jobs may accidentally receive stable publication credentials.
 
@@ -1282,7 +1282,7 @@ Separate validation and publication privileges.
 
 ---
 
-## Historical Tag Mutation
+### Historical Tag Mutation
 
 Official historical tags may be moved after publication.
 
@@ -1292,7 +1292,7 @@ Treat published release tags as immutable.
 
 ---
 
-## Incomplete Recovery
+### Incomplete Recovery
 
 Release systems may lack adequate recovery after partial failure.
 
@@ -1302,7 +1302,7 @@ Design rollback and recovery into the framework lifecycle.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The Release Framework succeeds when FamilyOS can consistently answer:
 
@@ -1336,7 +1336,7 @@ Can the release state be reconstructed years later?
 
 ---
 
-# Release State
+## Release State
 
 EPIC-REL-001 version `4.8.0` is already historically:
 
@@ -1363,7 +1363,7 @@ It is post-release normalization and revalidation.
 
 ---
 
-# Final Principle
+## Final Principle
 
 The defining Release Framework principle is:
 
@@ -1371,7 +1371,7 @@ The defining Release Framework principle is:
 
 ---
 
-# Final State
+## Final State
 
 ```text
 EPIC:                   EPIC-REL-001

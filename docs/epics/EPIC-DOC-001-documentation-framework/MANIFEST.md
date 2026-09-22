@@ -19,7 +19,7 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 This manifest defines the canonical repository inventory for:
 
@@ -55,7 +55,7 @@ CHANGELOG.md
 
 ---
 
-# 2. Canonical Repository Contract
+## 2. Canonical Repository Contract
 
 The normalized EPIC-DOC-001 repository contract is:
 
@@ -72,7 +72,7 @@ The canonical repository SHALL contain exactly the files declared by this manife
 
 ---
 
-# 3. Canonical Directory
+## 3. Canonical Directory
 
 ```text
 docs/
@@ -84,7 +84,7 @@ No alternative directory is authoritative for EPIC-DOC-001.
 
 ---
 
-# 4. Canonical Inventory
+## 4. Canonical Inventory
 
 The canonical inventory consists of:
 
@@ -98,7 +98,7 @@ The canonical inventory consists of:
 
 ---
 
-# 5. Canonical Numbered Documents
+## 5. Canonical Numbered Documents
 
 The numbered documentation set SHALL contain exactly the following files:
 
@@ -131,7 +131,7 @@ The numbered documentation set SHALL contain exactly the following files:
 
 ---
 
-# 6. Numbering Contract
+## 6. Numbering Contract
 
 The canonical numbering sequence is:
 
@@ -174,9 +174,9 @@ Expected missing numbers:      0
 
 ---
 
-# 7. Numbered Document Responsibilities
+## 7. Numbered Document Responsibilities
 
-## `00-EPIC.md`
+### `00-EPIC.md`
 
 Canonical numbered framework definition.
 
@@ -198,145 +198,145 @@ Defines:
 
 ---
 
-## `01-Introduction.md`
+### `01-Introduction.md`
 
 Introduces the Documentation Framework and establishes foundational context.
 
 ---
 
-## `02-Documentation-Vision.md`
+### `02-Documentation-Vision.md`
 
 Defines the long-term documentation vision for FamilyOS.
 
 ---
 
-## `03-Documentation-Architecture.md`
+### `03-Documentation-Architecture.md`
 
 Defines the architecture of the FamilyOS documentation system.
 
 ---
 
-## `04-Documentation-Standards.md`
+### `04-Documentation-Standards.md`
 
 Defines canonical documentation standards and conventions.
 
 ---
 
-## `05-Documentation-Lifecycle.md`
+### `05-Documentation-Lifecycle.md`
 
 Defines foundational lifecycle semantics for engineering documentation.
 
 ---
 
-## `06-Documentation-Templates.md`
+### `06-Documentation-Templates.md`
 
 Defines foundational documentation-template concepts.
 
 ---
 
-## `07-Documentation-Metadata.md`
+### `07-Documentation-Metadata.md`
 
 Defines documentation metadata requirements and conventions.
 
 ---
 
-## `08-Documentation-Versioning.md`
+### `08-Documentation-Versioning.md`
 
 Defines documentation versioning rules and lifecycle relationships.
 
 ---
 
-## `09-Documentation-Lifecycle.md`
+### `09-Documentation-Lifecycle.md`
 
 Provides the developed lifecycle model and lifecycle governance semantics.
 
 ---
 
-## `10-Documentation-Governance.md`
+### `10-Documentation-Governance.md`
 
 Defines documentation governance, ownership, responsibility, and decision rules.
 
 ---
 
-## `11-Documentation-Templates.md`
+### `11-Documentation-Templates.md`
 
 Defines the developed canonical template model.
 
 ---
 
-## `12-Documentation-Automation.md`
+### `12-Documentation-Automation.md`
 
 Defines documentation automation capabilities and boundaries.
 
 ---
 
-## `13-Documentation-Quality-Gates.md`
+### `13-Documentation-Quality-Gates.md`
 
 Defines documentation quality gates and validation expectations.
 
 ---
 
-## `14-Documentation-Repository-Organization.md`
+### `14-Documentation-Repository-Organization.md`
 
 Defines repository organization rules for documentation.
 
 ---
 
-## `15-Documentation-Review-Process.md`
+### `15-Documentation-Review-Process.md`
 
 Defines documentation review processes and responsibilities.
 
 ---
 
-## `16-Documentation-Maintenance.md`
+### `16-Documentation-Maintenance.md`
 
 Defines documentation maintenance requirements.
 
 ---
 
-## `17-Documentation-Migration-Strategy.md`
+### `17-Documentation-Migration-Strategy.md`
 
 Defines controlled documentation migration.
 
 ---
 
-## `18-Documentation-Deprecation-Policy.md`
+### `18-Documentation-Deprecation-Policy.md`
 
 Defines documentation deprecation requirements.
 
 ---
 
-## `19-Documentation-Metrics.md`
+### `19-Documentation-Metrics.md`
 
 Defines documentation metrics and measurement principles.
 
 ---
 
-## `20-Documentation-Framework-Validation.md`
+### `20-Documentation-Framework-Validation.md`
 
 Defines framework-level validation expectations.
 
 ---
 
-## `21-Documentation-Framework-Summary.md`
+### `21-Documentation-Framework-Summary.md`
 
 Provides the consolidated framework summary.
 
 ---
 
-## `22-Documentation-Framework-Release.md`
+### `22-Documentation-Framework-Release.md`
 
 Records the framework release declaration and release semantics.
 
 ---
 
-## `23-Documentation-Framework-Implementation-Checklist.md`
+### `23-Documentation-Framework-Implementation-Checklist.md`
 
 Defines implementation and adoption checks for the Documentation Framework.
 
 ---
 
-# 8. Canonical Control Documents
+## 8. Canonical Control Documents
 
 The control-document set SHALL contain exactly seven files:
 
@@ -358,9 +358,9 @@ Expected count:
 
 ---
 
-# 9. Control Document Responsibilities
+## 9. Control Document Responsibilities
 
-## `EPIC-DOC-001.md`
+### `EPIC-DOC-001.md`
 
 Provides the consolidated EPIC-level framework representation.
 
@@ -368,7 +368,7 @@ It SHALL remain semantically aligned with the numbered framework documentation.
 
 ---
 
-## `EPIC.yaml`
+### `EPIC.yaml`
 
 Provides the machine-readable repository and framework contract.
 
@@ -388,7 +388,7 @@ It SHALL define at minimum:
 
 ---
 
-## `README.md`
+### `README.md`
 
 Provides the primary human-readable entry point.
 
@@ -403,31 +403,31 @@ It SHALL describe:
 
 ---
 
-## `MANIFEST.md`
+### `MANIFEST.md`
 
 Defines the authoritative canonical file inventory.
 
 ---
 
-## `CHANGELOG.md`
+### `CHANGELOG.md`
 
 Records meaningful framework and repository evolution.
 
 ---
 
-## `VALIDATION.md`
+### `VALIDATION.md`
 
 Defines and records current validation evidence.
 
 ---
 
-## `Revision-History.md`
+### `Revision-History.md`
 
 Preserves framework revision history and structural evolution.
 
 ---
 
-# 10. Complete Canonical File Set
+## 10. Complete Canonical File Set
 
 The complete canonical inventory is:
 
@@ -467,7 +467,7 @@ Revision-History.md
 
 ---
 
-# 11. Canonical File Count
+## 11. Canonical File Count
 
 The expected filesystem equation is:
 
@@ -486,7 +486,7 @@ expected_canonical_files = 31
 
 ---
 
-# 12. Historical Structural State
+## 12. Historical Structural State
 
 Before normalization, repository inspection identified a mixed structure containing:
 
@@ -500,7 +500,7 @@ The structure nominally covered numbers `01-23`, but contained duplicate numberi
 
 ---
 
-# 13. Historical Duplicate Number Groups
+## 13. Historical Duplicate Number Groups
 
 The historical duplicate groups were:
 
@@ -554,7 +554,7 @@ Historical duplicate groups:
 
 ---
 
-# 14. Duplicate Skeleton Classification
+## 14. Duplicate Skeleton Classification
 
 Repository inspection classified the following files as short generic skeleton documents rather than substantive framework documents:
 
@@ -575,7 +575,7 @@ These documents contained generic framework scaffolding and competed with more s
 
 ---
 
-# 15. Removed Duplicate Skeleton Documents
+## 15. Removed Duplicate Skeleton Documents
 
 The normalized canonical structure excludes:
 
@@ -602,7 +602,7 @@ for each of these paths.
 
 ---
 
-# 16. Retained Documents from Duplicate Groups
+## 16. Retained Documents from Duplicate Groups
 
 The following substantive documents remain canonical:
 
@@ -621,7 +621,7 @@ The following substantive documents remain canonical:
 
 ---
 
-# 17. Introduction of `00-EPIC.md`
+## 17. Introduction of `00-EPIC.md`
 
 The historical numbered structure began at `01`.
 
@@ -637,7 +637,7 @@ This aligns EPIC-DOC-001 with the normalized FamilyOS engineering-framework docu
 
 ---
 
-# 18. Structural Transformation
+## 18. Structural Transformation
 
 The normalization can be represented as:
 
@@ -665,7 +665,7 @@ Canonical Structure
 
 ---
 
-# 19. Structural Preservation Rule
+## 19. Structural Preservation Rule
 
 Normalization SHALL preserve substantive framework semantics.
 
@@ -681,7 +681,7 @@ It is to:
 
 ---
 
-# 20. Historical Evidence Preservation
+## 20. Historical Evidence Preservation
 
 Historical repository evidence SHALL remain preserved.
 
@@ -696,7 +696,7 @@ If an earlier release tag exists, normalization SHALL NOT:
 
 ---
 
-# 21. Framework Version
+## 21. Framework Version
 
 The normalized framework continues to declare:
 
@@ -710,7 +710,7 @@ A future framework release MAY introduce a new version when justified by substan
 
 ---
 
-# 22. Current Framework Status
+## 22. Current Framework Status
 
 Current declared framework status:
 
@@ -726,7 +726,7 @@ Framework lifecycle state and repository validation state are separate concerns.
 
 ---
 
-# 23. Current Repository Validation State
+## 23. Current Repository Validation State
 
 Until current evidence has been executed and recorded:
 
@@ -739,7 +739,7 @@ Historical release declarations do not substitute for current repository evidenc
 
 ---
 
-# 24. Historical Release Declaration
+## 24. Historical Release Declaration
 
 The numbered release document:
 
@@ -761,7 +761,7 @@ It does not independently establish the authoritative Git tag or commit.
 
 ---
 
-# 25. Historical Git Verification
+## 25. Historical Git Verification
 
 Before historical release fields are finalized, validation SHALL determine:
 
@@ -777,7 +777,7 @@ No tag name or commit hash SHALL be invented.
 
 ---
 
-# 26. Filesystem Contract
+## 26. Filesystem Contract
 
 Validation SHALL compare this manifest against the actual filesystem.
 
@@ -800,7 +800,7 @@ unexpected: []
 
 ---
 
-# 27. Numbering Integrity Contract
+## 27. Numbering Integrity Contract
 
 For every canonical numbered file:
 
@@ -824,7 +824,7 @@ The expected numeric set is:
 
 ---
 
-# 28. Empty File Contract
+## 28. Empty File Contract
 
 Canonical files SHALL NOT be empty.
 
@@ -836,7 +836,7 @@ empty canonical files: 0
 
 ---
 
-# 29. Removed File Contract
+## 29. Removed File Contract
 
 The following paths SHALL NOT exist in the normalized canonical filesystem:
 
@@ -855,7 +855,7 @@ The following paths SHALL NOT exist in the normalized canonical filesystem:
 
 ---
 
-# 30. Manifest Synchronization
+## 30. Manifest Synchronization
 
 This manifest SHALL remain synchronized with `EPIC.yaml`.
 
@@ -872,7 +872,7 @@ The deliverable set in `EPIC.yaml` SHALL equal the canonical inventory defined h
 
 ---
 
-# 31. README Synchronization
+## 31. README Synchronization
 
 `README.md` SHALL describe the same canonical structure.
 
@@ -882,7 +882,7 @@ Historical discussion MAY reference them explicitly as removed or superseded str
 
 ---
 
-# 32. EPIC Synchronization
+## 32. EPIC Synchronization
 
 `00-EPIC.md` and `EPIC-DOC-001.md` SHALL describe the normalized repository structure consistently.
 
@@ -890,7 +890,7 @@ Neither document SHALL claim duplicate-number structures are still canonical.
 
 ---
 
-# 33. CHANGELOG Synchronization
+## 33. CHANGELOG Synchronization
 
 `CHANGELOG.md` SHALL record the structural normalization.
 
@@ -906,7 +906,7 @@ The normalization record SHOULD include:
 
 ---
 
-# 34. Revision History Synchronization
+## 34. Revision History Synchronization
 
 `Revision-History.md` SHALL preserve the distinction between:
 
@@ -924,7 +924,7 @@ These events SHALL NOT be conflated.
 
 ---
 
-# 35. Validation Synchronization
+## 35. Validation Synchronization
 
 `VALIDATION.md` SHALL provide current evidence for the manifest contract.
 
@@ -944,7 +944,7 @@ The validation SHALL verify:
 
 ---
 
-# 36. Reference Integrity
+## 36. Reference Integrity
 
 Canonical documents SHOULD reference existing canonical files.
 
@@ -966,7 +966,7 @@ Stale canonical references SHALL be corrected.
 
 ---
 
-# 37. Placeholder Integrity
+## 37. Placeholder Integrity
 
 Canonical control documents SHALL NOT contain unresolved implementation placeholders presented as current requirements.
 
@@ -994,7 +994,7 @@ Validation SHALL distinguish documented examples from unresolved placeholders.
 
 ---
 
-# 38. Semantic Integrity
+## 38. Semantic Integrity
 
 Structural validation alone is insufficient.
 
@@ -1011,7 +1011,7 @@ Control documents SHALL also agree semantically on:
 
 ---
 
-# 39. Framework Boundary Integrity
+## 39. Framework Boundary Integrity
 
 EPIC-DOC-001 owns documentation-framework semantics.
 
@@ -1032,7 +1032,7 @@ Cross-framework references SHOULD identify authority rather than duplicate it.
 
 ---
 
-# 40. Repository Quality Gates
+## 40. Repository Quality Gates
 
 Repository revalidation SHALL include the current engineering quality gates:
 
@@ -1056,7 +1056,7 @@ Actual test counts and execution times SHALL be recorded as evidence rather than
 
 ---
 
-# 41. Manifest Validation Matrix
+## 41. Manifest Validation Matrix
 
 | Validation Area                 | Requirement |
 | ------------------------------- | ----------- |
@@ -1080,7 +1080,7 @@ Actual test counts and execution times SHALL be recorded as evidence rather than
 
 ---
 
-# 42. Expected Canonical Filesystem
+## 42. Expected Canonical Filesystem
 
 ```text
 EPIC-DOC-001-documentation-framework/
@@ -1119,7 +1119,7 @@ EPIC-DOC-001-documentation-framework/
 
 ---
 
-# 43. Expected Inventory Verification
+## 43. Expected Inventory Verification
 
 A successful inventory verification SHALL produce logically equivalent evidence to:
 
@@ -1132,7 +1132,7 @@ unexpected: []
 
 ---
 
-# 44. Expected Numbering Verification
+## 44. Expected Numbering Verification
 
 A successful numbering verification SHALL produce:
 
@@ -1145,7 +1145,7 @@ missing numbers: []
 
 ---
 
-# 45. Expected Removed-File Verification
+## 45. Expected Removed-File Verification
 
 A successful removed-file check SHALL establish that none of the ten duplicate skeleton documents remains in the canonical filesystem.
 
@@ -1157,7 +1157,7 @@ removed duplicate skeletons present: []
 
 ---
 
-# 46. Current Normalization State
+## 46. Current Normalization State
 
 At the point represented by this manifest:
 
@@ -1180,7 +1180,7 @@ These states SHALL only advance when supported by current evidence.
 
 ---
 
-# 47. Closure Conditions
+## 47. Closure Conditions
 
 The manifest may be considered validated when all of the following are established:
 
@@ -1208,7 +1208,7 @@ The manifest may be considered validated when all of the following are establish
 
 ---
 
-# 48. Validation State Transition
+## 48. Validation State Transition
 
 The intended state transition is:
 
@@ -1232,7 +1232,7 @@ State transitions SHALL be evidence-driven.
 
 ---
 
-# 49. Historical Integrity Rule
+## 49. Historical Integrity Rule
 
 A later normalization commit SHALL NOT redefine the historical release commit.
 
@@ -1252,7 +1252,7 @@ This preserves both release history and current canonical structure.
 
 ---
 
-# 50. Manifest Authority
+## 50. Manifest Authority
 
 For repository inventory questions concerning EPIC-DOC-001:
 
@@ -1274,7 +1274,7 @@ If these documents disagree, the discrepancy SHALL be treated as a validation de
 
 ---
 
-# 51. Final Target State
+## 51. Final Target State
 
 The target normalized state is:
 
@@ -1302,7 +1302,7 @@ The final state SHALL only be recorded after the corresponding evidence exists.
 
 ---
 
-# 52. Summary
+## 52. Summary
 
 This manifest defines the normalized canonical repository structure for EPIC-DOC-001.
 

@@ -1,10 +1,10 @@
 # Release Framework
 
-# EPIC-REL-001
+## EPIC-REL-001
 
-## Release Framework
+### Release Framework
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework establishes the official release engineering foundation for the FamilyOS ecosystem.
 
@@ -18,7 +18,7 @@ The Release Framework therefore establishes the principles, lifecycle, architect
 
 ---
 
-# Purpose
+## Purpose
 
 The Release Framework provides the foundation required to:
 
@@ -47,7 +47,7 @@ The framework transforms release management from an isolated publication activit
 
 ---
 
-# Release Engineering Definition
+## Release Engineering Definition
 
 For FamilyOS, release engineering is the discipline responsible for controlling the transition between validated engineering outputs and officially consumable platform states.
 
@@ -83,7 +83,7 @@ Every significant transition must be deterministic where possible, observable wh
 
 ---
 
-# Scope
+## Scope
 
 The Release Framework covers:
 
@@ -120,7 +120,7 @@ The framework applies to releasable FamilyOS assets where release semantics are 
 
 ---
 
-# Out of Scope
+## Out of Scope
 
 The Release Framework does not replace:
 
@@ -142,7 +142,7 @@ The Release Framework consumes evidence and outputs from those systems and gover
 
 ---
 
-# Relationship With the Build Framework
+## Relationship With the Build Framework
 
 EPIC-BLD-001 — Build Framework and EPIC-REL-001 — Release Framework define separate but adjacent engineering responsibilities.
 
@@ -189,7 +189,7 @@ A release may only consume artifacts that satisfy the applicable build, testing,
 
 ---
 
-# Relationship With the Testing Framework
+## Relationship With the Testing Framework
 
 EPIC-TST-001 — Testing Framework defines how software behavior is verified.
 
@@ -210,7 +210,7 @@ A release candidate must not bypass mandatory testing requirements.
 
 ---
 
-# Relationship With the Quality Framework
+## Relationship With the Quality Framework
 
 EPIC-QLT-001 — Quality Framework defines the quality expectations and quality controls applicable across FamilyOS engineering.
 
@@ -230,7 +230,7 @@ Release approval must be evidence-based rather than assumption-based.
 
 ---
 
-# Relationship With the Documentation Framework
+## Relationship With the Documentation Framework
 
 EPIC-DOC-001 — Documentation Framework governs FamilyOS documentation architecture, lifecycle, quality, traceability, and publishing expectations.
 
@@ -251,7 +251,7 @@ Documentation must not be treated as an optional activity performed after public
 
 ---
 
-# Relationship With Plugin Governance
+## Relationship With Plugin Governance
 
 FamilyOS official plugins are governed by the platform plugin architecture and applicable plugin compliance mechanisms.
 
@@ -272,7 +272,7 @@ Plugin-specific requirements may extend the Release Framework but must not weake
 
 ---
 
-# Relationship With Security
+## Relationship With Security
 
 Security is integrated throughout the release lifecycle.
 
@@ -293,11 +293,11 @@ A release process that cannot establish reasonable confidence in artifact identi
 
 ---
 
-# Release Framework Objectives
+## Release Framework Objectives
 
 The Release Framework establishes the following primary objectives.
 
-## O1 — Deterministic Release Identity
+### O1 — Deterministic Release Identity
 
 Every official release must have an unambiguous identity.
 
@@ -305,7 +305,7 @@ The identity must allow engineers and automation to determine exactly which rele
 
 ---
 
-## O2 — Source Traceability
+### O2 — Source Traceability
 
 Every official release must be traceable to a specific controlled repository state.
 
@@ -313,13 +313,13 @@ The relationship between source state, build artifacts, release candidate, versi
 
 ---
 
-## O3 — Artifact Provenance
+### O3 — Artifact Provenance
 
 Release artifacts must preserve sufficient provenance information to determine how and from which inputs they were produced.
 
 ---
 
-## O4 — Controlled Promotion
+### O4 — Controlled Promotion
 
 Artifacts must progress through defined release states.
 
@@ -327,7 +327,7 @@ Promotion must occur according to explicit criteria rather than arbitrary public
 
 ---
 
-## O5 — Evidence-Based Readiness
+### O5 — Evidence-Based Readiness
 
 Release readiness must be demonstrated using objective evidence.
 
@@ -343,7 +343,7 @@ Evidence may originate from:
 
 ---
 
-## O6 — Reproducible Operations
+### O6 — Reproducible Operations
 
 Release operations should be automated and reproducible wherever practical.
 
@@ -351,19 +351,19 @@ Manual steps must be explicit, controlled, and auditable when automation is not 
 
 ---
 
-## O7 — Safe Publication
+### O7 — Safe Publication
 
 Publishing operations must protect release integrity and prevent accidental, incomplete, unauthorized, or ambiguous releases.
 
 ---
 
-## O8 — Recoverability
+### O8 — Recoverability
 
 FamilyOS must define how releases can be withdrawn, superseded, rolled back, or otherwise recovered from when release failures occur.
 
 ---
 
-## O9 — Observability
+### O9 — Observability
 
 The state and outcome of release operations must be observable.
 
@@ -371,17 +371,17 @@ Failures must provide sufficient information for diagnosis and recovery.
 
 ---
 
-## O10 — Governance
+### O10 — Governance
 
 Release authority, responsibilities, exceptions, and approval requirements must be explicitly governed.
 
 ---
 
-# Core Release Principles
+## Core Release Principles
 
 The following principles are normative for the FamilyOS Release Framework.
 
-## Principle 1 — Build Is Not Release
+### Principle 1 — Build Is Not Release
 
 A successful build does not constitute an official release.
 
@@ -389,7 +389,7 @@ Release qualification is a separate lifecycle stage.
 
 ---
 
-## Principle 2 — Every Release Has an Identity
+### Principle 2 — Every Release Has an Identity
 
 Official releases must have explicit and stable version identities.
 
@@ -397,25 +397,25 @@ Ambiguous releases are prohibited.
 
 ---
 
-## Principle 3 — Every Release Has a Source State
+### Principle 3 — Every Release Has a Source State
 
 An official release must map to an identifiable source repository state.
 
 ---
 
-## Principle 4 — Every Release Has Evidence
+### Principle 4 — Every Release Has Evidence
 
 Release approval must be supported by validation evidence appropriate to the release type and risk.
 
 ---
 
-## Principle 5 — Promotion Is Controlled
+### Principle 5 — Promotion Is Controlled
 
 Release candidates must progress through defined states and gates.
 
 ---
 
-## Principle 6 — Published Artifacts Are Immutable
+### Principle 6 — Published Artifacts Are Immutable
 
 Published release artifacts should be treated as immutable.
 
@@ -423,13 +423,13 @@ Corrections should normally produce a new release rather than silently modifying
 
 ---
 
-## Principle 7 — Version Meaning Must Be Stable
+### Principle 7 — Version Meaning Must Be Stable
 
 Version identifiers must have consistent semantics across the ecosystem.
 
 ---
 
-## Principle 8 — Automation Is Preferred
+### Principle 8 — Automation Is Preferred
 
 Repeatable release operations should be automated.
 
@@ -437,7 +437,7 @@ Automation reduces procedural drift and improves reproducibility.
 
 ---
 
-## Principle 9 — Manual Authority Remains Governed
+### Principle 9 — Manual Authority Remains Governed
 
 Automation does not eliminate governance.
 
@@ -445,7 +445,7 @@ Actions requiring explicit human authority must remain subject to defined approv
 
 ---
 
-## Principle 10 — Release Failure Is Expected
+### Principle 10 — Release Failure Is Expected
 
 The release architecture must assume that failures can occur.
 
@@ -453,13 +453,13 @@ Rollback, recovery, supersession, and incident handling must therefore be design
 
 ---
 
-## Principle 11 — Security Is Continuous
+### Principle 11 — Security Is Continuous
 
 Security controls apply throughout the release lifecycle and not only at publication time.
 
 ---
 
-## Principle 12 — Traceability Must Survive the Release
+### Principle 12 — Traceability Must Survive the Release
 
 Release metadata and evidence must remain useful after publication.
 
@@ -467,7 +467,7 @@ Historical releases must remain reconstructable to the extent required by platfo
 
 ---
 
-# Release Lifecycle Model
+## Release Lifecycle Model
 
 The canonical FamilyOS release lifecycle consists of the following conceptual stages:
 
@@ -514,7 +514,7 @@ They must not bypass mandatory controls without an explicitly governed exception
 
 ---
 
-# Release States
+## Release States
 
 The framework recognizes the need for explicit release states.
 
@@ -539,7 +539,7 @@ State transitions must be explicit enough to support both human governance and a
 
 ---
 
-# Versioning Model
+## Versioning Model
 
 FamilyOS releases require a consistent versioning strategy.
 
@@ -562,7 +562,7 @@ The authoritative rules are defined in `06-Versioning-Strategy.md`.
 
 ---
 
-# Release Types
+## Release Types
 
 The framework recognizes that not every release has the same purpose or risk profile.
 
@@ -583,7 +583,7 @@ Each type may have different qualification requirements while remaining governed
 
 ---
 
-# Release Channels
+## Release Channels
 
 FamilyOS may expose releases through controlled channels.
 
@@ -603,7 +603,7 @@ Promotion between channels must follow defined rules.
 
 ---
 
-# Release Readiness
+## Release Readiness
 
 A release must satisfy defined readiness requirements before promotion.
 
@@ -627,7 +627,7 @@ Readiness requirements may vary according to release type and risk but must rema
 
 ---
 
-# Release Candidates
+## Release Candidates
 
 A release candidate represents a specific release configuration submitted for final qualification.
 
@@ -639,7 +639,7 @@ Release candidate semantics are defined in `10-Release-Candidates.md`.
 
 ---
 
-# Artifact Integrity and Provenance
+## Artifact Integrity and Provenance
 
 Release artifacts must be associated with sufficient information to establish:
 
@@ -658,7 +658,7 @@ The Release Framework does not mandate a specific cryptographic implementation a
 
 ---
 
-# Release Validation
+## Release Validation
 
 Release validation verifies that the candidate intended for publication satisfies applicable release requirements.
 
@@ -683,7 +683,7 @@ Release validation must operate on the actual candidate whenever technically pos
 
 ---
 
-# Release Automation
+## Release Automation
 
 Release automation should provide repeatable mechanisms for:
 
@@ -704,7 +704,7 @@ A failed release automation workflow must not silently leave the repository or d
 
 ---
 
-# CI/CD Integration
+## CI/CD Integration
 
 Release workflows may integrate with continuous integration and continuous delivery systems.
 
@@ -722,7 +722,7 @@ Continuous delivery capability does not imply uncontrolled continuous publicatio
 
 ---
 
-# Changelog and Release Notes
+## Changelog and Release Notes
 
 Every significant release must provide appropriate information describing what changed.
 
@@ -740,7 +740,7 @@ Both must remain traceable to the corresponding release identity.
 
 ---
 
-# Repository Tags
+## Repository Tags
 
 Repository tags are part of the FamilyOS release identity and traceability model.
 
@@ -759,7 +759,7 @@ The authoritative tagging rules are defined in `16-Tagging-and-Repository-State.
 
 ---
 
-# Publishing and Distribution
+## Publishing and Distribution
 
 Publishing makes a qualified release available through an official release mechanism.
 
@@ -779,7 +779,7 @@ Publishing operations must preserve:
 
 ---
 
-# Rollback and Recovery
+## Rollback and Recovery
 
 Every release architecture must consider failure after publication.
 
@@ -799,7 +799,7 @@ Where rollback cannot safely restore the previous state, forward recovery must b
 
 ---
 
-# Release Security
+## Release Security
 
 Release security protects the release pipeline and released artifacts from unauthorized or unintended modification.
 
@@ -820,7 +820,7 @@ Security controls should be proportional to the release risk and ecosystem matur
 
 ---
 
-# Release Observability
+## Release Observability
 
 Release operations must generate enough information to determine:
 
@@ -837,7 +837,7 @@ Observability must support both automation and engineering diagnosis.
 
 ---
 
-# Release Governance
+## Release Governance
 
 Release governance defines:
 
@@ -854,7 +854,7 @@ No automation system may implicitly redefine governance by bypassing required ap
 
 ---
 
-# Release Compliance
+## Release Compliance
 
 Release compliance evaluates whether release activities conform to applicable FamilyOS policies, frameworks, specifications, and governance requirements.
 
@@ -872,7 +872,7 @@ Silent non-compliance is not an acceptable release strategy.
 
 ---
 
-# Release Metrics
+## Release Metrics
 
 Release metrics provide evidence about the effectiveness and reliability of release engineering.
 
@@ -894,7 +894,7 @@ Metrics must support engineering improvement rather than become isolated targets
 
 ---
 
-# Release Risk Management
+## Release Risk Management
 
 Every release introduces some degree of change and therefore some degree of risk.
 
@@ -916,7 +916,7 @@ Higher-risk releases may require stronger evidence and approval.
 
 ---
 
-# Normative Architecture
+## Normative Architecture
 
 The canonical documentation architecture for EPIC-REL-001 is:
 
@@ -959,7 +959,7 @@ These documents collectively define the normative Release Framework.
 
 ---
 
-# Document Responsibilities
+## Document Responsibilities
 
 The numbered documents have distinct responsibilities.
 
@@ -1029,7 +1029,7 @@ The numbered documents have distinct responsibilities.
 
 ---
 
-# Normative Language
+## Normative Language
 
 The keywords:
 
@@ -1050,61 +1050,61 @@ Normative requirements establish mandatory or recommended FamilyOS release behav
 
 ---
 
-# Release Invariants
+## Release Invariants
 
 The following invariants apply to official FamilyOS releases.
 
-## R1 — Identifiable
+### R1 — Identifiable
 
 Every official release MUST have an unambiguous release identity.
 
-## R2 — Traceable
+### R2 — Traceable
 
 Every official release MUST be traceable to an identifiable controlled source state.
 
-## R3 — Validated
+### R3 — Validated
 
 Every official release MUST satisfy applicable release validation requirements.
 
-## R4 — Evidence Backed
+### R4 — Evidence Backed
 
 Release approval MUST be supported by appropriate evidence.
 
-## R5 — Versioned
+### R5 — Versioned
 
 Every official release MUST follow the applicable versioning strategy.
 
-## R6 — Controlled
+### R6 — Controlled
 
 Release state transitions MUST occur through defined release mechanisms.
 
-## R7 — Immutable After Publication
+### R7 — Immutable After Publication
 
 Published release artifacts MUST NOT be silently replaced with different content under the same release identity.
 
-## R8 — Documented
+### R8 — Documented
 
 Applicable release documentation MUST exist before the release is considered complete.
 
-## R9 — Observable
+### R9 — Observable
 
 Release execution and failure states MUST provide sufficient operational evidence.
 
-## R10 — Governed
+### R10 — Governed
 
 Release authority and exceptions MUST follow FamilyOS governance.
 
-## R11 — Recoverable
+### R11 — Recoverable
 
 Release planning MUST consider appropriate rollback, withdrawal, supersession, or forward-recovery mechanisms.
 
-## R12 — Secure
+### R12 — Secure
 
 Release operations MUST preserve applicable security and integrity controls.
 
 ---
 
-# Completion Criteria
+## Completion Criteria
 
 EPIC-REL-001 may be considered complete when:
 
@@ -1141,7 +1141,7 @@ EPIC-REL-001 may be considered complete when:
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After implementation of EPIC-REL-001, FamilyOS will possess a formal release engineering capability connecting its existing engineering foundations into a controlled release process.
 
@@ -1193,7 +1193,7 @@ This establishes a release process that is:
 
 ---
 
-# Final Statement
+## Final Statement
 
 EPIC-REL-001 establishes release engineering as a first-class FamilyOS platform capability.
 

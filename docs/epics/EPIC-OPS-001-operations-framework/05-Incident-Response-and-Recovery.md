@@ -1,10 +1,10 @@
 # Operations Framework
 
-# EPIC-OPS-001
+## EPIC-OPS-001
 
-## Incident Response and Recovery
+### Incident Response and Recovery
 
-## Overview
+### Overview
 
 This document defines the FamilyOS incident-response and recovery model.
 
@@ -28,7 +28,7 @@ A recovery action is not considered complete until the resulting system state ha
 
 ---
 
-# Objectives
+## Objectives
 
 The incident-response and recovery model must:
 
@@ -47,7 +47,7 @@ The incident-response and recovery model must:
 
 ---
 
-# Incident Definition
+## Incident Definition
 
 An incident is an operational event or condition that causes, or threatens to cause, meaningful impact to FamilyOS.
 
@@ -68,7 +68,7 @@ Not every error is an incident.
 
 ---
 
-# Event, Failure, Alert, and Incident
+## Event, Failure, Alert, and Incident
 
 FamilyOS distinguishes between several related concepts.
 
@@ -96,7 +96,7 @@ Repeated or high-impact failures may.
 
 ---
 
-# Incident Trigger
+## Incident Trigger
 
 An incident may be triggered by:
 
@@ -114,7 +114,7 @@ Trigger mechanisms should remain structured where practical.
 
 ---
 
-# Incident Lifecycle
+## Incident Lifecycle
 
 The FamilyOS incident lifecycle is:
 
@@ -144,7 +144,7 @@ The lifecycle should remain proportional to incident severity.
 
 ---
 
-# Detection
+## Detection
 
 Detection identifies that an operational condition may require managed response.
 
@@ -164,7 +164,7 @@ Detection must rely on the existing Observability Framework wherever possible.
 
 ---
 
-# Assessment
+## Assessment
 
 Assessment determines:
 
@@ -181,7 +181,7 @@ Perfect diagnosis is not required before containment.
 
 ---
 
-# Classification
+## Classification
 
 Incidents SHOULD be classified according to useful operational dimensions.
 
@@ -201,7 +201,7 @@ Classification improves consistent response.
 
 ---
 
-# Incident Categories
+## Incident Categories
 
 A compact incident-category model may include:
 
@@ -222,7 +222,7 @@ Additional categories should only be introduced when they improve operational de
 
 ---
 
-# Severity Model
+## Severity Model
 
 FamilyOS uses a lightweight incident-severity model:
 
@@ -237,7 +237,7 @@ Severity reflects operational impact and urgency rather than technical novelty.
 
 ---
 
-# LOW Severity
+## LOW Severity
 
 A low-severity incident may include:
 
@@ -250,7 +250,7 @@ Low-severity incidents may not require immediate interruption of other work.
 
 ---
 
-# MEDIUM Severity
+## MEDIUM Severity
 
 A medium-severity incident may include:
 
@@ -263,7 +263,7 @@ Response should be timely and deliberate.
 
 ---
 
-# HIGH Severity
+## HIGH Severity
 
 A high-severity incident may include:
 
@@ -277,7 +277,7 @@ High-severity incidents normally require immediate focused response.
 
 ---
 
-# CRITICAL Severity
+## CRITICAL Severity
 
 A critical incident may involve:
 
@@ -293,7 +293,7 @@ Critical incidents require urgent containment and controlled recovery.
 
 ---
 
-# Severity Factors
+## Severity Factors
 
 Severity SHOULD consider:
 
@@ -311,7 +311,7 @@ The highest technical error count does not automatically imply the highest sever
 
 ---
 
-# Incident Identity
+## Incident Identity
 
 Significant incidents SHOULD receive a stable identifier.
 
@@ -333,7 +333,7 @@ Incident identity allows correlation across:
 
 ---
 
-# Incident State Model
+## Incident State Model
 
 A conceptual state model is:
 
@@ -359,43 +359,43 @@ The model exists to make response progression explicit.
 
 ---
 
-# OPEN
+## OPEN
 
 An incident is `OPEN` once a condition has been accepted as requiring managed response.
 
 ---
 
-# INVESTIGATING
+## INVESTIGATING
 
 `INVESTIGATING` means evidence is being collected and the likely cause or scope is being assessed.
 
 ---
 
-# CONTAINING
+## CONTAINING
 
 `CONTAINING` means actions are focused on limiting ongoing damage or expansion.
 
 ---
 
-# MITIGATING
+## MITIGATING
 
 `MITIGATING` means actions reduce immediate operational impact without necessarily restoring the ideal final state.
 
 ---
 
-# RECOVERING
+## RECOVERING
 
 `RECOVERING` means the system is being returned toward the desired operational state.
 
 ---
 
-# RESOLVED
+## RESOLVED
 
 `RESOLVED` means acceptable operational state has been restored and verified.
 
 ---
 
-# CLOSED
+## CLOSED
 
 `CLOSED` means response and required follow-up have been completed.
 
@@ -403,7 +403,7 @@ Closure may occur after review and corrective actions are captured.
 
 ---
 
-# Containment
+## Containment
 
 Containment limits incident impact before complete resolution.
 
@@ -424,7 +424,7 @@ Containment should preserve evidence where practical.
 
 ---
 
-# Containment Principle
+## Containment Principle
 
 The preferred strategy is:
 
@@ -440,7 +440,7 @@ before making broad destructive changes.
 
 ---
 
-# Security Incident Containment
+## Security Incident Containment
 
 Security incidents may require stronger containment actions.
 
@@ -457,7 +457,7 @@ Such actions MUST follow Security Framework controls.
 
 ---
 
-# Mitigation
+## Mitigation
 
 Mitigation reduces operational impact without necessarily correcting the root cause.
 
@@ -475,7 +475,7 @@ Mitigation may provide time for safer recovery.
 
 ---
 
-# Recovery
+## Recovery
 
 Recovery restores FamilyOS toward an acceptable operational state.
 
@@ -494,7 +494,7 @@ Recovery strategy must match the failure mode.
 
 ---
 
-# Recovery Principle
+## Recovery Principle
 
 FamilyOS follows:
 
@@ -506,7 +506,7 @@ It must not replace understanding when repeated failure is likely.
 
 ---
 
-# Recovery Strategy Selection
+## Recovery Strategy Selection
 
 A recovery strategy SHOULD consider:
 
@@ -522,7 +522,7 @@ Reversibility
 
 ---
 
-# Restart
+## Restart
 
 Restart may be appropriate for:
 
@@ -535,7 +535,7 @@ Restart SHOULD NOT be repeatedly automated without understanding persistent fail
 
 ---
 
-# Retry
+## Retry
 
 Retry may be appropriate for transient operations.
 
@@ -549,7 +549,7 @@ A persistent failing operation should escalate rather than retry forever.
 
 ---
 
-# Reconfiguration
+## Reconfiguration
 
 Reconfiguration is appropriate when failure results from invalid or unsuitable runtime configuration.
 
@@ -571,7 +571,7 @@ Verify
 
 ---
 
-# Dependency Restoration
+## Dependency Restoration
 
 If a critical dependency fails, recovery may involve restoring that dependency rather than changing FamilyOS itself.
 
@@ -579,7 +579,7 @@ The runtime should verify dependency health before declaring recovery.
 
 ---
 
-# Plugin Isolation
+## Plugin Isolation
 
 A malfunctioning non-critical plugin may be isolated.
 
@@ -597,7 +597,7 @@ This supports failure containment.
 
 ---
 
-# Rollback
+## Rollback
 
 Rollback restores a previously approved software release or configuration state.
 
@@ -607,7 +607,7 @@ The Release Framework remains authoritative for release rollback.
 
 ---
 
-# Rollback Flow
+## Rollback Flow
 
 ```text
 Incident
@@ -629,7 +629,7 @@ Rollback Verified
 
 ---
 
-# Configuration Rollback
+## Configuration Rollback
 
 Configuration changes may also require rollback.
 
@@ -639,7 +639,7 @@ It must still undergo security and runtime validation.
 
 ---
 
-# Restore
+## Restore
 
 Restore recovers persistent information from a protected backup or other validated source.
 
@@ -654,7 +654,7 @@ Restore operations may be destructive and require strong authorization.
 
 ---
 
-# Restore Is Not Recovery Until Verified
+## Restore Is Not Recovery Until Verified
 
 The sequence is:
 
@@ -676,7 +676,7 @@ A completed restore command does not prove successful recovery.
 
 ---
 
-# Backup Relationship
+## Backup Relationship
 
 Backup and recovery are related but separate capabilities.
 
@@ -690,7 +690,7 @@ A useful backup strategy requires validated restore procedures.
 
 ---
 
-# Recovery Verification
+## Recovery Verification
 
 Every meaningful recovery action SHOULD define verification criteria before execution where practical.
 
@@ -706,7 +706,7 @@ Verification may include:
 
 ---
 
-# Verification Levels
+## Verification Levels
 
 Recovery verification may occur at multiple levels:
 
@@ -721,7 +721,7 @@ The required level depends on incident type.
 
 ---
 
-# Operational Verification
+## Operational Verification
 
 Operational verification asks:
 
@@ -733,7 +733,7 @@ Are dependencies available?
 
 ---
 
-# Functional Verification
+## Functional Verification
 
 Functional verification asks:
 
@@ -743,7 +743,7 @@ Can the affected capability perform its intended responsibility?
 
 ---
 
-# Data Verification
+## Data Verification
 
 Data verification asks:
 
@@ -755,7 +755,7 @@ Did restoration introduce inconsistency?
 
 ---
 
-# Security Verification
+## Security Verification
 
 Security verification asks:
 
@@ -767,7 +767,7 @@ Are protected boundaries restored?
 
 ---
 
-# Failed Recovery
+## Failed Recovery
 
 Recovery attempts may fail.
 
@@ -781,7 +781,7 @@ A failed recovery SHOULD:
 
 ---
 
-# Recovery Escalation
+## Recovery Escalation
 
 A simple escalation model is:
 
@@ -803,7 +803,7 @@ Escalation should remain controlled.
 
 ---
 
-# Incident Commander Concept
+## Incident Commander Concept
 
 For significant incidents, one actor SHOULD coordinate response decisions.
 
@@ -820,7 +820,7 @@ In a small project, one person may perform all incident roles.
 
 ---
 
-# Parallel Changes During Incident
+## Parallel Changes During Incident
 
 Uncoordinated changes during incidents can obscure causality.
 
@@ -838,7 +838,7 @@ Observe Result
 
 ---
 
-# Incident Timeline
+## Incident Timeline
 
 Significant incidents SHOULD maintain enough timing information to reconstruct major events.
 
@@ -857,7 +857,7 @@ Exact minute-by-minute documentation is unnecessary for minor incidents.
 
 ---
 
-# Operational Evidence
+## Operational Evidence
 
 Incident response should preserve relevant evidence.
 
@@ -878,7 +878,7 @@ Evidence must respect privacy and security requirements.
 
 ---
 
-# Evidence Preservation
+## Evidence Preservation
 
 Response actions SHOULD avoid destroying useful diagnostic evidence unnecessarily.
 
@@ -888,7 +888,7 @@ Evidence preservation should remain proportional to severity.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Where incident evidence influences security, compliance, or release decisions, it SHOULD be sufficiently trustworthy for that purpose.
 
@@ -896,7 +896,7 @@ The system must not fabricate successful recovery evidence.
 
 ---
 
-# Communication
+## Communication
 
 Significant incidents may require communication to affected stakeholders.
 
@@ -911,7 +911,7 @@ FamilyOS does not require a large incident-communication organization at this st
 
 ---
 
-# Incident Privacy
+## Incident Privacy
 
 Incident records must not become uncontrolled repositories of private family information.
 
@@ -926,7 +926,7 @@ Private content should be minimized.
 
 ---
 
-# Incident Security
+## Incident Security
 
 Incident-management interfaces and records may contain sensitive operational information.
 
@@ -934,7 +934,7 @@ Access should follow Security Framework principles.
 
 ---
 
-# Incident and Observability Correlation
+## Incident and Observability Correlation
 
 Where possible, incident records should correlate with runtime evidence.
 
@@ -954,7 +954,7 @@ This supports coherent diagnosis.
 
 ---
 
-# Security Incidents
+## Security Incidents
 
 Security incidents are operational incidents with security consequences.
 
@@ -971,7 +971,7 @@ Security Framework threat and risk models remain authoritative for security clas
 
 ---
 
-# Security Incident Response
+## Security Incident Response
 
 A security incident may require:
 
@@ -995,7 +995,7 @@ Recovery must not restore availability while leaving the security compromise act
 
 ---
 
-# Data Incidents
+## Data Incidents
 
 Data incidents may involve:
 
@@ -1009,7 +1009,7 @@ Response should prioritize data integrity and preservation.
 
 ---
 
-# Release Incidents
+## Release Incidents
 
 A release incident occurs when a newly activated release causes unacceptable runtime behavior.
 
@@ -1031,7 +1031,7 @@ Open Engineering Defect
 
 ---
 
-# Dependency Incidents
+## Dependency Incidents
 
 External dependency incidents may require:
 
@@ -1045,7 +1045,7 @@ FamilyOS should not attempt to fix systems it does not control.
 
 ---
 
-# Plugin Incidents
+## Plugin Incidents
 
 A plugin incident may be isolated from core FamilyOS where architecture permits.
 
@@ -1061,7 +1061,7 @@ Validate Core Runtime
 
 ---
 
-# Incident Automation
+## Incident Automation
 
 Stable and low-risk incident procedures may be automated.
 
@@ -1077,7 +1077,7 @@ Automation should only be introduced for procedures with well-understood behavio
 
 ---
 
-# Automatic Recovery
+## Automatic Recovery
 
 Automatic recovery MAY be appropriate when:
 
@@ -1089,7 +1089,7 @@ Automatic recovery MAY be appropriate when:
 
 ---
 
-# Automatic Recovery Guardrails
+## Automatic Recovery Guardrails
 
 Automated recovery SHOULD define:
 
@@ -1105,7 +1105,7 @@ Evidence
 
 ---
 
-# Recovery Attempt Limits
+## Recovery Attempt Limits
 
 Automation MUST avoid infinite recovery loops.
 
@@ -1125,7 +1125,7 @@ The exact count should reflect operation semantics.
 
 ---
 
-# Human Approval
+## Human Approval
 
 Human approval SHOULD remain required for high-risk operations such as:
 
@@ -1137,7 +1137,7 @@ Human approval SHOULD remain required for high-risk operations such as:
 
 ---
 
-# Runbooks
+## Runbooks
 
 Repeatable incident procedures SHOULD be captured as concise runbooks where useful.
 
@@ -1159,7 +1159,7 @@ Runbooks should be operational tools, not documentation for its own sake.
 
 ---
 
-# Runbook Quality
+## Runbook Quality
 
 A useful runbook should answer:
 
@@ -1172,7 +1172,7 @@ A useful runbook should answer:
 
 ---
 
-# Post-Incident Review
+## Post-Incident Review
 
 Significant incidents SHOULD produce a proportional review.
 
@@ -1191,7 +1191,7 @@ A review may identify:
 
 ---
 
-# Root Cause
+## Root Cause
 
 Root cause identifies the underlying condition that made the incident possible.
 
@@ -1213,7 +1213,7 @@ may be closer to the cause.
 
 ---
 
-# Contributing Factors
+## Contributing Factors
 
 Incidents often have multiple contributing factors.
 
@@ -1230,7 +1230,7 @@ Reviews should consider the system rather than assigning simplistic blame.
 
 ---
 
-# Blameless Engineering Review
+## Blameless Engineering Review
 
 Incident review SHOULD focus primarily on system improvement.
 
@@ -1240,7 +1240,7 @@ The goal is to understand why the system allowed that error to produce significa
 
 ---
 
-# Corrective Actions
+## Corrective Actions
 
 Incident review may create corrective actions such as:
 
@@ -1260,7 +1260,7 @@ Actions should have clear engineering value.
 
 ---
 
-# Preventing Recurrence
+## Preventing Recurrence
 
 A significant incident should ideally result in at least one durable improvement when a practical improvement exists.
 
@@ -1280,7 +1280,7 @@ Release
 
 ---
 
-# Incident Metrics
+## Incident Metrics
 
 Operational maturity MAY measure incident properties such as:
 
@@ -1294,7 +1294,7 @@ Metrics should only be introduced when they improve decisions.
 
 ---
 
-# Recovery Time
+## Recovery Time
 
 Recovery duration may become an important reliability measure.
 
@@ -1312,7 +1312,7 @@ Formal Recovery Time Objectives may be introduced later.
 
 ---
 
-# Recovery Point
+## Recovery Point
 
 For persistent data incidents, recovery may involve some amount of data loss.
 
@@ -1322,7 +1322,7 @@ EPIC-OPS-001 does not require formal RPOs before meaningful requirements exist.
 
 ---
 
-# Incident Testing
+## Incident Testing
 
 Incident-response mechanisms SHOULD be testable where practical.
 
@@ -1338,7 +1338,7 @@ Tests may cover:
 
 ---
 
-# Recovery Testing
+## Recovery Testing
 
 Important recovery procedures should be exercised before they are needed in a real incident.
 
@@ -1355,7 +1355,7 @@ A recovery plan that has never been tested provides limited confidence.
 
 ---
 
-# Failure Injection
+## Failure Injection
 
 Controlled failure injection MAY be used to validate incident and recovery behavior.
 
@@ -1371,7 +1371,7 @@ Failure injection should be deterministic and safe.
 
 ---
 
-# Incident and Release Integration
+## Incident and Release Integration
 
 Incident evidence may feed Release Framework decisions.
 
@@ -1379,7 +1379,7 @@ For example, a release known to cause a high-severity incident SHOULD NOT be re-
 
 ---
 
-# Incident and Quality Integration
+## Incident and Quality Integration
 
 Incident findings may become Quality Framework evidence.
 
@@ -1387,7 +1387,7 @@ Recurring operational defects indicate quality gaps even if unit tests initially
 
 ---
 
-# Incident and Security Integration
+## Incident and Security Integration
 
 Security incidents may generate:
 
@@ -1399,7 +1399,7 @@ Security incidents may generate:
 
 ---
 
-# Incident and Observability Integration
+## Incident and Observability Integration
 
 Incident review may reveal missing observability.
 
@@ -1407,7 +1407,7 @@ A meaningful diagnostic gap SHOULD result in targeted observability improvement 
 
 ---
 
-# Minimal Initial Incident Model
+## Minimal Initial Incident Model
 
 The first implementation SHOULD remain lightweight.
 
@@ -1431,7 +1431,7 @@ Only required fields should be implemented.
 
 ---
 
-# Minimal Incident Record
+## Minimal Incident Record
 
 A minimal incident record may include:
 
@@ -1450,7 +1450,7 @@ Additional evidence may remain linked rather than duplicated.
 
 ---
 
-# Minimal Recovery Result
+## Minimal Recovery Result
 
 A conceptual recovery result may contain:
 
@@ -1466,7 +1466,7 @@ reason
 
 ---
 
-# Implementation Constraints
+## Implementation Constraints
 
 Incident-response implementation MUST:
 
@@ -1479,69 +1479,69 @@ Incident-response implementation MUST:
 
 ---
 
-# Operational Invariants
+## Operational Invariants
 
-## Invariant 1 — Incident State Is Explicit
+### Invariant 1 — Incident State Is Explicit
 
 Significant managed failures should have identifiable incident state.
 
-## Invariant 2 — Containment Precedes Risky Recovery
+### Invariant 2 — Containment Precedes Risky Recovery
 
 Ongoing damage should be limited before high-risk recovery where practical.
 
-## Invariant 3 — Recovery Is Verified
+### Invariant 3 — Recovery Is Verified
 
 No recovery action is complete until resulting state has been checked.
 
-## Invariant 4 — Failed Recovery Is Visible
+### Invariant 4 — Failed Recovery Is Visible
 
 Failed recovery must not produce a false resolved state.
 
-## Invariant 5 — Security Remains Enforced
+### Invariant 5 — Security Remains Enforced
 
 Incident urgency does not automatically bypass security controls.
 
-## Invariant 6 — Evidence Is Preserved Proportionally
+### Invariant 6 — Evidence Is Preserved Proportionally
 
 Important incidents retain sufficient evidence for diagnosis and learning.
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 FamilyOS SHOULD avoid:
 
-## Alert Equals Incident
+### Alert Equals Incident
 
 Not every alert requires full incident management.
 
-## Restart Until It Works
+### Restart Until It Works
 
 Repeated restart without diagnosis can hide persistent faults.
 
-## Recovery Without Verification
+### Recovery Without Verification
 
 Executing a recovery command is not proof of recovery.
 
-## Incident as Documentation Exercise
+### Incident as Documentation Exercise
 
 Incident management should support action, not produce unnecessary paperwork.
 
-## Uncontrolled Changes
+### Uncontrolled Changes
 
 Multiple unrelated changes during incident response make diagnosis harder.
 
-## Security Bypass During Emergency
+### Security Bypass During Emergency
 
 Urgency does not justify unrestricted operational access.
 
-## Infinite Automatic Recovery
+### Infinite Automatic Recovery
 
 Automation must stop and escalate after bounded failure.
 
 ---
 
-# Reference Incident Flow
+## Reference Incident Flow
 
 ```text
 Operational Condition
@@ -1581,7 +1581,7 @@ Is Managed Response Required?
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 This incident-response and recovery model is successful when FamilyOS can:
 
@@ -1599,7 +1599,7 @@ This incident-response and recovery model is successful when FamilyOS can:
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After implementation, FamilyOS should move from:
 
@@ -1627,7 +1627,7 @@ Learning
 
 ---
 
-# Conclusion
+## Conclusion
 
 FamilyOS cannot assume that runtime failures will always be prevented.
 
