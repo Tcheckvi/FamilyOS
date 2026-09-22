@@ -4,8 +4,10 @@ This module evaluates governed custody inputs against the immutable I1-R1
 contracts. The RD-01 bindings are pinned by the I1-R1 SPEC-0017 v1.1.0
 contract constants. This module performs no I/O and never authorizes key use.
 
-A successful validation only means that the supplied context is internally
-consistent and may advance to a later, separately governed custody step.
+I2-R1 validates the governed custody context. I2-R2 adds pure signing-request
+verification and single-use replay preflight. Passing either layer only means
+that the supplied state is internally consistent enough to advance to a later,
+separately governed custody boundary.
 """
 
 from __future__ import annotations
@@ -23,7 +25,11 @@ from familyos_pilot0.custody_worker_contracts import (
     ApproverEvidence,
     AuthorizationEnvelope,
     KeyPurposeClass,
+    ReplayClaim,
+    ReplayClaimState,
+    ReplayPolicy,
     RevocationStatus,
+    SigningRequest,
     TrustAnchorRecord,
 )
 
@@ -37,6 +43,8 @@ class CustodyValidationReason(StrEnum):
     INVALID_GOVERNED_TIME = "INVALID_GOVERNED_TIME"
     INVALID_EXPECTED_PAYLOAD_DIGEST = "INVALID_EXPECTED_PAYLOAD_DIGEST"
     INVALID_EXPECTED_WORKER_CHALLENGE = "INVALID_EXPECTED_WORKER_CHALLENGE"
+    INVALID_EXPECTED_CONTEXT_DIGEST = "INVALID_EXPECTED_CONTEXT_DIGEST"
+    INVALID_EXPECTED_CHAIN_FINGERPRINT = "INVALID_EXPECTED_CHAIN_FINGERPRINT"
 
     AUTHORIZATION_ID_MISMATCH = "AUTHORIZATION_ID_MISMATCH"
     OPERATION_ID_MISMATCH = "OPERATION_ID_MISMATCH"
@@ -68,6 +76,30 @@ class CustodyValidationReason(StrEnum):
     CANONICALIZATION_ID_MISMATCH = "CANONICALIZATION_ID_MISMATCH"
     SCHEMA_VERSION_MISMATCH = "SCHEMA_VERSION_MISMATCH"
     PAYLOAD_TEMPLATE_RULES_MISMATCH = "PAYLOAD_TEMPLATE_RULES_MISMATCH"
+
+    REPLAY_POLICY_MISMATCH = "REPLAY_POLICY_MISMATCH"
+    CLAIM_AUTHORIZATION_ID_MISMATCH = "CLAIM_AUTHORIZATION_ID_MISMATCH"
+    CLAIM_OPERATION_ID_MISMATCH = "CLAIM_OPERATION_ID_MISMATCH"
+    CLAIM_CONTEXT_DIGEST_MISMATCH = "CLAIM_CONTEXT_DIGEST_MISMATCH"
+    CLAIM_NOT_RESERVED = "CLAIM_NOT_RESERVED"
+    CLAIM_NOT_KEY_USE_CLAIMED = "CLAIM_NOT_KEY_USE_CLAIMED"
+    CLAIM_KEY_USE_INTENT_NOT_DURABLE = "CLAIM_KEY_USE_INTENT_NOT_DURABLE"
+    CLAIM_SIGNING_REQUEST_DIGEST_MISSING = "CLAIM_SIGNING_REQUEST_DIGEST_MISSING"
+    CLAIM_SIGNING_REQUEST_DIGEST_MISMATCH = "CLAIM_SIGNING_REQUEST_DIGEST_MISMATCH"
+
+    SIGNING_REQUEST_AUTHORIZATION_ID_MISMATCH = "SIGNING_REQUEST_AUTHORIZATION_ID_MISMATCH"
+    SIGNING_REQUEST_OPERATION_ID_MISMATCH = "SIGNING_REQUEST_OPERATION_ID_MISMATCH"
+    SIGNING_REQUEST_KEY_REF_MISMATCH = "SIGNING_REQUEST_KEY_REF_MISMATCH"
+    SIGNING_REQUEST_SIGNATURE_NAMESPACE_MISMATCH = "SIGNING_REQUEST_SIGNATURE_NAMESPACE_MISMATCH"
+    SIGNING_REQUEST_CANONICALIZATION_ID_MISMATCH = "SIGNING_REQUEST_CANONICALIZATION_ID_MISMATCH"
+    SIGNING_REQUEST_PAYLOAD_DIGEST_MISMATCH = "SIGNING_REQUEST_PAYLOAD_DIGEST_MISMATCH"
+    SIGNING_REQUEST_RESULT_AUDIENCE_MISMATCH = "SIGNING_REQUEST_RESULT_AUDIENCE_MISMATCH"
+    SIGNING_REQUEST_CONTEXT_DIGEST_MISMATCH = "SIGNING_REQUEST_CONTEXT_DIGEST_MISMATCH"
+    SIGNING_REQUEST_CHAIN_FINGERPRINT_MISMATCH = "SIGNING_REQUEST_CHAIN_FINGERPRINT_MISMATCH"
+    SIGNING_REQUEST_ISSUED_BEFORE_AUTHORIZATION = "SIGNING_REQUEST_ISSUED_BEFORE_AUTHORIZATION"
+    SIGNING_REQUEST_EXCEEDS_AUTHORIZATION = "SIGNING_REQUEST_EXCEEDS_AUTHORIZATION"
+    SIGNING_REQUEST_NOT_YET_VALID = "SIGNING_REQUEST_NOT_YET_VALID"
+    SIGNING_REQUEST_EXPIRED = "SIGNING_REQUEST_EXPIRED"
 
 
 @dataclass(frozen=True)
@@ -110,6 +142,10 @@ def _payload_template_rules_match(envelope: AuthorizationEnvelope) -> bool:
         (field.name, field.kind, field.derivation) for field in envelope.payload_template.fields
     )
     return actual == RD01_RECEIPT_CANONICALIZATION.field_rules
+
+
+def _decision(reasons: list[CustodyValidationReason]) -> CustodyValidationDecision:
+    return CustodyValidationDecision(reasons=tuple(dict.fromkeys(reasons)))
 
 
 def validate_custody_worker_context(
@@ -207,4 +243,115 @@ def validate_custody_worker_context(
     if not _payload_template_rules_match(envelope):
         reasons.append(CustodyValidationReason.PAYLOAD_TEMPLATE_RULES_MISMATCH)
 
-    return CustodyValidationDecision(reasons=tuple(dict.fromkeys(reasons)))
+    return _decision(reasons)
+
+
+def validate_replay_preflight(
+    *,
+    envelope: AuthorizationEnvelope,
+    claim: ReplayClaim,
+    expected_context_digest: str,
+) -> CustodyValidationDecision:
+    """Validate the reversible single-use reservation before key-use intent.
+
+    A passing result only confirms that the reservation is the expected,
+    unspent SINGLE_USE claim for this envelope and context. It never authorizes
+    a key and performs no claim transition.
+    """
+
+    reasons: list[CustodyValidationReason] = []
+
+    if not _is_sha256_hex(expected_context_digest):
+        reasons.append(CustodyValidationReason.INVALID_EXPECTED_CONTEXT_DIGEST)
+
+    if envelope.replay_policy is not ReplayPolicy.SINGLE_USE:
+        reasons.append(CustodyValidationReason.REPLAY_POLICY_MISMATCH)
+    if claim.authorization_id != envelope.authorization_id:
+        reasons.append(CustodyValidationReason.CLAIM_AUTHORIZATION_ID_MISMATCH)
+    if claim.operation_id != envelope.operation_id:
+        reasons.append(CustodyValidationReason.CLAIM_OPERATION_ID_MISMATCH)
+    if claim.context_digest != expected_context_digest:
+        reasons.append(CustodyValidationReason.CLAIM_CONTEXT_DIGEST_MISMATCH)
+    if claim.state is not ReplayClaimState.RESOURCES_RESERVED:
+        reasons.append(CustodyValidationReason.CLAIM_NOT_RESERVED)
+
+    return _decision(reasons)
+
+
+def verify_signing_request(
+    *,
+    envelope: AuthorizationEnvelope,
+    signing_request: SigningRequest,
+    claim: ReplayClaim,
+    governed_epoch_seconds: int,
+    expected_final_payload_digest: str,
+    expected_context_digest: str,
+    expected_chain_fingerprint: str,
+) -> CustodyValidationDecision:
+    """Verify a signing request against its authorization and durable claim.
+
+    The request itself is not authority. A passing result requires a durable
+    ``KEY_USE_CLAIMED`` replay claim bound to the exact request digest. Even
+    then, this pure verifier does not authorize or perform key use.
+    """
+
+    reasons: list[CustodyValidationReason] = []
+
+    if not _is_exact_nonnegative_int(governed_epoch_seconds):
+        reasons.append(CustodyValidationReason.INVALID_GOVERNED_TIME)
+    if not _is_sha256_hex(expected_final_payload_digest):
+        reasons.append(CustodyValidationReason.INVALID_EXPECTED_PAYLOAD_DIGEST)
+    if not _is_sha256_hex(expected_context_digest):
+        reasons.append(CustodyValidationReason.INVALID_EXPECTED_CONTEXT_DIGEST)
+    if not _is_sha256_hex(expected_chain_fingerprint):
+        reasons.append(CustodyValidationReason.INVALID_EXPECTED_CHAIN_FINGERPRINT)
+
+    if envelope.replay_policy is not ReplayPolicy.SINGLE_USE:
+        reasons.append(CustodyValidationReason.REPLAY_POLICY_MISMATCH)
+
+    if signing_request.authorization_id != envelope.authorization_id:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_AUTHORIZATION_ID_MISMATCH)
+    if signing_request.operation_id != envelope.operation_id:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_OPERATION_ID_MISMATCH)
+    if signing_request.key_ref != envelope.key_ref:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_KEY_REF_MISMATCH)
+    if signing_request.signature_namespace != envelope.signature_namespace:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_SIGNATURE_NAMESPACE_MISMATCH)
+    if signing_request.canonicalization_id != envelope.payload_template.canonicalization_id:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_CANONICALIZATION_ID_MISMATCH)
+    if signing_request.final_payload_digest != expected_final_payload_digest:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_PAYLOAD_DIGEST_MISMATCH)
+    if signing_request.result_audience != envelope.result_audience:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_RESULT_AUDIENCE_MISMATCH)
+    if signing_request.context_digest != expected_context_digest:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_CONTEXT_DIGEST_MISMATCH)
+    if signing_request.chain_fingerprint != expected_chain_fingerprint:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_CHAIN_FINGERPRINT_MISMATCH)
+
+    if signing_request.issued_at_epoch_seconds < envelope.not_before_epoch_seconds:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_ISSUED_BEFORE_AUTHORIZATION)
+    if signing_request.not_after_epoch_seconds > envelope.expires_at_epoch_seconds:
+        reasons.append(CustodyValidationReason.SIGNING_REQUEST_EXCEEDS_AUTHORIZATION)
+
+    if _is_exact_nonnegative_int(governed_epoch_seconds):
+        if governed_epoch_seconds < signing_request.issued_at_epoch_seconds:
+            reasons.append(CustodyValidationReason.SIGNING_REQUEST_NOT_YET_VALID)
+        if governed_epoch_seconds > signing_request.not_after_epoch_seconds:
+            reasons.append(CustodyValidationReason.SIGNING_REQUEST_EXPIRED)
+
+    if claim.authorization_id != signing_request.authorization_id:
+        reasons.append(CustodyValidationReason.CLAIM_AUTHORIZATION_ID_MISMATCH)
+    if claim.operation_id != signing_request.operation_id:
+        reasons.append(CustodyValidationReason.CLAIM_OPERATION_ID_MISMATCH)
+    if claim.context_digest != signing_request.context_digest:
+        reasons.append(CustodyValidationReason.CLAIM_CONTEXT_DIGEST_MISMATCH)
+    if claim.state is not ReplayClaimState.KEY_USE_CLAIMED:
+        reasons.append(CustodyValidationReason.CLAIM_NOT_KEY_USE_CLAIMED)
+    if not claim.key_use_intent_durable:
+        reasons.append(CustodyValidationReason.CLAIM_KEY_USE_INTENT_NOT_DURABLE)
+    if claim.signing_request_digest is None:
+        reasons.append(CustodyValidationReason.CLAIM_SIGNING_REQUEST_DIGEST_MISSING)
+    elif claim.signing_request_digest != signing_request.digest():
+        reasons.append(CustodyValidationReason.CLAIM_SIGNING_REQUEST_DIGEST_MISMATCH)
+
+    return _decision(reasons)
