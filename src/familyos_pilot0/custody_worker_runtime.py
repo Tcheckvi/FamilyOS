@@ -1,0 +1,614 @@
+"""Authoritative custody-worker claim storage and runtime provenance boundaries.
+
+This module is the first tracked runtime slice after the pure Phase-1 contract
+and validation layer. It intentionally does not perform native signing, access
+real custody material, or authorize production execution.
+
+The durable claim store is the only granting source. Caller-created ReplayClaim
+objects never constitute authority here.
+"""
+
+from __future__ import annotations
+
+import fcntl
+import hashlib
+import json
+import os
+import tempfile
+from collections.abc import Callable, Iterator
+from contextlib import contextmanager
+from pathlib import Path
+from typing import Final, cast
+
+from familyos_pilot0.custody_worker_contracts import (
+    KeyRef,
+    ReplayClaim,
+    ReplayClaimState,
+    SigningResult,
+    claim_state_after_durable_write_failure,
+    recover_claim_after_restart,
+)
+
+_STORE_VERSION: Final[int] = 1
+_TERMINAL_AFTER_KEY_USE: Final[frozenset[ReplayClaimState]] = frozenset(
+    {
+        ReplayClaimState.SPENT_CLEAN,
+        ReplayClaimState.SPENT_UNKNOWN,
+        ReplayClaimState.QUARANTINED,
+    }
+)
+
+
+class RuntimeClaimStoreError(RuntimeError):
+    """Base error for authoritative runtime claim-store failures."""
+
+
+class ClaimConflictError(RuntimeClaimStoreError):
+    """Raised when a requested transition conflicts with authoritative state."""
+
+
+class StaleClaimGenerationError(RuntimeClaimStoreError):
+    """Raised when compare-and-set generation does not match authoritative state."""
+
+
+class DurableWriteUncertain(RuntimeClaimStoreError):
+    """A durable write failed and the transition must not be treated as success."""
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        fail_closed_state: ReplayClaimState,
+    ) -> None:
+        super().__init__(message)
+        self.fail_closed_state = fail_closed_state
+
+
+class AuthoritativeClaimStore:
+    """Small durable single-authority replay/claim store.
+
+    The store uses an advisory cross-process lock plus atomic replacement,
+    file fsync, and directory fsync. Every transition reloads current state
+    while holding the lock and applies a claim-generation compare-and-set.
+
+    This slice is storage/runtime infrastructure only. Production deployment
+    location, account isolation, real-key custody, and native signing remain
+    outside its authorization.
+    """
+
+    def __init__(
+        self,
+        root: Path,
+        *,
+        fault_injector: Callable[[str], None] | None = None,
+    ) -> None:
+        if not isinstance(root, Path):
+            raise TypeError("root must be a pathlib.Path")
+        self._root = root
+        self._claims_path = root / "claims.json"
+        self._lock_path = root / "claims.lock"
+        self._fault_injector = fault_injector
+        self._root.mkdir(parents=True, exist_ok=True)
+        os.chmod(self._root, 0o700)
+
+    @contextmanager
+    def _locked(self) -> Iterator[None]:
+        fd = os.open(self._lock_path, os.O_CREAT | os.O_RDWR, 0o600)
+        try:
+            os.fchmod(fd, 0o600)
+            fcntl.flock(fd, fcntl.LOCK_EX)
+            yield
+        finally:
+            try:
+                fcntl.flock(fd, fcntl.LOCK_UN)
+            finally:
+                os.close(fd)
+
+    def _fault(self, phase: str) -> None:
+        if self._fault_injector is not None:
+            self._fault_injector(phase)
+
+    @staticmethod
+    def _claim_key(authorization_id: str, operation_id: str) -> str:
+        payload = (
+            f"{len(authorization_id)}:{authorization_id}"
+            f"{len(operation_id)}:{operation_id}"
+        ).encode()
+        return hashlib.sha256(payload).hexdigest()
+
+    def _read_document_locked(self) -> dict[str, object]:
+        if not self._claims_path.exists():
+            return {"version": _STORE_VERSION, "claims": {}}
+
+        try:
+            raw_text = self._claims_path.read_text(encoding="utf-8")
+            raw: object = json.loads(raw_text)
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise RuntimeClaimStoreError("authoritative claim store is unreadable") from exc
+
+        if not isinstance(raw, dict):
+            raise RuntimeClaimStoreError("authoritative claim store must be a JSON object")
+
+        document = cast(dict[str, object], raw)
+        if document.get("version") != _STORE_VERSION:
+            raise RuntimeClaimStoreError("unsupported authoritative claim-store version")
+
+        claims = document.get("claims")
+        if not isinstance(claims, dict):
+            raise RuntimeClaimStoreError("authoritative claim store claims must be an object")
+
+        return document
+
+    @staticmethod
+    def _claims_mapping(document: dict[str, object]) -> dict[str, object]:
+        claims = document.get("claims")
+        if not isinstance(claims, dict):
+            raise RuntimeClaimStoreError("authoritative claim store claims must be an object")
+        return cast(dict[str, object], claims)
+
+    @staticmethod
+    def _serialize_claim(claim: ReplayClaim) -> dict[str, object]:
+        return {
+            "authorization_id": claim.authorization_id,
+            "operation_id": claim.operation_id,
+            "claim_generation": claim.claim_generation,
+            "state": claim.state.value,
+            "non_key_resources_consumed": list(claim.non_key_resources_consumed),
+            "key_use_intent_durable": claim.key_use_intent_durable,
+            "context_digest": claim.context_digest,
+            "signing_request_digest": claim.signing_request_digest,
+        }
+
+    @staticmethod
+    def _deserialize_claim(raw: object) -> ReplayClaim:
+        if not isinstance(raw, dict):
+            raise RuntimeClaimStoreError("stored claim must be a JSON object")
+
+        mapping = cast(dict[str, object], raw)
+        expected = {
+            "authorization_id",
+            "operation_id",
+            "claim_generation",
+            "state",
+            "non_key_resources_consumed",
+            "key_use_intent_durable",
+            "context_digest",
+            "signing_request_digest",
+        }
+        if set(mapping) != expected:
+            raise RuntimeClaimStoreError("stored claim has an unexpected schema")
+
+        authorization_id = mapping["authorization_id"]
+        operation_id = mapping["operation_id"]
+        claim_generation = mapping["claim_generation"]
+        state = mapping["state"]
+        resources = mapping["non_key_resources_consumed"]
+        key_use_intent_durable = mapping["key_use_intent_durable"]
+        context_digest = mapping["context_digest"]
+        signing_request_digest = mapping["signing_request_digest"]
+
+        if not isinstance(authorization_id, str):
+            raise RuntimeClaimStoreError("stored authorization_id must be a string")
+        if not isinstance(operation_id, str):
+            raise RuntimeClaimStoreError("stored operation_id must be a string")
+        if type(claim_generation) is not int:
+            raise RuntimeClaimStoreError("stored claim_generation must be an exact int")
+        if not isinstance(state, str):
+            raise RuntimeClaimStoreError("stored state must be a string")
+        if not isinstance(resources, list) or not all(
+            isinstance(item, str) for item in resources
+        ):
+            raise RuntimeClaimStoreError(
+                "stored non_key_resources_consumed must be an array of strings"
+            )
+        if type(key_use_intent_durable) is not bool:
+            raise RuntimeClaimStoreError(
+                "stored key_use_intent_durable must be an exact bool"
+            )
+        if not isinstance(context_digest, str):
+            raise RuntimeClaimStoreError("stored context_digest must be a string")
+        if signing_request_digest is not None and not isinstance(
+            signing_request_digest, str
+        ):
+            raise RuntimeClaimStoreError(
+                "stored signing_request_digest must be a string or null"
+            )
+
+        try:
+            return ReplayClaim(
+                authorization_id=authorization_id,
+                operation_id=operation_id,
+                claim_generation=claim_generation,
+                state=ReplayClaimState(state),
+                non_key_resources_consumed=tuple(resources),
+                key_use_intent_durable=key_use_intent_durable,
+                context_digest=context_digest,
+                signing_request_digest=signing_request_digest,
+            )
+        except (TypeError, ValueError) as exc:
+            raise RuntimeClaimStoreError("stored claim violates contract invariants") from exc
+
+    def _load_claim_locked(
+        self,
+        authorization_id: str,
+        operation_id: str,
+    ) -> ReplayClaim | None:
+        document = self._read_document_locked()
+        claims = self._claims_mapping(document)
+        raw = claims.get(self._claim_key(authorization_id, operation_id))
+        if raw is None:
+            return None
+
+        claim = self._deserialize_claim(raw)
+        if (
+            claim.authorization_id != authorization_id
+            or claim.operation_id != operation_id
+        ):
+            raise RuntimeClaimStoreError("stored claim key does not match claim identity")
+        return claim
+
+    def _durable_write_document(
+        self,
+        document: dict[str, object],
+        *,
+        current: ReplayClaim | None,
+    ) -> None:
+        fail_closed_state = claim_state_after_durable_write_failure(
+            None if current is None else current.state
+        )
+        payload = (
+            json.dumps(document, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+            + "\n"
+        ).encode("utf-8")
+
+        fd = -1
+        tmp_path: Path | None = None
+        try:
+            fd, raw_tmp_path = tempfile.mkstemp(
+                prefix=".claims-",
+                suffix=".tmp",
+                dir=self._root,
+            )
+            tmp_path = Path(raw_tmp_path)
+            os.fchmod(fd, 0o600)
+
+            with os.fdopen(fd, "wb", closefd=True) as handle:
+                fd = -1
+                handle.write(payload)
+                handle.flush()
+                self._fault("before_file_fsync")
+                os.fsync(handle.fileno())
+                self._fault("after_file_fsync")
+
+            os.replace(tmp_path, self._claims_path)
+            tmp_path = None
+            self._fault("after_replace")
+
+            dir_fd = os.open(self._root, os.O_RDONLY)
+            try:
+                self._fault("before_directory_fsync")
+                os.fsync(dir_fd)
+                self._fault("after_directory_fsync")
+            finally:
+                os.close(dir_fd)
+
+        except OSError as exc:
+            raise DurableWriteUncertain(
+                "durable authoritative claim-store write is uncertain",
+                fail_closed_state=fail_closed_state,
+            ) from exc
+        finally:
+            if fd >= 0:
+                os.close(fd)
+            if tmp_path is not None:
+                try:
+                    tmp_path.unlink(missing_ok=True)
+                except OSError:
+                    pass
+
+    def _store_claim_locked(
+        self,
+        claim: ReplayClaim,
+        *,
+        current: ReplayClaim | None,
+    ) -> None:
+        document = self._read_document_locked()
+        claims = self._claims_mapping(document)
+        claims[self._claim_key(claim.authorization_id, claim.operation_id)] = (
+            self._serialize_claim(claim)
+        )
+        self._durable_write_document(document, current=current)
+
+    @staticmethod
+    def _require_identity(
+        claim: ReplayClaim,
+        *,
+        authorization_id: str,
+        operation_id: str,
+        context_digest: str,
+    ) -> None:
+        if claim.authorization_id != authorization_id:
+            raise ClaimConflictError("authorization_id does not match authoritative claim")
+        if claim.operation_id != operation_id:
+            raise ClaimConflictError("operation_id does not match authoritative claim")
+        if claim.context_digest != context_digest:
+            raise ClaimConflictError("context_digest does not match authoritative claim")
+
+    @staticmethod
+    def _require_generation(claim: ReplayClaim, expected_generation: int) -> None:
+        if type(expected_generation) is not int or expected_generation < 0:
+            raise ValueError("expected_generation must be a non-negative exact int")
+        if claim.claim_generation != expected_generation:
+            raise StaleClaimGenerationError(
+                "expected_generation does not match authoritative claim"
+            )
+
+    @staticmethod
+    def _next_claim(
+        current: ReplayClaim,
+        *,
+        state: ReplayClaimState,
+        key_use_intent_durable: bool,
+        signing_request_digest: str | None,
+    ) -> ReplayClaim:
+        return ReplayClaim(
+            authorization_id=current.authorization_id,
+            operation_id=current.operation_id,
+            claim_generation=current.claim_generation + 1,
+            state=state,
+            non_key_resources_consumed=current.non_key_resources_consumed,
+            key_use_intent_durable=key_use_intent_durable,
+            context_digest=current.context_digest,
+            signing_request_digest=signing_request_digest,
+        )
+
+    def reserve(
+        self,
+        *,
+        authorization_id: str,
+        operation_id: str,
+        context_digest: str,
+        non_key_resources_consumed: tuple[str, ...] = (),
+    ) -> ReplayClaim:
+        """Durably reserve one operation and bind its admitted context digest."""
+        with self._locked():
+            current = self._load_claim_locked(authorization_id, operation_id)
+            if current is not None:
+                raise ClaimConflictError("operation already has authoritative claim state")
+
+            claim = ReplayClaim(
+                authorization_id=authorization_id,
+                operation_id=operation_id,
+                claim_generation=0,
+                state=ReplayClaimState.RESOURCES_RESERVED,
+                non_key_resources_consumed=non_key_resources_consumed,
+                key_use_intent_durable=False,
+                context_digest=context_digest,
+                signing_request_digest=None,
+            )
+            self._store_claim_locked(claim, current=None)
+            return claim
+
+    def claim_key_use_intent(
+        self,
+        *,
+        authorization_id: str,
+        operation_id: str,
+        context_digest: str,
+        signing_request_digest: str,
+        expected_generation: int,
+    ) -> ReplayClaim:
+        """Durably bind the exact signing-request digest before signer execution."""
+        with self._locked():
+            current = self._load_claim_locked(authorization_id, operation_id)
+            if current is None:
+                raise ClaimConflictError("authoritative reservation is missing")
+
+            self._require_identity(
+                current,
+                authorization_id=authorization_id,
+                operation_id=operation_id,
+                context_digest=context_digest,
+            )
+            self._require_generation(current, expected_generation)
+
+            if current.state is not ReplayClaimState.RESOURCES_RESERVED:
+                raise ClaimConflictError("key-use intent requires RESOURCES_RESERVED")
+
+            claim = self._next_claim(
+                current,
+                state=ReplayClaimState.KEY_USE_CLAIMED,
+                key_use_intent_durable=True,
+                signing_request_digest=signing_request_digest,
+            )
+            self._store_claim_locked(claim, current=current)
+            return claim
+
+    def record_terminal(
+        self,
+        *,
+        authorization_id: str,
+        operation_id: str,
+        context_digest: str,
+        terminal_state: ReplayClaimState,
+        expected_generation: int,
+    ) -> ReplayClaim:
+        """Durably record a terminal claim state using authoritative current state."""
+        if type(terminal_state) is not ReplayClaimState:
+            raise TypeError("terminal_state must be an exact ReplayClaimState")
+
+        with self._locked():
+            current = self._load_claim_locked(authorization_id, operation_id)
+            if current is None:
+                raise ClaimConflictError("authoritative claim is missing")
+
+            self._require_identity(
+                current,
+                authorization_id=authorization_id,
+                operation_id=operation_id,
+                context_digest=context_digest,
+            )
+            self._require_generation(current, expected_generation)
+
+            if current.state is ReplayClaimState.RESOURCES_RESERVED:
+                if terminal_state not in {
+                    ReplayClaimState.NO_KEY_USE,
+                    ReplayClaimState.QUARANTINED,
+                }:
+                    raise ClaimConflictError(
+                        "reserved claim may terminate only as NO_KEY_USE or QUARANTINED"
+                    )
+                key_use_intent_durable = False
+                signing_request_digest = None
+            elif current.state is ReplayClaimState.KEY_USE_CLAIMED:
+                if terminal_state not in _TERMINAL_AFTER_KEY_USE:
+                    raise ClaimConflictError(
+                        "claimed key use requires SPENT_CLEAN, SPENT_UNKNOWN, or QUARANTINED"
+                    )
+                key_use_intent_durable = True
+                signing_request_digest = current.signing_request_digest
+            else:
+                raise ClaimConflictError("authoritative claim is already terminal")
+
+            claim = self._next_claim(
+                current,
+                state=terminal_state,
+                key_use_intent_durable=key_use_intent_durable,
+                signing_request_digest=signing_request_digest,
+            )
+            self._store_claim_locked(claim, current=current)
+            return claim
+
+    def load_authoritative(
+        self,
+        *,
+        authorization_id: str,
+        operation_id: str,
+    ) -> ReplayClaim | None:
+        """Load authoritative state; caller-created claims are not accepted."""
+        with self._locked():
+            return self._load_claim_locked(authorization_id, operation_id)
+
+    def claim_for_signer(
+        self,
+        *,
+        authorization_id: str,
+        operation_id: str,
+        context_digest: str,
+        signing_request_digest: str,
+    ) -> ReplayClaim:
+        """Reload authoritative key-use intent for the irreversible signer boundary."""
+        with self._locked():
+            claim = self._load_claim_locked(authorization_id, operation_id)
+            if claim is None:
+                raise ClaimConflictError("authoritative claim is missing")
+            self._require_identity(
+                claim,
+                authorization_id=authorization_id,
+                operation_id=operation_id,
+                context_digest=context_digest,
+            )
+            if claim.state is not ReplayClaimState.KEY_USE_CLAIMED:
+                raise ClaimConflictError("signer boundary requires KEY_USE_CLAIMED")
+            if not claim.key_use_intent_durable:
+                raise ClaimConflictError("key-use intent is not durable")
+            if claim.signing_request_digest != signing_request_digest:
+                raise ClaimConflictError(
+                    "signing_request_digest does not match authoritative state"
+                )
+            return claim
+
+    def claim_for_release(
+        self,
+        *,
+        authorization_id: str,
+        operation_id: str,
+        context_digest: str,
+        signing_request_digest: str,
+    ) -> ReplayClaim:
+        """Reload authoritative SPENT_CLEAN state for release validation."""
+        with self._locked():
+            claim = self._load_claim_locked(authorization_id, operation_id)
+            if claim is None:
+                raise ClaimConflictError("authoritative claim is missing")
+            self._require_identity(
+                claim,
+                authorization_id=authorization_id,
+                operation_id=operation_id,
+                context_digest=context_digest,
+            )
+            if claim.state is not ReplayClaimState.SPENT_CLEAN:
+                raise ClaimConflictError("release boundary requires SPENT_CLEAN")
+            if not claim.key_use_intent_durable:
+                raise ClaimConflictError("key-use intent is not durable")
+            if claim.signing_request_digest != signing_request_digest:
+                raise ClaimConflictError(
+                    "signing_request_digest does not match authoritative state"
+                )
+            return claim
+
+    def recover_after_restart(
+        self,
+        *,
+        authorization_id: str,
+        operation_id: str,
+    ) -> ReplayClaim | None:
+        """Recover in-flight claims fail-closed and persist the stricter state."""
+        with self._locked():
+            current = self._load_claim_locked(authorization_id, operation_id)
+            if current is None:
+                return None
+
+            recovered = recover_claim_after_restart(current)
+            if recovered.state is current.state:
+                return current
+
+            claim = ReplayClaim(
+                authorization_id=recovered.authorization_id,
+                operation_id=recovered.operation_id,
+                claim_generation=current.claim_generation + 1,
+                state=recovered.state,
+                non_key_resources_consumed=recovered.non_key_resources_consumed,
+                key_use_intent_durable=recovered.key_use_intent_durable,
+                context_digest=recovered.context_digest,
+                signing_request_digest=recovered.signing_request_digest,
+            )
+            self._store_claim_locked(claim, current=current)
+            return claim
+
+
+class RuntimeFactConstructor:
+    """Construct exact contract facts inside the trusted runtime boundary."""
+
+    @staticmethod
+    def signing_result(
+        *,
+        authorization_id: str,
+        operation_id: str,
+        key_ref: KeyRef,
+        signature_namespace: str,
+        final_payload_digest: str,
+        signature_sha256: str,
+        signature_verified: bool,
+        elapsed_at_signature_completion_seconds: int,
+        signer_reaped: bool,
+        custody_postconditions_verified: bool,
+        evidence_sealed: bool,
+    ) -> SigningResult:
+        if type(key_ref) is not KeyRef:
+            raise TypeError("key_ref must be an exact KeyRef")
+        return SigningResult(
+            authorization_id=authorization_id,
+            operation_id=operation_id,
+            key_ref=key_ref,
+            signature_namespace=signature_namespace,
+            final_payload_digest=final_payload_digest,
+            signature_sha256=signature_sha256,
+            signature_verified=signature_verified,
+            elapsed_at_signature_completion_seconds=(
+                elapsed_at_signature_completion_seconds
+            ),
+            signer_reaped=signer_reaped,
+            custody_postconditions_verified=custody_postconditions_verified,
+            evidence_sealed=evidence_sealed,
+        )
