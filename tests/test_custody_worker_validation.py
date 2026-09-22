@@ -15,12 +15,14 @@ from familyos_pilot0.custody_worker_contracts import (
     ReplayPolicy,
     RevocationStatus,
     SigningRequest,
+    SigningResult,
     TrustAnchorRecord,
 )
 from familyos_pilot0.custody_worker_validation import (
     CustodyValidationDecision,
     CustodyValidationReason,
     validate_custody_worker_context,
+    validate_post_signing_release,
     validate_replay_preflight,
     verify_signing_request,
 )
@@ -103,6 +105,34 @@ def _make_signing_request(
         chain_fingerprint=chain_fingerprint,
         issued_at_epoch_seconds=issued_at,
         not_after_epoch_seconds=not_after,
+    )
+
+
+def _make_signing_result(
+    request: SigningRequest,
+    *,
+    signature_verified: bool = True,
+    completion_seconds: int | None = None,
+    signer_reaped: bool = True,
+    custody_postconditions_verified: bool = True,
+    evidence_sealed: bool = True,
+) -> SigningResult:
+    return SigningResult(
+        authorization_id=request.authorization_id,
+        operation_id=request.operation_id,
+        key_ref=request.key_ref,
+        signature_namespace=request.signature_namespace,
+        final_payload_digest=request.final_payload_digest,
+        signature_sha256="9" * 64,
+        signature_verified=signature_verified,
+        elapsed_at_signature_completion_seconds=(
+            request.not_after_epoch_seconds - 1
+            if completion_seconds is None
+            else completion_seconds
+        ),
+        signer_reaped=signer_reaped,
+        custody_postconditions_verified=custody_postconditions_verified,
+        evidence_sealed=evidence_sealed,
     )
 
 
@@ -397,6 +427,181 @@ def test_verify_signing_request_rejects_expired_request() -> None:
     )
 
     assert CustodyValidationReason.SIGNING_REQUEST_EXPIRED in decision.reasons
+    assert decision.key_use_authorized is False
+
+
+def test_post_signing_release_accepts_exact_clean_terminal_result() -> None:
+    envelope, _, evidence = _aligned_context()
+    request = _make_signing_request(envelope, evidence)
+    result = _make_signing_result(request)
+    claim = make_claim(
+        ReplayClaimState.SPENT_CLEAN,
+        authorization_id=request.authorization_id,
+        operation_id=request.operation_id,
+        context_digest=request.context_digest,
+        signing_request_digest=request.digest(),
+    )
+
+    decision = validate_post_signing_release(
+        signing_request=request,
+        signing_result=result,
+        claim=claim,
+    )
+
+    assert decision.validation_passed is True
+    assert decision.reasons == ()
+    assert decision.key_use_authorized is False
+
+
+def test_post_signing_release_rejects_result_binding_mismatch() -> None:
+    envelope, _, evidence = _aligned_context()
+    request = _make_signing_request(envelope, evidence)
+    result = _make_signing_result(request)
+    altered = replace(
+        result,
+        authorization_id="auth-rd01-other",
+        final_payload_digest="5" * 64,
+    )
+    claim = make_claim(
+        ReplayClaimState.SPENT_CLEAN,
+        authorization_id=request.authorization_id,
+        operation_id=request.operation_id,
+        context_digest=request.context_digest,
+        signing_request_digest=request.digest(),
+    )
+
+    decision = validate_post_signing_release(
+        signing_request=request,
+        signing_result=altered,
+        claim=claim,
+    )
+
+    assert CustodyValidationReason.SIGNING_RESULT_AUTHORIZATION_ID_MISMATCH in decision.reasons
+    assert CustodyValidationReason.SIGNING_RESULT_PAYLOAD_DIGEST_MISMATCH in decision.reasons
+    assert decision.key_use_authorized is False
+
+
+def test_post_signing_release_requires_all_runtime_postconditions() -> None:
+    envelope, _, evidence = _aligned_context()
+    request = _make_signing_request(envelope, evidence)
+    result = _make_signing_result(
+        request,
+        signature_verified=False,
+        signer_reaped=False,
+        custody_postconditions_verified=False,
+        evidence_sealed=False,
+    )
+    claim = make_claim(
+        ReplayClaimState.SPENT_CLEAN,
+        authorization_id=request.authorization_id,
+        operation_id=request.operation_id,
+        context_digest=request.context_digest,
+        signing_request_digest=request.digest(),
+    )
+
+    decision = validate_post_signing_release(
+        signing_request=request,
+        signing_result=result,
+        claim=claim,
+    )
+
+    assert CustodyValidationReason.SIGNATURE_NOT_VERIFIED in decision.reasons
+    assert CustodyValidationReason.SIGNER_NOT_REAPED in decision.reasons
+    assert CustodyValidationReason.CUSTODY_POSTCONDITIONS_NOT_VERIFIED in decision.reasons
+    assert CustodyValidationReason.EVIDENCE_NOT_SEALED in decision.reasons
+    assert decision.key_use_authorized is False
+
+
+def test_post_signing_release_treats_not_after_as_exclusive() -> None:
+    envelope, _, evidence = _aligned_context()
+    request = _make_signing_request(envelope, evidence)
+    result = _make_signing_result(
+        request,
+        completion_seconds=request.not_after_epoch_seconds,
+    )
+    claim = make_claim(
+        ReplayClaimState.SPENT_CLEAN,
+        authorization_id=request.authorization_id,
+        operation_id=request.operation_id,
+        context_digest=request.context_digest,
+        signing_request_digest=request.digest(),
+    )
+
+    decision = validate_post_signing_release(
+        signing_request=request,
+        signing_result=result,
+        claim=claim,
+    )
+
+    assert CustodyValidationReason.SIGNATURE_COMPLETED_TOO_LATE in decision.reasons
+    assert decision.key_use_authorized is False
+
+
+def test_post_signing_release_requires_authoritative_spent_clean_claim() -> None:
+    envelope, _, evidence = _aligned_context()
+    request = _make_signing_request(envelope, evidence)
+    result = _make_signing_result(request)
+    claim = make_claim(
+        ReplayClaimState.SPENT_UNKNOWN,
+        authorization_id=request.authorization_id,
+        operation_id=request.operation_id,
+        context_digest=request.context_digest,
+    )
+
+    decision = validate_post_signing_release(
+        signing_request=request,
+        signing_result=result,
+        claim=claim,
+    )
+
+    assert CustodyValidationReason.CLAIM_NOT_SPENT_CLEAN in decision.reasons
+    assert CustodyValidationReason.CLAIM_SIGNING_REQUEST_DIGEST_MISSING in decision.reasons
+    assert CustodyValidationReason.CLAIM_NOT_TERMINAL not in decision.reasons
+    assert decision.key_use_authorized is False
+
+
+def test_post_signing_release_rejects_nonterminal_claim() -> None:
+    envelope, _, evidence = _aligned_context()
+    request = _make_signing_request(envelope, evidence)
+    result = _make_signing_result(request)
+    claim = make_claim(
+        ReplayClaimState.KEY_USE_CLAIMED,
+        authorization_id=request.authorization_id,
+        operation_id=request.operation_id,
+        context_digest=request.context_digest,
+        signing_request_digest=request.digest(),
+    )
+
+    decision = validate_post_signing_release(
+        signing_request=request,
+        signing_result=result,
+        claim=claim,
+    )
+
+    assert CustodyValidationReason.CLAIM_NOT_TERMINAL in decision.reasons
+    assert CustodyValidationReason.CLAIM_NOT_SPENT_CLEAN in decision.reasons
+    assert decision.key_use_authorized is False
+
+
+def test_post_signing_release_requires_exact_recorded_request_digest() -> None:
+    envelope, _, evidence = _aligned_context()
+    request = _make_signing_request(envelope, evidence)
+    result = _make_signing_result(request)
+    claim = make_claim(
+        ReplayClaimState.SPENT_CLEAN,
+        authorization_id=request.authorization_id,
+        operation_id=request.operation_id,
+        context_digest=request.context_digest,
+        signing_request_digest="6" * 64,
+    )
+
+    decision = validate_post_signing_release(
+        signing_request=request,
+        signing_result=result,
+        claim=claim,
+    )
+
+    assert CustodyValidationReason.CLAIM_SIGNING_REQUEST_DIGEST_MISMATCH in decision.reasons
     assert decision.key_use_authorized is False
 
 

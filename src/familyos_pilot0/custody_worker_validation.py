@@ -30,6 +30,7 @@ from familyos_pilot0.custody_worker_contracts import (
     ReplayPolicy,
     RevocationStatus,
     SigningRequest,
+    SigningResult,
     TrustAnchorRecord,
 )
 
@@ -100,6 +101,19 @@ class CustodyValidationReason(StrEnum):
     SIGNING_REQUEST_EXCEEDS_AUTHORIZATION = "SIGNING_REQUEST_EXCEEDS_AUTHORIZATION"
     SIGNING_REQUEST_NOT_YET_VALID = "SIGNING_REQUEST_NOT_YET_VALID"
     SIGNING_REQUEST_EXPIRED = "SIGNING_REQUEST_EXPIRED"
+
+    SIGNING_RESULT_AUTHORIZATION_ID_MISMATCH = "SIGNING_RESULT_AUTHORIZATION_ID_MISMATCH"
+    SIGNING_RESULT_OPERATION_ID_MISMATCH = "SIGNING_RESULT_OPERATION_ID_MISMATCH"
+    SIGNING_RESULT_KEY_REF_MISMATCH = "SIGNING_RESULT_KEY_REF_MISMATCH"
+    SIGNING_RESULT_SIGNATURE_NAMESPACE_MISMATCH = "SIGNING_RESULT_SIGNATURE_NAMESPACE_MISMATCH"
+    SIGNING_RESULT_PAYLOAD_DIGEST_MISMATCH = "SIGNING_RESULT_PAYLOAD_DIGEST_MISMATCH"
+    SIGNATURE_NOT_VERIFIED = "SIGNATURE_NOT_VERIFIED"
+    SIGNATURE_COMPLETED_TOO_LATE = "SIGNATURE_COMPLETED_TOO_LATE"
+    SIGNER_NOT_REAPED = "SIGNER_NOT_REAPED"
+    CUSTODY_POSTCONDITIONS_NOT_VERIFIED = "CUSTODY_POSTCONDITIONS_NOT_VERIFIED"
+    EVIDENCE_NOT_SEALED = "EVIDENCE_NOT_SEALED"
+    CLAIM_NOT_TERMINAL = "CLAIM_NOT_TERMINAL"
+    CLAIM_NOT_SPENT_CLEAN = "CLAIM_NOT_SPENT_CLEAN"
 
 
 @dataclass(frozen=True)
@@ -347,6 +361,67 @@ def verify_signing_request(
         reasons.append(CustodyValidationReason.CLAIM_CONTEXT_DIGEST_MISMATCH)
     if claim.state is not ReplayClaimState.KEY_USE_CLAIMED:
         reasons.append(CustodyValidationReason.CLAIM_NOT_KEY_USE_CLAIMED)
+    if not claim.key_use_intent_durable:
+        reasons.append(CustodyValidationReason.CLAIM_KEY_USE_INTENT_NOT_DURABLE)
+    if claim.signing_request_digest is None:
+        reasons.append(CustodyValidationReason.CLAIM_SIGNING_REQUEST_DIGEST_MISSING)
+    elif claim.signing_request_digest != signing_request.digest():
+        reasons.append(CustodyValidationReason.CLAIM_SIGNING_REQUEST_DIGEST_MISMATCH)
+
+    return _decision(reasons)
+
+
+def validate_post_signing_release(
+    *,
+    signing_request: SigningRequest,
+    signing_result: SigningResult,
+    claim: ReplayClaim,
+) -> CustodyValidationDecision:
+    """Validate post-signing release facts without releasing or mutating state.
+
+    ``SigningResult`` supplies facts observed by the trusted runtime. The
+    authoritative replay record must already be terminal ``SPENT_CLEAN`` and
+    must retain the exact digest of ``signing_request``. This function performs
+    no signing, no key access, no replay transition and no I/O.
+    """
+
+    reasons: list[CustodyValidationReason] = []
+
+    if signing_result.authorization_id != signing_request.authorization_id:
+        reasons.append(CustodyValidationReason.SIGNING_RESULT_AUTHORIZATION_ID_MISMATCH)
+    if signing_result.operation_id != signing_request.operation_id:
+        reasons.append(CustodyValidationReason.SIGNING_RESULT_OPERATION_ID_MISMATCH)
+    if signing_result.key_ref != signing_request.key_ref:
+        reasons.append(CustodyValidationReason.SIGNING_RESULT_KEY_REF_MISMATCH)
+    if signing_result.signature_namespace != signing_request.signature_namespace:
+        reasons.append(CustodyValidationReason.SIGNING_RESULT_SIGNATURE_NAMESPACE_MISMATCH)
+    if signing_result.final_payload_digest != signing_request.final_payload_digest:
+        reasons.append(CustodyValidationReason.SIGNING_RESULT_PAYLOAD_DIGEST_MISMATCH)
+
+    if not signing_result.signature_verified:
+        reasons.append(CustodyValidationReason.SIGNATURE_NOT_VERIFIED)
+    if (
+        signing_result.elapsed_at_signature_completion_seconds
+        >= signing_request.not_after_epoch_seconds
+    ):
+        reasons.append(CustodyValidationReason.SIGNATURE_COMPLETED_TOO_LATE)
+    if not signing_result.signer_reaped:
+        reasons.append(CustodyValidationReason.SIGNER_NOT_REAPED)
+    if not signing_result.custody_postconditions_verified:
+        reasons.append(CustodyValidationReason.CUSTODY_POSTCONDITIONS_NOT_VERIFIED)
+    if not signing_result.evidence_sealed:
+        reasons.append(CustodyValidationReason.EVIDENCE_NOT_SEALED)
+
+    if claim.authorization_id != signing_request.authorization_id:
+        reasons.append(CustodyValidationReason.CLAIM_AUTHORIZATION_ID_MISMATCH)
+    if claim.operation_id != signing_request.operation_id:
+        reasons.append(CustodyValidationReason.CLAIM_OPERATION_ID_MISMATCH)
+    if claim.context_digest != signing_request.context_digest:
+        reasons.append(CustodyValidationReason.CLAIM_CONTEXT_DIGEST_MISMATCH)
+    if not claim.is_terminal:
+        reasons.append(CustodyValidationReason.CLAIM_NOT_TERMINAL)
+    if claim.state is not ReplayClaimState.SPENT_CLEAN:
+        reasons.append(CustodyValidationReason.CLAIM_NOT_SPENT_CLEAN)
     if not claim.key_use_intent_durable:
         reasons.append(CustodyValidationReason.CLAIM_KEY_USE_INTENT_NOT_DURABLE)
     if claim.signing_request_digest is None:
