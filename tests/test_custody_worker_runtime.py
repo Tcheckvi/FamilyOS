@@ -18,6 +18,7 @@ from familyos_pilot0.custody_rollback_contracts import (
 from familyos_pilot0.custody_worker_contracts import (
     KeyPurposeClass,
     KeyRef,
+    ReplayClaim,
     ReplayClaimState,
     SigningResult,
 )
@@ -36,6 +37,7 @@ class _R2BSyntheticRollbackAnchor:
 
     def __init__(self, checkpoint: RollbackCheckpoint) -> None:
         self._checkpoint = checkpoint
+        self.executions: set[str] = set()
         self.fail_advance = False
         self.readback_mismatch = False
 
@@ -65,6 +67,11 @@ class _R2BSyntheticRollbackAnchor:
             candidate=candidate,
         )
         self._checkpoint = candidate
+
+    def acquire_execution(self, *, expected_current: RollbackCheckpoint, execution_id: str) -> None:
+        if self._checkpoint != expected_current or execution_id in self.executions:
+            raise RollbackContractError("synthetic execution already consumed or stale")
+        self.executions.add(execution_id)
 
 
 _R2B_TEST_BINDINGS: dict[
@@ -482,13 +489,13 @@ def test_store_rejects_schema_tampering(tmp_path: Path) -> None:
     data["claims"][key]["unexpected"] = True
     claims_path.write_text(json.dumps(data), encoding="utf-8")
 
-    with pytest.raises(RollbackRejectedError) as rollback_error:
+    with pytest.raises(RuntimeClaimStoreError, match="unexpected schema"):
         store.load_authoritative(
             authorization_id=AUTHORIZATION_ID,
             operation_id=OPERATION_ID,
         )
 
-    assert rollback_error.value.decision is RollbackVerificationDecision.DIVERGENCE
+    # R2C rejects the malformed claim before computing an admissible checkpoint.
 
 
 def test_lock_and_claim_files_are_not_group_or_world_accessible(
@@ -543,6 +550,26 @@ def test_r2b_constructor_requires_explicit_identity_and_anchor() -> None:
     assert signature.parameters["rollback_anchor"].default is inspect.Parameter.empty
 
 
+def _valid_checkpoint_document(generations: list[int]) -> dict[str, object]:
+    """Use actual v1 records: R2C now rejects incomplete synthetic envelopes."""
+    claims = {}
+    for index, generation in enumerate(generations):
+        operation = f"operation-{index}"
+        claim = ReplayClaim(
+            authorization_id="auth",
+            operation_id=operation,
+            claim_generation=generation,
+            state=ReplayClaimState.RESOURCES_RESERVED,
+            non_key_resources_consumed=(),
+            key_use_intent_durable=False,
+            context_digest=CONTEXT_DIGEST,
+        )
+        claims[AuthoritativeClaimStore._claim_key("auth", operation)] = (
+            AuthoritativeClaimStore._serialize_claim(claim)
+        )
+    return {"version": 1, "claims": claims}
+
+
 def test_r2b_empty_checkpoint_and_generation_formula(tmp_path: Path) -> None:
     root = tmp_path / "r2b-generation"
     identity = StoreIdentity(
@@ -561,36 +588,15 @@ def test_r2b_empty_checkpoint_and_generation_formula(tmp_path: Path) -> None:
     empty = store._rollback_checkpoint_for_document({})
     assert empty.store_generation == 0
 
-    one_claim = {
-        "claims": {
-            "a": {
-                "claim_generation": 0,
-            }
-        }
-    }
+    one_claim = _valid_checkpoint_document([0])
     one = store._rollback_checkpoint_for_document(one_claim)
     assert one.store_generation == 1
 
-    transitioned = {
-        "claims": {
-            "a": {
-                "claim_generation": 1,
-            }
-        }
-    }
+    transitioned = _valid_checkpoint_document([1])
     two = store._rollback_checkpoint_for_document(transitioned)
     assert two.store_generation == 2
 
-    two_claims = {
-        "claims": {
-            "a": {
-                "claim_generation": 1,
-            },
-            "b": {
-                "claim_generation": 0,
-            },
-        }
-    }
+    two_claims = _valid_checkpoint_document([1, 0])
     three = store._rollback_checkpoint_for_document(two_claims)
     assert three.store_generation == 3
     assert (
@@ -645,7 +651,7 @@ def test_r2b_store_ahead_of_anchor_is_denied(tmp_path: Path) -> None:
     )
 
     store._claims_path.write_text(
-        '{"claims":{"a":{"claim_generation":0}}}',
+        json.dumps(_valid_checkpoint_document([0])),
         encoding="utf-8",
     )
 
@@ -670,7 +676,7 @@ def test_r2b_anchor_advances_after_durable_store_state(tmp_path: Path) -> None:
 
     old_checkpoint = store._require_rollback_match_locked()
     store._claims_path.write_text(
-        '{"claims":{"a":{"claim_generation":0}}}',
+        json.dumps(_valid_checkpoint_document([0])),
         encoding="utf-8",
     )
     candidate = store._advance_rollback_anchor_locked(old_checkpoint)
@@ -697,7 +703,7 @@ def test_r2b_anchor_advance_failure_leaves_store_fail_closed(tmp_path: Path) -> 
 
     old_checkpoint = store._require_rollback_match_locked()
     store._claims_path.write_text(
-        '{"claims":{"a":{"claim_generation":0}}}',
+        json.dumps(_valid_checkpoint_document([0])),
         encoding="utf-8",
     )
     anchor.fail_advance = True
@@ -727,7 +733,7 @@ def test_r2b_anchor_readback_mismatch_is_denied(tmp_path: Path) -> None:
 
     old_checkpoint = store._require_rollback_match_locked()
     store._claims_path.write_text(
-        '{"claims":{"a":{"claim_generation":0}}}',
+        json.dumps(_valid_checkpoint_document([0])),
         encoding="utf-8",
     )
     anchor.readback_mismatch = True
