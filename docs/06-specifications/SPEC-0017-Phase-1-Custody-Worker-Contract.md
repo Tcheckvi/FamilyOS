@@ -2,7 +2,7 @@
 
 **Identifier:** SPEC-0017
 **Title:** Phase-1 Custody Worker Contract
-**Version:** 1.0.0
+**Version:** 1.1.0
 **Status:** Approved
 **Owner:** FamilyOS Project
 **Layer:** Specifications
@@ -250,9 +250,9 @@ decision_reference
 integrity_proof_identifier
 ```
 
-#### 6.6.3 Phase-1 proposed assignment
+#### 6.6.3 Phase-1 assignment
 
-Unless superseded by a later reviewed specification revision, Phase 1 SHALL use:
+Phase 1 SHALL use:
 
 STATIC:
 
@@ -722,16 +722,426 @@ REAL_SIGNING_AUTHORIZED=false
 F05_CLOSURE_AUTHORIZED=false
 ```
 
-### 6.21 Contracts Still To Be Specified
+### 6.21 Closed Pre-Implementation Contracts
 
-Before an implementation authorization decision, a reviewed revision of this specification SHALL define:
+The contracts in this section are normative prerequisites for any later implementation-authorization decision.
 
-- the canonical serialization and digest of the `AuthorizationEnvelope`, `TrustAnchorRecord`, worker profile, `context_digest` and `chain_fingerprint`;
-- the claim-ledger transition table, the compare-and-set interface and the uniqueness key;
-- for each runtime fact (governed time, trust anchors, worker profile, claim reads, approver evidence, worker challenge, signer identity and reap state, signature verification, cleanup result, sealed evidence, terminal record), the trusted component that may construct it and the store it is read from;
-- the `receipt_identifier` derivation rule and its inputs;
-- that the final canonical bytes are produced by the existing RD-01 receipt canonicalization (`TrustedHumanAuthorizationReceipt.canonical_payload_bytes`), whose fixed `version` and `purpose` the template commitment SHALL match;
-- the disposition of the implementation dependency on the currently untracked `real_data_wave_a.py` and `trust_source_bindings.py`.
+#### 6.21.1 Canonical structured-record serialization
+
+The following structured records SHALL use the canonicalization identifier:
+
+```text
+familyos-canonical-json-v1
+```
+
+This applies to:
+
+- `AuthorizationEnvelope`;
+- `TrustAnchorRecord`;
+- the pinned worker profile;
+- structured documents used to derive `context_digest`;
+- structured documents used to derive `chain_fingerprint`;
+- `ApproverEvidence`;
+- `SigningRequest`.
+
+Canonical JSON bytes SHALL be produced exactly as follows:
+
+```text
+JSON object
+-> keys sorted lexicographically
+-> separators exactly "," and ":"
+-> ASCII escaping enabled
+-> NaN and Infinity forbidden
+-> encoded as ASCII bytes
+```
+
+Equivalent Python behavior is:
+
+```python
+json.dumps(
+    document,
+    sort_keys=True,
+    separators=(",", ":"),
+    ensure_ascii=True,
+    allow_nan=False,
+).encode("ascii")
+```
+
+Strict parsing SHALL reject:
+
+- duplicate JSON keys;
+- JSON floats;
+- non-finite numbers;
+- missing required fields;
+- unknown fields;
+- non-string object keys;
+- type substitutions that violate the exact contract.
+
+`AuthorizationEnvelope` input JSON SHALL remain bounded by the reviewed maximum canonical input size of 65,536 UTF-8 bytes.
+
+The digest of each canonical structured record SHALL be lowercase hexadecimal SHA-256 over its exact canonical bytes.
+
+#### 6.21.2 AuthorizationEnvelope digest
+
+`AuthorizationEnvelope.digest` SHALL equal:
+
+```text
+SHA256(
+    canonical_json_bytes(
+        AuthorizationEnvelope.to_document()
+    )
+)
+```
+
+The canonical document SHALL include the entire accepted envelope structure, including nested `KeyRef`, `PayloadTemplateCommitment`, replay policy, policy version, revocation handle and delegation chain.
+
+No subset, caller-supplied digest, Python object equality, object identity or construction history SHALL substitute for this digest.
+
+#### 6.21.3 TrustAnchorRecord digest
+
+`TrustAnchorRecord.digest` SHALL equal:
+
+```text
+SHA256(
+    canonical_json_bytes(
+        TrustAnchorRecord.to_document()
+    )
+)
+```
+
+The canonical document SHALL sort unordered authorization-class values and approver bindings deterministically before serialization.
+
+The anchor digest SHALL bind the exact pinned issuance-record digest and the exact pinned structured-envelope digest.
+
+#### 6.21.4 Worker profile digest
+
+The pinned worker profile SHALL be represented as one exact structured document and SHALL have:
+
+```text
+profile_digest =
+SHA256(canonical_json_bytes(worker_profile_document))
+```
+
+The document SHALL bind at minimum:
+
+```text
+worker_audience
+result_audience
+family_or_security_domain
+allowed_actor_refs
+allowed_approver_refs
+capability_id
+capability_version
+action
+resource_ref
+scope_fingerprint
+key_ref
+signature_namespace
+expected_canonicalization_id
+expected_payload_template_commitment
+required_replay_policy
+required_replay_mirror_ids
+human_confirmation_deadline_seconds
+overall_freshness_budget_seconds
+```
+
+Collections whose semantic order is not meaningful SHALL be sorted before canonical serialization.
+
+#### 6.21.5 context_digest
+
+The admission context digest SHALL be exactly:
+
+```text
+context_document = {
+  "envelope_digest": envelope.digest(),
+  "anchor_digest": anchor.digest(),
+  "profile_digest": profile.digest()
+}
+
+context_digest =
+SHA256(canonical_json_bytes(context_document))
+```
+
+The authoritative claim ledger SHALL durably record this exact `context_digest` when resources are reserved.
+
+Every later irreversible boundary SHALL recompute or independently obtain the same trusted envelope, anchor and worker profile and SHALL deny on any context digest mismatch.
+
+#### 6.21.6 chain_fingerprint
+
+The confirmation-chain fingerprint SHALL be exactly:
+
+```text
+chain_document = {
+  "envelope_digest": envelope.digest(),
+  "anchor_digest": anchor.digest(),
+  "profile_digest": profile.digest(),
+  "payload_digest": final_payload_digest,
+  "evidence_digest": approver_evidence.digest(),
+  "governed_time": {
+    "epoch_seconds": trusted_time.epoch_seconds,
+    "source_identifier": trusted_time.source_identifier,
+    "source_attestation_identifier":
+      trusted_time.source_attestation_identifier
+  }
+}
+
+chain_fingerprint =
+SHA256(canonical_json_bytes(chain_document))
+```
+
+The fingerprint SHALL be recomputed from trusted inputs at the relevant boundary. A caller-provided chain fingerprint SHALL never establish provenance.
+
+#### 6.21.7 Authoritative claim-ledger uniqueness key
+
+The authoritative single-use uniqueness key SHALL be:
+
+```text
+authorization_id
+```
+
+There SHALL be at most one authoritative claim record for one `authorization_id`, regardless of `operation_id`.
+
+`operation_id` SHALL be stored as an immutable binding inside the claim. A request for an existing `authorization_id` with a different `operation_id` SHALL deny and SHALL NOT create a second claim.
+
+#### 6.21.8 Claim record
+
+The authoritative claim record SHALL bind at minimum:
+
+```text
+authorization_id
+operation_id
+claim_generation
+state
+context_digest
+non_key_resources_consumed
+key_use_intent_durable
+signing_request_digest
+```
+
+`claim_generation` SHALL be a monotonically increasing non-negative integer or an equivalent monotonic transaction sequence that provides anti-rollback evidence.
+
+The store SHALL preserve claim records across process restart.
+
+#### 6.21.9 Compare-and-set interface
+
+The authoritative claim store SHALL provide the logical equivalent of:
+
+```text
+read(authorization_id)
+
+reserve_if_unseen(
+  authorization_id,
+  operation_id,
+  context_digest,
+  consumed_or_reserved_resource_identities
+)
+
+compare_and_set(
+  authorization_id,
+  expected_generation,
+  expected_state,
+  expected_operation_id,
+  expected_context_digest,
+  replacement_record
+)
+```
+
+The exact programming-language API MAY differ, but the following semantics are mandatory:
+
+1. `reserve_if_unseen` is atomic with the uniqueness test on `authorization_id`.
+2. `compare_and_set` atomically checks generation, state, operation identity and context digest.
+3. A successful write is not reported until the configured durability boundary has completed.
+4. Conflict produces no partial granting mutation.
+5. Durability uncertainty fails closed.
+6. Rollback to an older generation SHALL be detected or prevented.
+7. No caller-created claim object is authoritative merely because its fields are internally consistent.
+
+#### 6.21.10 Claim-state transition table
+
+`UNSEEN` means no authoritative record exists and is not itself a stored state.
+
+| From | Event / prerequisite | To | Required durable binding |
+|---|---|---|---|
+| `UNSEEN` | exact operation selected by the human; permitted scarce resources are being reserved | `RESOURCES_RESERVED` | `authorization_id`, `operation_id`, `context_digest`, resource identities, generation |
+| `RESOURCES_RESERVED` | final human confirmation complete; exact signing request constructed; key-use intent about to become possible | `KEY_USE_CLAIMED` | `key_use_intent_durable=true`, exact `signing_request_digest`, next generation |
+| `RESOURCES_RESERVED` | operation terminates before any key-use intent | `NO_KEY_USE` | consumed non-key resources, next generation |
+| `RESOURCES_RESERVED` | persistence, rollback, ownership or state uncertainty | `SPENT_UNKNOWN` or `QUARANTINED` | uncertainty evidence when writable |
+| `KEY_USE_CLAIMED` | signer reaped; exact signature verified; custody postconditions passed; evidence sealed; final freshness accepted | `SPENT_CLEAN` | existing request/context bindings, next generation |
+| `KEY_USE_CLAIMED` | any uncertain signer completion, persistence failure, cleanup uncertainty or unverifiable terminal outcome | `SPENT_UNKNOWN` or `QUARANTINED` | uncertainty evidence when writable |
+| any non-`QUARANTINED` state | detected integrity, ownership, rollback or provenance conflict | `QUARANTINED` | conflict evidence when writable |
+
+Terminal states SHALL include:
+
+```text
+NO_KEY_USE
+SPENT_CLEAN
+SPENT_UNKNOWN
+QUARANTINED
+```
+
+A terminal record SHALL never transition to a reusable state.
+
+A terminal record MAY only be administratively escalated to a stricter terminal state when new trusted evidence establishes uncertainty or compromise. Such escalation SHALL preserve the prior record in audit evidence and SHALL never recreate granting authority.
+
+On restart:
+
+```text
+KEY_USE_CLAIMED without a trusted terminal record
+    -> SPENT_UNKNOWN
+
+RESOURCES_RESERVED without a trusted terminal record
+    -> NO_KEY_USE
+```
+
+Reserved non-key resources discovered after restart SHALL be treated as consumed.
+
+If a durability failure prevents confirmation of even the stricter state, the authorization SHALL remain unavailable for granting until governed operator reconciliation establishes a durable non-reusable record.
+
+#### 6.21.11 Runtime-fact provenance table
+
+The implementation SHALL use the following minimum provenance contract.
+
+| Runtime fact | Trusted constructor / component | Authoritative source or store | Caller value may grant? |
+|---|---|---|---|
+| governed time | trusted clock adapter that verifies the governed time attestation on consumption | pinned signed time-attestation material / qualified time source | No |
+| trust anchor | trust-anchor repository adapter | pinned read-only trust-anchor store outside ordinary-account write authority | No |
+| worker profile | worker-profile repository adapter | pinned read-only worker-policy/profile store outside ordinary-account write authority | No |
+| authoritative claim reads | claim-ledger adapter | exactly one durable authoritative claim store | No |
+| replay mirrors | mirror adapters | designated deny-only mirror stores | No |
+| approver evidence | custody worker after qualified local human-presence factors | protected sealed worker-evidence package | No |
+| worker challenge | custody worker fresh-challenge generator | generated inside the custody boundary and then sealed in evidence | No |
+| signer identity and reap state | signer supervisor / cleanup watchdog using an ownership identity stronger than PID alone | operating-system process/session ownership state plus sealed evidence | No |
+| signature verification | pinned signature-verification component using the expected public-key identity and exact canonical payload bytes | verified canonical payload, signature and pinned public-key material | No |
+| cleanup result | independent cleanup supervisor/watchdog | supervisor result plus protected sealed evidence | No |
+| sealed evidence | evidence sealer | protected append-only or equivalently tamper-evident evidence store | No |
+| terminal record | authoritative claim-ledger adapter | the same durable authoritative claim store used for key-use intent | No |
+
+Adapters MAY translate trusted source records into exact contract types. Translation itself SHALL NOT convert an untrusted caller assertion into trusted provenance.
+
+#### 6.21.12 receipt_identifier derivation
+
+The Phase-1 `receipt_identifier` SHALL be derived exactly from `authorization_id` and `operation_id`.
+
+The domain separator SHALL be the ASCII bytes:
+
+```text
+familyos-f05-receipt-identifier-v1
+```
+
+The preimage SHALL be:
+
+```text
+domain
++ NUL
++ ASCII(authorization_id)
++ NUL
++ ASCII(operation_id)
+```
+
+The resulting identifier SHALL be:
+
+```text
+"rcpt-" + lowercase_hex(SHA256(preimage))
+```
+
+Both identifiers SHALL satisfy the governed identifier grammar and SHALL NOT contain NUL. This makes the NUL-separated preimage unambiguous.
+
+No random identifier, caller-selected identifier or hash lacking the domain separator SHALL replace this derivation.
+
+#### 6.21.13 Existing RD-01 canonical receipt bytes
+
+Final Phase-1 RD-01 payload bytes SHALL be produced by the canonical semantics of:
+
+```text
+TrustedHumanAuthorizationReceipt.canonical_payload_bytes
+```
+
+The fixed values SHALL be:
+
+```text
+version=1
+purpose=familyos-m10-wave-a-human-authorization-v1
+```
+
+The canonical field order SHALL be exactly:
+
+```text
+version
+purpose
+receipt_identifier
+verifier_identifier
+subject_identifier
+scope_fingerprint
+issued_at_epoch_seconds
+expires_at_epoch_seconds
+decision_reference
+integrity_proof_identifier
+```
+
+Every field SHALL be encoded as:
+
+```text
+key=value\n
+```
+
+with:
+
+```text
+separator="="
+line_terminator="\n"
+encoding="utf-8"
+normalization="none"
+unknown_field_policy="deny"
+```
+
+The Phase-1 canonicalization identity SHALL remain:
+
+```text
+familyos-m10-wave-a-receipt-lines-v1
+```
+
+The Phase-1 RD-01 schema identity SHALL remain:
+
+```text
+familyos-m10-wave-a-rd01-receipt-v1
+```
+
+The payload-template commitment SHALL statically bind `version` and `purpose` to the exact values above.
+
+A regression test SHALL compare the worker-produced bytes against the existing RD-01 canonical method for representative boundary-safe fixtures and SHALL fail on any byte drift.
+
+#### 6.21.14 Disposition of the currently untracked Pilot0 dependencies
+
+The discovered files:
+
+```text
+src/familyos_pilot0/real_data_wave_a.py
+SHA256=fcc5dbffb67534236242ac6344d15d04335e3e9cba4d8759eecd0071317c6d3b
+
+src/familyos_pilot0/trust_source_bindings.py
+SHA256=56d7f356a7b6b07d860fe250c223870d21e1e2bc3a9ecbc2a0ef4d9f0a271c3b
+```
+
+are classified as:
+
+```text
+DISCOVERY_REFERENCE_INPUTS_ONLY
+```
+
+while they remain untracked.
+
+A canonical authorized implementation SHALL NOT depend at runtime on mutable untracked working-tree files.
+
+Before code from or semantics implemented only by these files become a canonical runtime dependency, the separately governed implementation plan SHALL:
+
+1. bind the exact discovery snapshot hash used as its source;
+2. create or promote tracked repository artifacts that carry the required semantics;
+3. carry forward the canonical-byte regression tests and trust-source negative tests needed by the authorized slice;
+4. identify whether each source unit is reused, refactored into a tracked replacement, or superseded;
+5. prove that the resulting tracked artifact preserves the fixed RD-01 canonical bytes and fail-closed trust semantics;
+6. avoid silently treating the current untracked test cache or untracked tests as canonical validation evidence.
+
+This disposition closes the dependency ambiguity without authorizing the promotion, refactor, tracking or implementation itself.
 
 ## 7. Constraints
 
@@ -741,7 +1151,7 @@ This specification is constrained by the following durable boundaries:
 - Persistent signing services and persistent brokers are outside Phase-1 scope.
 - Caller-created claims, envelopes, profiles, anchors, process identifiers, and signer results are untrusted until independently validated as required by Section 6.
 - Open deployment decisions listed in Section 6.19 SHALL remain open until separately governed.
-- The unresolved contracts listed in Section 6.21 SHALL be specified in a reviewed revision before implementation authorization.
+- The pre-implementation contracts defined in Section 6.21 SHALL remain satisfied by any authorized implementation slice; weakening or incompatible changes require a reviewed specification revision.
 
 ## 8. Conformance
 
@@ -801,4 +1211,5 @@ No example creates authority or relaxes a normative requirement.
 
 | Version | Status | Date | Description |
 |---|---|---|---|
+| 1.1.0 | Approved | 2026-09-22 | Close the pre-implementation contracts for canonical serialization and digests, claim-ledger CAS/state semantics, runtime-fact provenance, receipt-identifier derivation, RD-01 canonical-byte binding, and disposition of untracked Pilot0 dependencies. No implementation or execution authority is granted. |
 | 1.0.0 | Approved | 2026-09-22 | Initial canonical publication of the F05 Phase-1 custody worker contract. |

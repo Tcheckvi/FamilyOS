@@ -104,7 +104,7 @@ Specifications directory.
 
 | ID | Title | Status | Version |
 |---|---|---|---|
-| SPEC-0017 | Phase-1 Custody Worker Contract | Approved | 1.0.0 |
+| SPEC-0017 | Phase-1 Custody Worker Contract | Approved | 1.1.0 |
 
 The identifiers and metadata above correspond to the canonical specification
 documents currently present in `docs/06-specifications/`.
