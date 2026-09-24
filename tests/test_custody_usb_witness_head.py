@@ -267,3 +267,208 @@ def test_admin_right_and_absolute_path_are_mandatory(tmp_path: Path) -> None:
         )
     with pytest.raises(AnchorUnavailable, match="absolute"):
         enroll_synthetic_usb_head(Path("relative.json"), head=head(), administrator=ADMIN)
+
+
+def test_stable_storage_sync_uses_fullfsync_on_darwin(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import familyos_pilot0.custody_usb_witness_head as custody_usb
+
+    path = tmp_path / "sync.bin"
+    descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    calls: list[tuple[int, int]] = []
+
+    class Darwin:
+        platform = "darwin"
+
+    def observed_fcntl(fd: int, command: int) -> int:
+        calls.append((fd, command))
+        return 0
+
+    monkeypatch.setattr(custody_usb, "sys", Darwin())
+    monkeypatch.setattr(custody_usb.fcntl, "F_FULLFSYNC", 51, raising=False)
+    monkeypatch.setattr(custody_usb.fcntl, "fcntl", observed_fcntl)
+    try:
+        custody_usb._stable_storage_sync(descriptor)
+    finally:
+        os.close(descriptor)
+
+    assert calls == [(descriptor, 51)]
+
+
+def test_stable_storage_sync_missing_fullfsync_fails_closed_on_darwin(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import errno
+    import familyos_pilot0.custody_usb_witness_head as custody_usb
+
+    path = tmp_path / "sync.bin"
+    descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+
+    class Darwin:
+        platform = "darwin"
+
+    monkeypatch.setattr(custody_usb, "sys", Darwin())
+    monkeypatch.delattr(custody_usb.fcntl, "F_FULLFSYNC", raising=False)
+    try:
+        with pytest.raises(OSError) as exc_info:
+            custody_usb._stable_storage_sync(descriptor)
+    finally:
+        os.close(descriptor)
+
+    assert exc_info.value.errno == errno.ENOTSUP
+
+
+def test_stable_storage_sync_non_darwin_uses_fsync(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import familyos_pilot0.custody_usb_witness_head as custody_usb
+
+    path = tmp_path / "sync.bin"
+    descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    real_fsync = os.fsync
+    calls: list[int] = []
+
+    class NonDarwin:
+        platform = "linux"
+
+    def observed_fsync(fd: int) -> None:
+        calls.append(fd)
+        real_fsync(fd)
+
+    monkeypatch.setattr(custody_usb, "sys", NonDarwin())
+    monkeypatch.setattr(custody_usb.os, "fsync", observed_fsync)
+    try:
+        custody_usb._stable_storage_sync(descriptor)
+    finally:
+        os.close(descriptor)
+
+    assert calls == [descriptor]
+
+
+def test_cas_strong_sync_follows_directory_fsync_and_descriptor_survives_replace(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import familyos_pilot0.custody_usb_witness_head as custody_usb
+
+    path, backend = enrolled(tmp_path)
+    real_fsync = os.fsync
+    events: list[tuple[str, int]] = []
+
+    def observed_fsync(descriptor: int) -> None:
+        events.append(("fsync", stat.S_IFMT(os.fstat(descriptor).st_mode)))
+        real_fsync(descriptor)
+
+    def observed_strong_sync(descriptor: int) -> None:
+        events.append(("strong", stat.S_IFMT(os.fstat(descriptor).st_mode)))
+        assert os.fstat(descriptor).st_ino == path.stat().st_ino
+
+    monkeypatch.setattr(custody_usb.os, "fsync", observed_fsync)
+    monkeypatch.setattr(custody_usb, "_stable_storage_sync", observed_strong_sync)
+
+    backend.compare_and_set(head(), head(1, "b"))
+
+    file_fsync = events.index(("fsync", stat.S_IFREG))
+    directory_fsync = events.index(("fsync", stat.S_IFDIR))
+    strong_sync = events.index(("strong", stat.S_IFREG))
+    assert file_fsync < directory_fsync < strong_sync
+    assert backend.read() == head(1, "b")
+
+
+def test_strong_sync_failure_after_replace_is_uncertain_and_candidate_survives(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import familyos_pilot0.custody_usb_witness_head as custody_usb
+
+    path, backend = enrolled(tmp_path)
+
+    def fail_strong_sync(descriptor: int) -> None:
+        assert os.fstat(descriptor).st_ino == path.stat().st_ino
+        raise OSError("synthetic strong storage sync failure")
+
+    monkeypatch.setattr(custody_usb, "_stable_storage_sync", fail_strong_sync)
+
+    with pytest.raises(AnchorUncertain, match="may be durable"):
+        backend.compare_and_set(head(), head(1, "b"))
+
+    assert backend.read() == head(1, "b")
+
+
+def test_after_full_storage_sync_fault_is_uncertain_and_candidate_survives(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import familyos_pilot0.custody_usb_witness_head as custody_usb
+
+    path, _ = enrolled(tmp_path)
+
+    def no_op_strong_sync(descriptor: int) -> None:
+        assert os.fstat(descriptor).st_ino == path.stat().st_ino
+
+    def fail(phase: str) -> None:
+        if phase == "after_full_storage_sync":
+            raise RuntimeError("synthetic lost acknowledgement after full storage sync")
+
+    monkeypatch.setattr(custody_usb, "_stable_storage_sync", no_op_strong_sync)
+    backend = USBWitnessHead(
+        path,
+        identity=IDENTITY,
+        expected_directory_device=path.parent.stat().st_dev,
+        fault_injector=fail,
+    )
+
+    with pytest.raises(AnchorUncertain, match="may be durable"):
+        backend.compare_and_set(head(), head(1, "b"))
+
+    assert backend.read() == head(1, "b")
+
+
+def test_successful_cas_closes_candidate_descriptor_after_strong_sync(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import familyos_pilot0.custody_usb_witness_head as custody_usb
+
+    path, backend = enrolled(tmp_path)
+    captured: list[int] = []
+
+    def observed_strong_sync(descriptor: int) -> None:
+        assert os.fstat(descriptor).st_ino == path.stat().st_ino
+        captured.append(descriptor)
+
+    monkeypatch.setattr(custody_usb, "_stable_storage_sync", observed_strong_sync)
+
+    backend.compare_and_set(head(), head(1, "b"))
+
+    assert len(captured) == 1
+    with pytest.raises(OSError):
+        os.fstat(captured[0])
+    assert backend.read() == head(1, "b")
+
+
+def test_cleanup_close_failure_does_not_mask_anchor_uncertain(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    import familyos_pilot0.custody_usb_witness_head as custody_usb
+
+    path, backend = enrolled(tmp_path)
+    real_close = os.close
+    captured: list[int] = []
+
+    def fail_strong_sync(descriptor: int) -> None:
+        captured.append(descriptor)
+        raise OSError("synthetic strong storage sync failure")
+
+    def fail_candidate_close(descriptor: int) -> None:
+        if captured and descriptor == captured[0]:
+            raise OSError("synthetic cleanup close failure")
+        real_close(descriptor)
+
+    monkeypatch.setattr(custody_usb, "_stable_storage_sync", fail_strong_sync)
+    monkeypatch.setattr(custody_usb.os, "close", fail_candidate_close)
+
+    try:
+        with pytest.raises(AnchorUncertain, match="may be durable"):
+            backend.compare_and_set(head(), head(1, "b"))
+        assert backend.read() == head(1, "b")
+    finally:
+        if captured:
+            real_close(captured[0])

@@ -13,6 +13,7 @@ import json
 import math
 import os
 import stat
+import sys
 import threading
 import time
 import uuid
@@ -126,6 +127,19 @@ def _write_all(descriptor: int, payload: bytes) -> None:
         if written <= 0:
             raise OSError(errno.EIO, "short USB head write")
         offset += written
+
+
+def _stable_storage_sync(descriptor: int) -> None:
+    if sys.platform == "darwin":
+        command = getattr(fcntl, "F_FULLFSYNC", None)
+        if command is None:
+            raise OSError(
+                errno.ENOTSUP,
+                "F_FULLFSYNC is required for durable USB witness acknowledgment",
+            )
+        fcntl.fcntl(descriptor, command)
+        return
+    os.fsync(descriptor)
 
 
 def enroll_synthetic_usb_head(
@@ -284,8 +298,6 @@ class USBWitnessHead:
                 descriptor = os.open(temporary, flags, 0o600, dir_fd=directory)
                 _write_all(descriptor, _encode(candidate))
                 os.fsync(descriptor)
-                os.close(descriptor)
-                descriptor = -1
                 self._fault("after_temporary_fsync")
                 self._fault("before_replace")
                 commitment_possible = True
@@ -298,13 +310,20 @@ class USBWitnessHead:
                 self._fault("after_replace")
                 os.fsync(directory)
                 self._fault("after_directory_fsync")
+                _stable_storage_sync(descriptor)
+                self._fault("after_full_storage_sync")
+                os.close(descriptor)
+                descriptor = -1
                 if self._read_at(directory) != candidate:
                     raise OSError(errno.EIO, "USB head changed after durable replace")
             except AnchorRejected:
                 raise
             except Exception as exc:
                 if descriptor >= 0:
-                    os.close(descriptor)
+                    try:
+                        os.close(descriptor)
+                    except OSError:
+                        pass
                 if not commitment_possible:
                     try:
                         os.unlink(temporary, dir_fd=directory)
