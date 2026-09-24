@@ -300,6 +300,7 @@ def test_stable_storage_sync_missing_fullfsync_fails_closed_on_darwin(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     import errno
+
     import familyos_pilot0.custody_usb_witness_head as custody_usb
 
     path = tmp_path / "sync.bin"
