@@ -7173,3 +7173,57 @@ the documentation-authority audit and governance approval remain distinct
 evidence requirements. Existing pre-instrumentation runs remain unavailable
 for the P4 frequency denominator, even when adapter acceptance implies a
 successful cleanliness check.
+
+<!-- FAMILYOS:C6-FINAL-STATUS:BEGIN -->
+
+---
+
+## Governed Quality Observation — C6 Final Status
+
+**Reconciled:** 2026-09-27
+
+The governed Quality Observation evidence chain establishes C6 as final
+`PASS`.
+
+```text
+[x] C67 technical evidence reached 41/41
+[x] C67 formal closure completed
+[x] C67 post-closure reconciliation passed
+[x] C6 canonical scorecard evidence refresh passed
+[x] C6 post-refresh independent reconciliation passed
+[x] C6 scorecard aligned with governed false-negative state
+[x] Global status reconciliation records C6 = PASS
+[x] Final closure archive records C6 = PASS
+
+C6_FINAL_STATUS=PASS
+C6_SCORECARD_ALIGNED=true
+C6_STATUS_MUTATION_REQUIRED=false
+C67_REOPEN_AUTHORIZED=false
+```
+
+### Final Authority Anchors
+
+```text
+C67_POST_CLOSURE_REVIEW_SHA256=
+9ec90cd848f8e31503e647b95185e219baa4c3b3337564885ec5cf9467bd9869
+
+C6_SCORECARD_REFRESH_SHA256=
+2ed099495f5d121b066bbaa8773493a90e3904cf9679b5af437c7a94f451c4f1
+
+C6_POST_REFRESH_RECONCILIATION_SHA256=
+83649aa32c2afc936880d00f7ff5b12b05abbe9339eaf01751144b379ab5e2e6
+
+GLOBAL_STATUS_RECONCILIATION_SHA256=
+ceca337ee5f59e4f8f990bf3762ce016c98d0b8e297aa7edc9c91ff317a13c3f
+
+FINAL_CLOSURE_STATE_SHA256=
+e8f513fda183c43615fe68e9183ef8886f99f4df4cb4b2d937add0a5ce7b1359
+
+FINAL_CANONICAL_SCORECARD_SHA256=
+2519d8f228a7fe0142b4e644b8f38adc7deec71ad33190680d68080b8787f750
+```
+
+This status closes C6 only. It does not reopen C67 or implicitly transition
+another Quality criterion.
+
+<!-- FAMILYOS:C6-FINAL-STATUS:END -->
