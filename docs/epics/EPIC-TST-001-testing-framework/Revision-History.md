@@ -1,8 +1,8 @@
 # Testing Framework
 
-# Revision History
+## Revision History
 
-## Overview
+### Overview
 
 This document records the revision history of the FamilyOS Testing Framework defined by EPIC-TST-001.
 
@@ -25,7 +25,7 @@ Its purpose is to preserve historical context as the framework evolves.
 
 ---
 
-# Revision Principles
+## Revision Principles
 
 Revision history entries should be created for changes that materially affect the Testing Framework.
 
@@ -46,7 +46,7 @@ Minor editorial corrections do not necessarily require individual revision entri
 
 ---
 
-# Versioning
+## Versioning
 
 Testing Framework revisions should remain aligned with the broader FamilyOS versioning and documentation strategy.
 
@@ -67,9 +67,9 @@ The exact release version associated with each revision should be recorded when 
 
 ---
 
-# Revision Record
+## Revision Record
 
-## 1.0.0 — Initial Testing Framework Baseline
+### 1.0.0 — Initial Testing Framework Baseline
 
 **Status:** Initial baseline
 
@@ -77,7 +77,7 @@ The exact release version associated with each revision should be recorded when 
 
 **Scope:** Complete Testing Framework documentation foundation
 
-### Added
+#### Added
 
 The initial framework baseline introduced the official FamilyOS testing architecture, including:
 
@@ -105,7 +105,7 @@ The initial framework baseline introduced the official FamilyOS testing architec
 * framework validation;
 * implementation checklist.
 
-### Documentation Structure
+#### Documentation Structure
 
 The canonical documentation baseline includes:
 
@@ -138,7 +138,7 @@ README.md
 Revision-History.md
 ```
 
-### Architectural Decisions
+#### Architectural Decisions
 
 The initial baseline established that:
 
@@ -159,7 +159,7 @@ The initial baseline established that:
 
 ---
 
-# Initial Framework Maturity
+## Initial Framework Maturity
 
 The initial Testing Framework baseline establishes the architecture required for future implementation and maturation.
 
@@ -194,7 +194,7 @@ Not every long-term roadmap capability is required to be operational at the init
 
 ---
 
-# Validation Baseline
+## Validation Baseline
 
 The initial revision introduces an explicit framework validation model.
 
@@ -211,7 +211,7 @@ The framework should not treat those states as equivalent.
 
 ---
 
-# Implementation Tracking
+## Implementation Tracking
 
 The initial revision introduces:
 
@@ -237,7 +237,7 @@ This enables progressive framework adoption without misrepresenting future roadm
 
 ---
 
-# Governance Baseline
+## Governance Baseline
 
 The initial revision establishes testing governance covering:
 
@@ -257,7 +257,7 @@ Governance is intended to prevent testing degradation as FamilyOS grows.
 
 ---
 
-# Automation Baseline
+## Automation Baseline
 
 The framework defines a progressive automation architecture covering:
 
@@ -274,7 +274,7 @@ Specific CI implementation remains governed by repository tooling.
 
 ---
 
-# Testing Gate Baseline
+## Testing Gate Baseline
 
 The initial revision introduces the formal Testing Gate model.
 
@@ -292,7 +292,7 @@ Missing or stale evidence must never be treated as a normal pass.
 
 ---
 
-# Plugin Testing Baseline
+## Plugin Testing Baseline
 
 The Testing Framework applies to official FamilyOS plugins.
 
@@ -311,7 +311,7 @@ Plugin-specific testing practices must remain compatible with framework-wide pri
 
 ---
 
-## 1.0.1 — Canonical Pytest Result Pipeline — 2026-08-24
+### 1.0.1 — Canonical Pytest Result Pipeline — 2026-08-24
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -396,7 +396,7 @@ The following capabilities remain explicitly outside this revision:
 Framework version `1.0.0` remains unchanged.
 
 ---
-# Future Revisions
+## Future Revisions
 
 Future revisions may include:
 
@@ -418,7 +418,7 @@ These capabilities should only be promoted from roadmap objectives to normative 
 
 ---
 
-# Revision Entry Template
+## Revision Entry Template
 
 Future revisions should use a structure similar to:
 
@@ -452,7 +452,7 @@ Only sections relevant to the revision need to be included.
 
 ---
 
-# Breaking Changes
+## Breaking Changes
 
 A breaking Testing Framework revision should clearly document:
 
@@ -469,7 +469,7 @@ Breaking changes should not be introduced without a migration path.
 
 ---
 
-# Deprecated Capabilities
+## Deprecated Capabilities
 
 When a testing capability is deprecated, the revision history should identify:
 
@@ -481,7 +481,7 @@ When a testing capability is deprecated, the revision history should identify:
 
 ---
 
-# Removed Capabilities
+## Removed Capabilities
 
 Removal entries should record:
 
@@ -494,7 +494,7 @@ This preserves architectural context.
 
 ---
 
-# Relationship With Changelog
+## Relationship With Changelog
 
 This revision history records the evolution of the Testing Framework architecture and documentation baseline.
 
@@ -514,7 +514,7 @@ Revision History
 
 ---
 
-# Relationship With Framework Lifecycle
+## Relationship With Framework Lifecycle
 
 Revision history supports:
 
@@ -526,7 +526,7 @@ by preserving evidence of how the framework changes across versions.
 
 ---
 
-# Relationship With Governance
+## Relationship With Governance
 
 Revision records support the governance requirements defined in:
 
@@ -538,7 +538,7 @@ Major testing policy changes should remain historically understandable.
 
 ---
 
-# Relationship With Validation
+## Relationship With Validation
 
 Framework revisions may require updated validation according to:
 
@@ -550,7 +550,7 @@ A new normative requirement should normally introduce corresponding validation e
 
 ---
 
-# Relationship With Implementation Checklist
+## Relationship With Implementation Checklist
 
 Framework revisions may require updates to:
 
@@ -564,7 +564,7 @@ Checklist changes should remain synchronized with normative framework evolution.
 
 ---
 
-# Maintenance Rules
+## Maintenance Rules
 
 This revision history should be updated when:
 
@@ -579,7 +579,7 @@ It should not become a detailed commit log.
 
 ---
 
-# Historical Integrity
+## Historical Integrity
 
 Existing revision records should not be rewritten merely to reflect current terminology.
 
@@ -589,7 +589,7 @@ Corrections may be made where the record itself is factually incorrect, but hist
 
 ---
 
-# Current Baseline
+## Current Baseline
 
 The current initial baseline is:
 
@@ -603,7 +603,7 @@ It establishes the canonical testing architecture upon which future FamilyOS tes
 
 ---
 
-# Final Principle
+## Final Principle
 
 Revision history exists to ensure that Testing Framework evolution remains understandable.
 

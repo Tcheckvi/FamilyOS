@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 15 Documentation Review Process
+## 15 Documentation Review Process
 
-## Context
+### Context
 
 Documentation review is a critical activity in the FamilyOS documentation lifecycle.
 
@@ -18,23 +18,23 @@ The Documentation Review Process defines how documentation changes are evaluated
 
 ---
 
-# Documentation Review Principles
+## Documentation Review Principles
 
 FamilyOS documentation reviews follow these principles.
 
-## Quality Assurance
+### Quality Assurance
 
 Every official document must receive appropriate validation before publication.
 
 ---
 
-## Collaborative Improvement
+### Collaborative Improvement
 
 Reviews are collaborative processes designed to improve documentation quality.
 
 ---
 
-## Traceability
+### Traceability
 
 All review decisions must remain visible and connected to:
 
@@ -48,13 +48,13 @@ All review decisions must remain visible and connected to:
 
 ---
 
-## Appropriate Review Level
+### Appropriate Review Level
 
 The review depth depends on the document type and impact.
 
 ---
 
-# Review Process Overview
+## Review Process Overview
 
 The standard review workflow is:
 
@@ -89,7 +89,7 @@ Publication
 
 ---
 
-# Review Initiation
+## Review Initiation
 
 A documentation review begins when:
 
@@ -100,7 +100,7 @@ A documentation review begins when:
 
 ---
 
-## Review Request Requirements
+### Review Request Requirements
 
 The author must provide:
 
@@ -125,7 +125,7 @@ SPEC-0005 v1.0.0
 
 ---
 
-# Author Validation
+## Author Validation
 
 Before requesting review, the author must verify:
 
@@ -139,13 +139,13 @@ The author is responsible for the initial quality level.
 
 ---
 
-# Peer Review
+## Peer Review
 
 Peer review validates general documentation quality.
 
 Reviewers check:
 
-## Structure
+### Structure
 
 * required sections exist,
 * organization is correct,
@@ -153,7 +153,7 @@ Reviewers check:
 
 ---
 
-## Clarity
+### Clarity
 
 * concepts are understandable,
 * terminology is consistent,
@@ -161,14 +161,14 @@ Reviewers check:
 
 ---
 
-## Consistency
+### Consistency
 
 * no contradictions exist,
 * related documents remain aligned.
 
 ---
 
-# Technical Review
+## Technical Review
 
 Technical review is required when documentation affects:
 
@@ -187,7 +187,7 @@ Technical reviewers validate:
 
 ---
 
-# Architecture Review
+## Architecture Review
 
 Architecture review is required for documents affecting:
 
@@ -203,7 +203,7 @@ Examples:
 
 ---
 
-# Security Review
+## Security Review
 
 Security review is required for documentation involving:
 
@@ -214,7 +214,7 @@ Security review is required for documentation involving:
 
 ---
 
-# Review Comments
+## Review Comments
 
 Review comments must be:
 
@@ -237,7 +237,7 @@ This is wrong.
 
 ---
 
-# Review Resolution
+## Review Resolution
 
 Authors must address review feedback.
 
@@ -249,7 +249,7 @@ Resolution options:
 
 ---
 
-# Review Approval
+## Review Approval
 
 A document is approved when:
 
@@ -260,7 +260,7 @@ A document is approved when:
 
 ---
 
-# Review Status Model
+## Review Status Model
 
 Recommended review states:
 
@@ -281,7 +281,7 @@ Possible statuses:
 
 ---
 
-# Pull Request Integration
+## Pull Request Integration
 
 Documentation reviews should use Git pull requests.
 
@@ -313,7 +313,7 @@ Merge
 
 ---
 
-# Review Checklist
+## Review Checklist
 
 Reviewers should verify:
 
@@ -331,7 +331,7 @@ Reviewers should verify:
 
 ---
 
-# Review Exceptions
+## Review Exceptions
 
 Exceptions may be granted for:
 
@@ -347,35 +347,35 @@ Exceptions require:
 
 ---
 
-# Review Metrics
+## Review Metrics
 
 Documentation review quality may be measured through:
 
-## Review Coverage
+### Review Coverage
 
 Percentage of documents reviewed before publication.
 
 ---
 
-## Review Duration
+### Review Duration
 
 Time between review request and approval.
 
 ---
 
-## Defect Detection
+### Defect Detection
 
 Number of issues discovered during review.
 
 ---
 
-## Documentation Stability
+### Documentation Stability
 
 Number of post-publication corrections.
 
 ---
 
-# Governance Integration
+## Governance Integration
 
 The Documentation Review Process integrates with:
 
@@ -387,7 +387,7 @@ The Documentation Review Process integrates with:
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
 This process depends on:
 
@@ -398,7 +398,7 @@ This process depends on:
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 A documentation review process is compliant when:
 

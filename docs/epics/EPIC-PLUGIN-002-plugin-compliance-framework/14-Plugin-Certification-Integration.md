@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 14 Plugin Certification Integration
+## 14 Plugin Certification Integration
 
-## Introduction
+### Introduction
 
 Plugin Certification Integration defines how the FamilyOS Plugin Compliance Framework provides structured technical evidence to a separate plugin certification process.
 
@@ -20,7 +20,7 @@ The boundary between these responsibilities must remain explicit.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of certification integration is to provide a controlled transition from technical compliance to ecosystem trust decisions.
 
@@ -43,7 +43,7 @@ The certification system makes certification decisions.
 
 ---
 
-# Certification Boundary Principle
+## Certification Boundary Principle
 
 The governing principle is:
 
@@ -55,7 +55,7 @@ A plugin that requires certification should not normally be certifiable without 
 
 ---
 
-# Conceptual Relationship
+## Conceptual Relationship
 
 The target relationship is:
 
@@ -87,7 +87,7 @@ The certification system owns the final decision.
 
 ---
 
-# Compliance Responsibility
+## Compliance Responsibility
 
 The Plugin Compliance Framework is responsible for determining technical conformance.
 
@@ -106,7 +106,7 @@ It must not issue final certification status unless certification is explicitly 
 
 ---
 
-# Certification Responsibility
+## Certification Responsibility
 
 The certification process may evaluate concerns beyond deterministic technical compliance.
 
@@ -129,7 +129,7 @@ These responsibilities do not belong inside ordinary compliance validators.
 
 ---
 
-# Certification Eligibility
+## Certification Eligibility
 
 Certification Eligibility is the formal bridge between compliance and certification.
 
@@ -146,7 +146,7 @@ Eligibility must be derived from an explicit certification compliance profile an
 
 ---
 
-# Eligible
+## Eligible
 
 `ELIGIBLE` means that the plugin has demonstrated all compliance requirements necessary to enter the relevant certification decision process.
 
@@ -154,7 +154,7 @@ It does not mean that certification has been granted.
 
 ---
 
-# Not Eligible
+## Not Eligible
 
 `NOT_ELIGIBLE` means that one or more required compliance conditions prevent certification progression.
 
@@ -168,7 +168,7 @@ Typical causes include:
 
 ---
 
-# Incomplete Eligibility
+## Incomplete Eligibility
 
 `INCOMPLETE` means that the evidence required to determine certification eligibility is not yet complete.
 
@@ -183,7 +183,7 @@ Incomplete must never be interpreted as eligible.
 
 ---
 
-# Eligibility Error
+## Eligibility Error
 
 `ERROR` means that the compliance or eligibility system could not produce a reliable decision.
 
@@ -198,7 +198,7 @@ Certification should not proceed normally while eligibility is in an error state
 
 ---
 
-# Certification Profile
+## Certification Profile
 
 Certification eligibility must be evaluated against an explicit compliance profile.
 
@@ -221,7 +221,7 @@ It does not contain the full certification governance process.
 
 ---
 
-# Certification Profile Strength
+## Certification Profile Strength
 
 A certification profile should normally represent one of the strongest compliance profiles available.
 
@@ -239,7 +239,7 @@ Certification-specific governance requirements remain outside this profile when 
 
 ---
 
-# Certification Evidence Package
+## Certification Evidence Package
 
 The compliance framework should be capable of producing a certification-ready evidence package.
 
@@ -271,7 +271,7 @@ This package provides the technical basis for certification review.
 
 ---
 
-# Package Completeness
+## Package Completeness
 
 A certification package should be considered complete only when all required certification compliance evidence is available.
 
@@ -281,7 +281,7 @@ The package should identify missing elements explicitly.
 
 ---
 
-# Artifact Binding
+## Artifact Binding
 
 Certification compliance must be associated with the exact plugin artifact being considered.
 
@@ -304,7 +304,7 @@ This prevents certification evidence from being reused for a different artifact 
 
 ---
 
-# Source and Artifact Relationship
+## Source and Artifact Relationship
 
 Certification workflows may require evidence for both:
 
@@ -330,7 +330,7 @@ This creates traceability from implementation to distributed artifact.
 
 ---
 
-# Evidence Trust
+## Evidence Trust
 
 Certification workflows require stronger evidence trust than normal development.
 
@@ -346,7 +346,7 @@ Unverified self-declarations should not satisfy strong certification requirement
 
 ---
 
-# Evidence Provenance
+## Evidence Provenance
 
 Certification evidence must preserve complete provenance.
 
@@ -367,7 +367,7 @@ Missing provenance may invalidate otherwise technically correct evidence.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Certification packages should support integrity verification.
 
@@ -384,7 +384,7 @@ Integrity mechanisms should strengthen the existing compliance model rather than
 
 ---
 
-# Compliance Result Requirement
+## Compliance Result Requirement
 
 Certification should normally require:
 
@@ -410,7 +410,7 @@ must not be assumed certification-ready unless policy explicitly states those pr
 
 ---
 
-# Blocking Findings
+## Blocking Findings
 
 Any certification-blocking finding must result in:
 
@@ -429,7 +429,7 @@ Typical blocking categories include:
 
 ---
 
-# Critical Findings
+## Critical Findings
 
 Unresolved CRITICAL findings should normally prohibit certification eligibility.
 
@@ -449,7 +449,7 @@ Exceptions to this principle should be extremely restricted or impossible depend
 
 ---
 
-# Warning Handling
+## Warning Handling
 
 Warnings require explicit certification policy.
 
@@ -468,7 +468,7 @@ Certification policy decides whether it is acceptable.
 
 ---
 
-# Exception Handling
+## Exception Handling
 
 Certification workflows must inspect all active compliance exceptions.
 
@@ -491,7 +491,7 @@ The certification system may apply stricter exception policy.
 
 ---
 
-# Non-Certifiable Exceptions
+## Non-Certifiable Exceptions
 
 Some compliance exceptions may explicitly make a plugin ineligible for certification.
 
@@ -508,7 +508,7 @@ The semantic distinction is important.
 
 ---
 
-# Suppression Review
+## Suppression Review
 
 Suppressions must remain visible to certification consumers.
 
@@ -523,7 +523,7 @@ Certification policy may require:
 
 ---
 
-# Manual Review
+## Manual Review
 
 Certification may include manual review that goes beyond automated compliance.
 
@@ -539,7 +539,7 @@ These reviews must produce structured governance evidence where possible.
 
 ---
 
-# Manual Review Evidence
+## Manual Review Evidence
 
 A manual certification review should identify:
 
@@ -561,7 +561,7 @@ It may reference compliance findings and evidence.
 
 ---
 
-# Ownership Verification
+## Ownership Verification
 
 Certification may require verified plugin ownership or maintainership.
 
@@ -573,7 +573,7 @@ This distinction prevents compliance from becoming responsible for identity gove
 
 ---
 
-# Provenance Verification
+## Provenance Verification
 
 Certification may require verification that the plugin artifact originated from an accepted build and release process.
 
@@ -588,7 +588,7 @@ Certification determines whether this provenance satisfies policy.
 
 ---
 
-# Security Certification Review
+## Security Certification Review
 
 Technical security compliance may be necessary but not sufficient for certification.
 
@@ -603,7 +603,7 @@ The compliance framework supplies relevant security findings and evidence.
 
 ---
 
-# Certification Decision
+## Certification Decision
 
 The certification system should produce its own canonical decision.
 
@@ -624,7 +624,7 @@ EPIC-PLUGIN-002 only establishes the integration boundary.
 
 ---
 
-# Certification Record
+## Certification Record
 
 A certification record may eventually contain:
 
@@ -648,7 +648,7 @@ This record remains external to the core Compliance Result.
 
 ---
 
-# Certification Identity
+## Certification Identity
 
 Certification identity must remain distinct from:
 
@@ -661,7 +661,7 @@ This allows one plugin version or artifact to have multiple certification events
 
 ---
 
-# Certification Types
+## Certification Types
 
 FamilyOS may eventually support multiple certification types.
 
@@ -678,7 +678,7 @@ The compliance framework must support multiple certification targets through pro
 
 ---
 
-# Certification Target
+## Certification Target
 
 A compliance request may identify a certification target.
 
@@ -694,7 +694,7 @@ The target must be recorded in the Compliance Result.
 
 ---
 
-# Certification Gate Integration
+## Certification Gate Integration
 
 The Certification Gate consumes certification-grade compliance output.
 
@@ -717,7 +717,7 @@ This preserves separation between technical enforcement and approval.
 
 ---
 
-# Certification Workflow
+## Certification Workflow
 
 A conceptual end-to-end workflow is:
 
@@ -750,7 +750,7 @@ Not every plugin must participate in certification.
 
 ---
 
-# Certification Renewal
+## Certification Renewal
 
 Certification may expire or require renewal.
 
@@ -766,7 +766,7 @@ The compliance framework should support revalidation without mutating historical
 
 ---
 
-# Certification Expiration
+## Certification Expiration
 
 A certification may expire even when the underlying plugin has not changed.
 
@@ -781,7 +781,7 @@ Expiration semantics belong to certification governance.
 
 ---
 
-# Certification Revocation
+## Certification Revocation
 
 Certification may need to be revoked after issuance.
 
@@ -799,7 +799,7 @@ The certification system owns the revocation decision.
 
 ---
 
-# Compliance Drift and Certification
+## Compliance Drift and Certification
 
 A certified plugin may later become non-compliant.
 
@@ -827,7 +827,7 @@ Certification governance determines whether certification is suspended, revoked,
 
 ---
 
-# Continuous Certification Readiness
+## Continuous Certification Readiness
 
 FamilyOS may eventually support continuous certification readiness checks.
 
@@ -837,7 +837,7 @@ This does not mean issuing certification automatically.
 
 ---
 
-# Certification Status Is Not Compliance Status
+## Certification Status Is Not Compliance Status
 
 The framework must maintain strict semantic separation.
 
@@ -863,7 +863,7 @@ The two states describe different concepts.
 
 ---
 
-# Certification Status Reporting
+## Certification Status Reporting
 
 Compliance reports should not invent certification status.
 
@@ -879,7 +879,7 @@ Actual certification status should come from the authoritative certification sys
 
 ---
 
-# Registry Integration
+## Registry Integration
 
 A future FamilyOS plugin registry may consume both compliance and certification information.
 
@@ -899,7 +899,7 @@ The registry must preserve the distinction between compliance and certification.
 
 ---
 
-# Publication Policy
+## Publication Policy
 
 Future ecosystem publication may require:
 
@@ -921,7 +921,7 @@ Publication policy belongs to ecosystem governance.
 
 ---
 
-# Third-Party Certification
+## Third-Party Certification
 
 Third-party plugins may eventually enter certification workflows.
 
@@ -937,7 +937,7 @@ The compliance architecture already provides the technical foundation for these 
 
 ---
 
-# Official Plugin Certification
+## Official Plugin Certification
 
 Official FamilyOS plugins may use certification to demonstrate stronger platform guarantees.
 
@@ -962,7 +962,7 @@ First-party origin is not a substitute for evidence.
 
 ---
 
-# Certification Evidence Reuse
+## Certification Evidence Reuse
 
 Certification should reuse valid compliance evidence rather than duplicate technical validation unnecessarily.
 
@@ -984,7 +984,7 @@ may be reusable if:
 
 ---
 
-# Evidence Upgrade
+## Evidence Upgrade
 
 Sometimes evidence sufficient for release may be insufficient for certification.
 
@@ -1008,7 +1008,7 @@ This allows efficient progressive assurance.
 
 ---
 
-# Certification Package Validation
+## Certification Package Validation
 
 Before certification review begins, the certification system should validate the compliance package.
 
@@ -1026,7 +1026,7 @@ Invalid packages should be rejected before governance review.
 
 ---
 
-# Certification Package Immutability
+## Certification Package Immutability
 
 Once submitted for a certification decision, the compliance package should be immutable.
 
@@ -1036,7 +1036,7 @@ This preserves the decision audit trail.
 
 ---
 
-# Certification Audit Trail
+## Certification Audit Trail
 
 The full certification chain should be traceable:
 
@@ -1066,7 +1066,7 @@ Every major artifact should have a stable identity.
 
 ---
 
-# Decision Traceability
+## Decision Traceability
 
 A certification reviewer should be able to answer:
 
@@ -1084,7 +1084,7 @@ This traceability is fundamental to ecosystem trust.
 
 ---
 
-# Separation of Engines
+## Separation of Engines
 
 The compliance engine and certification decision engine should remain separate.
 
@@ -1107,7 +1107,7 @@ Certification must not depend directly on internal validator implementations.
 
 ---
 
-# Stable Certification Interface
+## Stable Certification Interface
 
 The compliance framework should expose a stable certification-facing interface based on structured outputs.
 
@@ -1125,7 +1125,7 @@ They should not depend on:
 
 ---
 
-# Certification API Boundary
+## Certification API Boundary
 
 A future interface may conceptually expose:
 
@@ -1140,7 +1140,7 @@ The exact API belongs to implementation design.
 
 ---
 
-# Failure Modes
+## Failure Modes
 
 Certification integration must handle explicit failure states.
 
@@ -1160,7 +1160,7 @@ These states must remain distinguishable.
 
 ---
 
-# Artifact Mismatch
+## Artifact Mismatch
 
 An artifact mismatch is a critical certification integration failure.
 
@@ -1175,7 +1175,7 @@ Certification must not continue under the assumption that the package applies to
 
 ---
 
-# Framework Version Compatibility
+## Framework Version Compatibility
 
 Certification policy may restrict which Compliance Framework versions are acceptable.
 
@@ -1189,7 +1189,7 @@ A technically compliant result produced under an obsolete framework may require 
 
 ---
 
-# Profile Version Compatibility
+## Profile Version Compatibility
 
 Certification may also require a current certification profile version.
 
@@ -1197,7 +1197,7 @@ A previously compliant certification result does not automatically satisfy a new
 
 ---
 
-# Rule Deprecation and Certification
+## Rule Deprecation and Certification
 
 Certification workflows must preserve historical interpretation when rules are deprecated.
 
@@ -1207,7 +1207,7 @@ Renewal may require evaluation under the current rule set.
 
 ---
 
-# Certification Exceptions Audit
+## Certification Exceptions Audit
 
 All exceptions affecting certification eligibility must be easy to audit.
 
@@ -1225,7 +1225,7 @@ This prevents hidden policy weakening.
 
 ---
 
-# Certification Conditions
+## Certification Conditions
 
 Certification decisions may include conditions.
 
@@ -1242,7 +1242,7 @@ Compliance may later validate whether those conditions remain satisfied.
 
 ---
 
-# Conditional Revalidation
+## Conditional Revalidation
 
 A certification condition may trigger future compliance revalidation.
 
@@ -1262,7 +1262,7 @@ This supports ongoing trust without conflating the two systems.
 
 ---
 
-# Certification Observability
+## Certification Observability
 
 The compliance framework may expose metrics relevant to certification readiness.
 
@@ -1279,7 +1279,7 @@ These metrics support governance improvement.
 
 ---
 
-# Certification Testing
+## Certification Testing
 
 Integration requires dedicated tests.
 
@@ -1300,7 +1300,7 @@ Core test categories include:
 
 ---
 
-# Interface Contract Tests
+## Interface Contract Tests
 
 FamilyOS should provide contract tests ensuring that certification consumers can process compliance outputs independently of internal engine implementation changes.
 
@@ -1308,41 +1308,41 @@ This protects the boundary between frameworks.
 
 ---
 
-# Certification Anti-Patterns
+## Certification Anti-Patterns
 
 The framework must avoid several anti-patterns.
 
-## Compliance Equals Certification
+### Compliance Equals Certification
 
 Do not automatically mark every compliant plugin as certified.
 
-## Certification Inside Validators
+### Certification Inside Validators
 
 Validators must not issue certification decisions.
 
-## Origin-Based Certification
+### Origin-Based Certification
 
 Official or first-party ownership must not replace evidence.
 
-## Artifact-Unbound Certification
+### Artifact-Unbound Certification
 
 Do not certify one artifact using compliance evidence for another.
 
-## Hidden Exceptions
+### Hidden Exceptions
 
 Certification reviewers must see all relevant exceptions and suppressions.
 
-## CLI Parsing
+### CLI Parsing
 
 Certification systems must not derive decisions by parsing human CLI output.
 
-## Stale Eligibility
+### Stale Eligibility
 
 Do not reuse certification eligibility after relevant context changes without revalidation.
 
 ---
 
-# Initial Certification Integration Baseline
+## Initial Certification Integration Baseline
 
 The initial framework should establish:
 
@@ -1358,7 +1358,7 @@ A complete certification service may be implemented separately.
 
 ---
 
-# Future Certification Capabilities
+## Future Certification Capabilities
 
 Future evolution may include:
 
@@ -1375,7 +1375,7 @@ These capabilities must preserve the compliance-certification boundary.
 
 ---
 
-# Certification Integration Invariants
+## Certification Integration Invariants
 
 The certification integration model establishes the following invariants:
 
@@ -1402,7 +1402,7 @@ The certification integration model establishes the following invariants:
 
 ---
 
-# Reference Certification Model
+## Reference Certification Model
 
 The complete reference model is:
 
@@ -1448,7 +1448,7 @@ This model preserves the separation between technical proof and governed trust.
 
 ---
 
-# Certification Integration Summary
+## Certification Integration Summary
 
 The FamilyOS Plugin Compliance Framework provides the technical evidence required for certification without absorbing certification governance into the compliance engine.
 
@@ -1470,7 +1470,7 @@ Certification governance then evaluates eligibility and any additional trust req
 
 ---
 
-# Final Certification Principle
+## Final Certification Principle
 
 The governing principle of Plugin Certification Integration is:
 

@@ -10,7 +10,7 @@ Owner: **FamilyOS Engineering**
 
 ---
 
-# Overview
+## Overview
 
 The FamilyOS Quality Framework establishes the authoritative engineering foundation for defining, evaluating, evidencing, governing, automating, observing, and continuously improving quality across the FamilyOS ecosystem.
 
@@ -50,7 +50,7 @@ Continuously Improved
 
 ---
 
-# Purpose
+## Purpose
 
 The Quality Framework provides a common engineering model for determining:
 
@@ -70,7 +70,7 @@ The framework provides the common quality layer connecting multiple FamilyOS eng
 
 ---
 
-# Strategic Objective
+## Strategic Objective
 
 The strategic objective of EPIC-QLT-001 is to move FamilyOS from independent quality tools and practices toward a coherent engineering quality system.
 
@@ -100,11 +100,11 @@ The Quality Framework provides the common semantics, evidence model, assessment 
 
 ---
 
-# Core Principles
+## Core Principles
 
 The framework is based on several foundational principles.
 
-## Quality Is Continuous
+### Quality Is Continuous
 
 Quality is integrated throughout the engineering lifecycle.
 
@@ -112,7 +112,7 @@ It is not postponed until release preparation.
 
 ---
 
-## Quality Is Evidence-Based
+### Quality Is Evidence-Based
 
 Authoritative quality decisions should be supported by verifiable evidence.
 
@@ -120,7 +120,7 @@ A successful command alone is not sufficient when the underlying evidence cannot
 
 ---
 
-## Quality Is Explainable
+### Quality Is Explainable
 
 Quality findings, assessments, and gates should explain:
 
@@ -134,31 +134,31 @@ What action is required?
 
 ---
 
-## Quality Is Governed
+### Quality Is Governed
 
 Quality requirements, rules, profiles, gates, exceptions, and lifecycle changes require explicit authority and ownership.
 
 ---
 
-## Quality Is Risk-Aware
+### Quality Is Risk-Aware
 
 Quality decisions should consider engineering risk rather than relying exclusively on binary technical checks.
 
 ---
 
-## Quality Is Automatable
+### Quality Is Automatable
 
 Deterministic verification should be automated whenever doing so improves reliability, reproducibility, and engineering feedback.
 
 ---
 
-## Prevention Before Detection
+### Prevention Before Detection
 
 The framework prefers preventing quality problems through architecture, standards, automation, and early feedback rather than discovering them late in the lifecycle.
 
 ---
 
-## Progressive Enforcement
+### Progressive Enforcement
 
 New controls should generally progress through:
 
@@ -176,7 +176,7 @@ This reduces disruption and allows controls to demonstrate reliability before be
 
 ---
 
-# Quality Model
+## Quality Model
 
 The framework introduces a common conceptual model around entities such as:
 
@@ -200,7 +200,7 @@ These concepts allow different quality capabilities to participate in a coherent
 
 ---
 
-# Quality Domains
+## Quality Domains
 
 Quality is evaluated across multiple engineering domains.
 
@@ -224,7 +224,7 @@ Additional domains may be introduced through governed framework evolution.
 
 ---
 
-# Quality Evidence
+## Quality Evidence
 
 Quality Evidence provides the traceable foundation for assessments and decisions.
 
@@ -252,7 +252,7 @@ Examples may include:
 
 ---
 
-# Quality Assessment
+## Quality Assessment
 
 Quality assessments combine applicable expectations, verification results, findings, and evidence into an explainable quality state.
 
@@ -278,7 +278,7 @@ Assessments provide the foundation for higher-level engineering decisions.
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Quality Gates determine whether an engineering target may progress through a controlled lifecycle transition.
 
@@ -295,7 +295,7 @@ A control should not normally become blocking before its reliability and operati
 
 ---
 
-# Quality Risk
+## Quality Risk
 
 Not every significant quality concern can be represented by a deterministic rule.
 
@@ -314,7 +314,7 @@ Quality Risk supports:
 
 ---
 
-# Defects and Quality Debt
+## Defects and Quality Debt
 
 The framework distinguishes between defects and quality debt.
 
@@ -326,7 +326,7 @@ Both require visibility, ownership, traceability, and controlled lifecycle manag
 
 ---
 
-# Quality Compliance
+## Quality Compliance
 
 Compliance evaluates whether applicable quality requirements have been satisfied.
 
@@ -348,7 +348,7 @@ Missing mandatory evidence must not silently become compliance.
 
 ---
 
-# Quality Exceptions
+## Quality Exceptions
 
 Exceptions provide a governed mechanism for handling situations where an authoritative quality expectation cannot temporarily be satisfied.
 
@@ -367,7 +367,7 @@ Exceptions must never become an invisible mechanism for suppressing quality fail
 
 ---
 
-# Quality Automation
+## Quality Automation
 
 Automation transforms deterministic quality requirements into repeatable engineering verification.
 
@@ -385,7 +385,7 @@ It integrates their results into a common quality model.
 
 ---
 
-# Local and CI Consistency
+## Local and CI Consistency
 
 A fundamental automation objective is:
 
@@ -401,7 +401,7 @@ CI should not implement a separate hidden quality policy.
 
 ---
 
-# Quality Observability
+## Quality Observability
 
 Quality state should not exist only inside ephemeral command output or CI logs.
 
@@ -418,7 +418,7 @@ The framework defines observability principles for understanding:
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 The Quality Framework is designed to improve the engineering system itself.
 
@@ -452,7 +452,7 @@ This may result in:
 
 ---
 
-# Framework Governance
+## Framework Governance
 
 Quality Governance defines:
 
@@ -470,7 +470,7 @@ Quality controls that influence authoritative engineering decisions must remain 
 
 ---
 
-# Framework Lifecycle
+## Framework Lifecycle
 
 The Quality Framework itself has a lifecycle.
 
@@ -498,7 +498,7 @@ Rules, profiles, gates, and other framework capabilities may also have governed 
 
 ---
 
-# Documentation Structure
+## Documentation Structure
 
 EPIC-QLT-001 contains exactly **26 canonical numbered documents**, from `00` through `25`.
 
@@ -533,7 +533,7 @@ EPIC-QLT-001 contains exactly **26 canonical numbered documents**, from `00` thr
 
 ---
 
-# Control Documents
+## Control Documents
 
 The numbered framework documents are complemented by the following control artifacts:
 
@@ -563,17 +563,17 @@ Together:
 
 ---
 
-# Framework Relationships
+## Framework Relationships
 
 The Quality Framework operates as part of the broader FamilyOS Engineering Platform.
 
-## EPIC-ENG-001 — Engineering Foundation
+### EPIC-ENG-001 — Engineering Foundation
 
 Provides the foundational engineering principles and architectural environment within which quality operates.
 
 ---
 
-## EPIC-TST-001 — Testing Framework
+### EPIC-TST-001 — Testing Framework
 
 Defines authoritative testing architecture, practices, levels, execution, and evidence.
 
@@ -583,7 +583,7 @@ The Quality Framework consumes testing evidence for broader quality assessment.
 
 ---
 
-## EPIC-DOC-001 — Documentation Framework
+### EPIC-DOC-001 — Documentation Framework
 
 Defines authoritative documentation architecture, standards, lifecycle, validation, quality, and governance.
 
@@ -591,13 +591,13 @@ The Quality Framework may consume documentation validation evidence.
 
 ---
 
-## EPIC-BLD-001 — Build Framework
+### EPIC-BLD-001 — Build Framework
 
 Defines reproducible build capabilities and provides build evidence that may participate in quality assessments and gates.
 
 ---
 
-## EPIC-REL-001 — Release Framework
+### EPIC-REL-001 — Release Framework
 
 Defines release governance and lifecycle.
 
@@ -605,7 +605,7 @@ Quality assessments and release quality gates may provide inputs into release de
 
 ---
 
-## EPIC-PLUGIN-002 — Plugin Compliance Framework
+### EPIC-PLUGIN-002 — Plugin Compliance Framework
 
 Defines authoritative compliance requirements for FamilyOS plugins.
 
@@ -613,7 +613,7 @@ The Quality Framework consumes plugin compliance evidence where applicable rathe
 
 ---
 
-# Architectural Boundary
+## Architectural Boundary
 
 The Quality Framework coordinates quality without absorbing the responsibilities of neighboring frameworks.
 
@@ -644,7 +644,7 @@ This preserves clear framework boundaries.
 
 ---
 
-# Implementation Strategy
+## Implementation Strategy
 
 The framework should be implemented progressively.
 
@@ -686,7 +686,7 @@ The complete implementation progression is defined in:
 
 ---
 
-# Initial Executable Scope
+## Initial Executable Scope
 
 The recommended first executable implementation should remain deliberately limited.
 
@@ -720,7 +720,7 @@ This provides useful quality infrastructure without prematurely introducing a ce
 
 ---
 
-# Advanced Capabilities
+## Advanced Capabilities
 
 Advanced capabilities may eventually include:
 
@@ -737,7 +737,7 @@ Deterministic quality foundations must come first.
 
 ---
 
-# AI and Quality Authority
+## AI and Quality Authority
 
 AI may eventually assist with:
 
@@ -754,7 +754,7 @@ Authoritative quality decisions must remain grounded in governed requirements, d
 
 ---
 
-# Validation
+## Validation
 
 The Quality Framework must validate itself before becoming authoritative.
 
@@ -781,7 +781,7 @@ Actual release validation evidence is recorded in:
 
 ---
 
-# Current Status
+## Current Status
 
 ```text
 Identifier: EPIC-QLT-001
@@ -797,7 +797,7 @@ Control artifacts are maintained separately and must remain synchronized before 
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 When progressively implemented, the Quality Framework should enable FamilyOS to:
 
@@ -817,7 +817,7 @@ When progressively implemented, the Quality Framework should enable FamilyOS to:
 
 ---
 
-# Long-Term Direction
+## Long-Term Direction
 
 The long-term objective is not merely to accumulate more quality checks.
 
@@ -845,7 +845,7 @@ remain traceable and understandable.
 
 ---
 
-# Navigation
+## Navigation
 
 For the framework definition, begin with:
 
@@ -877,6 +877,6 @@ For the complete authoritative inventory:
 
 ---
 
-# License
+## License
 
 This documentation is part of the FamilyOS Engineering Platform and follows the project's documentation, architecture, versioning, and governance requirements.

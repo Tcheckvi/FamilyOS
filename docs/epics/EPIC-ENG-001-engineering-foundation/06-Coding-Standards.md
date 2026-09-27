@@ -15,7 +15,7 @@ Coding standards transform individual coding preferences into shared engineering
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Coding Standards within the Engineering Foundation is to establish the role and objectives of code consistency.
 
@@ -28,9 +28,9 @@ Coding standards ensure that software created within FamilyOS remains:
 
 ---
 
-# Coding Standards Principles
+## Coding Standards Principles
 
-## Principle 1 — Code Is a Long-Term Asset
+### Principle 1 — Code Is a Long-Term Asset
 
 Code is not only written for immediate execution.
 
@@ -45,7 +45,7 @@ Therefore, code should prioritize:
 
 ---
 
-## Principle 2 — Consistency Reduces Complexity
+### Principle 2 — Consistency Reduces Complexity
 
 Consistent code organization reduces the cognitive effort required to understand the platform.
 
@@ -60,7 +60,7 @@ Consistency applies to:
 
 ---
 
-## Principle 3 — Readability Over Cleverness
+### Principle 3 — Readability Over Cleverness
 
 Code should favor understandable solutions over unnecessarily complex optimizations.
 
@@ -68,7 +68,7 @@ A simple and clear implementation is generally preferred over a shorter but hard
 
 ---
 
-## Principle 4 — Explicit Behavior
+### Principle 4 — Explicit Behavior
 
 FamilyOS code should make important behavior visible.
 
@@ -86,7 +86,7 @@ Explicit code improves:
 
 ---
 
-## Principle 5 — Strong Typing and Validation
+### Principle 5 — Strong Typing and Validation
 
 Code should use strong typing and validation practices whenever possible.
 
@@ -99,7 +99,7 @@ Benefits include:
 
 ---
 
-## Principle 6 — Automation Supports Consistency
+### Principle 6 — Automation Supports Consistency
 
 Engineering standards should be enforced by automation whenever practical.
 
@@ -115,7 +115,7 @@ Automation reduces subjective interpretation and improves engineering consistenc
 
 ---
 
-# Coding Standards Scope
+## Coding Standards Scope
 
 Coding standards apply across:
 
@@ -127,9 +127,9 @@ Coding standards apply across:
 
 ---
 
-# Coding Quality Expectations
+## Coding Quality Expectations
 
-## Maintainability
+### Maintainability
 
 Code should remain easy to:
 
@@ -140,7 +140,7 @@ Code should remain easy to:
 
 ---
 
-## Testability
+### Testability
 
 Code should support reliable verification.
 
@@ -152,7 +152,7 @@ Design choices should enable:
 
 ---
 
-## Modularity
+### Modularity
 
 Code should respect boundaries between components.
 
@@ -164,7 +164,7 @@ Modules should:
 
 ---
 
-## Documentation
+### Documentation
 
 Code should be supported by appropriate documentation when behavior or decisions require explanation.
 
@@ -176,7 +176,7 @@ Documentation should explain:
 
 ---
 
-# Coding Standards and Architecture
+## Coding Standards and Architecture
 
 Coding practices must support FamilyOS architecture principles.
 
@@ -192,7 +192,7 @@ Code organization must reflect architectural decisions.
 
 ---
 
-# Coding Standards and Review
+## Coding Standards and Review
 
 Coding standards provide a common basis for reviews.
 
@@ -208,7 +208,7 @@ Standards help reviewers focus on engineering value instead of personal preferen
 
 ---
 
-# Coding Standards and Automation
+## Coding Standards and Automation
 
 Where practical, coding standards should be supported by automation.
 
@@ -224,7 +224,7 @@ Automation provides consistent enforcement.
 
 ---
 
-# Code Ownership
+## Code Ownership
 
 Engineering quality depends on clear ownership.
 
@@ -242,7 +242,7 @@ Ownership should encourage collaboration rather than creating isolated knowledge
 
 ---
 
-# Relationship With Existing Standards
+## Relationship With Existing Standards
 
 Detailed coding rules are maintained by dedicated engineering documents.
 
@@ -258,39 +258,39 @@ The Engineering Foundation defines the purpose and role of these standards.
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
-## Architecture Framework
+### Architecture Framework
 
 Coding standards implement architectural decisions.
 
 ---
 
-## Testing Framework
+### Testing Framework
 
 Coding standards support testable software design.
 
 ---
 
-## Quality Framework
+### Quality Framework
 
 Coding standards provide measurable quality expectations.
 
 ---
 
-## Build Framework
+### Build Framework
 
 Coding standards enable reliable automated construction.
 
 ---
 
-## Documentation Framework
+### Documentation Framework
 
 Coding standards ensure engineering knowledge remains understandable.
 
 ---
 
-# Governance
+## Governance
 
 Coding standards evolve through controlled engineering processes.
 
@@ -306,7 +306,7 @@ Significant changes affecting engineering practices should be reviewed through t
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Coding Standards are successful when:
 
@@ -318,7 +318,7 @@ Coding Standards are successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Coding Standards establish the shared engineering expectations that allow FamilyOS contributors to build software consistently.
 

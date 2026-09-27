@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 12 Quality Reviews and Assessments
+## 12 Quality Reviews and Assessments
 
-## Overview
+### Overview
 
 The FamilyOS Quality Reviews and Assessments model defines how engineering artifacts, components, plugins, changes, releases, processes, and quality states are systematically examined to determine whether they satisfy applicable quality expectations.
 
@@ -38,7 +38,7 @@ Reviews and assessments provide the interpretation layer between raw quality inf
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Reviews and Assessments is to establish a consistent method for determining the quality state of FamilyOS engineering artifacts.
 
@@ -65,7 +65,7 @@ The assessment model provides the mechanism for answering that question.
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -85,7 +85,7 @@ Assessment must preserve that multidimensional nature.
 
 ---
 
-# Review Definition
+## Review Definition
 
 A Quality Review is a structured examination of an engineering artifact, change, or quality condition.
 
@@ -99,7 +99,7 @@ Reviews typically focus on a defined scope and produce findings, evidence, recom
 
 ---
 
-# Assessment Definition
+## Assessment Definition
 
 A Quality Assessment is the structured evaluation of available quality information against defined expectations.
 
@@ -125,7 +125,7 @@ The result is a Quality State.
 
 ---
 
-# Review vs Assessment
+## Review vs Assessment
 
 Reviews and assessments are related but distinct.
 
@@ -149,7 +149,7 @@ An assessment may consume several reviews.
 
 ---
 
-# Assessment Identity
+## Assessment Identity
 
 Significant assessments should have stable identifiers.
 
@@ -171,7 +171,7 @@ Stable identities support traceability and auditability.
 
 ---
 
-# Review Identity
+## Review Identity
 
 Formal reviews may similarly use identifiers such as:
 
@@ -191,7 +191,7 @@ Informal development reviews do not necessarily require persistent identifiers.
 
 ---
 
-# Assessment Metadata
+## Assessment Metadata
 
 A Quality Assessment record may include:
 
@@ -220,7 +220,7 @@ The exact implementation may evolve.
 
 ---
 
-# Review Metadata
+## Review Metadata
 
 A formal review may record:
 
@@ -244,7 +244,7 @@ This creates a durable review history.
 
 ---
 
-# Assessment Target
+## Assessment Target
 
 An assessment must identify its target.
 
@@ -268,7 +268,7 @@ Assessment conclusions are only valid for their defined target.
 
 ---
 
-# Assessment Scope
+## Assessment Scope
 
 Scope defines which aspects of the target were evaluated.
 
@@ -286,7 +286,7 @@ This assessment must not be interpreted as a complete security assessment.
 
 ---
 
-# Assessment Revision
+## Assessment Revision
 
 Assessments should identify the evaluated revision where practical.
 
@@ -303,7 +303,7 @@ An assessment against one revision does not automatically remain authoritative a
 
 ---
 
-# Assessment Profile
+## Assessment Profile
 
 Quality assessments should resolve the applicable Quality Profile.
 
@@ -323,7 +323,7 @@ The profile determines what must be evaluated.
 
 ---
 
-# Assessment Types
+## Assessment Types
 
 FamilyOS may support several assessment types:
 
@@ -344,7 +344,7 @@ Each type may use different criteria and evidence.
 
 ---
 
-# Component Assessment
+## Component Assessment
 
 A Component Assessment evaluates a defined engineering component.
 
@@ -361,7 +361,7 @@ The exact requirements depend on the component profile.
 
 ---
 
-# Plugin Assessment
+## Plugin Assessment
 
 A Plugin Assessment evaluates whether a plugin satisfies applicable FamilyOS expectations.
 
@@ -382,7 +382,7 @@ Official plugins may require stronger assessment than experimental plugins.
 
 ---
 
-# Architecture Assessment
+## Architecture Assessment
 
 Architecture Assessment examines structural quality.
 
@@ -400,7 +400,7 @@ Architecture assessment often combines automated validation and human review.
 
 ---
 
-# Security Assessment
+## Security Assessment
 
 Security Assessment examines applicable security quality requirements.
 
@@ -416,7 +416,7 @@ Security-specific policy remains defined by the FamilyOS Security Framework wher
 
 ---
 
-# Documentation Assessment
+## Documentation Assessment
 
 Documentation Assessment evaluates:
 
@@ -432,7 +432,7 @@ The Documentation Framework defines documentation-specific standards.
 
 ---
 
-# Build Assessment
+## Build Assessment
 
 Build Assessment evaluates whether build artifacts and processes satisfy quality requirements.
 
@@ -446,7 +446,7 @@ Potential evidence includes:
 
 ---
 
-# Release Assessment
+## Release Assessment
 
 Release Assessment evaluates whether a release candidate is ready for progression.
 
@@ -468,7 +468,7 @@ Release Assessment is a primary input to release Quality Gates.
 
 ---
 
-# Compliance Assessment
+## Compliance Assessment
 
 Compliance Assessment evaluates whether a target satisfies an applicable compliance profile.
 
@@ -478,7 +478,7 @@ The Quality Framework consumes compliance results without duplicating domain-spe
 
 ---
 
-# Process Assessment
+## Process Assessment
 
 Process Assessment examines whether engineering processes are functioning effectively.
 
@@ -493,7 +493,7 @@ Process assessments are primarily used for continuous improvement.
 
 ---
 
-# Quality Framework Assessment
+## Quality Framework Assessment
 
 The Quality Framework itself must be assessable.
 
@@ -513,7 +513,7 @@ Quality infrastructure must not be exempt from quality evaluation.
 
 ---
 
-# Review Types
+## Review Types
 
 Quality reviews may include:
 
@@ -531,7 +531,7 @@ Framework Review
 
 ---
 
-# Peer Review
+## Peer Review
 
 Peer review examines engineering changes before integration.
 
@@ -548,7 +548,7 @@ Peer review remains an important human quality control even with extensive autom
 
 ---
 
-# Architecture Review
+## Architecture Review
 
 Architecture review is appropriate when changes materially affect:
 
@@ -563,7 +563,7 @@ Not every implementation change requires formal architecture review.
 
 ---
 
-# Security Review
+## Security Review
 
 Security review should be proportional to security risk.
 
@@ -578,7 +578,7 @@ Potential triggers include:
 
 ---
 
-# Documentation Review
+## Documentation Review
 
 Documentation review evaluates whether important documentation remains aligned with implementation and architecture.
 
@@ -586,7 +586,7 @@ Normative documents generally require stronger review than informal guidance.
 
 ---
 
-# Risk Review
+## Risk Review
 
 Risk review evaluates significant Quality Risks.
 
@@ -603,7 +603,7 @@ High and Critical risks may require formal review.
 
 ---
 
-# Release Review
+## Release Review
 
 Release review examines the complete release quality state.
 
@@ -625,7 +625,7 @@ Is residual risk acceptable?
 
 ---
 
-# Post-Incident Review
+## Post-Incident Review
 
 Post-incident review analyzes operational failures.
 
@@ -647,7 +647,7 @@ The output may include:
 
 ---
 
-# Automated Review
+## Automated Review
 
 Automated review uses deterministic checks to evaluate quality conditions.
 
@@ -666,7 +666,7 @@ Automated reviews provide consistency and scalability.
 
 ---
 
-# Manual Review
+## Manual Review
 
 Manual review applies engineering judgment where automation is insufficient.
 
@@ -682,7 +682,7 @@ Manual review must remain structured enough to be traceable.
 
 ---
 
-# Hybrid Review
+## Hybrid Review
 
 Most significant FamilyOS assessments will likely use hybrid review.
 
@@ -702,7 +702,7 @@ Human judgment provides context.
 
 ---
 
-# Review Criteria
+## Review Criteria
 
 Every formal review should have defined criteria.
 
@@ -720,7 +720,7 @@ Undefined review criteria produce inconsistent conclusions.
 
 ---
 
-# Review Checklist
+## Review Checklist
 
 Checklists may help reviewers apply criteria consistently.
 
@@ -741,7 +741,7 @@ Checklists support review but must not replace engineering judgment.
 
 ---
 
-# Review Evidence
+## Review Evidence
 
 Formal review outcomes should produce evidence.
 
@@ -768,7 +768,7 @@ Review evidence participates in broader assessments.
 
 ---
 
-# Review Findings
+## Review Findings
 
 Reviews may produce findings.
 
@@ -785,7 +785,7 @@ Findings then follow the Quality Finding lifecycle.
 
 ---
 
-# Review Recommendation
+## Review Recommendation
 
 A review may produce recommendations that are not formal findings.
 
@@ -799,7 +799,7 @@ Recommendations must not be confused with mandatory remediation.
 
 ---
 
-# Review Decision
+## Review Decision
 
 A formal review may conclude:
 
@@ -814,7 +814,7 @@ The exact decision model may vary by review type.
 
 ---
 
-# Conditional Approval
+## Conditional Approval
 
 `APPROVED_WITH_CONDITIONS` should identify explicit conditions.
 
@@ -832,7 +832,7 @@ Conditions must remain trackable.
 
 ---
 
-# Review Independence
+## Review Independence
 
 Some high-risk reviews may benefit from reviewer independence.
 
@@ -842,7 +842,7 @@ The required level of independence should be proportional to risk.
 
 ---
 
-# Reviewer Qualification
+## Reviewer Qualification
 
 Formal reviews should be performed by people with appropriate expertise.
 
@@ -863,7 +863,7 @@ Governance may define formal reviewer roles later.
 
 ---
 
-# Review Accountability
+## Review Accountability
 
 A review record should identify who made the decision.
 
@@ -871,7 +871,7 @@ Anonymous approval is inappropriate for significant governance decisions.
 
 ---
 
-# Review Freshness
+## Review Freshness
 
 Review validity may depend on subsequent changes.
 
@@ -891,7 +891,7 @@ Material changes should trigger reassessment.
 
 ---
 
-# Review Triggers
+## Review Triggers
 
 Formal review may be triggered by:
 
@@ -908,7 +908,7 @@ Review triggers should be explicit where possible.
 
 ---
 
-# Change-Based Review
+## Change-Based Review
 
 Not every change requires the same review depth.
 
@@ -930,7 +930,7 @@ This keeps review proportional.
 
 ---
 
-# Periodic Review
+## Periodic Review
 
 Some quality areas require periodic review independent of individual changes.
 
@@ -947,7 +947,7 @@ Periodic review prevents long-lived degradation.
 
 ---
 
-# Event-Driven Review
+## Event-Driven Review
 
 Certain events may trigger review.
 
@@ -965,7 +965,7 @@ These events may reveal systemic quality weaknesses.
 
 ---
 
-# Assessment Inputs
+## Assessment Inputs
 
 A Quality Assessment may consume:
 
@@ -987,7 +987,7 @@ The applicable Quality Profile determines which inputs are required.
 
 ---
 
-# Required Assessment Inputs
+## Required Assessment Inputs
 
 An assessment should distinguish between:
 
@@ -1001,7 +1001,7 @@ Missing required inputs may make the assessment incomplete.
 
 ---
 
-# Assessment Completeness
+## Assessment Completeness
 
 Assessment completeness indicates whether all mandatory evaluation areas have sufficient evidence.
 
@@ -1024,7 +1024,7 @@ rather than incorrectly returning PASS.
 
 ---
 
-# Assessment Status
+## Assessment Status
 
 Assessment execution status may include:
 
@@ -1041,7 +1041,7 @@ This is distinct from Quality State.
 
 ---
 
-# Quality State
+## Quality State
 
 The assessment should produce a normalized Quality State.
 
@@ -1057,13 +1057,13 @@ UNKNOWN
 
 ---
 
-# PASS
+## PASS
 
 `PASS` means all required quality expectations are satisfied and no blocking condition exists.
 
 ---
 
-# PASS_WITH_WARNINGS
+## PASS_WITH_WARNINGS
 
 `PASS_WITH_WARNINGS` means mandatory requirements are satisfied but non-blocking concerns remain.
 
@@ -1071,7 +1071,7 @@ Warnings must remain visible.
 
 ---
 
-# CONDITIONAL
+## CONDITIONAL
 
 `CONDITIONAL` means progression may be allowed only under explicit conditions.
 
@@ -1083,13 +1083,13 @@ Examples include:
 
 ---
 
-# FAIL
+## FAIL
 
 `FAIL` means one or more blocking quality requirements are not satisfied.
 
 ---
 
-# UNKNOWN
+## UNKNOWN
 
 `UNKNOWN` means available information is insufficient to determine the quality state.
 
@@ -1097,7 +1097,7 @@ Unknown must never be silently treated as PASS.
 
 ---
 
-# Assessment Result vs Gate Decision
+## Assessment Result vs Gate Decision
 
 Assessment and Quality Gate are distinct.
 
@@ -1126,7 +1126,7 @@ PASS
 
 ---
 
-# Domain Assessment
+## Domain Assessment
 
 Quality may be assessed independently by domain.
 
@@ -1144,7 +1144,7 @@ This preserves multidimensional visibility.
 
 ---
 
-# Aggregate Assessment
+## Aggregate Assessment
 
 Domain assessments may be combined into an aggregate quality state.
 
@@ -1162,7 +1162,7 @@ However, exact semantics should be defined by Quality Profile and Gate policy.
 
 ---
 
-# No Blind Averaging
+## No Blind Averaging
 
 Quality must not be reduced through blind averaging.
 
@@ -1180,7 +1180,7 @@ Critical domain failures must remain explicit.
 
 ---
 
-# Assessment Rules
+## Assessment Rules
 
 Assessment logic should be deterministic where possible.
 
@@ -1201,7 +1201,7 @@ Human judgment may still be required for contextual areas.
 
 ---
 
-# Assessment Policy
+## Assessment Policy
 
 Quality Profiles may define assessment policy.
 
@@ -1221,7 +1221,7 @@ This creates predictable evaluation.
 
 ---
 
-# Risk-Based Assessment
+## Risk-Based Assessment
 
 Risk affects assessment depth.
 
@@ -1243,7 +1243,7 @@ Explicit Risk Assessment
 
 ---
 
-# Evidence-Based Assessment
+## Evidence-Based Assessment
 
 Assessment conclusions must reference supporting evidence.
 
@@ -1259,7 +1259,7 @@ This enables drill-down and auditability.
 
 ---
 
-# Finding-Based Assessment
+## Finding-Based Assessment
 
 Open findings influence assessment according to:
 
@@ -1275,7 +1275,7 @@ Policy determines its effect.
 
 ---
 
-# Risk-Based Assessment Decision
+## Risk-Based Assessment Decision
 
 Risk may alter assessment conclusions even when individual checks pass.
 
@@ -1295,7 +1295,7 @@ Quality assessment is broader than tool execution.
 
 ---
 
-# Exception-Aware Assessment
+## Exception-Aware Assessment
 
 Valid exceptions may modify how failed rules are interpreted.
 
@@ -1313,7 +1313,7 @@ The assessment must still expose the deviation.
 
 ---
 
-# Expired Exception
+## Expired Exception
 
 An expired exception must not continue to suppress a failure.
 
@@ -1321,7 +1321,7 @@ The assessment should treat the original requirement as active again.
 
 ---
 
-# Quality Debt in Assessments
+## Quality Debt in Assessments
 
 Quality debt should be visible in assessments.
 
@@ -1336,7 +1336,7 @@ Not all debt must block progression.
 
 ---
 
-# Defects in Assessments
+## Defects in Assessments
 
 Open defects should be evaluated according to:
 
@@ -1350,7 +1350,7 @@ Critical unresolved defects will normally block relevant assessments.
 
 ---
 
-# Historical Assessment
+## Historical Assessment
 
 Historical data may help interpret current quality.
 
@@ -1368,7 +1368,7 @@ This trend may indicate architecture degradation.
 
 ---
 
-# Baseline Assessment
+## Baseline Assessment
 
 Legacy areas may be assessed against an explicit baseline.
 
@@ -1388,7 +1388,7 @@ Baseline assessment should encourage progressive improvement.
 
 ---
 
-# Delta Assessment
+## Delta Assessment
 
 A Delta Assessment evaluates changes relative to a previous known state.
 
@@ -1405,7 +1405,7 @@ Delta assessment is useful for large legacy migrations.
 
 ---
 
-# Full Assessment
+## Full Assessment
 
 A Full Assessment evaluates the complete applicable quality profile.
 
@@ -1413,7 +1413,7 @@ It should be required periodically and before significant milestones where appro
 
 ---
 
-# Incremental Assessment
+## Incremental Assessment
 
 Incremental assessment evaluates only affected scope where safely possible.
 
@@ -1427,7 +1427,7 @@ Incremental assessment must preserve confidence through reliable impact analysis
 
 ---
 
-# Assessment Cache
+## Assessment Cache
 
 Validated assessment results may potentially be reused for unchanged targets.
 
@@ -1444,7 +1444,7 @@ Reuse must be deterministic and auditable.
 
 ---
 
-# Assessment Invalidation
+## Assessment Invalidation
 
 Cached assessment must be invalidated when relevant inputs change.
 
@@ -1459,7 +1459,7 @@ Triggers may include:
 
 ---
 
-# Assessment Confidence
+## Assessment Confidence
 
 The framework may eventually expose assessment confidence.
 
@@ -1475,7 +1475,7 @@ This should only be introduced if it improves engineering decisions.
 
 ---
 
-# Assessment Uncertainty
+## Assessment Uncertainty
 
 Assessment must represent uncertainty explicitly.
 
@@ -1493,7 +1493,7 @@ Unknown conditions should trigger additional verification where risk warrants it
 
 ---
 
-# Assessment Explanation
+## Assessment Explanation
 
 Every assessment should be explainable.
 
@@ -1519,7 +1519,7 @@ QLT-EVID-882A11
 
 ---
 
-# Assessment Summary
+## Assessment Summary
 
 A human-readable assessment summary may contain:
 
@@ -1552,7 +1552,7 @@ Open Risks:
 
 ---
 
-# Assessment Details
+## Assessment Details
 
 Detailed assessment should expose:
 
@@ -1568,7 +1568,7 @@ The summary should not replace the underlying data.
 
 ---
 
-# Assessment Report
+## Assessment Report
 
 A formal assessment report may include:
 
@@ -1590,7 +1590,7 @@ Decision
 
 ---
 
-# Review Report
+## Review Report
 
 A review report may include:
 
@@ -1609,7 +1609,7 @@ Decision
 
 ---
 
-# Review Comments
+## Review Comments
 
 Review comments should distinguish between:
 
@@ -1624,7 +1624,7 @@ This prevents ambiguity during remediation.
 
 ---
 
-# Review Resolution
+## Review Resolution
 
 Review findings should have explicit resolution.
 
@@ -1643,7 +1643,7 @@ RESOLVED
 
 ---
 
-# Review Rejection
+## Review Rejection
 
 A review may reject a change when the proposed direction is fundamentally incompatible with required quality expectations.
 
@@ -1651,7 +1651,7 @@ Rejection should include clear reasoning and remediation direction where possibl
 
 ---
 
-# Review Reassessment
+## Review Reassessment
 
 After significant changes, a previous review may require reassessment.
 
@@ -1659,7 +1659,7 @@ The original review should remain preserved historically.
 
 ---
 
-# Assessment Reassessment
+## Assessment Reassessment
 
 Assessments may also be repeated after:
 
@@ -1673,7 +1673,7 @@ Each authoritative assessment should preserve its own identity and timestamp.
 
 ---
 
-# Continuous Assessment
+## Continuous Assessment
 
 As automation increases, quality assessment may become continuous.
 
@@ -1695,7 +1695,7 @@ This enables rapid engineering feedback.
 
 ---
 
-# Continuous Assessment Boundary
+## Continuous Assessment Boundary
 
 Not all quality areas can or should be continuously automated.
 
@@ -1705,7 +1705,7 @@ The framework should combine continuous automation with deliberate review.
 
 ---
 
-# Pull Request Assessment
+## Pull Request Assessment
 
 A future CI integration may produce a Pull Request Quality Assessment.
 
@@ -1728,7 +1728,7 @@ This provides developers with consolidated quality feedback.
 
 ---
 
-# Branch Assessment
+## Branch Assessment
 
 Protected branches may require stronger assessment than local development branches.
 
@@ -1748,7 +1748,7 @@ The exact workflow belongs to Quality Gates and CI policy.
 
 ---
 
-# Release Candidate Assessment
+## Release Candidate Assessment
 
 Release candidates should receive comprehensive assessment.
 
@@ -1768,7 +1768,7 @@ Exceptions
 
 ---
 
-# Post-Release Assessment
+## Post-Release Assessment
 
 A release may also be assessed after deployment using operational evidence.
 
@@ -1784,7 +1784,7 @@ Post-release assessment feeds continuous improvement.
 
 ---
 
-# Assessment and Metrics
+## Assessment and Metrics
 
 Metrics support assessments but do not replace them.
 
@@ -1802,7 +1802,7 @@ Evidence and requirements determine quality conclusions.
 
 ---
 
-# Assessment and Quality Score
+## Assessment and Quality Score
 
 A future Quality Score may summarize selected dimensions.
 
@@ -1825,7 +1825,7 @@ FAIL
 
 ---
 
-# Assessment and Risk
+## Assessment and Risk
 
 Risk is a first-class assessment input.
 
@@ -1833,7 +1833,7 @@ Two technically identical findings may produce different assessment outcomes dep
 
 ---
 
-# Assessment and Quality Debt
+## Assessment and Quality Debt
 
 Quality debt may be acceptable within defined boundaries.
 
@@ -1850,7 +1850,7 @@ New high-risk debt may affect progression more strongly than stable low-risk leg
 
 ---
 
-# Assessment and Compliance
+## Assessment and Compliance
 
 Compliance assessment may contribute a domain result.
 
@@ -1865,7 +1865,7 @@ The Quality Framework should consume the result and evidence rather than duplica
 
 ---
 
-# Assessment and Governance
+## Assessment and Governance
 
 Governance determines:
 
@@ -1880,7 +1880,7 @@ Assessment behavior must remain consistent across teams and components.
 
 ---
 
-# Assessment Authority
+## Assessment Authority
 
 Certain assessment decisions may require designated authority.
 
@@ -1901,7 +1901,7 @@ Automated systems may provide authoritative results for deterministic rules.
 
 ---
 
-# Assessment Override
+## Assessment Override
 
 Manual override of an assessment should be exceptional.
 
@@ -1920,7 +1920,7 @@ Silent overrides are prohibited.
 
 ---
 
-# Review Conflict
+## Review Conflict
 
 Reviewers may disagree.
 
@@ -1936,7 +1936,7 @@ The framework should avoid decisions based solely on hierarchy where technical e
 
 ---
 
-# Evidence Conflict
+## Evidence Conflict
 
 Conflicting evidence should remain visible during assessment.
 
@@ -1954,7 +1954,7 @@ The assessment must evaluate scope and freshness rather than arbitrarily choosin
 
 ---
 
-# Assessment Error
+## Assessment Error
 
 An assessment may fail operationally because of:
 
@@ -1974,7 +1974,7 @@ not a Quality State of PASS or FAIL.
 
 ---
 
-# Assessment Integrity
+## Assessment Integrity
 
 Assessment records may influence release decisions and must therefore be protected from silent modification.
 
@@ -1988,7 +1988,7 @@ Important fields include:
 
 ---
 
-# Assessment Immutability
+## Assessment Immutability
 
 Published formal assessments should be treated as immutable where practical.
 
@@ -2006,7 +2006,7 @@ Assessment B
 
 ---
 
-# Assessment Provenance
+## Assessment Provenance
 
 An authoritative assessment should identify:
 
@@ -2024,7 +2024,7 @@ Which revision was evaluated?
 
 ---
 
-# Assessment Retention
+## Assessment Retention
 
 Historical assessments may be retained for:
 
@@ -2038,7 +2038,7 @@ Retention requirements may vary by assessment type.
 
 ---
 
-# Review Retention
+## Review Retention
 
 Formal reviews with significant governance value should remain traceable.
 
@@ -2046,7 +2046,7 @@ Routine peer review history may rely on repository collaboration systems.
 
 ---
 
-# Assessment Metrics
+## Assessment Metrics
 
 The assessment system itself may be measured.
 
@@ -2063,7 +2063,7 @@ Assessment Error Rate
 
 ---
 
-# Review Metrics
+## Review Metrics
 
 Possible review metrics include:
 
@@ -2079,7 +2079,7 @@ Metrics should improve review quality rather than pressure reviewers toward supe
 
 ---
 
-# Review Effectiveness
+## Review Effectiveness
 
 Review effectiveness may be evaluated by comparing:
 
@@ -2093,7 +2093,7 @@ This can identify review areas requiring improvement.
 
 ---
 
-# Assessment Effectiveness
+## Assessment Effectiveness
 
 Assessment effectiveness may be evaluated by asking whether PASS decisions correlate with stable engineering outcomes.
 
@@ -2109,7 +2109,7 @@ may indicate insufficient assessment criteria.
 
 ---
 
-# False Confidence Analysis
+## False Confidence Analysis
 
 One of the most important Quality Framework responsibilities is detecting false confidence.
 
@@ -2125,7 +2125,7 @@ Incidents should therefore evaluate whether previous assessments incorrectly rep
 
 ---
 
-# Assessment Calibration
+## Assessment Calibration
 
 Assessment policy should evolve through engineering experience.
 
@@ -2141,7 +2141,7 @@ Assessment must remain strict enough to protect quality and practical enough to 
 
 ---
 
-# Review Calibration
+## Review Calibration
 
 Review criteria should also evolve.
 
@@ -2151,7 +2151,7 @@ Repeated escaped architecture problems may indicate insufficient criteria.
 
 ---
 
-# Quality Review Culture
+## Quality Review Culture
 
 Reviews should be treated as engineering collaboration rather than personal judgment.
 
@@ -2169,7 +2169,7 @@ not the worth of the engineer who created it.
 
 ---
 
-# Review Constructiveness
+## Review Constructiveness
 
 High-quality review comments should be:
 
@@ -2183,7 +2183,7 @@ Comments should explain the engineering concern rather than merely state prefere
 
 ---
 
-# Review Consistency
+## Review Consistency
 
 Similar situations should receive similar review expectations.
 
@@ -2197,7 +2197,7 @@ Consistency requires:
 
 ---
 
-# Review Automation
+## Review Automation
 
 Automation should eliminate repetitive review work where deterministic rules exist.
 
@@ -2215,7 +2215,7 @@ Human review should focus increasingly on areas requiring judgment.
 
 ---
 
-# Assessment Automation
+## Assessment Automation
 
 Assessment automation may include:
 
@@ -2233,7 +2233,7 @@ Automation must preserve explainability.
 
 ---
 
-# AI-Assisted Reviews
+## AI-Assisted Reviews
 
 AI may assist reviewers with:
 
@@ -2247,7 +2247,7 @@ AI-generated review observations should remain advisory unless validated.
 
 ---
 
-# AI-Assisted Assessments
+## AI-Assisted Assessments
 
 AI may assist with:
 
@@ -2266,7 +2266,7 @@ AI must not autonomously:
 
 ---
 
-# Assessment Querying
+## Assessment Querying
 
 A future Quality Platform may support queries such as:
 
@@ -2286,7 +2286,7 @@ Structured assessment data enables this capability.
 
 ---
 
-# Review Querying
+## Review Querying
 
 Possible queries include:
 
@@ -2302,7 +2302,7 @@ Show repeated review findings.
 
 ---
 
-# Assessment Dashboard
+## Assessment Dashboard
 
 A future dashboard may display:
 
@@ -2324,7 +2324,7 @@ Dashboards must preserve drill-down to evidence.
 
 ---
 
-# Assessment History
+## Assessment History
 
 Assessment history may provide:
 
@@ -2339,7 +2339,7 @@ This enables longitudinal quality analysis.
 
 ---
 
-# Assessment Comparison
+## Assessment Comparison
 
 Assessments may be compared across:
 
@@ -2352,7 +2352,7 @@ Comparison can reveal both improvement and regression.
 
 ---
 
-# Assessment Diff
+## Assessment Diff
 
 A future assessment diff may show:
 
@@ -2368,71 +2368,71 @@ This improves review efficiency.
 
 ---
 
-# Review Anti-Patterns
+## Review Anti-Patterns
 
 The framework rejects several review anti-patterns.
 
-## Approval Without Criteria
+### Approval Without Criteria
 
 Review must be based on explicit engineering expectations.
 
-## Rubber-Stamp Review
+### Rubber-Stamp Review
 
 Approval without meaningful examination provides false confidence.
 
-## Review by Personal Preference
+### Review by Personal Preference
 
 Review comments should be grounded in standards, architecture, or justified engineering reasoning.
 
-## Endless Review
+### Endless Review
 
 Review must remain proportional and converge toward a decision.
 
-## Hidden Blocking Comments
+### Hidden Blocking Comments
 
 Blocking concerns must be clearly identified.
 
-## Review Without Ownership
+### Review Without Ownership
 
 Formal review decisions must identify responsible authority.
 
 ---
 
-# Assessment Anti-Patterns
+## Assessment Anti-Patterns
 
 The framework rejects several assessment anti-patterns.
 
-## Single Metric Assessment
+### Single Metric Assessment
 
 Quality cannot be represented by one metric.
 
-## Missing Evidence Equals PASS
+### Missing Evidence Equals PASS
 
 Unknown is not PASS.
 
-## Blind Averaging
+### Blind Averaging
 
 Critical failures must not disappear inside aggregate scores.
 
-## Stale Assessment Reuse
+### Stale Assessment Reuse
 
 Assessments must correspond to relevant target state.
 
-## Silent Override
+### Silent Override
 
 Assessment changes require traceability.
 
-## Assessment Without Scope
+### Assessment Without Scope
 
 A conclusion without defined scope is ambiguous.
 
-## Assessment Without Evidence
+### Assessment Without Evidence
 
 Authoritative conclusions require supporting evidence.
 
 ---
 
-# Initial Review Model
+## Initial Review Model
 
 An initial FamilyOS formal review model may contain:
 
@@ -2451,7 +2451,7 @@ This is sufficient to establish traceability.
 
 ---
 
-# Initial Assessment Model
+## Initial Assessment Model
 
 An initial assessment may contain:
 
@@ -2471,7 +2471,7 @@ This provides the foundation for Quality Gate integration.
 
 ---
 
-# Initial Assessment Flow
+## Initial Assessment Flow
 
 A practical initial implementation may follow:
 
@@ -2499,7 +2499,7 @@ Generate Assessment Report
 
 ---
 
-# Review Maturity Model
+## Review Maturity Model
 
 Quality Reviews may mature through:
 
@@ -2540,7 +2540,7 @@ Continuous Review Improvement
 
 ---
 
-# Assessment Maturity Model
+## Assessment Maturity Model
 
 Quality Assessment may mature through:
 
@@ -2581,7 +2581,7 @@ Quality Intelligence
 
 ---
 
-# Relationship With Quality Evidence
+## Relationship With Quality Evidence
 
 Quality Evidence provides the factual basis for assessment.
 
@@ -2595,7 +2595,7 @@ Assessment must preserve links to evidence.
 
 ---
 
-# Relationship With Quality Risk
+## Relationship With Quality Risk
 
 Quality Risk provides contextual consequence information.
 
@@ -2611,7 +2611,7 @@ This prevents technically identical findings from being interpreted identically 
 
 ---
 
-# Relationship With Quality Debt
+## Relationship With Quality Debt
 
 Quality Debt provides visibility into known unresolved deficiencies.
 
@@ -2627,7 +2627,7 @@ Debt should influence assessment according to risk and policy.
 
 ---
 
-# Relationship With Quality Gates
+## Relationship With Quality Gates
 
 Assessment answers:
 
@@ -2657,7 +2657,7 @@ Progression Decision
 
 ---
 
-# Relationship With Governance
+## Relationship With Governance
 
 Governance determines:
 
@@ -2671,7 +2671,7 @@ Reviews and assessments therefore provide the operational decision layer of Qual
 
 ---
 
-# Reference Review Flow
+## Reference Review Flow
 
 The complete review flow can be represented as:
 
@@ -2697,7 +2697,7 @@ Engineering Artifact / Change
 
 ---
 
-# Reference Assessment Flow
+## Reference Assessment Flow
 
 The complete Quality Assessment flow can be represented as:
 
@@ -2731,7 +2731,7 @@ Engineering Decision
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Reviews and Assessments enable FamilyOS to move from fragmented statements such as:
 
@@ -2766,7 +2766,7 @@ This creates a consistent basis for engineering decisions.
 
 ---
 
-# Final Review and Assessment Principle
+## Final Review and Assessment Principle
 
 Quality verification is valuable only when its results can be interpreted into meaningful engineering decisions.
 

@@ -1,8 +1,8 @@
 # Build Framework
 
-# 21 Summary
+## 21 Summary
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework establishes the official FamilyOS engineering foundation for transforming controlled source state into validated, traceable, and trustworthy software artifacts.
 
@@ -30,7 +30,7 @@ The central principle of the complete framework is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of EPIC-BLD-001 is to establish a coherent Build Framework for the FamilyOS Engineering Platform.
 
@@ -51,7 +51,7 @@ The framework provides the architecture required to answer:
 
 ---
 
-# Build Framework Position
+## Build Framework Position
 
 The Build Framework occupies a specific position in the FamilyOS engineering lifecycle.
 
@@ -75,7 +75,7 @@ The Build Framework converts engineering state into trustworthy artifact state.
 
 ---
 
-# Framework Boundary
+## Framework Boundary
 
 EPIC-BLD-001 begins with controlled engineering inputs.
 
@@ -99,7 +99,7 @@ The Build Framework does not own official release approval or publication.
 
 ---
 
-# Core Build Model
+## Core Build Model
 
 The complete Build Framework can be represented as:
 
@@ -133,7 +133,7 @@ This model is the architectural center of EPIC-BLD-001.
 
 ---
 
-# Build Inputs
+## Build Inputs
 
 A build is influenced by more than source code.
 
@@ -157,7 +157,7 @@ Trustworthy builds require these influences to be sufficiently explicit and cont
 
 ---
 
-# Build Context
+## Build Context
 
 The Build Context represents the effective state under which a particular build executes.
 
@@ -178,7 +178,7 @@ The Build Context provides the basis for reproducibility and traceability.
 
 ---
 
-# Build Identity
+## Build Identity
 
 Significant builds should progressively receive a Build ID or equivalent identity.
 
@@ -199,85 +199,85 @@ Build identity becomes increasingly important as automation and release maturity
 
 ---
 
-# Build Principles
+## Build Principles
 
 The Build Framework establishes durable principles.
 
 ---
 
-## Principle 1 — Explicit Inputs
+### Principle 1 — Explicit Inputs
 
 Build behavior should depend on explicit and governed inputs.
 
 ---
 
-## Principle 2 — Reproducibility
+### Principle 2 — Reproducibility
 
 Equivalent build contexts should produce equivalent meaningful results.
 
 ---
 
-## Principle 3 — Deterministic Configuration
+### Principle 3 — Deterministic Configuration
 
 Configuration precedence and profile resolution must be understandable.
 
 ---
 
-## Principle 4 — Environment Control
+### Principle 4 — Environment Control
 
 Environment state must not silently determine important build behavior.
 
 ---
 
-## Principle 5 — Dependency Control
+### Principle 5 — Dependency Control
 
 Dependencies must be declared, governed, and sufficiently reproducible for the build profile.
 
 ---
 
-## Principle 6 — Toolchain Control
+### Principle 6 — Toolchain Control
 
 Critical build tools must be identifiable and validated.
 
 ---
 
-## Principle 7 — Predictable Execution
+### Principle 7 — Predictable Execution
 
 Build execution should follow a canonical, understandable sequence.
 
 ---
 
-## Principle 8 — Explicit Artifacts
+### Principle 8 — Explicit Artifacts
 
 Trusted artifacts must be deliberately identified.
 
 ---
 
-## Principle 9 — Validation Before Trust
+### Principle 9 — Validation Before Trust
 
 Generated output does not become trusted merely because the build command completed successfully.
 
 ---
 
-## Principle 10 — Evidence
+### Principle 10 — Evidence
 
 Important builds should produce enough evidence to explain what happened.
 
 ---
 
-## Principle 11 — Automation Reuses Architecture
+### Principle 11 — Automation Reuses Architecture
 
 CI must execute canonical Build Framework semantics rather than invent separate behavior.
 
 ---
 
-## Principle 12 — Build And Release Separation
+### Principle 12 — Build And Release Separation
 
 Build success must not automatically imply release authorization.
 
 ---
 
-# Build Architecture
+## Build Architecture
 
 The Build Architecture separates responsibilities into understandable layers.
 
@@ -307,7 +307,7 @@ This separation allows implementation tools to evolve without redefining Build F
 
 ---
 
-# Build Lifecycle
+## Build Lifecycle
 
 The Build Lifecycle extends beyond command execution.
 
@@ -343,7 +343,7 @@ This makes build engineering a continuous platform capability.
 
 ---
 
-# Build Input Requirements
+## Build Input Requirements
 
 Build inputs must be:
 
@@ -357,7 +357,7 @@ Hidden build inputs reduce reproducibility.
 
 ---
 
-# Project Structure
+## Project Structure
 
 Repository structure forms part of the build contract.
 
@@ -375,7 +375,7 @@ Build behavior should not depend on accidental filesystem layout.
 
 ---
 
-# Build Toolchain
+## Build Toolchain
 
 The Build Toolchain provides the tools required to execute and validate builds.
 
@@ -394,7 +394,7 @@ The framework deliberately separates tool identity from architectural responsibi
 
 ---
 
-# Toolchain Principle
+## Toolchain Principle
 
 The rule is:
 
@@ -418,7 +418,7 @@ This protects FamilyOS from unnecessary tool lock-in.
 
 ---
 
-# Build Environment
+## Build Environment
 
 The Build Environment includes runtime and system conditions that can influence execution.
 
@@ -439,7 +439,7 @@ Properties that materially affect build results should be controlled.
 
 ---
 
-# Environment Reproducibility
+## Environment Reproducibility
 
 The target is not necessarily identical physical machines.
 
@@ -457,7 +457,7 @@ Environment B
 
 ---
 
-# Dependency Management
+## Dependency Management
 
 Dependencies are first-class build inputs.
 
@@ -474,7 +474,7 @@ The framework governs:
 
 ---
 
-# Dependency Reproducibility
+## Dependency Reproducibility
 
 Higher-trust build profiles require stronger dependency determinism.
 
@@ -482,7 +482,7 @@ The framework therefore allows dependency controls to increase with build purpos
 
 ---
 
-# Build Configuration
+## Build Configuration
 
 Build Configuration determines how canonical build behavior is parameterized.
 
@@ -497,7 +497,7 @@ The framework requires:
 
 ---
 
-# Build Profiles
+## Build Profiles
 
 Different build purposes may use different profiles.
 
@@ -518,7 +518,7 @@ They must not silently create incompatible build architectures.
 
 ---
 
-# Build Philosophy
+## Build Philosophy
 
 The Build Framework distinguishes execution success from build trust.
 
@@ -540,7 +540,7 @@ This distinction is essential to the entire framework.
 
 ---
 
-# Build Execution
+## Build Execution
 
 Build Execution performs the controlled transformation of validated Build Context into candidate artifacts.
 
@@ -554,7 +554,7 @@ Execution should be:
 
 ---
 
-# Execution Result
+## Execution Result
 
 The result of Build Execution is not automatically a trusted release artifact.
 
@@ -568,7 +568,7 @@ Trust requires validation.
 
 ---
 
-# Artifact Management
+## Artifact Management
 
 Artifacts are explicit engineering objects.
 
@@ -588,7 +588,7 @@ This prevents accidental promotion of unverified output.
 
 ---
 
-# Artifact Identity
+## Artifact Identity
 
 An artifact should progressively be associated with:
 
@@ -602,7 +602,7 @@ An artifact should progressively be associated with:
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Cryptographic digests may be used to establish artifact content identity.
 
@@ -620,7 +620,7 @@ Validation Required
 
 ---
 
-# Artifact Manifest
+## Artifact Manifest
 
 A mature build may produce an artifact manifest containing:
 
@@ -639,7 +639,7 @@ This supports downstream automation and release handoff.
 
 ---
 
-# Build Validation
+## Build Validation
 
 Build Validation determines whether a candidate artifact satisfies applicable requirements.
 
@@ -658,7 +658,7 @@ Validation may include:
 
 ---
 
-# Artifact-Level Validation
+## Artifact-Level Validation
 
 One of the most important framework rules is:
 
@@ -668,7 +668,7 @@ This reduces packaging-specific defects.
 
 ---
 
-# Clean Installation
+## Clean Installation
 
 A strong validation pattern is:
 
@@ -686,7 +686,7 @@ Trusted Artifact
 
 ---
 
-# Build Evidence
+## Build Evidence
 
 Build Evidence explains why a build result can be trusted.
 
@@ -708,7 +708,7 @@ Evidence requirements should remain proportional to build purpose.
 
 ---
 
-# Build Automation
+## Build Automation
 
 Automation exists to execute the Build Framework consistently.
 
@@ -728,7 +728,7 @@ CI does not own Build Architecture.
 
 ---
 
-# Continuous Integration
+## Continuous Integration
 
 CI provides independent execution from a controlled repository revision.
 
@@ -754,7 +754,7 @@ Collect Evidence
 
 ---
 
-# Local And CI Consistency
+## Local And CI Consistency
 
 FamilyOS should progressively ensure that local and CI environments invoke the same canonical build semantics.
 
@@ -762,7 +762,7 @@ A developer should be able to reproduce most CI failures through known local com
 
 ---
 
-# Build Automation Security
+## Build Automation Security
 
 Automation must apply:
 
@@ -775,7 +775,7 @@ Automation must apply:
 
 ---
 
-# Build Governance
+## Build Governance
 
 Build Governance ensures that Build Framework evolution remains controlled.
 
@@ -793,7 +793,7 @@ Governance defines:
 
 ---
 
-# Governance Proportionality
+## Governance Proportionality
 
 Not every build change requires formal architectural governance.
 
@@ -809,7 +809,7 @@ Governance should match impact.
 
 ---
 
-# Build Technical Debt
+## Build Technical Debt
 
 Build infrastructure is production engineering infrastructure.
 
@@ -828,7 +828,7 @@ Such debt must be managed deliberately.
 
 ---
 
-# Build And Testing
+## Build And Testing
 
 EPIC-BLD-001 integrates with EPIC-TST-001.
 
@@ -850,7 +850,7 @@ Testing semantics remain owned by the Testing Framework.
 
 ---
 
-# Build And Quality
+## Build And Quality
 
 EPIC-BLD-001 integrates with EPIC-QLT-001.
 
@@ -868,7 +868,7 @@ The Quality Framework defines quality policy.
 
 ---
 
-# Build And Documentation
+## Build And Documentation
 
 EPIC-BLD-001 integrates with EPIC-DOC-001.
 
@@ -883,7 +883,7 @@ Documentation governance remains owned by the Documentation Framework.
 
 ---
 
-# Build And Plugin Compliance
+## Build And Plugin Compliance
 
 Official plugin builds may integrate EPIC-PLUGIN-002.
 
@@ -903,7 +903,7 @@ Compliance semantics remain owned by the Plugin Compliance Framework.
 
 ---
 
-# Build And Release
+## Build And Release
 
 The Build/Release boundary is one of the most important FamilyOS engineering boundaries.
 
@@ -927,7 +927,7 @@ Distribution
 
 ---
 
-# Build Once, Promote
+## Build Once, Promote
 
 The long-term preferred model is:
 
@@ -949,7 +949,7 @@ This provides stronger traceability than rebuilding during release.
 
 ---
 
-# Release Candidate Profile
+## Release Candidate Profile
 
 A release-candidate build may apply stronger controls such as:
 
@@ -964,7 +964,7 @@ It still does not authorize release by itself.
 
 ---
 
-# Build Roadmap
+## Build Roadmap
 
 EPIC-BLD-001 defines an incremental maturity path.
 
@@ -1012,7 +1012,7 @@ This roadmap prevents premature infrastructure complexity.
 
 ---
 
-# Immediate Priorities
+## Immediate Priorities
 
 The highest-value implementation sequence is:
 
@@ -1040,7 +1040,7 @@ Release Integration
 
 ---
 
-# Future Build Maturity
+## Future Build Maturity
 
 Future FamilyOS maturity may introduce:
 
@@ -1058,7 +1058,7 @@ These capabilities should only be introduced when engineering or security needs 
 
 ---
 
-# Supply Chain Direction
+## Supply Chain Direction
 
 The long-term build model may evolve toward:
 
@@ -1082,7 +1082,7 @@ EPIC-BLD-001 provides the architectural foundation required for that evolution.
 
 ---
 
-# Build Framework Validation
+## Build Framework Validation
 
 The framework itself must be validated before closure.
 
@@ -1101,7 +1101,7 @@ The existence of all files alone is insufficient.
 
 ---
 
-# Canonical Document Set
+## Canonical Document Set
 
 The final normative EPIC-BLD-001 structure is:
 
@@ -1134,7 +1134,7 @@ The final normative EPIC-BLD-001 structure is:
 
 ---
 
-# Control Documents
+## Control Documents
 
 The framework is supported by:
 
@@ -1152,7 +1152,7 @@ These documents provide framework identity, navigation, history, manifest contro
 
 ---
 
-# Framework Completion Model
+## Framework Completion Model
 
 EPIC-BLD-001 should be considered complete when:
 
@@ -1174,69 +1174,69 @@ Framework Validated
 
 ---
 
-# Build Framework Invariants
+## Build Framework Invariants
 
 The complete framework establishes several invariants.
 
-## Invariant 1
+### Invariant 1
 
 Build inputs must be sufficiently explicit to understand meaningful build behavior.
 
-## Invariant 2
+### Invariant 2
 
 Configuration resolution must be deterministic.
 
-## Invariant 3
+### Invariant 3
 
 Dependencies must be governed.
 
-## Invariant 4
+### Invariant 4
 
 Toolchain requirements must be identifiable.
 
-## Invariant 5
+### Invariant 5
 
 Environment requirements must be controlled according to build purpose.
 
-## Invariant 6
+### Invariant 6
 
 Build execution must produce explicitly identifiable candidate artifacts.
 
-## Invariant 7
+### Invariant 7
 
 Candidate artifacts must be validated before becoming trusted artifacts.
 
-## Invariant 8
+### Invariant 8
 
 Trusted artifacts must have traceable origin.
 
-## Invariant 9
+### Invariant 9
 
 Automation must execute canonical Build Framework semantics.
 
-## Invariant 10
+### Invariant 10
 
 CI-specific infrastructure must not become hidden Build Architecture.
 
-## Invariant 11
+### Invariant 11
 
 Build success must remain distinct from release approval.
 
-## Invariant 12
+### Invariant 12
 
 Downstream release should prefer promotion of the exact validated artifact.
 
-## Invariant 13
+### Invariant 13
 
 Build governance must remain proportional to engineering impact.
 
-## Invariant 14
+### Invariant 14
 
 Future supply-chain controls must extend the architecture rather than replace it.
 
 ---
 
-# What EPIC-BLD-001 Establishes
+## What EPIC-BLD-001 Establishes
 
 The framework establishes that FamilyOS build engineering is:
 
@@ -1255,7 +1255,7 @@ Evolvable
 
 ---
 
-# What EPIC-BLD-001 Does Not Establish
+## What EPIC-BLD-001 Does Not Establish
 
 The framework does not require FamilyOS to immediately implement:
 
@@ -1272,7 +1272,7 @@ These remain possible maturity extensions.
 
 ---
 
-# Implementation Direction
+## Implementation Direction
 
 The next stage after framework completion is controlled implementation.
 
@@ -1298,7 +1298,7 @@ Release Integration
 
 ---
 
-# Engineering Outcome
+## Engineering Outcome
 
 When implemented, the Build Framework should allow a FamilyOS engineer to answer:
 
@@ -1317,7 +1317,7 @@ When implemented, the Build Framework should allow a FamilyOS engineer to answer
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The strategic result of EPIC-BLD-001 is a reliable boundary between engineering development and software release.
 
@@ -1349,7 +1349,7 @@ This is a fundamental maturity step for the FamilyOS Engineering Platform.
 
 ---
 
-# Framework Relationship Summary
+## Framework Relationship Summary
 
 The complete relationship is:
 
@@ -1380,7 +1380,7 @@ Each framework retains its own responsibility while contributing to a coherent e
 
 ---
 
-# Final Build Model
+## Final Build Model
 
 The complete FamilyOS Build Framework can ultimately be summarized as:
 
@@ -1406,7 +1406,7 @@ Release Handoff
 
 ---
 
-# Final Principle
+## Final Principle
 
 EPIC-BLD-001 is founded on one final rule:
 

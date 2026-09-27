@@ -1,8 +1,8 @@
 # Release Framework
 
-# 25 Framework Lifecycle
+## 25 Framework Lifecycle
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines not only how FamilyOS releases software and engineering assets, but also how the Release Framework itself must evolve over time.
 
@@ -27,7 +27,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define:
 
@@ -51,7 +51,7 @@ The objective is to ensure that release rules remain stable enough to govern eng
 
 ---
 
-# Framework Lifecycle Principle
+## Framework Lifecycle Principle
 
 The Release Framework is a versioned engineering capability.
 
@@ -74,7 +74,7 @@ Therefore, changes to EPIC-REL-001 may have platform-wide consequences.
 
 ---
 
-# Canonical Framework Lifecycle
+## Canonical Framework Lifecycle
 
 The conceptual lifecycle is:
 
@@ -111,9 +111,9 @@ The lifecycle semantics should remain explicit.
 
 ---
 
-# PROPOSED
+## PROPOSED
 
-## Definition
+### Definition
 
 `PROPOSED` represents an identified need for a new Release Framework or a significant change to the existing framework.
 
@@ -132,7 +132,7 @@ At this stage, no normative framework change exists yet.
 
 ---
 
-# Proposal Inputs
+## Proposal Inputs
 
 A framework proposal should identify:
 
@@ -147,9 +147,9 @@ Significant proposals may require an ADR or RFC.
 
 ---
 
-# DRAFT
+## DRAFT
 
-## Definition
+### Definition
 
 `DRAFT` represents a framework revision under active design.
 
@@ -169,7 +169,7 @@ A draft may include changes to:
 
 ---
 
-# Draft Isolation
+## Draft Isolation
 
 Experimental framework ideas should remain distinguishable from active requirements.
 
@@ -187,9 +187,9 @@ Draft state must remain visible.
 
 ---
 
-# VALIDATED
+## VALIDATED
 
-## Definition
+### Definition
 
 `VALIDATED` means that the proposed framework revision has passed applicable framework validation.
 
@@ -208,9 +208,9 @@ Validation does not yet make the framework active.
 
 ---
 
-# APPROVED
+## APPROVED
 
-## Definition
+### Definition
 
 `APPROVED` means that the framework revision has received required governance approval.
 
@@ -224,9 +224,9 @@ Approval should apply to:
 
 ---
 
-# RELEASED
+## RELEASED
 
-## Definition
+### Definition
 
 `RELEASED` means that the approved framework revision has received an official version and release identity.
 
@@ -244,9 +244,9 @@ The released framework becomes an official historical engineering state.
 
 ---
 
-# ACTIVE
+## ACTIVE
 
-## Definition
+### Definition
 
 `ACTIVE` means that the framework version is the authoritative Release Framework governing applicable FamilyOS releases.
 
@@ -254,9 +254,9 @@ Only one primary framework version should normally be authoritative for a given 
 
 ---
 
-# MAINTAINED
+## MAINTAINED
 
-## Definition
+### Definition
 
 `MAINTAINED` describes an active framework receiving compatible corrections and improvements.
 
@@ -273,9 +273,9 @@ Maintenance must preserve normative stability unless a versioned behavioral chan
 
 ---
 
-# DEPRECATED
+## DEPRECATED
 
-## Definition
+### Definition
 
 `DEPRECATED` means that a framework version remains historically valid but should no longer be used for new release implementation.
 
@@ -290,9 +290,9 @@ Deprecation should identify:
 
 ---
 
-# RETIRED
+## RETIRED
 
-## Definition
+### Definition
 
 `RETIRED` means the framework version is no longer supported for active release engineering.
 
@@ -300,7 +300,7 @@ Retirement must not erase its historical role.
 
 ---
 
-# SUPERSEDED
+## SUPERSEDED
 
 A framework is `SUPERSEDED` when a newer framework version becomes authoritative.
 
@@ -318,7 +318,7 @@ The previous framework remains available for historical interpretation.
 
 ---
 
-# ARCHIVED
+## ARCHIVED
 
 Archived framework material remains preserved but is no longer part of active governance.
 
@@ -326,7 +326,7 @@ Archive state is appropriate for obsolete implementation guidance, retired polic
 
 ---
 
-# Framework Version Identity
+## Framework Version Identity
 
 The Release Framework must have an explicit release identity.
 
@@ -354,7 +354,7 @@ Future framework versions must preserve clear identity.
 
 ---
 
-# Framework Versioning Principle
+## Framework Versioning Principle
 
 Framework versioning should reflect the significance of normative changes.
 
@@ -375,7 +375,7 @@ The exact repository-wide version strategy remains governed by `06-Versioning-St
 
 ---
 
-# Non-Normative Correction
+## Non-Normative Correction
 
 A non-normative correction does not intentionally change release behavior.
 
@@ -391,7 +391,7 @@ Such changes may require only lightweight framework maintenance.
 
 ---
 
-# Normative Change
+## Normative Change
 
 A normative change modifies release obligations.
 
@@ -408,7 +408,7 @@ Normative changes require stronger governance.
 
 ---
 
-# Breaking Framework Change
+## Breaking Framework Change
 
 A framework change is breaking when existing compliant release implementations may become non-compliant or change meaning.
 
@@ -434,7 +434,7 @@ Such changes require explicit migration planning.
 
 ---
 
-# Framework Change Classification
+## Framework Change Classification
 
 Every significant framework revision SHOULD be classified.
 
@@ -453,7 +453,7 @@ Classification helps determine validation, approval, versioning, and migration r
 
 ---
 
-# Change Proposal
+## Change Proposal
 
 A framework change proposal should identify:
 
@@ -471,7 +471,7 @@ This prevents isolated edits from unintentionally changing framework semantics.
 
 ---
 
-# Change Sources
+## Change Sources
 
 Framework changes may originate from:
 
@@ -488,7 +488,7 @@ Operational evidence should inform framework evolution.
 
 ---
 
-# Architecture Decision Requirement
+## Architecture Decision Requirement
 
 Significant architectural changes SHOULD use an ADR where appropriate.
 
@@ -506,7 +506,7 @@ The Release Framework then incorporates it.
 
 ---
 
-# RFC Requirement
+## RFC Requirement
 
 Broad or ecosystem-impacting framework changes MAY require an RFC.
 
@@ -522,7 +522,7 @@ Framework documentation should not replace deeper design discussion when substan
 
 ---
 
-# Framework Ownership
+## Framework Ownership
 
 EPIC-REL-001 must have explicit ownership.
 
@@ -539,7 +539,7 @@ Ownership must not depend solely on repository write access.
 
 ---
 
-# Framework Maintainer
+## Framework Maintainer
 
 A Framework Maintainer may perform operational maintenance such as:
 
@@ -552,7 +552,7 @@ Normative authority may require additional approval.
 
 ---
 
-# Framework Authority
+## Framework Authority
 
 Framework Authority controls changes to normative Release Framework behavior.
 
@@ -566,7 +566,7 @@ This authority may approve:
 
 ---
 
-# Framework Validation
+## Framework Validation
 
 Every official framework revision must be validated before release.
 
@@ -586,7 +586,7 @@ version consistency
 
 ---
 
-# Semantic Validation
+## Semantic Validation
 
 Structural validation alone is insufficient.
 
@@ -608,7 +608,7 @@ Do release profiles preserve common invariants?
 
 ---
 
-# Cross-Document Validation
+## Cross-Document Validation
 
 EPIC-REL-001 contains interdependent documents.
 
@@ -635,7 +635,7 @@ Cross-document validation is therefore mandatory for normative changes.
 
 ---
 
-# Control Document Validation
+## Control Document Validation
 
 Framework control documents must remain aligned.
 
@@ -654,7 +654,7 @@ A framework revision should not be considered complete if control metadata contr
 
 ---
 
-# Framework Readiness
+## Framework Readiness
 
 Before release, framework readiness should confirm:
 
@@ -672,7 +672,7 @@ repository state ready
 
 ---
 
-# Framework Candidate
+## Framework Candidate
 
 A major framework revision MAY use a formal release candidate.
 
@@ -688,7 +688,7 @@ Current documentation milestones may initially use a simpler final-validation wo
 
 ---
 
-# Framework Approval
+## Framework Approval
 
 Framework approval should consider:
 
@@ -703,7 +703,7 @@ Approval must bind to the exact framework revision.
 
 ---
 
-# Framework Release
+## Framework Release
 
 A framework release should follow the same high-level principles applied elsewhere.
 
@@ -729,7 +729,7 @@ verify
 
 ---
 
-# Self-Application Principle
+## Self-Application Principle
 
 The Release Framework should progressively become capable of using its own rules for its own releases.
 
@@ -746,7 +746,7 @@ The framework must support this without logical circularity.
 
 ---
 
-# Bootstrap Model
+## Bootstrap Model
 
 The initial version of EPIC-REL-001 may be released using the established FamilyOS engineering release practice that preceded it.
 
@@ -756,7 +756,7 @@ This is an acceptable bootstrap strategy.
 
 ---
 
-# Effective Date
+## Effective Date
 
 A framework revision SHOULD define when its normative rules become effective.
 
@@ -782,7 +782,7 @@ The effective model must be explicit for breaking changes.
 
 ---
 
-# Framework Adoption
+## Framework Adoption
 
 Releasing the framework does not necessarily mean every automation capability is immediately implemented.
 
@@ -802,7 +802,7 @@ The framework may define a target state ahead of full tooling maturity.
 
 ---
 
-# Implementation Status
+## Implementation Status
 
 Framework capability and implementation capability must remain distinct.
 
@@ -821,7 +821,7 @@ An implementation gap should remain visible.
 
 ---
 
-# Conformance Levels
+## Conformance Levels
 
 Future FamilyOS governance MAY introduce framework conformance levels.
 
@@ -839,7 +839,7 @@ Core mandatory rules must remain clear.
 
 ---
 
-# Migration Planning
+## Migration Planning
 
 Breaking framework revisions must include a migration strategy.
 
@@ -855,7 +855,7 @@ Migration may affect:
 
 ---
 
-# Migration Window
+## Migration Window
 
 A major framework change may define a transition period.
 
@@ -875,7 +875,7 @@ This prevents immediate disruption.
 
 ---
 
-# Dual Framework Operation
+## Dual Framework Operation
 
 Temporary coexistence of framework versions MAY be permitted during migration.
 
@@ -889,7 +889,7 @@ Indefinite ambiguity is not acceptable.
 
 ---
 
-# Compatibility
+## Compatibility
 
 Framework evolution must consider backward compatibility with existing release implementations.
 
@@ -909,7 +909,7 @@ Historical meaning must always be preserved.
 
 ---
 
-# Historical Compatibility
+## Historical Compatibility
 
 New framework versions MUST NOT retroactively redefine what historical releases meant.
 
@@ -917,7 +917,7 @@ For example, if old releases were valid under an earlier policy, a new policy sh
 
 ---
 
-# Grandfathering
+## Grandfathering
 
 Some existing release states may be grandfathered under previous framework rules.
 
@@ -927,7 +927,7 @@ It should not become a permanent bypass for new releases.
 
 ---
 
-# Deprecation Policy
+## Deprecation Policy
 
 When framework behavior is planned for removal, deprecation should be explicit.
 
@@ -945,7 +945,7 @@ where known.
 
 ---
 
-# Deprecated Automation
+## Deprecated Automation
 
 For example, a manual tag-only release process might eventually become deprecated in favor of structured release evidence.
 
@@ -953,7 +953,7 @@ The old method may remain temporarily supported while migration occurs.
 
 ---
 
-# Framework Retirement
+## Framework Retirement
 
 A framework version may be retired when:
 
@@ -965,7 +965,7 @@ Retirement should not delete prior normative history.
 
 ---
 
-# Framework Archival
+## Framework Archival
 
 Retired framework versions should be archived in a durable way.
 
@@ -982,7 +982,7 @@ This allows historical releases to be interpreted under the rules that governed 
 
 ---
 
-# Framework Replacement
+## Framework Replacement
 
 A future release architecture may become sufficiently different that EPIC-REL-001 is replaced rather than incrementally revised.
 
@@ -998,7 +998,7 @@ The successor must not erase EPIC-REL-001 history.
 
 ---
 
-# Framework Forking
+## Framework Forking
 
 FamilyOS SHOULD avoid multiple incompatible Release Framework forks.
 
@@ -1012,7 +1012,7 @@ Creating independent competing release frameworks should require strong architec
 
 ---
 
-# Extension Model
+## Extension Model
 
 The preferred model is:
 
@@ -1036,7 +1036,7 @@ This preserves shared semantics.
 
 ---
 
-# Framework Profile Evolution
+## Framework Profile Evolution
 
 Release profiles may evolve more frequently than core principles.
 
@@ -1050,7 +1050,7 @@ Such changes must remain compatible with core framework semantics.
 
 ---
 
-# Framework Principles Stability
+## Framework Principles Stability
 
 Core principles should have the highest stability.
 
@@ -1067,7 +1067,7 @@ Frequent changes to these principles would indicate architectural instability.
 
 ---
 
-# Architecture Stability
+## Architecture Stability
 
 Release architecture may evolve, but architectural boundaries should remain relatively stable.
 
@@ -1094,7 +1094,7 @@ most changeable
 
 ---
 
-# Framework Technical Debt
+## Framework Technical Debt
 
 The Release Framework may accumulate documentation or architectural debt.
 
@@ -1110,7 +1110,7 @@ Framework debt should be tracked and resolved like engineering debt.
 
 ---
 
-# Framework Quality
+## Framework Quality
 
 Framework quality should be evaluated for:
 
@@ -1126,7 +1126,7 @@ A framework that cannot be implemented reliably requires revision.
 
 ---
 
-# Framework Observability
+## Framework Observability
 
 The effectiveness of the Release Framework should be observable through release outcomes.
 
@@ -1143,7 +1143,7 @@ These signals should feed framework improvement.
 
 ---
 
-# Framework Metrics
+## Framework Metrics
 
 Potential lifecycle metrics include:
 
@@ -1161,7 +1161,7 @@ Metrics should support evolution rather than encourage change for its own sake.
 
 ---
 
-# Framework Feedback Loop
+## Framework Feedback Loop
 
 The desired improvement loop is:
 
@@ -1183,7 +1183,7 @@ This turns release operations into learning input.
 
 ---
 
-# Incident-Driven Change
+## Incident-Driven Change
 
 A severe release incident may reveal framework weaknesses.
 
@@ -1205,7 +1205,7 @@ A missing architectural control may justify framework revision.
 
 ---
 
-# Compliance Feedback
+## Compliance Feedback
 
 Release Compliance findings may expose recurring ambiguity or impractical requirements.
 
@@ -1219,7 +1219,7 @@ The cause should be analyzed before changing rules.
 
 ---
 
-# Security Feedback
+## Security Feedback
 
 Release security incidents may require immediate framework enhancement.
 
@@ -1234,7 +1234,7 @@ Security changes may require accelerated framework release.
 
 ---
 
-# Emergency Framework Update
+## Emergency Framework Update
 
 An urgent framework correction MAY use an accelerated governance path if current rules create immediate release risk.
 
@@ -1247,7 +1247,7 @@ Even then, the change must remain:
 
 ---
 
-# Framework Rollback
+## Framework Rollback
 
 A framework revision may itself prove defective.
 
@@ -1271,7 +1271,7 @@ Historical framework versions must remain identifiable.
 
 ---
 
-# Framework Forward Recovery
+## Framework Forward Recovery
 
 Forward recovery may be preferable to rewriting a released framework version.
 
@@ -1287,7 +1287,7 @@ rather than silently replacing `2.0.0`.
 
 ---
 
-# Framework Immutability
+## Framework Immutability
 
 A released framework version should be treated as an immutable historical normative state.
 
@@ -1297,7 +1297,7 @@ Material normative changes require a new framework release identity.
 
 ---
 
-# Framework Evidence
+## Framework Evidence
 
 A released framework should preserve evidence including:
 
@@ -1315,7 +1315,7 @@ This allows historical interpretation.
 
 ---
 
-# Revision History
+## Revision History
 
 `Revision-History.md` should record meaningful framework evolution.
 
@@ -1329,7 +1329,7 @@ It should identify:
 
 ---
 
-# Changelog Relationship
+## Changelog Relationship
 
 `CHANGELOG.md` should record release-oriented framework changes.
 
@@ -1339,7 +1339,7 @@ These documents must remain consistent.
 
 ---
 
-# EPIC Metadata
+## EPIC Metadata
 
 `EPIC.yaml` should reflect the framework's current official state.
 
@@ -1357,7 +1357,7 @@ The exact schema is governed elsewhere.
 
 ---
 
-# Manifest Relationship
+## Manifest Relationship
 
 `MANIFEST.md` should define authoritative documents and framework completeness expectations.
 
@@ -1365,7 +1365,7 @@ Framework lifecycle changes affecting document structure must update the manifes
 
 ---
 
-# Validation Record
+## Validation Record
 
 `VALIDATION.md` should provide evidence that the framework release satisfies its own completion criteria.
 
@@ -1373,7 +1373,7 @@ Validation state must correspond to the actual release candidate.
 
 ---
 
-# Release Document
+## Release Document
 
 `30-Release.md` should document the specific completion and publication state of the framework milestone.
 
@@ -1381,7 +1381,7 @@ It must not replace the general rules defined in this lifecycle document.
 
 ---
 
-# Implementation Checklist
+## Implementation Checklist
 
 `31-Implementation-Checklist.md` should distinguish:
 
@@ -1393,7 +1393,7 @@ A framework can be released while some long-term implementation remains roadmap 
 
 ---
 
-# Framework Lifecycle Roles
+## Framework Lifecycle Roles
 
 The lifecycle may involve:
 
@@ -1411,7 +1411,7 @@ Authority semantics must remain explicit.
 
 ---
 
-# Framework Lifecycle Governance
+## Framework Lifecycle Governance
 
 Major lifecycle transitions should be governed.
 
@@ -1438,7 +1438,7 @@ The exact authority mapping may evolve.
 
 ---
 
-# Framework Lifecycle Automation
+## Framework Lifecycle Automation
 
 Future tooling may automate:
 
@@ -1453,7 +1453,7 @@ Human review remains necessary for normative meaning.
 
 ---
 
-# Framework Lifecycle CI/CD
+## Framework Lifecycle CI/CD
 
 CI/CD may eventually run framework-specific pipelines.
 
@@ -1475,7 +1475,7 @@ Publication should remain governed.
 
 ---
 
-# Framework Compatibility Assessment
+## Framework Compatibility Assessment
 
 Every significant revision should answer:
 
@@ -1495,7 +1495,7 @@ Does migration documentation need updating?
 
 ---
 
-# Framework Impact Analysis
+## Framework Impact Analysis
 
 Impact should be assessed across:
 
@@ -1514,7 +1514,7 @@ Large blast radius changes require stronger governance.
 
 ---
 
-# Framework Change Risk
+## Framework Change Risk
 
 Framework changes can themselves introduce release risk.
 
@@ -1530,7 +1530,7 @@ Framework release planning must assess these risks.
 
 ---
 
-# Framework Adoption Verification
+## Framework Adoption Verification
 
 After a new framework version becomes active, FamilyOS should verify that applicable release workflows actually conform.
 
@@ -1545,7 +1545,7 @@ A framework is ineffective if implementation never adopts it.
 
 ---
 
-# Framework Drift
+## Framework Drift
 
 Framework Drift occurs when actual release practice diverges from active normative rules.
 
@@ -1567,7 +1567,7 @@ Drift must be treated as an implementation or governance gap.
 
 ---
 
-# Drift Detection
+## Drift Detection
 
 Release Compliance should eventually detect framework drift automatically where possible.
 
@@ -1575,7 +1575,7 @@ Recurring drift may trigger implementation work or framework reassessment.
 
 ---
 
-# Implementation Lag
+## Implementation Lag
 
 Some framework capabilities may intentionally precede implementation.
 
@@ -1595,7 +1595,7 @@ The framework must distinguish target architecture from currently enforceable re
 
 ---
 
-# Mandatory vs Future Capability
+## Mandatory vs Future Capability
 
 Normative documents should clearly distinguish:
 
@@ -1610,7 +1610,7 @@ This prevents roadmap ideas from being interpreted as immediate blockers.
 
 ---
 
-# Framework Documentation Stability
+## Framework Documentation Stability
 
 Document filenames and canonical structure should remain stable once published where practical.
 
@@ -1624,7 +1624,7 @@ Structural change should require explicit framework migration.
 
 ---
 
-# Document Deprecation
+## Document Deprecation
 
 If a framework document is replaced, the lifecycle should define whether it is:
 
@@ -1637,7 +1637,7 @@ Historical references should remain understandable.
 
 ---
 
-# Numbering Stability
+## Numbering Stability
 
 Numbered framework documents should not be casually renumbered after release.
 
@@ -1645,7 +1645,7 @@ If numbering must change, the migration should preserve mapping from previous id
 
 ---
 
-# Canonical Structure Evolution
+## Canonical Structure Evolution
 
 Structural evolution may be justified when:
 
@@ -1657,7 +1657,7 @@ Such changes should be deliberate rather than accidental.
 
 ---
 
-# Framework Reference Stability
+## Framework Reference Stability
 
 Cross-framework references should use stable identifiers where possible.
 
@@ -1672,7 +1672,7 @@ are generally more durable than informal names alone.
 
 ---
 
-# Dependency Lifecycle
+## Dependency Lifecycle
 
 EPIC-REL-001 depends conceptually on other FamilyOS foundations.
 
@@ -1688,7 +1688,7 @@ Examples include:
 
 ---
 
-# Upstream Change Review
+## Upstream Change Review
 
 When an upstream framework changes materially, Release Framework maintainers should determine whether:
 
@@ -1703,7 +1703,7 @@ are required.
 
 ---
 
-# Downstream Impact
+## Downstream Impact
 
 Release Framework changes may affect every release-producing subsystem.
 
@@ -1711,7 +1711,7 @@ Downstream impact must therefore be assessed before major normative changes.
 
 ---
 
-# Framework Release Cadence
+## Framework Release Cadence
 
 The Release Framework should evolve when needed.
 
@@ -1723,7 +1723,7 @@ Changes should be driven by real engineering needs.
 
 ---
 
-# Framework Review Cadence
+## Framework Review Cadence
 
 Periodic review MAY occur even when no release is required.
 
@@ -1739,7 +1739,7 @@ Review does not automatically require a new version.
 
 ---
 
-# Lifecycle Maturity
+## Lifecycle Maturity
 
 The Release Framework itself may mature through:
 
@@ -1771,93 +1771,93 @@ continuous framework feedback
 
 ---
 
-# Framework Lifecycle Invariants
+## Framework Lifecycle Invariants
 
 The following invariants apply.
 
-## FL1 — Every official Release Framework revision has an explicit identity.
+### FL1 — Every official Release Framework revision has an explicit identity.
 
-## FL2 — Normative changes are distinguishable from editorial changes.
+### FL2 — Normative changes are distinguishable from editorial changes.
 
-## FL3 — Significant framework changes are validated before release.
+### FL3 — Significant framework changes are validated before release.
 
-## FL4 — Normative framework changes require explicit governance approval.
+### FL4 — Normative framework changes require explicit governance approval.
 
-## FL5 — Released framework versions remain historically interpretable.
+### FL5 — Released framework versions remain historically interpretable.
 
-## FL6 — Breaking framework changes include migration considerations.
+### FL6 — Breaking framework changes include migration considerations.
 
-## FL7 — Framework deprecation does not erase historical authority.
+### FL7 — Framework deprecation does not erase historical authority.
 
-## FL8 — Active release practice should conform to the active framework version.
+### FL8 — Active release practice should conform to the active framework version.
 
-## FL9 — Framework implementation gaps remain visible.
+### FL9 — Framework implementation gaps remain visible.
 
-## FL10 — Framework changes must consider downstream ecosystem impact.
+### FL10 — Framework changes must consider downstream ecosystem impact.
 
-## FL11 — The framework should progressively apply its own release principles to itself.
+### FL11 — The framework should progressively apply its own release principles to itself.
 
-## FL12 — Framework evolution must remain traceable.
+### FL12 — Framework evolution must remain traceable.
 
 ---
 
-# Framework Lifecycle Anti-Patterns
+## Framework Lifecycle Anti-Patterns
 
-## Silent Normative Edit
+### Silent Normative Edit
 
 Changing a mandatory release requirement without a new governed framework revision.
 
 ---
 
-## Documentation Equals Activation
+### Documentation Equals Activation
 
 Assuming that editing Markdown automatically changes active release policy.
 
 ---
 
-## Retroactive Governance
+### Retroactive Governance
 
 Applying new framework rules to historical releases as if those rules existed at the time.
 
 ---
 
-## Eternal Draft
+### Eternal Draft
 
 Allowing unreleased framework rules to influence production indefinitely.
 
 ---
 
-## Unversioned Breaking Change
+### Unversioned Breaking Change
 
 Changing release semantics without explicit version impact.
 
 ---
 
-## Framework Forking
+### Framework Forking
 
 Creating separate incompatible release rule sets for each subsystem without strong architectural justification.
 
 ---
 
-## Tool-Led Framework
+### Tool-Led Framework
 
 Changing framework rules simply to match whatever a current CI/CD tool happens to support.
 
 ---
 
-## Untracked Implementation Drift
+### Untracked Implementation Drift
 
 Allowing real release workflows to diverge from framework rules without recording the gap.
 
 ---
 
-## Delete Old Framework
+### Delete Old Framework
 
 Removing superseded framework versions and making historical release interpretation impossible.
 
 ---
 
-# Minimum Framework Lifecycle
+## Minimum Framework Lifecycle
 
 At minimum, every official EPIC-REL-001 revision should follow:
 
@@ -1891,7 +1891,7 @@ where applicable.
 
 ---
 
-# Current EPIC-REL-001 Lifecycle
+## Current EPIC-REL-001 Lifecycle
 
 The initial EPIC-REL-001 release currently follows the FamilyOS framework milestone model.
 
@@ -1923,7 +1923,7 @@ Once released, this framework becomes the normative foundation for later release
 
 ---
 
-# Initial Bootstrap Release
+## Initial Bootstrap Release
 
 The first official EPIC-REL-001 release is a bootstrap release.
 
@@ -1945,7 +1945,7 @@ This transition is intentional.
 
 ---
 
-# Framework Success Criteria
+## Framework Success Criteria
 
 The Release Framework lifecycle is healthy when FamilyOS can answer:
 
@@ -1967,7 +1967,7 @@ Which framework superseded the previous one?
 
 ---
 
-# Target Framework Lifecycle Experience
+## Target Framework Lifecycle Experience
 
 At higher maturity, tooling should be able to report:
 
@@ -1992,7 +1992,7 @@ This is a future capability, not an immediate implementation requirement.
 
 ---
 
-# Relationship With Release Governance
+## Relationship With Release Governance
 
 `21-Release-Governance.md` defines who may approve framework changes, deprecation, replacement, and exceptions.
 
@@ -2000,7 +2000,7 @@ This document defines when those decisions occur in the framework lifecycle.
 
 ---
 
-# Relationship With Release Compliance
+## Relationship With Release Compliance
 
 `22-Release-Compliance.md` evaluates whether active release implementations conform to the active framework.
 
@@ -2008,19 +2008,19 @@ Framework lifecycle changes may therefore alter future compliance requirements.
 
 ---
 
-# Relationship With Release Metrics
+## Relationship With Release Metrics
 
 `23-Release-Metrics.md` can provide evidence about framework effectiveness and implementation maturity.
 
 ---
 
-# Relationship With Release Risk Management
+## Relationship With Release Risk Management
 
 `24-Release-Risk-Management.md` applies to risks introduced by framework changes as well as individual releases.
 
 ---
 
-# Relationship With Roadmap
+## Relationship With Roadmap
 
 `26-Roadmap.md` defines how future Release Framework capabilities are expected to evolve.
 
@@ -2028,7 +2028,7 @@ This document defines the controlled lifecycle through which roadmap capabilitie
 
 ---
 
-# Relationship With Validation
+## Relationship With Validation
 
 `28-Validation.md` defines the final validation state for EPIC-REL-001 itself.
 
@@ -2036,7 +2036,7 @@ Framework lifecycle requires that validation before official release.
 
 ---
 
-# Relationship With Release
+## Relationship With Release
 
 `30-Release.md` records the concrete release state of the current EPIC-REL-001 milestone.
 
@@ -2044,7 +2044,7 @@ This document defines the general lifecycle that future framework releases must 
 
 ---
 
-# Relationship With Implementation Checklist
+## Relationship With Implementation Checklist
 
 `31-Implementation-Checklist.md` records whether the framework definition and required implementation obligations have been satisfied.
 
@@ -2052,7 +2052,7 @@ Framework lifecycle uses that evidence before release completion.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Framework Lifecycle establishes EPIC-REL-001 as a maintained, versioned, governed engineering capability rather than static documentation.
 

@@ -13,7 +13,7 @@
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 This document defines the validation contract for the normalized
 EPIC-PLUGIN-001 control-document set.
@@ -38,7 +38,7 @@ The canonical files are:
 
 ---
 
-# Historical Baseline Validation
+## Historical Baseline Validation
 
 The canonical repository baseline is:
 
@@ -64,7 +64,7 @@ Historical Baseline Validation: PASS
 
 ---
 
-# Related Historical Milestone
+## Related Historical Milestone
 
 `v2.9.0-official-plugin-implementation` resolves to:
 
@@ -83,7 +83,7 @@ Documentary Baseline:             NO
 
 ---
 
-# Canonical Validation Gates
+## Canonical Validation Gates
 
 The normalized EPIC SHALL pass:
 
@@ -107,7 +107,7 @@ The normalized EPIC SHALL pass:
 
 ---
 
-# Current Validation State
+## Current Validation State
 
 The historical baseline checks have passed.
 
@@ -133,7 +133,7 @@ clean working tree.
 
 ---
 
-# Final Decision
+## Final Decision
 
 ```text
 EPIC-PLUGIN-001 REVALIDATION: PASS

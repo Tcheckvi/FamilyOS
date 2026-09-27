@@ -1,8 +1,8 @@
 # Build Framework
 
-# 10 Dependency Management
+## 10 Dependency Management
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS manages dependencies that influence build behavior, validation, artifact production, and reproducibility.
 
@@ -20,7 +20,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The Dependency Management model establishes the engineering requirements that govern all dependencies participating in FamilyOS build execution.
 
@@ -47,7 +47,7 @@ The objective is to prevent dependency state from becoming an uncontrolled sourc
 
 ---
 
-# Dependency Definition
+## Dependency Definition
 
 A dependency is any external software component, package, library, artifact, tool, or resource that a build requires or resolves in order to execute correctly.
 
@@ -65,7 +65,7 @@ Dependencies influence both execution and artifact trust.
 
 ---
 
-# Dependency Categories
+## Dependency Categories
 
 The FamilyOS dependency model recognizes several categories.
 
@@ -88,7 +88,7 @@ Their purpose is to clarify responsibility.
 
 ---
 
-# Runtime Dependencies
+## Runtime Dependencies
 
 Runtime dependencies are required by produced software when it executes.
 
@@ -105,7 +105,7 @@ They must therefore be explicitly declared.
 
 ---
 
-# Build Dependencies
+## Build Dependencies
 
 Build dependencies are required to construct artifacts.
 
@@ -120,7 +120,7 @@ Build dependencies may not become runtime dependencies unless intentionally requ
 
 ---
 
-# Development Dependencies
+## Development Dependencies
 
 Development dependencies support engineering workflows.
 
@@ -135,7 +135,7 @@ These dependencies should remain distinguishable from runtime requirements.
 
 ---
 
-# Validation Dependencies
+## Validation Dependencies
 
 Validation dependencies are required to verify build readiness or artifact quality.
 
@@ -151,7 +151,7 @@ They form part of the validation environment.
 
 ---
 
-# Documentation Dependencies
+## Documentation Dependencies
 
 Documentation generation may require dedicated tooling or packages.
 
@@ -159,7 +159,7 @@ These dependencies should remain explicit when documentation generation particip
 
 ---
 
-# Plugin Dependencies
+## Plugin Dependencies
 
 Official plugins may define additional dependencies.
 
@@ -175,7 +175,7 @@ A plugin must not introduce uncontrolled dependency behavior.
 
 ---
 
-# Optional Dependencies
+## Optional Dependencies
 
 Optional dependencies may support additional features or profiles.
 
@@ -189,7 +189,7 @@ Optional dependencies should not silently become mandatory.
 
 ---
 
-# External Artifact Dependencies
+## External Artifact Dependencies
 
 A build may depend on artifacts produced by another build.
 
@@ -203,7 +203,7 @@ Such dependencies must have identifiable origin and validation state.
 
 ---
 
-# Dependency Principle 1 — Dependencies Must Be Declared
+## Dependency Principle 1 — Dependencies Must Be Declared
 
 All required dependencies MUST be explicitly declared through canonical project mechanisms.
 
@@ -227,7 +227,7 @@ Build
 
 ---
 
-# Dependency Principle 2 — Dependency Purpose Must Be Clear
+## Dependency Principle 2 — Dependency Purpose Must Be Clear
 
 A dependency should have a clear reason for existing.
 
@@ -244,7 +244,7 @@ This reduces unnecessary dependency growth.
 
 ---
 
-# Dependency Principle 3 — Dependency Resolution Must Be Controlled
+## Dependency Principle 3 — Dependency Resolution Must Be Controlled
 
 Dependency resolution must not be treated as an invisible operation.
 
@@ -264,7 +264,7 @@ The resolved set influences build output.
 
 ---
 
-# Dependency Principle 4 — Resolution Must Be Reproducible Enough For Purpose
+## Dependency Principle 4 — Resolution Must Be Reproducible Enough For Purpose
 
 Development environments may allow broader resolution flexibility.
 
@@ -280,7 +280,7 @@ Stronger Dependency Control
 
 ---
 
-# Dependency Principle 5 — Transitive Dependencies Matter
+## Dependency Principle 5 — Transitive Dependencies Matter
 
 A direct dependency may introduce many transitive dependencies.
 
@@ -298,7 +298,7 @@ FamilyOS must recognize that the complete resolved graph may influence build tru
 
 ---
 
-# Dependency Principle 6 — Mutable Dependencies Must Be Minimized
+## Dependency Principle 6 — Mutable Dependencies Must Be Minimized
 
 Dependency references that can change without an explicit version transition weaken reproducibility.
 
@@ -315,7 +315,7 @@ Such mechanisms should not become canonical release-build dependencies without e
 
 ---
 
-# Dependency Principle 7 — Dependency Changes Are Build Changes
+## Dependency Principle 7 — Dependency Changes Are Build Changes
 
 Updating a dependency may change:
 
@@ -330,7 +330,7 @@ Dependency updates must therefore be reviewed as engineering changes.
 
 ---
 
-# Dependency Principle 8 — Dependency Security Is Build Security
+## Dependency Principle 8 — Dependency Security Is Build Security
 
 A compromised dependency can affect the build or resulting artifact.
 
@@ -340,7 +340,7 @@ Security considerations must be integrated into dependency management.
 
 ---
 
-# Dependency Declaration
+## Dependency Declaration
 
 Dependency declarations should exist in canonical project configuration.
 
@@ -354,7 +354,7 @@ The invariant is:
 
 ---
 
-# Canonical Dependency Source
+## Canonical Dependency Source
 
 The framework should avoid multiple conflicting dependency definitions.
 
@@ -373,7 +373,7 @@ If multiple files are necessary, ownership and precedence must be explicit.
 
 ---
 
-# Dependency Constraints
+## Dependency Constraints
 
 Dependencies should have deliberate version constraints.
 
@@ -388,7 +388,7 @@ Each strategy has tradeoffs.
 
 ---
 
-# Exact Version Constraints
+## Exact Version Constraints
 
 Exact version constraints improve predictability.
 
@@ -402,7 +402,7 @@ They also increase maintenance effort.
 
 ---
 
-# Compatible Version Ranges
+## Compatible Version Ranges
 
 Compatible ranges allow dependency evolution without constant manual updates.
 
@@ -414,7 +414,7 @@ They may be appropriate when:
 
 ---
 
-# Minimum Version Constraints
+## Minimum Version Constraints
 
 Minimum versions can support broader compatibility but may produce variable resolution.
 
@@ -422,7 +422,7 @@ They should be used carefully for trusted artifact generation.
 
 ---
 
-# Upper Bounds
+## Upper Bounds
 
 Upper bounds may prevent unexpected incompatibility when dependencies are known to introduce breaking changes outside a supported range.
 
@@ -430,7 +430,7 @@ They should not be added without a concrete compatibility reason.
 
 ---
 
-# Dependency Locking
+## Dependency Locking
 
 Dependency locking strengthens reproducibility by preserving a resolved dependency state.
 
@@ -450,7 +450,7 @@ The exact lock mechanism depends on tooling.
 
 ---
 
-# Lock State Purpose
+## Lock State Purpose
 
 A lock state may record:
 
@@ -464,7 +464,7 @@ Its purpose is to reduce uncertainty.
 
 ---
 
-# Lock State Scope
+## Lock State Scope
 
 FamilyOS may eventually distinguish lock requirements by profile.
 
@@ -488,7 +488,7 @@ The exact policy should evolve with implementation maturity.
 
 ---
 
-# Lock File Ownership
+## Lock File Ownership
 
 When lock files exist, their ownership must be clear.
 
@@ -498,7 +498,7 @@ A lock-file update is a dependency change.
 
 ---
 
-# Current Python Dependency Reproducibility Baseline
+## Current Python Dependency Reproducibility Baseline
 
 FamilyOS implements dependency version-resolution reproducibility for the Python 3.13 development and CI profile.
 
@@ -554,7 +554,7 @@ The current baseline closes version-resolution reproducibility for the supported
 
 ---
 
-# Dependency Resolution
+## Dependency Resolution
 
 Dependency resolution transforms declarations into an effective dependency graph.
 
@@ -562,7 +562,7 @@ The resolution process must be deterministic enough for the selected build profi
 
 ---
 
-# Resolution Inputs
+## Resolution Inputs
 
 Resolution may depend on:
 
@@ -578,7 +578,7 @@ These factors must remain understandable.
 
 ---
 
-# Resolution Environment
+## Resolution Environment
 
 Dependency resolution itself may vary by environment.
 
@@ -596,7 +596,7 @@ If this affects artifacts, it becomes part of build context.
 
 ---
 
-# Dependency Graph
+## Dependency Graph
 
 The complete resolved graph may conceptually be represented as:
 
@@ -615,7 +615,7 @@ Build trust depends on more than direct dependencies.
 
 ---
 
-# Dependency Graph Validation
+## Dependency Graph Validation
 
 The resolved graph may require validation for:
 
@@ -627,7 +627,7 @@ The resolved graph may require validation for:
 
 ---
 
-# Dependency Compatibility
+## Dependency Compatibility
 
 Dependencies must be compatible with:
 
@@ -641,7 +641,7 @@ Compatibility must not be assumed solely because installation succeeds.
 
 ---
 
-# Runtime Compatibility
+## Runtime Compatibility
 
 A dependency may support only specific runtime versions.
 
@@ -649,7 +649,7 @@ The Build Framework should detect incompatible combinations before trusted artif
 
 ---
 
-# Platform Compatibility
+## Platform Compatibility
 
 Some dependencies may behave differently across platforms.
 
@@ -657,7 +657,7 @@ Where platform-specific resolution occurs, the build profile must account for th
 
 ---
 
-# Dependency Conflict
+## Dependency Conflict
 
 A dependency conflict occurs when requirements cannot be satisfied simultaneously.
 
@@ -675,7 +675,7 @@ not silent fallback to unpredictable state.
 
 ---
 
-# Dependency Isolation
+## Dependency Isolation
 
 Project dependency state should remain isolated from global environments where practical.
 
@@ -685,7 +685,7 @@ Isolation reduces accidental package leakage.
 
 ---
 
-# Dependency Environment Reconstruction
+## Dependency Environment Reconstruction
 
 A canonical dependency environment should be reconstructable from project declarations and associated resolution state.
 
@@ -703,7 +703,7 @@ Valid Build Environment
 
 ---
 
-# Dependency Installation
+## Dependency Installation
 
 Dependency installation should be repeatable and automation-friendly.
 
@@ -711,7 +711,7 @@ Installation should not require undocumented manual steps.
 
 ---
 
-# Dependency Source
+## Dependency Source
 
 Dependencies may be acquired from:
 
@@ -725,7 +725,7 @@ Dependency origin must be clear.
 
 ---
 
-# Trusted Dependency Sources
+## Trusted Dependency Sources
 
 Canonical builds should use governed dependency sources.
 
@@ -733,7 +733,7 @@ Unknown or ad hoc package sources increase supply-chain risk.
 
 ---
 
-# Registry Configuration
+## Registry Configuration
 
 If FamilyOS uses package registries, registry configuration should remain explicit.
 
@@ -741,7 +741,7 @@ Authentication secrets must remain separated from ordinary dependency metadata.
 
 ---
 
-# Dependency Integrity
+## Dependency Integrity
 
 Where supported, dependency integrity may be strengthened through:
 
@@ -755,7 +755,7 @@ These mechanisms can be introduced progressively.
 
 ---
 
-# Dependency Provenance
+## Dependency Provenance
 
 Future FamilyOS build profiles may require stronger dependency provenance.
 
@@ -770,7 +770,7 @@ Provenance should be introduced when supply-chain maturity justifies it.
 
 ---
 
-# Dependency Security
+## Dependency Security
 
 Dependency management must consider known security risks.
 
@@ -788,7 +788,7 @@ Security Architecture defines broader policy.
 
 ---
 
-# Vulnerability Findings
+## Vulnerability Findings
 
 A dependency vulnerability may affect:
 
@@ -801,7 +801,7 @@ Severity and action thresholds should be governed through Security and Quality f
 
 ---
 
-# Dependency Security Review Integration Contract
+## Dependency Security Review Integration Contract
 
 Dependency security review is a cross-framework responsibility.
 
@@ -809,7 +809,7 @@ The Build Framework supplies controlled dependency facts and stable integration 
 
 This contract defines how dependency state becomes an identifiable subject for Security-owned review and how resulting evidence may be consumed without transferring policy ownership into the Build Framework.
 
-## Review Subject
+### Review Subject
 
 The review subject is the complete controlled dependency resolution applicable to the build or release candidate.
 
@@ -825,7 +825,7 @@ The subject must be identified by the canonical dependency declaration digest an
 
 A package name, source revision, branch name, or mutable environment alone is not a sufficient dependency-review identity.
 
-## Review Triggers
+### Review Triggers
 
 Dependency security review should be requested when:
 
@@ -839,7 +839,7 @@ Periodic review may also be appropriate because external advisory intelligence c
 
 The Security and Release Frameworks determine when periodic review is required for a particular risk or release profile.
 
-## Authority Boundary
+### Authority Boundary
 
 Responsibility remains divided as follows:
 
@@ -858,7 +858,7 @@ The Quality Framework may contribute broader quality and blocking policy.
 
 CI is an execution environment. It is not the source of dependency-security policy.
 
-## Review Outcome Semantics
+### Review Outcome Semantics
 
 Dependency security review uses four explicit outcome classes:
 
@@ -881,7 +881,7 @@ A missing, unavailable, partially executed, or silently disabled review MUST NOT
 
 These outcomes describe dependency security review only. They do not independently declare a build trusted or authorize a release.
 
-## Blocking Semantics
+### Blocking Semantics
 
 The Build Framework does not invent vulnerability severity thresholds or translate findings into release policy.
 
@@ -891,7 +891,7 @@ Critical dependency findings should normally block release unless they are expli
 
 This contract does not add or change current build, CI, release-candidate, or publication blocking behavior.
 
-## Exception And Risk Acceptance
+### Exception And Risk Acceptance
 
 An exception or accepted risk associated with dependency security must be:
 
@@ -904,7 +904,7 @@ An exception or accepted risk associated with dependency security must be:
 
 Risk acceptance must identify the relevant dependency-security finding or findings. It must not silently convert an unresolved finding, skipped review, or review error into `PASS`.
 
-## Evidence Binding
+### Evidence Binding
 
 Dependency-security review evidence should be associated with:
 
@@ -920,7 +920,7 @@ When external advisory intelligence participates, the observation time and intel
 
 Evidence that cannot be associated with the reviewed dependency state must not be treated as evidence for that state.
 
-## Tooling And Automation Boundary
+### Tooling And Automation Boundary
 
 This Build Framework contract does not select or implement a dependency vulnerability scanner.
 
@@ -932,7 +932,7 @@ This contract does not claim that vulnerability scanning exists, that advisory i
 
 ---
 
-# Build Dependency Risk
+## Build Dependency Risk
 
 Build-only dependencies are also security-sensitive.
 
@@ -948,7 +948,7 @@ Supply Chain Risk
 
 ---
 
-# Development Dependency Risk
+## Development Dependency Risk
 
 Development tools may influence source or artifacts through:
 
@@ -961,7 +961,7 @@ Their risk should remain proportional to their impact.
 
 ---
 
-# Dependency Update Lifecycle
+## Dependency Update Lifecycle
 
 Dependency updates should follow a controlled process.
 
@@ -989,7 +989,7 @@ Not every update requires the same level of review.
 
 ---
 
-# Patch Updates
+## Patch Updates
 
 Patch updates may be low-risk but still require validation.
 
@@ -997,7 +997,7 @@ Automated update mechanisms may be appropriate if quality gates remain intact.
 
 ---
 
-# Minor Updates
+## Minor Updates
 
 Minor updates may add features or behavior changes.
 
@@ -1010,7 +1010,7 @@ They should be validated against:
 
 ---
 
-# Major Updates
+## Major Updates
 
 Major dependency updates may introduce breaking changes.
 
@@ -1022,7 +1022,7 @@ They should receive stronger review and may require:
 
 ---
 
-# Dependency Removal
+## Dependency Removal
 
 Unused dependencies should be removed.
 
@@ -1043,7 +1043,7 @@ No Dependency
 
 ---
 
-# Dependency Minimalism
+## Dependency Minimalism
 
 FamilyOS should prefer the minimum dependency set required to provide intended capability.
 
@@ -1051,7 +1051,7 @@ Dependency convenience alone is not sufficient justification for permanent adopt
 
 ---
 
-# Dependency Duplication
+## Dependency Duplication
 
 Multiple dependencies solving the same problem should be avoided without clear architectural reason.
 
@@ -1063,7 +1063,7 @@ Duplication increases:
 
 ---
 
-# Optional Dependency Governance
+## Optional Dependency Governance
 
 Optional dependency groups must remain clear.
 
@@ -1080,7 +1080,7 @@ Their activation should be explicit.
 
 ---
 
-# Build Profile Dependency Sets
+## Build Profile Dependency Sets
 
 Different build profiles may use different dependency sets.
 
@@ -1108,7 +1108,7 @@ Profile differences must remain documented.
 
 ---
 
-# Plugin Dependency Management
+## Plugin Dependency Management
 
 Official plugins must declare their dependencies through governed mechanisms.
 
@@ -1120,7 +1120,7 @@ Plugin dependencies must not:
 
 ---
 
-# Plugin Dependency Compatibility
+## Plugin Dependency Compatibility
 
 A plugin dependency should be evaluated against:
 
@@ -1133,7 +1133,7 @@ This prevents isolated plugin success from destabilizing the platform.
 
 ---
 
-# Cross-Component Dependencies
+## Cross-Component Dependencies
 
 FamilyOS components may depend on other internal components.
 
@@ -1149,7 +1149,7 @@ when a proper package or architectural dependency should exist.
 
 ---
 
-# Internal Dependency Versioning
+## Internal Dependency Versioning
 
 Internal artifacts may eventually require explicit version relationships.
 
@@ -1157,7 +1157,7 @@ This will become more important as FamilyOS distribution architecture matures.
 
 ---
 
-# External Build Artifact Dependencies
+## External Build Artifact Dependencies
 
 A build consuming an upstream artifact must validate that artifact before use.
 
@@ -1175,7 +1175,7 @@ Downstream Build
 
 ---
 
-# Dependency Caching
+## Dependency Caching
 
 Dependency caches may improve performance.
 
@@ -1191,7 +1191,7 @@ They must not become authoritative dependency state.
 
 ---
 
-# Cache Safety
+## Cache Safety
 
 A cache must only be reused when its validity conditions remain satisfied.
 
@@ -1205,7 +1205,7 @@ Cache Performance
 
 ---
 
-# Offline Dependency Resolution
+## Offline Dependency Resolution
 
 Future stronger builds may use pre-fetched or mirrored dependencies to reduce external variability.
 
@@ -1219,7 +1219,7 @@ This is a future capability, not an immediate requirement.
 
 ---
 
-# Dependency Mirrors
+## Dependency Mirrors
 
 A controlled mirror may eventually provide:
 
@@ -1232,7 +1232,7 @@ Such infrastructure should only be introduced when justified.
 
 ---
 
-# Dependency Observability
+## Dependency Observability
 
 Build diagnostics should expose relevant dependency state.
 
@@ -1246,7 +1246,7 @@ For significant builds, useful information may include:
 
 ---
 
-# Dependency Evidence
+## Dependency Evidence
 
 Dependency state may become part of build evidence.
 
@@ -1266,7 +1266,7 @@ Evidence detail should remain proportional to profile.
 
 ---
 
-# Dependency Fingerprinting
+## Dependency Fingerprinting
 
 Future builds may fingerprint dependency state.
 
@@ -1289,7 +1289,7 @@ This could support:
 
 ---
 
-# Dependency Change Detection
+## Dependency Change Detection
 
 A build system may eventually detect when dependency state has changed relative to prior trusted builds.
 
@@ -1301,7 +1301,7 @@ This may trigger:
 
 ---
 
-# Dependency Failure Categories
+## Dependency Failure Categories
 
 Possible conceptual failure categories include:
 
@@ -1319,7 +1319,7 @@ Formal machine-readable implementation may come later.
 
 ---
 
-# Dependency Failure Diagnostics
+## Dependency Failure Diagnostics
 
 A useful dependency failure should identify:
 
@@ -1333,7 +1333,7 @@ Opaque package-manager errors should be wrapped or documented where practical.
 
 ---
 
-# Dependency And Reproducibility
+## Dependency And Reproducibility
 
 Dependency management is one of the strongest determinants of build reproducibility.
 
@@ -1349,7 +1349,7 @@ Improved Reproducibility
 
 ---
 
-# Dependency And Determinism
+## Dependency And Determinism
 
 Mutable dependency resolution introduces non-determinism.
 
@@ -1357,7 +1357,7 @@ Locking and controlled sources can progressively reduce it.
 
 ---
 
-# Dependency And Security
+## Dependency And Security
 
 Dependency compromise can affect every downstream artifact.
 
@@ -1365,7 +1365,7 @@ Dependency management is therefore one of the principal build supply-chain contr
 
 ---
 
-# Dependency And Quality
+## Dependency And Quality
 
 Dependency state can influence quality through:
 
@@ -1379,7 +1379,7 @@ Dependency changes may therefore participate in quality gates.
 
 ---
 
-# Dependency And Testing
+## Dependency And Testing
 
 The Testing Framework validates behavior after dependency changes.
 
@@ -1387,7 +1387,7 @@ Dependency updates should trigger appropriate regression testing.
 
 ---
 
-# Dependency And Release
+## Dependency And Release
 
 Official releases may require stronger dependency evidence.
 
@@ -1402,7 +1402,7 @@ The Build Framework should expose necessary data.
 
 ---
 
-# Dependency And Documentation
+## Dependency And Documentation
 
 Dependency requirements must be documented clearly enough that contributors can reconstruct supported environments.
 
@@ -1416,7 +1416,7 @@ Documentation should explain:
 
 ---
 
-# Dependency Governance
+## Dependency Governance
 
 Significant dependency architecture changes may require formal governance.
 
@@ -1431,7 +1431,7 @@ Examples include:
 
 ---
 
-# Dependency Technical Debt
+## Dependency Technical Debt
 
 Dependency debt includes:
 
@@ -1448,7 +1448,7 @@ Dependency debt should be reviewed continuously.
 
 ---
 
-# Dependency Maintenance Policy
+## Dependency Maintenance Policy
 
 Dependency maintenance should balance:
 
@@ -1464,7 +1464,7 @@ The target is controlled evolution.
 
 ---
 
-# Dependency Review Questions
+## Dependency Review Questions
 
 When introducing or updating a dependency, engineers should ask:
 
@@ -1492,49 +1492,49 @@ Can it be removed later?
 
 ---
 
-# Dependency Anti-Pattern — Undeclared Installation
+## Dependency Anti-Pattern — Undeclared Installation
 
 The framework rejects dependencies installed manually outside project definitions.
 
 ---
 
-# Dependency Anti-Pattern — Latest Everywhere
+## Dependency Anti-Pattern — Latest Everywhere
 
 Uncontrolled use of the newest available version can make builds change without source changes.
 
 ---
 
-# Dependency Anti-Pattern — CI-Only Dependency
+## Dependency Anti-Pattern — CI-Only Dependency
 
 CI must not install critical dependencies that are absent from canonical project declarations.
 
 ---
 
-# Dependency Anti-Pattern — Local Package Leakage
+## Dependency Anti-Pattern — Local Package Leakage
 
 A build must not succeed because a package exists globally but is missing from project dependencies.
 
 ---
 
-# Dependency Anti-Pattern — Stale Lock State
+## Dependency Anti-Pattern — Stale Lock State
 
 A lock file that no longer corresponds to declarations weakens rather than strengthens reproducibility.
 
 ---
 
-# Dependency Anti-Pattern — Unreviewed Build Dependency
+## Dependency Anti-Pattern — Unreviewed Build Dependency
 
 Build dependencies can alter artifacts and therefore require review proportional to impact.
 
 ---
 
-# Dependency Anti-Pattern — Excessive Dependency Surface
+## Dependency Anti-Pattern — Excessive Dependency Surface
 
 Adding packages for trivial tasks can create long-term maintenance and supply-chain cost.
 
 ---
 
-# Dependency Maturity Model
+## Dependency Maturity Model
 
 FamilyOS dependency maturity may progress through:
 
@@ -1577,7 +1577,7 @@ The framework supports progressive adoption.
 
 ---
 
-# Dependency Success Criteria
+## Dependency Success Criteria
 
 The Dependency Management model is successful when FamilyOS can answer:
 
@@ -1598,53 +1598,53 @@ The Dependency Management model is successful when FamilyOS can answer:
 
 ---
 
-# Dependency Invariants
+## Dependency Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Required dependencies must be explicitly declared.
 
-## Invariant 2
+### Invariant 2
 
 Dependency resolution must not rely on undocumented installed state.
 
-## Invariant 3
+### Invariant 3
 
 Critical dependency changes must remain reviewable.
 
-## Invariant 4
+### Invariant 4
 
 Unresolved dependency conflicts must prevent trusted artifact creation.
 
-## Invariant 5
+### Invariant 5
 
 Dependency sources must remain governable.
 
-## Invariant 6
+### Invariant 6
 
 Build-only dependencies must receive supply-chain consideration.
 
-## Invariant 7
+### Invariant 7
 
 Release candidate builds should use stronger dependency reproducibility controls.
 
-## Invariant 8
+### Invariant 8
 
 Dependency caches must not become authoritative.
 
-## Invariant 9
+### Invariant 9
 
 Plugin dependencies must remain compatible with platform rules.
 
-## Invariant 10
+### Invariant 10
 
 Dependency state must remain explainable for trusted builds.
 
 ---
 
-# Dependency Model Summary
+## Dependency Model Summary
 
 The canonical FamilyOS dependency lifecycle is:
 
@@ -1672,7 +1672,7 @@ This converts dependencies from invisible external conditions into governed comp
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Dependency Management model is founded on the following rule:
 

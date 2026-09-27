@@ -91,3 +91,4 @@ pretty = true
 
 [tool.pytest.ini_options]
 addopts = "--import-mode=importlib"
+norecursedirs = ["*.egg", ".*", "_darcs", "CVS", "dist", "node_modules", "venv", "{arch}"]

@@ -220,6 +220,27 @@ AI uses information but does not own business data.
 
 ---
 
+# AI and Application Relationship
+
+The AI Architecture proposes candidate actions; it does not execute them.
+
+The Application Architecture receives, mediates, and evaluates proposals
+before any effect occurs.
+
+Relationship:
+
+~~~text
+AI
+        │
+        ▼
+Application
+~~~
+
+AI conveys no authorization. Application mediates; it does not itself
+authorize (see Security and Identity Relationship).
+
+---
+
 # Security and Identity Relationship
 
 The Identity Architecture defines actors interacting with FamilyOS.
@@ -313,6 +334,12 @@ AI
         │
         ▼
 Authorized Data
+
+
+AI
+        │
+        ▼
+Application
 
 
 API

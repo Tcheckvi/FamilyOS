@@ -16,7 +16,7 @@
 
 ---
 
-# Purpose
+## Purpose
 
 This document records the actual validation state and evidence for **EPIC-QLT-001 — Quality Framework**.
 
@@ -41,7 +41,7 @@ Framework-level validation principles and expectations are defined in:
 
 ---
 
-# Validation Principle
+## Validation Principle
 
 Only evidence from actual execution, inspection, or governed review SHALL be used to convert a validation requirement into `PASS`.
 
@@ -61,7 +61,7 @@ A required check SHALL remain `PENDING` when acceptable evidence does not yet ex
 
 ---
 
-# Historical Publication Context
+## Historical Publication Context
 
 EPIC-QLT-001 version `1.0.0` was historically completed and published under:
 
@@ -84,7 +84,7 @@ Post-publication normalization is recorded through later repository commits.
 
 ---
 
-# Historical Publication State
+## Historical Publication State
 
 ```text
 Framework Version:      1.0.0
@@ -97,7 +97,7 @@ The historical publication and the current revalidation are separate events.
 
 ---
 
-# Canonical Structure
+## Canonical Structure
 
 The current canonical Quality Framework structure is:
 
@@ -116,7 +116,7 @@ The canonical relationship is:
 
 ---
 
-# Numbered Document Inventory
+## Numbered Document Inventory
 
 The canonical numbered documents are:
 
@@ -158,7 +158,7 @@ PASS
 
 ---
 
-# Control Document Inventory
+## Control Document Inventory
 
 The canonical control documents are:
 
@@ -181,7 +181,7 @@ PASS
 
 ---
 
-# Canonical File Inventory
+## Canonical File Inventory
 
 Expected canonical files:
 
@@ -215,7 +215,7 @@ PASS
 
 ---
 
-# Empty File Validation
+## Empty File Validation
 
 Required canonical documents were checked for unintended empty files.
 
@@ -239,7 +239,7 @@ PASS
 
 ---
 
-# Numbering Integrity
+## Numbering Integrity
 
 The canonical sequence is required to remain continuous from:
 
@@ -269,7 +269,7 @@ PASS
 
 ---
 
-# EPIC.yaml Validation
+## EPIC.yaml Validation
 
 `EPIC.yaml` was previously not parseable as a single valid YAML document.
 
@@ -330,7 +330,7 @@ PASS
 
 ---
 
-# MANIFEST.md Validation
+## MANIFEST.md Validation
 
 `MANIFEST.md` defines the authoritative human-readable structural inventory.
 
@@ -365,7 +365,7 @@ PASS
 
 ---
 
-# EPIC-QLT-001.md Validation
+## EPIC-QLT-001.md Validation
 
 `EPIC-QLT-001.md` records the completed Quality Framework state.
 
@@ -391,7 +391,7 @@ PASS
 
 ---
 
-# Revision-History.md Validation
+## Revision-History.md Validation
 
 `Revision-History.md` preserves the Quality Framework's historical and post-publication evolution.
 
@@ -413,7 +413,7 @@ PASS
 
 ---
 
-# README.md Validation
+## README.md Validation
 
 `README.md` provides the human-readable entry point to the Quality Framework.
 
@@ -435,7 +435,7 @@ PASS
 
 ---
 
-# CHANGELOG.md Validation
+## CHANGELOG.md Validation
 
 `CHANGELOG.md` records significant Quality Framework changes.
 
@@ -451,7 +451,7 @@ PASS
 
 ---
 
-# Control Document Synchronization
+## Control Document Synchronization
 
 Current control-document synchronization state:
 
@@ -473,7 +473,7 @@ PASS
 
 ---
 
-# Structural Validation Summary
+## Structural Validation Summary
 
 | Validation Area              | Result             |
 | ---------------------------- | ------------------ |
@@ -492,7 +492,7 @@ PASS
 
 ---
 
-# Semantic Consistency
+## Semantic Consistency
 
 The Quality Framework defines a coherent progression from engineering expectations to governed quality decisions.
 
@@ -544,7 +544,7 @@ PASS
 
 ---
 
-# Framework Boundary Validation
+## Framework Boundary Validation
 
 The Quality Framework coordinates engineering quality but does not replace specialized FamilyOS frameworks.
 
@@ -580,7 +580,7 @@ PASS
 
 ---
 
-# Governance Consistency
+## Governance Consistency
 
 The framework consistently requires explicit governance for:
 
@@ -604,7 +604,7 @@ PASS
 
 ---
 
-# Reference Integrity
+## Reference Integrity
 
 Internal document references are expected to correspond to canonical Quality Framework files or governed external FamilyOS framework references.
 
@@ -620,7 +620,7 @@ PASS
 
 ---
 
-# Placeholder Review
+## Placeholder Review
 
 The Quality Framework was checked for unresolved blocking placeholder tokens.
 
@@ -636,7 +636,7 @@ PASS
 
 ---
 
-# Current Repository Validation
+## Current Repository Validation
 
 The current repository quality gates were executed during this revalidation.
 
@@ -654,7 +654,7 @@ Revalidation date:
 
 ---
 
-# Ruff Validation
+## Ruff Validation
 
 Command:
 
@@ -682,7 +682,7 @@ PASS
 
 ---
 
-# MyPy Validation
+## MyPy Validation
 
 Command:
 
@@ -710,7 +710,7 @@ PASS
 
 ---
 
-# Pytest Validation
+## Pytest Validation
 
 Command:
 
@@ -746,7 +746,7 @@ PASS
 
 ---
 
-# Repository Diff Validation
+## Repository Diff Validation
 
 Command:
 
@@ -774,7 +774,7 @@ PASS
 
 ---
 
-# Current Repository Quality Summary
+## Current Repository Quality Summary
 
 ```text
 Ruff:      PASS
@@ -785,11 +785,11 @@ DiffCheck: PASS
 
 ---
 
-# Historical vs Current Evidence
+## Historical vs Current Evidence
 
 Historical publication and current revalidation evidence SHALL remain separate.
 
-## Historical Publication
+### Historical Publication
 
 ```text
 Framework Version:
@@ -806,7 +806,7 @@ Historical evidence belongs to the repository revision represented by the histor
 
 ---
 
-## Current Revalidation
+### Current Revalidation
 
 ```text
 Date:
@@ -829,7 +829,7 @@ Current evidence belongs to the repository state against which these commands we
 
 ---
 
-# Validation Evidence Integrity
+## Validation Evidence Integrity
 
 Validation evidence is revision-aware.
 
@@ -849,7 +849,7 @@ Required checks must be rerun when changes invalidate previous evidence.
 
 ---
 
-# Validation Status Matrix
+## Validation Status Matrix
 
 | Validation Area                  | Result                    |
 | -------------------------------- | ------------------------- |
@@ -881,7 +881,7 @@ Required checks must be rerun when changes invalidate previous evidence.
 
 ---
 
-# Acceptance Criteria
+## Acceptance Criteria
 
 EPIC-QLT-001 revalidation is complete when:
 
@@ -912,7 +912,7 @@ All current revalidation acceptance criteria are satisfied.
 
 ---
 
-# Machine-Readable Baseline Alignment
+## Machine-Readable Baseline Alignment
 
 Following successful revalidation, the expected `EPIC.yaml` baseline state is:
 
@@ -935,7 +935,7 @@ release:
 
 ---
 
-# Historical Tag Integrity
+## Historical Tag Integrity
 
 The historical Quality Framework publication tag is:
 
@@ -951,7 +951,7 @@ No historical tag rewrite is required or permitted by this validation.
 
 ---
 
-# Final Validation Decision
+## Final Validation Decision
 
 The current Quality Framework baseline satisfies the revalidation requirements documented in this validation record.
 
@@ -985,7 +985,7 @@ Final Validation:       VALIDATED
 
 ---
 
-# Final Validation Result
+## Final Validation Result
 
 ```text
 PASS
@@ -993,7 +993,7 @@ PASS
 
 ---
 
-# Final Principle
+## Final Principle
 
 The Quality Framework validation record SHALL remain grounded in actual evidence.
 
@@ -1005,7 +1005,7 @@ EPIC-QLT-001 satisfies this principle.
 
 ---
 
-# Final State
+## Final State
 
 **EPIC:** EPIC-QLT-001
 **Title:** Quality Framework

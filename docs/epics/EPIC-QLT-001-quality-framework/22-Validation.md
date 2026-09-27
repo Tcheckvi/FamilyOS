@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 22 Validation
+## 22 Validation
 
-## Overview
+### Overview
 
 The FamilyOS Quality Framework Validation defines how the Quality Framework itself is verified before it is considered complete, authoritative, releasable, and suitable for integration into the FamilyOS engineering ecosystem.
 
@@ -38,7 +38,7 @@ The Quality Framework must itself be subject to quality assurance.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Framework Validation is to establish evidence that the framework is:
 
@@ -75,7 +75,7 @@ Is sufficient evidence available to declare it ready?
 
 ---
 
-# Validation Principle
+## Validation Principle
 
 The foundational principle is:
 
@@ -96,7 +96,7 @@ Continuous Improvement
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 Validation applies to the complete Quality Framework artifact set.
 
@@ -145,7 +145,7 @@ where present in the canonical EPIC structure.
 
 ---
 
-# Validation Dimensions
+## Validation Dimensions
 
 The Quality Framework should be validated across multiple dimensions.
 
@@ -175,7 +175,7 @@ No single validation dimension is sufficient.
 
 ---
 
-# Structural Validation
+## Structural Validation
 
 Structural validation verifies that the framework contains the expected artifact structure.
 
@@ -199,7 +199,7 @@ Are empty normative documents absent?
 
 ---
 
-# Structural Inventory
+## Structural Inventory
 
 A canonical inventory should be maintained.
 
@@ -244,7 +244,7 @@ The actual canonical inventory is authoritative if numbering evolves.
 
 ---
 
-# File Presence Validation
+## File Presence Validation
 
 Every mandatory file should exist.
 
@@ -252,7 +252,7 @@ A missing normative chapter should fail framework completeness validation.
 
 ---
 
-# Empty File Validation
+## Empty File Validation
 
 Normative files should not be empty.
 
@@ -270,7 +270,7 @@ PASS
 
 ---
 
-# Duplicate File Validation
+## Duplicate File Validation
 
 Duplicate semantic chapters should be detected.
 
@@ -285,7 +285,7 @@ may indicate accidental duplication unless explicitly intentional.
 
 ---
 
-# Naming Validation
+## Naming Validation
 
 File names should follow FamilyOS naming conventions.
 
@@ -299,7 +299,7 @@ Validation should detect:
 
 ---
 
-# Numbering Validation
+## Numbering Validation
 
 Numbered chapters should form a coherent sequence.
 
@@ -307,7 +307,7 @@ Gaps should either be intentional and documented or treated as findings.
 
 ---
 
-# Control Artifact Validation
+## Control Artifact Validation
 
 Control artifacts should be checked for consistency with normative documents.
 
@@ -324,7 +324,7 @@ Revision-History.md
 
 ---
 
-# Content Validation
+## Content Validation
 
 Content validation verifies that each document fulfills its intended responsibility.
 
@@ -334,7 +334,7 @@ The goal is to verify that the required engineering concepts are actually define
 
 ---
 
-# Content Completeness
+## Content Completeness
 
 Each chapter should cover its expected subject.
 
@@ -354,7 +354,7 @@ A file containing unrelated content should not pass simply because it is non-emp
 
 ---
 
-# Required Concept Validation
+## Required Concept Validation
 
 Important concepts should appear in the appropriate normative chapters.
 
@@ -375,7 +375,7 @@ Quality Governance
 
 ---
 
-# Responsibility Validation
+## Responsibility Validation
 
 Each major concept should have a clear responsibility boundary.
 
@@ -395,7 +395,7 @@ What lifecycle applies?
 
 ---
 
-# Ambiguity Validation
+## Ambiguity Validation
 
 Normative statements should avoid ambiguous language where deterministic interpretation is required.
 
@@ -414,7 +414,7 @@ Such terms may be acceptable in guidance but should not define executable compli
 
 ---
 
-# Normative Language Validation
+## Normative Language Validation
 
 Where mandatory requirements are expressed, the framework should use consistent normative language.
 
@@ -432,7 +432,7 @@ The Documentation Framework should remain authoritative for exact language stand
 
 ---
 
-# Internal Consistency Validation
+## Internal Consistency Validation
 
 The framework should not define contradictory semantics across chapters.
 
@@ -450,7 +450,7 @@ Such inconsistency should fail validation.
 
 ---
 
-# Terminology Consistency
+## Terminology Consistency
 
 Terms should retain the same meaning throughout the framework.
 
@@ -472,7 +472,7 @@ Terminology drift should be treated as a documentation quality issue.
 
 ---
 
-# Status Consistency
+## Status Consistency
 
 Lifecycle states should remain consistent across documents.
 
@@ -488,7 +488,7 @@ another chapter should not silently introduce incompatible semantics for the sam
 
 ---
 
-# Severity Consistency
+## Severity Consistency
 
 Severity definitions must remain consistent across:
 
@@ -505,7 +505,7 @@ Different domains may use specialized models, but mappings should be explicit.
 
 ---
 
-# Architecture Validation
+## Architecture Validation
 
 Architecture validation verifies that the Quality Framework aligns with FamilyOS architecture.
 
@@ -513,7 +513,7 @@ The Quality Framework must not create parallel architectural systems without jus
 
 ---
 
-# Architectural Boundary Validation
+## Architectural Boundary Validation
 
 The framework should preserve separation between:
 
@@ -529,7 +529,7 @@ Plugin Compliance Domain
 
 ---
 
-# Dependency Direction Validation
+## Dependency Direction Validation
 
 Future implementation should respect FamilyOS Clean Architecture principles.
 
@@ -551,7 +551,7 @@ Infrastructure tools should not define domain semantics.
 
 ---
 
-# Tool Independence Validation
+## Tool Independence Validation
 
 Quality semantics should remain independent from specific tools.
 
@@ -575,13 +575,13 @@ This preserves architectural flexibility.
 
 ---
 
-# Provider Independence
+## Provider Independence
 
 CI providers, storage systems, reporting tools, and dashboards should remain implementation details where practical.
 
 ---
 
-# Cross-Framework Validation
+## Cross-Framework Validation
 
 The Quality Framework must be validated against related FamilyOS frameworks.
 
@@ -599,7 +599,7 @@ Architecture Foundation
 
 ---
 
-# Engineering Foundation Validation
+## Engineering Foundation Validation
 
 Verify that the Quality Framework remains consistent with:
 
@@ -616,7 +616,7 @@ Engineering Lifecycle
 
 ---
 
-# Testing Framework Validation
+## Testing Framework Validation
 
 Verify that the Quality Framework does not redefine testing architecture or methodology.
 
@@ -634,7 +634,7 @@ Quality Assessment
 
 ---
 
-# Documentation Framework Validation
+## Documentation Framework Validation
 
 Verify that documentation-specific semantics remain authoritative in the Documentation Framework.
 
@@ -642,7 +642,7 @@ The Quality Framework should integrate results rather than duplicate standards.
 
 ---
 
-# Build Framework Validation
+## Build Framework Validation
 
 Verify that build semantics remain defined by the Build Framework.
 
@@ -650,7 +650,7 @@ Quality should consume build evidence and assess quality impact.
 
 ---
 
-# Release Framework Validation
+## Release Framework Validation
 
 Verify that release lifecycle semantics remain owned by the Release Framework.
 
@@ -658,7 +658,7 @@ The Quality Framework may define quality conditions used by Release Gates.
 
 ---
 
-# Plugin Compliance Validation
+## Plugin Compliance Validation
 
 Verify that plugin-specific compliance remains owned by the Plugin Compliance Framework.
 
@@ -666,7 +666,7 @@ The Quality Framework should consume plugin compliance results.
 
 ---
 
-# Architecture Foundation Validation
+## Architecture Foundation Validation
 
 Verify compatibility with:
 
@@ -687,7 +687,7 @@ Governance Architecture
 
 ---
 
-# Reference Validation
+## Reference Validation
 
 References should be verified for existence and authority.
 
@@ -704,13 +704,13 @@ Retired References
 
 ---
 
-# Reference Existence
+## Reference Existence
 
 A normative reference should resolve to an identifiable FamilyOS artifact.
 
 ---
 
-# Reference Status
+## Reference Status
 
 Where status information exists, validation should determine whether the referenced artifact is:
 
@@ -723,13 +723,13 @@ UNKNOWN
 
 ---
 
-# Reference Version Validation
+## Reference Version Validation
 
 Where semantics depend on a particular version, the version should be explicit.
 
 ---
 
-# Traceability Validation
+## Traceability Validation
 
 Important Quality Framework concepts should be traceable to their authority.
 
@@ -753,7 +753,7 @@ Gate
 
 ---
 
-# Requirement Traceability
+## Requirement Traceability
 
 Every mandatory Quality Requirement should eventually identify:
 
@@ -768,7 +768,7 @@ Severity
 
 ---
 
-# Rule Traceability
+## Rule Traceability
 
 Every Quality Rule should identify the requirement or policy it verifies.
 
@@ -776,7 +776,7 @@ A rule without authority risks becoming arbitrary policy.
 
 ---
 
-# Evidence Traceability
+## Evidence Traceability
 
 Evidence should identify:
 
@@ -792,13 +792,13 @@ where applicable.
 
 ---
 
-# Assessment Traceability
+## Assessment Traceability
 
 An assessment should identify the evidence and framework state used to produce its result.
 
 ---
 
-# Gate Traceability
+## Gate Traceability
 
 A gate decision should be traceable to:
 
@@ -813,7 +813,7 @@ Overrides
 
 ---
 
-# Governance Traceability
+## Governance Traceability
 
 Governance decisions should preserve:
 
@@ -827,7 +827,7 @@ Affected Artifact
 
 ---
 
-# Implementation Feasibility Validation
+## Implementation Feasibility Validation
 
 A framework can be logically coherent but impractical to implement.
 
@@ -835,7 +835,7 @@ Feasibility validation therefore asks whether proposed concepts can realisticall
 
 ---
 
-# Model Feasibility
+## Model Feasibility
 
 Core domain concepts should be representable using stable data models.
 
@@ -852,7 +852,7 @@ QualityGateDecision
 
 ---
 
-# Verification Feasibility
+## Verification Feasibility
 
 Requirements intended for automation should have plausible verification mechanisms.
 
@@ -860,13 +860,13 @@ If no deterministic verification exists, the requirement should not pretend to b
 
 ---
 
-# Evidence Feasibility
+## Evidence Feasibility
 
 Required evidence should be obtainable without unreasonable engineering cost.
 
 ---
 
-# Automation Feasibility
+## Automation Feasibility
 
 Automation proposals should account for:
 
@@ -881,13 +881,13 @@ Maintenance Cost
 
 ---
 
-# Gate Feasibility
+## Gate Feasibility
 
 A gate should not depend on unavailable, unreliable, or excessively slow evidence.
 
 ---
 
-# Operational Feasibility
+## Operational Feasibility
 
 Quality Observability and Governance should not assume infrastructure that FamilyOS does not yet possess.
 
@@ -900,7 +900,7 @@ Future Capability
 
 ---
 
-# Determinism Validation
+## Determinism Validation
 
 Deterministic quality mechanisms should produce stable outcomes.
 
@@ -920,13 +920,13 @@ Equivalent Quality Result
 
 ---
 
-# Repeatability Validation
+## Repeatability Validation
 
 Important verification should be repeatable across compatible environments.
 
 ---
 
-# Environment Sensitivity
+## Environment Sensitivity
 
 Environment-dependent results should be explicitly identified.
 
@@ -942,13 +942,13 @@ Environment Variables
 
 ---
 
-# Reproducibility Validation
+## Reproducibility Validation
 
 Where reproducibility is required, all relevant inputs should be identifiable.
 
 ---
 
-# Quality Model Validation
+## Quality Model Validation
 
 The Quality Model should be checked for conceptual completeness.
 
@@ -969,7 +969,7 @@ Compliance
 
 ---
 
-# Requirement Model Validation
+## Requirement Model Validation
 
 Requirements should support:
 
@@ -984,7 +984,7 @@ Lifecycle
 
 ---
 
-# Finding Model Validation
+## Finding Model Validation
 
 Findings should support:
 
@@ -1003,7 +1003,7 @@ as applicable.
 
 ---
 
-# Evidence Model Validation
+## Evidence Model Validation
 
 Evidence should support:
 
@@ -1019,7 +1019,7 @@ Validity
 
 ---
 
-# Assessment Model Validation
+## Assessment Model Validation
 
 Assessments should support:
 
@@ -1035,7 +1035,7 @@ Timestamp
 
 ---
 
-# Metric Model Validation
+## Metric Model Validation
 
 Metrics should have:
 
@@ -1050,7 +1050,7 @@ Owner
 
 ---
 
-# Risk Model Validation
+## Risk Model Validation
 
 Quality Risk should support:
 
@@ -1068,7 +1068,7 @@ The exact schema may evolve.
 
 ---
 
-# Debt Model Validation
+## Debt Model Validation
 
 Quality Debt should support:
 
@@ -1084,7 +1084,7 @@ Status
 
 ---
 
-# Gate Model Validation
+## Gate Model Validation
 
 Quality Gates should support:
 
@@ -1100,7 +1100,7 @@ Override
 
 ---
 
-# Compliance Model Validation
+## Compliance Model Validation
 
 Compliance should distinguish:
 
@@ -1114,7 +1114,7 @@ Result
 
 ---
 
-# Governance Validation
+## Governance Validation
 
 Governance validation verifies that the framework defines clear authority.
 
@@ -1136,13 +1136,13 @@ Who can retire requirements?
 
 ---
 
-# Ownership Validation
+## Ownership Validation
 
 Critical framework artifacts should have identifiable ownership.
 
 ---
 
-# Exception Governance Validation
+## Exception Governance Validation
 
 Exceptions should define:
 
@@ -1156,19 +1156,19 @@ Expiration
 
 ---
 
-# Override Governance Validation
+## Override Governance Validation
 
 Gate overrides should remain exceptional and traceable.
 
 ---
 
-# Risk Acceptance Validation
+## Risk Acceptance Validation
 
 Accepted risk should identify the accepting authority.
 
 ---
 
-# Lifecycle Validation
+## Lifecycle Validation
 
 Every authoritative framework component should have a lifecycle.
 
@@ -1186,7 +1186,7 @@ Framework Versions
 
 ---
 
-# Rule Lifecycle Validation
+## Rule Lifecycle Validation
 
 Rules should have valid lifecycle states.
 
@@ -1206,7 +1206,7 @@ The canonical lifecycle should be defined consistently.
 
 ---
 
-# Invalid Lifecycle Transition
+## Invalid Lifecycle Transition
 
 Automation should eventually detect invalid transitions.
 
@@ -1222,7 +1222,7 @@ may require explicit governance rather than normal promotion.
 
 ---
 
-# Deprecation Validation
+## Deprecation Validation
 
 Deprecated capabilities should identify:
 
@@ -1236,13 +1236,13 @@ where applicable.
 
 ---
 
-# Retirement Validation
+## Retirement Validation
 
 Before retirement, validation should confirm that active dependencies have been migrated or explicitly accepted.
 
 ---
 
-# Roadmap Validation
+## Roadmap Validation
 
 The roadmap should be checked for architectural feasibility and dependency order.
 
@@ -1266,37 +1266,37 @@ Quality Intelligence
 
 ---
 
-# Dependency Validation
+## Dependency Validation
 
 Roadmap capabilities should not depend on capabilities scheduled after them without explanation.
 
 ---
 
-# Incremental Delivery Validation
+## Incremental Delivery Validation
 
 Each roadmap phase should provide useful engineering value independently.
 
 ---
 
-# Quality Gate Validation
+## Quality Gate Validation
 
 Quality Gates require particularly strong validation because they can block engineering progression.
 
 ---
 
-# Gate Correctness
+## Gate Correctness
 
 A gate should block only when authoritative policy requires it.
 
 ---
 
-# Gate Reliability
+## Gate Reliability
 
 Infrastructure failures should not be silently interpreted as quality failures.
 
 ---
 
-# Gate Diagnostics
+## Gate Diagnostics
 
 A failed gate should explain:
 
@@ -1310,7 +1310,7 @@ What Remediation Is Expected
 
 ---
 
-# Gate Override Validation
+## Gate Override Validation
 
 If override exists, the mechanism should be:
 
@@ -1323,7 +1323,7 @@ Time-Bounded where appropriate
 
 ---
 
-# Quality Metrics Validation
+## Quality Metrics Validation
 
 Metrics should be checked for usefulness and misuse risk.
 
@@ -1343,7 +1343,7 @@ Is its data reliable?
 
 ---
 
-# Vanity Metric Detection
+## Vanity Metric Detection
 
 Metrics without actionable purpose should be challenged.
 
@@ -1357,13 +1357,13 @@ may provide little value without context.
 
 ---
 
-# Metric Stability
+## Metric Stability
 
 Changes in metric calculation should be versioned or documented.
 
 ---
 
-# Quality Evidence Validation
+## Quality Evidence Validation
 
 Evidence should be validated for:
 
@@ -1380,13 +1380,13 @@ as appropriate.
 
 ---
 
-# Stale Evidence Validation
+## Stale Evidence Validation
 
 Evidence should not be reused beyond its valid context.
 
 ---
 
-# Quality Risk Validation
+## Quality Risk Validation
 
 Risk processes should distinguish identified risk from confirmed defects.
 
@@ -1394,7 +1394,7 @@ Risk scoring should remain understandable and governable.
 
 ---
 
-# Quality Debt Validation
+## Quality Debt Validation
 
 Quality Debt should not become a generic label for every unfinished task.
 
@@ -1402,7 +1402,7 @@ Debt should represent an intentional or accumulated quality compromise with futu
 
 ---
 
-# Review and Assessment Validation
+## Review and Assessment Validation
 
 Quality Reviews should have defined scope and outputs.
 
@@ -1410,7 +1410,7 @@ Quality Assessments should have reproducible semantics where automated.
 
 ---
 
-# Automation Validation
+## Automation Validation
 
 Quality Automation should itself be tested.
 
@@ -1427,7 +1427,7 @@ Performance Tests
 
 ---
 
-# Automation Failure Validation
+## Automation Failure Validation
 
 The framework should distinguish:
 
@@ -1451,7 +1451,7 @@ MyPy reports type errors
 
 ---
 
-# Observability Validation
+## Observability Validation
 
 Quality Observability should expose useful state without becoming the source of truth for quality policy.
 
@@ -1461,7 +1461,7 @@ They do not define policy.
 
 ---
 
-# Compliance Validation
+## Compliance Validation
 
 Compliance semantics should be deterministic where possible.
 
@@ -1469,7 +1469,7 @@ The same applicable requirements and evidence should produce equivalent complian
 
 ---
 
-# Continuous Improvement Validation
+## Continuous Improvement Validation
 
 Continuous Improvement should produce actual engineering changes.
 
@@ -1477,7 +1477,7 @@ A framework that repeatedly measures problems without changing engineering behav
 
 ---
 
-# Documentation Quality Validation
+## Documentation Quality Validation
 
 The Quality Framework documentation itself should be reviewed for:
 
@@ -1494,7 +1494,7 @@ Maintainability
 
 ---
 
-# Markdown Validation
+## Markdown Validation
 
 Markdown should follow FamilyOS Documentation Standards.
 
@@ -1511,25 +1511,25 @@ Link Validity
 
 ---
 
-# Heading Validation
+## Heading Validation
 
 Unexpected heading levels or inconsistent document titles should be detected.
 
 ---
 
-# Code Fence Validation
+## Code Fence Validation
 
 Every Markdown code fence should be correctly closed.
 
 ---
 
-# Link Validation
+## Link Validation
 
 Internal links and references should resolve where practical.
 
 ---
 
-# Documentation Duplication
+## Documentation Duplication
 
 Substantial duplication between chapters should be reviewed.
 
@@ -1537,7 +1537,7 @@ Some repetition is acceptable for clarity, but normative semantics should have a
 
 ---
 
-# Document Size
+## Document Size
 
 Document size alone should not determine quality.
 
@@ -1549,7 +1549,7 @@ Validation should focus on required content and clarity.
 
 ---
 
-# Manual Review
+## Manual Review
 
 Not all framework quality can initially be automated.
 
@@ -1565,13 +1565,13 @@ Cross-Framework Responsibility
 
 ---
 
-# Peer Review
+## Peer Review
 
 Before final framework release, the Quality Framework should receive engineering review appropriate to its architectural importance.
 
 ---
 
-# Architecture Review
+## Architecture Review
 
 Architecture review should confirm:
 
@@ -1584,19 +1584,19 @@ No Unnecessary Infrastructure Assumption
 
 ---
 
-# Governance Review
+## Governance Review
 
 Governance review should confirm authority and lifecycle semantics.
 
 ---
 
-# Implementation Review
+## Implementation Review
 
 Implementation-oriented review should verify that the framework can reasonably translate into code and automation.
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Validation should produce evidence.
 
@@ -1615,7 +1615,7 @@ Git Revision
 
 ---
 
-# Validation Record
+## Validation Record
 
 A validation record may conceptually contain:
 
@@ -1636,7 +1636,7 @@ The exact schema may evolve.
 
 ---
 
-# Validation Status
+## Validation Status
 
 A framework validation may use:
 
@@ -1649,13 +1649,13 @@ INCOMPLETE
 
 ---
 
-# PASS
+## PASS
 
 All mandatory validation criteria are satisfied.
 
 ---
 
-# PASS_WITH_FINDINGS
+## PASS_WITH_FINDINGS
 
 The framework is acceptable, but non-blocking findings remain.
 
@@ -1663,19 +1663,19 @@ Such findings should be explicitly recorded.
 
 ---
 
-# FAIL
+## FAIL
 
 One or more blocking validation requirements are not satisfied.
 
 ---
 
-# INCOMPLETE
+## INCOMPLETE
 
 Required validation has not yet been executed or evidence is insufficient.
 
 ---
 
-# Finding Severity
+## Finding Severity
 
 Validation findings may use the Quality Framework severity model.
 
@@ -1691,7 +1691,7 @@ CRITICAL
 
 ---
 
-# Blocking Validation Findings
+## Blocking Validation Findings
 
 Potential blocking findings include:
 
@@ -1706,7 +1706,7 @@ Incomplete Release Evidence
 
 ---
 
-# Non-Blocking Findings
+## Non-Blocking Findings
 
 Examples may include:
 
@@ -1719,7 +1719,7 @@ Non-Critical Reference Improvement
 
 ---
 
-# Validation Exceptions
+## Validation Exceptions
 
 Any exception to validation requirements should be explicit.
 
@@ -1736,7 +1736,7 @@ Remediation
 
 ---
 
-# Validation Automation
+## Validation Automation
 
 Validation should progressively become automated.
 
@@ -1754,7 +1754,7 @@ Required Metadata
 
 ---
 
-# Advanced Validation Automation
+## Advanced Validation Automation
 
 Later automation may verify:
 
@@ -1769,7 +1769,7 @@ Cross-Framework Dependencies
 
 ---
 
-# Validation CLI
+## Validation CLI
 
 A future CLI may provide:
 
@@ -1795,7 +1795,7 @@ PASS
 
 ---
 
-# Detailed Validation CLI
+## Detailed Validation CLI
 
 A verbose mode may expose:
 
@@ -1807,7 +1807,7 @@ with evidence and findings.
 
 ---
 
-# Machine-Readable Validation
+## Machine-Readable Validation
 
 A structured mode may eventually support:
 
@@ -1819,7 +1819,7 @@ for CI integration.
 
 ---
 
-# CI Validation
+## CI Validation
 
 Framework validation should eventually execute automatically when Quality Framework artifacts change.
 
@@ -1843,13 +1843,13 @@ Quality Result
 
 ---
 
-# Change-Aware Validation
+## Change-Aware Validation
 
 Only relevant validation may need to run for small changes, while major framework changes should trigger full validation.
 
 ---
 
-# Full Validation Triggers
+## Full Validation Triggers
 
 Full validation should be considered for:
 
@@ -1864,13 +1864,13 @@ Lifecycle Change
 
 ---
 
-# Release Validation
+## Release Validation
 
 Before release, the framework should pass a final release validation.
 
 ---
 
-# Release Validation Inputs
+## Release Validation Inputs
 
 Inputs should include:
 
@@ -1887,7 +1887,7 @@ Implementation Status
 
 ---
 
-# Release Validation Decision
+## Release Validation Decision
 
 Conceptually:
 
@@ -1905,7 +1905,7 @@ Release Ready
 
 ---
 
-# Validation and Implementation Status
+## Validation and Implementation Status
 
 Documentation completion does not imply implementation completion.
 
@@ -1920,7 +1920,7 @@ This distinction must remain explicit.
 
 ---
 
-# Framework Documentation Validation
+## Framework Documentation Validation
 
 The current EPIC may therefore reach:
 
@@ -1936,13 +1936,13 @@ without contradiction.
 
 ---
 
-# Validation and Versioning
+## Validation and Versioning
 
 Every released framework version should be associated with validation evidence.
 
 ---
 
-# Validation and Git
+## Validation and Git
 
 Validation evidence should identify the Git revision where practical.
 
@@ -1950,19 +1950,19 @@ This prevents ambiguity about what was actually validated.
 
 ---
 
-# Validation and Changelog
+## Validation and Changelog
 
 Significant validation-related changes should appear in the framework changelog.
 
 ---
 
-# Validation and Revision History
+## Validation and Revision History
 
 Document revisions should remain traceable through FamilyOS revision history conventions.
 
 ---
 
-# Validation and Quality Gates
+## Validation and Quality Gates
 
 Eventually, framework validation itself may become a Quality Gate.
 
@@ -1982,7 +1982,7 @@ This should only occur once validation automation is reliable.
 
 ---
 
-# Validation and Continuous Improvement
+## Validation and Continuous Improvement
 
 Validation findings should feed Continuous Improvement.
 
@@ -2000,7 +2000,7 @@ Prevention
 
 ---
 
-# Validation and Quality Debt
+## Validation and Quality Debt
 
 Known validation weaknesses may become Quality Debt.
 
@@ -2015,7 +2015,7 @@ This may be acceptable initially but should remain visible if it creates materia
 
 ---
 
-# Validation and Risk
+## Validation and Risk
 
 Incomplete validation may create explicit Quality Risk.
 
@@ -2031,7 +2031,7 @@ Such risks should not be hidden.
 
 ---
 
-# Validation and Governance
+## Validation and Governance
 
 Quality Governance determines:
 
@@ -2048,7 +2048,7 @@ Governance interprets that evidence for authoritative decisions.
 
 ---
 
-# Initial Validation Strategy
+## Initial Validation Strategy
 
 The initial Quality Framework validation can remain pragmatic.
 
@@ -2071,7 +2071,7 @@ Recommended sequence:
 
 ---
 
-# Initial Shell Validation
+## Initial Shell Validation
 
 Simple repository checks may include:
 
@@ -2097,7 +2097,7 @@ They do not prove semantic quality.
 
 ---
 
-# File Count Validation
+## File Count Validation
 
 A file count may detect unexpected structural changes.
 
@@ -2113,7 +2113,7 @@ File count is supporting evidence only.
 
 ---
 
-# Git Status Validation
+## Git Status Validation
 
 Before release, the working tree should be reviewed.
 
@@ -2127,7 +2127,7 @@ Unexpected changes should be investigated.
 
 ---
 
-# Test Validation
+## Test Validation
 
 Once implementation exists, framework-related tests should pass.
 
@@ -2145,7 +2145,7 @@ Quality Gate Tests
 
 ---
 
-# Static Analysis Validation
+## Static Analysis Validation
 
 Quality implementation should satisfy FamilyOS static quality controls.
 
@@ -2158,7 +2158,7 @@ MyPy
 
 ---
 
-# Full Repository Validation
+## Full Repository Validation
 
 Before significant framework release, the complete repository test suite should be considered where practical.
 
@@ -2166,7 +2166,7 @@ This reduces cross-framework regression risk.
 
 ---
 
-# Validation Maturity Model
+## Validation Maturity Model
 
 Quality Framework Validation may mature through:
 
@@ -2207,53 +2207,53 @@ Continuous Framework Assurance
 
 ---
 
-# Validation Anti-Patterns
+## Validation Anti-Patterns
 
 The FamilyOS Quality Framework rejects several validation anti-patterns.
 
-## File Presence Equals Validation
+### File Presence Equals Validation
 
 A document existing does not prove that its content is correct.
 
-## Tests Equal Complete Validation
+### Tests Equal Complete Validation
 
 Passing tests do not prove architectural or governance coherence.
 
-## Manual Review Only Forever
+### Manual Review Only Forever
 
 Repeatable structural validation should eventually be automated.
 
-## Automation Without Semantic Review
+### Automation Without Semantic Review
 
 Automated checks cannot replace architectural judgment.
 
-## Self-Certification Without Evidence
+### Self-Certification Without Evidence
 
 The framework should not declare itself valid without supporting evidence.
 
-## Validation After Release
+### Validation After Release
 
 Validation should precede authoritative release.
 
-## Hidden Findings
+### Hidden Findings
 
 Known problems should be recorded.
 
-## Permanent Exceptions
+### Permanent Exceptions
 
 Validation exceptions should not become silent permanent policy.
 
-## Tool Success Equals Quality Success
+### Tool Success Equals Quality Success
 
 A successful tool execution does not automatically imply framework validity.
 
-## Documentation Complete Equals Implementation Complete
+### Documentation Complete Equals Implementation Complete
 
 These are separate lifecycle states.
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 The Quality Framework should eventually satisfy the following checklist.
 
@@ -2346,7 +2346,7 @@ RELEASE
 
 ---
 
-# Reference Validation Flow
+## Reference Validation Flow
 
 The complete validation flow can be represented as:
 
@@ -2382,7 +2382,7 @@ Framework Quality Decision
 
 ---
 
-# Validation Outcome Model
+## Validation Outcome Model
 
 The desired final state is:
 
@@ -2426,7 +2426,7 @@ READY
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Framework Validation enables FamilyOS to move from:
 
@@ -2463,7 +2463,7 @@ a defensible quality decision.
 
 ---
 
-# Final Validation Principle
+## Final Validation Principle
 
 The authority of the Quality Framework depends on the credibility of the framework itself.
 

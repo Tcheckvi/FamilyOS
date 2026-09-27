@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 19 Documentation Metrics
+## 19 Documentation Metrics
 
-## Context
+### Context
 
 Documentation quality must be measurable to ensure continuous improvement.
 
@@ -18,35 +18,35 @@ Documentation Metrics define the measurements used to monitor the health of the 
 
 ---
 
-# Documentation Metrics Principles
+## Documentation Metrics Principles
 
 FamilyOS documentation metrics follow these principles.
 
-## Measurability
+### Measurability
 
 Metrics must provide objective information.
 
 ---
 
-## Actionability
+### Actionability
 
 Metrics must help identify improvement opportunities.
 
 ---
 
-## Transparency
+### Transparency
 
 Metric definitions must be documented and understandable.
 
 ---
 
-## Continuous Improvement
+### Continuous Improvement
 
 Metrics should support long-term documentation quality evolution.
 
 ---
 
-# Documentation Health Model
+## Documentation Health Model
 
 FamilyOS documentation health is evaluated through:
 
@@ -63,15 +63,15 @@ Documentation Health
 
 ---
 
-# Documentation Coverage
+## Documentation Coverage
 
-## Purpose
+### Purpose
 
 Measures whether required documentation exists.
 
 ---
 
-## Examples
+### Examples
 
 Coverage may evaluate:
 
@@ -82,7 +82,7 @@ Coverage may evaluate:
 
 ---
 
-## Example Metric
+### Example Metric
 
 ```text id="t7z8n4"
 Documentation Coverage =
@@ -92,15 +92,15 @@ Documented Items / Required Items × 100
 
 ---
 
-# Documentation Freshness
+## Documentation Freshness
 
-## Purpose
+### Purpose
 
 Measures whether documentation is regularly reviewed.
 
 ---
 
-## Indicators
+### Indicators
 
 Examples:
 
@@ -110,7 +110,7 @@ Examples:
 
 ---
 
-## Example
+### Example
 
 ```yaml id="m6f4zy"
 freshness:
@@ -120,15 +120,15 @@ freshness:
 
 ---
 
-# Documentation Quality
+## Documentation Quality
 
-## Purpose
+### Purpose
 
 Measures documentation reliability.
 
 ---
 
-## Quality Indicators
+### Quality Indicators
 
 Examples:
 
@@ -138,7 +138,7 @@ Examples:
 
 ---
 
-## Example Metric
+### Example Metric
 
 ```text id="q2h7sv"
 Quality Score =
@@ -148,15 +148,15 @@ Passed Checks / Total Checks × 100
 
 ---
 
-# Documentation Consistency
+## Documentation Consistency
 
-## Purpose
+### Purpose
 
 Measures alignment between documentation sources.
 
 ---
 
-## Indicators
+### Indicators
 
 Examples:
 
@@ -166,15 +166,15 @@ Examples:
 
 ---
 
-# Documentation Traceability
+## Documentation Traceability
 
-## Purpose
+### Purpose
 
 Measures the relationship between documentation and engineering artifacts.
 
 ---
 
-## Traceability Links
+### Traceability Links
 
 Examples:
 
@@ -200,7 +200,7 @@ Documentation
 
 ---
 
-## Example Metric
+### Example Metric
 
 ```text id="9h4q8p"
 Traceability Rate =
@@ -210,15 +210,15 @@ Linked Documents / Total Documents × 100
 
 ---
 
-# Documentation Maintenance Metrics
+## Documentation Maintenance Metrics
 
-## Purpose
+### Purpose
 
 Measures maintenance efficiency.
 
 ---
 
-## Indicators
+### Indicators
 
 Examples:
 
@@ -228,15 +228,15 @@ Examples:
 
 ---
 
-# Documentation Debt Metrics
+## Documentation Debt Metrics
 
-## Purpose
+### Purpose
 
 Measures accumulated documentation problems.
 
 ---
 
-## Documentation Debt Examples
+### Documentation Debt Examples
 
 * missing documents,
 * outdated content,
@@ -245,7 +245,7 @@ Measures accumulated documentation problems.
 
 ---
 
-## Example Metric
+### Example Metric
 
 ```text id="3w9p2m"
 Documentation Debt Count =
@@ -254,51 +254,51 @@ Number of Known Documentation Issues
 
 ---
 
-# Documentation Review Metrics
+## Documentation Review Metrics
 
 Metrics related to review activities:
 
-## Review Coverage
+### Review Coverage
 
 Percentage of documents reviewed.
 
 ---
 
-## Review Duration
+### Review Duration
 
 Time required for approval.
 
 ---
 
-## Review Findings
+### Review Findings
 
 Number of detected issues.
 
 ---
 
-# Documentation Automation Metrics
+## Documentation Automation Metrics
 
 Automation effectiveness may be measured through:
 
-## Validation Success Rate
+### Validation Success Rate
 
 Percentage of successful automated checks.
 
 ---
 
-## Automation Coverage
+### Automation Coverage
 
 Percentage of documents validated automatically.
 
 ---
 
-## Failure Resolution Time
+### Failure Resolution Time
 
 Time needed to resolve validation failures.
 
 ---
 
-# Documentation Dashboard
+## Documentation Dashboard
 
 Future FamilyOS tooling may provide a documentation dashboard.
 
@@ -316,7 +316,7 @@ Debt:            12 items
 
 ---
 
-# Metric Collection
+## Metric Collection
 
 Metrics may be collected from:
 
@@ -328,7 +328,7 @@ Metrics may be collected from:
 
 ---
 
-# Metric Ownership
+## Metric Ownership
 
 Responsibilities:
 
@@ -341,7 +341,7 @@ Responsibilities:
 
 ---
 
-# Metric Evolution
+## Metric Evolution
 
 Metrics evolve with FamilyOS maturity.
 
@@ -353,7 +353,7 @@ Changes require:
 
 ---
 
-# Governance Integration
+## Governance Integration
 
 Documentation metrics support:
 
@@ -364,7 +364,7 @@ Documentation metrics support:
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
 Documentation Metrics integrate with:
 
@@ -375,7 +375,7 @@ Documentation Metrics integrate with:
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 Documentation metrics are compliant when:
 

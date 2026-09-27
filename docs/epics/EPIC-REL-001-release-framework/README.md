@@ -1,8 +1,8 @@
 # Release Framework
 
-# EPIC-REL-001
+## EPIC-REL-001
 
-## Overview
+### Overview
 
 The **FamilyOS Release Framework** defines the official engineering model for preparing, validating, approving, deploying, observing, recovering, measuring, and governing FamilyOS releases.
 
@@ -52,7 +52,7 @@ docs/epics/EPIC-REL-001-release-framework/
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Release Framework is to ensure that FamilyOS releases are:
 
@@ -74,7 +74,7 @@ The framework governs the complete lifecycle from release preparation through ru
 
 ---
 
-# Core Principle
+## Core Principle
 
 The central principle of the Release Framework is:
 
@@ -84,7 +84,7 @@ This principle applies across the complete release lifecycle.
 
 ---
 
-# Why the Release Framework Exists
+## Why the Release Framework Exists
 
 As FamilyOS grows, releases may involve:
 
@@ -116,7 +116,7 @@ EPIC-REL-001 establishes one common release foundation.
 
 ---
 
-# Framework Scope
+## Framework Scope
 
 The Release Framework covers:
 
@@ -153,7 +153,7 @@ The Release Framework covers:
 
 ---
 
-# Release Lifecycle
+## Release Lifecycle
 
 The canonical release lifecycle is conceptually:
 
@@ -201,7 +201,7 @@ The release lifecycle therefore includes both successful delivery and controlled
 
 ---
 
-# Framework Architecture
+## Framework Architecture
 
 The Release Framework integrates the existing FamilyOS engineering foundations.
 
@@ -234,7 +234,7 @@ It does not replace the responsibilities of the underlying frameworks.
 
 ---
 
-# Build Once, Promote Many
+## Build Once, Promote Many
 
 FamilyOS follows the principle:
 
@@ -262,7 +262,7 @@ Rebuilding artifacts between release environments should be avoided where practi
 
 ---
 
-# Release Identity
+## Release Identity
 
 Every release must have explicit identity.
 
@@ -281,7 +281,7 @@ Published release identities must remain traceable and stable.
 
 ---
 
-# Release Candidates
+## Release Candidates
 
 A release candidate represents a specific state proposed for release.
 
@@ -298,7 +298,7 @@ Material changes create a new candidate or require renewed validation.
 
 ---
 
-# Release Readiness
+## Release Readiness
 
 Release readiness determines whether a candidate is prepared for authorization.
 
@@ -321,7 +321,7 @@ Readiness must be based on evidence.
 
 ---
 
-# Release Gates
+## Release Gates
 
 Release gates control progression through the release lifecycle.
 
@@ -350,7 +350,7 @@ Mandatory failed gates must prevent unauthorized release progression.
 
 ---
 
-# Release Approval
+## Release Approval
 
 Approval applies to a specific release candidate.
 
@@ -367,7 +367,7 @@ A materially changed candidate requires renewed consideration.
 
 ---
 
-# Deployment
+## Deployment
 
 Deployment activates an approved release in a target environment.
 
@@ -383,7 +383,7 @@ Deployment success alone does not establish release success.
 
 ---
 
-# Post-Deployment Verification
+## Post-Deployment Verification
 
 After deployment, the runtime state must be verified.
 
@@ -402,7 +402,7 @@ The objective is to confirm that the deployed release behaves acceptably in its 
 
 ---
 
-# Release Stabilization
+## Release Stabilization
 
 Some releases require an observation period before final acceptance.
 
@@ -419,7 +419,7 @@ A release remains under active evaluation until required stabilization criteria 
 
 ---
 
-# Release Acceptance
+## Release Acceptance
 
 Release acceptance marks the transition from deployed candidate to accepted release.
 
@@ -442,7 +442,7 @@ Acceptance must be based on evidence.
 
 ---
 
-# Rollback and Recovery
+## Rollback and Recovery
 
 Every significant production release must have an understood recovery strategy.
 
@@ -467,7 +467,7 @@ Recovery is complete only when the restored platform state has been verified.
 
 ---
 
-# Release Observability
+## Release Observability
 
 Release observability makes production release state visible.
 
@@ -493,7 +493,7 @@ Release observability may use:
 
 ---
 
-# Release Evidence
+## Release Evidence
 
 Release decisions must be supported by authoritative evidence.
 
@@ -516,7 +516,7 @@ Evidence must correspond to the exact release being evaluated.
 
 ---
 
-# Release Traceability
+## Release Traceability
 
 The target traceability model is:
 
@@ -552,7 +552,7 @@ This enables reliable investigation and governance.
 
 ---
 
-# Release Compliance
+## Release Compliance
 
 Release compliance determines whether applicable release controls have been satisfied.
 
@@ -569,7 +569,7 @@ Missing required evidence must never silently become compliance success.
 
 ---
 
-# Release Risk Management
+## Release Risk Management
 
 Every significant release should receive a risk classification.
 
@@ -599,7 +599,7 @@ Control depth should increase with release risk.
 
 ---
 
-# Release Metrics
+## Release Metrics
 
 The Release Framework defines metrics for understanding release system health.
 
@@ -621,7 +621,7 @@ Metrics exist to improve the release system, not to create simplistic individual
 
 ---
 
-# Release Automation
+## Release Automation
 
 Release automation should progressively implement the framework.
 
@@ -650,7 +650,7 @@ Automation must remain observable, governable, and safe.
 
 ---
 
-# Progressive Delivery
+## Progressive Delivery
 
 Future FamilyOS release capabilities may support:
 
@@ -664,7 +664,7 @@ Progressive delivery reduces blast radius by increasing exposure only when evide
 
 ---
 
-# Emergency Releases
+## Emergency Releases
 
 Emergency releases are accelerated releases.
 
@@ -684,7 +684,7 @@ Deferred controls must remain explicit and governed.
 
 ---
 
-# Plugin Releases
+## Plugin Releases
 
 Plugin releases are governed by both plugin compliance and release governance.
 
@@ -708,31 +708,31 @@ Plugin compliance does not independently authorize production release.
 
 ---
 
-# Framework Relationships
+## Framework Relationships
 
 The Release Framework integrates with several FamilyOS engineering foundations.
 
-## Engineering Foundation
+### Engineering Foundation
 
 Provides the broader engineering governance model.
 
-## Documentation Framework
+### Documentation Framework
 
 Defines documentation structure, standards, lifecycle, and governance.
 
-## Testing Framework
+### Testing Framework
 
 Provides test architecture and release-relevant testing evidence.
 
-## Quality Framework
+### Quality Framework
 
 Provides quality principles, quality gates, and quality evidence.
 
-## Build Framework
+### Build Framework
 
 Provides reproducible builds, trusted artifacts, provenance, and integrity.
 
-## Plugin Compliance Framework
+### Plugin Compliance Framework
 
 Provides plugin compliance evidence used during release eligibility assessment.
 
@@ -740,7 +740,7 @@ These frameworks remain independently governed while contributing to release dec
 
 ---
 
-# Documentation Structure
+## Documentation Structure
 
 The canonical Release Framework is maintained under:
 
@@ -787,7 +787,7 @@ The numbered documents are:
 
 ---
 
-# Supporting Artifacts
+## Supporting Artifacts
 
 The framework also includes:
 
@@ -809,7 +809,7 @@ MANIFEST.md
 
 ---
 
-# Recommended Reading Order
+## Recommended Reading Order
 
 For a complete understanding of the framework, the recommended reading order is:
 
@@ -854,7 +854,7 @@ Remaining numbered documents
 
 ---
 
-# Key Documents
+## Key Documents
 
 Readers looking for specific subjects should use:
 
@@ -907,7 +907,7 @@ Framework release
 
 ---
 
-# Canonical Inventory
+## Canonical Inventory
 
 `MANIFEST.md` defines the authoritative framework inventory.
 
@@ -923,7 +923,7 @@ This includes:
 
 ---
 
-# Validation
+## Validation
 
 Framework validation is defined by:
 
@@ -947,7 +947,7 @@ Validation covers:
 
 ---
 
-# Structural Verification
+## Structural Verification
 
 A basic structural review may use:
 
@@ -979,7 +979,7 @@ The expected result is:
 
 ---
 
-# Governance
+## Governance
 
 The Release Framework belongs to the FamilyOS Engineering Platform.
 
@@ -996,7 +996,7 @@ Material architectural changes may require an ADR.
 
 ---
 
-# Versioning
+## Versioning
 
 The Release Framework is versioned as an engineering foundation.
 
@@ -1014,7 +1014,7 @@ Published framework versions should not be silently rewritten.
 
 ---
 
-# Roadmap
+## Roadmap
 
 The framework roadmap is defined in:
 
@@ -1050,7 +1050,7 @@ Framework completion does not require all advanced roadmap capabilities to alrea
 
 ---
 
-# Framework Completion
+## Framework Completion
 
 EPIC-REL-001 is considered complete when:
 
@@ -1078,7 +1078,7 @@ EPIC-REL-001 is considered complete when:
 
 ---
 
-# Framework Baseline
+## Framework Baseline
 
 Once released, EPIC-REL-001 becomes the normative baseline for FamilyOS release engineering.
 
@@ -1099,7 +1099,7 @@ Potential future capabilities include:
 
 ---
 
-# Final Principle
+## Final Principle
 
 The Release Framework exists to ensure that production change remains controlled as FamilyOS grows.
 

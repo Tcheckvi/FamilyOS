@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 16 Test Reporting and Observability
+## 16 Test Reporting and Observability
 
-## Overview
+### Overview
 
 Test execution produces evidence about the state of the FamilyOS platform.
 
@@ -34,7 +34,7 @@ Together they transform individual test executions into actionable engineering e
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the official FamilyOS approach to test reporting and observability.
 
@@ -61,11 +61,11 @@ The objective is to ensure that testing information remains understandable and a
 
 ---
 
-# Reporting Principles
+## Reporting Principles
 
 FamilyOS test reporting follows several fundamental principles.
 
-## Clarity
+### Clarity
 
 Reports must clearly communicate the outcome of test execution.
 
@@ -73,7 +73,7 @@ Developers should not need to inspect large quantities of unrelated output to de
 
 ---
 
-## Actionability
+### Actionability
 
 Failure information must help engineers identify the next debugging action.
 
@@ -81,7 +81,7 @@ A report that only states that something failed provides insufficient diagnostic
 
 ---
 
-## Traceability
+### Traceability
 
 Test results should be traceable to the execution context that produced them.
 
@@ -98,7 +98,7 @@ Relevant context may include:
 
 ---
 
-## Visibility
+### Visibility
 
 Important testing conditions must remain visible.
 
@@ -114,7 +114,7 @@ This includes:
 
 ---
 
-## Consistency
+### Consistency
 
 Reporting conventions should remain consistent across test categories and execution environments.
 
@@ -122,7 +122,7 @@ Developers should not need to learn a completely different reporting model for e
 
 ---
 
-## Proportionality
+### Proportionality
 
 Reporting detail should match the execution context.
 
@@ -132,7 +132,7 @@ Release validation may require detailed persistent reports and artifacts.
 
 ---
 
-# Reporting Model
+## Reporting Model
 
 The FamilyOS test reporting model can be represented as:
 
@@ -168,7 +168,7 @@ Reporting therefore acts as the bridge between test execution and engineering go
 
 ---
 
-# Test Result States
+## Test Result States
 
 The testing system should distinguish meaningful result states.
 
@@ -191,7 +191,7 @@ A test that was not executed successfully must not be represented as equivalent 
 
 ---
 
-# Execution Summary
+## Execution Summary
 
 Every significant test execution should produce a concise summary.
 
@@ -218,7 +218,7 @@ A developer should be able to understand the overall execution state from the su
 
 ---
 
-# Failure Reporting
+## Failure Reporting
 
 Failure reporting is one of the most important responsibilities of the testing system.
 
@@ -238,7 +238,7 @@ Failure output should minimize unrelated information while preserving diagnostic
 
 ---
 
-# Assertion Messages
+## Assertion Messages
 
 Assertions should communicate meaningful differences between expected and actual behavior.
 
@@ -264,7 +264,7 @@ Custom assertion messages should be used where they materially improve diagnosis
 
 ---
 
-# Failure Context
+## Failure Context
 
 Some failures require additional contextual information.
 
@@ -285,7 +285,7 @@ Diagnostic value must remain compatible with FamilyOS security and privacy requi
 
 ---
 
-# Stack Traces
+## Stack Traces
 
 Stack traces are important diagnostic artifacts.
 
@@ -301,7 +301,7 @@ Full diagnostic information should remain accessible when needed.
 
 ---
 
-# Setup and Teardown Failures
+## Setup and Teardown Failures
 
 Failures occurring during fixture setup or resource cleanup must be clearly distinguished from failures in the test behavior itself.
 
@@ -329,7 +329,7 @@ This distinction helps determine whether the problem exists in:
 
 ---
 
-# Test Logging
+## Test Logging
 
 Logs generated during tests should support diagnosis without overwhelming normal output.
 
@@ -346,7 +346,7 @@ Tests should not rely on manually reading uncontrolled console output as their p
 
 ---
 
-# Captured Output
+## Captured Output
 
 Testing frameworks may capture:
 
@@ -360,7 +360,7 @@ This allows successful executions to remain concise while preserving diagnostic 
 
 ---
 
-# Structured Test Reports
+## Structured Test Reports
 
 Automated environments should support machine-readable test reports where appropriate.
 
@@ -379,7 +379,7 @@ The framework should prefer interoperable formats rather than unnecessary propri
 
 ---
 
-# Test Artifacts
+## Test Artifacts
 
 Some tests produce artifacts useful for debugging or validation.
 
@@ -406,7 +406,7 @@ Artifact retention must remain proportional to:
 
 ---
 
-# Artifact Naming
+## Artifact Naming
 
 Test artifacts should use predictable naming conventions.
 
@@ -439,7 +439,7 @@ migration-validation-report.json
 
 ---
 
-# Execution Metadata
+## Execution Metadata
 
 Test reports should capture enough metadata to reproduce and interpret execution.
 
@@ -464,7 +464,7 @@ Automated and release-related execution should provide stronger traceability.
 
 ---
 
-# Environment Visibility
+## Environment Visibility
 
 Environment differences frequently explain inconsistent test behavior.
 
@@ -484,7 +484,7 @@ This information is especially important for compatibility testing and CI-only f
 
 ---
 
-# Test Observability
+## Test Observability
 
 Test observability extends beyond individual execution results.
 
@@ -503,7 +503,7 @@ Observability therefore evaluates the health of the testing system itself.
 
 ---
 
-# Observability Dimensions
+## Observability Dimensions
 
 The FamilyOS Testing Framework recognizes several important observability dimensions.
 
@@ -523,7 +523,7 @@ No single metric can represent overall testing quality.
 
 ---
 
-# Test Health Metrics
+## Test Health Metrics
 
 Useful test-health metrics may include:
 
@@ -544,7 +544,7 @@ Metrics should support engineering decisions rather than exist solely for report
 
 ---
 
-# Test Count
+## Test Count
 
 Test count can indicate growth of the validation system.
 
@@ -566,7 +566,7 @@ Test quantity must never substitute for validation quality.
 
 ---
 
-# Pass Rate
+## Pass Rate
 
 Pass rate provides information about execution outcomes but must be interpreted carefully.
 
@@ -582,7 +582,7 @@ Pass rate is therefore one signal among many.
 
 ---
 
-# Failure Rate
+## Failure Rate
 
 Failure-rate trends can identify:
 
@@ -595,7 +595,7 @@ Repeated failures in the same subsystem should trigger investigation rather than
 
 ---
 
-# Flaky Test Metrics
+## Flaky Test Metrics
 
 Flaky tests must be measurable.
 
@@ -611,7 +611,7 @@ The objective should be a sustained reduction of flakiness.
 
 ---
 
-# Skipped Test Metrics
+## Skipped Test Metrics
 
 Skipped tests should be tracked over time.
 
@@ -627,7 +627,7 @@ Observability should make it possible to distinguish:
 
 ---
 
-# Quarantine Metrics
+## Quarantine Metrics
 
 Quarantined tests should be visible separately from ordinary skipped tests.
 
@@ -645,7 +645,7 @@ Long-lived quarantine entries should trigger review.
 
 ---
 
-# Execution Duration Metrics
+## Execution Duration Metrics
 
 Execution performance should be monitored at multiple levels.
 
@@ -665,7 +665,7 @@ Duration trends help detect gradual degradation before execution time becomes a 
 
 ---
 
-# Slow Test Reporting
+## Slow Test Reporting
 
 The testing system should make the slowest tests discoverable.
 
@@ -681,7 +681,7 @@ This information supports targeted optimization.
 
 ---
 
-# Performance Test Reporting
+## Performance Test Reporting
 
 Performance-test results require specialized reporting.
 
@@ -700,7 +700,7 @@ Performance results should include enough environmental context to make comparis
 
 ---
 
-# Historical Reporting
+## Historical Reporting
 
 Persistent test results enable historical analysis.
 
@@ -722,7 +722,7 @@ A gradual increase in duration may indicate accumulated test-suite performance d
 
 ---
 
-# Trend Analysis
+## Trend Analysis
 
 Trend analysis should focus on meaningful engineering signals.
 
@@ -742,7 +742,7 @@ An increasing test count, for example, may naturally increase total execution du
 
 ---
 
-# Regression Visibility
+## Regression Visibility
 
 Testing observability should make recurring regressions identifiable.
 
@@ -757,7 +757,7 @@ Reporting should therefore support learning from defects rather than merely reco
 
 ---
 
-# CI Reporting
+## CI Reporting
 
 Continuous integration should present test results prominently.
 
@@ -784,7 +784,7 @@ Developers should not need to inspect unrelated build logs to discover basic tes
 
 ---
 
-# Pull Request Reporting
+## Pull Request Reporting
 
 Where supported by the engineering platform, pull requests may surface test information such as:
 
@@ -798,7 +798,7 @@ Reporting should remain concise enough to support review without flooding the pu
 
 ---
 
-# Release Reporting
+## Release Reporting
 
 Release validation requires stronger evidence than ordinary development execution.
 
@@ -817,7 +817,7 @@ Release decisions should be based on explicit validation evidence.
 
 ---
 
-# Quality Gate Integration
+## Quality Gate Integration
 
 Test reporting feeds FamilyOS quality gates.
 
@@ -846,7 +846,7 @@ Quality gates should use structured evidence whenever possible.
 
 ---
 
-# Dashboarding
+## Dashboarding
 
 As FamilyOS grows, dashboards may provide aggregated visibility into test health.
 
@@ -868,7 +868,7 @@ Detailed execution evidence explains why.
 
 ---
 
-# Alerting
+## Alerting
 
 Some test-observability conditions may justify automated alerts.
 
@@ -886,7 +886,7 @@ Excessive alerts reduce their value.
 
 ---
 
-# Ownership
+## Ownership
 
 Important testing signals should have identifiable ownership.
 
@@ -905,7 +905,7 @@ Observability without ownership creates information without remediation.
 
 ---
 
-# Test Failure Classification
+## Test Failure Classification
 
 Failures may be classified to improve analysis.
 
@@ -926,7 +926,7 @@ Classification should not delay immediate debugging but can improve long-term tr
 
 ---
 
-# Infrastructure Failure Visibility
+## Infrastructure Failure Visibility
 
 Infrastructure failures must be distinguishable from product failures.
 
@@ -942,7 +942,7 @@ Treating infrastructure failures as ordinary test failures can distort product-q
 
 ---
 
-# Warning Reporting
+## Warning Reporting
 
 Warnings generated during test execution should remain visible.
 
@@ -958,7 +958,7 @@ A test suite that passes while continuously emitting ignored warnings may still 
 
 ---
 
-# Coverage Reporting
+## Coverage Reporting
 
 Coverage reports may be integrated into testing observability.
 
@@ -975,7 +975,7 @@ High coverage cannot compensate for weak assertions or missing scenarios.
 
 ---
 
-# Reporting Retention
+## Reporting Retention
 
 Not every report needs indefinite retention.
 
@@ -992,7 +992,7 @@ Release validation evidence may require longer retention than routine local or f
 
 ---
 
-# Privacy and Security
+## Privacy and Security
 
 Test reports and artifacts must respect FamilyOS security and privacy principles.
 
@@ -1016,7 +1016,7 @@ Debugging convenience does not justify leaking protected information.
 
 ---
 
-# Machine Readability
+## Machine Readability
 
 Where test results feed automation, reports should provide machine-readable representations.
 
@@ -1042,7 +1042,7 @@ Test Results
 
 ---
 
-# Reporting Reliability
+## Reporting Reliability
 
 Reporting mechanisms themselves must be reliable.
 
@@ -1054,7 +1054,7 @@ Critical reporting failures must remain visible.
 
 ---
 
-# Local Reporting
+## Local Reporting
 
 Local test output should optimize developer feedback.
 
@@ -1070,7 +1070,7 @@ Developers should be able to increase verbosity when deeper investigation is req
 
 ---
 
-# Automated Reporting
+## Automated Reporting
 
 Automated environments require stronger persistence and traceability.
 
@@ -1092,11 +1092,11 @@ The exact combination depends on the execution profile.
 
 ---
 
-# Reporting Profiles
+## Reporting Profiles
 
 FamilyOS may define reporting profiles aligned with execution profiles.
 
-## Developer Reporting Profile
+### Developer Reporting Profile
 
 Optimized for immediate feedback.
 
@@ -1106,7 +1106,7 @@ Includes:
 * detailed failures;
 * duration summary.
 
-## Pull Request Reporting Profile
+### Pull Request Reporting Profile
 
 Optimized for review and integration.
 
@@ -1117,7 +1117,7 @@ Includes:
 * quality-gate status;
 * relevant artifacts.
 
-## Full Validation Reporting Profile
+### Full Validation Reporting Profile
 
 Optimized for repository-level assessment.
 
@@ -1129,7 +1129,7 @@ Includes:
 * skipped and quarantined tests;
 * execution metadata.
 
-## Release Reporting Profile
+### Release Reporting Profile
 
 Optimized for auditable release confidence.
 
@@ -1143,7 +1143,7 @@ Includes:
 
 ---
 
-# Observability Maturity
+## Observability Maturity
 
 Test observability may evolve progressively.
 
@@ -1168,65 +1168,65 @@ FamilyOS should evolve toward higher maturity without introducing unnecessary op
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following reporting and observability practices are discouraged or prohibited.
 
-## Pass/Fail Only
+### Pass/Fail Only
 
 A binary status without useful diagnostic information creates unnecessary debugging effort.
 
 ---
 
-## Hidden Skips
+### Hidden Skips
 
 Skipped tests must not disappear from reporting.
 
 ---
 
-## Silent Retries
+### Silent Retries
 
 Retries must remain visible.
 
 ---
 
-## Log Flooding
+### Log Flooding
 
 Excessive output reduces diagnostic clarity.
 
 ---
 
-## Metrics Without Purpose
+### Metrics Without Purpose
 
 Collecting large numbers of metrics without engineering use creates observability noise.
 
 ---
 
-## Permanent Quarantine Without Visibility
+### Permanent Quarantine Without Visibility
 
 Quarantined tests must remain visible and actionable.
 
 ---
 
-## Sensitive Data in Reports
+### Sensitive Data in Reports
 
 Test diagnostics must never expose protected information.
 
 ---
 
-## Dashboard-Only Diagnostics
+### Dashboard-Only Diagnostics
 
 Dashboards summarize health but must not replace detailed failure evidence.
 
 ---
 
-## Ignored Historical Degradation
+### Ignored Historical Degradation
 
 Slow deterioration in execution reliability or performance should not be accepted simply because individual runs still succeed.
 
 ---
 
-# Reporting Governance
+## Reporting Governance
 
 Reporting conventions and observability policies are governed by the FamilyOS Testing Framework.
 
@@ -1247,7 +1247,7 @@ must preserve the principles established by this framework.
 
 ---
 
-# Relationship With Test Execution
+## Relationship With Test Execution
 
 Test reporting and test execution are closely related but represent different responsibilities.
 
@@ -1283,7 +1283,7 @@ Action
 
 ---
 
-# Relationship With Quality Engineering
+## Relationship With Quality Engineering
 
 Testing observability contributes directly to the FamilyOS Quality Framework.
 
@@ -1300,7 +1300,7 @@ Testing information therefore participates in broader engineering governance.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The FamilyOS test reporting and observability model is considered effective when:
 
@@ -1321,7 +1321,7 @@ The FamilyOS test reporting and observability model is considered effective when
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Testing Framework does not consider a test complete merely because it has executed.
 

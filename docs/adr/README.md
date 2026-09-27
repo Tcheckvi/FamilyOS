@@ -77,6 +77,7 @@ Current ADRs:
 | ADR | Title | Status |
 |---|---|---|
 | ADR-0007 | Official Plugins Architecture | Accepted |
+| ADR-0014 | Agentic AI Integration within the Canonical FamilyOS Architecture | Accepted |
 
 Future ADRs will extend the architectural knowledge base of FamilyOS.
 

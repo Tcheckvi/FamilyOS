@@ -1,8 +1,8 @@
 # Release Framework
 
-# 14 CI/CD Integration
+## 14 CI/CD Integration
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines CI/CD Integration as the controlled use of continuous integration and continuous delivery systems to execute, enforce, observe, and record release workflows.
 
@@ -38,7 +38,7 @@ CI/CD implements it.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of CI/CD Integration is to establish:
 
@@ -63,7 +63,7 @@ The objective is to make release execution repeatable without coupling FamilyOS 
 
 ---
 
-# CI/CD Principle
+## CI/CD Principle
 
 The central principle is:
 
@@ -75,7 +75,7 @@ The meaning and necessity of those steps must remain documented in EPIC-REL-001 
 
 ---
 
-# Continuous Integration Responsibility
+## Continuous Integration Responsibility
 
 Continuous Integration primarily verifies engineering state.
 
@@ -107,7 +107,7 @@ Are generated artifacts correct?
 
 ---
 
-# Continuous Delivery Responsibility
+## Continuous Delivery Responsibility
 
 Continuous Delivery primarily prepares a validated release state for controlled publication.
 
@@ -125,7 +125,7 @@ Continuous Delivery does not necessarily imply automatic publication.
 
 ---
 
-# Continuous Deployment vs Release Publication
+## Continuous Deployment vs Release Publication
 
 FamilyOS MUST distinguish between continuous deployment and release publication.
 
@@ -149,7 +149,7 @@ release == deployment
 
 ---
 
-# Pipeline Architecture
+## Pipeline Architecture
 
 A canonical release pipeline may contain the following stages:
 
@@ -189,7 +189,7 @@ The pipeline must reflect the applicable release profile.
 
 ---
 
-# Validation Pipelines
+## Validation Pipelines
 
 Validation pipelines are generally safe to execute frequently.
 
@@ -218,7 +218,7 @@ These pipelines may run on:
 
 ---
 
-# Publication Pipelines
+## Publication Pipelines
 
 Publication pipelines perform protected external actions.
 
@@ -235,7 +235,7 @@ Publication pipelines MUST have stronger authorization than ordinary CI validati
 
 ---
 
-# Separation of Validation and Publication
+## Separation of Validation and Publication
 
 Where practical, FamilyOS SHOULD separate:
 
@@ -253,7 +253,7 @@ This allows extensive validation without granting publication privileges to ever
 
 ---
 
-# Pipeline Trust Levels
+## Pipeline Trust Levels
 
 Different pipeline stages have different trust requirements.
 
@@ -280,7 +280,7 @@ Credentials and permissions should reflect these trust levels.
 
 ---
 
-# Pull Request Pipelines
+## Pull Request Pipelines
 
 Pull request or merge request pipelines SHOULD normally run without release publication credentials.
 
@@ -297,7 +297,7 @@ They MUST NOT normally be able to publish official releases.
 
 ---
 
-# Protected Branch Pipelines
+## Protected Branch Pipelines
 
 Protected branch pipelines may provide stronger release evidence because they operate on accepted repository state.
 
@@ -312,7 +312,7 @@ Access and mutation rules should be stricter than for ordinary development branc
 
 ---
 
-# Candidate Pipelines
+## Candidate Pipelines
 
 A Release Candidate pipeline should operate on an explicit candidate source state.
 
@@ -335,7 +335,7 @@ without binding it to candidate identity.
 
 ---
 
-# Candidate Pipeline Output
+## Candidate Pipeline Output
 
 A candidate pipeline may produce:
 
@@ -352,7 +352,7 @@ These outputs should remain associated with the exact candidate.
 
 ---
 
-# Stable Publication Pipeline
+## Stable Publication Pipeline
 
 A stable publication pipeline should only execute after applicable validation and approval.
 
@@ -370,7 +370,7 @@ A stable pipeline MUST NOT independently reinterpret an unvalidated branch as re
 
 ---
 
-# Pipeline Triggers
+## Pipeline Triggers
 
 CI/CD pipelines may be triggered by:
 
@@ -386,7 +386,7 @@ Trigger type alone must not determine release authority.
 
 ---
 
-# Tag-Triggered Pipelines
+## Tag-Triggered Pipelines
 
 Tag-triggered pipelines are common.
 
@@ -411,7 +411,7 @@ A tag-triggered publication workflow should verify:
 
 ---
 
-# Release Request Trigger
+## Release Request Trigger
 
 A stronger future model may use an explicit Release Request.
 
@@ -435,7 +435,7 @@ The Release Request may become the entry point for orchestration.
 
 ---
 
-# Manual Pipeline Trigger
+## Manual Pipeline Trigger
 
 Manual triggers MAY be appropriate for controlled release workflows.
 
@@ -450,7 +450,7 @@ Manual trigger must not imply manual policy bypass.
 
 ---
 
-# Scheduled Pipelines
+## Scheduled Pipelines
 
 Scheduled release jobs may be useful for:
 
@@ -463,7 +463,7 @@ Scheduled jobs should not automatically perform stable publication unless govern
 
 ---
 
-# Branch Protection
+## Branch Protection
 
 Release-sensitive branches SHOULD use repository protection where supported.
 
@@ -479,7 +479,7 @@ Branch protection reinforces release governance.
 
 ---
 
-# Tag Protection
+## Tag Protection
 
 Official release tags SHOULD be protected where the repository platform supports it.
 
@@ -493,7 +493,7 @@ Stable tags should be especially protected.
 
 ---
 
-# Repository Synchronization
+## Repository Synchronization
 
 Before publication, the CI/CD workflow should verify that the release source state is available in the authoritative repository.
 
@@ -509,7 +509,7 @@ This prevents release artifacts from referencing unpublished local state.
 
 ---
 
-# Working Tree Concerns
+## Working Tree Concerns
 
 CI/CD environments normally operate from a clean checkout.
 
@@ -523,7 +523,7 @@ However, pipelines must still ensure that:
 
 ---
 
-# Reproducible Checkout
+## Reproducible Checkout
 
 CI/CD workflows SHOULD use deterministic source checkout.
 
@@ -538,7 +538,7 @@ A moving branch ref should be resolved to an exact commit before candidate quali
 
 ---
 
-# CI Build Environment
+## CI Build Environment
 
 Release-critical CI environments should be controlled.
 
@@ -555,7 +555,7 @@ Hidden environment drift can change release results.
 
 ---
 
-# Runner Trust
+## Runner Trust
 
 Publication jobs SHOULD run only on trusted execution environments.
 
@@ -570,7 +570,7 @@ This is particularly important for:
 
 ---
 
-# Ephemeral Runners
+## Ephemeral Runners
 
 Ephemeral release runners are preferred where practical because they reduce persistent contamination between releases.
 
@@ -583,7 +583,7 @@ Benefits include:
 
 ---
 
-# Environment Separation
+## Environment Separation
 
 FamilyOS SHOULD separate lower-trust and privileged release environments.
 
@@ -603,7 +603,7 @@ This limits the impact of compromised validation jobs.
 
 ---
 
-# Credential Injection
+## Credential Injection
 
 CI/CD release credentials should be injected at runtime through secure secret mechanisms.
 
@@ -616,7 +616,7 @@ Credentials MUST NOT be:
 
 ---
 
-# Credential Scope
+## Credential Scope
 
 Credentials should be scoped to the smallest required capability.
 
@@ -632,7 +632,7 @@ A single unrestricted release credential should be avoided where possible.
 
 ---
 
-# Credential Availability
+## Credential Availability
 
 Privileged credentials should only become available after protected gates.
 
@@ -652,7 +652,7 @@ This reduces accidental credential exposure.
 
 ---
 
-# Environment Approval
+## Environment Approval
 
 Some CI/CD systems support protected environments requiring approval before access to secrets or publication.
 
@@ -662,7 +662,7 @@ The governance meaning must remain documented outside the provider configuration
 
 ---
 
-# Approval Gate Integration
+## Approval Gate Integration
 
 A release pipeline may pause between validation and publication.
 
@@ -682,7 +682,7 @@ Approval should identify the candidate and release scope.
 
 ---
 
-# Approval Invalidation
+## Approval Invalidation
 
 If the candidate changes after approval:
 
@@ -698,7 +698,7 @@ The pipeline must not continue using approval bound to an earlier candidate.
 
 ---
 
-# Pipeline Artifacts
+## Pipeline Artifacts
 
 CI systems often support internal pipeline artifacts.
 
@@ -715,7 +715,7 @@ Pipeline artifacts are not automatically official release artifacts.
 
 ---
 
-# Pipeline Artifact Promotion
+## Pipeline Artifact Promotion
 
 The preferred model is:
 
@@ -733,7 +733,7 @@ This avoids rebuilding after qualification.
 
 ---
 
-# Artifact Download and Reupload
+## Artifact Download and Reupload
 
 If publication jobs retrieve artifacts from a previous validation job, the workflow should verify checksums.
 
@@ -749,7 +749,7 @@ This protects artifact identity across pipeline boundaries.
 
 ---
 
-# Build Once Pipeline Model
+## Build Once Pipeline Model
 
 A strong pipeline architecture is:
 
@@ -771,7 +771,7 @@ This provides strong candidate-to-release continuity.
 
 ---
 
-# Rebuild Pipeline Risk
+## Rebuild Pipeline Risk
 
 A weaker pattern is:
 
@@ -791,7 +791,7 @@ If rebuilding cannot be avoided, renewed verification is required.
 
 ---
 
-# Pipeline Evidence
+## Pipeline Evidence
 
 CI/CD should preserve evidence required for release decisions.
 
@@ -809,7 +809,7 @@ Evidence may include:
 
 ---
 
-# Evidence Retention
+## Evidence Retention
 
 Pipeline logs may have limited retention.
 
@@ -819,7 +819,7 @@ Important historical release facts must not depend exclusively on temporary CI l
 
 ---
 
-# Structured Pipeline Output
+## Structured Pipeline Output
 
 Jobs should produce structured outputs where practical.
 
@@ -836,7 +836,7 @@ These outputs can feed later controlled stages.
 
 ---
 
-# Pipeline State
+## Pipeline State
 
 Pipeline status and release state are not the same.
 
@@ -858,7 +858,7 @@ Release lifecycle state must remain explicit.
 
 ---
 
-# Pipeline Failure Model
+## Pipeline Failure Model
 
 CI/CD failures should map to release states appropriately.
 
@@ -878,7 +878,7 @@ The pipeline should preserve enough context to determine the correct release sta
 
 ---
 
-# Failed Pipeline Retry
+## Failed Pipeline Retry
 
 Before retrying a failed release pipeline, the system should inspect previous side effects.
 
@@ -893,7 +893,7 @@ Retry must not recreate or overwrite release identity blindly.
 
 ---
 
-# Job Idempotency
+## Job Idempotency
 
 Publication jobs should be designed for safe re-execution.
 
@@ -917,7 +917,7 @@ package exists with different digest
 
 ---
 
-# Pipeline Concurrency
+## Pipeline Concurrency
 
 Concurrent release pipelines may create race conditions.
 
@@ -932,7 +932,7 @@ Release pipelines SHOULD use concurrency controls where appropriate.
 
 ---
 
-# Release Locking
+## Release Locking
 
 Future CI/CD integration may use a release lock.
 
@@ -952,7 +952,7 @@ The exact implementation is provider-specific.
 
 ---
 
-# Version Reservation
+## Version Reservation
 
 CI/CD orchestration MAY reserve a version before final publication to prevent parallel conflicts.
 
@@ -962,7 +962,7 @@ A stale reservation must be recoverable.
 
 ---
 
-# Candidate Concurrency
+## Candidate Concurrency
 
 Candidate creation should similarly prevent:
 
@@ -975,7 +975,7 @@ under the same target version.
 
 ---
 
-# Pipeline Caching
+## Pipeline Caching
 
 CI caching can improve speed.
 
@@ -989,7 +989,7 @@ Cache usage should be:
 
 ---
 
-# Dependency Caching
+## Dependency Caching
 
 Dependency caches should not bypass lockfile or integrity verification.
 
@@ -997,7 +997,7 @@ A cached dependency remains subject to release dependency policy.
 
 ---
 
-# Test Matrix Integration
+## Test Matrix Integration
 
 CI/CD may execute release validation across a support matrix.
 
@@ -1017,7 +1017,7 @@ The required matrix is defined by compatibility and testing policy.
 
 ---
 
-# Required Jobs
+## Required Jobs
 
 Release profiles should define which CI jobs are mandatory.
 
@@ -1043,7 +1043,7 @@ The logical profile must remain stable.
 
 ---
 
-# Optional Jobs
+## Optional Jobs
 
 Some jobs may be advisory.
 
@@ -1057,7 +1057,7 @@ The pipeline should clearly distinguish blocking and non-blocking results.
 
 ---
 
-# Status Check Semantics
+## Status Check Semantics
 
 Repository platform status checks can enforce release prerequisites.
 
@@ -1067,7 +1067,7 @@ A required check should not exist only because someone once added it to branch p
 
 ---
 
-# Pipeline Templates
+## Pipeline Templates
 
 FamilyOS SHOULD reuse CI/CD templates where release patterns repeat.
 
@@ -1082,7 +1082,7 @@ Templates must remain versioned and reviewed.
 
 ---
 
-# Framework Pipeline Template
+## Framework Pipeline Template
 
 A future framework release template may provide:
 
@@ -1099,7 +1099,7 @@ verify-tag
 
 ---
 
-# Plugin Pipeline Template
+## Plugin Pipeline Template
 
 A plugin template may provide:
 
@@ -1117,7 +1117,7 @@ verify
 
 ---
 
-# Platform Pipeline Template
+## Platform Pipeline Template
 
 A platform release may orchestrate several component pipelines.
 
@@ -1136,7 +1136,7 @@ Platform Release Pipeline
 
 ---
 
-# Parent and Child Pipelines
+## Parent and Child Pipelines
 
 Complex FamilyOS releases may eventually use parent-child pipeline architecture.
 
@@ -1151,7 +1151,7 @@ The parent must preserve component evidence and candidate identities.
 
 ---
 
-# Multi-Repository Pipelines
+## Multi-Repository Pipelines
 
 Future FamilyOS architecture may involve multiple repositories.
 
@@ -1169,7 +1169,7 @@ Each repository state must remain explicit.
 
 ---
 
-# External Services
+## External Services
 
 Release pipelines may interact with external systems.
 
@@ -1185,7 +1185,7 @@ External service failure must be represented as release state, not hidden by pip
 
 ---
 
-# Service Availability
+## Service Availability
 
 A release may be blocked or fail due to publication target availability.
 
@@ -1205,7 +1205,7 @@ These require different recovery actions.
 
 ---
 
-# Network Failure
+## Network Failure
 
 Release automation must assume network operations may fail after remote changes have partially completed.
 
@@ -1213,7 +1213,7 @@ Retry logic should verify remote state before repeating operations.
 
 ---
 
-# Pipeline Timeouts
+## Pipeline Timeouts
 
 Timeouts should produce explicit failed or blocked state.
 
@@ -1223,7 +1223,7 @@ Recovery may need to query the publication target.
 
 ---
 
-# Post-Publication Pipeline
+## Post-Publication Pipeline
 
 After publication, CI/CD may execute verification jobs.
 
@@ -1240,7 +1240,7 @@ Only after applicable verification passes should the release progress toward com
 
 ---
 
-# Public Installation Test
+## Public Installation Test
 
 For package releases, a strong post-publication check is installation through the same distribution path used by consumers.
 
@@ -1260,7 +1260,7 @@ This validates the actual published artifact.
 
 ---
 
-# Pipeline Release Evidence Summary
+## Pipeline Release Evidence Summary
 
 A completed release workflow may produce:
 
@@ -1285,7 +1285,7 @@ RESULT             COMPLETED
 
 ---
 
-# CI/CD Observability
+## CI/CD Observability
 
 Release pipeline interfaces should make it easy to identify:
 
@@ -1300,7 +1300,7 @@ Raw job lists alone are insufficient for mature release operations.
 
 ---
 
-# Pipeline Event Model
+## Pipeline Event Model
 
 CI/CD may emit events corresponding to release lifecycle.
 
@@ -1320,7 +1320,7 @@ The specific telemetry mechanism may vary.
 
 ---
 
-# CI/CD Security
+## CI/CD Security
 
 Release pipelines are part of the software supply chain.
 
@@ -1338,7 +1338,7 @@ Release pipeline security requires layered protection.
 
 ---
 
-# Pipeline Configuration Protection
+## Pipeline Configuration Protection
 
 Changes to release pipeline definitions SHOULD receive appropriate review.
 
@@ -1348,7 +1348,7 @@ A pipeline change can alter how official artifacts are published.
 
 ---
 
-# Workflow Pinning
+## Workflow Pinning
 
 Where pipelines use third-party actions, reusable jobs, or plugins, versions SHOULD be controlled.
 
@@ -1356,7 +1356,7 @@ Unpinned mutable dependencies can alter release behavior unexpectedly.
 
 ---
 
-# Third-Party CI Components
+## Third-Party CI Components
 
 External CI components must be treated as supply-chain dependencies.
 
@@ -1364,7 +1364,7 @@ Their trust, version, and permissions should be reviewed according to release ri
 
 ---
 
-# Secret Minimization
+## Secret Minimization
 
 Jobs that do not require secrets MUST NOT receive them.
 
@@ -1377,7 +1377,7 @@ This includes:
 
 ---
 
-# Untrusted Contribution Isolation
+## Untrusted Contribution Isolation
 
 Pipelines executing code from untrusted contributions must be isolated from release credentials.
 
@@ -1385,7 +1385,7 @@ This is a critical supply-chain security boundary.
 
 ---
 
-# Auditability
+## Auditability
 
 CI/CD release actions should make it possible to identify:
 
@@ -1402,7 +1402,7 @@ This supports incident analysis and governance.
 
 ---
 
-# Provider Independence
+## Provider Independence
 
 EPIC-REL-001 does not require a specific CI/CD platform.
 
@@ -1418,7 +1418,7 @@ The Release Framework defines semantics independently from provider syntax.
 
 ---
 
-# Provider-Specific Capabilities
+## Provider-Specific Capabilities
 
 FamilyOS MAY use provider-specific capabilities such as:
 
@@ -1434,7 +1434,7 @@ The release requirements they satisfy must remain documented independently.
 
 ---
 
-# CI/CD Migration
+## CI/CD Migration
 
 FamilyOS must be able to migrate CI/CD providers without redefining release semantics.
 
@@ -1460,7 +1460,7 @@ publication rules
 
 ---
 
-# CI/CD and Release Profiles
+## CI/CD and Release Profiles
 
 Each release profile should map to a pipeline profile.
 
@@ -1481,7 +1481,7 @@ verification
 
 ---
 
-# Framework Release CI/CD
+## Framework Release CI/CD
 
 For current FamilyOS framework releases, CI/CD integration can mature incrementally.
 
@@ -1501,7 +1501,7 @@ Later automation may support controlled tagging and publication.
 
 ---
 
-# Plugin Release CI/CD
+## Plugin Release CI/CD
 
 Official plugin release pipelines should eventually integrate:
 
@@ -1519,7 +1519,7 @@ verification
 
 ---
 
-# Platform Release CI/CD
+## Platform Release CI/CD
 
 A mature platform release pipeline may coordinate:
 
@@ -1537,7 +1537,7 @@ before producing the platform release.
 
 ---
 
-# Emergency Release CI/CD
+## Emergency Release CI/CD
 
 An emergency pipeline may use an accelerated profile.
 
@@ -1554,7 +1554,7 @@ Emergency release pipelines should exist before incidents occur where practical.
 
 ---
 
-# Security Release CI/CD
+## Security Release CI/CD
 
 Security-sensitive pipelines may require:
 
@@ -1569,7 +1569,7 @@ The pipeline must avoid exposing vulnerability details prematurely.
 
 ---
 
-# CI/CD Compliance
+## CI/CD Compliance
 
 Future Release Compliance may evaluate pipeline requirements.
 
@@ -1585,7 +1585,7 @@ post-publication verification      PASS
 
 ---
 
-# CI/CD Metrics
+## CI/CD Metrics
 
 FamilyOS may track:
 
@@ -1602,7 +1602,7 @@ Metrics should improve reliability and security.
 
 ---
 
-# CI/CD Maturity Model
+## CI/CD Maturity Model
 
 FamilyOS CI/CD release integration may evolve through:
 
@@ -1640,93 +1640,93 @@ multi-component release coordination
 
 ---
 
-# CI/CD Invariants
+## CI/CD Invariants
 
 The following invariants apply.
 
-## CICD1 — CI/CD implements release policy rather than defining it implicitly.
+### CICD1 — CI/CD implements release policy rather than defining it implicitly.
 
-## CICD2 — Release pipelines operate on explicit source and candidate identities.
+### CICD2 — Release pipelines operate on explicit source and candidate identities.
 
-## CICD3 — Validation and privileged publication should be separated where practical.
+### CICD3 — Validation and privileged publication should be separated where practical.
 
-## CICD4 — Untrusted jobs must not receive release credentials.
+### CICD4 — Untrusted jobs must not receive release credentials.
 
-## CICD5 — Candidate artifact identity must survive pipeline boundaries.
+### CICD5 — Candidate artifact identity must survive pipeline boundaries.
 
-## CICD6 — Published artifacts should match validated artifacts where practical.
+### CICD6 — Published artifacts should match validated artifacts where practical.
 
-## CICD7 — Approval must remain bound to the correct candidate.
+### CICD7 — Approval must remain bound to the correct candidate.
 
-## CICD8 — Pipeline success is not automatically release completion.
+### CICD8 — Pipeline success is not automatically release completion.
 
-## CICD9 — Partial remote failure must remain observable.
+### CICD9 — Partial remote failure must remain observable.
 
-## CICD10 — Retry operations must verify existing external state.
+### CICD10 — Retry operations must verify existing external state.
 
-## CICD11 — Critical release evidence must outlive transient pipeline execution where required.
+### CICD11 — Critical release evidence must outlive transient pipeline execution where required.
 
-## CICD12 — CI/CD provider changes must not redefine release semantics.
+### CICD12 — CI/CD provider changes must not redefine release semantics.
 
 ---
 
-# CI/CD Anti-Patterns
+## CI/CD Anti-Patterns
 
-## Pipeline as Constitution
+### Pipeline as Constitution
 
 Treating CI/CD configuration as the only definition of the release process.
 
 ---
 
-## Publish on Any Tag
+### Publish on Any Tag
 
 Automatically publishing every matching tag without validating candidate and approval state.
 
 ---
 
-## Secret Everywhere
+### Secret Everywhere
 
 Providing publication credentials to build and test jobs that do not need them.
 
 ---
 
-## Rebuild in Publish Job
+### Rebuild in Publish Job
 
 Publishing a newly rebuilt artifact after a different candidate artifact passed validation.
 
 ---
 
-## Pipeline Success Equals Release Success
+### Pipeline Success Equals Release Success
 
 Declaring a release complete because all visible jobs are green without verifying publication state.
 
 ---
 
-## Mutable Action Dependencies
+### Mutable Action Dependencies
 
 Using unpinned third-party pipeline components for privileged release operations.
 
 ---
 
-## Retry Without Inspection
+### Retry Without Inspection
 
 Restarting failed release jobs without verifying remote state.
 
 ---
 
-## Approval Detached From Candidate
+### Approval Detached From Candidate
 
 Allowing publication after the approved candidate has changed.
 
 ---
 
-## Temporary Logs as Permanent Evidence
+### Temporary Logs as Permanent Evidence
 
 Relying on short-lived pipeline output as the only historical release record.
 
 ---
 
-# Minimum CI/CD Integration
+## Minimum CI/CD Integration
 
 A minimum useful FamilyOS CI/CD release integration should provide:
 
@@ -1744,7 +1744,7 @@ while publication may initially remain manual.
 
 ---
 
-# Intermediate CI/CD Integration
+## Intermediate CI/CD Integration
 
 The next maturity step should add:
 
@@ -1759,7 +1759,7 @@ publication preparation
 
 ---
 
-# Target CI/CD Integration
+## Target CI/CD Integration
 
 A mature FamilyOS release pipeline should eventually support:
 
@@ -1789,7 +1789,7 @@ completion
 
 ---
 
-# Target Operator Experience
+## Target Operator Experience
 
 A release operator should eventually see a concise pipeline-level view such as:
 
@@ -1820,7 +1820,7 @@ Detailed evidence should remain available underneath this summary.
 
 ---
 
-# Relationship With Release Automation
+## Relationship With Release Automation
 
 `13-Release-Automation.md` defines the general automation model.
 
@@ -1828,13 +1828,13 @@ This document defines how that automation operates in CI/CD environments.
 
 ---
 
-# Relationship With Release Validation
+## Relationship With Release Validation
 
 `12-Release-Validation.md` defines the validation semantics that CI pipelines may execute.
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 `10-Release-Candidates.md` defines candidate identity.
 
@@ -1842,7 +1842,7 @@ CI/CD must preserve candidate identity through builds, artifacts, validation, an
 
 ---
 
-# Relationship With Artifacts and Provenance
+## Relationship With Artifacts and Provenance
 
 `11-Artifacts-and-Provenance.md` defines artifact identity and origin.
 
@@ -1850,7 +1850,7 @@ CI/CD is a major source of build and provenance evidence.
 
 ---
 
-# Relationship With Tagging and Repository State
+## Relationship With Tagging and Repository State
 
 `16-Tagging-and-Repository-State.md` defines authoritative Git tag and repository semantics.
 
@@ -1858,7 +1858,7 @@ CI/CD tagging jobs must follow those rules.
 
 ---
 
-# Relationship With Publishing and Distribution
+## Relationship With Publishing and Distribution
 
 `17-Publishing-and-Distribution.md` defines external publication semantics.
 
@@ -1866,25 +1866,25 @@ CI/CD publication jobs implement those transitions.
 
 ---
 
-# Relationship With Release Security
+## Relationship With Release Security
 
 `19-Release-Security.md` defines security requirements for CI/CD credentials, runners, pipelines, artifacts, and release authority.
 
 ---
 
-# Relationship With Release Observability
+## Relationship With Release Observability
 
 `20-Release-Observability.md` defines how pipeline and release state become visible and historically reconstructable.
 
 ---
 
-# Relationship With Release Governance
+## Relationship With Release Governance
 
 `21-Release-Governance.md` defines which CI/CD operations may run automatically and which require explicit authority.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS CI/CD Integration model establishes continuous integration and continuous delivery systems as controlled execution environments for release engineering.
 

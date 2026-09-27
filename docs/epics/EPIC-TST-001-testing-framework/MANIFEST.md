@@ -1,8 +1,8 @@
 # Testing Framework
 
-# MANIFEST
+## MANIFEST
 
-## Overview
+### Overview
 
 This manifest defines the canonical document set, structure, ownership expectations, validation relationships, and completeness requirements for **EPIC-TST-001 — Testing Framework**.
 
@@ -28,7 +28,7 @@ The canonical Testing Framework consists of:
 
 ---
 
-# EPIC Identification
+## EPIC Identification
 
 ```text
 EPIC ID: EPIC-TST-001
@@ -42,7 +42,7 @@ Historical Publication Tag: v4.2.0-testing-framework
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this manifest is to define:
 
@@ -70,7 +70,7 @@ This document should be used during:
 
 ---
 
-# Canonical Directory
+## Canonical Directory
 
 The canonical directory is:
 
@@ -82,7 +82,7 @@ All canonical EPIC-TST-001 files MUST be maintained under this directory unless 
 
 ---
 
-# Canonical Structure Summary
+## Canonical Structure Summary
 
 The canonical Testing Framework structure is:
 
@@ -103,7 +103,7 @@ This structure is authoritative for the current `1.0.0` Testing Framework baseli
 
 ---
 
-# Canonical Numbered Document Set
+## Canonical Numbered Document Set
 
 The canonical numbered Testing Framework sequence is:
 
@@ -138,7 +138,7 @@ The numbered sequence defines the canonical reading and architectural progressio
 
 ---
 
-# Canonical Control Documents
+## Canonical Control Documents
 
 The baseline includes exactly seven control documents:
 
@@ -160,7 +160,7 @@ Their responsibilities are distinct from the numbered framework chapters.
 
 ---
 
-# Complete Canonical File Set
+## Complete Canonical File Set
 
 The complete canonical file inventory is:
 
@@ -206,7 +206,7 @@ Total:
 
 ---
 
-# Canonical Repository Tree
+## Canonical Repository Tree
 
 ```text
 EPIC-TST-001-testing-framework/
@@ -246,161 +246,161 @@ EPIC-TST-001-testing-framework/
 
 ---
 
-# Document Responsibilities
+## Document Responsibilities
 
-## `00-EPIC.md`
+### `00-EPIC.md`
 
 Defines the canonical Testing Framework EPIC overview, purpose, scope, objectives, and primary framework contract.
 
 ---
 
-## `01-Context.md`
+### `01-Context.md`
 
 Defines the engineering context and motivation for the Testing Framework.
 
 ---
 
-## `02-Vision.md`
+### `02-Vision.md`
 
 Defines the long-term testing vision and target engineering state.
 
 ---
 
-## `03-Testing-Principles.md`
+### `03-Testing-Principles.md`
 
 Defines the normative principles governing FamilyOS testing.
 
 ---
 
-## `04-Testing-Architecture.md`
+### `04-Testing-Architecture.md`
 
 Defines the architectural structure of the Testing Framework.
 
 ---
 
-## `05-Testing-Levels.md`
+### `05-Testing-Levels.md`
 
 Defines the testing levels and their responsibilities.
 
 ---
 
-## `06-Unit-Testing.md`
+### `06-Unit-Testing.md`
 
 Defines unit-testing responsibilities and practices.
 
 ---
 
-## `07-Integration-Testing.md`
+### `07-Integration-Testing.md`
 
 Defines integration-testing responsibilities and practices.
 
 ---
 
-## `08-Functional-and-System-Testing.md`
+### `08-Functional-and-System-Testing.md`
 
 Defines functional and system testing expectations.
 
 ---
 
-## `09-Contract-Testing.md`
+### `09-Contract-Testing.md`
 
 Defines contract-testing expectations and compatibility validation.
 
 ---
 
-## `10-Regression-Testing.md`
+### `10-Regression-Testing.md`
 
 Defines regression-testing principles and responsibilities.
 
 ---
 
-## `11-Test-Data-and-Fixtures.md`
+### `11-Test-Data-and-Fixtures.md`
 
 Defines governance for test data, fixtures, and reusable test state.
 
 ---
 
-## `12-Mocks-and-Test-Doubles.md`
+### `12-Mocks-and-Test-Doubles.md`
 
 Defines policies for mocks, stubs, fakes, and other test doubles.
 
 ---
 
-## `13-Test-Isolation-and-Determinism.md`
+### `13-Test-Isolation-and-Determinism.md`
 
 Defines test-isolation and deterministic-execution requirements.
 
 ---
 
-## `14-Test-Coverage.md`
+### `14-Test-Coverage.md`
 
 Defines coverage expectations and interpretation principles.
 
 ---
 
-## `15-Test-Execution-and-Performance.md`
+### `15-Test-Execution-and-Performance.md`
 
 Defines execution profiles, performance expectations, and test-feedback requirements.
 
 ---
 
-## `16-Test-Reporting-and-Observability.md`
+### `16-Test-Reporting-and-Observability.md`
 
 Defines testing evidence, reporting, observability, and result interpretation.
 
 ---
 
-## `17-Automation-and-CI-Integration.md`
+### `17-Automation-and-CI-Integration.md`
 
 Defines Testing Framework automation and CI integration.
 
 ---
 
-## `18-Testing-Gates.md`
+### `18-Testing-Gates.md`
 
 Defines testing gates used in engineering progression.
 
 ---
 
-## `19-Governance-and-Test-Lifecycle.md`
+### `19-Governance-and-Test-Lifecycle.md`
 
 Defines governance and lifecycle expectations for tests and testing practices.
 
 ---
 
-## `20-Framework-Lifecycle.md`
+### `20-Framework-Lifecycle.md`
 
 Defines lifecycle governance for the Testing Framework itself.
 
 ---
 
-## `21-Roadmap.md`
+### `21-Roadmap.md`
 
 Defines future Testing Framework evolution.
 
 ---
 
-## `22-Validation.md`
+### `22-Validation.md`
 
 Defines how Testing Framework capabilities and framework requirements are validated.
 
 ---
 
-## `23-Implementation-Checklist.md`
+### `23-Implementation-Checklist.md`
 
 Defines implementation and validation tracking for Testing Framework capabilities.
 
 ---
 
-# Control Document Responsibilities
+## Control Document Responsibilities
 
-## `EPIC-TST-001.md`
+### `EPIC-TST-001.md`
 
 Provides the authoritative EPIC-level framework definition, scope, baseline summary, governance context, and overall framework state.
 
 ---
 
-## `EPIC.yaml`
+### `EPIC.yaml`
 
 Provides the machine-readable Testing Framework contract.
 
@@ -422,37 +422,37 @@ It records:
 
 ---
 
-## `README.md`
+### `README.md`
 
 Provides human navigation and high-level orientation.
 
 ---
 
-## `MANIFEST.md`
+### `MANIFEST.md`
 
 Defines the canonical inventory, structural counts, responsibilities, and completeness rules.
 
 ---
 
-## `CHANGELOG.md`
+### `CHANGELOG.md`
 
 Records release-oriented Testing Framework change history.
 
 ---
 
-## `VALIDATION.md`
+### `VALIDATION.md`
 
 Records actual EPIC-level validation evidence and validation state.
 
 ---
 
-## `Revision-History.md`
+### `Revision-History.md`
 
 Preserves deeper Testing Framework evolution and architectural revision history.
 
 ---
 
-# Normative Hierarchy
+## Normative Hierarchy
 
 Where Testing Framework documents differ in abstraction level, the following hierarchy should guide interpretation:
 
@@ -487,7 +487,7 @@ It MUST NOT silently contradict the broader FamilyOS engineering contract.
 
 ---
 
-# Normative Versus Informational Content
+## Normative Versus Informational Content
 
 Testing Framework documentation may contain:
 
@@ -512,7 +512,7 @@ Examples and roadmap descriptions MUST NOT be interpreted as already implemented
 
 ---
 
-# Completeness Requirements
+## Completeness Requirements
 
 The Testing Framework baseline is structurally complete only when:
 
@@ -534,7 +534,7 @@ Structural Completeness: VERIFIED
 
 ---
 
-# Non-Empty Requirement
+## Non-Empty Requirement
 
 No required completed canonical file may remain unintentionally empty.
 
@@ -562,7 +562,7 @@ PASS
 
 ---
 
-# Naming Requirements
+## Naming Requirements
 
 Canonical filenames MUST match this manifest.
 
@@ -586,7 +586,7 @@ Renaming canonical files requires coordinated updates to:
 
 ---
 
-# Sequence Integrity
+## Sequence Integrity
 
 The numbered sequence MUST remain continuous from:
 
@@ -617,7 +617,7 @@ Accidental duplicate numbers or missing sequence entries are structural defects.
 
 ---
 
-# Duplicate Document Policy
+## Duplicate Document Policy
 
 Documents that duplicate canonical responsibilities SHOULD NOT remain indefinitely.
 
@@ -636,7 +636,7 @@ Current canonical inventory contains no unresolved duplicate numbered responsibi
 
 ---
 
-# Legacy File Policy
+## Legacy File Policy
 
 Legacy files may exist temporarily during governed restructuring.
 
@@ -655,11 +655,11 @@ Historical information belongs in version history or revision history rather tha
 
 ---
 
-# Ownership
+## Ownership
 
 The Testing Framework requires explicit ownership at multiple levels.
 
-## Framework Ownership
+### Framework Ownership
 
 FamilyOS Engineering owns the Testing Framework baseline.
 
@@ -675,13 +675,13 @@ Responsibilities include:
 
 ---
 
-## Document Ownership
+### Document Ownership
 
 Each canonical document SHOULD have a clear maintenance responsibility even where explicit per-file owner metadata is not used.
 
 ---
 
-## Implementation Ownership
+### Implementation Ownership
 
 Implementation teams own concrete:
 
@@ -697,7 +697,7 @@ Implementation ownership MUST remain consistent with Testing Framework requireme
 
 ---
 
-# Review Responsibilities
+## Review Responsibilities
 
 Review of EPIC-TST-001 should confirm:
 
@@ -713,7 +713,7 @@ Review of EPIC-TST-001 should confirm:
 
 ---
 
-# Validation Relationship
+## Validation Relationship
 
 The manifest defines **what must exist**.
 
@@ -750,7 +750,7 @@ Implementation Evidence
 
 ---
 
-# EPIC Contract Relationship
+## EPIC Contract Relationship
 
 `EPIC.yaml` is the machine-readable structural and lifecycle contract.
 
@@ -782,7 +782,7 @@ Declared deliverables: 31
 
 ---
 
-# README Relationship
+## README Relationship
 
 `README.md` is the primary human navigation document.
 
@@ -792,7 +792,7 @@ If the README and manifest disagree about the canonical document set, the discre
 
 ---
 
-# Changelog Relationship
+## Changelog Relationship
 
 `CHANGELOG.md` records meaningful framework changes.
 
@@ -807,7 +807,7 @@ the changelog SHOULD record the change.
 
 ---
 
-# Revision History Relationship
+## Revision History Relationship
 
 `Revision-History.md` preserves deeper architectural and structural evolution of the Testing Framework.
 
@@ -815,7 +815,7 @@ Canonical restructuring SHOULD be recorded when it materially changes the framew
 
 ---
 
-# Roadmap Relationship
+## Roadmap Relationship
 
 Future documents or structural extensions SHOULD NOT be added merely because they appear useful.
 
@@ -830,7 +830,7 @@ This prevents uncontrolled documentation expansion.
 
 ---
 
-# Framework Lifecycle Relationship
+## Framework Lifecycle Relationship
 
 Changes to the canonical manifest are governed by:
 
@@ -849,7 +849,7 @@ Significant structural changes SHOULD consider:
 
 ---
 
-# Versioning
+## Versioning
 
 The canonical Testing Framework document version is:
 
@@ -869,7 +869,7 @@ Historical tags MUST remain immutable.
 
 ---
 
-# Structural Validation Commands
+## Structural Validation Commands
 
 Recommended validation:
 
@@ -916,7 +916,7 @@ Empty files:           0
 
 ---
 
-# Canonical Numbered File Count
+## Canonical Numbered File Count
 
 The canonical numbered sequence contains:
 
@@ -934,7 +934,7 @@ Any result other than 24 MUST be investigated.
 
 ---
 
-# Control Document Count
+## Control Document Count
 
 The canonical Testing Framework defines seven required control documents:
 
@@ -956,7 +956,7 @@ Control-document count:
 
 ---
 
-# Canonical File Count
+## Canonical File Count
 
 The complete baseline therefore contains:
 
@@ -988,7 +988,7 @@ PASS
 
 ---
 
-# Manifest Validation Checklist
+## Manifest Validation Checklist
 
 The current canonical manifest has been compared with the repository.
 
@@ -1007,7 +1007,7 @@ The current canonical manifest has been compared with the repository.
 
 ---
 
-# Manifest Status
+## Manifest Status
 
 Current manifest state:
 
@@ -1036,7 +1036,7 @@ VERIFIED
 
 ---
 
-# Repository Quality Context
+## Repository Quality Context
 
 The Testing Framework repository has been revalidated against the current FamilyOS repository state.
 
@@ -1062,7 +1062,7 @@ The manifest records these results only as structural validation context.
 
 ---
 
-# Change Control
+## Change Control
 
 Any future modification to the canonical manifest SHOULD evaluate:
 
@@ -1080,7 +1080,7 @@ The manifest MUST NOT drift independently from the repository contract.
 
 ---
 
-# Manifest Integrity
+## Manifest Integrity
 
 This file SHOULD remain focused on structural governance.
 
@@ -1106,7 +1106,7 @@ EPIC.yaml
 
 ---
 
-# Acceptance Criteria
+## Acceptance Criteria
 
 The manifest is considered verified when:
 
@@ -1125,7 +1125,7 @@ All current manifest acceptance criteria are satisfied.
 
 ---
 
-# Canonical Structural Contract
+## Canonical Structural Contract
 
 The authoritative Testing Framework structure is:
 
@@ -1164,7 +1164,7 @@ PASS
 
 ---
 
-# Final Principle
+## Final Principle
 
 The Testing Framework cannot be governed reliably if its canonical structure is ambiguous.
 
@@ -1180,7 +1180,7 @@ Together they establish the canonical structure of EPIC-TST-001.
 
 ---
 
-# Final Manifest State
+## Final Manifest State
 
 ```text
 EPIC:                   EPIC-TST-001

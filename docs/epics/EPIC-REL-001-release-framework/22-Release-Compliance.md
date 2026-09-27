@@ -1,8 +1,8 @@
 # Release Framework
 
-# 22 Release Compliance
+## 22 Release Compliance
 
-## Overview
+### Overview
 
 Release compliance is the capability to ensure that every FamilyOS release satisfies the policies, controls, standards, evidence requirements, governance rules, and approval conditions that apply to its lifecycle.
 
@@ -31,7 +31,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of release compliance is to establish a consistent and verifiable model for determining whether a FamilyOS release satisfies all applicable release requirements.
 
@@ -61,7 +61,7 @@ Release compliance transforms governance requirements into measurable release co
 
 ---
 
-# Release Compliance Principle
+## Release Compliance Principle
 
 Compliance must be embedded throughout the release lifecycle.
 
@@ -101,45 +101,45 @@ This ensures that compliance is built into the release rather than reconstructed
 
 ---
 
-# Compliance Objectives
+## Compliance Objectives
 
 Release compliance must support several objectives.
 
-## Conformance
+### Conformance
 
 Releases must satisfy applicable FamilyOS policies and standards.
 
-## Evidence
+### Evidence
 
 Compliance claims must be supported by evidence.
 
-## Traceability
+### Traceability
 
 Every significant decision and control result must be traceable.
 
-## Accountability
+### Accountability
 
 Release responsibilities and approval authorities must be identifiable.
 
-## Consistency
+### Consistency
 
 Equivalent releases should be evaluated through equivalent compliance rules.
 
-## Automation
+### Automation
 
 Machine-verifiable requirements should be automated where practical.
 
-## Auditability
+### Auditability
 
 Historical release decisions and evidence must remain reviewable.
 
-## Risk Control
+### Risk Control
 
 Exceptions and deviations must be explicitly evaluated and accepted.
 
 ---
 
-# Compliance Scope
+## Compliance Scope
 
 Release compliance applies to all significant FamilyOS release activities.
 
@@ -163,7 +163,7 @@ However, no production release is exempt from basic traceability and governance 
 
 ---
 
-# Risk-Based Compliance
+## Risk-Based Compliance
 
 Compliance controls should be proportional to release risk.
 
@@ -195,7 +195,7 @@ Risk classification must be recorded.
 
 ---
 
-# Compliance Profile
+## Compliance Profile
 
 Every significant release should be evaluated against a defined compliance profile.
 
@@ -216,7 +216,7 @@ Profiles prevent arbitrary compliance interpretation between releases.
 
 ---
 
-# Control Categories
+## Control Categories
 
 Release compliance is organized across several control categories.
 
@@ -243,7 +243,7 @@ These categories establish the minimum compliance model for the Release Framewor
 
 ---
 
-# Governance Compliance
+## Governance Compliance
 
 Every release must operate within the approved FamilyOS governance model.
 
@@ -262,7 +262,7 @@ Anonymous or unowned production releases are not acceptable.
 
 ---
 
-# Release Ownership
+## Release Ownership
 
 Each significant release must identify an accountable owner.
 
@@ -283,7 +283,7 @@ The requirement is clarity, not unnecessary organizational complexity.
 
 ---
 
-# Traceability Compliance
+## Traceability Compliance
 
 Every release must be traceable to the changes it contains.
 
@@ -326,7 +326,7 @@ A release must not contain unidentified or unexplained changes.
 
 ---
 
-# Source Revision Compliance
+## Source Revision Compliance
 
 The exact source revision used to build a release must be identifiable.
 
@@ -355,7 +355,7 @@ are insufficient release identifiers.
 
 ---
 
-# Build Compliance
+## Build Compliance
 
 Release artifacts must originate from the approved FamilyOS Build Framework.
 
@@ -374,7 +374,7 @@ A release must not substitute unverified local artifacts for approved release ar
 
 ---
 
-# Artifact Integrity Compliance
+## Artifact Integrity Compliance
 
 Artifacts must remain identifiable and verifiable throughout the release lifecycle.
 
@@ -411,7 +411,7 @@ Rebuilding between approval and production deployment should be avoided.
 
 ---
 
-# Testing Compliance
+## Testing Compliance
 
 Testing compliance confirms that required testing has been completed.
 
@@ -432,7 +432,7 @@ The required testing profile must be determined before release approval.
 
 ---
 
-# Test Evidence
+## Test Evidence
 
 Test compliance claims must be evidence-based.
 
@@ -457,7 +457,7 @@ without sufficient traceability to the tested release state.
 
 ---
 
-# Quality Compliance
+## Quality Compliance
 
 The Release Framework integrates with the FamilyOS Quality Framework.
 
@@ -475,7 +475,7 @@ Critical unresolved quality findings must either block the release or require ex
 
 ---
 
-# Quality Gate Compliance
+## Quality Gate Compliance
 
 Release quality gates should expose explicit results.
 
@@ -504,7 +504,7 @@ These states require explicit handling.
 
 ---
 
-# Security Compliance
+## Security Compliance
 
 Security is a mandatory release compliance domain.
 
@@ -523,7 +523,7 @@ Critical security findings should block production release unless a formally aut
 
 ---
 
-# Security Exception Governance
+## Security Exception Governance
 
 Security exceptions require explicit documentation.
 
@@ -545,7 +545,7 @@ Exceptions must be reviewed before expiration.
 
 ---
 
-# Dependency Compliance
+## Dependency Compliance
 
 Release dependencies must comply with applicable dependency management rules.
 
@@ -562,7 +562,7 @@ A release must not introduce unknown or unapproved dependencies into production.
 
 ---
 
-# Documentation Compliance
+## Documentation Compliance
 
 Release documentation must satisfy applicable FamilyOS documentation requirements.
 
@@ -584,7 +584,7 @@ Documentation describing a different artifact or source state is not valid relea
 
 ---
 
-# Release Notes Compliance
+## Release Notes Compliance
 
 Release notes should identify significant changes accurately.
 
@@ -603,7 +603,7 @@ Release notes should not conceal material changes.
 
 ---
 
-# Version Compliance
+## Version Compliance
 
 Release versions must comply with the FamilyOS versioning policy.
 
@@ -620,7 +620,7 @@ A release version must identify one unique release state.
 
 ---
 
-# Tag Compliance
+## Tag Compliance
 
 Production release tags must be immutable after publication.
 
@@ -630,7 +630,7 @@ A release process must prevent silent reassignment of an existing production tag
 
 ---
 
-# Deployment Compliance
+## Deployment Compliance
 
 Deployment must follow approved release procedures.
 
@@ -651,7 +651,7 @@ However, manual actions must remain controlled and traceable.
 
 ---
 
-# Environment Compliance
+## Environment Compliance
 
 Release controls may differ between environments.
 
@@ -672,7 +672,7 @@ A release must not accidentally inherit lower-environment compliance rules when 
 
 ---
 
-# Configuration Compliance
+## Configuration Compliance
 
 Configuration changes must be governed as release changes when they materially affect runtime behavior.
 
@@ -691,7 +691,7 @@ Only safe identifiers or references should be retained.
 
 ---
 
-# Migration Compliance
+## Migration Compliance
 
 Significant migrations require explicit compliance controls.
 
@@ -710,7 +710,7 @@ Irreversible migrations require stronger controls.
 
 ---
 
-# Rollback Compliance
+## Rollback Compliance
 
 Production releases must satisfy applicable rollback and recovery requirements.
 
@@ -728,7 +728,7 @@ A release with no known recovery path represents a significant compliance risk.
 
 ---
 
-# Observability Compliance
+## Observability Compliance
 
 A release must provide sufficient observability for its risk level.
 
@@ -746,7 +746,7 @@ Critical releases should not proceed when required observability is unavailable.
 
 ---
 
-# Approval Compliance
+## Approval Compliance
 
 Release approvals must be explicit and traceable.
 
@@ -766,7 +766,7 @@ If the release artifact changes materially after approval, revalidation may be r
 
 ---
 
-# Separation of Duties
+## Separation of Duties
 
 Where appropriate, FamilyOS may apply separation of duties.
 
@@ -793,7 +793,7 @@ The principle is independent oversight where justified.
 
 ---
 
-# Evidence Model
+## Evidence Model
 
 Compliance depends on evidence.
 
@@ -823,7 +823,7 @@ Evidence should be:
 
 ---
 
-# Evidence Sources
+## Evidence Sources
 
 Compliance evidence may originate from:
 
@@ -842,7 +842,7 @@ Evidence should preferably be generated automatically when possible.
 
 ---
 
-# Compliance Matrix
+## Compliance Matrix
 
 A release compliance matrix provides a structured view of applicable controls.
 
@@ -867,7 +867,7 @@ The matrix should be generated from authoritative evidence whenever practical.
 
 ---
 
-# Compliance Status
+## Compliance Status
 
 Release compliance should expose an explicit status.
 
@@ -880,19 +880,19 @@ NON_COMPLIANT
 PENDING
 ```
 
-## COMPLIANT
+### COMPLIANT
 
 All mandatory controls are satisfied.
 
-## COMPLIANT_WITH_EXCEPTIONS
+### COMPLIANT_WITH_EXCEPTIONS
 
 Mandatory controls have approved exceptions.
 
-## NON_COMPLIANT
+### NON_COMPLIANT
 
 One or more required controls are not satisfied and no valid exception exists.
 
-## PENDING
+### PENDING
 
 Required evidence or approval is incomplete.
 
@@ -912,7 +912,7 @@ state.
 
 ---
 
-# Compliance Gates
+## Compliance Gates
 
 Compliance should participate directly in release gates.
 
@@ -932,7 +932,7 @@ Human review remains appropriate for risk-based or contextual decisions.
 
 ---
 
-# Fail-Closed Behavior
+## Fail-Closed Behavior
 
 Critical compliance gates should fail closed.
 
@@ -966,7 +966,7 @@ depending on the release policy.
 
 ---
 
-# Exception Management
+## Exception Management
 
 Not every deviation requires permanent release blocking.
 
@@ -986,7 +986,7 @@ An exception is not equivalent to ignoring a failed control.
 
 ---
 
-# Exception Record
+## Exception Record
 
 An exception record should include:
 
@@ -1010,7 +1010,7 @@ Repeated exceptions against the same control indicate a systemic problem that re
 
 ---
 
-# Emergency Release Compliance
+## Emergency Release Compliance
 
 Emergency releases require accelerated processes, not uncontrolled processes.
 
@@ -1032,7 +1032,7 @@ Controls may be deferred only through explicit emergency governance.
 
 ---
 
-# Hotfix Compliance
+## Hotfix Compliance
 
 Hotfixes must remain part of normal release history.
 
@@ -1049,7 +1049,7 @@ Hotfixes must not become undocumented production-only changes.
 
 ---
 
-# Plugin Release Compliance
+## Plugin Release Compliance
 
 FamilyOS plugin releases are subject to both release controls and Plugin Compliance Framework requirements.
 
@@ -1070,7 +1070,7 @@ A plugin must not bypass platform release governance merely because it is indepe
 
 ---
 
-# Platform Compatibility Compliance
+## Platform Compatibility Compliance
 
 Plugin and component releases must verify compatibility with supported FamilyOS platform versions.
 
@@ -1086,7 +1086,7 @@ Unsupported compatibility combinations must not be promoted as compliant.
 
 ---
 
-# Compliance Reporting
+## Compliance Reporting
 
 Each significant release should produce a compliance summary.
 
@@ -1110,7 +1110,7 @@ The report should be concise enough for decision-making while linking to detaile
 
 ---
 
-# Audit Trail
+## Audit Trail
 
 Release compliance must preserve an audit trail.
 
@@ -1132,7 +1132,7 @@ It should not rely on reconstructing fragmented information after an incident.
 
 ---
 
-# Evidence Retention
+## Evidence Retention
 
 Compliance evidence must be retained according to approved FamilyOS policies.
 
@@ -1148,7 +1148,7 @@ Evidence required for audit or investigation must not be deleted prematurely.
 
 ---
 
-# Evidence Immutability
+## Evidence Immutability
 
 Certain release evidence should be immutable or protected against unauthorized modification.
 
@@ -1165,7 +1165,7 @@ Integrity protections must match the importance of the evidence.
 
 ---
 
-# Compliance Automation
+## Compliance Automation
 
 Compliance automation should reduce manual effort and increase consistency.
 
@@ -1185,7 +1185,7 @@ Automation should produce explicit machine-readable results.
 
 ---
 
-# Policy as Code
+## Policy as Code
 
 Where practical, release compliance rules may be implemented as policy as code.
 
@@ -1205,7 +1205,7 @@ However, policy definitions themselves must be governed and reviewed.
 
 ---
 
-# Compliance Drift
+## Compliance Drift
 
 Release controls may become outdated as the platform evolves.
 
@@ -1224,7 +1224,7 @@ Compliance must evolve with the platform.
 
 ---
 
-# Compliance Metrics
+## Compliance Metrics
 
 Useful release compliance metrics include:
 
@@ -1242,7 +1242,7 @@ Metrics should support improvement, not encourage superficial compliance behavio
 
 ---
 
-# Compliance Quality
+## Compliance Quality
 
 A high number of passing controls does not automatically indicate strong compliance.
 
@@ -1259,7 +1259,7 @@ Every mandatory control should have a clear purpose.
 
 ---
 
-# Relationship With Plugin Compliance Framework
+## Relationship With Plugin Compliance Framework
 
 The Plugin Compliance Framework governs structural and behavioral compliance of FamilyOS plugins.
 
@@ -1286,7 +1286,7 @@ Release-specific controls must still be satisfied.
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 The Build Framework provides evidence for:
 
@@ -1300,7 +1300,7 @@ Release compliance consumes this evidence during release evaluation.
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 The Testing Framework defines how verification is performed.
 
@@ -1312,7 +1312,7 @@ Compliance evaluates whether the required evidence is sufficient.
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 The Quality Framework establishes quality expectations and gates.
 
@@ -1320,7 +1320,7 @@ Release compliance ensures that required quality controls are satisfied or expli
 
 ---
 
-# Relationship With Security Framework
+## Relationship With Security Framework
 
 Security controls define release security requirements.
 
@@ -1330,7 +1330,7 @@ Security remains an independent authority over security-specific requirements.
 
 ---
 
-# Relationship With Release Observability
+## Relationship With Release Observability
 
 Release observability provides runtime evidence that supports post-deployment compliance.
 
@@ -1346,7 +1346,7 @@ Observability therefore extends release compliance beyond pre-deployment approva
 
 ---
 
-# Post-Release Compliance Verification
+## Post-Release Compliance Verification
 
 Some compliance controls can only be confirmed after deployment.
 
@@ -1374,7 +1374,7 @@ Final release closure may require both.
 
 ---
 
-# Compliance Review
+## Compliance Review
 
 High-risk releases may require a formal compliance review.
 
@@ -1391,7 +1391,7 @@ The review must focus on material risk rather than ceremonial process.
 
 ---
 
-# Non-Compliance Handling
+## Non-Compliance Handling
 
 When a release is non-compliant, the framework must define an explicit response.
 
@@ -1409,7 +1409,7 @@ Production deployment must not proceed silently after mandatory compliance failu
 
 ---
 
-# Compliance Failure After Deployment
+## Compliance Failure After Deployment
 
 A release may be discovered to be non-compliant after deployment.
 
@@ -1438,7 +1438,7 @@ Risk must be assessed.
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Release compliance must improve based on evidence.
 
@@ -1465,53 +1465,53 @@ Improvements may include:
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices are prohibited or strongly discouraged.
 
-## Compliance After Deployment
+### Compliance After Deployment
 
 Attempting to reconstruct required evidence only after production release.
 
-## Approval Without Evidence
+### Approval Without Evidence
 
 Approving a release without sufficient information to evaluate it.
 
-## Checkbox Compliance
+### Checkbox Compliance
 
 Treating control completion as more important than actual risk reduction.
 
-## Manual Evidence Copying
+### Manual Evidence Copying
 
 Repeatedly copying results into documents when authoritative systems can provide direct references.
 
-## Silent Exceptions
+### Silent Exceptions
 
 Ignoring failed controls without explicit risk acceptance.
 
-## Permanent Temporary Exceptions
+### Permanent Temporary Exceptions
 
 Allowing time-bounded exceptions to remain active indefinitely.
 
-## Artifact Substitution
+### Artifact Substitution
 
 Deploying an artifact different from the one that was validated and approved.
 
-## Mutable Release Tags
+### Mutable Release Tags
 
 Changing a published production tag to point to different source code.
 
-## Unknown Production State
+### Unknown Production State
 
 Operating production without a clear release identity.
 
-## Emergency Means Uncontrolled
+### Emergency Means Uncontrolled
 
 Using urgency as justification for eliminating all governance and evidence requirements.
 
 ---
 
-# Required Outcomes
+## Required Outcomes
 
 Implementation of this framework section must ensure that:
 
@@ -1533,7 +1533,7 @@ Implementation of this framework section must ensure that:
 
 ---
 
-# Final Release Compliance Principle
+## Final Release Compliance Principle
 
 Release compliance is not an administrative layer added after engineering work is complete.
 

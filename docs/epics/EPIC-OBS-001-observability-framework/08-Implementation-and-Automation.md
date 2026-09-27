@@ -1,10 +1,10 @@
 # Implementation and Automation
 
-# EPIC-OBS-001
+## EPIC-OBS-001
 
-## Implementation and Automation
+### Implementation and Automation
 
-## Overview
+### Overview
 
 This document defines the implementation strategy for the FamilyOS Observability Framework and establishes the foundation for future observability automation.
 
@@ -20,7 +20,7 @@ The implementation strategy follows the principle:
 
 ---
 
-# Objectives
+## Objectives
 
 The implementation must:
 
@@ -40,7 +40,7 @@ The implementation must:
 
 ---
 
-# Implementation Philosophy
+## Implementation Philosophy
 
 FamilyOS SHOULD implement observability incrementally.
 
@@ -68,7 +68,7 @@ Each stage should remain usable before the next stage is introduced.
 
 ---
 
-# Architecture First, Infrastructure Later
+## Architecture First, Infrastructure Later
 
 FamilyOS must distinguish between observability architecture and observability infrastructure.
 
@@ -99,7 +99,7 @@ External infrastructure should be introduced only when operational requirements 
 
 ---
 
-# Core Implementation Layers
+## Core Implementation Layers
 
 The initial implementation SHOULD follow a layered model.
 
@@ -124,7 +124,7 @@ Application and domain components should depend on FamilyOS contracts rather tha
 
 ---
 
-# Proposed Package Structure
+## Proposed Package Structure
 
 A minimal implementation may use a structure similar to:
 
@@ -152,7 +152,7 @@ Additional modules should only be introduced when concrete implementation comple
 
 ---
 
-# Observability Context
+## Observability Context
 
 The first runtime primitive SHOULD be an observability context.
 
@@ -172,7 +172,7 @@ Context enrichment should produce controlled derived contexts rather than unpred
 
 ---
 
-# Context Creation
+## Context Creation
 
 Entry points SHOULD create context when none exists.
 
@@ -200,7 +200,7 @@ Application Execution
 
 ---
 
-# Context Propagation
+## Context Propagation
 
 Context SHOULD propagate through application boundaries without becoming domain data.
 
@@ -212,7 +212,7 @@ This preserves architectural separation.
 
 ---
 
-# Structured Logger
+## Structured Logger
 
 FamilyOS SHOULD provide a structured logging abstraction.
 
@@ -243,7 +243,7 @@ A new logging engine is unnecessary.
 
 ---
 
-# Logging Provider
+## Logging Provider
 
 The initial logging provider SHOULD use existing Python capabilities where practical.
 
@@ -263,7 +263,7 @@ This provides a stable FamilyOS abstraction without introducing unnecessary depe
 
 ---
 
-# Metrics Interface
+## Metrics Interface
 
 FamilyOS SHOULD define a minimal metrics interface.
 
@@ -283,7 +283,7 @@ Advanced metric types should not be introduced until required.
 
 ---
 
-# In-Memory Metrics
+## In-Memory Metrics
 
 The initial implementation SHOULD support an in-memory metric provider.
 
@@ -313,7 +313,7 @@ No external metrics server is required initially.
 
 ---
 
-# Tracing Interface
+## Tracing Interface
 
 FamilyOS SHOULD provide a minimal tracing abstraction.
 
@@ -338,7 +338,7 @@ A span should support:
 
 ---
 
-# Span Lifecycle
+## Span Lifecycle
 
 The preferred execution model is:
 
@@ -358,7 +358,7 @@ Context-manager support MAY simplify instrumentation where consistent with Famil
 
 ---
 
-# Health Interface
+## Health Interface
 
 The implementation SHOULD define stable health models.
 
@@ -383,7 +383,7 @@ UNKNOWN
 
 ---
 
-# Health Registry
+## Health Registry
 
 A lightweight registry MAY coordinate available health checks.
 
@@ -402,7 +402,7 @@ The registry may aggregate results into system health.
 
 ---
 
-# Diagnostics Interface
+## Diagnostics Interface
 
 The initial diagnostics model SHOULD remain limited.
 
@@ -420,7 +420,7 @@ It SHOULD NOT provide unrestricted object dumps or arbitrary runtime introspecti
 
 ---
 
-# Alerting Implementation
+## Alerting Implementation
 
 A complete alert-management system is outside the initial implementation scope.
 
@@ -440,7 +440,7 @@ Alert delivery systems belong to future operational infrastructure.
 
 ---
 
-# Observability Facade
+## Observability Facade
 
 FamilyOS MAY provide a simple facade to reduce instrumentation complexity.
 
@@ -462,7 +462,7 @@ It must not become a service locator for unrelated platform capabilities.
 
 ---
 
-# Dependency Injection
+## Dependency Injection
 
 Observability providers SHOULD be injectable where practical.
 
@@ -483,7 +483,7 @@ Components should not construct external telemetry clients directly.
 
 ---
 
-# No Vendor Dependency in Core
+## No Vendor Dependency in Core
 
 Core FamilyOS code MUST NOT directly depend on vendor-specific observability SDKs unless isolated behind an adapter.
 
@@ -506,7 +506,7 @@ This preserves replaceability.
 
 ---
 
-# Plugin Integration
+## Plugin Integration
 
 Plugins SHOULD receive or access observability through standard FamilyOS runtime mechanisms.
 
@@ -528,7 +528,7 @@ This keeps official and compliant third-party plugins aligned with platform obse
 
 ---
 
-# Initial Instrumentation Targets
+## Initial Instrumentation Targets
 
 FamilyOS SHOULD NOT instrument everything immediately.
 
@@ -554,7 +554,7 @@ These boundaries provide significant diagnostic value with limited complexity.
 
 ---
 
-# Instrumentation Pattern
+## Instrumentation Pattern
 
 A typical operation may follow:
 
@@ -582,7 +582,7 @@ Instrumentation remains proportional.
 
 ---
 
-# Failure Instrumentation
+## Failure Instrumentation
 
 Failures SHOULD produce structured evidence.
 
@@ -600,7 +600,7 @@ The same exception SHOULD NOT be redundantly logged at every internal layer.
 
 ---
 
-# Decorators and Helpers
+## Decorators and Helpers
 
 FamilyOS MAY introduce instrumentation helpers when repeated patterns become clear.
 
@@ -618,7 +618,7 @@ Premature instrumentation magic should be avoided.
 
 ---
 
-# Test Provider
+## Test Provider
 
 A deterministic test provider is a high-priority implementation requirement.
 
@@ -646,7 +646,7 @@ Tests can then inspect captured evidence directly.
 
 ---
 
-# Observability Assertions
+## Observability Assertions
 
 Tests may provide helpers such as:
 
@@ -666,7 +666,7 @@ These helpers SHOULD test semantic contracts rather than formatting details.
 
 ---
 
-# Security Tests
+## Security Tests
 
 The implementation MUST include tests that deliberately introduce sensitive fixture values.
 
@@ -688,7 +688,7 @@ This converts privacy requirements into executable evidence.
 
 ---
 
-# Static Quality
+## Static Quality
 
 All observability implementation code MUST follow existing FamilyOS quality requirements.
 
@@ -704,7 +704,7 @@ Observability infrastructure is not exempt from normal engineering standards.
 
 ---
 
-# Performance Testing
+## Performance Testing
 
 Initial observability performance testing SHOULD remain proportional.
 
@@ -714,7 +714,7 @@ Micro-optimization is unnecessary before actual performance data exists.
 
 ---
 
-# Configuration
+## Configuration
 
 The implementation SHOULD support configuration for behavior such as:
 
@@ -742,7 +742,7 @@ secrets allowed
 
 ---
 
-# Default Configuration
+## Default Configuration
 
 FamilyOS SHOULD provide safe defaults.
 
@@ -761,7 +761,7 @@ A fresh development environment should not require external telemetry infrastruc
 
 ---
 
-# Automation Foundation
+## Automation Foundation
 
 Observability automation consumes standardized runtime evidence.
 
@@ -783,7 +783,7 @@ EPIC-OBS-001 establishes the first two layers and basic foundations for the thir
 
 ---
 
-# Health Automation
+## Health Automation
 
 Health contracts may later support:
 
@@ -807,7 +807,7 @@ The response mechanism belongs primarily to the future Operations Framework.
 
 ---
 
-# Release Automation
+## Release Automation
 
 The Release Framework may consume observability evidence.
 
@@ -831,7 +831,7 @@ This creates runtime evidence for release confidence.
 
 ---
 
-# Quality Automation
+## Quality Automation
 
 Observability metrics may eventually contribute to quality gates.
 
@@ -851,7 +851,7 @@ Quality gates SHOULD use stable contracts rather than arbitrary text parsing.
 
 ---
 
-# Plugin Compliance Automation
+## Plugin Compliance Automation
 
 Plugin Compliance may validate observability behavior automatically.
 
@@ -873,7 +873,7 @@ This strengthens plugin interoperability.
 
 ---
 
-# Diagnostic Automation
+## Diagnostic Automation
 
 Future diagnostic automation may combine:
 
@@ -899,7 +899,7 @@ It ensures the necessary structured evidence exists.
 
 ---
 
-# AI-Assisted Operations
+## AI-Assisted Operations
 
 FamilyOS may eventually use AI to assist operational diagnosis.
 
@@ -923,11 +923,11 @@ AI SHOULD NOT receive unrestricted private family data merely because it partici
 
 ---
 
-# Implementation Phases
+## Implementation Phases
 
 The implementation SHOULD be divided into small phases.
 
-## Phase 1 — Core Contracts
+### Phase 1 — Core Contracts
 
 Implement:
 
@@ -942,7 +942,7 @@ Health Models
 
 ---
 
-## Phase 2 — Local Providers
+### Phase 2 — Local Providers
 
 Implement:
 
@@ -956,7 +956,7 @@ Basic Diagnostics
 
 ---
 
-## Phase 3 — Platform Instrumentation
+### Phase 3 — Platform Instrumentation
 
 Instrument:
 
@@ -969,13 +969,13 @@ Critical Repository Boundaries
 
 ---
 
-## Phase 4 — Plugin Integration
+### Phase 4 — Plugin Integration
 
 Integrate official plugins with standard observability contracts.
 
 ---
 
-## Phase 5 — Validation
+### Phase 5 — Validation
 
 Run:
 
@@ -989,7 +989,7 @@ Correlation Tests
 
 ---
 
-## Phase 6 — External Integration
+### Phase 6 — External Integration
 
 Only when justified:
 
@@ -1005,7 +1005,7 @@ This phase is NOT required to establish the initial framework.
 
 ---
 
-# Avoided Complexity
+## Avoided Complexity
 
 The initial implementation SHOULD NOT require:
 
@@ -1021,7 +1021,7 @@ These may be introduced later if real operational requirements justify them.
 
 ---
 
-# Definition of Implementation Complete
+## Definition of Implementation Complete
 
 The initial Observability Framework implementation is complete when:
 
@@ -1044,7 +1044,7 @@ External observability infrastructure is not required for this definition.
 
 ---
 
-# Transition to Code
+## Transition to Code
 
 Once the EPIC documentation is validated, FamilyOS SHOULD stop expanding the observability specification unless implementation reveals a concrete architectural gap.
 
@@ -1068,7 +1068,7 @@ Documentation should then change because the architecture changed, not because a
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 This implementation strategy is successful when FamilyOS gains useful runtime visibility without creating unnecessary infrastructure complexity.
 
@@ -1087,7 +1087,7 @@ while providing a stable base for future operations.
 
 ---
 
-# Conclusion
+## Conclusion
 
 EPIC-OBS-001 should result in working observability capabilities, not merely an observability specification.
 

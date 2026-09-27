@@ -1,10 +1,10 @@
 # Operations Framework
 
-# EPIC-OPS-001
+## EPIC-OPS-001
 
-## Operations Framework
+### Operations Framework
 
-## Overview
+### Overview
 
 EPIC-OPS-001 — Operations Framework establishes the official operational foundation for the FamilyOS ecosystem.
 
@@ -29,7 +29,7 @@ Its purpose is to establish sufficient operational architecture for implementati
 
 ---
 
-# Purpose
+## Purpose
 
 The Operations Framework provides the foundation required to:
 
@@ -57,7 +57,7 @@ The objective is to establish a coherent operational model that can be implement
 
 ---
 
-# Strategic Intent
+## Strategic Intent
 
 FamilyOS already establishes how software is:
 
@@ -93,7 +93,7 @@ The Operations Framework therefore closes the gap between software delivery and 
 
 ---
 
-# Context
+## Context
 
 A system can be correctly designed, tested, built, and released while still failing operationally.
 
@@ -117,7 +117,7 @@ EPIC-OPS-001 defines how FamilyOS prepares for, detects, manages, and learns fro
 
 ---
 
-# Vision
+## Vision
 
 The FamilyOS operational vision is:
 
@@ -129,7 +129,7 @@ The objective is controlled failure, predictable response, and verifiable recove
 
 ---
 
-# Core Operational Questions
+## Core Operational Questions
 
 The Operations Framework must make it possible to answer:
 
@@ -173,7 +173,7 @@ These questions define the core FamilyOS operational responsibility.
 
 ---
 
-# Operational Model
+## Operational Model
 
 The high-level operational model is:
 
@@ -205,7 +205,7 @@ This model applies whether actions are manual or automated.
 
 ---
 
-# Operations as Engineering
+## Operations as Engineering
 
 Operations is not treated as a separate activity that begins after engineering ends.
 
@@ -233,7 +233,7 @@ Operability is therefore an engineering quality.
 
 ---
 
-# Operability
+## Operability
 
 A FamilyOS component is operable when its runtime behavior is sufficiently:
 
@@ -254,7 +254,7 @@ Operability remains proportional to responsibility and risk.
 
 ---
 
-# Architecture Position
+## Architecture Position
 
 The Operations Framework sits at the end of the current broad FamilyOS engineering foundation sequence.
 
@@ -282,7 +282,7 @@ Operations consumes the preceding frameworks rather than replacing them.
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 The Engineering Foundation defines how FamilyOS software is designed and developed.
 
@@ -301,7 +301,7 @@ SHOULD consider operational consequences.
 
 ---
 
-# Relationship With Testing
+## Relationship With Testing
 
 The Testing Framework verifies expected software behavior.
 
@@ -320,7 +320,7 @@ Operational behavior SHOULD be deterministic enough to test where practical.
 
 ---
 
-# Relationship With Quality
+## Relationship With Quality
 
 The Quality Framework provides engineering quality expectations and evidence.
 
@@ -338,7 +338,7 @@ Operational evidence may therefore contribute to FamilyOS quality decisions.
 
 ---
 
-# Relationship With Build
+## Relationship With Build
 
 The Build Framework produces controlled artifacts.
 
@@ -348,7 +348,7 @@ Runtime identity SHOULD remain traceable to the build and release that produced 
 
 ---
 
-# Relationship With Release
+## Relationship With Release
 
 The Release Framework determines which artifacts are approved for publication.
 
@@ -372,7 +372,7 @@ Operations MUST NOT create an independent competing release lifecycle.
 
 ---
 
-# Relationship With Observability
+## Relationship With Observability
 
 EPIC-OBS-001 provides the runtime evidence required by operations.
 
@@ -408,7 +408,7 @@ Operations MUST reuse FamilyOS observability contracts.
 
 ---
 
-# Relationship With Security
+## Relationship With Security
 
 EPIC-SEC-001 establishes:
 
@@ -425,7 +425,7 @@ Privileged operational actions MUST NOT become security bypasses.
 
 ---
 
-# Relationship With Plugin Compliance
+## Relationship With Plugin Compliance
 
 Operationally relevant plugin requirements may be validated through the existing Plugin Compliance Framework.
 
@@ -435,7 +435,7 @@ Plugin Compliance may validate applicable plugin conformance.
 
 ---
 
-# Runtime Identity
+## Runtime Identity
 
 Every meaningful runtime SHOULD provide enough information to determine what software is executing.
 
@@ -456,7 +456,7 @@ At minimum, the active release should be identifiable.
 
 ---
 
-# Runtime Traceability
+## Runtime Traceability
 
 The expected chain is:
 
@@ -476,7 +476,7 @@ Operational evidence should remain traceable to the runtime that generated it.
 
 ---
 
-# Operational Units
+## Operational Units
 
 An operational unit is a runtime element for which independent operational state provides useful value.
 
@@ -496,7 +496,7 @@ They do not automatically require separate processes or services.
 
 ---
 
-# Runtime Lifecycle
+## Runtime Lifecycle
 
 The conceptual runtime lifecycle is:
 
@@ -530,7 +530,7 @@ Implementation should use only the states it actually needs.
 
 ---
 
-# Startup
+## Startup
 
 Startup is not complete merely because a process exists.
 
@@ -549,7 +549,7 @@ The runtime must not claim readiness prematurely.
 
 ---
 
-# Shutdown
+## Shutdown
 
 Stateful runtime components SHOULD support controlled shutdown when required.
 
@@ -571,7 +571,7 @@ The exact sequence remains component-specific.
 
 ---
 
-# Health
+## Health
 
 FamilyOS uses a common operational health vocabulary:
 
@@ -586,7 +586,7 @@ Health describes operational ability, not merely process existence.
 
 ---
 
-# Readiness
+## Readiness
 
 Readiness answers:
 
@@ -596,7 +596,7 @@ A component may be alive without being ready.
 
 ---
 
-# Liveness
+## Liveness
 
 Liveness answers:
 
@@ -606,7 +606,7 @@ Readiness, liveness, and health remain related but distinct concepts.
 
 ---
 
-# Desired and Actual State
+## Desired and Actual State
 
 Operations distinguishes:
 
@@ -631,7 +631,7 @@ The difference creates an operational condition requiring evaluation.
 
 ---
 
-# Operational Control Loop
+## Operational Control Loop
 
 The conceptual control loop is:
 
@@ -654,7 +654,7 @@ Automation may eventually execute stable portions of this loop.
 
 ---
 
-# Configuration
+## Configuration
 
 Runtime configuration SHOULD be:
 
@@ -668,7 +668,7 @@ Critical invalid configuration should fail predictably.
 
 ---
 
-# Configuration Flow
+## Configuration Flow
 
 The expected model is:
 
@@ -688,7 +688,7 @@ Invalid critical configuration must not silently downgrade into unsafe operation
 
 ---
 
-# Configuration Drift
+## Configuration Drift
 
 Unexpected difference between intended and active configuration can create operational and security problems.
 
@@ -698,7 +698,7 @@ Drift detection may be introduced when deployment maturity requires it.
 
 ---
 
-# Dependencies
+## Dependencies
 
 Operationally relevant dependencies SHOULD be explicit.
 
@@ -714,13 +714,13 @@ Dependency classification determines expected failure behavior.
 
 ---
 
-# Critical Dependencies
+## Critical Dependencies
 
 Failure of a critical dependency may prevent startup, readiness, or essential runtime operation.
 
 ---
 
-# Optional Dependencies
+## Optional Dependencies
 
 Failure of an optional dependency SHOULD allow degraded operation where architecture permits.
 
@@ -736,7 +736,7 @@ Runtime DEGRADED
 
 ---
 
-# Conditional Dependencies
+## Conditional Dependencies
 
 A conditional dependency exists only when a particular capability or configuration requires it.
 
@@ -744,7 +744,7 @@ This prevents unnecessary runtime coupling.
 
 ---
 
-# Failure Isolation
+## Failure Isolation
 
 FamilyOS SHOULD contain operational failure within the smallest practical boundary.
 
@@ -768,7 +768,7 @@ unless the dependency is genuinely critical.
 
 ---
 
-# Graceful Degradation
+## Graceful Degradation
 
 Where possible, FamilyOS SHOULD preserve unaffected capabilities during partial failure.
 
@@ -776,7 +776,7 @@ A degraded runtime must remain observable.
 
 ---
 
-# External Dependencies
+## External Dependencies
 
 External systems should be assumed capable of:
 
@@ -799,7 +799,7 @@ FamilyOS should therefore use appropriate:
 
 ---
 
-# Timeouts
+## Timeouts
 
 Operations that could block indefinitely SHOULD use bounded execution where appropriate.
 
@@ -807,7 +807,7 @@ Timeouts should produce explicit operational evidence.
 
 ---
 
-# Retries
+## Retries
 
 Retries MAY be used for transient failures.
 
@@ -823,7 +823,7 @@ Infinite retry is prohibited.
 
 ---
 
-# Idempotency
+## Idempotency
 
 Operations that may be retried SHOULD consider duplicate execution.
 
@@ -833,7 +833,7 @@ Where this is impossible, retry behavior must explicitly account for side effect
 
 ---
 
-# Resource Management
+## Resource Management
 
 Runtime resources may include:
 
@@ -851,7 +851,7 @@ FamilyOS SHOULD avoid uncontrolled resource growth.
 
 ---
 
-# Bounded Resources
+## Bounded Resources
 
 Operational components such as:
 
@@ -864,7 +864,7 @@ SHOULD have intentional bounds when unbounded growth creates reliability risk.
 
 ---
 
-# Capacity
+## Capacity
 
 Capacity represents the resources available to handle expected workload.
 
@@ -880,7 +880,7 @@ rather than premature dynamic scaling infrastructure.
 
 ---
 
-# Performance
+## Performance
 
 Operational performance may be evaluated through:
 
@@ -895,7 +895,7 @@ Performance should be measured before significant optimization.
 
 ---
 
-# Reliability
+## Reliability
 
 FamilyOS reliability combines:
 
@@ -915,7 +915,7 @@ Reliability is not equivalent to uptime alone.
 
 ---
 
-# Reliability Engineering
+## Reliability Engineering
 
 Reliability SHOULD improve through:
 
@@ -929,7 +929,7 @@ Reliability SHOULD improve through:
 
 ---
 
-# Reliability Targets
+## Reliability Targets
 
 Formal SLOs are not required initially.
 
@@ -937,7 +937,7 @@ FamilyOS MAY introduce measurable reliability targets when actual deployment req
 
 ---
 
-# Incident Definition
+## Incident Definition
 
 An incident is an operational condition requiring managed response because it causes or threatens meaningful impact.
 
@@ -959,7 +959,7 @@ only when impact and response requirements justify escalation.
 
 ---
 
-# Incident Lifecycle
+## Incident Lifecycle
 
 FamilyOS uses the conceptual incident lifecycle:
 
@@ -987,7 +987,7 @@ The process remains proportional to severity.
 
 ---
 
-# Incident Severity
+## Incident Severity
 
 A compact severity model is:
 
@@ -1009,7 +1009,7 @@ Severity should reflect:
 
 ---
 
-# Containment
+## Containment
 
 Containment limits ongoing damage before complete recovery.
 
@@ -1028,7 +1028,7 @@ Containment should preserve relevant evidence where practical.
 
 ---
 
-# Recovery
+## Recovery
 
 Recovery restores FamilyOS toward an acceptable operational state.
 
@@ -1049,7 +1049,7 @@ The mechanism should match the failure.
 
 ---
 
-# Recovery Verification
+## Recovery Verification
 
 Recovery is not complete when the action finishes.
 
@@ -1071,7 +1071,7 @@ This is a core EPIC-OPS-001 invariant.
 
 ---
 
-# Failed Recovery
+## Failed Recovery
 
 A failed recovery must remain visible.
 
@@ -1081,7 +1081,7 @@ Failed recovery should result in reassessment or escalation.
 
 ---
 
-# Rollback
+## Rollback
 
 Release rollback remains owned by EPIC-REL-001.
 
@@ -1091,7 +1091,7 @@ Only known approved artifacts should be rollback targets.
 
 ---
 
-# Backup
+## Backup
 
 Persistent FamilyOS information may require backups.
 
@@ -1099,7 +1099,7 @@ Backup creation alone does not demonstrate recoverability.
 
 ---
 
-# Restore
+## Restore
 
 A complete recovery model is:
 
@@ -1119,7 +1119,7 @@ A backup that cannot be restored successfully provides limited operational value
 
 ---
 
-# Operational Security
+## Operational Security
 
 Privileged operational actions remain subject to EPIC-SEC-001.
 
@@ -1135,7 +1135,7 @@ Examples include:
 
 ---
 
-# Privileged Action Model
+## Privileged Action Model
 
 The expected flow is:
 
@@ -1157,7 +1157,7 @@ Administrative tooling MUST NOT bypass security controls.
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Humans and automation SHOULD receive only the operational permissions required for their responsibilities.
 
@@ -1165,7 +1165,7 @@ Observation and state modification should remain distinguishable where practical
 
 ---
 
-# High-Risk Operations
+## High-Risk Operations
 
 High-risk actions may include:
 
@@ -1182,7 +1182,7 @@ Such actions MAY require additional validation or human approval.
 
 ---
 
-# Operational Secrets
+## Operational Secrets
 
 Runtime secrets remain governed by EPIC-SEC-001.
 
@@ -1199,7 +1199,7 @@ Secrets MUST NOT intentionally appear in:
 
 ---
 
-# Operational Governance
+## Operational Governance
 
 Governance exists to ensure significant operational changes are intentional, authorized, and verified.
 
@@ -1218,7 +1218,7 @@ Not every runtime action needs the same process.
 
 ---
 
-# Change Governance
+## Change Governance
 
 A meaningful operational change follows:
 
@@ -1242,7 +1242,7 @@ Low-risk deterministic portions may be automated.
 
 ---
 
-# Environment Safety
+## Environment Safety
 
 Where multiple environments exist, significant operational actions SHOULD identify their target environment explicitly.
 
@@ -1250,7 +1250,7 @@ Environment ambiguity must not become normal operational behavior.
 
 ---
 
-# Operational Ownership
+## Operational Ownership
 
 Operationally significant components SHOULD have identifiable responsibility.
 
@@ -1270,7 +1270,7 @@ One person may hold all roles in a small project.
 
 ---
 
-# Observability Integration
+## Observability Integration
 
 Operations MUST reuse EPIC-OBS-001 for:
 
@@ -1287,7 +1287,7 @@ Operations must not create an independent telemetry architecture.
 
 ---
 
-# Operational Evidence
+## Operational Evidence
 
 Significant runtime activity SHOULD produce enough evidence to determine:
 
@@ -1304,7 +1304,7 @@ Evidence should remain structured and privacy-safe where practical.
 
 ---
 
-# Evidence Correlation
+## Evidence Correlation
 
 Operational evidence may use identifiers such as:
 
@@ -1321,7 +1321,7 @@ Only identifiers with actual diagnostic value should be included.
 
 ---
 
-# Operational Privacy
+## Operational Privacy
 
 Operational tooling SHOULD observe system behavior rather than unnecessarily exposing private family content.
 
@@ -1329,7 +1329,7 @@ Diagnostics, incidents, and runtime evidence must respect data-minimization prin
 
 ---
 
-# Alerting
+## Alerting
 
 Alerts should represent actionable operational conditions.
 
@@ -1353,7 +1353,7 @@ Alert noise is an operational defect.
 
 ---
 
-# Automation
+## Automation
 
 Stable, repeatable operational procedures SHOULD be candidates for automation.
 
@@ -1369,7 +1369,7 @@ Potential examples include:
 
 ---
 
-# Automation Model
+## Automation Model
 
 Operational automation follows:
 
@@ -1391,7 +1391,7 @@ Automation without verification is incomplete.
 
 ---
 
-# Automation Guardrails
+## Automation Guardrails
 
 Automated actions SHOULD define:
 
@@ -1406,7 +1406,7 @@ Automation MUST NOT repeat privileged operations indefinitely.
 
 ---
 
-# Human Control
+## Human Control
 
 Human control should remain available for:
 
@@ -1420,7 +1420,7 @@ FamilyOS should automate deterministic mechanics, not eliminate judgment.
 
 ---
 
-# Implementation Strategy
+## Implementation Strategy
 
 Implementation should remain incremental.
 
@@ -1448,7 +1448,7 @@ Validation
 
 ---
 
-# Minimal Initial Implementation
+## Minimal Initial Implementation
 
 The minimum useful operational implementation is:
 
@@ -1472,7 +1472,7 @@ A large operational platform is not required.
 
 ---
 
-# Candidate Core Models
+## Candidate Core Models
 
 Implementation MAY begin with models such as:
 
@@ -1493,7 +1493,7 @@ Only models justified by implementation should become permanent abstractions.
 
 ---
 
-# Vendor Neutrality
+## Vendor Neutrality
 
 FamilyOS operations should remain independent of specific infrastructure vendors.
 
@@ -1513,7 +1513,7 @@ This preserves future deployment flexibility.
 
 ---
 
-# Local Development
+## Local Development
 
 Operational architecture MUST remain usable during local development.
 
@@ -1535,7 +1535,7 @@ without enterprise infrastructure.
 
 ---
 
-# Testing
+## Testing
 
 Operational behavior SHOULD support deterministic automated tests.
 
@@ -1550,7 +1550,7 @@ Useful test techniques may include:
 
 ---
 
-# Failure Injection
+## Failure Injection
 
 Controlled failure injection MAY verify:
 
@@ -1565,7 +1565,7 @@ Failure injection must remain safe and deterministic.
 
 ---
 
-# Engineering Quality
+## Engineering Quality
 
 Applicable implementation must continue to satisfy existing FamilyOS engineering requirements.
 
@@ -1581,7 +1581,7 @@ must pass for affected implementation scope.
 
 ---
 
-# Release Integration
+## Release Integration
 
 Operational validation may contribute to release decisions.
 
@@ -1601,7 +1601,7 @@ Release governance itself remains owned by EPIC-REL-001.
 
 ---
 
-# Deployment Verification
+## Deployment Verification
 
 Artifact transfer alone does not establish deployment success.
 
@@ -1623,7 +1623,7 @@ Deployment Verified
 
 ---
 
-# Runtime Feedback
+## Runtime Feedback
 
 Operational evidence should feed improvements into:
 
@@ -1638,7 +1638,7 @@ This creates the operational feedback loop.
 
 ---
 
-# Post-Incident Improvement
+## Post-Incident Improvement
 
 Meaningful incidents may lead to:
 
@@ -1657,7 +1657,7 @@ The objective is lasting engineering improvement rather than incident paperwork.
 
 ---
 
-# Architectural Constraints
+## Architectural Constraints
 
 EPIC-OPS-001 establishes the following constraints:
 
@@ -1675,89 +1675,89 @@ EPIC-OPS-001 establishes the following constraints:
 
 ---
 
-# Core Invariants
+## Core Invariants
 
-## Runtime Identity
+### Runtime Identity
 
 Meaningful runtime execution should be traceable to an approved FamilyOS release.
 
-## Configuration Validation
+### Configuration Validation
 
 Critical invalid configuration must not silently proceed.
 
-## Explicit Health
+### Explicit Health
 
 Operationally significant runtime state should be understandable.
 
-## Failure Visibility
+### Failure Visibility
 
 Significant failure must produce sufficient operational evidence.
 
-## Security Enforcement
+### Security Enforcement
 
 Operational urgency must not automatically bypass applicable security controls.
 
-## Bounded Retry
+### Bounded Retry
 
 Automatic retry must not continue indefinitely.
 
-## Recovery Verification
+### Recovery Verification
 
 Recovery is incomplete until the resulting state is validated.
 
-## Framework Reuse
+### Framework Reuse
 
 Operations must consume rather than duplicate existing FamilyOS framework capabilities.
 
-## Proportional Complexity
+### Proportional Complexity
 
 Infrastructure sophistication must follow concrete requirements.
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 EPIC-OPS-001 rejects several operational anti-patterns.
 
-## Infrastructure First
+### Infrastructure First
 
 Complex infrastructure should not be introduced before the operational problem is understood.
 
-## Hidden Runtime State
+### Hidden Runtime State
 
 Important runtime behavior must not depend on invisible state.
 
-## Implicit Dependencies
+### Implicit Dependencies
 
 Critical runtime dependencies must not remain accidental.
 
-## Infinite Retry
+### Infinite Retry
 
 Retries require limits and failure escalation.
 
-## Restart as Universal Recovery
+### Restart as Universal Recovery
 
 Restart is one recovery technique, not the operational strategy.
 
-## Alert Everything
+### Alert Everything
 
 Non-actionable alerting reduces operational effectiveness.
 
-## Automation Without Verification
+### Automation Without Verification
 
 Execution does not prove success.
 
-## Security Bypass
+### Security Bypass
 
 Administrative or emergency context does not automatically eliminate security controls.
 
-## Documentation Instead of Implementation
+### Documentation Instead of Implementation
 
 Once the framework is validated, implementation becomes the priority.
 
 ---
 
-# Scope
+## Scope
 
 EPIC-OPS-001 covers:
 
@@ -1782,7 +1782,7 @@ EPIC-OPS-001 covers:
 
 ---
 
-# Out of Scope
+## Out of Scope
 
 EPIC-OPS-001 does not require immediate implementation of:
 
@@ -1802,7 +1802,7 @@ These capabilities may be introduced later if real FamilyOS requirements justify
 
 ---
 
-# Documentation Strategy
+## Documentation Strategy
 
 EPIC-OPS-001 uses the compact FamilyOS framework model.
 
@@ -1814,7 +1814,7 @@ Additional broad framework documentation is not required unless implementation e
 
 ---
 
-# Canonical Framework Documents
+## Canonical Framework Documents
 
 The complete canonical document set is:
 
@@ -1835,7 +1835,7 @@ These 10 documents constitute the complete EPIC-OPS-001 Operations Framework bas
 
 ---
 
-# Deliverables
+## Deliverables
 
 EPIC-OPS-001 delivers:
 
@@ -1857,7 +1857,7 @@ EPIC-OPS-001 delivers:
 
 ---
 
-# Validation
+## Validation
 
 The framework must demonstrate architectural sufficiency for:
 
@@ -1885,7 +1885,7 @@ Detailed validation requirements are defined in `09-Validation-and-Release.md`.
 
 ---
 
-# Definition of Done
+## Definition of Done
 
 EPIC-OPS-001 is complete when:
 
@@ -1907,7 +1907,7 @@ EPIC-OPS-001 is complete when:
 
 ---
 
-# Post-EPIC Rule
+## Post-EPIC Rule
 
 After EPIC-OPS-001 is validated and released, FamilyOS SHOULD stop creating broad engineering-framework documentation unless implementation reveals a genuine architectural gap.
 
@@ -1935,7 +1935,7 @@ This is an explicit transition away from framework expansion and toward product 
 
 ---
 
-# Foundation Completion
+## Foundation Completion
 
 EPIC-OPS-001 closes the planned broad engineering foundation sequence:
 
@@ -1963,7 +1963,7 @@ The next primary phase is implementation.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 EPIC-OPS-001 succeeds when FamilyOS has enough operational architecture to answer:
 
@@ -2005,7 +2005,7 @@ How does operational evidence improve engineering?
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After EPIC-OPS-001, FamilyOS will possess a coherent operational model that is:
 
@@ -2027,7 +2027,7 @@ The platform will be architecturally prepared to move from released software to 
 
 ---
 
-# Framework Release
+## Framework Release
 
 **EPIC Identifier:** EPIC-OPS-001
 
@@ -2051,7 +2051,7 @@ The platform will be architecturally prepared to move from released software to 
 
 ---
 
-# Conclusion
+## Conclusion
 
 EPIC-OPS-001 completes the broad FamilyOS engineering foundation by defining how released software becomes controlled runtime operation.
 

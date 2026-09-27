@@ -1,10 +1,10 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-# 07 Security Controls and Compliance
+## 07 Security Controls and Compliance
 
-## Overview
+### Overview
 
 Security controls and compliance provide the mechanism through which FamilyOS security requirements become verifiable, enforceable, measurable, and auditable.
 
@@ -30,7 +30,7 @@ A control is valuable only when its objective is clear, its implementation can b
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to establish the FamilyOS model for:
 
@@ -59,7 +59,7 @@ The objective is to create a security assurance model that remains practical, tr
 
 ---
 
-# Security Control Objectives
+## Security Control Objectives
 
 FamilyOS security controls MUST support objectives including:
 
@@ -80,7 +80,7 @@ Controls SHOULD be selected based on risk rather than implemented without a defi
 
 ---
 
-# Security Control Model
+## Security Control Model
 
 A FamilyOS security control SHOULD define:
 
@@ -110,7 +110,7 @@ Each important control SHOULD be traceable from requirement to evidence.
 
 ---
 
-# Control Identifier
+## Control Identifier
 
 Security controls SHOULD use stable identifiers.
 
@@ -138,7 +138,7 @@ Stable identifiers enable:
 
 ---
 
-# Control Definition
+## Control Definition
 
 Each security control SHOULD define at minimum:
 
@@ -166,7 +166,7 @@ Controls MAY additionally define:
 
 ---
 
-# Control Objective
+## Control Objective
 
 The control objective explains the security outcome that the control is intended to achieve.
 
@@ -183,7 +183,7 @@ This allows implementation mechanisms to evolve without changing the fundamental
 
 ---
 
-# Control Requirement
+## Control Requirement
 
 The control requirement defines the mandatory or recommended behavior required to satisfy the objective.
 
@@ -206,7 +206,7 @@ FamilyOS SHOULD use:
 
 ---
 
-# Control Scope
+## Control Scope
 
 Every control MUST have a defined scope.
 
@@ -228,7 +228,7 @@ Ambiguous scope SHOULD be avoided.
 
 ---
 
-# Control Ownership
+## Control Ownership
 
 Every significant security control SHOULD have defined ownership.
 
@@ -253,7 +253,7 @@ Control ownership does not eliminate shared security responsibility.
 
 ---
 
-# Control Categories
+## Control Categories
 
 FamilyOS SHOULD classify controls by purpose.
 
@@ -271,7 +271,7 @@ A mature security architecture generally uses multiple control categories togeth
 
 ---
 
-# Preventive Controls
+## Preventive Controls
 
 Preventive controls attempt to stop security violations before they occur.
 
@@ -291,7 +291,7 @@ Preventive controls SHOULD be preferred where reliable prevention is possible.
 
 ---
 
-# Detective Controls
+## Detective Controls
 
 Detective controls identify security-relevant activity that prevention mechanisms did not stop or could not prevent.
 
@@ -309,7 +309,7 @@ Detection SHOULD produce actionable evidence.
 
 ---
 
-# Corrective Controls
+## Corrective Controls
 
 Corrective controls reduce impact after a security issue has been identified.
 
@@ -326,7 +326,7 @@ Corrective controls SHOULD have clearly defined triggering conditions.
 
 ---
 
-# Recovery Controls
+## Recovery Controls
 
 Recovery controls restore trusted system operation after security failure.
 
@@ -342,7 +342,7 @@ Recovery MUST restore security guarantees, not merely service availability.
 
 ---
 
-# Compensating Controls
+## Compensating Controls
 
 A compensating control MAY be used when a primary control cannot be implemented immediately or completely.
 
@@ -358,7 +358,7 @@ Compensating controls MUST NOT become permanent undocumented substitutes for req
 
 ---
 
-# Control Implementation Categories
+## Control Implementation Categories
 
 Security controls MAY also be classified by implementation type.
 
@@ -373,7 +373,7 @@ FamilyOS primarily defines technical, administrative, and operational controls w
 
 ---
 
-# Technical Controls
+## Technical Controls
 
 Technical controls are enforced through software, infrastructure, or automated mechanisms.
 
@@ -392,7 +392,7 @@ Technical controls SHOULD be automated where reliable automation is possible.
 
 ---
 
-# Administrative Controls
+## Administrative Controls
 
 Administrative controls govern responsibilities, decisions, and security processes.
 
@@ -409,7 +409,7 @@ Administrative controls SHOULD be supported by technical enforcement where pract
 
 ---
 
-# Operational Controls
+## Operational Controls
 
 Operational controls govern recurring security activities.
 
@@ -427,7 +427,7 @@ Operational controls SHOULD have defined frequency or event triggers when applic
 
 ---
 
-# Control Layers
+## Control Layers
 
 Security controls SHOULD be distributed across architecture layers.
 
@@ -463,7 +463,7 @@ Critical risks SHOULD NOT rely exclusively on one control layer.
 
 ---
 
-# Defense-in-Depth Controls
+## Defense-in-Depth Controls
 
 Multiple controls MAY protect the same security objective.
 
@@ -484,7 +484,7 @@ Failure of one mechanism SHOULD NOT automatically result in complete loss of pro
 
 ---
 
-# Baseline Security Controls
+## Baseline Security Controls
 
 FamilyOS SHOULD maintain a baseline set of controls applicable to all relevant platform components.
 
@@ -508,7 +508,7 @@ Components MAY require additional controls based on risk.
 
 ---
 
-# Risk-Based Controls
+## Risk-Based Controls
 
 Security controls SHOULD be proportional to risk.
 
@@ -533,7 +533,7 @@ High-risk functionality MAY require stronger or additional controls.
 
 ---
 
-# Mandatory Controls
+## Mandatory Controls
 
 Controls classified as mandatory MUST be satisfied unless an approved exception exists.
 
@@ -551,7 +551,7 @@ Mandatory control failure MAY block release.
 
 ---
 
-# Recommended Controls
+## Recommended Controls
 
 Recommended controls represent practices that SHOULD normally be implemented.
 
@@ -561,7 +561,7 @@ Repeated deviation MAY indicate that the control needs clarification or architec
 
 ---
 
-# Conditional Controls
+## Conditional Controls
 
 Some controls apply only under defined conditions.
 
@@ -576,7 +576,7 @@ Applicability criteria MUST be explicit.
 
 ---
 
-# Control Dependencies
+## Control Dependencies
 
 A security control MAY depend on other controls.
 
@@ -598,7 +598,7 @@ Dependent controls SHOULD NOT be considered effective if a required foundational
 
 ---
 
-# Security Compliance
+## Security Compliance
 
 Security compliance is the verified state in which applicable security requirements and controls are satisfied.
 
@@ -614,7 +614,7 @@ is insufficient without appropriate verification when the control is material.
 
 ---
 
-# Compliance Model
+## Compliance Model
 
 The FamilyOS compliance model is:
 
@@ -641,7 +641,7 @@ Compliance decisions SHOULD be reproducible.
 
 ---
 
-# Compliance Status
+## Compliance Status
 
 Controls MAY have statuses such as:
 
@@ -658,7 +658,7 @@ Status semantics MUST be defined consistently.
 
 ---
 
-# Compliant
+## Compliant
 
 A control is COMPLIANT when:
 
@@ -672,7 +672,7 @@ Compliance SHOULD reflect actual implementation state.
 
 ---
 
-# Non-Compliant
+## Non-Compliant
 
 A control is NON_COMPLIANT when a mandatory requirement is not satisfied.
 
@@ -689,7 +689,7 @@ Non-compliance MUST be recorded and evaluated according to severity.
 
 ---
 
-# Partially Compliant
+## Partially Compliant
 
 PARTIALLY_COMPLIANT MAY be used when part of a control is satisfied but material gaps remain.
 
@@ -699,7 +699,7 @@ The missing elements SHOULD be explicitly documented.
 
 ---
 
-# Not Applicable
+## Not Applicable
 
 A control MAY be marked NOT_APPLICABLE only when its applicability conditions are not met.
 
@@ -709,7 +709,7 @@ Not applicable MUST NOT be used as a convenience mechanism to avoid implementati
 
 ---
 
-# Exempted
+## Exempted
 
 EXEMPTED indicates that an approved exception temporarily or permanently alters normal compliance expectations.
 
@@ -724,7 +724,7 @@ An exemption MUST reference:
 
 ---
 
-# Compliance Profiles
+## Compliance Profiles
 
 FamilyOS MAY define compliance profiles for different classes of components.
 
@@ -744,7 +744,7 @@ Profiles allow controls to reflect different risk contexts.
 
 ---
 
-# Core Platform Profile
+## Core Platform Profile
 
 The core platform SHOULD satisfy the strongest general FamilyOS security baseline.
 
@@ -765,7 +765,7 @@ Core security control failures MAY affect all downstream components.
 
 ---
 
-# Official Plugin Profile
+## Official Plugin Profile
 
 Official FamilyOS plugins MUST satisfy security controls appropriate to trusted first-party extensions.
 
@@ -784,7 +784,7 @@ Official status MUST NOT waive security requirements.
 
 ---
 
-# Third-Party Plugin Profile
+## Third-Party Plugin Profile
 
 Third-party plugins SHOULD be subject to stricter trust-boundary controls.
 
@@ -802,7 +802,7 @@ Third-party code MUST NOT be assumed trustworthy solely because it can be instal
 
 ---
 
-# Infrastructure Profile
+## Infrastructure Profile
 
 Infrastructure compliance SHOULD cover:
 
@@ -819,7 +819,7 @@ Production infrastructure SHOULD have stronger requirements than ordinary develo
 
 ---
 
-# CI/CD Profile
+## CI/CD Profile
 
 CI/CD security controls SHOULD include:
 
@@ -836,7 +836,7 @@ Untrusted contributions MUST NOT automatically receive privileged CI/CD secrets.
 
 ---
 
-# Compliance Evidence
+## Compliance Evidence
 
 Every significant security compliance claim SHOULD be supported by evidence.
 
@@ -857,7 +857,7 @@ Evidence SHOULD be attributable to a specific control where practical.
 
 ---
 
-# Evidence Quality
+## Evidence Quality
 
 Security evidence SHOULD be:
 
@@ -872,7 +872,7 @@ Evidence that cannot be connected to a control provides limited assurance.
 
 ---
 
-# Evidence Sources
+## Evidence Sources
 
 Evidence MAY originate from:
 
@@ -893,7 +893,7 @@ Automated evidence SHOULD be preferred where it produces reliable repeatable res
 
 ---
 
-# Automated Compliance
+## Automated Compliance
 
 FamilyOS SHOULD automate security compliance verification where practical.
 
@@ -912,7 +912,7 @@ Automation reduces inconsistency but MUST NOT replace human review where enginee
 
 ---
 
-# Continuous Compliance
+## Continuous Compliance
 
 Security compliance SHOULD be evaluated continuously rather than only at release time.
 
@@ -952,7 +952,7 @@ Compliance may change after release because of:
 
 ---
 
-# Control Testing
+## Control Testing
 
 Security controls MUST be testable where technically feasible.
 
@@ -971,7 +971,7 @@ Negative tests are essential to security-control validation.
 
 ---
 
-# Control Effectiveness
+## Control Effectiveness
 
 Implementation alone does not prove effectiveness.
 
@@ -989,7 +989,7 @@ FamilyOS SHOULD assess whether controls actually achieve their objectives.
 
 ---
 
-# Control Coverage
+## Control Coverage
 
 Control coverage SHOULD identify the assets and paths protected by a control.
 
@@ -1008,7 +1008,7 @@ Unprotected paths SHOULD be treated as control gaps.
 
 ---
 
-# Control Validation Frequency
+## Control Validation Frequency
 
 Control validation frequency SHOULD reflect risk.
 
@@ -1026,7 +1026,7 @@ High-risk controls SHOULD be validated more frequently.
 
 ---
 
-# Security Findings
+## Security Findings
 
 A security finding represents a detected deviation, weakness, failure, or risk associated with a security control or requirement.
 
@@ -1045,7 +1045,7 @@ Findings MUST remain traceable through resolution.
 
 ---
 
-# Finding Severity
+## Finding Severity
 
 Security findings SHOULD use a consistent severity model.
 
@@ -1070,7 +1070,7 @@ Severity SHOULD reflect:
 
 ---
 
-# Critical Findings
+## Critical Findings
 
 Critical findings represent conditions that may result in severe compromise of FamilyOS security.
 
@@ -1086,7 +1086,7 @@ Critical unresolved findings SHOULD block release.
 
 ---
 
-# High Findings
+## High Findings
 
 High-severity findings represent substantial security weaknesses that may materially compromise protected assets.
 
@@ -1094,7 +1094,7 @@ High findings SHOULD normally require remediation before release unless explicit
 
 ---
 
-# Medium Findings
+## Medium Findings
 
 Medium findings represent meaningful weaknesses with reduced impact, likelihood, or exposure.
 
@@ -1104,7 +1104,7 @@ Repeated unresolved medium findings MAY create cumulative security risk.
 
 ---
 
-# Low and Informational Findings
+## Low and Informational Findings
 
 Low-severity findings represent limited security weaknesses or hardening opportunities.
 
@@ -1118,7 +1118,7 @@ They SHOULD still remain traceable when relevant.
 
 ---
 
-# Finding Lifecycle
+## Finding Lifecycle
 
 Security findings SHOULD follow a defined lifecycle.
 
@@ -1150,7 +1150,7 @@ Alternative outcomes MAY include:
 
 ---
 
-# False Positives
+## False Positives
 
 Automated tools MAY generate false positives.
 
@@ -1160,7 +1160,7 @@ The decision SHOULD include documented rationale where the severity would otherw
 
 ---
 
-# Security Exceptions
+## Security Exceptions
 
 A security exception allows temporary or explicitly governed deviation from a control.
 
@@ -1182,7 +1182,7 @@ Expiration / Review Date
 
 ---
 
-# Exception Approval
+## Exception Approval
 
 Exception approval SHOULD reflect risk.
 
@@ -1194,7 +1194,7 @@ Critical security requirements SHOULD rarely receive exceptions.
 
 ---
 
-# Exception Expiration
+## Exception Expiration
 
 Temporary exceptions MUST have an expiration or mandatory review condition.
 
@@ -1204,7 +1204,7 @@ The system SHOULD treat an expired exception as requiring renewed review or reme
 
 ---
 
-# Risk Acceptance
+## Risk Acceptance
 
 Risk acceptance is a governance decision, not a technical workaround.
 
@@ -1221,7 +1221,7 @@ Risk acceptance MUST NOT be used to hide unresolved technical debt.
 
 ---
 
-# Compliance Reporting
+## Compliance Reporting
 
 FamilyOS SHOULD support security compliance reporting.
 
@@ -1240,7 +1240,7 @@ Reports SHOULD be generated from traceable evidence where possible.
 
 ---
 
-# Compliance Summary Model
+## Compliance Summary Model
 
 A compliance summary MAY appear as:
 
@@ -1264,7 +1264,7 @@ Metrics MUST NOT replace qualitative security assessment.
 
 ---
 
-# Security Metrics
+## Security Metrics
 
 Compliance metrics MAY track:
 
@@ -1281,7 +1281,7 @@ Metrics SHOULD support decisions rather than become targets that distort securit
 
 ---
 
-# Security Quality Gates
+## Security Quality Gates
 
 FamilyOS SHOULD define security quality gates.
 
@@ -1300,7 +1300,7 @@ Quality gates SHOULD be objective and automatable where possible.
 
 ---
 
-# Commit Security Gate
+## Commit Security Gate
 
 Commit or pull-request validation MAY include:
 
@@ -1314,7 +1314,7 @@ Failures SHOULD be visible before changes are merged.
 
 ---
 
-# Build Security Gate
+## Build Security Gate
 
 Build validation MAY require:
 
@@ -1328,7 +1328,7 @@ The build MUST NOT silently bypass required security validation.
 
 ---
 
-# Release Security Gate
+## Release Security Gate
 
 Release authorization SHOULD require verification that mandatory security controls remain satisfied.
 
@@ -1355,7 +1355,7 @@ A failed mandatory gate SHOULD prevent release unless explicitly governed.
 
 ---
 
-# Runtime Compliance
+## Runtime Compliance
 
 Some controls cannot be fully validated before deployment.
 
@@ -1371,7 +1371,7 @@ Runtime evidence SHOULD complement pre-release validation.
 
 ---
 
-# Configuration Compliance
+## Configuration Compliance
 
 Security configuration SHOULD be compared against approved baselines.
 
@@ -1388,7 +1388,7 @@ Configuration drift SHOULD be detectable where risk warrants it.
 
 ---
 
-# Dependency Compliance
+## Dependency Compliance
 
 Third-party dependencies MUST satisfy security requirements appropriate to their risk.
 
@@ -1405,7 +1405,7 @@ Known critical dependency vulnerabilities SHOULD affect release eligibility.
 
 ---
 
-# Plugin Security Compliance
+## Plugin Security Compliance
 
 Plugins MUST satisfy the controls applicable to their compliance profile.
 
@@ -1426,7 +1426,7 @@ Plugin compliance MUST integrate with EPIC-PLUGIN-002 — Plugin Compliance Fram
 
 ---
 
-# Plugin Capability Compliance
+## Plugin Capability Compliance
 
 Requested plugin capabilities MUST be:
 
@@ -1440,7 +1440,7 @@ A plugin that requests undocumented or excessive privileges SHOULD fail complian
 
 ---
 
-# Data Compliance
+## Data Compliance
 
 Data controls SHOULD verify:
 
@@ -1456,7 +1456,7 @@ Controls SHOULD align with `05-Data-Secrets-and-Cryptography.md`.
 
 ---
 
-# Identity Compliance
+## Identity Compliance
 
 Identity and access controls SHOULD verify:
 
@@ -1472,7 +1472,7 @@ Controls SHOULD align with `04-Identity-Authentication-and-Authorization.md`.
 
 ---
 
-# Cryptographic Compliance
+## Cryptographic Compliance
 
 Cryptographic compliance SHOULD verify:
 
@@ -1488,7 +1488,7 @@ Unsupported or prohibited algorithms SHOULD fail validation.
 
 ---
 
-# Secret Compliance
+## Secret Compliance
 
 Secret-management controls SHOULD verify:
 
@@ -1503,7 +1503,7 @@ Secret exposure SHOULD immediately create a security finding.
 
 ---
 
-# Infrastructure Compliance
+## Infrastructure Compliance
 
 Infrastructure controls SHOULD evaluate:
 
@@ -1519,7 +1519,7 @@ Production infrastructure SHOULD have explicit baseline validation.
 
 ---
 
-# Build Compliance
+## Build Compliance
 
 Security controls MUST integrate with EPIC-BLD-001 — Build Framework.
 
@@ -1534,7 +1534,7 @@ Build compliance SHOULD produce evidence for:
 
 ---
 
-# Release Compliance
+## Release Compliance
 
 Security controls MUST integrate with EPIC-REL-001 — Release Framework.
 
@@ -1551,7 +1551,7 @@ Release evidence SHOULD be retained according to governance requirements.
 
 ---
 
-# Observability Compliance
+## Observability Compliance
 
 Security telemetry SHOULD integrate with the FamilyOS Observability Framework.
 
@@ -1569,7 +1569,7 @@ Compliance MUST also ensure that observability does not expose sensitive data.
 
 ---
 
-# Documentation Compliance
+## Documentation Compliance
 
 Security controls MUST be documented sufficiently for implementation and validation.
 
@@ -1585,7 +1585,7 @@ Documentation MUST follow EPIC-DOC-001 — Documentation Framework.
 
 ---
 
-# Testing Compliance
+## Testing Compliance
 
 Security-control validation MUST integrate with EPIC-TST-001 — Testing Framework.
 
@@ -1602,7 +1602,7 @@ A control SHOULD NOT be considered fully validated solely because its successful
 
 ---
 
-# Quality Compliance
+## Quality Compliance
 
 Security compliance MUST integrate with EPIC-QLT-001 — Quality Framework.
 
@@ -1618,7 +1618,7 @@ Security is a required dimension of FamilyOS quality.
 
 ---
 
-# Compliance Governance
+## Compliance Governance
 
 Security compliance MUST have defined governance.
 
@@ -1636,7 +1636,7 @@ Control changes SHOULD be reviewed when they materially alter security guarantee
 
 ---
 
-# Control Change Management
+## Control Change Management
 
 Security controls evolve as FamilyOS changes.
 
@@ -1668,7 +1668,7 @@ A control change MAY require migration of existing compliance evidence.
 
 ---
 
-# Control Deprecation
+## Control Deprecation
 
 Controls MAY be deprecated when:
 
@@ -1683,7 +1683,7 @@ A replacement SHOULD be identified where applicable.
 
 ---
 
-# Compliance Review
+## Compliance Review
 
 Security compliance SHOULD be reviewed periodically.
 
@@ -1701,7 +1701,7 @@ Compliance review SHOULD produce actionable outcomes.
 
 ---
 
-# Independent Review
+## Independent Review
 
 High-impact controls SHOULD receive independent review where practical.
 
@@ -1716,7 +1716,7 @@ Independent review reduces the risk of self-validation errors.
 
 ---
 
-# Security Attestation
+## Security Attestation
 
 FamilyOS MAY produce security attestations for defined releases, components, or environments.
 
@@ -1733,7 +1733,7 @@ Attestation MUST NOT claim broader assurance than the evaluated scope supports.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Compliance evidence is itself security-relevant.
 
@@ -1753,7 +1753,7 @@ Important release evidence MAY use:
 
 ---
 
-# Evidence Retention
+## Evidence Retention
 
 Evidence retention SHOULD reflect:
 
@@ -1767,7 +1767,7 @@ Evidence SHOULD NOT be retained indefinitely without purpose.
 
 ---
 
-# Control Automation Architecture
+## Control Automation Architecture
 
 Automated security controls SHOULD integrate into standard FamilyOS engineering workflows.
 
@@ -1797,7 +1797,7 @@ Automation SHOULD provide fast feedback without obscuring control reasoning.
 
 ---
 
-# Policy as Code
+## Policy as Code
 
 FamilyOS MAY express suitable security policies as machine-readable rules.
 
@@ -1813,7 +1813,7 @@ Policy-as-code MUST NOT eliminate documented human-readable policy intent.
 
 ---
 
-# Compliance as Code
+## Compliance as Code
 
 Compliance rules MAY be automated when applicability and validation logic can be represented reliably.
 
@@ -1834,7 +1834,7 @@ Manual validation MAY remain necessary for architectural or contextual controls.
 
 ---
 
-# Security Control Traceability
+## Security Control Traceability
 
 FamilyOS SHOULD maintain traceability across:
 
@@ -1867,7 +1867,7 @@ Traceability helps demonstrate why each control exists and whether it remains ef
 
 ---
 
-# Security Debt
+## Security Debt
 
 Unresolved security weaknesses MAY create security debt.
 
@@ -1884,7 +1884,7 @@ Security debt MUST remain visible and governed.
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Security controls SHOULD improve over time based on:
 
@@ -1900,7 +1900,7 @@ Control frameworks MUST remain adaptable rather than static.
 
 ---
 
-# Security Control Invariants
+## Security Control Invariants
 
 The following invariants apply across FamilyOS:
 
@@ -1921,7 +1921,7 @@ The following invariants apply across FamilyOS:
 
 ---
 
-# Reference Compliance Flow
+## Reference Compliance Flow
 
 The canonical FamilyOS security compliance flow is:
 
@@ -1967,7 +1967,7 @@ This flow defines the baseline security assurance model for FamilyOS engineering
 
 ---
 
-# Relationship With Other FamilyOS Frameworks
+## Relationship With Other FamilyOS Frameworks
 
 Security controls and compliance integrate with the wider FamilyOS engineering foundation.
 
@@ -1998,7 +1998,7 @@ It provides the security-specific requirements and assurance criteria that integ
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 The FamilyOS Security Controls and Compliance model enables:
 
@@ -2020,7 +2020,7 @@ The FamilyOS Security Controls and Compliance model enables:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS security controls and compliance are based on the following principle:
 

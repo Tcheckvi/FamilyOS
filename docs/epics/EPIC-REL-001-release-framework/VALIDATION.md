@@ -20,7 +20,7 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 This document records validation requirements, execution evidence, and revalidation state for:
 
@@ -50,7 +50,7 @@ Only evidence from actual execution SHALL be used to convert pending validation 
 
 ---
 
-# 2. Historical Publication
+## 2. Historical Publication
 
 EPIC-REL-001 version `4.8.0` was historically published under:
 
@@ -80,7 +80,7 @@ Current normalization SHALL NOT move, recreate, overwrite, reinterpret, or other
 
 ---
 
-# 3. Historical Tag Evidence
+## 3. Historical Tag Evidence
 
 The historical tag has already been observed in the repository.
 
@@ -116,7 +116,7 @@ Current post-release validation SHALL later confirm that this historical referen
 
 ---
 
-# 4. Validation Authority
+## 4. Validation Authority
 
 Validation responsibilities are distributed as follows:
 
@@ -134,7 +134,7 @@ A requirement appearing elsewhere SHALL NOT automatically be treated as passed.
 
 ---
 
-# 5. Revalidation Context
+## 5. Revalidation Context
 
 The current activity is:
 
@@ -183,7 +183,7 @@ Revalidation includes:
 
 ---
 
-# 6. Canonical Inventory Baseline
+## 6. Canonical Inventory Baseline
 
 The canonical structure is:
 
@@ -213,7 +213,7 @@ structure:
 
 ---
 
-# 7. Numbered Document Baseline
+## 7. Numbered Document Baseline
 
 The canonical numbered documents are:
 
@@ -264,7 +264,7 @@ Duplicate Numbers:    0
 
 ---
 
-# 8. Control Document Baseline
+## 8. Control Document Baseline
 
 The canonical control documents are:
 
@@ -288,7 +288,7 @@ Unexpected:        0
 
 ---
 
-# 9. Filesystem Baseline
+## 9. Filesystem Baseline
 
 The expected canonical filesystem contract is:
 
@@ -319,7 +319,7 @@ The final filesystem contract SHALL be re-executed after control-document normal
 
 ---
 
-# 10. Validation State Model
+## 10. Validation State Model
 
 Revalidation uses the following states:
 
@@ -343,7 +343,7 @@ Historical success SHALL NOT automatically become current PASS evidence.
 
 ---
 
-# 11. Machine-Readable Revalidation State
+## 11. Machine-Readable Revalidation State
 
 During post-release revalidation, `EPIC.yaml` SHALL represent:
 
@@ -376,7 +376,7 @@ Current Revalidation
 
 ---
 
-# 12. YAML Parse Validation
+## 12. YAML Parse Validation
 
 `EPIC.yaml` SHALL be parsed using an actual YAML parser.
 
@@ -398,7 +398,7 @@ YAML Parse: PENDING
 
 ---
 
-# 13. YAML Contract Validation
+## 13. YAML Contract Validation
 
 The expected contract is:
 
@@ -438,7 +438,7 @@ YAML Contract: PENDING
 
 ---
 
-# 14. Filesystem Contract Validation
+## 14. Filesystem Contract Validation
 
 Validation SHALL compare:
 
@@ -471,7 +471,7 @@ Filesystem Contract: PENDING
 
 ---
 
-# 15. Numbering Validation
+## 15. Numbering Validation
 
 Validation SHALL confirm:
 
@@ -493,7 +493,7 @@ Numbering Validation: PENDING
 
 ---
 
-# 16. Control Document Validation
+## 16. Control Document Validation
 
 Validation SHALL confirm all seven control documents exist and contain substantive content.
 
@@ -505,7 +505,7 @@ Control Document Validation: PENDING
 
 ---
 
-# 17. Empty File Validation
+## 17. Empty File Validation
 
 No required canonical file may be empty.
 
@@ -523,7 +523,7 @@ Empty File Validation: PENDING
 
 ---
 
-# 18. Manifest Synchronization
+## 18. Manifest Synchronization
 
 `MANIFEST.md` SHALL match:
 
@@ -551,7 +551,7 @@ Manifest Synchronization: PENDING
 
 ---
 
-# 19. README Synchronization
+## 19. README Synchronization
 
 `README.md` SHALL:
 
@@ -570,7 +570,7 @@ README Synchronization: PENDING
 
 ---
 
-# 20. EPIC Summary Synchronization
+## 20. EPIC Summary Synchronization
 
 `EPIC-REL-001.md` SHALL align with:
 
@@ -602,7 +602,7 @@ EPIC Summary Synchronization: PENDING
 
 ---
 
-# 21. CHANGELOG Synchronization
+## 21. CHANGELOG Synchronization
 
 `CHANGELOG.md` SHALL preserve historical progression while accurately distinguishing historical pre-release state from current active state.
 
@@ -629,7 +629,7 @@ CHANGELOG Synchronization: PENDING
 
 ---
 
-# 22. Revision History Synchronization
+## 22. Revision History Synchronization
 
 `Revision-History.md` SHALL record:
 
@@ -649,7 +649,7 @@ Revision History Synchronization: PENDING
 
 ---
 
-# 23. State Consistency
+## 23. State Consistency
 
 The active canonical state SHALL converge on:
 
@@ -687,7 +687,7 @@ State Consistency: PENDING
 
 ---
 
-# 24. Historical State Handling
+## 24. Historical State Handling
 
 Terms such as:
 
@@ -719,7 +719,7 @@ Only contradictory active-state claims SHALL be treated as defects.
 
 ---
 
-# 25. Local Markdown Reference Validation
+## 25. Local Markdown Reference Validation
 
 Local Markdown references SHALL resolve to existing canonical files.
 
@@ -745,7 +745,7 @@ Reference Integrity: PENDING
 
 ---
 
-# 26. Canonical Document Reference Validation
+## 26. Canonical Document Reference Validation
 
 References to canonical Release Framework documents SHOULD correspond to actual files.
 
@@ -775,7 +775,7 @@ Canonical Document References: PENDING
 
 ---
 
-# 27. Release Architecture Consistency
+## 27. Release Architecture Consistency
 
 The Release Framework architecture SHALL remain coherent across:
 
@@ -811,7 +811,7 @@ Release Architecture Consistency: PENDING
 
 ---
 
-# 28. Release Lifecycle Consistency
+## 28. Release Lifecycle Consistency
 
 The canonical lifecycle SHOULD remain conceptually aligned around:
 
@@ -845,7 +845,7 @@ Release Lifecycle Consistency: PENDING
 
 ---
 
-# 29. Versioning Consistency
+## 29. Versioning Consistency
 
 Versioning semantics SHALL remain consistent across:
 
@@ -873,7 +873,7 @@ Versioning Consistency: PENDING
 
 ---
 
-# 30. Release Readiness Consistency
+## 30. Release Readiness Consistency
 
 Release readiness SHALL remain distinct from:
 
@@ -892,7 +892,7 @@ Release Readiness Consistency: PENDING
 
 ---
 
-# 31. Release Candidate Consistency
+## 31. Release Candidate Consistency
 
 A Release Candidate SHALL represent a sufficiently stable release identity suitable for qualification and approval.
 
@@ -906,7 +906,7 @@ Release Candidate Consistency: PENDING
 
 ---
 
-# 32. Artifact and Provenance Consistency
+## 32. Artifact and Provenance Consistency
 
 Release artifacts SHALL preserve:
 
@@ -928,7 +928,7 @@ Artifact and Provenance Consistency: PENDING
 
 ---
 
-# 33. Publication Semantics
+## 33. Publication Semantics
 
 Publication SHALL remain a controlled state transition rather than a single command.
 
@@ -956,7 +956,7 @@ Publication Semantic Consistency: PENDING
 
 ---
 
-# 34. Historical Publication Verification
+## 34. Historical Publication Verification
 
 For the framework's own publication, the following evidence has already been observed:
 
@@ -982,7 +982,7 @@ Final revalidation SHALL verify that this relationship remains unchanged after t
 
 ---
 
-# 35. Rollback and Recovery Consistency
+## 35. Rollback and Recovery Consistency
 
 The framework SHALL preserve clear semantics for:
 
@@ -1003,7 +1003,7 @@ Rollback and Recovery Consistency: PENDING
 
 ---
 
-# 36. Security Consistency
+## 36. Security Consistency
 
 Release security SHALL remain coherent regarding:
 
@@ -1024,7 +1024,7 @@ Release Security Consistency: PENDING
 
 ---
 
-# 37. Observability Consistency
+## 37. Observability Consistency
 
 Release observability SHALL provide sufficient state to understand:
 
@@ -1045,7 +1045,7 @@ Release Observability Consistency: PENDING
 
 ---
 
-# 38. Governance Consistency
+## 38. Governance Consistency
 
 Governance SHALL remain coherent across:
 
@@ -1080,7 +1080,7 @@ Governance Consistency: PENDING
 
 ---
 
-# 39. Framework Boundary Validation
+## 39. Framework Boundary Validation
 
 The Release Framework SHALL preserve explicit boundaries with:
 
@@ -1104,7 +1104,7 @@ Framework Boundary Validation: PENDING
 
 ---
 
-# 40. Placeholder Validation
+## 40. Placeholder Validation
 
 Validation SHALL distinguish actual unresolved placeholders from explanatory text.
 
@@ -1128,7 +1128,7 @@ Unresolved Blocking Placeholders: PENDING
 
 ---
 
-# 41. Join Defect Validation
+## 41. Join Defect Validation
 
 Documentation normalization SHALL check for malformed accidental word joins.
 
@@ -1155,7 +1155,7 @@ Join Defect Validation: PENDING
 
 ---
 
-# 42. Ruff Validation
+## 42. Ruff Validation
 
 Canonical command:
 
@@ -1179,7 +1179,7 @@ Only actual execution SHALL convert this to PASS.
 
 ---
 
-# 43. MyPy Validation
+## 43. MyPy Validation
 
 Canonical command:
 
@@ -1197,7 +1197,7 @@ MyPy: PENDING
 
 ---
 
-# 44. Pytest Validation
+## 44. Pytest Validation
 
 Canonical command:
 
@@ -1215,7 +1215,7 @@ Pytest: PENDING
 
 ---
 
-# 45. Repository Diff Validation
+## 45. Repository Diff Validation
 
 Canonical command:
 
@@ -1231,7 +1231,7 @@ DiffCheck: PENDING
 
 ---
 
-# 46. Historical Tag Integrity
+## 46. Historical Tag Integrity
 
 The historical tag is:
 
@@ -1263,7 +1263,7 @@ Historical Tag Integrity: PENDING FINAL RECHECK
 
 ---
 
-# 47. Remote Branch Verification
+## 47. Remote Branch Verification
 
 After a post-release normalization commit is created and pushed, validation SHALL compare:
 
@@ -1291,7 +1291,7 @@ Remote Branch Verification: PENDING
 
 ---
 
-# 48. Final Repository Cleanliness
+## 48. Final Repository Cleanliness
 
 After correction commit and remote synchronization, the repository SHOULD report:
 
@@ -1307,7 +1307,7 @@ Final Repository Cleanliness: PENDING
 
 ---
 
-# 49. Validation Matrix
+## 49. Validation Matrix
 
 | Validation Area                     | Current State         |
 | ----------------------------------- | --------------------- |
@@ -1350,7 +1350,7 @@ Final Repository Cleanliness: PENDING
 
 ---
 
-# 50. Historical Evidence Matrix
+## 50. Historical Evidence Matrix
 
 Historical publication evidence already observed during the read-only audit:
 
@@ -1369,7 +1369,7 @@ They do not automatically validate the current normalized repository state.
 
 ---
 
-# 51. Final Revalidation Conditions
+## 51. Final Revalidation Conditions
 
 EPIC-REL-001 MAY transition to final validated state only when:
 
@@ -1409,7 +1409,7 @@ EPIC-REL-001 MAY transition to final validated state only when:
 
 ---
 
-# 52. Final Machine-Readable State
+## 52. Final Machine-Readable State
 
 After successful revalidation, the expected `EPIC.yaml` state is:
 
@@ -1434,7 +1434,7 @@ release:
 
 ---
 
-# 53. Closure State
+## 53. Closure State
 
 The framework is historically completed and published.
 
@@ -1459,7 +1459,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 54. Post-Release Correction Procedure
+## 54. Post-Release Correction Procedure
 
 The expected workflow is:
 
@@ -1511,7 +1511,7 @@ Confirm clean working tree
 
 ---
 
-# 55. Evidence Recording Rule
+## 55. Evidence Recording Rule
 
 The required validation model is:
 
@@ -1539,7 +1539,7 @@ This rule applies to both automated and manual framework validation.
 
 ---
 
-# 56. Current Validation Decision
+## 56. Current Validation Decision
 
 Historical framework state:
 
@@ -1573,7 +1573,7 @@ Historical publication remains immutable and independently verified.
 
 ---
 
-# 57. Final Validation Principle
+## 57. Final Validation Principle
 
 The Release Framework itself SHALL follow the release principles it defines.
 

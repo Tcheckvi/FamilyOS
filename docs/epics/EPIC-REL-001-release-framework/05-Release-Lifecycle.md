@@ -1,8 +1,8 @@
 # Release Framework
 
-# 05 Release Lifecycle
+## 05 Release Lifecycle
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines a canonical release lifecycle for FamilyOS.
 
@@ -23,7 +23,7 @@ Each significant release stage must have a defined meaning.
 
 ---
 
-# Purpose
+## Purpose
 
 The Release Lifecycle establishes:
 
@@ -42,7 +42,7 @@ The lifecycle provides the common state model used by release planning, release 
 
 ---
 
-# Lifecycle Principle
+## Lifecycle Principle
 
 The central lifecycle principle is:
 
@@ -76,7 +76,7 @@ The lifecycle therefore separates preparation, qualification, approval, publicat
 
 ---
 
-# Canonical Lifecycle
+## Canonical Lifecycle
 
 The canonical FamilyOS release lifecycle is:
 
@@ -118,7 +118,7 @@ However, equivalent lifecycle semantics must remain preserved.
 
 ---
 
-# Lifecycle Phases
+## Lifecycle Phases
 
 The lifecycle may be grouped into five major phases.
 
@@ -148,7 +148,7 @@ Exceptional states may occur across several phases.
 
 ---
 
-# State Model
+## State Model
 
 Each lifecycle state has:
 
@@ -162,9 +162,9 @@ A state transition should occur only when its conditions are satisfied.
 
 ---
 
-# PLANNED
+## PLANNED
 
-## Definition
+### Definition
 
 `PLANNED` represents a release that has been identified but is not yet prepared for formal qualification.
 
@@ -182,7 +182,7 @@ The release is not yet considered ready for candidate creation.
 
 ---
 
-## Typical Inputs
+### Typical Inputs
 
 Inputs may include:
 
@@ -196,7 +196,7 @@ Inputs may include:
 
 ---
 
-## Expected Evidence
+### Expected Evidence
 
 Planning evidence may include:
 
@@ -210,7 +210,7 @@ known dependencies
 
 ---
 
-## Permitted Transitions
+### Permitted Transitions
 
 ```text
 PLANNED → PREPARED
@@ -222,9 +222,9 @@ Where cancellation is represented operationally, it may remain a planning outcom
 
 ---
 
-# PREPARED
+## PREPARED
 
-## Definition
+### Definition
 
 `PREPARED` means that the release scope and required release materials have been assembled sufficiently for readiness evaluation.
 
@@ -243,7 +243,7 @@ The release is still not considered release-ready.
 
 ---
 
-## Entry Criteria
+### Entry Criteria
 
 Typical entry criteria include:
 
@@ -254,13 +254,13 @@ Typical entry criteria include:
 
 ---
 
-## Exit Criteria
+### Exit Criteria
 
 A release may leave `PREPARED` when readiness evaluation can begin.
 
 ---
 
-## Permitted Transitions
+### Permitted Transitions
 
 ```text
 PREPARED → READY
@@ -272,9 +272,9 @@ Returning to `PLANNED` may be appropriate when release scope changes materially.
 
 ---
 
-# READY
+## READY
 
-## Definition
+### Definition
 
 `READY` means that the release has satisfied applicable readiness criteria and may become a formal release candidate.
 
@@ -293,7 +293,7 @@ Readiness may require:
 
 ---
 
-# Readiness Gate
+## Readiness Gate
 
 The transition:
 
@@ -322,7 +322,7 @@ The exact requirements depend on the applicable release profile.
 
 ---
 
-# Readiness Failure
+## Readiness Failure
 
 If readiness requirements are not satisfied, the release must not transition to `READY`.
 
@@ -342,9 +342,9 @@ with required remediation.
 
 ---
 
-# CANDIDATE
+## CANDIDATE
 
-## Definition
+### Definition
 
 `CANDIDATE` identifies the exact release configuration submitted for final release qualification.
 
@@ -365,7 +365,7 @@ validation scope
 
 ---
 
-# Candidate Creation Gate
+## Candidate Creation Gate
 
 The transition:
 
@@ -386,7 +386,7 @@ Candidate creation should establish:
 
 ---
 
-# Candidate Stability
+## Candidate Stability
 
 Once candidate validation begins, material candidate changes should invalidate the candidate or its affected validation evidence.
 
@@ -413,7 +413,7 @@ rather than mutating Candidate 1 without renewed qualification.
 
 ---
 
-# Candidate Iteration
+## Candidate Iteration
 
 Several candidate iterations may exist before final release.
 
@@ -435,9 +435,9 @@ Each candidate iteration must remain traceable.
 
 ---
 
-# VALIDATED
+## VALIDATED
 
-## Definition
+### Definition
 
 `VALIDATED` means that the actual release candidate has passed applicable final release validation.
 
@@ -459,7 +459,7 @@ Validation must apply to the candidate intended for release.
 
 ---
 
-# Validation Gate
+## Validation Gate
 
 The transition:
 
@@ -486,7 +486,7 @@ VALIDATION               PASS
 
 ---
 
-# Validation Failure
+## Validation Failure
 
 If final validation fails:
 
@@ -506,9 +506,9 @@ A corrected candidate should normally receive a new candidate identity.
 
 ---
 
-# APPROVED
+## APPROVED
 
-## Definition
+### Definition
 
 `APPROVED` means that the validated candidate has received all required governance approval for release.
 
@@ -529,7 +529,7 @@ However, approval semantics must remain explicit.
 
 ---
 
-# Approval Gate
+## Approval Gate
 
 The transition:
 
@@ -549,7 +549,7 @@ EXCEPTION REQUIRED
 
 ---
 
-# Approval Evidence
+## Approval Evidence
 
 Approval evidence may record:
 
@@ -562,9 +562,9 @@ Approval evidence may record:
 
 ---
 
-# RELEASED
+## RELEASED
 
-## Definition
+### Definition
 
 `RELEASED` means that the candidate has been assigned its final official release identity and the authoritative repository release anchor has been established.
 
@@ -580,7 +580,7 @@ It does not necessarily mean that all artifacts have already been published exte
 
 ---
 
-# Release Identity Gate
+## Release Identity Gate
 
 The transition:
 
@@ -612,7 +612,7 @@ RELEASED
 
 ---
 
-# Why RELEASED and PUBLISHED Are Separate
+## Why RELEASED and PUBLISHED Are Separate
 
 The distinction prevents the architecture from assuming that repository tagging and artifact publication are one atomic operation.
 
@@ -629,9 +629,9 @@ This state must remain observable.
 
 ---
 
-# PUBLISHED
+## PUBLISHED
 
-## Definition
+### Definition
 
 `PUBLISHED` means that the release has been made available through its authoritative publication targets.
 
@@ -649,7 +649,7 @@ Publication must be verified.
 
 ---
 
-# Publication Gate
+## Publication Gate
 
 The transition:
 
@@ -663,7 +663,7 @@ A partial publication must not be treated as `PUBLISHED` unless policy explicitl
 
 ---
 
-# Partial Publication
+## Partial Publication
 
 If some publication targets succeed and others fail, the release may transition to:
 
@@ -688,9 +688,9 @@ Recovery must begin from the actual recorded state.
 
 ---
 
-# DISTRIBUTED
+## DISTRIBUTED
 
-## Definition
+### Definition
 
 `DISTRIBUTED` means that the published release has been promoted or made available to its intended consumer scope.
 
@@ -707,7 +707,7 @@ Not all release profiles require a distinct distribution stage.
 
 ---
 
-# Distribution Gate
+## Distribution Gate
 
 The transition:
 
@@ -721,9 +721,9 @@ This may include post-publication verification before promotion.
 
 ---
 
-# COMPLETED
+## COMPLETED
 
-## Definition
+### Definition
 
 `COMPLETED` represents successful finalization of the release lifecycle.
 
@@ -743,7 +743,7 @@ These may include:
 
 ---
 
-# Completion Gate
+## Completion Gate
 
 The final transition:
 
@@ -763,7 +763,7 @@ Completion must be explicit.
 
 ---
 
-# Completed Release Invariant
+## Completed Release Invariant
 
 Once a release reaches `COMPLETED`, its historical identity should remain stable.
 
@@ -778,9 +778,9 @@ but must not rewrite the original release history.
 
 ---
 
-# BLOCKED
+## BLOCKED
 
-## Definition
+### Definition
 
 `BLOCKED` means that release progression cannot continue because one or more required conditions are not satisfied.
 
@@ -800,7 +800,7 @@ Typical causes include:
 
 ---
 
-# Blocked State Behavior
+## Blocked State Behavior
 
 A blocked release must identify:
 
@@ -827,9 +827,9 @@ new CANDIDATE
 
 ---
 
-# FAILED
+## FAILED
 
-## Definition
+### Definition
 
 `FAILED` means that a release operation encountered a failure after meaningful release execution began.
 
@@ -845,7 +845,7 @@ Typical failures include:
 
 ---
 
-# Failure Evidence
+## Failure Evidence
 
 A failed release must preserve:
 
@@ -862,7 +862,7 @@ recovery requirement
 
 ---
 
-# Failed vs Blocked
+## Failed vs Blocked
 
 The distinction is:
 
@@ -880,9 +880,9 @@ A partial publication failure is more naturally considered failed.
 
 ---
 
-# WITHDRAWN
+## WITHDRAWN
 
-## Definition
+### Definition
 
 `WITHDRAWN` means that an official release has been intentionally removed from normal consumption because it should no longer be used or distributed.
 
@@ -899,7 +899,7 @@ Withdrawal does not erase release history.
 
 ---
 
-# Withdrawal Invariant
+## Withdrawal Invariant
 
 A withdrawn release remains historically identifiable.
 
@@ -916,9 +916,9 @@ replacement guidance
 
 ---
 
-# SUPERSEDED
+## SUPERSEDED
 
-## Definition
+### Definition
 
 `SUPERSEDED` means that a later official release replaces the release as the preferred version.
 
@@ -938,9 +938,9 @@ Superseded releases may remain available unless policy requires removal.
 
 ---
 
-# ROLLED_BACK
+## ROLLED_BACK
 
-## Definition
+### Definition
 
 `ROLLED_BACK` means that a release was published or distributed but the active consumer state was intentionally returned to a previous release.
 
@@ -950,7 +950,7 @@ Rollback does not mean that the release never existed.
 
 ---
 
-# Rollback Relationship
+## Rollback Relationship
 
 Conceptually:
 
@@ -976,7 +976,7 @@ depending on policy.
 
 ---
 
-# Normal Transition Model
+## Normal Transition Model
 
 The normal lifecycle path is:
 
@@ -1013,7 +1013,7 @@ COMPLETED
 
 ---
 
-# Exceptional Transition Model
+## Exceptional Transition Model
 
 Exceptional transitions may include:
 
@@ -1037,7 +1037,7 @@ The exact transition matrix may evolve with implementation.
 
 ---
 
-# State Regression
+## State Regression
 
 Release progression should normally move forward.
 
@@ -1067,7 +1067,7 @@ State regression must be explicit.
 
 ---
 
-# Candidate Invalidation
+## Candidate Invalidation
 
 A candidate should be invalidated when material inputs change.
 
@@ -1084,7 +1084,7 @@ Candidate invalidation should produce a new candidate iteration.
 
 ---
 
-# Approval Invalidation
+## Approval Invalidation
 
 Approval may be invalidated when:
 
@@ -1099,7 +1099,7 @@ Approval must always correspond to the actual release candidate and applicable r
 
 ---
 
-# Version Finalization
+## Version Finalization
 
 A release version may be tentative during early lifecycle states.
 
@@ -1123,7 +1123,7 @@ The authoritative versioning rules are defined in `06-Versioning-Strategy.md`.
 
 ---
 
-# Tag Timing
+## Tag Timing
 
 Official release tags should be created only when the lifecycle has reached the appropriate release identity stage.
 
@@ -1145,7 +1145,7 @@ Creating final official tags before qualification increases ambiguity.
 
 ---
 
-# Release Gate Model
+## Release Gate Model
 
 The lifecycle contains several gates.
 
@@ -1165,7 +1165,7 @@ Each gate protects a state transition.
 
 ---
 
-# Gate Outcomes
+## Gate Outcomes
 
 A gate should produce one of a small number of explicit outcomes.
 
@@ -1180,7 +1180,7 @@ Not every gate requires all outcomes.
 
 ---
 
-# Gate Evidence
+## Gate Evidence
 
 Gate execution should preserve evidence sufficient to explain the result.
 
@@ -1198,7 +1198,7 @@ exceptions
 
 ---
 
-# Release Profiles
+## Release Profiles
 
 Release profiles may simplify the lifecycle.
 
@@ -1226,7 +1226,7 @@ They must not remove essential release semantics.
 
 ---
 
-# Framework Release Lifecycle
+## Framework Release Lifecycle
 
 The current FamilyOS framework release pattern can map to the lifecycle as follows:
 
@@ -1268,7 +1268,7 @@ This mapping provides a direct path from current practices to the formal Release
 
 ---
 
-# Plugin Release Lifecycle
+## Plugin Release Lifecycle
 
 A future official plugin release may use:
 
@@ -1302,7 +1302,7 @@ COMPLETED
 
 ---
 
-# Emergency Release Lifecycle
+## Emergency Release Lifecycle
 
 Emergency releases require an accelerated but controlled lifecycle.
 
@@ -1336,7 +1336,7 @@ They must retain identity, traceability, validation, approval, and recovery.
 
 ---
 
-# Security Release Lifecycle
+## Security Release Lifecycle
 
 A security-sensitive release may introduce additional controls.
 
@@ -1366,7 +1366,7 @@ The Release Framework supports these extensions without redefining core states.
 
 ---
 
-# Lifecycle Idempotency
+## Lifecycle Idempotency
 
 Release workflows should support safe retry where possible.
 
@@ -1393,7 +1393,7 @@ if different → block
 
 ---
 
-# Lifecycle Atomicity
+## Lifecycle Atomicity
 
 Some transitions may be nearly atomic.
 
@@ -1415,7 +1415,7 @@ Multi-step transitions must preserve intermediate state.
 
 ---
 
-# Publication Transaction Model
+## Publication Transaction Model
 
 A publication may conceptually act as a transaction.
 
@@ -1434,7 +1434,7 @@ If perfect rollback is impossible, the workflow must still preserve enough state
 
 ---
 
-# Post-Release Verification
+## Post-Release Verification
 
 Publication alone is insufficient.
 
@@ -1452,7 +1452,7 @@ Only after these checks should the release progress toward completion.
 
 ---
 
-# Completion Evidence
+## Completion Evidence
 
 A completed release should have a final evidence summary.
 
@@ -1476,7 +1476,7 @@ State: COMPLETED
 
 ---
 
-# Lifecycle Observability
+## Lifecycle Observability
 
 Every significant state change should be observable.
 
@@ -1504,7 +1504,7 @@ The exact event format is an implementation concern.
 
 ---
 
-# Lifecycle Auditability
+## Lifecycle Auditability
 
 State transitions should eventually preserve:
 
@@ -1521,7 +1521,7 @@ This provides a durable release history.
 
 ---
 
-# Lifecycle Security
+## Lifecycle Security
 
 Sensitive transitions require stronger protection.
 
@@ -1538,7 +1538,7 @@ These transitions may require additional authorization.
 
 ---
 
-# Lifecycle Governance
+## Lifecycle Governance
 
 Governance determines which transitions may occur automatically and which require explicit approval.
 
@@ -1564,7 +1564,7 @@ may require controlled release authority.
 
 ---
 
-# Lifecycle Compliance
+## Lifecycle Compliance
 
 Release compliance may evaluate both:
 
@@ -1585,7 +1585,7 @@ Withdrawn release MUST preserve historical identity.
 
 ---
 
-# Release Lifecycle Record
+## Release Lifecycle Record
 
 A future FamilyOS implementation may maintain a machine-readable lifecycle record.
 
@@ -1617,87 +1617,87 @@ This is conceptual rather than a required schema.
 
 ---
 
-# Lifecycle Invariants
+## Lifecycle Invariants
 
 The following invariants apply.
 
-## L1 — Every release has an explicit current state.
+### L1 — Every release has an explicit current state.
 
-## L2 — State transitions are deliberate.
+### L2 — State transitions are deliberate.
 
-## L3 — Required gates must pass before protected transitions.
+### L3 — Required gates must pass before protected transitions.
 
-## L4 — Candidate validation applies to the actual candidate.
+### L4 — Candidate validation applies to the actual candidate.
 
-## L5 — Material candidate change invalidates affected evidence.
+### L5 — Material candidate change invalidates affected evidence.
 
-## L6 — Approval applies to a specific validated candidate.
+### L6 — Approval applies to a specific validated candidate.
 
-## L7 — Official release identity is established before publication completion.
+### L7 — Official release identity is established before publication completion.
 
-## L8 — Publication must be verified.
+### L8 — Publication must be verified.
 
-## L9 — Partial failure must remain visible.
+### L9 — Partial failure must remain visible.
 
-## L10 — Completed release history must remain stable.
+### L10 — Completed release history must remain stable.
 
-## L11 — Withdrawal must not erase historical identity.
+### L11 — Withdrawal must not erase historical identity.
 
-## L12 — Recovery must operate from recorded actual state.
+### L12 — Recovery must operate from recorded actual state.
 
 ---
 
-# Lifecycle Anti-Patterns
+## Lifecycle Anti-Patterns
 
-## Implicit State
+### Implicit State
 
 Using tag presence, file existence, or CI success as the only indicator of release state.
 
 ---
 
-## Skipped Qualification
+### Skipped Qualification
 
 Moving directly from successful build to publication.
 
 ---
 
-## Candidate Mutation
+### Candidate Mutation
 
 Changing candidate contents after validation without renewing evidence.
 
 ---
 
-## Approval Drift
+### Approval Drift
 
 Using approval obtained for a previous candidate.
 
 ---
 
-## Premature Tagging
+### Premature Tagging
 
 Creating final official release tags before applicable release gates complete.
 
 ---
 
-## Publication Equals Completion
+### Publication Equals Completion
 
 Declaring release completion immediately after artifact upload.
 
 ---
 
-## Hidden Partial Failure
+### Hidden Partial Failure
 
 Losing track of which publication targets succeeded.
 
 ---
 
-## Historical Erasure
+### Historical Erasure
 
 Deleting release evidence because a release was withdrawn.
 
 ---
 
-# Minimum Lifecycle
+## Minimum Lifecycle
 
 The minimum acceptable FamilyOS release lifecycle is:
 
@@ -1725,7 +1725,7 @@ Its semantics must remain explicit.
 
 ---
 
-# Target Lifecycle
+## Target Lifecycle
 
 At higher maturity, FamilyOS should support:
 
@@ -1759,7 +1759,7 @@ with structured state, policies, evidence, automation, and recovery.
 
 ---
 
-# Relationship With Other Release Documents
+## Relationship With Other Release Documents
 
 The Release Lifecycle provides the state model used by:
 
@@ -1787,7 +1787,7 @@ The Release Lifecycle provides the state model used by:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Lifecycle establishes the authoritative state model for release progression.
 

@@ -1,8 +1,8 @@
 # Build Framework
 
-# 11 Build Configuration
+## 11 Build Configuration
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS build configuration is declared, resolved, validated, versioned, applied, observed, and governed.
 
@@ -29,7 +29,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Build Configuration model is to prevent critical build behavior from being distributed across hidden defaults, environment variables, CI-specific overrides, local scripts, and undocumented conventions.
 
@@ -49,7 +49,7 @@ The framework defines how configuration should remain:
 
 ---
 
-# Build Configuration Definition
+## Build Configuration Definition
 
 Build configuration is any controlled state that influences how a build executes.
 
@@ -71,7 +71,7 @@ It is part of the transformation contract.
 
 ---
 
-# Configuration Categories
+## Configuration Categories
 
 FamilyOS build configuration may be classified into several categories.
 
@@ -95,7 +95,7 @@ Their conceptual responsibilities should remain clear.
 
 ---
 
-# Project Configuration
+## Project Configuration
 
 Project configuration defines general project-level metadata and engineering settings.
 
@@ -112,7 +112,7 @@ For Python-based FamilyOS components, this may be represented through `pyproject
 
 ---
 
-# Build-Specific Configuration
+## Build-Specific Configuration
 
 Build-specific configuration controls the build lifecycle itself.
 
@@ -130,7 +130,7 @@ The exact representation may evolve.
 
 ---
 
-# Tool Configuration
+## Tool Configuration
 
 Tool configuration defines how individual build or validation tools behave.
 
@@ -148,7 +148,7 @@ Tool configuration is part of effective toolchain behavior.
 
 ---
 
-# Profile Configuration
+## Profile Configuration
 
 Build profiles group related configuration for a specific execution purpose.
 
@@ -167,7 +167,7 @@ Each profile may specialize the canonical build configuration.
 
 ---
 
-# Environment Configuration
+## Environment Configuration
 
 Environment configuration adapts canonical behavior to execution context.
 
@@ -182,7 +182,7 @@ Environment configuration must not silently redefine core build semantics.
 
 ---
 
-# Artifact Configuration
+## Artifact Configuration
 
 Artifact configuration defines what the build produces.
 
@@ -198,7 +198,7 @@ It may include:
 
 ---
 
-# Validation Configuration
+## Validation Configuration
 
 Validation configuration defines which checks apply before an artifact becomes trusted.
 
@@ -214,7 +214,7 @@ Validation configuration should remain aligned with Testing and Quality framewor
 
 ---
 
-# Automation Configuration
+## Automation Configuration
 
 Automation configuration defines how build execution integrates with CI or other automated systems.
 
@@ -230,7 +230,7 @@ It must not become an independent source of canonical build semantics.
 
 ---
 
-# Policy Configuration
+## Policy Configuration
 
 Policy configuration controls governance rules affecting build validity.
 
@@ -246,7 +246,7 @@ Policy configuration must remain traceable to the framework that owns the policy
 
 ---
 
-# Configuration Principle 1 — Configuration Must Be Explicit
+## Configuration Principle 1 — Configuration Must Be Explicit
 
 Significant build configuration SHOULD be explicitly represented.
 
@@ -268,7 +268,7 @@ Resolved Behavior
 
 ---
 
-# Configuration Principle 2 — Configuration Must Be Discoverable
+## Configuration Principle 2 — Configuration Must Be Discoverable
 
 An engineer should be able to determine where build behavior is configured.
 
@@ -281,7 +281,7 @@ Configuration should not require searching through:
 
 ---
 
-# Configuration Principle 3 — Configuration Should Be Version Controlled
+## Configuration Principle 3 — Configuration Should Be Version Controlled
 
 Configuration that affects canonical build behavior SHOULD be version controlled where practical.
 
@@ -303,7 +303,7 @@ Version control provides:
 
 ---
 
-# Configuration Principle 4 — Configuration Must Be Validated
+## Configuration Principle 4 — Configuration Must Be Validated
 
 Configuration must not be accepted solely because it is syntactically readable.
 
@@ -325,7 +325,7 @@ Invalid configuration must prevent trusted build execution.
 
 ---
 
-# Configuration Principle 5 — Precedence Must Be Defined
+## Configuration Principle 5 — Precedence Must Be Defined
 
 If multiple configuration layers can define the same setting, precedence must be explicit.
 
@@ -345,7 +345,7 @@ Environment overrides should be used only when appropriate.
 
 ---
 
-# Configuration Principle 6 — Effective Configuration Must Be Understandable
+## Configuration Principle 6 — Effective Configuration Must Be Understandable
 
 The build should be able to determine the final resolved configuration before execution.
 
@@ -363,7 +363,7 @@ The effective state should be inspectable where practical.
 
 ---
 
-# Configuration Principle 7 — Configuration Must Not Hide Architecture
+## Configuration Principle 7 — Configuration Must Not Hide Architecture
 
 Configuration should parameterize architecture.
 
@@ -380,7 +380,7 @@ without corresponding architectural documentation.
 
 ---
 
-# Configuration Principle 8 — Configuration Must Remain Minimal
+## Configuration Principle 8 — Configuration Must Remain Minimal
 
 Configuration should only exist where it controls meaningful behavior.
 
@@ -401,7 +401,7 @@ No Configuration Option
 
 ---
 
-# Configuration Principle 9 — Defaults Must Be Safe
+## Configuration Principle 9 — Defaults Must Be Safe
 
 Defaults should represent safe and predictable behavior.
 
@@ -417,7 +417,7 @@ Risk-sensitive behavior should require explicit selection.
 
 ---
 
-# Configuration Principle 10 — Build Profiles Must Be Explicit
+## Configuration Principle 10 — Build Profiles Must Be Explicit
 
 A build profile should not be inferred from vague environment conditions.
 
@@ -433,7 +433,7 @@ This improves reproducibility.
 
 ---
 
-# Configuration Source Model
+## Configuration Source Model
 
 The canonical configuration source model may be represented as:
 
@@ -452,7 +452,7 @@ The implementation may use fewer layers.
 
 ---
 
-# Current Implemented Configuration Contract
+## Current Implemented Configuration Contract
 
 The current FamilyOS package build does not use a single monolithic build-
 configuration file. Its configuration authority is intentionally divided
@@ -480,7 +480,7 @@ BuildEffectiveConfiguration
 This is a combined authority, not a precedence chain in which every source may
 override every other source. Each source owns a bounded category of state.
 
-## Canonical Configuration Authorities
+### Canonical Configuration Authorities
 
 | Authority | Current responsibility | Not its responsibility |
 |---|---|---|
@@ -505,7 +505,7 @@ They provide a closed set of supported values. The current implementation does
 not load another YAML, TOML, environment, or dictionary-based Build Framework
 configuration namespace.
 
-## Invocation Configuration
+### Invocation Configuration
 
 The public package-build command currently supports exactly these invocation
 settings:
@@ -526,7 +526,7 @@ Invocation configuration does not mutate `pyproject.toml`,
 implicitly select a profile, and profile selection is not inferred from an
 environment variable or CI-provider context.
 
-## Current Configuration Precedence
+### Current Configuration Precedence
 
 The current model applies precedence only where more than one supported source
 can supply the same setting.
@@ -559,7 +559,7 @@ can enforce profile and repository-layout policy before package construction.
 Equivalent relative, absolute, and normalized path forms therefore project to
 the same effective configuration.
 
-## Current Framework Defaults
+### Current Framework Defaults
 
 The current defaults proven by the public interface and application use case
 are:
@@ -586,7 +586,7 @@ is supplied. Selecting `ci` or `release-candidate` does not invent a default
 path; the absent default instead conflicts with those profiles' typed
 `evidence_required=True` policy and is rejected before package construction.
 
-## Bootstrap And Fixed Infrastructure Policy
+### Bootstrap And Fixed Infrastructure Policy
 
 The application bootstrap wires the current repository-owned build adapters.
 This dependency injection supports architectural separation and testing; it is
@@ -609,7 +609,7 @@ For the canonical Python package target, fixed infrastructure policy includes:
 
 These are fixed implementation semantics, not invocation overrides.
 
-## Configuration Versus Observed State
+### Configuration Versus Observed State
 
 `BuildContextResolver` combines selected configuration with state observed for
 one execution. The distinction is:
@@ -638,7 +638,7 @@ equivalent to a user-provided configuration override. Provider injection at an
 internal composition or test boundary does not create a public configuration
 source.
 
-## Current Profile Contract And Enforcement
+### Current Profile Contract And Enforcement
 
 All four profile definitions are immutable and declare purpose, supported
 targets, validation scope, whether evidence is required, environment
@@ -665,7 +665,7 @@ validation. Other target policy is currently implemented through the single
 canonical package pipeline rather than selected dynamically from every target
 definition field.
 
-## Environment-Variable Boundary
+### Environment-Variable Boundary
 
 The current canonical package-build path has no generic `FAMILYOS_*`
 environment-variable mechanism for overriding profile, target, output,
@@ -717,7 +717,7 @@ These are environment and tool-execution boundaries, not supported FamilyOS
 semantic override keys. They remain subject to later control where their
 influence proves material.
 
-## Secret Separation Contract
+### Secret Separation Contract
 
 Secrets are not Build Configuration.
 
@@ -736,7 +736,7 @@ This is not a claim that every possible ambient secret name is identified or
 that the subprocess environment is a complete allowlist. It defines the
 configuration ownership boundary and records the current verified sanitation.
 
-## Unknown Critical Settings
+### Unknown Critical Settings
 
 The current Build Framework configuration surface is closed and typed:
 
@@ -751,7 +751,7 @@ currently supported configuration model. If a future extensible configuration
 schema is introduced, it must add explicit unknown-key handling rather than
 weakening this closed surface.
 
-## Final Effective-Configuration Validation
+### Final Effective-Configuration Validation
 
 Canonical package-build execution now validates the final resolved
 configuration after `BuildContextResolver` returns and before the package
@@ -774,7 +774,7 @@ remains at the CLI boundary. The final gate does not interpret descriptive
 profile strings or invent clean-workspace, release-readiness, or severity
 policy.
 
-## Conflict And Validation-Bypass Policy
+### Conflict And Validation-Bypass Policy
 
 The current typed configuration surface rejects the material conflicts it can
 represent:
@@ -811,7 +811,7 @@ the CI package build; free-form profile `validation_scope` text is not treated
 as an in-process policy parser. Downstream release qualification likewise
 remains outside this package-build configuration gate.
 
-## Effective Configuration Inspectability
+### Effective Configuration Inspectability
 
 `EffectiveBuildConfigurationView` is the immutable inspection projection of
 one already-resolved `BuildContext` and its canonical
@@ -847,7 +847,7 @@ authorities, but the inspection projection does not mix them into
 configuration. It contains no environment-variable map, credentials, tokens,
 or publication secrets.
 
-## Current Implementation Limits
+### Current Implementation Limits
 
 The completed Level 12 contract retains these deliberate limits:
 
@@ -867,7 +867,7 @@ Level 12 effective-resolution contract ambiguous. Broader profile semantics,
 external-tool control, and default-authority consolidation require their own
 typed policy decisions rather than interpretation by the configuration view.
 
-## Current Configuration Resolution Acceptance Contract
+### Current Configuration Resolution Acceptance Contract
 
 Under the current architecture, "same configuration inputs" means:
 
@@ -911,7 +911,7 @@ proves that their equivalent deterministic inputs produce equal
 
 ---
 
-# Framework Defaults
+## Framework Defaults
 
 Framework defaults define baseline behavior.
 
@@ -926,7 +926,7 @@ Defaults should not carry hidden platform-specific assumptions.
 
 ---
 
-# Repository Configuration
+## Repository Configuration
 
 Repository configuration is authoritative for project-wide build behavior.
 
@@ -939,7 +939,7 @@ This is the preferred location for:
 
 ---
 
-# Component Configuration
+## Component Configuration
 
 Individual components or plugins may require specialized configuration.
 
@@ -947,7 +947,7 @@ Component configuration should extend canonical rules rather than contradict the
 
 ---
 
-# Profile Configuration
+## Profile Configuration
 
 Profile configuration specializes build behavior for a specific purpose.
 
@@ -967,7 +967,7 @@ may require stronger validation and evidence.
 
 ---
 
-# Invocation Parameters
+## Invocation Parameters
 
 Explicit invocation parameters may temporarily override configuration.
 
@@ -982,7 +982,7 @@ Invocation parameters should not provide unrestricted access to bypass trust con
 
 ---
 
-# Environment-Based Configuration
+## Environment-Based Configuration
 
 Environment values may provide context when configuration cannot reasonably be stored in the repository.
 
@@ -997,7 +997,7 @@ Environment configuration must remain constrained.
 
 ---
 
-# Configuration Resolution
+## Configuration Resolution
 
 Configuration resolution combines all applicable sources into one effective state.
 
@@ -1023,7 +1023,7 @@ Effective Configuration
 
 ---
 
-# Configuration Resolution Determinism
+## Configuration Resolution Determinism
 
 Equivalent configuration sources should resolve to equivalent effective configuration.
 
@@ -1036,7 +1036,7 @@ Resolution order must not depend on:
 
 ---
 
-# Configuration Conflict
+## Configuration Conflict
 
 A conflict occurs when two configuration sources define incompatible values.
 
@@ -1049,7 +1049,7 @@ It should never choose silently through incidental implementation behavior.
 
 ---
 
-# Effective Configuration
+## Effective Configuration
 
 The effective configuration is the final build configuration used by execution.
 
@@ -1072,7 +1072,7 @@ The exact model may remain distributed across existing tooling initially.
 
 ---
 
-# Configuration Identity
+## Configuration Identity
 
 For trusted builds, FamilyOS may eventually associate configuration with an identifier or fingerprint.
 
@@ -1087,7 +1087,7 @@ This is a maturity capability rather than an immediate universal requirement.
 
 ---
 
-# Build Profiles
+## Build Profiles
 
 Profiles provide controlled specialization of the canonical build model.
 
@@ -1095,7 +1095,7 @@ A profile must have a documented purpose.
 
 ---
 
-# Development Profile
+## Development Profile
 
 The development profile may prioritize:
 
@@ -1108,7 +1108,7 @@ It must not redefine canonical build semantics.
 
 ---
 
-# Validation Profile
+## Validation Profile
 
 The validation profile may enable:
 
@@ -1122,7 +1122,7 @@ Its purpose is engineering verification.
 
 ---
 
-# CI Profile
+## CI Profile
 
 The CI profile may require:
 
@@ -1134,7 +1134,7 @@ The CI profile may require:
 
 ---
 
-# Documentation Profile
+## Documentation Profile
 
 The documentation profile may enable:
 
@@ -1145,7 +1145,7 @@ The documentation profile may enable:
 
 ---
 
-# Plugin Profile
+## Plugin Profile
 
 The plugin profile may enable:
 
@@ -1156,7 +1156,7 @@ The plugin profile may enable:
 
 ---
 
-# Release Candidate Profile
+## Release Candidate Profile
 
 The release-candidate profile should apply stronger controls.
 
@@ -1171,7 +1171,7 @@ Possible settings include:
 
 ---
 
-# Profile Inheritance
+## Profile Inheritance
 
 Profile inheritance should be used cautiously.
 
@@ -1192,7 +1192,7 @@ is easier to understand than complex multi-level inheritance.
 
 ---
 
-# Configuration Schema
+## Configuration Schema
 
 As configuration complexity grows, FamilyOS may introduce explicit schemas.
 
@@ -1207,7 +1207,7 @@ A schema should be introduced only when it reduces real ambiguity.
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Configuration validation should occur before execution.
 
@@ -1227,7 +1227,7 @@ Policy Check
 
 ---
 
-# Syntax Validation
+## Syntax Validation
 
 Syntax validation ensures the configuration can be parsed.
 
@@ -1240,13 +1240,13 @@ Examples include:
 
 ---
 
-# Structural Validation
+## Structural Validation
 
 Structural validation ensures required configuration fields or sections exist.
 
 ---
 
-# Semantic Validation
+## Semantic Validation
 
 Semantic validation ensures values make sense.
 
@@ -1260,7 +1260,7 @@ may parse correctly but be semantically invalid.
 
 ---
 
-# Compatibility Validation
+## Compatibility Validation
 
 Compatibility validation checks interactions such as:
 
@@ -1284,7 +1284,7 @@ Compatible?
 
 ---
 
-# Policy Validation
+## Policy Validation
 
 Policy validation confirms configuration does not bypass required platform controls.
 
@@ -1296,7 +1296,7 @@ For example:
 
 ---
 
-# Configuration Error Handling
+## Configuration Error Handling
 
 Configuration failures should be explicit.
 
@@ -1310,7 +1310,7 @@ A useful failure should identify:
 
 ---
 
-# Configuration Failure Categories
+## Configuration Failure Categories
 
 Possible conceptual categories include:
 
@@ -1328,7 +1328,7 @@ Formal machine-readable implementation may come later.
 
 ---
 
-# Configuration And Reproducibility
+## Configuration And Reproducibility
 
 Configuration is one of the principal contributors to reproducibility.
 
@@ -1344,7 +1344,7 @@ Reduced Variability
 
 ---
 
-# Configuration And Determinism
+## Configuration And Determinism
 
 Hidden defaults and environment-driven behavior reduce determinism.
 
@@ -1352,7 +1352,7 @@ Explicit resolution improves it.
 
 ---
 
-# Configuration And Traceability
+## Configuration And Traceability
 
 Trusted build evidence should eventually be able to identify the configuration state used.
 
@@ -1367,7 +1367,7 @@ Sensitive values must be excluded.
 
 ---
 
-# Configuration And Build Evidence
+## Configuration And Build Evidence
 
 A build evidence bundle may conceptually include:
 
@@ -1385,7 +1385,7 @@ The amount of detail depends on build profile.
 
 ---
 
-# Configuration And Toolchain
+## Configuration And Toolchain
 
 Tool configuration is inseparable from tool behavior.
 
@@ -1403,7 +1403,7 @@ A tool version alone is insufficient evidence if behavior is heavily configurati
 
 ---
 
-# Configuration And Dependencies
+## Configuration And Dependencies
 
 Dependency selection may be configuration-dependent.
 
@@ -1417,7 +1417,7 @@ Such relationships must remain explicit.
 
 ---
 
-# Configuration And Environment
+## Configuration And Environment
 
 The framework should separate configuration from environment wherever practical.
 
@@ -1441,7 +1441,7 @@ Explicit Resolution
 
 ---
 
-# Configuration And Artifacts
+## Configuration And Artifacts
 
 Configuration may affect:
 
@@ -1456,7 +1456,7 @@ Such configuration should be captured as part of artifact traceability where rel
 
 ---
 
-# Configuration And Testing
+## Configuration And Testing
 
 Testing configuration remains governed primarily by the Testing Framework.
 
@@ -1464,7 +1464,7 @@ The Build Framework defines when testing configuration participates in build rea
 
 ---
 
-# Configuration And Quality
+## Configuration And Quality
 
 Quality configuration may define:
 
@@ -1476,7 +1476,7 @@ The Build Framework must consume these requirements without duplicating Quality 
 
 ---
 
-# Configuration And Plugins
+## Configuration And Plugins
 
 Plugins may require configuration for:
 
@@ -1490,7 +1490,7 @@ Plugin configuration must remain compatible with platform build rules.
 
 ---
 
-# Configuration And Release
+## Configuration And Release
 
 Release-candidate configuration may become part of the release handoff evidence.
 
@@ -1498,7 +1498,7 @@ The Release Framework may reject builds with unsupported configuration states.
 
 ---
 
-# Configuration Secrets
+## Configuration Secrets
 
 Secrets require special treatment.
 
@@ -1516,7 +1516,7 @@ rather than embedding the actual secret.
 
 ---
 
-# Secret Configuration Rules
+## Secret Configuration Rules
 
 Secrets MUST:
 
@@ -1528,7 +1528,7 @@ Secrets MUST:
 
 ---
 
-# Configuration Observability
+## Configuration Observability
 
 Build diagnostics should make non-sensitive effective configuration understandable.
 
@@ -1546,7 +1546,7 @@ without revealing secrets.
 
 ---
 
-# Configuration Inspection
+## Configuration Inspection
 
 Inspectability improves:
 
@@ -1563,7 +1563,7 @@ What configuration did this build actually use?
 
 ---
 
-# Configuration Diff
+## Configuration Diff
 
 Future tooling may support comparison between build configurations.
 
@@ -1583,7 +1583,7 @@ This is a future diagnostic capability.
 
 ---
 
-# Configuration Drift
+## Configuration Drift
 
 Configuration drift occurs when:
 
@@ -1596,7 +1596,7 @@ Drift must be reduced.
 
 ---
 
-# CI Configuration Drift
+## CI Configuration Drift
 
 CI configuration is a frequent source of divergence.
 
@@ -1618,7 +1618,7 @@ Recreate Build Configuration Independently
 
 ---
 
-# Local Configuration Drift
+## Local Configuration Drift
 
 Local developer overrides should not become required for canonical build success.
 
@@ -1626,7 +1626,7 @@ If a local override becomes universally required, it should be promoted to canon
 
 ---
 
-# Configuration Duplication
+## Configuration Duplication
 
 The same semantic setting should not be independently duplicated across:
 
@@ -1640,7 +1640,7 @@ Duplication creates synchronization debt.
 
 ---
 
-# Configuration Normalization
+## Configuration Normalization
 
 Where multiple syntax forms exist, the build system may normalize them into an internal representation.
 
@@ -1658,7 +1658,7 @@ This simplifies validation.
 
 ---
 
-# Configuration Immutability During Build
+## Configuration Immutability During Build
 
 Once effective configuration is resolved, it should remain stable during execution.
 
@@ -1678,7 +1678,7 @@ Dynamic mutation during a build makes traceability difficult.
 
 ---
 
-# Configuration Caching
+## Configuration Caching
 
 Configuration resolution may eventually be cached.
 
@@ -1688,7 +1688,7 @@ Caching must not cause stale configuration to be applied.
 
 ---
 
-# Configuration Change Management
+## Configuration Change Management
 
 Configuration changes should follow controlled engineering practice.
 
@@ -1712,7 +1712,7 @@ Adoption
 
 ---
 
-# Low-Risk Configuration Changes
+## Low-Risk Configuration Changes
 
 Examples may include:
 
@@ -1723,7 +1723,7 @@ These may require normal review only.
 
 ---
 
-# High-Risk Configuration Changes
+## High-Risk Configuration Changes
 
 Examples include:
 
@@ -1737,7 +1737,7 @@ These may require stronger governance.
 
 ---
 
-# Configuration Deprecation
+## Configuration Deprecation
 
 Obsolete configuration should be removed rather than maintained indefinitely.
 
@@ -1750,7 +1750,7 @@ A deprecation process may include:
 
 ---
 
-# Unknown Configuration
+## Unknown Configuration
 
 Unknown configuration keys should normally fail or warn explicitly.
 
@@ -1758,7 +1758,7 @@ Silently ignoring misspelled critical settings can produce dangerous assumptions
 
 ---
 
-# Backward Compatibility
+## Backward Compatibility
 
 Build configuration changes may affect:
 
@@ -1771,7 +1771,7 @@ Breaking configuration changes must be deliberate and documented.
 
 ---
 
-# Configuration Migration
+## Configuration Migration
 
 When configuration structure changes, migration should be explicit.
 
@@ -1784,7 +1784,7 @@ A migration may include:
 
 ---
 
-# Configuration Ownership
+## Configuration Ownership
 
 Configuration ownership should reflect responsibility.
 
@@ -1811,7 +1811,7 @@ The Build Framework should not absorb ownership of every configuration domain.
 
 ---
 
-# Configuration Governance
+## Configuration Governance
 
 Significant configuration model changes may require architectural review.
 
@@ -1825,7 +1825,7 @@ Examples include:
 
 ---
 
-# Configuration Technical Debt
+## Configuration Technical Debt
 
 Configuration debt includes:
 
@@ -1841,7 +1841,7 @@ This debt should be reduced continuously.
 
 ---
 
-# Configuration Minimalism
+## Configuration Minimalism
 
 A new configuration option should only be introduced when real variability is required.
 
@@ -1855,13 +1855,13 @@ If not, a single canonical behavior is preferable.
 
 ---
 
-# Configuration Anti-Pattern — Hidden Defaults
+## Configuration Anti-Pattern — Hidden Defaults
 
 Critical build behavior must not depend on undocumented default values.
 
 ---
 
-# Configuration Anti-Pattern — Environment Variable Explosion
+## Configuration Anti-Pattern — Environment Variable Explosion
 
 Dozens of loosely defined environment variables make builds difficult to reproduce.
 
@@ -1869,13 +1869,13 @@ Structured configuration should be preferred.
 
 ---
 
-# Configuration Anti-Pattern — CI Override Architecture
+## Configuration Anti-Pattern — CI Override Architecture
 
 CI must not override enough settings that it becomes a separate build system.
 
 ---
 
-# Configuration Anti-Pattern — Configuration As Code Without Boundaries
+## Configuration Anti-Pattern — Configuration As Code Without Boundaries
 
 Arbitrary executable configuration can hide side effects and undermine determinism.
 
@@ -1883,13 +1883,13 @@ Declarative configuration should be preferred where practical.
 
 ---
 
-# Configuration Anti-Pattern — Secrets In Repository
+## Configuration Anti-Pattern — Secrets In Repository
 
 Credentials and private keys must never be committed as normal build configuration.
 
 ---
 
-# Configuration Anti-Pattern — Profile Ambiguity
+## Configuration Anti-Pattern — Profile Ambiguity
 
 The build should not infer profiles from vague context such as:
 
@@ -1902,13 +1902,13 @@ Profile selection must be explicit.
 
 ---
 
-# Configuration Anti-Pattern — Silent Unknown Keys
+## Configuration Anti-Pattern — Silent Unknown Keys
 
 Typos must not silently disable or change critical behavior.
 
 ---
 
-# Configuration Maturity Model
+## Configuration Maturity Model
 
 FamilyOS build configuration maturity may progress through:
 
@@ -1951,7 +1951,7 @@ Each stage should solve demonstrated needs.
 
 ---
 
-# Configuration Success Criteria
+## Configuration Success Criteria
 
 The Build Configuration model is successful when FamilyOS can answer:
 
@@ -1972,53 +1972,53 @@ The Build Configuration model is successful when FamilyOS can answer:
 
 ---
 
-# Configuration Invariants
+## Configuration Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Critical build configuration must be explicit.
 
-## Invariant 2
+### Invariant 2
 
 Configuration precedence must be deterministic.
 
-## Invariant 3
+### Invariant 3
 
 Invalid configuration must prevent trusted artifact creation.
 
-## Invariant 4
+### Invariant 4
 
 Secrets must not be stored as ordinary configuration.
 
-## Invariant 5
+### Invariant 5
 
 CI must not maintain independent canonical build semantics.
 
-## Invariant 6
+### Invariant 6
 
 Effective configuration must remain stable during a build.
 
-## Invariant 7
+### Invariant 7
 
 Profiles must have documented purpose.
 
-## Invariant 8
+### Invariant 8
 
 Unknown critical configuration must not silently pass.
 
-## Invariant 9
+### Invariant 9
 
 Configuration changes must remain reviewable.
 
-## Invariant 10
+### Invariant 10
 
 Trusted build configuration state must remain explainable.
 
 ---
 
-# Configuration Model Summary
+## Configuration Model Summary
 
 The canonical FamilyOS Build Configuration flow is:
 
@@ -2046,7 +2046,7 @@ This transforms configuration from an implicit collection of settings into a gov
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Configuration model is founded on the following rule:
 

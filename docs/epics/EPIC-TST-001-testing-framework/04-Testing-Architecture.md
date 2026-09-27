@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 04 Testing Architecture
+## 04 Testing Architecture
 
-## Introduction
+### Introduction
 
 The FamilyOS Testing Architecture defines the structural model through which software behavior is validated across the FamilyOS engineering ecosystem.
 
@@ -27,7 +27,7 @@ They do not define it.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Testing Architecture is to provide a canonical structural model for FamilyOS testing.
 
@@ -54,7 +54,7 @@ The architecture ensures that testing behavior remains coherent as FamilyOS grow
 
 ---
 
-# Architectural Objective
+## Architectural Objective
 
 The primary architectural objective is:
 
@@ -74,7 +74,7 @@ A testing system that cannot answer these questions reliably does not provide su
 
 ---
 
-# Architectural Context
+## Architectural Context
 
 Testing exists inside the wider FamilyOS Engineering Platform.
 
@@ -112,7 +112,7 @@ Testing is therefore both:
 
 ---
 
-# Architectural Scope
+## Architectural Scope
 
 The Testing Architecture governs the structure used to validate:
 
@@ -134,7 +134,7 @@ It does not redefine the architecture of the systems being tested.
 
 ---
 
-# Separation Of Responsibilities
+## Separation Of Responsibilities
 
 The architecture separates five primary responsibilities:
 
@@ -160,7 +160,7 @@ This separation prevents testing policy, execution technology, and lifecycle dec
 
 ---
 
-# Test Definition Layer
+## Test Definition Layer
 
 The Test Definition Layer describes executable validation scenarios.
 
@@ -190,7 +190,7 @@ The test definition must remain understandable independently of the execution in
 
 ---
 
-# Test Selection Layer
+## Test Selection Layer
 
 The Test Selection Layer determines which tests should execute for a particular validation context.
 
@@ -211,7 +211,7 @@ Selection policy must remain explicit.
 
 ---
 
-# Test Execution Layer
+## Test Execution Layer
 
 The Test Execution Layer performs the selected tests.
 
@@ -230,7 +230,7 @@ The execution layer must not silently redefine test expectations.
 
 ---
 
-# Result Normalization Layer
+## Result Normalization Layer
 
 Different testing tools may expose different native result models.
 
@@ -257,7 +257,7 @@ This enables other FamilyOS frameworks to consume testing results without depend
 
 ---
 
-# Current Canonical Result Implementation
+## Current Canonical Result Implementation
 
 The current Testing Framework implementation provides a concrete structured
 pytest execution and normalization path.
@@ -333,7 +333,7 @@ results.
 
 ---
 
-# Evidence Production Layer
+## Evidence Production Layer
 
 Normalized test results become testing evidence.
 
@@ -356,7 +356,7 @@ Evidence must remain traceable to the execution that produced it.
 
 ---
 
-# Testing Levels Architecture
+## Testing Levels Architecture
 
 FamilyOS defines multiple testing levels.
 
@@ -384,7 +384,7 @@ They are complementary rather than interchangeable.
 
 ---
 
-# Unit Testing Boundary
+## Unit Testing Boundary
 
 Unit testing validates isolated behavior.
 
@@ -415,7 +415,7 @@ Unit tests optimize for:
 
 ---
 
-# Integration Testing Boundary
+## Integration Testing Boundary
 
 Integration testing validates collaboration between real components.
 
@@ -444,7 +444,7 @@ The relevant integration must remain real.
 
 ---
 
-# Contract Testing Boundary
+## Contract Testing Boundary
 
 Contract testing validates agreements across architectural boundaries.
 
@@ -474,7 +474,7 @@ The contract is the testing boundary.
 
 ---
 
-# Functional Testing Boundary
+## Functional Testing Boundary
 
 Functional testing validates complete capabilities from an externally meaningful perspective.
 
@@ -496,7 +496,7 @@ It should remain focused on capability behavior rather than implementation topol
 
 ---
 
-# System Testing Boundary
+## System Testing Boundary
 
 System testing validates assembled FamilyOS behavior.
 
@@ -527,7 +527,7 @@ System tests provide broad confidence but carry higher execution cost.
 
 ---
 
-# Testing Pyramid
+## Testing Pyramid
 
 The FamilyOS Testing Architecture generally favors a testing pyramid.
 
@@ -553,7 +553,7 @@ It expresses a preference for obtaining confidence from the lowest appropriate t
 
 ---
 
-# Testing Architecture Flow
+## Testing Architecture Flow
 
 The complete testing flow is:
 
@@ -604,7 +604,7 @@ No downstream consumer should need to reinterpret raw runner internals.
 
 ---
 
-# Testing Context
+## Testing Context
 
 Every governed test execution occurs within a testing context.
 
@@ -630,7 +630,7 @@ Higher-assurance workflows require stronger context.
 
 ---
 
-# Test Identity
+## Test Identity
 
 Tests should have stable identities where they participate in governed evidence.
 
@@ -647,7 +647,7 @@ A test identity should not depend unnecessarily on transient execution details.
 
 ---
 
-# Test Suite Architecture
+## Test Suite Architecture
 
 Tests are organized into suites.
 
@@ -675,7 +675,7 @@ Suites should reflect testing semantics rather than arbitrary repository organiz
 
 ---
 
-# Test Profile Architecture
+## Test Profile Architecture
 
 A testing profile defines a governed set of testing expectations for a particular context.
 
@@ -709,7 +709,7 @@ They should not redefine individual tests.
 
 ---
 
-# Environment Architecture
+## Environment Architecture
 
 Testing environments must be explicit and reproducible where required.
 
@@ -728,7 +728,7 @@ Environment complexity should increase only when the testing level requires it.
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 Testing environments should minimize interference.
 
@@ -752,7 +752,7 @@ Shared infrastructure may be used when safely partitioned.
 
 ---
 
-# Test Data Architecture
+## Test Data Architecture
 
 Test data is a governed input to test execution.
 
@@ -771,7 +771,7 @@ Test data must remain appropriate to the testing objective.
 
 ---
 
-# Fixture Architecture
+## Fixture Architecture
 
 Fixtures provide controlled setup and reusable state.
 
@@ -797,7 +797,7 @@ Fixture lifecycle must remain explicit.
 
 ---
 
-# Test Double Architecture
+## Test Double Architecture
 
 Test doubles exist at dependency boundaries.
 
@@ -824,7 +824,7 @@ A test double must not redefine the production contract.
 
 ---
 
-# Dependency Boundary
+## Dependency Boundary
 
 Every external dependency used during testing should belong to one of two categories:
 
@@ -842,7 +842,7 @@ Uncontrolled dependencies should be avoided in deterministic suites.
 
 ---
 
-# Time Boundary
+## Time Boundary
 
 Time is an external dependency.
 
@@ -864,7 +864,7 @@ This prevents arbitrary wall-clock dependence.
 
 ---
 
-# Randomness Boundary
+## Randomness Boundary
 
 Randomness is also an external dependency.
 
@@ -886,7 +886,7 @@ Failing randomized cases must be reproducible.
 
 ---
 
-# Filesystem Boundary
+## Filesystem Boundary
 
 Tests should access filesystem resources through controlled test locations.
 
@@ -904,7 +904,7 @@ Tests must not depend unintentionally on developer-specific filesystem state.
 
 ---
 
-# Network Boundary
+## Network Boundary
 
 Network access must be explicit.
 
@@ -922,7 +922,7 @@ Unit tests should normally belong to the first category.
 
 ---
 
-# Database Boundary
+## Database Boundary
 
 Persistence testing requires controlled state.
 
@@ -948,7 +948,7 @@ The database may be:
 
 ---
 
-# Plugin Testing Architecture
+## Plugin Testing Architecture
 
 Plugins are first-class testing subjects.
 
@@ -971,7 +971,7 @@ These boundaries should not be collapsed into one test suite.
 
 ---
 
-# Plugin Unit Testing
+## Plugin Unit Testing
 
 Plugin unit tests validate plugin-local behavior.
 
@@ -987,7 +987,7 @@ They should remain independent of the complete FamilyOS runtime where possible.
 
 ---
 
-# Plugin Contract Testing
+## Plugin Contract Testing
 
 Plugin contract tests validate compatibility with FamilyOS plugin contracts.
 
@@ -1003,7 +1003,7 @@ These tests protect the platform-plugin boundary.
 
 ---
 
-# Plugin Integration Testing
+## Plugin Integration Testing
 
 Plugin integration tests validate the plugin inside the actual FamilyOS runtime mechanisms.
 
@@ -1026,7 +1026,7 @@ This verifies behavior that unit testing cannot prove.
 
 ---
 
-# Official Plugin Testing
+## Official Plugin Testing
 
 Official plugins may require stronger testing profiles.
 
@@ -1048,7 +1048,7 @@ The Plugin Compliance Framework determines whether the evidence satisfies a comp
 
 ---
 
-# Third-Party Plugin Testing
+## Third-Party Plugin Testing
 
 Future third-party plugin support should reuse the same canonical testing model.
 
@@ -1060,7 +1060,7 @@ Result semantics remain consistent.
 
 ---
 
-# Test Discovery Architecture
+## Test Discovery Architecture
 
 Test discovery determines which executable test definitions are available.
 
@@ -1074,7 +1074,7 @@ The same repository state and configuration should produce equivalent discovery 
 
 ---
 
-# Test Selection Architecture
+## Test Selection Architecture
 
 Discovery and selection are different operations.
 
@@ -1098,7 +1098,7 @@ This distinction enables targeted testing without changing the canonical test in
 
 ---
 
-# Change-Based Selection
+## Change-Based Selection
 
 FamilyOS may support change-based test selection.
 
@@ -1120,7 +1120,7 @@ It must not weaken lifecycle assurance when broader testing is required.
 
 ---
 
-# Execution Architecture
+## Execution Architecture
 
 A test execution should have an explicit lifecycle.
 
@@ -1146,7 +1146,7 @@ The result model should preserve where failure occurred when useful.
 
 ---
 
-# Parallel Execution Architecture
+## Parallel Execution Architecture
 
 Independent tests may execute concurrently.
 
@@ -1166,7 +1166,7 @@ Parallel execution must preserve deterministic semantics.
 
 ---
 
-# Result Architecture
+## Result Architecture
 
 A canonical test result should identify the outcome of one governed test execution.
 
@@ -1186,7 +1186,7 @@ Exact schemas belong to implementation specifications.
 
 ---
 
-# Canonical Outcomes
+## Canonical Outcomes
 
 The architecture should distinguish at minimum between meaningful outcome classes such as:
 
@@ -1203,7 +1203,7 @@ Tool-specific result states should map explicitly to canonical semantics.
 
 ---
 
-# Failure Versus Error
+## Failure Versus Error
 
 A behavioral failure and an execution error must remain distinct.
 
@@ -1223,7 +1223,7 @@ This distinction is essential for trustworthy evidence.
 
 ---
 
-# Skip Semantics
+## Skip Semantics
 
 A skipped test is not a passing test.
 
@@ -1235,7 +1235,7 @@ A governed testing profile must determine whether skipped tests are acceptable.
 
 ---
 
-# Expected Failure Semantics
+## Expected Failure Semantics
 
 Expected failures require explicit representation.
 
@@ -1245,7 +1245,7 @@ The architecture must preserve enough information for governance and reporting.
 
 ---
 
-# Retry Architecture
+## Retry Architecture
 
 Retry may produce additional executions.
 
@@ -1266,7 +1266,7 @@ The final presentation may summarize them, but historical evidence must remain i
 
 ---
 
-# Test Run Architecture
+## Test Run Architecture
 
 A test run groups executions performed under a common testing context.
 
@@ -1290,7 +1290,7 @@ It is a governed execution record.
 
 ---
 
-# Evidence Architecture
+## Evidence Architecture
 
 Testing evidence is derived from test execution.
 
@@ -1311,7 +1311,7 @@ Evidence packages may be consumed by other FamilyOS systems.
 
 ---
 
-# Evidence Provenance
+## Evidence Provenance
 
 Evidence provenance answers:
 
@@ -1331,7 +1331,7 @@ The required provenance strength depends on lifecycle assurance.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Testing evidence used for governed decisions must be protected against accidental ambiguity or mutation.
 
@@ -1347,7 +1347,7 @@ These mechanisms belong to later implementation and security specifications.
 
 ---
 
-# Reporting Architecture
+## Reporting Architecture
 
 Reporting transforms testing evidence into useful representations.
 
@@ -1367,7 +1367,7 @@ Reporting must not alter the underlying evidence semantics.
 
 ---
 
-# Human Reporting
+## Human Reporting
 
 Human reports should optimize for diagnosis.
 
@@ -1381,7 +1381,7 @@ They should answer:
 
 ---
 
-# Machine Reporting
+## Machine Reporting
 
 Machine-readable reports enable automation.
 
@@ -1399,7 +1399,7 @@ Machine reporting requires stable schemas.
 
 ---
 
-# Testing Evidence Boundary
+## Testing Evidence Boundary
 
 Downstream frameworks may consume testing evidence.
 
@@ -1425,7 +1425,7 @@ Testing remains authoritative for the meaning of testing evidence.
 
 ---
 
-# Quality Integration
+## Quality Integration
 
 The Quality Framework evaluates broader engineering quality.
 
@@ -1449,7 +1449,7 @@ Quality must not redefine how a test result was produced.
 
 ---
 
-# Compliance Integration
+## Compliance Integration
 
 The Plugin Compliance Framework may require specific testing evidence.
 
@@ -1471,7 +1471,7 @@ Testing determines test semantics.
 
 ---
 
-# Build Integration
+## Build Integration
 
 The Build Framework may require tests before producing or accepting artifacts.
 
@@ -1493,7 +1493,7 @@ Testing does not own artifact construction.
 
 ---
 
-# Release Integration
+## Release Integration
 
 Release validation may require a governed testing profile.
 
@@ -1514,7 +1514,7 @@ The Release Framework owns the final release decision.
 
 ---
 
-# Certification Integration
+## Certification Integration
 
 Certification may consume high-assurance testing evidence.
 
@@ -1524,7 +1524,7 @@ It should consume actual evidence associated with the relevant artifact or revis
 
 ---
 
-# Continuous Integration Architecture
+## Continuous Integration Architecture
 
 CI is an execution environment for testing policy.
 
@@ -1549,7 +1549,7 @@ Required testing rules should remain governable independently of a specific CI v
 
 ---
 
-# Local Execution Architecture
+## Local Execution Architecture
 
 Developers should be able to execute relevant tests locally.
 
@@ -1570,7 +1570,7 @@ Local and CI semantics should remain compatible.
 
 ---
 
-# Command Architecture
+## Command Architecture
 
 Testing commands should provide stable entry points.
 
@@ -1589,7 +1589,7 @@ Actual CLI interfaces must be defined through the relevant specifications.
 
 ---
 
-# Repository Architecture
+## Repository Architecture
 
 Tests should be organized so that their scope is understandable.
 
@@ -1612,7 +1612,7 @@ Testing semantics are more important than exact folder names.
 
 ---
 
-# Test Support Architecture
+## Test Support Architecture
 
 Reusable testing infrastructure should be separated from actual test scenarios.
 
@@ -1629,7 +1629,7 @@ Support code must not obscure test intent.
 
 ---
 
-# Configuration Architecture
+## Configuration Architecture
 
 Testing configuration should be explicit.
 
@@ -1649,7 +1649,7 @@ Configuration precedence must remain predictable.
 
 ---
 
-# Testing Policy Architecture
+## Testing Policy Architecture
 
 Testing policy defines requirements.
 
@@ -1672,7 +1672,7 @@ This separation allows policy evolution without embedding governance directly in
 
 ---
 
-# Gate Architecture
+## Gate Architecture
 
 Testing gates evaluate evidence against lifecycle requirements.
 
@@ -1696,7 +1696,7 @@ Gate behavior must remain deterministic where inputs are deterministic.
 
 ---
 
-# Missing Evidence
+## Missing Evidence
 
 Missing evidence must be represented explicitly.
 
@@ -1717,7 +1717,7 @@ Missing evidence must never automatically become `PASS`.
 
 ---
 
-# Exception Architecture
+## Exception Architecture
 
 Governed exceptions exist outside normal test result semantics.
 
@@ -1741,7 +1741,7 @@ An exception does not change the historical test result.
 
 ---
 
-# Observability Architecture
+## Observability Architecture
 
 The testing system itself must be observable.
 
@@ -1760,7 +1760,7 @@ Observability supports testing-system improvement.
 
 ---
 
-# Performance Architecture
+## Performance Architecture
 
 Test execution performance should be measurable.
 
@@ -1779,7 +1779,7 @@ Performance problems should be diagnosable rather than accepted as unexplained s
 
 ---
 
-# Failure Diagnostics Architecture
+## Failure Diagnostics Architecture
 
 Failure diagnostics should preserve relevant information.
 
@@ -1800,7 +1800,7 @@ Sensitive information must be filtered appropriately.
 
 ---
 
-# Security Boundary
+## Security Boundary
 
 Testing infrastructure interacts with potentially sensitive resources.
 
@@ -1818,7 +1818,7 @@ Testing infrastructure must follow the FamilyOS Security Architecture.
 
 ---
 
-# Trust Boundary
+## Trust Boundary
 
 Not all test evidence has equal trust.
 
@@ -1843,7 +1843,7 @@ Trust level must not redefine behavioral outcome.
 
 ---
 
-# Artifact Binding
+## Artifact Binding
 
 High-assurance testing evidence may need to bind explicitly to an artifact.
 
@@ -1864,7 +1864,7 @@ This prevents evidence from one artifact being incorrectly applied to another.
 
 ---
 
-# Architecture Extensibility
+## Architecture Extensibility
 
 The Testing Architecture must support future testing capabilities without breaking its fundamental boundaries.
 
@@ -1884,7 +1884,7 @@ Extensions should integrate through governed testing semantics.
 
 ---
 
-# Architecture Evolution
+## Architecture Evolution
 
 The architecture should evolve through controlled changes.
 
@@ -1900,7 +1900,7 @@ Testing infrastructure should not evolve through accidental tool configuration d
 
 ---
 
-# Architecture Invariants
+## Architecture Invariants
 
 The FamilyOS Testing Architecture establishes the following invariants:
 
@@ -1932,7 +1932,7 @@ The FamilyOS Testing Architecture establishes the following invariants:
 
 ---
 
-# Architectural Responsibility Matrix
+## Architectural Responsibility Matrix
 
 The principal responsibility boundaries are:
 
@@ -1955,7 +1955,7 @@ This matrix prevents authority from becoming ambiguous.
 
 ---
 
-# Reference Execution Architecture
+## Reference Execution Architecture
 
 The reference logical execution architecture is:
 
@@ -2016,7 +2016,7 @@ Implementation may evolve while preserving these boundaries.
 
 ---
 
-# Architectural Maturity
+## Architectural Maturity
 
 The Testing Architecture should progress through controlled maturity stages.
 
@@ -2048,7 +2048,7 @@ Operational maturity is achieved through implementation.
 
 ---
 
-# Relationship With Testing Principles
+## Relationship With Testing Principles
 
 `03-Testing-Principles.md` defines the principles governing testing behavior.
 
@@ -2073,7 +2073,7 @@ Architecture must remain consistent with the principles.
 
 ---
 
-# Relationship With Testing Levels
+## Relationship With Testing Levels
 
 `05-Testing-Levels.md` defines the detailed semantic responsibilities of each testing level.
 
@@ -2083,7 +2083,7 @@ Testing-level rules must remain compatible with the architectural boundaries def
 
 ---
 
-# Relationship With Test Execution
+## Relationship With Test Execution
 
 Later framework documents define detailed execution requirements including:
 
@@ -2104,7 +2104,7 @@ They must not contradict its core responsibility boundaries.
 
 ---
 
-# Architectural Success Criteria
+## Architectural Success Criteria
 
 The Testing Architecture is successful when:
 
@@ -2121,7 +2121,7 @@ The Testing Architecture is successful when:
 
 ---
 
-# Final Architecture Statement
+## Final Architecture Statement
 
 The FamilyOS Testing Architecture establishes testing as a structured evidence-producing engineering capability.
 

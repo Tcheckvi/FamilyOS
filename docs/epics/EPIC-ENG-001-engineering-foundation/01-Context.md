@@ -1,8 +1,8 @@
 # Engineering Foundation
 
-# 01 Context
+## 01 Context
 
-## Context
+### Context
 
 FamilyOS is transitioning from an application-oriented project into a complete engineering ecosystem.
 
@@ -21,7 +21,7 @@ The Engineering Foundation defines the practices and principles that guide how F
 
 ---
 
-# Current Situation
+## Current Situation
 
 FamilyOS already contains several engineering capabilities:
 
@@ -43,7 +43,7 @@ Without a unified engineering foundation, future growth may introduce:
 
 ---
 
-# Problem Statement
+## Problem Statement
 
 As FamilyOS expands, contributors need clear answers to fundamental engineering questions:
 
@@ -58,9 +58,9 @@ The absence of standardized answers creates unnecessary complexity.
 
 ---
 
-# Engineering Challenges
+## Engineering Challenges
 
-## Scalability
+### Scalability
 
 The engineering approach must support:
 
@@ -72,7 +72,7 @@ The engineering approach must support:
 
 ---
 
-## Consistency
+### Consistency
 
 Different contributors must produce compatible solutions.
 
@@ -85,7 +85,7 @@ Consistency is required across:
 
 ---
 
-## Maintainability
+### Maintainability
 
 FamilyOS must remain understandable years after initial development.
 
@@ -97,7 +97,7 @@ Engineering practices must reduce:
 
 ---
 
-## Automation
+### Automation
 
 Manual processes do not scale.
 
@@ -110,39 +110,39 @@ Engineering activities should progressively support:
 
 ---
 
-# Engineering Foundation Goals
+## Engineering Foundation Goals
 
 The Engineering Foundation addresses these challenges by defining:
 
-## Development Standards
+### Development Standards
 
 Common rules for building FamilyOS components.
 
 ---
 
-## Collaboration Standards
+### Collaboration Standards
 
 Shared practices for working together.
 
 ---
 
-## Quality Expectations
+### Quality Expectations
 
 Clear expectations for reliable software.
 
 ---
 
-## Operational Practices
+### Operational Practices
 
 Repeatable processes for development and delivery.
 
 ---
 
-# Relationship With Existing FamilyOS Architecture
+## Relationship With Existing FamilyOS Architecture
 
 The Engineering Foundation builds upon existing principles:
 
-## Clean Architecture
+### Clean Architecture
 
 Maintains separation between:
 
@@ -152,7 +152,7 @@ Maintains separation between:
 
 ---
 
-## Domain-Driven Design
+### Domain-Driven Design
 
 Supports:
 
@@ -162,7 +162,7 @@ Supports:
 
 ---
 
-## Plugin Architecture
+### Plugin Architecture
 
 Provides engineering rules for:
 
@@ -172,13 +172,13 @@ Provides engineering rules for:
 
 ---
 
-## Documentation Framework
+### Documentation Framework
 
 Ensures engineering knowledge remains structured and available.
 
 ---
 
-# Scope Boundaries
+## Scope Boundaries
 
 The Engineering Foundation focuses on engineering practices.
 
@@ -193,11 +193,11 @@ These remain owned by their respective domains.
 
 ---
 
-# Expected Impact
+## Expected Impact
 
 The Engineering Foundation will provide:
 
-## For Developers
+### For Developers
 
 * clearer workflows,
 * better tooling,
@@ -205,7 +205,7 @@ The Engineering Foundation will provide:
 
 ---
 
-## For Maintainers
+### For Maintainers
 
 * easier evolution,
 * better traceability,
@@ -213,7 +213,7 @@ The Engineering Foundation will provide:
 
 ---
 
-## For Contributors
+### For Contributors
 
 * faster onboarding,
 * common engineering language,
@@ -221,7 +221,7 @@ The Engineering Foundation will provide:
 
 ---
 
-# Dependency Context
+## Dependency Context
 
 The Engineering Foundation depends on:
 
@@ -238,7 +238,7 @@ It provides foundations for:
 
 ---
 
-# Final Context Statement
+## Final Context Statement
 
 The Engineering Foundation is required to transform FamilyOS engineering practices from implicit knowledge into an explicit, documented, and scalable system.
 

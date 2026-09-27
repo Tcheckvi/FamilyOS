@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 11 Defect and Quality Debt Management
+## 11 Defect and Quality Debt Management
 
-## Overview
+### Overview
 
 The FamilyOS Defect and Quality Debt Management model defines how defects, known deficiencies, deferred corrections, technical weaknesses, and accumulated quality debt are identified, classified, prioritized, tracked, remediated, verified, and governed.
 
@@ -36,7 +36,7 @@ The objective is to prevent known deficiencies from becoming invisible or perman
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Defect and Quality Debt Management is to create a controlled mechanism for handling known quality deficiencies across the FamilyOS ecosystem.
 
@@ -78,7 +78,7 @@ This model converts quality deficiencies into manageable engineering work.
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -96,7 +96,7 @@ Visibility is a prerequisite for control.
 
 ---
 
-# Defect Definition
+## Defect Definition
 
 A Defect is an observed condition where a FamilyOS artifact fails to satisfy an applicable expectation.
 
@@ -128,7 +128,7 @@ A defect is supported by evidence.
 
 ---
 
-# Quality Debt Definition
+## Quality Debt Definition
 
 Quality Debt is a known unresolved condition that reduces engineering confidence, maintainability, reliability, or future development efficiency.
 
@@ -146,7 +146,7 @@ Quality debt may originate from defects, exceptions, incomplete capabilities, or
 
 ---
 
-# Technical Debt and Quality Debt
+## Technical Debt and Quality Debt
 
 Technical debt is a subset of the broader quality debt model.
 
@@ -176,7 +176,7 @@ The broader model ensures that non-code deficiencies remain visible.
 
 ---
 
-# Defect vs Finding
+## Defect vs Finding
 
 A Quality Finding represents the output of a quality check or assessment.
 
@@ -198,7 +198,7 @@ Not every finding necessarily becomes a defect.
 
 ---
 
-# Defect vs Risk
+## Defect vs Risk
 
 A defect is an observed problem.
 
@@ -218,7 +218,7 @@ Defect management and risk management therefore remain connected but distinct.
 
 ---
 
-# Defect Identity
+## Defect Identity
 
 Every managed defect should have a stable identifier.
 
@@ -245,7 +245,7 @@ Identifiers support:
 
 ---
 
-# Quality Debt Identity
+## Quality Debt Identity
 
 Significant quality debt items may use a dedicated identifier.
 
@@ -267,7 +267,7 @@ A unified identifier model may also be used if implementation simplicity is pref
 
 ---
 
-# Defect Metadata
+## Defect Metadata
 
 A defect record may include:
 
@@ -297,7 +297,7 @@ The exact representation may evolve.
 
 ---
 
-# Quality Debt Metadata
+## Quality Debt Metadata
 
 A debt record may include:
 
@@ -324,7 +324,7 @@ Debt records must remain actionable.
 
 ---
 
-# Defect Sources
+## Defect Sources
 
 Defects may originate from:
 
@@ -345,7 +345,7 @@ The original source should remain traceable.
 
 ---
 
-# Quality Debt Sources
+## Quality Debt Sources
 
 Quality debt may originate from:
 
@@ -364,7 +364,7 @@ Debt may also be intentionally created when a short-term trade-off is explicitly
 
 ---
 
-# Intentional Debt
+## Intentional Debt
 
 Not all debt is accidental.
 
@@ -389,7 +389,7 @@ Invisible intentional debt becomes unmanaged debt.
 
 ---
 
-# Accidental Debt
+## Accidental Debt
 
 Accidental debt may arise from:
 
@@ -403,7 +403,7 @@ Once identified, accidental debt must enter the same governance model as intenti
 
 ---
 
-# Defect Classification
+## Defect Classification
 
 Defects should be classified by Quality Domain.
 
@@ -429,7 +429,7 @@ Primary classification supports ownership and reporting.
 
 ---
 
-# Defect Severity
+## Defect Severity
 
 Defect severity should align with the common FamilyOS severity model:
 
@@ -447,7 +447,7 @@ It does not automatically define remediation priority.
 
 ---
 
-# Defect Priority
+## Defect Priority
 
 Priority defines how quickly the defect should be addressed.
 
@@ -484,7 +484,7 @@ Priority should consider:
 
 ---
 
-# Severity vs Priority
+## Severity vs Priority
 
 Severity and priority must remain distinct.
 
@@ -514,7 +514,7 @@ may be appropriate if the issue blocks an imminent release.
 
 ---
 
-# Defect Lifecycle
+## Defect Lifecycle
 
 A baseline defect lifecycle may include:
 
@@ -548,13 +548,13 @@ Each state must have defined semantics.
 
 ---
 
-# OPEN
+## OPEN
 
 `OPEN` means the defect has been identified but not yet fully triaged.
 
 ---
 
-# TRIAGED
+## TRIAGED
 
 `TRIAGED` means the defect has been validated and classified.
 
@@ -569,19 +569,19 @@ Triage should determine:
 
 ---
 
-# ASSIGNED
+## ASSIGNED
 
 `ASSIGNED` means an owner has accepted responsibility for remediation or disposition.
 
 ---
 
-# IN_PROGRESS
+## IN_PROGRESS
 
 `IN_PROGRESS` means active remediation is underway.
 
 ---
 
-# RESOLVED
+## RESOLVED
 
 `RESOLVED` means a correction has been implemented or the underlying condition has otherwise been addressed.
 
@@ -589,13 +589,13 @@ Resolution is not yet final closure.
 
 ---
 
-# VERIFIED
+## VERIFIED
 
 `VERIFIED` means evidence confirms that the defect no longer exists or the intended remediation is effective.
 
 ---
 
-# CLOSED
+## CLOSED
 
 `CLOSED` means the defect lifecycle is complete.
 
@@ -603,7 +603,7 @@ Closure should preserve historical records.
 
 ---
 
-# FALSE_POSITIVE
+## FALSE_POSITIVE
 
 A finding may be classified as a false positive when it does not represent an actual defect.
 
@@ -613,7 +613,7 @@ Frequent false positives should trigger rule quality review.
 
 ---
 
-# DUPLICATE
+## DUPLICATE
 
 Duplicate records should link to the authoritative defect.
 
@@ -621,7 +621,7 @@ Duplicates should not be independently remediated.
 
 ---
 
-# ACCEPTED_RISK
+## ACCEPTED_RISK
 
 A valid defect may remain unresolved because its associated risk has been explicitly accepted.
 
@@ -629,7 +629,7 @@ The defect should remain visible and linked to the risk acceptance.
 
 ---
 
-# WONT_FIX
+## WONT_FIX
 
 `WONT_FIX` should be used cautiously.
 
@@ -641,7 +641,7 @@ For significant issues, risk acceptance may be more appropriate.
 
 ---
 
-# OBSOLETE
+## OBSOLETE
 
 A defect may become obsolete if:
 
@@ -653,7 +653,7 @@ Obsolescence must be verified, not assumed.
 
 ---
 
-# Quality Debt Lifecycle
+## Quality Debt Lifecycle
 
 Quality debt may follow a similar lifecycle:
 
@@ -683,7 +683,7 @@ OBSOLETE
 
 ---
 
-# Debt Creation
+## Debt Creation
 
 Debt should be created when a known quality deficiency cannot reasonably be resolved immediately.
 
@@ -705,7 +705,7 @@ Debt entries without actionable context provide limited value.
 
 ---
 
-# Debt Assessment
+## Debt Assessment
 
 Debt should be assessed according to:
 
@@ -720,7 +720,7 @@ This links debt management to the Quality Risk Management model.
 
 ---
 
-# Debt Prioritization
+## Debt Prioritization
 
 Debt should be prioritized based on engineering risk rather than visibility or convenience.
 
@@ -744,7 +744,7 @@ No single factor should dominate blindly.
 
 ---
 
-# Debt Age
+## Debt Age
 
 Debt age measures how long a deficiency remains unresolved.
 
@@ -762,7 +762,7 @@ Old debt is not automatically critical, but persistent high-risk debt requires r
 
 ---
 
-# Debt Interest
+## Debt Interest
 
 Some debt creates increasing future cost.
 
@@ -779,7 +779,7 @@ Debt with high interest should receive stronger remediation priority.
 
 ---
 
-# Quality Debt Interest Model
+## Quality Debt Interest Model
 
 Conceptually:
 
@@ -799,7 +799,7 @@ The concept exists to recognize compounding engineering cost.
 
 ---
 
-# Debt Impact Dimensions
+## Debt Impact Dimensions
 
 Debt may affect:
 
@@ -818,7 +818,7 @@ Impact should remain explicit.
 
 ---
 
-# Debt Categories
+## Debt Categories
 
 Quality debt may be categorized as:
 
@@ -839,7 +839,7 @@ This supports domain-level reporting.
 
 ---
 
-# Architecture Debt
+## Architecture Debt
 
 Architecture debt may include:
 
@@ -853,7 +853,7 @@ Architecture debt often has high long-term interest.
 
 ---
 
-# Testing Debt
+## Testing Debt
 
 Testing debt may include:
 
@@ -867,7 +867,7 @@ Testing debt reduces confidence in future changes.
 
 ---
 
-# Security Debt
+## Security Debt
 
 Security debt may include:
 
@@ -880,7 +880,7 @@ Security debt requires particularly careful governance.
 
 ---
 
-# Documentation Debt
+## Documentation Debt
 
 Documentation debt may include:
 
@@ -893,7 +893,7 @@ Documentation debt can generate implementation defects and repeated engineering 
 
 ---
 
-# Dependency Debt
+## Dependency Debt
 
 Dependency debt may include:
 
@@ -906,7 +906,7 @@ Dependency debt may accumulate risk quickly if left unmanaged.
 
 ---
 
-# Automation Debt
+## Automation Debt
 
 Automation debt includes quality activities that remain manual despite being suitable for automation.
 
@@ -922,7 +922,7 @@ Automation debt increases inconsistency and engineering effort.
 
 ---
 
-# Observability Debt
+## Observability Debt
 
 Observability debt may include:
 
@@ -935,7 +935,7 @@ Operational defects are harder to diagnose when observability debt accumulates.
 
 ---
 
-# Compatibility Debt
+## Compatibility Debt
 
 Compatibility debt may include:
 
@@ -948,7 +948,7 @@ Compatibility debt should have clear retirement strategies.
 
 ---
 
-# Governance Debt
+## Governance Debt
 
 Governance debt may include:
 
@@ -962,7 +962,7 @@ Governance debt weakens the quality system itself.
 
 ---
 
-# Debt Register
+## Debt Register
 
 The framework may maintain a Quality Debt Register.
 
@@ -980,7 +980,7 @@ The register should provide platform-level visibility.
 
 ---
 
-# Debt Register Entry
+## Debt Register Entry
 
 A debt entry should provide enough information for future engineers to understand the original context.
 
@@ -1002,7 +1002,7 @@ Related Evidence
 
 ---
 
-# Debt Ownership
+## Debt Ownership
 
 Every significant debt item must have an owner.
 
@@ -1020,7 +1020,7 @@ Unowned debt is likely to become invisible debt.
 
 ---
 
-# Defect Ownership
+## Defect Ownership
 
 Every active significant defect should have clear ownership.
 
@@ -1035,7 +1035,7 @@ Assignment should reflect the area capable of resolving the root cause.
 
 ---
 
-# Defect Triage
+## Defect Triage
 
 Triage should occur as early as practical.
 
@@ -1059,7 +1059,7 @@ Does it require immediate remediation?
 
 ---
 
-# Automated Defect Creation
+## Automated Defect Creation
 
 Certain quality checks may create defect records automatically.
 
@@ -1073,7 +1073,7 @@ Automatic creation should be limited to meaningful issues to avoid backlog noise
 
 ---
 
-# Finding Promotion
+## Finding Promotion
 
 A finding may become a managed defect according to policy.
 
@@ -1091,7 +1091,7 @@ Low-value findings may remain in tool or quality reports without becoming long-l
 
 ---
 
-# Defect Deduplication
+## Defect Deduplication
 
 Multiple checks may detect the same underlying problem.
 
@@ -1109,7 +1109,7 @@ Evidence from all sources should remain linked.
 
 ---
 
-# Defect Fingerprint
+## Defect Fingerprint
 
 A defect fingerprint may help identify recurrence.
 
@@ -1126,7 +1126,7 @@ Fingerprints must remain stable enough to support comparison without hiding genu
 
 ---
 
-# Recurring Defects
+## Recurring Defects
 
 A recurring defect is one that reappears after previous correction.
 
@@ -1148,7 +1148,7 @@ Repeated defects indicate that the existing control may be insufficient.
 
 ---
 
-# Root Cause Analysis
+## Root Cause Analysis
 
 Significant defects should trigger root cause analysis where appropriate.
 
@@ -1170,7 +1170,7 @@ The purpose is systemic prevention.
 
 ---
 
-# Root Cause Categories
+## Root Cause Categories
 
 Possible root cause categories include:
 
@@ -1191,7 +1191,7 @@ Categorization enables trend analysis.
 
 ---
 
-# Corrective Action
+## Corrective Action
 
 Corrective action resolves the immediate defect.
 
@@ -1207,7 +1207,7 @@ Corrective action addresses the observed problem.
 
 ---
 
-# Preventive Action
+## Preventive Action
 
 Preventive action reduces recurrence.
 
@@ -1230,7 +1230,7 @@ Prevent Recurrence
 
 ---
 
-# Remediation Plan
+## Remediation Plan
 
 A debt or significant defect may require a remediation plan.
 
@@ -1249,7 +1249,7 @@ Large remediation may be broken into staged work.
 
 ---
 
-# Incremental Remediation
+## Incremental Remediation
 
 Large quality debt should support incremental reduction.
 
@@ -1271,7 +1271,7 @@ Incremental remediation is preferable to indefinite deferral.
 
 ---
 
-# New Debt Prevention
+## New Debt Prevention
 
 Baselines may allow existing debt while preventing new debt.
 
@@ -1291,7 +1291,7 @@ This is one of the most effective migration strategies for legacy areas.
 
 ---
 
-# Debt Baseline
+## Debt Baseline
 
 A debt baseline should identify:
 
@@ -1304,7 +1304,7 @@ The baseline must remain explicit.
 
 ---
 
-# Baseline Reduction
+## Baseline Reduction
 
 The expected direction is:
 
@@ -1322,7 +1322,7 @@ Baselines should progressively improve.
 
 ---
 
-# Baseline Growth
+## Baseline Growth
 
 Adding new debt to a baseline should require explicit justification.
 
@@ -1330,7 +1330,7 @@ A baseline must not become a mechanism for automatically accepting every new fai
 
 ---
 
-# Defect Verification
+## Defect Verification
 
 A defect is not complete merely because code changed.
 
@@ -1346,7 +1346,7 @@ Possible verification includes:
 
 ---
 
-# Regression Test Requirement
+## Regression Test Requirement
 
 For meaningful functional defects, remediation should consider adding a regression test.
 
@@ -1366,7 +1366,7 @@ A regression test may not always be appropriate, but the possibility should be e
 
 ---
 
-# Rule Improvement
+## Rule Improvement
 
 If a defect could have been detected automatically earlier, the framework should consider improving a quality rule.
 
@@ -1384,7 +1384,7 @@ This converts experience into systemic protection.
 
 ---
 
-# Documentation Improvement
+## Documentation Improvement
 
 Some defects reveal documentation deficiencies.
 
@@ -1404,7 +1404,7 @@ The root cause may span multiple domains.
 
 ---
 
-# Defect Closure Evidence
+## Defect Closure Evidence
 
 Closure should reference evidence proving resolution.
 
@@ -1428,7 +1428,7 @@ This makes closure auditable.
 
 ---
 
-# Debt Closure
+## Debt Closure
 
 Debt may be closed when:
 
@@ -1441,7 +1441,7 @@ Closure must not occur solely because the debt is old.
 
 ---
 
-# Debt Verification
+## Debt Verification
 
 Debt remediation should verify the intended quality state.
 
@@ -1460,7 +1460,7 @@ Required integration profile passes
 
 ---
 
-# Defect Reopening
+## Defect Reopening
 
 A closed defect may be reopened if:
 
@@ -1472,7 +1472,7 @@ Reopening preserves historical continuity.
 
 ---
 
-# Debt Reopening
+## Debt Reopening
 
 Closed debt may also be reopened when previously removed deficiencies return.
 
@@ -1480,7 +1480,7 @@ Recurrent debt should trigger deeper systemic analysis.
 
 ---
 
-# Defect Aging
+## Defect Aging
 
 Long-lived defects should be visible.
 
@@ -1496,7 +1496,7 @@ Aging does not automatically determine priority, but it reveals neglect.
 
 ---
 
-# Debt Aging
+## Debt Aging
 
 Debt aging should be analyzed alongside:
 
@@ -1509,7 +1509,7 @@ Old high-interest debt usually deserves stronger attention.
 
 ---
 
-# Defect Metrics
+## Defect Metrics
 
 Possible defect metrics include:
 
@@ -1527,7 +1527,7 @@ Metrics should support improvement rather than performance theater.
 
 ---
 
-# Defect Escape Rate
+## Defect Escape Rate
 
 A useful metric may compare defects detected before release with defects detected after release.
 
@@ -1545,7 +1545,7 @@ Interpretation must account for defect severity and detection opportunities.
 
 ---
 
-# Defect Recurrence Rate
+## Defect Recurrence Rate
 
 A recurrence metric may help identify weak corrective processes.
 
@@ -1561,7 +1561,7 @@ High recurrence suggests that fixes are addressing symptoms rather than causes.
 
 ---
 
-# Mean Time to Resolution
+## Mean Time to Resolution
 
 Defect remediation efficiency may be represented by:
 
@@ -1577,7 +1577,7 @@ Severity-specific MTTR may be more meaningful than one overall average.
 
 ---
 
-# Quality Debt Metrics
+## Quality Debt Metrics
 
 Possible debt metrics include:
 
@@ -1593,7 +1593,7 @@ Debt Reduction Rate
 
 ---
 
-# Debt Trend
+## Debt Trend
 
 Debt trend may reveal whether quality is improving.
 
@@ -1610,7 +1610,7 @@ The count alone should still be interpreted with severity and scope.
 
 ---
 
-# Debt Creation Rate
+## Debt Creation Rate
 
 A high creation rate may indicate systemic engineering problems.
 
@@ -1628,7 +1628,7 @@ This trend should trigger framework review.
 
 ---
 
-# Debt Burn-Down
+## Debt Burn-Down
 
 A debt burn-down may track planned reduction.
 
@@ -1650,7 +1650,7 @@ Burn-down targets should focus on meaningful debt rather than arbitrary counts.
 
 ---
 
-# Debt Density
+## Debt Density
 
 Debt may occasionally be normalized against repository scope.
 
@@ -1664,7 +1664,7 @@ Such metrics should be used cautiously.
 
 ---
 
-# Defect Distribution
+## Defect Distribution
 
 Defects may be grouped by:
 
@@ -1679,7 +1679,7 @@ Distribution analysis can reveal systemic weaknesses.
 
 ---
 
-# Pareto Analysis
+## Pareto Analysis
 
 The framework may identify whether a small number of root causes produce most defects.
 
@@ -1695,7 +1695,7 @@ This can guide quality investment.
 
 ---
 
-# Quality Debt Portfolio
+## Quality Debt Portfolio
 
 Quality debt should be managed as a portfolio rather than a simple backlog.
 
@@ -1714,7 +1714,7 @@ Different categories may require different remediation strategies.
 
 ---
 
-# Strategic Debt
+## Strategic Debt
 
 Some debt may block future architectural goals.
 
@@ -1728,7 +1728,7 @@ Strategic debt should be evaluated relative to the roadmap.
 
 ---
 
-# Release-Blocking Defects
+## Release-Blocking Defects
 
 Certain defects must block release.
 
@@ -1743,7 +1743,7 @@ Blocking behavior must be defined by Quality Gates and profiles.
 
 ---
 
-# Non-Blocking Defects
+## Non-Blocking Defects
 
 Non-blocking defects may remain open across a release when risk is acceptable.
 
@@ -1753,7 +1753,7 @@ Release notes or risk reports may need to reference significant known limitation
 
 ---
 
-# Known Issues
+## Known Issues
 
 A release may intentionally contain known non-blocking issues.
 
@@ -1768,7 +1768,7 @@ Known issues must not become an informal substitute for defect management.
 
 ---
 
-# Release Debt
+## Release Debt
 
 A release may carry approved quality debt.
 
@@ -1788,7 +1788,7 @@ Subsequent releases should not automatically inherit acceptance without review.
 
 ---
 
-# Debt Carry-Forward
+## Debt Carry-Forward
 
 When debt remains unresolved across releases, carry-forward should preserve:
 
@@ -1802,7 +1802,7 @@ The debt should not be recreated as a new item every release.
 
 ---
 
-# Exception-Generated Debt
+## Exception-Generated Debt
 
 Temporary exceptions frequently create quality debt.
 
@@ -1820,7 +1820,7 @@ When appropriate, the exception should automatically link to a debt record.
 
 ---
 
-# Exception Expiration
+## Exception Expiration
 
 When an exception expires, associated debt must be reassessed.
 
@@ -1837,7 +1837,7 @@ Silent expiration is not acceptable.
 
 ---
 
-# Accepted Risk Debt
+## Accepted Risk Debt
 
 A defect under accepted risk remains known quality debt unless the condition is no longer considered a deficiency.
 
@@ -1845,7 +1845,7 @@ Risk acceptance does not erase the debt.
 
 ---
 
-# Security Debt Governance
+## Security Debt Governance
 
 Security debt requires stronger controls.
 
@@ -1861,7 +1861,7 @@ Permanent acceptance should be exceptional.
 
 ---
 
-# Architecture Debt Governance
+## Architecture Debt Governance
 
 Architecture debt should be evaluated for compounding cost.
 
@@ -1876,7 +1876,7 @@ The response should address the systemic cause.
 
 ---
 
-# Testing Debt Governance
+## Testing Debt Governance
 
 Testing debt may receive higher priority when it affects:
 
@@ -1889,7 +1889,7 @@ Coverage numbers alone should not determine testing debt importance.
 
 ---
 
-# Documentation Debt Governance
+## Documentation Debt Governance
 
 Documentation debt should be prioritized according to its impact on:
 
@@ -1903,7 +1903,7 @@ Public or normative documentation generally requires stronger control.
 
 ---
 
-# Quality Infrastructure Defects
+## Quality Infrastructure Defects
 
 Defects in the quality system are particularly important.
 
@@ -1920,7 +1920,7 @@ Such defects can create false confidence across the entire platform.
 
 ---
 
-# Quality Infrastructure Debt
+## Quality Infrastructure Debt
 
 Quality infrastructure may also accumulate debt.
 
@@ -1936,7 +1936,7 @@ Because the quality system governs other engineering decisions, its debt deserve
 
 ---
 
-# Flaky Tests as Debt
+## Flaky Tests as Debt
 
 Persistent flaky tests should be treated as Quality Debt.
 
@@ -1950,7 +1950,7 @@ Flaky tests should not be normalized as routine noise.
 
 ---
 
-# Suppressions as Debt Signals
+## Suppressions as Debt Signals
 
 Repeated suppressions may indicate debt.
 
@@ -1972,7 +1972,7 @@ The system should determine whether the problem lies in:
 
 ---
 
-# Manual Checks as Debt Signals
+## Manual Checks as Debt Signals
 
 A manual quality process may be acceptable initially.
 
@@ -1982,7 +1982,7 @@ This creates a path toward scalable quality engineering.
 
 ---
 
-# Defect Review
+## Defect Review
 
 Significant open defects should be reviewed periodically.
 
@@ -2004,7 +2004,7 @@ Remediation still valid?
 
 ---
 
-# Debt Review
+## Debt Review
 
 Debt reviews should focus on:
 
@@ -2019,7 +2019,7 @@ Debt that is never reviewed becomes unmanaged debt.
 
 ---
 
-# Quality Debt Review Cadence
+## Quality Debt Review Cadence
 
 Review frequency should reflect risk.
 
@@ -2040,7 +2040,7 @@ Exact cadence belongs to governance policy.
 
 ---
 
-# Defect Escalation
+## Defect Escalation
 
 Defects should escalate when:
 
@@ -2055,7 +2055,7 @@ Escalation should remain explicit.
 
 ---
 
-# Debt Escalation
+## Debt Escalation
 
 Debt may escalate when:
 
@@ -2069,7 +2069,7 @@ A previously low-priority debt item may become strategically critical.
 
 ---
 
-# Defect SLA
+## Defect SLA
 
 The framework may eventually define target remediation expectations by severity.
 
@@ -2093,7 +2093,7 @@ Specific durations should be defined by governance rather than hard-coded univer
 
 ---
 
-# Debt Remediation Objectives
+## Debt Remediation Objectives
 
 Debt reduction objectives may be defined by:
 
@@ -2117,7 +2117,7 @@ Targets must remain meaningful.
 
 ---
 
-# Debt Budget
+## Debt Budget
 
 A future governance model may define a Quality Debt Budget.
 
@@ -2136,7 +2136,7 @@ Any budget must remain risk-aware.
 
 ---
 
-# Debt Budget Anti-Pattern
+## Debt Budget Anti-Pattern
 
 A debt budget must not become permission to intentionally create problems simply because capacity remains.
 
@@ -2144,7 +2144,7 @@ Quality decisions should still seek the best engineering outcome.
 
 ---
 
-# Remediation Verification Gate
+## Remediation Verification Gate
 
 Major debt remediation may require a dedicated verification step.
 
@@ -2162,7 +2162,7 @@ This prevents premature closure.
 
 ---
 
-# Defect and CI Integration
+## Defect and CI Integration
 
 CI may automatically:
 
@@ -2178,7 +2178,7 @@ Only meaningful managed defects should persist.
 
 ---
 
-# Defect and Release Integration
+## Defect and Release Integration
 
 Release validation should consider:
 
@@ -2193,7 +2193,7 @@ Release gates determine whether these conditions permit progression.
 
 ---
 
-# Defect and Documentation Integration
+## Defect and Documentation Integration
 
 Significant known limitations should be reflected in appropriate documentation.
 
@@ -2208,7 +2208,7 @@ The defect tracker remains the authoritative lifecycle record.
 
 ---
 
-# Defect and Governance Integration
+## Defect and Governance Integration
 
 Governance should define:
 
@@ -2223,7 +2223,7 @@ Without governance, defect state can become inconsistent.
 
 ---
 
-# Defect Auditability
+## Defect Auditability
 
 A defect record should allow reconstruction of:
 
@@ -2243,7 +2243,7 @@ How was closure verified?
 
 ---
 
-# Debt Auditability
+## Debt Auditability
 
 A debt record should answer:
 
@@ -2261,7 +2261,7 @@ How was it eventually resolved?
 
 ---
 
-# Defect Reporting
+## Defect Reporting
 
 Quality reports may include:
 
@@ -2278,7 +2278,7 @@ The report should emphasize risk rather than raw count alone.
 
 ---
 
-# Debt Reporting
+## Debt Reporting
 
 Quality debt reports may include:
 
@@ -2294,7 +2294,7 @@ Debt Resolved
 
 ---
 
-# Domain Debt Report
+## Domain Debt Report
 
 Example:
 
@@ -2310,7 +2310,7 @@ Counts should be supplemented with risk information.
 
 ---
 
-# Risk-Based Debt Report
+## Risk-Based Debt Report
 
 Example:
 
@@ -2325,7 +2325,7 @@ This provides more decision value than total count alone.
 
 ---
 
-# Release Defect Report
+## Release Defect Report
 
 A release report may include:
 
@@ -2340,7 +2340,7 @@ Significant accepted risks should be traceable.
 
 ---
 
-# Defect Trend Analysis
+## Defect Trend Analysis
 
 Historical defect trends may reveal:
 
@@ -2363,7 +2363,7 @@ Trend interpretation should consider release scope.
 
 ---
 
-# Debt Trend Analysis
+## Debt Trend Analysis
 
 Debt trends may reveal whether engineering practices are sustainable.
 
@@ -2379,7 +2379,7 @@ unless the platform is undergoing a known expansion or migration.
 
 ---
 
-# Root Cause Trend
+## Root Cause Trend
 
 Root cause analysis may reveal recurring categories.
 
@@ -2395,7 +2395,7 @@ This may justify investment in stronger integration testing.
 
 ---
 
-# Defect Learning Loop
+## Defect Learning Loop
 
 The desired systemic loop is:
 
@@ -2417,7 +2417,7 @@ The goal is continuous reduction of recurring defect classes.
 
 ---
 
-# Debt Learning Loop
+## Debt Learning Loop
 
 Quality debt should also generate learning.
 
@@ -2435,7 +2435,7 @@ Debt management should not consist only of cleanup.
 
 ---
 
-# Preventing Defect Normalization
+## Preventing Defect Normalization
 
 Repeated exposure to the same warnings can create normalization.
 
@@ -2451,7 +2451,7 @@ The framework must prevent permanent tolerance of recurring defects without expl
 
 ---
 
-# Preventing Debt Normalization
+## Preventing Debt Normalization
 
 The phrase:
 
@@ -2465,7 +2465,7 @@ Legacy status is context, not quality approval.
 
 ---
 
-# No Zero-Defect Dogma
+## No Zero-Defect Dogma
 
 The framework does not require theoretical elimination of every defect.
 
@@ -2483,7 +2483,7 @@ This is more practical and sustainable.
 
 ---
 
-# Defect Cost
+## Defect Cost
 
 The cost of defects increases when detection occurs later.
 
@@ -2509,7 +2509,7 @@ This reinforces early quality feedback.
 
 ---
 
-# Debt Cost
+## Debt Cost
 
 Debt creates both direct and indirect cost.
 
@@ -2527,7 +2527,7 @@ These effects justify active debt management.
 
 ---
 
-# Debt Prioritization Matrix
+## Debt Prioritization Matrix
 
 A conceptual matrix may combine Risk and Interest.
 
@@ -2547,7 +2547,7 @@ Final priority should remain context-aware.
 
 ---
 
-# Debt Dependency Graph
+## Debt Dependency Graph
 
 Some debt items depend on others.
 
@@ -2569,7 +2569,7 @@ Large remediation initiatives may require explicit dependency mapping.
 
 ---
 
-# Debt Clusters
+## Debt Clusters
 
 Related debt may be grouped into clusters.
 
@@ -2585,7 +2585,7 @@ Clusters enable strategic remediation rather than isolated fixes.
 
 ---
 
-# Quality Debt Epic
+## Quality Debt Epic
 
 Large debt clusters may justify dedicated engineering EPICs.
 
@@ -2605,7 +2605,7 @@ This prevents strategic debt from disappearing inside small backlog items.
 
 ---
 
-# Defect Automation
+## Defect Automation
 
 Automation may assist with:
 
@@ -2620,7 +2620,7 @@ Automation must preserve human review for contextual decisions.
 
 ---
 
-# Debt Automation
+## Debt Automation
 
 Automation may identify candidate debt from:
 
@@ -2634,7 +2634,7 @@ Candidate debt should be reviewed before authoritative registration where contex
 
 ---
 
-# AI-Assisted Defect Analysis
+## AI-Assisted Defect Analysis
 
 AI may assist with:
 
@@ -2648,7 +2648,7 @@ AI must not silently close defects or accept risk.
 
 ---
 
-# AI-Assisted Debt Analysis
+## AI-Assisted Debt Analysis
 
 AI may assist with:
 
@@ -2661,7 +2661,7 @@ Authoritative priority and governance decisions remain human-controlled.
 
 ---
 
-# Defect Data Integrity
+## Defect Data Integrity
 
 Defect records influence quality and release decisions.
 
@@ -2678,7 +2678,7 @@ Examples include:
 
 ---
 
-# Debt Data Integrity
+## Debt Data Integrity
 
 Debt history should preserve:
 
@@ -2692,7 +2692,7 @@ This protects long-term engineering knowledge.
 
 ---
 
-# Defect Retention
+## Defect Retention
 
 Closed defect records may remain valuable for:
 
@@ -2705,7 +2705,7 @@ Retention policy should reflect analytical value.
 
 ---
 
-# Debt Retention
+## Debt Retention
 
 Closed debt records may help explain architectural history and framework evolution.
 
@@ -2713,7 +2713,7 @@ Important debt history should therefore not be destroyed immediately after remed
 
 ---
 
-# Defect Confidentiality
+## Defect Confidentiality
 
 Some defects may contain sensitive information.
 
@@ -2727,7 +2727,7 @@ Access control should reflect sensitivity.
 
 ---
 
-# Initial Defect Model
+## Initial Defect Model
 
 An initial FamilyOS implementation may begin with:
 
@@ -2747,7 +2747,7 @@ This is sufficient for basic lifecycle management.
 
 ---
 
-# Initial Quality Debt Model
+## Initial Quality Debt Model
 
 An initial debt record may contain:
 
@@ -2766,7 +2766,7 @@ The model can evolve as governance maturity increases.
 
 ---
 
-# Initial Workflow
+## Initial Workflow
 
 A practical initial workflow is:
 
@@ -2801,7 +2801,7 @@ Immediate Fix?
 
 ---
 
-# Defect Management Maturity
+## Defect Management Maturity
 
 Defect management may mature through:
 
@@ -2837,7 +2837,7 @@ Trend-Based Quality Improvement
 
 ---
 
-# Quality Debt Management Maturity
+## Quality Debt Management Maturity
 
 Quality debt management may mature through:
 
@@ -2878,7 +2878,7 @@ Continuous Debt Prevention
 
 ---
 
-# Reference Defect Flow
+## Reference Defect Flow
 
 The complete defect lifecycle can be represented as:
 
@@ -2919,7 +2919,7 @@ Evidence / Incident / Review
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Defect and Quality Debt Management enables FamilyOS to move from:
 
@@ -2948,7 +2948,7 @@ This distinction is essential for sustainable platform evolution.
 
 ---
 
-# Final Defect and Debt Principle
+## Final Defect and Debt Principle
 
 FamilyOS does not need to eliminate every imperfection immediately.
 

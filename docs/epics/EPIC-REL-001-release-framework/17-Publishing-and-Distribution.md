@@ -1,8 +1,8 @@
 # Release Framework
 
-# 17 Publishing and Distribution
+## 17 Publishing and Distribution
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines Publishing and Distribution as distinct release engineering responsibilities.
 
@@ -36,7 +36,7 @@ The objective is to ensure that FamilyOS releases become externally available th
 
 ---
 
-# Purpose
+## Purpose
 
 This document establishes:
 
@@ -59,7 +59,7 @@ The goal is to prevent FamilyOS from treating an upload command or Git push as s
 
 ---
 
-# Core Principle
+## Core Principle
 
 The central principle is:
 
@@ -93,7 +93,7 @@ and available through the intended channel
 
 ---
 
-# Publishing vs Distribution
+## Publishing vs Distribution
 
 The distinction is:
 
@@ -113,7 +113,7 @@ Their semantics must remain distinguishable.
 
 ---
 
-# Lifecycle Position
+## Lifecycle Position
 
 Publishing and Distribution primarily govern:
 
@@ -135,7 +135,7 @@ The distinction remains important for failure handling.
 
 ---
 
-# RELEASED State
+## RELEASED State
 
 `RELEASED` means the official release identity has been established.
 
@@ -149,7 +149,7 @@ The release may not yet be available through every authoritative publication tar
 
 ---
 
-# PUBLISHED State
+## PUBLISHED State
 
 `PUBLISHED` means all mandatory publication targets for the applicable release profile have been successfully updated and verified.
 
@@ -166,7 +166,7 @@ Publication requirements depend on release type.
 
 ---
 
-# DISTRIBUTED State
+## DISTRIBUTED State
 
 `DISTRIBUTED` means the published release has been promoted or exposed to its intended consumer scope.
 
@@ -183,7 +183,7 @@ Distribution may occur immediately after publication or through a later controll
 
 ---
 
-# Publication Target
+## Publication Target
 
 A Publication Target is an authoritative system receiving part of the official release.
 
@@ -204,7 +204,7 @@ A release profile must identify its mandatory publication targets.
 
 ---
 
-# Authoritative Publication Target
+## Authoritative Publication Target
 
 An authoritative target is one whose state contributes to the official release definition.
 
@@ -222,7 +222,7 @@ A cache or temporary mirror is not automatically authoritative.
 
 ---
 
-# Publication Target Registry
+## Publication Target Registry
 
 At higher maturity, FamilyOS should maintain explicit publication target definitions.
 
@@ -246,7 +246,7 @@ The exact configuration format is implementation-specific.
 
 ---
 
-# Publication Preconditions
+## Publication Preconditions
 
 Publication SHOULD only begin after applicable requirements are satisfied.
 
@@ -268,7 +268,7 @@ Failure of mandatory preconditions must block publication.
 
 ---
 
-# Publication Gate
+## Publication Gate
 
 The Publication Gate protects:
 
@@ -293,7 +293,7 @@ PUBLICATION READY     PASS
 
 ---
 
-# External Side Effects
+## External Side Effects
 
 Publishing introduces externally visible side effects.
 
@@ -309,7 +309,7 @@ These operations should occur after lower-risk validation has already passed.
 
 ---
 
-# Publication Sequencing
+## Publication Sequencing
 
 Multi-target publication requires deliberate ordering.
 
@@ -335,7 +335,7 @@ The exact sequence depends on release profile.
 
 ---
 
-# Ordering Principle
+## Ordering Principle
 
 Publication ordering should minimize unsafe partial states.
 
@@ -343,7 +343,7 @@ For example, a stable channel should not normally point to a version whose artif
 
 ---
 
-# Publication Transaction
+## Publication Transaction
 
 A release publication may be modeled as a transaction-like process.
 
@@ -369,7 +369,7 @@ Therefore, FamilyOS must preserve intermediate state and recovery information.
 
 ---
 
-# Atomic Publication
+## Atomic Publication
 
 Where a target supports atomic publication, FamilyOS SHOULD use it where practical.
 
@@ -383,7 +383,7 @@ Examples may include:
 
 ---
 
-# Non-Atomic Publication
+## Non-Atomic Publication
 
 Where publication is inherently multi-step, the workflow must record which operations completed.
 
@@ -402,7 +402,7 @@ It must not be reported as fully published.
 
 ---
 
-# Partial Publication
+## Partial Publication
 
 Partial publication occurs when at least one external release side effect succeeds but the complete mandatory publication set does not.
 
@@ -419,7 +419,7 @@ Partial publication requires explicit recovery.
 
 ---
 
-# Partial Publication State
+## Partial Publication State
 
 A partial release should preserve per-target state.
 
@@ -437,7 +437,7 @@ This enables safe recovery.
 
 ---
 
-# Publication Failure
+## Publication Failure
 
 A release publication may transition to `FAILED` when mandatory publication cannot complete.
 
@@ -452,7 +452,7 @@ The release history must record:
 
 ---
 
-# Publication Retry
+## Publication Retry
 
 A retry must inspect actual external state before repeating side effects.
 
@@ -472,7 +472,7 @@ The retry workflow should query the target first.
 
 ---
 
-# Idempotent Publication
+## Idempotent Publication
 
 Publication operations SHOULD be idempotent where possible.
 
@@ -491,7 +491,7 @@ artifact exists with different checksum
 
 ---
 
-# Publication Collision
+## Publication Collision
 
 A publication collision occurs when an official release identity already exists with different content.
 
@@ -511,7 +511,7 @@ Existing immutable versions must not be silently overwritten.
 
 ---
 
-# Source Publication
+## Source Publication
 
 For Git-based releases, source publication may include:
 
@@ -523,7 +523,7 @@ For some release profiles, this alone may constitute the primary publication mec
 
 ---
 
-# Artifact Publication
+## Artifact Publication
 
 Artifact publication moves qualified release artifacts into an authoritative artifact target.
 
@@ -539,7 +539,7 @@ The published artifact must match the candidate artifact where practical.
 
 ---
 
-# Package Publication
+## Package Publication
 
 Package releases may be published to package registries.
 
@@ -557,7 +557,7 @@ Package publication should be treated as immutable where the registry supports i
 
 ---
 
-# Plugin Publication
+## Plugin Publication
 
 Official plugin releases may require publication into a plugin registry or plugin distribution mechanism.
 
@@ -572,7 +572,7 @@ Publication should preserve:
 
 ---
 
-# Documentation Publication
+## Documentation Publication
 
 Documentation may be published to:
 
@@ -585,7 +585,7 @@ Documentation publication must remain aligned with the corresponding release ver
 
 ---
 
-# Release Metadata Publication
+## Release Metadata Publication
 
 Release metadata may include:
 
@@ -602,7 +602,7 @@ Metadata should not contradict actual published state.
 
 ---
 
-# Release Notes Publication
+## Release Notes Publication
 
 Required release notes should become accessible through an authoritative publication mechanism.
 
@@ -617,7 +617,7 @@ Release note publication should be verified like other release artifacts.
 
 ---
 
-# Changelog Publication
+## Changelog Publication
 
 The changelog is normally part of repository source state.
 
@@ -625,7 +625,7 @@ If a separate public changelog representation exists, it should match the releas
 
 ---
 
-# Publication Verification
+## Publication Verification
 
 Publication is not complete until mandatory targets are verified.
 
@@ -649,7 +649,7 @@ Is metadata correct?
 
 ---
 
-# Verification Principle
+## Verification Principle
 
 The governing rule is:
 
@@ -661,7 +661,7 @@ Target verification establishes successful publication.
 
 ---
 
-# Remote Tag Verification
+## Remote Tag Verification
 
 For Git-based release publication:
 
@@ -675,7 +675,7 @@ should be confirmed.
 
 ---
 
-# Artifact Verification
+## Artifact Verification
 
 For file-based artifacts:
 
@@ -689,7 +689,7 @@ should be confirmed where the target allows it.
 
 ---
 
-# Package Verification
+## Package Verification
 
 Package verification may include:
 
@@ -701,7 +701,7 @@ Package verification may include:
 
 ---
 
-# Documentation Verification
+## Documentation Verification
 
 Documentation publication may verify:
 
@@ -713,7 +713,7 @@ Documentation publication may verify:
 
 ---
 
-# Publication Evidence
+## Publication Evidence
 
 A publication record should eventually contain:
 
@@ -731,7 +731,7 @@ This evidence supports historical reconstruction.
 
 ---
 
-# Publication Timestamp
+## Publication Timestamp
 
 The release publication time should be recorded where meaningful.
 
@@ -743,7 +743,7 @@ When several targets publish at slightly different times, the framework may dist
 
 ---
 
-# Release Date
+## Release Date
 
 The official release date should align with the release's publication policy.
 
@@ -753,7 +753,7 @@ The exact definition should remain consistent across FamilyOS release records.
 
 ---
 
-# Distribution Definition
+## Distribution Definition
 
 Distribution exposes a published release to intended consumers.
 
@@ -769,7 +769,7 @@ Distribution is often more mutable than publication.
 
 ---
 
-# Distribution Target
+## Distribution Target
 
 A Distribution Target represents the consumer-facing availability path.
 
@@ -786,7 +786,7 @@ documentation current alias
 
 ---
 
-# Version vs Distribution Alias
+## Version vs Distribution Alias
 
 Official versions are immutable.
 
@@ -808,7 +808,7 @@ without changing either official release identity.
 
 ---
 
-# Stable Promotion
+## Stable Promotion
 
 Stable distribution should only occur after stable qualification.
 
@@ -826,7 +826,7 @@ verify stable alias
 
 ---
 
-# Candidate Distribution
+## Candidate Distribution
 
 Candidate releases may be exposed through a candidate channel.
 
@@ -840,7 +840,7 @@ Consumers must be able to distinguish candidate from stable availability.
 
 ---
 
-# Preview Distribution
+## Preview Distribution
 
 Preview releases may be distributed to a limited or explicitly pre-release audience.
 
@@ -848,7 +848,7 @@ The release must clearly communicate reduced stability expectations.
 
 ---
 
-# Maintenance Distribution
+## Maintenance Distribution
 
 A maintenance channel may point to a supported previous release line.
 
@@ -863,7 +863,7 @@ This supports controlled parallel maintenance.
 
 ---
 
-# Distribution Promotion
+## Distribution Promotion
 
 Promotion changes consumer-facing release state.
 
@@ -878,7 +878,7 @@ A promotion must identify:
 
 ---
 
-# Distribution Without Rebuild
+## Distribution Without Rebuild
 
 Channel promotion SHOULD reuse the same published artifacts.
 
@@ -906,7 +906,7 @@ without renewed qualification.
 
 ---
 
-# Stable Alias Verification
+## Stable Alias Verification
 
 After channel promotion:
 
@@ -920,7 +920,7 @@ should be verified.
 
 ---
 
-# Distribution Failure
+## Distribution Failure
 
 Distribution may fail even after publication succeeds.
 
@@ -937,7 +937,7 @@ This must remain explicit.
 
 ---
 
-# Publication Without Distribution
+## Publication Without Distribution
 
 A valid lifecycle may intentionally stop at `PUBLISHED`.
 
@@ -951,7 +951,7 @@ The state must remain clear.
 
 ---
 
-# Staged Distribution
+## Staged Distribution
 
 Future FamilyOS releases may support staged distribution.
 
@@ -973,7 +973,7 @@ Each stage may require verification.
 
 ---
 
-# Progressive Distribution
+## Progressive Distribution
 
 Advanced release strategies may include:
 
@@ -989,7 +989,7 @@ The architecture must remain compatible with these strategies.
 
 ---
 
-# Distribution Observation
+## Distribution Observation
 
 Promotion should be followed by appropriate observation.
 
@@ -1005,7 +1005,7 @@ This information may influence final completion or recovery.
 
 ---
 
-# Distribution Freeze
+## Distribution Freeze
 
 A release may be published but distribution intentionally paused.
 
@@ -1021,7 +1021,7 @@ This must remain an explicit state.
 
 ---
 
-# Publication Approval
+## Publication Approval
 
 Publication authority may be distinct from release validation authority.
 
@@ -1044,7 +1044,7 @@ Their authority must remain explicit.
 
 ---
 
-# Distribution Approval
+## Distribution Approval
 
 Stable channel promotion may require separate authority from artifact publication.
 
@@ -1052,7 +1052,7 @@ This is especially useful where publication and consumer exposure carry differen
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Publishing credentials should be separated by target where practical.
 
@@ -1069,7 +1069,7 @@ This limits failure impact.
 
 ---
 
-# Publication Security
+## Publication Security
 
 Publishing systems are high-value supply-chain targets.
 
@@ -1087,7 +1087,7 @@ Detailed requirements are defined in `19-Release-Security.md`.
 
 ---
 
-# Consumer Trust
+## Consumer Trust
 
 A consumer should eventually be able to determine:
 
@@ -1109,7 +1109,7 @@ Publication and distribution metadata should support these questions.
 
 ---
 
-# Release Discovery
+## Release Discovery
 
 FamilyOS may eventually provide release discovery mechanisms.
 
@@ -1125,7 +1125,7 @@ Discovery aliases must resolve to explicit immutable versions.
 
 ---
 
-# `latest` Alias
+## `latest` Alias
 
 If FamilyOS uses `latest`, its semantics must be defined.
 
@@ -1139,7 +1139,7 @@ is preferable to ambiguous interpretation.
 
 ---
 
-# Current Release Alias
+## Current Release Alias
 
 A mutable `current` or `stable` reference may identify the recommended release.
 
@@ -1147,7 +1147,7 @@ It must never replace explicit version history.
 
 ---
 
-# Withdrawal
+## Withdrawal
 
 Withdrawal removes a release from normal consumption while preserving historical identity.
 
@@ -1161,7 +1161,7 @@ Its distribution aliases should no longer promote it.
 
 ---
 
-# Withdrawal Process
+## Withdrawal Process
 
 Conceptually:
 
@@ -1179,7 +1179,7 @@ publish consumer guidance
 
 ---
 
-# Artifact Withdrawal
+## Artifact Withdrawal
 
 Some registries may support:
 
@@ -1192,7 +1192,7 @@ These mechanisms should preserve version history where possible.
 
 ---
 
-# Release Supersession
+## Release Supersession
 
 A release becomes `SUPERSEDED` when a newer release becomes preferred.
 
@@ -1210,7 +1210,7 @@ Supersession is a normal historical transition.
 
 ---
 
-# Supersession Is Not Deletion
+## Supersession Is Not Deletion
 
 Superseded releases may remain available for:
 
@@ -1224,7 +1224,7 @@ Support policy determines whether they remain recommended.
 
 ---
 
-# Distribution Rollback
+## Distribution Rollback
 
 If the active stable release proves defective, distribution may be rolled back to a previous release.
 
@@ -1242,7 +1242,7 @@ Both explicit releases remain unchanged.
 
 ---
 
-# Rollback Verification
+## Rollback Verification
 
 After channel rollback, the workflow must verify:
 
@@ -1255,7 +1255,7 @@ Rollback itself is a release operation requiring evidence.
 
 ---
 
-# Forward Recovery
+## Forward Recovery
 
 If rollback is unsafe, distribution may instead move directly to a corrected release.
 
@@ -1273,7 +1273,7 @@ This is often safer where data or compatibility changed irreversibly.
 
 ---
 
-# Publication Recovery
+## Publication Recovery
 
 Recovery from publication failure should begin from recorded actual state.
 
@@ -1289,7 +1289,7 @@ A correct recovery process should attempt only missing or failed operations wher
 
 ---
 
-# Cleanup
+## Cleanup
 
 Some failed publication artifacts may need cleanup.
 
@@ -1303,7 +1303,7 @@ Cleanup must not silently delete immutable official history.
 
 ---
 
-# Publication Drafts
+## Publication Drafts
 
 Where supported, draft release mechanisms are useful.
 
@@ -1323,7 +1323,7 @@ This reduces consumer exposure to partially assembled releases.
 
 ---
 
-# Staging Registry
+## Staging Registry
 
 Future release infrastructure may use staging registries.
 
@@ -1343,7 +1343,7 @@ Promotion should preserve artifact identity.
 
 ---
 
-# Multi-Target Integrity
+## Multi-Target Integrity
 
 When identical artifacts are published to several targets:
 
@@ -1357,7 +1357,7 @@ Different transformations require distinct artifact identities.
 
 ---
 
-# Mirror Distribution
+## Mirror Distribution
 
 Mirrors may distribute official artifacts.
 
@@ -1372,7 +1372,7 @@ A mirror should not modify official content under the same identity.
 
 ---
 
-# CDN Distribution
+## CDN Distribution
 
 A content delivery network may cache release artifacts.
 
@@ -1382,7 +1382,7 @@ Immutable versioned artifact URLs reduce this risk.
 
 ---
 
-# Immutable URLs
+## Immutable URLs
 
 Where practical, distribution should prefer immutable versioned paths such as:
 
@@ -1400,7 +1400,7 @@ Mutable aliases may exist separately for discovery.
 
 ---
 
-# Publication Naming
+## Publication Naming
 
 Published release resources should use predictable naming aligned with official release identity.
 
@@ -1416,7 +1416,7 @@ Ambiguous names should be avoided.
 
 ---
 
-# Publication Metadata Consistency
+## Publication Metadata Consistency
 
 Published metadata must agree across all authoritative targets.
 
@@ -1432,7 +1432,7 @@ should remain consistent wherever repeated.
 
 ---
 
-# Release Page
+## Release Page
 
 A repository release page may aggregate:
 
@@ -1450,7 +1450,7 @@ It does not replace the underlying release evidence.
 
 ---
 
-# Distribution Metadata
+## Distribution Metadata
 
 Distribution systems may maintain mutable data such as:
 
@@ -1464,7 +1464,7 @@ Such metadata should be observable and auditable.
 
 ---
 
-# Publication Event Model
+## Publication Event Model
 
 Future FamilyOS release systems may emit events such as:
 
@@ -1482,7 +1482,7 @@ The exact implementation is defined by observability architecture.
 
 ---
 
-# Publication Auditability
+## Publication Auditability
 
 Release history should eventually identify:
 
@@ -1497,7 +1497,7 @@ Release history should eventually identify:
 
 ---
 
-# Distribution Auditability
+## Distribution Auditability
 
 Channel changes should record:
 
@@ -1512,7 +1512,7 @@ This is especially important for stable and maintenance channels.
 
 ---
 
-# Publication Metrics
+## Publication Metrics
 
 Future metrics may include:
 
@@ -1527,7 +1527,7 @@ Metrics should support reliability improvement.
 
 ---
 
-# Distribution Metrics
+## Distribution Metrics
 
 Possible distribution metrics include:
 
@@ -1539,7 +1539,7 @@ Possible distribution metrics include:
 
 ---
 
-# Framework Release Publication
+## Framework Release Publication
 
 For current FamilyOS framework releases, publication may be relatively simple.
 
@@ -1565,7 +1565,7 @@ If no additional distribution target exists, `PUBLISHED` may transition directly
 
 ---
 
-# Plugin Release Publication
+## Plugin Release Publication
 
 A plugin release may require:
 
@@ -1583,7 +1583,7 @@ stable plugin channel promotion
 
 ---
 
-# Platform Release Publication
+## Platform Release Publication
 
 A platform release may involve:
 
@@ -1600,7 +1600,7 @@ The release should become `PUBLISHED` only after all mandatory targets verify su
 
 ---
 
-# Documentation Release Publication
+## Documentation Release Publication
 
 A documentation release may include:
 
@@ -1613,7 +1613,7 @@ Generated output should remain traceable to source revision.
 
 ---
 
-# Security Release Publication
+## Security Release Publication
 
 Security release publication may require coordination of:
 
@@ -1629,7 +1629,7 @@ Timing may be tightly controlled.
 
 ---
 
-# Emergency Release Publication
+## Emergency Release Publication
 
 Emergency publication may use an accelerated workflow.
 
@@ -1645,7 +1645,7 @@ Urgency must not justify uncontrolled artifact replacement.
 
 ---
 
-# Publication Profiles
+## Publication Profiles
 
 Release profiles should define mandatory targets.
 
@@ -1672,129 +1672,129 @@ Profiles must be governed.
 
 ---
 
-# Publication Invariants
+## Publication Invariants
 
 The following invariants apply.
 
-## PUB1 — Publication operates on an approved release identity.
+### PUB1 — Publication operates on an approved release identity.
 
-## PUB2 — Mandatory publication targets are explicit.
+### PUB2 — Mandatory publication targets are explicit.
 
-## PUB3 — Published artifact identity matches the qualified candidate where practical.
+### PUB3 — Published artifact identity matches the qualified candidate where practical.
 
-## PUB4 — Publication results are verified.
+### PUB4 — Publication results are verified.
 
-## PUB5 — Partial publication remains visible.
+### PUB5 — Partial publication remains visible.
 
-## PUB6 — Immutable versions are not silently overwritten.
+### PUB6 — Immutable versions are not silently overwritten.
 
-## PUB7 — Retry inspects existing target state.
+### PUB7 — Retry inspects existing target state.
 
-## PUB8 — Publication evidence identifies target, version, result, and verification.
+### PUB8 — Publication evidence identifies target, version, result, and verification.
 
-## PUB9 — Publication credentials remain governed and protected.
+### PUB9 — Publication credentials remain governed and protected.
 
-## PUB10 — Official published release history remains reconstructable.
-
----
-
-# Distribution Invariants
-
-## DST1 — Distribution aliases resolve to explicit release versions.
-
-## DST2 — Stable promotion requires applicable qualification.
-
-## DST3 — Promotion should preserve validated artifact identity.
-
-## DST4 — Distribution state is independently observable from publication state.
-
-## DST5 — Channel changes must remain governed.
-
-## DST6 — Withdrawal does not erase historical release identity.
-
-## DST7 — Supersession preserves previous release history.
-
-## DST8 — Rollback or channel restoration is verified.
+### PUB10 — Official published release history remains reconstructable.
 
 ---
 
-# Publishing Anti-Patterns
+## Distribution Invariants
 
-## Upload Equals Publish
+### DST1 — Distribution aliases resolve to explicit release versions.
+
+### DST2 — Stable promotion requires applicable qualification.
+
+### DST3 — Promotion should preserve validated artifact identity.
+
+### DST4 — Distribution state is independently observable from publication state.
+
+### DST5 — Channel changes must remain governed.
+
+### DST6 — Withdrawal does not erase historical release identity.
+
+### DST7 — Supersession preserves previous release history.
+
+### DST8 — Rollback or channel restoration is verified.
+
+---
+
+## Publishing Anti-Patterns
+
+### Upload Equals Publish
 
 Treating one successful upload as proof of complete release publication.
 
 ---
 
-## Publish Before Approval
+### Publish Before Approval
 
 Executing external publication before applicable governance approval.
 
 ---
 
-## Mutable Release Artifact
+### Mutable Release Artifact
 
 Replacing an existing package under the same official version.
 
 ---
 
-## Blind Multi-Target Publication
+### Blind Multi-Target Publication
 
 Publishing to several systems without recording individual target state.
 
 ---
 
-## Retry Without Query
+### Retry Without Query
 
 Repeating a timed-out upload without checking whether the remote target already accepted it.
 
 ---
 
-## Release Notes Later
+### Release Notes Later
 
 Publishing the official stable release while mandatory release communication remains incomplete.
 
 ---
 
-## Publish Unverified Rebuild
+### Publish Unverified Rebuild
 
 Rebuilding artifacts during publication and publishing them without renewed validation.
 
 ---
 
-# Distribution Anti-Patterns
+## Distribution Anti-Patterns
 
-## Stable Before Verify
+### Stable Before Verify
 
 Updating the stable channel before publication verification completes.
 
 ---
 
-## Channel as Version
+### Channel as Version
 
 Telling consumers only to use `latest` without preserving explicit release identity.
 
 ---
 
-## Silent Stable Rollback
+### Silent Stable Rollback
 
 Changing stable to an older version without recording why.
 
 ---
 
-## Delete Defective History
+### Delete Defective History
 
 Removing all evidence of a bad release instead of marking it withdrawn.
 
 ---
 
-## Rebuild on Promotion
+### Rebuild on Promotion
 
 Creating new artifact contents when moving a release from candidate to stable.
 
 ---
 
-# Minimum Publishing Model
+## Minimum Publishing Model
 
 At minimum, a FamilyOS official release should know:
 
@@ -1814,7 +1814,7 @@ artifact checksum where practical
 
 ---
 
-# Minimum Distribution Model
+## Minimum Distribution Model
 
 Where release channels exist, FamilyOS should know:
 
@@ -1827,7 +1827,7 @@ verification result
 
 ---
 
-# Target Publishing Experience
+## Target Publishing Experience
 
 At higher maturity, FamilyOS tooling should provide:
 
@@ -1851,7 +1851,7 @@ PUBLICATION          COMPLETE
 
 ---
 
-# Target Distribution Experience
+## Target Distribution Experience
 
 After publication:
 
@@ -1871,7 +1871,7 @@ DISTRIBUTION         COMPLETE
 
 ---
 
-# Target Failure Experience
+## Target Failure Experience
 
 If publication partially fails:
 
@@ -1897,7 +1897,7 @@ The operator should not have to infer this state manually.
 
 ---
 
-# Relationship With Release Lifecycle
+## Relationship With Release Lifecycle
 
 `05-Release-Lifecycle.md` defines:
 
@@ -1912,7 +1912,7 @@ This document defines the operations and evidence behind those states.
 
 ---
 
-# Relationship With Versioning
+## Relationship With Versioning
 
 `06-Versioning-Strategy.md` defines immutable release versions.
 
@@ -1920,7 +1920,7 @@ Publishing must preserve those version semantics.
 
 ---
 
-# Relationship With Release Types and Channels
+## Relationship With Release Types and Channels
 
 `07-Release-Types-and-Channels.md` defines distribution channels and promotion semantics.
 
@@ -1928,19 +1928,19 @@ This document governs how publication and channel exposure are executed.
 
 ---
 
-# Relationship With Release Planning
+## Relationship With Release Planning
 
 `08-Release-Planning.md` identifies publication targets and distribution intent before execution.
 
 ---
 
-# Relationship With Artifacts and Provenance
+## Relationship With Artifacts and Provenance
 
 `11-Artifacts-and-Provenance.md` defines the identity and integrity of published artifacts.
 
 ---
 
-# Relationship With Release Automation
+## Relationship With Release Automation
 
 `13-Release-Automation.md` defines idempotent, stateful execution and safe retry.
 
@@ -1948,19 +1948,19 @@ Publication automation must follow those principles.
 
 ---
 
-# Relationship With CI/CD Integration
+## Relationship With CI/CD Integration
 
 `14-CI-CD-Integration.md` defines how privileged publication stages operate in trusted pipeline environments.
 
 ---
 
-# Relationship With Changelog and Release Notes
+## Relationship With Changelog and Release Notes
 
 `15-Changelog-and-Release-Notes.md` defines release communication that must accompany publication where required.
 
 ---
 
-# Relationship With Tagging and Repository State
+## Relationship With Tagging and Repository State
 
 `16-Tagging-and-Repository-State.md` defines Git release anchors and remote tag verification.
 
@@ -1968,31 +1968,31 @@ Git publication may be one mandatory publication target.
 
 ---
 
-# Relationship With Rollback and Recovery
+## Relationship With Rollback and Recovery
 
 `18-Rollback-and-Recovery.md` defines how failed or defective publication and distribution states are recovered.
 
 ---
 
-# Relationship With Release Security
+## Relationship With Release Security
 
 `19-Release-Security.md` defines protection of publishing authority, credentials, artifacts, targets, and consumer trust.
 
 ---
 
-# Relationship With Release Observability
+## Relationship With Release Observability
 
 `20-Release-Observability.md` defines publication and distribution telemetry, state, evidence, and failures.
 
 ---
 
-# Relationship With Release Governance
+## Relationship With Release Governance
 
 `21-Release-Governance.md` defines who may publish, promote, withdraw, supersede, or roll back official releases.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Publishing and Distribution model establishes the controlled transition between an approved release and an officially consumable release.
 

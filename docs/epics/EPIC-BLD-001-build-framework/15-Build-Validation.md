@@ -1,8 +1,8 @@
 # Build Framework
 
-# 15 Build Validation
+## 15 Build Validation
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS determines whether a build, its execution context, and its resulting artifacts satisfy the requirements necessary to establish build trust.
 
@@ -18,7 +18,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Build Validation is to provide a consistent model for verifying:
 
@@ -40,7 +40,7 @@ Build Validation transforms build completion into engineering confidence.
 
 ---
 
-# Validation Philosophy
+## Validation Philosophy
 
 FamilyOS distinguishes between three fundamentally different states.
 
@@ -58,7 +58,7 @@ A successful process exit alone is insufficient.
 
 ---
 
-# Validation Model
+## Validation Model
 
 The canonical Build Validation model is:
 
@@ -84,7 +84,7 @@ Each validation layer addresses a different source of uncertainty.
 
 ---
 
-# Validation Objectives
+## Validation Objectives
 
 Build Validation should determine:
 
@@ -100,7 +100,7 @@ Build Validation should determine:
 
 ---
 
-# Validation Principle 1 — Validation Before Trust
+## Validation Principle 1 — Validation Before Trust
 
 No candidate artifact may become trusted solely because it was generated successfully.
 
@@ -118,7 +118,7 @@ This is one of the foundational Build Framework invariants.
 
 ---
 
-# Validation Principle 2 — Validate As Early As Possible
+## Validation Principle 2 — Validate As Early As Possible
 
 Problems should be detected at the earliest meaningful stage.
 
@@ -146,7 +146,7 @@ Early validation improves both reliability and efficiency.
 
 ---
 
-# Validation Principle 3 — Validation Must Be Layered
+## Validation Principle 3 — Validation Must Be Layered
 
 No single check provides sufficient assurance.
 
@@ -168,7 +168,7 @@ Validation must therefore operate across layers.
 
 ---
 
-# Validation Principle 4 — Validation Must Be Profile-Aware
+## Validation Principle 4 — Validation Must Be Profile-Aware
 
 Different build profiles may require different levels of validation.
 
@@ -192,7 +192,7 @@ The profile must determine validation requirements explicitly.
 
 ---
 
-# Validation Principle 5 — Validation Results Must Be Observable
+## Validation Principle 5 — Validation Results Must Be Observable
 
 A validation system must expose:
 
@@ -206,7 +206,7 @@ Opaque validation weakens trust.
 
 ---
 
-# Validation Principle 6 — Failed Validation Must Prevent Trust
+## Validation Principle 6 — Failed Validation Must Prevent Trust
 
 Required validation failure MUST block trusted artifact declaration.
 
@@ -224,7 +224,7 @@ for mandatory validation.
 
 ---
 
-# Validation Principle 7 — Validation Must Be Repeatable
+## Validation Principle 7 — Validation Must Be Repeatable
 
 Equivalent build contexts should produce equivalent validation outcomes.
 
@@ -232,7 +232,7 @@ Validation itself should avoid uncontrolled environmental variability.
 
 ---
 
-# Validation Principle 8 — Validation Must Remain Independent Of Release Authority
+## Validation Principle 8 — Validation Must Remain Independent Of Release Authority
 
 Build Validation determines whether an artifact meets build requirements.
 
@@ -250,7 +250,7 @@ Release Decision
 
 ---
 
-# Validation Domains
+## Validation Domains
 
 FamilyOS Build Validation covers several domains.
 
@@ -274,7 +274,7 @@ Build Validation
 
 ---
 
-# Input Validation
+## Input Validation
 
 Input Validation confirms that required build inputs exist and satisfy basic requirements.
 
@@ -290,7 +290,7 @@ Inputs may include:
 
 ---
 
-# Input Presence Validation
+## Input Presence Validation
 
 Required inputs must exist.
 
@@ -306,7 +306,7 @@ Missing required input must fail before execution.
 
 ---
 
-# Input Syntax Validation
+## Input Syntax Validation
 
 Structured inputs should be syntactically valid.
 
@@ -320,7 +320,7 @@ Examples include:
 
 ---
 
-# Input Structural Validation
+## Input Structural Validation
 
 Input structure may be validated for expected layout.
 
@@ -333,7 +333,7 @@ Examples include:
 
 ---
 
-# Input Semantic Validation
+## Input Semantic Validation
 
 Semantically invalid input must fail even when syntax is valid.
 
@@ -347,7 +347,7 @@ may parse correctly but violate artifact requirements.
 
 ---
 
-# Input Freshness Validation
+## Input Freshness Validation
 
 Generated inputs may require freshness checks.
 
@@ -365,7 +365,7 @@ Current Generated State
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Configuration validation ensures that effective build configuration is valid and internally consistent.
 
@@ -380,7 +380,7 @@ It may include:
 
 ---
 
-# Effective Configuration Validation
+## Effective Configuration Validation
 
 The final resolved configuration should be validated, not merely individual source files.
 
@@ -398,7 +398,7 @@ Validation
 
 ---
 
-# Profile Validation
+## Profile Validation
 
 The selected build profile must:
 
@@ -409,13 +409,13 @@ The selected build profile must:
 
 ---
 
-# Configuration Conflict Validation
+## Configuration Conflict Validation
 
 Ambiguous or contradictory configuration should fail explicitly.
 
 ---
 
-# Dependency Validation
+## Dependency Validation
 
 Dependency Validation ensures that dependency state is suitable for build execution.
 
@@ -431,7 +431,7 @@ This may include:
 
 ---
 
-# Dependency Resolution Validation
+## Dependency Resolution Validation
 
 The resolved dependency graph must satisfy applicable constraints.
 
@@ -439,7 +439,7 @@ Unresolved conflicts must prevent build execution or trust.
 
 ---
 
-# Dependency Lock Validation
+## Dependency Lock Validation
 
 When lock state is required, validation should confirm that:
 
@@ -449,7 +449,7 @@ When lock state is required, validation should confirm that:
 
 ---
 
-# Dependency Compatibility Validation
+## Dependency Compatibility Validation
 
 Dependencies must be compatible with:
 
@@ -461,7 +461,7 @@ Dependencies must be compatible with:
 
 ---
 
-# Dependency Security Validation
+## Dependency Security Validation
 
 Dependency security findings may participate in validation.
 
@@ -469,7 +469,7 @@ The exact blocking policy remains aligned with Security and Quality governance.
 
 ---
 
-# Toolchain Validation
+## Toolchain Validation
 
 Toolchain Validation confirms that required tools are present and supported.
 
@@ -485,7 +485,7 @@ Examples include:
 
 ---
 
-# Tool Version Validation
+## Tool Version Validation
 
 Critical tool versions should be validated where they affect build trust.
 
@@ -501,7 +501,7 @@ Compatibility Decision
 
 ---
 
-# Tool Configuration Validation
+## Tool Configuration Validation
 
 A supported tool with invalid configuration may still produce invalid behavior.
 
@@ -509,7 +509,7 @@ Tool configuration must therefore also participate in validation.
 
 ---
 
-# Environment Validation
+## Environment Validation
 
 Environment Validation verifies that the execution environment satisfies required conditions.
 
@@ -526,7 +526,7 @@ This may include:
 
 ---
 
-# Clean Environment Validation
+## Clean Environment Validation
 
 Release-oriented builds may require stronger environment cleanliness.
 
@@ -539,7 +539,7 @@ Examples include:
 
 ---
 
-# Source State Validation
+## Source State Validation
 
 Some profiles may validate source control state.
 
@@ -552,7 +552,7 @@ Possible checks include:
 
 ---
 
-# Execution Validation
+## Execution Validation
 
 Execution Validation determines whether required build stages completed successfully and coherently.
 
@@ -566,7 +566,7 @@ This may include:
 
 ---
 
-# Stage Completion Validation
+## Stage Completion Validation
 
 A build stage should not be considered successful merely because a later stage executed.
 
@@ -574,13 +574,13 @@ Required stage status should be explicit.
 
 ---
 
-# Execution Ordering Validation
+## Execution Ordering Validation
 
 Where stage order matters, the canonical order should be enforced.
 
 ---
 
-# Side Effect Validation
+## Side Effect Validation
 
 Build execution may be checked for unintended changes to authoritative source.
 
@@ -600,7 +600,7 @@ Unexpected mutation may indicate build drift.
 
 ---
 
-# Artifact Validation
+## Artifact Validation
 
 Artifact Validation is one of the most important Build Validation domains.
 
@@ -608,7 +608,7 @@ It determines whether generated candidate artifacts conform to expected structur
 
 ---
 
-# Artifact Presence Validation
+## Artifact Presence Validation
 
 Required artifacts must exist.
 
@@ -623,7 +623,7 @@ and only one is produced, the build may be incomplete.
 
 ---
 
-# Artifact Count Validation
+## Artifact Count Validation
 
 Unexpected duplicate or missing artifacts may indicate configuration problems.
 
@@ -631,7 +631,7 @@ The expected artifact set should remain explicit.
 
 ---
 
-# Artifact Naming Validation
+## Artifact Naming Validation
 
 Artifact names should conform to:
 
@@ -644,7 +644,7 @@ Invalid naming may affect installation or release processes.
 
 ---
 
-# Artifact Structure Validation
+## Artifact Structure Validation
 
 Artifact internal structure may be validated.
 
@@ -657,7 +657,7 @@ For Python packages this may include:
 
 ---
 
-# Artifact Content Validation
+## Artifact Content Validation
 
 Artifact contents should match intended packaging rules.
 
@@ -671,7 +671,7 @@ Validation should detect accidental inclusion of:
 
 ---
 
-# Artifact Metadata Validation
+## Artifact Metadata Validation
 
 Artifact metadata must match authoritative project state.
 
@@ -686,7 +686,7 @@ Possible checks include:
 
 ---
 
-# Metadata Consistency Validation
+## Metadata Consistency Validation
 
 If the same property exists in multiple layers, values must remain consistent.
 
@@ -702,7 +702,7 @@ where applicable.
 
 ---
 
-# Artifact Integrity Validation
+## Artifact Integrity Validation
 
 Artifact integrity ensures that artifact bytes correspond to recorded integrity information.
 
@@ -710,7 +710,7 @@ This may include checksums.
 
 ---
 
-# Checksum Generation
+## Checksum Generation
 
 Integrity digests should be calculated only after final artifact bytes are stable.
 
@@ -724,7 +724,7 @@ Recorded Integrity
 
 ---
 
-# Checksum Verification
+## Checksum Verification
 
 Downstream validation may recompute and compare the digest.
 
@@ -732,7 +732,7 @@ A mismatch MUST invalidate trust.
 
 ---
 
-# Functional Artifact Validation
+## Functional Artifact Validation
 
 Some artifacts should be tested as artifacts rather than only as source.
 
@@ -746,7 +746,7 @@ This may include:
 
 ---
 
-# Clean Installation Validation
+## Clean Installation Validation
 
 A Python artifact may be installed into a fresh environment to verify that packaging is complete.
 
@@ -754,7 +754,7 @@ This catches problems that source-level tests may miss.
 
 ---
 
-# Import Validation
+## Import Validation
 
 After installation, key modules may be imported to detect:
 
@@ -764,7 +764,7 @@ After installation, key modules may be imported to detect:
 
 ---
 
-# CLI Smoke Validation
+## CLI Smoke Validation
 
 Where appropriate, the packaged CLI may be invoked minimally to verify entry points.
 
@@ -780,7 +780,7 @@ The exact command is implementation-specific.
 
 ---
 
-# Plugin Artifact Validation
+## Plugin Artifact Validation
 
 Official plugin artifacts may require:
 
@@ -793,7 +793,7 @@ Official plugin artifacts may require:
 
 ---
 
-# Documentation Artifact Validation
+## Documentation Artifact Validation
 
 Documentation artifacts may require:
 
@@ -805,7 +805,7 @@ Documentation artifacts may require:
 
 ---
 
-# Source Distribution Validation
+## Source Distribution Validation
 
 Source distributions may require validation that they contain enough authoritative state to rebuild or install correctly.
 
@@ -818,7 +818,7 @@ This may include:
 
 ---
 
-# Wheel Validation
+## Wheel Validation
 
 Wheel validation may include:
 
@@ -830,7 +830,7 @@ Wheel validation may include:
 
 ---
 
-# Evidence Validation
+## Evidence Validation
 
 Build evidence itself must be checked for completeness and consistency.
 
@@ -838,7 +838,7 @@ A build should not claim strong trust while required evidence is missing.
 
 ---
 
-# Evidence Completeness
+## Evidence Completeness
 
 Required evidence may include:
 
@@ -854,7 +854,7 @@ Evidence requirements depend on profile.
 
 ---
 
-# Evidence Consistency
+## Evidence Consistency
 
 Evidence must refer to the correct build and artifact set.
 
@@ -868,7 +868,7 @@ Build ID Associated With Artifact
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Future stronger evidence may itself require integrity protection.
 
@@ -876,7 +876,7 @@ This becomes more relevant with provenance or signing.
 
 ---
 
-# Policy Validation
+## Policy Validation
 
 Policy Validation evaluates build state against FamilyOS governance rules.
 
@@ -890,7 +890,7 @@ Policy sources may include:
 
 ---
 
-# Quality Gate Integration
+## Quality Gate Integration
 
 Build Validation may participate in quality gates.
 
@@ -908,7 +908,7 @@ The Quality Framework owns the broader gate policy.
 
 ---
 
-# Security Gate Integration
+## Security Gate Integration
 
 Security-sensitive builds may require checks for:
 
@@ -920,7 +920,7 @@ Security-sensitive builds may require checks for:
 
 ---
 
-# Plugin Compliance Integration
+## Plugin Compliance Integration
 
 Plugin builds may require compliance results before artifacts become trusted.
 
@@ -930,7 +930,7 @@ It does not redefine compliance rules.
 
 ---
 
-# Release Readiness Validation
+## Release Readiness Validation
 
 Build Validation may determine whether a trusted artifact satisfies the Build Framework side of release readiness.
 
@@ -944,7 +944,7 @@ Does this artifact satisfy the required build conditions for release considerati
 
 ---
 
-# Release Readiness Inputs
+## Release Readiness Inputs
 
 Release-readiness validation may consider:
 
@@ -959,13 +959,13 @@ Release-readiness validation may consider:
 
 ---
 
-# Validation Profiles
+## Validation Profiles
 
 Validation requirements vary by build profile.
 
 ---
 
-# Development Validation Profile
+## Development Validation Profile
 
 Development validation may prioritize rapid feedback.
 
@@ -979,7 +979,7 @@ Possible checks include:
 
 ---
 
-# Validation Build Profile
+## Validation Build Profile
 
 A dedicated validation profile may execute:
 
@@ -991,7 +991,7 @@ A dedicated validation profile may execute:
 
 ---
 
-# CI Validation Profile
+## CI Validation Profile
 
 CI may require:
 
@@ -1004,7 +1004,7 @@ CI may require:
 
 ---
 
-# Release Candidate Validation Profile
+## Release Candidate Validation Profile
 
 Release-candidate validation SHOULD apply the strongest current Build Framework controls.
 
@@ -1034,7 +1034,7 @@ Release Readiness
 
 ---
 
-# Validation Strictness
+## Validation Strictness
 
 Validation strictness should increase with artifact importance.
 
@@ -1048,7 +1048,7 @@ Stronger Validation
 
 ---
 
-# Validation Result
+## Validation Result
 
 A validation process should produce an explicit result.
 
@@ -1070,7 +1070,7 @@ A formal object may be introduced later.
 
 ---
 
-# Validation Status
+## Validation Status
 
 Possible conceptual statuses include:
 
@@ -1086,7 +1086,7 @@ Required checks must not be silently marked as skipped.
 
 ---
 
-# Required Versus Optional Validation
+## Required Versus Optional Validation
 
 Validation checks may be:
 
@@ -1100,13 +1100,13 @@ The classification must be explicit.
 
 ---
 
-# Required Validation Failure
+## Required Validation Failure
 
 A required check failure MUST make the overall validation fail.
 
 ---
 
-# Optional Validation Failure
+## Optional Validation Failure
 
 Optional validation may produce warnings without blocking trust.
 
@@ -1114,7 +1114,7 @@ Use of optional checks should remain intentional.
 
 ---
 
-# Validation Warnings
+## Validation Warnings
 
 Warnings should indicate conditions that deserve attention but do not invalidate the current profile.
 
@@ -1124,7 +1124,7 @@ Persistent warnings should be reviewed.
 
 ---
 
-# Validation Exceptions
+## Validation Exceptions
 
 Temporary exceptions may sometimes be necessary.
 
@@ -1140,7 +1140,7 @@ Exceptions must not become permanent undocumented bypasses.
 
 ---
 
-# Validation Bypass
+## Validation Bypass
 
 High-trust profiles SHOULD NOT allow arbitrary validation bypass.
 
@@ -1148,7 +1148,7 @@ If a required validation is intentionally bypassed, trust state must reflect the
 
 ---
 
-# Validation Ordering
+## Validation Ordering
 
 Checks should be ordered to maximize early feedback.
 
@@ -1172,7 +1172,7 @@ The exact ordering depends on workflow.
 
 ---
 
-# Validation Cost
+## Validation Cost
 
 Some checks are expensive.
 
@@ -1186,7 +1186,7 @@ High-cost validation may be reserved for CI or release profiles.
 
 ---
 
-# Validation Parallelization
+## Validation Parallelization
 
 Independent checks may execute in parallel.
 
@@ -1196,7 +1196,7 @@ The result must remain equivalent to sequential validation.
 
 ---
 
-# Validation Caching
+## Validation Caching
 
 Some validation results may be cached when their relevant inputs are unchanged.
 
@@ -1206,7 +1206,7 @@ A stale validation cache must not create false trust.
 
 ---
 
-# Validation Reuse
+## Validation Reuse
 
 A validated artifact may carry forward its validation state if its bytes and associated context remain unchanged.
 
@@ -1224,7 +1224,7 @@ This supports build-once-promote principles.
 
 ---
 
-# Validation Invalidation
+## Validation Invalidation
 
 Validation must be considered invalid if relevant state changes.
 
@@ -1238,7 +1238,7 @@ Examples include:
 
 ---
 
-# Validation And Immutability
+## Validation And Immutability
 
 Artifact immutability allows validation results to remain meaningful.
 
@@ -1246,7 +1246,7 @@ If an artifact changes, it must be revalidated.
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Validation results themselves are part of Build Evidence.
 
@@ -1262,7 +1262,7 @@ Useful evidence may include:
 
 ---
 
-# Validation Reports
+## Validation Reports
 
 A build may generate a validation report.
 
@@ -1283,7 +1283,7 @@ Build Validation Report
 
 ---
 
-# Human-Readable Validation Output
+## Human-Readable Validation Output
 
 Validation results should remain understandable to developers.
 
@@ -1291,7 +1291,7 @@ Humans should not need to decode raw machine output for routine failures.
 
 ---
 
-# Machine-Readable Validation Output
+## Machine-Readable Validation Output
 
 Future automation may benefit from structured results.
 
@@ -1305,7 +1305,7 @@ A structured format should be introduced when useful.
 
 ---
 
-# Validation Failure Diagnostics
+## Validation Failure Diagnostics
 
 A good validation failure should explain:
 
@@ -1318,7 +1318,7 @@ A good validation failure should explain:
 
 ---
 
-# Validation Failure Categories
+## Validation Failure Categories
 
 Possible conceptual categories include:
 
@@ -1339,7 +1339,7 @@ Formal machine-readable categories may come later.
 
 ---
 
-# Validation Fail-Fast
+## Validation Fail-Fast
 
 Certain failures should stop validation immediately.
 
@@ -1353,7 +1353,7 @@ Continuing may provide little value.
 
 ---
 
-# Validation Continue-On-Failure
+## Validation Continue-On-Failure
 
 Independent checks may sometimes continue to collect a broader defect picture.
 
@@ -1366,7 +1366,7 @@ The policy should be explicit.
 
 ---
 
-# Validation And Testing Framework
+## Validation And Testing Framework
 
 Testing is an important validation contributor.
 
@@ -1388,7 +1388,7 @@ Build Validation Decision
 
 ---
 
-# Validation And Quality Framework
+## Validation And Quality Framework
 
 The Quality Framework may consume Build Validation evidence.
 
@@ -1401,13 +1401,13 @@ Examples include:
 
 ---
 
-# Validation And Documentation Framework
+## Validation And Documentation Framework
 
 Build documentation and generated documentation may require validation according to Documentation Framework standards.
 
 ---
 
-# Validation And Security Architecture
+## Validation And Security Architecture
 
 Security validation may include:
 
@@ -1420,7 +1420,7 @@ Security policy remains governed outside Build Framework.
 
 ---
 
-# Validation And Release Framework
+## Validation And Release Framework
 
 The Release Framework consumes trusted artifacts and validation evidence.
 
@@ -1438,7 +1438,7 @@ Release retains authority to reject even a valid build.
 
 ---
 
-# Validation And Automation
+## Validation And Automation
 
 CI should execute canonical validation rather than duplicate validation logic independently.
 
@@ -1452,7 +1452,7 @@ Local / CI Execution
 
 ---
 
-# Validation And Developer Workflow
+## Validation And Developer Workflow
 
 Developers should be able to run relevant validation locally before pushing changes.
 
@@ -1460,7 +1460,7 @@ This improves feedback and reduces CI-only failures.
 
 ---
 
-# Pre-Commit Validation
+## Pre-Commit Validation
 
 Some low-cost validation may occur before commit.
 
@@ -1474,7 +1474,7 @@ The Build Framework does not mandate a specific Git hook implementation.
 
 ---
 
-# Pre-Push Validation
+## Pre-Push Validation
 
 Developers may run broader validation before pushing.
 
@@ -1482,7 +1482,7 @@ The canonical build model should support this without requiring CI-only mechanis
 
 ---
 
-# Validation Observability
+## Validation Observability
 
 Useful validation metrics may include:
 
@@ -1495,7 +1495,7 @@ Useful validation metrics may include:
 
 ---
 
-# Validation Metrics
+## Validation Metrics
 
 Potential quality metrics include:
 
@@ -1510,7 +1510,7 @@ The Quality Framework governs formal metric use.
 
 ---
 
-# Validation Duration
+## Validation Duration
 
 Validation duration may be tracked to identify expensive stages.
 
@@ -1518,7 +1518,7 @@ Optimization must not weaken confidence.
 
 ---
 
-# Validation Stability
+## Validation Stability
 
 Flaky validation is harmful because it weakens trust.
 
@@ -1526,7 +1526,7 @@ A required check should behave deterministically under equivalent conditions.
 
 ---
 
-# Flaky Test Integration
+## Flaky Test Integration
 
 If tests used for build validation are flaky, the problem must be addressed in the Testing Framework.
 
@@ -1534,7 +1534,7 @@ Retries must not become a permanent substitute for deterministic testing.
 
 ---
 
-# Reproducibility Validation
+## Reproducibility Validation
 
 FamilyOS may eventually validate reproducibility by building equivalent contexts multiple times and comparing outputs.
 
@@ -1560,7 +1560,7 @@ Differences should be explainable.
 
 ---
 
-# Reproducibility Validation Levels
+## Reproducibility Validation Levels
 
 Possible maturity levels include:
 
@@ -1576,7 +1576,7 @@ Not all levels are immediate requirements.
 
 ---
 
-# Artifact Comparison Validation
+## Artifact Comparison Validation
 
 Artifact comparison may examine:
 
@@ -1590,7 +1590,7 @@ This can help identify unexpected toolchain or dependency drift.
 
 ---
 
-# Validation Security
+## Validation Security
 
 Validation tooling itself must be trusted.
 
@@ -1600,7 +1600,7 @@ Toolchain governance therefore applies to validators.
 
 ---
 
-# Validation Least Privilege
+## Validation Least Privilege
 
 Validation should not require release publication credentials.
 
@@ -1608,13 +1608,13 @@ Checks should operate with minimal privileges.
 
 ---
 
-# Secret Safety
+## Secret Safety
 
 Validation output must not expose secrets discovered in configuration or environment.
 
 ---
 
-# Validation Tamper Resistance
+## Validation Tamper Resistance
 
 Future high-trust workflows may protect validation reports from modification.
 
@@ -1622,7 +1622,7 @@ This becomes relevant when formal provenance or attestations are introduced.
 
 ---
 
-# Validation Governance
+## Validation Governance
 
 Significant validation-policy changes may require formal review.
 
@@ -1636,7 +1636,7 @@ Examples include:
 
 ---
 
-# Validation Rule Ownership
+## Validation Rule Ownership
 
 Validation rules should remain owned by the appropriate framework.
 
@@ -1663,7 +1663,7 @@ Build Validation orchestrates applicable rules without absorbing all ownership.
 
 ---
 
-# Validation Change Management
+## Validation Change Management
 
 Changes should follow:
 
@@ -1683,7 +1683,7 @@ Adoption
 
 ---
 
-# Validation Technical Debt
+## Validation Technical Debt
 
 Validation debt includes:
 
@@ -1699,19 +1699,19 @@ This debt weakens confidence and should be reduced.
 
 ---
 
-# Validation Anti-Pattern — Tests Are Enough
+## Validation Anti-Pattern — Tests Are Enough
 
 Passing tests does not guarantee artifact correctness.
 
 ---
 
-# Validation Anti-Pattern — Build Exit Code Is Enough
+## Validation Anti-Pattern — Build Exit Code Is Enough
 
 A successful build command does not establish artifact trust.
 
 ---
 
-# Validation Anti-Pattern — Manual Inspection Only
+## Validation Anti-Pattern — Manual Inspection Only
 
 Manual inspection may supplement validation.
 
@@ -1719,31 +1719,31 @@ It must not be the sole canonical mechanism for routine requirements that can be
 
 ---
 
-# Validation Anti-Pattern — CI-Only Validation Logic
+## Validation Anti-Pattern — CI-Only Validation Logic
 
 Required validation semantics should not exist only inside one CI provider configuration.
 
 ---
 
-# Validation Anti-Pattern — Permanent Skip
+## Validation Anti-Pattern — Permanent Skip
 
 A required validation that is permanently skipped is effectively not a requirement.
 
 ---
 
-# Validation Anti-Pattern — Warning Flood
+## Validation Anti-Pattern — Warning Flood
 
 A validation system that emits large numbers of routinely ignored warnings loses effectiveness.
 
 ---
 
-# Validation Anti-Pattern — Rebuild To Validate
+## Validation Anti-Pattern — Rebuild To Validate
 
 Where possible, validate the artifact intended for promotion rather than rebuilding a separate artifact for validation.
 
 ---
 
-# Validation Maturity Model
+## Validation Maturity Model
 
 FamilyOS Build Validation may evolve through:
 
@@ -1791,7 +1791,7 @@ Each stage should be introduced according to actual platform needs.
 
 ---
 
-# Validation Success Criteria
+## Validation Success Criteria
 
 The Build Validation model is successful when FamilyOS can answer:
 
@@ -1814,53 +1814,53 @@ The Build Validation model is successful when FamilyOS can answer:
 
 ---
 
-# Validation Invariants
+## Validation Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Required validation must occur before trusted artifact declaration.
 
-## Invariant 2
+### Invariant 2
 
 Mandatory validation failure must prevent build trust.
 
-## Invariant 3
+### Invariant 3
 
 Validation requirements must be explicit per build profile.
 
-## Invariant 4
+### Invariant 4
 
 Artifact validation must validate the actual artifact intended for downstream use.
 
-## Invariant 5
+### Invariant 5
 
 Validation evidence must remain associated with the correct build.
 
-## Invariant 6
+### Invariant 6
 
 Validation must not rely on undocumented CI-only behavior.
 
-## Invariant 7
+### Invariant 7
 
 Changing trusted artifact bytes invalidates prior artifact validation.
 
-## Invariant 8
+### Invariant 8
 
 Release authority remains outside Build Validation.
 
-## Invariant 9
+### Invariant 9
 
 Validation tooling must itself remain governed.
 
-## Invariant 10
+### Invariant 10
 
 Validation failures must remain observable and explainable.
 
 ---
 
-# Canonical Validation Flow
+## Canonical Validation Flow
 
 The FamilyOS Build Validation flow can be summarized as:
 
@@ -1898,7 +1898,7 @@ This sequence converts successful build execution into evidence-backed engineeri
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Validation model is founded on the following rule:
 

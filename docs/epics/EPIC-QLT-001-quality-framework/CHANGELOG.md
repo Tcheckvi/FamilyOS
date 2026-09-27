@@ -6,9 +6,9 @@ The changelog tracks the evolution of the framework documentation, architecture,
 
 ---
 
-# [Unreleased]
+## [Unreleased]
 
-## Planned
+### Planned
 
 * Implement the initial executable Quality Framework capabilities.
 * Introduce core quality domain models.
@@ -27,11 +27,11 @@ The changelog tracks the evolution of the framework documentation, architecture,
 
 ---
 
-# [1.0.0] — Draft
+## [1.0.0] — Draft
 
-## Added
+### Added
 
-### Quality Framework Foundation
+#### Quality Framework Foundation
 
 Established EPIC-QLT-001 as the authoritative Quality Framework for the FamilyOS engineering ecosystem.
 
@@ -47,7 +47,7 @@ Defined the framework's:
 * lifecycle;
 * implementation strategy.
 
-### Quality Domains
+#### Quality Domains
 
 Introduced the canonical Quality Domain model for organizing quality requirements, rules, evidence, assessments, metrics, risks, and governance.
 
@@ -67,7 +67,7 @@ Initial domains include:
 * compliance;
 * governance.
 
-### Quality Rule Model
+#### Quality Rule Model
 
 Defined the conceptual model for Quality Rules, including:
 
@@ -80,15 +80,15 @@ Defined the conceptual model for Quality Rules, including:
 * lifecycle;
 * governance.
 
-### Quality Profiles
+#### Quality Profiles
 
 Introduced reusable Quality Profiles for defining which quality expectations apply to different engineering targets.
 
-### Quality Metrics
+#### Quality Metrics
 
 Defined principles for quality measurement, interpretation, aggregation, governance, and responsible use.
 
-### Quality Evidence
+#### Quality Evidence
 
 Introduced Quality Evidence as a first-class framework concept.
 
@@ -101,11 +101,11 @@ Established evidence expectations around:
 * machine readability;
 * attribution.
 
-### Quality Risk Management
+#### Quality Risk Management
 
 Defined a lifecycle for identifying, evaluating, owning, mitigating, monitoring, escalating, accepting, and closing Quality Risks.
 
-### Defect and Quality Debt Management
+#### Defect and Quality Debt Management
 
 Established distinct models for:
 
@@ -117,11 +117,11 @@ Established distinct models for:
 * acceptance;
 * lifecycle tracking.
 
-### Quality Reviews and Assessments
+#### Quality Reviews and Assessments
 
 Defined formal Quality Review and Quality Assessment concepts for consolidating evidence, findings, risks, and applicable quality expectations.
 
-### Quality Automation
+#### Quality Automation
 
 Defined automation architecture and principles for deterministic quality verification.
 
@@ -133,7 +133,7 @@ Established initial integration direction for:
 
 Defined local and CI consistency as a core automation requirement.
 
-### Quality Observability
+#### Quality Observability
 
 Defined principles for observing:
 
@@ -145,7 +145,7 @@ Defined principles for observing:
 * quality trends;
 * recurring engineering problems.
 
-### Quality Gates
+#### Quality Gates
 
 Introduced Quality Gates as governed engineering decision mechanisms.
 
@@ -159,21 +159,21 @@ Non-Blocking
 Blocking
 ```
 
-### Quality Compliance
+#### Quality Compliance
 
 Defined quality compliance semantics based on explicit requirements, rules, evidence, findings, and compliance results.
 
 Established governed exception requirements.
 
-### Continuous Improvement
+#### Continuous Improvement
 
 Defined the feedback model through which quality evidence and recurring problems can produce systemic engineering improvements.
 
-### Quality Governance
+#### Quality Governance
 
 Defined authority, ownership, escalation, exception governance, policy management, gate governance, and framework evolution responsibilities.
 
-### Framework Lifecycle
+#### Framework Lifecycle
 
 Defined how the Quality Framework is:
 
@@ -188,27 +188,27 @@ Defined how the Quality Framework is:
 * deprecated;
 * retired.
 
-### Roadmap
+#### Roadmap
 
 Defined progressive implementation and adoption stages for transforming the normative framework into executable FamilyOS quality capabilities.
 
-### Validation
+#### Validation
 
 Defined structural, semantic, architectural, governance, dependency, and lifecycle validation requirements for the framework itself.
 
-### Release Model
+#### Release Model
 
 Defined the release readiness and publication model for EPIC-QLT-001.
 
-### Implementation Checklist
+#### Implementation Checklist
 
 Introduced the canonical implementation checklist describing the progressive path from documentation to executable quality infrastructure.
 
 ---
 
-## Changed
+### Changed
 
-### Canonical Documentation Architecture
+#### Canonical Documentation Architecture
 
 Replaced the previous generic engineering-oriented document structure with a dedicated Quality Framework architecture.
 
@@ -245,7 +245,7 @@ The canonical numbered documentation is now:
 
 The canonical structure therefore contains exactly **26 numbered documents**.
 
-### Control Documents
+#### Control Documents
 
 Aligned the EPIC control model around:
 
@@ -269,7 +269,7 @@ The complete canonical EPIC structure therefore contains:
 33 canonical files
 ```
 
-### Framework Boundaries
+#### Framework Boundaries
 
 Clarified the relationship between EPIC-QLT-001 and neighboring FamilyOS engineering frameworks.
 
@@ -284,17 +284,17 @@ Key relationships include:
 * EPIC-REL-001 — Release Framework;
 * EPIC-PLUGIN-002 — Plugin Compliance Framework.
 
-### Enforcement Strategy
+#### Enforcement Strategy
 
 Clarified that quality enforcement follows progressive adoption rather than immediate blocking enforcement.
 
-### AI Boundary
+#### AI Boundary
 
 Clarified that future AI-assisted quality capabilities may support investigation, explanation, summarization, and pattern analysis but SHALL NOT silently replace deterministic quality controls or governed engineering authority.
 
 ---
 
-## Removed
+### Removed
 
 Removed the obsolete generic numbered documentation structure previously inherited from broader engineering framework templates, including documents such as:
 
@@ -325,7 +325,7 @@ These responsibilities were replaced by the specialized Quality Framework struct
 
 ---
 
-## Fixed
+### Fixed
 
 * Removed duplicate numbered document `23`.
 * Established exactly one canonical document for every number from `00` through `25`.
@@ -344,13 +344,13 @@ These responsibilities were replaced by the specialized Quality Framework struct
 
 ---
 
-# Versioning Policy
+## Versioning Policy
 
 The Quality Framework follows FamilyOS documentation and release governance.
 
 Version changes should reflect the significance of framework evolution.
 
-## Patch
+### Patch
 
 Patch versions may include:
 
@@ -360,7 +360,7 @@ Patch versions may include:
 * formatting fixes;
 * metadata corrections.
 
-## Minor
+### Minor
 
 Minor versions may include backward-compatible additions such as:
 
@@ -371,7 +371,7 @@ Minor versions may include backward-compatible additions such as:
 * new optional profiles;
 * expanded automation.
 
-## Major
+### Major
 
 Major versions may be required for significant changes such as:
 
@@ -385,7 +385,7 @@ Major versions may be required for significant changes such as:
 
 ---
 
-# Changelog Governance
+## Changelog Governance
 
 Every significant Quality Framework revision SHOULD update this changelog.
 
@@ -399,7 +399,7 @@ Changes affecting authoritative semantics, structure, governance, lifecycle, val
 
 ---
 
-# Current State
+## Current State
 
 ```text
 EPIC:       EPIC-QLT-001

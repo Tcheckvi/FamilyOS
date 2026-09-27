@@ -11,7 +11,7 @@
 
 ---
 
-# 1. Overview
+## 1. Overview
 
 EPIC-ENG-001 establishes the canonical Engineering Foundation for FamilyOS.
 
@@ -25,7 +25,7 @@ Instead, it provides the common baseline from which those frameworks extend Fami
 
 ---
 
-# 2. Purpose
+## 2. Purpose
 
 The purpose of EPIC-ENG-001 is to establish a durable engineering foundation for FamilyOS.
 
@@ -58,7 +58,7 @@ The Engineering Foundation provides a common operating model without duplicating
 
 ---
 
-# 3. Engineering Mission
+## 3. Engineering Mission
 
 FamilyOS requires an engineering model capable of supporting long-term platform evolution.
 
@@ -82,17 +82,17 @@ Engineering practices MUST support both current implementation requirements and 
 
 ---
 
-# 4. Engineering Objectives
+## 4. Engineering Objectives
 
 EPIC-ENG-001 establishes the following core objectives.
 
-## 4.1 Consistent Engineering Practices
+### 4.1 Consistent Engineering Practices
 
 FamilyOS engineering practices MUST follow common expectations across repositories, frameworks, plugins, and platform capabilities.
 
 ---
 
-## 4.2 Architectural Discipline
+### 4.2 Architectural Discipline
 
 Architecture MUST remain explicit.
 
@@ -100,7 +100,7 @@ Major implementation decisions SHOULD follow architectural intent rather than sh
 
 ---
 
-## 4.3 Maintainability
+### 4.3 Maintainability
 
 Engineering decisions MUST support long-term maintainability.
 
@@ -108,13 +108,13 @@ The repository SHOULD remain understandable to future contributors without requi
 
 ---
 
-## 4.4 Testability
+### 4.4 Testability
 
 Software SHOULD be designed so that meaningful behavior can be validated through automated testing.
 
 ---
 
-## 4.5 Type Safety
+### 4.5 Type Safety
 
 Production source code SHOULD use strong typing where appropriate.
 
@@ -122,25 +122,25 @@ Static type validation is part of the FamilyOS repository quality model.
 
 ---
 
-## 4.6 Traceability
+### 4.6 Traceability
 
 Significant engineering decisions, changes, releases, and validation outcomes MUST remain traceable.
 
 ---
 
-## 4.7 Reproducibility
+### 4.7 Reproducibility
 
 Development, build, validation, and release processes SHOULD minimize hidden environmental assumptions.
 
 ---
 
-## 4.8 Sustainable Evolution
+### 4.8 Sustainable Evolution
 
 Engineering practices MUST support continued platform evolution without uncontrolled architectural degradation.
 
 ---
 
-# 5. Canonical Scope
+## 5. Canonical Scope
 
 The Engineering Foundation covers shared repository-level engineering concerns.
 
@@ -176,7 +176,7 @@ Engineering Foundation
 
 ---
 
-# 6. Scope Boundaries
+## 6. Scope Boundaries
 
 EPIC-ENG-001 defines shared engineering expectations.
 
@@ -188,7 +188,7 @@ The Engineering Foundation MUST avoid unnecessary duplication of those framework
 
 ---
 
-# 7. Canonical Repository Structure
+## 7. Canonical Repository Structure
 
 The canonical EPIC-ENG-001 repository structure consists of:
 
@@ -206,7 +206,7 @@ Canonical numbered range:
 
 ---
 
-# 8. Numbered Documents
+## 8. Numbered Documents
 
 The canonical numbered documents are:
 
@@ -246,7 +246,7 @@ PASS
 
 ---
 
-# 9. Control Documents
+## 9. Control Documents
 
 The canonical control documents are:
 
@@ -269,7 +269,7 @@ PASS
 
 ---
 
-# 10. Canonical File Count
+## 10. Canonical File Count
 
 Final canonical inventory:
 
@@ -287,7 +287,7 @@ PASS
 
 ---
 
-# 11. Context Normalization
+## 11. Context Normalization
 
 `01-Context.md` is the canonical Engineering Foundation context document.
 
@@ -309,7 +309,7 @@ Active Engineering Foundation navigation MUST use:
 
 ---
 
-# 12. Engineering Principles
+## 12. Engineering Principles
 
 The Engineering Foundation establishes shared principles for FamilyOS engineering.
 
@@ -330,7 +330,7 @@ These principles apply across FamilyOS engineering work unless a stronger specia
 
 ---
 
-# 13. Repository Architecture
+## 13. Repository Architecture
 
 The repository architecture SHOULD make engineering intent visible.
 
@@ -351,7 +351,7 @@ Architectural boundaries SHOULD be reflected in project organization.
 
 ---
 
-# 14. Development Workflow
+## 14. Development Workflow
 
 FamilyOS development follows a controlled engineering lifecycle.
 
@@ -391,7 +391,7 @@ However, the level of engineering control SHOULD remain proportional to the impa
 
 ---
 
-# 15. Coding Standards
+## 15. Coding Standards
 
 FamilyOS code SHOULD prioritize:
 
@@ -409,7 +409,7 @@ Code SHOULD avoid hidden behavior where explicit behavior is practical.
 
 ---
 
-# 16. Type Safety
+## 16. Type Safety
 
 Static typing is part of the FamilyOS engineering quality model.
 
@@ -433,7 +433,7 @@ PASS
 
 ---
 
-# 17. Ruff Validation
+## 17. Ruff Validation
 
 Ruff provides repository-wide linting validation.
 
@@ -457,7 +457,7 @@ PASS
 
 ---
 
-# 18. Pytest Validation
+## 18. Pytest Validation
 
 Pytest provides automated behavioral validation.
 
@@ -481,7 +481,7 @@ PASS
 
 ---
 
-# 19. Diff Validation
+## 19. Diff Validation
 
 Repository diff integrity is validated using:
 
@@ -499,7 +499,7 @@ No whitespace errors or conflict markers were detected.
 
 ---
 
-# 20. Project Structure
+## 20. Project Structure
 
 Project structure SHOULD communicate architectural intent.
 
@@ -517,7 +517,7 @@ Repository organization MUST remain understandable as the platform grows.
 
 ---
 
-# 21. Toolchain
+## 21. Toolchain
 
 The Engineering Foundation identifies core engineering validation tools.
 
@@ -537,7 +537,7 @@ The Engineering Foundation defines shared expectations rather than every tool-sp
 
 ---
 
-# 22. Environment Management
+## 22. Environment Management
 
 Development environments SHOULD remain reproducible.
 
@@ -551,7 +551,7 @@ Environment-specific assumptions SHOULD be documented when they materially affec
 
 ---
 
-# 23. Dependency Management
+## 23. Dependency Management
 
 Dependencies MUST be introduced deliberately.
 
@@ -569,7 +569,7 @@ Unnecessary dependencies SHOULD be avoided.
 
 ---
 
-# 24. Configuration Management
+## 24. Configuration Management
 
 Configuration MUST remain explicit and reviewable.
 
@@ -584,7 +584,7 @@ Detailed secrets and security governance belong to specialized security architec
 
 ---
 
-# 25. Build Philosophy
+## 25. Build Philosophy
 
 EPIC-ENG-001 defines the shared expectation that builds SHOULD be:
 
@@ -604,7 +604,7 @@ EPIC-ENG-001 does not duplicate the Build Framework.
 
 ---
 
-# 26. Testing Philosophy
+## 26. Testing Philosophy
 
 Testing is part of engineering, not a post-implementation activity.
 
@@ -626,7 +626,7 @@ EPIC-TST-001 — Testing Framework
 
 ---
 
-# 27. Documentation Philosophy
+## 27. Documentation Philosophy
 
 Documentation is an engineering artifact.
 
@@ -643,7 +643,7 @@ Documentation that materially affects engineering behavior MUST remain reviewabl
 
 ---
 
-# 28. Quality Philosophy
+## 28. Quality Philosophy
 
 Quality is a continuous engineering responsibility.
 
@@ -663,7 +663,7 @@ EPIC-QLT-001 — Quality Framework
 
 ---
 
-# 29. Technical Governance
+## 29. Technical Governance
 
 Engineering decisions vary in impact.
 
@@ -680,7 +680,7 @@ Exceptions to established engineering rules SHOULD be explicit and justified.
 
 ---
 
-# 30. Engineering Lifecycle
+## 30. Engineering Lifecycle
 
 The Engineering Foundation defines the shared engineering lifecycle:
 
@@ -718,13 +718,13 @@ Specialized frameworks MAY define more detailed lifecycle states.
 
 ---
 
-# 31. Specialized Framework Ownership
+## 31. Specialized Framework Ownership
 
 EPIC-ENG-001 defines shared engineering expectations while specialized frameworks own detailed architecture.
 
 ---
 
-## Testing Framework
+### Testing Framework
 
 ```text
 EPIC-TST-001 — Testing Framework
@@ -743,7 +743,7 @@ EPIC-ENG-001 defines only the shared expectation that FamilyOS software must be 
 
 ---
 
-## Quality Framework
+### Quality Framework
 
 ```text
 EPIC-QLT-001 — Quality Framework
@@ -763,7 +763,7 @@ EPIC-ENG-001 defines shared engineering quality expectations.
 
 ---
 
-## Build Framework
+### Build Framework
 
 ```text
 EPIC-BLD-001 — Build Framework
@@ -782,7 +782,7 @@ EPIC-ENG-001 defines shared build philosophy only.
 
 ---
 
-## Release Framework
+### Release Framework
 
 ```text
 EPIC-REL-001 — Release Framework
@@ -805,7 +805,7 @@ EPIC-ENG-001 defines only common release-readiness expectations.
 
 ---
 
-# 32. Additional Framework Integration
+## 32. Additional Framework Integration
 
 The Engineering Foundation also provides baseline expectations for other FamilyOS engineering capabilities, including:
 
@@ -820,7 +820,7 @@ These frameworks extend the Engineering Foundation without changing its role as 
 
 ---
 
-# 33. Validation Model
+## 33. Validation Model
 
 Engineering Foundation validation includes:
 
@@ -843,7 +843,7 @@ All required validation areas have passed for the current Engineering Foundation
 
 ---
 
-# 34. Structural Validation
+## 34. Structural Validation
 
 Structural validation confirmed:
 
@@ -873,7 +873,7 @@ PASS
 
 ---
 
-# 35. EPIC Contract Validation
+## 35. EPIC Contract Validation
 
 The machine-readable EPIC contract defines:
 
@@ -913,7 +913,7 @@ PASS
 
 ---
 
-# 36. Documentation Validation
+## 36. Documentation Validation
 
 Documentation review confirmed:
 
@@ -936,7 +936,7 @@ Documentation Review: PASS
 
 ---
 
-# 37. Engineering Review
+## 37. Engineering Review
 
 Engineering review confirmed:
 
@@ -957,7 +957,7 @@ Engineering Review: PASS
 
 ---
 
-# 38. Quality Gates
+## 38. Quality Gates
 
 Mandatory repository quality gates:
 
@@ -983,7 +983,7 @@ Final results:
 
 ---
 
-# 39. Objective Quality Evidence
+## 39. Objective Quality Evidence
 
 Final repository quality evidence:
 
@@ -1014,7 +1014,7 @@ ALL QUALITY GATES: PASS
 
 ---
 
-# 40. Acceptance Criteria
+## 40. Acceptance Criteria
 
 EPIC-ENG-001 acceptance criteria include:
 
@@ -1041,7 +1041,7 @@ ACCEPTED
 
 ---
 
-# 41. Release Readiness
+## 41. Release Readiness
 
 Release readiness status:
 
@@ -1067,7 +1067,7 @@ READY FOR RELEASE
 
 ---
 
-# 42. Versioning Model
+## 42. Versioning Model
 
 EPIC-ENG-001 uses document version:
 
@@ -1083,7 +1083,7 @@ The EPIC document version MUST NOT be inferred from the repository release tag.
 
 ---
 
-# 43. Historical Tags
+## 43. Historical Tags
 
 Historical engineering tags include:
 
@@ -1100,7 +1100,7 @@ They are not rewritten by the current normalization.
 
 ---
 
-# 44. Target Publication Tag
+## 44. Target Publication Tag
 
 Recent repository-wide framework releases include:
 
@@ -1123,7 +1123,7 @@ The target tag was verified as available prior to final publication preparation.
 
 ---
 
-# 45. Publication State
+## 45. Publication State
 
 The Engineering Foundation implementation and validation lifecycle is complete.
 
@@ -1153,7 +1153,7 @@ Confirm clean working tree
 
 ---
 
-# 46. Completion Transition
+## 46. Completion Transition
 
 EPIC-ENG-001 has been authorized to transition from:
 
@@ -1177,7 +1177,7 @@ Completion date:
 
 ---
 
-# 47. Final Approval
+## 47. Final Approval
 
 Final approval state:
 
@@ -1197,7 +1197,7 @@ Final approval state:
 
 ---
 
-# 48. Final Engineering State
+## 48. Final Engineering State
 
 ```text
 Canonical Structure        PASS
@@ -1216,7 +1216,7 @@ Final Approval             PASS
 
 ---
 
-# 49. Completion Statement
+## 49. Completion Statement
 
 EPIC-ENG-001 — Engineering Foundation has completed its canonical normalization, documentation review, engineering review, repository validation, quality-gate execution, and release-readiness validation.
 
@@ -1241,7 +1241,7 @@ The Engineering Foundation is approved as the canonical shared engineering basel
 
 ---
 
-# Final Status
+## Final Status
 
 **EPIC:** EPIC-ENG-001
 **Title:** Engineering Foundation

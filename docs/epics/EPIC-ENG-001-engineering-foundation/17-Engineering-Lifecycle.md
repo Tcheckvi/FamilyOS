@@ -17,7 +17,7 @@ A controlled lifecycle allows FamilyOS to evolve while preserving:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Engineering Lifecycle is to define the global engineering process that connects every engineering discipline within FamilyOS.
 
@@ -33,9 +33,9 @@ The Engineering Lifecycle provides a common framework for:
 
 ---
 
-# Engineering Lifecycle Principles
+## Engineering Lifecycle Principles
 
-## Principle 1 — Every Change Has a Lifecycle
+### Principle 1 — Every Change Has a Lifecycle
 
 Engineering changes should not appear directly as isolated implementations.
 
@@ -49,7 +49,7 @@ A lifecycle provides:
 
 ---
 
-## Principle 2 — Appropriate Process for Appropriate Change
+### Principle 2 — Appropriate Process for Appropriate Change
 
 Not every change requires the same level of process.
 
@@ -71,7 +71,7 @@ Major changes may require:
 
 ---
 
-## Principle 3 — Knowledge Evolves With Software
+### Principle 3 — Knowledge Evolves With Software
 
 Engineering knowledge must evolve together with implementation.
 
@@ -84,7 +84,7 @@ A completed engineering change should leave:
 
 ---
 
-## Principle 4 — Validation Is Continuous
+### Principle 4 — Validation Is Continuous
 
 Validation is not only a final phase.
 
@@ -97,7 +97,7 @@ Confidence should be built throughout the lifecycle through:
 
 ---
 
-# Global Engineering Lifecycle
+## Global Engineering Lifecycle
 
 FamilyOS follows the following engineering lifecycle.
 
@@ -133,7 +133,7 @@ This lifecycle defines the global engineering flow of the platform.
 
 ---
 
-# Engineering Lifecycle Integration
+## Engineering Lifecycle Integration
 
 The global Engineering Lifecycle coordinates the specialized engineering lifecycles defined throughout the Engineering Foundation.
 
@@ -158,9 +158,9 @@ The Engineering Lifecycle provides the common coordination model that keeps them
 
 ---
 
-# Phase 1 — Need Identification
+## Phase 1 — Need Identification
 
-## Objective
+### Objective
 
 Understand why a change is required.
 
@@ -179,9 +179,9 @@ Possible inputs:
 
 ---
 
-# Phase 2 — Analysis
+## Phase 2 — Analysis
 
-## Objective
+### Objective
 
 Understand the impact of the proposed change.
 
@@ -201,9 +201,9 @@ Possible artifacts:
 
 ---
 
-# Phase 3 — Design
+## Phase 3 — Design
 
-## Objective
+### Objective
 
 Define the solution before implementation.
 
@@ -222,9 +222,9 @@ Possible artifacts:
 
 ---
 
-# Phase 4 — Implementation
+## Phase 4 — Implementation
 
-## Objective
+### Objective
 
 Transform the approved design into working software.
 
@@ -236,9 +236,9 @@ Implementation follows:
 
 ---
 
-# Phase 5 — Validation
+## Phase 5 — Validation
 
-## Objective
+### Objective
 
 Verify engineering expectations.
 
@@ -252,9 +252,9 @@ Validation may include:
 
 ---
 
-# Phase 6 — Integration
+## Phase 6 — Integration
 
-## Objective
+### Objective
 
 Safely integrate validated changes.
 
@@ -266,9 +266,9 @@ Integration requires:
 
 ---
 
-# Phase 7 — Release
+## Phase 7 — Release
 
-## Objective
+### Objective
 
 Deliver validated engineering artifacts.
 
@@ -281,9 +281,9 @@ Release activities may include:
 
 ---
 
-# Phase 8 — Maintenance
+## Phase 8 — Maintenance
 
-## Objective
+### Objective
 
 Preserve engineering quality after delivery.
 
@@ -296,9 +296,9 @@ Maintenance includes:
 
 ---
 
-# Phase 9 — Continuous Evolution
+## Phase 9 — Continuous Evolution
 
-## Objective
+### Objective
 
 Continuously improve FamilyOS.
 
@@ -313,7 +313,7 @@ Engineering never reaches a final state.
 
 ---
 
-# Relationship With Other Engineering Frameworks
+## Relationship With Other Engineering Frameworks
 
 The Engineering Lifecycle orchestrates:
 
@@ -332,7 +332,7 @@ It provides the engineering context in which each framework operates.
 
 ---
 
-# Governance
+## Governance
 
 The Engineering Lifecycle is governed by the Technical Governance framework.
 
@@ -340,7 +340,7 @@ Changes affecting the lifecycle should be evaluated for their impact on every sp
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The Engineering Lifecycle is successful when:
 
@@ -352,7 +352,7 @@ The Engineering Lifecycle is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The Engineering Lifecycle is the central coordination model of the FamilyOS Engineering Foundation.
 

@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 07 Documentation Metadata
+## 07 Documentation Metadata
 
-## Purpose
+### Purpose
 
 Documentation metadata defines the information required to identify, classify, manage, and automate FamilyOS documentation artifacts.
 
@@ -16,7 +16,7 @@ Metadata provides structured information about documentation resources and enabl
 
 Every official FamilyOS documentation artifact SHOULD contain appropriate metadata.
 
-## Metadata Principles
+### Metadata Principles
 
 FamilyOS documentation metadata follows these principles:
 
@@ -28,7 +28,7 @@ FamilyOS documentation metadata follows these principles:
 
 Metadata MUST describe the document itself and MUST NOT replace the document content.
 
-## Metadata Objectives
+### Metadata Objectives
 
 Documentation metadata enables:
 
@@ -39,11 +39,11 @@ Documentation metadata enables:
 - automated processing,
 - dependency management.
 
-## Required Metadata Fields
+### Required Metadata Fields
 
 Official documentation artifacts SHOULD define the following metadata fields.
 
-## Identifier
+### Identifier
 
 The identifier uniquely identifies the documentation artifact.
 
@@ -60,7 +60,7 @@ Identifiers MUST:
 - remain stable,
 - never be reused.
 
-## Title
+### Title
 
 The title provides the human-readable name of the document.
 
@@ -70,7 +70,7 @@ Titles SHOULD:
 - use approved terminology,
 - remain consistent with repository naming.
 
-## Document Type
+### Document Type
 
 The document type defines the category of documentation.
 
@@ -89,7 +89,7 @@ The document type determines:
 - validation rules,
 - lifecycle behavior.
 
-## Version
+### Version
 
 The version identifies the current document revision.
 
@@ -101,6 +101,7 @@ Examples:
 1.0.0
 1.1.0
 2.0.0
+```
 
 Version changes SHOULD reflect the impact of modifications.
 

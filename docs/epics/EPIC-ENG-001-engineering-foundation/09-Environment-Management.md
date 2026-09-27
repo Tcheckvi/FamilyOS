@@ -10,7 +10,7 @@ Environment Management establishes the principles required to create, maintain, 
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Environment Management is to ensure that FamilyOS engineering activities can be be performed in environments that are:
 
@@ -24,9 +24,9 @@ A reliable environment is a foundation for reliable software.
 
 ---
 
-# Environment Management Principles
+## Environment Management Principles
 
-## Principle 1 — Reproducible Environments
+### Principle 1 — Reproducible Environments
 
 Engineering environments should produce consistent results regardless of where they are executed.
 
@@ -41,7 +41,7 @@ A contributor should be able to recreate an environment from documented sources.
 
 ---
 
-## Principle 2 — Environment as Code
+### Principle 2 — Environment as Code
 
 Environment configuration should be treated as an engineering artifact.
 
@@ -56,7 +56,7 @@ Undocumented environment assumptions create long-term risks.
 
 ---
 
-## Principle 3 — Separation of Environments
+### Principle 3 — Separation of Environments
 
 Different lifecycle stages require different environments.
 
@@ -79,7 +79,7 @@ Each environment has a specific purpose.
 
 ---
 
-## Principle 4 — Controlled Dependencies
+### Principle 4 — Controlled Dependencies
 
 Environment dependencies should be explicit.
 
@@ -94,7 +94,7 @@ Hidden dependencies reduce reliability.
 
 ---
 
-## Principle 5 — Consistent Developer Experience
+### Principle 5 — Consistent Developer Experience
 
 Contributors should experience similar workflows across environments.
 
@@ -107,9 +107,9 @@ Consistency improves:
 
 ---
 
-# Environment Categories
+## Environment Categories
 
-## Development Environment
+### Development Environment
 
 The development environment supports daily engineering activities.
 
@@ -122,7 +122,7 @@ It should provide:
 
 ---
 
-## Testing Environment
+### Testing Environment
 
 The testing environment supports software validation.
 
@@ -138,7 +138,7 @@ Reference:
 
 ---
 
-## CI/CD Environment
+### CI/CD Environment
 
 The CI/CD environment provides automated engineering validation.
 
@@ -156,7 +156,7 @@ Reference:
 
 ---
 
-## Release Environment
+### Release Environment
 
 The release environment supports controlled delivery.
 
@@ -168,7 +168,7 @@ It should ensure:
 
 ---
 
-# Environment Configuration
+## Environment Configuration
 
 Environment configuration should define:
 
@@ -181,7 +181,7 @@ Configuration changes should be reviewed when they impact engineering workflows.
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 Isolation helps prevent:
 
@@ -198,7 +198,7 @@ Isolation may apply to:
 
 ---
 
-# Environment Lifecycle
+## Environment Lifecycle
 
 Engineering environments have a managed lifecycle.
 
@@ -227,7 +227,7 @@ Environment lifecycle management ensures long-term consistency, traceability, an
 
 ---
 
-# Dependency Management Relationship
+## Dependency Management Relationship
 
 Environment management depends on controlled dependency management.
 
@@ -243,7 +243,7 @@ Reference:
 
 ---
 
-# Environment Validation
+## Environment Validation
 
 Environments should be validated before use.
 
@@ -256,7 +256,7 @@ Validation may include:
 
 ---
 
-# Environment Documentation
+## Environment Documentation
 
 Environment knowledge must remain documented.
 
@@ -273,7 +273,7 @@ Reference:
 
 ---
 
-# Environment Evolution
+## Environment Evolution
 
 Environment changes are part of engineering evolution.
 
@@ -292,39 +292,39 @@ Significant changes may require:
 
 ---
 
-# Relationship With Engineering Domains
+## Relationship With Engineering Domains
 
-## Development Workflow
+### Development Workflow
 
 Provides the environments where engineering activities happen.
 
 ---
 
-## Toolchain
+### Toolchain
 
 Defines the tools used inside environments.
 
 ---
 
-## Build Framework
+### Build Framework
 
 Ensures consistent construction environments.
 
 ---
 
-## Testing Framework
+### Testing Framework
 
 Ensures reliable validation environments.
 
 ---
 
-## Release Framework
+### Release Framework
 
 Ensures controlled delivery environments.
 
 ---
 
-# Governance
+## Governance
 
 Environment management follows engineering governance rules.
 
@@ -338,7 +338,7 @@ Changes affecting engineering environments should be reviewed through the approp
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Environment Management is successful when:
 
@@ -350,7 +350,7 @@ Environment Management is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Environment Management provides the foundation required for consistent FamilyOS engineering operations.
 

@@ -18,7 +18,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 This manifest defines the canonical repository inventory for:
 
@@ -43,7 +43,7 @@ It does not replace the normative authority of the numbered Observability Framew
 
 ---
 
-# 2. Repository Location
+## 2. Repository Location
 
 The canonical repository location is:
 
@@ -55,7 +55,7 @@ All canonical Observability Framework documents SHALL reside directly within thi
 
 ---
 
-# 3. Framework Identity
+## 3. Framework Identity
 
 ```text
 EPIC ID:                 EPIC-OBS-001
@@ -70,7 +70,7 @@ The framework establishes the canonical FamilyOS observability foundation.
 
 ---
 
-# 4. Historical Publication
+## 4. Historical Publication
 
 EPIC-OBS-001 was historically published before the current standardized FamilyOS EPIC control-document model was applied.
 
@@ -89,7 +89,7 @@ The current repository representation may therefore differ structurally from the
 
 ---
 
-# 5. Historical Repository Structure
+## 5. Historical Repository Structure
 
 At historical publication time, EPIC-OBS-001 consisted of ten numbered documents.
 
@@ -108,7 +108,7 @@ This distinction SHALL remain explicit.
 
 ---
 
-# 6. Current Canonical Structure
+## 6. Current Canonical Structure
 
 The normalized current repository representation consists of:
 
@@ -131,7 +131,7 @@ Canonical repository equation:
 
 ---
 
-# 7. Canonical Numbered Documents
+## 7. Canonical Numbered Documents
 
 The canonical numbered-document set is:
 
@@ -152,7 +152,7 @@ The numbered sequence SHALL contain exactly ten documents.
 
 ---
 
-# 8. Numbering Contract
+## 8. Numbering Contract
 
 The canonical numbered range is:
 
@@ -184,7 +184,7 @@ The sequence SHALL contain:
 
 ---
 
-# 9. Numbered Document Inventory
+## 9. Numbered Document Inventory
 
 | Number | Document                                   | Responsibility                                            |
 | ------ | ------------------------------------------ | --------------------------------------------------------- |
@@ -201,7 +201,7 @@ The sequence SHALL contain:
 
 ---
 
-# 10. `00-EPIC.md`
+## 10. `00-EPIC.md`
 
 Purpose:
 
@@ -226,7 +226,7 @@ This document is the primary numbered entry point for EPIC-OBS-001.
 
 ---
 
-# 11. `01-Context-and-Vision.md`
+## 11. `01-Context-and-Vision.md`
 
 Purpose:
 
@@ -246,7 +246,7 @@ Primary responsibilities include:
 
 ---
 
-# 12. `02-Observability-Principles.md`
+## 12. `02-Observability-Principles.md`
 
 Purpose:
 
@@ -270,7 +270,7 @@ Primary responsibilities include:
 
 ---
 
-# 13. `03-Observability-Architecture.md`
+## 13. `03-Observability-Architecture.md`
 
 Purpose:
 
@@ -292,7 +292,7 @@ Primary responsibilities include:
 
 ---
 
-# 14. `04-Logging-Metrics-and-Tracing.md`
+## 14. `04-Logging-Metrics-and-Tracing.md`
 
 Purpose:
 
@@ -315,7 +315,7 @@ Primary responsibilities include:
 
 ---
 
-# 15. `05-Health-Diagnostics-and-Alerting.md`
+## 15. `05-Health-Diagnostics-and-Alerting.md`
 
 Purpose:
 
@@ -337,7 +337,7 @@ Primary responsibilities include:
 
 ---
 
-# 16. `06-Observability-Data-and-Correlation.md`
+## 16. `06-Observability-Data-and-Correlation.md`
 
 Purpose:
 
@@ -359,7 +359,7 @@ Primary responsibilities include:
 
 ---
 
-# 17. `07-Security-Privacy-and-Governance.md`
+## 17. `07-Security-Privacy-and-Governance.md`
 
 Purpose:
 
@@ -382,7 +382,7 @@ Primary responsibilities include:
 
 ---
 
-# 18. `08-Implementation-and-Automation.md`
+## 18. `08-Implementation-and-Automation.md`
 
 Purpose:
 
@@ -406,7 +406,7 @@ The document SHOULD remain vendor-neutral where practical.
 
 ---
 
-# 19. `09-Validation-and-Release.md`
+## 19. `09-Validation-and-Release.md`
 
 Purpose:
 
@@ -429,7 +429,7 @@ EPIC-REL-001 remains authoritative for the general FamilyOS release lifecycle.
 
 ---
 
-# 20. Canonical Control Documents
+## 20. Canonical Control Documents
 
 The normalized canonical control-document set is:
 
@@ -447,7 +447,7 @@ Exactly seven control documents are expected.
 
 ---
 
-# 21. Control Document Inventory
+## 21. Control Document Inventory
 
 | Document              | Responsibility                                 |
 | --------------------- | ---------------------------------------------- |
@@ -461,7 +461,7 @@ Exactly seven control documents are expected.
 
 ---
 
-# 22. `EPIC-OBS-001.md`
+## 22. `EPIC-OBS-001.md`
 
 Purpose:
 
@@ -484,7 +484,7 @@ It SHOULD summarize:
 
 ---
 
-# 23. `EPIC.yaml`
+## 23. `EPIC.yaml`
 
 Purpose:
 
@@ -512,7 +512,7 @@ Markdown fences SHALL NOT wrap the physical YAML file.
 
 ---
 
-# 24. `README.md`
+## 24. `README.md`
 
 Purpose:
 
@@ -533,7 +533,7 @@ It SHOULD explain:
 
 ---
 
-# 25. `MANIFEST.md`
+## 25. `MANIFEST.md`
 
 Purpose:
 
@@ -545,7 +545,7 @@ This document is authoritative for current repository inventory.
 
 ---
 
-# 26. `CHANGELOG.md`
+## 26. `CHANGELOG.md`
 
 Purpose:
 
@@ -563,7 +563,7 @@ Historical publication SHALL NOT be rewritten as though current control document
 
 ---
 
-# 27. `VALIDATION.md`
+## 27. `VALIDATION.md`
 
 Purpose:
 
@@ -590,7 +590,7 @@ Validation results SHALL be evidence-based.
 
 ---
 
-# 28. `Revision-History.md`
+## 28. `Revision-History.md`
 
 Purpose:
 
@@ -611,7 +611,7 @@ It SHOULD preserve:
 
 ---
 
-# 29. Canonical Deliverables
+## 29. Canonical Deliverables
 
 The current normalized canonical deliverable inventory consists of exactly seventeen files:
 
@@ -643,7 +643,7 @@ Expected count:
 
 ---
 
-# 30. Inventory Contract
+## 30. Inventory Contract
 
 For the normalized repository state:
 
@@ -664,7 +664,7 @@ These values SHALL only become validated after actual repository execution confi
 
 ---
 
-# 31. Historical vs Current Structure
+## 31. Historical vs Current Structure
 
 Two repository states SHALL remain explicitly distinguishable.
 
@@ -689,7 +689,7 @@ The normalized repository SHALL NOT imply that the seven control documents exist
 
 ---
 
-# 32. Historical Tag Integrity
+## 32. Historical Tag Integrity
 
 The historical release tag is:
 
@@ -717,7 +717,7 @@ The historical tag remains an immutable reference to the original published Obse
 
 ---
 
-# 33. Repository Synchronization
+## 33. Repository Synchronization
 
 The following documents SHALL remain structurally synchronized:
 
@@ -746,7 +746,7 @@ Synchronization includes:
 
 ---
 
-# 34. Structure Contract
+## 34. Structure Contract
 
 The current expected structure is:
 
@@ -762,7 +762,7 @@ Any deviation requires investigation before current repository revalidation may 
 
 ---
 
-# 35. Historical Structure Contract
+## 35. Historical Structure Contract
 
 Historical publication structure:
 
@@ -779,7 +779,7 @@ This structure belongs specifically to the published historical state.
 
 ---
 
-# 36. Numbered Document Contract
+## 36. Numbered Document Contract
 
 A canonical numbered document SHALL match:
 
@@ -797,7 +797,7 @@ Exactly one canonical document SHALL exist for each number.
 
 ---
 
-# 37. Control Document Contract
+## 37. Control Document Contract
 
 Expected control documents:
 
@@ -815,7 +815,7 @@ Missing or unexpected control documents SHALL prevent structural validation from
 
 ---
 
-# 38. Empty File Policy
+## 38. Empty File Policy
 
 Canonical files SHALL NOT be empty.
 
@@ -829,7 +829,7 @@ A zero-byte canonical file SHALL fail repository validation.
 
 ---
 
-# 39. Reference Integrity
+## 39. Reference Integrity
 
 Local Markdown references SHOULD resolve to existing canonical content where they represent active repository links.
 
@@ -844,7 +844,7 @@ Historical text SHALL NOT automatically fail reference validation merely because
 
 ---
 
-# 40. Placeholder Policy
+## 40. Placeholder Policy
 
 Potential unresolved markers may include:
 
@@ -869,7 +869,7 @@ Only genuine unresolved blocking placeholders SHALL fail validation.
 
 ---
 
-# 41. Join Defect Policy
+## 41. Join Defect Policy
 
 Documentation normalization SHALL check for accidental malformed word joins introduced during editing.
 
@@ -888,7 +888,7 @@ Technical identifiers such as class names, symbols, metric names, event names, o
 
 ---
 
-# 42. Observability Semantic Integrity
+## 42. Observability Semantic Integrity
 
 Repository validation SHALL confirm that normalization preserves core Observability Framework semantics.
 
@@ -914,7 +914,7 @@ Normalization SHALL NOT silently weaken these requirements.
 
 ---
 
-# 43. Structured Telemetry Integrity
+## 43. Structured Telemetry Integrity
 
 The framework SHALL preserve preference for structured telemetry where practical.
 
@@ -936,7 +936,7 @@ Free-form text MAY complement structured signals but SHALL NOT replace necessary
 
 ---
 
-# 44. Logging Integrity
+## 44. Logging Integrity
 
 Logging semantics SHALL remain coherent regarding:
 
@@ -952,7 +952,7 @@ Logs SHALL NOT become an uncontrolled storage mechanism for arbitrary applicatio
 
 ---
 
-# 45. Metrics Integrity
+## 45. Metrics Integrity
 
 Metric semantics SHALL remain coherent regarding:
 
@@ -968,7 +968,7 @@ Unbounded high-cardinality labels SHOULD be avoided.
 
 ---
 
-# 46. Tracing Integrity
+## 46. Tracing Integrity
 
 Tracing SHALL preserve meaningful execution relationships.
 
@@ -990,7 +990,7 @@ Trace data SHALL remain correlation-aware and privacy-aware.
 
 ---
 
-# 47. Event Integrity
+## 47. Event Integrity
 
 Structured observability events SHOULD use stable names.
 
@@ -1008,7 +1008,7 @@ Event semantics SHOULD remain stable enough for automation and diagnostics.
 
 ---
 
-# 48. Health Integrity
+## 48. Health Integrity
 
 Health SHALL remain distinct from simple process existence.
 
@@ -1026,7 +1026,7 @@ A process may exist while mandatory dependencies or initialization requirements 
 
 ---
 
-# 49. Readiness Integrity
+## 49. Readiness Integrity
 
 Readiness SHALL indicate whether a component can perform its intended responsibilities.
 
@@ -1040,7 +1040,7 @@ Readiness MAY depend on:
 
 ---
 
-# 50. Liveness Integrity
+## 50. Liveness Integrity
 
 Liveness SHALL indicate whether a process or subsystem remains alive enough to continue operating.
 
@@ -1048,7 +1048,7 @@ Liveness SHALL NOT be treated as sufficient evidence of readiness or full health
 
 ---
 
-# 51. Diagnostics Integrity
+## 51. Diagnostics Integrity
 
 Diagnostics SHOULD expose enough state for troubleshooting while respecting security and privacy.
 
@@ -1061,7 +1061,7 @@ Diagnostic content SHOULD avoid unnecessary:
 
 ---
 
-# 52. Alerting Integrity
+## 52. Alerting Integrity
 
 Alerts SHOULD correspond to meaningful and actionable conditions.
 
@@ -1077,7 +1077,7 @@ Alerting governance SHOULD consider:
 
 ---
 
-# 53. Correlation Integrity
+## 53. Correlation Integrity
 
 Correlation SHALL preserve stable relationships between related telemetry.
 
@@ -1097,7 +1097,7 @@ Correlation identifiers SHOULD avoid embedding sensitive data unnecessarily.
 
 ---
 
-# 54. Time Integrity
+## 54. Time Integrity
 
 Telemetry timestamps SHOULD use consistent conventions.
 
@@ -1111,7 +1111,7 @@ Observability architecture SHOULD consider:
 
 ---
 
-# 55. Telemetry Data Governance
+## 55. Telemetry Data Governance
 
 Observability data SHALL remain governed.
 
@@ -1129,7 +1129,7 @@ Governance may cover:
 
 ---
 
-# 56. Data Minimization
+## 56. Data Minimization
 
 Telemetry SHOULD include only information required for legitimate observability purposes.
 
@@ -1137,7 +1137,7 @@ Observability SHALL NOT become an uncontrolled replica of FamilyOS domain data.
 
 ---
 
-# 57. Secret Protection
+## 57. Secret Protection
 
 Secrets SHALL NOT intentionally appear in observability data.
 
@@ -1157,7 +1157,7 @@ Redaction MAY provide defense in depth but SHALL NOT replace safe instrumentatio
 
 ---
 
-# 58. Privacy Integrity
+## 58. Privacy Integrity
 
 FamilyOS observability SHALL remain privacy-aware.
 
@@ -1165,7 +1165,7 @@ Telemetry containing personal or family-sensitive information requires clear leg
 
 ---
 
-# 59. Vendor-Neutrality Integrity
+## 59. Vendor-Neutrality Integrity
 
 The Observability Framework SHOULD remain independent of one specific telemetry vendor.
 
@@ -1175,7 +1175,7 @@ Vendor integrations MAY be implemented through adapters.
 
 ---
 
-# 60. Testing Boundary
+## 60. Testing Boundary
 
 EPIC-TST-001 remains authoritative for general testing architecture.
 
@@ -1195,7 +1195,7 @@ The framework SHALL NOT create a competing general testing lifecycle.
 
 ---
 
-# 61. Quality Boundary
+## 61. Quality Boundary
 
 EPIC-QLT-001 remains authoritative for general quality governance.
 
@@ -1209,7 +1209,7 @@ Observability may provide quality evidence including:
 
 ---
 
-# 62. Build Boundary
+## 62. Build Boundary
 
 EPIC-BLD-001 remains authoritative for build engineering.
 
@@ -1224,7 +1224,7 @@ Observability SHALL NOT redefine build lifecycle semantics.
 
 ---
 
-# 63. Release Boundary
+## 63. Release Boundary
 
 EPIC-REL-001 remains authoritative for release engineering.
 
@@ -1240,7 +1240,7 @@ Observability SHALL NOT introduce a competing release lifecycle.
 
 ---
 
-# 64. Security Boundary
+## 64. Security Boundary
 
 EPIC-SEC-001 remains authoritative for the Security Framework.
 
@@ -1250,7 +1250,7 @@ Observability SHALL apply applicable security controls to telemetry data.
 
 ---
 
-# 65. Evidence Model
+## 65. Evidence Model
 
 Observability revalidation follows:
 
@@ -1272,7 +1272,7 @@ Evidence SHALL NOT be inferred merely from documentation intent.
 
 ---
 
-# 66. Validation Categories
+## 66. Validation Categories
 
 The normalized repository SHOULD be validated across:
 
@@ -1314,7 +1314,7 @@ Final Repository State
 
 ---
 
-# 67. Validation State
+## 67. Validation State
 
 The current normalization activity SHALL initially use:
 
@@ -1328,7 +1328,7 @@ These values SHALL remain pending until current repository evidence is actually 
 
 ---
 
-# 68. Revalidation Transition
+## 68. Revalidation Transition
 
 Permitted transition:
 
@@ -1358,7 +1358,7 @@ Revalidation
 
 ---
 
-# 69. Historical Publication State
+## 69. Historical Publication State
 
 Historical publication is already complete.
 
@@ -1376,7 +1376,7 @@ Only the current normalized repository validation state remains pending.
 
 ---
 
-# 70. Historical Validation Text
+## 70. Historical Validation Text
 
 Historical numbered documents may contain states such as:
 
@@ -1392,7 +1392,7 @@ Such text SHALL NOT automatically be treated as the current lifecycle state of t
 
 ---
 
-# 71. Change Governance
+## 71. Change Governance
 
 Changes to current canonical repository membership require synchronized updates to:
 
@@ -1410,7 +1410,7 @@ Changes affecting numbered-document membership also require explicit framework r
 
 ---
 
-# 72. Future Structural Changes
+## 72. Future Structural Changes
 
 Future versions may extend or reorganize the Observability Framework.
 
@@ -1426,7 +1426,7 @@ Such changes SHALL:
 
 ---
 
-# 73. Repository Inventory Summary
+## 73. Repository Inventory Summary
 
 ```text
 EPIC:                    EPIC-OBS-001
@@ -1461,7 +1461,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 74. Canonical File List
+## 74. Canonical File List
 
 ```text
 docs/epics/EPIC-OBS-001-observability-framework/
@@ -1486,7 +1486,7 @@ docs/epics/EPIC-OBS-001-observability-framework/
 
 ---
 
-# 75. Manifest Final State
+## 75. Manifest Final State
 
 The canonical normalized Observability Framework repository contract is:
 

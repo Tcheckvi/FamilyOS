@@ -1,8 +1,8 @@
 # Release Framework
 
-# 15 Changelog and Release Notes
+## 15 Changelog and Release Notes
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines the rules governing changelogs and release notes across the FamilyOS ecosystem.
 
@@ -18,7 +18,7 @@ They MUST NOT be treated as interchangeable.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to establish:
 
@@ -40,7 +40,7 @@ The objective is to ensure that FamilyOS releases are understandable both at the
 
 ---
 
-# Core Principle
+## Core Principle
 
 The central principle is:
 
@@ -58,7 +58,7 @@ The release communication set must remain aligned with the final validated candi
 
 ---
 
-# Changelog Definition
+## Changelog Definition
 
 A changelog is a structured historical record describing significant changes across FamilyOS versions.
 
@@ -80,7 +80,7 @@ The changelog is cumulative.
 
 ---
 
-# Release Notes Definition
+## Release Notes Definition
 
 Release notes are a release-specific communication artifact.
 
@@ -108,7 +108,7 @@ Release notes are not merely a copy of the changelog.
 
 ---
 
-# Changelog vs Release Notes
+## Changelog vs Release Notes
 
 The distinction is:
 
@@ -130,7 +130,7 @@ Both should derive from the same factual release state.
 
 ---
 
-# Documentation Ownership
+## Documentation Ownership
 
 The Documentation Framework governs:
 
@@ -152,7 +152,7 @@ These responsibilities must remain separate.
 
 ---
 
-# Changelog Structure
+## Changelog Structure
 
 A FamilyOS changelog SHOULD use a consistent version-oriented structure.
 
@@ -180,7 +180,7 @@ The exact formatting remains governed by documentation standards.
 
 ---
 
-# Unreleased Section
+## Unreleased Section
 
 An `Unreleased` section MAY be used to accumulate changes intended for future releases.
 
@@ -200,7 +200,7 @@ Before publication, the relevant entries should be moved or transformed into the
 
 ---
 
-# Change Categories
+## Change Categories
 
 FamilyOS SHOULD use stable change categories.
 
@@ -219,7 +219,7 @@ Additional categories MAY be introduced where they provide meaningful release in
 
 ---
 
-# Added
+## Added
 
 `Added` records new functionality or capability.
 
@@ -233,7 +233,7 @@ Examples include:
 
 ---
 
-# Changed
+## Changed
 
 `Changed` records modifications to existing behavior or structure.
 
@@ -248,7 +248,7 @@ Changes with compatibility impact must be called out explicitly.
 
 ---
 
-# Fixed
+## Fixed
 
 `Fixed` records corrections.
 
@@ -261,7 +261,7 @@ Examples include:
 
 ---
 
-# Deprecated
+## Deprecated
 
 `Deprecated` records functionality that remains available but is scheduled for future removal or replacement.
 
@@ -273,7 +273,7 @@ Deprecation entries should identify:
 
 ---
 
-# Removed
+## Removed
 
 `Removed` records functionality or behavior no longer available.
 
@@ -281,7 +281,7 @@ Removal may imply compatibility impact and therefore must align with versioning 
 
 ---
 
-# Security
+## Security
 
 `Security` records security-related changes suitable for public disclosure.
 
@@ -291,7 +291,7 @@ The changelog must not disclose confidential vulnerability information premature
 
 ---
 
-# Changelog Version Identity
+## Changelog Version Identity
 
 Every released changelog section MUST use the correct official release version.
 
@@ -317,7 +317,7 @@ if the final release was published as:
 
 ---
 
-# Version Consistency
+## Version Consistency
 
 Version identity must remain consistent across:
 
@@ -334,7 +334,7 @@ Any conflict must be resolved before release completion.
 
 ---
 
-# Changelog Release Date
+## Changelog Release Date
 
 Released changelog entries SHOULD include a release date where appropriate.
 
@@ -348,7 +348,7 @@ Dates should represent the actual release publication date according to applicab
 
 ---
 
-# Historical Immutability
+## Historical Immutability
 
 Published changelog history SHOULD remain stable.
 
@@ -360,7 +360,7 @@ The preferred approach is to preserve historical traceability.
 
 ---
 
-# Changelog Correction
+## Changelog Correction
 
 A factual changelog correction MAY be made without changing the original release identity when the correction affects documentation only.
 
@@ -368,7 +368,7 @@ However, the correction should not falsely imply that software behavior changed 
 
 ---
 
-# Changelog Completeness
+## Changelog Completeness
 
 A release changelog entry should represent all significant changes relevant to consumers and maintainers.
 
@@ -378,7 +378,7 @@ The purpose is meaningful change history, not raw commit duplication.
 
 ---
 
-# Commit Log Is Not Changelog
+## Commit Log Is Not Changelog
 
 The following is insufficient as a release changelog:
 
@@ -394,7 +394,7 @@ A changelog is curated release history.
 
 ---
 
-# Pull Requests Are Not Changelog
+## Pull Requests Are Not Changelog
 
 Similarly, a list of pull requests does not automatically constitute a useful changelog.
 
@@ -404,7 +404,7 @@ The resulting changelog should still present meaningful release categories.
 
 ---
 
-# Release Notes Structure
+## Release Notes Structure
 
 Release notes SHOULD normally include the following areas where applicable:
 
@@ -425,7 +425,7 @@ Not every release requires every section.
 
 ---
 
-# Release Identity
+## Release Identity
 
 Release notes must clearly identify the release.
 
@@ -446,7 +446,7 @@ The identity must match official release metadata.
 
 ---
 
-# Release Summary
+## Release Summary
 
 The summary should explain why the release exists.
 
@@ -462,7 +462,7 @@ The summary should remain concise and accurate.
 
 ---
 
-# Highlights
+## Highlights
 
 Release highlights may identify the most significant changes.
 
@@ -472,7 +472,7 @@ They should not simply duplicate every changelog item.
 
 ---
 
-# Change Details
+## Change Details
 
 Release notes may expand on important changelog items where consumers need more context.
 
@@ -489,7 +489,7 @@ reducing the risk of incompatible plugin-platform combinations.
 
 ---
 
-# Compatibility Section
+## Compatibility Section
 
 Release notes MUST include compatibility information when the release changes supported relationships.
 
@@ -506,7 +506,7 @@ Compatibility must not be left implicit when materially affected.
 
 ---
 
-# Breaking Changes
+## Breaking Changes
 
 Breaking changes must be clearly visible.
 
@@ -522,7 +522,7 @@ Release notes should identify:
 
 ---
 
-# Migration Section
+## Migration Section
 
 A migration section is required when consumers must take action to move from a previous supported version.
 
@@ -539,7 +539,7 @@ Migration steps should reflect validated behavior.
 
 ---
 
-# Upgrade Guidance
+## Upgrade Guidance
 
 Upgrade guidance may describe:
 
@@ -554,7 +554,7 @@ For simple releases, this may be minimal.
 
 ---
 
-# Known Issues
+## Known Issues
 
 Known non-blocking issues SHOULD be disclosed where they are relevant to consumers.
 
@@ -569,7 +569,7 @@ Known issues must not be hidden simply because they were accepted for release.
 
 ---
 
-# Security Notes
+## Security Notes
 
 Security-related release communication must balance:
 
@@ -589,7 +589,7 @@ Sensitive technical detail may be published separately according to security pol
 
 ---
 
-# Security Advisory Relationship
+## Security Advisory Relationship
 
 A security advisory is distinct from general release notes.
 
@@ -601,7 +601,7 @@ The Security Framework or security governance defines disclosure depth.
 
 ---
 
-# Rollback Information
+## Rollback Information
 
 Where rollback is supported and operationally relevant, release notes MAY include rollback considerations.
 
@@ -622,7 +622,7 @@ This information must align with validated recovery behavior.
 
 ---
 
-# Release Notes for Framework Releases
+## Release Notes for Framework Releases
 
 A FamilyOS framework release should normally describe:
 
@@ -638,7 +638,7 @@ For example, EPIC-REL-001 release notes should explain that the Release Framewor
 
 ---
 
-# Release Notes for Plugin Releases
+## Release Notes for Plugin Releases
 
 Plugin release notes may include:
 
@@ -652,7 +652,7 @@ Plugin release notes may include:
 
 ---
 
-# Release Notes for Platform Releases
+## Release Notes for Platform Releases
 
 Platform release notes may need broader structure.
 
@@ -673,7 +673,7 @@ Platform notes should provide an integrated view.
 
 ---
 
-# Release Notes for Documentation Releases
+## Release Notes for Documentation Releases
 
 Documentation release notes may be lighter.
 
@@ -686,7 +686,7 @@ They should identify:
 
 ---
 
-# Release Notes for Maintenance Releases
+## Release Notes for Maintenance Releases
 
 Maintenance notes should focus on:
 
@@ -698,7 +698,7 @@ Maintenance notes should focus on:
 
 ---
 
-# Release Notes for Emergency Releases
+## Release Notes for Emergency Releases
 
 Emergency release notes may initially be concise due to urgency.
 
@@ -716,7 +716,7 @@ Documentation may be expanded after immediate stabilization if governance permit
 
 ---
 
-# Candidate Release Notes
+## Candidate Release Notes
 
 Release candidate notes may exist before stable publication.
 
@@ -733,7 +733,7 @@ They must not be represented as stable release notes.
 
 ---
 
-# Stable Release Notes
+## Stable Release Notes
 
 Stable release notes should be generated or finalized from the Final Candidate.
 
@@ -741,7 +741,7 @@ Any material difference between candidate and stable release must be reflected b
 
 ---
 
-# Release Note Freeze
+## Release Note Freeze
 
 Release note content becomes increasingly stable as the candidate approaches approval.
 
@@ -756,7 +756,7 @@ Editorial improvements may continue later if factual meaning remains unchanged.
 
 ---
 
-# Changelog Freeze
+## Changelog Freeze
 
 The release's changelog entry should be considered final once the stable scope is finalized.
 
@@ -764,7 +764,7 @@ Changes after final validation should trigger review of changelog consistency.
 
 ---
 
-# Release Communication Gate
+## Release Communication Gate
 
 Before stable publication, the release process should verify:
 
@@ -782,7 +782,7 @@ Missing mandatory release communication may block publication.
 
 ---
 
-# Documentation Readiness Relationship
+## Documentation Readiness Relationship
 
 `09-Release-Readiness.md` evaluates whether release communication is sufficiently prepared to create a candidate.
 
@@ -790,13 +790,13 @@ This document defines the communication content and semantics.
 
 ---
 
-# Final Validation Relationship
+## Final Validation Relationship
 
 `12-Release-Validation.md` confirms that changelog and release notes describe the actual Final Candidate.
 
 ---
 
-# Changelog Source Data
+## Changelog Source Data
 
 FamilyOS MAY progressively use structured change data.
 
@@ -812,7 +812,7 @@ No specific mechanism is mandated by this document.
 
 ---
 
-# Change Fragments
+## Change Fragments
 
 A future FamilyOS workflow may use change fragments created during development.
 
@@ -831,7 +831,7 @@ This is an optional future capability.
 
 ---
 
-# Structured Change Record
+## Structured Change Record
 
 Another possible model is:
 
@@ -846,7 +846,7 @@ Machine-readable change data can improve automation while preserving human-reada
 
 ---
 
-# Automation Principle
+## Automation Principle
 
 Automation may assist changelog and release note generation.
 
@@ -858,7 +858,7 @@ The governing principle is:
 
 ---
 
-# Automatic Version Insertion
+## Automatic Version Insertion
 
 The release workflow SHOULD automate version insertion where practical.
 
@@ -878,7 +878,7 @@ in release documents.
 
 ---
 
-# Automatic Date Insertion
+## Automatic Date Insertion
 
 Release date insertion may also be automated at publication time.
 
@@ -886,7 +886,7 @@ This ensures the date represents actual release timing rather than planning assu
 
 ---
 
-# Automatic Comparison Links
+## Automatic Comparison Links
 
 Where the hosting platform supports it, changelog entries may include links comparing versions.
 
@@ -902,7 +902,7 @@ It does not replace it.
 
 ---
 
-# Release Note Generation
+## Release Note Generation
 
 Automation may generate a draft such as:
 
@@ -925,7 +925,7 @@ Human review may then add:
 
 ---
 
-# AI-Assisted Release Notes
+## AI-Assisted Release Notes
 
 Future FamilyOS tooling MAY use AI assistance for drafting release notes.
 
@@ -937,7 +937,7 @@ The release evidence remains authoritative.
 
 ---
 
-# Release Notes and Artifact Set
+## Release Notes and Artifact Set
 
 Release notes should correspond to the actual published artifact set.
 
@@ -945,7 +945,7 @@ If a package expected in the notes was removed from the Final Candidate, the not
 
 ---
 
-# Release Notes and Versioned Components
+## Release Notes and Versioned Components
 
 Platform releases may contain independently versioned components.
 
@@ -965,7 +965,7 @@ where relevant.
 
 ---
 
-# Release Notes and Channels
+## Release Notes and Channels
 
 Pre-release channels must be clearly identified.
 
@@ -980,7 +980,7 @@ Stable notes should not contain ambiguous preview language unless the release it
 
 ---
 
-# Release Notes and Support Status
+## Release Notes and Support Status
 
 Release communication may identify:
 
@@ -994,7 +994,7 @@ Support status must remain separate from version identity.
 
 ---
 
-# Withdrawn Release Communication
+## Withdrawn Release Communication
 
 If a release is withdrawn, its release notes should remain historically discoverable where appropriate.
 
@@ -1014,7 +1014,7 @@ The original release history must not be erased.
 
 ---
 
-# Superseded Release Communication
+## Superseded Release Communication
 
 A superseded release may remain available.
 
@@ -1028,7 +1028,7 @@ This helps consumers understand the recommended upgrade path.
 
 ---
 
-# Rolled-Back Release Communication
+## Rolled-Back Release Communication
 
 If a release is rolled back operationally, its history must remain intact.
 
@@ -1041,7 +1041,7 @@ Release notes may record:
 
 ---
 
-# Release Documentation Integrity
+## Release Documentation Integrity
 
 Release communication itself is part of release integrity.
 
@@ -1056,7 +1056,7 @@ Documentation validation is therefore a release control, not merely editorial po
 
 ---
 
-# Documentation Validation
+## Documentation Validation
 
 Validation should check:
 
@@ -1073,7 +1073,7 @@ security communication where applicable
 
 ---
 
-# Release Notes Approval
+## Release Notes Approval
 
 High-risk release notes MAY require specialized review.
 
@@ -1088,7 +1088,7 @@ Governance defines required reviewers.
 
 ---
 
-# Release Communication Ownership
+## Release Communication Ownership
 
 The Release Owner is responsible for ensuring that release communication is complete.
 
@@ -1100,7 +1100,7 @@ Security owners may control sensitive disclosure.
 
 ---
 
-# Audience Model
+## Audience Model
 
 Release notes may serve multiple audiences:
 
@@ -1117,7 +1117,7 @@ One release note document may serve several audiences, or specialized documents 
 
 ---
 
-# Consumer-Oriented Content
+## Consumer-Oriented Content
 
 Release notes should prioritize practical information.
 
@@ -1132,7 +1132,7 @@ Internal implementation detail should be included only where useful.
 
 ---
 
-# Maintainer-Oriented Content
+## Maintainer-Oriented Content
 
 Maintainer notes may additionally include:
 
@@ -1144,7 +1144,7 @@ Maintainer notes may additionally include:
 
 ---
 
-# Machine-Readable Release Notes Metadata
+## Machine-Readable Release Notes Metadata
 
 Future FamilyOS releases may expose structured metadata alongside human-readable release notes.
 
@@ -1168,7 +1168,7 @@ This does not replace human-readable communication.
 
 ---
 
-# Release Communication Evidence
+## Release Communication Evidence
 
 Final release evidence should identify:
 
@@ -1183,7 +1183,7 @@ This supports historical reconstruction.
 
 ---
 
-# Changelog Retention
+## Changelog Retention
 
 The changelog should be a durable repository artifact.
 
@@ -1197,7 +1197,7 @@ The changelog is part of long-term project history.
 
 ---
 
-# Release Notes Retention
+## Release Notes Retention
 
 Release notes should also remain accessible for historical official releases.
 
@@ -1210,7 +1210,7 @@ Consumers and maintainers may need them years later for:
 
 ---
 
-# Release Note Publication Targets
+## Release Note Publication Targets
 
 Release notes may be published through:
 
@@ -1223,7 +1223,7 @@ At least one authoritative representation should remain accessible.
 
 ---
 
-# Changelog and Release Notes Consistency
+## Changelog and Release Notes Consistency
 
 The two artifacts must not contradict one another.
 
@@ -1241,7 +1241,7 @@ The release communication set must be reconciled before completion.
 
 ---
 
-# Release Notes and Commit State
+## Release Notes and Commit State
 
 Release notes should normally be included in or traceable to the release source state where applicable.
 
@@ -1249,7 +1249,7 @@ This prevents release communication from becoming detached from the released rep
 
 ---
 
-# Comparison With Previous Release
+## Comparison With Previous Release
 
 Release notes SHOULD identify the meaningful delta from the previous release.
 
@@ -1264,13 +1264,13 @@ The previous release must be correctly identified.
 
 ---
 
-# Initial Release Notes
+## Initial Release Notes
 
 For a first release with no predecessor, release notes should clearly describe the initial capability rather than forcing artificial change comparisons.
 
 ---
 
-# Major Release Notes
+## Major Release Notes
 
 Major releases should provide stronger communication.
 
@@ -1285,7 +1285,7 @@ They SHOULD prominently include:
 
 ---
 
-# Minor Release Notes
+## Minor Release Notes
 
 Minor releases should emphasize:
 
@@ -1296,7 +1296,7 @@ Minor releases should emphasize:
 
 ---
 
-# Patch Release Notes
+## Patch Release Notes
 
 Patch releases should focus on:
 
@@ -1307,7 +1307,7 @@ Patch releases should focus on:
 
 ---
 
-# Release Communication Checklist
+## Release Communication Checklist
 
 Before publication, the following questions should be answerable:
 
@@ -1333,7 +1333,7 @@ Are recovery implications documented where needed?
 
 ---
 
-# Framework Release Changelog Example
+## Framework Release Changelog Example
 
 A FamilyOS framework milestone may use:
 
@@ -1353,7 +1353,7 @@ The exact content must reflect the final framework scope.
 
 ---
 
-# Framework Release Notes Example Structure
+## Framework Release Notes Example Structure
 
 Conceptually:
 
@@ -1388,7 +1388,7 @@ This example is illustrative, not the final EPIC-REL-001 release note.
 
 ---
 
-# Release Note Generation Pipeline
+## Release Note Generation Pipeline
 
 A future automation flow may be:
 
@@ -1412,7 +1412,7 @@ publication
 
 ---
 
-# Release Communication Failure
+## Release Communication Failure
 
 Missing or inaccurate required release communication must block release progression where applicable.
 
@@ -1426,7 +1426,7 @@ Examples include:
 
 ---
 
-# Documentation-Only Correction
+## Documentation-Only Correction
 
 A purely editorial correction after release may not require a new software version if governance permits documentation to evolve independently.
 
@@ -1434,7 +1434,7 @@ However, if the corrected documentation itself is published as a new official re
 
 ---
 
-# Release Communication and Immutability
+## Release Communication and Immutability
 
 Release communication may require factual correction after publication.
 
@@ -1444,113 +1444,113 @@ Where possible, history should show the correction.
 
 ---
 
-# Changelog Anti-Patterns
+## Changelog Anti-Patterns
 
-## Raw Commit Dump
+### Raw Commit Dump
 
 Copying Git history directly into the changelog.
 
 ---
 
-## Missing Version
+### Missing Version
 
 Recording changes without clear release identity.
 
 ---
 
-## Retroactive Feature Addition
+### Retroactive Feature Addition
 
 Editing an old changelog entry to claim functionality that was not actually present in that release.
 
 ---
 
-## Unreleased Drift
+### Unreleased Drift
 
 Allowing unreleased entries to remain indefinitely without clear release mapping.
 
 ---
 
-# Release Note Anti-Patterns
+## Release Note Anti-Patterns
 
-## Changelog Copy
+### Changelog Copy
 
 Publishing the changelog entry verbatim as release notes without practical context.
 
 ---
 
-## Candidate Drift
+### Candidate Drift
 
 Publishing release notes prepared for an earlier candidate.
 
 ---
 
-## Hidden Breaking Changes
+### Hidden Breaking Changes
 
 Mentioning incompatible behavior only deep inside technical details.
 
 ---
 
-## Migration by Assumption
+### Migration by Assumption
 
 Telling consumers to upgrade without validating the migration path.
 
 ---
 
-## Security Overexposure
+### Security Overexposure
 
 Publishing sensitive vulnerability detail before coordinated disclosure.
 
 ---
 
-## Marketing Without Engineering Facts
+### Marketing Without Engineering Facts
 
 Producing release notes that emphasize promotion while omitting compatibility, migration, or known limitations.
 
 ---
 
-# Changelog Invariants
+## Changelog Invariants
 
 The following invariants apply.
 
-## CL1 — Every significant official release has a traceable changelog record where the project uses a changelog.
+### CL1 — Every significant official release has a traceable changelog record where the project uses a changelog.
 
-## CL2 — Released changelog entries use the correct official version.
+### CL2 — Released changelog entries use the correct official version.
 
-## CL3 — Changelog history reflects actual released changes.
+### CL3 — Changelog history reflects actual released changes.
 
-## CL4 — Breaking and security-relevant changes are classified appropriately.
+### CL4 — Breaking and security-relevant changes are classified appropriately.
 
-## CL5 — Historical release meaning must not be silently rewritten.
+### CL5 — Historical release meaning must not be silently rewritten.
 
-## CL6 — Changelog structure remains consistent enough for human and automated use.
-
----
-
-# Release Notes Invariants
-
-## RN1 — Required release notes identify the exact official release.
-
-## RN2 — Release notes describe the Final Candidate.
-
-## RN3 — Breaking changes are clearly communicated.
-
-## RN4 — Migration is documented when consumer action is required.
-
-## RN5 — Known material limitations are disclosed where appropriate.
-
-## RN6 — Compatibility information is explicit when relevant.
-
-## RN7 — Security communication follows disclosure governance.
-
-## RN8 — Release notes remain historically accessible where required.
-
-## RN9 — Release notes and changelog must not contradict each other.
-
-## RN10 — Release communication is part of release readiness and validation.
+### CL6 — Changelog structure remains consistent enough for human and automated use.
 
 ---
 
-# Minimum Changelog Requirements
+## Release Notes Invariants
+
+### RN1 — Required release notes identify the exact official release.
+
+### RN2 — Release notes describe the Final Candidate.
+
+### RN3 — Breaking changes are clearly communicated.
+
+### RN4 — Migration is documented when consumer action is required.
+
+### RN5 — Known material limitations are disclosed where appropriate.
+
+### RN6 — Compatibility information is explicit when relevant.
+
+### RN7 — Security communication follows disclosure governance.
+
+### RN8 — Release notes remain historically accessible where required.
+
+### RN9 — Release notes and changelog must not contradict each other.
+
+### RN10 — Release communication is part of release readiness and validation.
+
+---
+
+## Minimum Changelog Requirements
 
 At minimum, a FamilyOS changelog entry should identify:
 
@@ -1563,7 +1563,7 @@ release date where required
 
 ---
 
-# Minimum Release Notes Requirements
+## Minimum Release Notes Requirements
 
 At minimum, significant release notes should identify:
 
@@ -1578,7 +1578,7 @@ known material issues
 
 ---
 
-# Target Release Communication Experience
+## Target Release Communication Experience
 
 At higher maturity, a FamilyOS release workflow should be able to report:
 
@@ -1602,7 +1602,7 @@ This result should be based on structured release evidence.
 
 ---
 
-# Relationship With Versioning
+## Relationship With Versioning
 
 `06-Versioning-Strategy.md` defines official version semantics.
 
@@ -1610,37 +1610,37 @@ Changelog and release notes must consistently use that version.
 
 ---
 
-# Relationship With Release Planning
+## Relationship With Release Planning
 
 `08-Release-Planning.md` determines which release documentation is required.
 
 ---
 
-# Relationship With Release Readiness
+## Relationship With Release Readiness
 
 `09-Release-Readiness.md` verifies that required communication is sufficiently prepared before candidate creation.
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 `10-Release-Candidates.md` establishes the exact candidate the release communication must describe.
 
 ---
 
-# Relationship With Release Validation
+## Relationship With Release Validation
 
 `12-Release-Validation.md` verifies that release communication is consistent with the Final Candidate.
 
 ---
 
-# Relationship With Release Automation
+## Relationship With Release Automation
 
 `13-Release-Automation.md` may automate collection, version insertion, changelog generation, and release note drafting.
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 EPIC-DOC-001 remains authoritative for documentation standards, formatting, quality, metadata, and lifecycle.
 
@@ -1648,19 +1648,19 @@ EPIC-REL-001 defines the release-specific obligations applied to changelogs and 
 
 ---
 
-# Relationship With Publishing
+## Relationship With Publishing
 
 `17-Publishing-and-Distribution.md` defines how release notes and release communication become officially published.
 
 ---
 
-# Relationship With Release Security
+## Relationship With Release Security
 
 `19-Release-Security.md` defines security-related disclosure and integrity requirements.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Changelog and Release Notes model establishes release communication as a first-class part of release engineering.
 

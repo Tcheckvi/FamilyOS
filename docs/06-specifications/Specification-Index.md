@@ -94,6 +94,18 @@ Specifications directory.
 | SPEC-0012 | Plugin Lifecycle Contract | Draft | 1.0.0 |
 | SPEC-0013 | Security Profile Contract | Draft | 1.0.0 |
 
+## AI Platform Capability
+
+| ID | Title | Status | Version |
+|---|---|---|---|
+| SPEC-0016 | ProposedAction Contract | Draft | 0.1.0 |
+
+## Custody and Security Runtime
+
+| ID | Title | Status | Version |
+|---|---|---|---|
+| SPEC-0017 | Phase-1 Custody Worker Contract | Approved | 1.1.0 |
+
 The identifiers and metadata above correspond to the canonical specification
 documents currently present in `docs/06-specifications/`.
 

@@ -17,7 +17,7 @@ The revision history distinguishes between:
 
 ---
 
-# Current EPIC State
+## Current EPIC State
 
 | Field                         | Value                                      |
 | ----------------------------- | ------------------------------------------ |
@@ -39,11 +39,11 @@ The revision history distinguishes between:
 
 ---
 
-# 1. Revision Principles
+## 1. Revision Principles
 
 The Operations Framework revision history follows several foundational principles.
 
-## Historical Integrity
+### Historical Integrity
 
 Historical publication state SHALL remain identifiable and immutable.
 
@@ -63,7 +63,7 @@ Later normalization commits SHALL NOT replace that historical publication identi
 
 ---
 
-## Explicit Evolution
+### Explicit Evolution
 
 Material changes to the Operations Framework SHOULD remain traceable.
 
@@ -91,7 +91,7 @@ This includes changes affecting:
 
 ---
 
-## Evidence-Based Validation
+### Evidence-Based Validation
 
 Validation state SHALL follow evidence.
 
@@ -111,7 +111,7 @@ Record
 
 ---
 
-## Structural Truth
+### Structural Truth
 
 The repository history SHALL preserve the distinction between:
 
@@ -129,7 +129,7 @@ The seven current control documents SHALL NOT be retroactively attributed to the
 
 ---
 
-# 2. Framework Version
+## 2. Framework Version
 
 The historically published Operations Framework version is:
 
@@ -143,7 +143,7 @@ Post-release repository normalization does not by itself require a new semantic 
 
 ---
 
-# 3. Framework Version vs Repository History
+## 3. Framework Version vs Repository History
 
 Framework version:
 
@@ -167,7 +167,7 @@ A later repository-normalization commit may have a different Git identity while 
 
 ---
 
-# 4. Historical Documentation Model
+## 4. Historical Documentation Model
 
 The original Operations Framework used the compact FamilyOS framework documentation model.
 
@@ -184,7 +184,7 @@ The historical release therefore consisted only of the ten numbered framework do
 
 ---
 
-# 5. Historical Numbered Documents
+## 5. Historical Numbered Documents
 
 The historical release contained:
 
@@ -205,7 +205,7 @@ These documents form the historical normative framework baseline.
 
 ---
 
-# 6. Historical Publication
+## 6. Historical Publication
 
 EPIC-OPS-001 version `5.1.0` was historically published under:
 
@@ -233,7 +233,7 @@ Immutable
 
 ---
 
-# 7. Historical Tag Evidence
+## 7. Historical Tag Evidence
 
 The historical tag exists as an annotated Git tag.
 
@@ -249,7 +249,7 @@ This relationship SHALL remain unchanged through normalization.
 
 ---
 
-# 8. Historical Tag Immutability
+## 8. Historical Tag Immutability
 
 Post-release normalization SHALL NOT:
 
@@ -262,7 +262,7 @@ Post-release normalization SHALL NOT:
 
 ---
 
-# 9. Operations Framework Foundation
+## 9. Operations Framework Foundation
 
 Version `5.1.0` established the canonical FamilyOS Operations Framework.
 
@@ -289,7 +289,7 @@ The release defines:
 
 ---
 
-# 10. Operations Principles Revision
+## 10. Operations Principles Revision
 
 Version `5.1.0` establishes principles including:
 
@@ -312,7 +312,7 @@ These principles define the foundational operations posture for FamilyOS.
 
 ---
 
-# 11. Explicit Ownership Revision
+## 11. Explicit Ownership Revision
 
 Operational responsibilities SHOULD have identifiable ownership.
 
@@ -330,7 +330,7 @@ Ambiguous ownership increases operational risk.
 
 ---
 
-# 12. Controlled Change Revision
+## 12. Controlled Change Revision
 
 Operational change SHOULD remain explicit and governed.
 
@@ -349,7 +349,7 @@ High-impact changes SHOULD receive proportionally stronger validation.
 
 ---
 
-# 13. Runtime Configuration Revision
+## 13. Runtime Configuration Revision
 
 Critical runtime configuration SHOULD be validated before unsafe execution.
 
@@ -366,7 +366,7 @@ Invalid configuration SHOULD fail safely.
 
 ---
 
-# 14. Observable Operation Revision
+## 14. Observable Operation Revision
 
 Operational behavior SHOULD remain observable.
 
@@ -386,7 +386,7 @@ EPIC-OBS-001 remains authoritative for observability architecture.
 
 ---
 
-# 15. Recoverability Revision
+## 15. Recoverability Revision
 
 Failure is treated as an expected operational condition.
 
@@ -406,7 +406,7 @@ Recovery SHALL be validated.
 
 ---
 
-# 16. Evidence-Based Operation Revision
+## 16. Evidence-Based Operation Revision
 
 Version `5.1.0` establishes that command completion does not by itself prove operational success.
 
@@ -436,7 +436,7 @@ This applies particularly to:
 
 ---
 
-# 17. Automation Revision
+## 17. Automation Revision
 
 Operational automation SHOULD improve repeatability and reduce operator error.
 
@@ -453,7 +453,7 @@ Automation SHALL NOT bypass security or required validation.
 
 ---
 
-# 18. Security-by-Default Revision
+## 18. Security-by-Default Revision
 
 Operational convenience SHALL NOT weaken FamilyOS security controls.
 
@@ -469,7 +469,7 @@ Operational tooling SHALL NOT intentionally expose:
 
 ---
 
-# 19. Infrastructure Neutrality Revision
+## 19. Infrastructure Neutrality Revision
 
 The Operations Framework remains independent of specific infrastructure providers.
 
@@ -486,7 +486,7 @@ Operational contracts SHOULD remain portable.
 
 ---
 
-# 20. Proportional Complexity Revision
+## 20. Proportional Complexity Revision
 
 Operational complexity SHOULD follow demonstrated need.
 
@@ -508,7 +508,7 @@ The framework explicitly avoids infrastructure complexity introduced solely beca
 
 ---
 
-# 21. Operations Architecture Revision
+## 21. Operations Architecture Revision
 
 Version `5.1.0` establishes a layered operational architecture.
 
@@ -534,7 +534,7 @@ The architecture separates operational policy from infrastructure-specific mecha
 
 ---
 
-# 22. Runtime Management Revision
+## 22. Runtime Management Revision
 
 Runtime management covers explicit lifecycle state.
 
@@ -560,7 +560,7 @@ Operational meaning SHOULD remain explicit.
 
 ---
 
-# 23. Service Management Revision
+## 23. Service Management Revision
 
 Service lifecycle expectations include:
 
@@ -581,7 +581,7 @@ A service SHALL NOT be considered healthy merely because a process exists.
 
 ---
 
-# 24. Health Revision
+## 24. Health Revision
 
 Version `5.1.0` establishes explicit operational health semantics.
 
@@ -598,7 +598,7 @@ Health SHOULD communicate meaningful operational condition.
 
 ---
 
-# 25. Readiness Revision
+## 25. Readiness Revision
 
 Readiness remains distinct from process existence and health.
 
@@ -612,7 +612,7 @@ A component may be running but not ready because:
 
 ---
 
-# 26. Dependency Management Revision
+## 26. Dependency Management Revision
 
 Operational dependency handling SHOULD remain explicit regarding:
 
@@ -630,7 +630,7 @@ Dependency failure SHOULD not automatically cause uncontrolled failure propagati
 
 ---
 
-# 27. Incident Response Revision
+## 27. Incident Response Revision
 
 Version `5.1.0` establishes structured incident response.
 
@@ -658,7 +658,7 @@ Significant incidents SHOULD produce structured learning and appropriate evidenc
 
 ---
 
-# 28. Incident Classification Revision
+## 28. Incident Classification Revision
 
 Incident severity may consider:
 
@@ -674,7 +674,7 @@ Severity SHOULD guide escalation and response rigor.
 
 ---
 
-# 29. Incident Evidence Revision
+## 29. Incident Evidence Revision
 
 Incident handling SHOULD preserve evidence appropriate to impact.
 
@@ -690,7 +690,7 @@ Evidence SHALL remain security- and privacy-aware.
 
 ---
 
-# 30. Recovery Revision
+## 30. Recovery Revision
 
 The framework establishes a strict distinction between restart, restoration, and recovery.
 
@@ -713,7 +713,7 @@ Recovery validation may include:
 
 ---
 
-# 31. Restore Revision
+## 31. Restore Revision
 
 Restore operations MAY involve:
 
@@ -727,7 +727,7 @@ Restore SHALL be followed by validation appropriate to operational impact.
 
 ---
 
-# 32. Rollback Revision
+## 32. Rollback Revision
 
 Rollback is treated as a controlled recovery action.
 
@@ -744,7 +744,7 @@ Rollback completion SHALL NOT automatically prove successful recovery.
 
 ---
 
-# 33. Capacity Revision
+## 33. Capacity Revision
 
 Version `5.1.0` establishes evidence-based capacity management.
 
@@ -762,7 +762,7 @@ Capacity considerations may include:
 
 ---
 
-# 34. Performance Revision
+## 34. Performance Revision
 
 Performance SHOULD be measured rather than assumed.
 
@@ -780,7 +780,7 @@ Performance evidence SHOULD identify relevant runtime context where practical.
 
 ---
 
-# 35. Reliability Revision
+## 35. Reliability Revision
 
 Reliability engineering may include:
 
@@ -797,7 +797,7 @@ Reliability SHALL remain compatible with security and correctness.
 
 ---
 
-# 36. Operational Security Revision
+## 36. Operational Security Revision
 
 Version `5.1.0` integrates security into operations.
 
@@ -816,7 +816,7 @@ EPIC-SEC-001 remains authoritative for Security Framework policy.
 
 ---
 
-# 37. Governance Revision
+## 37. Governance Revision
 
 Operational governance may define:
 
@@ -834,7 +834,7 @@ Governance SHOULD remain proportional to operational impact.
 
 ---
 
-# 38. Implementation Revision
+## 38. Implementation Revision
 
 The framework provides implementation direction while remaining infrastructure-neutral.
 
@@ -852,7 +852,7 @@ Implementation areas may include:
 
 ---
 
-# 39. Infrastructure-as-Code Revision
+## 39. Infrastructure-as-Code Revision
 
 Infrastructure SHOULD be represented declaratively where practical.
 
@@ -869,7 +869,7 @@ No specific IaC technology is mandated.
 
 ---
 
-# 40. Automation Flow Revision
+## 40. Automation Flow Revision
 
 The framework establishes the conceptual operational automation flow:
 
@@ -893,7 +893,7 @@ Execution completion SHALL NOT automatically prove intended outcome.
 
 ---
 
-# 41. Structured Automation Revision
+## 41. Structured Automation Revision
 
 Automation SHOULD produce machine-readable results where practical.
 
@@ -915,7 +915,7 @@ Human-readable output may coexist with structured output.
 
 ---
 
-# 42. Operational Validation Revision
+## 42. Operational Validation Revision
 
 Operational validation may include:
 
@@ -936,7 +936,7 @@ Validation SHALL produce evidence appropriate to the decision it supports.
 
 ---
 
-# 43. Testing Boundary Revision
+## 43. Testing Boundary Revision
 
 EPIC-TST-001 remains authoritative for general testing architecture.
 
@@ -944,7 +944,7 @@ EPIC-OPS-001 defines operations-specific testing requirements.
 
 ---
 
-# 44. Quality Boundary Revision
+## 44. Quality Boundary Revision
 
 EPIC-QLT-001 remains authoritative for quality governance.
 
@@ -958,7 +958,7 @@ Operations may provide evidence concerning:
 
 ---
 
-# 45. Build Boundary Revision
+## 45. Build Boundary Revision
 
 EPIC-BLD-001 remains authoritative for build engineering.
 
@@ -966,7 +966,7 @@ Operations consumes validated artifacts and SHALL NOT silently alter them in way
 
 ---
 
-# 46. Release Boundary Revision
+## 46. Release Boundary Revision
 
 EPIC-REL-001 remains authoritative for release engineering.
 
@@ -983,7 +983,7 @@ Operations SHALL NOT redefine general release lifecycle semantics.
 
 ---
 
-# 47. Observability Boundary Revision
+## 47. Observability Boundary Revision
 
 EPIC-OBS-001 remains authoritative for observability architecture.
 
@@ -991,7 +991,7 @@ Operations consumes observability signals but SHALL NOT redefine canonical telem
 
 ---
 
-# 48. Security Boundary Revision
+## 48. Security Boundary Revision
 
 EPIC-SEC-001 remains authoritative for security architecture and policy.
 
@@ -999,7 +999,7 @@ Operations consumes security controls but SHALL NOT redefine their authoritative
 
 ---
 
-# 49. Historical Validation State
+## 49. Historical Validation State
 
 The historical numbered baseline may contain pre-publication or validation-example states such as:
 
@@ -1015,7 +1015,7 @@ They SHALL NOT automatically determine the current normalized control-layer stat
 
 ---
 
-# 50. Historical Text Defects
+## 50. Historical Text Defects
 
 The historical numbered baseline may also contain textual join defects introduced before publication.
 
@@ -1039,7 +1039,7 @@ Any correction to historical numbered content SHALL be separately governed.
 
 ---
 
-# 51. Historical Release Completion
+## 51. Historical Release Completion
 
 Version `5.1.0` was historically completed and published under:
 
@@ -1057,7 +1057,7 @@ The framework is therefore historically published.
 
 ---
 
-# 52. Post-Release Governance Evolution
+## 52. Post-Release Governance Evolution
 
 After publication, the FamilyOS framework-governance model evolved.
 
@@ -1077,7 +1077,7 @@ EPIC-OPS-001 did not contain this layer in its original publication.
 
 ---
 
-# 53. Post-Release Normalization
+## 53. Post-Release Normalization
 
 The current normalization adds:
 
@@ -1103,7 +1103,7 @@ These documents improve:
 
 ---
 
-# 54. Current Repository Structure
+## 54. Current Repository Structure
 
 The normalized repository contains:
 
@@ -1123,7 +1123,7 @@ Current canonical range remains:
 
 ---
 
-# 55. Historical vs Current Structure
+## 55. Historical vs Current Structure
 
 Historical release:
 
@@ -1145,7 +1145,7 @@ The current state SHALL NOT be retroactively attributed to the historical public
 
 ---
 
-# 56. Machine-Readable Normalization
+## 56. Machine-Readable Normalization
 
 The current normalization introduces:
 
@@ -1170,7 +1170,7 @@ It records:
 
 ---
 
-# 57. Manifest Normalization
+## 57. Manifest Normalization
 
 The normalization introduces:
 
@@ -1182,7 +1182,7 @@ as the authoritative current repository inventory.
 
 ---
 
-# 58. Validation Normalization
+## 58. Validation Normalization
 
 The normalization introduces:
 
@@ -1196,7 +1196,7 @@ It distinguishes historical publication evidence from current repository evidenc
 
 ---
 
-# 59. Changelog Normalization
+## 59. Changelog Normalization
 
 The normalization introduces:
 
@@ -1212,7 +1212,7 @@ to preserve:
 
 ---
 
-# 60. README Normalization
+## 60. README Normalization
 
 The normalization introduces:
 
@@ -1226,7 +1226,7 @@ It does not replace the normative numbered framework documents.
 
 ---
 
-# 61. EPIC Control Summary
+## 61. EPIC Control Summary
 
 The normalization introduces:
 
@@ -1238,7 +1238,7 @@ as the consolidated control-level summary.
 
 ---
 
-# 62. Current Validation State
+## 62. Current Validation State
 
 Current repository revalidation state:
 
@@ -1251,7 +1251,7 @@ This state SHALL remain pending until actual current repository evidence is reco
 
 ---
 
-# 63. Current Revalidation Scope
+## 63. Current Revalidation Scope
 
 Current revalidation includes:
 
@@ -1310,7 +1310,7 @@ Final Repository Cleanliness
 
 ---
 
-# 64. Validation Evidence Policy
+## 64. Validation Evidence Policy
 
 The required sequence is:
 
@@ -1328,7 +1328,7 @@ Historical evidence does not automatically prove current normalized repository s
 
 ---
 
-# 65. Historical Evidence Already Established
+## 65. Historical Evidence Already Established
 
 The following historical evidence has already been established:
 
@@ -1347,7 +1347,7 @@ This proves historical publication integrity.
 
 ---
 
-# 66. Current Repository Evidence
+## 66. Current Repository Evidence
 
 Current repository evidence remains to be collected after all seven control documents are physically present and synchronized.
 
@@ -1360,11 +1360,11 @@ Final Revalidation:     Validated
 
 ---
 
-# 67. Revision Classification
+## 67. Revision Classification
 
 Future Operations Framework changes may be classified as follows.
 
-## Editorial
+### Editorial
 
 Examples:
 
@@ -1381,7 +1381,7 @@ Usually none
 
 ---
 
-## Repository Normalization
+### Repository Normalization
 
 Examples:
 
@@ -1401,7 +1401,7 @@ when normative operations semantics remain unchanged.
 
 ---
 
-## Compatible Semantic Change
+### Compatible Semantic Change
 
 Examples:
 
@@ -1420,7 +1420,7 @@ subject to FamilyOS governance.
 
 ---
 
-## Breaking Semantic Change
+### Breaking Semantic Change
 
 Examples:
 
@@ -1440,7 +1440,7 @@ subject to governance.
 
 ---
 
-# 68. Historical State Policy
+## 68. Historical State Policy
 
 Historical lifecycle states may remain when clearly identified as historical.
 
@@ -1458,7 +1458,7 @@ They SHALL NOT automatically become active current repository states.
 
 ---
 
-# 69. Current State Policy
+## 69. Current State Policy
 
 Current control documents SHALL distinguish:
 
@@ -1478,7 +1478,7 @@ Only current normalized repository validation remains pending.
 
 ---
 
-# 70. Repository Completion Conditions
+## 70. Repository Completion Conditions
 
 Current normalization becomes technically validated only when:
 
@@ -1504,7 +1504,7 @@ Current normalization becomes technically validated only when:
 
 ---
 
-# 71. Post-Release Correction Conditions
+## 71. Post-Release Correction Conditions
 
 The normalization workflow becomes fully complete when:
 
@@ -1519,7 +1519,7 @@ The normalization workflow becomes fully complete when:
 
 ---
 
-# 72. Future Operations Framework Evolution
+## 72. Future Operations Framework Evolution
 
 Future revisions may introduce:
 
@@ -1538,7 +1538,7 @@ Future revisions SHALL preserve historical version `5.1.0` publication evidence.
 
 ---
 
-# 73. Current Revision State
+## 73. Current Revision State
 
 ```text
 EPIC:                    EPIC-OPS-001
@@ -1569,7 +1569,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 74. Current Validation Evidence Status
+## 74. Current Validation Evidence Status
 
 Historical publication evidence is established.
 
@@ -1585,7 +1585,7 @@ Until current evidence is complete, this revision history SHALL NOT claim final 
 
 ---
 
-# 75. Final Revision Principle
+## 75. Final Revision Principle
 
 EPIC-OPS-001 version `5.1.0` established the canonical FamilyOS Operations Framework.
 

@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 17 Continuous Improvement
+## 17 Continuous Improvement
 
-## Overview
+### Overview
 
 The FamilyOS Continuous Improvement model defines how the quality of the FamilyOS engineering ecosystem is systematically evaluated, learned from, and improved over time.
 
@@ -55,7 +55,7 @@ The objective is to improve the systems that create, detect, prevent, and manage
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Continuous Improvement is to ensure that FamilyOS becomes progressively:
 
@@ -92,7 +92,7 @@ Measured Outcome
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -114,7 +114,7 @@ Continuous Improvement focuses on this second level.
 
 ---
 
-# Quality Improvement Definition
+## Quality Improvement Definition
 
 Quality Improvement is a deliberate change intended to improve one or more quality characteristics of FamilyOS.
 
@@ -136,7 +136,7 @@ An improvement should ideally be measurable.
 
 ---
 
-# Continuous Improvement Scope
+## Continuous Improvement Scope
 
 Continuous Improvement applies to:
 
@@ -161,7 +161,7 @@ It therefore applies to both the product and the engineering system.
 
 ---
 
-# Product Improvement
+## Product Improvement
 
 Product improvement concerns the quality of FamilyOS itself.
 
@@ -175,7 +175,7 @@ Examples include:
 
 ---
 
-# Engineering System Improvement
+## Engineering System Improvement
 
 Engineering system improvement concerns how FamilyOS is built.
 
@@ -194,7 +194,7 @@ These improvements indirectly increase product quality.
 
 ---
 
-# Quality Framework Improvement
+## Quality Framework Improvement
 
 The Quality Framework itself must be continuously improved.
 
@@ -221,7 +221,7 @@ A target of improvement
 
 ---
 
-# Improvement Cycle
+## Improvement Cycle
 
 The FamilyOS improvement cycle is:
 
@@ -247,7 +247,7 @@ This cycle should operate continuously.
 
 ---
 
-# Observe
+## Observe
 
 Observation collects signals about quality state.
 
@@ -268,7 +268,7 @@ Operational Telemetry
 
 ---
 
-# Measure
+## Measure
 
 Measurement quantifies relevant conditions.
 
@@ -287,7 +287,7 @@ Measurement should support decisions rather than create metrics for their own sa
 
 ---
 
-# Analyze
+## Analyze
 
 Analysis determines why a quality condition exists.
 
@@ -309,7 +309,7 @@ Which engineering assumption failed?
 
 ---
 
-# Prioritize
+## Prioritize
 
 Not every improvement can be implemented immediately.
 
@@ -329,7 +329,7 @@ High-leverage improvements should receive priority.
 
 ---
 
-# Improve
+## Improve
 
 Improvement introduces a controlled change.
 
@@ -348,7 +348,7 @@ Remove Dependency
 
 ---
 
-# Validate
+## Validate
 
 An improvement should be validated.
 
@@ -372,7 +372,7 @@ This confirms effectiveness.
 
 ---
 
-# Standardize
+## Standardize
 
 Successful improvements should become part of normal engineering practice.
 
@@ -388,7 +388,7 @@ This may include:
 
 ---
 
-# Reobserve
+## Reobserve
 
 After standardization, quality state should continue to be observed.
 
@@ -398,7 +398,7 @@ Continuous Improvement therefore never ends with deployment of the change.
 
 ---
 
-# Improvement Trigger
+## Improvement Trigger
 
 An Improvement Trigger is a condition that initiates analysis.
 
@@ -419,7 +419,7 @@ Architecture Drift
 
 ---
 
-# Reactive Improvement
+## Reactive Improvement
 
 Reactive improvement begins after a problem occurs.
 
@@ -439,7 +439,7 @@ Reactive improvement is necessary but insufficient.
 
 ---
 
-# Proactive Improvement
+## Proactive Improvement
 
 Proactive improvement addresses risk before failure occurs.
 
@@ -459,7 +459,7 @@ A mature quality system should increasingly emphasize proactive improvement.
 
 ---
 
-# Preventive Improvement
+## Preventive Improvement
 
 Preventive improvement modifies the engineering system to reduce future defect probability.
 
@@ -475,7 +475,7 @@ Invalid Metadata Prevented
 
 ---
 
-# Improvement Opportunity
+## Improvement Opportunity
 
 An Improvement Opportunity is a documented potential change that may improve quality.
 
@@ -497,7 +497,7 @@ status
 
 ---
 
-# Improvement Identity
+## Improvement Identity
 
 Formal improvement initiatives may use stable identities.
 
@@ -518,7 +518,7 @@ This supports traceability.
 
 ---
 
-# Improvement Sources
+## Improvement Sources
 
 Improvement opportunities may originate from:
 
@@ -540,7 +540,7 @@ Compliance Assessments
 
 ---
 
-# Improvement Backlog
+## Improvement Backlog
 
 Improvement opportunities should be maintained in a structured backlog.
 
@@ -550,7 +550,7 @@ It should contain improvements with meaningful quality significance.
 
 ---
 
-# Improvement Categories
+## Improvement Categories
 
 Improvement initiatives may be categorized as:
 
@@ -571,7 +571,7 @@ Categories support analysis and ownership.
 
 ---
 
-# Corrective Improvement
+## Corrective Improvement
 
 Corrective improvement addresses an existing quality problem.
 
@@ -583,7 +583,7 @@ Examples include:
 
 ---
 
-# Preventive Improvement
+## Preventive Improvement
 
 Preventive improvement reduces the probability of future problems.
 
@@ -595,7 +595,7 @@ Examples include:
 
 ---
 
-# Automation Improvement
+## Automation Improvement
 
 Automation improvement replaces repetitive or unreliable manual quality work.
 
@@ -613,7 +613,7 @@ Compliance Rule
 
 ---
 
-# Architecture Improvement
+## Architecture Improvement
 
 Architecture improvements may include:
 
@@ -625,7 +625,7 @@ Architecture improvements may include:
 
 ---
 
-# Testing Improvement
+## Testing Improvement
 
 Testing improvements may include:
 
@@ -640,7 +640,7 @@ Improved Failure Diagnostics
 
 ---
 
-# Documentation Improvement
+## Documentation Improvement
 
 Documentation improvements may include:
 
@@ -651,7 +651,7 @@ Documentation improvements may include:
 
 ---
 
-# Tooling Improvement
+## Tooling Improvement
 
 Tooling improvements may reduce:
 
@@ -664,7 +664,7 @@ Error Probability
 
 ---
 
-# Governance Improvement
+## Governance Improvement
 
 Governance improvements may include:
 
@@ -676,7 +676,7 @@ Governance improvements may include:
 
 ---
 
-# Process Improvement
+## Process Improvement
 
 Process improvement should target actual engineering friction.
 
@@ -686,7 +686,7 @@ The objective is to improve engineering outcomes.
 
 ---
 
-# Observability Improvement
+## Observability Improvement
 
 Observability improvement may include:
 
@@ -700,7 +700,7 @@ More Reliable Telemetry
 
 ---
 
-# Improvement Priority
+## Improvement Priority
 
 Improvement priority should be risk-based.
 
@@ -720,7 +720,7 @@ This need not become a rigid numerical formula.
 
 ---
 
-# High-Leverage Improvement
+## High-Leverage Improvement
 
 A High-Leverage Improvement addresses a systemic cause affecting multiple quality outcomes.
 
@@ -741,7 +741,7 @@ Continuous Improvement should favor high-leverage solutions.
 
 ---
 
-# Local Improvement
+## Local Improvement
 
 A Local Improvement affects one target.
 
@@ -753,7 +753,7 @@ Fix one broken test.
 
 ---
 
-# Systemic Improvement
+## Systemic Improvement
 
 A Systemic Improvement changes the engineering system.
 
@@ -768,7 +768,7 @@ Systemic improvements generally provide greater long-term value.
 
 ---
 
-# Root Cause Analysis
+## Root Cause Analysis
 
 Significant quality problems should be analyzed beyond their immediate symptom.
 
@@ -788,7 +788,7 @@ Improvement
 
 ---
 
-# Root Cause Principle
+## Root Cause Principle
 
 The objective of Root Cause Analysis is not to assign blame.
 
@@ -796,7 +796,7 @@ The objective is to understand how the engineering system allowed the problem to
 
 ---
 
-# Five Whys
+## Five Whys
 
 The Five Whys technique may be used where appropriate.
 
@@ -832,7 +832,7 @@ Add metadata validation to plugin generation and CI.
 
 ---
 
-# Root Cause Categories
+## Root Cause Categories
 
 Root causes may include:
 
@@ -853,7 +853,7 @@ Human error should rarely be treated as the final root cause.
 
 ---
 
-# Contributing Factors
+## Contributing Factors
 
 Many quality problems have multiple contributing factors.
 
@@ -873,7 +873,7 @@ Improvement may require addressing several factors.
 
 ---
 
-# Escape Analysis
+## Escape Analysis
 
 Escaped defects require special analysis.
 
@@ -897,7 +897,7 @@ Was an exception involved?
 
 ---
 
-# Control Gap
+## Control Gap
 
 A Control Gap exists when no quality mechanism is responsible for detecting a meaningful risk.
 
@@ -917,7 +917,7 @@ Control gaps should become improvement opportunities.
 
 ---
 
-# Control Failure
+## Control Failure
 
 A Control Failure occurs when an existing quality control should have detected a problem but did not.
 
@@ -931,7 +931,7 @@ Potential causes include:
 
 ---
 
-# Control Noise
+## Control Noise
 
 A quality control that generates excessive false positives creates noise.
 
@@ -941,7 +941,7 @@ Repeated suppressions or ignored warnings may indicate a need for rule improveme
 
 ---
 
-# Quality Rule Improvement
+## Quality Rule Improvement
 
 Rules should evolve based on observed effectiveness.
 
@@ -963,7 +963,7 @@ Review
 
 ---
 
-# Rule Effectiveness Review
+## Rule Effectiveness Review
 
 A rule may be reviewed using:
 
@@ -978,7 +978,7 @@ Execution Cost
 
 ---
 
-# Rule Retirement
+## Rule Retirement
 
 A rule may be retired when:
 
@@ -991,7 +991,7 @@ Rule retirement should be governed.
 
 ---
 
-# Test Improvement Loop
+## Test Improvement Loop
 
 Testing should continuously improve based on defect history.
 
@@ -1011,7 +1011,7 @@ Significant defects should normally result in regression protection where practi
 
 ---
 
-# Flaky Test Improvement
+## Flaky Test Improvement
 
 Flaky tests should be treated as quality problems.
 
@@ -1033,7 +1033,7 @@ Repeated retries should not become the permanent solution.
 
 ---
 
-# Test Performance Improvement
+## Test Performance Improvement
 
 Test duration should be observed over time.
 
@@ -1049,7 +1049,7 @@ Optimization must not reduce meaningful coverage.
 
 ---
 
-# Architecture Improvement Loop
+## Architecture Improvement Loop
 
 Architecture quality should evolve through:
 
@@ -1069,7 +1069,7 @@ Validation
 
 ---
 
-# Architecture Debt Reduction
+## Architecture Debt Reduction
 
 Architecture debt should be reduced intentionally.
 
@@ -1087,7 +1087,7 @@ New violations should be prevented while existing debt is reduced.
 
 ---
 
-# Dependency Improvement
+## Dependency Improvement
 
 Dependency quality improvement may include:
 
@@ -1101,7 +1101,7 @@ Improve Dependency Boundaries
 
 ---
 
-# Documentation Improvement Loop
+## Documentation Improvement Loop
 
 Documentation quality may improve through:
 
@@ -1119,7 +1119,7 @@ Automation Improvement
 
 ---
 
-# Automation Improvement Loop
+## Automation Improvement Loop
 
 Quality automation should continuously improve.
 
@@ -1139,7 +1139,7 @@ Reduced Execution Time
 
 ---
 
-# Gate Improvement Loop
+## Gate Improvement Loop
 
 Quality Gates should evolve based on outcomes.
 
@@ -1157,7 +1157,7 @@ Policy Improvement
 
 ---
 
-# Compliance Improvement Loop
+## Compliance Improvement Loop
 
 Repeated compliance failures may reveal:
 
@@ -1170,7 +1170,7 @@ Compliance data should therefore feed framework improvement.
 
 ---
 
-# Quality Debt Improvement
+## Quality Debt Improvement
 
 Quality Debt should not only be tracked.
 
@@ -1194,7 +1194,7 @@ Debt Closure
 
 ---
 
-# Debt Burn-Down
+## Debt Burn-Down
 
 Debt trends may be observed through burn-down.
 
@@ -1213,7 +1213,7 @@ The objective should focus on risk reduction rather than raw item count.
 
 ---
 
-# Debt Prevention
+## Debt Prevention
 
 Continuous Improvement should also reduce new debt creation.
 
@@ -1229,7 +1229,7 @@ New Debt Prevented
 
 ---
 
-# Risk Improvement
+## Risk Improvement
 
 Risk management should feed improvement.
 
@@ -1245,7 +1245,7 @@ Dependency Policy Improvement
 
 ---
 
-# Incident Improvement
+## Incident Improvement
 
 Operational incidents provide valuable quality feedback.
 
@@ -1267,7 +1267,7 @@ Validation
 
 ---
 
-# Post-Incident Review
+## Post-Incident Review
 
 Significant incidents should result in a structured review.
 
@@ -1291,7 +1291,7 @@ What should change?
 
 ---
 
-# Blameless Improvement
+## Blameless Improvement
 
 Continuous Improvement should avoid blame-oriented analysis.
 
@@ -1310,7 +1310,7 @@ rather than individual fault.
 
 ---
 
-# Quality Retrospective
+## Quality Retrospective
 
 A Quality Retrospective is a periodic review of quality outcomes.
 
@@ -1329,7 +1329,7 @@ Escaped Defects
 
 ---
 
-# Retrospective Frequency
+## Retrospective Frequency
 
 Retrospectives may occur:
 
@@ -1342,7 +1342,7 @@ Frequency should remain proportional to project activity.
 
 ---
 
-# Retrospective Output
+## Retrospective Output
 
 A retrospective should produce actionable outcomes.
 
@@ -1361,7 +1361,7 @@ before the merge gate.
 
 ---
 
-# Quality Review
+## Quality Review
 
 Quality Reviews provide broader periodic evaluation.
 
@@ -1380,7 +1380,7 @@ Operational Outcomes
 
 ---
 
-# Improvement Decision
+## Improvement Decision
 
 An improvement decision should define:
 
@@ -1396,7 +1396,7 @@ Validation Method
 
 ---
 
-# Improvement Owner
+## Improvement Owner
 
 Every significant improvement should have an accountable owner.
 
@@ -1404,7 +1404,7 @@ Unowned improvements tend to remain permanently unresolved.
 
 ---
 
-# Improvement Status
+## Improvement Status
 
 A conceptual status model may include:
 
@@ -1419,7 +1419,7 @@ REJECTED
 
 ---
 
-# Improvement Completion
+## Improvement Completion
 
 An improvement should not be considered complete simply because code was changed.
 
@@ -1435,7 +1435,7 @@ Expected Outcome Evaluation
 
 ---
 
-# Improvement Evidence
+## Improvement Evidence
 
 Evidence should demonstrate whether the improvement achieved its objective.
 
@@ -1451,7 +1451,7 @@ Flaky test rate = 0.4%
 
 ---
 
-# Improvement Failure
+## Improvement Failure
 
 An improvement may fail to produce the expected result.
 
@@ -1473,7 +1473,7 @@ Continuous Improvement is itself iterative.
 
 ---
 
-# Improvement Metrics
+## Improvement Metrics
 
 Potential metrics include:
 
@@ -1489,7 +1489,7 @@ Automation Time Saved
 
 ---
 
-# Improvement Lead Time
+## Improvement Lead Time
 
 Improvement Lead Time may measure:
 
@@ -1503,7 +1503,7 @@ Long lead times for high-risk improvements may indicate governance or capacity p
 
 ---
 
-# Improvement Effectiveness
+## Improvement Effectiveness
 
 Improvement effectiveness should evaluate outcomes rather than activity.
 
@@ -1521,7 +1521,7 @@ Escaped defects reduced by 40%.
 
 ---
 
-# Quality Trend Analysis
+## Quality Trend Analysis
 
 Continuous Improvement relies heavily on trends.
 
@@ -1540,7 +1540,7 @@ Compliance Trend
 
 ---
 
-# Trend Interpretation
+## Trend Interpretation
 
 Trend analysis should consider context.
 
@@ -1566,7 +1566,7 @@ Interpretation requires evidence.
 
 ---
 
-# Baseline
+## Baseline
 
 A baseline provides a reference state for improvement.
 
@@ -1584,7 +1584,7 @@ Without a baseline, improvement claims may be difficult to validate.
 
 ---
 
-# Improvement Target
+## Improvement Target
 
 Where useful, an improvement should define a measurable target.
 
@@ -1604,7 +1604,7 @@ Targets should remain realistic and quality-focused.
 
 ---
 
-# Quality Objectives
+## Quality Objectives
 
 Longer-term Quality Objectives may guide multiple improvements.
 
@@ -1623,7 +1623,7 @@ Supporting Improvements:
 
 ---
 
-# Strategic Improvement
+## Strategic Improvement
 
 Some improvements may span multiple releases.
 
@@ -1638,7 +1638,7 @@ These should be managed as explicit engineering initiatives.
 
 ---
 
-# Tactical Improvement
+## Tactical Improvement
 
 Tactical improvements are smaller changes with immediate value.
 
@@ -1654,7 +1654,7 @@ Both strategic and tactical improvement are necessary.
 
 ---
 
-# Continuous Improvement Backlog
+## Continuous Improvement Backlog
 
 The improvement backlog should combine:
 
@@ -1670,7 +1670,7 @@ Priority should remain risk-based.
 
 ---
 
-# Improvement Planning
+## Improvement Planning
 
 Improvement work should be integrated into engineering planning.
 
@@ -1688,7 +1688,7 @@ Quality Improvement
 
 ---
 
-# Quality Investment
+## Quality Investment
 
 Quality improvement is an engineering investment.
 
@@ -1702,7 +1702,7 @@ Benefits may include:
 
 ---
 
-# Cost of Poor Quality
+## Cost of Poor Quality
 
 Continuous Improvement should consider the Cost of Poor Quality.
 
@@ -1722,7 +1722,7 @@ Reducing these costs may justify improvement investment.
 
 ---
 
-# Prevention vs Correction
+## Prevention vs Correction
 
 A mature quality strategy shifts investment toward prevention.
 
@@ -1740,7 +1740,7 @@ Prevention generally reduces downstream cost.
 
 ---
 
-# Feedback Loops
+## Feedback Loops
 
 FamilyOS should establish feedback loops across the engineering lifecycle.
 
@@ -1757,7 +1757,7 @@ Compliance → Governance
 
 ---
 
-# Fast Feedback
+## Fast Feedback
 
 Feedback should arrive as early as practical.
 
@@ -1777,7 +1777,7 @@ Problems detected earlier are generally cheaper to fix.
 
 ---
 
-# Slow Feedback
+## Slow Feedback
 
 Some quality signals require longer observation.
 
@@ -1792,7 +1792,7 @@ Continuous Improvement must support both fast and slow feedback loops.
 
 ---
 
-# Learning System
+## Learning System
 
 FamilyOS should evolve toward an engineering learning system.
 
@@ -1814,7 +1814,7 @@ Future Prevention
 
 ---
 
-# Institutional Learning
+## Institutional Learning
 
 Important lessons should not remain only in individual memory.
 
@@ -1834,7 +1834,7 @@ This converts experience into institutional capability.
 
 ---
 
-# Knowledge Capture
+## Knowledge Capture
 
 Significant quality lessons should be captured in durable artifacts.
 
@@ -1849,7 +1849,7 @@ Examples include:
 
 ---
 
-# Repeated Problem Detection
+## Repeated Problem Detection
 
 Quality Observability should identify recurring problems.
 
@@ -1867,7 +1867,7 @@ Systemic Improvement Required
 
 ---
 
-# Pattern Analysis
+## Pattern Analysis
 
 Recurring findings may be grouped by:
 
@@ -1883,7 +1883,7 @@ Patterns often reveal higher-value improvements.
 
 ---
 
-# Quality Clustering
+## Quality Clustering
 
 Future Quality Intelligence may cluster related:
 
@@ -1899,7 +1899,7 @@ to identify systemic causes.
 
 ---
 
-# Improvement Experiment
+## Improvement Experiment
 
 Some improvements may be introduced experimentally.
 
@@ -1919,7 +1919,7 @@ Duration + flaky rate.
 
 ---
 
-# Experiment Principle
+## Experiment Principle
 
 Engineering experiments should define:
 
@@ -1933,7 +1933,7 @@ Rollback Condition
 
 ---
 
-# Improvement Rollback
+## Improvement Rollback
 
 An improvement that degrades quality should be reversible where practical.
 
@@ -1951,7 +1951,7 @@ Further Analysis
 
 ---
 
-# Standardization
+## Standardization
 
 Once an improvement proves effective, it should be standardized.
 
@@ -1968,7 +1968,7 @@ Quality Profile
 
 ---
 
-# Automation After Learning
+## Automation After Learning
 
 A recurring principle is:
 
@@ -1986,7 +1986,7 @@ Automation should follow understanding.
 
 ---
 
-# Improvement Governance
+## Improvement Governance
 
 Significant improvements should follow appropriate governance.
 
@@ -1996,7 +1996,7 @@ Governance should be proportional.
 
 ---
 
-# Improvement Decision Levels
+## Improvement Decision Levels
 
 Conceptually:
 
@@ -2016,7 +2016,7 @@ Strategic Improvement
 
 ---
 
-# Improvement Traceability
+## Improvement Traceability
 
 Significant improvements should trace to their source.
 
@@ -2036,7 +2036,7 @@ This demonstrates learning.
 
 ---
 
-# Improvement History
+## Improvement History
 
 Historical improvement records help answer:
 
@@ -2052,7 +2052,7 @@ Which quality problem led to this architecture change?
 
 ---
 
-# Improvement and Quality Metrics
+## Improvement and Quality Metrics
 
 Metrics provide evidence for identifying and validating improvements.
 
@@ -2072,7 +2072,7 @@ Metric Change
 
 ---
 
-# Improvement and Quality Evidence
+## Improvement and Quality Evidence
 
 Quality Evidence provides factual support for improvement decisions.
 
@@ -2080,7 +2080,7 @@ Improvement claims should remain evidence-based.
 
 ---
 
-# Improvement and Quality Risk
+## Improvement and Quality Risk
 
 Risk helps prioritize improvement work.
 
@@ -2088,7 +2088,7 @@ High-risk systemic problems should generally receive higher priority.
 
 ---
 
-# Improvement and Quality Debt
+## Improvement and Quality Debt
 
 Quality Debt is one of the principal inputs to improvement planning.
 
@@ -2096,7 +2096,7 @@ Debt reduction should be visible as continuous engineering progress.
 
 ---
 
-# Improvement and Defect Management
+## Improvement and Defect Management
 
 Defects provide direct signals about product quality.
 
@@ -2104,13 +2104,13 @@ Repeated defects should drive systemic improvement.
 
 ---
 
-# Improvement and Quality Reviews
+## Improvement and Quality Reviews
 
 Quality Reviews are major mechanisms for discovering and prioritizing improvement opportunities.
 
 ---
 
-# Improvement and Quality Automation
+## Improvement and Quality Automation
 
 Automation implements many systemic improvements.
 
@@ -2118,7 +2118,7 @@ It also provides telemetry used to measure their effectiveness.
 
 ---
 
-# Improvement and Quality Observability
+## Improvement and Quality Observability
 
 Quality Observability provides:
 
@@ -2133,7 +2133,7 @@ Continuous Improvement converts these into action.
 
 ---
 
-# Improvement and Quality Gates
+## Improvement and Quality Gates
 
 Gate failures and overrides provide important improvement signals.
 
@@ -2153,7 +2153,7 @@ Both require analysis.
 
 ---
 
-# Improvement and Quality Compliance
+## Improvement and Quality Compliance
 
 Compliance trends may reveal systemic requirement or implementation problems.
 
@@ -2161,7 +2161,7 @@ Repeated non-conformity should feed improvement planning.
 
 ---
 
-# Improvement and Governance
+## Improvement and Governance
 
 Quality Governance ensures improvement priorities align with FamilyOS engineering strategy.
 
@@ -2169,7 +2169,7 @@ Governance should also remove unnecessary barriers to improvement.
 
 ---
 
-# Improvement Review
+## Improvement Review
 
 Completed improvements should periodically be reviewed for sustained effectiveness.
 
@@ -2177,7 +2177,7 @@ A change that initially works may degrade over time.
 
 ---
 
-# Continuous Improvement Dashboard
+## Continuous Improvement Dashboard
 
 A future dashboard may expose:
 
@@ -2194,7 +2194,7 @@ Quality Trend
 
 ---
 
-# Improvement Report
+## Improvement Report
 
 A periodic improvement report may include:
 
@@ -2211,7 +2211,7 @@ Next Priorities
 
 ---
 
-# Continuous Improvement Events
+## Continuous Improvement Events
 
 Potential events include:
 
@@ -2227,7 +2227,7 @@ These may integrate with Quality Observability.
 
 ---
 
-# Improvement Automation
+## Improvement Automation
 
 Automation may assist with:
 
@@ -2239,7 +2239,7 @@ Automation may assist with:
 
 ---
 
-# AI-Assisted Improvement
+## AI-Assisted Improvement
 
 AI may assist with:
 
@@ -2255,7 +2255,7 @@ AI should remain advisory unless future governance explicitly grants authority.
 
 ---
 
-# AI Improvement Guardrails
+## AI Improvement Guardrails
 
 AI-generated recommendations should distinguish:
 
@@ -2270,7 +2270,7 @@ AI must not fabricate causal relationships.
 
 ---
 
-# Predictive Improvement
+## Predictive Improvement
 
 At higher maturity, FamilyOS may identify improvement opportunities before significant failure occurs.
 
@@ -2290,7 +2290,7 @@ This may trigger preventive work.
 
 ---
 
-# Quality Improvement Maturity Model
+## Quality Improvement Maturity Model
 
 Continuous Improvement may mature through:
 
@@ -2331,7 +2331,7 @@ Self-Improving Engineering System
 
 ---
 
-# Self-Improving Engineering System
+## Self-Improving Engineering System
 
 At high maturity, FamilyOS should progressively convert recurring engineering lessons into automated prevention.
 
@@ -2355,7 +2355,7 @@ Engineering governance remains authoritative.
 
 ---
 
-# Improvement Sustainability
+## Improvement Sustainability
 
 Quality improvement must remain sustainable.
 
@@ -2373,7 +2373,7 @@ Long-Term Value
 
 ---
 
-# Simplicity Principle
+## Simplicity Principle
 
 Continuous Improvement should prefer the simplest change that reliably addresses the systemic problem.
 
@@ -2381,7 +2381,7 @@ Complex quality infrastructure should not be introduced without demonstrated nee
 
 ---
 
-# Improvement Without Bureaucracy
+## Improvement Without Bureaucracy
 
 Continuous Improvement must not become a bureaucracy of improvement records.
 
@@ -2395,53 +2395,53 @@ Small improvements should remain easy.
 
 ---
 
-# Improvement Anti-Patterns
+## Improvement Anti-Patterns
 
 The FamilyOS Quality Framework rejects several improvement anti-patterns.
 
-## Fix and Forget
+### Fix and Forget
 
 Correcting a recurring defect without understanding its systemic cause.
 
-## Metric Chasing
+### Metric Chasing
 
 Improving a number without improving meaningful quality.
 
-## Improvement Without Baseline
+### Improvement Without Baseline
 
 Claiming success without understanding the previous state.
 
-## Improvement Without Validation
+### Improvement Without Validation
 
 Completing work without measuring whether the problem improved.
 
-## Permanent Manual Workaround
+### Permanent Manual Workaround
 
 Repeated manual mitigation instead of addressing the root cause.
 
-## Automation Without Understanding
+### Automation Without Understanding
 
 Automating a broken or poorly understood process.
 
-## Blame-Oriented Retrospective
+### Blame-Oriented Retrospective
 
 Focusing on individuals rather than engineering systems.
 
-## Improvement Backlog Graveyard
+### Improvement Backlog Graveyard
 
 Recording opportunities without ownership or prioritization.
 
-## Process Inflation
+### Process Inflation
 
 Adding process after every problem without evaluating whether it reduces risk.
 
-## Quality Theatre
+### Quality Theatre
 
 Performing visible quality activities that do not meaningfully improve engineering outcomes.
 
 ---
 
-# Initial Continuous Improvement Model
+## Initial Continuous Improvement Model
 
 An initial FamilyOS implementation may begin with:
 
@@ -2461,7 +2461,7 @@ No complex improvement platform is required initially.
 
 ---
 
-# Initial Improvement Record
+## Initial Improvement Record
 
 A simple record may contain:
 
@@ -2478,7 +2478,7 @@ validation
 
 ---
 
-# Initial Improvement Sources
+## Initial Improvement Sources
 
 The first improvement backlog may derive from:
 
@@ -2493,7 +2493,7 @@ Quality Gate Failures
 
 ---
 
-# Initial Review Cycle
+## Initial Review Cycle
 
 A practical initial cycle may occur:
 
@@ -2509,7 +2509,7 @@ The exact cadence may evolve with project activity.
 
 ---
 
-# Initial Improvement Priorities
+## Initial Improvement Priorities
 
 Early FamilyOS improvement should prioritize:
 
@@ -2526,7 +2526,7 @@ These provide strong foundational leverage.
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 Continuous Improvement should evolve incrementally:
 
@@ -2548,7 +2548,7 @@ The maturity of the improvement system should follow the maturity of available q
 
 ---
 
-# Relationship With Quality Metrics
+## Relationship With Quality Metrics
 
 Quality Metrics provide measurable signals.
 
@@ -2556,19 +2556,19 @@ Continuous Improvement uses those signals to identify opportunities and validate
 
 ---
 
-# Relationship With Quality Evidence
+## Relationship With Quality Evidence
 
 Quality Evidence provides the factual foundation for improvement analysis.
 
 ---
 
-# Relationship With Quality Risk
+## Relationship With Quality Risk
 
 Risk determines the urgency and priority of many improvements.
 
 ---
 
-# Relationship With Defect and Quality Debt Management
+## Relationship With Defect and Quality Debt Management
 
 Defects and Quality Debt provide major sources of improvement opportunities.
 
@@ -2576,7 +2576,7 @@ Continuous Improvement converts recurring or high-risk conditions into systemic 
 
 ---
 
-# Relationship With Quality Reviews and Assessments
+## Relationship With Quality Reviews and Assessments
 
 Quality Reviews and Assessments identify quality state and recurring weaknesses.
 
@@ -2584,7 +2584,7 @@ Continuous Improvement converts those observations into engineering change.
 
 ---
 
-# Relationship With Quality Automation
+## Relationship With Quality Automation
 
 Automation is both:
 
@@ -2600,7 +2600,7 @@ A Major Mechanism for Improvement
 
 ---
 
-# Relationship With Quality Observability
+## Relationship With Quality Observability
 
 Quality Observability answers:
 
@@ -2617,7 +2617,7 @@ What should we change because of it?
 
 ---
 
-# Relationship With Quality Gates
+## Relationship With Quality Gates
 
 Quality Gates expose progression failures and policy friction.
 
@@ -2625,7 +2625,7 @@ These become important inputs to improvement analysis.
 
 ---
 
-# Relationship With Quality Compliance
+## Relationship With Quality Compliance
 
 Compliance identifies conformity gaps.
 
@@ -2633,7 +2633,7 @@ Continuous Improvement addresses systemic causes behind recurring non-conformity
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Quality Governance provides authority, prioritization, ownership, and strategic alignment for significant improvements.
 
@@ -2641,7 +2641,7 @@ Continuous Improvement provides the feedback loop that tells governance what nee
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 The Engineering Foundation defines how FamilyOS engineering operates.
 
@@ -2649,7 +2649,7 @@ Continuous Improvement ensures those practices evolve based on real engineering 
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 The Testing Framework provides major defect-prevention and feedback mechanisms.
 
@@ -2657,7 +2657,7 @@ Continuous Improvement uses testing outcomes to improve both the product and tes
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 Documentation quality findings and maintenance experience feed documentation improvement.
 
@@ -2665,7 +2665,7 @@ Successful improvements may become new documentation standards or automation.
 
 ---
 
-# Relationship With Build and Release Frameworks
+## Relationship With Build and Release Frameworks
 
 Build and release outcomes provide critical feedback regarding:
 
@@ -2681,7 +2681,7 @@ These signals feed Continuous Improvement.
 
 ---
 
-# Relationship With Plugin Compliance Framework
+## Relationship With Plugin Compliance Framework
 
 Plugin compliance trends may reveal systemic problems across official plugins.
 
@@ -2695,7 +2695,7 @@ Continuous Improvement can transform repeated plugin findings into:
 
 ---
 
-# Reference Continuous Improvement Flow
+## Reference Continuous Improvement Flow
 
 The complete FamilyOS Continuous Improvement flow can be represented as:
 
@@ -2748,7 +2748,7 @@ New Quality Evidence
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Continuous Improvement enables FamilyOS to move from:
 
@@ -2782,7 +2782,7 @@ This creates cumulative engineering capability.
 
 ---
 
-# Final Continuous Improvement Principle
+## Final Continuous Improvement Principle
 
 Quality maturity is not defined by the absence of problems.
 

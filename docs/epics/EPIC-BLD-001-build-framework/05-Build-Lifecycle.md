@@ -1,8 +1,8 @@
 # Build Framework
 
-# 05 Build Lifecycle
+## 05 Build Lifecycle
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the lifecycle through which FamilyOS build capabilities are designed, prepared, executed, validated, maintained, and improved.
 
@@ -27,7 +27,7 @@ Instead, build engineering is treated as a continuous process that includes:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Build Lifecycle is to provide a consistent model for managing build capabilities across the complete FamilyOS Engineering Platform.
 
@@ -41,7 +41,7 @@ The framework must make all major lifecycle phases explicit.
 
 ---
 
-# Lifecycle Model
+## Lifecycle Model
 
 The canonical Build Lifecycle is:
 
@@ -79,7 +79,7 @@ Individual build profiles may specialize or simplify particular phases.
 
 ---
 
-# Lifecycle Scope
+## Lifecycle Scope
 
 The Build Lifecycle covers:
 
@@ -103,7 +103,7 @@ The Build Lifecycle covers:
 
 ---
 
-# Lifecycle Boundary
+## Lifecycle Boundary
 
 The Build Lifecycle begins before execution.
 
@@ -129,7 +129,7 @@ The actual lifecycle is broader.
 
 ---
 
-# Phase 1 — Build Design
+## Phase 1 — Build Design
 
 Build design defines how a particular FamilyOS component is expected to participate in the Build Framework.
 
@@ -144,7 +144,7 @@ This phase occurs when:
 
 ---
 
-# Build Design Objectives
+## Build Design Objectives
 
 Build design should determine:
 
@@ -163,7 +163,7 @@ The design should align with the canonical Build Architecture.
 
 ---
 
-# Build Design Questions
+## Build Design Questions
 
 A build capability should answer:
 
@@ -193,7 +193,7 @@ Unanswered design questions often become hidden implementation assumptions.
 
 ---
 
-# Design Governance
+## Design Governance
 
 Build design changes may require governance when they affect:
 
@@ -211,7 +211,7 @@ Significant architectural changes may require ADR or RFC treatment.
 
 ---
 
-# Phase 2 — Build Preparation
+## Phase 2 — Build Preparation
 
 Preparation converts build intent into an executable request.
 
@@ -229,7 +229,7 @@ The objective is to establish a well-defined starting point.
 
 ---
 
-# Build Request
+## Build Request
 
 A conceptual build request may contain:
 
@@ -248,7 +248,7 @@ The exact representation is implementation-specific.
 
 ---
 
-# Build Identity Creation
+## Build Identity Creation
 
 Significant builds should progressively receive a stable build identifier.
 
@@ -268,7 +268,7 @@ Evidence
 
 ---
 
-# Phase 3 — Build Context Resolution
+## Phase 3 — Build Context Resolution
 
 Context resolution determines the effective state of the build.
 
@@ -288,7 +288,7 @@ This creates the effective Build Context.
 
 ---
 
-# Context Resolution Model
+## Context Resolution Model
 
 ```text
 Raw Inputs
@@ -312,7 +312,7 @@ The effective context should be stable before significant execution begins.
 
 ---
 
-# Context Validation
+## Context Validation
 
 The resolved context should be checked for internal consistency.
 
@@ -329,7 +329,7 @@ Invalid context should fail before build execution.
 
 ---
 
-# Phase 4 — Input Validation
+## Phase 4 — Input Validation
 
 Input validation confirms that build inputs satisfy applicable requirements.
 
@@ -347,7 +347,7 @@ Inputs may include:
 
 ---
 
-# Input Validation Objectives
+## Input Validation Objectives
 
 Input validation should detect:
 
@@ -363,7 +363,7 @@ The earlier these problems are detected, the more efficient the build process be
 
 ---
 
-# Source State Validation
+## Source State Validation
 
 For some build profiles, source state may require additional checks.
 
@@ -380,7 +380,7 @@ The profile determines the required strictness.
 
 ---
 
-# Phase 5 — Dependency Preparation
+## Phase 5 — Dependency Preparation
 
 Dependencies must be resolved before reliable execution.
 
@@ -395,7 +395,7 @@ Dependency preparation may include:
 
 ---
 
-# Dependency Lifecycle
+## Dependency Lifecycle
 
 ```text
 Declaration
@@ -415,7 +415,7 @@ Dependency resolution must not become an invisible side effect.
 
 ---
 
-# Dependency Failure
+## Dependency Failure
 
 Dependency preparation may fail because of:
 
@@ -430,7 +430,7 @@ Such failures should be classified before execution begins where practical.
 
 ---
 
-# Phase 6 — Toolchain Validation
+## Phase 6 — Toolchain Validation
 
 The build toolchain must be suitable for the requested build.
 
@@ -446,7 +446,7 @@ Validation may include:
 
 ---
 
-# Toolchain Lifecycle
+## Toolchain Lifecycle
 
 ```text
 Tool Requirement
@@ -464,7 +464,7 @@ Toolchain validation reduces machine-specific ambiguity.
 
 ---
 
-# Phase 7 — Environment Validation
+## Phase 7 — Environment Validation
 
 The build environment must satisfy applicable execution requirements.
 
@@ -481,7 +481,7 @@ Environment validation may include:
 
 ---
 
-# Environment States
+## Environment States
 
 A build environment may be classified conceptually as:
 
@@ -497,7 +497,7 @@ Execution should begin only after required environment conditions are known.
 
 ---
 
-# Environment Failure
+## Environment Failure
 
 An unsupported environment must fail explicitly rather than produce undefined behavior.
 
@@ -517,7 +517,7 @@ Unsupported Platform
 
 ---
 
-# Phase 8 — Build Preparation Execution
+## Phase 8 — Build Preparation Execution
 
 After validation succeeds, the build system may perform operational preparation.
 
@@ -534,7 +534,7 @@ This phase prepares the execution workspace.
 
 ---
 
-# Clean State Principle
+## Clean State Principle
 
 Where appropriate, builds should support preparation from a clean state.
 
@@ -550,7 +550,7 @@ Build Execution
 
 ---
 
-# Phase 9 — Build Execution
+## Phase 9 — Build Execution
 
 Build execution performs the actual transformation.
 
@@ -569,7 +569,7 @@ Execution follows the Build Architecture defined in `04-Build-Architecture.md`.
 
 ---
 
-# Execution Model
+## Execution Model
 
 ```text
 Prepared Context
@@ -589,7 +589,7 @@ Their responsibilities should remain explicit.
 
 ---
 
-# Execution Status
+## Execution Status
 
 A build execution may expose states such as:
 
@@ -607,7 +607,7 @@ The Build Framework requires clear terminal outcomes.
 
 ---
 
-# Execution Failure
+## Execution Failure
 
 When execution fails, the lifecycle transitions into controlled failure handling.
 
@@ -627,7 +627,7 @@ Partial outputs should not automatically be treated as valid artifacts.
 
 ---
 
-# Phase 10 — Artifact Discovery
+## Phase 10 — Artifact Discovery
 
 After successful execution, produced outputs must be identified.
 
@@ -643,7 +643,7 @@ This prevents raw build outputs from being treated indiscriminately.
 
 ---
 
-# Artifact Discovery Model
+## Artifact Discovery Model
 
 ```text
 Raw Build Output
@@ -659,7 +659,7 @@ Only classified outputs participate in artifact validation.
 
 ---
 
-# Phase 11 — Artifact Identification
+## Phase 11 — Artifact Identification
 
 Each significant artifact should receive sufficient identity.
 
@@ -675,7 +675,7 @@ Identification may include:
 
 ---
 
-# Artifact Identity Lifecycle
+## Artifact Identity Lifecycle
 
 ```text
 Generated File
@@ -691,7 +691,7 @@ Validation remains required.
 
 ---
 
-# Phase 12 — Artifact Validation
+## Phase 12 — Artifact Validation
 
 Artifact validation determines whether outputs satisfy applicable requirements.
 
@@ -709,7 +709,7 @@ Validation may include:
 
 ---
 
-# Artifact Validation Flow
+## Artifact Validation Flow
 
 ```text
 Identified Artifact
@@ -729,7 +729,7 @@ Applicable stages depend on artifact type.
 
 ---
 
-# Artifact Validation Failure
+## Artifact Validation Failure
 
 If artifact validation fails:
 
@@ -745,7 +745,7 @@ The artifact must not be handed off as trusted output.
 
 ---
 
-# Phase 13 — Evidence Generation
+## Phase 13 — Evidence Generation
 
 Once execution and validation information is available, the build system may assemble evidence.
 
@@ -765,7 +765,7 @@ Evidence can include:
 
 ---
 
-# Evidence Lifecycle
+## Evidence Lifecycle
 
 ```text
 Context
@@ -783,7 +783,7 @@ Evidence must remain associated with the relevant build.
 
 ---
 
-# Evidence Strength
+## Evidence Strength
 
 Evidence requirements vary by profile.
 
@@ -805,7 +805,7 @@ The framework allows proportional evidence without weakening core trust principl
 
 ---
 
-# Phase 14 — Build Finalization
+## Phase 14 — Build Finalization
 
 Build finalization establishes the final build result.
 
@@ -828,7 +828,7 @@ The result should be stable after finalization.
 
 ---
 
-# Successful Build Finalization
+## Successful Build Finalization
 
 A successful finalization indicates that:
 
@@ -841,7 +841,7 @@ The result may then become eligible for downstream handoff.
 
 ---
 
-# Failed Build Finalization
+## Failed Build Finalization
 
 A failed build should still produce a useful result.
 
@@ -857,7 +857,7 @@ Failure evidence supports debugging and quality improvement.
 
 ---
 
-# Phase 15 — Trusted Artifact Declaration
+## Phase 15 — Trusted Artifact Declaration
 
 Artifacts become trusted only when applicable lifecycle requirements succeed.
 
@@ -879,7 +879,7 @@ This distinction is fundamental.
 
 ---
 
-# Trust Is Profile-Dependent
+## Trust Is Profile-Dependent
 
 Trust requirements may depend on intended use.
 
@@ -899,7 +899,7 @@ Trust must always be interpreted relative to a build profile and downstream purp
 
 ---
 
-# Phase 16 — Release Handoff
+## Phase 16 — Release Handoff
 
 When a build produces artifacts eligible for release consideration, the Build Framework prepares handoff information.
 
@@ -920,7 +920,7 @@ The Release Framework decides what happens next.
 
 ---
 
-# Handoff Boundary
+## Handoff Boundary
 
 The Build Framework ends its authority at handoff.
 
@@ -937,7 +937,7 @@ Those remain release responsibilities.
 
 ---
 
-# Phase 17 — Cleanup
+## Phase 17 — Cleanup
 
 After finalization, temporary build state may be cleaned.
 
@@ -952,7 +952,7 @@ Cleanup must not remove evidence or artifacts required downstream.
 
 ---
 
-# Cleanup Rules
+## Cleanup Rules
 
 Temporary state should be distinguishable from trusted output.
 
@@ -968,7 +968,7 @@ Preserve
 
 ---
 
-# Phase 18 — Build Retention
+## Phase 18 — Build Retention
 
 Some build information may need retention.
 
@@ -985,7 +985,7 @@ Retention policy may depend on environment and downstream needs.
 
 ---
 
-# Local Retention
+## Local Retention
 
 Development builds may retain minimal information.
 
@@ -993,7 +993,7 @@ Developers may intentionally clean local outputs frequently.
 
 ---
 
-# CI Retention
+## CI Retention
 
 CI may retain:
 
@@ -1006,7 +1006,7 @@ The Build Framework defines the need for evidence but does not mandate a particu
 
 ---
 
-# Release Candidate Retention
+## Release Candidate Retention
 
 Release candidate build evidence may require stronger retention to support:
 
@@ -1019,7 +1019,7 @@ Detailed policy belongs to the intersection of Build and Release governance.
 
 ---
 
-# Phase 19 — Maintenance
+## Phase 19 — Maintenance
 
 Build capabilities require active maintenance.
 
@@ -1037,7 +1037,7 @@ Build infrastructure is not static.
 
 ---
 
-# Toolchain Maintenance
+## Toolchain Maintenance
 
 Toolchain updates should be evaluated for:
 
@@ -1051,7 +1051,7 @@ Significant changes may require validation beyond simple version replacement.
 
 ---
 
-# Dependency Maintenance
+## Dependency Maintenance
 
 Dependency changes may influence build output.
 
@@ -1059,7 +1059,7 @@ Therefore dependency maintenance must follow controlled engineering practices.
 
 ---
 
-# Configuration Maintenance
+## Configuration Maintenance
 
 Obsolete configuration should be removed.
 
@@ -1069,7 +1069,7 @@ Accumulated unused build configuration is a form of build debt.
 
 ---
 
-# Phase 20 — Build Observability Review
+## Phase 20 — Build Observability Review
 
 Build systems should be periodically evaluated for observability quality.
 
@@ -1091,7 +1091,7 @@ Poor observability creates hidden maintenance cost.
 
 ---
 
-# Phase 21 — Build Performance Review
+## Phase 21 — Build Performance Review
 
 Build performance should be reviewed when it materially affects developer or CI productivity.
 
@@ -1107,7 +1107,7 @@ Optimization must preserve canonical semantics.
 
 ---
 
-# Performance Lifecycle
+## Performance Lifecycle
 
 ```text
 Measure
@@ -1127,7 +1127,7 @@ Optimization without measurement should be avoided.
 
 ---
 
-# Phase 22 — Build Debt Management
+## Phase 22 — Build Debt Management
 
 Build systems accumulate technical debt.
 
@@ -1145,7 +1145,7 @@ This debt should be identified and managed explicitly.
 
 ---
 
-# Build Debt Indicators
+## Build Debt Indicators
 
 Possible signals include:
 
@@ -1161,7 +1161,7 @@ These signals should trigger review.
 
 ---
 
-# Phase 23 — Continuous Improvement
+## Phase 23 — Continuous Improvement
 
 The Build Framework supports continuous improvement.
 
@@ -1178,7 +1178,7 @@ Improvement sources include:
 
 ---
 
-# Improvement Loop
+## Improvement Loop
 
 ```text
 Observe
@@ -1202,13 +1202,13 @@ This creates a feedback loop between build operations and framework evolution.
 
 ---
 
-# Lifecycle Profiles
+## Lifecycle Profiles
 
 Different build profiles may execute different subsets of the lifecycle.
 
 ---
 
-# Development Lifecycle
+## Development Lifecycle
 
 A development build may follow:
 
@@ -1230,7 +1230,7 @@ It prioritizes fast feedback.
 
 ---
 
-# CI Lifecycle
+## CI Lifecycle
 
 A CI build may follow:
 
@@ -1256,7 +1256,7 @@ It prioritizes repeatability and independent verification.
 
 ---
 
-# Release Candidate Lifecycle
+## Release Candidate Lifecycle
 
 A release candidate build may require:
 
@@ -1286,7 +1286,7 @@ This is typically the strictest build lifecycle.
 
 ---
 
-# Plugin Build Lifecycle
+## Plugin Build Lifecycle
 
 Official plugins may use a specialized lifecycle:
 
@@ -1310,7 +1310,7 @@ The plugin lifecycle remains subordinate to the canonical Build Framework.
 
 ---
 
-# Documentation Build Lifecycle
+## Documentation Build Lifecycle
 
 Documentation artifacts may follow:
 
@@ -1330,7 +1330,7 @@ This allows generated documentation to participate in controlled build processes
 
 ---
 
-# Lifecycle State Model
+## Lifecycle State Model
 
 A conceptual lifecycle state machine may include:
 
@@ -1370,45 +1370,45 @@ The exact implementation may remain simpler.
 
 ---
 
-# Lifecycle Invariants
+## Lifecycle Invariants
 
 The following lifecycle invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Context must resolve before significant execution.
 
-## Invariant 2
+### Invariant 2
 
 Invalid mandatory inputs must stop the build.
 
-## Invariant 3
+### Invariant 3
 
 Unsupported mandatory environment state must stop the build.
 
-## Invariant 4
+### Invariant 4
 
 Execution failure must prevent trusted artifact declaration.
 
-## Invariant 5
+### Invariant 5
 
 Artifact validation must precede release handoff.
 
-## Invariant 6
+### Invariant 6
 
 Evidence must refer to the correct build.
 
-## Invariant 7
+### Invariant 7
 
 Cleanup must not destroy required trusted artifacts or evidence.
 
-## Invariant 8
+### Invariant 8
 
 Release authority begins only after build handoff.
 
 ---
 
-# Lifecycle Failure Model
+## Lifecycle Failure Model
 
 Failures are classified by lifecycle stage.
 
@@ -1431,7 +1431,7 @@ Classification improves diagnosis and metrics.
 
 ---
 
-# Recoverable And Non-Recoverable Failure
+## Recoverable And Non-Recoverable Failure
 
 Some failures may be recoverable.
 
@@ -1452,7 +1452,7 @@ The build system should avoid unsafe automatic recovery that hides real problems
 
 ---
 
-# Cancellation
+## Cancellation
 
 Build cancellation may occur because of:
 
@@ -1467,7 +1467,7 @@ Partial outputs should remain clearly marked as non-final.
 
 ---
 
-# Lifecycle Observability
+## Lifecycle Observability
 
 Each lifecycle stage should expose useful observability.
 
@@ -1486,7 +1486,7 @@ These dimensions may later support quality metrics.
 
 ---
 
-# Lifecycle Metrics
+## Lifecycle Metrics
 
 Potential build lifecycle metrics include:
 
@@ -1512,7 +1512,7 @@ The Quality Framework governs how metrics become formal quality indicators.
 
 ---
 
-# Lifecycle Automation
+## Lifecycle Automation
 
 Automation should support the lifecycle without removing its conceptual stages.
 
@@ -1534,7 +1534,7 @@ CI Job
 
 ---
 
-# Lifecycle Documentation
+## Lifecycle Documentation
 
 Important lifecycle behavior must be documented.
 
@@ -1552,7 +1552,7 @@ This supports maintainability and onboarding.
 
 ---
 
-# Lifecycle Security
+## Lifecycle Security
 
 Security considerations apply throughout the lifecycle.
 
@@ -1580,7 +1580,7 @@ Security controls must be applied at the appropriate stages.
 
 ---
 
-# Lifecycle Governance
+## Lifecycle Governance
 
 Lifecycle changes should be governed according to impact.
 
@@ -1597,7 +1597,7 @@ These may require architectural review.
 
 ---
 
-# Lifecycle Evolution
+## Lifecycle Evolution
 
 The Build Lifecycle itself may mature.
 
@@ -1637,49 +1637,49 @@ Evolution should preserve conceptual continuity.
 
 ---
 
-# Lifecycle Anti-Patterns
+## Lifecycle Anti-Patterns
 
 The Build Lifecycle rejects several patterns.
 
 ---
 
-## Build Without Preparation
+### Build Without Preparation
 
 Starting execution before context and inputs are understood creates fragile builds.
 
 ---
 
-## Validation Only At The End
+### Validation Only At The End
 
 Many failures should be detected before expensive execution.
 
 ---
 
-## Artifact Promotion After Failed Validation
+### Artifact Promotion After Failed Validation
 
 A failed artifact must not silently proceed.
 
 ---
 
-## Hidden Post-Build Mutation
+### Hidden Post-Build Mutation
 
 Artifacts must not be modified after validation without invalidating their trust state.
 
 ---
 
-## Release During Build Execution
+### Release During Build Execution
 
 Release publication must remain a separate downstream lifecycle.
 
 ---
 
-## Permanent Temporary State
+### Permanent Temporary State
 
 Intermediate build outputs should not gradually become unofficial authoritative artifacts.
 
 ---
 
-# Build Lifecycle And Developer Workflow
+## Build Lifecycle And Developer Workflow
 
 The build lifecycle must integrate naturally with development.
 
@@ -1703,7 +1703,7 @@ The Build Lifecycle must reinforce rather than obstruct normal engineering flow.
 
 ---
 
-# Build Lifecycle And Testing
+## Build Lifecycle And Testing
 
 Tests may participate at multiple stages.
 
@@ -1725,7 +1725,7 @@ Testing policy remains owned by the Testing Framework.
 
 ---
 
-# Build Lifecycle And Quality
+## Build Lifecycle And Quality
 
 Quality gates may evaluate build lifecycle outcomes.
 
@@ -1743,7 +1743,7 @@ The Quality Framework governs broader assessment.
 
 ---
 
-# Build Lifecycle And Release
+## Build Lifecycle And Release
 
 The lifecycle ends in a controlled release handoff.
 
@@ -1761,7 +1761,7 @@ This handoff is one of the most important boundaries in FamilyOS engineering.
 
 ---
 
-# Build Lifecycle And Continuous Improvement
+## Build Lifecycle And Continuous Improvement
 
 Lifecycle execution generates operational knowledge.
 
@@ -1783,7 +1783,7 @@ This creates a self-reinforcing engineering system.
 
 ---
 
-# Lifecycle Success Criteria
+## Lifecycle Success Criteria
 
 The Build Lifecycle is successful when FamilyOS can consistently determine:
 
@@ -1806,7 +1806,7 @@ The Build Lifecycle is successful when FamilyOS can consistently determine:
 
 ---
 
-# Lifecycle Summary
+## Lifecycle Summary
 
 The canonical FamilyOS Build Lifecycle can be summarized as:
 
@@ -1840,7 +1840,7 @@ This model converts build engineering from an isolated technical action into a g
 
 ---
 
-# Final Lifecycle Principle
+## Final Lifecycle Principle
 
 The FamilyOS Build Lifecycle is founded on the following rule:
 

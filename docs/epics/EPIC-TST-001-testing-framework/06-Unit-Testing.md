@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 06 Unit Testing
+## 06 Unit Testing
 
-## Introduction
+### Introduction
 
 Unit testing forms the fastest and most localized verification layer of the FamilyOS Testing Framework.
 
@@ -16,7 +16,7 @@ FamilyOS treats unit testing as a permanent engineering capability rather than a
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of unit testing is to verify that individual engineering units behave according to their defined responsibilities.
 
@@ -35,7 +35,7 @@ Unit testing must remain sufficiently lightweight to execute frequently througho
 
 ---
 
-# Unit Definition
+## Unit Definition
 
 A unit is the smallest practical behavioral boundary that can be tested independently.
 
@@ -66,7 +66,7 @@ A small function may require integration testing if its behavior fundamentally d
 
 ---
 
-# Governing Principle
+## Governing Principle
 
 The governing principle of FamilyOS unit testing is:
 
@@ -89,7 +89,7 @@ Failures should point directly toward the behavior responsible for the defect.
 
 ---
 
-# Unit Testing Objectives
+## Unit Testing Objectives
 
 FamilyOS unit testing optimizes for:
 
@@ -108,7 +108,7 @@ These properties are more important than maximizing the raw number of tests.
 
 ---
 
-# Unit Testing Boundary
+## Unit Testing Boundary
 
 The canonical unit testing boundary is:
 
@@ -133,7 +133,7 @@ Dependencies outside the unit boundary should either:
 
 ---
 
-# Observable Behavior
+## Observable Behavior
 
 Unit tests should validate observable behavior.
 
@@ -153,7 +153,7 @@ Tests should avoid asserting irrelevant implementation details.
 
 ---
 
-# Behavioral Testing
+## Behavioral Testing
 
 FamilyOS unit tests should primarily describe behavior.
 
@@ -171,7 +171,7 @@ Tests should communicate why the behavior matters.
 
 ---
 
-# Unit Test Structure
+## Unit Test Structure
 
 A unit test should normally contain three conceptual phases:
 
@@ -193,7 +193,7 @@ The conceptual separation should remain clear even when the implementation is co
 
 ---
 
-# Arrange Phase
+## Arrange Phase
 
 The Arrange phase establishes controlled preconditions.
 
@@ -212,7 +212,7 @@ Excessive setup often indicates that the unit boundary is too broad.
 
 ---
 
-# Act Phase
+## Act Phase
 
 The Act phase performs the behavior under test.
 
@@ -222,7 +222,7 @@ Multiple unrelated actions may make failures ambiguous.
 
 ---
 
-# Assert Phase
+## Assert Phase
 
 The Assert phase verifies the observable outcome.
 
@@ -237,7 +237,7 @@ A test should assert everything necessary to prove the intended behavior, but no
 
 ---
 
-# Test Independence
+## Test Independence
 
 Every unit test must be independently executable.
 
@@ -265,7 +265,7 @@ Any execution order should produce equivalent results.
 
 ---
 
-# Determinism
+## Determinism
 
 Given the same controlled inputs and execution environment, a unit test must produce the same result.
 
@@ -285,7 +285,7 @@ Sources of nondeterminism must be controlled.
 
 ---
 
-# Time Control
+## Time Control
 
 Tests involving time should not depend directly on uncontrolled wall-clock time.
 
@@ -313,7 +313,7 @@ This enables exact assertions.
 
 ---
 
-# Randomness Control
+## Randomness Control
 
 Random behavior must be deterministic during unit testing.
 
@@ -328,7 +328,7 @@ Tests must not fail unpredictably because random values happened to produce an u
 
 ---
 
-# Identifier Control
+## Identifier Control
 
 Automatically generated identifiers may also introduce nondeterminism.
 
@@ -338,7 +338,7 @@ Tests should not rely on incidental generated values.
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 Unit tests must not depend unnecessarily on developer-machine configuration.
 
@@ -355,7 +355,7 @@ Required environment state must be explicitly established.
 
 ---
 
-# Network Isolation
+## Network Isolation
 
 Unit tests should not perform external network operations.
 
@@ -365,7 +365,7 @@ Network-dependent behavior should be validated through higher-level testing wher
 
 ---
 
-# Filesystem Isolation
+## Filesystem Isolation
 
 Unit tests should avoid persistent filesystem dependencies.
 
@@ -375,7 +375,7 @@ They must not rely on arbitrary files already present on the developer machine.
 
 ---
 
-# Database Isolation
+## Database Isolation
 
 Production databases must never be required for unit testing.
 
@@ -385,7 +385,7 @@ If local behavior depends on a repository abstraction, a controlled fake or othe
 
 ---
 
-# External Service Isolation
+## External Service Isolation
 
 External services must not be necessary to execute the unit suite.
 
@@ -404,7 +404,7 @@ Tests requiring those systems belong to broader testing boundaries.
 
 ---
 
-# Test Doubles
+## Test Doubles
 
 Test doubles may be used to control dependencies outside the unit boundary.
 
@@ -424,7 +424,7 @@ Detailed test-double governance is defined by `12-Mocks-and-Test-Doubles.md`.
 
 ---
 
-# Stubs
+## Stubs
 
 A stub provides controlled responses required by the test.
 
@@ -444,7 +444,7 @@ Stubs are useful when collaborator output influences the behavior under test.
 
 ---
 
-# Fakes
+## Fakes
 
 A fake provides a lightweight working implementation.
 
@@ -459,7 +459,7 @@ Fakes can reduce excessive interaction-based testing.
 
 ---
 
-# Mocks
+## Mocks
 
 Mocks validate expected interactions.
 
@@ -475,7 +475,7 @@ Mocks should not be used merely because mocking is convenient.
 
 ---
 
-# Avoid Excessive Mocking
+## Avoid Excessive Mocking
 
 Excessive mocking can create tests that validate implementation structure instead of behavior.
 
@@ -496,7 +496,7 @@ Tests should prefer simple real collaborators when they are deterministic and in
 
 ---
 
-# Mocking Internal Details
+## Mocking Internal Details
 
 Private implementation details should not normally be mocked.
 
@@ -506,7 +506,7 @@ Mocking internal methods creates fragile coupling between tests and implementati
 
 ---
 
-# Interaction Assertions
+## Interaction Assertions
 
 Interaction assertions are appropriate when the interaction is part of the required behavior.
 
@@ -528,7 +528,7 @@ is required to prove the contract.
 
 ---
 
-# Positive Cases
+## Positive Cases
 
 Unit tests should cover expected valid behavior.
 
@@ -544,7 +544,7 @@ Positive tests establish the expected operating path.
 
 ---
 
-# Negative Cases
+## Negative Cases
 
 Unit tests should also validate invalid behavior.
 
@@ -561,7 +561,7 @@ Negative behavior is part of the contract.
 
 ---
 
-# Boundary Cases
+## Boundary Cases
 
 Boundary conditions should receive explicit attention.
 
@@ -582,7 +582,7 @@ Boundary defects frequently remain invisible when only typical values are tested
 
 ---
 
-# Error Behavior
+## Error Behavior
 
 Expected errors should be tested explicitly.
 
@@ -600,7 +600,7 @@ Tests should not rely unnecessarily on unstable implementation-specific error te
 
 ---
 
-# Exception Testing
+## Exception Testing
 
 When an exception is part of the behavioral contract, the test should validate it intentionally.
 
@@ -620,7 +620,7 @@ Unexpected exceptions indicate test failure.
 
 ---
 
-# Domain Model Unit Testing
+## Domain Model Unit Testing
 
 Domain models should be heavily unit-testable.
 
@@ -638,7 +638,7 @@ Domain behavior should generally not require infrastructure to validate.
 
 ---
 
-# Value Object Testing
+## Value Object Testing
 
 Value objects should be tested for:
 
@@ -651,7 +651,7 @@ Value objects should be tested for:
 
 ---
 
-# Entity Testing
+## Entity Testing
 
 Entity tests should focus on behavior and invariants.
 
@@ -665,7 +665,7 @@ Examples include:
 
 ---
 
-# Policy Testing
+## Policy Testing
 
 Policies should normally be testable as deterministic units.
 
@@ -685,7 +685,7 @@ Both permitted and denied outcomes should be covered where relevant.
 
 ---
 
-# Rule Testing
+## Rule Testing
 
 Rules should expose deterministic outcomes for controlled inputs.
 
@@ -699,7 +699,7 @@ Rule tests should validate:
 
 ---
 
-# Service Testing
+## Service Testing
 
 Services may be unit tested when collaborators can be controlled without destroying the behavior being validated.
 
@@ -707,7 +707,7 @@ A service with many required mocks may indicate that integration testing provide
 
 ---
 
-# Parser Testing
+## Parser Testing
 
 Parsers should validate:
 
@@ -723,7 +723,7 @@ Representative fixtures should remain minimal.
 
 ---
 
-# Validator Testing
+## Validator Testing
 
 Validators should be tested for:
 
@@ -738,7 +738,7 @@ Validation semantics must remain explicit.
 
 ---
 
-# Configuration Unit Testing
+## Configuration Unit Testing
 
 Configuration components may be unit tested for:
 
@@ -753,7 +753,7 @@ Actual integration with environment sources belongs to integration testing where
 
 ---
 
-# Recipe Testing
+## Recipe Testing
 
 FamilyOS generation recipes should be unit tested for:
 
@@ -768,7 +768,7 @@ Generated output semantics may require broader tests depending on the recipe.
 
 ---
 
-# Capability Unit Testing
+## Capability Unit Testing
 
 Capability implementations should be unit tested when their behavior can be meaningfully isolated.
 
@@ -784,7 +784,7 @@ Runtime registration and capability resolution belong primarily to integration t
 
 ---
 
-# Plugin Unit Testing
+## Plugin Unit Testing
 
 Official and third-party plugins use the same unit-testing semantics as the rest of FamilyOS.
 
@@ -805,7 +805,7 @@ Plugin origin does not change the definition of a unit test.
 
 ---
 
-# Built-In Plugin Expectations
+## Built-In Plugin Expectations
 
 Built-in plugins should maintain strong unit coverage because they are part of the governed FamilyOS distribution.
 
@@ -813,7 +813,7 @@ Their unit suites should provide rapid evidence before broader plugin validation
 
 ---
 
-# Third-Party Plugin Expectations
+## Third-Party Plugin Expectations
 
 Third-party plugins may be required by compliance profiles to provide unit-testing evidence.
 
@@ -823,7 +823,7 @@ The Plugin Compliance Framework determines whether required evidence is present 
 
 ---
 
-# Naming Tests
+## Naming Tests
 
 Test names should describe behavior clearly.
 
@@ -853,7 +853,7 @@ Naming conventions may vary by language or framework, but semantic clarity is re
 
 ---
 
-# Test Readability
+## Test Readability
 
 Tests are executable engineering documentation.
 
@@ -868,7 +868,7 @@ without reconstructing excessive hidden setup.
 
 ---
 
-# Test Setup
+## Test Setup
 
 Shared setup should be used carefully.
 
@@ -880,7 +880,7 @@ The test should remain understandable locally.
 
 ---
 
-# Fixtures
+## Fixtures
 
 Fixtures may provide reusable test state.
 
@@ -896,7 +896,7 @@ Detailed fixture governance is defined by `11-Test-Data-and-Fixtures.md`.
 
 ---
 
-# Fixture Scope
+## Fixture Scope
 
 Fixture scope should be as narrow as practical.
 
@@ -906,7 +906,7 @@ Changes to one fixture should not unexpectedly alter unrelated behavioral scenar
 
 ---
 
-# Test Data
+## Test Data
 
 Unit test data should be minimal.
 
@@ -916,7 +916,7 @@ Minimal data improves readability and diagnostic precision.
 
 ---
 
-# Test Builders
+## Test Builders
 
 Builders and factories may reduce repetitive setup for complex objects.
 
@@ -926,7 +926,7 @@ A builder must not hide values that materially affect the behavior being tested.
 
 ---
 
-# Parameterized Testing
+## Parameterized Testing
 
 Parameterized tests are appropriate when the same behavioral rule should be validated against multiple inputs.
 
@@ -942,7 +942,7 @@ Parameterized tests should not combine unrelated behaviors merely to reduce line
 
 ---
 
-# Property-Based Testing
+## Property-Based Testing
 
 Property-based testing may complement example-based unit tests.
 
@@ -958,7 +958,7 @@ Generated cases must remain reproducible when failures occur.
 
 ---
 
-# Mutation Testing
+## Mutation Testing
 
 Mutation testing may be used to evaluate the effectiveness of unit tests.
 
@@ -970,7 +970,7 @@ It must not become an isolated optimization target.
 
 ---
 
-# Coverage
+## Coverage
 
 Unit-test coverage is an evidence signal.
 
@@ -1002,7 +1002,7 @@ The canonical coverage model is defined by `14-Test-Coverage.md`.
 
 ---
 
-# Branch Coverage
+## Branch Coverage
 
 Branch coverage is particularly relevant for:
 
@@ -1016,7 +1016,7 @@ Critical branches should receive explicit behavioral tests.
 
 ---
 
-# Meaningful Coverage
+## Meaningful Coverage
 
 FamilyOS prioritizes meaningful behavioral coverage over superficial numerical coverage.
 
@@ -1024,7 +1024,7 @@ A test that executes a branch without validating its result provides weak eviden
 
 ---
 
-# Unit Test Performance
+## Unit Test Performance
 
 The unit suite should remain fast enough for frequent execution.
 
@@ -1034,7 +1034,7 @@ Performance degradation in the unit suite is an engineering concern.
 
 ---
 
-# Slow Unit Tests
+## Slow Unit Tests
 
 A test classified as a unit test but requiring substantial execution time should be reviewed.
 
@@ -1050,7 +1050,7 @@ Classification should reflect actual semantics.
 
 ---
 
-# Parallel Execution
+## Parallel Execution
 
 Unit tests should support parallel execution where the test infrastructure allows it.
 
@@ -1063,7 +1063,7 @@ Parallel safety requires:
 
 ---
 
-# Repeated Execution
+## Repeated Execution
 
 A healthy unit suite should survive repeated execution.
 
@@ -1081,7 +1081,7 @@ Intermittent failures indicate a determinism or isolation problem.
 
 ---
 
-# Flaky Unit Tests
+## Flaky Unit Tests
 
 Flaky unit tests are defects in the testing system.
 
@@ -1098,7 +1098,7 @@ Permanent silent exclusion is not acceptable.
 
 ---
 
-# Failure Diagnostics
+## Failure Diagnostics
 
 A unit-test failure should make the failing behavior easy to identify.
 
@@ -1112,7 +1112,7 @@ Useful diagnostics include:
 
 ---
 
-# Assertion Quality
+## Assertion Quality
 
 Assertions should validate behavior directly.
 
@@ -1132,7 +1132,7 @@ Stronger assertions provide stronger evidence.
 
 ---
 
-# Over-Specification
+## Over-Specification
 
 Tests must avoid over-specifying behavior that is not part of the contract.
 
@@ -1147,7 +1147,7 @@ Over-specification makes safe refactoring unnecessarily difficult.
 
 ---
 
-# Refactoring Safety
+## Refactoring Safety
 
 A strong unit suite should permit internal refactoring while detecting behavioral regressions.
 
@@ -1165,7 +1165,7 @@ If harmless refactoring breaks large numbers of tests, test coupling should be r
 
 ---
 
-# Test Maintenance
+## Test Maintenance
 
 Unit tests are production engineering assets.
 
@@ -1177,7 +1177,7 @@ Tests must not be retained merely because they once existed.
 
 ---
 
-# Regression Tests
+## Regression Tests
 
 When a defect is fixed, a regression test should normally be introduced at the lowest appropriate level.
 
@@ -1187,7 +1187,7 @@ This provides fast permanent protection.
 
 ---
 
-# Bug Reproduction
+## Bug Reproduction
 
 A useful defect workflow is:
 
@@ -1211,7 +1211,7 @@ This converts the defect into durable executable evidence.
 
 ---
 
-# Test-First Development
+## Test-First Development
 
 FamilyOS does not require one universal development methodology.
 
@@ -1221,7 +1221,7 @@ The important requirement is that expected behavior becomes executable and maint
 
 ---
 
-# Unit Testing And Architecture
+## Unit Testing And Architecture
 
 Unit-test difficulty can reveal architectural problems.
 
@@ -1237,7 +1237,7 @@ Testing feedback may therefore inform architectural improvement.
 
 ---
 
-# Dependency Injection
+## Dependency Injection
 
 Dependency injection can improve testability when external collaborators need controlled substitution.
 
@@ -1245,7 +1245,7 @@ It should be introduced for architectural clarity, not solely to satisfy mocking
 
 ---
 
-# Pure Functions
+## Pure Functions
 
 Pure functions are naturally unit-testable because they provide:
 
@@ -1265,7 +1265,7 @@ Where appropriate, critical transformation logic should favor designs with expli
 
 ---
 
-# Side Effects
+## Side Effects
 
 Side effects should be isolated behind clear boundaries.
 
@@ -1282,7 +1282,7 @@ Local decision logic should remain independently testable where practical.
 
 ---
 
-# Unit Tests And Public Interfaces
+## Unit Tests And Public Interfaces
 
 Tests should generally exercise stable public or behavioral interfaces.
 
@@ -1292,7 +1292,7 @@ If a private method requires extensive independent testing, it may represent a h
 
 ---
 
-# Security-Sensitive Unit Tests
+## Security-Sensitive Unit Tests
 
 Security-sensitive local behavior requires explicit unit testing.
 
@@ -1309,7 +1309,7 @@ Security testing may additionally require higher testing levels.
 
 ---
 
-# Compatibility-Sensitive Unit Tests
+## Compatibility-Sensitive Unit Tests
 
 Version parsing, compatibility decisions, and local migration rules should receive unit tests when they can be isolated.
 
@@ -1317,7 +1317,7 @@ Cross-component compatibility still requires broader evidence.
 
 ---
 
-# Serialization Unit Tests
+## Serialization Unit Tests
 
 Serialization logic may be unit tested for:
 
@@ -1331,7 +1331,7 @@ External protocol compatibility may require contract or integration testing.
 
 ---
 
-# CLI Unit Testing
+## CLI Unit Testing
 
 CLI-local logic may be unit tested for:
 
@@ -1345,7 +1345,7 @@ Complete command execution through the assembled application belongs to function
 
 ---
 
-# Event Unit Testing
+## Event Unit Testing
 
 Event-producing behavior may be unit tested by observing emitted domain events through a controlled collector.
 
@@ -1353,7 +1353,7 @@ Event infrastructure delivery belongs to integration testing.
 
 ---
 
-# Repository Logic
+## Repository Logic
 
 Repository interfaces and local mapping logic may have unit tests.
 
@@ -1363,7 +1363,7 @@ An in-memory repository used as a fake must not be treated as evidence that the 
 
 ---
 
-# Unit Testing Profiles
+## Unit Testing Profiles
 
 Testing profiles may define different unit-testing expectations.
 
@@ -1388,7 +1388,7 @@ Profiles do not redefine unit-test semantics.
 
 ---
 
-# Local Development
+## Local Development
 
 During local development, unit tests should provide the primary rapid-feedback loop.
 
@@ -1408,7 +1408,7 @@ before broader validation when practical.
 
 ---
 
-# Continuous Integration
+## Continuous Integration
 
 The unit suite should normally execute early in CI.
 
@@ -1431,7 +1431,7 @@ Fast failures reduce wasted pipeline execution.
 
 ---
 
-# CI Failure Semantics
+## CI Failure Semantics
 
 A required unit-test failure must fail the corresponding validation gate.
 
@@ -1441,7 +1441,7 @@ Infrastructure failures must be distinguishable from behavioral test failures.
 
 ---
 
-# Unit Test Reporting
+## Unit Test Reporting
 
 Reports should expose enough information to identify:
 
@@ -1456,7 +1456,7 @@ Detailed reporting requirements are defined by `16-Test-Reporting-and-Observabil
 
 ---
 
-# Unit Testing Evidence
+## Unit Testing Evidence
 
 A successful unit-test execution may produce evidence consumed by:
 
@@ -1470,7 +1470,7 @@ Evidence consumers must not reinterpret what constitutes a unit test.
 
 ---
 
-# Quality Framework Relationship
+## Quality Framework Relationship
 
 The Quality Framework may define expectations for:
 
@@ -1484,7 +1484,7 @@ The Testing Framework remains authoritative for unit-testing semantics.
 
 ---
 
-# Build Framework Relationship
+## Build Framework Relationship
 
 The Build Framework may require successful unit-test evidence before artifact construction or promotion.
 
@@ -1492,7 +1492,7 @@ Build does not redefine the tests.
 
 ---
 
-# Release Framework Relationship
+## Release Framework Relationship
 
 The Release Framework may require successful unit suites as release evidence.
 
@@ -1500,7 +1500,7 @@ Higher release maturity may require broader testing levels in addition to unit t
 
 ---
 
-# Plugin Compliance Relationship
+## Plugin Compliance Relationship
 
 The Plugin Compliance Framework may define rules such as:
 
@@ -1514,7 +1514,7 @@ This document defines what valid unit-testing behavior means.
 
 ---
 
-# Certification Relationship
+## Certification Relationship
 
 Certification may require stronger provenance for unit-test evidence.
 
@@ -1530,7 +1530,7 @@ Certification remains separate from ordinary unit-test execution.
 
 ---
 
-# Unit Test Governance
+## Unit Test Governance
 
 Unit-testing policy changes must follow Testing Framework governance.
 
@@ -1545,7 +1545,7 @@ Examples include changes to:
 
 ---
 
-# Unit Test Review
+## Unit Test Review
 
 Code review should evaluate tests alongside production changes.
 
@@ -1561,7 +1561,7 @@ Reviewers should consider:
 
 ---
 
-# Test Deletion
+## Test Deletion
 
 Deleting a unit test requires understanding what evidence is being removed.
 
@@ -1576,7 +1576,7 @@ Deletion should not silently remove required behavioral assurance.
 
 ---
 
-# Disabled Tests
+## Disabled Tests
 
 Disabled tests must remain exceptional.
 
@@ -1591,7 +1591,7 @@ Temporary disabling should have:
 
 ---
 
-# Unit Test Anti-Patterns
+## Unit Test Anti-Patterns
 
 The following patterns should be avoided:
 
@@ -1613,7 +1613,7 @@ Tests classified as unit tests despite real integration dependencies
 
 ---
 
-# Unit Testing Invariants
+## Unit Testing Invariants
 
 The FamilyOS Testing Framework establishes the following unit-testing invariants:
 
@@ -1640,7 +1640,7 @@ The FamilyOS Testing Framework establishes the following unit-testing invariants
 
 ---
 
-# Unit Testing Maturity
+## Unit Testing Maturity
 
 FamilyOS unit-testing maturity can progress through the following conceptual stages:
 
@@ -1664,7 +1664,7 @@ Maturity should increase without sacrificing execution speed or developer usabil
 
 ---
 
-# Minimum Unit Testing Standard
+## Minimum Unit Testing Standard
 
 At minimum, a FamilyOS unit test should:
 
@@ -1682,7 +1682,7 @@ Tests that cannot satisfy these properties should be reviewed for correct classi
 
 ---
 
-# Unit Testing Decision Model
+## Unit Testing Decision Model
 
 The following decision model may guide test design:
 
@@ -1708,7 +1708,7 @@ Unit       Boundary
 
 ---
 
-# Final Unit Testing Principle
+## Final Unit Testing Principle
 
 The governing FamilyOS unit-testing principle is:
 

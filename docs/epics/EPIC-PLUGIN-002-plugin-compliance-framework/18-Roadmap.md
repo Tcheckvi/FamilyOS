@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 18 Roadmap
+## 18 Roadmap
 
-## Introduction
+### Introduction
 
 The Plugin Compliance Framework Roadmap defines how FamilyOS should progress from architectural definition to a production-grade plugin compliance capability.
 
@@ -53,7 +53,7 @@ Continuous Compliance
 
 ---
 
-# Roadmap Principle
+## Roadmap Principle
 
 The governing roadmap principle is:
 
@@ -65,7 +65,7 @@ The meanings of rules, evidence, findings, compliance results, and lifecycle dec
 
 ---
 
-# Strategic Objectives
+## Strategic Objectives
 
 The roadmap is organized around several strategic objectives:
 
@@ -84,15 +84,15 @@ Each phase should produce independently useful capability.
 
 ---
 
-# Phase 0 — Framework Definition
+## Phase 0 — Framework Definition
 
-## Objective
+### Objective
 
 Complete the normative architecture and governance foundation of EPIC-PLUGIN-002.
 
 This phase defines the contracts implementation must follow.
 
-## Deliverables
+### Deliverables
 
 Phase 0 establishes:
 
@@ -114,7 +114,7 @@ Phase 0 establishes:
 * validation model;
 * release model.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 0 is complete when:
 
@@ -128,13 +128,13 @@ Phase 0 is complete when:
 
 ---
 
-# Phase 1 — Core Compliance Models
+## Phase 1 — Core Compliance Models
 
-## Objective
+### Objective
 
 Implement the foundational domain models required by all subsequent compliance capabilities.
 
-## Initial Models
+### Initial Models
 
 The first implementation should introduce concepts equivalent to:
 
@@ -153,7 +153,7 @@ The physical Python package structure may evolve.
 
 The semantic boundaries must remain aligned with the framework.
 
-## Initial Enumerations
+### Initial Enumerations
 
 The initial implementation should support canonical rule outcomes:
 
@@ -174,7 +174,7 @@ INCOMPLETE
 ERROR
 ```
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 1 is complete when the core models:
 
@@ -187,13 +187,13 @@ Phase 1 is complete when the core models:
 
 ---
 
-# Phase 2 — Rule Registry
+## Phase 2 — Rule Registry
 
-## Objective
+### Objective
 
 Create the authoritative executable representation of plugin compliance rules.
 
-## Rule Registry Responsibilities
+### Rule Registry Responsibilities
 
 The Rule Registry should support:
 
@@ -209,7 +209,7 @@ The Rule Registry should support:
 * remediation metadata;
 * ownership.
 
-## Initial Rule Families
+### Initial Rule Families
 
 The initial catalog should prioritize high-value deterministic rules.
 
@@ -229,7 +229,7 @@ PLUGIN-DOC
 PLUGIN-SEC
 ```
 
-## Rule Volume
+### Rule Volume
 
 The first implementation should remain intentionally small.
 
@@ -241,7 +241,7 @@ A useful initial target is:
 
 The objective is to validate architecture and developer experience rather than maximize rule count.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 2 is complete when:
 
@@ -254,13 +254,13 @@ Phase 2 is complete when:
 
 ---
 
-# Phase 3 — Profile Registry
+## Phase 3 — Profile Registry
 
-## Objective
+### Objective
 
 Implement compliance profile composition.
 
-## Initial Profile
+### Initial Profile
 
 The first operational profile should target official FamilyOS plugins.
 
@@ -272,7 +272,7 @@ official-v1
 
 It should provide the baseline from which stronger future profiles can evolve.
 
-## Future Profiles
+### Future Profiles
 
 The architecture should support:
 
@@ -288,7 +288,7 @@ certification
 
 Not every profile must be implemented immediately.
 
-## Profile Resolver
+### Profile Resolver
 
 The implementation should resolve profiles deterministically from:
 
@@ -296,7 +296,7 @@ The implementation should resolve profiles deterministically from:
 * plugin classification;
 * lifecycle context.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 3 is complete when:
 
@@ -308,13 +308,13 @@ Phase 3 is complete when:
 
 ---
 
-# Phase 4 — Validator Registry
+## Phase 4 — Validator Registry
 
-## Objective
+### Objective
 
 Create the controlled mapping between compliance requirements and validation implementations.
 
-## Initial Validator Families
+### Initial Validator Families
 
 Initial validators may include:
 
@@ -330,7 +330,7 @@ TestEvidenceValidator
 QualityEvidenceValidator
 ```
 
-## Validator Contract
+### Validator Contract
 
 All validators should conform to one stable contract.
 
@@ -350,7 +350,7 @@ Validator Result
 
 Validators must not declare overall compliance.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 4 is complete when:
 
@@ -362,13 +362,13 @@ Phase 4 is complete when:
 
 ---
 
-# Phase 5 — Validation Engine
+## Phase 5 — Validation Engine
 
-## Objective
+### Objective
 
 Implement the orchestration core of plugin compliance.
 
-## Required Capabilities
+### Required Capabilities
 
 The initial Validation Engine should support:
 
@@ -385,7 +385,7 @@ The initial Validation Engine should support:
 * finding generation;
 * final status derivation.
 
-## Reference Flow
+### Reference Flow
 
 ```text
 Validation Request
@@ -418,15 +418,15 @@ Findings
 Compliance Result
 ```
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 5 is complete when a plugin can be evaluated locally and produce a deterministic structured Compliance Result.
 
 ---
 
-# Phase 6 — Initial Rule Catalog
+## Phase 6 — Initial Rule Catalog
 
-## Objective
+### Objective
 
 Create the first practically useful plugin compliance baseline.
 
@@ -440,7 +440,7 @@ Rules should be selected according to:
 
 ---
 
-# Identity Baseline
+## Identity Baseline
 
 Initial identity rules may verify:
 
@@ -451,7 +451,7 @@ Initial identity rules may verify:
 
 ---
 
-# Metadata Baseline
+## Metadata Baseline
 
 Initial metadata rules may verify:
 
@@ -464,7 +464,7 @@ Initial metadata rules may verify:
 
 ---
 
-# Structure Baseline
+## Structure Baseline
 
 Initial structure rules may verify:
 
@@ -477,7 +477,7 @@ Structural rules should validate real platform requirements rather than arbitrar
 
 ---
 
-# Architecture Baseline
+## Architecture Baseline
 
 Initial architecture rules should focus on known stable boundaries.
 
@@ -490,7 +490,7 @@ Examples include:
 
 ---
 
-# Capability Baseline
+## Capability Baseline
 
 Initial capability rules may verify:
 
@@ -501,7 +501,7 @@ Initial capability rules may verify:
 
 ---
 
-# Contribution Baseline
+## Contribution Baseline
 
 Initial contribution validation may verify:
 
@@ -512,7 +512,7 @@ Initial contribution validation may verify:
 
 ---
 
-# Dependency Baseline
+## Dependency Baseline
 
 Initial dependency rules may verify:
 
@@ -523,7 +523,7 @@ Initial dependency rules may verify:
 
 ---
 
-# Testing Baseline
+## Testing Baseline
 
 The Compliance Framework should consume existing Testing Framework evidence.
 
@@ -537,7 +537,7 @@ Compliance must not create a competing testing methodology.
 
 ---
 
-# Quality Baseline
+## Quality Baseline
 
 Initial quality rules should integrate existing engineering checks.
 
@@ -553,7 +553,7 @@ where they already represent active FamilyOS engineering requirements.
 
 ---
 
-# Documentation Baseline
+## Documentation Baseline
 
 Initial documentation rules may verify:
 
@@ -566,7 +566,7 @@ Deeper documentation-quality evaluation may mature later.
 
 ---
 
-# Security Baseline
+## Security Baseline
 
 Security-critical requirements should be included from the first executable compliance release.
 
@@ -579,13 +579,13 @@ Initial rules should prevent obvious trust-boundary violations such as:
 
 ---
 
-# Phase 7 — Official Plugin Pilot
+## Phase 7 — Official Plugin Pilot
 
-## Objective
+### Objective
 
 Validate the compliance system against real official FamilyOS plugins before broad enforcement.
 
-## Candidate Plugins
+### Candidate Plugins
 
 A representative pilot may include:
 
@@ -600,7 +600,7 @@ Communication
 
 The final pilot set may evolve.
 
-## Pilot Strategy
+### Pilot Strategy
 
 The initial pilot should prefer:
 
@@ -612,7 +612,7 @@ or advisory evaluation.
 
 The goal is to identify framework defects before compliance begins blocking normal development.
 
-## Pilot Measurements
+### Pilot Measurements
 
 Useful measurements include:
 
@@ -625,7 +625,7 @@ Useful measurements include:
 * remediation duration;
 * domain distribution.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 7 is complete when:
 
@@ -637,13 +637,13 @@ Phase 7 is complete when:
 
 ---
 
-# Phase 8 — Developer CLI
+## Phase 8 — Developer CLI
 
-## Objective
+### Objective
 
 Expose compliance through the standard FamilyOS developer experience.
 
-## Initial Commands
+### Initial Commands
 
 The CLI should eventually support operations conceptually equivalent to:
 
@@ -657,7 +657,7 @@ familyos plugin compliance explain
 
 Exact command grammar belongs to implementation design.
 
-## Required Output
+### Required Output
 
 Local execution should expose:
 
@@ -670,19 +670,19 @@ Local execution should expose:
 * remediation;
 * deterministic exit behavior.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 8 is complete when plugin developers can execute the same core compliance evaluation locally that CI will later consume.
 
 ---
 
-# Phase 9 — Machine-Readable Reporting
+## Phase 9 — Machine-Readable Reporting
 
-## Objective
+### Objective
 
 Provide a stable structured integration contract.
 
-## Initial Format
+### Initial Format
 
 The first canonical machine-readable projection should preferably be JSON.
 
@@ -699,19 +699,19 @@ It should include:
 * diagnostics;
 * overall status.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 9 is complete when downstream tools no longer need to parse human-readable CLI output.
 
 ---
 
-# Phase 10 — CI Integration
+## Phase 10 — CI Integration
 
-## Objective
+### Objective
 
 Make plugin compliance a standard FamilyOS continuous-integration capability.
 
-## Evidence Reuse
+### Evidence Reuse
 
 CI should reuse existing results from:
 
@@ -723,7 +723,7 @@ Pytest
 
 through evidence adapters where compatibility can be demonstrated.
 
-## CI Flow
+### CI Flow
 
 ```text
 Source
@@ -742,7 +742,7 @@ Compliance Engine
 Compliance Result
 ```
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 10 is complete when:
 
@@ -753,15 +753,15 @@ Phase 10 is complete when:
 
 ---
 
-# Phase 11 — Merge Gate
+## Phase 11 — Merge Gate
 
-## Objective
+### Objective
 
 Introduce the first strong lifecycle enforcement point.
 
 The initial Merge Gate should target official plugin changes.
 
-## Baseline Policy
+### Baseline Policy
 
 A simple initial model is:
 
@@ -774,19 +774,19 @@ ERROR          -> BLOCK
 
 Warning behavior should remain profile-driven.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 11 is complete when protected plugin changes cannot merge while required compliance remains unresolved.
 
 ---
 
-# Phase 12 — Evidence Maturity
+## Phase 12 — Evidence Maturity
 
-## Objective
+### Objective
 
 Strengthen evidence beyond transient validator output.
 
-## Capabilities
+### Capabilities
 
 This phase should introduce:
 
@@ -800,7 +800,7 @@ This phase should introduce:
 * evidence reuse;
 * invalidation.
 
-## Evidence Reuse
+### Evidence Reuse
 
 One evidence object should be reusable across compatible rules.
 
@@ -814,19 +814,19 @@ Import Graph Evidence
         └── Security Rules
 ```
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 12 is complete when evidence can be reused safely without weakening correctness.
 
 ---
 
-# Phase 13 — Incremental Validation Foundations
+## Phase 13 — Incremental Validation Foundations
 
-## Objective
+### Objective
 
 Reduce unnecessary validation work while preserving semantic equivalence.
 
-## Initial Strategy
+### Initial Strategy
 
 The framework may begin tracking relationships between:
 
@@ -836,7 +836,7 @@ The framework may begin tracking relationships between:
 * rule dependencies;
 * compliance domains.
 
-## Safety Principle
+### Safety Principle
 
 > Work may be skipped only when the framework can demonstrate that the skipped work cannot affect the current compliance result.
 
@@ -844,13 +844,13 @@ When uncertain, full validation remains the fallback.
 
 ---
 
-# Phase 14 — Build Integration
+## Phase 14 — Build Integration
 
-## Objective
+### Objective
 
 Connect compliance with governed plugin artifact creation.
 
-## Source Validation
+### Source Validation
 
 Before build, compliance may validate:
 
@@ -860,7 +860,7 @@ Before build, compliance may validate:
 * quality;
 * documentation.
 
-## Artifact Validation
+### Artifact Validation
 
 After build, validation may inspect:
 
@@ -870,15 +870,15 @@ After build, validation may inspect:
 * unexpected content;
 * artifact digest.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 14 is complete when release-grade plugin artifacts can be associated with a specific compliance evaluation.
 
 ---
 
-# Phase 15 — Artifact Binding
+## Phase 15 — Artifact Binding
 
-## Objective
+### Objective
 
 Prevent compliance evidence for one artifact from being reused for another.
 
@@ -897,15 +897,15 @@ Compliance Evaluation
 Bound Compliance Result
 ```
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 15 is complete when FamilyOS can prove exactly which artifact a release-grade Compliance Result applies to.
 
 ---
 
-# Phase 16 — Release Profile
+## Phase 16 — Release Profile
 
-## Objective
+### Objective
 
 Introduce a stronger profile appropriate to official plugin releases.
 
@@ -919,19 +919,19 @@ The Release Profile may require:
 * documentation compliance;
 * artifact integrity.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 16 is complete when release-specific assurance is distinct from ordinary development or merge assurance.
 
 ---
 
-# Phase 17 — Release Gate
+## Phase 17 — Release Gate
 
-## Objective
+### Objective
 
 Prevent official plugin release when required compliance cannot be demonstrated.
 
-## Expected Behavior
+### Expected Behavior
 
 The Release Gate should normally block:
 
@@ -949,19 +949,19 @@ COMPLIANT
 
 result should permit normal release progression.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 17 is complete when official release workflows consume canonical compliance decisions rather than implement separate validation policy.
 
 ---
 
-# Phase 18 — Governance Automation
+## Phase 18 — Governance Automation
 
-## Objective
+### Objective
 
 Move compliance policy toward structured, validated Compliance as Code.
 
-## Potential Structure
+### Potential Structure
 
 A future repository structure may include:
 
@@ -975,7 +975,7 @@ compliance/
 
 Exact paths belong to implementation architecture.
 
-## Policy CI
+### Policy CI
 
 Policy changes should validate:
 
@@ -987,15 +987,15 @@ Policy changes should validate:
 * rule tests;
 * lifecycle metadata.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 18 is complete when compliance policy changes can be automatically checked before activation.
 
 ---
 
-# Phase 19 — Rule Lifecycle Automation
+## Phase 19 — Rule Lifecycle Automation
 
-## Objective
+### Objective
 
 Make governance states operational.
 
@@ -1018,9 +1018,9 @@ Policy tooling should prevent invalid lifecycle transitions.
 
 ---
 
-# Phase 20 — Compliance Drift Detection
+## Phase 20 — Compliance Drift Detection
 
-## Objective
+### Objective
 
 Identify when current plugin compliance differs from previous verified compliance.
 
@@ -1034,15 +1034,15 @@ POLICY_DRIFT
 TRUST_DRIFT
 ```
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 20 is complete when maintainers can distinguish code regressions from ecosystem policy evolution.
 
 ---
 
-# Phase 21 — Certification Profile
+## Phase 21 — Certification Profile
 
-## Objective
+### Objective
 
 Establish the strongest technical compliance profile required before certification governance.
 
@@ -1057,9 +1057,9 @@ The Certification Profile may require:
 
 ---
 
-# Phase 22 — Certification Eligibility
+## Phase 22 — Certification Eligibility
 
-## Objective
+### Objective
 
 Implement the technical bridge from compliance to certification.
 
@@ -1078,9 +1078,9 @@ They are not certification decisions.
 
 ---
 
-# Phase 23 — Certification Evidence Package
+## Phase 23 — Certification Evidence Package
 
-## Objective
+### Objective
 
 Produce a structured handoff for certification governance.
 
@@ -1097,15 +1097,15 @@ The package should contain:
 * suppressions;
 * integrity metadata.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 23 is complete when certification systems can consume compliance outputs without depending on validator internals or CLI text.
 
 ---
 
-# Phase 24 — Certification Gate
+## Phase 24 — Certification Gate
 
-## Objective
+### Objective
 
 Confirm that certification-grade compliance requirements are satisfied before governance review begins.
 
@@ -1113,9 +1113,9 @@ The Certification Gate must remain separate from the final certification authori
 
 ---
 
-# Phase 25 — Security Hardening
+## Phase 25 — Security Hardening
 
-## Objective
+### Objective
 
 Strengthen the compliance infrastructure itself.
 
@@ -1130,9 +1130,9 @@ Capabilities should include stronger protection against:
 
 ---
 
-# Phase 26 — Runtime Isolation
+## Phase 26 — Runtime Isolation
 
-## Objective
+### Objective
 
 Prepare compliance execution for plugins that cannot be assumed trusted.
 
@@ -1149,9 +1149,9 @@ Static validation should remain preferred where runtime execution is unnecessary
 
 ---
 
-# Phase 27 — Third-Party Profile
+## Phase 27 — Third-Party Profile
 
-## Objective
+### Objective
 
 Define a public compliance profile suitable for external plugin authors.
 
@@ -1173,9 +1173,9 @@ It must avoid internal FamilyOS workflow requirements that external authors cann
 
 ---
 
-# Phase 28 — Third-Party Developer Tooling
+## Phase 28 — Third-Party Developer Tooling
 
-## Objective
+### Objective
 
 Allow independent plugin authors to evaluate compliance before submitting or distributing plugins.
 
@@ -1188,15 +1188,15 @@ External developers should receive:
 * remediation guidance;
 * compatibility information.
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 28 is complete when compliance can be understood and executed without private FamilyOS engineering knowledge.
 
 ---
 
-# Phase 29 — Third-Party Validation Infrastructure
+## Phase 29 — Third-Party Validation Infrastructure
 
-## Objective
+### Objective
 
 Run untrusted plugin validation safely.
 
@@ -1218,15 +1218,15 @@ Trusted Evidence
 Compliance Result
 ```
 
-## Exit Criteria
+### Exit Criteria
 
 Phase 29 is complete when external plugins can be evaluated without granting them implicit trust in the validation environment.
 
 ---
 
-# Phase 30 — Continuous Revalidation
+## Phase 30 — Continuous Revalidation
 
-## Objective
+### Objective
 
 Transform compliance from an event into a persistent ecosystem capability.
 
@@ -1246,9 +1246,9 @@ Revalidation should remain scoped where correctness can be demonstrated.
 
 ---
 
-# Phase 31 — Trust Attestation
+## Phase 31 — Trust Attestation
 
-## Objective
+### Objective
 
 Strengthen evidence portability across distributed systems.
 
@@ -1267,9 +1267,9 @@ They do not replace it.
 
 ---
 
-# Phase 32 — Supply Chain Integration
+## Phase 32 — Supply Chain Integration
 
-## Objective
+### Objective
 
 Integrate compliance with future software supply-chain evidence.
 
@@ -1285,9 +1285,9 @@ This phase should be coordinated with FamilyOS Security and Build architecture.
 
 ---
 
-# Phase 33 — Plugin Registry Integration
+## Phase 33 — Plugin Registry Integration
 
-## Objective
+### Objective
 
 Expose governed compliance metadata through a future FamilyOS plugin registry.
 
@@ -1308,9 +1308,9 @@ Sensitive evidence and findings should remain protected according to policy.
 
 ---
 
-# Phase 34 — Registry Admission Gates
+## Phase 34 — Registry Admission Gates
 
-## Objective
+### Objective
 
 Allow distribution environments to require specific assurance.
 
@@ -1331,9 +1331,9 @@ Registry policy must consume compliance and certification states without merging
 
 ---
 
-# Phase 35 — Compliance Analytics
+## Phase 35 — Compliance Analytics
 
-## Objective
+### Objective
 
 Use compliance history to improve platform governance.
 
@@ -1354,9 +1354,9 @@ They must not replace explicit rule evaluation.
 
 ---
 
-# Phase 36 — Mature Compliance Platform
+## Phase 36 — Mature Compliance Platform
 
-## Objective
+### Objective
 
 Reach a state where plugin compliance is a permanent FamilyOS platform capability.
 
@@ -1380,7 +1380,7 @@ At this stage, compliance is part of normal plugin lifecycle architecture rather
 
 ---
 
-# Recommended Implementation Order
+## Recommended Implementation Order
 
 The recommended implementation order is:
 
@@ -1425,7 +1425,7 @@ This order maximizes useful engineering value while preserving architectural dep
 
 ---
 
-# Recommended First Implementation Slice
+## Recommended First Implementation Slice
 
 The first implementation should remain intentionally constrained.
 
@@ -1455,7 +1455,7 @@ This slice should prove:
 
 ---
 
-# Recommended Pilot Plugin
+## Recommended Pilot Plugin
 
 A pilot plugin should exercise a meaningful range of plugin architecture.
 
@@ -1476,7 +1476,7 @@ The final choice should be based on implementation readiness rather than roadmap
 
 ---
 
-# Implementation Dependency — Engineering Foundation
+## Implementation Dependency — Engineering Foundation
 
 The Compliance Framework depends on the FamilyOS Engineering Foundation for:
 
@@ -1490,7 +1490,7 @@ Compliance should consume these foundations rather than duplicate them.
 
 ---
 
-# Implementation Dependency — Plugin Architecture
+## Implementation Dependency — Plugin Architecture
 
 Plugin Architecture remains authoritative for plugin contracts.
 
@@ -1500,7 +1500,7 @@ If architecture is ambiguous, the architecture must be clarified before complian
 
 ---
 
-# Implementation Dependency — Testing Framework
+## Implementation Dependency — Testing Framework
 
 Testing evidence should come from the Testing Framework.
 
@@ -1510,7 +1510,7 @@ It must not create a second testing architecture.
 
 ---
 
-# Implementation Dependency — Quality Framework
+## Implementation Dependency — Quality Framework
 
 Quality evidence should integrate existing FamilyOS quality systems.
 
@@ -1518,7 +1518,7 @@ Initial implementation should prioritize existing tooling before adding new qual
 
 ---
 
-# Implementation Dependency — Documentation Framework
+## Implementation Dependency — Documentation Framework
 
 Documentation compliance should align with FamilyOS documentation standards.
 
@@ -1526,7 +1526,7 @@ The first implementation can focus on deterministic presence and structure befor
 
 ---
 
-# Implementation Dependency — Security Architecture
+## Implementation Dependency — Security Architecture
 
 Security rules must derive from authoritative FamilyOS security requirements.
 
@@ -1534,7 +1534,7 @@ The Compliance Framework should not independently invent security policy.
 
 ---
 
-# Implementation Dependency — Build Framework
+## Implementation Dependency — Build Framework
 
 Artifact-bound compliance depends on reliable build artifact identity.
 
@@ -1542,7 +1542,7 @@ Build integration should therefore mature before strong release or certification
 
 ---
 
-# Implementation Dependency — Release Framework
+## Implementation Dependency — Release Framework
 
 Release workflows should consume compliance decisions.
 
@@ -1550,7 +1550,7 @@ They should not maintain independent duplicated plugin-compliance policy.
 
 ---
 
-# Implementation Dependency — Certification Governance
+## Implementation Dependency — Certification Governance
 
 Certification governance consumes certification-grade compliance outputs.
 
@@ -1558,7 +1558,7 @@ It remains responsible for final trust decisions.
 
 ---
 
-# Delivery Risk — Excessive Initial Scope
+## Delivery Risk — Excessive Initial Scope
 
 Attempting to implement every compliance domain simultaneously would increase:
 
@@ -1572,7 +1572,7 @@ The roadmap deliberately favors narrow initial scope.
 
 ---
 
-# Delivery Risk — Too Many Rules
+## Delivery Risk — Too Many Rules
 
 A large rule catalog can appear mature while producing low-value noise.
 
@@ -1582,7 +1582,7 @@ Each rule should protect a meaningful platform contract.
 
 ---
 
-# Delivery Risk — False Positives
+## Delivery Risk — False Positives
 
 False positives undermine developer trust.
 
@@ -1598,7 +1598,7 @@ or non-blocking until reliable.
 
 ---
 
-# Delivery Risk — Duplicate Engineering Work
+## Delivery Risk — Duplicate Engineering Work
 
 Compliance should not rerun expensive tools unnecessarily.
 
@@ -1614,7 +1614,7 @@ evidence should be reused when provenance and context permit it.
 
 ---
 
-# Delivery Risk — Weak Remediation
+## Delivery Risk — Weak Remediation
 
 A technically correct finding that developers cannot understand becomes operationally expensive.
 
@@ -1622,7 +1622,7 @@ Remediation quality should therefore be treated as a first-class requirement.
 
 ---
 
-# Delivery Risk — CI Performance
+## Delivery Risk — CI Performance
 
 Full compliance evaluation may become expensive as rules grow.
 
@@ -1638,7 +1638,7 @@ Correctness remains the priority.
 
 ---
 
-# Delivery Risk — Policy Hidden in Code
+## Delivery Risk — Policy Hidden in Code
 
 Allowing validator implementations to define undocumented requirements would undermine governance.
 
@@ -1646,7 +1646,7 @@ Policy representation and validator implementation must remain distinct.
 
 ---
 
-# Delivery Risk — Premature Release Enforcement
+## Delivery Risk — Premature Release Enforcement
 
 A framework should not block releases before it demonstrates sufficient reliability.
 
@@ -1660,7 +1660,7 @@ Release enforcement should follow:
 
 ---
 
-# Delivery Risk — Premature Certification
+## Delivery Risk — Premature Certification
 
 Certification built on weak evidence creates false trust.
 
@@ -1673,7 +1673,7 @@ Certification readiness must follow:
 
 ---
 
-# Delivery Risk — Premature Third-Party Exposure
+## Delivery Risk — Premature Third-Party Exposure
 
 External ecosystems magnify unstable contracts.
 
@@ -1687,7 +1687,7 @@ Third-party support should follow:
 
 ---
 
-# Delivery Risk — Governance Debt
+## Delivery Risk — Governance Debt
 
 A growing rule catalog without ownership and lifecycle controls becomes difficult to maintain.
 
@@ -1695,7 +1695,7 @@ Governance automation should mature before compliance policy becomes large.
 
 ---
 
-# Delivery Risk — Exception Debt
+## Delivery Risk — Exception Debt
 
 Frequent long-lived exceptions can indicate:
 
@@ -1707,7 +1707,7 @@ Exception metrics should therefore inform governance review.
 
 ---
 
-# Delivery Risk — Compliance Drift
+## Delivery Risk — Compliance Drift
 
 Plugins may become non-compliant without source changes.
 
@@ -1724,7 +1724,7 @@ Drift detection must therefore be a planned framework capability.
 
 ---
 
-# Milestone Model
+## Milestone Model
 
 A practical milestone sequence is:
 
@@ -1758,7 +1758,7 @@ They are not framework version numbers.
 
 ---
 
-# M0 — Framework Definition
+## M0 — Framework Definition
 
 Completion criteria:
 
@@ -1771,7 +1771,7 @@ Completion criteria:
 
 ---
 
-# M1 — Core Models
+## M1 — Core Models
 
 Completion criteria:
 
@@ -1782,7 +1782,7 @@ Completion criteria:
 
 ---
 
-# M2 — Rule and Profile Registries
+## M2 — Rule and Profile Registries
 
 Completion criteria:
 
@@ -1794,7 +1794,7 @@ Completion criteria:
 
 ---
 
-# M3 — Validation Engine
+## M3 — Validation Engine
 
 Completion criteria:
 
@@ -1805,7 +1805,7 @@ Completion criteria:
 
 ---
 
-# M4 — Initial Rule Catalog
+## M4 — Initial Rule Catalog
 
 Completion criteria:
 
@@ -1816,7 +1816,7 @@ Completion criteria:
 
 ---
 
-# M5 — Official Plugin Pilot
+## M5 — Official Plugin Pilot
 
 Completion criteria:
 
@@ -1827,7 +1827,7 @@ Completion criteria:
 
 ---
 
-# M6 — Developer CLI
+## M6 — Developer CLI
 
 Completion criteria:
 
@@ -1837,7 +1837,7 @@ Completion criteria:
 
 ---
 
-# M7 — Machine-Readable Reporting
+## M7 — Machine-Readable Reporting
 
 Completion criteria:
 
@@ -1847,7 +1847,7 @@ Completion criteria:
 
 ---
 
-# M8 — CI Integration
+## M8 — CI Integration
 
 Completion criteria:
 
@@ -1858,7 +1858,7 @@ Completion criteria:
 
 ---
 
-# M9 — Merge Gate
+## M9 — Merge Gate
 
 Completion criteria:
 
@@ -1868,7 +1868,7 @@ Completion criteria:
 
 ---
 
-# M10 — Evidence Maturity
+## M10 — Evidence Maturity
 
 Completion criteria:
 
@@ -1879,7 +1879,7 @@ Completion criteria:
 
 ---
 
-# M11 — Build and Artifact Binding
+## M11 — Build and Artifact Binding
 
 Completion criteria:
 
@@ -1889,7 +1889,7 @@ Completion criteria:
 
 ---
 
-# M12 — Release Profile and Gate
+## M12 — Release Profile and Gate
 
 Completion criteria:
 
@@ -1899,7 +1899,7 @@ Completion criteria:
 
 ---
 
-# M13 — Governance Automation
+## M13 — Governance Automation
 
 Completion criteria:
 
@@ -1911,7 +1911,7 @@ Completion criteria:
 
 ---
 
-# M14 — Compliance Drift Detection
+## M14 — Compliance Drift Detection
 
 Completion criteria:
 
@@ -1921,7 +1921,7 @@ Completion criteria:
 
 ---
 
-# M15 — Certification Eligibility
+## M15 — Certification Eligibility
 
 Completion criteria:
 
@@ -1932,7 +1932,7 @@ Completion criteria:
 
 ---
 
-# M16 — Security Hardening
+## M16 — Security Hardening
 
 Completion criteria:
 
@@ -1944,7 +1944,7 @@ Completion criteria:
 
 ---
 
-# M17 — Third-Party Readiness
+## M17 — Third-Party Readiness
 
 Completion criteria:
 
@@ -1955,7 +1955,7 @@ Completion criteria:
 
 ---
 
-# M18 — Continuous Revalidation
+## M18 — Continuous Revalidation
 
 Completion criteria:
 
@@ -1966,7 +1966,7 @@ Completion criteria:
 
 ---
 
-# M19 — Attestation and Registry Integration
+## M19 — Attestation and Registry Integration
 
 Completion criteria:
 
@@ -1976,7 +1976,7 @@ Completion criteria:
 
 ---
 
-# M20 — Mature Compliance Platform
+## M20 — Mature Compliance Platform
 
 Completion criteria:
 
@@ -1987,7 +1987,7 @@ Completion criteria:
 
 ---
 
-# Success Metrics
+## Success Metrics
 
 Useful roadmap metrics may include:
 
@@ -2010,7 +2010,7 @@ They do not replace compliance semantics.
 
 ---
 
-# Definition of Developer Success
+## Definition of Developer Success
 
 The framework becomes useful to a plugin developer when the normal workflow becomes:
 
@@ -2037,7 +2037,7 @@ without requiring knowledge of validator internals.
 
 ---
 
-# Definition of CI Success
+## Definition of CI Success
 
 The framework becomes useful to CI when:
 
@@ -2053,13 +2053,13 @@ produces equivalent compliance semantics locally and in CI.
 
 ---
 
-# Definition of Release Success
+## Definition of Release Success
 
 Release integration succeeds when an official plugin cannot be released under a release-grade workflow without the required canonical Compliance Result and gate decision.
 
 ---
 
-# Definition of Certification Success
+## Definition of Certification Success
 
 Certification integration succeeds when certification governance can consume compliance eligibility and evidence without:
 
@@ -2069,7 +2069,7 @@ Certification integration succeeds when certification governance can consume com
 
 ---
 
-# Definition of Third-Party Success
+## Definition of Third-Party Success
 
 Third-party readiness succeeds when an independent developer can:
 
@@ -2083,7 +2083,7 @@ using public platform contracts.
 
 ---
 
-# Definition of Ecosystem Success
+## Definition of Ecosystem Success
 
 The mature ecosystem should distinguish clearly between:
 
@@ -2102,7 +2102,7 @@ These are separate assurance claims.
 
 ---
 
-# Roadmap Review
+## Roadmap Review
 
 The roadmap should be reviewed after major milestones.
 
@@ -2119,7 +2119,7 @@ Review questions should include:
 
 ---
 
-# Roadmap Flexibility
+## Roadmap Flexibility
 
 The roadmap defines strategic sequencing rather than rigid scheduling.
 
@@ -2136,7 +2136,7 @@ Dependencies must still be respected.
 
 ---
 
-# Roadmap Change Governance
+## Roadmap Change Governance
 
 Changing implementation order does not automatically change compliance semantics.
 
@@ -2152,7 +2152,7 @@ must be reviewed through the appropriate framework governance mechanism.
 
 ---
 
-# Roadmap Invariants
+## Roadmap Invariants
 
 The roadmap establishes the following invariants:
 
@@ -2179,7 +2179,7 @@ The roadmap establishes the following invariants:
 
 ---
 
-# Reference Roadmap
+## Reference Roadmap
 
 The complete strategic progression is:
 
@@ -2258,7 +2258,7 @@ Mature Plugin Compliance Platform
 
 ---
 
-# Roadmap Summary
+## Roadmap Summary
 
 EPIC-PLUGIN-002 should evolve through controlled increments rather than one monolithic implementation effort.
 
@@ -2299,7 +2299,7 @@ Each stage increases assurance while preserving one stable compliance language.
 
 ---
 
-# Final Roadmap Principle
+## Final Roadmap Principle
 
 The governing roadmap principle of EPIC-PLUGIN-002 is:
 

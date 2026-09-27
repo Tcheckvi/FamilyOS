@@ -10,7 +10,7 @@ Technical Governance establishes the principles and processes that ensure engine
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Technical Governance within the Engineering Foundation is to define how technical decisions are:
 
@@ -24,9 +24,9 @@ Governance ensures that technical evolution remains intentional rather than acci
 
 ---
 
-# Technical Governance Principles
+## Technical Governance Principles
 
-## Principle 1 — Explicit Decisions
+### Principle 1 — Explicit Decisions
 
 Important technical decisions must be visible.
 
@@ -40,7 +40,7 @@ Important decisions must be captured through appropriate engineering artifacts.
 
 ---
 
-## Principle 2 — Appropriate Decision Artifacts
+### Principle 2 — Appropriate Decision Artifacts
 
 FamilyOS uses different artifacts for different decision levels.
 
@@ -67,7 +67,7 @@ Each artifact has a defined purpose.
 
 ---
 
-## Principle 3 — Traceability
+### Principle 3 — Traceability
 
 Technical decisions must remain connected to their context.
 
@@ -80,7 +80,7 @@ Traceability should allow contributors to understand:
 
 ---
 
-## Principle 4 — Review Before Impact
+### Principle 4 — Review Before Impact
 
 Decisions that significantly affect the platform should be reviewed before implementation.
 
@@ -93,7 +93,7 @@ Review helps evaluate:
 
 ---
 
-## Principle 5 — Long-Term Thinking
+### Principle 5 — Long-Term Thinking
 
 Technical decisions should consider future evolution.
 
@@ -107,7 +107,7 @@ Evaluation should include:
 
 ---
 
-# Governance Decision Levels
+## Governance Decision Levels
 
 FamilyOS decisions exist at different levels.
 
@@ -128,7 +128,7 @@ Each level requires an appropriate decision process.
 
 ---
 
-# Strategic Decisions
+## Strategic Decisions
 
 Strategic decisions affect long-term platform direction.
 
@@ -146,7 +146,7 @@ Possible artifacts:
 
 ---
 
-# Architectural Decisions
+## Architectural Decisions
 
 Architectural decisions affect system structure.
 
@@ -162,7 +162,7 @@ Primary artifact:
 
 ---
 
-# Engineering Decisions
+## Engineering Decisions
 
 Engineering decisions affect development practices.
 
@@ -179,7 +179,7 @@ Possible artifacts:
 
 ---
 
-# Implementation Decisions
+## Implementation Decisions
 
 Implementation decisions concern local solutions.
 
@@ -191,7 +191,7 @@ They should remain aligned with:
 
 ---
 
-# Governance Workflow
+## Governance Workflow
 
 Technical decisions follow a structured process.
 
@@ -224,7 +224,7 @@ Governance continues after implementation by preserving engineering knowledge an
 
 ---
 
-# Governance Authority Model
+## Governance Authority Model
 
 Technical governance relies on clearly defined decision authority.
 
@@ -242,7 +242,7 @@ Clear authority improves consistency while avoiding unnecessary decision bottlen
 
 ---
 
-# Governance and Documentation
+## Governance and Documentation
 
 Governance depends on documentation.
 
@@ -259,7 +259,7 @@ Reference:
 
 ---
 
-# Governance and Architecture
+## Governance and Architecture
 
 Architecture governance ensures that technical evolution remains coherent.
 
@@ -276,7 +276,7 @@ Reference:
 
 ---
 
-# Governance and Quality
+## Governance and Quality
 
 Technical governance considers quality impact.
 
@@ -293,7 +293,7 @@ Reference:
 
 ---
 
-# Governance and Security
+## Governance and Security
 
 Technical decisions should consider security implications.
 
@@ -306,35 +306,35 @@ Evaluation may include:
 
 ---
 
-# Governance Ownership
+## Governance Ownership
 
 Governance responsibilities include:
 
-## Contributors
+### Contributors
 
 Responsible for proposing clear and documented changes.
 
 ---
 
-## Reviewers
+### Reviewers
 
 Responsible for evaluating impact and alignment.
 
 ---
 
-## Maintainers
+### Maintainers
 
 Responsible for preserving consistency over time.
 
 ---
 
-## Architects
+### Architects
 
 Responsible for architectural coherence.
 
 ---
 
-# Governance Evolution
+## Governance Evolution
 
 The governance model evolves with FamilyOS maturity.
 
@@ -349,7 +349,7 @@ Changes to governance should themselves follow the documented governance process
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Technical Governance is successful when:
 
@@ -361,7 +361,7 @@ Technical Governance is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Technical Governance establishes the decision-making framework required for FamilyOS to evolve responsibly.
 

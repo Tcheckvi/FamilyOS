@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 08 Functional and System Testing
+## 08 Functional and System Testing
 
-## Overview
+### Overview
 
 Functional and system testing validate FamilyOS behavior at progressively broader levels of the assembled platform.
 
@@ -16,7 +16,7 @@ Together, these testing levels provide confidence that architectural components 
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of functional and system testing is to validate FamilyOS from the perspective of complete behaviors rather than isolated implementation units.
 
@@ -37,13 +37,13 @@ Functional and system testing therefore form an essential validation layer betwe
 
 ---
 
-# Testing Level Distinction
+## Testing Level Distinction
 
 Functional and system testing are related but serve different purposes.
 
 The distinction must remain explicit.
 
-## Functional Testing
+### Functional Testing
 
 Functional testing validates specific behaviors or capabilities from an external or business-oriented perspective.
 
@@ -55,7 +55,7 @@ Functional tests may exercise several internal components without validating the
 
 ---
 
-## System Testing
+### System Testing
 
 System testing validates the assembled platform as a complete operational system.
 
@@ -67,7 +67,7 @@ System tests therefore operate at a broader architectural scope than functional 
 
 ---
 
-# Testing Progression
+## Testing Progression
 
 The relationship between major testing levels can be represented as:
 
@@ -96,11 +96,11 @@ For this reason, higher-level tests should remain intentional and focused.
 
 ---
 
-# Functional Testing Principles
+## Functional Testing Principles
 
 Functional testing follows several core principles.
 
-## Test Observable Behavior
+### Test Observable Behavior
 
 Functional tests should validate behavior that can be observed through supported platform interfaces.
 
@@ -117,7 +117,7 @@ Tests should avoid depending unnecessarily on internal implementation details.
 
 ---
 
-## Validate Requirements
+### Validate Requirements
 
 Functional tests must trace back to defined behavior.
 
@@ -135,7 +135,7 @@ A functional test should exist because a meaningful platform behavior requires v
 
 ---
 
-## Prefer Behavioral Assertions
+### Prefer Behavioral Assertions
 
 Assertions should focus on outcomes rather than internal implementation steps.
 
@@ -151,7 +151,7 @@ This allows implementations to evolve without invalidating behaviorally correct 
 
 ---
 
-## Preserve Determinism
+### Preserve Determinism
 
 Functional tests must remain reproducible.
 
@@ -168,11 +168,11 @@ Controlled environments should be used wherever possible.
 
 ---
 
-# System Testing Principles
+## System Testing Principles
 
 System testing follows additional principles due to its broader scope.
 
-## Test the Assembled Platform
+### Test the Assembled Platform
 
 System tests should exercise a representative FamilyOS assembly.
 
@@ -192,7 +192,7 @@ The purpose is to validate collaboration across the complete platform boundary.
 
 ---
 
-## Minimize Internal Substitution
+### Minimize Internal Substitution
 
 System tests should use real FamilyOS components whenever practical.
 
@@ -202,7 +202,7 @@ External systems may still be replaced with controlled test equivalents.
 
 ---
 
-## Validate Operational Behavior
+### Validate Operational Behavior
 
 System testing should verify more than successful business results.
 
@@ -219,7 +219,7 @@ It may also validate:
 
 ---
 
-# Functional Testing Scope
+## Functional Testing Scope
 
 Functional testing may cover behaviors such as:
 
@@ -240,7 +240,7 @@ The exact scope depends on the feature being validated.
 
 ---
 
-# System Testing Scope
+## System Testing Scope
 
 System tests validate broader scenarios involving the assembled platform.
 
@@ -288,7 +288,7 @@ This validates the platform assembly rather than an isolated interaction.
 
 ---
 
-# Business Workflow Testing
+## Business Workflow Testing
 
 Functional tests should validate meaningful business workflows.
 
@@ -321,7 +321,7 @@ Internal components should only be inspected when necessary to validate an expli
 
 ---
 
-# Capability Functional Testing
+## Capability Functional Testing
 
 Capabilities are primary functional interfaces within FamilyOS.
 
@@ -339,7 +339,7 @@ Capability tests should use the same public interfaces available to legitimate p
 
 ---
 
-# Plugin Functional Testing
+## Plugin Functional Testing
 
 Official and third-party plugins contribute functionality to FamilyOS.
 
@@ -360,7 +360,7 @@ Tests should avoid coupling to private plugin implementation details.
 
 ---
 
-# CLI Functional Testing
+## CLI Functional Testing
 
 The FamilyOS CLI represents an important user-facing interface.
 
@@ -389,7 +389,7 @@ The exact command syntax depends on the implemented CLI contract.
 
 ---
 
-# Persistence Functional Testing
+## Persistence Functional Testing
 
 Functional workflows involving persistence should validate the complete behavior rather than only repository operations.
 
@@ -418,7 +418,7 @@ This provides stronger confidence that persistence integrates correctly with app
 
 ---
 
-# Configuration Functional Testing
+## Configuration Functional Testing
 
 Configuration can significantly change platform behavior.
 
@@ -437,7 +437,7 @@ Tests should use isolated configuration sources rather than relying on developer
 
 ---
 
-# Event Functional Testing
+## Event Functional Testing
 
 Functional tests involving events should validate complete observable behavior.
 
@@ -463,7 +463,7 @@ The test should validate the outcome rather than only checking that an internal 
 
 ---
 
-# Error Scenario Testing
+## Error Scenario Testing
 
 Functional and system tests must validate failure behavior as well as successful behavior.
 
@@ -489,7 +489,7 @@ Errors should remain:
 
 ---
 
-# Startup Testing
+## Startup Testing
 
 System tests must validate platform startup behavior.
 
@@ -509,7 +509,7 @@ Failures during startup must produce clear diagnostics.
 
 ---
 
-# Shutdown Testing
+## Shutdown Testing
 
 Platform shutdown is part of correct system behavior.
 
@@ -527,7 +527,7 @@ Shutdown should remain deterministic and safe even after partial startup failure
 
 ---
 
-# Restart Testing
+## Restart Testing
 
 Where persistent state is involved, system tests may validate restart behavior.
 
@@ -559,7 +559,7 @@ Restart testing helps identify lifecycle and persistence defects that cannot be 
 
 ---
 
-# System Configuration Matrix
+## System Configuration Matrix
 
 FamilyOS may support multiple valid system configurations.
 
@@ -578,7 +578,7 @@ Critical supported configurations should receive explicit validation.
 
 ---
 
-# External Dependencies
+## External Dependencies
 
 System tests should avoid uncontrolled reliance on production external services.
 
@@ -594,7 +594,7 @@ Live service testing should be classified separately and must not destabilize th
 
 ---
 
-# Test Data
+## Test Data
 
 Functional and system tests should use representative but controlled test data.
 
@@ -613,7 +613,7 @@ Synthetic data should be preferred.
 
 ---
 
-# Fixtures and Environment Provisioning
+## Fixtures and Environment Provisioning
 
 Higher-level testing frequently requires more complex fixtures.
 
@@ -635,7 +635,7 @@ Manual environment preparation should not be required for normal automated test 
 
 ---
 
-# Functional Test Isolation
+## Functional Test Isolation
 
 Functional tests must remain independent.
 
@@ -653,7 +653,7 @@ Isolation prevents cascading failures and improves parallel execution.
 
 ---
 
-# System Test Isolation
+## System Test Isolation
 
 System tests may require larger environments but should still preserve isolation.
 
@@ -670,7 +670,7 @@ System test environments should be disposable whenever practical.
 
 ---
 
-# Directory Organization
+## Directory Organization
 
 Functional and system tests should remain clearly separated.
 
@@ -714,7 +714,7 @@ The exact structure may evolve, but classification must remain explicit.
 
 ---
 
-# Naming Conventions
+## Naming Conventions
 
 Functional test names should describe expected observable behavior.
 
@@ -742,7 +742,7 @@ Names should communicate behavior rather than implementation mechanics.
 
 ---
 
-# Test Markers
+## Test Markers
 
 Functional and system tests may use explicit markers.
 
@@ -785,7 +785,7 @@ The exact commands are governed by the project testing configuration.
 
 ---
 
-# Execution Strategy
+## Execution Strategy
 
 Functional tests should generally execute after unit and integration validation.
 
@@ -811,7 +811,7 @@ This ordering provides faster feedback by detecting simpler failures before expe
 
 ---
 
-# Continuous Integration
+## Continuous Integration
 
 Functional and system tests are part of the FamilyOS CI strategy.
 
@@ -828,7 +828,7 @@ Critical functional and system failures should block release promotion.
 
 ---
 
-# Performance Considerations
+## Performance Considerations
 
 Higher-level tests are inherently more expensive.
 
@@ -848,7 +848,7 @@ Optimization should focus on infrastructure reuse where isolation can still be g
 
 ---
 
-# Parallel Execution
+## Parallel Execution
 
 Functional and system tests should support parallel execution where architecture and infrastructure permit it.
 
@@ -864,7 +864,7 @@ Tests that cannot safely execute in parallel should be explicitly identified.
 
 ---
 
-# Failure Diagnostics
+## Failure Diagnostics
 
 Higher-level test failures must provide sufficient context for diagnosis.
 
@@ -887,7 +887,7 @@ Sensitive data and secrets must never be exposed.
 
 ---
 
-# Logging During Tests
+## Logging During Tests
 
 System tests may capture platform logs.
 
@@ -899,45 +899,45 @@ Log assertions are appropriate only when logging behavior itself is part of the 
 
 ---
 
-# Functional Testing Anti-Patterns
+## Functional Testing Anti-Patterns
 
 The following practices should be avoided.
 
-## Testing Private Implementation Details
+### Testing Private Implementation Details
 
 Functional tests should validate public behavior.
 
 ---
 
-## Reproducing Unit Tests
+### Reproducing Unit Tests
 
 Higher-level tests should not duplicate every low-level edge case.
 
 ---
 
-## Excessive Mocking
+### Excessive Mocking
 
 Mocking internal platform components can remove the behavior that functional testing is intended to validate.
 
 ---
 
-## Shared State
+### Shared State
 
 Tests must not depend on state created by other scenarios.
 
 ---
 
-## Uncontrolled External Services
+### Uncontrolled External Services
 
 Network dependencies introduce instability and unpredictability.
 
 ---
 
-# System Testing Anti-Patterns
+## System Testing Anti-Patterns
 
 System testing must also avoid several common problems.
 
-## One Giant System Test
+### One Giant System Test
 
 A single scenario attempting to validate the entire platform becomes difficult to diagnose and maintain.
 
@@ -945,7 +945,7 @@ System behavior should be decomposed into meaningful scenarios.
 
 ---
 
-## Treating System Tests as the Primary Test Layer
+### Treating System Tests as the Primary Test Layer
 
 System tests cannot replace unit and integration testing.
 
@@ -953,25 +953,25 @@ Doing so creates slow feedback and poor failure localization.
 
 ---
 
-## Environment-Specific Assumptions
+### Environment-Specific Assumptions
 
 Tests must not silently depend on a specific developer machine.
 
 ---
 
-## Arbitrary Sleeps
+### Arbitrary Sleeps
 
 Fixed waits should not be used to synchronize asynchronous behavior.
 
 ---
 
-## Production Dependencies
+### Production Dependencies
 
 Normal automated system tests should not require production services or production data.
 
 ---
 
-# Relationship With Acceptance Criteria
+## Relationship With Acceptance Criteria
 
 Functional tests frequently provide executable evidence that acceptance criteria are satisfied.
 
@@ -989,7 +989,7 @@ The mechanism should remain lightweight and maintainable.
 
 ---
 
-# Relationship With Contract Testing
+## Relationship With Contract Testing
 
 Functional testing validates behavior.
 
@@ -1001,7 +1001,7 @@ Contract testing therefore complements functional testing rather than replacing 
 
 ---
 
-# Relationship With Regression Testing
+## Relationship With Regression Testing
 
 Functional and system tests become regression protection when they preserve previously validated behavior.
 
@@ -1013,7 +1013,7 @@ If the defect can be protected through a faster unit or integration test, that l
 
 ---
 
-# Relationship With Release Validation
+## Relationship With Release Validation
 
 System testing is an important component of release confidence.
 
@@ -1032,7 +1032,7 @@ A release candidate should not be promoted when mandatory system scenarios fail.
 
 ---
 
-# Official Plugin Validation
+## Official Plugin Validation
 
 Official FamilyOS plugins require functional validation appropriate to their domain.
 
@@ -1051,7 +1051,7 @@ These tests contribute to official plugin certification.
 
 ---
 
-# Security Considerations
+## Security Considerations
 
 Functional and system tests must respect security requirements.
 
@@ -1067,7 +1067,7 @@ Dedicated test credentials or controlled security contexts should be used when a
 
 ---
 
-# Reliability Requirements
+## Reliability Requirements
 
 Functional and system tests must be treated as production engineering assets.
 
@@ -1086,7 +1086,7 @@ Repeated nondeterministic failures must therefore be investigated rather than ig
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Mandatory functional and system scenarios may participate in FamilyOS quality gates.
 
@@ -1102,7 +1102,7 @@ The exact mandatory test sets are defined by the Quality Framework and release g
 
 ---
 
-# Governance
+## Governance
 
 Functional and system testing practices are governed by the FamilyOS Testing Framework.
 
@@ -1131,7 +1131,7 @@ Relevant governance sources include:
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 Functional and system testing will evolve as FamilyOS grows.
 
@@ -1154,7 +1154,7 @@ Evolution must preserve test determinism, maintainability, architectural clarity
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 A functional and system testing implementation is aligned with this framework when:
 
@@ -1182,7 +1182,7 @@ A functional and system testing implementation is aligned with this framework wh
 
 ---
 
-# Final Principle
+## Final Principle
 
 Functional and system testing provide evidence that FamilyOS delivers correct behavior beyond isolated components and individual integrations.
 

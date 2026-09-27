@@ -1,8 +1,8 @@
 # Build Framework
 
-# 17 Build Automation and CI
+## 17 Build Automation and CI
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS build capabilities are automated and integrated with Continuous Integration environments.
 
@@ -22,7 +22,7 @@ This document defines how build automation, CI execution, environment provisioni
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Build Automation and CI is to establish a consistent automation model for FamilyOS.
 
@@ -46,7 +46,7 @@ The objective is to reduce manual effort while preserving transparency, reproduc
 
 ---
 
-# Automation Philosophy
+## Automation Philosophy
 
 FamilyOS follows the progression:
 
@@ -72,7 +72,7 @@ Automation should only formalize behavior that is already architecturally unders
 
 ---
 
-# Automation As Execution
+## Automation As Execution
 
 Automation is an execution mechanism.
 
@@ -92,7 +92,7 @@ CI must remain an adapter around the Build Framework.
 
 ---
 
-# CI Is Not The Build Architecture
+## CI Is Not The Build Architecture
 
 FamilyOS explicitly rejects the model:
 
@@ -116,7 +116,7 @@ A contributor should be able to understand how FamilyOS builds without reading t
 
 ---
 
-# Automation Objectives
+## Automation Objectives
 
 Build automation should improve:
 
@@ -138,7 +138,7 @@ It must not reduce:
 
 ---
 
-# Automation Principle 1 — Canonical Entry Points
+## Automation Principle 1 — Canonical Entry Points
 
 Automation SHOULD invoke canonical build entry points.
 
@@ -160,7 +160,7 @@ The build semantics should remain aligned.
 
 ---
 
-# Automation Principle 2 — CI Must Start From Controlled State
+## Automation Principle 2 — CI Must Start From Controlled State
 
 CI should execute from an identifiable repository revision.
 
@@ -182,7 +182,7 @@ This creates independent verification of repository state.
 
 ---
 
-# Automation Principle 3 — Environment Provisioning Must Be Explicit
+## Automation Principle 3 — Environment Provisioning Must Be Explicit
 
 CI should not depend on undocumented preinstalled state.
 
@@ -198,7 +198,7 @@ Examples include:
 
 ---
 
-# Automation Principle 4 — Dependencies Must Be Installed From Canonical Definitions
+## Automation Principle 4 — Dependencies Must Be Installed From Canonical Definitions
 
 CI dependency installation must derive from the same authoritative dependency model used by FamilyOS engineering.
 
@@ -221,7 +221,7 @@ Canonical Dependency Definition
 
 ---
 
-# Automation Principle 5 — Validation Must Be Reusable
+## Automation Principle 5 — Validation Must Be Reusable
 
 Validation rules should not be rewritten uniquely inside CI configuration.
 
@@ -241,7 +241,7 @@ Validation semantics should not.
 
 ---
 
-# Automation Principle 6 — Build Outputs Must Be Explicit
+## Automation Principle 6 — Build Outputs Must Be Explicit
 
 CI should know exactly which outputs constitute candidate artifacts.
 
@@ -259,7 +259,7 @@ CI Artifact Collection
 
 ---
 
-# Automation Principle 7 — Evidence Must Be Collected During Automation
+## Automation Principle 7 — Evidence Must Be Collected During Automation
 
 CI provides a strong environment for collecting build evidence.
 
@@ -278,7 +278,7 @@ Evidence should emerge from canonical build behavior where practical.
 
 ---
 
-# Automation Principle 8 — Failure Must Remain Visible
+## Automation Principle 8 — Failure Must Remain Visible
 
 Automation must not hide failure.
 
@@ -296,7 +296,7 @@ unless an explicitly governed exception applies.
 
 ---
 
-# Automation Principle 9 — CI Provider Independence
+## Automation Principle 9 — CI Provider Independence
 
 FamilyOS build architecture should not depend conceptually on a specific CI provider.
 
@@ -306,7 +306,7 @@ This improves portability and long-term maintainability.
 
 ---
 
-# Automation Principle 10 — Automation Permissions Must Be Minimal
+## Automation Principle 10 — Automation Permissions Must Be Minimal
 
 Build automation should receive only the permissions required for its role.
 
@@ -320,7 +320,7 @@ This preserves separation of responsibilities.
 
 ---
 
-# Automation Model
+## Automation Model
 
 The canonical automation model is:
 
@@ -354,7 +354,7 @@ Release workflows may consume this result separately.
 
 ---
 
-# CI Lifecycle
+## CI Lifecycle
 
 A FamilyOS CI build may follow these conceptual phases.
 
@@ -390,7 +390,7 @@ The exact workflow structure may vary.
 
 ---
 
-# CI Initialization
+## CI Initialization
 
 Initialization establishes the automation context.
 
@@ -407,7 +407,7 @@ This context supports traceability.
 
 ---
 
-# Source Checkout
+## Source Checkout
 
 The CI system must obtain a known source state.
 
@@ -415,7 +415,7 @@ Checkout should preserve enough information to identify the revision that produc
 
 ---
 
-# Full Versus Shallow Repository History
+## Full Versus Shallow Repository History
 
 Some build or release workflows may require access to:
 
@@ -429,7 +429,7 @@ Checkout depth should match actual build needs.
 
 ---
 
-# Working Tree State
+## Working Tree State
 
 CI builds should normally begin from a clean checkout.
 
@@ -443,7 +443,7 @@ Clean Working Tree
 
 ---
 
-# Environment Provisioning
+## Environment Provisioning
 
 CI environment provisioning establishes:
 
@@ -456,7 +456,7 @@ Provisioning should remain deterministic enough for the selected build profile.
 
 ---
 
-# Runtime Provisioning
+## Runtime Provisioning
 
 CI should use an explicitly selected supported runtime.
 
@@ -464,7 +464,7 @@ The runtime must not silently follow provider defaults.
 
 ---
 
-# Toolchain Provisioning
+## Toolchain Provisioning
 
 Required tools should derive from project or framework definitions.
 
@@ -472,7 +472,7 @@ CI should avoid depending on undocumented tools bundled with a runner image.
 
 ---
 
-# Dependency Installation
+## Dependency Installation
 
 Dependencies should be installed from canonical declarations.
 
@@ -480,7 +480,7 @@ For stronger build profiles, locking may be enforced.
 
 ---
 
-# Dependency Caching In CI
+## Dependency Caching In CI
 
 CI may cache dependency downloads or prepared environments.
 
@@ -500,7 +500,7 @@ Reconstruct Valid Dependency State
 
 ---
 
-# Cache Validation
+## Cache Validation
 
 Cache keys should include the state that materially determines cached content.
 
@@ -515,7 +515,7 @@ Incomplete keys can cause invalid reuse.
 
 ---
 
-# Source Validation Automation
+## Source Validation Automation
 
 CI may automate validation such as:
 
@@ -528,7 +528,7 @@ These checks should invoke canonical configuration.
 
 ---
 
-# Ruff Integration
+## Ruff Integration
 
 Ruff may participate in automated source validation.
 
@@ -536,7 +536,7 @@ CI should use the same repository configuration used locally.
 
 ---
 
-# MyPy Integration
+## MyPy Integration
 
 MyPy may participate in static type validation.
 
@@ -544,7 +544,7 @@ CI must not maintain an independent type-checking configuration.
 
 ---
 
-# Testing Integration
+## Testing Integration
 
 CI may invoke the Testing Framework to run:
 
@@ -558,7 +558,7 @@ The Build Framework consumes the resulting evidence.
 
 ---
 
-# Pytest Integration
+## Pytest Integration
 
 For current Python FamilyOS components, Pytest may execute automated tests.
 
@@ -566,13 +566,13 @@ CI should invoke canonical test configuration and preserve relevant test results
 
 ---
 
-# Test Failure
+## Test Failure
 
 Required test failure must block build trust for profiles where the test is mandatory.
 
 ---
 
-# Parallel Validation
+## Parallel Validation
 
 Independent validation stages may run in parallel where this reduces execution time.
 
@@ -588,7 +588,7 @@ The final build decision must aggregate all mandatory results.
 
 ---
 
-# Build Execution Automation
+## Build Execution Automation
 
 After prerequisites succeed, CI may invoke canonical Build Execution.
 
@@ -606,7 +606,7 @@ CI should not reproduce package-generation commands independently unless those c
 
 ---
 
-# Build Profile Selection In CI
+## Build Profile Selection In CI
 
 CI must explicitly select its build profile.
 
@@ -622,7 +622,7 @@ Profile selection should not depend on accidental provider context.
 
 ---
 
-# CI Build Identity
+## CI Build Identity
 
 Each automated build should be traceable through a Build ID or equivalent execution identity.
 
@@ -636,7 +636,7 @@ The exact mapping can evolve.
 
 ---
 
-# Artifact Validation Automation
+## Artifact Validation Automation
 
 CI provides an ideal environment for independent artifact validation.
 
@@ -651,7 +651,7 @@ Possible automated checks include:
 
 ---
 
-# Clean Installation Job
+## Clean Installation Job
 
 A stronger CI pipeline may create a fresh environment and install the produced artifact.
 
@@ -669,7 +669,7 @@ This detects packaging defects that source tests may miss.
 
 ---
 
-# Artifact Integrity Automation
+## Artifact Integrity Automation
 
 CI may calculate integrity digests after final candidate artifacts are produced.
 
@@ -677,7 +677,7 @@ These digests can become Build Evidence.
 
 ---
 
-# Artifact Manifest Automation
+## Artifact Manifest Automation
 
 A future CI build may create an artifact manifest describing all generated trusted outputs.
 
@@ -685,7 +685,7 @@ This improves downstream release handoff.
 
 ---
 
-# Build Evidence Automation
+## Build Evidence Automation
 
 CI can collect evidence such as:
 
@@ -706,7 +706,7 @@ Evidence should remain tied to the actual artifacts produced.
 
 ---
 
-# Log Collection
+## Log Collection
 
 CI logs provide operational evidence.
 
@@ -716,7 +716,7 @@ Structured evidence is preferable for machine consumption.
 
 ---
 
-# Test Reports
+## Test Reports
 
 Automated test reports may be retained as Build Evidence when relevant.
 
@@ -724,7 +724,7 @@ Their format is governed by Testing and CI tooling.
 
 ---
 
-# Validation Reports
+## Validation Reports
 
 Build Validation may generate a dedicated report.
 
@@ -732,7 +732,7 @@ CI should retain the report for profiles requiring traceable validation.
 
 ---
 
-# Artifact Upload
+## Artifact Upload
 
 CI may upload candidate or trusted artifacts to temporary automation storage.
 
@@ -740,7 +740,7 @@ This does not constitute official release publication.
 
 ---
 
-# CI Artifact Storage Boundary
+## CI Artifact Storage Boundary
 
 The distinction is:
 
@@ -754,7 +754,7 @@ CI storage is an engineering handoff or diagnostic mechanism.
 
 ---
 
-# Build Once, Promote Later
+## Build Once, Promote Later
 
 FamilyOS should progressively adopt the principle:
 
@@ -772,7 +772,7 @@ This is preferable to rebuilding at each release stage.
 
 ---
 
-# Automation And Release Handoff
+## Automation And Release Handoff
 
 A release workflow should consume explicit trusted Build outputs.
 
@@ -792,7 +792,7 @@ The release workflow should not recreate the Build Framework independently.
 
 ---
 
-# Release Trigger
+## Release Trigger
 
 The trigger for release may involve:
 
@@ -806,7 +806,7 @@ Trigger policy belongs primarily to the Release Framework.
 
 ---
 
-# Automated Release Candidate Builds
+## Automated Release Candidate Builds
 
 A release-candidate automation may apply stricter controls.
 
@@ -822,7 +822,7 @@ Possible requirements include:
 
 ---
 
-# Release Credentials
+## Release Credentials
 
 Release publication credentials should only be exposed to release-specific stages.
 
@@ -830,7 +830,7 @@ They should not be available to ordinary build and test jobs.
 
 ---
 
-# Environment Separation
+## Environment Separation
 
 A strong automation architecture may separate:
 
@@ -847,7 +847,7 @@ This supports least privilege.
 
 ---
 
-# CI Job Architecture
+## CI Job Architecture
 
 CI workflows may use several jobs.
 
@@ -869,7 +869,7 @@ Some stages may run in parallel.
 
 ---
 
-# Monolithic Versus Multi-Job CI
+## Monolithic Versus Multi-Job CI
 
 A single CI job may be sufficient during early maturity.
 
@@ -884,7 +884,7 @@ Infrastructure complexity must remain proportional.
 
 ---
 
-# CI Matrix Builds
+## CI Matrix Builds
 
 Matrix execution may validate multiple supported environments.
 
@@ -900,7 +900,7 @@ A matrix should reflect actual compatibility requirements.
 
 ---
 
-# Canonical Artifact Build
+## Canonical Artifact Build
 
 FamilyOS may test multiple environments while producing official candidate artifacts using one canonical build environment.
 
@@ -908,7 +908,7 @@ This distinction should remain explicit.
 
 ---
 
-# Platform Matrix
+## Platform Matrix
 
 Future builds may validate across:
 
@@ -920,7 +920,7 @@ Matrix complexity should grow only with actual platform support.
 
 ---
 
-# Automated Plugin Builds
+## Automated Plugin Builds
 
 Official plugins may use automation for:
 
@@ -932,7 +932,7 @@ Official plugins may use automation for:
 
 ---
 
-# Plugin Automation Model
+## Plugin Automation Model
 
 ```text
 Plugin Source
@@ -950,7 +950,7 @@ Trusted Plugin Artifact
 
 ---
 
-# Plugin Compliance Automation
+## Plugin Compliance Automation
 
 The Plugin Compliance Framework may expose automated checks.
 
@@ -960,7 +960,7 @@ It must not redefine compliance policy.
 
 ---
 
-# Documentation Automation
+## Documentation Automation
 
 CI may automate:
 
@@ -973,7 +973,7 @@ Documentation output may become part of the build artifact set.
 
 ---
 
-# Documentation Drift Detection
+## Documentation Drift Detection
 
 Automation can detect when generated documentation or indexes are stale relative to authoritative sources.
 
@@ -981,7 +981,7 @@ This may prevent repository drift.
 
 ---
 
-# Build Configuration Automation
+## Build Configuration Automation
 
 CI should consume canonical Build Configuration.
 
@@ -989,7 +989,7 @@ CI-specific variables may provide context but should not become independent conf
 
 ---
 
-# Environment Variable Governance In CI
+## Environment Variable Governance In CI
 
 CI environments often contain many variables.
 
@@ -997,7 +997,7 @@ Canonical build behavior should only consume explicitly defined values.
 
 ---
 
-# Secret Management In CI
+## Secret Management In CI
 
 Secrets must be managed through the CI provider's secure mechanism or an equivalent governed system.
 
@@ -1010,7 +1010,7 @@ Secrets MUST NOT be:
 
 ---
 
-# Secret Scope
+## Secret Scope
 
 Secrets should be scoped to the minimum job or stage requiring them.
 
@@ -1026,7 +1026,7 @@ Release Job
 
 ---
 
-# CI Permissions
+## CI Permissions
 
 Repository and workflow permissions should be minimized.
 
@@ -1034,7 +1034,7 @@ Read-only permissions are preferable for ordinary validation where sufficient.
 
 ---
 
-# Untrusted Contributions
+## Untrusted Contributions
 
 Automation triggered by untrusted contributions requires careful secret and permission handling.
 
@@ -1042,7 +1042,7 @@ Build validation must not expose privileged secrets to untrusted code.
 
 ---
 
-# Pull Request Builds
+## Pull Request Builds
 
 Pull request automation may perform:
 
@@ -1054,13 +1054,13 @@ It should normally avoid privileged release operations.
 
 ---
 
-# Branch Builds
+## Branch Builds
 
 Branch workflows may provide continuous validation of engineering state.
 
 ---
 
-# Main Branch Builds
+## Main Branch Builds
 
 The primary branch may perform stronger integration validation than feature branches where appropriate.
 
@@ -1068,7 +1068,7 @@ The exact branch policy belongs to engineering workflow governance.
 
 ---
 
-# Tag Builds
+## Tag Builds
 
 Tag-triggered builds may participate in release candidate generation.
 
@@ -1076,7 +1076,7 @@ Tags must not automatically imply release approval unless Release Framework gove
 
 ---
 
-# Scheduled Automation
+## Scheduled Automation
 
 Some build validation may run periodically.
 
@@ -1090,7 +1090,7 @@ Scheduled automation should only exist when it provides clear value.
 
 ---
 
-# Reproducibility Automation
+## Reproducibility Automation
 
 Future CI may periodically execute equivalent builds and compare outputs.
 
@@ -1110,7 +1110,7 @@ Differences should be analyzed.
 
 ---
 
-# Clean Build Automation
+## Clean Build Automation
 
 CI should regularly prove that FamilyOS can build from clean state.
 
@@ -1118,7 +1118,7 @@ Fresh runners naturally support this objective.
 
 ---
 
-# Cache-Free Validation
+## Cache-Free Validation
 
 Occasional cache-free builds may help detect hidden dependence on cached state.
 
@@ -1126,7 +1126,7 @@ This need not occur on every build.
 
 ---
 
-# Dependency Update Automation
+## Dependency Update Automation
 
 Automated dependency-update tools may propose changes.
 
@@ -1143,7 +1143,7 @@ Governance decides.
 
 ---
 
-# Toolchain Update Automation
+## Toolchain Update Automation
 
 Similarly, tool updates may be proposed automatically.
 
@@ -1151,7 +1151,7 @@ Adoption must remain controlled.
 
 ---
 
-# Failure Handling In CI
+## Failure Handling In CI
 
 CI failure should be explicit and actionable.
 
@@ -1164,7 +1164,7 @@ A failed build should provide:
 
 ---
 
-# Fail-Fast
+## Fail-Fast
 
 Some workflows may stop on the first mandatory failure.
 
@@ -1172,7 +1172,7 @@ This reduces resource usage.
 
 ---
 
-# Continue-On-Failure
+## Continue-On-Failure
 
 Independent validation may continue to provide a fuller defect picture.
 
@@ -1180,7 +1180,7 @@ This must not turn mandatory failures into successful pipeline status.
 
 ---
 
-# CI Retries
+## CI Retries
 
 Automatic job retries should be restricted to transient infrastructure problems.
 
@@ -1188,7 +1188,7 @@ Retries must not become a response to deterministic test or build failures.
 
 ---
 
-# Flaky Automation
+## Flaky Automation
 
 Repeatedly flaky CI reduces engineering confidence.
 
@@ -1196,7 +1196,7 @@ Flakiness should be treated as quality debt.
 
 ---
 
-# CI Determinism
+## CI Determinism
 
 Equivalent source and context should produce stable CI behavior.
 
@@ -1204,7 +1204,7 @@ Unexplained run-to-run variation should trigger investigation.
 
 ---
 
-# Automation Observability
+## Automation Observability
 
 CI should provide visibility into:
 
@@ -1220,7 +1220,7 @@ The Build Framework should not depend on provider-specific UI as its only source
 
 ---
 
-# Automation Metrics
+## Automation Metrics
 
 Potential automation metrics include:
 
@@ -1236,7 +1236,7 @@ Metrics should support decisions.
 
 ---
 
-# Build Duration Regression
+## Build Duration Regression
 
 Automation can provide a baseline for detecting build performance regressions.
 
@@ -1244,7 +1244,7 @@ Performance thresholds should only become blocking when explicitly governed.
 
 ---
 
-# CI Queue Time
+## CI Queue Time
 
 Queue time is an infrastructure metric rather than Build Framework semantics.
 
@@ -1252,7 +1252,7 @@ It may still influence developer experience.
 
 ---
 
-# Automation Evidence Retention
+## Automation Evidence Retention
 
 CI may retain build evidence for a defined period.
 
@@ -1260,7 +1260,7 @@ Stronger retention may be required for release candidates.
 
 ---
 
-# Evidence Identity
+## Evidence Identity
 
 Evidence should identify:
 
@@ -1272,7 +1272,7 @@ This prevents confusion between outputs from different runs.
 
 ---
 
-# Artifact Retention
+## Artifact Retention
 
 Routine feature-branch artifacts may require short retention.
 
@@ -1282,7 +1282,7 @@ Exact retention duration is an operational or release policy.
 
 ---
 
-# Artifact Promotion Between Jobs
+## Artifact Promotion Between Jobs
 
 If one CI job builds an artifact and another validates it, the same bytes must be transferred.
 
@@ -1290,7 +1290,7 @@ The second job must not silently rebuild.
 
 ---
 
-# Multi-Stage Artifact Integrity
+## Multi-Stage Artifact Integrity
 
 When artifacts move between automation stages:
 
@@ -1308,7 +1308,7 @@ This strengthens continuity.
 
 ---
 
-# Automation Portability
+## Automation Portability
 
 Build automation should make migration between CI providers reasonably possible.
 
@@ -1321,7 +1321,7 @@ Portability improves when:
 
 ---
 
-# Provider-Specific Adapters
+## Provider-Specific Adapters
 
 Provider-specific concepts may include:
 
@@ -1334,7 +1334,7 @@ These belong to integration adapters.
 
 ---
 
-# Automation As Code
+## Automation As Code
 
 CI configuration should be version controlled.
 
@@ -1342,7 +1342,7 @@ Automation changes should therefore receive review like other engineering change
 
 ---
 
-# CI Configuration Review
+## CI Configuration Review
 
 Review should consider:
 
@@ -1355,7 +1355,7 @@ Review should consider:
 
 ---
 
-# Automation Governance
+## Automation Governance
 
 Significant CI changes may require architectural review if they alter canonical build behavior.
 
@@ -1363,7 +1363,7 @@ Changing provider-specific syntax does not necessarily require architectural gov
 
 ---
 
-# CI Workflow Ownership
+## CI Workflow Ownership
 
 Automation workflows should have identifiable ownership.
 
@@ -1371,7 +1371,7 @@ Unowned CI configuration tends to accumulate fragile logic.
 
 ---
 
-# CI Technical Debt
+## CI Technical Debt
 
 Automation debt includes:
 
@@ -1387,7 +1387,7 @@ This debt should be managed.
 
 ---
 
-# Automation Security
+## Automation Security
 
 CI automation is a high-value software supply-chain target.
 
@@ -1402,7 +1402,7 @@ Security must therefore consider:
 
 ---
 
-# Third-Party CI Components
+## Third-Party CI Components
 
 External workflow components should be selected and governed carefully.
 
@@ -1410,7 +1410,7 @@ Critical automation must not blindly execute untrusted remote code.
 
 ---
 
-# Pinned Automation Dependencies
+## Pinned Automation Dependencies
 
 Where supported and justified, CI dependencies may be pinned to stable versions or immutable identifiers.
 
@@ -1418,7 +1418,7 @@ The exact strategy should align with Security Architecture.
 
 ---
 
-# Build Isolation In CI
+## Build Isolation In CI
 
 CI builds should use sufficient isolation to prevent cross-run contamination.
 
@@ -1426,7 +1426,7 @@ Ephemeral runners provide a strong default.
 
 ---
 
-# Self-Hosted Runners
+## Self-Hosted Runners
 
 If FamilyOS later uses self-hosted runners, additional controls may be required for:
 
@@ -1437,7 +1437,7 @@ If FamilyOS later uses self-hosted runners, additional controls may be required 
 
 ---
 
-# Remote Build Services
+## Remote Build Services
 
 Future FamilyOS maturity may introduce remote build execution.
 
@@ -1447,7 +1447,7 @@ They should not create a separate architecture.
 
 ---
 
-# Automation Quality Gates
+## Automation Quality Gates
 
 CI may enforce build-related quality gates.
 
@@ -1467,19 +1467,19 @@ The Quality Framework owns gate semantics.
 
 ---
 
-# Gate Failure
+## Gate Failure
 
 A blocking quality gate must fail the appropriate automation path.
 
 ---
 
-# Compliance Gates
+## Compliance Gates
 
 Plugin builds may require compliance gates before artifact trust.
 
 ---
 
-# Security Gates
+## Security Gates
 
 Release candidate builds may eventually require security gates.
 
@@ -1487,13 +1487,13 @@ These should consume governed security evidence.
 
 ---
 
-# Build Automation Profiles
+## Build Automation Profiles
 
 Automation profiles may correspond to build purposes.
 
 ---
 
-# Pull Request Profile
+## Pull Request Profile
 
 Possible focus:
 
@@ -1503,7 +1503,7 @@ Possible focus:
 
 ---
 
-# Main Integration Profile
+## Main Integration Profile
 
 Possible focus:
 
@@ -1514,7 +1514,7 @@ Possible focus:
 
 ---
 
-# Release Candidate Profile
+## Release Candidate Profile
 
 Possible focus:
 
@@ -1527,7 +1527,7 @@ Possible focus:
 
 ---
 
-# Automation And Local Developer Experience
+## Automation And Local Developer Experience
 
 CI should reinforce local workflows.
 
@@ -1545,13 +1545,13 @@ Local Reproduction
 
 ---
 
-# CI-Only Failure
+## CI-Only Failure
 
 If a failure cannot be reproduced locally because CI uses hidden semantics, automation architecture should be reviewed.
 
 ---
 
-# Automation Documentation
+## Automation Documentation
 
 Important automation behavior should be documented.
 
@@ -1565,7 +1565,7 @@ Documentation should explain:
 
 ---
 
-# Automation Change Lifecycle
+## Automation Change Lifecycle
 
 Automation changes should follow:
 
@@ -1585,61 +1585,61 @@ Document
 
 ---
 
-# Automation Anti-Pattern — Build Logic Only In CI YAML
+## Automation Anti-Pattern — Build Logic Only In CI YAML
 
 Critical build behavior must live in canonical build implementation or configuration.
 
 ---
 
-# Automation Anti-Pattern — Hidden Dependency Installation
+## Automation Anti-Pattern — Hidden Dependency Installation
 
 CI must not install packages that canonical dependency definitions do not require.
 
 ---
 
-# Automation Anti-Pattern — Provider Default Runtime
+## Automation Anti-Pattern — Provider Default Runtime
 
 Canonical builds must not silently depend on whichever runtime version a CI provider currently ships.
 
 ---
 
-# Automation Anti-Pattern — Rebuild During Release
+## Automation Anti-Pattern — Rebuild During Release
 
 A release pipeline should prefer promoting the validated CI artifact rather than rebuilding different bytes.
 
 ---
 
-# Automation Anti-Pattern — Excessive Secrets
+## Automation Anti-Pattern — Excessive Secrets
 
 Ordinary build jobs must not receive release or production credentials.
 
 ---
 
-# Automation Anti-Pattern — Always Retry
+## Automation Anti-Pattern — Always Retry
 
 Deterministic failures should fail.
 
 ---
 
-# Automation Anti-Pattern — Permanent Continue-On-Error
+## Automation Anti-Pattern — Permanent Continue-On-Error
 
 Mandatory validation that permanently uses continue-on-error is not truly mandatory.
 
 ---
 
-# Automation Anti-Pattern — Cache As Required State
+## Automation Anti-Pattern — Cache As Required State
 
 Removing the cache must not make a valid build impossible.
 
 ---
 
-# Automation Anti-Pattern — CI And Local Drift
+## Automation Anti-Pattern — CI And Local Drift
 
 CI must not gradually become a separate engineering environment with incompatible commands and configuration.
 
 ---
 
-# Automation Anti-Pattern — Workflow Duplication
+## Automation Anti-Pattern — Workflow Duplication
 
 Multiple workflows should not independently duplicate the same build procedure.
 
@@ -1647,7 +1647,7 @@ Shared canonical commands should be reused.
 
 ---
 
-# Automation Maturity Model
+## Automation Maturity Model
 
 FamilyOS Build Automation may evolve through:
 
@@ -1695,7 +1695,7 @@ Each stage should deliver clear engineering value.
 
 ---
 
-# Automation Success Criteria
+## Automation Success Criteria
 
 Build Automation and CI are successful when FamilyOS can answer:
 
@@ -1718,53 +1718,53 @@ Build Automation and CI are successful when FamilyOS can answer:
 
 ---
 
-# Automation Invariants
+## Automation Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 CI must invoke canonical FamilyOS build semantics.
 
-## Invariant 2
+### Invariant 2
 
 CI must operate from identifiable source state.
 
-## Invariant 3
+### Invariant 3
 
 Required runtime and tooling must be explicitly provisioned or validated.
 
-## Invariant 4
+### Invariant 4
 
 Dependencies must derive from canonical project definitions.
 
-## Invariant 5
+### Invariant 5
 
 Mandatory validation failure must fail the appropriate automation path.
 
-## Invariant 6
+### Invariant 6
 
 Candidate artifacts must be explicitly collected.
 
-## Invariant 7
+### Invariant 7
 
 Release publication authority must remain separated from ordinary build jobs.
 
-## Invariant 8
+### Invariant 8
 
 CI caches must remain optional optimizations.
 
-## Invariant 9
+### Invariant 9
 
 The artifact promoted downstream must match the artifact validated upstream.
 
-## Invariant 10
+### Invariant 10
 
 CI provider-specific implementation must not redefine Build Framework architecture.
 
 ---
 
-# Canonical CI Flow
+## Canonical CI Flow
 
 The FamilyOS CI Build Framework flow can be summarized as:
 
@@ -1800,7 +1800,7 @@ This flow turns CI into an independent execution and assurance environment for t
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Automation and CI model is founded on the following rule:
 

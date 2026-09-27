@@ -1,8 +1,8 @@
 # Release Framework
 
-# 12 Release Validation
+## 12 Release Validation
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines Release Validation as the formal qualification of the exact Release Candidate intended for approval and publication.
 
@@ -32,7 +32,7 @@ Release Validation is one of the most important control boundaries in the Family
 
 ---
 
-# Purpose
+## Purpose
 
 The Release Validation model establishes:
 
@@ -59,7 +59,7 @@ The objective is to ensure that the exact candidate considered for release is de
 
 ---
 
-# Validation Principle
+## Validation Principle
 
 The central principle is:
 
@@ -93,7 +93,7 @@ publish candidate A
 
 ---
 
-# Release Readiness vs Release Validation
+## Release Readiness vs Release Validation
 
 Release Readiness and Release Validation perform different roles.
 
@@ -123,7 +123,7 @@ Readiness cannot replace final candidate validation.
 
 ---
 
-# Validation Target
+## Validation Target
 
 Every validation execution MUST identify the candidate being validated.
 
@@ -142,7 +142,7 @@ Without a stable target, validation evidence becomes ambiguous.
 
 ---
 
-# Validation Profile
+## Validation Profile
 
 Validation requirements depend on release type, channel, scope, and risk.
 
@@ -162,7 +162,7 @@ A profile defines which validation domains are mandatory.
 
 ---
 
-# Validation Domains
+## Validation Domains
 
 The canonical validation domains are:
 
@@ -193,7 +193,7 @@ Applicable requirements must be explicit.
 
 ---
 
-# Validation Outcome
+## Validation Outcome
 
 Release Validation must produce an explicit result.
 
@@ -210,7 +210,7 @@ A candidate may transition to `VALIDATED` only when mandatory requirements are s
 
 ---
 
-# PASS
+## PASS
 
 `PASS` means:
 
@@ -224,7 +224,7 @@ The candidate may progress toward release approval.
 
 ---
 
-# FAIL
+## FAIL
 
 `FAIL` means one or more validation requirements failed in a way that invalidates the candidate.
 
@@ -244,7 +244,7 @@ new candidate
 
 ---
 
-# BLOCKED
+## BLOCKED
 
 `BLOCKED` means validation cannot complete because a prerequisite or external condition is unresolved.
 
@@ -260,7 +260,7 @@ Blocked validation is not equivalent to passed validation.
 
 ---
 
-# EXCEPTION_REQUIRED
+## EXCEPTION_REQUIRED
 
 `EXCEPTION_REQUIRED` means a requirement is not satisfied but applicable governance permits a controlled exception.
 
@@ -272,7 +272,7 @@ validation != PASS
 
 ---
 
-# Candidate Identity Validation
+## Candidate Identity Validation
 
 The first responsibility of Release Validation is confirming that the candidate identity is unambiguous.
 
@@ -299,7 +299,7 @@ CANDIDATE IDENTITY   PASS
 
 ---
 
-# Candidate Stability Validation
+## Candidate Stability Validation
 
 The validator should determine whether the candidate materially changed since qualification began.
 
@@ -315,7 +315,7 @@ A material difference invalidates relevant validation evidence.
 
 ---
 
-# Source Validation
+## Source Validation
 
 Source Validation confirms that the candidate originates from the expected controlled source state.
 
@@ -341,7 +341,7 @@ must remain traceable.
 
 ---
 
-# Repository State Validation
+## Repository State Validation
 
 Repository validation may verify:
 
@@ -358,7 +358,7 @@ The exact rules depend on lifecycle stage.
 
 ---
 
-# Repository Validation Example
+## Repository Validation Example
 
 ```text
 Branch                PASS
@@ -373,7 +373,7 @@ REPOSITORY VALIDATION PASS
 
 ---
 
-# Build Validation
+## Build Validation
 
 Where release artifacts require a build, validation must confirm that the applicable Build Framework requirements have been satisfied.
 
@@ -389,7 +389,7 @@ The Release Framework consumes Build Framework evidence rather than redefining b
 
 ---
 
-# Artifact Validation
+## Artifact Validation
 
 Artifact Validation confirms that the candidate contains the expected release artifacts.
 
@@ -406,7 +406,7 @@ Checks may include:
 
 ---
 
-# Artifact Validation Example
+## Artifact Validation Example
 
 ```text
 Expected Artifacts       4
@@ -421,7 +421,7 @@ ARTIFACT VALIDATION      PASS
 
 ---
 
-# Artifact Integrity Validation
+## Artifact Integrity Validation
 
 Where integrity records exist, validation should confirm:
 
@@ -437,7 +437,7 @@ An unexplained checksum change indicates that the artifact identity changed.
 
 ---
 
-# Provenance Validation
+## Provenance Validation
 
 Provenance Validation verifies that release artifacts can be traced to their expected origin.
 
@@ -466,7 +466,7 @@ Any broken link requires investigation.
 
 ---
 
-# Provenance Validation Example
+## Provenance Validation Example
 
 ```text
 Source Revision        VERIFIED
@@ -480,7 +480,7 @@ PROVENANCE             PASS
 
 ---
 
-# Version Validation
+## Version Validation
 
 Version Validation verifies compliance with `06-Versioning-Strategy.md`.
 
@@ -509,7 +509,7 @@ VERSION VALIDATION    PASS
 
 ---
 
-# Version Consistency
+## Version Consistency
 
 The final version should remain consistent across applicable locations.
 
@@ -528,7 +528,7 @@ Conflicting version information must block final qualification until resolved.
 
 ---
 
-# Testing Validation
+## Testing Validation
 
 Release Validation should verify that mandatory testing evidence applies to the candidate.
 
@@ -547,7 +547,7 @@ The Testing Framework remains authoritative for test methodology.
 
 ---
 
-# Test Evidence Validation
+## Test Evidence Validation
 
 The Release Framework must confirm:
 
@@ -562,7 +562,7 @@ A stale test run must not automatically satisfy final validation.
 
 ---
 
-# Testing Example
+## Testing Example
 
 ```text
 Unit Tests             PASS
@@ -577,7 +577,7 @@ TEST VALIDATION        PASS
 
 ---
 
-# Static Analysis Validation
+## Static Analysis Validation
 
 Applicable releases may require static checks such as:
 
@@ -591,7 +591,7 @@ These should be treated as quality or security evidence according to framework o
 
 ---
 
-# Quality Validation
+## Quality Validation
 
 Quality Validation confirms applicable EPIC-QLT-001 requirements.
 
@@ -617,7 +617,7 @@ QUALITY VALIDATION   PASS
 
 ---
 
-# Defect Validation
+## Defect Validation
 
 Open defects must be classified before release approval.
 
@@ -636,7 +636,7 @@ Accepted defects must be documented where applicable.
 
 ---
 
-# Security Validation
+## Security Validation
 
 Security Validation confirms that applicable release security requirements are satisfied.
 
@@ -655,7 +655,7 @@ High-risk releases may require stronger security evidence.
 
 ---
 
-# Security Validation Example
+## Security Validation Example
 
 ```text
 Critical Findings     0
@@ -669,7 +669,7 @@ SECURITY VALIDATION   PASS
 
 ---
 
-# Security Exception
+## Security Exception
 
 Security exceptions require explicit governance.
 
@@ -679,7 +679,7 @@ Release urgency alone is not sufficient justification for bypassing essential se
 
 ---
 
-# Compliance Validation
+## Compliance Validation
 
 Release Compliance Validation confirms that the candidate satisfies applicable compliance requirements.
 
@@ -697,7 +697,7 @@ For official plugins, this may include:
 
 ---
 
-# Compliance Example
+## Compliance Example
 
 ```text
 Compliance Profile   official-plugin
@@ -711,7 +711,7 @@ COMPLIANCE            PASS
 
 ---
 
-# Documentation Validation
+## Documentation Validation
 
 Documentation Validation confirms that required release documentation is complete and consistent with the candidate.
 
@@ -728,7 +728,7 @@ Checks may include:
 
 ---
 
-# Documentation Consistency
+## Documentation Consistency
 
 Release documentation must describe the actual candidate.
 
@@ -746,7 +746,7 @@ The documentation must be corrected before release completion.
 
 ---
 
-# Framework Validation
+## Framework Validation
 
 For FamilyOS framework releases, validation should include:
 
@@ -763,7 +763,7 @@ For FamilyOS framework releases, validation should include:
 
 ---
 
-# Compatibility Validation
+## Compatibility Validation
 
 Compatibility Validation evaluates the candidate against applicable compatibility contracts.
 
@@ -781,7 +781,7 @@ Known compatibility breaks must be consistent with versioning and documentation.
 
 ---
 
-# Compatibility Matrix
+## Compatibility Matrix
 
 A future release may use a compatibility matrix.
 
@@ -800,7 +800,7 @@ The exact format is implementation-specific.
 
 ---
 
-# Installation Validation
+## Installation Validation
 
 Where applicable, a Release Candidate should be tested through the same installation path intended for consumers.
 
@@ -816,7 +816,7 @@ An artifact that builds successfully but cannot be installed is not a valid rele
 
 ---
 
-# Clean Environment Validation
+## Clean Environment Validation
 
 Installation should preferably be tested in a controlled clean environment.
 
@@ -829,7 +829,7 @@ This reduces hidden dependency on:
 
 ---
 
-# Upgrade Validation
+## Upgrade Validation
 
 For releases that replace a supported earlier version, upgrade validation may be required.
 
@@ -853,7 +853,7 @@ Checks may include:
 
 ---
 
-# Migration Validation
+## Migration Validation
 
 If a release includes migration procedures, those procedures must be tested where risk justifies it.
 
@@ -869,7 +869,7 @@ A migration guide should reflect validated procedures.
 
 ---
 
-# Rollback Validation
+## Rollback Validation
 
 Where rollback is part of the release strategy, validation should determine whether rollback actually works.
 
@@ -891,7 +891,7 @@ Rollback must not be assumed safe without evidence when operational risk is sign
 
 ---
 
-# Forward-Recovery Validation
+## Forward-Recovery Validation
 
 Where rollback is impossible, release validation should verify that the defined forward-recovery approach is realistic.
 
@@ -904,7 +904,7 @@ This may include:
 
 ---
 
-# Publication Preparation Validation
+## Publication Preparation Validation
 
 Before release approval, final validation should confirm that publication can proceed safely.
 
@@ -923,7 +923,7 @@ No external side effect is required simply to validate preparation.
 
 ---
 
-# Dry-Run Validation
+## Dry-Run Validation
 
 Where practical, FamilyOS tooling SHOULD support a dry-run or equivalent validation mode.
 
@@ -945,7 +945,7 @@ This helps discover failures before high-impact operations.
 
 ---
 
-# Validation Ordering
+## Validation Ordering
 
 Validation should generally perform lower-risk and lower-cost checks before high-impact operations.
 
@@ -983,7 +983,7 @@ The exact order may vary.
 
 ---
 
-# Validation Dependency Graph
+## Validation Dependency Graph
 
 Validation results may depend on one another.
 
@@ -1005,7 +1005,7 @@ Future automation should model these dependencies explicitly.
 
 ---
 
-# Validation Freshness
+## Validation Freshness
 
 Validation evidence must be sufficiently fresh relative to the candidate.
 
@@ -1021,7 +1021,7 @@ Examples include:
 
 ---
 
-# Validation Invalidation
+## Validation Invalidation
 
 A material candidate change after successful validation MUST invalidate affected validation results.
 
@@ -1041,7 +1041,7 @@ or a new candidate identity may be required.
 
 ---
 
-# Partial Revalidation
+## Partial Revalidation
 
 Some non-source changes may permit partial revalidation.
 
@@ -1060,7 +1060,7 @@ Partial revalidation must be justified by evidence dependencies.
 
 ---
 
-# Full Revalidation
+## Full Revalidation
 
 Full revalidation should normally occur after:
 
@@ -1073,7 +1073,7 @@ Full revalidation should normally occur after:
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Validation should produce a durable evidence summary.
 
@@ -1094,7 +1094,7 @@ ReleaseValidation
 
 ---
 
-# Validation Report
+## Validation Report
 
 A future FamilyOS validation report may look like:
 
@@ -1130,7 +1130,7 @@ RESULT               VALIDATED
 
 ---
 
-# Failed Validation Report
+## Failed Validation Report
 
 Example:
 
@@ -1156,7 +1156,7 @@ Candidate promotion prohibited.
 
 ---
 
-# Validation Findings
+## Validation Findings
 
 A validation finding should contain:
 
@@ -1173,7 +1173,7 @@ This supports traceability and remediation.
 
 ---
 
-# Finding Severity
+## Finding Severity
 
 Possible severity categories may include:
 
@@ -1190,7 +1190,7 @@ Severity semantics must remain explicit.
 
 ---
 
-# Blocking Findings
+## Blocking Findings
 
 Any finding designated as blocking prevents transition to `VALIDATED`.
 
@@ -1202,7 +1202,7 @@ Blocking findings must be:
 
 ---
 
-# Warning Findings
+## Warning Findings
 
 Warnings may permit release progression.
 
@@ -1212,7 +1212,7 @@ Warnings must not become a mechanism for downgrading true blockers.
 
 ---
 
-# Validation Exceptions
+## Validation Exceptions
 
 An exception must identify:
 
@@ -1230,7 +1230,7 @@ It does not permanently redefine policy.
 
 ---
 
-# Exception Invalidation
+## Exception Invalidation
 
 An exception may become invalid if:
 
@@ -1244,7 +1244,7 @@ Exceptions must be reevaluated when their assumptions no longer hold.
 
 ---
 
-# Validation Authority
+## Validation Authority
 
 Release Validation may be performed by:
 
@@ -1261,7 +1261,7 @@ The result must remain explicit and trustworthy.
 
 ---
 
-# Automated Validation
+## Automated Validation
 
 Deterministic checks should be automated where practical.
 
@@ -1278,7 +1278,7 @@ Examples include:
 
 ---
 
-# Human Validation
+## Human Validation
 
 Human review remains appropriate for:
 
@@ -1293,7 +1293,7 @@ Automation should not replace necessary engineering judgment.
 
 ---
 
-# Validation Independence
+## Validation Independence
 
 Higher-risk releases may benefit from some separation between:
 
@@ -1311,7 +1311,7 @@ The degree of independence depends on governance and release risk.
 
 ---
 
-# Validation Reproducibility
+## Validation Reproducibility
 
 A validation process should be repeatable enough that equivalent candidate inputs produce equivalent decisions where objective rules apply.
 
@@ -1319,7 +1319,7 @@ Differences in validation outcome should be explainable.
 
 ---
 
-# Local Validation
+## Local Validation
 
 Local validation may be valuable for early release preparation.
 
@@ -1336,7 +1336,7 @@ Local success may not satisfy every authoritative release profile.
 
 ---
 
-# CI Validation
+## CI Validation
 
 CI/CD may provide authoritative repeatable validation.
 
@@ -1352,7 +1352,7 @@ CI is an implementation mechanism, not the source of release policy.
 
 ---
 
-# Validation Environment
+## Validation Environment
 
 For significant releases, the validation environment should be controlled.
 
@@ -1369,7 +1369,7 @@ Hidden environment dependencies reduce confidence.
 
 ---
 
-# Multi-Environment Validation
+## Multi-Environment Validation
 
 Some platform releases may require validation across multiple environments.
 
@@ -1387,7 +1387,7 @@ The applicable support matrix determines required coverage.
 
 ---
 
-# Release Validation and Build Once
+## Release Validation and Build Once
 
 The preferred high-integrity model is:
 
@@ -1407,7 +1407,7 @@ This minimizes release drift.
 
 ---
 
-# Validation and Publication
+## Validation and Publication
 
 Validation MUST complete before protected publication operations unless an explicit release profile defines a controlled alternative.
 
@@ -1415,7 +1415,7 @@ Final publication should not be used as the mechanism for discovering basic rele
 
 ---
 
-# Post-Publication Validation
+## Post-Publication Validation
 
 Some validation can only occur after publication.
 
@@ -1430,7 +1430,7 @@ These checks are post-publication verification and complement pre-publication Re
 
 ---
 
-# Validation and Approval
+## Validation and Approval
 
 `VALIDATED` is not the same as `APPROVED`.
 
@@ -1452,7 +1452,7 @@ This distinction must remain explicit.
 
 ---
 
-# Validation and Risk
+## Validation and Risk
 
 A technically valid candidate may still carry unacceptable release risk.
 
@@ -1470,7 +1470,7 @@ Release Risk Management remains a separate governance input.
 
 ---
 
-# Validation and Evidence Retention
+## Validation and Evidence Retention
 
 Final release validation evidence should be retained long enough to support:
 
@@ -1483,7 +1483,7 @@ Final release validation evidence should be retained long enough to support:
 
 ---
 
-# Framework Release Validation
+## Framework Release Validation
 
 For a FamilyOS framework release, final validation should normally include:
 
@@ -1508,7 +1508,7 @@ tag availability
 
 ---
 
-# EPIC-REL-001 Self-Validation
+## EPIC-REL-001 Self-Validation
 
 Before EPIC-REL-001 is closed, its own release validation should verify:
 
@@ -1530,7 +1530,7 @@ The actual evidence must be collected at closure time.
 
 ---
 
-# Plugin Release Validation
+## Plugin Release Validation
 
 A plugin release may require:
 
@@ -1548,7 +1548,7 @@ documentation            PASS
 
 ---
 
-# Platform Release Validation
+## Platform Release Validation
 
 A platform release may require the broadest validation profile:
 
@@ -1572,7 +1572,7 @@ recovery
 
 ---
 
-# Security Release Validation
+## Security Release Validation
 
 A security release may add:
 
@@ -1588,7 +1588,7 @@ Accelerated release timing must not remove essential security qualification.
 
 ---
 
-# Emergency Release Validation
+## Emergency Release Validation
 
 An emergency release may use focused validation.
 
@@ -1610,7 +1610,7 @@ The reduced scope must be explicitly governed.
 
 ---
 
-# Validation Metrics
+## Validation Metrics
 
 FamilyOS may later track:
 
@@ -1626,7 +1626,7 @@ Metrics should improve validation quality rather than incentivize superficial su
 
 ---
 
-# Validation Maturity
+## Validation Maturity
 
 FamilyOS release validation may evolve through:
 
@@ -1658,87 +1658,87 @@ automated release qualification
 
 ---
 
-# Validation Invariants
+## Validation Invariants
 
 The following invariants apply.
 
-## RV1 — Release Validation targets an explicit candidate.
+### RV1 — Release Validation targets an explicit candidate.
 
-## RV2 — Validation evidence must correspond to the candidate being qualified.
+### RV2 — Validation evidence must correspond to the candidate being qualified.
 
-## RV3 — Material candidate changes invalidate affected validation.
+### RV3 — Material candidate changes invalidate affected validation.
 
-## RV4 — Blocking findings prevent validation success.
+### RV4 — Blocking findings prevent validation success.
 
-## RV5 — Exceptions require explicit governance.
+### RV5 — Exceptions require explicit governance.
 
-## RV6 — Artifact integrity must be validated where applicable.
+### RV6 — Artifact integrity must be validated where applicable.
 
-## RV7 — Version consistency must be validated.
+### RV7 — Version consistency must be validated.
 
-## RV8 — Required testing evidence must be verified.
+### RV8 — Required testing evidence must be verified.
 
-## RV9 — Required quality, security, compliance, and documentation evidence must be verified.
+### RV9 — Required quality, security, compliance, and documentation evidence must be verified.
 
-## RV10 — Validation does not itself grant release approval.
+### RV10 — Validation does not itself grant release approval.
 
-## RV11 — Validation results must be explicit and auditable.
+### RV11 — Validation results must be explicit and auditable.
 
-## RV12 — Published content must not materially differ from the validated candidate without renewed qualification.
+### RV12 — Published content must not materially differ from the validated candidate without renewed qualification.
 
 ---
 
-# Validation Anti-Patterns
+## Validation Anti-Patterns
 
-## Validate Branch Tip
+### Validate Branch Tip
 
 Validating a mutable branch rather than an identifiable candidate.
 
 ---
 
-## Stale Test Approval
+### Stale Test Approval
 
 Using old test results after candidate source changed.
 
 ---
 
-## Build-Only Validation
+### Build-Only Validation
 
 Treating successful package creation as sufficient release qualification.
 
 ---
 
-## Checklist Without Evidence
+### Checklist Without Evidence
 
 Marking validation items complete without supporting results.
 
 ---
 
-## Rebuild After Pass
+### Rebuild After Pass
 
 Publishing newly rebuilt artifacts after candidate validation without verification.
 
 ---
 
-## Validation Equals Approval
+### Validation Equals Approval
 
 Automatically assuming that technically valid means authorized for publication.
 
 ---
 
-## Exception by Silence
+### Exception by Silence
 
 Ignoring failed validation requirements because they appear low risk.
 
 ---
 
-## Post-Publication Discovery
+### Post-Publication Discovery
 
 Using production publication as the primary method for finding basic packaging or compatibility failures.
 
 ---
 
-# Minimum Validation Model
+## Minimum Validation Model
 
 At minimum, an official FamilyOS release should validate:
 
@@ -1758,7 +1758,7 @@ before progressing to final approval.
 
 ---
 
-# Target Validation Experience
+## Target Validation Experience
 
 At higher maturity, the release system should provide a command or equivalent capability that produces:
 
@@ -1797,7 +1797,7 @@ The simplicity of the result should be supported by detailed evidence underneath
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 `10-Release-Candidates.md` defines the exact object being validated.
 
@@ -1805,43 +1805,43 @@ This document defines how that object is qualified.
 
 ---
 
-# Relationship With Artifacts and Provenance
+## Relationship With Artifacts and Provenance
 
 `11-Artifacts-and-Provenance.md` provides the artifact identity and traceability model used during validation.
 
 ---
 
-# Relationship With Release Automation
+## Relationship With Release Automation
 
 `13-Release-Automation.md` defines how deterministic validation steps may become repeatable automated operations.
 
 ---
 
-# Relationship With CI/CD Integration
+## Relationship With CI/CD Integration
 
 `14-CI-CD-Integration.md` defines how authoritative validation can be executed and preserved within pipeline environments.
 
 ---
 
-# Relationship With Governance
+## Relationship With Governance
 
 `21-Release-Governance.md` defines the authority required to accept findings, approve exceptions, and authorize progression after validation.
 
 ---
 
-# Relationship With Release Compliance
+## Relationship With Release Compliance
 
 `22-Release-Compliance.md` defines release-specific conformance evaluation and how compliance findings participate in final qualification.
 
 ---
 
-# Relationship With Release Risk Management
+## Relationship With Release Risk Management
 
 `24-Release-Risk-Management.md` defines how remaining risk is evaluated after technical validation.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Validation model establishes the final technical and policy qualification boundary before release approval.
 

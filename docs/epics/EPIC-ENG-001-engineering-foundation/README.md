@@ -10,7 +10,7 @@ The Engineering Foundation serves as the reference framework for all future engi
 
 ---
 
-# Scope
+## Scope
 
 This EPIC defines the engineering philosophy of FamilyOS.
 
@@ -38,7 +38,7 @@ The objective is to establish a stable engineering baseline that can support the
 
 ---
 
-# Document Organization
+## Document Organization
 
 The Engineering Foundation is organized as a collection of focused engineering documents.
 
@@ -82,7 +82,7 @@ Supporting project metadata is provided through:
 
 ---
 
-# Relationship With Other Engineering Frameworks
+## Relationship With Other Engineering Frameworks
 
 The Engineering Foundation is the parent framework for the remaining engineering domains.
 
@@ -101,7 +101,7 @@ Future engineering frameworks inherit the concepts defined by this EPIC while in
 
 ---
 
-# Audience
+## Audience
 
 This documentation is intended for:
 
@@ -117,7 +117,7 @@ It serves both as an engineering reference and as onboarding documentation for n
 
 ---
 
-# Governance
+## Governance
 
 The Engineering Foundation is governed by the FamilyOS Engineering Constitution and the official documentation standards.
 
@@ -127,7 +127,7 @@ Every significant modification should remain consistent with the architectural v
 
 ---
 
-# Maintenance
+## Maintenance
 
 The Engineering Foundation is intended to evolve incrementally.
 
@@ -141,7 +141,7 @@ Changes should:
 
 ---
 
-# References
+## References
 
 This EPIC should be read together with:
 

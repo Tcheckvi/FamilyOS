@@ -18,7 +18,7 @@ The revision history distinguishes between:
 
 ---
 
-# Current EPIC State
+## Current EPIC State
 
 | Field                        | Value                         |
 | ---------------------------- | ----------------------------- |
@@ -39,11 +39,11 @@ The revision history distinguishes between:
 
 ---
 
-# Revision Principles
+## Revision Principles
 
 The Quality Framework revision history follows several principles.
 
-## Historical Integrity
+### Historical Integrity
 
 Published repository states SHALL remain historically identifiable.
 
@@ -51,7 +51,7 @@ A historical publication tag SHALL NOT be silently moved to a later commit merel
 
 ---
 
-## Explicit Evolution
+### Explicit Evolution
 
 Material framework changes should be recorded explicitly.
 
@@ -71,7 +71,7 @@ should be traceable to an identifiable framework revision.
 
 ---
 
-## Evidence-Based Validation
+### Evidence-Based Validation
 
 Validation state SHALL reflect actual evidence.
 
@@ -81,7 +81,7 @@ Only actual execution, review, or other accepted evidence may convert a pending 
 
 ---
 
-## Structural Consistency
+### Structural Consistency
 
 The canonical documentation inventory SHALL remain synchronized across:
 
@@ -95,7 +95,7 @@ The canonical documentation inventory SHALL remain synchronized across:
 
 ---
 
-# Versioning Model
+## Versioning Model
 
 The Quality Framework uses semantic versioning principles for framework evolution.
 
@@ -117,7 +117,7 @@ Version impact remains subject to FamilyOS release governance.
 
 ---
 
-# Framework Version vs Repository Tag
+## Framework Version vs Repository Tag
 
 The Quality Framework version and repository publication tag serve different purposes.
 
@@ -137,7 +137,7 @@ These values SHALL NOT be assumed to use the same numbering scheme.
 
 ---
 
-# Canonical Structure History
+## Canonical Structure History
 
 The current canonical Quality Framework structure consists of:
 
@@ -171,7 +171,7 @@ This structure represents the authoritative current documentation organization f
 
 ---
 
-# Canonical Numbered Documents
+## Canonical Numbered Documents
 
 The current numbered document sequence is:
 
@@ -206,9 +206,9 @@ The current numbered document sequence is:
 
 ---
 
-# Revision Timeline
+## Revision Timeline
 
-## Version 1.0.0 — Quality Framework Foundation
+### Version 1.0.0 — Quality Framework Foundation
 
 **Status:** Completed
 **Historical Publication:** Published
@@ -244,7 +244,7 @@ The framework establishes quality as a continuous, evidence-based, explainable, 
 
 ---
 
-# Version 1.0.0 Structural Baseline
+## Version 1.0.0 Structural Baseline
 
 The final canonical structural baseline for version `1.0.0` is:
 
@@ -259,7 +259,7 @@ The canonical structure SHALL be treated as authoritative unless a future govern
 
 ---
 
-# Historical Publication
+## Historical Publication
 
 Version `1.0.0` was historically published under:
 
@@ -283,7 +283,7 @@ v4.6.0-quality-framework
 
 ---
 
-# Historical Tag Immutability
+## Historical Tag Immutability
 
 The historical publication tag:
 
@@ -304,7 +304,7 @@ Corrections after publication SHALL instead be represented by ordinary repositor
 
 ---
 
-# Post-Publication Normalization
+## Post-Publication Normalization
 
 Following historical publication, the Quality Framework documentation may receive normalization changes that improve consistency without redefining the semantic identity of version `1.0.0`.
 
@@ -324,7 +324,7 @@ Such changes do not automatically require modification of the historical publica
 
 ---
 
-# Post-Publication Revalidation
+## Post-Publication Revalidation
 
 A post-publication revalidation is being performed against the current repository state.
 
@@ -342,7 +342,7 @@ The revalidation does not rewrite historical publication history.
 
 ---
 
-# Revalidation Scope
+## Revalidation Scope
 
 The post-publication revalidation includes:
 
@@ -370,7 +370,7 @@ Only checks supported by actual evidence SHALL be marked as passed.
 
 ---
 
-# Current Structural Evidence
+## Current Structural Evidence
 
 The current canonical inventory is:
 
@@ -395,7 +395,7 @@ MANIFEST.md
 
 ---
 
-# Current Repository Quality Evidence
+## Current Repository Quality Evidence
 
 During the current post-publication revalidation, repository quality gates were executed against the current repository state.
 
@@ -421,7 +421,7 @@ They SHALL NOT be interpreted as evidence for unrelated repository revisions.
 
 ---
 
-# Current Quality Gate State
+## Current Quality Gate State
 
 | Quality Gate              | Current Evidence        |
 | ------------------------- | ----------------------- |
@@ -439,7 +439,7 @@ Additional documentation and control-document synchronization work may still be 
 
 ---
 
-# EPIC.yaml Normalization
+## EPIC.yaml Normalization
 
 During post-publication revalidation, `EPIC.yaml` was normalized to represent the current canonical Quality Framework contract.
 
@@ -466,7 +466,7 @@ historical_tag_immutable: true
 
 ---
 
-# MANIFEST.md Normalization
+## MANIFEST.md Normalization
 
 `MANIFEST.md` was synchronized with the canonical Quality Framework structure.
 
@@ -489,7 +489,7 @@ The manifest remains the authoritative human-readable inventory contract for the
 
 ---
 
-# EPIC-QLT-001.md Normalization
+## EPIC-QLT-001.md Normalization
 
 `EPIC-QLT-001.md` was synchronized with the completed framework state.
 
@@ -506,7 +506,7 @@ The document records:
 
 ---
 
-# Validation Evidence Policy
+## Validation Evidence Policy
 
 Validation evidence SHALL be revision-aware.
 
@@ -538,23 +538,23 @@ Required validation SHALL be rerun when repository changes invalidate previous e
 
 ---
 
-# Validation State Semantics
+## Validation State Semantics
 
 The following state semantics apply.
 
-## PASS
+### PASS
 
 A required validation has been executed successfully and acceptable evidence exists.
 
-## FAIL
+### FAIL
 
 A required validation has been executed and did not satisfy its acceptance criteria.
 
-## PENDING
+### PENDING
 
 The validation has not yet been executed, completed, or formally evaluated.
 
-## NOT APPLICABLE
+### NOT APPLICABLE
 
 The validation does not apply to the evaluated target and that determination is justified.
 
@@ -562,7 +562,7 @@ No validation state SHALL be promoted from `PENDING` to `PASS` without supportin
 
 ---
 
-# Quality Framework Boundary Preservation
+## Quality Framework Boundary Preservation
 
 Revision activity SHALL preserve the Quality Framework's ownership boundaries.
 
@@ -579,7 +579,7 @@ Future revisions SHALL preserve these boundaries unless an explicit architectura
 
 ---
 
-# Compatibility Expectations
+## Compatibility Expectations
 
 Compatible framework revisions should preserve:
 
@@ -595,7 +595,7 @@ Breaking changes require explicit migration guidance.
 
 ---
 
-# Governance of Revisions
+## Governance of Revisions
 
 Material revisions should identify:
 
@@ -620,11 +620,11 @@ Post-Publication Revalidation
 
 ---
 
-# Revision Classification
+## Revision Classification
 
 Quality Framework changes may be classified as follows.
 
-## Editorial
+### Editorial
 
 Examples:
 
@@ -641,7 +641,7 @@ Usually none
 
 ---
 
-## Documentation Normalization
+### Documentation Normalization
 
 Examples:
 
@@ -660,7 +660,7 @@ provided framework semantics remain unchanged.
 
 ---
 
-## Compatible Semantic Change
+### Compatible Semantic Change
 
 Examples:
 
@@ -677,7 +677,7 @@ MINOR
 
 ---
 
-## Breaking Semantic Change
+### Breaking Semantic Change
 
 Examples:
 
@@ -694,7 +694,7 @@ MAJOR
 
 ---
 
-# Historical Record
+## Historical Record
 
 The revision history SHALL preserve previous publication information even when later documentation improves the representation of that history.
 
@@ -704,7 +704,7 @@ Where historical and current structures differ, the distinction should be record
 
 ---
 
-# Release Relationship
+## Release Relationship
 
 Framework revision and release governance interact as follows:
 
@@ -726,7 +726,7 @@ The Release Framework remains authoritative for repository-wide release governan
 
 ---
 
-# Current Publication Relationship
+## Current Publication Relationship
 
 The current relationship is:
 
@@ -747,7 +747,7 @@ Current post-publication normalization exists after that historical publication 
 
 ---
 
-# Current Revalidation Relationship
+## Current Revalidation Relationship
 
 The current repository activity is represented separately:
 
@@ -768,7 +768,7 @@ This preserves both historical integrity and current documentation accuracy.
 
 ---
 
-# Revalidation Completion Requirements
+## Revalidation Completion Requirements
 
 The current post-publication revalidation may be considered complete when:
 
@@ -789,7 +789,7 @@ The current post-publication revalidation may be considered complete when:
 
 ---
 
-# Future Revisions
+## Future Revisions
 
 Future Quality Framework revisions may introduce:
 
@@ -814,7 +814,7 @@ Such revisions SHALL remain compatible with the framework's core principles unle
 
 ---
 
-# AI Evolution
+## AI Evolution
 
 Future revisions may introduce AI-assisted capabilities for:
 
@@ -838,7 +838,7 @@ Deterministic verification and explicit governance remain authoritative for:
 
 ---
 
-# Revision Summary
+## Revision Summary
 
 The current Quality Framework revision state is:
 
@@ -862,7 +862,7 @@ Current Activity:        Post-publication revalidation
 
 ---
 
-# Current Validation Evidence Summary
+## Current Validation Evidence Summary
 
 Current executed repository evidence includes:
 
@@ -883,7 +883,7 @@ These results are associated with the current revalidation work and SHALL remain
 
 ---
 
-# Final Revision Statement
+## Final Revision Statement
 
 EPIC-QLT-001 — Quality Framework version `1.0.0` establishes the canonical FamilyOS quality engineering foundation.
 

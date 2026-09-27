@@ -1,8 +1,8 @@
 # Build Framework
 
-# 04 Build Architecture
+## 04 Build Architecture
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the canonical architecture through which FamilyOS engineering inputs are transformed into validated and trusted artifacts.
 
@@ -29,7 +29,7 @@ Its purpose is to provide a stable model that remains valid even when specific b
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Build Architecture is to ensure that FamilyOS build capabilities do not emerge as a collection of unrelated scripts, commands, CI jobs, packaging utilities, and local conventions.
 
@@ -45,7 +45,7 @@ The answer is expressed through clearly separated responsibilities.
 
 ---
 
-# Architectural Objective
+## Architectural Objective
 
 The primary architectural objective is to transform:
 
@@ -87,7 +87,7 @@ Each stage has a distinct responsibility.
 
 ---
 
-# Architectural Principles
+## Architectural Principles
 
 The Build Architecture follows the principles defined in `03-Build-Principles.md`.
 
@@ -108,7 +108,7 @@ These principles constrain implementation decisions.
 
 ---
 
-# Architectural Layers
+## Architectural Layers
 
 The FamilyOS Build Architecture is organized into conceptual layers.
 
@@ -133,7 +133,7 @@ A concrete implementation may combine them physically while preserving their res
 
 ---
 
-# Layer 1 — Build Interface
+## Layer 1 — Build Interface
 
 The Build Interface provides the entry point through which humans or automation request build operations.
 
@@ -149,7 +149,7 @@ The interface should expose stable build semantics.
 
 ---
 
-# Interface Responsibilities
+## Interface Responsibilities
 
 The Build Interface is responsible for:
 
@@ -164,7 +164,7 @@ It should not contain hidden build architecture.
 
 ---
 
-# Interface Model
+## Interface Model
 
 ```text
 Developer / CI / Release Process
@@ -178,7 +178,7 @@ The same architectural build model should be accessible from multiple execution 
 
 ---
 
-# Layer 2 — Build Input Layer
+## Layer 2 — Build Input Layer
 
 The Build Input Layer identifies the engineering state capable of influencing build output.
 
@@ -201,7 +201,7 @@ The input layer must distinguish authoritative inputs from temporary state.
 
 ---
 
-# Input Categories
+## Input Categories
 
 FamilyOS build inputs can be grouped into several categories.
 
@@ -221,7 +221,7 @@ This classification improves traceability and validation.
 
 ---
 
-# Source Inputs
+## Source Inputs
 
 Source inputs include repository-controlled engineering content such as:
 
@@ -237,7 +237,7 @@ Source inputs should normally be associated with repository state.
 
 ---
 
-# Configuration Inputs
+## Configuration Inputs
 
 Configuration inputs influence build behavior.
 
@@ -254,7 +254,7 @@ Configuration should be explicit and version-controlled where practical.
 
 ---
 
-# Dependency Inputs
+## Dependency Inputs
 
 Dependency inputs define the external software required for the build.
 
@@ -270,7 +270,7 @@ Resolved dependency state may become part of build evidence.
 
 ---
 
-# Generated Inputs
+## Generated Inputs
 
 Some build processes consume generated content.
 
@@ -290,7 +290,7 @@ Generated inputs should be reproducible or traceable.
 
 ---
 
-# Toolchain Inputs
+## Toolchain Inputs
 
 The build toolchain influences build semantics.
 
@@ -307,7 +307,7 @@ Significant toolchain state should be identifiable.
 
 ---
 
-# Environment Inputs
+## Environment Inputs
 
 Environment state may influence build behavior.
 
@@ -325,7 +325,7 @@ The architecture should minimize uncontrolled environmental influence.
 
 ---
 
-# Policy Inputs
+## Policy Inputs
 
 Build behavior may be constrained by FamilyOS engineering policies.
 
@@ -341,7 +341,7 @@ Policies influence validation and release readiness.
 
 ---
 
-# Layer 3 — Build Context Resolution
+## Layer 3 — Build Context Resolution
 
 The Build Context Resolution Layer transforms raw inputs into an explicit effective build context.
 
@@ -371,7 +371,7 @@ The context should be inspectable where practical.
 
 ---
 
-# Build Context Identity
+## Build Context Identity
 
 A significant build should eventually be associated with a build identifier.
 
@@ -390,7 +390,7 @@ The exact identifier format is implementation-specific.
 
 ---
 
-# Context Resolution Rules
+## Context Resolution Rules
 
 Context resolution should:
 
@@ -406,7 +406,7 @@ Implicit behavior should be minimized.
 
 ---
 
-# Layer 4 — Build Environment
+## Layer 4 — Build Environment
 
 The Build Environment Layer provides the runtime conditions required for execution.
 
@@ -424,7 +424,7 @@ It requires sufficient control.
 
 ---
 
-# Environment Responsibilities
+## Environment Responsibilities
 
 The Build Environment is responsible for providing:
 
@@ -439,7 +439,7 @@ The environment must not introduce undocumented build behavior.
 
 ---
 
-# Environment Validation
+## Environment Validation
 
 Before execution, relevant environment assumptions should be validated.
 
@@ -458,7 +458,7 @@ Invalid environments should fail early.
 
 ---
 
-# Layer 5 — Build Orchestration
+## Layer 5 — Build Orchestration
 
 The Build Orchestration Layer coordinates the build lifecycle.
 
@@ -475,7 +475,7 @@ Orchestration should remain explicit.
 
 ---
 
-# Canonical Orchestration Flow
+## Canonical Orchestration Flow
 
 A representative flow is:
 
@@ -503,7 +503,7 @@ Different build types may specialize this flow.
 
 ---
 
-# Orchestration And Policy
+## Orchestration And Policy
 
 Orchestration may evaluate policy requirements.
 
@@ -518,7 +518,7 @@ Policy evaluation should remain separated from low-level transformation logic wh
 
 ---
 
-# Layer 6 — Build Execution
+## Layer 6 — Build Execution
 
 The Build Execution Layer performs concrete transformations.
 
@@ -536,7 +536,7 @@ This layer performs work but does not alone establish trust.
 
 ---
 
-# Execution Units
+## Execution Units
 
 A build may consist of multiple execution units.
 
@@ -556,7 +556,7 @@ Each unit should have explicit inputs and outputs where practical.
 
 ---
 
-# Execution Boundaries
+## Execution Boundaries
 
 Execution should not silently modify authoritative source state.
 
@@ -566,7 +566,7 @@ Temporary execution state should remain isolated.
 
 ---
 
-# Layer 7 — Artifact Layer
+## Layer 7 — Artifact Layer
 
 The Artifact Layer manages outputs produced by build execution.
 
@@ -584,7 +584,7 @@ The layer is responsible for:
 
 ---
 
-# Artifact Model
+## Artifact Model
 
 A conceptual artifact is:
 
@@ -604,7 +604,7 @@ Artifacts may exist individually or as a related set.
 
 ---
 
-# Artifact Set Model
+## Artifact Set Model
 
 A build may produce:
 
@@ -623,7 +623,7 @@ The Build Architecture must not assume one build produces only one file.
 
 ---
 
-# Artifact Locations
+## Artifact Locations
 
 Artifact destinations should be predictable.
 
@@ -639,7 +639,7 @@ The architecture should prevent accidental confusion between these categories.
 
 ---
 
-# Layer 8 — Validation Layer
+## Layer 8 — Validation Layer
 
 The Validation Layer determines whether build state and artifacts satisfy applicable requirements.
 
@@ -659,7 +659,7 @@ Validation is central to build trust.
 
 ---
 
-# Input Validation
+## Input Validation
 
 Input validation may verify:
 
@@ -672,7 +672,7 @@ Input validation may verify:
 
 ---
 
-# Environment Validation
+## Environment Validation
 
 Environment validation may verify:
 
@@ -684,7 +684,7 @@ Environment validation may verify:
 
 ---
 
-# Execution Validation
+## Execution Validation
 
 Execution validation determines whether build stages completed correctly.
 
@@ -697,7 +697,7 @@ This may include:
 
 ---
 
-# Artifact Validation
+## Artifact Validation
 
 Artifact validation may verify:
 
@@ -712,7 +712,7 @@ Artifact validation may verify:
 
 ---
 
-# Layer 9 — Evidence Layer
+## Layer 9 — Evidence Layer
 
 The Evidence Layer captures information supporting build trust.
 
@@ -739,7 +739,7 @@ Evidence requirements may differ by profile.
 
 ---
 
-# Evidence Profiles
+## Evidence Profiles
 
 For example:
 
@@ -761,7 +761,7 @@ The architecture supports proportional evidence requirements.
 
 ---
 
-# Layer 10 — Integration Layer
+## Layer 10 — Integration Layer
 
 The Integration Layer connects the Build Framework to the broader FamilyOS Engineering Platform.
 
@@ -781,7 +781,7 @@ The Build Framework must cooperate with these systems without absorbing their re
 
 ---
 
-# Relationship With Testing Architecture
+## Relationship With Testing Architecture
 
 Testing may be invoked during build validation.
 
@@ -801,7 +801,7 @@ Testing architecture remains owned by EPIC-TST-001.
 
 ---
 
-# Relationship With Quality Architecture
+## Relationship With Quality Architecture
 
 The Build Framework may expose build-specific quality evidence.
 
@@ -818,7 +818,7 @@ These may participate in Quality Framework assessments.
 
 ---
 
-# Relationship With Documentation Architecture
+## Relationship With Documentation Architecture
 
 Documentation may be both:
 
@@ -829,7 +829,7 @@ The architecture must support both relationships.
 
 ---
 
-# Relationship With Plugin Architecture
+## Relationship With Plugin Architecture
 
 Plugins may introduce specialized build inputs and outputs.
 
@@ -847,7 +847,7 @@ without requiring each plugin to invent an independent build architecture.
 
 ---
 
-# Relationship With Plugin Compliance
+## Relationship With Plugin Compliance
 
 Plugin compliance checks may participate in validation.
 
@@ -865,7 +865,7 @@ The Build Framework consumes compliance results but does not redefine compliance
 
 ---
 
-# Relationship With Security Architecture
+## Relationship With Security Architecture
 
 Security requirements may apply throughout the build layers.
 
@@ -889,7 +889,7 @@ Security must therefore be considered throughout the architecture.
 
 ---
 
-# Relationship With Release Architecture
+## Relationship With Release Architecture
 
 The Release Framework receives trusted build outputs.
 
@@ -911,7 +911,7 @@ Release decisions remain outside Build Framework authority.
 
 ---
 
-# Canonical Build Pipeline Architecture
+## Canonical Build Pipeline Architecture
 
 The complete canonical pipeline can be represented as:
 
@@ -955,7 +955,7 @@ The responsibilities must remain conceptually present.
 
 ---
 
-# Build Profile Architecture
+## Build Profile Architecture
 
 Build profiles specialize the canonical architecture.
 
@@ -982,7 +982,7 @@ Profiles must not change foundational architecture.
 
 ---
 
-# Development Profile
+## Development Profile
 
 A development build prioritizes:
 
@@ -994,7 +994,7 @@ It may use lighter evidence requirements while preserving canonical semantics.
 
 ---
 
-# Validation Profile
+## Validation Profile
 
 A validation build prioritizes:
 
@@ -1007,7 +1007,7 @@ It may produce limited distributable artifacts.
 
 ---
 
-# CI Profile
+## CI Profile
 
 A CI build prioritizes:
 
@@ -1018,7 +1018,7 @@ A CI build prioritizes:
 
 ---
 
-# Release Candidate Profile
+## Release Candidate Profile
 
 A release candidate build uses the strongest build controls required before release handoff.
 
@@ -1034,7 +1034,7 @@ It may require:
 
 ---
 
-# Plugin Profile
+## Plugin Profile
 
 A plugin build may include:
 
@@ -1048,7 +1048,7 @@ It still follows the canonical Build Architecture.
 
 ---
 
-# Documentation Profile
+## Documentation Profile
 
 A documentation build may produce:
 
@@ -1062,7 +1062,7 @@ Documentation artifacts may use the same artifact identity and traceability prin
 
 ---
 
-# Dependency Architecture
+## Dependency Architecture
 
 Dependency resolution occupies a controlled position within the build.
 
@@ -1082,7 +1082,7 @@ Dependency resolution must not remain invisible.
 
 ---
 
-# Toolchain Architecture
+## Toolchain Architecture
 
 The toolchain is similarly modeled.
 
@@ -1100,7 +1100,7 @@ This allows toolchain drift to be detected.
 
 ---
 
-# Configuration Architecture
+## Configuration Architecture
 
 Build configuration follows:
 
@@ -1122,7 +1122,7 @@ The effective configuration should be inspectable.
 
 ---
 
-# Environment Architecture
+## Environment Architecture
 
 Environment handling follows:
 
@@ -1140,7 +1140,7 @@ This reduces reliance on implicit workstation state.
 
 ---
 
-# Artifact Architecture
+## Artifact Architecture
 
 Artifact production follows:
 
@@ -1164,7 +1164,7 @@ This distinguishes generated output from trusted output.
 
 ---
 
-# Evidence Architecture
+## Evidence Architecture
 
 Evidence production should be integrated with the lifecycle.
 
@@ -1184,7 +1184,7 @@ Evidence must not depend entirely on reconstructing logs afterward.
 
 ---
 
-# Observability Architecture
+## Observability Architecture
 
 Observability crosses all layers.
 
@@ -1206,7 +1206,7 @@ Each stage should expose useful information appropriate to its responsibility.
 
 ---
 
-# Error Architecture
+## Error Architecture
 
 Failures should propagate through defined boundaries.
 
@@ -1226,7 +1226,7 @@ Errors should not disappear inside automation layers.
 
 ---
 
-# Build Result Model
+## Build Result Model
 
 A build result should conceptually expose:
 
@@ -1246,7 +1246,7 @@ The concrete representation may evolve.
 
 ---
 
-# Build State Model
+## Build State Model
 
 A build may progress through states such as:
 
@@ -1272,7 +1272,7 @@ Additional states may be introduced if needed.
 
 ---
 
-# Trusted Artifact Boundary
+## Trusted Artifact Boundary
 
 An artifact becomes trusted only after applicable validation succeeds.
 
@@ -1292,7 +1292,7 @@ This is one of the most important boundaries in the architecture.
 
 ---
 
-# Release Handoff Contract
+## Release Handoff Contract
 
 The Build Framework should expose a clear conceptual contract to the Release Framework.
 
@@ -1314,51 +1314,51 @@ The Release Framework may reject the handoff if additional release requirements 
 
 ---
 
-# Architectural Invariants
+## Architectural Invariants
 
 The following invariants should remain true across implementations.
 
-## Invariant 1
+### Invariant 1
 
 Build inputs must be identifiable.
 
-## Invariant 2
+### Invariant 2
 
 Build configuration must resolve before execution.
 
-## Invariant 3
+### Invariant 3
 
 Unsupported environments must not silently continue.
 
-## Invariant 4
+### Invariant 4
 
 Execution output is not automatically trusted.
 
-## Invariant 5
+### Invariant 5
 
 Artifacts must pass applicable validation before trust.
 
-## Invariant 6
+### Invariant 6
 
 Evidence must remain associated with the relevant build.
 
-## Invariant 7
+### Invariant 7
 
 Release authority remains outside the Build Framework.
 
-## Invariant 8
+### Invariant 8
 
 Automation must execute the canonical build model rather than redefine it.
 
 ---
 
-# Architectural Anti-Patterns
+## Architectural Anti-Patterns
 
 The Build Architecture explicitly rejects several patterns.
 
 ---
 
-## CI-As-Build-System
+### CI-As-Build-System
 
 ```text
 CI YAML
@@ -1370,7 +1370,7 @@ Critical build logic must not exist exclusively in CI configuration.
 
 ---
 
-## Hidden Local Tooling
+### Hidden Local Tooling
 
 ```text
 Developer Machine
@@ -1384,7 +1384,7 @@ This creates non-reproducible behavior.
 
 ---
 
-## Artifact Without Origin
+### Artifact Without Origin
 
 ```text
 artifact.whl
@@ -1394,25 +1394,25 @@ with no known relationship to source, build, or validation is insufficient for t
 
 ---
 
-## Multiple Build Definitions
+### Multiple Build Definitions
 
 Independent local, CI, and release build logic creates semantic drift.
 
 ---
 
-## Validation After Release
+### Validation After Release
 
 Build validation must occur before release handoff, not after official distribution.
 
 ---
 
-## Build Logic Scattered Across Repository
+### Build Logic Scattered Across Repository
 
 Build responsibilities should remain discoverable and intentionally structured.
 
 ---
 
-# Architectural Extensibility
+## Architectural Extensibility
 
 The Build Architecture must allow future capabilities without destabilizing core concepts.
 
@@ -1432,7 +1432,7 @@ These capabilities should integrate through existing architectural responsibilit
 
 ---
 
-# Technology Independence
+## Technology Independence
 
 The architecture intentionally avoids requiring a specific technology.
 
@@ -1453,7 +1453,7 @@ They do not define it.
 
 ---
 
-# Simplicity Constraint
+## Simplicity Constraint
 
 The Build Architecture must remain no more complex than necessary.
 
@@ -1473,7 +1473,7 @@ Controlled Extension
 
 ---
 
-# Architectural Governance
+## Architectural Governance
 
 Significant changes to the Build Architecture may require formal governance.
 
@@ -1491,7 +1491,7 @@ The applicable governance mechanism may include an ADR, RFC, or EPIC revision.
 
 ---
 
-# Architectural Quality Attributes
+## Architectural Quality Attributes
 
 The Build Architecture should optimize for the following qualities:
 
@@ -1510,7 +1510,7 @@ Performance is important but remains subordinate to trust.
 
 ---
 
-# Reference Architecture
+## Reference Architecture
 
 The canonical reference architecture is:
 
@@ -1565,7 +1565,7 @@ This reference model defines the structural foundation for later implementation.
 
 ---
 
-# Architecture Success Criteria
+## Architecture Success Criteria
 
 The Build Architecture is successful when FamilyOS can clearly identify:
 
@@ -1586,7 +1586,7 @@ The Build Architecture is successful when FamilyOS can clearly identify:
 
 ---
 
-# Final Architectural Principle
+## Final Architectural Principle
 
 The FamilyOS Build Architecture is founded on the following rule:
 

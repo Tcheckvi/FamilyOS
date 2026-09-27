@@ -1,10 +1,10 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-# 05 Data, Secrets and Cryptography
+## 05 Data, Secrets and Cryptography
 
-## Overview
+### Overview
 
 Data protection, secret management, and cryptography form the confidentiality and integrity foundation of the FamilyOS Security Framework.
 
@@ -28,7 +28,7 @@ These responsibilities MUST remain governed consistently across the FamilyOS pla
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the FamilyOS requirements for:
 
@@ -58,7 +58,7 @@ The objective is to ensure that sensitive FamilyOS information remains protected
 
 ---
 
-# Security Objectives
+## Security Objectives
 
 The FamilyOS data and cryptographic security architecture MUST support the following objectives:
 
@@ -77,7 +77,7 @@ The FamilyOS data and cryptographic security architecture MUST support the follo
 
 ---
 
-# Data Security Model
+## Data Security Model
 
 FamilyOS protects information throughout the complete data lifecycle.
 
@@ -110,7 +110,7 @@ Security controls MUST remain appropriate throughout all relevant lifecycle stag
 
 ---
 
-# Data Classification
+## Data Classification
 
 FamilyOS SHOULD classify information according to its sensitivity and potential impact if compromised.
 
@@ -128,7 +128,7 @@ Specific domains MAY define more specialized categories where required.
 
 ---
 
-# Public Data
+## Public Data
 
 Public data is information approved for unrestricted or broadly unrestricted disclosure.
 
@@ -145,7 +145,7 @@ Public does not mean uncontrolled.
 
 ---
 
-# Internal Data
+## Internal Data
 
 Internal data is information intended for FamilyOS internal operational use.
 
@@ -160,7 +160,7 @@ Internal data SHOULD NOT automatically be publicly exposed.
 
 ---
 
-# Confidential Data
+## Confidential Data
 
 Confidential data includes information whose unauthorized disclosure could create meaningful privacy, operational, or organizational impact.
 
@@ -176,7 +176,7 @@ Confidential data SHOULD require controlled access.
 
 ---
 
-# Sensitive Data
+## Sensitive Data
 
 Sensitive data includes information requiring stronger security controls because compromise could produce significant harm.
 
@@ -193,7 +193,7 @@ Sensitive data SHOULD receive stronger access control, encryption, auditing, and
 
 ---
 
-# Highly Sensitive Data
+## Highly Sensitive Data
 
 Highly sensitive data includes information whose compromise could materially undermine FamilyOS security or expose critical private information.
 
@@ -210,7 +210,7 @@ Highly sensitive data MUST receive the strongest applicable security controls.
 
 ---
 
-# Data Classification Responsibilities
+## Data Classification Responsibilities
 
 Data classification SHOULD influence:
 
@@ -229,7 +229,7 @@ It SHOULD translate into enforceable technical and operational controls.
 
 ---
 
-# Data Ownership
+## Data Ownership
 
 Important FamilyOS data SHOULD have defined ownership.
 
@@ -252,7 +252,7 @@ Ownership does not automatically imply unrestricted access.
 
 ---
 
-# Data Minimization
+## Data Minimization
 
 FamilyOS SHOULD collect and retain only the information necessary for legitimate platform functionality.
 
@@ -270,7 +270,7 @@ Sensitive information SHOULD have a clear operational purpose.
 
 ---
 
-# Sensitive Data Handling
+## Sensitive Data Handling
 
 Sensitive data MUST be protected while:
 
@@ -288,7 +288,7 @@ Security controls SHOULD reflect both classification and threat model.
 
 ---
 
-# Data at Rest
+## Data at Rest
 
 Data at rest includes persistent information stored in:
 
@@ -304,7 +304,7 @@ Sensitive data at rest SHOULD be protected using appropriate access controls and
 
 ---
 
-# Storage Access Control
+## Storage Access Control
 
 Storage systems MUST enforce appropriate permissions.
 
@@ -319,7 +319,7 @@ Filesystem or database-level protections SHOULD complement application-layer aut
 
 ---
 
-# Encryption at Rest
+## Encryption at Rest
 
 Sensitive and highly sensitive information SHOULD be encrypted at rest when encryption materially improves security.
 
@@ -336,7 +336,7 @@ Encryption keys MUST NOT be stored alongside encrypted data in a manner that rem
 
 ---
 
-# Data in Transit
+## Data in Transit
 
 Sensitive information transmitted between security boundaries MUST use protected transport.
 
@@ -350,7 +350,7 @@ Plaintext transmission of secrets or highly sensitive information over untrusted
 
 ---
 
-# Secure Transport
+## Secure Transport
 
 Approved secure transport mechanisms SHOULD be used for:
 
@@ -365,7 +365,7 @@ Transport security configuration MUST avoid obsolete or insecure cryptographic p
 
 ---
 
-# Data in Use
+## Data in Use
 
 Sensitive data remains vulnerable while actively processed.
 
@@ -381,7 +381,7 @@ Highly sensitive values SHOULD have the shortest practical lifetime in accessibl
 
 ---
 
-# Temporary Data
+## Temporary Data
 
 Temporary data MAY contain sensitive information.
 
@@ -398,7 +398,7 @@ Temporary storage MUST NOT become an ungoverned persistence layer.
 
 ---
 
-# Data Integrity
+## Data Integrity
 
 FamilyOS MUST protect important information against unauthorized or accidental modification.
 
@@ -416,7 +416,7 @@ Integrity protection SHOULD reflect the criticality of the information.
 
 ---
 
-# Integrity Verification
+## Integrity Verification
 
 Critical artifacts SHOULD support integrity verification.
 
@@ -433,7 +433,7 @@ Integrity verification SHOULD be reproducible and auditable.
 
 ---
 
-# Data Authenticity
+## Data Authenticity
 
 Where it is important to establish origin, FamilyOS SHOULD support authenticity verification.
 
@@ -449,7 +449,7 @@ Authenticity SHOULD be distinguishable from integrity alone.
 
 ---
 
-# Data Retention
+## Data Retention
 
 FamilyOS SHOULD define retention requirements for important classes of information.
 
@@ -467,7 +467,7 @@ Sensitive information SHOULD NOT be retained indefinitely without justification.
 
 ---
 
-# Data Deletion
+## Data Deletion
 
 Data deletion MUST be controlled and consistent with retention requirements.
 
@@ -485,7 +485,7 @@ A deletion request MUST NOT be considered complete if unnecessary live copies re
 
 ---
 
-# Secure Deletion
+## Secure Deletion
 
 Secure deletion requirements SHOULD reflect the underlying storage technology and threat model.
 
@@ -497,7 +497,7 @@ Deletion procedures MUST be documented where they affect security guarantees.
 
 ---
 
-# Backup Security
+## Backup Security
 
 Backups frequently contain the same sensitive information as production storage and MUST receive equivalent protection.
 
@@ -514,7 +514,7 @@ Backup systems MUST NOT become weaker copies of production security controls.
 
 ---
 
-# Backup Encryption
+## Backup Encryption
 
 Sensitive backups SHOULD be encrypted.
 
@@ -524,7 +524,7 @@ Loss of backup encryption keys MUST be considered in recovery planning.
 
 ---
 
-# Backup Integrity
+## Backup Integrity
 
 FamilyOS SHOULD verify that backups have not been corrupted or modified unexpectedly.
 
@@ -539,7 +539,7 @@ A backup that cannot be trusted SHOULD NOT be used as a recovery source without 
 
 ---
 
-# Exported Data
+## Exported Data
 
 Exported data leaves normal application security boundaries.
 
@@ -558,7 +558,7 @@ Sensitive exports MUST NOT silently receive weaker protections than source data.
 
 ---
 
-# Data Sharing
+## Data Sharing
 
 Sharing sensitive information MUST require explicit authorization.
 
@@ -575,7 +575,7 @@ Cross-family or external sharing MUST NOT occur implicitly.
 
 ---
 
-# Logging and Sensitive Data
+## Logging and Sensitive Data
 
 Logs MUST NOT become an uncontrolled channel for sensitive data exposure.
 
@@ -592,7 +592,7 @@ Logs SHOULD prefer identifiers and redacted values where sufficient.
 
 ---
 
-# Data Redaction
+## Data Redaction
 
 Redaction SHOULD be applied when partial information is sufficient for diagnostics or audit purposes.
 
@@ -613,7 +613,7 @@ Redaction MUST NOT create a reversible exposure when the value is intended to re
 
 ---
 
-# Secrets
+## Secrets
 
 Secrets are security-sensitive values that provide authentication, authorization, cryptographic, or privileged access.
 
@@ -634,7 +634,7 @@ Secrets MUST be treated separately from ordinary configuration.
 
 ---
 
-# Secret Management Architecture
+## Secret Management Architecture
 
 The preferred FamilyOS secret access model is:
 
@@ -658,7 +658,7 @@ Applications SHOULD retrieve secrets only when required.
 
 ---
 
-# Secret Storage
+## Secret Storage
 
 Secrets MUST NOT be stored directly in source code.
 
@@ -675,7 +675,7 @@ Approved secret storage mechanisms SHOULD provide access control and auditabilit
 
 ---
 
-# Environment Variables
+## Environment Variables
 
 Environment variables MAY be used for secret injection where appropriate.
 
@@ -693,7 +693,7 @@ Highly sensitive environments SHOULD use stronger secret-management mechanisms w
 
 ---
 
-# Secret Access
+## Secret Access
 
 Secret access MUST follow least privilege.
 
@@ -711,7 +711,7 @@ Broad shared secrets SHOULD be avoided.
 
 ---
 
-# Secret Distribution
+## Secret Distribution
 
 Secret distribution SHOULD minimize exposure.
 
@@ -727,7 +727,7 @@ Automated distribution SHOULD prefer authenticated secret-management channels.
 
 ---
 
-# Secret Rotation
+## Secret Rotation
 
 Long-lived secrets SHOULD support rotation.
 
@@ -744,7 +744,7 @@ Rotation SHOULD minimize service disruption while eliminating use of obsolete cr
 
 ---
 
-# Secret Revocation
+## Secret Revocation
 
 Compromised or obsolete secrets MUST be revocable.
 
@@ -754,7 +754,7 @@ Systems MUST NOT continue accepting a revoked secret indefinitely because of sta
 
 ---
 
-# Secret Versioning
+## Secret Versioning
 
 Secret-management systems MAY support versioned secrets.
 
@@ -774,7 +774,7 @@ Multiple valid secret versions SHOULD exist only for the shortest necessary tran
 
 ---
 
-# Secret Lifetime
+## Secret Lifetime
 
 Secrets SHOULD have an appropriate lifetime.
 
@@ -784,7 +784,7 @@ Permanent credentials SHOULD require strong justification.
 
 ---
 
-# Secret Exposure Response
+## Secret Exposure Response
 
 When a secret is suspected of exposure:
 
@@ -811,7 +811,7 @@ Changing the secret alone MAY be insufficient if unauthorized use occurred.
 
 ---
 
-# Cryptographic Architecture
+## Cryptographic Architecture
 
 FamilyOS cryptographic mechanisms MUST use established, reviewed cryptographic primitives.
 
@@ -830,7 +830,7 @@ Cryptographic use cases include:
 
 ---
 
-# Approved Cryptography
+## Approved Cryptography
 
 FamilyOS SHOULD maintain an approved cryptographic baseline.
 
@@ -847,7 +847,7 @@ Obsolete or known-insecure algorithms MUST NOT be used for new security-sensitiv
 
 ---
 
-# Cryptographic Agility
+## Cryptographic Agility
 
 The architecture SHOULD support cryptographic agility.
 
@@ -857,7 +857,7 @@ Systems SHOULD avoid embedding unnecessary assumptions about a single permanent 
 
 ---
 
-# Encryption
+## Encryption
 
 Encryption provides confidentiality.
 
@@ -875,7 +875,7 @@ Encryption without integrity protection SHOULD be avoided when authenticated enc
 
 ---
 
-# Authenticated Encryption
+## Authenticated Encryption
 
 Authenticated encryption SHOULD be preferred where both confidentiality and integrity are required.
 
@@ -888,7 +888,7 @@ Decryption failures MUST be handled safely.
 
 ---
 
-# Hashing
+## Hashing
 
 Cryptographic hashing MAY be used for:
 
@@ -902,7 +902,7 @@ General-purpose cryptographic hashes MUST NOT be confused with password-hashing 
 
 ---
 
-# Password Hashing
+## Password Hashing
 
 Passwords MUST use dedicated password-hashing algorithms designed to resist brute-force attacks.
 
@@ -912,7 +912,7 @@ Ordinary fast hashes MUST NOT be used as password storage mechanisms.
 
 ---
 
-# Digital Signatures
+## Digital Signatures
 
 Digital signatures MAY be used when FamilyOS must establish:
 
@@ -933,7 +933,7 @@ Signing keys MUST receive strong protection.
 
 ---
 
-# Signature Verification
+## Signature Verification
 
 Signature verification MUST validate:
 
@@ -946,7 +946,7 @@ A valid signature from an untrusted key MUST NOT automatically establish trust.
 
 ---
 
-# Message Authentication
+## Message Authentication
 
 Message authentication mechanisms MAY protect integrity and authenticity where digital signatures are not required.
 
@@ -956,7 +956,7 @@ Shared-key authentication SHOULD consider the consequences of every holder being
 
 ---
 
-# Cryptographic Randomness
+## Cryptographic Randomness
 
 Security-sensitive random values MUST come from a cryptographically secure random source.
 
@@ -973,7 +973,7 @@ General-purpose pseudo-random generators MUST NOT be used when cryptographic unp
 
 ---
 
-# Key Management
+## Key Management
 
 Cryptographic keys are high-value security assets.
 
@@ -1005,7 +1005,7 @@ Every key SHOULD have a defined purpose.
 
 ---
 
-# Key Separation
+## Key Separation
 
 Keys SHOULD be separated by purpose.
 
@@ -1023,7 +1023,7 @@ The same cryptographic key SHOULD NOT be reused for unrelated purposes without e
 
 ---
 
-# Environment Key Separation
+## Environment Key Separation
 
 Development, testing, staging, and production SHOULD use separate key material.
 
@@ -1033,7 +1033,7 @@ Compromise of development infrastructure SHOULD NOT automatically compromise pro
 
 ---
 
-# Key Generation
+## Key Generation
 
 Cryptographic keys MUST be generated using approved secure mechanisms.
 
@@ -1043,7 +1043,7 @@ Manually selected keys MUST NOT be used where cryptographically random key gener
 
 ---
 
-# Key Storage
+## Key Storage
 
 Private and symmetric keys MUST be stored securely.
 
@@ -1059,7 +1059,7 @@ Plaintext key files with unrestricted access are prohibited.
 
 ---
 
-# Key Access
+## Key Access
 
 Key access MUST follow least privilege.
 
@@ -1069,7 +1069,7 @@ Where practical, systems SHOULD perform cryptographic operations without exposin
 
 ---
 
-# Key Rotation
+## Key Rotation
 
 Keys SHOULD support rotation according to:
 
@@ -1084,7 +1084,7 @@ Rotation procedures MUST consider existing encrypted or signed data.
 
 ---
 
-# Key Revocation
+## Key Revocation
 
 Compromised signing, authentication, or access keys MUST be revocable.
 
@@ -1094,7 +1094,7 @@ Historical validation MAY require additional timestamp or provenance information
 
 ---
 
-# Key Destruction
+## Key Destruction
 
 Keys that are no longer required SHOULD be securely destroyed where practical.
 
@@ -1109,7 +1109,7 @@ Destroying a key MAY permanently render encrypted data inaccessible and therefor
 
 ---
 
-# Key Recovery
+## Key Recovery
 
 Some encryption systems MAY require controlled key recovery mechanisms.
 
@@ -1119,7 +1119,7 @@ Recovery mechanisms MUST NOT create an unrestricted security bypass.
 
 ---
 
-# Cryptographic Metadata
+## Cryptographic Metadata
 
 Cryptographic operations SHOULD retain sufficient metadata for future verification.
 
@@ -1136,7 +1136,7 @@ Sensitive key material MUST NOT be included in metadata.
 
 ---
 
-# Cryptographic Failure Handling
+## Cryptographic Failure Handling
 
 Cryptographic failures MUST fail safely.
 
@@ -1152,7 +1152,7 @@ Failure MUST NOT silently downgrade to insecure processing.
 
 ---
 
-# Algorithm Deprecation
+## Algorithm Deprecation
 
 Cryptographic algorithms MAY become unsafe over time.
 
@@ -1171,7 +1171,7 @@ Deprecated algorithms MUST NOT remain indefinitely because of convenience.
 
 ---
 
-# Cryptographic Libraries
+## Cryptographic Libraries
 
 FamilyOS SHOULD use established and maintained cryptographic libraries.
 
@@ -1187,7 +1187,7 @@ Library selection SHOULD consider:
 
 ---
 
-# Secret and Cryptographic Configuration
+## Secret and Cryptographic Configuration
 
 Cryptographic and secret-related configuration is security-sensitive.
 
@@ -1204,7 +1204,7 @@ Unsafe cryptographic defaults MUST be avoided.
 
 ---
 
-# Plugin Data Security
+## Plugin Data Security
 
 Plugins MAY process sensitive FamilyOS data.
 
@@ -1220,7 +1220,7 @@ Plugins MUST NOT receive direct access to unrelated secrets or sensitive data.
 
 ---
 
-# Plugin Secrets
+## Plugin Secrets
 
 Plugin credentials SHOULD be isolated by plugin and purpose.
 
@@ -1235,7 +1235,7 @@ Plugin secrets MUST be revocable independently where practical.
 
 ---
 
-# Plugin Cryptography
+## Plugin Cryptography
 
 Plugins requiring cryptographic functionality SHOULD use approved FamilyOS abstractions or approved libraries.
 
@@ -1245,7 +1245,7 @@ Compliance validation SHOULD include cryptographic requirements where applicable
 
 ---
 
-# Service Secrets
+## Service Secrets
 
 Services SHOULD use dedicated credentials.
 
@@ -1260,7 +1260,7 @@ Dedicated service secrets improve:
 
 ---
 
-# CI/CD Secrets
+## CI/CD Secrets
 
 Build and deployment systems frequently require sensitive credentials.
 
@@ -1279,7 +1279,7 @@ Pull requests from untrusted contexts MUST NOT automatically receive privileged 
 
 ---
 
-# Build Artifact Security
+## Build Artifact Security
 
 Artifacts SHOULD support verification when security-sensitive.
 
@@ -1294,7 +1294,7 @@ Artifact verification integrates with EPIC-BLD-001 — Build Framework.
 
 ---
 
-# Release Cryptography
+## Release Cryptography
 
 Release processes MAY use cryptographic mechanisms to establish integrity and authenticity.
 
@@ -1309,7 +1309,7 @@ Release cryptography MUST integrate with EPIC-REL-001 — Release Framework.
 
 ---
 
-# Data Security and Observability
+## Data Security and Observability
 
 Security observability MUST avoid exposing protected data.
 
@@ -1326,7 +1326,7 @@ Telemetry MUST NOT record secret values.
 
 ---
 
-# Secret Access Auditing
+## Secret Access Auditing
 
 Access to highly sensitive secrets SHOULD be auditable where technically appropriate.
 
@@ -1346,7 +1346,7 @@ Audit records MUST NOT include the secret value.
 
 ---
 
-# Key Operation Auditing
+## Key Operation Auditing
 
 Security-sensitive key operations SHOULD be observable.
 
@@ -1363,7 +1363,7 @@ Auditability MUST respect performance and privacy requirements.
 
 ---
 
-# Data Breach Containment
+## Data Breach Containment
 
 If sensitive data exposure is suspected, FamilyOS SHOULD support:
 
@@ -1396,7 +1396,7 @@ The response SHOULD depend on the affected data classification and security cont
 
 ---
 
-# Secret Leakage Detection
+## Secret Leakage Detection
 
 FamilyOS engineering processes SHOULD include mechanisms capable of identifying accidental secret exposure.
 
@@ -1411,7 +1411,7 @@ Detected secrets MUST be treated as compromised unless exposure can be reliably 
 
 ---
 
-# Data and Clean Architecture
+## Data and Clean Architecture
 
 Data protection concerns MUST respect Clean Architecture boundaries.
 
@@ -1441,7 +1441,7 @@ Infrastructure implementations MUST satisfy domain and application security requ
 
 ---
 
-# Data and Domain-Driven Design
+## Data and Domain-Driven Design
 
 Different bounded contexts MAY have different security requirements.
 
@@ -1468,7 +1468,7 @@ Each domain SHOULD define appropriate sensitivity while following common FamilyO
 
 ---
 
-# Data and Identity Security
+## Data and Identity Security
 
 This document extends the controls established by `04-Identity-Authentication-and-Authorization.md`.
 
@@ -1484,7 +1484,7 @@ Weak secret or key handling can invalidate otherwise correct access-control arch
 
 ---
 
-# Data and Plugin Compliance
+## Data and Plugin Compliance
 
 EPIC-PLUGIN-002 — Plugin Compliance Framework SHOULD validate plugin behavior relating to:
 
@@ -1499,7 +1499,7 @@ Non-compliant handling of highly sensitive information SHOULD be treated as a hi
 
 ---
 
-# Data and Testing
+## Data and Testing
 
 Security tests SHOULD cover:
 
@@ -1518,7 +1518,7 @@ Tests MUST NOT embed real production secrets.
 
 ---
 
-# Test Secrets
+## Test Secrets
 
 Test environments MUST use dedicated non-production secrets.
 
@@ -1528,7 +1528,7 @@ Test data SHOULD avoid unnecessary use of real sensitive personal information.
 
 ---
 
-# Data and Quality
+## Data and Quality
 
 Data protection and cryptographic controls MUST participate in FamilyOS quality governance.
 
@@ -1545,7 +1545,7 @@ Critical failures MUST affect release eligibility.
 
 ---
 
-# Cryptographic Governance
+## Cryptographic Governance
 
 Material cryptographic changes SHOULD require security review.
 
@@ -1563,7 +1563,7 @@ Important decisions SHOULD be documented through FamilyOS architectural governan
 
 ---
 
-# Exception Management
+## Exception Management
 
 Exceptions to data-protection, secret-management, or cryptographic standards MUST be explicit.
 
@@ -1581,7 +1581,7 @@ Undocumented cryptographic exceptions are prohibited.
 
 ---
 
-# Data Security Evidence
+## Data Security Evidence
 
 Security claims SHOULD be supported by evidence.
 
@@ -1609,7 +1609,7 @@ Evidence SHOULD demonstrate that controls exist and remain operational.
 
 ---
 
-# Data Security Lifecycle
+## Data Security Lifecycle
 
 FamilyOS data security follows a continuous lifecycle.
 
@@ -1639,7 +1639,7 @@ Security controls MUST evolve as risk, technology, and system architecture chang
 
 ---
 
-# Security Invariants
+## Security Invariants
 
 The following invariants apply across FamilyOS:
 
@@ -1660,7 +1660,7 @@ The following invariants apply across FamilyOS:
 
 ---
 
-# Reference Security Flow
+## Reference Security Flow
 
 The canonical data and cryptographic protection model is:
 
@@ -1701,7 +1701,7 @@ Secret and key management support this lifecycle across all relevant stages.
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 The FamilyOS Data, Secrets and Cryptography architecture enables:
 
@@ -1723,7 +1723,7 @@ The FamilyOS Data, Secrets and Cryptography architecture enables:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS data security is based on the following principle:
 

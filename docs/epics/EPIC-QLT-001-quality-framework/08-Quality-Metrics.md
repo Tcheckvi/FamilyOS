@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 08 Quality Metrics
+## 08 Quality Metrics
 
-## Overview
+### Overview
 
 The FamilyOS Quality Metrics model defines how measurable engineering signals are collected, interpreted, normalized, compared, and used to support quality decisions.
 
@@ -28,7 +28,7 @@ The Quality Metrics model ensures that measurements remain meaningful, contextua
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Metrics is not to maximize numbers.
 
@@ -58,7 +58,7 @@ Metrics must therefore remain connected to decisions, risks, and engineering beh
 
 ---
 
-# Metrics Principle
+## Metrics Principle
 
 The foundational principle is:
 
@@ -92,7 +92,7 @@ Metrics must always be interpreted within context.
 
 ---
 
-# Metric Definition
+## Metric Definition
 
 A Quality Metric is a structured quantitative observation about an engineering target.
 
@@ -116,7 +116,7 @@ A metric should have stable semantics so values remain comparable over time.
 
 ---
 
-# Metric Identity
+## Metric Identity
 
 Every authoritative metric should have a stable identifier.
 
@@ -146,7 +146,7 @@ Stable identifiers support:
 
 ---
 
-# Metric Metadata
+## Metric Metadata
 
 A metric definition may include:
 
@@ -171,7 +171,7 @@ Metric definitions should be versioned when their semantics change materially.
 
 ---
 
-# Metric Name
+## Metric Name
 
 Metric names should describe what is being measured.
 
@@ -188,7 +188,7 @@ Avoid tool-specific names where a broader quality concept exists.
 
 ---
 
-# Metric Description
+## Metric Description
 
 A metric description must explain:
 
@@ -201,7 +201,7 @@ This prevents misleading interpretation.
 
 ---
 
-# Metric Domain
+## Metric Domain
 
 Every metric must belong to one primary Quality Domain.
 
@@ -221,7 +221,7 @@ Metrics may influence multiple domains, but a primary classification improves ow
 
 ---
 
-# Metric Unit
+## Metric Unit
 
 Metrics must define their measurement unit.
 
@@ -242,7 +242,7 @@ Units must remain consistent across historical comparisons.
 
 ---
 
-# Metric Scope
+## Metric Scope
 
 Metrics may operate at different scopes.
 
@@ -271,7 +271,7 @@ must specify what was measured.
 
 ---
 
-# Metric Timestamp
+## Metric Timestamp
 
 Metrics are observations in time.
 
@@ -289,7 +289,7 @@ This enables reliable trend analysis.
 
 ---
 
-# Metric Source
+## Metric Source
 
 Every metric should identify its source.
 
@@ -308,7 +308,7 @@ The source must be traceable to the measurement.
 
 ---
 
-# Metric Evidence
+## Metric Evidence
 
 Metric values are a form of Quality Evidence.
 
@@ -328,7 +328,7 @@ This allows the system to reconstruct how the value was produced.
 
 ---
 
-# Metric Categories
+## Metric Categories
 
 Quality metrics may be grouped into several categories.
 
@@ -349,7 +349,7 @@ These categories describe how the measurement is used.
 
 ---
 
-# Outcome Metrics
+## Outcome Metrics
 
 Outcome metrics measure engineering results.
 
@@ -367,7 +367,7 @@ They may be lagging indicators.
 
 ---
 
-# Process Metrics
+## Process Metrics
 
 Process metrics measure engineering activity.
 
@@ -383,7 +383,7 @@ Process metrics indicate how consistently quality practices are applied.
 
 ---
 
-# Risk Metrics
+## Risk Metrics
 
 Risk metrics measure exposure.
 
@@ -401,7 +401,7 @@ Risk metrics are particularly important for release and governance decisions.
 
 ---
 
-# Trend Metrics
+## Trend Metrics
 
 Trend metrics represent changes over time.
 
@@ -419,7 +419,7 @@ Trend metrics often provide more insight than isolated values.
 
 ---
 
-# Efficiency Metrics
+## Efficiency Metrics
 
 Efficiency metrics evaluate quality system cost.
 
@@ -435,7 +435,7 @@ These metrics help maintain developer experience and scalability.
 
 ---
 
-# Reliability Metrics
+## Reliability Metrics
 
 Reliability metrics measure stability.
 
@@ -453,7 +453,7 @@ A quality system that is itself unreliable reduces engineering confidence.
 
 ---
 
-# Debt Metrics
+## Debt Metrics
 
 Debt metrics measure unresolved quality deficiencies.
 
@@ -470,7 +470,7 @@ Debt metrics should support reduction strategies.
 
 ---
 
-# Governance Metrics
+## Governance Metrics
 
 Governance metrics measure quality process control.
 
@@ -488,11 +488,11 @@ These metrics expose weaknesses in quality governance.
 
 ---
 
-# Leading and Lagging Indicators
+## Leading and Lagging Indicators
 
 Metrics may be leading or lagging indicators.
 
-## Leading Indicators
+### Leading Indicators
 
 Leading indicators may predict future quality risk.
 
@@ -507,7 +507,7 @@ Increasing Architecture Violations
 
 These signals may indicate future problems before failures occur.
 
-## Lagging Indicators
+### Lagging Indicators
 
 Lagging indicators reflect outcomes already observed.
 
@@ -524,7 +524,7 @@ A mature quality system should use both.
 
 ---
 
-# Metric Normalization
+## Metric Normalization
 
 Different tools may report similar measurements differently.
 
@@ -543,7 +543,7 @@ Normalization must preserve semantic accuracy.
 
 ---
 
-# Metric Aggregation
+## Metric Aggregation
 
 Metrics may be aggregated across scopes.
 
@@ -565,7 +565,7 @@ Not every metric should be aggregated through simple averaging.
 
 ---
 
-# Weighted Aggregation
+## Weighted Aggregation
 
 Some metrics may require weighted aggregation.
 
@@ -575,7 +575,7 @@ The framework must avoid misleading aggregation.
 
 ---
 
-# Non-Aggregatable Metrics
+## Non-Aggregatable Metrics
 
 Some metrics should not be aggregated.
 
@@ -595,7 +595,7 @@ must not disappear inside an average.
 
 ---
 
-# Metric Thresholds
+## Metric Thresholds
 
 Metrics may define thresholds.
 
@@ -621,7 +621,7 @@ Thresholds must be contextual and profile-aware.
 
 ---
 
-# Threshold Semantics
+## Threshold Semantics
 
 Thresholds must define comparison semantics explicitly.
 
@@ -639,7 +639,7 @@ Ambiguous thresholds must not be used for gate decisions.
 
 ---
 
-# Threshold Profiles
+## Threshold Profiles
 
 Different profiles may define different thresholds.
 
@@ -660,7 +660,7 @@ Stricter assurance contexts may require stronger thresholds.
 
 ---
 
-# Metric Targets
+## Metric Targets
 
 A target represents a desired value.
 
@@ -677,7 +677,7 @@ This allows continuous improvement without blocking every deviation from the asp
 
 ---
 
-# Metric Direction
+## Metric Direction
 
 Metric definitions should specify whether improvement means increasing or decreasing values.
 
@@ -698,7 +698,7 @@ This is necessary for trend interpretation.
 
 ---
 
-# Metric Baselines
+## Metric Baselines
 
 Metrics should support baselines.
 
@@ -721,7 +721,7 @@ Baselines enable meaningful comparison.
 
 ---
 
-# Baseline Types
+## Baseline Types
 
 Possible baseline types include:
 
@@ -737,7 +737,7 @@ The baseline must be explicit.
 
 ---
 
-# Trend Analysis
+## Trend Analysis
 
 Historical metric values create trends.
 
@@ -763,7 +763,7 @@ Trends may reveal:
 
 ---
 
-# Trend Window
+## Trend Window
 
 Trend calculations should define a window.
 
@@ -781,7 +781,7 @@ It must therefore remain explicit.
 
 ---
 
-# Trend Direction
+## Trend Direction
 
 A trend may be classified as:
 
@@ -797,7 +797,7 @@ Trend classification should not hide raw data.
 
 ---
 
-# Metric Volatility
+## Metric Volatility
 
 Some metrics fluctuate naturally.
 
@@ -812,7 +812,7 @@ The framework should distinguish normal variation from meaningful degradation.
 
 ---
 
-# Statistical Interpretation
+## Statistical Interpretation
 
 Where useful, metrics may use statistical techniques.
 
@@ -827,7 +827,7 @@ Statistical complexity should only be introduced where it improves engineering d
 
 ---
 
-# Avoiding False Precision
+## Avoiding False Precision
 
 Metrics must not imply greater precision than the underlying data supports.
 
@@ -843,7 +843,7 @@ The framework should prefer understandable values.
 
 ---
 
-# Composite Metrics
+## Composite Metrics
 
 Composite metrics combine several measurements.
 
@@ -859,7 +859,7 @@ A composite metric must never hide critical underlying failures.
 
 ---
 
-# Quality Scores
+## Quality Scores
 
 The framework may eventually support quality scores, but they must be used cautiously.
 
@@ -879,7 +879,7 @@ It must not become authoritative by itself.
 
 ---
 
-# No Universal Quality Percentage
+## No Universal Quality Percentage
 
 FamilyOS should not define a universal single percentage representing total quality.
 
@@ -904,7 +904,7 @@ because the security failure may be blocking.
 
 ---
 
-# Testing Metrics
+## Testing Metrics
 
 Testing metrics may include:
 
@@ -922,7 +922,7 @@ These metrics should be interpreted alongside test relevance and risk.
 
 ---
 
-# Test Coverage
+## Test Coverage
 
 Coverage measures execution, not correctness.
 
@@ -942,7 +942,7 @@ Coverage is valuable when interpreted appropriately.
 
 ---
 
-# Flaky Test Rate
+## Flaky Test Rate
 
 Flaky tests reduce trust in verification.
 
@@ -960,7 +960,7 @@ High flakiness should be treated as a testing quality problem.
 
 ---
 
-# Architecture Metrics
+## Architecture Metrics
 
 Architecture metrics may include:
 
@@ -974,7 +974,7 @@ These metrics can reveal architecture drift.
 
 ---
 
-# Architecture Violation Trend
+## Architecture Violation Trend
 
 A useful signal may be:
 
@@ -991,7 +991,7 @@ This indicates systemic degradation even before architectural failure becomes cr
 
 ---
 
-# Maintainability Metrics
+## Maintainability Metrics
 
 Maintainability metrics may include:
 
@@ -1008,7 +1008,7 @@ These measurements must be interpreted contextually.
 
 ---
 
-# Complexity Metrics
+## Complexity Metrics
 
 Complexity measurements can identify risky code.
 
@@ -1020,7 +1020,7 @@ Thresholds should therefore remain contextual.
 
 ---
 
-# Security Metrics
+## Security Metrics
 
 Security metrics may include:
 
@@ -1036,7 +1036,7 @@ Critical security metrics may directly affect release gates.
 
 ---
 
-# Vulnerability Age
+## Vulnerability Age
 
 A useful security metric may be:
 
@@ -1052,7 +1052,7 @@ Long-lived unresolved vulnerabilities may indicate governance problems.
 
 ---
 
-# Reliability Metrics
+## Reliability Metrics
 
 Reliability metrics may include:
 
@@ -1069,7 +1069,7 @@ Runtime metrics become especially important once FamilyOS operates deployed serv
 
 ---
 
-# Performance Metrics
+## Performance Metrics
 
 Performance metrics may include:
 
@@ -1088,7 +1088,7 @@ Performance should be compared against meaningful baselines.
 
 ---
 
-# Percentile Metrics
+## Percentile Metrics
 
 For runtime latency, percentiles may provide more insight than averages.
 
@@ -1105,7 +1105,7 @@ Percentiles should only be used when sufficient data exists.
 
 ---
 
-# Documentation Metrics
+## Documentation Metrics
 
 Documentation metrics may include:
 
@@ -1122,7 +1122,7 @@ Documentation quality should not be reduced to word count.
 
 ---
 
-# Compatibility Metrics
+## Compatibility Metrics
 
 Compatibility metrics may include:
 
@@ -1135,7 +1135,7 @@ These metrics support controlled evolution.
 
 ---
 
-# Dependency Metrics
+## Dependency Metrics
 
 Dependency metrics may include:
 
@@ -1154,7 +1154,7 @@ Context matters.
 
 ---
 
-# Build Metrics
+## Build Metrics
 
 Build metrics may include:
 
@@ -1170,7 +1170,7 @@ These metrics contribute to engineering reliability.
 
 ---
 
-# Release Metrics
+## Release Metrics
 
 Release metrics may include:
 
@@ -1186,7 +1186,7 @@ Release metrics should help identify systemic delivery risk.
 
 ---
 
-# Developer Experience Metrics
+## Developer Experience Metrics
 
 Developer Experience metrics may include:
 
@@ -1202,7 +1202,7 @@ Quality enforcement that significantly damages developer productivity must itsel
 
 ---
 
-# Quality System Metrics
+## Quality System Metrics
 
 The Quality Framework should observe itself.
 
@@ -1222,7 +1222,7 @@ This allows the framework to continuously improve.
 
 ---
 
-# Finding Metrics
+## Finding Metrics
 
 Quality findings generate valuable metrics.
 
@@ -1241,7 +1241,7 @@ Finding metrics help evaluate both risk and engineering effectiveness.
 
 ---
 
-# Finding Density
+## Finding Density
 
 Finding density may normalize counts against scope.
 
@@ -1255,7 +1255,7 @@ Such metrics should be used cautiously because different components have differe
 
 ---
 
-# Finding Age
+## Finding Age
 
 Finding age measures unresolved duration.
 
@@ -1273,7 +1273,7 @@ A high number of old findings may indicate uncontrolled debt.
 
 ---
 
-# Mean Time to Remediation
+## Mean Time to Remediation
 
 Mean Time to Remediation may measure how quickly quality issues are resolved.
 
@@ -1291,7 +1291,7 @@ Different severity levels should often be analyzed separately.
 
 ---
 
-# Quality Debt Metrics
+## Quality Debt Metrics
 
 Quality debt may be measured across categories.
 
@@ -1310,7 +1310,7 @@ Debt metrics should encourage reduction rather than normalize permanent deficien
 
 ---
 
-# Exception Metrics
+## Exception Metrics
 
 Exception metrics may include:
 
@@ -1326,7 +1326,7 @@ Frequent exceptions may indicate unsuitable rules or weak governance.
 
 ---
 
-# Suppression Metrics
+## Suppression Metrics
 
 Suppression frequency may reveal problematic quality rules.
 
@@ -1349,7 +1349,7 @@ Suppression volume should therefore be observable.
 
 ---
 
-# Gate Metrics
+## Gate Metrics
 
 Quality Gate metrics may include:
 
@@ -1365,7 +1365,7 @@ These metrics help assess gate effectiveness.
 
 ---
 
-# Quality Profile Metrics
+## Quality Profile Metrics
 
 Profiles may be measured through:
 
@@ -1381,7 +1381,7 @@ This helps determine whether profiles are appropriately designed.
 
 ---
 
-# Metric Collection
+## Metric Collection
 
 Metric collection should be automated where practical.
 
@@ -1403,7 +1403,7 @@ Manual metrics should only be used where automation is impractical.
 
 ---
 
-# Metric Store
+## Metric Store
 
 The architecture may introduce a Quality Metric Store.
 
@@ -1421,7 +1421,7 @@ Historical data enables long-term analysis.
 
 ---
 
-# Metric Immutability
+## Metric Immutability
 
 Published metric observations should not be silently modified.
 
@@ -1431,7 +1431,7 @@ The framework must preserve historical integrity.
 
 ---
 
-# Metric Retention
+## Metric Retention
 
 Metric retention should reflect analytical value and storage cost.
 
@@ -1446,7 +1446,7 @@ Retention policy must be explicit.
 
 ---
 
-# Metric Cardinality
+## Metric Cardinality
 
 Metrics with excessive dimensions can create scalability problems.
 
@@ -1456,7 +1456,7 @@ The framework should balance analytical depth with operational cost.
 
 ---
 
-# Metric Tagging
+## Metric Tagging
 
 Metrics may include dimensions such as:
 
@@ -1474,7 +1474,7 @@ Tags must remain controlled to avoid unbounded cardinality.
 
 ---
 
-# Metric Context
+## Metric Context
 
 Metrics must include enough context to interpret them correctly.
 
@@ -1495,7 +1495,7 @@ Revision = abc123
 
 ---
 
-# Metric Comparison
+## Metric Comparison
 
 Metrics may be compared against:
 
@@ -1512,7 +1512,7 @@ The comparison basis must be explicit.
 
 ---
 
-# Regression Detection
+## Regression Detection
 
 A metric may trigger a regression when change exceeds an allowed boundary.
 
@@ -1532,7 +1532,7 @@ Regression rules should account for normal measurement variance.
 
 ---
 
-# Relative vs Absolute Thresholds
+## Relative vs Absolute Thresholds
 
 Thresholds may be absolute:
 
@@ -1550,7 +1550,7 @@ Both models may be useful depending on the metric.
 
 ---
 
-# Metric Gate Integration
+## Metric Gate Integration
 
 Metrics may contribute to Quality Gates.
 
@@ -1572,7 +1572,7 @@ Metrics should not bypass the Quality Rule and Assessment architecture.
 
 ---
 
-# Metrics and Rules
+## Metrics and Rules
 
 The relationship between metrics and rules is:
 
@@ -1596,7 +1596,7 @@ A rule gives it decision semantics.
 
 ---
 
-# Metrics and Findings
+## Metrics and Findings
 
 A threshold violation may generate a finding.
 
@@ -1617,7 +1617,7 @@ The original metric value remains evidence.
 
 ---
 
-# Metrics and Assessments
+## Metrics and Assessments
 
 Assessments may use several metrics simultaneously.
 
@@ -1636,7 +1636,7 @@ The assessment should preserve individual values rather than collapsing them pre
 
 ---
 
-# Metrics and Risk
+## Metrics and Risk
 
 Metrics can reveal risk concentration.
 
@@ -1654,7 +1654,7 @@ Risk evaluation should consider both severity and persistence.
 
 ---
 
-# Metric Alerting
+## Metric Alerting
 
 Some metrics may trigger alerts.
 
@@ -1671,7 +1671,7 @@ Alerts should be actionable and avoid unnecessary noise.
 
 ---
 
-# Metric Noise
+## Metric Noise
 
 Excessive alerts create metric fatigue.
 
@@ -1686,7 +1686,7 @@ A metric should not generate enforcement simply because it exists.
 
 ---
 
-# Metric Governance
+## Metric Governance
 
 Metric definitions must be governed.
 
@@ -1704,7 +1704,7 @@ Changing a metric definition may invalidate historical comparisons.
 
 ---
 
-# Metric Ownership
+## Metric Ownership
 
 Every authoritative metric should have an owner.
 
@@ -1721,7 +1721,7 @@ Unowned metrics should not become authoritative gate inputs.
 
 ---
 
-# Metric Lifecycle
+## Metric Lifecycle
 
 A metric may follow a lifecycle such as:
 
@@ -1741,7 +1741,7 @@ Experimental metrics should not automatically become blocking.
 
 ---
 
-# Metric Versioning
+## Metric Versioning
 
 Metrics require versioning when:
 
@@ -1755,7 +1755,7 @@ Historical values must remain associated with the definition used when they were
 
 ---
 
-# Metric Deprecation
+## Metric Deprecation
 
 A deprecated metric should define:
 
@@ -1768,7 +1768,7 @@ Metric identifiers must not be reused for different meanings.
 
 ---
 
-# Metric Validation
+## Metric Validation
 
 Metric collection pipelines should validate values.
 
@@ -1784,7 +1784,7 @@ Invalid measurements must not silently enter authoritative quality data.
 
 ---
 
-# Missing Metric Data
+## Missing Metric Data
 
 Missing data must remain distinguishable from zero.
 
@@ -1804,7 +1804,7 @@ Unknown values must not be interpreted as success.
 
 ---
 
-# Metric Errors
+## Metric Errors
 
 Collection errors should be visible.
 
@@ -1822,7 +1822,7 @@ This prevents incorrect quality conclusions.
 
 ---
 
-# Metric Reproducibility
+## Metric Reproducibility
 
 Where possible, metric measurements should be reproducible.
 
@@ -1839,7 +1839,7 @@ should produce comparable results.
 
 ---
 
-# Metric Environment Sensitivity
+## Metric Environment Sensitivity
 
 Some metrics depend strongly on environment.
 
@@ -1855,7 +1855,7 @@ Cross-environment comparisons must be handled cautiously.
 
 ---
 
-# Metric Calibration
+## Metric Calibration
 
 Thresholds should be calibrated using actual data.
 
@@ -1865,7 +1865,7 @@ Calibration helps reduce false regressions.
 
 ---
 
-# Metric Review
+## Metric Review
 
 Metrics should be periodically reviewed.
 
@@ -1889,7 +1889,7 @@ Metrics that no longer provide value should be retired.
 
 ---
 
-# Goodhart's Law Awareness
+## Goodhart's Law Awareness
 
 The framework must recognize the risk that metrics become targets.
 
@@ -1909,7 +1909,7 @@ Metric design must actively avoid such incentives.
 
 ---
 
-# Anti-Gaming Principle
+## Anti-Gaming Principle
 
 Quality metrics must not reward superficial optimization.
 
@@ -1924,7 +1924,7 @@ No critical engineering decision should rely blindly on a single metric.
 
 ---
 
-# Metric Transparency
+## Metric Transparency
 
 Engineers should be able to understand how a metric is calculated.
 
@@ -1945,7 +1945,7 @@ where applicable.
 
 ---
 
-# Metric Explainability
+## Metric Explainability
 
 If a metric contributes to a failed gate, the engineer should be able to understand:
 
@@ -1965,7 +1965,7 @@ This is essential for actionable feedback.
 
 ---
 
-# Metric Dashboards
+## Metric Dashboards
 
 The Quality Framework may eventually expose quality dashboards.
 
@@ -1984,7 +1984,7 @@ They must not become the authoritative source of quality rules.
 
 ---
 
-# Metric Reporting
+## Metric Reporting
 
 Quality reports should include metrics when they materially support interpretation.
 
@@ -2010,7 +2010,7 @@ Reports should avoid overwhelming engineers with low-value measurements.
 
 ---
 
-# Executive Metrics
+## Executive Metrics
 
 High-level stakeholders may require aggregated metrics.
 
@@ -2027,7 +2027,7 @@ High-level reporting must preserve access to underlying evidence.
 
 ---
 
-# Engineering Metrics
+## Engineering Metrics
 
 Engineers often require more detailed measurements.
 
@@ -2043,7 +2043,7 @@ Different audiences may require different reporting layers.
 
 ---
 
-# Historical Metrics
+## Historical Metrics
 
 Historical data enables FamilyOS to understand long-term quality evolution.
 
@@ -2064,7 +2064,7 @@ This provides evidence of improvement.
 
 ---
 
-# Release Comparison
+## Release Comparison
 
 Release-level metric comparison can reveal meaningful changes.
 
@@ -2088,7 +2088,7 @@ This supports evidence-based release evolution.
 
 ---
 
-# Metric Correlation
+## Metric Correlation
 
 Advanced analysis may examine correlations.
 
@@ -2114,7 +2114,7 @@ Such analysis should therefore remain advisory.
 
 ---
 
-# Predictive Metrics
+## Predictive Metrics
 
 As sufficient historical data becomes available, metrics may support predictive analysis.
 
@@ -2129,7 +2129,7 @@ Predictive models must remain explainable and non-authoritative unless explicitl
 
 ---
 
-# AI-Assisted Metric Analysis
+## AI-Assisted Metric Analysis
 
 AI may assist with:
 
@@ -2145,7 +2145,7 @@ The authoritative metric model remains deterministic and governed.
 
 ---
 
-# Metric Storage Security
+## Metric Storage Security
 
 Quality metrics may influence release or compliance decisions.
 
@@ -2162,7 +2162,7 @@ Authoritative quality data must remain traceable and protected.
 
 ---
 
-# Metric Privacy
+## Metric Privacy
 
 Future operational metrics may contain sensitive data.
 
@@ -2172,7 +2172,7 @@ Metrics should capture engineering signals without unnecessarily storing sensiti
 
 ---
 
-# Metric Scalability
+## Metric Scalability
 
 Large FamilyOS ecosystems may generate significant metric volume.
 
@@ -2189,7 +2189,7 @@ Scalability should not compromise metric integrity.
 
 ---
 
-# Metric Sampling
+## Metric Sampling
 
 Sampling may be appropriate for high-volume operational metrics.
 
@@ -2205,45 +2205,45 @@ should not depend on incomplete sampling unless explicitly designed to do so.
 
 ---
 
-# Metric Anti-Patterns
+## Metric Anti-Patterns
 
 The Quality Metrics model rejects several anti-patterns.
 
-## Metric as Quality
+### Metric as Quality
 
 A number must not be treated as the complete quality state.
 
-## Vanity Metrics
+### Vanity Metrics
 
 Measurements that look impressive but do not support decisions should be avoided.
 
-## Hidden Formulas
+### Hidden Formulas
 
 Opaque scoring reduces trust.
 
-## Arbitrary Thresholds
+### Arbitrary Thresholds
 
 Thresholds require engineering justification.
 
-## Metric Overload
+### Metric Overload
 
 Excessive measurements create noise.
 
-## Universal Quality Score
+### Universal Quality Score
 
 Quality cannot responsibly be reduced to one percentage.
 
-## Missing Context
+### Missing Context
 
 Measurements without scope, environment, or source can be misleading.
 
-## Gaming
+### Gaming
 
 Metrics must not encourage superficial optimization.
 
 ---
 
-# Initial FamilyOS Quality Metrics
+## Initial FamilyOS Quality Metrics
 
 An initial implementation may prioritize a limited high-value metric set.
 
@@ -2277,7 +2277,7 @@ Additional metrics should be introduced only when they provide clear value.
 
 ---
 
-# Metric Expansion Strategy
+## Metric Expansion Strategy
 
 Metrics should evolve progressively.
 
@@ -2305,7 +2305,7 @@ Not every new metric should immediately become blocking.
 
 ---
 
-# Reference Metric Flow
+## Reference Metric Flow
 
 The complete metric lifecycle can be represented as:
 
@@ -2333,7 +2333,7 @@ This model preserves the distinction between observation and decision.
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The Quality Metrics model enables FamilyOS to move from subjective impressions such as:
 
@@ -2359,7 +2359,7 @@ This provides stronger engineering visibility without pretending that measuremen
 
 ---
 
-# Final Metrics Principle
+## Final Metrics Principle
 
 Quality metrics must illuminate engineering reality rather than distort it.
 

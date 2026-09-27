@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 03 Quality Principles
+## 03 Quality Principles
 
-## Overview
+### Overview
 
 The FamilyOS Quality Framework is governed by a set of foundational principles that define how quality must be understood, designed, measured, enforced, and continuously improved across the engineering ecosystem.
 
@@ -33,7 +33,7 @@ The principles must remain stable.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Quality Principles is to establish a common engineering philosophy for quality across FamilyOS.
 
@@ -69,7 +69,7 @@ Quality Decisions
 
 ---
 
-# Principle 1 — Quality Is an Engineering Responsibility
+## Principle 1 — Quality Is an Engineering Responsibility
 
 Quality is the responsibility of every engineering activity.
 
@@ -109,7 +109,7 @@ No individual function can independently guarantee the quality of the complete p
 
 ---
 
-# Principle 2 — Quality Must Be Designed In
+## Principle 2 — Quality Must Be Designed In
 
 Quality must be considered during design rather than added after implementation.
 
@@ -156,7 +156,7 @@ Prevention is preferable to correction.
 
 ---
 
-# Principle 3 — Prevention Is Better Than Detection
+## Principle 3 — Prevention Is Better Than Detection
 
 Detecting defects is necessary.
 
@@ -197,7 +197,7 @@ Learn
 
 ---
 
-# Principle 4 — Quality Must Be Continuous
+## Principle 4 — Quality Must Be Continuous
 
 Quality is not a milestone.
 
@@ -233,7 +233,7 @@ Quality state must therefore be continuously reevaluated.
 
 ---
 
-# Principle 5 — Quality Must Be Evidence-Based
+## Principle 5 — Quality Must Be Evidence-Based
 
 Quality claims require evidence.
 
@@ -272,7 +272,7 @@ The framework must favor evidence over assumption.
 
 ---
 
-# Principle 6 — Quality Must Be Explicit
+## Principle 6 — Quality Must Be Explicit
 
 Implicit quality expectations are difficult to enforce.
 
@@ -302,7 +302,7 @@ Explicit requirements improve consistency, automation, traceability, and governa
 
 ---
 
-# Principle 7 — Quality Must Be Measurable Where Practical
+## Principle 7 — Quality Must Be Measurable Where Practical
 
 Not every quality characteristic can be reduced to a number.
 
@@ -328,7 +328,7 @@ Metrics must not become objectives detached from real quality outcomes.
 
 ---
 
-# Principle 8 — Metrics Must Not Replace Judgment
+## Principle 8 — Metrics Must Not Replace Judgment
 
 Metrics are indicators.
 
@@ -373,7 +373,7 @@ The framework must combine measurable evidence with engineering judgment.
 
 ---
 
-# Principle 9 — Quality Must Be Risk-Based
+## Principle 9 — Quality Must Be Risk-Based
 
 Quality controls must reflect risk.
 
@@ -408,7 +408,7 @@ Quality requirements must remain proportional to engineering risk.
 
 ---
 
-# Principle 10 — Quality Must Be Automated Where Reliable
+## Principle 10 — Quality Must Be Automated Where Reliable
 
 Any quality check that can be executed reliably, deterministically, and repeatedly should progressively become automated.
 
@@ -443,7 +443,7 @@ It must not automate unreliable or context-sensitive judgments merely for the sa
 
 ---
 
-# Principle 11 — Human Judgment Must Remain Available
+## Principle 11 — Human Judgment Must Remain Available
 
 Not every quality concern can be expressed as deterministic automation.
 
@@ -473,7 +473,7 @@ Automation and human review are complementary.
 
 ---
 
-# Principle 12 — Quality Feedback Must Be Fast
+## Principle 12 — Quality Feedback Must Be Fast
 
 Slow feedback reduces engineering effectiveness.
 
@@ -503,7 +503,7 @@ Quality checks should therefore be optimized for practical feedback speed.
 
 ---
 
-# Principle 13 — Quality Feedback Must Be Actionable
+## Principle 13 — Quality Feedback Must Be Actionable
 
 A quality check is useful only when engineers can understand and resolve the result.
 
@@ -540,7 +540,7 @@ Unknown Cause
 
 ---
 
-# Principle 14 — Quality Must Be Reproducible
+## Principle 14 — Quality Must Be Reproducible
 
 Equivalent inputs should produce equivalent quality results.
 
@@ -575,7 +575,7 @@ Same Quality Result
 
 ---
 
-# Principle 15 — Quality Must Be Traceable
+## Principle 15 — Quality Must Be Traceable
 
 Quality decisions must be traceable to their origin.
 
@@ -613,7 +613,7 @@ It also improves:
 
 ---
 
-# Principle 16 — Quality Rules Must Be Versioned
+## Principle 16 — Quality Rules Must Be Versioned
 
 Quality requirements evolve.
 
@@ -639,7 +639,7 @@ A quality result should be interpretable relative to the rules that were active 
 
 ---
 
-# Principle 17 — Quality Must Be Tool-Independent
+## Principle 17 — Quality Must Be Tool-Independent
 
 The framework must define capabilities rather than permanently bind quality concepts to tools.
 
@@ -677,7 +677,7 @@ This separation protects the framework from unnecessary technology coupling.
 
 ---
 
-# Principle 18 — Quality Controls Must Be Consistent
+## Principle 18 — Quality Controls Must Be Consistent
 
 Equivalent engineering situations should be evaluated consistently.
 
@@ -696,7 +696,7 @@ Where different controls are required, the differences must be explicit and just
 
 ---
 
-# Principle 19 — Quality Must Scale
+## Principle 19 — Quality Must Scale
 
 Quality mechanisms must remain effective as FamilyOS grows.
 
@@ -716,7 +716,7 @@ Quality enforcement must not become an engineering bottleneck.
 
 ---
 
-# Principle 20 — Quality Gates Must Be Explicit
+## Principle 20 — Quality Gates Must Be Explicit
 
 Quality gates must define clear transition criteria.
 
@@ -750,7 +750,7 @@ where conditional behavior is explicitly governed.
 
 ---
 
-# Principle 21 — Blocking Rules Must Be Justified
+## Principle 21 — Blocking Rules Must Be Justified
 
 Not every finding should block engineering progress.
 
@@ -773,7 +773,7 @@ The framework must maintain an appropriate balance.
 
 ---
 
-# Principle 22 — Exceptions Must Be Controlled
+## Principle 22 — Exceptions Must Be Controlled
 
 Quality requirements may occasionally require exceptions.
 
@@ -806,7 +806,7 @@ It is a governance failure.
 
 ---
 
-# Principle 23 — Existing Debt Must Not Justify New Debt
+## Principle 23 — Existing Debt Must Not Justify New Debt
 
 Legacy quality problems may exist.
 
@@ -834,7 +834,7 @@ This supports gradual improvement without requiring immediate elimination of all
 
 ---
 
-# Principle 24 — Quality Debt Must Be Visible
+## Principle 24 — Quality Debt Must Be Visible
 
 Known quality deficiencies must not remain hidden.
 
@@ -870,7 +870,7 @@ Remediated
 
 ---
 
-# Principle 25 — Quality Must Protect Architecture
+## Principle 25 — Quality Must Protect Architecture
 
 Architectural integrity is a quality property.
 
@@ -900,7 +900,7 @@ Automated Validation
 
 ---
 
-# Principle 26 — Quality Must Include Documentation
+## Principle 26 — Quality Must Include Documentation
 
 Documentation quality is engineering quality.
 
@@ -927,7 +927,7 @@ Important documentation should be:
 
 ---
 
-# Principle 27 — Quality Must Include Security
+## Principle 27 — Quality Must Include Security
 
 Security cannot be separated from quality.
 
@@ -947,7 +947,7 @@ Security findings must be evaluated according to severity and risk.
 
 ---
 
-# Principle 28 — Quality Must Include Maintainability
+## Principle 28 — Quality Must Include Maintainability
 
 Software quality includes the ability to evolve safely.
 
@@ -966,7 +966,7 @@ Short-term implementation speed must not systematically compromise long-term mai
 
 ---
 
-# Principle 29 — Quality Must Include Reliability
+## Principle 29 — Quality Must Include Reliability
 
 FamilyOS components must behave predictably under expected conditions.
 
@@ -985,7 +985,7 @@ Reliability concerns must contribute to quality assessments.
 
 ---
 
-# Principle 30 — Quality Must Include Compatibility
+## Principle 30 — Quality Must Include Compatibility
 
 FamilyOS evolves continuously.
 
@@ -1006,7 +1006,7 @@ Breaking changes must be intentional, documented, and governed.
 
 ---
 
-# Principle 31 — Quality Must Include Performance Where Relevant
+## Principle 31 — Quality Must Include Performance Where Relevant
 
 Performance is a quality characteristic when it affects:
 
@@ -1026,7 +1026,7 @@ Performance optimization must be evidence-based rather than speculative.
 
 ---
 
-# Principle 32 — Quality Must Include Observability
+## Principle 32 — Quality Must Include Observability
 
 A system that cannot explain its operational behavior is difficult to maintain and verify.
 
@@ -1042,7 +1042,7 @@ Operational evidence should progressively contribute to engineering quality asse
 
 ---
 
-# Principle 33 — Quality Must Extend Beyond Release
+## Principle 33 — Quality Must Extend Beyond Release
 
 Release is not the end of the quality lifecycle.
 
@@ -1068,7 +1068,7 @@ Operational learning must influence future quality controls.
 
 ---
 
-# Principle 34 — Defects Must Produce Learning
+## Principle 34 — Defects Must Produce Learning
 
 Fixing a defect is necessary.
 
@@ -1101,7 +1101,7 @@ Repeated defects should lead to stronger systemic protection.
 
 ---
 
-# Principle 35 — Quality Must Improve Continuously
+## Principle 35 — Quality Must Improve Continuously
 
 The Quality Framework itself must evolve.
 
@@ -1131,7 +1131,7 @@ The objective is better quality engineering.
 
 ---
 
-# Principle 36 — Quality Controls Must Minimize Unnecessary Friction
+## Principle 36 — Quality Controls Must Minimize Unnecessary Friction
 
 Quality systems must protect engineering outcomes without creating avoidable obstacles.
 
@@ -1150,7 +1150,7 @@ False positives should therefore be treated as quality problems within the quali
 
 ---
 
-# Principle 37 — Quality Infrastructure Is Production Infrastructure
+## Principle 37 — Quality Infrastructure Is Production Infrastructure
 
 Quality tooling directly affects engineering confidence.
 
@@ -1172,7 +1172,7 @@ It must itself be tested, versioned, reviewed, and monitored.
 
 ---
 
-# Principle 38 — Quality Decisions Must Be Explainable
+## Principle 38 — Quality Decisions Must Be Explainable
 
 A quality decision must not be an opaque result.
 
@@ -1198,7 +1198,7 @@ This principle becomes especially important when automated systems become more a
 
 ---
 
-# Principle 39 — AI May Assist but Must Not Become Opaque Authority
+## Principle 39 — AI May Assist but Must Not Become Opaque Authority
 
 AI may support FamilyOS quality processes.
 
@@ -1221,7 +1221,7 @@ AI recommendations must remain explainable and reviewable.
 
 ---
 
-# Principle 40 — Quality Must Support Developer Autonomy
+## Principle 40 — Quality Must Support Developer Autonomy
 
 Developers should be able to understand and execute relevant quality verification without depending entirely on centralized infrastructure.
 
@@ -1243,7 +1243,7 @@ Local reproducibility improves autonomy and reduces feedback delays.
 
 ---
 
-# Principle 41 — Quality Profiles Must Be Explicit
+## Principle 41 — Quality Profiles Must Be Explicit
 
 Different components may require different levels of quality control.
 
@@ -1273,7 +1273,7 @@ Profiles must inherit appropriate FamilyOS baseline requirements.
 
 ---
 
-# Principle 42 — Critical Components Require Stronger Assurance
+## Principle 42 — Critical Components Require Stronger Assurance
 
 Criticality must influence assurance depth.
 
@@ -1292,7 +1292,7 @@ Assurance effort must be proportional to potential impact.
 
 ---
 
-# Principle 43 — Quality Requirements Must Have Ownership
+## Principle 43 — Quality Requirements Must Have Ownership
 
 Important quality requirements require clear ownership.
 
@@ -1311,7 +1311,7 @@ Quality governance must therefore identify responsible authorities for significa
 
 ---
 
-# Principle 44 — Quality Changes Must Be Reviewed
+## Principle 44 — Quality Changes Must Be Reviewed
 
 Changes to the Quality Framework can affect the entire engineering ecosystem.
 
@@ -1330,7 +1330,7 @@ Quality governance must avoid uncontrolled changes that unexpectedly alter engin
 
 ---
 
-# Principle 45 — Quality Must Preserve Engineering Knowledge
+## Principle 45 — Quality Must Preserve Engineering Knowledge
 
 Quality depends on institutional knowledge.
 
@@ -1351,7 +1351,7 @@ Engineering knowledge is part of platform sustainability.
 
 ---
 
-# Principle 46 — Quality Must Be Auditable
+## Principle 46 — Quality Must Be Auditable
 
 Important quality decisions should be reconstructable.
 
@@ -1379,7 +1379,7 @@ It also supports debugging, governance, and engineering learning.
 
 ---
 
-# Principle 47 — Quality Must Be Deterministic Where Possible
+## Principle 47 — Quality Must Be Deterministic Where Possible
 
 Deterministic quality checks are preferable because they produce predictable engineering behavior.
 
@@ -1397,7 +1397,7 @@ Where nondeterminism is unavoidable, it must be understood and controlled.
 
 ---
 
-# Principle 48 — Quality Failures Must Be Classified
+## Principle 48 — Quality Failures Must Be Classified
 
 A failure should communicate its nature.
 
@@ -1426,7 +1426,7 @@ Classification improves:
 
 ---
 
-# Principle 49 — Severity Must Reflect Impact
+## Principle 49 — Severity Must Reflect Impact
 
 Finding severity must represent meaningful engineering impact.
 
@@ -1446,7 +1446,7 @@ Severity classification must support rational prioritization.
 
 ---
 
-# Principle 50 — Quality Must Favor Sustainable Improvement
+## Principle 50 — Quality Must Favor Sustainable Improvement
 
 The objective of the Quality Framework is not maximum enforcement at any cost.
 
@@ -1470,7 +1470,7 @@ The framework succeeds when quality improves continuously without making enginee
 
 ---
 
-# Principle Hierarchy
+## Principle Hierarchy
 
 The Quality Principles can be grouped into several conceptual categories.
 
@@ -1515,7 +1515,7 @@ Together these categories form the philosophical foundation of the FamilyOS Qual
 
 ---
 
-# Applying the Principles
+## Applying the Principles
 
 When introducing a new quality mechanism, FamilyOS should evaluate it against these principles.
 
@@ -1543,7 +1543,7 @@ A quality mechanism that violates several foundational principles should be reco
 
 ---
 
-# Principle Conflicts
+## Principle Conflicts
 
 Quality principles may occasionally create competing pressures.
 
@@ -1577,7 +1577,7 @@ Balanced application of the principles is essential.
 
 ---
 
-# Anti-Principles
+## Anti-Principles
 
 The FamilyOS Quality Framework explicitly rejects several approaches.
 
@@ -1597,7 +1597,7 @@ These approaches conflict with the intended engineering model.
 
 ---
 
-# Expected Engineering Behavior
+## Expected Engineering Behavior
 
 The principles defined in this document should produce engineering behavior where:
 
@@ -1627,7 +1627,7 @@ These behaviors define the operational meaning of quality within FamilyOS.
 
 ---
 
-# Relationship With the Quality Architecture
+## Relationship With the Quality Architecture
 
 The Quality Principles define why the framework behaves as it does.
 
@@ -1651,7 +1651,7 @@ The architecture must remain consistent with the principles established here.
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Governance ensures that the principles remain effective over time.
 
@@ -1668,7 +1668,7 @@ The principles therefore form the normative foundation for later governance mech
 
 ---
 
-# Final Principle
+## Final Principle
 
 The ultimate principle of the FamilyOS Quality Framework is:
 

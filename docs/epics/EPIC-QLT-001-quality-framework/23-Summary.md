@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 23 Summary
+## 23 Summary
 
-## Overview
+### Overview
 
 EPIC-QLT-001 — Quality Framework establishes the quality engineering foundation of FamilyOS.
 
@@ -46,7 +46,7 @@ The framework is designed to support both present engineering needs and the long
 
 ---
 
-# Framework Purpose
+## Framework Purpose
 
 The primary purpose of EPIC-QLT-001 is to ensure that FamilyOS quality becomes:
 
@@ -67,7 +67,7 @@ Quality is treated as a permanent engineering responsibility.
 
 ---
 
-# Quality Philosophy
+## Quality Philosophy
 
 FamilyOS quality is based on the principle that engineering confidence must be justified by evidence.
 
@@ -105,7 +105,7 @@ This creates explainable engineering confidence.
 
 ---
 
-# Quality as an Engineering Capability
+## Quality as an Engineering Capability
 
 The Quality Framework treats quality as a cross-cutting engineering capability spanning:
 
@@ -129,7 +129,7 @@ Quality therefore cannot be owned by one tool or one lifecycle phase.
 
 ---
 
-# Quality Architecture
+## Quality Architecture
 
 The framework establishes a layered quality architecture.
 
@@ -171,7 +171,7 @@ Continuous Improvement
 
 ---
 
-# Quality Requirements
+## Quality Requirements
 
 Quality Requirements define the authoritative expectations that FamilyOS engineering targets must satisfy.
 
@@ -192,7 +192,7 @@ Requirements create the bridge between engineering intent and enforceable qualit
 
 ---
 
-# Quality Rules
+## Quality Rules
 
 Quality Rules operationalize requirements.
 
@@ -220,7 +220,7 @@ Rules remain subordinate to authoritative requirements.
 
 ---
 
-# Quality Profiles
+## Quality Profiles
 
 Quality Profiles define which requirements apply to specific target categories.
 
@@ -241,7 +241,7 @@ Profiles avoid applying every possible requirement to every engineering target.
 
 ---
 
-# Quality Metrics
+## Quality Metrics
 
 Quality Metrics provide quantitative visibility into engineering quality.
 
@@ -265,7 +265,7 @@ They are not themselves proof of quality.
 
 ---
 
-# Quality Evidence
+## Quality Evidence
 
 Quality Evidence provides the factual foundation of the framework.
 
@@ -295,7 +295,7 @@ Evidence enables reproducibility, traceability, assessments, governance, and his
 
 ---
 
-# Quality Findings
+## Quality Findings
 
 Quality Findings represent observed quality conditions requiring attention or interpretation.
 
@@ -319,7 +319,7 @@ Findings may become:
 
 ---
 
-# Quality Risk
+## Quality Risk
 
 Quality Risk evaluates the potential consequences associated with quality conditions.
 
@@ -341,7 +341,7 @@ Higher-risk engineering changes require stronger confidence.
 
 ---
 
-# Defect Management
+## Defect Management
 
 Defect management provides a structured lifecycle for confirmed quality problems.
 
@@ -367,7 +367,7 @@ Significant defects should contribute to future prevention.
 
 ---
 
-# Quality Debt
+## Quality Debt
 
 Quality Debt represents known unresolved quality deficiencies.
 
@@ -396,7 +396,7 @@ The framework rejects invisible or permanently forgotten debt.
 
 ---
 
-# Quality Reviews
+## Quality Reviews
 
 Quality Reviews provide structured human evaluation where deterministic automation is insufficient.
 
@@ -418,7 +418,7 @@ It does not replace deterministic verification where automation is possible.
 
 ---
 
-# Quality Assessments
+## Quality Assessments
 
 Quality Assessments combine distributed quality information into an interpretable target-level state.
 
@@ -453,7 +453,7 @@ What is the current quality state?
 
 ---
 
-# Quality Automation
+## Quality Automation
 
 Quality Automation converts repeatable quality requirements into executable controls.
 
@@ -487,7 +487,7 @@ Actionable Feedback
 
 ---
 
-# Automation Integration
+## Automation Integration
 
 Quality automation may operate across:
 
@@ -504,7 +504,7 @@ The long-term objective is a consistent local and CI quality experience.
 
 ---
 
-# Quality Observability
+## Quality Observability
 
 Quality Observability provides continuous visibility into quality state and evolution.
 
@@ -535,7 +535,7 @@ Improvement
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Quality Gates transform quality state into controlled lifecycle progression decisions.
 
@@ -567,7 +567,7 @@ Unknown quality state must never silently become PASS.
 
 ---
 
-# Compliance
+## Compliance
 
 Quality Compliance evaluates whether targets satisfy applicable mandatory FamilyOS requirements.
 
@@ -599,7 +599,7 @@ ERROR
 
 ---
 
-# Compliance Profiles
+## Compliance Profiles
 
 Compliance Profiles enable different requirements for different target categories.
 
@@ -617,7 +617,7 @@ Domain frameworks may provide specialized compliance semantics.
 
 ---
 
-# Exceptions
+## Exceptions
 
 Exceptions permit controlled temporary deviations from requirements.
 
@@ -637,7 +637,7 @@ An exception does not erase the underlying quality condition.
 
 ---
 
-# Overrides
+## Overrides
 
 Overrides alter a progression decision under exceptional governance.
 
@@ -663,7 +663,7 @@ This distinction preserves engineering truth.
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Continuous Improvement transforms quality outcomes into engineering learning.
 
@@ -693,7 +693,7 @@ It is to reduce the probability of entire defect classes recurring.
 
 ---
 
-# Learning Loop
+## Learning Loop
 
 A mature quality learning loop is:
 
@@ -713,7 +713,7 @@ FamilyOS should continuously convert engineering experience into institutional c
 
 ---
 
-# Quality Governance
+## Quality Governance
 
 Quality Governance defines:
 
@@ -733,7 +733,7 @@ Governance ensures quality decisions remain consistent and traceable.
 
 ---
 
-# Governance Model
+## Governance Model
 
 The governance chain is:
 
@@ -761,7 +761,7 @@ Lower-level automation must not silently redefine higher-level policy.
 
 ---
 
-# Federated Governance
+## Federated Governance
 
 The Quality Framework favors federated governance.
 
@@ -787,7 +787,7 @@ This prevents semantic duplication.
 
 ---
 
-# Quality Framework Lifecycle
+## Quality Framework Lifecycle
 
 The Quality Framework itself has a lifecycle.
 
@@ -827,7 +827,7 @@ Framework capabilities must not remain permanently authoritative without lifecyc
 
 ---
 
-# Rule Lifecycle
+## Rule Lifecycle
 
 Quality Rules may evolve through:
 
@@ -851,7 +851,7 @@ This enables evidence-based enforcement.
 
 ---
 
-# Framework Versioning
+## Framework Versioning
 
 Framework versions preserve semantic history.
 
@@ -868,7 +868,7 @@ This allows historical assessments and gate decisions to remain interpretable.
 
 ---
 
-# Roadmap
+## Roadmap
 
 The implementation roadmap progresses through:
 
@@ -900,7 +900,7 @@ This order intentionally prioritizes deterministic engineering foundations befor
 
 ---
 
-# Initial Implementation Direction
+## Initial Implementation Direction
 
 The first implementation should remain small and practical.
 
@@ -923,7 +923,7 @@ The Quality Framework should normalize existing tools rather than replace them.
 
 ---
 
-# Future Quality CLI
+## Future Quality CLI
 
 A future quality CLI may evolve toward:
 
@@ -943,7 +943,7 @@ The exact command model should follow the FamilyOS CLI Architecture.
 
 ---
 
-# Future Quality Platform
+## Future Quality Platform
 
 At greater maturity, the Quality Framework may evolve into an internal Quality Platform.
 
@@ -975,7 +975,7 @@ This platform should emerge incrementally from proven capabilities.
 
 ---
 
-# Quality Intelligence
+## Quality Intelligence
 
 Advanced quality intelligence should only be introduced after sufficient deterministic evidence and historical data exist.
 
@@ -994,7 +994,7 @@ AI should remain explainable and evidence-grounded.
 
 ---
 
-# AI Role
+## AI Role
 
 AI may assist with:
 
@@ -1018,7 +1018,7 @@ unless future FamilyOS governance explicitly defines such authority.
 
 ---
 
-# Validation
+## Validation
 
 The Quality Framework must itself be validated.
 
@@ -1042,7 +1042,7 @@ The framework should satisfy the same expectations of evidence and traceability 
 
 ---
 
-# Validation Principle
+## Validation Principle
 
 The authority of the Quality Framework depends on the credibility of the framework itself.
 
@@ -1066,7 +1066,7 @@ These states must remain separate.
 
 ---
 
-# Cross-Framework Integration
+## Cross-Framework Integration
 
 The Quality Framework integrates with major FamilyOS foundations.
 
@@ -1087,7 +1087,7 @@ The Quality Framework consumes their domain-specific outputs and combines them i
 
 ---
 
-# Engineering Foundation Relationship
+## Engineering Foundation Relationship
 
 The Engineering Foundation defines the general FamilyOS engineering philosophy.
 
@@ -1095,7 +1095,7 @@ The Quality Framework operationalizes quality assurance across that engineering 
 
 ---
 
-# Testing Framework Relationship
+## Testing Framework Relationship
 
 The Testing Framework defines how testing works.
 
@@ -1111,7 +1111,7 @@ Quality Assessment
 
 ---
 
-# Documentation Framework Relationship
+## Documentation Framework Relationship
 
 The Documentation Framework defines documentation quality semantics.
 
@@ -1119,7 +1119,7 @@ The Quality Framework integrates documentation results into broader assessments 
 
 ---
 
-# Build Framework Relationship
+## Build Framework Relationship
 
 The Build Framework defines build semantics.
 
@@ -1127,7 +1127,7 @@ The Quality Framework consumes build evidence and determines quality impact.
 
 ---
 
-# Release Framework Relationship
+## Release Framework Relationship
 
 The Release Framework governs release lifecycle.
 
@@ -1135,7 +1135,7 @@ The Quality Framework provides release quality state and Quality Gates.
 
 ---
 
-# Plugin Compliance Framework Relationship
+## Plugin Compliance Framework Relationship
 
 The Plugin Compliance Framework provides specialized compliance for plugins.
 
@@ -1143,7 +1143,7 @@ The Quality Framework integrates its compliance evidence into broader platform q
 
 ---
 
-# Architecture Relationship
+## Architecture Relationship
 
 Architecture decisions may become:
 
@@ -1163,7 +1163,7 @@ This converts architecture from documentation into enforceable engineering struc
 
 ---
 
-# Quality Traceability
+## Quality Traceability
 
 One of the framework's most important strategic capabilities is end-to-end quality traceability.
 
@@ -1195,7 +1195,7 @@ This creates explainable governance.
 
 ---
 
-# Quality Control Plane
+## Quality Control Plane
 
 The Quality Framework forms part of the FamilyOS engineering control plane.
 
@@ -1221,7 +1221,7 @@ The integrity of this control plane is itself a quality and security concern.
 
 ---
 
-# Quality and Developer Experience
+## Quality and Developer Experience
 
 Quality controls should support engineers rather than create unnecessary friction.
 
@@ -1239,7 +1239,7 @@ Poor quality tooling encourages bypass behavior and reduces trust.
 
 ---
 
-# Quality and Sustainability
+## Quality and Sustainability
 
 The long-term objective is not maximum strictness.
 
@@ -1261,7 +1261,7 @@ Evolution
 
 ---
 
-# No Zero-Defect Dogma
+## No Zero-Defect Dogma
 
 FamilyOS does not assume that every quality deficiency must be eliminated immediately.
 
@@ -1281,7 +1281,7 @@ This creates realistic but disciplined quality engineering.
 
 ---
 
-# No Quality Theatre
+## No Quality Theatre
 
 The framework rejects quality activities that create appearances without meaningful engineering confidence.
 
@@ -1300,7 +1300,7 @@ Every quality mechanism should serve an explicit engineering purpose.
 
 ---
 
-# Core Quality Principles
+## Core Quality Principles
 
 The framework can be summarized through several core principles.
 
@@ -1334,7 +1334,7 @@ Quality systems must improve continuously.
 
 ---
 
-# Current Framework Outcome
+## Current Framework Outcome
 
 At the completion of EPIC-QLT-001 documentation, FamilyOS gains an authoritative conceptual foundation for:
 
@@ -1361,7 +1361,7 @@ This provides the architecture necessary for future implementation.
 
 ---
 
-# Documentation Completion vs Implementation
+## Documentation Completion vs Implementation
 
 Completion of the EPIC documentation should be interpreted as:
 
@@ -1383,7 +1383,7 @@ Implementation follows the roadmap.
 
 ---
 
-# Near-Term Engineering Outcome
+## Near-Term Engineering Outcome
 
 The near-term target is to establish:
 
@@ -1400,7 +1400,7 @@ integrating existing FamilyOS quality tools.
 
 ---
 
-# Medium-Term Engineering Outcome
+## Medium-Term Engineering Outcome
 
 The medium-term target is:
 
@@ -1417,7 +1417,7 @@ Governed Exceptions
 
 ---
 
-# Long-Term Engineering Outcome
+## Long-Term Engineering Outcome
 
 The long-term target is:
 
@@ -1432,7 +1432,7 @@ Explainable AI Assistance
 
 ---
 
-# Framework Maturity
+## Framework Maturity
 
 The full maturity progression can be summarized as:
 
@@ -1478,7 +1478,7 @@ Quality Intelligence
 
 ---
 
-# Strategic Value
+## Strategic Value
 
 EPIC-QLT-001 creates value beyond defect detection.
 
@@ -1496,7 +1496,7 @@ It provides the foundation for:
 
 ---
 
-# FamilyOS Quality Vision
+## FamilyOS Quality Vision
 
 The strategic quality vision is:
 
@@ -1512,7 +1512,7 @@ It means engineering confidence should become increasingly demonstrable.
 
 ---
 
-# Reference Quality System
+## Reference Quality System
 
 The complete reference model is:
 
@@ -1564,7 +1564,7 @@ This forms a closed quality engineering system.
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The Quality Framework enables FamilyOS to move from:
 
@@ -1608,7 +1608,7 @@ This is the fundamental transformation introduced by EPIC-QLT-001.
 
 ---
 
-# Final Summary Principle
+## Final Summary Principle
 
 FamilyOS quality must not depend on optimism, memory, isolated tools, or informal approval.
 

@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 11 Documentation Templates
+## 11 Documentation Templates
 
-## Context
+### Context
 
 FamilyOS documentation must remain consistent across all domains, plugins, specifications, and engineering activities.
 
@@ -18,23 +18,23 @@ Documentation templates define the official structures used to create FamilyOS d
 
 ---
 
-# Documentation Template Principles
+## Documentation Template Principles
 
 FamilyOS templates follow these principles.
 
-## Consistency
+### Consistency
 
 Documents describing similar concepts must share a common structure.
 
 ---
 
-## Completeness
+### Completeness
 
 Templates must provide all required sections while allowing domain-specific extensions.
 
 ---
 
-## Automation Compatibility
+### Automation Compatibility
 
 Templates must support future automation processes:
 
@@ -45,7 +45,7 @@ Templates must support future automation processes:
 
 ---
 
-## Human Readability
+### Human Readability
 
 Templates must remain understandable for:
 
@@ -56,7 +56,7 @@ Templates must remain understandable for:
 
 ---
 
-# Official Documentation Template Categories
+## Official Documentation Template Categories
 
 FamilyOS defines the following documentation categories:
 
@@ -75,7 +75,7 @@ Documentation Templates
 
 ---
 
-# EPIC Documentation Template
+## EPIC Documentation Template
 
 EPIC documents describe large engineering initiatives.
 
@@ -105,7 +105,7 @@ Required structure:
 
 ---
 
-# RFC Documentation Template
+## RFC Documentation Template
 
 RFC documents describe proposed designs and major changes.
 
@@ -141,7 +141,7 @@ Required structure:
 
 ---
 
-# ADR Documentation Template
+## ADR Documentation Template
 
 ADR documents capture architectural decisions.
 
@@ -167,7 +167,7 @@ Required structure:
 
 ---
 
-# SPEC Documentation Template
+## SPEC Documentation Template
 
 SPEC documents define normative requirements.
 
@@ -197,7 +197,7 @@ Required structure:
 
 ---
 
-# Plugin Documentation Template
+## Plugin Documentation Template
 
 Official plugins must provide standardized documentation.
 
@@ -229,7 +229,7 @@ Required structure:
 
 ---
 
-# Architecture Document Template
+## Architecture Document Template
 
 Architecture documentation describes system design.
 
@@ -259,7 +259,7 @@ Required structure:
 
 ---
 
-# Guide Documentation Template
+## Guide Documentation Template
 
 Guides explain operational or development procedures.
 
@@ -283,7 +283,7 @@ Required structure:
 
 ---
 
-# Reference Documentation Template
+## Reference Documentation Template
 
 Reference documents provide stable technical information.
 
@@ -305,7 +305,7 @@ Required structure:
 
 ---
 
-# Required Metadata Header
+## Required Metadata Header
 
 Official documentation should include metadata.
 
@@ -324,7 +324,7 @@ document:
 
 ---
 
-# Template Extension Rules
+## Template Extension Rules
 
 Templates may be extended when:
 
@@ -336,35 +336,35 @@ Extensions must not remove mandatory sections.
 
 ---
 
-# Template Validation Rules
+## Template Validation Rules
 
 A document using a FamilyOS template must verify:
 
-## Structure
+### Structure
 
 Required sections exist.
 
 ---
 
-## Metadata
+### Metadata
 
 Required metadata fields are present.
 
 ---
 
-## References
+### References
 
 Referenced artifacts are valid.
 
 ---
 
-## Versioning
+### Versioning
 
 Version follows documentation version rules.
 
 ---
 
-# Template Evolution Process
+## Template Evolution Process
 
 Templates evolve through controlled changes.
 
@@ -385,7 +385,7 @@ Template Release
 
 ---
 
-# Template Versioning
+## Template Versioning
 
 Templates follow semantic versioning.
 
@@ -403,7 +403,7 @@ v2.0.0
 
 ---
 
-# Template Repository Organization
+## Template Repository Organization
 
 Recommended structure:
 
@@ -421,7 +421,7 @@ docs/
 
 ---
 
-# Governance Integration
+## Governance Integration
 
 Templates are maintained through Documentation Governance.
 
@@ -434,7 +434,7 @@ Changes require:
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
 Documentation templates integrate with:
 
@@ -446,7 +446,7 @@ Documentation templates integrate with:
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 Documentation templates are compliant when:
 

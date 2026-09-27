@@ -20,7 +20,7 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 This document defines and records the validation requirements for the normalized repository representation of:
 
@@ -44,7 +44,7 @@ A requirement SHALL NOT be marked `PASS` merely because it is documented.
 
 ---
 
-# 2. Historical Publication
+## 2. Historical Publication
 
 EPIC-OPS-001 version `5.1.0` was historically published under:
 
@@ -74,7 +74,7 @@ The historical publication SHALL remain unchanged throughout normalization.
 
 ---
 
-# 3. Historical Tag Evidence
+## 3. Historical Tag Evidence
 
 Historical tag:
 
@@ -106,7 +106,7 @@ Historical Tag Integrity: PENDING FINAL RECHECK
 
 ---
 
-# 4. Historical Structure
+## 4. Historical Structure
 
 The historical publication contains exactly ten numbered documents:
 
@@ -134,7 +134,7 @@ Historical Files:      10
 
 ---
 
-# 5. Current Normalized Structure
+## 5. Current Normalized Structure
 
 The current normalized repository adds seven control documents:
 
@@ -159,7 +159,7 @@ Canonical Files:       17
 
 ---
 
-# 6. Validation State Model
+## 6. Validation State Model
 
 Current validation uses:
 
@@ -183,7 +183,7 @@ Historical publication evidence SHALL NOT automatically establish current normal
 
 ---
 
-# 7. Machine-Readable Baseline
+## 7. Machine-Readable Baseline
 
 During current post-release revalidation, the expected baseline is:
 
@@ -208,7 +208,7 @@ release:
 
 ---
 
-# 8. YAML Parse Validation
+## 8. YAML Parse Validation
 
 `EPIC.yaml` SHALL parse successfully with a real YAML parser.
 
@@ -229,7 +229,7 @@ YAML Parse: PENDING
 
 ---
 
-# 9. YAML Contract Validation
+## 9. YAML Contract Validation
 
 Expected identity:
 
@@ -272,7 +272,7 @@ YAML Contract: PENDING
 
 ---
 
-# 10. Filesystem Contract Validation
+## 10. Filesystem Contract Validation
 
 Validation SHALL compare the machine-readable deliverables with physical repository membership.
 
@@ -299,7 +299,7 @@ Filesystem Contract: PENDING
 
 ---
 
-# 11. Numbering Integrity
+## 11. Numbering Integrity
 
 The numbered range SHALL remain:
 
@@ -336,7 +336,7 @@ Numbering Integrity: PENDING
 
 ---
 
-# 12. Control Document Validation
+## 12. Control Document Validation
 
 Expected control documents:
 
@@ -364,7 +364,7 @@ Control Document Validation: PENDING
 
 ---
 
-# 13. Empty File Validation
+## 13. Empty File Validation
 
 No canonical file may be empty.
 
@@ -382,7 +382,7 @@ Empty File Validation: PENDING
 
 ---
 
-# 14. Manifest Synchronization
+## 14. Manifest Synchronization
 
 `MANIFEST.md` SHALL agree with:
 
@@ -413,7 +413,7 @@ Manifest Synchronization: PENDING
 
 ---
 
-# 15. README Synchronization
+## 15. README Synchronization
 
 `README.md` SHALL accurately describe:
 
@@ -443,7 +443,7 @@ README Synchronization: PENDING
 
 ---
 
-# 16. EPIC Summary Synchronization
+## 16. EPIC Summary Synchronization
 
 `EPIC-OPS-001.md` SHALL align with:
 
@@ -464,7 +464,7 @@ EPIC Summary Synchronization: PENDING
 
 ---
 
-# 17. Changelog Synchronization
+## 17. Changelog Synchronization
 
 `CHANGELOG.md` SHALL distinguish:
 
@@ -488,7 +488,7 @@ Changelog Synchronization: PENDING
 
 ---
 
-# 18. Revision History Synchronization
+## 18. Revision History Synchronization
 
 `Revision-History.md` SHALL preserve:
 
@@ -508,7 +508,7 @@ Revision History Synchronization: PENDING
 
 ---
 
-# 19. State Consistency
+## 19. State Consistency
 
 Historical publication:
 
@@ -536,7 +536,7 @@ State Consistency: PENDING
 
 ---
 
-# 20. Historical Numbered-State Interpretation
+## 20. Historical Numbered-State Interpretation
 
 Historical numbered documents may contain:
 
@@ -557,7 +557,7 @@ They SHALL NOT automatically be interpreted as active current control-layer stat
 
 ---
 
-# 21. Historical `09-Validation-and-Release.md` Context
+## 21. Historical `09-Validation-and-Release.md` Context
 
 The historical validation document may contain:
 
@@ -573,7 +573,7 @@ The normalized control layer SHALL carry current repository lifecycle truth.
 
 ---
 
-# 22. Local Markdown Reference Validation
+## 22. Local Markdown Reference Validation
 
 Active local Markdown references SHOULD resolve.
 
@@ -598,7 +598,7 @@ Reference Integrity: PENDING
 
 ---
 
-# 23. Placeholder Validation
+## 23. Placeholder Validation
 
 Potential unresolved markers include:
 
@@ -629,7 +629,7 @@ Unresolved Blocking Placeholders: PENDING
 
 ---
 
-# 24. Join Defect Validation
+## 24. Join Defect Validation
 
 The historical numbered baseline already contains malformed joins requiring contextual classification.
 
@@ -660,7 +660,7 @@ Join Defect Validation: PENDING
 
 ---
 
-# 25. Historical Join-Defect Preservation Rule
+## 25. Historical Join-Defect Preservation Rule
 
 Current control-document normalization SHALL NOT silently rewrite the historical numbered baseline merely to make the current control layer pass.
 
@@ -682,7 +682,7 @@ Historical Join-Defect Classification: PENDING
 
 ---
 
-# 26. Operations Principle Consistency
+## 26. Operations Principle Consistency
 
 The framework SHALL preserve principles including:
 
@@ -709,7 +709,7 @@ Operations Principle Consistency: PENDING
 
 ---
 
-# 27. Operations Architecture Consistency
+## 27. Operations Architecture Consistency
 
 Architecture SHALL remain coherent across:
 
@@ -734,7 +734,7 @@ Operations Architecture Consistency: PENDING
 
 ---
 
-# 28. Infrastructure Neutrality
+## 28. Infrastructure Neutrality
 
 The Operations Framework SHALL remain infrastructure-neutral.
 
@@ -755,7 +755,7 @@ Infrastructure Neutrality: PENDING
 
 ---
 
-# 29. Ownership Consistency
+## 29. Ownership Consistency
 
 Operational responsibilities SHOULD have identifiable ownership where impact requires it.
 
@@ -776,7 +776,7 @@ Ownership Consistency: PENDING
 
 ---
 
-# 30. Controlled Change Consistency
+## 30. Controlled Change Consistency
 
 Operational change SHOULD remain controlled.
 
@@ -798,7 +798,7 @@ Controlled Change Consistency: PENDING
 
 ---
 
-# 31. Runtime Configuration Consistency
+## 31. Runtime Configuration Consistency
 
 Critical runtime configuration MUST be validated before unsafe execution.
 
@@ -819,7 +819,7 @@ Runtime Configuration Consistency: PENDING
 
 ---
 
-# 32. Runtime State Consistency
+## 32. Runtime State Consistency
 
 Runtime state SHOULD remain explicit.
 
@@ -846,7 +846,7 @@ Runtime State Consistency: PENDING
 
 ---
 
-# 33. Service Management Consistency
+## 33. Service Management Consistency
 
 Services SHOULD have explicit lifecycle expectations covering:
 
@@ -869,7 +869,7 @@ Service Management Consistency: PENDING
 
 ---
 
-# 34. Health Consistency
+## 34. Health Consistency
 
 Health SHALL describe meaningful operational condition.
 
@@ -883,7 +883,7 @@ Health Consistency: PENDING
 
 ---
 
-# 35. Readiness Consistency
+## 35. Readiness Consistency
 
 Readiness SHALL indicate whether a component can perform its intended responsibilities.
 
@@ -903,7 +903,7 @@ Readiness Consistency: PENDING
 
 ---
 
-# 36. Dependency Consistency
+## 36. Dependency Consistency
 
 Operational dependency handling SHOULD remain explicit regarding:
 
@@ -925,7 +925,7 @@ Dependency Consistency: PENDING
 
 ---
 
-# 37. Incident Response Consistency
+## 37. Incident Response Consistency
 
 Significant incidents SHOULD follow structured response.
 
@@ -957,7 +957,7 @@ Incident Response Consistency: PENDING
 
 ---
 
-# 38. Incident Evidence Consistency
+## 38. Incident Evidence Consistency
 
 Incident handling SHOULD preserve evidence appropriate to:
 
@@ -977,7 +977,7 @@ Incident Evidence Consistency: PENDING
 
 ---
 
-# 39. Recovery Consistency
+## 39. Recovery Consistency
 
 Recovery SHALL remain incomplete until resulting operational state has been validated.
 
@@ -997,7 +997,7 @@ Recovery Consistency: PENDING
 
 ---
 
-# 40. Restore Validation Consistency
+## 40. Restore Validation Consistency
 
 Restore validation may include:
 
@@ -1017,7 +1017,7 @@ Restore Validation Consistency: PENDING
 
 ---
 
-# 41. Rollback Consistency
+## 41. Rollback Consistency
 
 Rollback SHALL remain a controlled recovery action.
 
@@ -1038,7 +1038,7 @@ Rollback Consistency: PENDING
 
 ---
 
-# 42. Capacity Consistency
+## 42. Capacity Consistency
 
 Capacity planning SHOULD remain evidence-based.
 
@@ -1061,7 +1061,7 @@ Capacity Consistency: PENDING
 
 ---
 
-# 43. Performance Consistency
+## 43. Performance Consistency
 
 Performance SHALL remain measurable rather than assumed.
 
@@ -1082,7 +1082,7 @@ Performance Consistency: PENDING
 
 ---
 
-# 44. Reliability Consistency
+## 44. Reliability Consistency
 
 Reliability mechanisms may include:
 
@@ -1105,7 +1105,7 @@ Reliability Consistency: PENDING
 
 ---
 
-# 45. Operational Security Consistency
+## 45. Operational Security Consistency
 
 Operations SHALL preserve Security Framework requirements.
 
@@ -1125,7 +1125,7 @@ Operational Security Consistency: PENDING
 
 ---
 
-# 46. Governance Consistency
+## 46. Governance Consistency
 
 Operational governance SHOULD remain coherent regarding:
 
@@ -1146,7 +1146,7 @@ Operational Governance Consistency: PENDING
 
 ---
 
-# 47. Automation Consistency
+## 47. Automation Consistency
 
 Automation SHALL preserve the preferred operational flow:
 
@@ -1174,7 +1174,7 @@ Operations Automation Consistency: PENDING
 
 ---
 
-# 48. Automation Security Consistency
+## 48. Automation Security Consistency
 
 Automation MUST NOT bypass required security controls.
 
@@ -1188,7 +1188,7 @@ Automation Security Consistency: PENDING
 
 ---
 
-# 49. Automation Validation Consistency
+## 49. Automation Validation Consistency
 
 Automation MUST NOT bypass required validation.
 
@@ -1204,7 +1204,7 @@ Automation Validation Consistency: PENDING
 
 ---
 
-# 50. Structured Automation Result Consistency
+## 50. Structured Automation Result Consistency
 
 Automation SHOULD produce machine-readable results where practical.
 
@@ -1230,7 +1230,7 @@ Structured Automation Result Consistency: PENDING
 
 ---
 
-# 51. Infrastructure-as-Code Consistency
+## 51. Infrastructure-as-Code Consistency
 
 Infrastructure SHOULD be represented declaratively where practical.
 
@@ -1250,7 +1250,7 @@ Infrastructure-as-Code Consistency: PENDING
 
 ---
 
-# 52. Testing Boundary
+## 52. Testing Boundary
 
 EPIC-TST-001 remains authoritative for general testing architecture.
 
@@ -1264,7 +1264,7 @@ Operations / Testing Boundary: PENDING
 
 ---
 
-# 53. Quality Boundary
+## 53. Quality Boundary
 
 EPIC-QLT-001 remains authoritative for quality governance.
 
@@ -1284,7 +1284,7 @@ Operations / Quality Boundary: PENDING
 
 ---
 
-# 54. Build Boundary
+## 54. Build Boundary
 
 EPIC-BLD-001 remains authoritative for build engineering.
 
@@ -1298,7 +1298,7 @@ Operations / Build Boundary: PENDING
 
 ---
 
-# 55. Release Boundary
+## 55. Release Boundary
 
 EPIC-REL-001 remains authoritative for release engineering.
 
@@ -1319,7 +1319,7 @@ Operations / Release Boundary: PENDING
 
 ---
 
-# 56. Observability Boundary
+## 56. Observability Boundary
 
 EPIC-OBS-001 remains authoritative for observability architecture.
 
@@ -1333,7 +1333,7 @@ Operations / Observability Boundary: PENDING
 
 ---
 
-# 57. Security Boundary
+## 57. Security Boundary
 
 EPIC-SEC-001 remains authoritative for security architecture and policy.
 
@@ -1347,7 +1347,7 @@ Operations / Security Boundary: PENDING
 
 ---
 
-# 58. Historical Tag Integrity
+## 58. Historical Tag Integrity
 
 Historical tag:
 
@@ -1379,7 +1379,7 @@ Historical Tag Integrity: PENDING FINAL RECHECK
 
 ---
 
-# 59. Ruff Validation
+## 59. Ruff Validation
 
 Canonical command:
 
@@ -1395,7 +1395,7 @@ Ruff: PENDING
 
 ---
 
-# 60. MyPy Validation
+## 60. MyPy Validation
 
 Canonical command:
 
@@ -1413,7 +1413,7 @@ Actual checked source-file count SHALL be recorded from execution.
 
 ---
 
-# 61. Pytest Validation
+## 61. Pytest Validation
 
 Canonical command:
 
@@ -1431,7 +1431,7 @@ Actual passed-test count SHALL be recorded from execution.
 
 ---
 
-# 62. Diff Validation
+## 62. Diff Validation
 
 Canonical command:
 
@@ -1447,7 +1447,7 @@ DiffCheck: PENDING
 
 ---
 
-# 63. Repository Cleanliness
+## 63. Repository Cleanliness
 
 After normalization is committed and published, expected repository state is:
 
@@ -1463,7 +1463,7 @@ Final Repository Cleanliness: PENDING
 
 ---
 
-# 64. Remote Branch Verification
+## 64. Remote Branch Verification
 
 After normalization commit publication:
 
@@ -1481,7 +1481,7 @@ Remote Branch Verification: PENDING
 
 ---
 
-# 65. Historical Remote Tag Verification
+## 65. Historical Remote Tag Verification
 
 The authoritative remote tag SHALL remain attached to:
 
@@ -1497,7 +1497,7 @@ Historical Remote Tag Verification: PENDING FINAL RECHECK
 
 ---
 
-# 66. Validation Matrix
+## 66. Validation Matrix
 
 | Validation Area                          | Current State         |
 | ---------------------------------------- | --------------------- |
@@ -1560,7 +1560,7 @@ Historical Remote Tag Verification: PENDING FINAL RECHECK
 
 ---
 
-# 67. Historical Evidence Already Established
+## 67. Historical Evidence Already Established
 
 Historical release evidence currently established:
 
@@ -1581,7 +1581,7 @@ They do not automatically establish normalized repository validation.
 
 ---
 
-# 68. Historical Join-Defect Evidence
+## 68. Historical Join-Defect Evidence
 
 The historical numbered baseline contains at least the following observed text defects:
 
@@ -1607,7 +1607,7 @@ Historical Join Defects Classified: PENDING
 
 ---
 
-# 69. Placeholder Example Classification
+## 69. Placeholder Example Classification
 
 Historical validation text contains placeholder terms such as:
 
@@ -1629,7 +1629,7 @@ Context-Aware Placeholder Validation: PENDING
 
 ---
 
-# 70. Final Revalidation Conditions
+## 70. Final Revalidation Conditions
 
 Current normalized EPIC-OPS-001 revalidation MAY become validated only when:
 
@@ -1668,7 +1668,7 @@ Current normalized EPIC-OPS-001 revalidation MAY become validated only when:
 
 ---
 
-# 71. Final Machine-Readable Target State
+## 71. Final Machine-Readable Target State
 
 After successful current revalidation, expected `EPIC.yaml` state becomes:
 
@@ -1700,7 +1700,7 @@ Historical publication metadata SHALL remain unchanged.
 
 ---
 
-# 72. Evidence Recording Rule
+## 72. Evidence Recording Rule
 
 Required model:
 
@@ -1728,7 +1728,7 @@ Only actual current evidence SHALL convert repository validation to `Validated`.
 
 ---
 
-# 73. Current Validation Decision
+## 73. Current Validation Decision
 
 Historical framework state:
 
@@ -1761,7 +1761,7 @@ EPIC-OPS-001 REVALIDATION: PASS
 
 ---
 
-# 74. Final Validation Principle
+## 74. Final Validation Principle
 
 Historical publication proves that EPIC-OPS-001 version `5.1.0` was released.
 

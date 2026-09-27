@@ -12,7 +12,7 @@ Documentation ensures that engineering decisions, architectural concepts, and op
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Documentation Philosophy within the Engineering Foundation is to define the strategic role of documentation.
 
@@ -28,9 +28,9 @@ Documentation is considered an engineering asset.
 
 ---
 
-# Documentation Philosophy Principles
+## Documentation Philosophy Principles
 
-## Principle 1 — Documentation Is Part of Engineering
+### Principle 1 — Documentation Is Part of Engineering
 
 Documentation is not an optional activity performed after implementation.
 
@@ -44,7 +44,7 @@ Important changes should consider:
 
 ---
 
-## Principle 2 — Knowledge Must Be Preserved
+### Principle 2 — Knowledge Must Be Preserved
 
 FamilyOS is designed for long-term evolution.
 
@@ -58,7 +58,7 @@ Documentation prevents knowledge from existing only in individual memory.
 
 ---
 
-## Principle 3 — Decisions Must Be Traceable
+### Principle 3 — Decisions Must Be Traceable
 
 Important engineering decisions should remain connected to their context.
 
@@ -74,7 +74,7 @@ A decision without context becomes difficult to maintain.
 
 ---
 
-## Principle 4 — Documentation Should Explain Intent
+### Principle 4 — Documentation Should Explain Intent
 
 Documentation should not only describe what exists.
 
@@ -88,7 +88,7 @@ Intent is essential for long-term maintenance.
 
 ---
 
-## Principle 5 — Documentation Evolves With the System
+### Principle 5 — Documentation Evolves With the System
 
 Documentation must evolve together with software.
 
@@ -105,7 +105,7 @@ Outdated documentation creates engineering risk.
 
 ---
 
-## Principle 6 — Documentation Must Be Discoverable
+### Principle 6 — Documentation Must Be Discoverable
 
 Useful knowledge must be easy to find.
 
@@ -118,7 +118,7 @@ Documentation organization should support:
 
 ---
 
-# Documentation as a System Component
+## Documentation as a System Component
 
 FamilyOS documentation forms a structured knowledge system.
 
@@ -138,7 +138,7 @@ Every documentation category contributes to the long-term engineering knowledge 
 
 ---
 
-# Documentation and Architecture
+## Documentation and Architecture
 
 Architecture requires explicit knowledge management.
 
@@ -156,7 +156,7 @@ Reference:
 
 ---
 
-# Documentation and Development Workflow
+## Documentation and Development Workflow
 
 Documentation is integrated into development activities.
 
@@ -171,7 +171,7 @@ A completed engineering change should leave the platform better understood than 
 
 ---
 
-# Documentation and Quality
+## Documentation and Quality
 
 Documentation contributes to engineering quality.
 
@@ -190,7 +190,7 @@ Reference:
 
 ---
 
-# Documentation and Testing
+## Documentation and Testing
 
 Testing knowledge should remain documented.
 
@@ -206,7 +206,7 @@ Reference:
 
 ---
 
-# Documentation and Release
+## Documentation and Release
 
 Releases should preserve knowledge about changes.
 
@@ -222,7 +222,7 @@ Reference:
 
 ---
 
-# Documentation Lifecycle
+## Documentation Lifecycle
 
 Documentation follows a controlled lifecycle.
 
@@ -251,7 +251,7 @@ Reference:
 
 ---
 
-# Documentation Provenance
+## Documentation Provenance
 
 Every authoritative engineering document should preserve sufficient provenance information.
 
@@ -268,7 +268,7 @@ Documentation provenance strengthens traceability, governance, maintenance, and 
 
 ---
 
-# Documentation Automation
+## Documentation Automation
 
 Where practical, documentation processes should be supported by automation.
 
@@ -283,7 +283,7 @@ Automation improves consistency.
 
 ---
 
-# Documentation Governance
+## Documentation Governance
 
 Documentation requires ownership and maintenance.
 
@@ -298,7 +298,7 @@ Significant documentation changes should follow the documented engineering gover
 
 ---
 
-# Documentation Evolution
+## Documentation Evolution
 
 The documentation ecosystem evolves with FamilyOS.
 
@@ -313,7 +313,7 @@ Changes follow documentation governance rules.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Documentation Philosophy is successful when:
 
@@ -325,7 +325,7 @@ Documentation Philosophy is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Documentation Philosophy establishes knowledge management as a core engineering capability of FamilyOS.
 

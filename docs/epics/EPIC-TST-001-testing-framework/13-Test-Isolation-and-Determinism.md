@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 13 Test Isolation and Determinism
+## 13 Test Isolation and Determinism
 
-## Overview
+### Overview
 
 Test isolation and determinism are foundational properties of the FamilyOS Testing Framework.
 
@@ -27,7 +27,7 @@ FamilyOS therefore treats test isolation and determinism as mandatory quality pr
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this strategy is to establish the rules and engineering practices required to ensure that FamilyOS tests produce reliable, reproducible, and independently executable results.
 
@@ -49,7 +49,7 @@ Reliable tests allow engineering decisions to be based on evidence rather than p
 
 ---
 
-# Core Principle
+## Core Principle
 
 The fundamental principle is:
 
@@ -70,7 +70,7 @@ All meaningful dependencies should be explicit and controlled.
 
 ---
 
-# Isolation Definition
+## Isolation Definition
 
 A test is isolated when it owns or safely controls all mutable state required for its execution.
 
@@ -94,7 +94,7 @@ Neither test should depend on state produced by the other.
 
 ---
 
-# Determinism Definition
+## Determinism Definition
 
 A deterministic test satisfies:
 
@@ -116,7 +116,7 @@ It requires the tested behavior to remain reproducible according to its contract
 
 ---
 
-# Isolation Dimensions
+## Isolation Dimensions
 
 Test isolation applies across several dimensions.
 
@@ -141,7 +141,7 @@ Each dimension must be controlled according to the test scope.
 
 ---
 
-# Independent Execution
+## Independent Execution
 
 Every automated test should be executable independently.
 
@@ -163,7 +163,7 @@ This property is essential for:
 
 ---
 
-# Order Independence
+## Order Independence
 
 Tests must not depend on execution order.
 
@@ -188,7 +188,7 @@ Changing test order should not change outcomes.
 
 ---
 
-# Randomized Test Order
+## Randomized Test Order
 
 Randomized test ordering can be useful for detecting hidden dependencies.
 
@@ -198,7 +198,7 @@ Future FamilyOS testing tooling may periodically execute tests in randomized ord
 
 ---
 
-# Shared Mutable State
+## Shared Mutable State
 
 Shared mutable state is one of the primary causes of test interference.
 
@@ -215,7 +215,7 @@ Shared mutable state should be avoided or explicitly reset between tests.
 
 ---
 
-# Global State
+## Global State
 
 Production global state can make tests difficult to isolate.
 
@@ -237,7 +237,7 @@ If global state exists, tests must establish and restore its state safely.
 
 ---
 
-# Singleton Isolation
+## Singleton Isolation
 
 Singleton components can introduce hidden dependencies between tests.
 
@@ -251,7 +251,7 @@ A singleton should never become a reason for order-dependent tests.
 
 ---
 
-# Registry Isolation
+## Registry Isolation
 
 FamilyOS uses architectural registries for concepts such as:
 
@@ -274,7 +274,7 @@ Avoid reliance on a process-wide registry during normal unit or integration test
 
 ---
 
-# Plugin Registry Isolation
+## Plugin Registry Isolation
 
 Plugin tests should create isolated plugin registries.
 
@@ -292,7 +292,7 @@ Registry cleanup must be automatic.
 
 ---
 
-# Capability Registry Isolation
+## Capability Registry Isolation
 
 Capability registration tests require particular care because duplicate or stale registration can cause misleading failures.
 
@@ -316,7 +316,7 @@ The initial state must be obvious from the fixture.
 
 ---
 
-# Event Handler Isolation
+## Event Handler Isolation
 
 Event subscribers must not leak between tests.
 
@@ -335,7 +335,7 @@ Event infrastructure must provide isolated instances or reliable teardown.
 
 ---
 
-# Cache Isolation
+## Cache Isolation
 
 Caches can create hidden coupling.
 
@@ -352,7 +352,7 @@ Cache state should never depend implicitly on previous tests.
 
 ---
 
-# Filesystem Isolation
+## Filesystem Isolation
 
 Filesystem tests should use dedicated temporary locations.
 
@@ -374,7 +374,7 @@ Each test receives an isolated temporary directory.
 
 ---
 
-# Fixed Filesystem Paths
+## Fixed Filesystem Paths
 
 Fixed paths create collision risk.
 
@@ -390,7 +390,7 @@ Prefer uniquely provisioned temporary directories.
 
 ---
 
-# File Cleanup
+## File Cleanup
 
 Files created during tests must be removed automatically.
 
@@ -405,7 +405,7 @@ Testing frameworks and temporary-resource abstractions should handle cleanup whe
 
 ---
 
-# Working Directory Isolation
+## Working Directory Isolation
 
 Tests must not assume a particular current working directory unless that behavior is explicitly under test.
 
@@ -415,7 +415,7 @@ Implicit working-directory dependencies frequently cause local-versus-CI differe
 
 ---
 
-# Database Isolation
+## Database Isolation
 
 Database-backed tests require explicit isolation.
 
@@ -432,7 +432,7 @@ The selected strategy must preserve the realism required by the testing level.
 
 ---
 
-# Transaction Isolation
+## Transaction Isolation
 
 Transaction-based cleanup may be used where supported.
 
@@ -454,7 +454,7 @@ The cleanup mechanism must not invalidate the behavior under test.
 
 ---
 
-# Database Identifier Isolation
+## Database Identifier Isolation
 
 Parallel tests must not accidentally operate on identical persistent identifiers.
 
@@ -464,7 +464,7 @@ If a shared database is unavoidable, unique test-level identifiers should be use
 
 ---
 
-# Database Seeding Isolation
+## Database Seeding Isolation
 
 Each test should seed only the data it requires.
 
@@ -487,7 +487,7 @@ Discard State
 
 ---
 
-# Environment Variable Isolation
+## Environment Variable Isolation
 
 Environment variables are process-global mutable state.
 
@@ -508,7 +508,7 @@ The test should not depend on whether the variable existed before execution.
 
 ---
 
-# Environment Independence
+## Environment Independence
 
 Normal tests must not depend on developer-specific environment variables.
 
@@ -528,7 +528,7 @@ When these affect the test, values must be explicitly controlled.
 
 ---
 
-# Configuration Isolation
+## Configuration Isolation
 
 Configuration should be explicitly created for tests.
 
@@ -545,7 +545,7 @@ The initial configuration should always be known.
 
 ---
 
-# Time Determinism
+## Time Determinism
 
 Current time is inherently variable.
 
@@ -563,7 +563,7 @@ Prefer injected clocks or explicit timestamps.
 
 ---
 
-# Fixed Clocks
+## Fixed Clocks
 
 A fixed clock provides deterministic time.
 
@@ -586,7 +586,7 @@ Time-sensitive components should depend on a clock abstraction when practical.
 
 ---
 
-# Advancing Clocks
+## Advancing Clocks
 
 Some tests require time progression.
 
@@ -600,7 +600,7 @@ This is preferable to waiting ten actual minutes or modifying system time.
 
 ---
 
-# Sleep Avoidance
+## Sleep Avoidance
 
 Tests should not use arbitrary sleeps to synchronize behavior.
 
@@ -621,7 +621,7 @@ Prefer:
 
 ---
 
-# Timeout Testing
+## Timeout Testing
 
 Timeout behavior should be validated without relying on slow real-time waits where possible.
 
@@ -641,7 +641,7 @@ Tests should remain fast and reproducible.
 
 ---
 
-# Timezone Determinism
+## Timezone Determinism
 
 Timezone-sensitive tests must explicitly define timezone context.
 
@@ -658,7 +658,7 @@ Expected behavior should use timezone-aware values.
 
 ---
 
-# Date Boundary Testing
+## Date Boundary Testing
 
 Date-sensitive tests should explicitly test relevant boundaries.
 
@@ -677,7 +677,7 @@ The boundary should be constructed rather than waited for.
 
 ---
 
-# Randomness Determinism
+## Randomness Determinism
 
 Random behavior can make tests difficult to reproduce.
 
@@ -699,7 +699,7 @@ when uniqueness is not part of the behavior.
 
 ---
 
-# Seeded Randomness
+## Seeded Randomness
 
 When randomized testing is useful, a reproducible seed should be available.
 
@@ -719,7 +719,7 @@ A failing random test must provide enough information to recreate the exact fail
 
 ---
 
-# Property-Based Testing Determinism
+## Property-Based Testing Determinism
 
 Property-based testing may generate many input cases.
 
@@ -731,7 +731,7 @@ Significant discovered failures should become deterministic regression tests.
 
 ---
 
-# Identifier Determinism
+## Identifier Determinism
 
 Random IDs should be injected or controlled when they appear in expected results.
 
@@ -752,7 +752,7 @@ This improves:
 
 ---
 
-# Network Isolation
+## Network Isolation
 
 Normal automated tests should not depend on uncontrolled external networks.
 
@@ -769,7 +769,7 @@ Tests should instead use controlled boundaries.
 
 ---
 
-# External Service Isolation
+## External Service Isolation
 
 External services may be represented through:
 
@@ -789,7 +789,7 @@ A specialized certification suite may use an official sandbox.
 
 ---
 
-# Network Access Blocking
+## Network Access Blocking
 
 FamilyOS may block unexpected external network access during normal automated testing.
 
@@ -799,7 +799,7 @@ Any test requiring intentional network access should be explicitly classified.
 
 ---
 
-# Port Isolation
+## Port Isolation
 
 Tests using local network servers must avoid fixed shared ports.
 
@@ -809,7 +809,7 @@ Preferred strategies include dynamically allocated free ports or isolated contai
 
 ---
 
-# Process Isolation
+## Process Isolation
 
 Tests that launch subprocesses must control:
 
@@ -824,7 +824,7 @@ Child processes must not remain running after test completion.
 
 ---
 
-# Subprocess Determinism
+## Subprocess Determinism
 
 Commands invoked through subprocess tests should use controlled executables and arguments.
 
@@ -832,7 +832,7 @@ Tests should not depend on arbitrary binaries installed on a developer machine u
 
 ---
 
-# Thread Isolation
+## Thread Isolation
 
 Tests involving threads must ensure background threads terminate.
 
@@ -842,7 +842,7 @@ Tests should use explicit synchronization rather than timing assumptions.
 
 ---
 
-# Async Isolation
+## Async Isolation
 
 Asynchronous tests must ensure:
 
@@ -855,7 +855,7 @@ Pending asynchronous tasks at test completion should be treated as potential tes
 
 ---
 
-# Async Determinism
+## Async Determinism
 
 Async execution order may vary.
 
@@ -865,7 +865,7 @@ Synchronization should use explicit events, queues, or task completion mechanism
 
 ---
 
-# Event Ordering
+## Event Ordering
 
 Event ordering should only be asserted where the architecture guarantees it.
 
@@ -875,7 +875,7 @@ For order-independent contracts, assertions should use order-independent compari
 
 ---
 
-# Parallel Test Execution
+## Parallel Test Execution
 
 FamilyOS tests should support parallel execution where practical.
 
@@ -892,7 +892,7 @@ Parallel execution is a strong test of isolation quality.
 
 ---
 
-# Worker Isolation
+## Worker Isolation
 
 When multiple test workers are used, resources should be namespaced per worker when required.
 
@@ -908,7 +908,7 @@ or separate temporary directories provisioned automatically.
 
 ---
 
-# Parallel-Safe Identifiers
+## Parallel-Safe Identifiers
 
 Deterministic identifiers are valuable, but they can conflict if parallel tests share infrastructure.
 
@@ -918,7 +918,7 @@ Where that is not possible, test-specific namespaces should be applied.
 
 ---
 
-# Fixture Isolation
+## Fixture Isolation
 
 Fixtures must preserve the isolation requirements of their consuming tests.
 
@@ -928,7 +928,7 @@ Function-scoped mutable fixtures should generally be preferred.
 
 ---
 
-# Fixture Scope Review
+## Fixture Scope Review
 
 Broad fixture scopes should be reviewed carefully.
 
@@ -945,7 +945,7 @@ Performance improvements must not compromise test independence.
 
 ---
 
-# Autouse Fixture Isolation
+## Autouse Fixture Isolation
 
 Autouse fixtures can provide global safeguards such as:
 
@@ -959,7 +959,7 @@ Invisible setup reduces clarity.
 
 ---
 
-# Cleanup Guarantees
+## Cleanup Guarantees
 
 Every allocated resource must have a cleanup strategy.
 
@@ -978,7 +978,7 @@ Cleanup should be automatic and exception-safe.
 
 ---
 
-# Setup Failure Cleanup
+## Setup Failure Cleanup
 
 Partial fixture setup can fail before normal teardown begins.
 
@@ -988,7 +988,7 @@ Resource lifecycle management should account for partial initialization.
 
 ---
 
-# Context Managers
+## Context Managers
 
 Context managers can provide deterministic resource cleanup.
 
@@ -1003,7 +1003,7 @@ The runtime should release resources on exit even when the test raises an except
 
 ---
 
-# Runtime Isolation
+## Runtime Isolation
 
 Runtime tests should generally use fresh FamilyOS runtime instances.
 
@@ -1020,7 +1020,7 @@ Sharing these across unrelated tests introduces significant interference risk.
 
 ---
 
-# Runtime Lifecycle Isolation
+## Runtime Lifecycle Isolation
 
 Each runtime-oriented test should establish an explicit lifecycle.
 
@@ -1043,7 +1043,7 @@ The shutdown step must occur even if validation fails.
 
 ---
 
-# Plugin Isolation
+## Plugin Isolation
 
 Plugin tests must not depend on plugins accidentally registered elsewhere in the test process.
 
@@ -1058,7 +1058,7 @@ The plugin environment should be reproducible.
 
 ---
 
-# Contribution Isolation
+## Contribution Isolation
 
 Policies, rules, recipes, templates, and other plugin contributions should use isolated registries or stores.
 
@@ -1066,7 +1066,7 @@ Contributions registered during one test must not become available implicitly to
 
 ---
 
-# CLI Isolation
+## CLI Isolation
 
 CLI tests must isolate:
 
@@ -1081,7 +1081,7 @@ A CLI test should behave the same whether executed individually or as part of th
 
 ---
 
-# Standard Input and Output Isolation
+## Standard Input and Output Isolation
 
 Tests interacting with:
 
@@ -1095,7 +1095,7 @@ They must not rely on actual interactive input.
 
 ---
 
-# Logging Isolation
+## Logging Isolation
 
 Logging configuration is often process-global.
 
@@ -1107,7 +1107,7 @@ A test must not fail because another test changed global logging configuration.
 
 ---
 
-# Warning Isolation
+## Warning Isolation
 
 Warning filters may also be process-global.
 
@@ -1117,7 +1117,7 @@ Warnings expected by a scenario should be captured explicitly.
 
 ---
 
-# Locale Isolation
+## Locale Isolation
 
 Locale can affect:
 
@@ -1132,7 +1132,7 @@ Normal tests should avoid accidental dependency on host locale.
 
 ---
 
-# Encoding Determinism
+## Encoding Determinism
 
 File and text tests should specify encodings where relevant.
 
@@ -1142,7 +1142,7 @@ Tests should not rely on platform-default encoding.
 
 ---
 
-# Platform Independence
+## Platform Independence
 
 Where behavior is intended to be platform-independent, tests must not depend on:
 
@@ -1155,7 +1155,7 @@ Platform-specific tests should be explicitly classified.
 
 ---
 
-# Filesystem Ordering
+## Filesystem Ordering
 
 Filesystem enumeration order should not be assumed unless explicitly sorted.
 
@@ -1172,7 +1172,7 @@ Prefer explicit sorting when ordering is not meaningful.
 
 ---
 
-# Dictionary and Set Ordering
+## Dictionary and Set Ordering
 
 Tests should distinguish between ordered and unordered contracts.
 
@@ -1182,7 +1182,7 @@ A deterministic observed order should not accidentally become an unsupported con
 
 ---
 
-# Floating-Point Determinism
+## Floating-Point Determinism
 
 Floating-point calculations may require tolerance-based assertions.
 
@@ -1196,7 +1196,7 @@ Exact equality should be used only when the numerical contract supports it.
 
 ---
 
-# External Clock Dependencies
+## External Clock Dependencies
 
 External services may return timestamps.
 
@@ -1206,7 +1206,7 @@ When necessary, the service boundary should be stubbed or sandboxed.
 
 ---
 
-# Scheduler Determinism
+## Scheduler Determinism
 
 Scheduled behavior should be tested through controlled scheduler abstractions.
 
@@ -1214,7 +1214,7 @@ Tests should be able to trigger scheduled operations explicitly rather than wait
 
 ---
 
-# Retry Determinism
+## Retry Determinism
 
 Retry logic should avoid real delays.
 
@@ -1236,7 +1236,7 @@ No arbitrary sleeping is required.
 
 ---
 
-# Backoff Testing
+## Backoff Testing
 
 Backoff calculations can be tested as pure logic where possible.
 
@@ -1244,7 +1244,7 @@ If scheduler interaction is involved, an injected scheduler or clock should reco
 
 ---
 
-# Flaky Tests
+## Flaky Tests
 
 A flaky test produces inconsistent results without intentional changes to code or validated environment.
 
@@ -1264,7 +1264,7 @@ Flaky tests must be treated as engineering defects.
 
 ---
 
-# Flaky Test Policy
+## Flaky Test Policy
 
 FamilyOS should not normalize flaky tests as expected pipeline behavior.
 
@@ -1282,7 +1282,7 @@ Temporary quarantine may be appropriate only under controlled governance.
 
 ---
 
-# Test Retries
+## Test Retries
 
 Automatic retries can hide nondeterminism.
 
@@ -1292,7 +1292,7 @@ Where retry mechanisms exist for diagnostic purposes, the initial failure should
 
 ---
 
-# Quarantined Tests
+## Quarantined Tests
 
 A test may be temporarily quarantined when:
 
@@ -1311,7 +1311,7 @@ Quarantined tests must not silently disappear from quality reporting.
 
 ---
 
-# Repetition Testing
+## Repetition Testing
 
 Potentially flaky tests may be executed repeatedly to verify stability.
 
@@ -1328,7 +1328,7 @@ Repetition is a diagnostic technique, not a replacement for proper design.
 
 ---
 
-# Failure Reproduction
+## Failure Reproduction
 
 A nondeterministic failure should be reduced to reproducible conditions.
 
@@ -1346,7 +1346,7 @@ This information helps convert flaky failures into deterministic regressions.
 
 ---
 
-# Deterministic Failure Messages
+## Deterministic Failure Messages
 
 Test failures should also provide deterministic, readable diagnostics.
 
@@ -1356,7 +1356,7 @@ Where such values are unavoidable, diagnostics should still identify the behavio
 
 ---
 
-# Snapshot Determinism
+## Snapshot Determinism
 
 Snapshot tests require stable output.
 
@@ -1373,7 +1373,7 @@ Otherwise snapshots generate meaningless churn.
 
 ---
 
-# Golden File Determinism
+## Golden File Determinism
 
 Golden-file tests require stable inputs and output generation.
 
@@ -1381,7 +1381,7 @@ The resulting artifact must not contain nondeterministic metadata unless that me
 
 ---
 
-# Serialization Determinism
+## Serialization Determinism
 
 Serialized output should be deterministic when the contract requires canonical representation.
 
@@ -1396,7 +1396,7 @@ Tests should validate canonical behavior only where it is intentional.
 
 ---
 
-# Test Discovery Determinism
+## Test Discovery Determinism
 
 The set of discovered tests should remain stable for a given code state and configuration.
 
@@ -1406,7 +1406,7 @@ Test discovery should not depend on external services or mutable runtime state.
 
 ---
 
-# Collection Isolation
+## Collection Isolation
 
 Test collection itself should avoid side effects.
 
@@ -1421,7 +1421,7 @@ Setup belongs in fixtures or explicit test lifecycle code.
 
 ---
 
-# Import-Time Side Effects
+## Import-Time Side Effects
 
 Production modules with large import-time side effects make isolation harder.
 
@@ -1438,7 +1438,7 @@ Explicit initialization improves testability and runtime clarity.
 
 ---
 
-# Dependency Injection and Isolation
+## Dependency Injection and Isolation
 
 Dependency injection is a primary architectural mechanism supporting determinism.
 
@@ -1457,7 +1457,7 @@ This reduces invasive monkeypatching.
 
 ---
 
-# Testability as an Architectural Signal
+## Testability as an Architectural Signal
 
 Difficulty achieving isolation may reveal architectural problems.
 
@@ -1473,7 +1473,7 @@ Testing friction can therefore indicate areas requiring architectural improvemen
 
 ---
 
-# Unit Test Isolation
+## Unit Test Isolation
 
 Unit tests should provide the strongest isolation.
 
@@ -1488,7 +1488,7 @@ Dependencies outside the unit boundary should be replaced with appropriate test 
 
 ---
 
-# Integration Test Isolation
+## Integration Test Isolation
 
 Integration tests contain real interactions but must still isolate the environment surrounding those interactions.
 
@@ -1504,7 +1504,7 @@ may be real while unrelated external services remain substituted.
 
 ---
 
-# Functional Test Isolation
+## Functional Test Isolation
 
 Functional tests may assemble larger application contexts.
 
@@ -1520,7 +1520,7 @@ Functional realism does not justify environmental nondeterminism.
 
 ---
 
-# System Test Isolation
+## System Test Isolation
 
 System tests may use representative complete environments.
 
@@ -1536,7 +1536,7 @@ System tests should remain reproducible even when their infrastructure is larger
 
 ---
 
-# Contract Test Isolation
+## Contract Test Isolation
 
 Contract tests should be especially deterministic.
 
@@ -1546,7 +1546,7 @@ External variability would weaken compatibility evidence.
 
 ---
 
-# Regression Test Isolation
+## Regression Test Isolation
 
 Regression tests must reproduce a historical failure reliably.
 
@@ -1556,7 +1556,7 @@ The original failure condition should be reduced to deterministic inputs wheneve
 
 ---
 
-# Test Data Relationship
+## Test Data Relationship
 
 Isolation depends strongly on test data design.
 
@@ -1572,7 +1572,7 @@ The FamilyOS Test Data and Fixtures strategy defines these requirements in great
 
 ---
 
-# Mock and Fake Relationship
+## Mock and Fake Relationship
 
 Mocks and fakes can support isolation by replacing uncontrolled dependencies.
 
@@ -1582,7 +1582,7 @@ Isolation must preserve the behavior belonging to the declared testing level.
 
 ---
 
-# Coverage Relationship
+## Coverage Relationship
 
 Coverage results are only reliable when test execution is stable.
 
@@ -1592,7 +1592,7 @@ Isolation and determinism therefore form prerequisites for trustworthy coverage 
 
 ---
 
-# CI Determinism
+## CI Determinism
 
 CI should provide a reproducible validation environment.
 
@@ -1610,7 +1610,7 @@ CI should minimize hidden differences from supported local environments.
 
 ---
 
-# Local and CI Equivalence
+## Local and CI Equivalence
 
 Tests should not require one set of assumptions locally and another in CI.
 
@@ -1620,7 +1620,7 @@ Environment-specific infrastructure should be provided through explicit configur
 
 ---
 
-# Containerized Test Environments
+## Containerized Test Environments
 
 Containerization may improve isolation for certain integration or system tests.
 
@@ -1637,7 +1637,7 @@ State and timing still require careful control.
 
 ---
 
-# Reproducible Dependencies
+## Reproducible Dependencies
 
 Tests must execute against controlled dependency versions.
 
@@ -1647,7 +1647,7 @@ Dependency pinning and build reproducibility are governed by the FamilyOS Engine
 
 ---
 
-# Hermetic Testing
+## Hermetic Testing
 
 A hermetic test depends only on declared inputs and controlled resources.
 
@@ -1669,7 +1669,7 @@ FamilyOS should move critical automated tests toward hermetic behavior where pra
 
 ---
 
-# Hermetic Unit Tests
+## Hermetic Unit Tests
 
 Unit tests should generally be highly hermetic.
 
@@ -1684,7 +1684,7 @@ This enables extremely fast and reliable execution.
 
 ---
 
-# Hermetic Integration Tests
+## Hermetic Integration Tests
 
 Full hermeticity may require local controlled infrastructure.
 
@@ -1704,7 +1704,7 @@ The environment remains self-contained despite real integration.
 
 ---
 
-# Resource Ownership
+## Resource Ownership
 
 Every resource used during a test should have clear ownership.
 
@@ -1719,7 +1719,7 @@ Resources without clear ownership frequently become sources of test interference
 
 ---
 
-# Resource Lifetime
+## Resource Lifetime
 
 Resource lifetime should match the narrowest appropriate test scope.
 
@@ -1739,7 +1739,7 @@ Shared lifetime should require explicit justification.
 
 ---
 
-# Isolation Verification
+## Isolation Verification
 
 FamilyOS may use automated techniques to verify isolation.
 
@@ -1757,7 +1757,7 @@ These techniques can expose hidden dependencies.
 
 ---
 
-# Determinism Verification
+## Determinism Verification
 
 Determinism can be evaluated by executing the same suite repeatedly under equivalent conditions.
 
@@ -1765,7 +1765,7 @@ Unexpected result variance should trigger investigation.
 
 ---
 
-# Parallel Execution as Validation
+## Parallel Execution as Validation
 
 Parallel execution is useful not only for speed but also for detecting poor isolation.
 
@@ -1781,7 +1781,7 @@ Such failures should be corrected rather than disabling parallelism automaticall
 
 ---
 
-# Performance and Isolation
+## Performance and Isolation
 
 Isolation sometimes introduces setup overhead.
 
@@ -1798,7 +1798,7 @@ Performance optimization must preserve correctness.
 
 ---
 
-# Isolation vs Realism
+## Isolation vs Realism
 
 More isolation does not always mean better testing.
 
@@ -1814,7 +1814,7 @@ The rule is:
 
 ---
 
-# Determinism vs Realism
+## Determinism vs Realism
 
 Real systems may include nondeterministic elements.
 
@@ -1824,7 +1824,7 @@ For example, asynchronous processing can be tested with explicit synchronization
 
 ---
 
-# Error Isolation
+## Error Isolation
 
 Failure tests should isolate the intended failure.
 
@@ -1834,7 +1834,7 @@ Single-cause tests produce clearer diagnostics.
 
 ---
 
-# Failure Locality
+## Failure Locality
 
 Isolation improves failure locality.
 
@@ -1844,7 +1844,7 @@ Cascading failures often indicate shared state or broad uncontrolled fixtures.
 
 ---
 
-# Cascading Failures
+## Cascading Failures
 
 When one failing test causes many subsequent failures, FamilyOS should investigate possible leaked state.
 
@@ -1860,7 +1860,7 @@ Cascading failures are strong isolation warning signals.
 
 ---
 
-# Test Pollution
+## Test Pollution
 
 Test pollution occurs when one test modifies the environment in a way that affects another.
 
@@ -1877,7 +1877,7 @@ Test pollution must be treated as a defect.
 
 ---
 
-# Pollution Detection
+## Pollution Detection
 
 Potential safeguards include verifying after tests that:
 
@@ -1891,7 +1891,7 @@ Automation may be introduced incrementally.
 
 ---
 
-# Deterministic Assertions
+## Deterministic Assertions
 
 Assertions should not depend on uncontrolled values.
 
@@ -1913,7 +1913,7 @@ may reflect the real contract more accurately.
 
 ---
 
-# Stable Tests Across Refactoring
+## Stable Tests Across Refactoring
 
 A deterministic test should validate contracts and behavior rather than incidental internal sequencing.
 
@@ -1921,123 +1921,123 @@ This improves both reliability and maintainability.
 
 ---
 
-# Isolation Anti-Patterns
+## Isolation Anti-Patterns
 
 The following practices should be avoided.
 
-## Test Order Dependencies
+### Test Order Dependencies
 
 A test must never require another test to execute first.
 
 ---
 
-## Shared Mutable Fixtures
+### Shared Mutable Fixtures
 
 Mutable session-wide fixtures create hidden coupling.
 
 ---
 
-## Fixed Temporary Paths
+### Fixed Temporary Paths
 
 Parallel execution can cause collisions.
 
 ---
 
-## Fixed Network Ports
+### Fixed Network Ports
 
 Concurrent tests may interfere with one another.
 
 ---
 
-## Real Wall-Clock Waiting
+### Real Wall-Clock Waiting
 
 Timing-based sleeps create slow and unreliable tests.
 
 ---
 
-## Uncontrolled Randomness
+### Uncontrolled Randomness
 
 A failure that cannot be reproduced is difficult to fix.
 
 ---
 
-## External Production Services
+### External Production Services
 
 Live external systems create uncontrollable dependencies.
 
 ---
 
-## Global Registry Leakage
+### Global Registry Leakage
 
 Registrations must not persist unintentionally across tests.
 
 ---
 
-## Environment Leakage
+### Environment Leakage
 
 Changed environment variables must be restored.
 
 ---
 
-## Database Pollution
+### Database Pollution
 
 Persistent state must not survive unintentionally between scenarios.
 
 ---
 
-## Retry Until Green
+### Retry Until Green
 
 Repeatedly rerunning flaky tests does not establish correctness.
 
 ---
 
-## Ignoring Parallel Failures
+### Ignoring Parallel Failures
 
 Parallel-only failures often expose genuine isolation defects.
 
 ---
 
-# Determinism Anti-Patterns
+## Determinism Anti-Patterns
 
 The following also undermine determinism.
 
-## Exact Current-Time Assertions
+### Exact Current-Time Assertions
 
 Real-time values change between executions.
 
 ---
 
-## Arbitrary Sleep Synchronization
+### Arbitrary Sleep Synchronization
 
 Scheduler timing is not a reliable synchronization mechanism.
 
 ---
 
-## Unseeded Random Generation
+### Unseeded Random Generation
 
 Random failures become difficult to reproduce.
 
 ---
 
-## External Mutable Data
+### External Mutable Data
 
 Public API or remote database contents may change independently.
 
 ---
 
-## Undefined Ordering Assumptions
+### Undefined Ordering Assumptions
 
 Collections or asynchronous operations may not guarantee order.
 
 ---
 
-## Host-Specific Configuration
+### Host-Specific Configuration
 
 Tests must not accidentally depend on machine state.
 
 ---
 
-# Flakiness Metrics
+## Flakiness Metrics
 
 FamilyOS may track reliability metrics such as:
 
@@ -2052,7 +2052,7 @@ Metrics should drive corrective action rather than normalize instability.
 
 ---
 
-# Flake Budget
+## Flake Budget
 
 FamilyOS should not establish a permanent acceptable flake rate for mandatory quality gates.
 
@@ -2060,7 +2060,7 @@ Mandatory validation should ultimately be reliable enough that a failure is trea
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Isolation and determinism are prerequisites for trustworthy quality gates.
 
@@ -2078,7 +2078,7 @@ Repeated nondeterminism in mandatory tests must be addressed with priority.
 
 ---
 
-# Release Validation
+## Release Validation
 
 Release validation must not depend on known flaky tests without explicit governance.
 
@@ -2086,7 +2086,7 @@ A release cannot gain meaningful confidence from tests whose outcomes are unpred
 
 ---
 
-# Plugin Certification
+## Plugin Certification
 
 Official plugin certification tests must be reproducible.
 
@@ -2102,7 +2102,7 @@ Certification environments should be explicitly provisioned.
 
 ---
 
-# Security Testing Isolation
+## Security Testing Isolation
 
 Security-related tests require controlled environments.
 
@@ -2114,7 +2114,7 @@ Security logic itself must remain real when it is the behavior under test.
 
 ---
 
-# Data Privacy
+## Data Privacy
 
 Isolation also protects privacy.
 
@@ -2124,7 +2124,7 @@ Test environments must not read production personal data merely because it is av
 
 ---
 
-# Evidence Reliability
+## Evidence Reliability
 
 Test evidence is meaningful only when execution conditions are known and reproducible.
 
@@ -2138,7 +2138,7 @@ A deterministic test suite provides stronger evidence for:
 
 ---
 
-# Relationship With Testing Architecture
+## Relationship With Testing Architecture
 
 Isolation is a cross-cutting property across every testing level.
 
@@ -2160,7 +2160,7 @@ The mechanisms vary by testing level, but the requirement remains.
 
 ---
 
-# Relationship With Test Data and Fixtures
+## Relationship With Test Data and Fixtures
 
 Test data and fixture design provide the practical mechanisms for establishing isolated state.
 
@@ -2168,7 +2168,7 @@ Fixtures should create the required environment and automatically remove it afte
 
 ---
 
-# Relationship With Mocks and Test Doubles
+## Relationship With Mocks and Test Doubles
 
 Test doubles help replace uncontrolled dependencies.
 
@@ -2176,7 +2176,7 @@ They should improve determinism without removing the behavior belonging to the t
 
 ---
 
-# Relationship With Coverage Model
+## Relationship With Coverage Model
 
 Coverage metrics assume stable test execution.
 
@@ -2184,7 +2184,7 @@ Isolation and determinism are therefore foundational to accurate coverage measur
 
 ---
 
-# Relationship With Test Execution
+## Relationship With Test Execution
 
 Parallelization, selective execution, sharding, and repeated execution all depend on strong isolation.
 
@@ -2192,7 +2192,7 @@ The FamilyOS test execution strategy can scale only when tests do not depend on 
 
 ---
 
-# Relationship With CI
+## Relationship With CI
 
 CI environments expose isolation defects more frequently because they may:
 
@@ -2206,7 +2206,7 @@ A test that fails only in CI should first be investigated for hidden environment
 
 ---
 
-# Governance
+## Governance
 
 Test isolation and determinism are governed by the FamilyOS Testing Framework and broader engineering standards.
 
@@ -2228,7 +2228,7 @@ Mandatory testing infrastructure must preserve reproducible behavior.
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 FamilyOS should strengthen isolation and determinism as the platform grows.
 
@@ -2253,7 +2253,7 @@ Evolution should improve reliability without unnecessarily increasing test compl
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 A FamilyOS test suite is aligned with the isolation and determinism strategy when:
 
@@ -2295,7 +2295,7 @@ A FamilyOS test suite is aligned with the isolation and determinism strategy whe
 
 ---
 
-# Final Principle
+## Final Principle
 
 Isolation and determinism are prerequisites for trustworthy automated validation.
 

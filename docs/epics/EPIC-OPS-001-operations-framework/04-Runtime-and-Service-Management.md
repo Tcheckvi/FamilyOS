@@ -1,10 +1,10 @@
 # Operations Framework
 
-# EPIC-OPS-001
+## EPIC-OPS-001
 
-# 04 Runtime and Service Management
+## 04 Runtime and Service Management
 
-## Overview
+### Overview
 
 Runtime and service management define how FamilyOS services, processes, plugins, integrations, workloads, and operational dependencies are supervised throughout active execution.
 
@@ -29,7 +29,7 @@ FamilyOS MUST treat runtime behavior as governed state rather than uncontrolled 
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to establish FamilyOS requirements for:
 
@@ -58,7 +58,7 @@ The objective is to ensure that FamilyOS services remain understandable, control
 
 ---
 
-# Runtime Management Objectives
+## Runtime Management Objectives
 
 FamilyOS runtime management MUST support the following objectives:
 
@@ -78,7 +78,7 @@ FamilyOS runtime management MUST support the following objectives:
 
 ---
 
-# Runtime Model
+## Runtime Model
 
 The canonical FamilyOS runtime model is:
 
@@ -117,7 +117,7 @@ Every transition SHOULD have explicit operational semantics.
 
 ---
 
-# Runtime Environment
+## Runtime Environment
 
 A runtime environment is the operational context in which FamilyOS components execute.
 
@@ -137,7 +137,7 @@ Runtime environments MUST have defined ownership and purpose.
 
 ---
 
-# Environment Identity
+## Environment Identity
 
 Every operational environment SHOULD have an explicit identity.
 
@@ -162,7 +162,7 @@ Operators MUST be able to determine which environment they are acting on.
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 Runtime environments SHOULD be isolated according to risk.
 
@@ -178,7 +178,7 @@ Environment boundaries MUST NOT rely solely on naming conventions.
 
 ---
 
-# Service Definition
+## Service Definition
 
 A service is an independently operated runtime capability.
 
@@ -197,7 +197,7 @@ Every operational service SHOULD have explicit service metadata.
 
 ---
 
-# Service Metadata
+## Service Metadata
 
 Service metadata SHOULD include:
 
@@ -225,7 +225,7 @@ Additional metadata MAY include:
 
 ---
 
-# Service Identity
+## Service Identity
 
 Every service SHOULD have a stable identity independent of individual process instances.
 
@@ -249,7 +249,7 @@ Stable service identity supports:
 
 ---
 
-# Instance Identity
+## Instance Identity
 
 A running instance SHOULD have a unique runtime identifier where multiple instances MAY exist.
 
@@ -265,7 +265,7 @@ Instance identifiers SHOULD NOT be reused in ways that create ambiguity.
 
 ---
 
-# Service Ownership
+## Service Ownership
 
 Every operational service SHOULD have an identifiable owner.
 
@@ -283,7 +283,7 @@ Services without ownership SHOULD NOT be considered operationally mature.
 
 ---
 
-# Service Lifecycle
+## Service Lifecycle
 
 FamilyOS services SHOULD follow a defined lifecycle.
 
@@ -316,7 +316,7 @@ Not every service requires every lifecycle state, but semantics SHOULD remain ex
 
 ---
 
-# Defined State
+## Defined State
 
 DEFINED indicates that the service has an approved operational definition but is not yet provisioned.
 
@@ -331,7 +331,7 @@ The definition SHOULD include:
 
 ---
 
-# Provisioned State
+## Provisioned State
 
 PROVISIONED indicates that runtime resources required by the service have been prepared.
 
@@ -348,7 +348,7 @@ Provisioning MUST NOT automatically imply service readiness.
 
 ---
 
-# Starting State
+## Starting State
 
 STARTING indicates that service initialization is underway.
 
@@ -365,7 +365,7 @@ STARTING MUST be distinguishable from RUNNING when initialization is incomplete.
 
 ---
 
-# Running State
+## Running State
 
 RUNNING indicates that the process is active.
 
@@ -383,7 +383,7 @@ Service Healthy
 
 ---
 
-# Degraded State
+## Degraded State
 
 DEGRADED indicates that the service remains operational but some functionality or dependency is impaired.
 
@@ -398,7 +398,7 @@ Degraded state MUST NOT silently disable required security controls.
 
 ---
 
-# Stopping State
+## Stopping State
 
 STOPPING indicates controlled shutdown is underway.
 
@@ -406,7 +406,7 @@ The service SHOULD stop accepting new work where appropriate while completing or
 
 ---
 
-# Stopped State
+## Stopped State
 
 STOPPED indicates that the service is not actively executing.
 
@@ -418,7 +418,7 @@ Stopped state SHOULD distinguish:
 
 ---
 
-# Retired State
+## Retired State
 
 RETIRED indicates that the service is no longer expected to operate.
 
@@ -436,7 +436,7 @@ Retired services SHOULD NOT retain unnecessary privileged access.
 
 ---
 
-# Service State Machine
+## Service State Machine
 
 A canonical runtime state model is:
 
@@ -470,7 +470,7 @@ Invalid state transitions SHOULD be prevented.
 
 ---
 
-# Process Supervision
+## Process Supervision
 
 Operational processes SHOULD be supervised.
 
@@ -486,7 +486,7 @@ Supervision MUST NOT create uncontrolled restart loops.
 
 ---
 
-# Supervisor Responsibilities
+## Supervisor Responsibilities
 
 A runtime supervisor MAY be responsible for:
 
@@ -502,7 +502,7 @@ Supervisor behavior SHOULD remain predictable.
 
 ---
 
-# Startup Management
+## Startup Management
 
 Service startup SHOULD follow a deterministic sequence.
 
@@ -532,7 +532,7 @@ Critical initialization failure SHOULD stop startup safely.
 
 ---
 
-# Startup Validation
+## Startup Validation
 
 Before becoming ready, a service SHOULD validate required conditions.
 
@@ -549,7 +549,7 @@ A service MUST NOT declare readiness before essential startup requirements are s
 
 ---
 
-# Startup Failure
+## Startup Failure
 
 Startup failure SHOULD produce:
 
@@ -562,7 +562,7 @@ Startup failure MUST NOT result in ambiguous partial operation.
 
 ---
 
-# Shutdown Management
+## Shutdown Management
 
 Services MUST support predictable shutdown behavior.
 
@@ -578,7 +578,7 @@ Shutdown SHOULD preserve data integrity and operational clarity.
 
 ---
 
-# Graceful Shutdown
+## Graceful Shutdown
 
 Services SHOULD support graceful shutdown where in-progress work exists.
 
@@ -607,7 +607,7 @@ Graceful shutdown SHOULD have a bounded timeout.
 
 ---
 
-# Forced Shutdown
+## Forced Shutdown
 
 Forced termination MAY be necessary when graceful shutdown cannot complete.
 
@@ -617,7 +617,7 @@ Systems SHOULD be designed so that forced termination does not create unrecovera
 
 ---
 
-# Exit Codes
+## Exit Codes
 
 Services SHOULD use meaningful process exit codes where applicable.
 
@@ -633,7 +633,7 @@ Operational tooling SHOULD preserve exit status information.
 
 ---
 
-# Readiness
+## Readiness
 
 Readiness indicates whether a service is able to accept its intended workload.
 
@@ -651,7 +651,7 @@ Readiness SHOULD be externally observable where practical.
 
 ---
 
-# Readiness Checks
+## Readiness Checks
 
 Readiness checks SHOULD be:
 
@@ -666,7 +666,7 @@ Failure of a required dependency MAY cause readiness to become false.
 
 ---
 
-# Liveness
+## Liveness
 
 Liveness indicates whether the service process is functioning sufficiently to continue execution.
 
@@ -678,7 +678,7 @@ Otherwise, external outages may cause restart storms.
 
 ---
 
-# Health
+## Health
 
 Health represents the broader operational condition of a service.
 
@@ -695,7 +695,7 @@ Health SHOULD combine meaningful operational signals rather than simply process 
 
 ---
 
-# Health Dimensions
+## Health Dimensions
 
 Health MAY consider:
 
@@ -712,7 +712,7 @@ Health semantics SHOULD remain stable enough for automation.
 
 ---
 
-# Health Aggregation
+## Health Aggregation
 
 Service health MAY aggregate multiple component signals.
 
@@ -733,7 +733,7 @@ Aggregation rules SHOULD avoid masking critical failures.
 
 ---
 
-# Unknown Health
+## Unknown Health
 
 UNKNOWN SHOULD be used when health cannot be determined reliably.
 
@@ -743,7 +743,7 @@ For critical services, prolonged unknown state SHOULD trigger investigation.
 
 ---
 
-# Dependency Management
+## Dependency Management
 
 Operational services SHOULD declare important runtime dependencies.
 
@@ -761,7 +761,7 @@ Dependency relationships SHOULD be documented and observable.
 
 ---
 
-# Dependency Classification
+## Dependency Classification
 
 Dependencies SHOULD be classified according to their operational importance.
 
@@ -781,7 +781,7 @@ OPTIONAL dependencies do not affect core readiness.
 
 ---
 
-# Dependency Startup
+## Dependency Startup
 
 Service startup MUST NOT rely on arbitrary fixed sleep periods as the primary dependency-readiness mechanism.
 
@@ -796,7 +796,7 @@ Dependency initialization SHOULD fail clearly when requirements cannot be satisf
 
 ---
 
-# External Dependencies
+## External Dependencies
 
 External dependencies MUST be treated as potentially unreliable.
 
@@ -813,7 +813,7 @@ External dependency failure SHOULD NOT automatically cause uncontrolled platform
 
 ---
 
-# Dependency Timeouts
+## Dependency Timeouts
 
 Network and remote dependency operations SHOULD use bounded timeouts.
 
@@ -828,7 +828,7 @@ Timeout values SHOULD reflect expected service behavior.
 
 ---
 
-# Retry Policy
+## Retry Policy
 
 Retries MAY improve resilience for transient failures.
 
@@ -846,7 +846,7 @@ Blind retry of permanent failures SHOULD be avoided.
 
 ---
 
-# Exponential Backoff
+## Exponential Backoff
 
 Where repeated retries are appropriate, exponential or progressive backoff SHOULD be considered.
 
@@ -863,7 +863,7 @@ Randomized jitter MAY be used to reduce synchronized retry storms.
 
 ---
 
-# Circuit Breaking
+## Circuit Breaking
 
 Circuit breaking MAY be used to protect services from repeatedly calling a failing dependency.
 
@@ -892,7 +892,7 @@ Circuit-breaker behavior SHOULD be observable.
 
 ---
 
-# Graceful Degradation
+## Graceful Degradation
 
 Services SHOULD support safe degradation where architecture permits.
 
@@ -911,7 +911,7 @@ Degradation MUST NOT bypass:
 
 ---
 
-# Runtime Configuration
+## Runtime Configuration
 
 Runtime configuration controls service behavior and MUST be explicit.
 
@@ -927,7 +927,7 @@ Invalid critical configuration SHOULD prevent unsafe startup.
 
 ---
 
-# Configuration Loading
+## Configuration Loading
 
 Configuration loading SHOULD follow a deterministic precedence model.
 
@@ -950,7 +950,7 @@ The actual precedence model MUST be documented.
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Configuration SHOULD be validated against an explicit schema where practical.
 
@@ -966,7 +966,7 @@ Validation errors SHOULD identify the affected configuration key without exposin
 
 ---
 
-# Dynamic Configuration
+## Dynamic Configuration
 
 Dynamic runtime configuration MAY be supported.
 
@@ -981,7 +981,7 @@ Dynamic configuration SHOULD identify whether each setting:
 
 ---
 
-# Configuration Reload
+## Configuration Reload
 
 Services MAY support controlled configuration reload.
 
@@ -996,7 +996,7 @@ Atomic configuration replacement SHOULD be preferred.
 
 ---
 
-# Configuration Drift
+## Configuration Drift
 
 Runtime configuration SHOULD be comparable to intended configuration.
 
@@ -1012,7 +1012,7 @@ Drift SHOULD be detectable where operationally significant.
 
 ---
 
-# Runtime Secrets
+## Runtime Secrets
 
 Runtime secrets MUST follow EPIC-SEC-001 requirements.
 
@@ -1027,7 +1027,7 @@ Services SHOULD access only the secrets they require.
 
 ---
 
-# Runtime State
+## Runtime State
 
 Runtime state is information generated or modified during service execution.
 
@@ -1045,7 +1045,7 @@ Runtime state SHOULD have defined lifecycle semantics.
 
 ---
 
-# Persistent State
+## Persistent State
 
 Persistent state MUST be distinguished from ephemeral runtime state.
 
@@ -1055,7 +1055,7 @@ Service restart MUST NOT unexpectedly destroy state that is required for correct
 
 ---
 
-# Ephemeral State
+## Ephemeral State
 
 Ephemeral state MAY be lost during restart.
 
@@ -1065,7 +1065,7 @@ Systems SHOULD NOT accidentally treat required durable information as ephemeral.
 
 ---
 
-# Cache Management
+## Cache Management
 
 Caches SHOULD be treated as derived operational state unless explicitly designed otherwise.
 
@@ -1080,7 +1080,7 @@ Cache behavior SHOULD define:
 
 ---
 
-# Lock Management
+## Lock Management
 
 Runtime locks SHOULD have bounded lifecycle.
 
@@ -1095,7 +1095,7 @@ Locks SHOULD NOT create permanent unavailable state after failure.
 
 ---
 
-# Job Management
+## Job Management
 
 Background jobs SHOULD have explicit state when operationally significant.
 
@@ -1114,7 +1114,7 @@ Job state transitions SHOULD be traceable.
 
 ---
 
-# Idempotent Processing
+## Idempotent Processing
 
 Background operations SHOULD be idempotent where practical.
 
@@ -1124,7 +1124,7 @@ Where idempotency is impossible, reconciliation mechanisms SHOULD exist.
 
 ---
 
-# Runtime Resource Management
+## Runtime Resource Management
 
 Services MUST operate within understood resource expectations.
 
@@ -1142,7 +1142,7 @@ Unbounded resource consumption SHOULD be avoided.
 
 ---
 
-# Resource Limits
+## Resource Limits
 
 Services SHOULD define limits where practical.
 
@@ -1160,7 +1160,7 @@ Resource limits SHOULD fail in predictable ways.
 
 ---
 
-# Resource Pressure
+## Resource Pressure
 
 Services SHOULD expose signals for significant resource pressure.
 
@@ -1176,7 +1176,7 @@ Operators SHOULD be able to detect resource pressure before catastrophic failure
 
 ---
 
-# Backpressure
+## Backpressure
 
 Systems SHOULD support backpressure when producers can overwhelm consumers.
 
@@ -1192,7 +1192,7 @@ Unbounded queue growth SHOULD be avoided.
 
 ---
 
-# Runtime Restart Policy
+## Runtime Restart Policy
 
 Restart behavior MUST be explicit.
 
@@ -1209,7 +1209,7 @@ Automatic restart SHOULD be used only where it improves recovery safely.
 
 ---
 
-# Restart Loop Prevention
+## Restart Loop Prevention
 
 Repeated crash-restart cycles MUST be bounded.
 
@@ -1224,7 +1224,7 @@ A permanently failing service MUST NOT consume unlimited resources through resta
 
 ---
 
-# Crash Recovery
+## Crash Recovery
 
 After unexpected termination, services SHOULD recover to a known state.
 
@@ -1240,7 +1240,7 @@ Crash recovery SHOULD preserve data integrity.
 
 ---
 
-# Runtime Failure Classification
+## Runtime Failure Classification
 
 Runtime failures SHOULD be classified where useful.
 
@@ -1260,7 +1260,7 @@ Classification SHOULD improve incident triage.
 
 ---
 
-# Maintenance Mode
+## Maintenance Mode
 
 Services MAY support maintenance mode when normal operation must be intentionally restricted.
 
@@ -1275,7 +1275,7 @@ Maintenance mode MUST remain observable and controlled.
 
 ---
 
-# Maintenance Entry
+## Maintenance Entry
 
 Entering maintenance mode SHOULD require explicit authorization.
 
@@ -1289,7 +1289,7 @@ The operation SHOULD record:
 
 ---
 
-# Maintenance Exit
+## Maintenance Exit
 
 Leaving maintenance mode SHOULD verify that:
 
@@ -1302,7 +1302,7 @@ Maintenance mode MUST NOT remain enabled accidentally without visibility.
 
 ---
 
-# Service Discovery
+## Service Discovery
 
 Where services communicate dynamically, FamilyOS MAY use service-discovery mechanisms.
 
@@ -1319,7 +1319,7 @@ Discovery MUST NOT weaken authentication or authorization requirements.
 
 ---
 
-# Endpoint Management
+## Endpoint Management
 
 Runtime endpoints SHOULD be explicitly defined and controlled.
 
@@ -1329,7 +1329,7 @@ Endpoint changes SHOULD be observable and governed.
 
 ---
 
-# Port Management
+## Port Management
 
 Services SHOULD expose only required ports.
 
@@ -1339,7 +1339,7 @@ Port allocation SHOULD avoid ambiguous or undocumented runtime dependencies.
 
 ---
 
-# Runtime Networking
+## Runtime Networking
 
 Service networking SHOULD follow least-access principles.
 
@@ -1354,7 +1354,7 @@ Network controls SHOULD complement application security.
 
 ---
 
-# Runtime Security
+## Runtime Security
 
 Operations MUST preserve the FamilyOS Security Framework during execution.
 
@@ -1373,7 +1373,7 @@ Operational convenience MUST NOT invalidate security architecture.
 
 ---
 
-# Runtime Privileges
+## Runtime Privileges
 
 Services SHOULD execute with the minimum permissions required.
 
@@ -1388,7 +1388,7 @@ Privilege escalation MUST be explicit and governed.
 
 ---
 
-# Process Isolation
+## Process Isolation
 
 Operational components SHOULD be isolated where practical.
 
@@ -1404,7 +1404,7 @@ Isolation reduces failure and compromise propagation.
 
 ---
 
-# Plugin Runtime Management
+## Plugin Runtime Management
 
 Plugins represent runtime extensions and MUST remain governed.
 
@@ -1421,7 +1421,7 @@ Plugins MUST NOT be allowed to execute outside approved security and capability 
 
 ---
 
-# Plugin Activation
+## Plugin Activation
 
 Plugin activation SHOULD validate:
 
@@ -1436,7 +1436,7 @@ Invalid plugins SHOULD fail activation safely.
 
 ---
 
-# Plugin Deactivation
+## Plugin Deactivation
 
 Plugins SHOULD support controlled deactivation where architecture permits.
 
@@ -1451,7 +1451,7 @@ A disabled plugin MUST NOT remain silently active.
 
 ---
 
-# Runtime Observability
+## Runtime Observability
 
 Every operationally significant service SHOULD emit sufficient observability data.
 
@@ -1470,7 +1470,7 @@ Observability MUST integrate with EPIC-OBS-001 — Observability Framework.
 
 ---
 
-# Runtime Logging
+## Runtime Logging
 
 Runtime logs SHOULD include sufficient context for operational diagnosis.
 
@@ -1491,7 +1491,7 @@ Logs MUST respect security and privacy requirements.
 
 ---
 
-# Runtime Metrics
+## Runtime Metrics
 
 Services SHOULD expose meaningful operational metrics.
 
@@ -1510,7 +1510,7 @@ Metrics SHOULD support operational decisions.
 
 ---
 
-# Runtime Tracing
+## Runtime Tracing
 
 Distributed or multi-component operations MAY use tracing.
 
@@ -1525,7 +1525,7 @@ Tracing MUST NOT expose secrets or unnecessary sensitive data.
 
 ---
 
-# Runtime Events
+## Runtime Events
 
 Important service lifecycle transitions SHOULD produce operational events.
 
@@ -1546,7 +1546,7 @@ Event names SHOULD remain consistent.
 
 ---
 
-# Runtime Auditability
+## Runtime Auditability
 
 Security-sensitive or high-impact runtime actions SHOULD be auditable.
 
@@ -1563,7 +1563,7 @@ Audit events SHOULD identify the responsible principal.
 
 ---
 
-# Runtime Validation
+## Runtime Validation
 
 Runtime state SHOULD be validated after significant changes.
 
@@ -1580,7 +1580,7 @@ Validation SHOULD confirm that intended operation has been restored.
 
 ---
 
-# Post-Deployment Runtime Validation
+## Post-Deployment Runtime Validation
 
 After deployment, FamilyOS SHOULD verify:
 
@@ -1605,7 +1605,7 @@ Deployment MUST NOT be considered complete before required validation succeeds.
 
 ---
 
-# Runtime Reconciliation
+## Runtime Reconciliation
 
 Where desired state differs from actual state, operations SHOULD support reconciliation.
 
@@ -1626,7 +1626,7 @@ Reconciliation SHOULD be safe and traceable.
 
 ---
 
-# Service Availability
+## Service Availability
 
 Runtime management SHOULD support the availability objectives defined for each service.
 
@@ -1636,7 +1636,7 @@ Not every FamilyOS service requires identical availability targets.
 
 ---
 
-# Service Criticality
+## Service Criticality
 
 Services SHOULD be classified according to operational importance.
 
@@ -1659,7 +1659,7 @@ Criticality MAY influence:
 
 ---
 
-# Service Dependency Map
+## Service Dependency Map
 
 Important services SHOULD have documented dependency relationships.
 
@@ -1678,7 +1678,7 @@ Dependency maps improve incident analysis and change-impact assessment.
 
 ---
 
-# Service Startup Order
+## Service Startup Order
 
 Where startup ordering is necessary, dependencies SHOULD define order.
 
@@ -1688,7 +1688,7 @@ Services SHOULD prefer explicit readiness checks over fragile ordering assumptio
 
 ---
 
-# Service Shutdown Order
+## Service Shutdown Order
 
 Shutdown MAY require dependency-aware sequencing.
 
@@ -1698,7 +1698,7 @@ Shutdown design SHOULD minimize incomplete work or corruption.
 
 ---
 
-# Runtime Compatibility
+## Runtime Compatibility
 
 Runtime components SHOULD validate compatibility with required:
 
@@ -1712,7 +1712,7 @@ Incompatible combinations SHOULD fail safely.
 
 ---
 
-# Runtime Versioning
+## Runtime Versioning
 
 Every running service SHOULD expose its version through operationally accessible metadata.
 
@@ -1726,7 +1726,7 @@ Operators MUST be able to identify deployed code accurately.
 
 ---
 
-# Runtime Upgrades
+## Runtime Upgrades
 
 Service upgrades SHOULD be controlled transitions.
 
@@ -1743,7 +1743,7 @@ Upgrades MUST be validated after completion.
 
 ---
 
-# Zero-Downtime Upgrades
+## Zero-Downtime Upgrades
 
 Zero-downtime deployment MAY be used where availability requirements justify the complexity.
 
@@ -1757,7 +1757,7 @@ The strategy SHOULD preserve compatibility during transition.
 
 ---
 
-# Rolling Deployment
+## Rolling Deployment
 
 Rolling deployment replaces instances gradually.
 
@@ -1778,7 +1778,7 @@ Automatic progression SHOULD stop if health degrades.
 
 ---
 
-# Blue-Green Deployment
+## Blue-Green Deployment
 
 Blue-green deployment MAY maintain two operational environments.
 
@@ -1797,7 +1797,7 @@ Rollback may be simplified if the previous environment remains intact.
 
 ---
 
-# Service Retirement
+## Service Retirement
 
 Service retirement is an operational lifecycle event.
 
@@ -1815,7 +1815,7 @@ Retired services MUST NOT remain accidentally reachable.
 
 ---
 
-# Retirement Validation
+## Retirement Validation
 
 After retirement, FamilyOS SHOULD verify that:
 
@@ -1829,7 +1829,7 @@ Retirement SHOULD be traceable.
 
 ---
 
-# Runtime Documentation
+## Runtime Documentation
 
 Operationally significant services SHOULD have runtime documentation.
 
@@ -1849,7 +1849,7 @@ Documentation MUST follow EPIC-DOC-001 — Documentation Framework.
 
 ---
 
-# Service Runbooks
+## Service Runbooks
 
 Critical and operationally complex services SHOULD have runbooks.
 
@@ -1869,7 +1869,7 @@ Runbooks SHOULD remain aligned with actual runtime behavior.
 
 ---
 
-# Runtime Testing
+## Runtime Testing
 
 Runtime management mechanisms SHOULD be tested.
 
@@ -1889,7 +1889,7 @@ Testing MUST integrate with EPIC-TST-001 — Testing Framework.
 
 ---
 
-# Runtime Quality
+## Runtime Quality
 
 Runtime behavior is part of FamilyOS quality.
 
@@ -1907,7 +1907,7 @@ Runtime quality SHOULD participate in EPIC-QLT-001 quality gates.
 
 ---
 
-# Runtime Security Integration
+## Runtime Security Integration
 
 Runtime management MUST enforce relevant requirements from EPIC-SEC-001 — Security Framework.
 
@@ -1924,7 +1924,7 @@ Runtime state MUST NOT weaken validated security guarantees.
 
 ---
 
-# Release Integration
+## Release Integration
 
 Runtime management begins from a validated release state.
 
@@ -1949,7 +1949,7 @@ Operators SHOULD be able to identify this relationship.
 
 ---
 
-# Build Integration
+## Build Integration
 
 Runtime artifacts MUST correspond to controlled outputs defined by EPIC-BLD-001 — Build Framework.
 
@@ -1959,7 +1959,7 @@ Runtime configuration SHOULD remain separate from immutable application artifact
 
 ---
 
-# Observability Integration
+## Observability Integration
 
 EPIC-OBS-001 — Observability Framework provides the common telemetry architecture for runtime management.
 
@@ -1976,7 +1976,7 @@ Operational tooling SHOULD consume these standardized signals.
 
 ---
 
-# Security Integration
+## Security Integration
 
 EPIC-SEC-001 defines runtime protection requirements.
 
@@ -2000,7 +2000,7 @@ Runtime management MUST NOT create bypass paths around these controls.
 
 ---
 
-# Operational Governance
+## Operational Governance
 
 Material runtime-management changes SHOULD be governed.
 
@@ -2017,7 +2017,7 @@ High-impact changes SHOULD receive architecture and operational review.
 
 ---
 
-# Runtime Exceptions
+## Runtime Exceptions
 
 Operational exceptions MUST be explicit.
 
@@ -2035,7 +2035,7 @@ Permanent undocumented runtime exceptions are prohibited.
 
 ---
 
-# Runtime Evidence
+## Runtime Evidence
 
 Operational evidence MAY include:
 
@@ -2052,7 +2052,7 @@ Evidence SHOULD support reconstruction of significant runtime events.
 
 ---
 
-# Runtime Management Invariants
+## Runtime Management Invariants
 
 The following invariants apply across FamilyOS:
 
@@ -2075,7 +2075,7 @@ The following invariants apply across FamilyOS:
 
 ---
 
-# Canonical Runtime Management Flow
+## Canonical Runtime Management Flow
 
 The canonical FamilyOS runtime lifecycle is:
 
@@ -2133,7 +2133,7 @@ This model keeps runtime state observable and governed throughout service operat
 
 ---
 
-# Runtime Readiness Model
+## Runtime Readiness Model
 
 A FamilyOS service is operationally ready only when:
 
@@ -2162,7 +2162,7 @@ Process existence alone is insufficient.
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 The FamilyOS Runtime and Service Management model enables:
 
@@ -2186,7 +2186,7 @@ The FamilyOS Runtime and Service Management model enables:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS runtime and service management is based on the following principle:
 

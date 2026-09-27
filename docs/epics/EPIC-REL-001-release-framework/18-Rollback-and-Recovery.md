@@ -1,8 +1,8 @@
 # Release Framework
 
-# 18 Rollback and Recovery
+## 18 Rollback and Recovery
 
-## Overview
+### Overview
 
 Rollback and recovery are fundamental capabilities of the FamilyOS Release Framework.
 
@@ -22,7 +22,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of rollback and recovery management is to ensure that FamilyOS can respond safely and predictably when a release does not behave as expected.
 
@@ -50,7 +50,7 @@ The objective is to restore an acceptable and verified platform state.
 
 ---
 
-# Rollback and Recovery Principle
+## Rollback and Recovery Principle
 
 FamilyOS distinguishes between **rollback** and **recovery**.
 
@@ -102,37 +102,37 @@ The selected recovery strategy must minimize risk while restoring acceptable pla
 
 ---
 
-# Recovery Objectives
+## Recovery Objectives
 
 Rollback and recovery procedures must support the following objectives.
 
-## Safety
+### Safety
 
 Recovery actions must not create greater risk than the release failure they are intended to resolve.
 
-## Predictability
+### Predictability
 
 Recovery procedures must be documented, understood, and reproducible.
 
-## Speed
+### Speed
 
 Critical release failures must be recoverable within an operationally acceptable timeframe.
 
-## Integrity
+### Integrity
 
 Recovery must preserve or restore system, configuration, and data integrity.
 
-## Traceability
+### Traceability
 
 All significant recovery decisions and actions must be recorded.
 
-## Verifiability
+### Verifiability
 
 The recovered platform state must be validated before the incident is considered resolved.
 
 ---
 
-# Recovery Preparedness
+## Recovery Preparedness
 
 Recovery preparation begins before release deployment.
 
@@ -157,7 +157,7 @@ A release without an understood recovery strategy carries unmanaged operational 
 
 ---
 
-# Rollback Eligibility
+## Rollback Eligibility
 
 Not every release can be safely rolled back.
 
@@ -183,11 +183,11 @@ CONDITIONAL_ROLLBACK
 FORWARD_RECOVERY_ONLY
 ```
 
-## Direct Rollback
+### Direct Rollback
 
 The previous stable release can be restored using the established rollback procedure.
 
-## Conditional Rollback
+### Conditional Rollback
 
 Rollback is possible only after additional recovery actions.
 
@@ -199,7 +199,7 @@ Examples include:
 * feature deactivation;
 * dependency restoration.
 
-## Forward Recovery Only
+### Forward Recovery Only
 
 Returning to the previous release would create unacceptable risk.
 
@@ -215,7 +215,7 @@ This classification must be visible during release readiness assessment.
 
 ---
 
-# Previous Stable Release
+## Previous Stable Release
 
 Every production release must identify the previous stable release.
 
@@ -239,7 +239,7 @@ It must not be inferred during an incident.
 
 ---
 
-# Artifact Preservation
+## Artifact Preservation
 
 Rollback depends on the availability of trusted release artifacts.
 
@@ -287,7 +287,7 @@ This preserves artifact identity across release operations.
 
 ---
 
-# Rollback Triggers
+## Rollback Triggers
 
 Rollback or recovery evaluation should begin when a production release causes or is strongly associated with unacceptable degradation.
 
@@ -314,7 +314,7 @@ Where practical, measurable thresholds should be established before deployment.
 
 ---
 
-# Automated Rollback Triggers
+## Automated Rollback Triggers
 
 Certain deployment environments may support automated rollback.
 
@@ -344,7 +344,7 @@ Automation improves recovery speed but does not eliminate governance requirement
 
 ---
 
-# Rollback Decision Authority
+## Rollback Decision Authority
 
 Rollback authority must be defined before production incidents occur.
 
@@ -366,7 +366,7 @@ All emergency rollback decisions must subsequently be recorded and reviewed.
 
 ---
 
-# Rollback Decision Model
+## Rollback Decision Model
 
 The rollback decision should consider:
 
@@ -400,7 +400,7 @@ The decision must consider both the impact of remaining on the current release a
 
 ---
 
-# Rollback Procedure
+## Rollback Procedure
 
 A rollback procedure must be deterministic and documented.
 
@@ -437,7 +437,7 @@ However, the control model must remain consistent.
 
 ---
 
-# Stabilization Before Rollback
+## Stabilization Before Rollback
 
 Immediate rollback is not always the safest first action.
 
@@ -458,7 +458,7 @@ Stabilization creates a controlled environment in which recovery can proceed saf
 
 ---
 
-# Application Rollback
+## Application Rollback
 
 Application rollback restores application components to a previous approved version.
 
@@ -477,7 +477,7 @@ After application rollback, the deployment must undergo recovery validation befo
 
 ---
 
-# Configuration Rollback
+## Configuration Rollback
 
 Release failures may result from configuration rather than application code.
 
@@ -498,7 +498,7 @@ Sensitive configuration must never be copied into release evidence in plaintext.
 
 ---
 
-# Feature-Level Recovery
+## Feature-Level Recovery
 
 FamilyOS should prefer targeted recovery when a failing capability can be isolated safely.
 
@@ -516,7 +516,7 @@ However, feature-level recovery is valid only when the remaining platform state 
 
 ---
 
-# Database and Schema Recovery
+## Database and Schema Recovery
 
 Database changes are among the most significant rollback risks.
 
@@ -541,7 +541,7 @@ These are separate recovery decisions.
 
 ---
 
-# Data Recovery
+## Data Recovery
 
 Data recovery must be treated with greater caution than software rollback.
 
@@ -563,7 +563,7 @@ Destructive data recovery operations require explicit authorization.
 
 ---
 
-# Migration Recovery
+## Migration Recovery
 
 Release migrations must define their recovery characteristics.
 
@@ -575,15 +575,15 @@ COMPENSATABLE
 IRREVERSIBLE
 ```
 
-## Reversible Migration
+### Reversible Migration
 
 The migration can be safely reversed through an approved operation.
 
-## Compensatable Migration
+### Compensatable Migration
 
 The migration cannot be directly reversed but its effects can be corrected through a compensating operation.
 
-## Irreversible Migration
+### Irreversible Migration
 
 The migration permanently changes state in a way that cannot safely be undone.
 
@@ -600,7 +600,7 @@ They may require:
 
 ---
 
-# Dependency Recovery
+## Dependency Recovery
 
 A release may change dependencies or dependency expectations.
 
@@ -620,7 +620,7 @@ Dependency compatibility must be evaluated as part of the rollback procedure.
 
 ---
 
-# Plugin Recovery
+## Plugin Recovery
 
 FamilyOS is a plugin-oriented platform.
 
@@ -642,7 +642,7 @@ The release framework must prevent recovery actions that restore a plugin versio
 
 ---
 
-# API Compatibility During Recovery
+## API Compatibility During Recovery
 
 Rollback can reintroduce older API behavior.
 
@@ -662,7 +662,7 @@ Breaking API changes require explicit recovery planning.
 
 ---
 
-# Security During Recovery
+## Security During Recovery
 
 Recovery operations must maintain FamilyOS security requirements.
 
@@ -690,7 +690,7 @@ Security controls must return to their approved state before incident closure.
 
 ---
 
-# Recovery Verification
+## Recovery Verification
 
 Rollback completion does not prove recovery success.
 
@@ -714,7 +714,7 @@ The required verification depth depends on incident severity and release scope.
 
 ---
 
-# Recovery Acceptance Criteria
+## Recovery Acceptance Criteria
 
 Recovery should be considered successful only when predefined acceptance criteria are satisfied.
 
@@ -735,7 +735,7 @@ The recovered state must be explicitly accepted by the appropriate operational a
 
 ---
 
-# Post-Rollback Observation
+## Post-Rollback Observation
 
 A successful rollback must be followed by an observation period.
 
@@ -755,7 +755,7 @@ A platform should not be declared stable immediately after the deployment comman
 
 ---
 
-# Failed Rollback
+## Failed Rollback
 
 Rollback itself can fail.
 
@@ -794,7 +794,7 @@ Each failed recovery action can further complicate system state.
 
 ---
 
-# Forward Recovery
+## Forward Recovery
 
 Forward recovery is the preferred strategy when rollback is unsafe or impossible.
 
@@ -814,7 +814,7 @@ Urgency may shorten normal release procedures, but it must not eliminate essenti
 
 ---
 
-# Emergency Releases
+## Emergency Releases
 
 A corrective release produced during recovery is an emergency release.
 
@@ -834,7 +834,7 @@ Emergency release procedures must optimize speed while maintaining minimum manda
 
 ---
 
-# Recovery Evidence
+## Recovery Evidence
 
 Every significant rollback or recovery operation must generate evidence.
 
@@ -861,7 +861,7 @@ Evidence supports both operational traceability and continuous improvement.
 
 ---
 
-# Recovery Metrics
+## Recovery Metrics
 
 The Release Framework should measure recovery capability.
 
@@ -884,7 +884,7 @@ A fast, controlled rollback is preferable to allowing a damaging release to rema
 
 ---
 
-# Recovery Testing
+## Recovery Testing
 
 Recovery procedures must be tested.
 
@@ -905,7 +905,7 @@ High-risk release paths should receive proportionally stronger recovery testing.
 
 ---
 
-# Rollback Drills
+## Rollback Drills
 
 Periodic rollback drills should be used to validate operational readiness.
 
@@ -924,7 +924,7 @@ Drills should produce findings that feed continuous improvement.
 
 ---
 
-# Release Readiness Integration
+## Release Readiness Integration
 
 Rollback and recovery readiness are part of release readiness.
 
@@ -947,7 +947,7 @@ A release with significant unresolved recovery risk should not pass the release 
 
 ---
 
-# Release Gate Integration
+## Release Gate Integration
 
 Rollback capability may be enforced through release gates.
 
@@ -968,7 +968,7 @@ Human review remains necessary for complex recovery risk.
 
 ---
 
-# Incident Management Integration
+## Incident Management Integration
 
 Release rollback and incident management are closely related.
 
@@ -989,7 +989,7 @@ Neither replaces the other.
 
 ---
 
-# Communication During Recovery
+## Communication During Recovery
 
 Recovery activities must be communicated clearly to affected stakeholders.
 
@@ -1009,7 +1009,7 @@ Technical investigation and stakeholder communication should remain synchronized
 
 ---
 
-# Post-Recovery Review
+## Post-Recovery Review
 
 Significant release recovery events must be reviewed after service stability has been restored.
 
@@ -1039,7 +1039,7 @@ The review must feed relevant findings into:
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 The Build Framework enables rollback by producing reproducible, immutable, and verifiable artifacts.
 
@@ -1064,7 +1064,7 @@ Rollback must preserve the integrity guarantees established during build.
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 The Testing Framework supports recovery by validating:
 
@@ -1078,7 +1078,7 @@ Recovery testing should reuse established testing capabilities wherever practica
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 The Quality Framework defines the quality expectations used to determine whether a recovered platform state is acceptable.
 
@@ -1090,7 +1090,7 @@ The target remains restoration of the approved quality state.
 
 ---
 
-# Relationship With Deployment
+## Relationship With Deployment
 
 Deployment and rollback are complementary release operations.
 
@@ -1100,7 +1100,7 @@ The release lifecycle should therefore treat rollback as part of deployment arch
 
 ---
 
-# Governance
+## Governance
 
 Rollback and recovery requirements are governed by the FamilyOS Release Framework.
 
@@ -1118,7 +1118,7 @@ Exceptions require explicit risk acceptance.
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Every recovery event provides evidence about the effectiveness of the release system.
 
@@ -1147,45 +1147,45 @@ Recovery maturity is therefore part of release maturity.
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices are prohibited or strongly discouraged.
 
-## No Rollback Plan
+### No Rollback Plan
 
 Deploying production changes without understanding how service can be restored.
 
-## Rebuilding Previous Releases During Incidents
+### Rebuilding Previous Releases During Incidents
 
 Depending on a new build of old source code instead of retaining verified artifacts.
 
-## Blind Database Rollback
+### Blind Database Rollback
 
 Reversing application versions without evaluating schema and data compatibility.
 
-## Repeated Uncontrolled Recovery Attempts
+### Repeated Uncontrolled Recovery Attempts
 
 Executing recovery actions repeatedly without understanding the resulting system state.
 
-## Undocumented Emergency Changes
+### Undocumented Emergency Changes
 
 Applying production fixes without traceability.
 
-## Assuming Deployment Success Equals Recovery Success
+### Assuming Deployment Success Equals Recovery Success
 
 Stopping verification immediately after a rollback command completes.
 
-## Security Bypass as Default Recovery
+### Security Bypass as Default Recovery
 
 Disabling security controls simply to accelerate restoration.
 
-## Permanent Emergency State
+### Permanent Emergency State
 
 Leaving temporary recovery configuration or operational exceptions active indefinitely.
 
 ---
 
-# Required Outcomes
+## Required Outcomes
 
 Implementation of this framework section must ensure that:
 
@@ -1202,7 +1202,7 @@ Implementation of this framework section must ensure that:
 
 ---
 
-# Final Rollback and Recovery Principle
+## Final Rollback and Recovery Principle
 
 FamilyOS must never depend on improvisation when a production release fails.
 

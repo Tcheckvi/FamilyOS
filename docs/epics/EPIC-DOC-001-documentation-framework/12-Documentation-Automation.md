@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 12 Documentation Automation
+## 12 Documentation Automation
 
-## Context
+### Context
 
 As the FamilyOS ecosystem grows, manual documentation management becomes increasingly difficult.
 
@@ -18,35 +18,35 @@ Documentation automation defines the mechanisms that support validation, generat
 
 ---
 
-# Documentation Automation Principles
+## Documentation Automation Principles
 
 FamilyOS documentation automation follows these principles.
 
-## Reliability
+### Reliability
 
 Automated checks must provide predictable and reproducible results.
 
 ---
 
-## Transparency
+### Transparency
 
 Automation rules must be understandable and documented.
 
 ---
 
-## Non-Intrusive Evolution
+### Non-Intrusive Evolution
 
 Automation must improve documentation quality without limiting legitimate contributions.
 
 ---
 
-## Continuous Validation
+### Continuous Validation
 
 Documentation quality should be verified continuously during development.
 
 ---
 
-# Automation Objectives
+## Automation Objectives
 
 Documentation automation provides support for:
 
@@ -60,7 +60,7 @@ Documentation automation provides support for:
 
 ---
 
-# Documentation Validation Pipeline
+## Documentation Validation Pipeline
 
 The recommended validation pipeline is:
 
@@ -85,7 +85,7 @@ Documentation Approval
 
 ---
 
-# Markdown Validation
+## Markdown Validation
 
 Markdown validation ensures documents follow FamilyOS formatting standards.
 
@@ -105,7 +105,7 @@ markdownlint docs/
 
 ---
 
-# Metadata Validation
+## Metadata Validation
 
 Official documents require valid metadata.
 
@@ -128,7 +128,7 @@ document:
 
 ---
 
-# Reference Validation
+## Reference Validation
 
 Documentation references must remain valid.
 
@@ -154,7 +154,7 @@ SPEC-0005
 
 ---
 
-# Structure Validation
+## Structure Validation
 
 Templates define required sections.
 
@@ -177,7 +177,7 @@ RFC Document
 
 ---
 
-# Documentation Index Generation
+## Documentation Index Generation
 
 Automation may generate documentation indexes.
 
@@ -205,7 +205,7 @@ Version: 1.0.0
 
 ---
 
-# Documentation Dependency Mapping
+## Documentation Dependency Mapping
 
 Automation can analyze relationships between documents.
 
@@ -225,7 +225,7 @@ This improves traceability.
 
 ---
 
-# CI/CD Integration
+## CI/CD Integration
 
 Documentation validation should integrate with continuous integration workflows.
 
@@ -242,7 +242,7 @@ documentation:
 
 ---
 
-# Pull Request Validation
+## Pull Request Validation
 
 Documentation changes should automatically trigger validation.
 
@@ -255,7 +255,7 @@ Recommended checks:
 
 ---
 
-# Documentation Generation
+## Documentation Generation
 
 Future automation may generate:
 
@@ -268,11 +268,11 @@ Generated content must remain distinguishable from manually written documentatio
 
 ---
 
-# Documentation Automation Tools
+## Documentation Automation Tools
 
 Potential tools include:
 
-## Markdown Tools
+### Markdown Tools
 
 Purpose:
 
@@ -281,7 +281,7 @@ Purpose:
 
 ---
 
-## Static Analysis Tools
+### Static Analysis Tools
 
 Purpose:
 
@@ -290,7 +290,7 @@ Purpose:
 
 ---
 
-## Custom FamilyOS Validators
+### Custom FamilyOS Validators
 
 Purpose:
 
@@ -300,7 +300,7 @@ Purpose:
 
 ---
 
-# Automation Rules
+## Automation Rules
 
 The following rules apply:
 
@@ -312,7 +312,7 @@ The following rules apply:
 
 ---
 
-# Documentation Automation Lifecycle
+## Documentation Automation Lifecycle
 
 Automation itself follows a lifecycle:
 
@@ -334,7 +334,7 @@ Maintenance
 
 ---
 
-# Governance Integration
+## Governance Integration
 
 Documentation automation is governed by:
 
@@ -345,7 +345,7 @@ Documentation automation is governed by:
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
 Documentation automation integrates with:
 
@@ -357,7 +357,7 @@ Documentation automation integrates with:
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 Documentation automation is compliant when:
 

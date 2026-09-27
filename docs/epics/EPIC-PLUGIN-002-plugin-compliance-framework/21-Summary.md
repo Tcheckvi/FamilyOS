@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 21 Summary
+## 21 Summary
 
-## Introduction
+### Introduction
 
 EPIC-PLUGIN-002 establishes the FamilyOS Plugin Compliance Framework.
 
@@ -16,7 +16,7 @@ The central principle is:
 
 ---
 
-# Strategic Role
+## Strategic Role
 
 The Plugin Compliance Framework sits between plugin extensibility and ecosystem trust.
 
@@ -50,7 +50,7 @@ Each level represents a stronger assurance claim.
 
 ---
 
-# Core Model
+## Core Model
 
 The compliance framework is built around a clear processing chain:
 
@@ -89,7 +89,7 @@ This sequence separates policy, execution, evidence, decision, and lifecycle enf
 
 ---
 
-# Compliance Rules
+## Compliance Rules
 
 Compliance rules are the smallest governed units of conformance.
 
@@ -111,7 +111,7 @@ Rules must remain versioned, testable, traceable, and governable.
 
 ---
 
-# Compliance Domains
+## Compliance Domains
 
 The initial domain model includes:
 
@@ -139,7 +139,7 @@ This gives the framework a stable organizational model while still allowing cros
 
 ---
 
-# Compliance Profiles
+## Compliance Profiles
 
 Profiles determine which rules apply to a specific plugin and lifecycle context.
 
@@ -161,7 +161,7 @@ They do not redefine rule meaning.
 
 ---
 
-# Validation Engine
+## Validation Engine
 
 The Validation Engine provides the execution core of the framework.
 
@@ -183,7 +183,7 @@ The same engine should be used by local tooling, CI, build, release, and certifi
 
 ---
 
-# Evidence Model
+## Evidence Model
 
 Compliance decisions must be evidence-based.
 
@@ -218,7 +218,7 @@ Stronger lifecycle stages may require stronger evidence trust.
 
 ---
 
-# Rule Outcomes
+## Rule Outcomes
 
 The preferred canonical rule outcome model is:
 
@@ -236,7 +236,7 @@ They are distinct from severity.
 
 ---
 
-# Severity Model
+## Severity Model
 
 The baseline severity model is:
 
@@ -253,7 +253,7 @@ Profiles and gates determine how that severity affects progression.
 
 ---
 
-# Compliance Findings
+## Compliance Findings
 
 Findings explain concrete compliance conditions discovered during an evaluation.
 
@@ -277,7 +277,7 @@ They must not become opaque error messages.
 
 ---
 
-# Compliance Status
+## Compliance Status
 
 The canonical overall compliance states are:
 
@@ -294,7 +294,7 @@ They must not be confused with rule outcomes or severity.
 
 ---
 
-# Reporting
+## Reporting
 
 All reporting derives from the canonical Compliance Result.
 
@@ -313,7 +313,7 @@ They must never change compliance meaning.
 
 ---
 
-# Automation
+## Automation
 
 Compliance is designed to integrate throughout the engineering lifecycle.
 
@@ -345,7 +345,7 @@ Compliance should be easiest to fix when the change is smallest.
 
 ---
 
-# Compliance Gates
+## Compliance Gates
 
 Gates convert Compliance Results into lifecycle decisions.
 
@@ -367,7 +367,7 @@ They enforce the assurance required for progression.
 
 ---
 
-# Certification Boundary
+## Certification Boundary
 
 Compliance and certification remain separate.
 
@@ -397,7 +397,7 @@ A compliant plugin is not automatically certified.
 
 ---
 
-# Governance
+## Governance
 
 The framework treats compliance requirements as governed platform contracts.
 
@@ -421,7 +421,7 @@ Compliance policy must never emerge accidentally from validator behavior.
 
 ---
 
-# Security and Trust
+## Security and Trust
 
 The framework assumes the evaluated plugin is not automatically trusted.
 
@@ -440,7 +440,7 @@ They must not control the mechanisms that decide whether those inputs demonstrat
 
 ---
 
-# Framework Lifecycle
+## Framework Lifecycle
 
 The framework itself evolves through controlled stages:
 
@@ -467,7 +467,7 @@ Framework evolution must preserve historical traceability and migration paths.
 
 ---
 
-# Roadmap
+## Roadmap
 
 The recommended implementation sequence is:
 
@@ -521,7 +521,7 @@ The framework should grow one trustworthy layer at a time.
 
 ---
 
-# Initial Implementation Baseline
+## Initial Implementation Baseline
 
 The first implementation should remain intentionally focused.
 
@@ -545,7 +545,7 @@ The goal is to prove architecture and semantics before expanding rule volume.
 
 ---
 
-# Existing Engineering Integration
+## Existing Engineering Integration
 
 The framework is designed to reuse existing FamilyOS engineering evidence.
 
@@ -568,7 +568,7 @@ EPIC-PLUGIN-002 coordinates these systems specifically for plugin conformance.
 
 ---
 
-# Key Invariants
+## Key Invariants
 
 The framework establishes several non-negotiable invariants:
 
@@ -593,7 +593,7 @@ The framework establishes several non-negotiable invariants:
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 When EPIC-PLUGIN-002 is operational, FamilyOS should be able to evaluate a supported plugin and answer clearly:
 
@@ -614,7 +614,7 @@ These questions should be answerable through structured, reproducible compliance
 
 ---
 
-# Ecosystem Impact
+## Ecosystem Impact
 
 The framework enables FamilyOS to move from an ecosystem based primarily on functional plugin execution toward one based on verifiable platform contracts.
 
@@ -644,7 +644,7 @@ becomes possible.
 
 ---
 
-# Definition of Success
+## Definition of Success
 
 EPIC-PLUGIN-002 succeeds when FamilyOS has:
 
@@ -664,7 +664,7 @@ EPIC-PLUGIN-002 succeeds when FamilyOS has:
 
 ---
 
-# Final Summary
+## Final Summary
 
 The Plugin Compliance Framework transforms compliance from an informal engineering expectation into an explicit platform capability.
 
@@ -690,7 +690,7 @@ This creates the foundation required for FamilyOS to scale its plugin ecosystem 
 
 ---
 
-# Final Principle
+## Final Principle
 
 The complete EPIC can be summarized by one principle:
 

@@ -1,10 +1,10 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-## Implementation and Automation
+### Implementation and Automation
 
-## Overview
+### Overview
 
 This document defines the implementation strategy and automation model for the FamilyOS Security Framework.
 
@@ -27,7 +27,7 @@ Instead, it defines a practical path from security architecture to enforceable p
 
 ---
 
-# Implementation Philosophy
+## Implementation Philosophy
 
 FamilyOS security follows the implementation sequence:
 
@@ -55,7 +55,7 @@ Security architecture must ultimately become executable behavior.
 
 ---
 
-# Implementation Objectives
+## Implementation Objectives
 
 The implementation must provide mechanisms capable of supporting:
 
@@ -80,7 +80,7 @@ Not every mechanism must be implemented simultaneously.
 
 ---
 
-# Implementation Boundaries
+## Implementation Boundaries
 
 Security implementation SHOULD respect existing FamilyOS architecture.
 
@@ -102,7 +102,7 @@ External security technologies remain behind adapters where practical.
 
 ---
 
-# Clean Architecture Alignment
+## Clean Architecture Alignment
 
 Security implementation must preserve FamilyOS Clean Architecture principles.
 
@@ -133,7 +133,7 @@ Dependencies point inward toward stable FamilyOS contracts.
 
 ---
 
-# Security Package Structure
+## Security Package Structure
 
 A future implementation may use a structure conceptually similar to:
 
@@ -155,7 +155,7 @@ EPIC-SEC-001 does not mandate unnecessary directories before code requires them.
 
 ---
 
-# Core Security Primitives
+## Core Security Primitives
 
 The first implementation SHOULD establish a small set of reusable security primitives.
 
@@ -175,7 +175,7 @@ These primitives provide stable contracts around which implementation can evolve
 
 ---
 
-# Security Context
+## Security Context
 
 `SecurityContext` represents security-relevant information associated with an execution context.
 
@@ -197,7 +197,7 @@ The actual implementation SHOULD remain smaller if some fields are unnecessary.
 
 ---
 
-# Security Context Requirements
+## Security Context Requirements
 
 A security context SHOULD be:
 
@@ -211,7 +211,7 @@ Security context must not become a container for arbitrary application data.
 
 ---
 
-# Security Context Propagation
+## Security Context Propagation
 
 Where an operation crosses relevant application boundaries, required security context should propagate explicitly.
 
@@ -235,7 +235,7 @@ Implicit global security state should be avoided.
 
 ---
 
-# Permission Model
+## Permission Model
 
 Permissions represent stable authorization concepts.
 
@@ -262,7 +262,7 @@ The exact representation should remain simple and strongly validated.
 
 ---
 
-# Permission Naming
+## Permission Naming
 
 Permission names SHOULD be:
 
@@ -277,7 +277,7 @@ Permission semantics must not silently vary between components.
 
 ---
 
-# Authorization Request
+## Authorization Request
 
 A protected operation SHOULD be representable as an authorization request.
 
@@ -298,7 +298,7 @@ The model should remain proportional to actual policy needs.
 
 ---
 
-# Authorization Decision
+## Authorization Decision
 
 Authorization must return an explicit decision.
 
@@ -322,7 +322,7 @@ DENY
 
 ---
 
-# Authorization Reasons
+## Authorization Reasons
 
 Stable reason categories improve explainability and testing.
 
@@ -341,7 +341,7 @@ Reason categories SHOULD NOT expose sensitive internal details.
 
 ---
 
-# Authorization Service
+## Authorization Service
 
 A central authorization contract may conceptually provide:
 
@@ -355,7 +355,7 @@ The initial contract should remain small.
 
 ---
 
-# Enforcement
+## Enforcement
 
 Authorization contracts have value only when enforcement occurs at meaningful boundaries.
 
@@ -372,7 +372,7 @@ Security checks should not be scattered randomly across helper functions.
 
 ---
 
-# Enforcement Pattern
+## Enforcement Pattern
 
 A protected capability may follow:
 
@@ -396,7 +396,7 @@ The pattern should remain predictable across FamilyOS.
 
 ---
 
-# Denial Behavior
+## Denial Behavior
 
 Authorization denial SHOULD:
 
@@ -409,7 +409,7 @@ Denial must not silently fall through to execution.
 
 ---
 
-# Authentication Integration
+## Authentication Integration
 
 EPIC-SEC-001 does not require a specific authentication provider.
 
@@ -433,7 +433,7 @@ This preserves vendor neutrality.
 
 ---
 
-# Authentication Providers
+## Authentication Providers
 
 Future adapters may support:
 
@@ -447,7 +447,7 @@ The framework should not require these providers before concrete use cases exist
 
 ---
 
-# Test Authentication
+## Test Authentication
 
 Tests SHOULD use deterministic authentication providers.
 
@@ -465,7 +465,7 @@ Tests must not depend on production credentials.
 
 ---
 
-# Secret Provider Contract
+## Secret Provider Contract
 
 Secret access SHOULD occur through a dedicated contract.
 
@@ -482,7 +482,7 @@ Mutation operations should only be introduced when required.
 
 ---
 
-# Secret References
+## Secret References
 
 Application code SHOULD refer to secrets indirectly.
 
@@ -498,7 +498,7 @@ This separates secret identity from secret material.
 
 ---
 
-# Local Secret Provider
+## Local Secret Provider
 
 Development environments MAY use a simple local provider.
 
@@ -512,7 +512,7 @@ It must not encourage:
 
 ---
 
-# Test Secret Provider
+## Test Secret Provider
 
 Tests SHOULD use deterministic synthetic secrets.
 
@@ -528,7 +528,7 @@ This enables repeatable testing without external infrastructure.
 
 ---
 
-# Production Secret Providers
+## Production Secret Providers
 
 Future production adapters may integrate with external secret-management systems.
 
@@ -536,7 +536,7 @@ The core architecture should not depend on which provider is selected.
 
 ---
 
-# Secret Redaction
+## Secret Redaction
 
 Security implementation SHOULD provide consistent mechanisms for preventing accidental secret exposure.
 
@@ -552,7 +552,7 @@ Where automatic redaction is introduced, tests must verify its behavior.
 
 ---
 
-# Cryptographic Ports
+## Cryptographic Ports
 
 Cryptographic functionality SHOULD be exposed through purpose-specific interfaces where abstraction provides value.
 
@@ -570,7 +570,7 @@ A single generic cryptography service should be avoided if it obscures security 
 
 ---
 
-# Cryptographic Adapters
+## Cryptographic Adapters
 
 Adapters should use established cryptographic libraries.
 
@@ -580,7 +580,7 @@ Algorithm selection should be centralized enough to support future cryptographic
 
 ---
 
-# Data Protection Enforcement
+## Data Protection Enforcement
 
 Data-protection requirements may be enforced at several layers.
 
@@ -598,7 +598,7 @@ Encryption and access control solve different problems and should not be conflat
 
 ---
 
-# Security Events
+## Security Events
 
 Security-sensitive operations SHOULD produce structured events where useful.
 
@@ -621,7 +621,7 @@ Protected content and secrets must not be included unnecessarily.
 
 ---
 
-# Security Event Integration
+## Security Event Integration
 
 Security events SHOULD integrate with the Observability Framework.
 
@@ -641,7 +641,7 @@ Security should not create an entirely separate telemetry architecture.
 
 ---
 
-# Security Event Categories
+## Security Event Categories
 
 Initial categories may include:
 
@@ -667,7 +667,7 @@ Signal volume must remain proportional.
 
 ---
 
-# Security Findings
+## Security Findings
 
 Automated validation SHOULD produce structured security findings.
 
@@ -689,7 +689,7 @@ Findings should be machine-processable where practical.
 
 ---
 
-# Finding Severity
+## Finding Severity
 
 A simple initial severity model is:
 
@@ -704,7 +704,7 @@ Severity should align with the risk model defined in `06-Threat-Risk-and-Trust-M
 
 ---
 
-# Security Validation Result
+## Security Validation Result
 
 Security validation SHOULD produce an aggregate result.
 
@@ -722,7 +722,7 @@ This result may later participate in quality and release gates.
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Security-sensitive configuration SHOULD be validated before use.
 
@@ -737,7 +737,7 @@ Validation may verify:
 
 ---
 
-# Startup Security Validation
+## Startup Security Validation
 
 Critical invalid security configuration MAY prevent startup or capability activation.
 
@@ -757,7 +757,7 @@ Silent insecure fallback is prohibited.
 
 ---
 
-# Plugin Security Implementation
+## Plugin Security Implementation
 
 Plugins SHOULD consume platform security contracts rather than implement independent alternatives.
 
@@ -777,7 +777,7 @@ Execution
 
 ---
 
-# Plugin Permission Metadata
+## Plugin Permission Metadata
 
 Where useful, plugin metadata MAY declare security requirements.
 
@@ -793,7 +793,7 @@ The exact schema should align with the existing plugin architecture.
 
 ---
 
-# Plugin Activation Validation
+## Plugin Activation Validation
 
 Before activation, applicable plugins MAY be validated for:
 
@@ -808,7 +808,7 @@ This should integrate with the existing Plugin Compliance Framework.
 
 ---
 
-# Security and Plugin Compliance
+## Security and Plugin Compliance
 
 The relationship is:
 
@@ -826,7 +826,7 @@ Security MUST NOT duplicate the entire compliance engine.
 
 ---
 
-# Repository Security
+## Repository Security
 
 Repositories should remain focused on persistence concerns.
 
@@ -846,7 +846,7 @@ Repository
 
 ---
 
-# Integration Security Implementation
+## Integration Security Implementation
 
 External integrations SHOULD use dedicated adapters.
 
@@ -862,7 +862,7 @@ The adapter boundary provides a natural location for:
 
 ---
 
-# Integration Credentials
+## Integration Credentials
 
 Integration adapters SHOULD obtain credentials through the Secret Provider contract.
 
@@ -882,7 +882,7 @@ Credential values must not become normal application configuration.
 
 ---
 
-# Dependency Security Automation
+## Dependency Security Automation
 
 Dependency security SHOULD build upon the existing dependency and build architecture.
 
@@ -898,7 +898,7 @@ New tooling should only be introduced when it provides clear value.
 
 ---
 
-# Secret Detection Automation
+## Secret Detection Automation
 
 Source and configuration files SHOULD be checked for accidentally committed secrets where practical.
 
@@ -914,7 +914,7 @@ Detection must be tuned to avoid unusable false-positive rates.
 
 ---
 
-# Static Security Analysis
+## Static Security Analysis
 
 Security-specific static analysis MAY complement existing FamilyOS checks.
 
@@ -929,7 +929,7 @@ Security-specific tools should only be added when their findings are actionable 
 
 ---
 
-# Dynamic Security Tests
+## Dynamic Security Tests
 
 Security behavior SHOULD primarily be validated through executable tests.
 
@@ -946,7 +946,7 @@ Examples include:
 
 ---
 
-# Authorization Test Matrix
+## Authorization Test Matrix
 
 Authorization tests SHOULD include both positive and negative cases.
 
@@ -974,7 +974,7 @@ Negative cases are mandatory security evidence.
 
 ---
 
-# Security Boundary Tests
+## Security Boundary Tests
 
 Important trust boundaries SHOULD receive direct tests.
 
@@ -998,7 +998,7 @@ Tests should verify both intended access and prohibited access.
 
 ---
 
-# Security Regression Tests
+## Security Regression Tests
 
 When a security defect is fixed, a regression test SHOULD be added whenever practical.
 
@@ -1018,7 +1018,7 @@ This converts discovered vulnerabilities into lasting engineering knowledge.
 
 ---
 
-# Property-Based Security Testing
+## Property-Based Security Testing
 
 Property-based testing MAY be introduced when security invariants benefit from broad input exploration.
 
@@ -1033,7 +1033,7 @@ It is optional and should be justified by value.
 
 ---
 
-# Fuzz Testing
+## Fuzz Testing
 
 Fuzz testing MAY be introduced for high-risk parsers or externally exposed boundaries.
 
@@ -1041,7 +1041,7 @@ It is not required as a universal FamilyOS security tool.
 
 ---
 
-# Security Test Fixtures
+## Security Test Fixtures
 
 Security fixtures SHOULD use:
 
@@ -1055,7 +1055,7 @@ Fixtures should be deterministic.
 
 ---
 
-# CI Security Pipeline
+## CI Security Pipeline
 
 Security validation should integrate incrementally into CI.
 
@@ -1081,7 +1081,7 @@ The exact ordering may evolve with the existing FamilyOS pipeline.
 
 ---
 
-# Fast Security Checks
+## Fast Security Checks
 
 Frequently executed checks should remain fast.
 
@@ -1096,7 +1096,7 @@ Fast checks support developer feedback.
 
 ---
 
-# Extended Security Checks
+## Extended Security Checks
 
 More expensive checks MAY run less frequently.
 
@@ -1110,7 +1110,7 @@ Execution frequency should reflect cost and risk.
 
 ---
 
-# Local Security Validation
+## Local Security Validation
 
 Developers SHOULD be able to execute core security validation locally.
 
@@ -1126,7 +1126,7 @@ The exact CLI command should only be introduced when implementation requires it.
 
 ---
 
-# Machine-Readable Results
+## Machine-Readable Results
 
 Automation SHOULD produce structured results where practical.
 
@@ -1142,7 +1142,7 @@ Human-readable output may be derived from these structures.
 
 ---
 
-# Deterministic Validation
+## Deterministic Validation
 
 Given the same:
 
@@ -1159,7 +1159,7 @@ External data sources must be explicitly identified when they introduce time-dep
 
 ---
 
-# Security Evidence
+## Security Evidence
 
 Automation should produce evidence suitable for:
 
@@ -1174,7 +1174,7 @@ Evidence must remain proportional to its purpose.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Security evidence must not claim successful validation when checks were:
 
@@ -1196,7 +1196,7 @@ where relevant.
 
 ---
 
-# Fail-Open Versus Fail-Closed Automation
+## Fail-Open Versus Fail-Closed Automation
 
 Security-critical enforcement SHOULD normally fail closed.
 
@@ -1224,7 +1224,7 @@ PASS
 
 ---
 
-# Security Gates
+## Security Gates
 
 Security automation may produce lifecycle gates.
 
@@ -1242,7 +1242,7 @@ PASS / BLOCK / REVIEW
 
 ---
 
-# Critical Findings
+## Critical Findings
 
 Critical findings SHOULD normally block release.
 
@@ -1258,13 +1258,13 @@ Exact policy must remain risk-based.
 
 ---
 
-# High Findings
+## High Findings
 
 High-severity findings SHOULD normally require remediation or explicit security review before release.
 
 ---
 
-# Medium and Low Findings
+## Medium and Low Findings
 
 Medium and low findings may be:
 
@@ -1277,7 +1277,7 @@ They should not automatically create permanent release paralysis.
 
 ---
 
-# Risk Acceptance Automation
+## Risk Acceptance Automation
 
 Automation MAY record explicit risk acceptance metadata.
 
@@ -1285,7 +1285,7 @@ It MUST NOT silently convert unresolved findings into successful validation.
 
 ---
 
-# Build Integration
+## Build Integration
 
 Security automation should consume the Build Framework rather than create an independent build process.
 
@@ -1299,7 +1299,7 @@ Possible integration points include:
 
 ---
 
-# Release Integration
+## Release Integration
 
 Security validation should integrate with the Release Framework.
 
@@ -1319,7 +1319,7 @@ Security should not create a separate competing release lifecycle.
 
 ---
 
-# Observability Integration
+## Observability Integration
 
 Security implementation should use the Observability Framework for runtime evidence.
 
@@ -1339,7 +1339,7 @@ Security telemetry remains subject to privacy and redaction requirements.
 
 ---
 
-# Quality Integration
+## Quality Integration
 
 Security validation results may become Quality Framework evidence.
 
@@ -1359,7 +1359,7 @@ This allows security to participate in existing engineering gates.
 
 ---
 
-# Documentation Integration
+## Documentation Integration
 
 Security contracts that developers must use SHOULD be documented near their implementation.
 
@@ -1369,7 +1369,7 @@ Detailed API documentation should derive from actual code once implementation ex
 
 ---
 
-# Developer Workflow
+## Developer Workflow
 
 A security-aware development workflow SHOULD become:
 
@@ -1393,7 +1393,7 @@ Security should become part of normal engineering rather than a separate final p
 
 ---
 
-# Security Review Triggers
+## Security Review Triggers
 
 Additional review SHOULD be considered when a change affects:
 
@@ -1411,7 +1411,7 @@ Not every code change requires dedicated security review.
 
 ---
 
-# Automation Principles
+## Automation Principles
 
 Security automation follows these rules:
 
@@ -1435,7 +1435,7 @@ Do Not Duplicate Existing Frameworks
 
 ---
 
-# Automation Must Not Replace Architecture
+## Automation Must Not Replace Architecture
 
 Security tooling cannot compensate for unclear trust boundaries or undefined authorization semantics.
 
@@ -1461,7 +1461,7 @@ Architecture
 
 ---
 
-# Automation Must Not Replace Review
+## Automation Must Not Replace Review
 
 Automated security validation is necessary but not sufficient.
 
@@ -1473,7 +1473,7 @@ It does not eliminate it.
 
 ---
 
-# Avoiding Tool Proliferation
+## Avoiding Tool Proliferation
 
 Before introducing a security tool, FamilyOS SHOULD ask:
 
@@ -1489,7 +1489,7 @@ Tools without clear answers should not be introduced.
 
 ---
 
-# Implementation Phases
+## Implementation Phases
 
 Security implementation SHOULD proceed incrementally.
 
@@ -1525,7 +1525,7 @@ These phases may overlap where implementation naturally requires it.
 
 ---
 
-# Phase 1 — Core Security Models
+## Phase 1 — Core Security Models
 
 Initial models SHOULD establish:
 
@@ -1541,7 +1541,7 @@ The goal is a stable vocabulary.
 
 ---
 
-# Phase 2 — Authorization
+## Phase 2 — Authorization
 
 Authorization implementation SHOULD establish:
 
@@ -1554,7 +1554,7 @@ This is one of the highest-priority runtime controls.
 
 ---
 
-# Phase 3 — Secret Management
+## Phase 3 — Secret Management
 
 Secret-management implementation SHOULD establish:
 
@@ -1568,7 +1568,7 @@ External production providers can follow later.
 
 ---
 
-# Phase 4 — Security Events
+## Phase 4 — Security Events
 
 Security events SHOULD integrate with the Observability Framework.
 
@@ -1576,7 +1576,7 @@ Initial implementation should prioritize high-value events rather than emitting 
 
 ---
 
-# Phase 5 — Plugin Security
+## Phase 5 — Plugin Security
 
 Plugin integration SHOULD establish:
 
@@ -1589,7 +1589,7 @@ This phase builds upon the existing plugin architecture.
 
 ---
 
-# Phase 6 — Security Validation
+## Phase 6 — Security Validation
 
 A unified validation layer SHOULD aggregate relevant security findings.
 
@@ -1605,7 +1605,7 @@ Dependency Evidence
 
 ---
 
-# Phase 7 — CI Automation
+## Phase 7 — CI Automation
 
 Stable local validation should then be integrated into CI.
 
@@ -1613,7 +1613,7 @@ CI should not become the first environment where security behavior can be tested
 
 ---
 
-# Phase 8 — Release Gates
+## Phase 8 — Release Gates
 
 Only mature, reliable security validations should become blocking release gates.
 
@@ -1621,7 +1621,7 @@ This prevents unstable security automation from unnecessarily disrupting develop
 
 ---
 
-# Minimal Viable Security Foundation
+## Minimal Viable Security Foundation
 
 The minimum useful implementation for FamilyOS is:
 
@@ -1647,11 +1647,11 @@ This foundation provides substantial security value without requiring enterprise
 
 ---
 
-# Implementation Anti-Patterns
+## Implementation Anti-Patterns
 
 FamilyOS SHOULD avoid the following patterns.
 
-## Global Security State
+### Global Security State
 
 ```text
 GLOBAL_CURRENT_USER
@@ -1660,33 +1660,33 @@ GLOBAL_PERMISSIONS
 
 Uncontrolled global state reduces testability and isolation.
 
-## Scattered Authorization
+### Scattered Authorization
 
 Permission checks distributed randomly across unrelated helpers create inconsistent enforcement.
 
-## Hard-Coded Secrets
+### Hard-Coded Secrets
 
 Credentials embedded directly in code or configuration files are prohibited.
 
-## Provider Coupling
+### Provider Coupling
 
 Core domain code should not directly depend on vendor-specific identity or secret APIs.
 
-## Security Through Logging
+### Security Through Logging
 
 Logging suspicious behavior does not replace preventing unauthorized behavior.
 
-## Security Through Obscurity
+### Security Through Obscurity
 
 Hidden implementation details must not be treated as primary security controls.
 
-## Automatic Trust
+### Automatic Trust
 
 Installed, internal, or official components must not receive unrestricted access automatically.
 
 ---
 
-# Implementation Quality Requirements
+## Implementation Quality Requirements
 
 Security implementation MUST satisfy applicable FamilyOS engineering quality standards.
 
@@ -1704,7 +1704,7 @@ Security-specific checks may supplement these requirements.
 
 ---
 
-# Test Coverage Expectations
+## Test Coverage Expectations
 
 Security-critical behavior SHOULD receive strong behavioral coverage.
 
@@ -1720,7 +1720,7 @@ A numeric coverage percentage alone does not prove security.
 
 ---
 
-# Performance Expectations
+## Performance Expectations
 
 Security implementation should avoid unnecessary performance cost.
 
@@ -1730,7 +1730,7 @@ Performance optimization must preserve security invariants.
 
 ---
 
-# Backward Compatibility
+## Backward Compatibility
 
 Security changes may intentionally restrict behavior that was previously permitted.
 
@@ -1740,7 +1740,7 @@ When a security change is breaking, FamilyOS SHOULD provide an explicit migratio
 
 ---
 
-# Migration Strategy
+## Migration Strategy
 
 Security migrations may involve:
 
@@ -1760,7 +1760,7 @@ Transitional compatibility must not silently disable essential protections.
 
 ---
 
-# Operational Readiness
+## Operational Readiness
 
 Before security mechanisms are relied upon operationally, FamilyOS should be able to determine:
 
@@ -1774,7 +1774,7 @@ This prepares the platform for the future Operations Framework.
 
 ---
 
-# Future Automation
+## Future Automation
 
 As FamilyOS matures, automation may expand toward:
 
@@ -1793,7 +1793,7 @@ They are not prerequisites for EPIC-SEC-001 completion.
 
 ---
 
-# Implementation Exit Criteria
+## Implementation Exit Criteria
 
 The implementation architecture defined by EPIC-SEC-001 is ready when FamilyOS has clear answers for:
 
@@ -1825,7 +1825,7 @@ How can release decisions consume security results?
 
 ---
 
-# Automation Exit Criteria
+## Automation Exit Criteria
 
 Security automation is sufficiently defined when:
 
@@ -1841,7 +1841,7 @@ Security automation is sufficiently defined when:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 This implementation and automation model succeeds when security can move from architecture into code without requiring another large documentation phase.
 
@@ -1863,7 +1863,7 @@ Quality / Release Gate
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After implementation of this model, FamilyOS security should become a normal part of engineering.
 
@@ -1887,7 +1887,7 @@ Security becomes enforceable rather than aspirational.
 
 ---
 
-# Conclusion
+## Conclusion
 
 EPIC-SEC-001 deliberately avoids building a large security platform before FamilyOS needs one.
 

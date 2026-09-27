@@ -1,10 +1,10 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-## Threat, Risk, and Trust Model
+### Threat, Risk, and Trust Model
 
-## Overview
+### Overview
 
 This document defines the FamilyOS threat model, security risk model, and trust model.
 
@@ -29,7 +29,7 @@ It provides enough structure to guide architecture, implementation, testing, plu
 
 ---
 
-# Objectives
+## Objectives
 
 The Threat, Risk, and Trust Model must:
 
@@ -47,7 +47,7 @@ The Threat, Risk, and Trust Model must:
 
 ---
 
-# Security Assets
+## Security Assets
 
 A security asset is anything whose confidentiality, integrity, availability, authenticity, or controlled use matters to FamilyOS.
 
@@ -75,7 +75,7 @@ FamilyOS assets may include:
 
 ---
 
-# Asset Categories
+## Asset Categories
 
 FamilyOS assets may be grouped conceptually as:
 
@@ -93,7 +93,7 @@ This classification helps identify different kinds of threats.
 
 ---
 
-# Data Assets
+## Data Assets
 
 Data assets include information processed or stored by FamilyOS.
 
@@ -119,7 +119,7 @@ Threats may include:
 
 ---
 
-# Identity Assets
+## Identity Assets
 
 Identity assets describe who or what participates in FamilyOS.
 
@@ -142,7 +142,7 @@ Threats may include:
 
 ---
 
-# Security Assets
+## Security Assets
 
 Security assets directly support protection mechanisms.
 
@@ -162,7 +162,7 @@ Compromise of these assets may undermine multiple security controls simultaneous
 
 ---
 
-# Software Assets
+## Software Assets
 
 Software assets include:
 
@@ -183,7 +183,7 @@ Threats may include:
 
 ---
 
-# Operational Evidence
+## Operational Evidence
 
 Observability and security evidence may itself become security-sensitive.
 
@@ -206,7 +206,7 @@ Threats include:
 
 ---
 
-# Actors
+## Actors
 
 Threat modeling begins by identifying relevant actors.
 
@@ -232,7 +232,7 @@ Trust depends on context and boundary.
 
 ---
 
-# Legitimate Actors
+## Legitimate Actors
 
 Legitimate actors are expected to use FamilyOS according to intended permissions.
 
@@ -248,7 +248,7 @@ Threat modeling therefore includes misuse as well as malicious behavior.
 
 ---
 
-# External Actors
+## External Actors
 
 External actors may attempt to interact with FamilyOS without valid authorization.
 
@@ -265,7 +265,7 @@ The model assumes external input is untrusted.
 
 ---
 
-# Compromised Actors
+## Compromised Actors
 
 A legitimate identity or component may become compromised.
 
@@ -283,7 +283,7 @@ FamilyOS SHOULD therefore avoid assuming that prior trust guarantees permanent s
 
 ---
 
-# Threat Sources
+## Threat Sources
 
 Threats may originate from:
 
@@ -303,7 +303,7 @@ Not every threat requires malicious intent.
 
 ---
 
-# Trust Model
+## Trust Model
 
 Trust defines what security assumptions FamilyOS permits between components and actors.
 
@@ -315,7 +315,7 @@ The core rule is:
 
 ---
 
-# Trust Is Contextual
+## Trust Is Contextual
 
 An actor may be trusted for one operation and untrusted for another.
 
@@ -333,7 +333,7 @@ Trust therefore cannot be represented by a single global boolean value.
 
 ---
 
-# Trust Is Scoped
+## Trust Is Scoped
 
 Trust SHOULD be limited according to:
 
@@ -347,7 +347,7 @@ This aligns trust with least privilege.
 
 ---
 
-# Trust Boundaries
+## Trust Boundaries
 
 A trust boundary exists when security assumptions change.
 
@@ -383,7 +383,7 @@ Each boundary should define expected validation and authorization behavior.
 
 ---
 
-# User-to-Platform Boundary
+## User-to-Platform Boundary
 
 User-provided input crosses a major trust boundary.
 
@@ -405,7 +405,7 @@ Controls may include:
 
 ---
 
-# Core-to-Plugin Boundary
+## Core-to-Plugin Boundary
 
 Plugins operate within FamilyOS but may introduce code and dependencies outside the core platform.
 
@@ -423,7 +423,7 @@ Third-party plugins require stronger scrutiny than core components.
 
 ---
 
-# Application-to-Repository Boundary
+## Application-to-Repository Boundary
 
 Repositories control access to persisted information.
 
@@ -439,7 +439,7 @@ Authorization should generally be established before access reaches lower-level 
 
 ---
 
-# External Integration Boundary
+## External Integration Boundary
 
 External systems MUST be treated as independent trust domains.
 
@@ -455,7 +455,7 @@ Integration boundaries require explicit validation and failure isolation.
 
 ---
 
-# Secret Provider Boundary
+## Secret Provider Boundary
 
 Secret providers represent highly sensitive trust boundaries.
 
@@ -465,7 +465,7 @@ The interface should support scoped access.
 
 ---
 
-# Build and Release Trust Boundary
+## Build and Release Trust Boundary
 
 A build artifact becomes a release candidate only after successful validation.
 
@@ -487,7 +487,7 @@ Security should be able to determine whether an artifact is sufficiently trustwo
 
 ---
 
-# Trust Levels
+## Trust Levels
 
 FamilyOS MAY use conceptual trust levels where useful.
 
@@ -504,7 +504,7 @@ These levels are conceptual and do not replace explicit authorization.
 
 ---
 
-# Zero Implicit Trust
+## Zero Implicit Trust
 
 FamilyOS adopts the rule:
 
@@ -519,7 +519,7 @@ Each security property must be established independently.
 
 ---
 
-# Threat Modeling Approach
+## Threat Modeling Approach
 
 Threat modeling SHOULD be performed at meaningful architectural boundaries.
 
@@ -545,7 +545,7 @@ This process may be applied during design and implementation reviews.
 
 ---
 
-# Threat Categories
+## Threat Categories
 
 FamilyOS uses a compact set of threat categories.
 
@@ -564,7 +564,7 @@ These include:
 
 ---
 
-# Identity Threats
+## Identity Threats
 
 Identity threats include:
 
@@ -584,7 +584,7 @@ Controls may include:
 
 ---
 
-# Authorization Threats
+## Authorization Threats
 
 Authorization threats include:
 
@@ -605,7 +605,7 @@ Controls may include:
 
 ---
 
-# Data Threats
+## Data Threats
 
 Data threats include:
 
@@ -627,7 +627,7 @@ Controls may include:
 
 ---
 
-# Secret Threats
+## Secret Threats
 
 Secret threats include:
 
@@ -648,7 +648,7 @@ Controls may include:
 
 ---
 
-# Plugin Threats
+## Plugin Threats
 
 Plugins may introduce:
 
@@ -669,7 +669,7 @@ Controls may include:
 
 ---
 
-# Integration Threats
+## Integration Threats
 
 External integrations may introduce:
 
@@ -691,7 +691,7 @@ Controls may include:
 
 ---
 
-# Availability Threats
+## Availability Threats
 
 Availability threats include:
 
@@ -713,7 +713,7 @@ Controls may include:
 
 ---
 
-# Configuration Threats
+## Configuration Threats
 
 Configuration can create security failures through:
 
@@ -732,7 +732,7 @@ Controls include:
 
 ---
 
-# Supply-Chain Threats
+## Supply-Chain Threats
 
 Supply-chain threats include:
 
@@ -752,7 +752,7 @@ Controls may include:
 
 ---
 
-# Observability Threats
+## Observability Threats
 
 Observability may create risk through:
 
@@ -766,7 +766,7 @@ Controls are defined jointly with the Observability Framework.
 
 ---
 
-# Threat Scenarios
+## Threat Scenarios
 
 Threat models SHOULD use concrete scenarios when possible.
 
@@ -799,7 +799,7 @@ This format keeps security analysis actionable.
 
 ---
 
-# Risk Model
+## Risk Model
 
 Risk represents the significance of a threat.
 
@@ -813,7 +813,7 @@ The purpose is prioritization, not mathematical precision.
 
 ---
 
-# Likelihood
+## Likelihood
 
 Likelihood represents how plausible it is that a threat will occur.
 
@@ -835,7 +835,7 @@ Likelihood may consider:
 
 ---
 
-# Impact
+## Impact
 
 Impact represents potential harm.
 
@@ -860,7 +860,7 @@ Impact may include effects on:
 
 ---
 
-# Risk Classification
+## Risk Classification
 
 FamilyOS MAY use a simple matrix:
 
@@ -886,7 +886,7 @@ The exact matrix may evolve if implementation needs more precision.
 
 ---
 
-# Critical Risk
+## Critical Risk
 
 A critical risk generally represents a condition capable of causing severe compromise of:
 
@@ -900,13 +900,13 @@ Critical risks SHOULD normally block release or activation until resolved or exp
 
 ---
 
-# High Risk
+## High Risk
 
 High risks require remediation or explicit review before affected functionality progresses toward release.
 
 ---
 
-# Medium Risk
+## Medium Risk
 
 Medium risks should be tracked and remediated proportionally.
 
@@ -914,7 +914,7 @@ They may not always require immediate release blocking.
 
 ---
 
-# Low Risk
+## Low Risk
 
 Low risks may be accepted temporarily when the cost of immediate remediation exceeds the practical benefit.
 
@@ -922,7 +922,7 @@ Acceptance should remain intentional.
 
 ---
 
-# Risk Treatment
+## Risk Treatment
 
 FamilyOS recognizes four common risk treatments:
 
@@ -935,7 +935,7 @@ Accept
 
 ---
 
-# Mitigate
+## Mitigate
 
 Mitigation reduces likelihood or impact through controls.
 
@@ -951,7 +951,7 @@ Telemetry redaction + tests
 
 ---
 
-# Avoid
+## Avoid
 
 Avoidance removes the risky behavior entirely.
 
@@ -965,7 +965,7 @@ Capability not implemented
 
 ---
 
-# Transfer
+## Transfer
 
 Some risk may be transferred contractually or operationally to external providers.
 
@@ -973,7 +973,7 @@ Transfer does not eliminate FamilyOS responsibility to evaluate the remaining ri
 
 ---
 
-# Accept
+## Accept
 
 Risk acceptance acknowledges that a known residual risk remains.
 
@@ -983,7 +983,7 @@ Security risks must not be accepted accidentally through inaction.
 
 ---
 
-# Residual Risk
+## Residual Risk
 
 Controls reduce risk but rarely eliminate it completely.
 
@@ -1003,7 +1003,7 @@ Residual risk must be acceptable for the intended use.
 
 ---
 
-# Control Selection
+## Control Selection
 
 Security controls SHOULD be selected according to risk.
 
@@ -1025,7 +1025,7 @@ Tool choice comes after the control objective is understood.
 
 ---
 
-# Preventive Controls
+## Preventive Controls
 
 Preventive controls reduce the probability of a security event.
 
@@ -1040,7 +1040,7 @@ Examples:
 
 ---
 
-# Detective Controls
+## Detective Controls
 
 Detective controls identify security-relevant behavior.
 
@@ -1053,7 +1053,7 @@ Examples:
 
 ---
 
-# Corrective Controls
+## Corrective Controls
 
 Corrective controls help restore safe operation.
 
@@ -1067,7 +1067,7 @@ Examples:
 
 ---
 
-# Compensating Controls
+## Compensating Controls
 
 A compensating control MAY be used when an ideal primary control cannot yet be implemented.
 
@@ -1075,7 +1075,7 @@ Compensating controls should be documented and treated as temporary where approp
 
 ---
 
-# Trust and Authorization
+## Trust and Authorization
 
 Trust does not replace authorization.
 
@@ -1095,7 +1095,7 @@ Trust may influence policy but does not remove the policy decision.
 
 ---
 
-# Trust and Identity
+## Trust and Identity
 
 Identity is a prerequisite for many trust decisions.
 
@@ -1105,7 +1105,7 @@ Additional context determines what the actor may do.
 
 ---
 
-# Trust and Plugins
+## Trust and Plugins
 
 Plugin trust SHOULD consider factors such as:
 
@@ -1121,7 +1121,7 @@ Trust should remain scoped.
 
 ---
 
-# Trust and Dependencies
+## Trust and Dependencies
 
 Dependencies are trusted only for specific purposes.
 
@@ -1129,7 +1129,7 @@ The presence of a dependency in the project does not justify unrestricted access
 
 ---
 
-# Trust and External Services
+## Trust and External Services
 
 External services must be trusted only according to defined contracts.
 
@@ -1139,7 +1139,7 @@ Trust decisions should include failure and compromise scenarios.
 
 ---
 
-# Trust Revocation
+## Trust Revocation
 
 Trust may need to be revoked.
 
@@ -1155,7 +1155,7 @@ Architecture SHOULD support revocation where practical.
 
 ---
 
-# Temporal Trust
+## Temporal Trust
 
 Some trust decisions should be time-bound.
 
@@ -1170,7 +1170,7 @@ Permanent trust should not be the default when limited-duration trust is suffici
 
 ---
 
-# Security Assumptions
+## Security Assumptions
 
 Threat models rely on assumptions.
 
@@ -1192,7 +1192,7 @@ Assumptions should be revisited when architecture changes.
 
 ---
 
-# Assumption Failure
+## Assumption Failure
 
 FamilyOS SHOULD consider what happens when important assumptions fail.
 
@@ -1213,7 +1213,7 @@ This supports defense-in-depth design.
 
 ---
 
-# Blast Radius
+## Blast Radius
 
 Security architecture SHOULD limit how much damage one compromised component can cause.
 
@@ -1229,7 +1229,7 @@ The objective is not perfect isolation but proportional containment.
 
 ---
 
-# Abuse Cases
+## Abuse Cases
 
 Threat modeling SHOULD include abuse cases in addition to normal use cases.
 
@@ -1251,7 +1251,7 @@ Abuse cases translate threat models into tests.
 
 ---
 
-# Threat-to-Test Mapping
+## Threat-to-Test Mapping
 
 Important threats SHOULD map to executable security tests where practical.
 
@@ -1275,7 +1275,7 @@ This turns threat modeling into engineering evidence.
 
 ---
 
-# Threat-to-Observability Mapping
+## Threat-to-Observability Mapping
 
 Important security threats SHOULD also identify required runtime evidence.
 
@@ -1296,7 +1296,7 @@ This supports future detection and operations.
 
 ---
 
-# Risk and Release Gates
+## Risk and Release Gates
 
 Security risk may influence release decisions.
 
@@ -1323,7 +1323,7 @@ Exact governance is defined by security controls and release policy.
 
 ---
 
-# Risk and Plugin Activation
+## Risk and Plugin Activation
 
 Plugin security risk may also affect plugin activation.
 
@@ -1343,7 +1343,7 @@ This model may evolve as the plugin ecosystem grows.
 
 ---
 
-# Risk Ownership
+## Risk Ownership
 
 Important risks SHOULD have an identifiable owner.
 
@@ -1358,7 +1358,7 @@ Risk ownership prevents unresolved findings from becoming invisible.
 
 ---
 
-# Risk Review
+## Risk Review
 
 Risks SHOULD be reviewed when:
 
@@ -1373,7 +1373,7 @@ Risk documentation should remain current enough to support decisions.
 
 ---
 
-# Threat Model Evolution
+## Threat Model Evolution
 
 Threat models are not static.
 
@@ -1397,7 +1397,7 @@ This should occur proportionally rather than as a large recurring documentation 
 
 ---
 
-# Minimal Threat Model
+## Minimal Threat Model
 
 The initial FamilyOS implementation does not require a complex formal threat-modeling platform.
 
@@ -1421,7 +1421,7 @@ This is sufficient for early implementation.
 
 ---
 
-# Example Threat Record
+## Example Threat Record
 
 ```text
 Threat ID: SEC-T001
@@ -1459,7 +1459,7 @@ MITIGATED
 
 ---
 
-# Trust Review Questions
+## Trust Review Questions
 
 When evaluating a trust relationship, engineers SHOULD ask:
 
@@ -1474,7 +1474,7 @@ When evaluating a trust relationship, engineers SHOULD ask:
 
 ---
 
-# Threat Review Questions
+## Threat Review Questions
 
 For each meaningful security boundary:
 
@@ -1488,7 +1488,7 @@ For each meaningful security boundary:
 
 ---
 
-# Risk Review Questions
+## Risk Review Questions
 
 For each identified threat:
 
@@ -1502,7 +1502,7 @@ For each identified threat:
 
 ---
 
-# Plugin Threat Checklist
+## Plugin Threat Checklist
 
 Applicable plugins SHOULD be evaluated for:
 
@@ -1522,7 +1522,7 @@ Not every plugin requires every control.
 
 ---
 
-# Integration Threat Checklist
+## Integration Threat Checklist
 
 External integrations SHOULD be evaluated for:
 
@@ -1541,7 +1541,7 @@ Failure isolation
 
 ---
 
-# Data Threat Checklist
+## Data Threat Checklist
 
 Sensitive data flows SHOULD consider:
 
@@ -1561,7 +1561,7 @@ Any unexpected propagation should be treated as a security concern.
 
 ---
 
-# Threat Model and Privacy
+## Threat Model and Privacy
 
 Threat analysis should include privacy-related security failures.
 
@@ -1577,7 +1577,7 @@ Privacy risk therefore participates in the broader security risk model.
 
 ---
 
-# Threat Model and Observability
+## Threat Model and Observability
 
 Observability improves threat detection but can also create threats.
 
@@ -1597,7 +1597,7 @@ Security events should provide useful evidence without exposing protected conten
 
 ---
 
-# Threat Model and Automation
+## Threat Model and Automation
 
 Future automation may consume threat and risk information.
 
@@ -1612,7 +1612,7 @@ Automation SHOULD depend on structured risk and validation results.
 
 ---
 
-# Avoiding Threat Inflation
+## Avoiding Threat Inflation
 
 FamilyOS should not classify every theoretical possibility as critical.
 
@@ -1629,7 +1629,7 @@ Risk classification exists to preserve proportionality.
 
 ---
 
-# Avoiding Risk Blindness
+## Avoiding Risk Blindness
 
 The opposite problem must also be avoided.
 
@@ -1651,7 +1651,7 @@ They are not equivalent.
 
 ---
 
-# Security Decision Hierarchy
+## Security Decision Hierarchy
 
 When evaluating threats and controls, FamilyOS SHOULD prioritize:
 
@@ -1677,7 +1677,7 @@ This hierarchy applies to genuine security conflicts, not speculative over-engin
 
 ---
 
-# Minimal Initial Implementation
+## Minimal Initial Implementation
 
 The first implementation SHOULD support:
 
@@ -1697,7 +1697,7 @@ A dedicated external threat-management product is not required.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 This model is successful when FamilyOS can:
 
@@ -1714,7 +1714,7 @@ This model is successful when FamilyOS can:
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After adoption of this model, security discussions should be expressible as:
 
@@ -1740,7 +1740,7 @@ This provides a common security language across FamilyOS engineering.
 
 ---
 
-# Conclusion
+## Conclusion
 
 FamilyOS security should not be driven by assumptions of universal trust or by indiscriminate deployment of security tools.
 

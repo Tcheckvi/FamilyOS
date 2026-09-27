@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 17 Framework Lifecycle
+## 17 Framework Lifecycle
 
-## Introduction
+### Introduction
 
 The Plugin Compliance Framework is itself a governed FamilyOS engineering capability.
 
@@ -24,7 +24,7 @@ The framework lifecycle must therefore preserve:
 
 ---
 
-# Purpose
+## Purpose
 
 The Framework Lifecycle defines how EPIC-PLUGIN-002 evolves from initial implementation into a mature and long-lived FamilyOS platform capability.
 
@@ -46,7 +46,7 @@ The lifecycle model applies to the framework as a whole rather than to individua
 
 ---
 
-# Lifecycle Principle
+## Lifecycle Principle
 
 The governing principle is:
 
@@ -56,7 +56,7 @@ Framework evolution should improve platform assurance while preserving enough st
 
 ---
 
-# Lifecycle Model
+## Lifecycle Model
 
 The conceptual framework lifecycle is:
 
@@ -83,7 +83,7 @@ These stages describe maturity rather than mutually exclusive runtime states.
 
 ---
 
-# Defined Stage
+## Defined Stage
 
 The Defined stage establishes the normative framework.
 
@@ -105,7 +105,7 @@ EPIC-PLUGIN-002 documentation establishes this foundation.
 
 ---
 
-# Implemented Stage
+## Implemented Stage
 
 The Implemented stage introduces working compliance infrastructure.
 
@@ -126,7 +126,7 @@ It must preserve the architectural contracts required for later growth.
 
 ---
 
-# Adopted Stage
+## Adopted Stage
 
 The Adopted stage begins when compliance validation becomes part of normal plugin engineering workflows.
 
@@ -142,7 +142,7 @@ Adoption should initially emphasize developer feedback rather than punitive enfo
 
 ---
 
-# Enforced Stage
+## Enforced Stage
 
 The Enforced stage begins when compliance results participate directly in lifecycle gates.
 
@@ -157,7 +157,7 @@ At this stage, rule quality and governance become especially important because c
 
 ---
 
-# Mature Stage
+## Mature Stage
 
 A mature framework provides:
 
@@ -178,7 +178,7 @@ It means change occurs predictably.
 
 ---
 
-# Evolution Stage
+## Evolution Stage
 
 Once mature, the framework continues evolving alongside FamilyOS.
 
@@ -196,7 +196,7 @@ Framework evolution must preserve its foundational semantics.
 
 ---
 
-# Initial Adoption Strategy
+## Initial Adoption Strategy
 
 The initial adoption should prioritize official and built-in FamilyOS plugins.
 
@@ -227,7 +227,7 @@ This reduces the risk of exposing unstable compliance policy to external plugin 
 
 ---
 
-# Pilot Phase
+## Pilot Phase
 
 A pilot phase should validate the practical behavior of:
 
@@ -243,7 +243,7 @@ Pilot rules may initially run in advisory or shadow mode.
 
 ---
 
-# Shadow Adoption
+## Shadow Adoption
 
 Shadow validation allows FamilyOS to evaluate compliance without blocking workflows.
 
@@ -266,7 +266,7 @@ Shadow mode is especially useful when introducing broad new requirements.
 
 ---
 
-# Advisory Adoption
+## Advisory Adoption
 
 After shadow validation, rules may become advisory.
 
@@ -276,7 +276,7 @@ They allow maintainers to correct issues before blocking enforcement begins.
 
 ---
 
-# Enforcement Adoption
+## Enforcement Adoption
 
 After migration readiness is demonstrated, applicable rules may become blocking under stronger profiles.
 
@@ -299,7 +299,7 @@ Critical requirements may skip progressive rollout when immediate enforcement is
 
 ---
 
-# Versioning Model
+## Versioning Model
 
 The framework must expose an explicit version.
 
@@ -315,7 +315,7 @@ The exact release policy should align with the broader FamilyOS engineering plat
 
 ---
 
-# Major Versions
+## Major Versions
 
 A major framework version may be required when changes materially alter compliance semantics.
 
@@ -331,7 +331,7 @@ Major upgrades require migration guidance.
 
 ---
 
-# Minor Versions
+## Minor Versions
 
 Minor versions may introduce backward-compatible framework capabilities.
 
@@ -347,7 +347,7 @@ Minor releases should avoid surprising existing stable profiles.
 
 ---
 
-# Patch Versions
+## Patch Versions
 
 Patch releases should contain compatibility-preserving corrections such as:
 
@@ -360,7 +360,7 @@ A patch release should not intentionally introduce a new blocking requirement.
 
 ---
 
-# Framework Compatibility
+## Framework Compatibility
 
 A plugin compliance result is meaningful only relative to the framework version that produced it.
 
@@ -382,7 +382,7 @@ This context must remain attached to historical results.
 
 ---
 
-# Backward Compatibility
+## Backward Compatibility
 
 Framework evolution should preserve backward compatibility where practical.
 
@@ -397,7 +397,7 @@ Backward compatibility does not mean old compliance policy remains valid forever
 
 ---
 
-# Forward Compatibility
+## Forward Compatibility
 
 Older tooling may encounter newer framework artifacts.
 
@@ -413,7 +413,7 @@ is safer than silently ignoring unknown fields that may affect compliance meanin
 
 ---
 
-# Compatibility Windows
+## Compatibility Windows
 
 Major compliance changes may require temporary compatibility windows.
 
@@ -430,7 +430,7 @@ The window allows plugin maintainers to migrate before v1 enforcement is retired
 
 ---
 
-# Compatibility Window Policy
+## Compatibility Window Policy
 
 A compatibility window should define:
 
@@ -445,7 +445,7 @@ Open-ended compatibility windows should be avoided.
 
 ---
 
-# Migration
+## Migration
 
 Framework migrations must be deliberate and documented.
 
@@ -462,7 +462,7 @@ Migration should be actionable rather than purely descriptive.
 
 ---
 
-# Migration Artifacts
+## Migration Artifacts
 
 A framework release may provide:
 
@@ -477,7 +477,7 @@ Automation should be preferred where migrations are mechanical and safe.
 
 ---
 
-# Profile Migration
+## Profile Migration
 
 Plugins may need to migrate from one profile version to another.
 
@@ -494,7 +494,7 @@ The framework should expose the additional or changed requirements.
 
 ---
 
-# Rule Migration
+## Rule Migration
 
 Deprecated rules should identify replacements where possible.
 
@@ -514,7 +514,7 @@ Migration tooling should be able to explain the difference.
 
 ---
 
-# Evidence Migration
+## Evidence Migration
 
 Evidence schemas may evolve.
 
@@ -528,7 +528,7 @@ Conversion must preserve provenance and integrity.
 
 ---
 
-# Report Migration
+## Report Migration
 
 Machine-readable report schemas may evolve independently of compliance semantics.
 
@@ -538,7 +538,7 @@ Where practical, FamilyOS may support conversion between compatible report versi
 
 ---
 
-# Revalidation
+## Revalidation
 
 Framework evolution may require existing plugins to be revalidated.
 
@@ -555,7 +555,7 @@ Revalidation produces a new Compliance Result.
 
 ---
 
-# Revalidation Principle
+## Revalidation Principle
 
 The governing principle is:
 
@@ -575,7 +575,7 @@ Both results may be correct.
 
 ---
 
-# Revalidation Scope
+## Revalidation Scope
 
 Not every framework update requires full ecosystem revalidation.
 
@@ -591,7 +591,7 @@ Impact analysis should determine the minimum safe scope.
 
 ---
 
-# Ecosystem Revalidation
+## Ecosystem Revalidation
 
 High-impact framework changes may trigger ecosystem-wide revalidation.
 
@@ -605,7 +605,7 @@ The process should produce clear drift reports.
 
 ---
 
-# Compliance Drift
+## Compliance Drift
 
 Compliance Drift occurs when a plugin's current compliance state differs from its previous verified state.
 
@@ -621,7 +621,7 @@ The framework should identify the cause where possible.
 
 ---
 
-# Drift Categories
+## Drift Categories
 
 Future tooling may classify drift as:
 
@@ -637,7 +637,7 @@ This helps maintainers understand why revalidation changed the result.
 
 ---
 
-# Deprecation Strategy
+## Deprecation Strategy
 
 Framework capabilities may become deprecated.
 
@@ -655,7 +655,7 @@ Deprecation must remain explicit.
 
 ---
 
-# Deprecation Requirements
+## Deprecation Requirements
 
 Every meaningful deprecation should define:
 
@@ -670,7 +670,7 @@ Tooling should expose deprecation warnings before removal.
 
 ---
 
-# Retirement
+## Retirement
 
 Retirement removes an artifact from active framework behavior.
 
@@ -680,7 +680,7 @@ A retired profile may no longer be selectable for new evaluations but may remain
 
 ---
 
-# Framework Retirement
+## Framework Retirement
 
 The framework itself is a foundational FamilyOS capability and is not expected to be retired casually.
 
@@ -694,7 +694,7 @@ If a successor framework ever replaces EPIC-PLUGIN-002, the migration must prese
 
 ---
 
-# Long-Term Rule Catalog
+## Long-Term Rule Catalog
 
 The Rule Catalog will grow over time.
 
@@ -708,7 +708,7 @@ Rule quality matters more than quantity.
 
 ---
 
-# Rule Consolidation
+## Rule Consolidation
 
 Over time, overlapping or obsolete rules may require consolidation.
 
@@ -718,7 +718,7 @@ The framework should avoid rewriting multiple historical rules into one without 
 
 ---
 
-# Domain Evolution
+## Domain Evolution
 
 Existing domains may gain new responsibilities as the platform evolves.
 
@@ -735,7 +735,7 @@ Potential future domains include:
 
 ---
 
-# Third-Party Ecosystem Readiness
+## Third-Party Ecosystem Readiness
 
 Before broad third-party plugin adoption, the framework should reach sufficient maturity in:
 
@@ -751,7 +751,7 @@ External authors require predictable contracts.
 
 ---
 
-# Public Compliance Contract
+## Public Compliance Contract
 
 A mature third-party ecosystem requires a stable public compliance contract.
 
@@ -769,7 +769,7 @@ Hidden internal expectations must not become external compliance requirements.
 
 ---
 
-# Framework Adoption Levels
+## Framework Adoption Levels
 
 FamilyOS may track adoption through levels such as:
 
@@ -787,7 +787,7 @@ These levels may help measure framework maturity.
 
 ---
 
-# Initial Framework Baseline
+## Initial Framework Baseline
 
 The initial operational baseline should prioritize:
 
@@ -804,7 +804,7 @@ This baseline provides immediate value without requiring every future feature.
 
 ---
 
-# Intermediate Maturity
+## Intermediate Maturity
 
 Intermediate maturity may add:
 
@@ -818,7 +818,7 @@ Intermediate maturity may add:
 
 ---
 
-# Advanced Maturity
+## Advanced Maturity
 
 Advanced maturity may include:
 
@@ -834,7 +834,7 @@ These capabilities should remain compatible with the foundational architecture.
 
 ---
 
-# Framework Evolution Decisions
+## Framework Evolution Decisions
 
 Significant framework evolution should consider:
 
@@ -852,7 +852,7 @@ The strongest technical solution is not always the best lifecycle decision if mi
 
 ---
 
-# Evolution Conservatism
+## Evolution Conservatism
 
 Stable compliance contracts should evolve conservatively.
 
@@ -868,7 +868,7 @@ Experimental areas may evolve faster.
 
 ---
 
-# Stable vs Experimental Features
+## Stable vs Experimental Features
 
 Framework capabilities should distinguish stable and experimental features.
 
@@ -882,7 +882,7 @@ Experimental features must not silently become mandatory stable policy.
 
 ---
 
-# Feature Graduation
+## Feature Graduation
 
 A conceptual graduation flow is:
 
@@ -900,7 +900,7 @@ Promotion should require sufficient testing, documentation, and governance revie
 
 ---
 
-# Framework Configuration Evolution
+## Framework Configuration Evolution
 
 Configuration schemas may evolve.
 
@@ -915,7 +915,7 @@ Configuration changes must never silently weaken mandatory compliance policy.
 
 ---
 
-# Tooling Compatibility
+## Tooling Compatibility
 
 CLI and CI integrations should declare supported framework versions.
 
@@ -923,7 +923,7 @@ When incompatibility exists, tooling should provide a clear error and upgrade gu
 
 ---
 
-# Validator Compatibility
+## Validator Compatibility
 
 Validator versions may evolve independently.
 
@@ -937,7 +937,7 @@ This allows implementation improvement without unnecessary rule churn.
 
 ---
 
-# Certification Compatibility
+## Certification Compatibility
 
 Certification systems may accept only specific framework or profile versions.
 
@@ -947,7 +947,7 @@ This prevents obsolete compliance policy from satisfying current certification s
 
 ---
 
-# Release Compatibility
+## Release Compatibility
 
 Release workflows may similarly define minimum accepted framework versions.
 
@@ -955,7 +955,7 @@ Older local compliance results should not automatically authorize current releas
 
 ---
 
-# Framework Changelog
+## Framework Changelog
 
 Every framework release should maintain a clear changelog.
 
@@ -972,7 +972,7 @@ The changelog should highlight:
 
 ---
 
-# Revision History
+## Revision History
 
 The documentation set should maintain revision history describing significant conceptual changes to the framework.
 
@@ -980,7 +980,7 @@ This complements code-level version history.
 
 ---
 
-# Lifecycle Documentation
+## Lifecycle Documentation
 
 Lifecycle state should be documented for:
 
@@ -994,7 +994,7 @@ A developer should be able to determine whether a compliance artifact is current
 
 ---
 
-# Framework Self-Compliance
+## Framework Self-Compliance
 
 As the framework matures, its own implementation should satisfy the same engineering standards it enforces.
 
@@ -1011,7 +1011,7 @@ The compliance framework should not become an exception to FamilyOS engineering 
 
 ---
 
-# Framework Validation
+## Framework Validation
 
 Before each framework release, FamilyOS should validate:
 
@@ -1026,7 +1026,7 @@ Before each framework release, FamilyOS should validate:
 
 ---
 
-# Framework Release Gates
+## Framework Release Gates
 
 The framework itself may eventually use dedicated release gates.
 
@@ -1053,7 +1053,7 @@ Framework Release
 
 ---
 
-# Rollback Strategy
+## Rollback Strategy
 
 A framework release may require rollback if it introduces severe unintended behavior.
 
@@ -1070,7 +1070,7 @@ It does not erase history.
 
 ---
 
-# Emergency Lifecycle Changes
+## Emergency Lifecycle Changes
 
 Critical security or integrity issues may require emergency framework releases.
 
@@ -1087,7 +1087,7 @@ Urgency must not eliminate traceability.
 
 ---
 
-# Long-Term Maintenance
+## Long-Term Maintenance
 
 Long-term framework maintenance includes:
 
@@ -1103,7 +1103,7 @@ Compliance is a permanent engineering capability rather than a one-time project.
 
 ---
 
-# Lifecycle Metrics
+## Lifecycle Metrics
 
 Framework lifecycle metrics may include:
 
@@ -1124,7 +1124,7 @@ They do not replace engineering judgment.
 
 ---
 
-# Framework Health
+## Framework Health
 
 A healthy framework should demonstrate:
 
@@ -1140,41 +1140,41 @@ Frequent emergency exceptions may indicate design problems.
 
 ---
 
-# Lifecycle Anti-Patterns
+## Lifecycle Anti-Patterns
 
 The framework must avoid several lifecycle anti-patterns.
 
-## Permanent Experimental State
+### Permanent Experimental State
 
 Do not leave critical compliance behavior indefinitely experimental.
 
-## Silent Breaking Changes
+### Silent Breaking Changes
 
 Do not strengthen stable policy without versioning and migration.
 
-## Historical Rewrite
+### Historical Rewrite
 
 Do not alter previous compliance results to match current policy.
 
-## Endless Compatibility
+### Endless Compatibility
 
 Do not preserve obsolete framework versions indefinitely without clear need.
 
-## Migration Without Tooling
+### Migration Without Tooling
 
 Do not introduce broad breaking changes without practical remediation guidance.
 
-## Version Without Meaning
+### Version Without Meaning
 
 Do not change framework versions without communicating semantic impact.
 
-## Stale Certification Evidence
+### Stale Certification Evidence
 
 Do not let obsolete compliance contexts silently satisfy current certification requirements.
 
 ---
 
-# Framework Lifecycle Invariants
+## Framework Lifecycle Invariants
 
 The Framework Lifecycle establishes the following invariants:
 
@@ -1201,7 +1201,7 @@ The Framework Lifecycle establishes the following invariants:
 
 ---
 
-# Reference Lifecycle
+## Reference Lifecycle
 
 The complete framework evolution model is:
 
@@ -1243,7 +1243,7 @@ Each stage strengthens plugin assurance while preserving migration paths.
 
 ---
 
-# Lifecycle Summary
+## Lifecycle Summary
 
 The Plugin Compliance Framework must evolve as a stable platform contract rather than as a collection of ad hoc checks.
 
@@ -1271,7 +1271,7 @@ This lifecycle allows FamilyOS to increase plugin assurance without destabilizin
 
 ---
 
-# Final Lifecycle Principle
+## Final Lifecycle Principle
 
 The governing lifecycle principle of EPIC-PLUGIN-002 is:
 

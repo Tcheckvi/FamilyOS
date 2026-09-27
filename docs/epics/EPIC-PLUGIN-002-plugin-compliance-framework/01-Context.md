@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 01 Context
+## 01 Context
 
-## Introduction
+### Introduction
 
 The FamilyOS plugin ecosystem is designed to provide controlled extensibility across the platform.
 
@@ -18,7 +18,7 @@ The Plugin Compliance Framework exists to provide this assurance.
 
 ---
 
-# Platform Context
+## Platform Context
 
 FamilyOS has evolved from a core application architecture into an extensible engineering platform.
 
@@ -63,7 +63,7 @@ Functional execution therefore represents only one dimension of plugin validity.
 
 ---
 
-# Evolution of the Plugin Ecosystem
+## Evolution of the Plugin Ecosystem
 
 The FamilyOS plugin ecosystem evolves through several maturity stages.
 
@@ -108,7 +108,7 @@ That requirement is addressed by the Plugin Compliance Framework.
 
 ---
 
-# From Extensibility to Governance
+## From Extensibility to Governance
 
 Extensibility without governance eventually creates architectural drift.
 
@@ -152,7 +152,7 @@ The Plugin Compliance Framework provides the bridge between documented contracts
 
 ---
 
-# Why Runtime Success Is Insufficient
+## Why Runtime Success Is Insufficient
 
 A plugin that loads successfully is not necessarily a valid FamilyOS plugin.
 
@@ -188,7 +188,7 @@ The compliance framework formalizes the requirements between basic technical fun
 
 ---
 
-# The Compliance Gap
+## The Compliance Gap
 
 Before the introduction of EPIC-PLUGIN-002, FamilyOS engineering foundations define many requirements relevant to plugins.
 
@@ -219,7 +219,7 @@ EPIC-PLUGIN-002 closes that gap by translating distributed platform requirements
 
 ---
 
-# Distributed Requirements
+## Distributed Requirements
 
 Plugin compliance is inherently cross-cutting.
 
@@ -263,7 +263,7 @@ This separation preserves clear ownership while enabling unified validation.
 
 ---
 
-# Official Plugin Context
+## Official Plugin Context
 
 The introduction of official FamilyOS plugins significantly increases the importance of compliance.
 
@@ -289,7 +289,7 @@ Compliance validation provides repeatable evidence that official plugins remain 
 
 ---
 
-# Future Third-Party Ecosystem
+## Future Third-Party Ecosystem
 
 The need for compliance becomes even stronger when plugin development extends beyond the core FamilyOS engineering team.
 
@@ -312,7 +312,7 @@ This enables external extensibility without sacrificing platform integrity.
 
 ---
 
-# Trust Boundaries
+## Trust Boundaries
 
 Plugins execute within or alongside the FamilyOS platform and may interact with sensitive platform capabilities.
 
@@ -340,7 +340,7 @@ However, it provides a systematic mechanism for detecting violations of security
 
 ---
 
-# Ecosystem Integrity
+## Ecosystem Integrity
 
 The long-term stability of FamilyOS depends on ecosystem integrity.
 
@@ -363,7 +363,7 @@ The compliance framework protects against this outcome.
 
 ---
 
-# Automation Requirement
+## Automation Requirement
 
 Manual compliance review cannot be the primary validation mechanism for a growing plugin ecosystem.
 
@@ -397,7 +397,7 @@ The framework must therefore treat automation as a foundational requirement rath
 
 ---
 
-# Developer Feedback
+## Developer Feedback
 
 Compliance validation must not operate only as a blocking mechanism.
 
@@ -433,7 +433,7 @@ Compliance therefore becomes part of the development feedback loop.
 
 ---
 
-# Compliance and Certification
+## Compliance and Certification
 
 Compliance must remain distinct from certification.
 
@@ -473,7 +473,7 @@ This separation allows compliance validation to remain deterministic while certi
 
 ---
 
-# Lifecycle Context
+## Lifecycle Context
 
 Compliance is not necessarily permanent.
 
@@ -505,7 +505,7 @@ This model enables reproducibility and future revalidation.
 
 ---
 
-# Engineering Workflow Context
+## Engineering Workflow Context
 
 Compliance must integrate naturally into the FamilyOS engineering lifecycle.
 
@@ -544,7 +544,7 @@ This supports the shift-left engineering principle established across FamilyOS f
 
 ---
 
-# Governance Context
+## Governance Context
 
 Compliance requirements are platform contracts.
 
@@ -567,7 +567,7 @@ This ensures that compliance remains enforceable without becoming arbitrary.
 
 ---
 
-# Strategic Context
+## Strategic Context
 
 The Plugin Compliance Framework represents a transition in FamilyOS platform maturity.
 
@@ -587,7 +587,7 @@ These distinctions establish a scalable trust model for the plugin ecosystem.
 
 ---
 
-# Context Summary
+## Context Summary
 
 EPIC-PLUGIN-002 exists because FamilyOS has reached a level of plugin maturity where implicit conventions and runtime validation are no longer sufficient.
 
@@ -608,7 +608,7 @@ It transforms plugin governance from an implicit engineering expectation into an
 
 ---
 
-# Final Context Principle
+## Final Context Principle
 
 The context of EPIC-PLUGIN-002 can be summarized by one principle:
 

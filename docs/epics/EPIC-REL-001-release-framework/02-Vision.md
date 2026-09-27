@@ -1,8 +1,8 @@
 # Release Framework
 
-# 02 Vision
+## 02 Vision
 
-## Overview
+### Overview
 
 The vision of EPIC-REL-001 — Release Framework is to establish release engineering as a permanent, first-class capability of the FamilyOS platform.
 
@@ -27,7 +27,7 @@ The objective is to establish a release architecture in which every official Fam
 
 ---
 
-# Vision Statement
+## Vision Statement
 
 The FamilyOS Release Framework exists to ensure that every official release can be trusted as a controlled engineering state.
 
@@ -39,7 +39,7 @@ This vision applies across all releasable FamilyOS assets.
 
 ---
 
-# Strategic Intent
+## Strategic Intent
 
 The Release Framework must prevent release engineering from becoming an accumulation of scripts, terminal commands, platform-specific conventions, or undocumented maintainer knowledge.
 
@@ -77,7 +77,7 @@ The semantics must remain stable even when implementations evolve.
 
 ---
 
-# Long-Term Release Model
+## Long-Term Release Model
 
 The long-term FamilyOS release model is a controlled progression from source state to officially consumable platform state.
 
@@ -133,11 +133,11 @@ The framework must minimize hidden transitions and ambiguous states.
 
 ---
 
-# Desired Release Properties
+## Desired Release Properties
 
 Every mature FamilyOS release should satisfy the following properties.
 
-## Identifiable
+### Identifiable
 
 A release must have one stable, unambiguous identity.
 
@@ -145,7 +145,7 @@ A maintainer, automation system, or consumer must be able to reference the relea
 
 ---
 
-## Traceable
+### Traceable
 
 The release must be traceable to the source state from which it originated.
 
@@ -163,7 +163,7 @@ release
 
 ---
 
-## Reproducible
+### Reproducible
 
 Release operations should be reproducible wherever the surrounding systems allow it.
 
@@ -171,7 +171,7 @@ The same controlled inputs and release configuration should produce equivalent r
 
 ---
 
-## Evidence-Based
+### Evidence-Based
 
 A release must not depend solely on human confidence or informal judgment.
 
@@ -179,7 +179,7 @@ The release decision should be supported by objective evidence appropriate to th
 
 ---
 
-## Immutable
+### Immutable
 
 Once an artifact has been officially published under a release identity, its meaning must remain stable.
 
@@ -187,7 +187,7 @@ The same release identity must not silently represent different artifact content
 
 ---
 
-## Governed
+### Governed
 
 Release authority must be explicit.
 
@@ -203,7 +203,7 @@ The platform must know who or what may:
 
 ---
 
-## Observable
+### Observable
 
 Release execution must provide enough information to understand:
 
@@ -216,7 +216,7 @@ Release execution must provide enough information to understand:
 
 ---
 
-## Recoverable
+### Recoverable
 
 The release architecture must assume that failures will eventually occur.
 
@@ -231,7 +231,7 @@ The platform must provide defined strategies for:
 
 ---
 
-## Secure
+### Secure
 
 Release infrastructure must preserve artifact and release integrity.
 
@@ -239,13 +239,13 @@ Unauthorized publication, tag manipulation, credential misuse, and artifact repl
 
 ---
 
-## Scalable
+### Scalable
 
 The release model must remain usable as FamilyOS grows from a relatively small repository into an ecosystem containing many releasable assets.
 
 ---
 
-# Platform Release Vision
+## Platform Release Vision
 
 FamilyOS must eventually support a formal platform release identity.
 
@@ -269,7 +269,7 @@ However, when components participate in an official platform release, their comp
 
 ---
 
-# Component Release Vision
+## Component Release Vision
 
 Some FamilyOS components may evolve independently.
 
@@ -304,7 +304,7 @@ The relationship between these identities must remain traceable.
 
 ---
 
-# Official Plugin Release Vision
+## Official Plugin Release Vision
 
 Official plugins are expected to become a significant part of the FamilyOS ecosystem.
 
@@ -324,7 +324,7 @@ Plugin release workflows should reuse the common Release Framework rather than i
 
 ---
 
-# Versioning Vision
+## Versioning Vision
 
 FamilyOS versioning must become predictable and meaningful.
 
@@ -344,7 +344,7 @@ The framework should eliminate arbitrary version assignment.
 
 ---
 
-# Tagging Vision
+## Tagging Vision
 
 Git tags should serve as durable release anchors.
 
@@ -368,7 +368,7 @@ Tag creation must become the result of release qualification, not a substitute f
 
 ---
 
-# Release Candidate Vision
+## Release Candidate Vision
 
 A release candidate must become a concrete engineering object.
 
@@ -392,7 +392,7 @@ If any material element changes, candidate identity or candidate validation must
 
 ---
 
-# Release Readiness Vision
+## Release Readiness Vision
 
 Release readiness should eventually become machine-verifiable to the greatest practical extent.
 
@@ -422,7 +422,7 @@ The framework should automate objective checks and preserve human authority for 
 
 ---
 
-# Evidence Vision
+## Evidence Vision
 
 Release evidence should become a structured engineering asset.
 
@@ -473,7 +473,7 @@ The architectural requirement is persistent, queryable release evidence.
 
 ---
 
-# Provenance Vision
+## Provenance Vision
 
 FamilyOS should progressively strengthen its software supply-chain provenance.
 
@@ -503,7 +503,7 @@ No future provenance improvement should require fundamental redesign of the rele
 
 ---
 
-# Automation Vision
+## Automation Vision
 
 The long-term release process should minimize repetitive manual work.
 
@@ -530,7 +530,7 @@ Automation must remain subordinate to the release model and governance rules.
 
 ---
 
-# Human Decision Vision
+## Human Decision Vision
 
 Automation should not eliminate meaningful human decisions.
 
@@ -566,7 +566,7 @@ This separation improves both safety and accountability.
 
 ---
 
-# CI/CD Vision
+## CI/CD Vision
 
 CI/CD should become an implementation mechanism for the Release Framework.
 
@@ -596,7 +596,7 @@ This distinction protects the release model from tool lock-in and undocumented b
 
 ---
 
-# Publishing Vision
+## Publishing Vision
 
 Publication should become an atomic or transactionally controlled process wherever possible.
 
@@ -615,7 +615,7 @@ A workflow should not consider a release complete merely because an upload comma
 
 ---
 
-# Distribution Vision
+## Distribution Vision
 
 FamilyOS release engineering must distinguish between publication and distribution.
 
@@ -637,7 +637,7 @@ Future release channels may use this distinction to support staged availability.
 
 ---
 
-# Release Channel Vision
+## Release Channel Vision
 
 Release channels should communicate stability and intended consumption.
 
@@ -657,7 +657,7 @@ A channel must never become an alternative versioning system with unclear semant
 
 ---
 
-# Progressive Delivery Vision
+## Progressive Delivery Vision
 
 The framework should remain compatible with future progressive delivery mechanisms.
 
@@ -676,7 +676,7 @@ It ensures that the release architecture does not prevent it.
 
 ---
 
-# Rollback Vision
+## Rollback Vision
 
 Rollback should become an explicit release capability rather than an emergency improvisation.
 
@@ -693,7 +693,7 @@ Rollback should be tested where its reliability is operationally important.
 
 ---
 
-# Forward Recovery Vision
+## Forward Recovery Vision
 
 Some release failures cannot safely be solved through rollback.
 
@@ -721,7 +721,7 @@ The Release Framework must treat this as a normal recovery strategy.
 
 ---
 
-# Security Vision
+## Security Vision
 
 The release pipeline should eventually be treated as a protected software supply-chain boundary.
 
@@ -742,7 +742,7 @@ Highly privileged release operations should be minimized and auditable.
 
 ---
 
-# Credential Vision
+## Credential Vision
 
 Release credentials must not become embedded in source code, scripts, or documentation.
 
@@ -759,7 +759,7 @@ Automation should receive only the permissions necessary for its release respons
 
 ---
 
-# Observability Vision
+## Observability Vision
 
 A mature release should generate an event trail that allows the full workflow to be reconstructed.
 
@@ -792,7 +792,7 @@ The lifecycle semantics must remain stable.
 
 ---
 
-# Release History Vision
+## Release History Vision
 
 FamilyOS should eventually maintain a coherent historical release record.
 
@@ -818,7 +818,7 @@ Release history must remain useful even after tools and infrastructure change.
 
 ---
 
-# Changelog Vision
+## Changelog Vision
 
 The FamilyOS changelog model should be consistent and automation-friendly.
 
@@ -836,7 +836,7 @@ The release process should be able to transform structured change information in
 
 ---
 
-# Release Notes Vision
+## Release Notes Vision
 
 Release notes should become a deliberate product of the release lifecycle.
 
@@ -855,7 +855,7 @@ Release notes must describe the actual release candidate, not an earlier planned
 
 ---
 
-# Compatibility Vision
+## Compatibility Vision
 
 As FamilyOS grows, releases must communicate compatibility explicitly.
 
@@ -874,7 +874,7 @@ The Release Framework must integrate compatibility evidence where release decisi
 
 ---
 
-# Governance Vision
+## Governance Vision
 
 Release governance should become policy-driven.
 
@@ -904,7 +904,7 @@ These responsibilities must be explicit and reviewable.
 
 ---
 
-# Exception Vision
+## Exception Vision
 
 Exceptional releases must remain governed.
 
@@ -923,7 +923,7 @@ This allows operational flexibility without sacrificing accountability.
 
 ---
 
-# Emergency Release Vision
+## Emergency Release Vision
 
 Emergency release procedures should eventually provide a predefined accelerated path.
 
@@ -946,7 +946,7 @@ They must retain minimum requirements for:
 
 ---
 
-# Compliance Vision
+## Compliance Vision
 
 Release compliance should become increasingly automated.
 
@@ -970,7 +970,7 @@ This should integrate with the broader FamilyOS Plugin Compliance and governance
 
 ---
 
-# Metrics Vision
+## Metrics Vision
 
 Release metrics should help FamilyOS improve release reliability.
 
@@ -991,7 +991,7 @@ Metrics should provide operational insight without incentivizing unsafe release 
 
 ---
 
-# Risk-Based Release Vision
+## Risk-Based Release Vision
 
 The Release Framework should progressively adopt risk-based controls.
 
@@ -1019,7 +1019,7 @@ The framework should allow validation and approval requirements to scale accordi
 
 ---
 
-# Release Profiles Vision
+## Release Profiles Vision
 
 Future FamilyOS maturity may introduce reusable release profiles.
 
@@ -1048,7 +1048,7 @@ Profiles must extend the common Release Framework rather than fragment it.
 
 ---
 
-# Policy-as-Code Vision
+## Policy-as-Code Vision
 
 Where practical, release policies should eventually become machine-evaluable.
 
@@ -1070,7 +1070,7 @@ It must not create opaque rules that exist only inside automation.
 
 ---
 
-# Release Orchestration Vision
+## Release Orchestration Vision
 
 At higher maturity levels, FamilyOS may introduce a dedicated release orchestration layer.
 
@@ -1095,7 +1095,7 @@ Such orchestration must emerge from this framework rather than replace it.
 
 ---
 
-# Tool Independence
+## Tool Independence
 
 The Release Framework must remain independent from specific providers.
 
@@ -1114,7 +1114,7 @@ Release semantics must remain portable.
 
 ---
 
-# Repository Independence
+## Repository Independence
 
 FamilyOS currently relies heavily on Git repository state for release traceability.
 
@@ -1128,7 +1128,7 @@ The release model must support:
 
 ---
 
-# Release Data Model Vision
+## Release Data Model Vision
 
 The Release Framework should eventually support an explicit release domain model.
 
@@ -1153,7 +1153,7 @@ EPIC-REL-001 establishes their conceptual foundations first.
 
 ---
 
-# CLI Vision
+## CLI Vision
 
 FamilyOS release engineering may eventually expose CLI capabilities.
 
@@ -1177,7 +1177,7 @@ The Release Framework must be mature enough that such tooling can be implemented
 
 ---
 
-# Machine-Readable Release Metadata
+## Machine-Readable Release Metadata
 
 Future releases should expose machine-readable metadata.
 
@@ -1195,7 +1195,7 @@ Human-readable release notes and machine-readable release metadata should comple
 
 ---
 
-# Release Integrity Vision
+## Release Integrity Vision
 
 The ultimate integrity objective is to create a verifiable chain:
 
@@ -1221,7 +1221,7 @@ Weakness in any link reduces confidence in the final release.
 
 ---
 
-# Framework Evolution Vision
+## Framework Evolution Vision
 
 EPIC-REL-001 itself must evolve through controlled versions.
 
@@ -1242,7 +1242,7 @@ The Release Framework must apply its own release discipline to its evolution.
 
 ---
 
-# Maturity Strategy
+## Maturity Strategy
 
 The vision is intentionally progressive.
 
@@ -1286,7 +1286,7 @@ Each stage builds upon the previous one.
 
 ---
 
-# Non-Goals of the Vision
+## Non-Goals of the Vision
 
 The Release Framework vision does not require:
 
@@ -1305,37 +1305,37 @@ Implementation may progress incrementally.
 
 ---
 
-# Vision Invariants
+## Vision Invariants
 
 The long-term architecture must preserve the following invariants.
 
-## V1 — Release identity remains unambiguous.
+### V1 — Release identity remains unambiguous.
 
-## V2 — Source-to-release traceability remains possible.
+### V2 — Source-to-release traceability remains possible.
 
-## V3 — Validation refers to the actual candidate.
+### V3 — Validation refers to the actual candidate.
 
-## V4 — Published release identity remains stable.
+### V4 — Published release identity remains stable.
 
-## V5 — Release authority remains explicit.
+### V5 — Release authority remains explicit.
 
-## V6 — Release failures remain observable.
+### V6 — Release failures remain observable.
 
-## V7 — Recovery remains part of release design.
+### V7 — Recovery remains part of release design.
 
-## V8 — Security remains integrated throughout the lifecycle.
+### V8 — Security remains integrated throughout the lifecycle.
 
-## V9 — Automation remains governed.
+### V9 — Automation remains governed.
 
-## V10 — Release semantics remain independent from implementation tools.
+### V10 — Release semantics remain independent from implementation tools.
 
-## V11 — Historical releases remain reconstructable.
+### V11 — Historical releases remain reconstructable.
 
-## V12 — Framework evolution remains controlled.
+### V12 — Framework evolution remains controlled.
 
 ---
 
-# Target Engineering Experience
+## Target Engineering Experience
 
 The long-term developer and maintainer experience should be simple even though the release architecture is rigorous.
 
@@ -1380,7 +1380,7 @@ The simplicity of the interface must come from strong architecture rather than h
 
 ---
 
-# Target Consumer Experience
+## Target Consumer Experience
 
 Consumers of FamilyOS releases should be able to determine:
 
@@ -1396,7 +1396,7 @@ Release engineering must therefore support both internal engineering reliability
 
 ---
 
-# Target Maintainer Experience
+## Target Maintainer Experience
 
 Maintainers should no longer need to remember release procedures from previous terminal sessions.
 
@@ -1413,7 +1413,7 @@ The release process should become transferable between qualified maintainers.
 
 ---
 
-# Target Governance Experience
+## Target Governance Experience
 
 Governance should be able to answer:
 
@@ -1439,7 +1439,7 @@ These questions should not require reconstructing fragmented terminal logs.
 
 ---
 
-# Target Historical Experience
+## Target Historical Experience
 
 Years after a release, FamilyOS maintainers should still be able to understand it.
 
@@ -1454,7 +1454,7 @@ This requires release history to be part of the platform's durable engineering r
 
 ---
 
-# Definition of the Future State
+## Definition of the Future State
 
 The Release Framework reaches its intended future state when release engineering becomes a reliable system rather than an individual procedure.
 
@@ -1478,7 +1478,7 @@ are all explicit parts of a single governed architecture.
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 EPIC-REL-001 enables FamilyOS to move from:
 
@@ -1500,7 +1500,7 @@ This distinction represents the transition from manual release activity to matur
 
 ---
 
-# Final Vision
+## Final Vision
 
 The ultimate vision of EPIC-REL-001 is a FamilyOS ecosystem in which releases are predictable engineering events.
 

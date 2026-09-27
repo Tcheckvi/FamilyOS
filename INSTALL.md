@@ -1,19 +1,19 @@
-# Installation des EPIC FamilyOS
+# FamilyOS EPIC Installation
 
-## Installation dans le dépôt courant
+## Installation in the Current Repository
 
 ```bash
 chmod +x install-epics.sh
 ./install-epics.sh familyos-engineering-epics.zip .
 ```
 
-Les fichiers seront placés automatiquement dans :
+The files will be placed automatically in:
 
 ```text
 docs/epics/
 ```
 
-## Installation directement dans le dépôt FamilyOS
+## Installation Directly in the FamilyOS Repository
 
 ```bash
 chmod +x install-epics.sh
