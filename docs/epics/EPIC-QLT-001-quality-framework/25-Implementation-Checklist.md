@@ -7227,3 +7227,81 @@ This status closes C6 only. It does not reopen C67 or implicitly transition
 another Quality criterion.
 
 <!-- FAMILYOS:C6-FINAL-STATUS:END -->
+
+<!-- FAMILYOS:QUALITY-GLOBAL-CLOSURE:BEGIN -->
+
+---
+
+## Governed Quality Observation — Final Global Closure
+
+**Reconciled:** 2026-09-27
+
+The final governed Quality Observation authority chain records all criteria
+C1 through C11 as `PASS` and the global overall status as `PASS`.
+
+```text
+[x] C1 = PASS
+[x] C2 = PASS
+[x] C3 = PASS
+[x] C4 = PASS
+[x] C5 = PASS
+[x] C6 = PASS
+[x] C7 = PASS
+[x] C8 = PASS
+[x] C9 = PASS
+[x] C10 = PASS
+[x] C11 = PASS
+
+QUALITY_OBSERVATION_FINAL_OVERALL_STATUS=PASS
+ALL_C1_THROUGH_C11_PASS=true
+ALL_C1_THROUGH_C11_BLOCKER_FREE=true
+GLOBAL_CLOSURE_COMPLETE=true
+```
+
+### C1 Final Transition Evidence
+
+The governed C1 N70 refresh advanced the canonical C1 population from 28 to
+70 qualifying observations and satisfied every frozen C1 threshold.
+
+```text
+CANONICAL_C1_POPULATION=70
+CANONICAL_C1_ELAPSED_SECONDS=1235616
+CANONICAL_C1_DISTINCT_UTC_DATES=13
+CANONICAL_C1_MAX_SINGLE_UTC_DATE_SHARE_PERCENT=22.85714286
+ALL_CANONICAL_C1_THRESHOLDS_PASS=true
+C1_STATUS_AFTER=PASS
+C1_STATUS_TRANSITION_CONFIRMED=true
+```
+
+### Final Archive Authority
+
+```text
+FINAL_CLOSURE_ARCHIVE_TYPE=FAMILYOS_FINAL_GLOBAL_CLOSURE_ARCHIVE
+FINAL_CLOSURE_ARCHIVED_AT_UTC=2026-09-18T01:56:33Z
+
+FINAL_CLOSURE_STATE_SHA256=
+e8f513fda183c43615fe68e9183ef8886f99f4df4cb4b2d937add0a5ce7b1359
+
+FINAL_CANONICAL_SCORECARD_SHA256=
+2519d8f228a7fe0142b4e644b8f38adc7deec71ad33190680d68080b8787f750
+
+FINAL_ARCHIVE_REPOSITORY_HEAD=
+6a551cb2bf20a41a296e4063ef8d0a2888ff42a4
+
+FINAL_ARCHIVE_REPOSITORY_TREE=
+3b9cff4f3bed7cb8dd29a9949721262304a515af
+```
+
+The archive itself performed no repository mutation, no Git mutation, no
+workflow dispatch, and no additional canonical scorecard mutation.
+
+This closure record does not reopen C67 and does not authorize unrelated
+repository, production, or runtime actions.
+
+```text
+C67_REOPEN_AUTHORIZED=false
+C67_REOPEN_PERFORMED=false
+QUALITY_OBSERVATION_GLOBAL_CLOSURE=PASS
+```
+
+<!-- FAMILYOS:QUALITY-GLOBAL-CLOSURE:END -->
