@@ -597,7 +597,7 @@ class SingleUseAuthorizationLedger:
             self._consumed.add(normalized)
 
 
-M10_EXECUTION_CONTRACT_VERSION: Final[str] = "familyos-pilot0-m10-controlled-execution-v4"
+M10_EXECUTION_CONTRACT_VERSION: Final[str] = "familyos-pilot0-m10-controlled-execution-v5"
 
 
 def _validate_m9_runtime_types(
@@ -722,8 +722,8 @@ def _validate_m9_runtime_types(
             ),
             ("store_disabled_confirmed", provider.store_disabled_confirmed),
             (
-                "hosted_tools_disabled_confirmed",
-                provider.hosted_tools_disabled_confirmed,
+                "hosted_tools_not_requested_confirmed",
+                provider.hosted_tools_not_requested_confirmed,
             ),
             (
                 "provider_sharing_disabled_confirmed",

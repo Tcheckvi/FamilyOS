@@ -77,7 +77,7 @@ def make_m9_request() -> ExecutionAuthorizationReadinessRequest:
         provider=ProviderProjectReadOnlyEvidence(
             dedicated_familyos_project_confirmed=True,
             store_disabled_confirmed=True,
-            hosted_tools_disabled_confirmed=True,
+            hosted_tools_not_requested_confirmed=True,
             provider_sharing_disabled_confirmed=True,
             read_only_preflight_completed=True,
         ),

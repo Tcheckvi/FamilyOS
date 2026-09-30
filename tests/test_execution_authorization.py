@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import fields
+from dataclasses import fields, replace
 
 import pytest
 
@@ -80,7 +80,7 @@ def make_request(
         provider=ProviderProjectReadOnlyEvidence(
             dedicated_familyos_project_confirmed=True,
             store_disabled_confirmed=True,
-            hosted_tools_disabled_confirmed=True,
+            hosted_tools_not_requested_confirmed=True,
             provider_sharing_disabled_confirmed=True,
             read_only_preflight_completed=read_only_preflight_completed,
             provider_configuration_mutation_requested=(provider_configuration_mutation_requested),
@@ -390,3 +390,19 @@ def test_used_token_cannot_be_revoked_before_use() -> None:
 
     with pytest.raises(ExecutionAuthorizationValidationError):
         revoke_single_use_authorization_before_use(used)
+
+
+def test_hosted_tools_not_requested_confirmation_is_fail_closed() -> None:
+    request = make_request()
+    request = replace(
+        request,
+        provider=replace(
+            request.provider,
+            hosted_tools_not_requested_confirmed=False,
+        ),
+    )
+    decision = evaluate_execution_authorization_readiness(request)
+
+    assert "hosted_tools_not_requested_not_confirmed" in decision.reasons
+    assert decision.ready_to_issue_single_use_authorization is False
+    assert decision.execution_authorized is False

@@ -164,3 +164,121 @@ must provide at minimum:
 Until that stage is explicitly authorized:
 
 `M10_REAL_DATA_EXECUTION_AUTHORIZED=false`
+
+<!-- FAMILYOS-M10-WAVE-A-IMPLEMENTATION-V1 -->
+
+## Wave A Real-Data Readiness Boundary — Local Implementation
+
+The local Wave A boundary for RD-01, RD-04, RD-05 and RD-06 is implemented in
+`src/familyos_pilot0/real_data_wave_a.py`.
+
+It consumes the existing M10 `ControlledExecutionReadinessDecision` and final
+minor-data screening evidence. It performs no provider transmission and its
+decision object always reports `execution_authorized == False`.
+
+The boundary is deliberately fail-closed:
+
+- RD-04 requires a separately supplied `TrustedExecutionClock`. There is no
+  fallback to ordinary process wall-clock time when trusted time is
+  unavailable.
+- RD-05 binds final-screening evidence to the exact M10 scope, screening
+  evidence identifier, policy identifier and trusted timestamp, and enforces
+  an explicit maximum age.
+- RD-06 compares approved provider, project, model and non-secret credential
+  fingerprint identities to identities observed from a separate runtime
+  provider-identity source before any future transmission.
+- RD-01 requires a receipt from an explicitly allow-listed external verifier
+  and requires a separate verifier boundary to return a scope-bound verified
+  human authorization. A caller-provided boolean does not satisfy this gate.
+
+The module contains no network call and no default implementation of the
+trusted clock, runtime provider-identity source, or trusted human receipt
+verifier. Those trust sources must be separately supplied and reviewed.
+
+This implementation does not itself close RD-01, RD-04, RD-05 or RD-06.
+Closure still requires implementation evidence, reconciliation against the
+real-data blocker contract and a separate human closure decision.
+
+The other real-data blockers remain unchanged, including durable cross-process
+single-use state, reserve/submit/consume-or-void semantics, process-level
+egress isolation, controlled traceback/log policy and independent final
+real-execution design review.
+
+`M10_REAL_DATA_EXECUTION_AUTHORIZED=false`
+
+<!-- FAMILYOS-M10-WAVE-A-TRUST-SOURCE-BINDINGS-V1 -->
+
+## Wave A trust-source bindings — approved offline profile
+
+The capability-informed Wave A trust-source profile has now been materialized
+as local, fail-closed binding components. This implementation does not perform
+or authorize real-data execution and does not close any real-data blocker by
+itself.
+
+The approved profile is:
+
+- RD-04: signed external time attestation verified locally with the existing
+  operating-system `ssh-keygen` signature-verification toolchain;
+- RD-05: freshness policy
+  `familyos-m10-final-screening-freshness-v1`, maximum age 60 seconds, allowed
+  future skew 0 seconds;
+- RD-06: immutable local runtime provider configuration containing the exact
+  provider, project/account, model, non-secret credential fingerprint, scope,
+  and a canonical configuration digest;
+- RD-01: offline signed human authorization receipt verified locally against
+  one explicitly governed allowed-signer principal.
+
+The implementation introduces no third-party dependency and performs no
+network or provider API call. No private signing key is stored in repository
+source, tests, logs, or governance evidence. Tests create only temporary
+synthetic Ed25519 key material and remove it after use.
+
+The signed time attestation and signed human receipt are canonical,
+scope-bound payloads. Verification is performed without shell invocation and
+fails closed on invalid signature, unavailable local verification tooling,
+scope mismatch, identity mismatch, or temporal invalidity.
+
+RD-05 temporal evidence is created from the verified trusted-time evidence;
+ordinary process wall-clock time is not substituted.
+
+RD-06 remains a local runtime-configuration binding. It does not claim
+provider-origin project/account confirmation. If later closure review requires
+provider-origin confirmation, separate provider/API authorization is still
+required.
+
+Implementation success remains distinct from blocker closure. RD-01, RD-04,
+RD-05, and RD-06 remain open until their concrete closure evidence is
+materialized and independently reconciled.
+
+`COMMIT_AUTHORIZED=false`
+
+`NETWORK_ACCESS_AUTHORIZED=false`
+
+`PROVIDER_API_USE_AUTHORIZED=false`
+
+`REAL_EMAIL_AUTHORIZED=false`
+
+`REAL_FAMILY_DATA_AUTHORIZED=false`
+
+`M10_REAL_DATA_EXECUTION_AUTHORIZED=false`
+
+<!-- FAMILYOS-M10-M9-HOSTED-TOOLS-SUCCESSOR-V5 -->
+
+## M9 Governed-Route Hosted-Tools Successor Binding — v5
+
+M10 consumes the M9 v2 semantic
+`hosted_tools_not_requested_confirmed`: the exact governed provider request must
+omit hosted-tool requests. This does not claim that hosted tools are globally
+unavailable in the provider organization or project.
+
+M10 continues to require an exact boolean value and preserves the existing
+fail-closed provider boundary. Provider-configuration mutation remains denied
+during controlled execution, and provider transmission remains a separately
+governed boundary.
+
+The controlled-execution contract version is advanced to
+`familyos-pilot0-m10-controlled-execution-v5` so evidence created under the
+previous hosted-tools semantic cannot be silently treated as current evidence.
+
+This successor does not authorize provider execution, provider transmission,
+RFC3161 consumption, RD-04 signing, or any repository publication action.

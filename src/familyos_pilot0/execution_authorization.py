@@ -168,7 +168,7 @@ class ProviderProjectReadOnlyEvidence:
 
     dedicated_familyos_project_confirmed: bool
     store_disabled_confirmed: bool
-    hosted_tools_disabled_confirmed: bool
+    hosted_tools_not_requested_confirmed: bool
     provider_sharing_disabled_confirmed: bool
     read_only_preflight_completed: bool
     provider_configuration_mutation_requested: bool = False
@@ -326,7 +326,7 @@ class SingleUseTokenValidationDecision:
         return False
 
 
-SCOPE_SCHEMA_VERSION: Final[str] = "familyos-pilot0-m9-execution-auth-v1"
+SCOPE_SCHEMA_VERSION: Final[str] = "familyos-pilot0-m9-execution-auth-v2"
 
 
 def build_execution_authorization_scope_fingerprint(
@@ -396,8 +396,8 @@ def evaluate_execution_authorization_readiness(
         if not request.provider.store_disabled_confirmed:
             reasons.append("provider_store_disabled_not_confirmed")
 
-        if not request.provider.hosted_tools_disabled_confirmed:
-            reasons.append("hosted_tools_disabled_not_confirmed")
+        if not request.provider.hosted_tools_not_requested_confirmed:
+            reasons.append("hosted_tools_not_requested_not_confirmed")
 
         if not request.provider.provider_sharing_disabled_confirmed:
             reasons.append("provider_sharing_disabled_not_confirmed")

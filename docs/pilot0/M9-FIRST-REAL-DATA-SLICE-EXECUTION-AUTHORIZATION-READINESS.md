@@ -141,3 +141,32 @@ binding, minor-data refusal, payload/route binding, provider preflight,
 single-use token behavior, operator pre-send boundary, synthetic rehearsals,
 quality checks, repository scope reconciliation, and human milestone closure
 decision have all passed.
+
+<!-- FAMILYOS-M9-GOVERNED-ROUTE-HOSTED-TOOLS-SUCCESSOR-V2 -->
+
+## Governed-Route Hosted-Tools Contract Successor — v2
+
+This section supersedes any earlier M9 wording that could be read as requiring
+provider- or organization-level unavailability of hosted tools.
+
+`ProviderProjectReadOnlyEvidence.hosted_tools_not_requested_confirmed` means that
+the exact governed provider route is structurally constrained to omit hosted-tool
+requests. Provider or organization capability availability alone does not satisfy
+or invalidate this gate.
+
+The evidence is fail-closed:
+
+- `hosted_tools_not_requested_confirmed == False` produces
+  `hosted_tools_not_requested_not_confirmed`;
+- read-only provider preflight must still be complete;
+- provider configuration mutation remains forbidden by M9 readiness;
+- provider sharing and storage boundaries remain independent mandatory gates.
+
+For the OpenAI gateway, this evidence must be supported by the governed request
+implementation and its tests; merely observing provider UI settings is not enough.
+
+The M9 scope schema is advanced to
+`familyos-pilot0-m9-execution-auth-v2`. Authorization artifacts produced under
+the v1 schema are not reusable as v2 scope evidence.
+
+This successor does not authorize provider execution or transmission.
