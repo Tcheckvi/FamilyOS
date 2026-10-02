@@ -282,3 +282,51 @@ previous hosted-tools semantic cannot be silently treated as current evidence.
 
 This successor does not authorize provider execution, provider transmission,
 RFC3161 consumption, RD-04 signing, or any repository publication action.
+
+<!-- FAMILYOS-M10-WAVE-A-TERMINAL-CLOSURE-SYNCHRONIZATION-V1 -->
+
+## Wave A terminal closure synchronization
+
+The earlier Wave A sections above describe the implementation and pre-closure
+state at the time they were written. They remain historically accurate for that
+stage, but they no longer represent the terminal blocker-closure state.
+
+As of 2026-10-02, governed external closure evidence establishes:
+
+- RD-01: `CLOSED`.
+  The terminal v2.7 one-shot run completed successfully, its evidence was
+  independently reconciled, dual closure-readiness review passed, and a separate
+  human closure decision was recorded. The closure package records
+  `RD01_CLOSED=true`. The human closure-authorization phrase SHA-256 is
+  `06f4dc4b4caf40cb8f1a490674983d3e47f07d0066b1fa0a1e601b5fa6815b85`.
+- RD-04: `CLOSED_INDEPENDENTLY_RECONCILED`.
+  The governed RFC3161 time-authority closure was independently reconciled.
+  The authoritative closure manifest SHA-256 is
+  `713f841637b542432288b85130a93ebf3668e5b632f38dc0d97740165b865f36`.
+- RD-05: `CLOSED`.
+  The externally governed final-screening temporal-evidence closure completed.
+  The external closure-state SHA-256 is
+  `38508995567432fbe93237cec1fdcc11b98527e80bdfa0741849438256dbd4ac`.
+- RD-06: `CLOSED_INDEPENDENTLY_RECONCILED`.
+  The exact local runtime provider configuration and trusted-capture chain were
+  independently reconciled and separately authorized for final closure.
+  The final human closure-authorization SHA-256 is
+  `4b938c61464d9c2602a23f0d4f850f0edc8edcf730f8f3626d4198f88c20e45e`.
+
+Therefore:
+
+`WAVE_A_RD_CLOSED_COUNT=4`
+
+`OPERATIONS_CLOSURE_PLAYBOOK=FINALIZED`
+
+This synchronization changes blocker-closure documentation only. It does not
+authorize real family data, real email, provider transmission, provider API use,
+credential use, or any other M10 real-data execution.
+
+Historical `COMMIT_AUTHORIZED=false`, `NETWORK_ACCESS_AUTHORIZED=false`,
+`PROVIDER_API_USE_AUTHORIZED=false`, `REAL_EMAIL_AUTHORIZED=false`,
+`REAL_FAMILY_DATA_AUTHORIZED=false`, and
+`M10_REAL_DATA_EXECUTION_AUTHORIZED=false` boundaries remain in force unless a
+separate governed authorization explicitly changes them.
+
+`M10_REAL_DATA_EXECUTION_AUTHORIZED=false`
