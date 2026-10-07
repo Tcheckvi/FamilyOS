@@ -15,6 +15,14 @@ from familyos_cli.application.build import (
 from familyos_cli.application.build.build_input_validator import (
     BuildInputValidator,
 )
+from familyos_cli.application.family.create_family import CreateFamily
+from familyos_cli.application.family.end_membership import EndMembership
+from familyos_cli.application.family.end_relationship import EndRelationship
+from familyos_cli.application.family.establish_membership import EstablishMembership
+from familyos_cli.application.family.establish_relationship import EstablishRelationship
+from familyos_cli.application.family.get_family import GetFamily
+from familyos_cli.application.family.get_membership import GetMembership
+from familyos_cli.application.family.get_relationship import GetRelationship
 from familyos_cli.application.generation.application_recipe_registry_factory import (
     ApplicationRecipeRegistryFactory,
 )
@@ -48,6 +56,8 @@ from familyos_cli.application.generation.preset_recipe_resolver import (
 from familyos_cli.application.generation.recipe_catalog_service import (
     RecipeCatalogService,
 )
+from familyos_cli.application.person.create_person import CreatePerson
+from familyos_cli.application.person.get_person import GetPerson
 from familyos_cli.application.quality.default_quality_profile_registry import (
     build_default_quality_profile_registry,
 )
@@ -144,8 +154,21 @@ from familyos_cli.infrastructure.build import (
     PythonPackageBuilder,
     PythonWheelFunctionalValidator,
 )
+from familyos_cli.infrastructure.family.sqlite_family_repository import (
+    SQLiteFamilyRepository,
+)
+from familyos_cli.infrastructure.family.sqlite_membership_repository import (
+    SQLiteMembershipRepository,
+)
+from familyos_cli.infrastructure.family.sqlite_relationship_repository import (
+    SQLiteRelationshipRepository,
+)
 from familyos_cli.infrastructure.generation.generation_engine import (
     GenerationEngine,
+)
+from familyos_cli.infrastructure.persistence.sqlite_database import SQLiteDatabase
+from familyos_cli.infrastructure.person.sqlite_person_repository import (
+    SQLitePersonRepository,
 )
 from familyos_cli.infrastructure.quality.documentation_quality_executor import (
     DocumentationQualityExecutor,
@@ -219,6 +242,8 @@ class ApplicationContainer:
     def __init__(
         self,
         project_root: Path | None = None,
+        *,
+        core_database_path: Path | None = None,
     ) -> None:
         """Initialize application dependencies."""
 
@@ -227,6 +252,22 @@ class ApplicationContainer:
             if project_root is not None
             else Path(__file__).resolve().parents[3]
         )
+
+        self._core_database: SQLiteDatabase | None = None
+        self._core_person_repository: SQLitePersonRepository | None = None
+        self._core_family_repository: SQLiteFamilyRepository | None = None
+        self._core_membership_repository: SQLiteMembershipRepository | None = None
+        self._core_relationship_repository: SQLiteRelationshipRepository | None = None
+
+        if core_database_path is not None:
+            core_database = SQLiteDatabase(core_database_path)
+            self._core_database = core_database
+            self._core_person_repository = SQLitePersonRepository(core_database)
+            self._core_family_repository = SQLiteFamilyRepository(core_database)
+            self._core_membership_repository = SQLiteMembershipRepository(core_database)
+            self._core_relationship_repository = SQLiteRelationshipRepository(
+                core_database
+            )
 
         self._runtime = RuntimeFactory.create()
 
@@ -322,6 +363,127 @@ class ApplicationContainer:
         """Return the canonical repository root for this composition."""
 
         return self._project_root
+
+    @staticmethod
+    def _core_product_clock() -> datetime:
+        """Return one timezone-aware Core Product occurrence time."""
+
+        return datetime.now(UTC)
+
+    @staticmethod
+    def _core_persistence_required() -> RuntimeError:
+        """Return the fail-closed error for absent durable Core Product storage."""
+
+        return RuntimeError(
+            "Core Product durable persistence requires an explicit core_database_path"
+        )
+
+    def core_database(self) -> SQLiteDatabase:
+        """Return the configured bounded Core Product SQLite database."""
+
+        if self._core_database is None:
+            raise self._core_persistence_required()
+        return self._core_database
+
+    def core_person_repository(self) -> SQLitePersonRepository:
+        """Return the durable Person repository for Core Product composition."""
+
+        if self._core_person_repository is None:
+            raise self._core_persistence_required()
+        return self._core_person_repository
+
+    def core_family_repository(self) -> SQLiteFamilyRepository:
+        """Return the durable Family repository for Core Product composition."""
+
+        if self._core_family_repository is None:
+            raise self._core_persistence_required()
+        return self._core_family_repository
+
+    def core_membership_repository(self) -> SQLiteMembershipRepository:
+        """Return the durable Membership repository for Core Product composition."""
+
+        if self._core_membership_repository is None:
+            raise self._core_persistence_required()
+        return self._core_membership_repository
+
+    def core_relationship_repository(self) -> SQLiteRelationshipRepository:
+        """Return the durable Relationship repository for Core Product composition."""
+
+        if self._core_relationship_repository is None:
+            raise self._core_persistence_required()
+        return self._core_relationship_repository
+
+    def create_person_use_case(self) -> CreatePerson:
+        """Compose durable canonical Person creation."""
+
+        return CreatePerson(
+            self.core_person_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def get_person_use_case(self) -> GetPerson:
+        """Compose durable canonical Person retrieval."""
+
+        return GetPerson(self.core_person_repository())
+
+    def create_family_use_case(self) -> CreateFamily:
+        """Compose durable canonical Family creation."""
+
+        return CreateFamily(
+            self.core_family_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def get_family_use_case(self) -> GetFamily:
+        """Compose durable canonical Family retrieval."""
+
+        return GetFamily(self.core_family_repository())
+
+    def establish_membership_use_case(self) -> EstablishMembership:
+        """Compose durable canonical Membership establishment."""
+
+        return EstablishMembership(
+            self.core_family_repository(),
+            self.core_person_repository(),
+            self.core_membership_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def get_membership_use_case(self) -> GetMembership:
+        """Compose durable canonical Membership retrieval."""
+
+        return GetMembership(self.core_membership_repository())
+
+    def end_membership_use_case(self) -> EndMembership:
+        """Compose durable canonical Membership ending."""
+
+        return EndMembership(
+            self.core_membership_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def establish_relationship_use_case(self) -> EstablishRelationship:
+        """Compose durable canonical Relationship establishment."""
+
+        return EstablishRelationship(
+            self.core_family_repository(),
+            self.core_person_repository(),
+            self.core_relationship_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def get_relationship_use_case(self) -> GetRelationship:
+        """Compose durable canonical Relationship retrieval."""
+
+        return GetRelationship(self.core_relationship_repository())
+
+    def end_relationship_use_case(self) -> EndRelationship:
+        """Compose durable canonical Relationship ending."""
+
+        return EndRelationship(
+            self.core_relationship_repository(),
+            clock=self._core_product_clock,
+        )
 
     @staticmethod
     def _quality_finding_id() -> QualityFindingId:
@@ -630,7 +792,10 @@ class ApplicationFactory:
     """Application factory."""
 
     @staticmethod
-    def create() -> ApplicationContainer:
+    def create(
+        *,
+        core_database_path: Path | None = None,
+    ) -> ApplicationContainer:
         """Create application container."""
 
-        return ApplicationContainer()
+        return ApplicationContainer(core_database_path=core_database_path)
