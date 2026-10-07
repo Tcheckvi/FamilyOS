@@ -8,6 +8,7 @@ from typing import cast
 import pytest
 
 from familyos_cli.application.family import (
+    ActivateMembership,
     CreateFamily,
     EndMembership,
     EndRelationship,
@@ -16,6 +17,7 @@ from familyos_cli.application.family import (
     GetFamily,
     GetMembership,
     GetRelationship,
+    SuspendMembership,
 )
 from familyos_cli.application.person import CreatePerson, GetPerson
 from familyos_cli.bootstrap.application_factory import ApplicationFactory
@@ -73,6 +75,8 @@ def test_core_product_use_cases_use_durable_repositories(tmp_path: Path) -> None
     get_family = container.get_family_use_case()
     establish_membership = container.establish_membership_use_case()
     get_membership = container.get_membership_use_case()
+    activate_membership = container.activate_membership_use_case()
+    suspend_membership = container.suspend_membership_use_case()
     end_membership = container.end_membership_use_case()
     establish_relationship = container.establish_relationship_use_case()
     get_relationship = container.get_relationship_use_case()
@@ -84,6 +88,8 @@ def test_core_product_use_cases_use_durable_repositories(tmp_path: Path) -> None
     assert isinstance(get_family, GetFamily)
     assert isinstance(establish_membership, EstablishMembership)
     assert isinstance(get_membership, GetMembership)
+    assert isinstance(activate_membership, ActivateMembership)
+    assert isinstance(suspend_membership, SuspendMembership)
     assert isinstance(end_membership, EndMembership)
     assert isinstance(establish_relationship, EstablishRelationship)
     assert isinstance(get_relationship, GetRelationship)
@@ -102,6 +108,8 @@ def test_core_product_use_cases_use_durable_repositories(tmp_path: Path) -> None
     assert vars(establish_membership)["_person_repository"] is person_repository
     assert vars(establish_membership)["_membership_repository"] is membership_repository
     assert vars(get_membership)["_repository"] is membership_repository
+    assert vars(activate_membership)["_repository"] is membership_repository
+    assert vars(suspend_membership)["_repository"] is membership_repository
     assert vars(end_membership)["_repository"] is membership_repository
     assert vars(establish_relationship)["_family_repository"] is family_repository
     assert vars(establish_relationship)["_person_repository"] is person_repository
@@ -132,6 +140,8 @@ def test_missing_core_database_path_preserves_container_and_fails_closed(
         container.get_family_use_case,
         container.establish_membership_use_case,
         container.get_membership_use_case,
+        container.activate_membership_use_case,
+        container.suspend_membership_use_case,
         container.end_membership_use_case,
         container.establish_relationship_use_case,
         container.get_relationship_use_case,

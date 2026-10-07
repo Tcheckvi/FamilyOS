@@ -15,6 +15,7 @@ from familyos_cli.application.build import (
 from familyos_cli.application.build.build_input_validator import (
     BuildInputValidator,
 )
+from familyos_cli.application.family.activate_membership import ActivateMembership
 from familyos_cli.application.family.create_family import CreateFamily
 from familyos_cli.application.family.end_membership import EndMembership
 from familyos_cli.application.family.end_relationship import EndRelationship
@@ -23,6 +24,7 @@ from familyos_cli.application.family.establish_relationship import EstablishRela
 from familyos_cli.application.family.get_family import GetFamily
 from familyos_cli.application.family.get_membership import GetMembership
 from familyos_cli.application.family.get_relationship import GetRelationship
+from familyos_cli.application.family.suspend_membership import SuspendMembership
 from familyos_cli.application.generation.application_recipe_registry_factory import (
     ApplicationRecipeRegistryFactory,
 )
@@ -453,6 +455,22 @@ class ApplicationContainer:
         """Compose durable canonical Membership retrieval."""
 
         return GetMembership(self.core_membership_repository())
+
+    def activate_membership_use_case(self) -> ActivateMembership:
+        """Compose durable canonical Membership activation."""
+
+        return ActivateMembership(
+            self.core_membership_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def suspend_membership_use_case(self) -> SuspendMembership:
+        """Compose durable canonical Membership suspension."""
+
+        return SuspendMembership(
+            self.core_membership_repository(),
+            clock=self._core_product_clock,
+        )
 
     def end_membership_use_case(self) -> EndMembership:
         """Compose durable canonical Membership ending."""

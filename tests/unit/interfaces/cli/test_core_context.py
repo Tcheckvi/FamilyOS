@@ -74,6 +74,8 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     get_family = Mock()
     establish_membership = Mock()
     get_membership = Mock()
+    activate_membership = Mock()
+    suspend_membership = Mock()
     end_membership = Mock()
     establish_relationship = Mock()
     get_relationship = Mock()
@@ -85,6 +87,8 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     container.get_family_use_case.return_value = get_family
     container.establish_membership_use_case.return_value = establish_membership
     container.get_membership_use_case.return_value = get_membership
+    container.activate_membership_use_case.return_value = activate_membership
+    container.suspend_membership_use_case.return_value = suspend_membership
     container.end_membership_use_case.return_value = end_membership
     container.establish_relationship_use_case.return_value = establish_relationship
     container.get_relationship_use_case.return_value = get_relationship
@@ -104,6 +108,10 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     assert context.establish_membership is establish_membership
     assert context.get_membership is get_membership
     assert context.get_membership is get_membership
+    assert context.activate_membership is activate_membership
+    assert context.activate_membership is activate_membership
+    assert context.suspend_membership is suspend_membership
+    assert context.suspend_membership is suspend_membership
     assert context.end_membership is end_membership
     assert context.end_membership is end_membership
     assert context.establish_relationship is establish_relationship
@@ -119,6 +127,8 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     container.get_family_use_case.assert_called_once_with()
     container.establish_membership_use_case.assert_called_once_with()
     container.get_membership_use_case.assert_called_once_with()
+    container.activate_membership_use_case.assert_called_once_with()
+    container.suspend_membership_use_case.assert_called_once_with()
     container.end_membership_use_case.assert_called_once_with()
     container.establish_relationship_use_case.assert_called_once_with()
     container.get_relationship_use_case.assert_called_once_with()

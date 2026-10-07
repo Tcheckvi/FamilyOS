@@ -41,6 +41,15 @@ def test_new_container_recovers_complete_core_product_state(
         RelationshipType.PARENT_OF,
     ).relationship
 
+    activated_membership = first_container.activate_membership_use_case().execute(
+        family.family_id,
+        first_person.person_id,
+    ).membership
+    suspended_membership = first_container.suspend_membership_use_case().execute(
+        family.family_id,
+        first_person.person_id,
+    ).membership
+
     ended_membership = first_container.end_membership_use_case().execute(
         family.family_id,
         first_person.person_id,
@@ -53,6 +62,8 @@ def test_new_container_recovers_complete_core_product_state(
     ).relationship
 
     assert membership.state is MembershipState.PENDING
+    assert activated_membership.state is MembershipState.ACTIVE
+    assert suspended_membership.state is MembershipState.SUSPENDED
     assert relationship.state is RelationshipState.ESTABLISHED
     assert ended_membership.state is MembershipState.ENDED
     assert ended_relationship.state is RelationshipState.ENDED

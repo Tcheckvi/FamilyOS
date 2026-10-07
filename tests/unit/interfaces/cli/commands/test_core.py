@@ -247,6 +247,96 @@ def test_membership_get_returns_nonzero_for_absence(
     assert "not found" in result.output
 
 
+def test_membership_activate_requires_explicit_database() -> None:
+    result = runner.invoke(
+        core_app,
+        ["membership", "activate", str(FAMILY_UUID), str(PERSON_UUID)],
+    )
+
+    assert result.exit_code == 2
+    assert "--database" in result.output
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_membership_activate_delegates_to_context(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    family_id = FamilyId(FAMILY_UUID)
+    person_id = PersonId(PERSON_UUID)
+    membership = Membership.establish(family_id, person_id).activate()
+    context = context_type.return_value
+    context.activate_membership.execute.return_value = SimpleNamespace(
+        membership=membership,
+    )
+
+    result = runner.invoke(
+        core_app,
+        [
+            "membership",
+            "activate",
+            str(FAMILY_UUID),
+            str(PERSON_UUID),
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "Membership activated" in result.stdout
+    assert "state=active" in result.stdout
+    context.activate_membership.execute.assert_called_once_with(
+        family_id,
+        person_id,
+    )
+
+
+def test_membership_suspend_requires_explicit_database() -> None:
+    result = runner.invoke(
+        core_app,
+        ["membership", "suspend", str(FAMILY_UUID), str(PERSON_UUID)],
+    )
+
+    assert result.exit_code == 2
+    assert "--database" in result.output
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_membership_suspend_delegates_to_context(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    family_id = FamilyId(FAMILY_UUID)
+    person_id = PersonId(PERSON_UUID)
+    membership = Membership.establish(family_id, person_id).activate().suspend()
+    context = context_type.return_value
+    context.suspend_membership.execute.return_value = SimpleNamespace(
+        membership=membership,
+    )
+
+    result = runner.invoke(
+        core_app,
+        [
+            "membership",
+            "suspend",
+            str(FAMILY_UUID),
+            str(PERSON_UUID),
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "Membership suspended" in result.stdout
+    assert "state=suspended" in result.stdout
+    context.suspend_membership.execute.assert_called_once_with(
+        family_id,
+        person_id,
+    )
+
+
 @patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
 def test_membership_end_delegates_to_context(
     context_type: Mock,

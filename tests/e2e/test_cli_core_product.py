@@ -205,6 +205,97 @@ def test_membership_establish_get_end_round_trip(
     assert "state=ended" in recovered_ended.stdout
 
 
+def test_membership_activate_suspend_reactivate_round_trip(
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core-lifecycle.db"
+    person_id = _create_person(database)
+    family_id = _create_family(database)
+
+    established = runner.invoke(
+        app,
+        [
+            "core",
+            "membership",
+            "establish",
+            family_id,
+            person_id,
+            "--database",
+            str(database),
+        ],
+        catch_exceptions=False,
+    )
+    assert established.exit_code == 0
+    assert "state=pending" in established.stdout
+
+    activated = runner.invoke(
+        app,
+        [
+            "core",
+            "membership",
+            "activate",
+            family_id,
+            person_id,
+            "--database",
+            str(database),
+        ],
+        catch_exceptions=False,
+    )
+    assert activated.exit_code == 0
+    assert "Membership activated" in activated.stdout
+    assert "state=active" in activated.stdout
+
+    suspended = runner.invoke(
+        app,
+        [
+            "core",
+            "membership",
+            "suspend",
+            family_id,
+            person_id,
+            "--database",
+            str(database),
+        ],
+        catch_exceptions=False,
+    )
+    assert suspended.exit_code == 0
+    assert "Membership suspended" in suspended.stdout
+    assert "state=suspended" in suspended.stdout
+
+    recovered_suspended = runner.invoke(
+        app,
+        [
+            "core",
+            "membership",
+            "get",
+            family_id,
+            person_id,
+            "--database",
+            str(database),
+        ],
+        catch_exceptions=False,
+    )
+    assert recovered_suspended.exit_code == 0
+    assert "state=suspended" in recovered_suspended.stdout
+
+    reactivated = runner.invoke(
+        app,
+        [
+            "core",
+            "membership",
+            "activate",
+            family_id,
+            person_id,
+            "--database",
+            str(database),
+        ],
+        catch_exceptions=False,
+    )
+    assert reactivated.exit_code == 0
+    assert "Membership activated" in reactivated.stdout
+    assert "state=active" in reactivated.stdout
+
+
 def test_relationship_establish_get_end_round_trip_with_child_of_normalization(
     tmp_path: Path,
 ) -> None:

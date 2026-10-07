@@ -327,6 +327,96 @@ def get_membership(
     )
 
 
+@membership_app.command(name="activate")
+def activate_membership(
+    family_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Family UUID version 4."),
+    ],
+    person_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Person UUID."),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """Activate or reactivate one durable canonical Membership."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    canonical_person_id = _parse_person_id(person_id)
+
+    try:
+        result = CommandContext(
+            core_database_path=database,
+        ).activate_membership.execute(
+            canonical_family_id,
+            canonical_person_id,
+        )
+    except (
+        MembershipNotFoundError,
+        InvalidMembershipTransitionError,
+        MembershipConflictError,
+    ) as error:
+        _command_error(error)
+
+    membership = result.membership
+    Output.success(
+        "Membership activated: "
+        f"{_membership_identity(membership.family_id, membership.person_id)} "
+        f"state={membership.state.value}",
+    )
+
+
+@membership_app.command(name="suspend")
+def suspend_membership(
+    family_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Family UUID version 4."),
+    ],
+    person_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Person UUID."),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """Suspend one durable canonical Membership."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    canonical_person_id = _parse_person_id(person_id)
+
+    try:
+        result = CommandContext(
+            core_database_path=database,
+        ).suspend_membership.execute(
+            canonical_family_id,
+            canonical_person_id,
+        )
+    except (
+        MembershipNotFoundError,
+        InvalidMembershipTransitionError,
+        MembershipConflictError,
+    ) as error:
+        _command_error(error)
+
+    membership = result.membership
+    Output.success(
+        "Membership suspended: "
+        f"{_membership_identity(membership.family_id, membership.person_id)} "
+        f"state={membership.state.value}",
+    )
+
+
 @membership_app.command(name="end")
 def end_membership(
     family_id: Annotated[
