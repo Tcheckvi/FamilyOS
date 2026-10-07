@@ -381,3 +381,26 @@ def test_relationship_establish_get_end_round_trip_with_child_of_normalization(
     )
     assert recovered_ended.exit_code == 0
     assert "state=ended" in recovered_ended.stdout
+
+def test_family_create_then_fresh_cli_resolve_boundary_recovers_from_same_database(
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core-boundary.db"
+    family_id = _create_family(database)
+
+    resolved = runner.invoke(
+        app,
+        [
+            "core",
+            "family",
+            "resolve-boundary",
+            family_id,
+            "--database",
+            str(database),
+        ],
+        catch_exceptions=False,
+    )
+
+    assert resolved.exit_code == 0
+    assert family_id in resolved.stdout
+    assert "Family boundary resolved" in resolved.stdout

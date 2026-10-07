@@ -15,6 +15,9 @@ from familyos_cli.application.family.establish_relationship import EstablishRela
 from familyos_cli.application.family.get_family import GetFamily
 from familyos_cli.application.family.get_membership import GetMembership
 from familyos_cli.application.family.get_relationship import GetRelationship
+from familyos_cli.application.family.resolve_family_boundary import (
+    ResolveFamilyBoundary,
+)
 from familyos_cli.application.family.suspend_membership import SuspendMembership
 from familyos_cli.application.generation.domain_generation_catalog_service import (
     DomainGenerationCatalogService,
@@ -156,6 +159,12 @@ class CommandContext:
         """Provide the durable Core Product Family query use case."""
 
         return self._container.get_family_use_case()
+
+    @cached_property
+    def resolve_family_boundary(self) -> ResolveFamilyBoundary:
+        """Provide durable canonical Family boundary resolution."""
+
+        return self._container.resolve_family_boundary_use_case()
 
     @cached_property
     def establish_membership(self) -> EstablishMembership:

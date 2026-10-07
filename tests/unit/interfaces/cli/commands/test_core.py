@@ -527,3 +527,69 @@ def test_relationship_end_delegates_to_context(
         high,
         RelationshipType.PARENT_OF,
     )
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_family_resolve_boundary_returns_existing_boundary(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    family_id = FamilyId(FAMILY_UUID)
+    context = context_type.return_value
+    context.resolve_family_boundary.execute.return_value = family_id
+
+    result = runner.invoke(
+        core_app,
+        [
+            "family",
+            "resolve-boundary",
+            str(FAMILY_UUID),
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert f"Family boundary resolved: {FAMILY_UUID}" in result.stdout
+    context_type.assert_called_once_with(core_database_path=database)
+    context.resolve_family_boundary.execute.assert_called_once_with(family_id)
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_family_resolve_boundary_returns_not_found(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    family_id = FamilyId(FAMILY_UUID)
+    context = context_type.return_value
+    context.resolve_family_boundary.execute.return_value = None
+
+    result = runner.invoke(
+        core_app,
+        [
+            "family",
+            "resolve-boundary",
+            str(FAMILY_UUID),
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 1
+    assert f'Family "{FAMILY_UUID}" not found.' in result.stderr
+    context.resolve_family_boundary.execute.assert_called_once_with(family_id)
+
+
+def test_family_resolve_boundary_requires_explicit_database() -> None:
+    result = runner.invoke(
+        core_app,
+        [
+            "family",
+            "resolve-boundary",
+            str(FAMILY_UUID),
+        ],
+    )
+
+    assert result.exit_code == 2
+    assert "--database" in result.output

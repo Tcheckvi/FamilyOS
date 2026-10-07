@@ -238,6 +238,41 @@ def get_family(
     )
 
 
+@family_app.command(name="resolve-boundary")
+def resolve_family_boundary(
+    family_id: Annotated[
+        str,
+        typer.Argument(
+            ...,
+            help="Canonical Family UUID version 4.",
+        ),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """Resolve one durable canonical Family boundary identity."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    boundary_id = CommandContext(
+        core_database_path=database,
+    ).resolve_family_boundary.execute(canonical_family_id)
+
+    if boundary_id is None:
+        Output.error(
+            f'Family "{canonical_family_id}" not found.',
+        )
+        raise typer.Exit(code=1)
+
+    Output.success(
+        f"Family boundary resolved: {boundary_id}",
+    )
+
+
 @membership_app.command(name="establish")
 def establish_membership(
     family_id: Annotated[

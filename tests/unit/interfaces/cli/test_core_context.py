@@ -72,6 +72,7 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     get_person = Mock()
     create_family = Mock()
     get_family = Mock()
+    resolve_family_boundary = Mock()
     establish_membership = Mock()
     get_membership = Mock()
     activate_membership = Mock()
@@ -85,6 +86,7 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     container.get_person_use_case.return_value = get_person
     container.create_family_use_case.return_value = create_family
     container.get_family_use_case.return_value = get_family
+    container.resolve_family_boundary_use_case.return_value = resolve_family_boundary
     container.establish_membership_use_case.return_value = establish_membership
     container.get_membership_use_case.return_value = get_membership
     container.activate_membership_use_case.return_value = activate_membership
@@ -104,6 +106,8 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     assert context.create_family is create_family
     assert context.get_family is get_family
     assert context.get_family is get_family
+    assert context.resolve_family_boundary is resolve_family_boundary
+    assert context.resolve_family_boundary is resolve_family_boundary
     assert context.establish_membership is establish_membership
     assert context.establish_membership is establish_membership
     assert context.get_membership is get_membership
@@ -125,6 +129,7 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     container.get_person_use_case.assert_called_once_with()
     container.create_family_use_case.assert_called_once_with()
     container.get_family_use_case.assert_called_once_with()
+    container.resolve_family_boundary_use_case.assert_called_once_with()
     container.establish_membership_use_case.assert_called_once_with()
     container.get_membership_use_case.assert_called_once_with()
     container.activate_membership_use_case.assert_called_once_with()

@@ -24,6 +24,9 @@ from familyos_cli.application.family.establish_relationship import EstablishRela
 from familyos_cli.application.family.get_family import GetFamily
 from familyos_cli.application.family.get_membership import GetMembership
 from familyos_cli.application.family.get_relationship import GetRelationship
+from familyos_cli.application.family.resolve_family_boundary import (
+    ResolveFamilyBoundary,
+)
 from familyos_cli.application.family.suspend_membership import SuspendMembership
 from familyos_cli.application.generation.application_recipe_registry_factory import (
     ApplicationRecipeRegistryFactory,
@@ -440,6 +443,11 @@ class ApplicationContainer:
         """Compose durable canonical Family retrieval."""
 
         return GetFamily(self.core_family_repository())
+
+    def resolve_family_boundary_use_case(self) -> ResolveFamilyBoundary:
+        """Compose durable canonical Family boundary resolution."""
+
+        return ResolveFamilyBoundary(self.core_family_repository())
 
     def establish_membership_use_case(self) -> EstablishMembership:
         """Compose durable canonical Membership establishment."""

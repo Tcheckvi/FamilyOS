@@ -73,6 +73,7 @@ def test_core_product_use_cases_use_durable_repositories(tmp_path: Path) -> None
     get_person = container.get_person_use_case()
     create_family = container.create_family_use_case()
     get_family = container.get_family_use_case()
+    resolve_family_boundary = container.resolve_family_boundary_use_case()
     establish_membership = container.establish_membership_use_case()
     get_membership = container.get_membership_use_case()
     activate_membership = container.activate_membership_use_case()
@@ -104,6 +105,7 @@ def test_core_product_use_cases_use_durable_repositories(tmp_path: Path) -> None
     assert vars(get_person)["_repository"] is person_repository
     assert vars(create_family)["_repository"] is family_repository
     assert vars(get_family)["_repository"] is family_repository
+    assert vars(resolve_family_boundary)["_repository"] is family_repository
     assert vars(establish_membership)["_family_repository"] is family_repository
     assert vars(establish_membership)["_person_repository"] is person_repository
     assert vars(establish_membership)["_membership_repository"] is membership_repository
@@ -138,6 +140,7 @@ def test_missing_core_database_path_preserves_container_and_fails_closed(
         container.get_person_use_case,
         container.create_family_use_case,
         container.get_family_use_case,
+        container.resolve_family_boundary_use_case,
         container.establish_membership_use_case,
         container.get_membership_use_case,
         container.activate_membership_use_case,
