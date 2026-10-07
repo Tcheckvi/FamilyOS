@@ -7,7 +7,13 @@ from pathlib import Path
 
 from familyos_cli.application.build import RunPackageBuildUseCase
 from familyos_cli.application.family.create_family import CreateFamily
+from familyos_cli.application.family.end_membership import EndMembership
+from familyos_cli.application.family.end_relationship import EndRelationship
+from familyos_cli.application.family.establish_membership import EstablishMembership
+from familyos_cli.application.family.establish_relationship import EstablishRelationship
 from familyos_cli.application.family.get_family import GetFamily
+from familyos_cli.application.family.get_membership import GetMembership
+from familyos_cli.application.family.get_relationship import GetRelationship
 from familyos_cli.application.generation.domain_generation_catalog_service import (
     DomainGenerationCatalogService,
 )
@@ -148,6 +154,42 @@ class CommandContext:
         """Provide the durable Core Product Family query use case."""
 
         return self._container.get_family_use_case()
+
+    @cached_property
+    def establish_membership(self) -> EstablishMembership:
+        """Provide durable canonical Membership establishment."""
+
+        return self._container.establish_membership_use_case()
+
+    @cached_property
+    def get_membership(self) -> GetMembership:
+        """Provide durable canonical Membership retrieval."""
+
+        return self._container.get_membership_use_case()
+
+    @cached_property
+    def end_membership(self) -> EndMembership:
+        """Provide durable canonical Membership ending."""
+
+        return self._container.end_membership_use_case()
+
+    @cached_property
+    def establish_relationship(self) -> EstablishRelationship:
+        """Provide durable canonical Relationship establishment."""
+
+        return self._container.establish_relationship_use_case()
+
+    @cached_property
+    def get_relationship(self) -> GetRelationship:
+        """Provide durable canonical Relationship retrieval."""
+
+        return self._container.get_relationship_use_case()
+
+    @cached_property
+    def end_relationship(self) -> EndRelationship:
+        """Provide durable canonical Relationship ending."""
+
+        return self._container.end_relationship_use_case()
 
     @cached_property
     def generation_catalog(

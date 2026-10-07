@@ -3,12 +3,27 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, NoReturn
 from uuid import UUID
 
 import typer
 
-from familyos_cli.domain.family import FamilyId
+from familyos_cli.application.family.activate_membership import MembershipNotFoundError
+from familyos_cli.application.family.end_relationship import RelationshipNotFoundError
+from familyos_cli.application.family.establish_membership import (
+    FamilyNotFoundError,
+    PersonNotFoundError,
+)
+from familyos_cli.application.ports.family import (
+    MembershipConflictError,
+    RelationshipConflictError,
+)
+from familyos_cli.domain.family import (
+    FamilyId,
+    InvalidMembershipTransitionError,
+    InvalidRelationshipTransitionError,
+    RelationshipType,
+)
 from familyos_cli.domain.person import PersonId
 from familyos_cli.interfaces.cli.context import CommandContext
 from familyos_cli.interfaces.cli.output import Output
@@ -28,6 +43,16 @@ family_app = typer.Typer(
     no_args_is_help=True,
 )
 
+membership_app = typer.Typer(
+    help="Membership commands.",
+    no_args_is_help=True,
+)
+
+relationship_app = typer.Typer(
+    help="Relationship commands.",
+    no_args_is_help=True,
+)
+
 core_app.add_typer(
     person_app,
     name="person",
@@ -36,6 +61,16 @@ core_app.add_typer(
 core_app.add_typer(
     family_app,
     name="family",
+)
+
+core_app.add_typer(
+    membership_app,
+    name="membership",
+)
+
+core_app.add_typer(
+    relationship_app,
+    name="relationship",
 )
 
 
@@ -57,6 +92,38 @@ def _parse_family_id(raw_value: str) -> FamilyId:
             "family_id must be a valid UUID version 4",
             param_hint="FAMILY_ID",
         ) from error
+
+
+def _parse_relationship_type(raw_value: str) -> RelationshipType:
+    try:
+        return RelationshipType(raw_value)
+    except (TypeError, ValueError) as error:
+        allowed = ", ".join(member.value for member in RelationshipType)
+        raise typer.BadParameter(
+            f"relationship_type must be one of: {allowed}",
+            param_hint="RELATIONSHIP_TYPE",
+        ) from error
+
+
+def _membership_identity(family_id: FamilyId, person_id: PersonId) -> str:
+    return f"{family_id}:{person_id}"
+
+
+def _relationship_identity(
+    family_id: FamilyId,
+    source_person_id: PersonId,
+    target_person_id: PersonId,
+    relationship_type: RelationshipType,
+) -> str:
+    return (
+        f"{family_id}:{source_person_id}:{target_person_id}:"
+        f"{relationship_type.value}"
+    )
+
+
+def _command_error(error: Exception) -> NoReturn:
+    Output.error(str(error))
+    raise typer.Exit(code=1)
 
 
 @person_app.command(name="create")
@@ -168,4 +235,342 @@ def get_family(
 
     Output.info(
         f"Family found: {family.family_id}",
+    )
+
+
+@membership_app.command(name="establish")
+def establish_membership(
+    family_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Family UUID version 4."),
+    ],
+    person_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Person UUID."),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """Establish one durable canonical Membership."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    canonical_person_id = _parse_person_id(person_id)
+
+    try:
+        result = CommandContext(
+            core_database_path=database,
+        ).establish_membership.execute(
+            canonical_family_id,
+            canonical_person_id,
+        )
+    except (
+        FamilyNotFoundError,
+        PersonNotFoundError,
+        MembershipConflictError,
+    ) as error:
+        _command_error(error)
+
+    membership = result.membership
+    Output.success(
+        "Membership established: "
+        f"{_membership_identity(membership.family_id, membership.person_id)} "
+        f"state={membership.state.value}",
+    )
+
+
+@membership_app.command(name="get")
+def get_membership(
+    family_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Family UUID version 4."),
+    ],
+    person_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Person UUID."),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """Get one durable canonical Membership."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    canonical_person_id = _parse_person_id(person_id)
+    membership = CommandContext(
+        core_database_path=database,
+    ).get_membership.execute(
+        canonical_family_id,
+        canonical_person_id,
+    )
+
+    if membership is None:
+        Output.error(
+            "Membership "
+            f'"{_membership_identity(canonical_family_id, canonical_person_id)}" '
+            "not found.",
+        )
+        raise typer.Exit(code=1)
+
+    Output.info(
+        "Membership found: "
+        f"{_membership_identity(membership.family_id, membership.person_id)} "
+        f"state={membership.state.value}",
+    )
+
+
+@membership_app.command(name="end")
+def end_membership(
+    family_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Family UUID version 4."),
+    ],
+    person_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Person UUID."),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """End one durable canonical Membership."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    canonical_person_id = _parse_person_id(person_id)
+
+    try:
+        result = CommandContext(
+            core_database_path=database,
+        ).end_membership.execute(
+            canonical_family_id,
+            canonical_person_id,
+        )
+    except (
+        MembershipNotFoundError,
+        InvalidMembershipTransitionError,
+        MembershipConflictError,
+    ) as error:
+        _command_error(error)
+
+    membership = result.membership
+    Output.success(
+        "Membership ended: "
+        f"{_membership_identity(membership.family_id, membership.person_id)} "
+        f"state={membership.state.value}",
+    )
+
+
+@relationship_app.command(name="establish")
+def establish_relationship(
+    family_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Family UUID version 4."),
+    ],
+    source_person_id: Annotated[
+        str,
+        typer.Argument(..., help="Source Person UUID."),
+    ],
+    target_person_id: Annotated[
+        str,
+        typer.Argument(..., help="Target Person UUID."),
+    ],
+    relationship_type: Annotated[
+        str,
+        typer.Argument(
+            ...,
+            help="Relationship type: parent_of, child_of, spouse_of, sibling_of.",
+        ),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """Establish one durable canonical Relationship."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    canonical_source_person_id = _parse_person_id(source_person_id)
+    canonical_target_person_id = _parse_person_id(target_person_id)
+    canonical_relationship_type = _parse_relationship_type(relationship_type)
+
+    try:
+        result = CommandContext(
+            core_database_path=database,
+        ).establish_relationship.execute(
+            canonical_family_id,
+            canonical_source_person_id,
+            canonical_target_person_id,
+            canonical_relationship_type,
+        )
+    except (
+        FamilyNotFoundError,
+        PersonNotFoundError,
+        RelationshipConflictError,
+        ValueError,
+    ) as error:
+        _command_error(error)
+
+    relationship = result.relationship
+    Output.success(
+        "Relationship established: "
+        f"{_relationship_identity(
+            relationship.family_id,
+            relationship.source_person_id,
+            relationship.target_person_id,
+            relationship.relationship_type,
+        )} "
+        f"state={relationship.state.value}",
+    )
+
+
+@relationship_app.command(name="get")
+def get_relationship(
+    family_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Family UUID version 4."),
+    ],
+    source_person_id: Annotated[
+        str,
+        typer.Argument(..., help="Source Person UUID."),
+    ],
+    target_person_id: Annotated[
+        str,
+        typer.Argument(..., help="Target Person UUID."),
+    ],
+    relationship_type: Annotated[
+        str,
+        typer.Argument(
+            ...,
+            help="Relationship type: parent_of, child_of, spouse_of, sibling_of.",
+        ),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """Get one durable canonical Relationship."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    canonical_source_person_id = _parse_person_id(source_person_id)
+    canonical_target_person_id = _parse_person_id(target_person_id)
+    canonical_relationship_type = _parse_relationship_type(relationship_type)
+
+    try:
+        relationship = CommandContext(
+            core_database_path=database,
+        ).get_relationship.execute(
+            canonical_family_id,
+            canonical_source_person_id,
+            canonical_target_person_id,
+            canonical_relationship_type,
+        )
+    except ValueError as error:
+        _command_error(error)
+
+    if relationship is None:
+        Output.error(
+            "Relationship "
+            f'"{_relationship_identity(
+                canonical_family_id,
+                canonical_source_person_id,
+                canonical_target_person_id,
+                canonical_relationship_type,
+            )}" not found.',
+        )
+        raise typer.Exit(code=1)
+
+    Output.info(
+        "Relationship found: "
+        f"{_relationship_identity(
+            relationship.family_id,
+            relationship.source_person_id,
+            relationship.target_person_id,
+            relationship.relationship_type,
+        )} "
+        f"state={relationship.state.value}",
+    )
+
+
+@relationship_app.command(name="end")
+def end_relationship(
+    family_id: Annotated[
+        str,
+        typer.Argument(..., help="Canonical Family UUID version 4."),
+    ],
+    source_person_id: Annotated[
+        str,
+        typer.Argument(..., help="Source Person UUID."),
+    ],
+    target_person_id: Annotated[
+        str,
+        typer.Argument(..., help="Target Person UUID."),
+    ],
+    relationship_type: Annotated[
+        str,
+        typer.Argument(
+            ...,
+            help="Relationship type: parent_of, child_of, spouse_of, sibling_of.",
+        ),
+    ],
+    database: Annotated[
+        Path,
+        typer.Option(
+            "--database",
+            help="Explicit SQLite database path for Core Product durable state.",
+        ),
+    ],
+) -> None:
+    """End one durable canonical Relationship."""
+
+    canonical_family_id = _parse_family_id(family_id)
+    canonical_source_person_id = _parse_person_id(source_person_id)
+    canonical_target_person_id = _parse_person_id(target_person_id)
+    canonical_relationship_type = _parse_relationship_type(relationship_type)
+
+    try:
+        result = CommandContext(
+            core_database_path=database,
+        ).end_relationship.execute(
+            canonical_family_id,
+            canonical_source_person_id,
+            canonical_target_person_id,
+            canonical_relationship_type,
+        )
+    except (
+        RelationshipNotFoundError,
+        InvalidRelationshipTransitionError,
+        RelationshipConflictError,
+        ValueError,
+    ) as error:
+        _command_error(error)
+
+    relationship = result.relationship
+    Output.success(
+        "Relationship ended: "
+        f"{_relationship_identity(
+            relationship.family_id,
+            relationship.source_person_id,
+            relationship.target_person_id,
+            relationship.relationship_type,
+        )} "
+        f"state={relationship.state.value}",
     )

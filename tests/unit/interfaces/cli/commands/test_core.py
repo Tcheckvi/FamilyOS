@@ -9,7 +9,13 @@ from uuid import UUID, uuid1
 
 from typer.testing import CliRunner
 
-from familyos_cli.domain.family import Family, FamilyId
+from familyos_cli.domain.family import (
+    Family,
+    FamilyId,
+    Membership,
+    Relationship,
+    RelationshipType,
+)
 from familyos_cli.domain.person import Person, PersonId
 from familyos_cli.interfaces.cli.app import app
 from familyos_cli.interfaces.cli.commands.core import core_app
@@ -159,3 +165,275 @@ def test_family_get_rejects_non_v4_uuid(tmp_path: Path) -> None:
 
     assert result.exit_code == 2
     assert "family_id must be a valid UUID version 4" in result.output
+
+
+def test_core_help_registers_membership_and_relationship_groups() -> None:
+    result = runner.invoke(core_app, ["--help"])
+
+    assert result.exit_code == 0
+    assert "membership" in result.stdout
+    assert "relationship" in result.stdout
+
+
+def test_membership_establish_requires_explicit_database() -> None:
+    result = runner.invoke(
+        core_app,
+        ["membership", "establish", str(FAMILY_UUID), str(PERSON_UUID)],
+    )
+
+    assert result.exit_code == 2
+    assert "--database" in result.output
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_membership_establish_delegates_to_context(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    family_id = FamilyId(FAMILY_UUID)
+    person_id = PersonId(PERSON_UUID)
+    membership = Membership.establish(family_id, person_id)
+    context = context_type.return_value
+    context.establish_membership.execute.return_value = SimpleNamespace(
+        membership=membership,
+    )
+
+    result = runner.invoke(
+        core_app,
+        [
+            "membership",
+            "establish",
+            str(FAMILY_UUID),
+            str(PERSON_UUID),
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "Membership established" in result.stdout
+    assert "state=pending" in result.stdout
+    context_type.assert_called_once_with(core_database_path=database)
+    context.establish_membership.execute.assert_called_once_with(
+        family_id,
+        person_id,
+    )
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_membership_get_returns_nonzero_for_absence(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    context = context_type.return_value
+    context.get_membership.execute.return_value = None
+
+    result = runner.invoke(
+        core_app,
+        [
+            "membership",
+            "get",
+            str(FAMILY_UUID),
+            str(PERSON_UUID),
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 1
+    assert "Membership" in result.output
+    assert "not found" in result.output
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_membership_end_delegates_to_context(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    family_id = FamilyId(FAMILY_UUID)
+    person_id = PersonId(PERSON_UUID)
+    membership = Membership.establish(family_id, person_id).end()
+    context = context_type.return_value
+    context.end_membership.execute.return_value = SimpleNamespace(
+        membership=membership,
+    )
+
+    result = runner.invoke(
+        core_app,
+        [
+            "membership",
+            "end",
+            str(FAMILY_UUID),
+            str(PERSON_UUID),
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "Membership ended" in result.stdout
+    assert "state=ended" in result.stdout
+    context.end_membership.execute.assert_called_once_with(
+        family_id,
+        person_id,
+    )
+
+
+def test_relationship_establish_requires_explicit_database() -> None:
+    result = runner.invoke(
+        core_app,
+        [
+            "relationship",
+            "establish",
+            str(FAMILY_UUID),
+            str(PERSON_UUID),
+            "33333333-3333-4333-8333-333333333333",
+            "parent_of",
+        ],
+    )
+
+    assert result.exit_code == 2
+    assert "--database" in result.output
+
+
+def test_relationship_rejects_unknown_type(tmp_path: Path) -> None:
+    result = runner.invoke(
+        core_app,
+        [
+            "relationship",
+            "get",
+            str(FAMILY_UUID),
+            str(PERSON_UUID),
+            "33333333-3333-4333-8333-333333333333",
+            "unknown",
+            "--database",
+            str(tmp_path / "core.db"),
+        ],
+    )
+
+    assert result.exit_code == 2
+    assert "relationship_type must be one of" in result.output
+    assert "parent_of" in result.output
+    assert "child_of" in result.output
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_relationship_establish_delegates_to_context_and_reports_canonical_form(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    family_id = FamilyId(FAMILY_UUID)
+    low = PersonId(UUID("00000000-0000-4000-8000-000000000001"))
+    high = PersonId(UUID("ffffffff-ffff-4fff-8fff-ffffffffffff"))
+    relationship = Relationship.establish(
+        family_id,
+        high,
+        low,
+        RelationshipType.CHILD_OF,
+    )
+    context = context_type.return_value
+    context.establish_relationship.execute.return_value = SimpleNamespace(
+        relationship=relationship,
+    )
+
+    result = runner.invoke(
+        core_app,
+        [
+            "relationship",
+            "establish",
+            str(FAMILY_UUID),
+            str(high),
+            str(low),
+            "child_of",
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "Relationship established" in result.stdout
+    assert "parent_of" in result.stdout
+    assert "state=established" in result.stdout
+    context.establish_relationship.execute.assert_called_once_with(
+        family_id,
+        high,
+        low,
+        RelationshipType.CHILD_OF,
+    )
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_relationship_get_returns_nonzero_for_absence(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    context = context_type.return_value
+    context.get_relationship.execute.return_value = None
+
+    result = runner.invoke(
+        core_app,
+        [
+            "relationship",
+            "get",
+            str(FAMILY_UUID),
+            str(PERSON_UUID),
+            "33333333-3333-4333-8333-333333333333",
+            "parent_of",
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 1
+    assert "Relationship" in result.output
+    assert "not found" in result.output
+
+
+@patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
+def test_relationship_end_delegates_to_context(
+    context_type: Mock,
+    tmp_path: Path,
+) -> None:
+    database = tmp_path / "core.db"
+    family_id = FamilyId(FAMILY_UUID)
+    low = PersonId(UUID("00000000-0000-4000-8000-000000000001"))
+    high = PersonId(UUID("ffffffff-ffff-4fff-8fff-ffffffffffff"))
+    relationship = Relationship.establish(
+        family_id,
+        low,
+        high,
+        RelationshipType.PARENT_OF,
+    ).end()
+    context = context_type.return_value
+    context.end_relationship.execute.return_value = SimpleNamespace(
+        relationship=relationship,
+    )
+
+    result = runner.invoke(
+        core_app,
+        [
+            "relationship",
+            "end",
+            str(FAMILY_UUID),
+            str(low),
+            str(high),
+            "parent_of",
+            "--database",
+            str(database),
+        ],
+    )
+
+    assert result.exit_code == 0
+    assert "Relationship ended" in result.stdout
+    assert "state=ended" in result.stdout
+    context.end_relationship.execute.assert_called_once_with(
+        family_id,
+        low,
+        high,
+        RelationshipType.PARENT_OF,
+    )

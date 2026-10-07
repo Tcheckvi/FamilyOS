@@ -72,11 +72,23 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     get_person = Mock()
     create_family = Mock()
     get_family = Mock()
+    establish_membership = Mock()
+    get_membership = Mock()
+    end_membership = Mock()
+    establish_relationship = Mock()
+    get_relationship = Mock()
+    end_relationship = Mock()
 
     container.create_person_use_case.return_value = create_person
     container.get_person_use_case.return_value = get_person
     container.create_family_use_case.return_value = create_family
     container.get_family_use_case.return_value = get_family
+    container.establish_membership_use_case.return_value = establish_membership
+    container.get_membership_use_case.return_value = get_membership
+    container.end_membership_use_case.return_value = end_membership
+    container.establish_relationship_use_case.return_value = establish_relationship
+    container.get_relationship_use_case.return_value = get_relationship
+    container.end_relationship_use_case.return_value = end_relationship
 
     context = CommandContext(container=container)
 
@@ -88,8 +100,26 @@ def test_core_product_use_cases_are_exposed_and_cached() -> None:
     assert context.create_family is create_family
     assert context.get_family is get_family
     assert context.get_family is get_family
+    assert context.establish_membership is establish_membership
+    assert context.establish_membership is establish_membership
+    assert context.get_membership is get_membership
+    assert context.get_membership is get_membership
+    assert context.end_membership is end_membership
+    assert context.end_membership is end_membership
+    assert context.establish_relationship is establish_relationship
+    assert context.establish_relationship is establish_relationship
+    assert context.get_relationship is get_relationship
+    assert context.get_relationship is get_relationship
+    assert context.end_relationship is end_relationship
+    assert context.end_relationship is end_relationship
 
     container.create_person_use_case.assert_called_once_with()
     container.get_person_use_case.assert_called_once_with()
     container.create_family_use_case.assert_called_once_with()
     container.get_family_use_case.assert_called_once_with()
+    container.establish_membership_use_case.assert_called_once_with()
+    container.get_membership_use_case.assert_called_once_with()
+    container.end_membership_use_case.assert_called_once_with()
+    container.establish_relationship_use_case.assert_called_once_with()
+    container.get_relationship_use_case.assert_called_once_with()
+    container.end_relationship_use_case.assert_called_once_with()
