@@ -3,6 +3,7 @@
 import typer
 
 from familyos_cli.interfaces.cli.commands.build import build
+from familyos_cli.interfaces.cli.commands.core import core_app
 from familyos_cli.interfaces.cli.commands.create import create_app
 from familyos_cli.interfaces.cli.commands.generation import (
     generation_app,
@@ -23,6 +24,11 @@ app = typer.Typer(
 app.add_typer(
     create_app,
     name="create",
+)
+
+app.add_typer(
+    core_app,
+    name="core",
 )
 
 app.add_typer(
