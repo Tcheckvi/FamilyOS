@@ -1,10 +1,10 @@
 # Operations Framework
 
-# EPIC-OPS-001
+## EPIC-OPS-001
 
-## Validation and Release
+### Validation and Release
 
-## Overview
+### Overview
 
 This document defines the final validation and release requirements for EPIC-OPS-001 — Operations Framework.
 
@@ -18,7 +18,7 @@ Its completion criteria therefore focus on architectural sufficiency and impleme
 
 ---
 
-# Validation Objectives
+## Validation Objectives
 
 EPIC-OPS-001 validation must confirm that the framework:
 
@@ -36,7 +36,7 @@ EPIC-OPS-001 validation must confirm that the framework:
 
 ---
 
-# Validation Philosophy
+## Validation Philosophy
 
 The Operations Framework is considered valid when FamilyOS has enough operational architecture to implement runtime management without requiring another major documentation phase.
 
@@ -60,7 +60,7 @@ Operational capability is.
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 Validation covers:
 
@@ -82,7 +82,7 @@ Validation covers:
 
 ---
 
-# Canonical Documents
+## Canonical Documents
 
 The canonical EPIC-OPS-001 documentation set is:
 
@@ -103,7 +103,7 @@ Exactly these 10 documents constitute the compact framework baseline.
 
 ---
 
-# Completeness Validation
+## Completeness Validation
 
 The framework is complete when:
 
@@ -116,7 +116,7 @@ The framework is complete when:
 
 ---
 
-# Document Consistency
+## Document Consistency
 
 Documents SHOULD use consistent terminology for:
 
@@ -137,7 +137,7 @@ Terms should not silently change meaning between documents.
 
 ---
 
-# Runtime Model Validation
+## Runtime Model Validation
 
 The framework must define how FamilyOS transitions from release into active execution.
 
@@ -163,7 +163,7 @@ Operational Evidence
 
 ---
 
-# Runtime Identity Validation
+## Runtime Identity Validation
 
 The architecture SHOULD support determining:
 
@@ -176,7 +176,7 @@ Runtime identity must remain traceable enough for diagnosis.
 
 ---
 
-# Lifecycle Validation
+## Lifecycle Validation
 
 Operational lifecycle semantics must be explicit enough to support implementation.
 
@@ -198,7 +198,7 @@ The semantics must still remain understandable.
 
 ---
 
-# Startup Validation
+## Startup Validation
 
 The framework must establish that critical runtime prerequisites are checked before readiness is declared.
 
@@ -213,7 +213,7 @@ Potential startup requirements include:
 
 ---
 
-# Shutdown Validation
+## Shutdown Validation
 
 The framework should define controlled shutdown expectations where stateful runtime behavior requires them.
 
@@ -227,7 +227,7 @@ Validation should confirm that shutdown considers:
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 The framework must establish that critical runtime configuration is validated.
 
@@ -243,7 +243,7 @@ rather than silent insecure or unstable fallback.
 
 ---
 
-# Environment Validation
+## Environment Validation
 
 Where multiple environments exist, operational actions should be capable of identifying the intended environment.
 
@@ -251,7 +251,7 @@ The framework should prevent environment ambiguity from becoming a normal operat
 
 ---
 
-# Dependency Validation
+## Dependency Validation
 
 Operational dependencies should be distinguishable where their criticality affects behavior.
 
@@ -265,7 +265,7 @@ Conditional Dependency
 
 ---
 
-# Failure Isolation Validation
+## Failure Isolation Validation
 
 The architecture should favor containing failure within the smallest practical operational boundary.
 
@@ -283,7 +283,7 @@ where architecture permits.
 
 ---
 
-# Health Validation
+## Health Validation
 
 The framework must define a coherent health model.
 
@@ -300,7 +300,7 @@ Health should describe operational capability rather than merely process existen
 
 ---
 
-# Readiness Validation
+## Readiness Validation
 
 Readiness must remain conceptually distinct from health and liveness.
 
@@ -308,7 +308,7 @@ The framework should support determining whether a component is able to accept a
 
 ---
 
-# Liveness Validation
+## Liveness Validation
 
 Liveness should represent whether an operational unit remains capable of progressing.
 
@@ -318,7 +318,7 @@ The distinction must remain explicit.
 
 ---
 
-# Observability Integration Validation
+## Observability Integration Validation
 
 EPIC-OPS-001 MUST reuse the Observability Framework.
 
@@ -335,7 +335,7 @@ Operations must not define a competing telemetry architecture.
 
 ---
 
-# Security Integration Validation
+## Security Integration Validation
 
 EPIC-OPS-001 MUST apply EPIC-SEC-001 controls to privileged operational activity.
 
@@ -351,7 +351,7 @@ Security Events
 
 ---
 
-# Privileged Action Validation
+## Privileged Action Validation
 
 High-impact operations should be expressible through controlled flows.
 
@@ -375,7 +375,7 @@ Validation should confirm that these actions can be:
 
 ---
 
-# Incident Model Validation
+## Incident Model Validation
 
 The framework must define when operational failure becomes a managed incident.
 
@@ -392,7 +392,7 @@ These terms must not be treated as equivalent.
 
 ---
 
-# Incident Severity Validation
+## Incident Severity Validation
 
 A lightweight severity model should exist.
 
@@ -409,7 +409,7 @@ Severity should reflect impact and urgency.
 
 ---
 
-# Incident Lifecycle Validation
+## Incident Lifecycle Validation
 
 The framework must define a usable incident-response lifecycle.
 
@@ -437,7 +437,7 @@ Review
 
 ---
 
-# Containment Validation
+## Containment Validation
 
 Containment must be recognized as a separate operational objective from full recovery.
 
@@ -445,7 +445,7 @@ The framework should support limiting ongoing damage before complete resolution.
 
 ---
 
-# Recovery Validation
+## Recovery Validation
 
 The framework must define multiple recovery strategies rather than relying on restart alone.
 
@@ -463,7 +463,7 @@ restore
 
 ---
 
-# Recovery Verification
+## Recovery Verification
 
 This is a mandatory framework invariant.
 
@@ -485,7 +485,7 @@ Recovery Confirmed
 
 ---
 
-# Failed Recovery Validation
+## Failed Recovery Validation
 
 Failed recovery must remain visible.
 
@@ -495,7 +495,7 @@ The framework should support reassessment and escalation.
 
 ---
 
-# Rollback Integration Validation
+## Rollback Integration Validation
 
 Release rollback remains governed by EPIC-REL-001.
 
@@ -505,7 +505,7 @@ Validation should confirm this boundary.
 
 ---
 
-# Backup and Restore Validation
+## Backup and Restore Validation
 
 Where persistent data requires backup, the framework must recognize that backup creation alone is insufficient.
 
@@ -521,7 +521,7 @@ Recoverability
 
 ---
 
-# Reliability Validation
+## Reliability Validation
 
 The framework must define reliability as more than uptime.
 
@@ -541,7 +541,7 @@ Operational Visibility
 
 ---
 
-# Performance Validation
+## Performance Validation
 
 The framework should establish that performance is measured before major optimization.
 
@@ -555,7 +555,7 @@ Operational performance may consider:
 
 ---
 
-# Capacity Validation
+## Capacity Validation
 
 Capacity management should account for relevant resources such as:
 
@@ -572,7 +572,7 @@ The framework does not require advanced automatic scaling.
 
 ---
 
-# Resource Bound Validation
+## Resource Bound Validation
 
 The framework should discourage uncontrolled resource growth.
 
@@ -585,7 +585,7 @@ Examples include:
 
 ---
 
-# Retry Validation
+## Retry Validation
 
 Retries should be:
 
@@ -597,13 +597,13 @@ The framework must explicitly reject infinite retry behavior.
 
 ---
 
-# Timeout Validation
+## Timeout Validation
 
 External or potentially blocking operations should support bounded execution where indefinite waiting creates operational risk.
 
 ---
 
-# Automation Validation
+## Automation Validation
 
 Operational automation must follow explicit contracts.
 
@@ -625,7 +625,7 @@ Automation without verification is incomplete.
 
 ---
 
-# Automation Guardrail Validation
+## Automation Guardrail Validation
 
 Automated operations should define:
 
@@ -639,7 +639,7 @@ Automated operations should define:
 
 ---
 
-# Human Approval Validation
+## Human Approval Validation
 
 The framework must preserve the possibility of human approval for high-risk or destructive actions.
 
@@ -647,7 +647,7 @@ Automation must not erase meaningful decision boundaries.
 
 ---
 
-# Governance Validation
+## Governance Validation
 
 Operational governance should remain proportional.
 
@@ -664,7 +664,7 @@ without requiring heavyweight processes for low-risk work.
 
 ---
 
-# Operational Ownership Validation
+## Operational Ownership Validation
 
 Operationally significant components should support identifiable ownership.
 
@@ -680,7 +680,7 @@ Who responds when it fails?
 
 ---
 
-# Security Failure Validation
+## Security Failure Validation
 
 When required operational security controls fail, the protected action should not proceed.
 
@@ -696,7 +696,7 @@ Evidence
 
 ---
 
-# Secret Protection Validation
+## Secret Protection Validation
 
 Operational interfaces and evidence MUST NOT intentionally expose:
 
@@ -708,7 +708,7 @@ Operational interfaces and evidence MUST NOT intentionally expose:
 
 ---
 
-# Operational Evidence Validation
+## Operational Evidence Validation
 
 Significant operational activity should be capable of producing enough evidence to answer:
 
@@ -730,7 +730,7 @@ Evidence must remain proportional and privacy-safe.
 
 ---
 
-# Evidence Correlation Validation
+## Evidence Correlation Validation
 
 Operational evidence should support correlation where useful through identifiers such as:
 
@@ -746,7 +746,7 @@ Not every signal requires every identifier.
 
 ---
 
-# Privacy Validation
+## Privacy Validation
 
 Operational evidence should minimize private family content.
 
@@ -754,7 +754,7 @@ Diagnostics and incident records should prefer operational metadata over unneces
 
 ---
 
-# Plugin Operations Validation
+## Plugin Operations Validation
 
 Operationally relevant plugin behavior should align with common framework semantics.
 
@@ -769,7 +769,7 @@ Validation should confirm the architecture supports:
 
 ---
 
-# External Integration Validation
+## External Integration Validation
 
 External systems must remain independent operational trust boundaries.
 
@@ -784,7 +784,7 @@ The framework should define expectations around:
 
 ---
 
-# Framework Reuse Validation
+## Framework Reuse Validation
 
 EPIC-OPS-001 must not duplicate existing FamilyOS frameworks.
 
@@ -804,7 +804,7 @@ Operations integrates them at runtime.
 
 ---
 
-# Architecture Simplicity Validation
+## Architecture Simplicity Validation
 
 The framework must remain proportional to actual FamilyOS complexity.
 
@@ -818,7 +818,7 @@ Validation should reject unnecessary assumptions such as:
 
 ---
 
-# Implementation Readiness
+## Implementation Readiness
 
 The framework is implementation-ready when the core operational contracts are sufficiently clear.
 
@@ -841,7 +841,7 @@ The final implementation may use fewer abstractions if simpler designs satisfy t
 
 ---
 
-# Minimal Implementation Validation
+## Minimal Implementation Validation
 
 The minimum implementation target should support:
 
@@ -865,7 +865,7 @@ This is sufficient for initial operational capability.
 
 ---
 
-# Local Development Validation
+## Local Development Validation
 
 Core operations behavior should remain testable and usable locally.
 
@@ -879,7 +879,7 @@ FamilyOS should not require production infrastructure to validate:
 
 ---
 
-# Testability Validation
+## Testability Validation
 
 Operational contracts should support deterministic tests.
 
@@ -893,7 +893,7 @@ Tests may use:
 
 ---
 
-# Static Quality Validation
+## Static Quality Validation
 
 Applicable implementation must continue to satisfy existing FamilyOS quality gates.
 
@@ -909,7 +909,7 @@ remain required for implementation scope.
 
 ---
 
-# Operational Test Categories
+## Operational Test Categories
 
 Future implementation SHOULD support testing across:
 
@@ -928,7 +928,7 @@ Not every operational scenario needs a large end-to-end suite.
 
 ---
 
-# Failure Injection Validation
+## Failure Injection Validation
 
 Controlled failure injection MAY be used to validate:
 
@@ -942,7 +942,7 @@ Failure injection should remain deterministic.
 
 ---
 
-# Release Validation
+## Release Validation
 
 Before EPIC-OPS-001 itself is released, validation must confirm that the framework documentation is complete and internally coherent.
 
@@ -950,7 +950,7 @@ This is a framework release, not a claim that every future operational feature h
 
 ---
 
-# Framework Release Meaning
+## Framework Release Meaning
 
 Release of EPIC-OPS-001 means:
 
@@ -972,7 +972,7 @@ Enterprise Operations Infrastructure Complete
 
 ---
 
-# Target Release
+## Target Release
 
 The intended framework release is:
 
@@ -988,7 +988,7 @@ v5.0.0-security-framework
 
 ---
 
-# Predecessor Validation
+## Predecessor Validation
 
 Before release, the Operations Framework should reference its predecessor correctly.
 
@@ -1001,7 +1001,7 @@ v5.0.0-security-framework
 
 ---
 
-# Release Preconditions
+## Release Preconditions
 
 Before tagging the framework release:
 
@@ -1017,7 +1017,7 @@ Before tagging the framework release:
 
 ---
 
-# Document Audit
+## Document Audit
 
 The final documentation audit SHOULD verify:
 
@@ -1035,7 +1035,7 @@ Predecessor release
 
 ---
 
-# Git Staging Validation
+## Git Staging Validation
 
 Only the intended EPIC-OPS-001 files should be staged for the framework commit.
 
@@ -1049,7 +1049,7 @@ with exactly 10 canonical Markdown files.
 
 ---
 
-# Whitespace Validation
+## Whitespace Validation
 
 Before commit:
 
@@ -1061,7 +1061,7 @@ must produce no unexpected whitespace errors.
 
 ---
 
-# Commit Validation
+## Commit Validation
 
 The framework should be committed with a clear semantic message.
 
@@ -1075,7 +1075,7 @@ The resulting commit should contain exactly the intended framework documents.
 
 ---
 
-# Working Tree Validation
+## Working Tree Validation
 
 After commit:
 
@@ -1093,7 +1093,7 @@ before the release tag is created.
 
 ---
 
-# Release Tag
+## Release Tag
 
 The intended annotated tag is:
 
@@ -1109,7 +1109,7 @@ EPIC-OPS-001 Operations Framework completed
 
 ---
 
-# Tag Target Validation
+## Tag Target Validation
 
 Before publication, the tag must point to the intended framework commit.
 
@@ -1122,7 +1122,7 @@ git rev-list -n 1 v5.1.0-operations-framework
 
 ---
 
-# Branch Publication
+## Branch Publication
 
 The framework commit must be published to the intended FamilyOS branch before or together with the release tag.
 
@@ -1134,7 +1134,7 @@ feature/foundation-engineering-docs
 
 ---
 
-# Tag Publication
+## Tag Publication
 
 The annotated tag must be pushed explicitly.
 
@@ -1142,7 +1142,7 @@ Successful tag publication establishes the immutable framework release marker.
 
 ---
 
-# Remote Branch Validation
+## Remote Branch Validation
 
 After publication, local and remote branch targets must match.
 
@@ -1156,7 +1156,7 @@ Remote Branch HEAD
 
 ---
 
-# Remote Tag Validation
+## Remote Tag Validation
 
 For an annotated tag, remote verification may produce:
 
@@ -1169,7 +1169,7 @@ The dereferenced `^{}` target must match the framework commit.
 
 ---
 
-# Final Release State
+## Final Release State
 
 The desired final state is:
 
@@ -1187,7 +1187,7 @@ Working Tree    Clean
 
 ---
 
-# Framework Definition of Done
+## Framework Definition of Done
 
 EPIC-OPS-001 is complete when:
 
@@ -1207,7 +1207,7 @@ EPIC-OPS-001 is complete when:
 
 ---
 
-# Operational Architecture Definition of Done
+## Operational Architecture Definition of Done
 
 The operational architecture is sufficiently complete when FamilyOS has explicit models for:
 
@@ -1229,7 +1229,7 @@ Automation
 
 ---
 
-# Incident Definition of Done
+## Incident Definition of Done
 
 Incident architecture is complete when FamilyOS can conceptually:
 
@@ -1243,7 +1243,7 @@ Incident architecture is complete when FamilyOS can conceptually:
 
 ---
 
-# Reliability Definition of Done
+## Reliability Definition of Done
 
 Reliability architecture is complete when the framework establishes:
 
@@ -1257,7 +1257,7 @@ Reliability architecture is complete when the framework establishes:
 
 ---
 
-# Security Definition of Done
+## Security Definition of Done
 
 Operational security is complete at framework level when:
 
@@ -1270,7 +1270,7 @@ Operational security is complete at framework level when:
 
 ---
 
-# Automation Definition of Done
+## Automation Definition of Done
 
 Operational automation is sufficiently defined when:
 
@@ -1284,7 +1284,7 @@ Operational automation is sufficiently defined when:
 
 ---
 
-# Non-Goals of Validation
+## Non-Goals of Validation
 
 Framework validation does not require:
 
@@ -1300,7 +1300,7 @@ Those are implementation or operational maturity concerns, not prerequisites for
 
 ---
 
-# Post-Release Rule
+## Post-Release Rule
 
 After EPIC-OPS-001 is released, FamilyOS SHOULD stop adding broad foundation frameworks unless a concrete architectural gap requires one.
 
@@ -1324,7 +1324,7 @@ This rule exists to prevent documentation from replacing product development.
 
 ---
 
-# Post-Framework Transition
+## Post-Framework Transition
 
 EPIC-OPS-001 represents the final planned broad engineering foundation in this sequence.
 
@@ -1354,7 +1354,7 @@ IMPLEMENTATION
 
 ---
 
-# Future Framework Changes
+## Future Framework Changes
 
 Future changes to EPIC-OPS-001 should occur because:
 
@@ -1367,7 +1367,7 @@ Documentation expansion should not occur merely because additional topics could 
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 EPIC-OPS-001 validation succeeds when FamilyOS can confidently state:
 
@@ -1397,7 +1397,7 @@ We know how operational evidence feeds engineering.
 
 ---
 
-# Release Decision
+## Release Decision
 
 The framework may be released when all validation requirements are satisfied and no unresolved architecture issue materially prevents implementation.
 
@@ -1417,7 +1417,7 @@ RELEASE
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After release of EPIC-OPS-001, FamilyOS will possess a complete cross-cutting foundation for moving from engineered software to controlled runtime operation.
 
@@ -1437,7 +1437,7 @@ its runtime behavior.
 
 ---
 
-# Conclusion
+## Conclusion
 
 EPIC-OPS-001 closes the planned sequence of broad FamilyOS engineering foundations.
 

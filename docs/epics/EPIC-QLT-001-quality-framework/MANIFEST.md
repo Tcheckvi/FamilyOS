@@ -16,7 +16,7 @@
 
 ---
 
-# Purpose
+## Purpose
 
 This manifest defines the authoritative document inventory and structural contract of EPIC-QLT-001 — Quality Framework.
 
@@ -37,7 +37,7 @@ The manifest SHALL remain synchronized with the physical repository structure.
 
 ---
 
-# Canonical Structure
+## Canonical Structure
 
 EPIC-QLT-001 contains two document classes:
 
@@ -69,7 +69,7 @@ Therefore, the canonical EPIC inventory consists of:
 
 ---
 
-# Numbered Document Inventory
+## Numbered Document Inventory
 
 | No. | Document                                   | Purpose                                                                                                                                 |
 | --: | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -102,7 +102,7 @@ Therefore, the canonical EPIC inventory consists of:
 
 ---
 
-# Control Document Inventory
+## Control Document Inventory
 
 | Document              | Purpose                                                                                                                                 |
 | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -116,7 +116,7 @@ Therefore, the canonical EPIC inventory consists of:
 
 ---
 
-# Structural Requirements
+## Structural Requirements
 
 The canonical numbered documentation SHALL satisfy all of the following:
 
@@ -135,7 +135,7 @@ A structural deviation SHALL be treated as a documentation integrity finding unt
 
 ---
 
-# Canonical Numbering
+## Canonical Numbering
 
 The authoritative numbered sequence is:
 
@@ -172,11 +172,11 @@ This sequence is authoritative for EPIC-QLT-001 version 1.0.0.
 
 ---
 
-# Document Responsibility Model
+## Document Responsibility Model
 
 The documentation is organized into several conceptual layers.
 
-## Foundation
+### Foundation
 
 ```text
 00 EPIC
@@ -189,7 +189,7 @@ These documents explain why the framework exists and establish its foundational 
 
 ---
 
-## Quality Architecture and Model
+### Quality Architecture and Model
 
 ```text
 04 Quality Architecture
@@ -202,7 +202,7 @@ These documents define how quality concepts are organized and represented.
 
 ---
 
-## Measurement and Evidence
+### Measurement and Evidence
 
 ```text
 08 Quality Metrics
@@ -213,7 +213,7 @@ These documents define how quality state becomes measurable, observable, and sup
 
 ---
 
-## Risk and Quality State Management
+### Risk and Quality State Management
 
 ```text
 10 Quality Risk Management
@@ -225,7 +225,7 @@ These documents define how quality problems, risks, deficiencies, and target-lev
 
 ---
 
-## Automation and Enforcement
+### Automation and Enforcement
 
 ```text
 13 Quality Automation
@@ -238,7 +238,7 @@ These documents define how quality evaluation becomes automated, observable, enf
 
 ---
 
-## Improvement and Governance
+### Improvement and Governance
 
 ```text
 17 Continuous Improvement
@@ -250,7 +250,7 @@ These documents define how quality improves, how authority is exercised, and how
 
 ---
 
-## Evolution and Closure
+### Evolution and Closure
 
 ```text
 20 Roadmap
@@ -265,7 +265,7 @@ These documents define future evolution, dependencies, validation, consolidation
 
 ---
 
-# Normative Hierarchy
+## Normative Hierarchy
 
 The Quality Framework documentation follows this general authority hierarchy:
 
@@ -291,11 +291,11 @@ EPIC-QLT-001 SHALL not silently redefine responsibilities owned by another autho
 
 ---
 
-# Framework Relationships
+## Framework Relationships
 
 The Quality Framework operates in coordination with other FamilyOS engineering frameworks.
 
-## Engineering Foundation
+### Engineering Foundation
 
 `EPIC-ENG-001 — Engineering Foundation`
 
@@ -303,7 +303,7 @@ Provides the engineering principles, architecture expectations, development foun
 
 ---
 
-## Testing Framework
+### Testing Framework
 
 `EPIC-TST-001 — Testing Framework`
 
@@ -313,7 +313,7 @@ The Quality Framework may consume test results as Quality Evidence but SHALL not
 
 ---
 
-## Documentation Framework
+### Documentation Framework
 
 `EPIC-DOC-001 — Documentation Framework`
 
@@ -323,7 +323,7 @@ The Quality Framework may evaluate documentation quality using those authoritati
 
 ---
 
-## Build Framework
+### Build Framework
 
 `EPIC-BLD-001 — Build Framework`
 
@@ -331,7 +331,7 @@ Provides build execution and build evidence that may participate in quality asse
 
 ---
 
-## Release Framework
+### Release Framework
 
 `EPIC-REL-001 — Release Framework`
 
@@ -341,7 +341,7 @@ The Quality Framework does not replace release governance.
 
 ---
 
-## Plugin Compliance Framework
+### Plugin Compliance Framework
 
 `EPIC-PLUGIN-002 — Plugin Compliance Framework`
 
@@ -351,7 +351,7 @@ The Quality Framework may consume plugin compliance results but SHALL not duplic
 
 ---
 
-# Synchronization Requirements
+## Synchronization Requirements
 
 The following files SHALL remain synchronized with this manifest:
 
@@ -380,7 +380,7 @@ Synchronization includes, where applicable:
 
 ---
 
-# Completeness Requirements
+## Completeness Requirements
 
 EPIC-QLT-001 is structurally complete only when:
 
@@ -400,7 +400,7 @@ EPIC-QLT-001 is structurally complete only when:
 
 ---
 
-# Change Control
+## Change Control
 
 Changes to the canonical inventory require deliberate review.
 
@@ -425,7 +425,7 @@ Such changes SHALL:
 
 ---
 
-# Document Addition Policy
+## Document Addition Policy
 
 New numbered documents SHOULD NOT be added casually.
 
@@ -441,7 +441,7 @@ This protects the framework from unnecessary fragmentation.
 
 ---
 
-# Document Removal Policy
+## Document Removal Policy
 
 A canonical document SHALL NOT simply disappear.
 
@@ -463,7 +463,7 @@ Where historical traceability is required, deprecation is preferred over silent 
 
 ---
 
-# Naming Requirements
+## Naming Requirements
 
 Canonical numbered files use:
 
@@ -483,7 +483,7 @@ Control files use their established FamilyOS names and are not part of numbered 
 
 ---
 
-# Language Requirement
+## Language Requirement
 
 The normative Quality Framework documentation is written in English.
 
@@ -491,7 +491,7 @@ Technical identifiers, commands, source code, and externally defined names retai
 
 ---
 
-# Validation Responsibility
+## Validation Responsibility
 
 Structural validation should verify at minimum:
 
@@ -519,7 +519,7 @@ Lifecycle consistency
 
 ---
 
-# Repository Integrity
+## Repository Integrity
 
 The Quality Framework documentation SHALL remain suitable for version-controlled engineering governance.
 
@@ -535,7 +535,7 @@ Repository integrity requires:
 
 ---
 
-# Manifest Authority
+## Manifest Authority
 
 This manifest is the authoritative structural inventory for EPIC-QLT-001 version 1.0.0.
 
@@ -547,7 +547,7 @@ When the physical repository and these control artifacts disagree, the discrepan
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 EPIC-QLT-001 conforms to this manifest when:
 

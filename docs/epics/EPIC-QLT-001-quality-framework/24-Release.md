@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 24 Release
+## 24 Release
 
-## Overview
+### Overview
 
 This document defines the release model for EPIC-QLT-001 — Quality Framework.
 
@@ -30,7 +30,7 @@ It does not automatically imply that every quality mechanism described by the fr
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the release process is to provide a controlled transition from:
 
@@ -58,7 +58,7 @@ The release process ensures that the framework:
 
 ---
 
-# Release Principle
+## Release Principle
 
 The foundational principle is:
 
@@ -70,7 +70,7 @@ It should represent an explicit engineering decision that the framework is ready
 
 ---
 
-# Release Scope
+## Release Scope
 
 The release scope includes the normative EPIC-QLT-001 documentation set and associated control artifacts.
 
@@ -89,29 +89,29 @@ EPIC-QLT-001
 
 ---
 
-# Release Units
+## Release Units
 
 The Quality Framework may evolve through several release units.
 
-## Documentation Release
+### Documentation Release
 
 A Documentation Release establishes or updates the normative framework definition.
 
-## Implementation Release
+### Implementation Release
 
 An Implementation Release introduces executable quality capabilities aligned with the framework.
 
-## Policy Release
+### Policy Release
 
 A Policy Release changes authoritative quality requirements, profiles, gates, or governance semantics.
 
-## Maintenance Release
+### Maintenance Release
 
 A Maintenance Release corrects documentation or implementation defects without materially changing framework semantics.
 
 ---
 
-# Documentation Release
+## Documentation Release
 
 The first major EPIC-QLT-001 milestone is the Quality Framework Documentation Release.
 
@@ -146,7 +146,7 @@ Implementation Checklist
 
 ---
 
-# Documentation Release Outcome
+## Documentation Release Outcome
 
 After successful release, the documentation becomes the authoritative conceptual foundation for future Quality Framework implementation.
 
@@ -164,7 +164,7 @@ depending on actual implementation progress.
 
 ---
 
-# Implementation Release
+## Implementation Release
 
 Implementation releases should progressively realize the roadmap.
 
@@ -188,7 +188,7 @@ Each implementation release should preserve alignment with the normative framewo
 
 ---
 
-# Release Version
+## Release Version
 
 Every authoritative framework release should have a defined version.
 
@@ -208,7 +208,7 @@ The exact version should align with the FamilyOS Release Framework.
 
 ---
 
-# Version Semantics
+## Version Semantics
 
 A conceptual semantic versioning model may be:
 
@@ -227,7 +227,7 @@ The Release Framework remains authoritative for final versioning policy.
 
 ---
 
-# Initial Release
+## Initial Release
 
 The initial normative release of EPIC-QLT-001 may be considered:
 
@@ -248,7 +248,7 @@ The actual repository tag should be chosen according to the broader FamilyOS rel
 
 ---
 
-# Release Identity
+## Release Identity
 
 A Quality Framework release should be identifiable through:
 
@@ -264,7 +264,7 @@ This allows historical reconstruction.
 
 ---
 
-# Git Revision
+## Git Revision
 
 The release must bind to a specific Git revision.
 
@@ -280,7 +280,7 @@ Immutable Repository State
 
 ---
 
-# Release Tag
+## Release Tag
 
 The release should use an annotated Git tag according to FamilyOS release conventions.
 
@@ -294,7 +294,7 @@ The actual version must remain coordinated with repository-wide versioning.
 
 ---
 
-# Tag Principle
+## Tag Principle
 
 A release tag should only be created after validation has been completed successfully.
 
@@ -318,7 +318,7 @@ Tag
 
 ---
 
-# Release Candidate
+## Release Candidate
 
 Significant releases may use a release candidate state.
 
@@ -338,7 +338,7 @@ A release candidate should be sufficiently complete for final validation.
 
 ---
 
-# Release Candidate State
+## Release Candidate State
 
 A release candidate should have:
 
@@ -352,7 +352,7 @@ Validation Ready
 
 ---
 
-# Release Readiness
+## Release Readiness
 
 Release readiness requires more than file completeness.
 
@@ -386,7 +386,7 @@ Blocking Validation Findings
 
 ---
 
-# Release Readiness Checklist
+## Release Readiness Checklist
 
 A minimum release readiness checklist should include:
 
@@ -411,7 +411,7 @@ A minimum release readiness checklist should include:
 
 ---
 
-# Canonical Structure Validation
+## Canonical Structure Validation
 
 Before release, the canonical EPIC structure should be checked.
 
@@ -428,7 +428,7 @@ The resulting inventory should match the authoritative manifest.
 
 ---
 
-# Empty File Validation
+## Empty File Validation
 
 Before release:
 
@@ -443,7 +443,7 @@ should return no required normative documents.
 
 ---
 
-# Markdown Validation
+## Markdown Validation
 
 Markdown validation should confirm:
 
@@ -460,7 +460,7 @@ according to the Documentation Framework.
 
 ---
 
-# Reference Validation
+## Reference Validation
 
 Important references should be validated before release.
 
@@ -481,7 +481,7 @@ Unknown or obsolete normative references should be resolved.
 
 ---
 
-# Cross-Framework Validation
+## Cross-Framework Validation
 
 The release should confirm that EPIC-QLT-001 does not incorrectly duplicate responsibilities belonging to:
 
@@ -497,7 +497,7 @@ Architecture Foundation
 
 ---
 
-# Quality Model Validation
+## Quality Model Validation
 
 Core concepts should be coherent across the complete framework.
 
@@ -522,7 +522,7 @@ must have non-conflicting semantics.
 
 ---
 
-# Severity Validation
+## Severity Validation
 
 Severity semantics should remain consistent across the framework.
 
@@ -540,7 +540,7 @@ unless a specialized mapping is explicitly documented.
 
 ---
 
-# Lifecycle Validation
+## Lifecycle Validation
 
 Lifecycle semantics should be consistent for:
 
@@ -557,7 +557,7 @@ Automation
 
 ---
 
-# Governance Validation
+## Governance Validation
 
 The release should define sufficient authority for:
 
@@ -574,7 +574,7 @@ Framework Evolution
 
 ---
 
-# Release Validation Evidence
+## Release Validation Evidence
 
 Release validation should produce traceable evidence.
 
@@ -593,7 +593,7 @@ Framework Findings
 
 ---
 
-# Validation Record
+## Validation Record
 
 A release validation record may conceptually contain:
 
@@ -619,7 +619,7 @@ true
 
 ---
 
-# VALIDATION.md
+## VALIDATION.md
 
 The canonical `VALIDATION.md` control artifact should record the current validation state.
 
@@ -637,7 +637,7 @@ Validation State
 
 ---
 
-# Release Validation State
+## Release Validation State
 
 A release may use:
 
@@ -649,19 +649,19 @@ CONDITIONAL
 
 ---
 
-# READY
+## READY
 
 `READY` means all mandatory release criteria are satisfied.
 
 ---
 
-# NOT_READY
+## NOT_READY
 
 `NOT_READY` means at least one blocking release criterion remains unresolved.
 
 ---
 
-# CONDITIONAL
+## CONDITIONAL
 
 `CONDITIONAL` means release is permitted only through explicit governance acceptance of known non-blocking limitations.
 
@@ -669,7 +669,7 @@ For the initial normative Quality Framework release, unconditional readiness sho
 
 ---
 
-# Blocking Release Findings
+## Blocking Release Findings
 
 Potential blocking release findings include:
 
@@ -684,7 +684,7 @@ Unresolved Critical Validation Finding
 
 ---
 
-# Non-Blocking Release Findings
+## Non-Blocking Release Findings
 
 Potential non-blocking findings may include:
 
@@ -699,7 +699,7 @@ Such findings should remain documented.
 
 ---
 
-# Known Limitations
+## Known Limitations
 
 The release should clearly identify known limitations.
 
@@ -717,7 +717,7 @@ These are implementation gaps, not necessarily framework-definition defects.
 
 ---
 
-# Documentation vs Implementation Limitation
+## Documentation vs Implementation Limitation
 
 The release must preserve the distinction:
 
@@ -731,7 +731,7 @@ A capability may be validly defined before implementation exists.
 
 ---
 
-# Changelog
+## Changelog
 
 The framework changelog should describe release evolution.
 
@@ -763,7 +763,7 @@ The actual changelog format should follow FamilyOS Documentation and Release sta
 
 ---
 
-# Revision History
+## Revision History
 
 Revision history should preserve meaningful documentation evolution.
 
@@ -778,7 +778,7 @@ Status
 
 ---
 
-# EPIC Metadata
+## EPIC Metadata
 
 `EPIC.yaml` should reflect release status accurately.
 
@@ -800,7 +800,7 @@ The exact schema should follow FamilyOS EPIC conventions.
 
 ---
 
-# Status Transition
+## Status Transition
 
 A conceptual EPIC status transition may be:
 
@@ -818,7 +818,7 @@ The canonical FamilyOS status vocabulary remains authoritative.
 
 ---
 
-# Manifest Validation
+## Manifest Validation
 
 `MANIFEST.md` should identify the authoritative deliverables and normative hierarchy.
 
@@ -826,7 +826,7 @@ Before release, it should be synchronized with the actual EPIC structure.
 
 ---
 
-# README Validation
+## README Validation
 
 The EPIC README should provide discoverability and summarize:
 
@@ -840,7 +840,7 @@ Relationships
 
 ---
 
-# Release Notes
+## Release Notes
 
 Release notes should communicate meaningful framework changes to FamilyOS engineers.
 
@@ -853,7 +853,7 @@ They should focus on:
 
 ---
 
-# Release Notes vs Changelog
+## Release Notes vs Changelog
 
 The changelog records changes.
 
@@ -863,7 +863,7 @@ Both may coexist.
 
 ---
 
-# Release Package
+## Release Package
 
 If a release package is generated, it may contain:
 
@@ -878,13 +878,13 @@ The repository remains the authoritative source unless FamilyOS governance defin
 
 ---
 
-# Release Artifact Integrity
+## Release Artifact Integrity
 
 If packaged artifacts are produced, their contents should correspond to the tagged Git revision.
 
 ---
 
-# Release Branch
+## Release Branch
 
 The Quality Framework release should follow the repository's established branch and merge workflow.
 
@@ -892,7 +892,7 @@ The Release document should not redefine branch strategy.
 
 ---
 
-# Merge Readiness
+## Merge Readiness
 
 Before final integration, verify:
 
@@ -904,7 +904,7 @@ Unexpected uncommitted or unrelated changes should be resolved.
 
 ---
 
-# Commit Structure
+## Commit Structure
 
 The final release may use one or more commits depending on repository workflow.
 
@@ -912,7 +912,7 @@ A release commit should be understandable and scoped appropriately.
 
 ---
 
-# Commit Message
+## Commit Message
 
 A conceptual commit message may be:
 
@@ -924,7 +924,7 @@ or another repository-compliant form.
 
 ---
 
-# Tagging
+## Tagging
 
 After release readiness is confirmed, the release may be tagged.
 
@@ -939,7 +939,7 @@ The exact tag must follow current FamilyOS release naming and version sequence.
 
 ---
 
-# Tag Verification
+## Tag Verification
 
 After tagging:
 
@@ -951,7 +951,7 @@ or equivalent may confirm presence.
 
 ---
 
-# Remote Publication
+## Remote Publication
 
 If the release is intended for remote publication:
 
@@ -967,7 +967,7 @@ Credentials and branch names remain environment-specific.
 
 ---
 
-# Release Rollback
+## Release Rollback
 
 If a critical release problem is detected immediately after publication, the response should preserve history.
 
@@ -989,7 +989,7 @@ where practical.
 
 ---
 
-# Tag Correction
+## Tag Correction
 
 Published tags should generally not be moved silently.
 
@@ -999,7 +999,7 @@ Once published, release governance should determine the corrective approach.
 
 ---
 
-# Release Immutability
+## Release Immutability
 
 A released framework version should represent an immutable historical state.
 
@@ -1015,7 +1015,7 @@ rather than rewriting the meaning of the existing version.
 
 ---
 
-# Patch Release
+## Patch Release
 
 A patch release may address:
 
@@ -1031,7 +1031,7 @@ without intentionally changing normative architecture.
 
 ---
 
-# Minor Release
+## Minor Release
 
 A minor release may introduce backward-compatible framework capabilities.
 
@@ -1046,7 +1046,7 @@ New Non-Breaking Quality Profile Capability
 
 ---
 
-# Major Release
+## Major Release
 
 A major release may introduce:
 
@@ -1062,7 +1062,7 @@ Such releases require migration planning.
 
 ---
 
-# Framework Migration
+## Framework Migration
 
 When a release introduces breaking changes:
 
@@ -1082,7 +1082,7 @@ New Framework Version
 
 ---
 
-# Migration Documentation
+## Migration Documentation
 
 A breaking release should document:
 
@@ -1097,7 +1097,7 @@ Validation
 
 ---
 
-# Compatibility
+## Compatibility
 
 Framework releases should identify compatibility with related FamilyOS frameworks where relevant.
 
@@ -1114,7 +1114,7 @@ Plugin Compliance Framework
 
 ---
 
-# Compatibility State
+## Compatibility State
 
 A conceptual compatibility state may include:
 
@@ -1127,7 +1127,7 @@ INCOMPATIBLE
 
 ---
 
-# Release Dependencies
+## Release Dependencies
 
 A framework release should identify significant dependencies that must already exist.
 
@@ -1146,13 +1146,13 @@ Architecture Foundation
 
 ---
 
-# Dependency Release Coordination
+## Dependency Release Coordination
 
 If dependent frameworks change materially, the Quality Framework may require a compatibility review before release.
 
 ---
 
-# Release Security
+## Release Security
 
 Release operations should preserve repository and artifact integrity.
 
@@ -1168,7 +1168,7 @@ Unauthorized Gate Override
 
 ---
 
-# Release Authority
+## Release Authority
 
 The actor or authority permitted to declare EPIC-QLT-001 released should be defined by FamilyOS governance.
 
@@ -1176,7 +1176,7 @@ For the current project stage, this may be lightweight, but the authority should
 
 ---
 
-# Release Decision
+## Release Decision
 
 A release decision should answer:
 
@@ -1196,7 +1196,7 @@ Who authorized release?
 
 ---
 
-# Release Decision Record
+## Release Decision Record
 
 A conceptual record may contain:
 
@@ -1222,7 +1222,7 @@ RELEASED
 
 ---
 
-# Release Evidence
+## Release Evidence
 
 Release evidence should remain available for future reconstruction.
 
@@ -1239,7 +1239,7 @@ Known Findings
 
 ---
 
-# Release Observability
+## Release Observability
 
 Future Quality Observability may expose framework release history.
 
@@ -1260,7 +1260,7 @@ MIGRATION_REQUIRED
 
 ---
 
-# Release Metrics
+## Release Metrics
 
 Potential framework release metrics include:
 
@@ -1276,7 +1276,7 @@ These metrics should only be introduced if they provide useful engineering insig
 
 ---
 
-# Post-Release Review
+## Post-Release Review
 
 After significant framework releases, a review may evaluate:
 
@@ -1294,7 +1294,7 @@ Did any framework contradiction appear?
 
 ---
 
-# Post-Release Findings
+## Post-Release Findings
 
 Problems discovered after release should create normal Quality Findings or framework defects.
 
@@ -1302,7 +1302,7 @@ A released framework is not assumed to be permanently perfect.
 
 ---
 
-# Post-Release Improvement
+## Post-Release Improvement
 
 The feedback loop is:
 
@@ -1322,7 +1322,7 @@ Next Framework Release
 
 ---
 
-# Release and Continuous Improvement
+## Release and Continuous Improvement
 
 Release is not the end of the Quality Framework lifecycle.
 
@@ -1330,7 +1330,7 @@ It marks the beginning of operational learning for that version.
 
 ---
 
-# Framework Support
+## Framework Support
 
 Released framework versions may eventually receive support classifications.
 
@@ -1347,7 +1347,7 @@ The Framework Lifecycle defines the broader model.
 
 ---
 
-# Deprecation
+## Deprecation
 
 A released framework version may later become deprecated.
 
@@ -1362,7 +1362,7 @@ Support Status
 
 ---
 
-# Retirement
+## Retirement
 
 Retired versions should no longer govern current FamilyOS engineering.
 
@@ -1370,7 +1370,7 @@ Historical assessments and decisions must remain interpretable against them.
 
 ---
 
-# Initial Quality Framework Release
+## Initial Quality Framework Release
 
 For the initial EPIC-QLT-001 normative release, the release objective is:
 
@@ -1392,7 +1392,7 @@ Validation Completed
 
 ---
 
-# Initial Release Does Not Require
+## Initial Release Does Not Require
 
 The first documentation release does not necessarily require the complete implementation of:
 
@@ -1410,7 +1410,7 @@ These belong to the implementation roadmap.
 
 ---
 
-# Initial Release Success Criteria
+## Initial Release Success Criteria
 
 The first Quality Framework release is successful when FamilyOS has a coherent and validated answer to:
 
@@ -1444,7 +1444,7 @@ How will the framework evolve?
 
 ---
 
-# Release Checklist
+## Release Checklist
 
 The canonical release checklist should include:
 
@@ -1515,7 +1515,7 @@ The canonical numbering should always follow the actual repository manifest if i
 
 ---
 
-# Release Command Sequence
+## Release Command Sequence
 
 A conceptual final repository sequence may be:
 
@@ -1546,7 +1546,7 @@ The exact branch, tag, and version must follow the current repository release st
 
 ---
 
-# Release Verification
+## Release Verification
 
 After tagging, verify:
 
@@ -1560,7 +1560,7 @@ The release should correspond to the intended commit.
 
 ---
 
-# Remote Release Verification
+## Remote Release Verification
 
 After push, verify that:
 
@@ -1576,7 +1576,7 @@ This protects release integrity.
 
 ---
 
-# Release Failure
+## Release Failure
 
 If validation fails:
 
@@ -1594,7 +1594,7 @@ The release should not proceed by simply ignoring failed criteria.
 
 ---
 
-# Release Exception
+## Release Exception
 
 If a release exception is required, it must follow Quality Governance.
 
@@ -1611,7 +1611,7 @@ Expiration / Follow-Up
 
 ---
 
-# Release Override
+## Release Override
 
 A Quality Gate override should be even more exceptional.
 
@@ -1632,7 +1632,7 @@ FAIL remains recorded
 
 ---
 
-# Release Auditability
+## Release Auditability
 
 A future engineer should be able to reconstruct:
 
@@ -1652,7 +1652,7 @@ Why was release authorized?
 
 ---
 
-# Release Retention
+## Release Retention
 
 Release records should remain available as part of FamilyOS engineering history.
 
@@ -1669,7 +1669,7 @@ Release Notes
 
 ---
 
-# Relationship With Quality Framework Lifecycle
+## Relationship With Quality Framework Lifecycle
 
 The release state is one phase of the broader lifecycle.
 
@@ -1689,7 +1689,7 @@ Evolution
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Quality Governance defines release authority, exceptions, and lifecycle rules.
 
@@ -1697,7 +1697,7 @@ This Release document defines how those concepts apply to EPIC-QLT-001.
 
 ---
 
-# Relationship With Quality Validation
+## Relationship With Quality Validation
 
 Validation produces the evidence required for release.
 
@@ -1715,7 +1715,7 @@ Release Decision
 
 ---
 
-# Relationship With Quality Gates
+## Relationship With Quality Gates
 
 A mature FamilyOS system may eventually introduce an automated Quality Framework Release Gate.
 
@@ -1733,7 +1733,7 @@ Release
 
 ---
 
-# Relationship With Release Framework
+## Relationship With Release Framework
 
 The FamilyOS Release Framework remains authoritative for:
 
@@ -1749,7 +1749,7 @@ This document specializes those principles for the Quality Framework.
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 The Documentation Framework governs document structure, metadata, revision, and publication quality.
 
@@ -1757,13 +1757,13 @@ A Quality Framework documentation release must comply with those expectations.
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 The Engineering Foundation defines repository workflow, development lifecycle, toolchain, and governance principles used during Quality Framework release.
 
 ---
 
-# Relationship With Continuous Improvement
+## Relationship With Continuous Improvement
 
 Post-release findings become inputs to Continuous Improvement.
 
@@ -1771,53 +1771,53 @@ No framework release should be treated as permanently final.
 
 ---
 
-# Release Anti-Patterns
+## Release Anti-Patterns
 
 The FamilyOS Quality Framework rejects several release anti-patterns.
 
-## Release Because Writing Stopped
+### Release Because Writing Stopped
 
 Completion of drafting is not release readiness.
 
-## Tag Before Validation
+### Tag Before Validation
 
 Tags should represent validated framework states.
 
-## Documentation Release Equals Implementation Release
+### Documentation Release Equals Implementation Release
 
 These milestones must remain distinct.
 
-## Unversioned Framework Release
+### Unversioned Framework Release
 
 Authoritative framework states require identifiable versions.
 
-## Moving Published Tags Silently
+### Moving Published Tags Silently
 
 Historical release identity should remain stable.
 
-## Hidden Known Limitations
+### Hidden Known Limitations
 
 Implementation gaps and known findings should remain visible.
 
-## Release With Broken References
+### Release With Broken References
 
 Normative references should be validated.
 
-## Release Without Authority
+### Release Without Authority
 
 The release decision should identify the responsible governance authority.
 
-## Release Without Evidence
+### Release Without Evidence
 
 A framework release should be supported by validation evidence.
 
-## Permanent First Version
+### Permanent First Version
 
 The framework must remain capable of evolution.
 
 ---
 
-# Release Maturity Model
+## Release Maturity Model
 
 Quality Framework release capability may mature through:
 
@@ -1858,7 +1858,7 @@ Continuously Governed Framework Release
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The release model enables FamilyOS to move from:
 
@@ -1893,7 +1893,7 @@ serve as an authoritative FamilyOS engineering baseline.
 
 ---
 
-# Final Release Principle
+## Final Release Principle
 
 A framework becomes authoritative not when it is merely written, but when a specific, validated, governed, and reproducible version is intentionally released.
 

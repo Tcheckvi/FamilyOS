@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 22 Release
+## 22 Release
 
-## Introduction
+### Introduction
 
 The release of the Plugin Compliance Framework marks the transition from architectural definition to an officially governed FamilyOS engineering capability.
 
@@ -25,7 +25,7 @@ The release process must preserve the trustworthiness of the compliance system i
 
 ---
 
-# Purpose
+## Purpose
 
 This document defines the release principles and requirements for EPIC-PLUGIN-002.
 
@@ -59,7 +59,7 @@ Authority follows validated and governed release.
 
 ---
 
-# Release Principle
+## Release Principle
 
 The governing release principle is:
 
@@ -69,7 +69,7 @@ A plugin evaluated under one framework version must not be represented as though
 
 ---
 
-# Release Scope
+## Release Scope
 
 A framework release may include changes to:
 
@@ -90,7 +90,7 @@ The release process must understand which of these components affect compliance 
 
 ---
 
-# Release Unit
+## Release Unit
 
 The Plugin Compliance Framework should be treated as one governed release unit even when its implementation spans multiple packages or repositories.
 
@@ -107,7 +107,7 @@ A Compliance Result must record the framework version used during evaluation.
 
 ---
 
-# Release Identity
+## Release Identity
 
 Every official framework release must have an explicit version.
 
@@ -129,7 +129,7 @@ The version must be available to:
 
 ---
 
-# Versioning
+## Versioning
 
 The framework should follow the FamilyOS release strategy and semantic versioning principles where appropriate.
 
@@ -143,7 +143,7 @@ Version changes communicate expected compatibility impact.
 
 ---
 
-# Major Release
+## Major Release
 
 A major release may be required when framework semantics change incompatibly.
 
@@ -160,7 +160,7 @@ Major releases require explicit migration planning.
 
 ---
 
-# Minor Release
+## Minor Release
 
 A minor release may introduce backward-compatible capability.
 
@@ -177,7 +177,7 @@ A minor release should not unexpectedly invalidate previously valid stable workf
 
 ---
 
-# Patch Release
+## Patch Release
 
 A patch release should preserve intended compliance semantics.
 
@@ -193,7 +193,7 @@ A patch release must not intentionally introduce a new mandatory blocking requir
 
 ---
 
-# Policy Versioning
+## Policy Versioning
 
 Framework implementation version and compliance policy version may eventually require independent identification.
 
@@ -210,7 +210,7 @@ Initially, one framework release version may govern both.
 
 ---
 
-# Schema Versioning
+## Schema Versioning
 
 Machine-readable schemas require explicit versions.
 
@@ -229,7 +229,7 @@ Schema versions must not be inferred solely from framework implementation versio
 
 ---
 
-# Release Candidate
+## Release Candidate
 
 Before an official framework release, a release candidate should be validated.
 
@@ -256,7 +256,7 @@ Multiple release candidates may be required.
 
 ---
 
-# Release Candidate Freeze
+## Release Candidate Freeze
 
 During final validation, the release candidate should be sufficiently frozen to make evidence meaningful.
 
@@ -272,7 +272,7 @@ should invalidate affected release validation and require appropriate revalidati
 
 ---
 
-# Release Candidate Validation
+## Release Candidate Validation
 
 A framework release candidate should validate:
 
@@ -290,7 +290,7 @@ A framework release candidate should validate:
 
 ---
 
-# Repository Quality Gates
+## Repository Quality Gates
 
 Before release, the implementation must satisfy the active FamilyOS engineering quality requirements.
 
@@ -308,7 +308,7 @@ Additional framework-specific checks may be required.
 
 ---
 
-# Documentation Release Gate
+## Documentation Release Gate
 
 The documentation release gate should verify:
 
@@ -323,7 +323,7 @@ The documentation release gate should verify:
 
 ---
 
-# Rule Catalog Release Gate
+## Rule Catalog Release Gate
 
 Before release, the Rule Catalog must satisfy:
 
@@ -342,7 +342,7 @@ Invalid active rules must block release.
 
 ---
 
-# Profile Release Gate
+## Profile Release Gate
 
 All active profiles must satisfy:
 
@@ -359,7 +359,7 @@ A broken profile invalidates the release candidate.
 
 ---
 
-# Validator Release Gate
+## Validator Release Gate
 
 Authoritative validators should satisfy:
 
@@ -375,7 +375,7 @@ Security-sensitive validators may require additional review.
 
 ---
 
-# Evidence Release Gate
+## Evidence Release Gate
 
 The evidence subsystem should validate:
 
@@ -392,7 +392,7 @@ Evidence defects can invalidate compliance decisions and must therefore be treat
 
 ---
 
-# Reporting Release Gate
+## Reporting Release Gate
 
 Canonical Compliance Results must render consistently across supported output formats.
 
@@ -410,7 +410,7 @@ All representations must preserve the same semantic result.
 
 ---
 
-# Security Release Gate
+## Security Release Gate
 
 Security validation should include tests for:
 
@@ -427,7 +427,7 @@ Critical unresolved trust-boundary defects must block framework release.
 
 ---
 
-# Official Plugin Regression Gate
+## Official Plugin Regression Gate
 
 Before stable release, the framework should evaluate representative official plugins.
 
@@ -448,7 +448,7 @@ The exact set may evolve with the official plugin ecosystem.
 
 ---
 
-# Baseline Comparison
+## Baseline Comparison
 
 Release validation should compare current plugin results with the previous stable framework release where applicable.
 
@@ -465,7 +465,7 @@ Unexpected regressions require investigation.
 
 ---
 
-# Intended Compliance Changes
+## Intended Compliance Changes
 
 A new release may intentionally change plugin compliance status.
 
@@ -485,7 +485,7 @@ The change must be documented.
 
 ---
 
-# Unintended Compliance Changes
+## Unintended Compliance Changes
 
 Unexpected compliance changes may indicate:
 
@@ -499,7 +499,7 @@ These should block release until understood.
 
 ---
 
-# Impact Analysis
+## Impact Analysis
 
 Every release containing compliance-semantic changes should include impact analysis.
 
@@ -514,7 +514,7 @@ Impact analysis should identify:
 
 ---
 
-# Migration Requirement
+## Migration Requirement
 
 A release introducing breaking compliance changes must provide migration guidance before enforcement.
 
@@ -530,7 +530,7 @@ When does enforcement begin?
 
 ---
 
-# Release Notes
+## Release Notes
 
 Framework release notes should summarize changes relevant to plugin developers and governance consumers.
 
@@ -550,7 +550,7 @@ Release notes should emphasize compliance-semantic changes.
 
 ---
 
-# Changelog
+## Changelog
 
 `CHANGELOG.md` should maintain a durable history of framework evolution.
 
@@ -568,7 +568,7 @@ Every released version should record significant changes to:
 
 ---
 
-# Revision History
+## Revision History
 
 `Revision-History.md` should document significant changes to the normative documentation set.
 
@@ -576,7 +576,7 @@ This is distinct from implementation commit history.
 
 ---
 
-# Release Metadata
+## Release Metadata
 
 The framework should eventually maintain structured release metadata.
 
@@ -596,7 +596,7 @@ Additional metadata may be introduced as implementation matures.
 
 ---
 
-# Framework Release Artifact
+## Framework Release Artifact
 
 A future framework release may produce a versioned artifact containing:
 
@@ -613,7 +613,7 @@ This can improve reproducibility across environments.
 
 ---
 
-# Policy Bundle
+## Policy Bundle
 
 A mature implementation may package compliance policy separately from engine code.
 
@@ -631,7 +631,7 @@ The policy bundle must remain trusted and integrity-protected.
 
 ---
 
-# Release Integrity
+## Release Integrity
 
 Framework release artifacts should eventually support integrity verification.
 
@@ -645,7 +645,7 @@ The specific mechanism belongs to the broader FamilyOS release and security arch
 
 ---
 
-# Release Approval
+## Release Approval
 
 A stable framework release should require explicit approval according to FamilyOS governance.
 
@@ -660,7 +660,7 @@ Approval should consider:
 
 ---
 
-# Release Authority
+## Release Authority
 
 The ability to publish an authoritative compliance framework release must be restricted to governed release mechanisms.
 
@@ -668,7 +668,7 @@ Individual plugins must not select arbitrary modified policy bundles and represe
 
 ---
 
-# Stable Release
+## Stable Release
 
 A stable framework release is eligible for production compliance evaluation.
 
@@ -684,7 +684,7 @@ Stable does not mean permanent.
 
 ---
 
-# Preview Release
+## Preview Release
 
 The framework may use preview releases for significant new capabilities.
 
@@ -699,7 +699,7 @@ Preview policy should not silently become mandatory stable policy.
 
 ---
 
-# Experimental Release
+## Experimental Release
 
 Experimental capabilities may be released for evaluation without production enforcement guarantees.
 
@@ -707,7 +707,7 @@ Experimental features should be clearly marked and excluded from strong lifecycl
 
 ---
 
-# Release Channels
+## Release Channels
 
 A mature framework may distinguish:
 
@@ -723,7 +723,7 @@ They must not be confused with plugin classification.
 
 ---
 
-# Adoption After Release
+## Adoption After Release
 
 Publishing a framework release does not necessarily activate all new rules immediately.
 
@@ -746,7 +746,7 @@ This allows controlled adoption.
 
 ---
 
-# Enforcement Date
+## Enforcement Date
 
 When a release introduces future blocking requirements, the enforcement date should be explicit.
 
@@ -754,7 +754,7 @@ Developers should not discover a major new blocking policy only when a release g
 
 ---
 
-# Grace Period
+## Grace Period
 
 Non-critical breaking policy may receive a grace period.
 
@@ -769,7 +769,7 @@ Security-critical requirements may require immediate enforcement.
 
 ---
 
-# Release Compatibility
+## Release Compatibility
 
 Each stable framework release should document compatibility with relevant FamilyOS platform versions.
 
@@ -785,7 +785,7 @@ Compatibility ranges must be explicit when technically relevant.
 
 ---
 
-# Plugin Compatibility
+## Plugin Compatibility
 
 Plugins should not normally declare arbitrary framework compatibility unless the platform architecture requires it.
 
@@ -798,7 +798,7 @@ The authoritative compatibility relationship should derive from:
 
 ---
 
-# Tooling Compatibility
+## Tooling Compatibility
 
 CLI and CI tooling must verify that they support the requested framework version.
 
@@ -808,7 +808,7 @@ Silent interpretation of unknown policy is prohibited.
 
 ---
 
-# Rollback
+## Rollback
 
 A framework release may require rollback if a severe defect is discovered.
 
@@ -826,7 +826,7 @@ The system should prefer corrective releases over rewriting already published ve
 
 ---
 
-# Published Release Immutability
+## Published Release Immutability
 
 Published framework releases should be treated as immutable.
 
@@ -836,7 +836,7 @@ Historical results must remain interpretable under the original release.
 
 ---
 
-# Emergency Release
+## Emergency Release
 
 Critical security or integrity issues may require an emergency release.
 
@@ -853,7 +853,7 @@ Urgency does not justify silent policy mutation.
 
 ---
 
-# Security Advisory Integration
+## Security Advisory Integration
 
 A security advisory may trigger:
 
@@ -874,7 +874,7 @@ This provides a governed path for rapid ecosystem response.
 
 ---
 
-# Revalidation After Release
+## Revalidation After Release
 
 A new framework release may trigger plugin revalidation.
 
@@ -895,7 +895,7 @@ The framework should prefer the smallest safe revalidation scope.
 
 ---
 
-# Release Drift
+## Release Drift
 
 A framework release may intentionally create compliance drift.
 
@@ -912,7 +912,7 @@ Reason: New mandatory security rule
 
 ---
 
-# Release and Certification
+## Release and Certification
 
 Certification systems must record the framework release used to establish compliance eligibility.
 
@@ -927,7 +927,7 @@ Old compliance results may become insufficient for new certification decisions.
 
 ---
 
-# Release and Build
+## Release and Build
 
 The Build Framework may consume framework release identity when producing plugin artifacts.
 
@@ -943,7 +943,7 @@ Compliance Result
 
 ---
 
-# Release and CI
+## Release and CI
 
 CI should use an explicitly resolved framework version.
 
@@ -953,7 +953,7 @@ Upgrade policy should be governed.
 
 ---
 
-# Pinned Framework Versions
+## Pinned Framework Versions
 
 High-assurance workflows may pin framework versions.
 
@@ -969,7 +969,7 @@ Governance must still prevent indefinite use of obsolete policy.
 
 ---
 
-# Minimum Supported Framework Version
+## Minimum Supported Framework Version
 
 Release or certification systems may define a minimum accepted framework version.
 
@@ -977,7 +977,7 @@ This allows FamilyOS to retire obsolete compliance policy safely.
 
 ---
 
-# Release Validation Record
+## Release Validation Record
 
 Each framework release should preserve a validation record containing enough evidence to demonstrate:
 
@@ -990,7 +990,7 @@ Each framework release should preserve a validation record containing enough evi
 
 ---
 
-# Release Failure
+## Release Failure
 
 A release candidate must not become stable when critical validation fails.
 
@@ -1009,7 +1009,7 @@ These are framework release blockers.
 
 ---
 
-# Warning-Level Release Issues
+## Warning-Level Release Issues
 
 Some non-critical issues may be accepted temporarily through governed release exceptions.
 
@@ -1023,7 +1023,7 @@ Such exceptions must remain documented.
 
 ---
 
-# Release Exception Governance
+## Release Exception Governance
 
 Framework release exceptions require:
 
@@ -1037,7 +1037,7 @@ A release exception must not silently weaken plugin compliance policy.
 
 ---
 
-# Release Checklist
+## Release Checklist
 
 Before a stable release, verify:
 
@@ -1066,7 +1066,7 @@ This checklist may later become automated.
 
 ---
 
-# Initial EPIC Release
+## Initial EPIC Release
 
 The initial release of EPIC-PLUGIN-002 primarily establishes the normative framework definition.
 
@@ -1083,7 +1083,7 @@ Documentation completion must not falsely imply that all advanced roadmap capabi
 
 ---
 
-# Initial Release Objective
+## Initial Release Objective
 
 The initial EPIC release should establish a stable architectural baseline from which implementation can begin.
 
@@ -1098,7 +1098,7 @@ Its primary outputs are:
 
 ---
 
-# Future Operational Release
+## Future Operational Release
 
 A later operational release should indicate that executable compliance infrastructure is ready for normal FamilyOS engineering use.
 
@@ -1106,7 +1106,7 @@ Operational readiness requires the criteria defined in `20-Validation.md`.
 
 ---
 
-# Release Maturity
+## Release Maturity
 
 The framework may progress through release maturity levels such as:
 
@@ -1133,7 +1133,7 @@ These maturity levels describe capability rather than semantic version numbers.
 
 ---
 
-# Release Metrics
+## Release Metrics
 
 Useful release metrics may include:
 
@@ -1154,7 +1154,7 @@ They do not determine release readiness automatically.
 
 ---
 
-# Release Auditability
+## Release Auditability
 
 A historical framework release should answer:
 
@@ -1173,41 +1173,41 @@ This auditability is essential for long-lived compliance and certification recor
 
 ---
 
-# Release Anti-Patterns
+## Release Anti-Patterns
 
 The framework must avoid several release anti-patterns.
 
-## Silent Policy Release
+### Silent Policy Release
 
 Do not introduce compliance-semantic changes without versioning.
 
-## Mutable Published Release
+### Mutable Published Release
 
 Do not rewrite an already published framework version.
 
-## Release Without Regression Testing
+### Release Without Regression Testing
 
 Do not publish broad policy changes without evaluating representative plugins.
 
-## Release Without Migration
+### Release Without Migration
 
 Do not introduce breaking requirements without remediation guidance.
 
-## Automatic Uncontrolled Upgrade
+### Automatic Uncontrolled Upgrade
 
 Do not allow high-assurance workflows to change framework semantics unexpectedly.
 
-## Documentation-Only Authority
+### Documentation-Only Authority
 
 Do not declare operational enforcement readiness solely because documentation is complete.
 
-## Certification by Version
+### Certification by Version
 
 Do not assume that using a particular framework version automatically certifies a plugin.
 
 ---
 
-# Release Invariants
+## Release Invariants
 
 The release model establishes the following invariants:
 
@@ -1234,7 +1234,7 @@ The release model establishes the following invariants:
 
 ---
 
-# Reference Release Flow
+## Reference Release Flow
 
 The complete framework release flow is:
 
@@ -1280,7 +1280,7 @@ Revalidation / Enforcement
 
 ---
 
-# Release Summary
+## Release Summary
 
 The Plugin Compliance Framework release process ensures that compliance policy itself is released with the discipline expected from the plugins it governs.
 
@@ -1304,7 +1304,7 @@ Trustworthy Framework Release
 
 ---
 
-# Final Release Principle
+## Final Release Principle
 
 The governing release principle of EPIC-PLUGIN-002 is:
 

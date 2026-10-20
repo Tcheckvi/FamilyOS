@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 03 Principles
+## 03 Principles
 
-## Introduction
+### Introduction
 
 The Plugin Compliance Framework is governed by a set of foundational principles that define how plugin compliance must be designed, implemented, evaluated, and evolved across FamilyOS.
 
@@ -16,7 +16,7 @@ These principles define the constraints that must remain stable.
 
 ---
 
-# Principle 1 — Compliance Is Explicit
+## Principle 1 — Compliance Is Explicit
 
 Plugin compliance must never depend on undocumented assumptions.
 
@@ -37,7 +37,7 @@ A plugin cannot reasonably conform to a rule that has never been defined.
 
 ---
 
-# Principle 2 — Compliance Is Evidence-Based
+## Principle 2 — Compliance Is Evidence-Based
 
 Compliance decisions must be supported by evidence.
 
@@ -77,7 +77,7 @@ The stronger the compliance claim, the stronger the required evidence must be.
 
 ---
 
-# Principle 3 — Compliance Is Deterministic Where Possible
+## Principle 3 — Compliance Is Deterministic Where Possible
 
 Deterministic requirements must produce deterministic results.
 
@@ -107,7 +107,7 @@ Human review must not be disguised as deterministic automation.
 
 ---
 
-# Principle 4 — Rules Have Stable Identities
+## Principle 4 — Rules Have Stable Identities
 
 Every compliance rule must have a stable identifier.
 
@@ -128,7 +128,7 @@ If a requirement changes materially, the framework must preserve traceability th
 
 ---
 
-# Principle 5 — Compliance Policy Is Separate From Execution
+## Principle 5 — Compliance Policy Is Separate From Execution
 
 Compliance requirements and compliance execution are separate concerns.
 
@@ -158,7 +158,7 @@ This separation prevents implementation details from becoming the source of comp
 
 ---
 
-# Principle 6 — One Authoritative Rule Model
+## Principle 6 — One Authoritative Rule Model
 
 FamilyOS must maintain one authoritative interpretation of plugin compliance.
 
@@ -184,7 +184,7 @@ This principle prevents compliance fragmentation.
 
 ---
 
-# Principle 7 — Compliance Is Classification-Aware
+## Principle 7 — Compliance Is Classification-Aware
 
 Not every plugin requires the same compliance profile.
 
@@ -205,7 +205,7 @@ They do not create independent definitions of compliance.
 
 ---
 
-# Principle 8 — Rules Are Composable
+## Principle 8 — Rules Are Composable
 
 Compliance requirements should be organized into reusable rules that can be composed into profiles.
 
@@ -227,7 +227,7 @@ Composition preserves consistency and simplifies governance.
 
 ---
 
-# Principle 9 — Compliance Is Domain-Oriented
+## Principle 9 — Compliance Is Domain-Oriented
 
 Rules must belong to clearly defined compliance domains.
 
@@ -261,7 +261,7 @@ A rule should have one primary compliance domain even when its evidence crosses 
 
 ---
 
-# Principle 10 — Automation Is the Default for Deterministic Rules
+## Principle 10 — Automation Is the Default for Deterministic Rules
 
 Any compliance requirement that can be evaluated reliably by software should be designed for automation.
 
@@ -284,7 +284,7 @@ This principle improves consistency and reduces repetitive manual review.
 
 ---
 
-# Principle 11 — Compliance Must Shift Left
+## Principle 11 — Compliance Must Shift Left
 
 Compliance feedback should be available as early as possible in the engineering lifecycle.
 
@@ -315,7 +315,7 @@ Local validation and CI validation should use equivalent rules whenever possible
 
 ---
 
-# Principle 12 — Findings Must Be Actionable
+## Principle 12 — Findings Must Be Actionable
 
 A failed rule must help the developer understand the problem.
 
@@ -336,7 +336,7 @@ The framework exists to improve ecosystem quality, not merely reject plugins.
 
 ---
 
-# Principle 13 — Severity Has Defined Meaning
+## Principle 13 — Severity Has Defined Meaning
 
 Compliance severity must be governed consistently.
 
@@ -363,7 +363,7 @@ Individual validators must not invent conflicting severity semantics.
 
 ---
 
-# Principle 14 — Compliance Status Is Derived
+## Principle 14 — Compliance Status Is Derived
 
 A plugin must not arbitrarily declare itself compliant.
 
@@ -394,7 +394,7 @@ The plugin may provide inputs to validation, but it does not control the final c
 
 ---
 
-# Principle 15 — Compliance Is Versioned
+## Principle 15 — Compliance Is Versioned
 
 Compliance has meaning only within an explicit version context.
 
@@ -416,7 +416,7 @@ This enables reproducibility and historical analysis.
 
 ---
 
-# Principle 16 — Compliance Is Not Permanent
+## Principle 16 — Compliance Is Not Permanent
 
 A plugin that is compliant at one point in time is not guaranteed to remain compliant forever.
 
@@ -436,7 +436,7 @@ Compliance should be treated as a verified state within a defined context, not a
 
 ---
 
-# Principle 17 — Compliance and Certification Are Separate
+## Principle 17 — Compliance and Certification Are Separate
 
 Compliance must remain technically and conceptually separate from certification.
 
@@ -464,7 +464,7 @@ A certification policy may require compliance as a prerequisite.
 
 ---
 
-# Principle 18 — Existing Frameworks Remain Authoritative
+## Principle 18 — Existing Frameworks Remain Authoritative
 
 The Plugin Compliance Framework must not redefine requirements already owned by another FamilyOS foundation.
 
@@ -498,7 +498,7 @@ It does not replace their source of authority.
 
 ---
 
-# Principle 19 — Evidence Should Be Reused
+## Principle 19 — Evidence Should Be Reused
 
 The framework should reuse trustworthy engineering evidence whenever possible.
 
@@ -523,7 +523,7 @@ This reduces execution cost while maintaining trust.
 
 ---
 
-# Principle 20 — Evidence Has Provenance
+## Principle 20 — Evidence Has Provenance
 
 Compliance evidence must identify where it came from.
 
@@ -541,7 +541,7 @@ Evidence without sufficient provenance may be unsuitable for strong compliance o
 
 ---
 
-# Principle 21 — Failures Must Fail Predictably
+## Principle 21 — Failures Must Fail Predictably
 
 Compliance validation must distinguish clearly between:
 
@@ -569,7 +569,7 @@ This distinction is essential for reliable automation.
 
 ---
 
-# Principle 22 — Unknown Is Not Pass
+## Principle 22 — Unknown Is Not Pass
 
 The absence of a detected failure must not automatically mean compliance.
 
@@ -592,7 +592,7 @@ The essential principle is that uncertainty must remain visible.
 
 ---
 
-# Principle 23 — Exceptions Are Governed
+## Principle 23 — Exceptions Are Governed
 
 Compliance exceptions may occasionally be necessary.
 
@@ -614,7 +614,7 @@ An exception does not erase the underlying requirement.
 
 ---
 
-# Principle 24 — Suppressions Must Be Visible
+## Principle 24 — Suppressions Must Be Visible
 
 If individual findings can be suppressed, the suppression must remain visible in compliance evidence and reporting.
 
@@ -630,7 +630,7 @@ Silent suppression undermines trust in compliance results.
 
 ---
 
-# Principle 25 — Security Requirements Cannot Be Weakened Accidentally
+## Principle 25 — Security Requirements Cannot Be Weakened Accidentally
 
 Compliance profiles and exception mechanisms must not unintentionally bypass mandatory security constraints.
 
@@ -642,7 +642,7 @@ This establishes a minimum platform safety boundary.
 
 ---
 
-# Principle 26 — Compatibility Is a Compliance Concern
+## Principle 26 — Compatibility Is a Compliance Concern
 
 Plugin compliance includes compatibility with supported FamilyOS platform contracts.
 
@@ -654,7 +654,7 @@ Compatibility must be explicit rather than inferred from successful execution al
 
 ---
 
-# Principle 27 — Lifecycle Behavior Is Verifiable
+## Principle 27 — Lifecycle Behavior Is Verifiable
 
 Compliance must consider the plugin lifecycle, not only static source structure.
 
@@ -686,7 +686,7 @@ The applicable lifecycle requirements depend on plugin classification and capabi
 
 ---
 
-# Principle 28 — Compliance Must Be Auditable
+## Principle 28 — Compliance Must Be Auditable
 
 A compliance result must be explainable after it has been produced.
 
@@ -704,7 +704,7 @@ Auditability is essential for certification and ecosystem trust.
 
 ---
 
-# Principle 29 — Reports Are Structured First
+## Principle 29 — Reports Are Structured First
 
 Compliance information should have a structured canonical representation.
 
@@ -724,7 +724,7 @@ This ensures that different consumers receive consistent information.
 
 ---
 
-# Principle 30 — Tooling Must Not Change Compliance Meaning
+## Principle 30 — Tooling Must Not Change Compliance Meaning
 
 The same governed rule set must have the same semantic meaning regardless of whether it is evaluated through:
 
@@ -740,7 +740,7 @@ It must not silently change policy.
 
 ---
 
-# Principle 31 — Rules Must Be Testable
+## Principle 31 — Rules Must Be Testable
 
 Compliance rules themselves require verification.
 
@@ -756,7 +756,7 @@ Compliance infrastructure that cannot validate its own rules cannot provide stro
 
 ---
 
-# Principle 32 — Rule Evolution Is Governed
+## Principle 32 — Rule Evolution Is Governed
 
 Compliance rules will evolve with FamilyOS.
 
@@ -775,7 +775,7 @@ A compliance rule is part of the platform contract.
 
 ---
 
-# Principle 33 — Deprecated Rules Remain Traceable
+## Principle 33 — Deprecated Rules Remain Traceable
 
 When a rule is deprecated or replaced, historical compliance results must remain understandable.
 
@@ -798,7 +798,7 @@ Historical evidence must not become ambiguous because the active rule catalog ch
 
 ---
 
-# Principle 34 — Compliance Must Scale
+## Principle 34 — Compliance Must Scale
 
 The framework must remain practical as the number of:
 
@@ -819,7 +819,7 @@ This supports parallelization, incremental validation, and future ecosystem grow
 
 ---
 
-# Principle 35 — Compliance Must Remain Explainable
+## Principle 35 — Compliance Must Remain Explainable
 
 Automation must not turn compliance into an opaque scoring system.
 
@@ -833,7 +833,7 @@ Explainability takes precedence over superficial simplicity.
 
 ---
 
-# Principle 36 — Trust Is Earned Through Verification
+## Principle 36 — Trust Is Earned Through Verification
 
 The framework must never equate plugin origin with automatic compliance.
 
@@ -847,7 +847,7 @@ This ensures that FamilyOS applies its standards consistently to its own ecosyst
 
 ---
 
-# Principle 37 — Compliance Protects Extensibility
+## Principle 37 — Compliance Protects Extensibility
 
 Compliance must not be designed as an obstacle to extension.
 
@@ -869,7 +869,7 @@ Good compliance rules protect the platform while giving plugin authors predictab
 
 ---
 
-# Principle 38 — The Framework Must Evolve Conservatively
+## Principle 38 — The Framework Must Evolve Conservatively
 
 Compliance affects every plugin that participates in the ecosystem.
 
@@ -887,7 +887,7 @@ Stable compliance contracts must evolve deliberately.
 
 ---
 
-# Principle Hierarchy
+## Principle Hierarchy
 
 When implementation decisions create tension between principles, FamilyOS should prioritize them according to platform integrity.
 
@@ -916,7 +916,7 @@ Operational convenience must never silently override platform safety or architec
 
 ---
 
-# Application of Principles
+## Application of Principles
 
 These principles apply to all components introduced by EPIC-PLUGIN-002, including future:
 
@@ -935,7 +935,7 @@ Detailed specifications may refine these principles but must not contradict them
 
 ---
 
-# Principles Summary
+## Principles Summary
 
 The Plugin Compliance Framework is built around a simple model:
 
@@ -965,7 +965,7 @@ This model keeps compliance understandable, automatable, auditable, and scalable
 
 ---
 
-# Final Principle
+## Final Principle
 
 The governing principle of EPIC-PLUGIN-002 is:
 

@@ -17,7 +17,7 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 This manifest defines the authoritative canonical document inventory for:
 
@@ -50,7 +50,7 @@ and with the physical repository state.
 
 ---
 
-# 2. Canonical Structure
+## 2. Canonical Structure
 
 EPIC-REL-001 contains two document classes:
 
@@ -99,7 +99,7 @@ Canonical Files:       39
 
 ---
 
-# 3. Numbered Document Inventory
+## 3. Numbered Document Inventory
 
 | No. | Document                             | Purpose                                                                                                                     |
 | --: | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
@@ -138,7 +138,7 @@ Canonical Files:       39
 
 ---
 
-# 4. Control Document Inventory
+## 4. Control Document Inventory
 
 The canonical control documents are:
 
@@ -156,7 +156,7 @@ Exactly seven control documents SHALL exist.
 
 ---
 
-# 5. Canonical File Inventory
+## 5. Canonical File Inventory
 
 The complete canonical inventory is:
 
@@ -212,7 +212,7 @@ Canonical Files:    39
 
 ---
 
-# 6. Structural Requirements
+## 6. Structural Requirements
 
 The canonical numbered documentation SHALL satisfy all of the following:
 
@@ -241,7 +241,7 @@ A structural deviation SHALL be treated as a documentation integrity finding unt
 
 ---
 
-# 7. Filesystem Contract
+## 7. Filesystem Contract
 
 The physical EPIC directory SHALL contain exactly:
 
@@ -270,7 +270,7 @@ The filesystem SHALL NOT contain an undeclared canonical EPIC file.
 
 ---
 
-# 8. Numbering Contract
+## 8. Numbering Contract
 
 The canonical numbered range is:
 
@@ -331,7 +331,7 @@ The final numbered document SHALL be:
 
 ---
 
-# 9. EPIC.yaml Synchronization
+## 9. EPIC.yaml Synchronization
 
 `EPIC.yaml` is the machine-readable structural authority.
 
@@ -361,7 +361,7 @@ The machine-readable and human-readable inventories SHALL remain synchronized.
 
 ---
 
-# 10. Framework Identity
+## 10. Framework Identity
 
 The canonical framework identity is:
 
@@ -378,7 +378,7 @@ Post-release documentation normalization SHALL NOT rewrite the historical framew
 
 ---
 
-# 11. Historical Publication
+## 11. Historical Publication
 
 EPIC-REL-001 has already been historically published.
 
@@ -403,7 +403,7 @@ Post-release documentation corrections SHALL be recorded in later commits rather
 
 ---
 
-# 12. Historical Tag Policy
+## 12. Historical Tag Policy
 
 The historical tag:
 
@@ -432,7 +432,7 @@ Current corrections SHALL preserve historical truth.
 
 ---
 
-# 13. Publication Evidence
+## 13. Publication Evidence
 
 Historical publication evidence SHALL distinguish between:
 
@@ -462,7 +462,7 @@ resolves to:
 
 ---
 
-# 14. Current Repository Relationship
+## 14. Current Repository Relationship
 
 The current repository HEAD MAY be newer than the historical publication commit.
 
@@ -484,7 +484,7 @@ The framework's historical publication identity SHALL remain preserved while its
 
 ---
 
-# 15. Post-Release Revalidation
+## 15. Post-Release Revalidation
 
 The current activity is:
 
@@ -506,7 +506,7 @@ Revalidation does not create a new historical release.
 
 ---
 
-# 16. Revalidation State Model
+## 16. Revalidation State Model
 
 During revalidation, the framework SHALL distinguish historical publication state from current validation state.
 
@@ -536,7 +536,7 @@ only after corresponding validation has actually executed successfully.
 
 ---
 
-# 17. Evidence Rule
+## 17. Evidence Rule
 
 Validation claims SHALL be evidence-based.
 
@@ -556,7 +556,7 @@ Documentation SHALL record successful validation only after the relevant command
 
 ---
 
-# 18. Required Structural Validation
+## 18. Required Structural Validation
 
 Current revalidation SHALL verify at minimum:
 
@@ -587,7 +587,7 @@ Canonical Range:      00-31
 
 ---
 
-# 19. Required Semantic Validation
+## 19. Required Semantic Validation
 
 Revalidation SHALL verify consistency across the principal Release Framework concepts, including:
 
@@ -623,7 +623,7 @@ Semantic validation SHALL also confirm explicit ownership boundaries with specia
 
 ---
 
-# 20. Framework Boundaries
+## 20. Framework Boundaries
 
 EPIC-REL-001 owns release engineering semantics.
 
@@ -656,7 +656,7 @@ Release may consume evidence and artifacts produced by these frameworks without 
 
 ---
 
-# 21. Build / Release Boundary
+## 21. Build / Release Boundary
 
 The Build Framework and Release Framework SHALL remain distinct.
 
@@ -692,7 +692,7 @@ A build artifact does not become a released artifact merely because its build su
 
 ---
 
-# 22. Testing / Release Boundary
+## 22. Testing / Release Boundary
 
 The Testing Framework owns canonical testing strategy and test execution semantics.
 
@@ -704,7 +704,7 @@ A release decision MAY require successful test evidence without owning the detai
 
 ---
 
-# 23. Quality / Release Boundary
+## 23. Quality / Release Boundary
 
 The Quality Framework owns general quality rules, evidence, metrics, assessments, risk, and quality-gate semantics.
 
@@ -714,7 +714,7 @@ Release-specific gates SHALL remain consistent with the canonical Quality Framew
 
 ---
 
-# 24. Security / Release Boundary
+## 24. Security / Release Boundary
 
 Release security concerns include:
 
@@ -732,7 +732,7 @@ The Release Framework SHALL define release-specific security requirements while 
 
 ---
 
-# 25. Operations / Release Boundary
+## 25. Operations / Release Boundary
 
 The Release Framework controls publication and distribution.
 
@@ -746,7 +746,7 @@ Where workflows connect release and operations, the boundary SHALL remain explic
 
 ---
 
-# 26. Control Document Synchronization
+## 26. Control Document Synchronization
 
 The seven control documents SHALL converge on the same canonical facts.
 
@@ -772,7 +772,7 @@ Historical statements MAY retain earlier lifecycle states when clearly identifie
 
 ---
 
-# 27. State Consistency
+## 27. State Consistency
 
 The active canonical framework state is:
 
@@ -799,7 +799,7 @@ Historical descriptions of earlier states MAY remain when clearly contextualized
 
 ---
 
-# 28. Validation Authority
+## 28. Validation Authority
 
 This manifest defines structural expectations.
 
@@ -827,7 +827,7 @@ The two documents SHALL remain consistent but serve different purposes.
 
 ---
 
-# 29. Repository Quality Gates
+## 29. Repository Quality Gates
 
 Final repository revalidation SHALL include actual execution of the applicable repository quality gates.
 
@@ -846,7 +846,7 @@ The manifest does not predeclare those commands as PASS.
 
 ---
 
-# 30. Repository Cleanliness
+## 30. Repository Cleanliness
 
 Final revalidation SHALL verify repository state.
 
@@ -863,7 +863,7 @@ historical tag unchanged
 
 ---
 
-# 31. Revalidation Commit Policy
+## 31. Revalidation Commit Policy
 
 Post-release corrections SHALL use a new forward commit.
 
@@ -884,7 +884,7 @@ The correction commit SHALL NOT be represented as the historical release commit.
 
 ---
 
-# 32. Remote Verification
+## 32. Remote Verification
 
 Remote verification SHALL distinguish:
 
@@ -907,7 +907,7 @@ This is expected and correct.
 
 ---
 
-# 33. Manifest Integrity Requirements
+## 33. Manifest Integrity Requirements
 
 This manifest SHALL remain internally consistent.
 
@@ -925,7 +925,7 @@ It SHALL NOT contain:
 
 ---
 
-# 34. Canonical Inventory Validation
+## 34. Canonical Inventory Validation
 
 The expected filesystem contract is:
 
@@ -943,7 +943,7 @@ These values SHALL be confirmed against the actual repository during revalidatio
 
 ---
 
-# 35. Manifest Completion Conditions
+## 35. Manifest Completion Conditions
 
 Manifest synchronization is complete when:
 
@@ -962,7 +962,7 @@ Manifest synchronization is complete when:
 
 ---
 
-# 36. Canonical Manifest Summary
+## 36. Canonical Manifest Summary
 
 ```text
 EPIC:                   EPIC-REL-001
@@ -987,7 +987,7 @@ Final Revalidation:     Validated
 
 ---
 
-# 37. Final Manifest Contract
+## 37. Final Manifest Contract
 
 The authoritative structural contract for EPIC-REL-001 is:
 

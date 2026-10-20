@@ -1,6 +1,6 @@
 # Operations Framework
 
-# Changelog
+## Changelog
 
 This document records the evolution of **EPIC-OPS-001 — Operations Framework**.
 
@@ -8,9 +8,9 @@ It preserves the historical publication of version `5.1.0` and records the later
 
 ---
 
-# Unreleased
+## Unreleased
 
-## Added
+### Added
 
 * Standardized EPIC control-document layer.
 * Machine-readable `EPIC.yaml`.
@@ -20,7 +20,7 @@ It preserves the historical publication of version `5.1.0` and records the later
 * Repository validation record in `VALIDATION.md`.
 * Framework revision history in `Revision-History.md`.
 
-## Changed
+### Changed
 
 * Normalized the repository representation from the historical compact documentation model to the current FamilyOS controlled EPIC model.
 * Distinguished the historical ten-document release structure from the current seventeen-file normalized repository structure.
@@ -29,7 +29,7 @@ It preserves the historical publication of version `5.1.0` and records the later
 * Added explicit post-release revalidation state.
 * Added machine-readable repository, validation, governance, and closure metadata.
 
-## Validation
+### Validation
 
 Current normalized repository state:
 
@@ -42,9 +42,9 @@ No current PASS result is recorded until supported by actual repository executio
 
 ---
 
-# 5.1.0 — Operations Framework
+## 5.1.0 — Operations Framework
 
-## Historical Status
+### Historical Status
 
 ```text
 PUBLISHED
@@ -70,7 +70,7 @@ IMMUTABLE
 
 ---
 
-# Historical Documentation Model
+## Historical Documentation Model
 
 The original Operations Framework release used the compact FamilyOS framework documentation model.
 
@@ -89,9 +89,9 @@ This historical distinction SHALL remain preserved.
 
 ---
 
-# Added in 5.1.0
+## Added in 5.1.0
 
-## Operations Framework Foundation
+### Operations Framework Foundation
 
 Established **EPIC-OPS-001 — Operations Framework** as the canonical FamilyOS operational engineering foundation.
 
@@ -118,7 +118,7 @@ The framework introduced a dedicated operations model covering:
 
 ---
 
-# Canonical Historical Documents
+## Canonical Historical Documents
 
 The historical release established the following numbered-document structure:
 
@@ -143,7 +143,7 @@ Historical numbered-document count:
 
 ---
 
-# Operations Principles
+## Operations Principles
 
 Version `5.1.0` established foundational operational principles including:
 
@@ -166,7 +166,7 @@ These principles govern operational design, implementation, automation, and runt
 
 ---
 
-# Explicit Ownership
+## Explicit Ownership
 
 Operational responsibilities SHOULD have identifiable ownership.
 
@@ -185,7 +185,7 @@ Ambiguous ownership increases operational risk.
 
 ---
 
-# Controlled Change
+## Controlled Change
 
 The framework established controlled change as a core requirement.
 
@@ -203,7 +203,7 @@ High-impact changes SHOULD receive proportionally stronger validation.
 
 ---
 
-# Validated Runtime Configuration
+## Validated Runtime Configuration
 
 Version `5.1.0` established validation of critical runtime configuration before unsafe execution.
 
@@ -220,7 +220,7 @@ Invalid critical configuration SHOULD fail safely.
 
 ---
 
-# Observable Operation
+## Observable Operation
 
 Operational behavior SHOULD remain observable.
 
@@ -240,7 +240,7 @@ EPIC-OBS-001 remains authoritative for observability architecture.
 
 ---
 
-# Recoverability
+## Recoverability
 
 The framework established recoverability as a permanent operational requirement.
 
@@ -258,7 +258,7 @@ Recovery SHALL include validation.
 
 ---
 
-# Evidence-Based Operation
+## Evidence-Based Operation
 
 Operational success SHALL not be inferred merely because a command completed.
 
@@ -287,7 +287,7 @@ This principle applies especially to:
 
 ---
 
-# Automation with Validation
+## Automation with Validation
 
 Version `5.1.0` established operational automation as a controlled capability.
 
@@ -305,7 +305,7 @@ Automation SHALL NOT bypass security or validation.
 
 ---
 
-# Security by Default
+## Security by Default
 
 Operational convenience SHALL NOT weaken FamilyOS security controls.
 
@@ -321,7 +321,7 @@ Operational tooling SHALL NOT intentionally expose:
 
 ---
 
-# Infrastructure Neutrality
+## Infrastructure Neutrality
 
 The Operations Framework remains independent of specific infrastructure products.
 
@@ -338,7 +338,7 @@ Infrastructure choices may evolve while operational contracts remain stable.
 
 ---
 
-# Proportional Complexity
+## Proportional Complexity
 
 Operational sophistication SHOULD follow demonstrated need.
 
@@ -360,7 +360,7 @@ The framework explicitly avoids infrastructure complexity introduced purely for 
 
 ---
 
-# Operations Architecture
+## Operations Architecture
 
 Version `5.1.0` established the canonical Operations Architecture.
 
@@ -386,7 +386,7 @@ The architecture separates operational-domain concepts from infrastructure provi
 
 ---
 
-# Runtime Management
+## Runtime Management
 
 The framework introduced explicit runtime lifecycle management.
 
@@ -412,7 +412,7 @@ Operational meaning SHOULD remain explicit.
 
 ---
 
-# Service Management
+## Service Management
 
 Version `5.1.0` established service lifecycle expectations including:
 
@@ -433,7 +433,7 @@ A service SHALL NOT be considered healthy merely because a process exists.
 
 ---
 
-# Configuration Management
+## Configuration Management
 
 Operational configuration SHOULD be:
 
@@ -449,7 +449,7 @@ Configuration drift SHOULD be minimized.
 
 ---
 
-# Health
+## Health
 
 The framework established explicit operational health semantics.
 
@@ -466,7 +466,7 @@ Health SHOULD communicate meaningful operational condition.
 
 ---
 
-# Readiness
+## Readiness
 
 Readiness was established as distinct from process existence and health.
 
@@ -480,7 +480,7 @@ A component may be running but not ready because:
 
 ---
 
-# Dependency Management
+## Dependency Management
 
 Runtime dependencies SHALL remain explicit.
 
@@ -500,7 +500,7 @@ Dependency failure SHOULD not automatically produce uncontrolled failure propaga
 
 ---
 
-# Incident Response
+## Incident Response
 
 Version `5.1.0` established structured incident response.
 
@@ -528,7 +528,7 @@ Significant incidents SHOULD produce structured learning.
 
 ---
 
-# Incident Classification
+## Incident Classification
 
 Incident severity may consider:
 
@@ -544,7 +544,7 @@ Severity SHOULD guide escalation and response rigor.
 
 ---
 
-# Incident Evidence
+## Incident Evidence
 
 Incident handling SHOULD preserve evidence appropriate to impact.
 
@@ -560,7 +560,7 @@ Evidence SHALL remain security- and privacy-aware.
 
 ---
 
-# Recovery
+## Recovery
 
 The framework established a strong distinction between restart, restoration, and recovery.
 
@@ -583,7 +583,7 @@ Recovery validation may include:
 
 ---
 
-# Rollback
+## Rollback
 
 Rollback was defined as a controlled recovery action.
 
@@ -600,7 +600,7 @@ Rollback completion SHALL NOT automatically establish successful recovery.
 
 ---
 
-# Capacity
+## Capacity
 
 Version `5.1.0` established evidence-based capacity management.
 
@@ -618,7 +618,7 @@ Capacity considerations may include:
 
 ---
 
-# Capacity Review
+## Capacity Review
 
 Capacity SHOULD be reviewed against actual operational evidence.
 
@@ -626,7 +626,7 @@ The framework avoids mandatory large-scale infrastructure before measured requir
 
 ---
 
-# Performance
+## Performance
 
 The framework established measurable operational performance.
 
@@ -644,7 +644,7 @@ Performance validation SHOULD identify the relevant build or artifact where prac
 
 ---
 
-# Reliability
+## Reliability
 
 Reliability engineering may include:
 
@@ -661,7 +661,7 @@ Reliability SHALL remain compatible with correctness and security.
 
 ---
 
-# Operational Security
+## Operational Security
 
 Version `5.1.0` integrated security into operations.
 
@@ -680,7 +680,7 @@ EPIC-SEC-001 remains authoritative for Security Framework policy.
 
 ---
 
-# Operational Governance
+## Operational Governance
 
 The framework established governance for operational actions.
 
@@ -700,7 +700,7 @@ Governance SHOULD remain proportional to operational impact.
 
 ---
 
-# Implementation Direction
+## Implementation Direction
 
 Version `5.1.0` provided implementation direction without binding FamilyOS to one infrastructure platform.
 
@@ -717,7 +717,7 @@ Implementation areas may include:
 
 ---
 
-# Infrastructure as Code
+## Infrastructure as Code
 
 The framework encouraged declarative infrastructure representation where practical.
 
@@ -734,7 +734,7 @@ No specific IaC technology is mandated.
 
 ---
 
-# Automation
+## Automation
 
 Operations automation may include:
 
@@ -752,7 +752,7 @@ Operations automation may include:
 
 ---
 
-# Canonical Automation Flow
+## Canonical Automation Flow
 
 Version `5.1.0` establishes the conceptual automation sequence:
 
@@ -776,7 +776,7 @@ The result of execution SHALL be verified.
 
 ---
 
-# Structured Automation Results
+## Structured Automation Results
 
 Automation SHOULD produce structured output where practical.
 
@@ -798,7 +798,7 @@ Human-readable output may coexist with structured output.
 
 ---
 
-# Operational Validation
+## Operational Validation
 
 Operational validation may occur at several levels:
 
@@ -821,7 +821,7 @@ Validation SHALL provide evidence appropriate to the decision it supports.
 
 ---
 
-# Testing Integration
+## Testing Integration
 
 EPIC-OPS-001 integrates with the FamilyOS Testing Framework.
 
@@ -841,7 +841,7 @@ EPIC-TST-001 remains authoritative for general testing architecture.
 
 ---
 
-# Quality Integration
+## Quality Integration
 
 The framework integrates with EPIC-QLT-001.
 
@@ -855,7 +855,7 @@ Operational evidence may contribute to quality evaluation through:
 
 ---
 
-# Build Integration
+## Build Integration
 
 EPIC-OPS-001 consumes artifacts produced by EPIC-BLD-001.
 
@@ -863,7 +863,7 @@ Operational mechanisms SHOULD deploy validated artifacts without uncontrolled ch
 
 ---
 
-# Release Integration
+## Release Integration
 
 Operations integrates with EPIC-REL-001.
 
@@ -880,7 +880,7 @@ EPIC-REL-001 remains authoritative for release lifecycle semantics.
 
 ---
 
-# Observability Integration
+## Observability Integration
 
 EPIC-OBS-001 remains authoritative for observability.
 
@@ -897,7 +897,7 @@ Operational behavior SHOULD remain diagnosable.
 
 ---
 
-# Security Integration
+## Security Integration
 
 EPIC-SEC-001 remains authoritative for security architecture and policy.
 
@@ -912,7 +912,7 @@ Operations consumes security mechanisms for:
 
 ---
 
-# Framework Boundaries
+## Framework Boundaries
 
 EPIC-OPS-001 owns:
 
@@ -941,7 +941,7 @@ It does not own:
 
 ---
 
-# Historical Validation State
+## Historical Validation State
 
 The historical numbered framework may contain pre-publication state markers such as:
 
@@ -957,7 +957,7 @@ They SHALL NOT automatically be interpreted as current control-layer lifecycle s
 
 ---
 
-# Historical Release Completion
+## Historical Release Completion
 
 Version `5.1.0` was completed and published under:
 
@@ -975,7 +975,7 @@ The historical framework publication is therefore complete.
 
 ---
 
-# Historical Tag Integrity
+## Historical Tag Integrity
 
 The following operations are prohibited during current normalization:
 
@@ -991,7 +991,7 @@ Normalization belongs to later forward repository history.
 
 ---
 
-# Post-Release Governance Evolution
+## Post-Release Governance Evolution
 
 After historical publication, the FamilyOS framework-governance model evolved.
 
@@ -1009,7 +1009,7 @@ Revision-History.md
 
 ---
 
-# Historical vs Current Repository State
+## Historical vs Current Repository State
 
 Historical publication:
 
@@ -1033,7 +1033,7 @@ The current structure SHALL NOT be retroactively attributed to the historical re
 
 ---
 
-# Current Revalidation
+## Current Revalidation
 
 The normalized repository representation requires evidence-based revalidation.
 
@@ -1079,7 +1079,7 @@ Final Repository State
 
 ---
 
-# Validation Evidence Policy
+## Validation Evidence Policy
 
 The required model is:
 
@@ -1107,7 +1107,7 @@ Current repository validation SHALL be based on actual evidence.
 
 ---
 
-# Current Normalization State
+## Current Normalization State
 
 ```text
 Framework Version:       5.1.0
@@ -1134,7 +1134,7 @@ Final Revalidation:      Validated
 
 ---
 
-# Future Changes
+## Future Changes
 
 Future Operations Framework revisions may introduce:
 
@@ -1155,7 +1155,7 @@ Such changes SHALL follow FamilyOS framework versioning and release governance r
 
 ---
 
-# Final Changelog Principle
+## Final Changelog Principle
 
 The canonical historical statement for EPIC-OPS-001 is:
 

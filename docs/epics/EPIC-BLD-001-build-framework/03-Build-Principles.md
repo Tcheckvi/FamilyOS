@@ -1,8 +1,8 @@
 # Build Framework
 
-# 03 Build Principles
+## 03 Build Principles
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the engineering principles that govern how FamilyOS build capabilities are designed, implemented, executed, validated, automated, maintained, and evolved.
 
@@ -30,7 +30,7 @@ The engineering expectations that establish build trust must remain coherent.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Build Principles is to ensure that every FamilyOS build capability follows a consistent engineering philosophy.
 
@@ -55,7 +55,7 @@ They also provide criteria for evaluating proposed build changes.
 
 ---
 
-# Principle Model
+## Principle Model
 
 The FamilyOS Build Framework is based on a layered principle model.
 
@@ -95,7 +95,7 @@ No single principle defines build quality by itself.
 
 ---
 
-# Principle 1 — Reproducibility First
+## Principle 1 — Reproducibility First
 
 FamilyOS builds SHOULD be reproducible.
 
@@ -127,7 +127,7 @@ Build systems must therefore minimize uncontrolled state.
 
 ---
 
-# Reproducibility Requirements
+## Reproducibility Requirements
 
 Reproducibility depends on control over several dimensions.
 
@@ -147,7 +147,7 @@ A build cannot be considered strongly reproducible if any critical dimension rem
 
 ---
 
-# Practical Reproducibility
+## Practical Reproducibility
 
 FamilyOS does not require immediate perfect bit-for-bit reproducibility for every artifact.
 
@@ -161,7 +161,7 @@ When exact reproducibility is not possible, sources of variability SHOULD be doc
 
 ---
 
-# Principle 2 — Deterministic Processes
+## Principle 2 — Deterministic Processes
 
 Build behavior SHOULD be deterministic wherever technically feasible.
 
@@ -182,7 +182,7 @@ These influences SHOULD be eliminated, controlled, or made explicit.
 
 ---
 
-# Determinism Rule
+## Determinism Rule
 
 The preferred relationship is:
 
@@ -206,7 +206,7 @@ Unpredictable Result
 
 ---
 
-# Principle 3 — Explicit Inputs
+## Principle 3 — Explicit Inputs
 
 Every significant build input SHOULD be explicit.
 
@@ -232,7 +232,7 @@ The build system should avoid depending on invisible state.
 
 ---
 
-# Explicitness Model
+## Explicitness Model
 
 The preferred model is:
 
@@ -258,7 +258,7 @@ Explicitness is one of the primary mechanisms through which reproducibility is a
 
 ---
 
-# Principle 4 — Controlled Dependencies
+## Principle 4 — Controlled Dependencies
 
 Dependencies are part of the effective build state.
 
@@ -276,7 +276,7 @@ Dependency management SHOULD provide:
 
 ---
 
-# Dependency Principle
+## Dependency Principle
 
 A dependency must not be treated as external background state.
 
@@ -294,7 +294,7 @@ Changes in dependencies may change the resulting artifact even when application 
 
 ---
 
-# Principle 5 — Controlled Toolchain
+## Principle 5 — Controlled Toolchain
 
 The build toolchain is an engineering dependency.
 
@@ -313,7 +313,7 @@ Significant toolchain versions SHOULD be known.
 
 ---
 
-# Toolchain Drift Rule
+## Toolchain Drift Rule
 
 The Build Framework must avoid uncontrolled situations such as:
 
@@ -335,7 +335,7 @@ Consistent Build Semantics
 
 ---
 
-# Principle 6 — Environment Independence
+## Principle 6 — Environment Independence
 
 Build behavior SHOULD minimize dependence on machine-specific state.
 
@@ -350,7 +350,7 @@ Relevant environment assumptions must be:
 
 ---
 
-# Environment Independence Model
+## Environment Independence Model
 
 The target direction is:
 
@@ -370,7 +370,7 @@ The build semantics must remain stable.
 
 ---
 
-# Principle 7 — Configuration Is Code
+## Principle 7 — Configuration Is Code
 
 Build configuration is part of the engineering state.
 
@@ -386,7 +386,7 @@ Configuration must not silently change critical build behavior.
 
 ---
 
-# Configuration Rule
+## Configuration Rule
 
 The preferred model is:
 
@@ -410,7 +410,7 @@ Implicit Behavior
 
 ---
 
-# Principle 8 — Build Trust Requires Validation
+## Principle 8 — Build Trust Requires Validation
 
 Successful execution does not establish trust by itself.
 
@@ -430,7 +430,7 @@ Validation is the mechanism that connects these states.
 
 ---
 
-# Validation Principle
+## Validation Principle
 
 The canonical trust progression is:
 
@@ -450,7 +450,7 @@ Validation may operate before, during, and after artifact generation.
 
 ---
 
-# Principle 9 — Evidence Before Trust
+## Principle 9 — Evidence Before Trust
 
 Trusted build outputs SHOULD be supported by evidence.
 
@@ -471,7 +471,7 @@ The amount of evidence required may vary according to build type and maturity.
 
 ---
 
-# Evidence Rule
+## Evidence Rule
 
 The preferred model is:
 
@@ -495,7 +495,7 @@ Later Guesswork
 
 ---
 
-# Principle 10 — Artifact Identity
+## Principle 10 — Artifact Identity
 
 Artifacts SHOULD have explicit identity.
 
@@ -513,7 +513,7 @@ Artifact identity may include:
 
 ---
 
-# Artifact Identity Model
+## Artifact Identity Model
 
 ```text
 Artifact
@@ -529,7 +529,7 @@ The exact representation may depend on artifact type.
 
 ---
 
-# Principle 11 — Traceability By Design
+## Principle 11 — Traceability By Design
 
 Trusted artifacts SHOULD be traceable to their source and build context.
 
@@ -549,7 +549,7 @@ Traceability must not depend exclusively on human memory.
 
 ---
 
-# Traceability Benefits
+## Traceability Benefits
 
 Traceability supports:
 
@@ -563,7 +563,7 @@ Traceability supports:
 
 ---
 
-# Principle 12 — Local and CI Semantic Alignment
+## Principle 12 — Local and CI Semantic Alignment
 
 Local and CI builds SHOULD use the same conceptual build model.
 
@@ -585,7 +585,7 @@ The build semantics should remain common.
 
 ---
 
-# Principle 13 — Automation Must Not Define Architecture
+## Principle 13 — Automation Must Not Define Architecture
 
 Automation tools execute build architecture.
 
@@ -611,7 +611,7 @@ Automation
 
 ---
 
-# Principle 14 — Automation With Control
+## Principle 14 — Automation With Control
 
 Automation SHOULD reduce repetitive human work while preserving validation and governance.
 
@@ -630,7 +630,7 @@ It is not an exception to build policy.
 
 ---
 
-# Principle 15 — Fail Fast When State Is Invalid
+## Principle 15 — Fail Fast When State Is Invalid
 
 Invalid build state SHOULD be rejected as early as practical.
 
@@ -665,7 +665,7 @@ Late Failure
 
 ---
 
-# Principle 16 — Failure Must Be Explainable
+## Principle 16 — Failure Must Be Explainable
 
 Build failures must provide actionable information.
 
@@ -681,7 +681,7 @@ A build failure without useful information reduces developer productivity and we
 
 ---
 
-# Failure Transparency Rule
+## Failure Transparency Rule
 
 The Build Framework distinguishes between:
 
@@ -701,7 +701,7 @@ Opaque failure is an engineering defect.
 
 ---
 
-# Principle 17 — Observability By Design
+## Principle 17 — Observability By Design
 
 Build processes SHOULD expose meaningful operational information.
 
@@ -720,7 +720,7 @@ Observability must support both humans and automation.
 
 ---
 
-# Observability Boundary
+## Observability Boundary
 
 Observability must not disclose sensitive information.
 
@@ -734,7 +734,7 @@ Build logs and evidence must avoid leaking:
 
 ---
 
-# Principle 18 — Security Is Part Of Build Engineering
+## Principle 18 — Security Is Part Of Build Engineering
 
 Build systems are part of the FamilyOS software supply chain.
 
@@ -752,7 +752,7 @@ Build security is not an optional downstream concern.
 
 ---
 
-# Principle 19 — Least Privilege
+## Principle 19 — Least Privilege
 
 Build processes SHOULD operate with the minimum privileges necessary.
 
@@ -771,7 +771,7 @@ Each capability should receive only the permissions it requires.
 
 ---
 
-# Principle 20 — Build and Release Separation
+## Principle 20 — Build and Release Separation
 
 Build completion MUST NOT automatically imply release approval.
 
@@ -791,7 +791,7 @@ These decisions must remain distinct.
 
 ---
 
-# Principle 21 — Separation Of Responsibilities
+## Principle 21 — Separation Of Responsibilities
 
 Build responsibilities should remain separated where doing so improves clarity.
 
@@ -817,7 +817,7 @@ These responsibilities may exist within one implementation, but their conceptual
 
 ---
 
-# Principle 22 — Build Logic Must Be Maintainable
+## Principle 22 — Build Logic Must Be Maintainable
 
 Build logic should be designed with the same maintainability expectations applied to application code.
 
@@ -834,7 +834,7 @@ Build systems are production engineering assets.
 
 ---
 
-# Principle 23 — Prefer Declarative State
+## Principle 23 — Prefer Declarative State
 
 Where practical, FamilyOS SHOULD prefer declarative descriptions of build requirements over procedural hidden configuration.
 
@@ -856,7 +856,7 @@ Declarative state improves:
 
 ---
 
-# Principle 24 — Single Source Of Build Truth
+## Principle 24 — Single Source Of Build Truth
 
 FamilyOS SHOULD avoid multiple conflicting definitions of the same build behavior.
 
@@ -881,7 +881,7 @@ all encoding different rules.
 
 ---
 
-# Principle 25 — Tool Choice Follows Architecture
+## Principle 25 — Tool Choice Follows Architecture
 
 FamilyOS must not design build architecture around the limitations or preferences of a specific tool.
 
@@ -907,7 +907,7 @@ Architecture Shaped Around Tool
 
 ---
 
-# Principle 26 — Simplicity Over Build Sophistication
+## Principle 26 — Simplicity Over Build Sophistication
 
 Build infrastructure must remain proportional to real engineering needs.
 
@@ -928,7 +928,7 @@ They are not objectives by themselves.
 
 ---
 
-# Simplicity Rule
+## Simplicity Rule
 
 The preferred progression is:
 
@@ -944,7 +944,7 @@ Controlled Evolution
 
 ---
 
-# Principle 27 — Build Complexity Must Be Visible
+## Principle 27 — Build Complexity Must Be Visible
 
 When complexity is necessary, it must be explicit.
 
@@ -960,7 +960,7 @@ Complexity that cannot be avoided must be documented and governed.
 
 ---
 
-# Principle 28 — Incremental Evolution
+## Principle 28 — Incremental Evolution
 
 The Build Framework must support incremental implementation.
 
@@ -988,7 +988,7 @@ Each stage should remain useful independently.
 
 ---
 
-# Principle 29 — Backward Compatibility Matters
+## Principle 29 — Backward Compatibility Matters
 
 Changes to build behavior may affect:
 
@@ -1005,7 +1005,7 @@ Breaking changes must be explicit and governed.
 
 ---
 
-# Principle 30 — Build Interfaces Should Be Stable
+## Principle 30 — Build Interfaces Should Be Stable
 
 The canonical build entry points should evolve more slowly than internal implementation.
 
@@ -1020,7 +1020,7 @@ without constantly changing developer workflows.
 
 ---
 
-# Stable Interface Model
+## Stable Interface Model
 
 ```text
 Stable Build Interface
@@ -1032,7 +1032,7 @@ This supports maintainability and evolution.
 
 ---
 
-# Principle 31 — Generated Content Must Be Governed
+## Principle 31 — Generated Content Must Be Governed
 
 Generated content is part of build engineering when generation occurs during the build lifecycle.
 
@@ -1049,7 +1049,7 @@ Generated content must not become an uncontrolled source of repository drift.
 
 ---
 
-# Principle 32 — Build Outputs Must Have Defined Destinations
+## Principle 32 — Build Outputs Must Have Defined Destinations
 
 Artifacts should be produced into known and predictable locations.
 
@@ -1065,7 +1065,7 @@ Defined output locations improve:
 
 ---
 
-# Principle 33 — Temporary State Must Be Contained
+## Principle 33 — Temporary State Must Be Contained
 
 Temporary build state SHOULD remain isolated from authoritative engineering state.
 
@@ -1080,7 +1080,7 @@ Temporary outputs must not be confused with trusted artifacts.
 
 ---
 
-# Principle 34 — Clean Builds Must Be Possible
+## Principle 34 — Clean Builds Must Be Possible
 
 FamilyOS SHOULD support rebuilding from a clean state.
 
@@ -1105,7 +1105,7 @@ Valid Artifact
 
 ---
 
-# Principle 35 — Incremental Builds Must Not Change Semantics
+## Principle 35 — Incremental Builds Must Not Change Semantics
 
 Incremental build optimization may be introduced where useful.
 
@@ -1123,7 +1123,7 @@ It must not change expected outcomes.
 
 ---
 
-# Principle 36 — Caching Must Be Safe
+## Principle 36 — Caching Must Be Safe
 
 Caching may improve build performance.
 
@@ -1141,7 +1141,7 @@ Cache Hit Rate
 
 ---
 
-# Principle 37 — Performance Follows Correctness
+## Principle 37 — Performance Follows Correctness
 
 Build performance matters, but optimization must not precede trust.
 
@@ -1165,7 +1165,7 @@ This prevents fast but unreliable build systems.
 
 ---
 
-# Principle 38 — Build Evidence Must Be Proportional
+## Principle 38 — Build Evidence Must Be Proportional
 
 Not every local developer build requires the same evidence as a release candidate build.
 
@@ -1191,7 +1191,7 @@ The model must remain proportional to risk and purpose.
 
 ---
 
-# Principle 39 — Build Profiles Must Be Explicit
+## Principle 39 — Build Profiles Must Be Explicit
 
 Different build modes may exist.
 
@@ -1216,7 +1216,7 @@ Profiles must not become hidden collections of environment-specific behavior.
 
 ---
 
-# Principle 40 — Build Context Must Be Inspectable
+## Principle 40 — Build Context Must Be Inspectable
 
 A build should make its effective context understandable.
 
@@ -1233,7 +1233,7 @@ This improves diagnosis and trust.
 
 ---
 
-# Principle 41 — Idempotence Where Practical
+## Principle 41 — Idempotence Where Practical
 
 Repeated execution of the same build operation SHOULD avoid creating uncontrolled cumulative side effects.
 
@@ -1243,7 +1243,7 @@ Where build operations mutate state, that behavior must be deliberate and docume
 
 ---
 
-# Principle 42 — Build Operations Must Respect Repository Boundaries
+## Principle 42 — Build Operations Must Respect Repository Boundaries
 
 The Build Framework must not introduce uncontrolled changes to unrelated repository areas.
 
@@ -1253,7 +1253,7 @@ Build operations should remain scoped to their defined responsibilities.
 
 ---
 
-# Principle 43 — Build Documentation Is Part Of The System
+## Principle 43 — Build Documentation Is Part Of The System
 
 Important build behavior MUST be documented.
 
@@ -1271,7 +1271,7 @@ Build knowledge must not reside only in source code or contributor memory.
 
 ---
 
-# Principle 44 — Governance Is Proportional
+## Principle 44 — Governance Is Proportional
 
 Not every build change requires an ADR or RFC.
 
@@ -1299,7 +1299,7 @@ RFC / EPIC Evolution
 
 ---
 
-# Principle 45 — Architectural Changes Must Be Explicit
+## Principle 45 — Architectural Changes Must Be Explicit
 
 Changes that materially affect:
 
@@ -1316,7 +1316,7 @@ They require explicit architectural consideration.
 
 ---
 
-# Principle 46 — Build Standards Apply Across FamilyOS
+## Principle 46 — Build Standards Apply Across FamilyOS
 
 The Build Framework establishes common standards for the complete FamilyOS engineering ecosystem.
 
@@ -1326,7 +1326,7 @@ They should not redefine fundamental principles independently.
 
 ---
 
-# Principle 47 — Plugin Builds Must Respect Platform Rules
+## Principle 47 — Plugin Builds Must Respect Platform Rules
 
 Official plugin build processes must remain compatible with:
 
@@ -1340,7 +1340,7 @@ Plugins may extend the build model but must not bypass its trust requirements.
 
 ---
 
-# Principle 48 — Build Systems Must Support Future Artifact Types
+## Principle 48 — Build Systems Must Support Future Artifact Types
 
 The framework must not assume that Python packages will remain the only important artifacts.
 
@@ -1357,7 +1357,7 @@ Build architecture should therefore define stable concepts rather than format-sp
 
 ---
 
-# Principle 49 — Supply Chain Assurance Evolves Incrementally
+## Principle 49 — Supply Chain Assurance Evolves Incrementally
 
 The Build Framework should support future mechanisms such as:
 
@@ -1371,7 +1371,7 @@ However, these capabilities should be introduced only when engineering maturity 
 
 ---
 
-# Principle 50 — Trust Must Be Explainable
+## Principle 50 — Trust Must Be Explainable
 
 The final principle combines all previous requirements.
 
@@ -1399,7 +1399,7 @@ Trust without explainability is insufficient for a governed engineering platform
 
 ---
 
-# Principle Interaction
+## Principle Interaction
 
 The principles reinforce one another.
 
@@ -1445,7 +1445,7 @@ Supply Chain Confidence
 
 ---
 
-# Principle Conflict Resolution
+## Principle Conflict Resolution
 
 Build principles may occasionally conflict.
 
@@ -1478,7 +1478,7 @@ Architectural judgment remains necessary.
 
 ---
 
-# Decision Evaluation Model
+## Decision Evaluation Model
 
 A proposed build change should be evaluated using questions such as:
 
@@ -1506,7 +1506,7 @@ This model provides practical application of the principles.
 
 ---
 
-# Compliance Expectations
+## Compliance Expectations
 
 Build implementations SHOULD be evaluated against the principles in this document.
 
@@ -1523,7 +1523,7 @@ However, deliberate contradiction of foundational principles requires explicit j
 
 ---
 
-# Non-Negotiable Principles
+## Non-Negotiable Principles
 
 The following principles are considered foundational and MUST NOT be bypassed without formal architectural justification:
 
@@ -1540,7 +1540,7 @@ The following principles are considered foundational and MUST NOT be bypassed wi
 
 ---
 
-# Build Principle Summary
+## Build Principle Summary
 
 The FamilyOS Build Framework can be summarized through the following equation:
 
@@ -1565,7 +1565,7 @@ Trust emerges from the complete engineering system.
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Framework is founded on the following final rule:
 

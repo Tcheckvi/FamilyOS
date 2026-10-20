@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 13 Documentation Quality Gates
+## 13 Documentation Quality Gates
 
-## Context
+### Context
 
 FamilyOS documentation is a critical engineering asset that supports architecture, development, governance, and ecosystem evolution.
 
@@ -18,17 +18,17 @@ Documentation Quality Gates define the mandatory validation steps required to en
 
 ---
 
-# Quality Gate Principles
+## Quality Gate Principles
 
 FamilyOS documentation quality gates follow these principles.
 
-## Prevention
+### Prevention
 
 Quality gates prevent defective documentation from becoming an official reference.
 
 ---
 
-## Automation First
+### Automation First
 
 Whenever possible, validation should be automated.
 
@@ -40,7 +40,7 @@ Automation reduces:
 
 ---
 
-## Human Validation
+### Human Validation
 
 Automation cannot replace expert review.
 
@@ -52,7 +52,7 @@ Human validation remains required for:
 
 ---
 
-## Continuous Improvement
+### Continuous Improvement
 
 Quality gates evolve with:
 
@@ -62,7 +62,7 @@ Quality gates evolve with:
 
 ---
 
-# Documentation Quality Gate Model
+## Documentation Quality Gate Model
 
 FamilyOS defines the following quality gates:
 
@@ -101,15 +101,15 @@ Publication
 
 ---
 
-# Gate 1 — Structure Validation
+## Gate 1 — Structure Validation
 
-## Purpose
+### Purpose
 
 Ensure that the document follows approved documentation standards.
 
 ---
 
-## Validation Criteria
+### Validation Criteria
 
 The document must contain:
 
@@ -121,7 +121,7 @@ The document must contain:
 
 ---
 
-## Examples
+### Examples
 
 Valid:
 
@@ -140,15 +140,15 @@ random-folder/document.md
 
 ---
 
-# Gate 2 — Content Validation
+## Gate 2 — Content Validation
 
-## Purpose
+### Purpose
 
 Verify documentation completeness and clarity.
 
 ---
 
-## Validation Criteria
+### Validation Criteria
 
 The document must:
 
@@ -160,7 +160,7 @@ The document must:
 
 ---
 
-## Content Quality Checks
+### Content Quality Checks
 
 Reviewers verify:
 
@@ -171,15 +171,15 @@ Reviewers verify:
 
 ---
 
-# Gate 3 — Technical Review
+## Gate 3 — Technical Review
 
-## Purpose
+### Purpose
 
 Validate technical correctness.
 
 ---
 
-## Required For
+### Required For
 
 Technical review is required for documents related to:
 
@@ -192,7 +192,7 @@ Technical review is required for documents related to:
 
 ---
 
-## Review Criteria
+### Review Criteria
 
 Reviewers validate:
 
@@ -203,15 +203,15 @@ Reviewers validate:
 
 ---
 
-# Gate 4 — Governance Approval
+## Gate 4 — Governance Approval
 
-## Purpose
+### Purpose
 
 Confirm that documentation follows FamilyOS governance rules.
 
 ---
 
-## Approval Criteria
+### Approval Criteria
 
 The document must have:
 
@@ -223,11 +223,11 @@ The document must have:
 
 ---
 
-# Automated Quality Checks
+## Automated Quality Checks
 
 The following checks should be automated.
 
-## Markdown Validation
+### Markdown Validation
 
 Checks:
 
@@ -237,7 +237,7 @@ Checks:
 
 ---
 
-## Metadata Validation
+### Metadata Validation
 
 Checks:
 
@@ -247,7 +247,7 @@ Checks:
 
 ---
 
-## Reference Validation
+### Reference Validation
 
 Checks:
 
@@ -257,7 +257,7 @@ Checks:
 
 ---
 
-## Template Validation
+### Template Validation
 
 Checks:
 
@@ -266,7 +266,7 @@ Checks:
 
 ---
 
-# Human Review Checklist
+## Human Review Checklist
 
 Reviewers should verify:
 
@@ -282,7 +282,7 @@ Reviewers should verify:
 
 ---
 
-# Quality Gate Failure Handling
+## Quality Gate Failure Handling
 
 When a document fails a quality gate:
 
@@ -296,7 +296,7 @@ Failures must be visible and traceable.
 
 ---
 
-# Quality Gate Status
+## Quality Gate Status
 
 Recommended status values:
 
@@ -310,7 +310,7 @@ quality:
 
 ---
 
-# Integration With CI/CD
+## Integration With CI/CD
 
 Documentation quality gates should run automatically during:
 
@@ -331,7 +331,7 @@ documentation_quality:
 
 ---
 
-# Integration With Quality Framework
+## Integration With Quality Framework
 
 Documentation Quality Gates are part of the wider FamilyOS Quality Framework.
 
@@ -344,7 +344,7 @@ They contribute to:
 
 ---
 
-# Governance Rules
+## Governance Rules
 
 The following rules apply:
 
@@ -356,7 +356,7 @@ The following rules apply:
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
 Documentation Quality Gates integrate with:
 
@@ -369,7 +369,7 @@ Documentation Quality Gates integrate with:
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 Documentation quality gates are compliant when:
 

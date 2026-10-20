@@ -16,13 +16,13 @@
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 EPIC-HLT-001 records the completed implementation of the official FamilyOS Health Plugin and establishes the governance record that was not present at the historical implementation release.
 
 This EPIC does not rewrite the historical release. It documents and validates the already completed implementation represented by `v3.2.0-health-plugin-implementation`.
 
-# 2. Historical Baselines
+## 2. Historical Baselines
 
 The Health Plugin documentation baseline is:
 
@@ -36,13 +36,13 @@ Commit: `661f4176f6b14cbad4f888007ecc2afcc9648c75`
 
 No EPIC-HLT-001 document existed at the implementation tag.
 
-# 3. Source RFC
+## 3. Source RFC
 
 The implementation is governed by RFC-0011 — Health Plugin.
 
 The RFC documentation defines the Health Plugin architecture, domain, generation, policies, rules, and validation model.
 
-# 4. Implementation Scope
+## 4. Implementation Scope
 
 The historical implementation contains the official Health Plugin under:
 
@@ -61,7 +61,7 @@ The implementation includes:
 - validation models and validator;
 - health documentation recipe.
 
-# 5. Validation Scope
+## 5. Validation Scope
 
 Repository evidence includes dedicated unit and runtime tests for:
 
@@ -83,7 +83,7 @@ The current repository quality gates used during retrospective revalidation are:
 - Pytest;
 - Git diff validation.
 
-# 6. Historical Integrity
+## 6. Historical Integrity
 
 EPIC-HLT-001 must preserve:
 
@@ -94,13 +94,13 @@ EPIC-HLT-001 must preserve:
 
 The retrospective EPIC must not move, replace, or reinterpret historical tags.
 
-# 7. Governance Model
+## 7. Governance Model
 
 This directory contains seven control documents and no numbered documents.
 
 The historical implementation itself remains authoritative evidence of implementation completion.
 
-# 8. Completion
+## 8. Completion
 
 EPIC-HLT-001 is considered complete when:
 
@@ -112,7 +112,7 @@ EPIC-HLT-001 is considered complete when:
 - the final repository state is clean;
 - closure metadata records the completed state.
 
-# 9. References
+## 9. References
 
 - RFC-0011 — Health Plugin
 - `v2.3.0-health-plugin`

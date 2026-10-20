@@ -10,7 +10,7 @@ A consistent workflow reduces uncertainty, improves collaboration, and protects 
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Development Workflow is to establish a common engineering process for:
 
@@ -24,9 +24,9 @@ The workflow ensures that engineering activities remain aligned with FamilyOS pr
 
 ---
 
-# Development Workflow Principles
+## Development Workflow Principles
 
-## Principle 1 — Understand Before Changing
+### Principle 1 — Understand Before Changing
 
 Changes should begin with understanding the existing system.
 
@@ -41,7 +41,7 @@ Understanding reduces unnecessary changes.
 
 ---
 
-## Principle 2 — Design Before Implementation
+### Principle 2 — Design Before Implementation
 
 Significant changes should be designed before code is written.
 
@@ -55,7 +55,7 @@ Design activities may include:
 
 ---
 
-## Principle 3 — Small and Controlled Changes
+### Principle 3 — Small and Controlled Changes
 
 Changes should remain focused and understandable.
 
@@ -68,7 +68,7 @@ Benefits:
 
 ---
 
-## Principle 4 — Continuous Validation
+### Principle 4 — Continuous Validation
 
 Validation should happen throughout development.
 
@@ -81,7 +81,7 @@ Validation includes:
 
 ---
 
-# Development Lifecycle
+## Development Lifecycle
 
 FamilyOS development follows this lifecycle:
 
@@ -115,9 +115,9 @@ Maintenance
 
 ---
 
-# Phase 1 — Idea and Analysis
+## Phase 1 — Idea and Analysis
 
-## Objective
+### Objective
 
 Understand the purpose and impact of a change.
 
@@ -136,9 +136,9 @@ Possible artifacts:
 
 ---
 
-# Phase 2 — Design
+## Phase 2 — Design
 
-## Objective
+### Objective
 
 Define the solution before implementation.
 
@@ -157,9 +157,9 @@ Possible artifacts:
 
 ---
 
-# Phase 3 — Implementation
+## Phase 3 — Implementation
 
-## Objective
+### Objective
 
 Create the required changes.
 
@@ -172,9 +172,9 @@ Implementation should follow:
 
 ---
 
-# Phase 4 — Validation
+## Phase 4 — Validation
 
-## Objective
+### Objective
 
 Verify that the change meets expectations.
 
@@ -188,9 +188,9 @@ Validation may include:
 
 ---
 
-# Quality Gate
+## Quality Gate
 
-## Objective
+### Objective
 
 Ensure that every change satisfies the minimum engineering quality requirements before formal review.
 
@@ -206,9 +206,9 @@ Only changes that satisfy these minimum engineering quality requirements should 
 
 ---
 
-# Phase 5 — Review
+## Phase 5 — Review
 
-## Objective
+### Objective
 
 Ensure quality and alignment.
 
@@ -222,9 +222,9 @@ Reviews should evaluate:
 
 ---
 
-# Phase 6 — Integration
+## Phase 6 — Integration
 
-## Objective
+### Objective
 
 Safely integrate approved changes.
 
@@ -236,29 +236,29 @@ Integration requires:
 
 ---
 
-# Development Change Categories
+## Development Change Categories
 
 FamilyOS recognizes several change types.
 
-## Feature Development
+### Feature Development
 
 Introduces new capabilities.
 
 ---
 
-## Bug Fix
+### Bug Fix
 
 Corrects unexpected behavior.
 
 ---
 
-## Refactoring
+### Refactoring
 
 Improves internal structure without changing expected behavior.
 
 ---
 
-## Architectural Change
+### Architectural Change
 
 Changes system structure or boundaries.
 
@@ -270,7 +270,7 @@ May require:
 
 ---
 
-## Documentation Change
+### Documentation Change
 
 Updates engineering knowledge and references.
 
@@ -280,7 +280,7 @@ Reference:
 
 ---
 
-# Engineering Feedback Loop
+## Engineering Feedback Loop
 
 Development follows a continuous improvement loop:
 
@@ -302,7 +302,7 @@ Improve
 
 ---
 
-# Relationship With Quality
+## Relationship With Quality
 
 Development workflow integrates quality from the beginning.
 
@@ -321,7 +321,7 @@ Reference:
 
 ---
 
-# Relationship With Testing
+## Relationship With Testing
 
 Testing supports every development phase.
 
@@ -337,7 +337,7 @@ Reference:
 
 ---
 
-# Relationship With Documentation
+## Relationship With Documentation
 
 Engineering knowledge must evolve with implementation.
 
@@ -353,7 +353,7 @@ Reference:
 
 ---
 
-# Development Workflow Governance
+## Development Workflow Governance
 
 Workflow improvements should be managed through:
 
@@ -365,7 +365,7 @@ The workflow itself evolves as FamilyOS matures.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The Development Workflow is successful when:
 
@@ -377,7 +377,7 @@ The Development Workflow is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Development Workflow transforms software development from an individual activity into a structured engineering process.
 

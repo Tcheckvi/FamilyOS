@@ -12,7 +12,7 @@ Testing is part of the engineering process from design to delivery.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Testing Philosophy within the Engineering Foundation is to define the strategic role of testing.
 
@@ -26,9 +26,9 @@ Testing exists to ensure that FamilyOS software remains:
 
 ---
 
-# Testing Philosophy Principles
+## Testing Philosophy Principles
 
-## Principle 1 — Testing Is Part of Engineering
+### Principle 1 — Testing Is Part of Engineering
 
 Testing is integrated into the complete development lifecycle.
 
@@ -43,7 +43,7 @@ Quality is built through engineering practices, not verified only at the end.
 
 ---
 
-## Principle 2 — Testability by Design
+### Principle 2 — Testability by Design
 
 Software should be designed to be testable.
 
@@ -58,7 +58,7 @@ Architecture decisions should consider validation needs.
 
 ---
 
-## Principle 3 — Automated Validation
+### Principle 3 — Automated Validation
 
 Where practical, validation should be automated.
 
@@ -73,7 +73,7 @@ Automated testing is a foundation for continuous engineering.
 
 ---
 
-## Principle 4 — Confidence Over Coverage Numbers
+### Principle 4 — Confidence Over Coverage Numbers
 
 Testing success is not defined only by the quantity of tests.
 
@@ -87,7 +87,7 @@ Meaningful validation is preferred over artificial metrics.
 
 ---
 
-## Principle 5 — Tests as Documentation
+### Principle 5 — Tests as Documentation
 
 Tests describe expected system behavior.
 
@@ -101,7 +101,7 @@ Tests become part of the engineering knowledge base.
 
 ---
 
-# Testing Lifecycle
+## Testing Lifecycle
 
 Testing follows a continuous engineering lifecycle.
 
@@ -128,7 +128,7 @@ Every stage contributes to engineering confidence and software quality.
 
 ---
 
-# Testing Role in the Development Lifecycle
+## Testing Role in the Development Lifecycle
 
 Testing supports every stage.
 
@@ -155,7 +155,7 @@ Testing is an integral engineering activity rather than an isolated verification
 
 ---
 
-# Testing and Architecture
+## Testing and Architecture
 
 Architecture decisions should support effective testing.
 
@@ -170,7 +170,7 @@ Testing provides feedback on architectural quality.
 
 ---
 
-# Testing and Development Workflow
+## Testing and Development Workflow
 
 Testing is integrated into development activities.
 
@@ -185,41 +185,41 @@ Validation may include:
 
 ---
 
-# Testing Categories
+## Testing Categories
 
 FamilyOS recognizes different testing responsibilities.
 
-## Unit Testing
+### Unit Testing
 
 Validates isolated components and behaviors.
 
 ---
 
-## Integration Testing
+### Integration Testing
 
 Validates interactions between components.
 
 ---
 
-## Framework Testing
+### Framework Testing
 
 Validates shared engineering capabilities.
 
 ---
 
-## Plugin Testing
+### Plugin Testing
 
 Validates plugin behavior and integration.
 
 ---
 
-## Regression Testing
+### Regression Testing
 
 Ensures existing behavior remains stable.
 
 ---
 
-# Testing Automation
+## Testing Automation
 
 Testing automation should support:
 
@@ -235,7 +235,7 @@ Automated tests should be:
 
 ---
 
-# Testing and Quality
+## Testing and Quality
 
 Testing contributes to quality by providing evidence that engineering expectations are satisfied.
 
@@ -252,7 +252,7 @@ Reference:
 
 ---
 
-# Testing and Build Processes
+## Testing and Build Processes
 
 Testing is integrated into build workflows.
 
@@ -264,7 +264,7 @@ Reference:
 
 ---
 
-# Testing and Release Processes
+## Testing and Release Processes
 
 Release decisions should rely on validated software states.
 
@@ -280,7 +280,7 @@ Reference:
 
 ---
 
-# Testing Documentation
+## Testing Documentation
 
 Testing knowledge must remain documented.
 
@@ -296,7 +296,7 @@ Reference:
 
 ---
 
-# Testing Evolution
+## Testing Evolution
 
 Testing practices evolve with FamilyOS maturity.
 
@@ -310,7 +310,7 @@ Changes should follow engineering governance.
 
 ---
 
-# Governance
+## Governance
 
 Testing practices should remain aligned with:
 
@@ -324,7 +324,7 @@ Major testing changes affecting engineering reliability should be documented thr
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Testing Philosophy is successful when:
 
@@ -336,7 +336,7 @@ Testing Philosophy is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Testing Philosophy establishes testing as a core engineering capability of FamilyOS.
 

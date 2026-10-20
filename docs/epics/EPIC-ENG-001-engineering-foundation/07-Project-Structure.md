@@ -10,7 +10,7 @@ A well-designed project structure reflects engineering responsibilities and supp
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Project Structure is to establish the organizational principles that guide the arrangement of FamilyOS components.
 
@@ -24,9 +24,9 @@ The project structure should enable:
 
 ---
 
-# Project Structure Principles
+## Project Structure Principles
 
-## Principle 1 — Structure Reflects Responsibilities
+### Principle 1 — Structure Reflects Responsibilities
 
 Project organization should represent meaningful engineering responsibilities.
 
@@ -45,7 +45,7 @@ A contributor should understand the role of a component by its location.
 
 ---
 
-## Principle 2 — Separation of Concerns
+### Principle 2 — Separation of Concerns
 
 Different engineering concerns should remain separated.
 
@@ -60,7 +60,7 @@ Clear separation reduces complexity and accidental coupling.
 
 ---
 
-## Principle 3 — Domain-Oriented Organization
+### Principle 3 — Domain-Oriented Organization
 
 FamilyOS is organized around domains and capabilities.
 
@@ -73,7 +73,7 @@ Project structure should support:
 
 ---
 
-## Principle 4 — Discoverability
+### Principle 4 — Discoverability
 
 The structure should help contributors quickly locate required information.
 
@@ -86,7 +86,7 @@ A contributor should be able to discover:
 
 ---
 
-## Principle 5 — Evolution Without Disruption
+### Principle 5 — Evolution Without Disruption
 
 The project structure must support growth without frequent large migrations.
 
@@ -100,7 +100,7 @@ Examples:
 
 ---
 
-# Project Organization Model
+## Project Organization Model
 
 The FamilyOS repository follows a layered engineering organization.
 
@@ -134,7 +134,7 @@ The repository structure should reflect engineering responsibilities rather than
 
 ---
 
-# Application Structure
+## Application Structure
 
 Application code represents the implemented platform capabilities.
 
@@ -153,7 +153,7 @@ The application structure follows:
 
 ---
 
-# Test Structure
+## Test Structure
 
 Tests are organized according to validation responsibilities.
 
@@ -172,7 +172,7 @@ Reference:
 
 ---
 
-# Documentation Structure
+## Documentation Structure
 
 Documentation is maintained as a first-class project component.
 
@@ -191,7 +191,7 @@ Reference:
 
 ---
 
-# Engineering Structure
+## Engineering Structure
 
 Engineering documentation defines:
 
@@ -204,7 +204,7 @@ The engineering structure connects technical implementation with documented proc
 
 ---
 
-# Plugin Structure
+## Plugin Structure
 
 FamilyOS plugins follow the modular project organization.
 
@@ -221,7 +221,7 @@ This supports independent evolution of platform extensions.
 
 ---
 
-# Automation Structure
+## Automation Structure
 
 Automation components support engineering workflows.
 
@@ -236,7 +236,7 @@ Automation should remain organized and reusable.
 
 ---
 
-# Configuration Structure
+## Configuration Structure
 
 Configuration files should be:
 
@@ -248,7 +248,7 @@ Configuration should never hide important engineering behavior.
 
 ---
 
-# Relationship With Architecture
+## Relationship With Architecture
 
 Project structure implements architectural intent.
 
@@ -263,7 +263,7 @@ A repository structure that conflicts with architecture creates long-term comple
 
 ---
 
-# Relationship With Development Workflow
+## Relationship With Development Workflow
 
 Project structure supports the development lifecycle.
 
@@ -276,7 +276,7 @@ It allows contributors to:
 
 ---
 
-# Relationship With Automation
+## Relationship With Automation
 
 A predictable project structure enables automation.
 
@@ -289,7 +289,7 @@ Automation can reliably:
 
 ---
 
-# Structural Invariants
+## Structural Invariants
 
 The FamilyOS project structure shall preserve the following invariants:
 
@@ -304,7 +304,7 @@ These invariants protect repository stability while allowing the project structu
 
 ---
 
-# Governance
+## Governance
 
 Changes to project structure should consider:
 
@@ -317,7 +317,7 @@ Major structural changes should be documented through the appropriate engineerin
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Project Structure is successful when:
 
@@ -329,7 +329,7 @@ Project Structure is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Project Structure provides the organizational foundation required for scalable engineering.
 

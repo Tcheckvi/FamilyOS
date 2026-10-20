@@ -10,7 +10,7 @@ This roadmap defines the expected evolution path of the Engineering Foundation a
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this roadmap is to provide visibility into the evolution of FamilyOS engineering capabilities.
 
@@ -24,9 +24,9 @@ It identifies:
 
 ---
 
-# Roadmap Principles
+## Roadmap Principles
 
-## Principle 1 — Incremental Evolution
+### Principle 1 — Incremental Evolution
 
 The Engineering Foundation evolves progressively.
 
@@ -36,7 +36,7 @@ Engineering maturity is achieved through continuous improvement rather than disr
 
 ---
 
-## Principle 2 — Foundation Before Optimization
+### Principle 2 — Foundation Before Optimization
 
 FamilyOS prioritizes stable engineering foundations before advanced optimization.
 
@@ -44,7 +44,7 @@ Reliable engineering practices must exist before increasing complexity.
 
 ---
 
-## Principle 3 — Integration Over Isolation
+### Principle 3 — Integration Over Isolation
 
 Engineering capabilities should work together.
 
@@ -52,7 +52,7 @@ Future frameworks should extend the Engineering Foundation instead of creating p
 
 ---
 
-## Principle 4 — Sustainable Evolution
+### Principle 4 — Sustainable Evolution
 
 Engineering improvements should remain sustainable over the lifetime of the platform.
 
@@ -60,7 +60,7 @@ Every roadmap milestone should strengthen maintainability, consistency, and long
 
 ---
 
-# Current State
+## Current State
 
 The Engineering Foundation currently provides:
 
@@ -87,7 +87,7 @@ These capabilities establish the initial engineering baseline for the FamilyOS e
 
 ---
 
-# Engineering Maturity Model
+## Engineering Maturity Model
 
 The roadmap follows a progressive engineering maturity model.
 
@@ -123,9 +123,9 @@ Each maturity level extends the previous one without replacing it.
 
 ---
 
-# Phase 1 — Foundation Stabilization
+## Phase 1 — Foundation Stabilization
 
-## Objective
+### Objective
 
 Establish consistent engineering practices across FamilyOS.
 
@@ -142,9 +142,9 @@ A common engineering model shared throughout the platform.
 
 ---
 
-# Phase 2 — Engineering Automation
+## Phase 2 — Engineering Automation
 
-## Objective
+### Objective
 
 Increase automation across engineering activities.
 
@@ -166,9 +166,9 @@ Related frameworks:
 
 ---
 
-# Phase 3 — Advanced Engineering Workflows
+## Phase 3 — Advanced Engineering Workflows
 
-## Objective
+### Objective
 
 Improve engineering efficiency and scalability.
 
@@ -185,9 +185,9 @@ A scalable engineering environment supporting platform growth.
 
 ---
 
-# Phase 4 — Framework Integration
+## Phase 4 — Framework Integration
 
-## Objective
+### Objective
 
 Integrate all engineering disciplines into a unified operating model.
 
@@ -207,9 +207,9 @@ A fully integrated engineering ecosystem.
 
 ---
 
-# Phase 5 — Continuous Improvement
+## Phase 5 — Continuous Improvement
 
-## Objective
+### Objective
 
 Continuously increase engineering maturity.
 
@@ -227,11 +227,11 @@ A sustainable engineering culture capable of continuous evolution.
 
 ---
 
-# Future Engineering Capabilities
+## Future Engineering Capabilities
 
 The Engineering Foundation may later support additional capabilities.
 
-## Developer Experience
+### Developer Experience
 
 Possible improvements include:
 
@@ -241,7 +241,7 @@ Possible improvements include:
 
 ---
 
-## Engineering Analytics
+### Engineering Analytics
 
 Potential capabilities include:
 
@@ -252,7 +252,7 @@ Potential capabilities include:
 
 ---
 
-## Intelligent Engineering Automation
+### Intelligent Engineering Automation
 
 Potential future capabilities include:
 
@@ -262,7 +262,7 @@ Potential future capabilities include:
 
 ---
 
-# Dependencies
+## Dependencies
 
 The roadmap depends on the continued evolution of:
 
@@ -276,7 +276,7 @@ Future engineering frameworks should align with the Engineering Foundation roadm
 
 ---
 
-# Governance
+## Governance
 
 Roadmap evolution follows Technical Governance.
 
@@ -289,7 +289,7 @@ Roadmap changes should remain:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The Engineering Foundation roadmap is successful when:
 
@@ -301,7 +301,7 @@ The Engineering Foundation roadmap is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The Engineering Foundation roadmap defines the long-term evolution of FamilyOS engineering.
 

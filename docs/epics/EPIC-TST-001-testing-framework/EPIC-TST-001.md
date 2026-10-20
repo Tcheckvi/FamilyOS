@@ -1,10 +1,10 @@
 # Testing Framework
 
-# EPIC-TST-001
+## EPIC-TST-001
 
-## Testing Framework
+### Testing Framework
 
-## Overview
+### Overview
 
 EPIC-TST-001 establishes the official **Testing Framework** for the FamilyOS engineering platform.
 
@@ -35,7 +35,7 @@ The framework establishes the architecture required to transform software behavi
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of EPIC-TST-001 is to establish a unified testing foundation that enables FamilyOS to evolve safely as the platform grows.
 
@@ -57,7 +57,7 @@ The framework provides the principles and mechanisms required to:
 
 ---
 
-# Problem Statement
+## Problem Statement
 
 As FamilyOS expands, testing complexity increases.
 
@@ -98,7 +98,7 @@ EPIC-TST-001 addresses these risks by defining one coherent testing architecture
 
 ---
 
-# Vision
+## Vision
 
 FamilyOS should be able to change rapidly without sacrificing confidence.
 
@@ -124,7 +124,7 @@ The Testing Framework enables that evidence to be created consistently.
 
 ---
 
-# Core Principle
+## Core Principle
 
 The governing principle of EPIC-TST-001 is:
 
@@ -141,7 +141,7 @@ The primary objective is trustworthy validation.
 
 ---
 
-# Strategic Objectives
+## Strategic Objectives
 
 EPIC-TST-001 establishes the foundation required to:
 
@@ -169,7 +169,7 @@ EPIC-TST-001 establishes the foundation required to:
 
 ---
 
-# Scope
+## Scope
 
 EPIC-TST-001 applies to testing throughout the FamilyOS engineering platform.
 
@@ -197,7 +197,7 @@ The scope includes:
 
 ---
 
-# Out of Scope
+## Out of Scope
 
 EPIC-TST-001 does not independently define:
 
@@ -216,7 +216,7 @@ The Testing Framework integrates with them where testing evidence is required.
 
 ---
 
-# Testing Architecture
+## Testing Architecture
 
 The FamilyOS Testing Framework follows a layered architecture.
 
@@ -255,7 +255,7 @@ Governance and lifecycle management surround the complete system.
 
 ---
 
-# Testing Levels
+## Testing Levels
 
 FamilyOS recognizes multiple complementary testing levels.
 
@@ -281,7 +281,7 @@ Performance testing introduces an additional validation dimension where executio
 
 ---
 
-# Unit Testing
+## Unit Testing
 
 Unit testing provides the fastest behavioral feedback.
 
@@ -298,7 +298,7 @@ Unit tests should not attempt to replace integration testing.
 
 ---
 
-# Integration Testing
+## Integration Testing
 
 Integration tests validate meaningful architectural boundaries.
 
@@ -316,7 +316,7 @@ Integration tests provide evidence that components behave correctly when connect
 
 ---
 
-# Functional Testing
+## Functional Testing
 
 Functional tests validate meaningful capability or workflow behavior.
 
@@ -324,7 +324,7 @@ They focus on externally meaningful outcomes rather than internal implementation
 
 ---
 
-# System Testing
+## System Testing
 
 System tests validate significant FamilyOS behavior across broader platform boundaries.
 
@@ -332,7 +332,7 @@ Because system tests may be more expensive, they belong to appropriate execution
 
 ---
 
-# Contract Testing
+## Contract Testing
 
 Contract testing protects interfaces between independently evolving components.
 
@@ -348,7 +348,7 @@ Contract tests help detect incompatible changes before they propagate through th
 
 ---
 
-# Regression Testing
+## Regression Testing
 
 Regression tests preserve knowledge about previously corrected defects.
 
@@ -374,7 +374,7 @@ Significant defects should not be allowed to disappear from engineering memory a
 
 ---
 
-# Test Data
+## Test Data
 
 Testing should use controlled data.
 
@@ -389,7 +389,7 @@ Routine tests should not depend on uncontrolled production personal data.
 
 ---
 
-# Fixtures
+## Fixtures
 
 Fixtures establish controlled testing state.
 
@@ -405,7 +405,7 @@ Shared fixtures should only exist when their reuse provides meaningful value.
 
 ---
 
-# Mocks and Test Doubles
+## Mocks and Test Doubles
 
 Test doubles are useful tools but must not replace meaningful validation.
 
@@ -423,7 +423,7 @@ Over-mocking can create false confidence and should be avoided.
 
 ---
 
-# Isolation
+## Isolation
 
 Tests must not rely on hidden state created by unrelated tests.
 
@@ -442,7 +442,7 @@ Tests should remain independently executable wherever practical.
 
 ---
 
-# Determinism
+## Determinism
 
 Equivalent test conditions should produce equivalent results.
 
@@ -459,7 +459,7 @@ These dependencies should be controlled where practical.
 
 ---
 
-# Test Coverage
+## Test Coverage
 
 Coverage is an engineering signal.
 
@@ -475,7 +475,7 @@ A high coverage percentage with weak assertions remains weak testing.
 
 ---
 
-# Test Execution
+## Test Execution
 
 Testing should support multiple execution scopes.
 
@@ -504,7 +504,7 @@ Developers should receive fast feedback without losing broader validation safety
 
 ---
 
-# Execution Profiles
+## Execution Profiles
 
 The framework recognizes execution profiles such as:
 
@@ -518,7 +518,7 @@ Each profile may require different combinations of testing levels and evidence.
 
 ---
 
-# Performance
+## Performance
 
 Testing performance matters because slow feedback reduces engineering efficiency.
 
@@ -535,7 +535,7 @@ Performance optimization must not compromise test reliability.
 
 ---
 
-# Reporting
+## Reporting
 
 Testing results must be understandable.
 
@@ -552,7 +552,7 @@ Failure diagnostics should reduce the time required to understand defects.
 
 ---
 
-# Observability
+## Observability
 
 The health of the testing system should itself become observable.
 
@@ -571,7 +571,7 @@ Testing observability should support decisions rather than produce vanity metric
 
 ---
 
-# Automation
+## Automation
 
 Repeatable validation should be automated where practical.
 
@@ -597,7 +597,7 @@ The required validation breadth increases according to lifecycle risk.
 
 ---
 
-# Continuous Integration
+## Continuous Integration
 
 CI provides the primary automated environment for repository-wide testing enforcement.
 
@@ -614,7 +614,7 @@ Local and CI behavior should remain sufficiently aligned to allow developers to 
 
 ---
 
-# Testing Gates
+## Testing Gates
 
 Testing gates convert evidence into progression decisions.
 
@@ -639,7 +639,7 @@ Missing required evidence must not produce a normal PASS.
 
 ---
 
-# Gate Evidence
+## Gate Evidence
 
 Testing gates may consume:
 
@@ -655,7 +655,7 @@ The exact evidence depends on lifecycle stage and risk.
 
 ---
 
-# Governance
+## Governance
 
 Testing requires explicit governance.
 
@@ -676,7 +676,7 @@ Without governance, testing infrastructure gradually degrades.
 
 ---
 
-# Test Lifecycle
+## Test Lifecycle
 
 Tests are maintained engineering assets.
 
@@ -714,7 +714,7 @@ Removal should be deliberate, particularly for regression and contract tests.
 
 ---
 
-# Testing Debt
+## Testing Debt
 
 Testing debt includes deficiencies such as:
 
@@ -731,7 +731,7 @@ Testing debt should remain visible and prioritized according to risk.
 
 ---
 
-# Flaky Tests
+## Flaky Tests
 
 Flaky tests are defects in the validation system.
 
@@ -748,7 +748,7 @@ Known flakiness should be:
 
 ---
 
-# Quarantine
+## Quarantine
 
 Quarantine may temporarily isolate an unstable test.
 
@@ -763,7 +763,7 @@ A quarantine should identify:
 
 ---
 
-# Testing Framework Lifecycle
+## Testing Framework Lifecycle
 
 The Testing Framework itself is versioned and governed.
 
@@ -792,7 +792,7 @@ Framework changes must consider compatibility and migration.
 
 ---
 
-# Framework Maturity
+## Framework Maturity
 
 The Testing Framework roadmap progresses through:
 
@@ -825,7 +825,7 @@ Advanced capabilities must build upon reliable foundations.
 
 ---
 
-# Validation
+## Validation
 
 The Testing Framework must itself be validated.
 
@@ -848,7 +848,7 @@ These states must never be treated as equivalent.
 
 ---
 
-# Implementation Tracking
+## Implementation Tracking
 
 Implementation is tracked through:
 
@@ -869,7 +869,7 @@ This enables incremental adoption without misrepresenting maturity.
 
 ---
 
-# Official Plugin Applicability
+## Official Plugin Applicability
 
 EPIC-TST-001 applies to FamilyOS official plugins.
 
@@ -888,7 +888,7 @@ Plugin-specific requirements may extend the framework but must remain compatible
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 The Testing Framework builds upon **EPIC-ENG-001 — Engineering Foundation**.
 
@@ -904,7 +904,7 @@ EPIC-TST-001 specializes those foundations for testing.
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 The Testing Framework contributes evidence to **EPIC-QLT-001 — Quality Framework**.
 
@@ -927,7 +927,7 @@ Testing is therefore a major quality capability, but not the complete FamilyOS q
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 Testing integrates with **EPIC-BLD-001 — Build Framework**.
 
@@ -935,7 +935,7 @@ Build outputs may require validation before they are considered suitable for dow
 
 ---
 
-# Relationship With Release Framework
+## Relationship With Release Framework
 
 Testing evidence contributes to **EPIC-REL-001 — Release Framework**.
 
@@ -950,7 +950,7 @@ Release decisions may require:
 
 ---
 
-# Documentation Architecture
+## Documentation Architecture
 
 The canonical Testing Framework sequence is:
 
@@ -995,7 +995,7 @@ EPIC-TST-001.md
 
 ---
 
-# Deliverables
+## Deliverables
 
 EPIC-TST-001 delivers:
 
@@ -1028,7 +1028,7 @@ EPIC-TST-001 delivers:
 
 ---
 
-# Acceptance Criteria
+## Acceptance Criteria
 
 The documentation baseline is acceptable when:
 
@@ -1051,7 +1051,7 @@ The documentation baseline is acceptable when:
 
 ---
 
-# Operational Acceptance
+## Operational Acceptance
 
 Documentation completion does not automatically establish operational completion.
 
@@ -1067,7 +1067,7 @@ Operational acceptance requires applicable implementation evidence demonstrating
 
 ---
 
-# Risks
+## Risks
 
 Key risks addressed by EPIC-TST-001 include:
 
@@ -1086,7 +1086,7 @@ Key risks addressed by EPIC-TST-001 include:
 
 ---
 
-# Non-Goals
+## Non-Goals
 
 EPIC-TST-001 does not attempt to maximize:
 
@@ -1100,7 +1100,7 @@ The framework optimizes for reliable engineering evidence proportional to risk.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 EPIC-TST-001 succeeds when FamilyOS has a Testing Framework that:
 
@@ -1119,7 +1119,7 @@ EPIC-TST-001 succeeds when FamilyOS has a Testing Framework that:
 
 ---
 
-# Current Baseline
+## Current Baseline
 
 ```text
 EPIC: EPIC-TST-001
@@ -1146,7 +1146,7 @@ The EPIC must not be marked fully validated until the repository evidence requir
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS depends on testing to determine whether engineering changes can be trusted.
 

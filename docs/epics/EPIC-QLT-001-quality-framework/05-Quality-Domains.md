@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 05 Quality Domains
+## 05 Quality Domains
 
-## Overview
+### Overview
 
 The FamilyOS Quality Framework organizes quality into a set of explicit quality domains.
 
@@ -27,7 +27,7 @@ Instead, quality is evaluated as a multidimensional engineering property.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Quality Domains model is to create a stable classification system for all quality-related concerns across FamilyOS.
 
@@ -68,7 +68,7 @@ Assessment
 
 ---
 
-# Domain Model Principles
+## Domain Model Principles
 
 Quality domains must remain:
 
@@ -109,7 +109,7 @@ They do not define quality domains.
 
 ---
 
-# Core Quality Domains
+## Core Quality Domains
 
 The initial FamilyOS Quality Framework defines the following primary domains:
 
@@ -139,7 +139,7 @@ Additional domains may be introduced through controlled framework evolution.
 
 ---
 
-# Domain Relationship
+## Domain Relationship
 
 The domains are independent but strongly interconnected.
 
@@ -173,7 +173,7 @@ The Quality Framework must support this relationship without collapsing all doma
 
 ---
 
-# Correctness Domain
+## Correctness Domain
 
 The Correctness Domain evaluates whether software behaves according to defined expectations.
 
@@ -204,7 +204,7 @@ Correctness requirements may originate from:
 
 ---
 
-# Correctness Evidence
+## Correctness Evidence
 
 Potential correctness evidence includes:
 
@@ -228,7 +228,7 @@ Missing Validation
 
 ---
 
-# Architecture Domain
+## Architecture Domain
 
 The Architecture Domain protects structural integrity.
 
@@ -253,7 +253,7 @@ Does the implementation respect the intended architecture?
 
 ---
 
-# Architecture Evidence
+## Architecture Evidence
 
 Architecture evidence may include:
 
@@ -276,7 +276,7 @@ Plugin Boundary Violation
 
 ---
 
-# Maintainability Domain
+## Maintainability Domain
 
 The Maintainability Domain evaluates the ability of software to evolve safely and efficiently.
 
@@ -300,7 +300,7 @@ Can this component be understood and changed safely?
 
 ---
 
-# Maintainability Evidence
+## Maintainability Evidence
 
 Possible evidence includes:
 
@@ -325,7 +325,7 @@ Poor Separation of Concerns
 
 ---
 
-# Reliability Domain
+## Reliability Domain
 
 The Reliability Domain evaluates predictable and resilient behavior.
 
@@ -347,7 +347,7 @@ Can the system continue to behave predictably under expected failure conditions?
 
 ---
 
-# Reliability Evidence
+## Reliability Evidence
 
 Possible reliability evidence includes:
 
@@ -371,7 +371,7 @@ Non-Deterministic Behavior
 
 ---
 
-# Security Domain
+## Security Domain
 
 The Security Domain evaluates protection against threats, unauthorized actions, data exposure, and unsafe behavior.
 
@@ -395,7 +395,7 @@ Does the system preserve required security properties?
 
 ---
 
-# Security Evidence
+## Security Evidence
 
 Security evidence may include:
 
@@ -420,7 +420,7 @@ Insecure Configuration
 
 ---
 
-# Performance Domain
+## Performance Domain
 
 The Performance Domain evaluates whether a component operates within defined efficiency expectations.
 
@@ -445,7 +445,7 @@ Performance expectations must remain contextual.
 
 ---
 
-# Performance Evidence
+## Performance Evidence
 
 Possible evidence includes:
 
@@ -468,7 +468,7 @@ Scalability Limitation
 
 ---
 
-# Testing Domain
+## Testing Domain
 
 The Testing Domain evaluates the quality and adequacy of verification mechanisms.
 
@@ -494,7 +494,7 @@ Does the available test evidence provide sufficient confidence?
 
 ---
 
-# Testing Evidence
+## Testing Evidence
 
 Potential evidence includes:
 
@@ -518,7 +518,7 @@ Insufficient Integration Testing
 
 ---
 
-# Documentation Domain
+## Documentation Domain
 
 The Documentation Domain evaluates engineering knowledge quality.
 
@@ -541,7 +541,7 @@ Is the required engineering knowledge accurate and available?
 
 ---
 
-# Documentation Evidence
+## Documentation Evidence
 
 Possible evidence includes:
 
@@ -565,7 +565,7 @@ Incomplete Architecture Description
 
 ---
 
-# Compatibility Domain
+## Compatibility Domain
 
 The Compatibility Domain evaluates whether changes preserve expected interoperability across versions and components.
 
@@ -588,7 +588,7 @@ Can existing consumers continue to operate correctly?
 
 ---
 
-# Compatibility Evidence
+## Compatibility Evidence
 
 Potential evidence includes:
 
@@ -611,7 +611,7 @@ Plugin Compatibility Regression
 
 ---
 
-# Dependency Domain
+## Dependency Domain
 
 The Dependency Domain evaluates the quality and risk associated with external and internal dependencies.
 
@@ -634,7 +634,7 @@ Are dependencies controlled, appropriate, and safe?
 
 ---
 
-# Dependency Evidence
+## Dependency Evidence
 
 Potential evidence includes:
 
@@ -657,7 +657,7 @@ Unnecessary Dependency
 
 ---
 
-# Compliance Domain
+## Compliance Domain
 
 The Compliance Domain evaluates conformance to internal engineering standards and framework requirements.
 
@@ -679,7 +679,7 @@ Does the component satisfy applicable FamilyOS requirements?
 
 ---
 
-# Compliance Evidence
+## Compliance Evidence
 
 Potential evidence includes:
 
@@ -701,7 +701,7 @@ Governance Requirement Failure
 
 ---
 
-# Observability Domain
+## Observability Domain
 
 The Observability Domain evaluates the ability to understand runtime and operational behavior.
 
@@ -723,7 +723,7 @@ Can engineers understand what the system is doing and why?
 
 ---
 
-# Observability Evidence
+## Observability Evidence
 
 Potential evidence includes:
 
@@ -745,7 +745,7 @@ Missing Health Signal
 
 ---
 
-# Build Domain
+## Build Domain
 
 The Build Domain evaluates the integrity and reliability of artifact creation.
 
@@ -766,7 +766,7 @@ Can FamilyOS reliably produce the intended artifacts?
 
 ---
 
-# Build Evidence
+## Build Evidence
 
 Potential evidence includes:
 
@@ -788,7 +788,7 @@ Artifact Integrity Failure
 
 ---
 
-# Release Domain
+## Release Domain
 
 The Release Domain evaluates whether a release candidate satisfies required readiness criteria.
 
@@ -809,7 +809,7 @@ Is this release ready to be delivered?
 
 ---
 
-# Release Evidence
+## Release Evidence
 
 Potential evidence includes:
 
@@ -833,7 +833,7 @@ Unapproved Exception
 
 ---
 
-# Infrastructure Domain
+## Infrastructure Domain
 
 The Infrastructure Domain evaluates engineering and runtime infrastructure quality.
 
@@ -854,7 +854,7 @@ Is the infrastructure reliable, secure, and reproducible?
 
 ---
 
-# Infrastructure Evidence
+## Infrastructure Evidence
 
 Potential evidence includes:
 
@@ -876,7 +876,7 @@ Infrastructure Dependency Failure
 
 ---
 
-# Developer Experience Domain
+## Developer Experience Domain
 
 The Developer Experience Domain evaluates whether engineering workflows support effective development.
 
@@ -900,7 +900,7 @@ Can engineers work effectively without unnecessary quality friction?
 
 ---
 
-# Developer Experience Evidence
+## Developer Experience Evidence
 
 Potential evidence includes:
 
@@ -923,7 +923,7 @@ Excessive Manual Workflow
 
 ---
 
-# Governance Domain
+## Governance Domain
 
 The Governance Domain evaluates whether quality-related decisions are properly controlled.
 
@@ -945,7 +945,7 @@ Are quality decisions controlled, traceable, and accountable?
 
 ---
 
-# Governance Evidence
+## Governance Evidence
 
 Potential evidence includes:
 
@@ -968,7 +968,7 @@ Untraceable Decision
 
 ---
 
-# Cross-Domain Findings
+## Cross-Domain Findings
 
 Some findings affect multiple domains.
 
@@ -1004,7 +1004,7 @@ This preserves classification clarity while recognizing impact relationships.
 
 ---
 
-# Primary Domain
+## Primary Domain
 
 Every quality requirement should have a primary domain.
 
@@ -1019,7 +1019,7 @@ A requirement should not be duplicated across several domains solely because it 
 
 ---
 
-# Secondary Domain Relationships
+## Secondary Domain Relationships
 
 Secondary domain relationships may capture additional impacts.
 
@@ -1040,7 +1040,7 @@ These relationships support multidimensional analysis.
 
 ---
 
-# Domain Ownership
+## Domain Ownership
 
 Each quality domain should have defined governance ownership.
 
@@ -1059,7 +1059,7 @@ It identifies the authority responsible for the domain model.
 
 ---
 
-# Domain Requirements
+## Domain Requirements
 
 Each quality domain may define its own requirements.
 
@@ -1083,7 +1083,7 @@ All requirements still use the common Quality Architecture.
 
 ---
 
-# Domain Rule Sets
+## Domain Rule Sets
 
 Rules may be grouped by domain.
 
@@ -1105,7 +1105,7 @@ Rule grouping improves discoverability and governance.
 
 ---
 
-# Domain Check Providers
+## Domain Check Providers
 
 A single quality domain may use multiple check providers.
 
@@ -1123,7 +1123,7 @@ The domain remains independent of specific providers.
 
 ---
 
-# Domain Metrics
+## Domain Metrics
 
 Metrics should be classified by domain.
 
@@ -1152,7 +1152,7 @@ Metrics should remain meaningful within their domain context.
 
 ---
 
-# Domain Quality Score
+## Domain Quality Score
 
 The framework may eventually support domain-level scores.
 
@@ -1172,7 +1172,7 @@ The framework should prefer interpretable quality state over artificial scoring.
 
 ---
 
-# Overall Quality State
+## Overall Quality State
 
 Overall quality state may be derived from multiple domains.
 
@@ -1196,7 +1196,7 @@ Aggregation logic must remain explicit.
 
 ---
 
-# Domain Criticality
+## Domain Criticality
 
 Some domains may be more critical depending on component type.
 
@@ -1216,7 +1216,7 @@ Quality profiles may define domain criticality.
 
 ---
 
-# Domain Weighting
+## Domain Weighting
 
 If weighting is introduced, it must be used cautiously.
 
@@ -1240,7 +1240,7 @@ Blocking conditions take precedence over aggregate scoring.
 
 ---
 
-# Domain Applicability
+## Domain Applicability
 
 Not every domain applies equally to every target.
 
@@ -1268,7 +1268,7 @@ Applicability must be determined through:
 
 ---
 
-# Domain Applicability Matrix
+## Domain Applicability Matrix
 
 The framework may define applicability matrices.
 
@@ -1289,7 +1289,7 @@ The exact matrix must be defined through profiles and governance.
 
 ---
 
-# Quality Profiles and Domains
+## Quality Profiles and Domains
 
 Quality profiles combine domain requirements.
 
@@ -1311,7 +1311,7 @@ A profile defines which domains and rules apply.
 
 ---
 
-# Domain Baselines
+## Domain Baselines
 
 Baselines may exist per domain.
 
@@ -1328,7 +1328,7 @@ This allows incremental improvement without weakening unrelated domains.
 
 ---
 
-# Domain Findings Lifecycle
+## Domain Findings Lifecycle
 
 Findings should follow a consistent lifecycle regardless of domain.
 
@@ -1360,7 +1360,7 @@ These states must be governed.
 
 ---
 
-# Domain Severity Mapping
+## Domain Severity Mapping
 
 Tools may use different severity systems.
 
@@ -1380,7 +1380,7 @@ Severity mapping may vary by domain because context affects impact.
 
 ---
 
-# Domain-Specific Thresholds
+## Domain-Specific Thresholds
 
 Metrics may require domain-specific thresholds.
 
@@ -1404,7 +1404,7 @@ Thresholds must be explicit and profile-aware.
 
 ---
 
-# Domain Quality Gates
+## Domain Quality Gates
 
 Quality gates may evaluate one or several domains.
 
@@ -1432,7 +1432,7 @@ Gate configuration must identify required domains clearly.
 
 ---
 
-# Domain Dependencies
+## Domain Dependencies
 
 Some quality domains depend on evidence from other domains.
 
@@ -1454,7 +1454,7 @@ These relationships should be explicit.
 
 ---
 
-# Domain Failure Propagation
+## Domain Failure Propagation
 
 A severe finding may propagate into higher-level quality decisions.
 
@@ -1474,7 +1474,7 @@ Propagation rules must be deterministic.
 
 ---
 
-# Domain Exceptions
+## Domain Exceptions
 
 Exceptions may apply to specific domain requirements.
 
@@ -1492,7 +1492,7 @@ Scope must remain precise.
 
 ---
 
-# Domain Reporting
+## Domain Reporting
 
 Quality reports should expose domain-level status.
 
@@ -1515,7 +1515,7 @@ Domain-level reporting improves diagnosis.
 
 ---
 
-# Domain Trends
+## Domain Trends
 
 Quality trends should also be visible by domain.
 
@@ -1539,7 +1539,7 @@ Domain trends help identify systemic issues.
 
 ---
 
-# Domain Risk Analysis
+## Domain Risk Analysis
 
 Risk analysis should consider domain context.
 
@@ -1561,7 +1561,7 @@ The same severity label may require different remediation urgency depending on d
 
 ---
 
-# Domain Maturity
+## Domain Maturity
 
 Domains may have different implementation maturity levels.
 
@@ -1585,7 +1585,7 @@ The Quality Framework should allow domains to mature independently while preserv
 
 ---
 
-# Domain Maturity Model
+## Domain Maturity Model
 
 A domain may progress through stages such as:
 
@@ -1628,7 +1628,7 @@ This model may be used to plan framework evolution.
 
 ---
 
-# Domain Extension Model
+## Domain Extension Model
 
 New quality domains may be introduced when existing categories do not adequately represent an engineering concern.
 
@@ -1647,7 +1647,7 @@ New domains must not be created merely to mirror a tool.
 
 ---
 
-# Possible Future Domains
+## Possible Future Domains
 
 Future evolution may introduce additional domains such as:
 
@@ -1665,7 +1665,7 @@ These domains should integrate through the existing Quality Architecture.
 
 ---
 
-# AI Quality Domain
+## AI Quality Domain
 
 If FamilyOS introduces significant AI-driven capabilities, a dedicated AI Quality domain may eventually become appropriate.
 
@@ -1692,7 +1692,7 @@ Observability
 
 ---
 
-# Data Quality Domain
+## Data Quality Domain
 
 A future Data Quality domain may address:
 
@@ -1707,7 +1707,7 @@ This may become particularly important as FamilyOS manages increasingly complex 
 
 ---
 
-# Privacy Quality Domain
+## Privacy Quality Domain
 
 Privacy may eventually justify a dedicated domain.
 
@@ -1725,7 +1725,7 @@ Until then, privacy requirements may primarily exist within Security, Governance
 
 ---
 
-# Domain Registry
+## Domain Registry
 
 The framework should maintain a registry of recognized quality domains.
 
@@ -1745,7 +1745,7 @@ This registry ensures consistent classification.
 
 ---
 
-# Domain Identifier
+## Domain Identifier
 
 Each quality domain should have a stable identifier.
 
@@ -1775,7 +1775,7 @@ Identifier conventions may be finalized during implementation.
 
 ---
 
-# Domain Governance
+## Domain Governance
 
 Domain changes must be governed.
 
@@ -1801,7 +1801,7 @@ Domain evolution must therefore consider compatibility.
 
 ---
 
-# Domain Versioning
+## Domain Versioning
 
 Domain definitions should be versioned when their semantics change significantly.
 
@@ -1811,33 +1811,33 @@ This supports long-term quality traceability.
 
 ---
 
-# Domain Anti-Patterns
+## Domain Anti-Patterns
 
 The Quality Domains model rejects several anti-patterns.
 
-## Tool Domains
+### Tool Domains
 
 Creating domains named after tools tightly couples quality architecture to implementation.
 
-## Duplicate Domains
+### Duplicate Domains
 
 Overlapping domains create ambiguous ownership.
 
-## Metric Domains
+### Metric Domains
 
 A metric such as coverage is not itself a quality domain.
 
-## Organizational Domains
+### Organizational Domains
 
 Domains should describe engineering concerns rather than team structures.
 
-## Arbitrary Domains
+### Arbitrary Domains
 
 A domain must represent a meaningful and durable quality dimension.
 
 ---
 
-# Example Classification
+## Example Classification
 
 Consider the following issue:
 
@@ -1864,7 +1864,7 @@ The finding should still have one primary domain to preserve clear ownership.
 
 ---
 
-# Example Security Classification
+## Example Security Classification
 
 Consider:
 
@@ -1887,7 +1887,7 @@ A release gate may then treat the security finding as blocking.
 
 ---
 
-# Example Documentation Classification
+## Example Documentation Classification
 
 Consider:
 
@@ -1910,7 +1910,7 @@ This demonstrates how domains cooperate without losing classification precision.
 
 ---
 
-# Reference Domain Structure
+## Reference Domain Structure
 
 The quality domain architecture can be represented as:
 
@@ -1941,7 +1941,7 @@ This model allows quality domains to remain specialized while contributing to a 
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The Quality Domains model transforms quality from an undifferentiated concept into a structured engineering taxonomy.
 
@@ -1967,7 +1967,7 @@ This classification is essential for reliable quality management at ecosystem sc
 
 ---
 
-# Final Domain Principle
+## Final Domain Principle
 
 Quality must be multidimensional.
 
@@ -1976,3 +1976,94 @@ No single metric, tool, test suite, or engineering discipline can represent the 
 The Quality Domains model therefore provides the structural vocabulary required to evaluate quality across architecture, implementation, testing, security, documentation, reliability, performance, compatibility, governance, and the broader engineering lifecycle.
 
 These domains form the classification foundation for the quality rules, evidence, metrics, assessments, risk mechanisms, gates, reporting, observability, and governance capabilities defined throughout the remainder of EPIC-QLT-001.
+
+---
+
+### Runtime Quality Domain Contract
+
+This section records the implementation-level contract required before the
+initial Quality domain model is introduced.
+
+The canonical runtime representation SHALL use `QualityDomain` as the
+machine-readable classification of the quality concern being evaluated.
+Domain values SHALL be stable identifiers suitable for deterministic
+serialization, comparison, evidence correlation, and later assessment.
+
+The initial runtime vocabulary SHALL be derived from the normative Quality
+Framework rather than from any individual verification tool. A Quality domain
+MUST NOT encode Ruff, MyPy, Pytest, a CI provider, or another execution
+mechanism as the domain abstraction itself.
+
+Where a governed Quality domain requires a persistent textual identifier, that
+identifier SHALL remain compatible with the FamilyOS identifier specification
+and the existing `QLT-DOM-*` namespace. This reconciliation does not introduce
+a second Quality-domain identifier scheme.
+
+The Phase 2 implementation SHALL remain limited to the core domain vocabulary.
+Tool adapters, evidence persistence, assessment orchestration, profiles, CLI
+surfaces, CI integration, gates, historical state, observability, governance,
+and Quality intelligence remain governed by their later implementation phases.
+
+#### Runtime Representation Decision
+
+`QualityDomain` SHALL be implemented as an immutable, validated, extensible
+value object rather than as a closed enum or an unconstrained raw string.
+
+This representation preserves the distinction between a governed stable
+identifier and a display or implementation name while allowing the Quality
+Framework to introduce additional governed domains without requiring the core
+type itself to be expanded for every future domain.
+
+The currently documented `QLT-DOM-*` identifiers form the initial governed
+Quality-domain catalogue. They do not define an eternally closed set of values.
+Any future Quality-domain identifier MUST be introduced through the applicable
+FamilyOS governance process and MUST remain compatible with the identifier
+requirements of `SPEC-0002`.
+
+The runtime value object SHALL validate the Quality-domain identifier contract
+at its stable boundary. It MUST reject malformed identifiers and MUST NOT treat
+an arbitrary string as a valid Quality domain merely because it is non-empty.
+
+This decision resolves the Phase 2 representation choice only. Definition of
+the runtime type, the initial domain catalogue, validation behavior, and tests
+remain implementation work governed by the original Phase 2 checklist.
+
+### Phase 2 Quality Identifier Runtime Contract
+
+Phase 2 runtime identifiers SHALL preserve the category and stable-boundary
+requirements of `SPEC-0002`.
+
+The initial Quality runtime SHALL recognize the following governed identifier
+categories:
+
+```text
+QLT-DOM-*
+QLT-REQ-*
+QLT-RULE-*
+QLT-FIND-*
+```
+
+Each category SHALL be represented by an immutable validated value object at
+the domain boundary rather than by an unconstrained raw string.
+
+Validation SHALL establish at minimum that the value is a non-empty canonical
+string in the expected Quality identifier namespace and that it contains a
+non-empty category-specific suffix.
+
+Phase 2 SHALL NOT impose a narrower internal suffix grammar that would reject
+identifier forms already present in the normative Quality corpus. In
+particular, existing domain segments such as `ARC` and `ARCH`, or `TST` and
+`TEST`, SHALL NOT be silently normalized into one another.
+
+Identifier objects SHALL preserve the canonical supplied identifier exactly.
+They SHALL NOT infer additional semantics solely from arbitrary suffix
+segments.
+
+The `QualityDomain` initial governed catalogue remains the set of documented
+`QLT-DOM-*` identifiers. Future governed Quality domains remain extensible
+under the previously defined Runtime Representation Decision.
+
+`QLT-EVID-*` belongs to the Quality Evidence contract governed by Phase 3.
+Phase 2 MAY carry opaque evidence identifier references where required by the
+Finding contract, but SHALL NOT introduce the `QualityEvidence` runtime model
+or close the Phase 3 evidence implementation gate.

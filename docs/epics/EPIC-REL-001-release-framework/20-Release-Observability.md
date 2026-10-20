@@ -1,8 +1,8 @@
 # Release Framework
 
-# 20 Release Observability
+## 20 Release Observability
 
-## Overview
+### Overview
 
 Release observability is the capability to understand the state, behavior, impact, and outcome of a FamilyOS release throughout its lifecycle.
 
@@ -34,7 +34,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of release observability is to establish a consistent model for collecting, correlating, interpreting, and preserving runtime evidence associated with FamilyOS releases.
 
@@ -65,7 +65,7 @@ Release observability transforms production behavior into actionable release inf
 
 ---
 
-# Release Observability Principle
+## Release Observability Principle
 
 General system observability answers:
 
@@ -119,45 +119,45 @@ Observability must connect runtime signals back to release identity.
 
 ---
 
-# Objectives
+## Objectives
 
 Release observability must support several operational objectives.
 
-## Visibility
+### Visibility
 
 The active release state must be visible.
 
-## Correlation
+### Correlation
 
 Runtime behavior must be correlatable with release changes.
 
-## Detection
+### Detection
 
 Release-related failures must be detected quickly.
 
-## Diagnosis
+### Diagnosis
 
 Observability data must help determine why a release is failing.
 
-## Verification
+### Verification
 
 Release success must be supported by runtime evidence.
 
-## Recovery
+### Recovery
 
 Rollback and recovery decisions must be informed by reliable signals.
 
-## Traceability
+### Traceability
 
 Release events and significant runtime observations must remain traceable.
 
-## Improvement
+### Improvement
 
 Historical release telemetry must support continuous improvement.
 
 ---
 
-# Observability Across the Release Lifecycle
+## Observability Across the Release Lifecycle
 
 Observability must exist throughout the release lifecycle.
 
@@ -192,7 +192,7 @@ Observability must therefore begin before deployment rather than after a problem
 
 ---
 
-# Pre-Deployment Baseline
+## Pre-Deployment Baseline
 
 Release evaluation requires a reference point.
 
@@ -219,7 +219,7 @@ The purpose is to understand normal behavior well enough to identify meaningful 
 
 ---
 
-# Release Identity
+## Release Identity
 
 Every observable release must have a stable identity.
 
@@ -251,7 +251,7 @@ This metadata enables runtime evidence to be associated with the exact release s
 
 ---
 
-# Version Visibility
+## Version Visibility
 
 The currently running FamilyOS version must be discoverable through approved operational mechanisms.
 
@@ -272,7 +272,7 @@ The objective is operational identification, not unrestricted disclosure.
 
 ---
 
-# Deployment Markers
+## Deployment Markers
 
 Every production deployment should create an observable deployment marker.
 
@@ -295,7 +295,7 @@ Deployment markers allow operational signals before and after the release to be 
 
 ---
 
-# Deployment Timeline
+## Deployment Timeline
 
 The release system should maintain a deployment timeline.
 
@@ -332,7 +332,7 @@ This creates a coherent operational history of the release.
 
 ---
 
-# Observability Signals
+## Observability Signals
 
 FamilyOS release observability is built from several signal categories.
 
@@ -354,7 +354,7 @@ Signals should complement one another.
 
 ---
 
-# Metrics
+## Metrics
 
 Metrics provide quantitative information about runtime behavior.
 
@@ -381,7 +381,7 @@ Metrics should be tagged or otherwise correlated with relevant release identity 
 
 ---
 
-# Release Health Metrics
+## Release Health Metrics
 
 Release health metrics should focus on whether the deployed release behaves within acceptable operational boundaries.
 
@@ -403,7 +403,7 @@ The conceptual requirement is consistent release-level visibility.
 
 ---
 
-# Logs
+## Logs
 
 Logs provide detailed event and diagnostic information.
 
@@ -437,7 +437,7 @@ Sensitive information must not be logged.
 
 ---
 
-# Traceability Through Logs
+## Traceability Through Logs
 
 Release logs should make it possible to reconstruct significant release events.
 
@@ -458,7 +458,7 @@ Operational logs must complement formal release evidence.
 
 ---
 
-# Distributed Tracing
+## Distributed Tracing
 
 Where FamilyOS components participate in distributed request flows, tracing can provide release-level diagnostic value.
 
@@ -477,7 +477,7 @@ This allows traces from different release versions to be compared.
 
 ---
 
-# Events
+## Events
 
 Release events represent significant lifecycle transitions.
 
@@ -502,7 +502,7 @@ The implementation may use different naming conventions while preserving equival
 
 ---
 
-# Health Signals
+## Health Signals
 
 Health checks provide immediate information about whether deployed components can operate.
 
@@ -531,17 +531,17 @@ Binary health models may be insufficient for complex systems.
 
 ---
 
-# Liveness and Readiness
+## Liveness and Readiness
 
 Liveness and readiness must not be treated as identical concepts.
 
-## Liveness
+### Liveness
 
 Liveness answers:
 
 > Is the component running?
 
-## Readiness
+### Readiness
 
 Readiness answers:
 
@@ -553,7 +553,7 @@ Release verification should therefore prefer readiness-oriented evidence when de
 
 ---
 
-# Dependency Observability
+## Dependency Observability
 
 A release may appear healthy while one of its dependencies is degraded.
 
@@ -586,7 +586,7 @@ This distinction directly affects rollback decisions.
 
 ---
 
-# Plugin Observability
+## Plugin Observability
 
 FamilyOS is a plugin-oriented platform.
 
@@ -608,7 +608,7 @@ Plugin telemetry should allow failures to be isolated without incorrectly attrib
 
 ---
 
-# Configuration Observability
+## Configuration Observability
 
 Configuration changes can alter runtime behavior without changing application artifacts.
 
@@ -629,7 +629,7 @@ Only identifiers, versions, hashes, or other safe references should be used.
 
 ---
 
-# Feature Flag Observability
+## Feature Flag Observability
 
 When feature flags are used, the active feature state becomes part of the effective release state.
 
@@ -648,7 +648,7 @@ This makes it possible to distinguish failures caused by deployment from failure
 
 ---
 
-# Migration Observability
+## Migration Observability
 
 Database and state migrations must produce observable lifecycle signals.
 
@@ -672,7 +672,7 @@ Migration observability is especially important because migration failures may a
 
 ---
 
-# Security Observability
+## Security Observability
 
 Release observability must integrate security-relevant signals.
 
@@ -693,7 +693,7 @@ Observability must not itself create a security vulnerability.
 
 ---
 
-# Privacy and Data Protection
+## Privacy and Data Protection
 
 Observability systems may process sensitive operational information.
 
@@ -720,7 +720,7 @@ Sensitive values must be:
 
 ---
 
-# Release Dashboards
+## Release Dashboards
 
 Release dashboards should provide a concise operational view of the active release.
 
@@ -745,7 +745,7 @@ Dashboards should support decision-making rather than merely display large volum
 
 ---
 
-# Release-Specific Views
+## Release-Specific Views
 
 Operational teams should be able to isolate telemetry for a specific release.
 
@@ -770,7 +770,7 @@ Release-specific filtering is essential when multiple versions coexist during:
 
 ---
 
-# Comparative Observability
+## Comparative Observability
 
 Where possible, FamilyOS should support comparison between release states.
 
@@ -800,7 +800,7 @@ Comparative analysis helps detect regressions that absolute thresholds may miss.
 
 ---
 
-# Release Verification
+## Release Verification
 
 Release observability provides the runtime evidence required for post-deployment verification.
 
@@ -821,7 +821,7 @@ The exact thresholds depend on the component and release risk.
 
 ---
 
-# Stabilization Window
+## Stabilization Window
 
 Production releases should have an appropriate stabilization window.
 
@@ -844,7 +844,7 @@ The stabilization window should be proportional to release risk.
 
 ---
 
-# Release Acceptance
+## Release Acceptance
 
 A production release should not be considered fully accepted until required runtime evidence has been evaluated.
 
@@ -862,7 +862,7 @@ Acceptance converts deployment completion into an evidence-based release outcome
 
 ---
 
-# Alerting
+## Alerting
 
 Alerts must identify conditions that require operational attention.
 
@@ -891,7 +891,7 @@ An alert should help operators understand:
 
 ---
 
-# Alert Severity
+## Alert Severity
 
 Release alerts should use a consistent severity model.
 
@@ -915,7 +915,7 @@ Critical alerts may trigger:
 
 ---
 
-# Alert Fatigue
+## Alert Fatigue
 
 Excessive or low-quality alerts reduce operational effectiveness.
 
@@ -935,7 +935,7 @@ Alert quality is part of observability quality.
 
 ---
 
-# Anomaly Detection
+## Anomaly Detection
 
 Thresholds are useful but may not detect every regression.
 
@@ -955,7 +955,7 @@ It must not automatically classify every deviation as a release failure.
 
 ---
 
-# Rollback Decision Support
+## Rollback Decision Support
 
 Observability is a primary input into rollback decisions.
 
@@ -992,7 +992,7 @@ Rollback decisions must consider evidence from multiple signals when practical.
 
 ---
 
-# Recovery Observability
+## Recovery Observability
 
 Observability must continue during rollback and recovery.
 
@@ -1012,7 +1012,7 @@ Recovery is not complete until the recovered state has been observed and verifie
 
 ---
 
-# Observability During Failed Rollback
+## Observability During Failed Rollback
 
 A failed rollback must remain observable.
 
@@ -1031,7 +1031,7 @@ Recovery status must therefore be visible to operators and incident management.
 
 ---
 
-# Release Evidence
+## Release Evidence
 
 Release observability contributes directly to release evidence.
 
@@ -1053,7 +1053,7 @@ Evidence should reference authoritative telemetry rather than unnecessarily dupl
 
 ---
 
-# Evidence Retention
+## Evidence Retention
 
 Release observability evidence must be retained according to applicable FamilyOS retention policies.
 
@@ -1075,7 +1075,7 @@ The framework must preserve sufficient historical information to support:
 
 ---
 
-# Observability Reliability
+## Observability Reliability
 
 Observability infrastructure is itself operational infrastructure.
 
@@ -1099,7 +1099,7 @@ A significant loss of observability during deployment may justify pausing releas
 
 ---
 
-# Missing Telemetry
+## Missing Telemetry
 
 Missing telemetry must not automatically be interpreted as healthy behavior.
 
@@ -1127,7 +1127,7 @@ Release gates must distinguish healthy signals from missing signals.
 
 ---
 
-# Observability Validation
+## Observability Validation
 
 Observability must be validated before it is relied upon for production release decisions.
 
@@ -1145,7 +1145,7 @@ Observability verification should be part of release readiness for critical comp
 
 ---
 
-# Release Readiness Integration
+## Release Readiness Integration
 
 Release readiness must evaluate observability preparedness.
 
@@ -1169,7 +1169,7 @@ Missing critical observability must be treated as release risk.
 
 ---
 
-# Release Gate Integration
+## Release Gate Integration
 
 Observability may participate directly in automated release gates.
 
@@ -1197,7 +1197,7 @@ Automated gates must fail safely when required telemetry is unavailable.
 
 ---
 
-# Progressive Delivery
+## Progressive Delivery
 
 Release observability is especially important for progressive delivery strategies.
 
@@ -1235,7 +1235,7 @@ Progression must stop when release health becomes unacceptable.
 
 ---
 
-# Canary Observability
+## Canary Observability
 
 Canary deployments require comparison between canary and baseline populations.
 
@@ -1252,7 +1252,7 @@ A canary is useful only when its behavior can be observed independently.
 
 ---
 
-# Blue-Green Observability
+## Blue-Green Observability
 
 Blue-green deployment requires clear visibility into both environments.
 
@@ -1270,7 +1270,7 @@ Traffic switching must be observable and reversible.
 
 ---
 
-# Release Metrics
+## Release Metrics
 
 The Release Framework should maintain metrics about release observability itself.
 
@@ -1290,7 +1290,7 @@ These metrics support maturity assessment.
 
 ---
 
-# Release Observability Maturity
+## Release Observability Maturity
 
 Release observability maturity can evolve through several stages.
 
@@ -1315,7 +1315,7 @@ The framework should evolve incrementally rather than require maximum sophistica
 
 ---
 
-# Relationship With Rollback and Recovery
+## Relationship With Rollback and Recovery
 
 Release observability provides the evidence required by rollback and recovery.
 
@@ -1351,7 +1351,7 @@ Rollback and observability therefore form complementary release capabilities.
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 The Quality Framework defines quality expectations.
 
@@ -1371,7 +1371,7 @@ Runtime evidence therefore extends quality assurance into production.
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 Testing provides controlled pre-release evidence.
 
@@ -1399,7 +1399,7 @@ Production observability must never be used as a substitute for appropriate test
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 The Build Framework establishes artifact identity and provenance.
 
@@ -1430,7 +1430,7 @@ This creates end-to-end traceability.
 
 ---
 
-# Relationship With Security
+## Relationship With Security
 
 Security observability must integrate with release observability where release changes may affect the security posture.
 
@@ -1440,7 +1440,7 @@ Security telemetry remains governed by the FamilyOS security architecture and ap
 
 ---
 
-# Governance
+## Governance
 
 Release observability is governed by the FamilyOS Release Framework.
 
@@ -1458,7 +1458,7 @@ Exceptions require explicit risk acceptance.
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Observability must evolve based on operational experience.
 
@@ -1486,53 +1486,53 @@ Improvements may include:
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following practices are prohibited or strongly discouraged.
 
-## Deployment Without Release Identity
+### Deployment Without Release Identity
 
 Running production software without knowing exactly which release is active.
 
-## Logs Without Release Context
+### Logs Without Release Context
 
 Producing diagnostic information that cannot be associated with a release.
 
-## Monitoring Only Infrastructure
+### Monitoring Only Infrastructure
 
 Observing CPU and memory while ignoring application and workflow health.
 
-## Missing Deployment Markers
+### Missing Deployment Markers
 
 Changing production state without recording when the change occurred.
 
-## Treating Missing Telemetry as Healthy
+### Treating Missing Telemetry as Healthy
 
 Assuming that absence of errors means successful operation.
 
-## Excessive Alerting
+### Excessive Alerting
 
 Generating so many alerts that meaningful release failures become difficult to identify.
 
-## Dashboard-Only Observability
+### Dashboard-Only Observability
 
 Depending on visual dashboards without preserving authoritative underlying telemetry.
 
-## Observability After Failure
+### Observability After Failure
 
 Adding instrumentation only after a production problem has already occurred.
 
-## Sensitive Data Leakage
+### Sensitive Data Leakage
 
 Exposing secrets, credentials, private content, or unnecessary personal information through telemetry.
 
-## Deployment Success Equals Release Success
+### Deployment Success Equals Release Success
 
 Declaring a release successful merely because deployment tooling completed without error.
 
 ---
 
-# Required Outcomes
+## Required Outcomes
 
 Implementation of this framework section must ensure that:
 
@@ -1551,7 +1551,7 @@ Implementation of this framework section must ensure that:
 
 ---
 
-# Final Release Observability Principle
+## Final Release Observability Principle
 
 A production deployment is not evidence of production success.
 

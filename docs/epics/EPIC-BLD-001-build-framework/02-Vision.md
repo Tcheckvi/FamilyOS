@@ -1,8 +1,8 @@
 # Build Framework
 
-# 02 Vision
+## 02 Vision
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the long-term vision for build engineering within the FamilyOS ecosystem.
 
@@ -25,7 +25,7 @@ The Build Framework provides the strategic direction required to ensure that Fam
 
 ---
 
-# Build Vision
+## Build Vision
 
 The FamilyOS Build Framework is guided by the following vision:
 
@@ -63,7 +63,7 @@ The Build Framework exists to make these questions answerable by design.
 
 ---
 
-# Strategic Intent
+## Strategic Intent
 
 The strategic intent of EPIC-BLD-001 is to make build engineering a predictable and reliable component of the FamilyOS Engineering Platform.
 
@@ -89,7 +89,7 @@ Each stage strengthens confidence without requiring unnecessary infrastructure b
 
 ---
 
-# Long-Term Vision
+## Long-Term Vision
 
 The long-term FamilyOS build environment should make it possible to execute a build from a controlled repository state and obtain artifacts whose origin, configuration, dependencies, and validation state can be understood without relying on undocumented developer knowledge.
 
@@ -115,7 +115,7 @@ The resulting artifact should be suitable for controlled handoff to the Release 
 
 ---
 
-# Vision Principle 1 — Reproducibility
+## Vision Principle 1 — Reproducibility
 
 Reproducibility is a foundational property of the FamilyOS build vision.
 
@@ -137,7 +137,7 @@ However, significant differences must be explainable.
 
 ---
 
-# Vision Principle 2 — Determinism
+## Vision Principle 2 — Determinism
 
 FamilyOS should progressively eliminate unnecessary non-determinism from build processes.
 
@@ -166,7 +166,7 @@ Where non-determinism is unavoidable, it must be understood and documented.
 
 ---
 
-# Vision Principle 3 — Traceability
+## Vision Principle 3 — Traceability
 
 Every trusted artifact should be traceable to the engineering state that produced it.
 
@@ -195,7 +195,7 @@ Traceability is necessary for debugging, release confidence, auditing, maintenan
 
 ---
 
-# Vision Principle 4 — Explicit Build Inputs
+## Vision Principle 4 — Explicit Build Inputs
 
 FamilyOS build behavior must progressively eliminate hidden inputs.
 
@@ -224,7 +224,7 @@ The long-term build model should make significant inputs visible and governable.
 
 ---
 
-# Vision Principle 5 — Controlled Environments
+## Vision Principle 5 — Controlled Environments
 
 The Build Framework does not require every build environment to be physically identical.
 
@@ -246,7 +246,7 @@ Environment control strengthens both developer confidence and CI consistency.
 
 ---
 
-# Vision Principle 6 — Governed Dependencies
+## Vision Principle 6 — Governed Dependencies
 
 Dependencies are part of the effective source of a build.
 
@@ -276,7 +276,7 @@ Dependency governance should progressively support:
 
 ---
 
-# Vision Principle 7 — Governed Toolchain
+## Vision Principle 7 — Governed Toolchain
 
 Build tools influence build outputs.
 
@@ -297,7 +297,7 @@ The long-term objective is to ensure that significant toolchain dependencies are
 
 ---
 
-# Vision Principle 8 — Validation Before Trust
+## Vision Principle 8 — Validation Before Trust
 
 The Build Framework distinguishes between a completed build and a trusted build.
 
@@ -321,7 +321,7 @@ Validation must confirm that applicable requirements were satisfied.
 
 ---
 
-# Vision Principle 9 — Artifact Identity
+## Vision Principle 9 — Artifact Identity
 
 Artifacts must become explicit engineering objects rather than anonymous files.
 
@@ -349,7 +349,7 @@ Artifact
 
 ---
 
-# Vision Principle 10 — Evidence By Design
+## Vision Principle 10 — Evidence By Design
 
 Build evidence should emerge naturally from build execution.
 
@@ -389,7 +389,7 @@ Attempted Reconstruction
 
 ---
 
-# Vision Principle 11 — Local and CI Alignment
+## Vision Principle 11 — Local and CI Alignment
 
 The FamilyOS build model must not fragment between developer environments and CI.
 
@@ -409,7 +409,7 @@ The underlying build semantics should not.
 
 ---
 
-# Vision Principle 12 — Automation Without Hidden Logic
+## Vision Principle 12 — Automation Without Hidden Logic
 
 Automation is essential, but build architecture must not become hidden inside CI configuration.
 
@@ -437,7 +437,7 @@ Automation should execute the framework, not define it accidentally.
 
 ---
 
-# Vision Principle 13 — Clear Build and Release Separation
+## Vision Principle 13 — Clear Build and Release Separation
 
 Build and release must remain distinct engineering responsibilities.
 
@@ -457,7 +457,7 @@ This separation creates a controlled promotion boundary.
 
 ---
 
-# Vision Principle 14 — Security-Aware Build Engineering
+## Vision Principle 14 — Security-Aware Build Engineering
 
 The build process participates directly in the FamilyOS software supply chain.
 
@@ -478,7 +478,7 @@ The framework must create the foundation for stronger supply-chain controls with
 
 ---
 
-# Vision Principle 15 — Observable Build Systems
+## Vision Principle 15 — Observable Build Systems
 
 Build execution should become easy to understand and diagnose.
 
@@ -496,7 +496,7 @@ Build observability supports both developer productivity and engineering governa
 
 ---
 
-# Vision Principle 16 — Failure As Controlled Feedback
+## Vision Principle 16 — Failure As Controlled Feedback
 
 Failure is not inherently negative.
 
@@ -524,7 +524,7 @@ Corrective Action
 
 ---
 
-# Vision Principle 17 — Maintainable Build Architecture
+## Vision Principle 17 — Maintainable Build Architecture
 
 Build systems often become difficult to maintain because responsibilities accumulate in scripts, CI jobs, and local procedures.
 
@@ -544,7 +544,7 @@ No critical build behavior should depend permanently on undocumented tribal know
 
 ---
 
-# Vision Principle 18 — Incremental Maturity
+## Vision Principle 18 — Incremental Maturity
 
 FamilyOS must not attempt to implement the most advanced possible build infrastructure immediately.
 
@@ -577,7 +577,7 @@ Each stage must solve a real engineering need.
 
 ---
 
-# Vision Principle 19 — Tool Independence
+## Vision Principle 19 — Tool Independence
 
 The Build Framework defines concepts before tools.
 
@@ -596,7 +596,7 @@ This prevents architectural coupling to temporary technologies.
 
 ---
 
-# Vision Principle 20 — Platform Scalability
+## Vision Principle 20 — Platform Scalability
 
 FamilyOS may eventually contain:
 
@@ -621,7 +621,7 @@ Future-Compatible Architecture
 
 ---
 
-# Target Build Experience
+## Target Build Experience
 
 The long-term developer experience should be straightforward.
 
@@ -647,7 +647,7 @@ The framework should reduce cognitive load rather than add ceremonial complexity
 
 ---
 
-# Target Local Build Model
+## Target Local Build Model
 
 Local builds should provide rapid and representative feedback.
 
@@ -669,7 +669,7 @@ Local execution must remain practical while preserving alignment with canonical 
 
 ---
 
-# Target CI Build Model
+## Target CI Build Model
 
 CI should provide standardized and independently repeatable execution.
 
@@ -689,7 +689,7 @@ CI should strengthen confidence rather than introduce separate semantics.
 
 ---
 
-# Target Release Candidate Model
+## Target Release Candidate Model
 
 Release candidate builds should operate under the strongest build controls required by the platform.
 
@@ -710,7 +710,7 @@ The exact requirements may evolve together with EPIC-REL-001.
 
 ---
 
-# Target Artifact Model
+## Target Artifact Model
 
 The future FamilyOS artifact should be treated as a traceable engineering object.
 
@@ -737,7 +737,7 @@ The information must be available through the build evidence model where require
 
 ---
 
-# Target Build Evidence Model
+## Target Build Evidence Model
 
 Evidence should support both automated decisions and human investigation.
 
@@ -762,7 +762,7 @@ Evidence requirements should remain proportional to artifact risk and platform m
 
 ---
 
-# Target Build Pipeline
+## Target Build Pipeline
 
 The strategic target build pipeline is:
 
@@ -802,7 +802,7 @@ The conceptual responsibilities should remain identifiable.
 
 ---
 
-# Build Architecture Vision
+## Build Architecture Vision
 
 The Build Framework should evolve toward a layered architecture.
 
@@ -833,7 +833,7 @@ This architecture promotes separation of responsibilities and future adaptabilit
 
 ---
 
-# Build Interface Vision
+## Build Interface Vision
 
 Build operations should expose a consistent and understandable entry point.
 
@@ -849,7 +849,7 @@ The interface must remain subordinate to the canonical build model.
 
 ---
 
-# Build Orchestration Vision
+## Build Orchestration Vision
 
 Orchestration coordinates stages without embedding unnecessary implementation details.
 
@@ -871,7 +871,7 @@ Orchestration should remain explicit and testable where practical.
 
 ---
 
-# Build Execution Vision
+## Build Execution Vision
 
 Execution performs the concrete transformations required to produce artifacts.
 
@@ -888,7 +888,7 @@ Execution mechanisms may vary while respecting common lifecycle rules.
 
 ---
 
-# Artifact Layer Vision
+## Artifact Layer Vision
 
 The artifact layer should manage the technical outputs of build execution.
 
@@ -904,7 +904,7 @@ Its long-term responsibilities may include:
 
 ---
 
-# Validation and Evidence Vision
+## Validation and Evidence Vision
 
 Validation and evidence should surround the complete build lifecycle rather than exist only as an afterthought.
 
@@ -920,7 +920,7 @@ This layer creates confidence in the resulting output.
 
 ---
 
-# Build Governance Vision
+## Build Governance Vision
 
 Build governance should remain lightweight for ordinary changes while protecting significant architectural decisions.
 
@@ -942,7 +942,7 @@ Governance should prevent fragmentation without creating unnecessary bureaucracy
 
 ---
 
-# Build Quality Vision
+## Build Quality Vision
 
 High-quality build engineering means more than successful automation.
 
@@ -962,7 +962,7 @@ These properties must reinforce one another.
 
 ---
 
-# Build Security Vision
+## Build Security Vision
 
 The Build Framework should progressively support stronger software supply-chain assurance.
 
@@ -980,7 +980,7 @@ These capabilities are strategic possibilities, not mandatory immediate implemen
 
 ---
 
-# Build Performance Vision
+## Build Performance Vision
 
 Build performance must support productive engineering without sacrificing trust.
 
@@ -1002,7 +1002,7 @@ Caching and parallelism must not hide state or make results difficult to reprodu
 
 ---
 
-# Developer Experience Vision
+## Developer Experience Vision
 
 A high-quality build experience should feel predictable.
 
@@ -1022,7 +1022,7 @@ The target is engineering confidence, not build-system sophistication.
 
 ---
 
-# Documentation Vision
+## Documentation Vision
 
 Every important build capability should be documented at the correct level.
 
@@ -1042,7 +1042,7 @@ Build knowledge must remain institutional rather than personal.
 
 ---
 
-# Automation Vision
+## Automation Vision
 
 Automation should progressively reduce manual effort without reducing visibility.
 
@@ -1066,7 +1066,7 @@ Human review remains possible at governance boundaries.
 
 ---
 
-# CI Integration Vision
+## CI Integration Vision
 
 CI should become an execution environment for the canonical build framework.
 
@@ -1086,7 +1086,7 @@ This preserves portability between automation providers.
 
 ---
 
-# Plugin Build Vision
+## Plugin Build Vision
 
 The FamilyOS plugin architecture requires the build framework to support modular components.
 
@@ -1110,7 +1110,7 @@ The core framework should enable this without becoming tied to individual plugin
 
 ---
 
-# Documentation Artifact Vision
+## Documentation Artifact Vision
 
 Documentation can itself become a build artifact.
 
@@ -1126,7 +1126,7 @@ This means documentation generation should eventually participate in the same tr
 
 ---
 
-# Multi-Artifact Vision
+## Multi-Artifact Vision
 
 A single build may produce multiple related artifacts.
 
@@ -1146,7 +1146,7 @@ The Build Framework should support artifact sets without assuming a one-build-on
 
 ---
 
-# Build Identity Vision
+## Build Identity Vision
 
 Every significant build should eventually have a stable identity.
 
@@ -1166,7 +1166,7 @@ This becomes especially valuable for CI, release, incident analysis, and provena
 
 ---
 
-# Release Handoff Vision
+## Release Handoff Vision
 
 The Build Framework should eventually expose a clear release handoff contract.
 
@@ -1187,7 +1187,7 @@ The Release Framework can then evaluate whether the candidate should be promoted
 
 ---
 
-# Future Build Maturity
+## Future Build Maturity
 
 The Build Framework must support future growth without requiring all future capabilities immediately.
 
@@ -1223,7 +1223,7 @@ Progress between levels should depend on engineering value.
 
 ---
 
-# Anti-Vision
+## Anti-Vision
 
 The Build Framework explicitly rejects several undesirable future states.
 
@@ -1244,7 +1244,7 @@ These conditions are incompatible with the FamilyOS engineering vision.
 
 ---
 
-# Vision Success Criteria
+## Vision Success Criteria
 
 The Build Framework vision is realized when FamilyOS can consistently demonstrate that:
 
@@ -1266,7 +1266,7 @@ The Build Framework vision is realized when FamilyOS can consistently demonstrat
 
 ---
 
-# Vision Statement
+## Vision Statement
 
 The long-term FamilyOS build vision can be summarized as:
 
@@ -1292,7 +1292,7 @@ Engineering Trust
 
 ---
 
-# Final Vision
+## Final Vision
 
 The FamilyOS Build Framework aims to make build engineering predictable enough to disappear as a source of uncertainty while remaining visible enough to be understood, governed, verified, and improved.
 

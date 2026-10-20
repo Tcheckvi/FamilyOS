@@ -13,7 +13,7 @@
 
 ---
 
-# 1. Overview
+## 1. Overview
 
 This epic defines the implementation strategy for official FamilyOS plugins.
 
@@ -27,7 +27,7 @@ plugin implementations following:
 
 ---
 
-# 2. Motivation
+## 2. Motivation
 
 FamilyOS has completed the specification phase for official plugins:
 
@@ -50,7 +50,7 @@ A standardized implementation process is required to ensure:
 
 ---
 
-# 3. Scope
+## 3. Scope
 
 This epic covers:
 
@@ -66,7 +66,7 @@ This epic covers:
 
 ---
 
-# 4. Official Plugin Roadmap
+## 4. Official Plugin Roadmap
 
 Implementation order:
 
@@ -81,9 +81,9 @@ Implementation order:
 
 ---
 
-# 5. Phase 1 — Security Plugin Implementation
+## 5. Phase 1 — Security Plugin Implementation
 
-## Objective
+### Objective
 
 Create the reference implementation for all future official plugins.
 
@@ -102,7 +102,7 @@ Deliverables:
 
 ---
 
-# 6. Phase 2 — Domain Plugin Implementations
+## 6. Phase 2 — Domain Plugin Implementations
 
 Following Security Plugin completion:
 
@@ -116,42 +116,42 @@ Each plugin SHALL follow the ADR-0013 implementation model.
 
 ---
 
-# 7. Technical Requirements
+## 7. Technical Requirements
 
 Every official plugin SHALL provide:
 
-## Plugin Layer
+### Plugin Layer
 
 * plugin class;
 * metadata;
 * capabilities;
 * contributions.
 
-## Domain Layer
+### Domain Layer
 
 * entities;
 * value objects;
 * aggregates;
 * domain services.
 
-## Policy Layer
+### Policy Layer
 
 * policies;
 * policy sets.
 
-## Rules Layer
+### Rules Layer
 
 * executable rules;
 * validations;
 * explanations.
 
-## Generation Layer
+### Generation Layer
 
 * presets;
 * recipes;
 * templates.
 
-## Testing Layer
+### Testing Layer
 
 * unit tests;
 * integration tests;
@@ -159,7 +159,7 @@ Every official plugin SHALL provide:
 
 ---
 
-# 8. Quality Requirements
+## 8. Quality Requirements
 
 Every implementation SHALL pass:
 
@@ -170,7 +170,7 @@ Every implementation SHALL pass:
 
 ---
 
-# 9. Success Criteria
+## 9. Success Criteria
 
 This epic is complete when:
 
@@ -183,7 +183,7 @@ This epic is complete when:
 
 ---
 
-# 10. References
+## 10. References
 
 * ADR-0007 — Official Plugins Architecture
 * ADR-0013 — Official Plugin Implementation Strategy
@@ -196,7 +196,7 @@ This epic is complete when:
 
 ---
 
-# Revision History
+## Revision History
 
 | Version | Date       | Description         |
 | ------- | ---------- | ------------------- |

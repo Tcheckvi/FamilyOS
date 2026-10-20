@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 06 Quality Rule Model
+## 06 Quality Rule Model
 
-## Overview
+### Overview
 
 The FamilyOS Quality Rule Model defines how quality requirements are translated into explicit, evaluable, and governable rules.
 
@@ -24,7 +24,7 @@ The Quality Rule Model provides the bridge between quality intent and executable
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Quality Rule Model is to transform broad quality expectations into precise engineering constraints.
 
@@ -57,7 +57,7 @@ A quality rule must be specific enough to support reliable evaluation.
 
 ---
 
-# Rule Definition
+## Rule Definition
 
 A Quality Rule is a versioned engineering constraint associated with one or more quality requirements.
 
@@ -85,7 +85,7 @@ A rule must be clear enough that two independent implementations can interpret i
 
 ---
 
-# Rule Characteristics
+## Rule Characteristics
 
 A FamilyOS quality rule should be:
 
@@ -104,7 +104,7 @@ The rule definition must describe the engineering expectation rather than embed 
 
 ---
 
-# Rule Identity
+## Rule Identity
 
 Each quality rule must have a stable identifier.
 
@@ -134,7 +134,7 @@ Identifiers must not be silently reused for different semantics.
 
 ---
 
-# Rule Metadata
+## Rule Metadata
 
 A quality rule should contain structured metadata.
 
@@ -164,7 +164,7 @@ Additional implementation-specific metadata may be added later.
 
 ---
 
-# Rule Title
+## Rule Title
 
 The title should provide a concise description of the expected behavior.
 
@@ -192,7 +192,7 @@ because the rule should remain conceptually independent from the tool.
 
 ---
 
-# Rule Description
+## Rule Description
 
 The rule description defines the condition being evaluated.
 
@@ -210,7 +210,7 @@ A good rule description must minimize ambiguity.
 
 ---
 
-# Rule Rationale
+## Rule Rationale
 
 Every significant rule should explain why it exists.
 
@@ -243,7 +243,7 @@ Rationale improves:
 
 ---
 
-# Rule Domain
+## Rule Domain
 
 Every rule must belong to one primary Quality Domain.
 
@@ -264,7 +264,7 @@ A rule may also reference related domains.
 
 ---
 
-# Rule Requirement Traceability
+## Rule Requirement Traceability
 
 Every rule should trace to at least one Quality Requirement.
 
@@ -292,7 +292,7 @@ A rule should not exist without a clear requirement unless it is explicitly clas
 
 ---
 
-# Rule Scope
+## Rule Scope
 
 Scope defines where a rule applies.
 
@@ -332,7 +332,7 @@ Scope must remain precise enough to avoid unintended enforcement.
 
 ---
 
-# Rule Applicability
+## Rule Applicability
 
 Applicability determines whether a rule is relevant to a particular target.
 
@@ -361,7 +361,7 @@ A non-applicable rule should produce a clear `NOT_APPLICABLE` state rather than 
 
 ---
 
-# Rule Condition
+## Rule Condition
 
 The condition defines the actual quality expectation.
 
@@ -383,7 +383,7 @@ Conditions should be written in implementation-neutral language whenever practic
 
 ---
 
-# Rule Evaluation Type
+## Rule Evaluation Type
 
 Rules may use several evaluation types.
 
@@ -398,7 +398,7 @@ ADVISORY
 
 ---
 
-# Automated Rules
+## Automated Rules
 
 An automated rule can be evaluated deterministically by software.
 
@@ -415,7 +415,7 @@ Automated rules should provide reproducible evidence.
 
 ---
 
-# Manual Rules
+## Manual Rules
 
 A manual rule requires engineering judgment.
 
@@ -437,7 +437,7 @@ Manual must not mean informal.
 
 ---
 
-# Hybrid Rules
+## Hybrid Rules
 
 A hybrid rule combines automated evidence and human judgment.
 
@@ -455,7 +455,7 @@ Hybrid rules are appropriate when automation can detect signals but cannot deter
 
 ---
 
-# Advisory Rules
+## Advisory Rules
 
 Advisory rules provide information without automatically blocking progress.
 
@@ -470,7 +470,7 @@ Advisory rules remain part of the quality system and should be traceable.
 
 ---
 
-# Rule Severity
+## Rule Severity
 
 Every finding produced by a rule should map to a defined severity model.
 
@@ -490,7 +490,7 @@ It must not be confused with whether a rule blocks a gate.
 
 ---
 
-# Severity and Blocking Are Separate
+## Severity and Blocking Are Separate
 
 A finding may be severe without automatically blocking every workflow.
 
@@ -514,7 +514,7 @@ Blocking behavior is determined by:
 
 ---
 
-# Rule Blocking Behavior
+## Rule Blocking Behavior
 
 Rules may define default blocking behavior.
 
@@ -541,7 +541,7 @@ Such differences must be explicit.
 
 ---
 
-# Rule Result Model
+## Rule Result Model
 
 Rule evaluation should produce standardized result states.
 
@@ -560,13 +560,13 @@ These states must have stable semantics.
 
 ---
 
-# PASS
+## PASS
 
 `PASS` means the rule was successfully evaluated and its condition was satisfied.
 
 ---
 
-# FAIL
+## FAIL
 
 `FAIL` means the rule was successfully evaluated and its condition was not satisfied.
 
@@ -574,7 +574,7 @@ A failure should normally produce one or more findings.
 
 ---
 
-# WARNING
+## WARNING
 
 `WARNING` means the rule produced a concern that does not currently constitute a failure.
 
@@ -582,7 +582,7 @@ Warnings should remain visible and traceable.
 
 ---
 
-# ERROR
+## ERROR
 
 `ERROR` means the rule could not be evaluated because the verification mechanism failed.
 
@@ -597,7 +597,7 @@ An `ERROR` must not be interpreted as `PASS`.
 
 ---
 
-# SKIPPED
+## SKIPPED
 
 `SKIPPED` means the rule was intentionally not executed.
 
@@ -611,7 +611,7 @@ Examples:
 
 ---
 
-# NOT_APPLICABLE
+## NOT_APPLICABLE
 
 `NOT_APPLICABLE` means the rule does not apply to the evaluated target.
 
@@ -619,7 +619,7 @@ This is distinct from `SKIPPED`.
 
 ---
 
-# Rule Evidence
+## Rule Evidence
 
 Each rule evaluation should generate evidence.
 
@@ -650,7 +650,7 @@ Evidence may include:
 
 ---
 
-# Rule Findings
+## Rule Findings
 
 A failed or advisory rule may produce one or more Quality Findings.
 
@@ -668,7 +668,7 @@ One rule may generate multiple findings.
 
 ---
 
-# Finding Normalization
+## Finding Normalization
 
 Tool-specific output should be normalized to the FamilyOS finding model.
 
@@ -686,7 +686,7 @@ Normalization should preserve sufficient original context while using a common s
 
 ---
 
-# Rule Execution Provider
+## Rule Execution Provider
 
 A rule may be implemented by one or more execution providers.
 
@@ -706,7 +706,7 @@ A future provider should be replaceable without changing the rule semantics.
 
 ---
 
-# Rule Configuration
+## Rule Configuration
 
 Rules may expose configuration parameters.
 
@@ -731,7 +731,7 @@ Configuration must be:
 
 ---
 
-# Rule Defaults
+## Rule Defaults
 
 Rules may define default configuration values.
 
@@ -749,7 +749,7 @@ Overrides must follow configuration governance.
 
 ---
 
-# Rule Thresholds
+## Rule Thresholds
 
 Some rules depend on thresholds.
 
@@ -775,7 +775,7 @@ A threshold should define:
 
 ---
 
-# Threshold Example
+## Threshold Example
 
 A conceptual rule could define:
 
@@ -793,7 +793,7 @@ The semantic model remains stable.
 
 ---
 
-# Rule Profiles
+## Rule Profiles
 
 Quality Profiles determine which rules apply to particular component classes.
 
@@ -818,7 +818,7 @@ Profiles should reuse rules rather than duplicate them.
 
 ---
 
-# Rule Inheritance
+## Rule Inheritance
 
 Rules themselves should generally not inherit from each other.
 
@@ -834,7 +834,7 @@ A rule should remain a clear, directly evaluable unit.
 
 ---
 
-# Rule Composition
+## Rule Composition
 
 A complex requirement may be represented by several rules.
 
@@ -863,7 +863,7 @@ This is preferable to one opaque monolithic rule.
 
 ---
 
-# Atomic Rules
+## Atomic Rules
 
 Rules should be as atomic as practical.
 
@@ -885,7 +885,7 @@ because this combines unrelated concerns.
 
 ---
 
-# Composite Checks
+## Composite Checks
 
 Atomic rules do not require one process invocation per rule.
 
@@ -905,7 +905,7 @@ Execution efficiency and rule semantics remain separate concerns.
 
 ---
 
-# Rule Ordering
+## Rule Ordering
 
 Rules should generally be independent.
 
@@ -925,7 +925,7 @@ Hidden execution ordering should be avoided.
 
 ---
 
-# Rule Dependencies
+## Rule Dependencies
 
 A rule may declare prerequisites.
 
@@ -957,7 +957,7 @@ The behavior must be defined.
 
 ---
 
-# Rule Conflict Prevention
+## Rule Conflict Prevention
 
 Two rules should not impose contradictory requirements on the same target.
 
@@ -977,7 +977,7 @@ Conflicts must be resolved at the framework level rather than left to tool behav
 
 ---
 
-# Rule Precedence
+## Rule Precedence
 
 If override mechanisms exist, precedence must be deterministic.
 
@@ -997,7 +997,7 @@ Mandatory requirements must not be silently disabled by lower-precedence configu
 
 ---
 
-# Mandatory Rules
+## Mandatory Rules
 
 Some rules may be classified as mandatory.
 
@@ -1014,7 +1014,7 @@ Bypass requires a governed exception if permitted at all.
 
 ---
 
-# Optional Rules
+## Optional Rules
 
 Optional rules may be enabled by profiles or repositories.
 
@@ -1028,7 +1028,7 @@ Optional rules must still use the same rule model.
 
 ---
 
-# Experimental Rules
+## Experimental Rules
 
 New rules may enter an experimental state.
 
@@ -1044,7 +1044,7 @@ Experimental rules should normally be non-blocking.
 
 ---
 
-# Rule Lifecycle
+## Rule Lifecycle
 
 A quality rule should follow a controlled lifecycle.
 
@@ -1066,7 +1066,7 @@ Not every rule must pass through every state, but transitions must be controlled
 
 ---
 
-# DRAFT
+## DRAFT
 
 A draft rule is under development.
 
@@ -1074,7 +1074,7 @@ It must not be treated as authoritative unless explicitly configured for testing
 
 ---
 
-# EXPERIMENTAL
+## EXPERIMENTAL
 
 An experimental rule may execute in real workflows but should normally not block engineering progress.
 
@@ -1082,7 +1082,7 @@ Its purpose is validation and calibration.
 
 ---
 
-# ACTIVE
+## ACTIVE
 
 An active rule is part of the authoritative quality framework.
 
@@ -1090,7 +1090,7 @@ Its behavior and semantics are governed.
 
 ---
 
-# DEPRECATED
+## DEPRECATED
 
 A deprecated rule remains supported temporarily but should no longer be used for new quality profiles.
 
@@ -1098,7 +1098,7 @@ A replacement should be identified where applicable.
 
 ---
 
-# RETIRED
+## RETIRED
 
 A retired rule is no longer active.
 
@@ -1108,7 +1108,7 @@ Its identifier must not be reused.
 
 ---
 
-# Rule Versioning
+## Rule Versioning
 
 Rules must be versioned when their semantics materially change.
 
@@ -1124,7 +1124,7 @@ Minor metadata or wording improvements may not require semantic version changes 
 
 ---
 
-# Rule Semantic Stability
+## Rule Semantic Stability
 
 A rule identifier should represent a stable quality concept.
 
@@ -1134,7 +1134,7 @@ This protects historical evidence.
 
 ---
 
-# Rule Deprecation
+## Rule Deprecation
 
 Deprecation should define:
 
@@ -1148,7 +1148,7 @@ Deprecated rules should remain visible in governance reporting.
 
 ---
 
-# Rule Ownership
+## Rule Ownership
 
 Every active rule must have an owner.
 
@@ -1165,7 +1165,7 @@ Ownership may belong to a framework, domain authority, or designated engineering
 
 ---
 
-# Rule Review
+## Rule Review
 
 Rules should undergo review before becoming authoritative.
 
@@ -1193,7 +1193,7 @@ Rules that cannot provide useful remediation should be reconsidered.
 
 ---
 
-# Rule Validation
+## Rule Validation
 
 The framework should validate rule definitions themselves.
 
@@ -1212,7 +1212,7 @@ Invalid rules must not silently become active.
 
 ---
 
-# Rule Testing
+## Rule Testing
 
 Rule implementations must be tested.
 
@@ -1231,7 +1231,7 @@ A quality rule that is incorrectly implemented can produce false engineering dec
 
 ---
 
-# Golden Rule Tests
+## Golden Rule Tests
 
 Important rules may use golden test fixtures.
 
@@ -1251,7 +1251,7 @@ Golden tests help preserve rule behavior across implementation changes.
 
 ---
 
-# False Positives
+## False Positives
 
 A false positive occurs when a rule reports a violation where the target is actually acceptable.
 
@@ -1266,7 +1266,7 @@ The framework must monitor and minimize false-positive rates.
 
 ---
 
-# False Negatives
+## False Negatives
 
 A false negative occurs when a rule fails to detect a real violation.
 
@@ -1276,7 +1276,7 @@ Critical rules should prioritize reliable detection over cosmetic convenience.
 
 ---
 
-# Rule Precision
+## Rule Precision
 
 Rules should balance:
 
@@ -1294,7 +1294,7 @@ Advisory maintainability rules may prefer higher precision to avoid noise.
 
 ---
 
-# Rule Performance
+## Rule Performance
 
 Quality rules affect developer feedback time.
 
@@ -1311,7 +1311,7 @@ Slow rules may be assigned to deeper execution profiles if immediate feedback is
 
 ---
 
-# Fast Rules
+## Fast Rules
 
 Fast rules are appropriate for local workflows.
 
@@ -1326,7 +1326,7 @@ Fast rules should normally execute early.
 
 ---
 
-# Deep Rules
+## Deep Rules
 
 Deep rules may require more resources.
 
@@ -1341,7 +1341,7 @@ These may execute in CI or release workflows.
 
 ---
 
-# Rule Execution Context
+## Rule Execution Context
 
 Every evaluation should record relevant context.
 
@@ -1362,7 +1362,7 @@ This improves reproducibility and auditability.
 
 ---
 
-# Rule Determinism
+## Rule Determinism
 
 Rules should be deterministic where possible.
 
@@ -1381,7 +1381,7 @@ Nondeterministic rule implementations must document the reason.
 
 ---
 
-# External Dependencies
+## External Dependencies
 
 Rules should minimize dependence on uncontrolled external services.
 
@@ -1396,7 +1396,7 @@ If external services are necessary, the rule should define:
 
 ---
 
-# Rule Error Semantics
+## Rule Error Semantics
 
 Execution failure must never silently imply compliance.
 
@@ -1422,7 +1422,7 @@ The applicable quality gate then decides how an error affects progression.
 
 ---
 
-# Rule Remediation
+## Rule Remediation
 
 Every actionable rule should provide remediation guidance.
 
@@ -1440,7 +1440,7 @@ It should help engineers resolve it.
 
 ---
 
-# Auto-Fix Support
+## Auto-Fix Support
 
 Some rules may support automated remediation.
 
@@ -1461,7 +1461,7 @@ The rule itself remains separate from its remediation mechanism.
 
 ---
 
-# Suppression
+## Suppression
 
 Local suppression of findings must be controlled.
 
@@ -1477,7 +1477,7 @@ A suppression should ideally record:
 
 ---
 
-# Suppression vs Exception
+## Suppression vs Exception
 
 Suppression and exception are distinct.
 
@@ -1495,7 +1495,7 @@ High-risk or blocking rules should typically require formal exceptions rather th
 
 ---
 
-# Rule Exceptions
+## Rule Exceptions
 
 A rule may define whether exceptions are allowed.
 
@@ -1512,7 +1512,7 @@ The policy should reflect the risk of the rule.
 
 ---
 
-# Exception Application
+## Exception Application
 
 An approved exception should reference:
 
@@ -1531,7 +1531,7 @@ The exception modifies the decision interpretation rather than erasing evidence.
 
 ---
 
-# Rule Baselines
+## Rule Baselines
 
 Rules may support baselining when introduced into existing repositories.
 
@@ -1551,7 +1551,7 @@ They must not permanently legitimize quality debt.
 
 ---
 
-# Baseline Fingerprints
+## Baseline Fingerprints
 
 Individual findings may require stable fingerprints to distinguish:
 
@@ -1577,7 +1577,7 @@ Implementation must balance stability with accuracy.
 
 ---
 
-# Rule Metrics
+## Rule Metrics
 
 Rules may produce metrics in addition to pass/fail results.
 
@@ -1594,7 +1594,7 @@ Metrics can support trends and threshold-based rules.
 
 ---
 
-# Rule Trend Analysis
+## Rule Trend Analysis
 
 Historical rule results can reveal systemic changes.
 
@@ -1612,7 +1612,7 @@ This trend may indicate architecture degradation even if individual findings rem
 
 ---
 
-# Rule Aggregation
+## Rule Aggregation
 
 Rules may contribute to higher-level assessments.
 
@@ -1630,7 +1630,7 @@ Aggregation logic belongs to the assessment layer, not the rule itself.
 
 ---
 
-# Rule and Gate Separation
+## Rule and Gate Separation
 
 Rules determine compliance with specific expectations.
 
@@ -1652,7 +1652,7 @@ This separation allows the same rule to behave differently at different lifecycl
 
 ---
 
-# Example Rule Definition
+## Example Rule Definition
 
 A conceptual rule may be represented as:
 
@@ -1677,7 +1677,7 @@ symbols from another domain package outside approved public contracts.
 
 ---
 
-# Example Rule Evaluation
+## Example Rule Evaluation
 
 ```text
 Target:
@@ -1701,7 +1701,7 @@ The finding may then participate in a Merge Gate or Release Gate.
 
 ---
 
-# Example Documentation Rule
+## Example Documentation Rule
 
 ```text
 id: QLT-RULE-DOC-001
@@ -1725,7 +1725,7 @@ Missing artifacts generate individual findings.
 
 ---
 
-# Example Testing Rule
+## Example Testing Rule
 
 ```text
 id: QLT-RULE-TST-001
@@ -1745,7 +1745,7 @@ Infrastructure execution failure produces `ERROR`, not `FAIL`.
 
 ---
 
-# Example Security Rule
+## Example Security Rule
 
 ```text
 id: QLT-RULE-SEC-001
@@ -1760,7 +1760,7 @@ Release profiles may classify this rule as blocking.
 
 ---
 
-# Rule Catalog
+## Rule Catalog
 
 The framework should maintain a rule catalog.
 
@@ -1787,7 +1787,7 @@ Applicable Profiles
 
 ---
 
-# Machine-Readable Rule Definitions
+## Machine-Readable Rule Definitions
 
 Rules should eventually support machine-readable representation.
 
@@ -1805,7 +1805,7 @@ The exact serialization format is not normative at this architectural stage.
 
 ---
 
-# Human-Readable Rule Documentation
+## Human-Readable Rule Documentation
 
 Every significant rule should also remain understandable to humans.
 
@@ -1823,7 +1823,7 @@ Machine-readable configuration alone is insufficient for governance quality.
 
 ---
 
-# Rule Registry
+## Rule Registry
 
 The Quality Registry may maintain all active and historical rules.
 
@@ -1843,7 +1843,7 @@ The registry enables rule resolution by identifier and version.
 
 ---
 
-# Rule Discovery
+## Rule Discovery
 
 The Quality Execution Engine should discover applicable rules through:
 
@@ -1863,7 +1863,7 @@ Discovery should be deterministic.
 
 ---
 
-# Rule Selection
+## Rule Selection
 
 Rule selection must distinguish:
 
@@ -1880,7 +1880,7 @@ These states must not be conflated.
 
 ---
 
-# Mandatory Rule Preservation
+## Mandatory Rule Preservation
 
 Specialized profiles may strengthen rules.
 
@@ -1902,7 +1902,7 @@ Removal, when ever allowed, requires explicit governance.
 
 ---
 
-# Rule Configuration Validation
+## Rule Configuration Validation
 
 Invalid rule configuration must fail clearly.
 
@@ -1918,7 +1918,7 @@ The quality engine must not silently substitute arbitrary defaults.
 
 ---
 
-# Rule Integrity
+## Rule Integrity
 
 Rule definitions are part of quality infrastructure.
 
@@ -1933,7 +1933,7 @@ Authoritative rule definitions should therefore be:
 
 ---
 
-# Rule Auditability
+## Rule Auditability
 
 A quality decision should be reconstructable from rule history.
 
@@ -1955,7 +1955,7 @@ This is essential for release traceability and governance.
 
 ---
 
-# Rule Change Impact
+## Rule Change Impact
 
 Rule changes may affect large portions of the platform.
 
@@ -1979,7 +1979,7 @@ This supports controlled adoption.
 
 ---
 
-# Rule Rollout
+## Rule Rollout
 
 Significant rules may use progressive rollout.
 
@@ -2001,7 +2001,7 @@ Progressive rollout reduces disruptive framework changes.
 
 ---
 
-# Rule Migration
+## Rule Migration
 
 When one rule replaces another, migration guidance should define:
 
@@ -2015,7 +2015,7 @@ Rule migration must not invalidate historical evidence unnecessarily.
 
 ---
 
-# Rule Compatibility
+## Rule Compatibility
 
 Machine-readable rule contracts may eventually become dependencies for:
 
@@ -2029,7 +2029,7 @@ Changes to these contracts must consider compatibility.
 
 ---
 
-# Rule Governance Events
+## Rule Governance Events
 
 The framework may emit events for rule lifecycle changes.
 
@@ -2047,7 +2047,7 @@ Such events may support auditing and automation.
 
 ---
 
-# Rule Quality
+## Rule Quality
 
 Rules themselves have quality requirements.
 
@@ -2064,7 +2064,7 @@ The framework must therefore evaluate rule quality.
 
 ---
 
-# Rule Quality Criteria
+## Rule Quality Criteria
 
 An active rule should ideally satisfy:
 
@@ -2083,7 +2083,7 @@ Rules that consistently fail these criteria should be improved or retired.
 
 ---
 
-# Rule Effectiveness
+## Rule Effectiveness
 
 Rule effectiveness should be evaluated over time.
 
@@ -2100,7 +2100,7 @@ A rule that generates persistent noise without meaningful value should be recons
 
 ---
 
-# Rule Observability
+## Rule Observability
 
 The quality system should eventually expose operational information about rules.
 
@@ -2120,7 +2120,7 @@ These metrics help maintain the quality infrastructure itself.
 
 ---
 
-# AI-Assisted Rule Analysis
+## AI-Assisted Rule Analysis
 
 AI may assist with:
 
@@ -2136,11 +2136,11 @@ Any rule change must remain governed and reviewable.
 
 ---
 
-# Rule Anti-Patterns
+## Rule Anti-Patterns
 
 The Quality Rule Model rejects several patterns.
 
-## Tool-Named Rules
+### Tool-Named Rules
 
 Avoid:
 
@@ -2154,7 +2154,7 @@ Prefer:
 Python source must satisfy configured static analysis requirements
 ```
 
-## Monolithic Rules
+### Monolithic Rules
 
 Avoid:
 
@@ -2164,29 +2164,29 @@ Repository must be high quality
 
 Rules must address specific concerns.
 
-## Hidden Rules
+### Hidden Rules
 
 Mandatory quality behavior must not exist only inside CI scripts.
 
-## Unowned Rules
+### Unowned Rules
 
 Every active authoritative rule requires ownership.
 
-## Permanent Suppressions
+### Permanent Suppressions
 
 Suppression must not become invisible technical debt.
 
-## Unversioned Semantic Changes
+### Unversioned Semantic Changes
 
 Rule behavior must not change materially without traceability.
 
-## Silent Evaluation Errors
+### Silent Evaluation Errors
 
 Execution failure must never imply compliance.
 
 ---
 
-# Reference Rule Flow
+## Reference Rule Flow
 
 The complete rule flow can be represented as:
 
@@ -2218,7 +2218,7 @@ This model preserves clear responsibility at every stage.
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The Quality Rule Model transforms FamilyOS quality requirements from descriptive guidance into governed engineering constraints.
 
@@ -2246,7 +2246,7 @@ These questions are essential for scalable quality automation and governance.
 
 ---
 
-# Final Rule Principle
+## Final Rule Principle
 
 A quality rule must make an engineering expectation executable without making it obscure.
 
@@ -2265,3 +2265,262 @@ Evidence
 ```
 
 The FamilyOS Quality Rule Model therefore establishes the normative structure required to make quality requirements explicit, repeatable, traceable, automatable, explainable, and governable throughout the complete FamilyOS engineering lifecycle.
+
+---
+
+### Phase 2 Runtime Rule and Status Contract
+
+This section reconciles the normative Quality Rule Model with the initial
+machine-readable Quality domain implementation.
+
+#### Canonical Quality Severity
+
+`QualitySeverity` SHALL expose exactly the following initial values:
+
+```text
+INFO
+LOW
+MEDIUM
+HIGH
+CRITICAL
+```
+
+Severity expresses the significance of a quality concern. It MUST NOT itself
+decide gate behavior or progression policy.
+
+#### Canonical Quality Status
+
+`QualityStatus` SHALL expose exactly the following initial values:
+
+```text
+PASS
+WARNING
+FAIL
+ERROR
+SKIPPED
+UNKNOWN
+```
+
+The status semantics are:
+
+- `PASS` — evaluation completed successfully and the evaluated condition was
+  satisfied.
+- `WARNING` — evaluation completed and identified a non-blocking concern.
+- `FAIL` — evaluation completed successfully and identified a quality
+  violation.
+- `ERROR` — the evaluation mechanism could not produce a reliable conclusion.
+- `SKIPPED` — evaluation was intentionally not executed.
+- `UNKNOWN` — available information is insufficient to determine the quality
+  state.
+
+The following distinctions are normative:
+
+- `ERROR` MUST NOT be collapsed into `FAIL`.
+- `UNKNOWN` MUST NOT be interpreted as `PASS`.
+- `SKIPPED` MUST remain distinct from `UNKNOWN`.
+- `WARNING` is the canonical Quality status spelling.
+
+Existing uses of `WARN` that describe an enforcement mode, lifecycle phase,
+profile behavior, or another semantically distinct policy concept are not
+renamed by this contract.
+
+#### Runtime Quality Identifiers
+
+Runtime identifiers SHALL preserve the governed FamilyOS Quality namespaces
+already established by the normative framework and SHALL remain compatible
+with the canonical FamilyOS identifier specification.
+
+The initial namespaces include:
+
+```text
+QLT-DOM-*
+QLT-REQ-*
+QLT-RULE-*
+QLT-FIND-*
+```
+
+Phase 2 MUST NOT invent a competing identifier convention.
+
+This contract authorizes only the core model vocabulary governed by the Core
+Domain Models phase. It does not authorize Quality Evidence implementation,
+tool adapters, assessment execution, profiles, CLI integration, CI integration,
+or quality gates.
+
+### Phase 2 Core Model Shape Contract
+
+This section reconciles the initial runtime shape of the Phase 2 Quality
+domain models. It narrows implementation choices only where the existing
+Quality Framework already establishes sufficient semantics.
+
+#### Quality Target
+
+`QualityTarget` SHALL identify the governed object being evaluated with enough
+identity to support reproducible evaluation.
+
+The initial runtime model SHALL contain:
+
+```text
+target_type
+identifier
+revision
+version
+path
+metadata
+```
+
+`target_type` and `identifier` are required non-empty strings.
+
+`revision`, `version`, and `path` are optional strings. When supplied, they
+MUST be non-empty. A source-controlled target SHOULD carry its source revision
+when reproducibility requires revision binding.
+
+`metadata` SHALL be immutable from the perspective of the `QualityTarget`
+instance. Phase 2 metadata is descriptive context only and SHALL NOT determine
+Quality policy, gate behavior, or tool execution.
+
+Target identity SHALL be based on the explicit target classification and
+identifier together with the supplied reproducibility qualifiers. Phase 2
+SHALL NOT invent target-type-specific infrastructure behavior.
+
+#### Quality Finding
+
+`QualityFinding` SHALL represent one normalized Quality observation.
+
+The initial runtime model SHALL contain:
+
+```text
+id
+rule_id
+domain
+severity
+status
+message
+target
+location
+evidence_ids
+```
+
+The required fields are `id`, `rule_id`, `domain`, `severity`, `status`,
+`message`, and `target`.
+
+`id` SHALL use the governed `QLT-FIND-*` category.
+
+`rule_id` SHALL use the governed `QLT-RULE-*` category.
+
+`domain` SHALL be a `QualityDomain`.
+
+`severity` SHALL be a `QualitySeverity`.
+
+`status` SHALL be a `QualityStatus`.
+
+`message` MUST be non-empty.
+
+`target` SHALL be a `QualityTarget`.
+
+`location` is optional descriptive location information and, when supplied,
+MUST be non-empty.
+
+`evidence_ids` SHALL be an immutable collection of opaque canonical
+`QLT-EVID-*` identifier strings during Phase 2. Phase 2 SHALL validate the
+Quality Evidence namespace boundary only; it SHALL NOT define
+`QualityEvidence`, Evidence persistence, or Evidence lifecycle semantics.
+
+The Finding model SHALL NOT generate evidence identifiers and SHALL NOT
+require an Evidence runtime object to exist.
+
+#### Quality Requirement
+
+`QualityRequirement` SHALL represent one governed Quality expectation.
+
+The initial runtime model SHALL contain:
+
+```text
+id
+title
+description
+domain
+authority
+mandatory
+applicability
+verification
+```
+
+`id` SHALL use the governed `QLT-REQ-*` category.
+
+`title`, `description`, `authority`, `applicability`, and `verification` are
+required non-empty strings in the initial Phase 2 runtime model.
+
+`domain` SHALL be a `QualityDomain`.
+
+`mandatory` SHALL be an explicit boolean and SHALL NOT be inferred from
+authority, severity, applicability, or verification text.
+
+`authority` records the authoritative source or provenance for the
+requirement. Phase 2 SHALL NOT introduce a separate authority registry.
+
+`applicability` records the governed applicability expression or description.
+Phase 2 SHALL NOT implement profile resolution or applicability execution.
+
+`verification` records the expected verification semantics. It SHALL remain
+tool-independent and SHALL NOT embed Ruff, MyPy, Pytest, CI-provider, command,
+or adapter execution behavior.
+
+#### Quality Rule
+
+`QualityRule` SHALL represent one governed, tool-independent executable-quality
+definition without implementing execution itself.
+
+The initial runtime model SHALL contain:
+
+```text
+id
+requirement_id
+domain
+severity
+description
+executor
+```
+
+`id` SHALL use the governed `QLT-RULE-*` category.
+
+`requirement_id` SHALL use the governed `QLT-REQ-*` category when supplied.
+The field is optional in Phase 2 because the normative framework requires
+requirement linkage where appropriate rather than for every possible rule.
+
+`domain` SHALL be a `QualityDomain`.
+
+`severity` SHALL be a `QualitySeverity`.
+
+`description` MUST be non-empty.
+
+`executor` is an optional opaque logical reference only. When supplied, it
+MUST be a non-empty string. It SHALL NOT be a callable, process executor,
+tool adapter, application port, infrastructure object, or tool-specific
+configuration.
+
+The actual Quality Executor application port remains governed by Phase 4.
+Ruff, MyPy, Pytest, documentation-validation, Plugin Compliance, and other
+tool adapters remain governed by their later implementation phases.
+
+#### Phase 2 Model Invariants
+
+The Phase 2 models SHALL be immutable domain values or immutable domain
+records using the established FamilyOS domain-model style where appropriate.
+
+They SHALL reject invalid backing types rather than silently coercing them.
+
+Closed canonical vocabularies such as `QualitySeverity` and `QualityStatus`
+SHALL remain distinct from extensible governed identifier value objects.
+
+Phase 2 SHALL NOT introduce:
+
+- `QualityEvidence`;
+- Quality Evidence persistence or lifecycle behavior;
+- Quality Assessment execution;
+- Quality Profiles;
+- Quality Gates;
+- Quality CLI;
+- CI integration;
+- Quality Executor application ports;
+- Ruff, MyPy, Pytest, or other tool adapters;
+- tool-specific behavior in the Quality domain layer.

@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 18 Quality Governance
+## 18 Quality Governance
 
-## Overview
+### Overview
 
 The FamilyOS Quality Governance model defines the authority, ownership, decision structures, policies, responsibilities, controls, escalation mechanisms, and lifecycle rules required to govern quality consistently across the FamilyOS engineering ecosystem.
 
@@ -47,7 +47,7 @@ change, override, and improve FamilyOS quality policy?
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Governance is to ensure that quality decisions are:
 
@@ -94,7 +94,7 @@ Continuous Improvement
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -114,7 +114,7 @@ Outcome
 
 ---
 
-# Governance Scope
+## Governance Scope
 
 Quality Governance applies to:
 
@@ -141,37 +141,37 @@ It therefore governs both quality expectations and the mechanisms used to enforc
 
 ---
 
-# Governance Objectives
+## Governance Objectives
 
 Quality Governance exists to achieve several objectives.
 
-## Consistency
+### Consistency
 
 Equivalent quality conditions should receive equivalent treatment.
 
-## Accountability
+### Accountability
 
 Important quality responsibilities should have clear ownership.
 
-## Traceability
+### Traceability
 
 Important decisions should be reconstructable.
 
-## Proportionality
+### Proportionality
 
 Governance effort should correspond to risk.
 
-## Independence
+### Independence
 
 Critical quality decisions should not depend solely on delivery pressure.
 
-## Evolution
+### Evolution
 
 Quality policy must be able to change safely as FamilyOS evolves.
 
 ---
 
-# Governance Model
+## Governance Model
 
 The conceptual governance model is:
 
@@ -199,7 +199,7 @@ Quality Governance must remain aligned with broader FamilyOS governance.
 
 ---
 
-# Governance Hierarchy
+## Governance Hierarchy
 
 A conceptual authority hierarchy may be:
 
@@ -227,7 +227,7 @@ Lower-level mechanisms must not contradict higher-level authority.
 
 ---
 
-# Normative Hierarchy
+## Normative Hierarchy
 
 When quality documents conflict, the authoritative hierarchy must determine precedence.
 
@@ -255,7 +255,7 @@ The exact hierarchy should remain aligned with the FamilyOS Documentation and En
 
 ---
 
-# Governance Authority
+## Governance Authority
 
 Governance Authority represents the ability to make an authoritative quality decision.
 
@@ -275,7 +275,7 @@ The applicable authority depends on the decision.
 
 ---
 
-# Authority Principle
+## Authority Principle
 
 Authority should follow responsibility and risk.
 
@@ -295,7 +295,7 @@ Not every decision requires the highest governance level.
 
 ---
 
-# Quality Authority
+## Quality Authority
 
 Quality Authority is responsible for maintaining the integrity of the Quality Framework.
 
@@ -310,7 +310,7 @@ Responsibilities may include:
 
 ---
 
-# Domain Authority
+## Domain Authority
 
 Specific quality domains may have dedicated authorities.
 
@@ -330,7 +330,7 @@ Domain authorities define domain-specific requirements within the common Quality
 
 ---
 
-# Federated Governance
+## Federated Governance
 
 FamilyOS should use federated quality governance where appropriate.
 
@@ -354,7 +354,7 @@ This avoids centralizing every technical decision in one authority.
 
 ---
 
-# Central Governance Responsibilities
+## Central Governance Responsibilities
 
 Central Quality Governance should focus on:
 
@@ -373,7 +373,7 @@ Domain-specific technical details should remain with the appropriate framework.
 
 ---
 
-# Governance Roles
+## Governance Roles
 
 A mature Quality Governance model may distinguish roles such as:
 
@@ -394,7 +394,7 @@ A single person may hold several roles in smaller project stages.
 
 ---
 
-# Quality Framework Owner
+## Quality Framework Owner
 
 The Quality Framework Owner is responsible for:
 
@@ -406,7 +406,7 @@ The Quality Framework Owner is responsible for:
 
 ---
 
-# Quality Domain Owner
+## Quality Domain Owner
 
 A Quality Domain Owner is responsible for a specific quality domain.
 
@@ -424,7 +424,7 @@ Improvement
 
 ---
 
-# Rule Owner
+## Rule Owner
 
 A Rule Owner is responsible for:
 
@@ -439,13 +439,13 @@ Rules without ownership may become unreliable technical debt.
 
 ---
 
-# Profile Owner
+## Profile Owner
 
 A Quality Profile Owner is responsible for ensuring that the profile contains the correct requirements for its target class.
 
 ---
 
-# Gate Owner
+## Gate Owner
 
 A Gate Owner maintains:
 
@@ -461,7 +461,7 @@ Gate ownership does not automatically grant override authority.
 
 ---
 
-# Risk Owner
+## Risk Owner
 
 A Risk Owner is responsible for:
 
@@ -474,7 +474,7 @@ Risk ownership does not necessarily mean the owner may accept the risk.
 
 ---
 
-# Quality Debt Owner
+## Quality Debt Owner
 
 Quality Debt should have accountable ownership where remediation is expected.
 
@@ -489,7 +489,7 @@ Closure Evidence
 
 ---
 
-# Exception Owner
+## Exception Owner
 
 An Exception Owner ensures that:
 
@@ -500,7 +500,7 @@ An Exception Owner ensures that:
 
 ---
 
-# Release Authority
+## Release Authority
 
 Release Authority determines whether release-specific governance requirements are satisfied.
 
@@ -508,7 +508,7 @@ It may consume Quality Gate decisions but should not silently alter underlying Q
 
 ---
 
-# Separation of Duties
+## Separation of Duties
 
 Critical quality decisions may require separation of duties.
 
@@ -536,7 +536,7 @@ The same individual should not necessarily control every step for high-risk tran
 
 ---
 
-# Separation of Policy and Implementation
+## Separation of Policy and Implementation
 
 A core governance principle is:
 
@@ -554,7 +554,7 @@ Tool configuration must not become an undocumented source of policy.
 
 ---
 
-# Separation of Assessment and Progression
+## Separation of Assessment and Progression
 
 Quality Assessment answers:
 
@@ -572,7 +572,7 @@ Governance must preserve this distinction.
 
 ---
 
-# Separation of Risk and Compliance
+## Separation of Risk and Compliance
 
 Compliance answers:
 
@@ -594,7 +594,7 @@ Governance must consider both.
 
 ---
 
-# Quality Policy
+## Quality Policy
 
 Quality Policy defines authoritative expectations governing quality behavior.
 
@@ -612,7 +612,7 @@ Evidence Requirements
 
 ---
 
-# Policy Identity
+## Policy Identity
 
 Formal policies should have stable identities where practical.
 
@@ -632,7 +632,7 @@ QLT-POL-EVID-001
 
 ---
 
-# Policy Metadata
+## Policy Metadata
 
 A policy may contain:
 
@@ -651,7 +651,7 @@ status
 
 ---
 
-# Policy Lifecycle
+## Policy Lifecycle
 
 A policy may move through:
 
@@ -673,7 +673,7 @@ Emergency policy changes may use an accelerated but still traceable path.
 
 ---
 
-# Policy Proposal
+## Policy Proposal
 
 A policy proposal should explain:
 
@@ -689,7 +689,7 @@ Risk
 
 ---
 
-# Policy Review
+## Policy Review
 
 Policy review should consider:
 
@@ -704,7 +704,7 @@ Policy review should consider:
 
 ---
 
-# Policy Approval
+## Policy Approval
 
 The approving authority depends on policy scope.
 
@@ -723,7 +723,7 @@ Architecture Quality Policy
 
 ---
 
-# Policy Effective Date
+## Policy Effective Date
 
 Policies should identify when they become effective.
 
@@ -731,7 +731,7 @@ This enables staged rollout and historical interpretation.
 
 ---
 
-# Policy Deprecation
+## Policy Deprecation
 
 Policies should be deprecated when:
 
@@ -744,7 +744,7 @@ Deprecated policies should identify their replacement where applicable.
 
 ---
 
-# Policy Retirement
+## Policy Retirement
 
 Retired policies should no longer govern new assessments.
 
@@ -752,7 +752,7 @@ Historical decisions should remain interpretable against them.
 
 ---
 
-# Quality Requirement Governance
+## Quality Requirement Governance
 
 Requirements should not appear arbitrarily.
 
@@ -776,7 +776,7 @@ Enforcement
 
 ---
 
-# Requirement Authority
+## Requirement Authority
 
 Every mandatory requirement should identify its authority.
 
@@ -794,7 +794,7 @@ Release Policy
 
 ---
 
-# Requirement Ownership
+## Requirement Ownership
 
 Every active requirement should have an owner or governing domain.
 
@@ -802,7 +802,7 @@ Orphaned mandatory requirements should trigger review.
 
 ---
 
-# Requirement Review
+## Requirement Review
 
 Requirements should be reviewed for:
 
@@ -817,7 +817,7 @@ Consistency
 
 ---
 
-# Requirement Change
+## Requirement Change
 
 Changing a mandatory requirement may affect:
 
@@ -831,7 +831,7 @@ Changes should therefore include impact analysis.
 
 ---
 
-# Quality Rule Governance
+## Quality Rule Governance
 
 Rules operationalize requirements.
 
@@ -844,7 +844,7 @@ Rule governance ensures they remain:
 
 ---
 
-# Rule Introduction
+## Rule Introduction
 
 A new rule should identify:
 
@@ -859,7 +859,7 @@ Expected Evidence
 
 ---
 
-# Rule Rollout
+## Rule Rollout
 
 New rules may use:
 
@@ -875,7 +875,7 @@ This reduces disruptive enforcement.
 
 ---
 
-# Rule Calibration
+## Rule Calibration
 
 Rules should be calibrated using real engineering evidence.
 
@@ -892,7 +892,7 @@ Escaped Defects
 
 ---
 
-# Rule Modification
+## Rule Modification
 
 Significant rule changes should preserve:
 
@@ -903,7 +903,7 @@ Significant rule changes should preserve:
 
 ---
 
-# Rule Retirement
+## Rule Retirement
 
 A rule may be retired when:
 
@@ -919,7 +919,7 @@ Retirement should remain traceable.
 
 ---
 
-# Quality Profile Governance
+## Quality Profile Governance
 
 Quality Profiles define requirement sets for target classes.
 
@@ -929,13 +929,13 @@ They therefore require controlled governance.
 
 ---
 
-# Profile Ownership
+## Profile Ownership
 
 Every profile should have a defined owner.
 
 ---
 
-# Profile Versioning
+## Profile Versioning
 
 Profiles should be versioned when requirement changes affect compliance semantics.
 
@@ -948,7 +948,7 @@ official-plugin-v2
 
 ---
 
-# Profile Compatibility
+## Profile Compatibility
 
 Profile evolution should consider whether existing targets immediately become non-compliant.
 
@@ -956,7 +956,7 @@ Migration strategies may be required.
 
 ---
 
-# Profile Migration
+## Profile Migration
 
 A profile migration may use:
 
@@ -974,7 +974,7 @@ New Profile Enforced
 
 ---
 
-# Severity Governance
+## Severity Governance
 
 Severity classifications affect:
 
@@ -988,7 +988,7 @@ Severity policy must therefore remain consistent.
 
 ---
 
-# Severity Authority
+## Severity Authority
 
 The Quality Framework should define the common severity model.
 
@@ -996,7 +996,7 @@ Domain frameworks may provide domain-specific interpretation without redefining 
 
 ---
 
-# Severity Escalation
+## Severity Escalation
 
 A finding may be escalated when new context increases risk.
 
@@ -1017,7 +1017,7 @@ Escalation should preserve rationale.
 
 ---
 
-# Severity Downgrade
+## Severity Downgrade
 
 Downgrades should also require documented reasoning.
 
@@ -1025,7 +1025,7 @@ Severity should not be reduced simply to make a gate pass.
 
 ---
 
-# Risk Governance
+## Risk Governance
 
 Quality Governance defines how quality risks are:
 
@@ -1041,7 +1041,7 @@ Closed
 
 ---
 
-# Risk Acceptance Authority
+## Risk Acceptance Authority
 
 Risk acceptance authority should correspond to risk level.
 
@@ -1065,7 +1065,7 @@ Exact authority mappings should be formally defined.
 
 ---
 
-# Risk Acceptance Principle
+## Risk Acceptance Principle
 
 Risk acceptance must be explicit.
 
@@ -1073,7 +1073,7 @@ Silence is not acceptance.
 
 ---
 
-# Risk Acceptance Record
+## Risk Acceptance Record
 
 A risk acceptance should include:
 
@@ -1090,7 +1090,7 @@ Expiration
 
 ---
 
-# Temporary Risk Acceptance
+## Temporary Risk Acceptance
 
 Some risk acceptance may be temporary.
 
@@ -1098,7 +1098,7 @@ Expiration should trigger reassessment.
 
 ---
 
-# Risk Escalation
+## Risk Escalation
 
 Risks should escalate when:
 
@@ -1110,7 +1110,7 @@ Risks should escalate when:
 
 ---
 
-# Quality Debt Governance
+## Quality Debt Governance
 
 Quality Debt requires governance because tolerated debt can accumulate silently.
 
@@ -1128,7 +1128,7 @@ Closure
 
 ---
 
-# Debt Acceptance
+## Debt Acceptance
 
 Creating Quality Debt should not become a routine substitute for meeting quality requirements.
 
@@ -1136,7 +1136,7 @@ Significant debt should require explicit acknowledgement.
 
 ---
 
-# Debt Budget
+## Debt Budget
 
 Governance may define debt budgets for selected domains.
 
@@ -1154,7 +1154,7 @@ Debt budgets should encourage improvement.
 
 ---
 
-# Debt Aging
+## Debt Aging
 
 Older debt may require escalation.
 
@@ -1170,7 +1170,7 @@ especially when risk or interest also increases.
 
 ---
 
-# Debt Closure
+## Debt Closure
 
 Debt should close only when remediation is verified.
 
@@ -1178,13 +1178,13 @@ Closing an issue without correcting the underlying quality condition is insuffic
 
 ---
 
-# Exception Governance
+## Exception Governance
 
 Quality Exceptions require strong governance because they intentionally permit deviation from normal policy.
 
 ---
 
-# Exception Principle
+## Exception Principle
 
 An exception must be:
 
@@ -1200,7 +1200,7 @@ Observable
 
 ---
 
-# Exception Authority
+## Exception Authority
 
 The authority required should depend on:
 
@@ -1211,7 +1211,7 @@ The authority required should depend on:
 
 ---
 
-# Exception Request
+## Exception Request
 
 A request should include:
 
@@ -1228,7 +1228,7 @@ Requested Duration
 
 ---
 
-# Exception Review
+## Exception Review
 
 The reviewing authority should evaluate:
 
@@ -1248,7 +1248,7 @@ Is the duration reasonable?
 
 ---
 
-# Exception Approval
+## Exception Approval
 
 Approval should create an authoritative exception record.
 
@@ -1256,13 +1256,13 @@ Verbal or undocumented approval is insufficient for governed exceptions.
 
 ---
 
-# Exception Expiration
+## Exception Expiration
 
 Expired exceptions must automatically lose authority where automation supports it.
 
 ---
 
-# Exception Renewal
+## Exception Renewal
 
 Renewal should be explicit and should reassess:
 
@@ -1272,7 +1272,7 @@ Renewal should be explicit and should reassess:
 
 ---
 
-# Exception Revocation
+## Exception Revocation
 
 An exception may be revoked before expiration when:
 
@@ -1283,7 +1283,7 @@ An exception may be revoked before expiration when:
 
 ---
 
-# Exception Inventory
+## Exception Inventory
 
 Governance should maintain visibility into:
 
@@ -1298,13 +1298,13 @@ Exceptions by Owner
 
 ---
 
-# Override Governance
+## Override Governance
 
 Gate overrides require stronger governance than normal exceptions because they directly alter progression decisions.
 
 ---
 
-# Override Principle
+## Override Principle
 
 An override changes:
 
@@ -1320,7 +1320,7 @@ Underlying Quality State
 
 ---
 
-# Override Requirements
+## Override Requirements
 
 A formal override should contain:
 
@@ -1338,7 +1338,7 @@ Timestamp
 
 ---
 
-# Override Review
+## Override Review
 
 Overrides should be reviewed after the event, especially for:
 
@@ -1350,7 +1350,7 @@ Repeated overrides may indicate systemic governance problems.
 
 ---
 
-# Emergency Governance
+## Emergency Governance
 
 FamilyOS may require emergency quality decisions.
 
@@ -1368,7 +1368,7 @@ even when normal process is accelerated.
 
 ---
 
-# Emergency Principle
+## Emergency Principle
 
 Emergency does not mean uncontrolled.
 
@@ -1376,7 +1376,7 @@ The process may become faster, but the decision must remain explicit.
 
 ---
 
-# Emergency Override
+## Emergency Override
 
 A conceptual emergency flow is:
 
@@ -1398,7 +1398,7 @@ Mandatory Follow-Up Review
 
 ---
 
-# Post-Emergency Review
+## Post-Emergency Review
 
 A post-emergency review should determine:
 
@@ -1416,7 +1416,7 @@ Should the normal process change?
 
 ---
 
-# Quality Assessment Governance
+## Quality Assessment Governance
 
 Formal Quality Assessments should follow governed models.
 
@@ -1430,7 +1430,7 @@ Governance should define:
 
 ---
 
-# Assessment Independence
+## Assessment Independence
 
 High-risk assessments may require independent review.
 
@@ -1438,7 +1438,7 @@ The implementation author should not always be the sole authority determining fi
 
 ---
 
-# Assessment Reassessment
+## Assessment Reassessment
 
 Assessments should be repeated when relevant state changes.
 
@@ -1454,7 +1454,7 @@ Exception Expires
 
 ---
 
-# Assessment Dispute
+## Assessment Dispute
 
 Engineers may challenge an assessment when they believe:
 
@@ -1467,7 +1467,7 @@ Governance should provide a resolution path.
 
 ---
 
-# Dispute Resolution
+## Dispute Resolution
 
 A conceptual path is:
 
@@ -1487,7 +1487,7 @@ Escalation may occur when required.
 
 ---
 
-# Quality Gate Governance
+## Quality Gate Governance
 
 Governance determines:
 
@@ -1502,7 +1502,7 @@ Who May Override It
 
 ---
 
-# Gate Policy Authority
+## Gate Policy Authority
 
 Gate policies should have explicit authority.
 
@@ -1510,7 +1510,7 @@ A CI administrator should not independently redefine release quality requirement
 
 ---
 
-# Gate Enforcement Audit
+## Gate Enforcement Audit
 
 Governance should periodically verify that:
 
@@ -1524,7 +1524,7 @@ Overrides Are Recorded
 
 ---
 
-# Quality Compliance Governance
+## Quality Compliance Governance
 
 Compliance governance determines:
 
@@ -1537,7 +1537,7 @@ Compliance governance determines:
 
 ---
 
-# Compliance Certification Authority
+## Compliance Certification Authority
 
 If FamilyOS introduces formal internal certification, the authority issuing certification must be explicit.
 
@@ -1545,7 +1545,7 @@ Certification should never be generated solely from an ungoverned tool result.
 
 ---
 
-# Quality Automation Governance
+## Quality Automation Governance
 
 Quality Automation executes policy.
 
@@ -1553,7 +1553,7 @@ Governance should ensure that automation remains aligned with authoritative requ
 
 ---
 
-# Automation Ownership
+## Automation Ownership
 
 Every critical quality automation component should have an owner.
 
@@ -1570,7 +1570,7 @@ Documentation Validator
 
 ---
 
-# Automation Change Control
+## Automation Change Control
 
 Changes to critical automation should be reviewed when they may affect:
 
@@ -1582,7 +1582,7 @@ Changes to critical automation should be reviewed when they may affect:
 
 ---
 
-# Automation Failure Governance
+## Automation Failure Governance
 
 Critical automation failure should have defined behavior.
 
@@ -1598,7 +1598,7 @@ The behavior should depend on risk.
 
 ---
 
-# Automation Trust
+## Automation Trust
 
 Automation should earn authority through:
 
@@ -1614,13 +1614,13 @@ A broken tool must not remain silently authoritative.
 
 ---
 
-# Quality Evidence Governance
+## Quality Evidence Governance
 
 Governance should define which evidence types are authoritative for specific decisions.
 
 ---
 
-# Evidence Authority
+## Evidence Authority
 
 Examples:
 
@@ -1639,7 +1639,7 @@ Not all evidence has equal authority.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Important evidence should be protected against:
 
@@ -1649,7 +1649,7 @@ Important evidence should be protected against:
 
 ---
 
-# Evidence Retention Governance
+## Evidence Retention Governance
 
 Retention should correspond to lifecycle significance.
 
@@ -1665,7 +1665,7 @@ Release Gate Evidence
 
 ---
 
-# Quality Metrics Governance
+## Quality Metrics Governance
 
 Metrics can strongly influence engineering behavior.
 
@@ -1673,7 +1673,7 @@ They therefore require governance.
 
 ---
 
-# Metric Definition
+## Metric Definition
 
 Each important metric should define:
 
@@ -1688,7 +1688,7 @@ Owner
 
 ---
 
-# Metric Change
+## Metric Change
 
 Changes to metric calculation should be documented.
 
@@ -1696,7 +1696,7 @@ Historical comparisons may otherwise become misleading.
 
 ---
 
-# Metric Misuse
+## Metric Misuse
 
 Governance should prevent metrics from becoming simplistic performance targets.
 
@@ -1710,7 +1710,7 @@ should not become an individual productivity measure.
 
 ---
 
-# Responsible Measurement
+## Responsible Measurement
 
 Quality metrics should evaluate:
 
@@ -1725,7 +1725,7 @@ rather than create employee surveillance.
 
 ---
 
-# Quality Observability Governance
+## Quality Observability Governance
 
 Observability governance should ensure that:
 
@@ -1737,7 +1737,7 @@ Observability governance should ensure that:
 
 ---
 
-# Dashboard Authority
+## Dashboard Authority
 
 A dashboard is a presentation layer.
 
@@ -1747,7 +1747,7 @@ Authoritative state remains in underlying governed records.
 
 ---
 
-# Alert Governance
+## Alert Governance
 
 Alert policy should define:
 
@@ -1761,13 +1761,13 @@ Deduplication
 
 ---
 
-# Continuous Improvement Governance
+## Continuous Improvement Governance
 
 Continuous Improvement requires governance to ensure important systemic problems become owned engineering work.
 
 ---
 
-# Improvement Authority
+## Improvement Authority
 
 Small improvements may proceed through normal engineering workflow.
 
@@ -1775,7 +1775,7 @@ Cross-cutting or architectural improvements may require higher authority.
 
 ---
 
-# Improvement Prioritization
+## Improvement Prioritization
 
 Governance should consider:
 
@@ -1791,13 +1791,13 @@ Quality improvement should compete fairly with feature development.
 
 ---
 
-# Improvement Verification
+## Improvement Verification
 
 Significant improvements should demonstrate whether the expected outcome was achieved.
 
 ---
 
-# Governance Reviews
+## Governance Reviews
 
 Quality Governance should itself be reviewed periodically.
 
@@ -1817,7 +1817,7 @@ Compliance Trends
 
 ---
 
-# Governance Review Questions
+## Governance Review Questions
 
 A mature governance review should ask:
 
@@ -1845,7 +1845,7 @@ Where should governance become simpler?
 
 ---
 
-# Governance Effectiveness
+## Governance Effectiveness
 
 Governance effectiveness should be judged by outcomes.
 
@@ -1865,7 +1865,7 @@ Sustainable Engineering
 
 ---
 
-# Governance Friction
+## Governance Friction
 
 Governance itself can create Quality Debt if it becomes unnecessarily complex.
 
@@ -1881,7 +1881,7 @@ These should trigger improvement.
 
 ---
 
-# Proportional Governance
+## Proportional Governance
 
 The governance effort should correspond to risk.
 
@@ -1902,7 +1902,7 @@ Strict Gate
 
 ---
 
-# Risk-Based Governance
+## Risk-Based Governance
 
 A conceptual model is:
 
@@ -1919,7 +1919,7 @@ This avoids both under-governance and unnecessary bureaucracy.
 
 ---
 
-# Governance Escalation
+## Governance Escalation
 
 Escalation is required when a decision exceeds local authority.
 
@@ -1935,7 +1935,7 @@ Repeated Governance Failure
 
 ---
 
-# Escalation Path
+## Escalation Path
 
 A conceptual path may be:
 
@@ -1955,7 +1955,7 @@ Not every issue should traverse the entire chain.
 
 ---
 
-# Cross-Domain Conflict
+## Cross-Domain Conflict
 
 Quality domains may occasionally conflict.
 
@@ -1979,7 +1979,7 @@ Governance must provide a mechanism to resolve such conflicts explicitly.
 
 ---
 
-# Conflict Resolution
+## Conflict Resolution
 
 Conflict resolution should consider:
 
@@ -1995,7 +1995,7 @@ The decision should be documented when significant.
 
 ---
 
-# Decision Record
+## Decision Record
 
 Important governance decisions should create durable records.
 
@@ -2013,7 +2013,7 @@ Review Record
 
 ---
 
-# Decision Identity
+## Decision Identity
 
 Formal quality governance decisions may use stable identifiers.
 
@@ -2027,7 +2027,7 @@ This is optional where an existing ADR, RFC, or other governed identifier alread
 
 ---
 
-# Decision Metadata
+## Decision Metadata
 
 A decision record may contain:
 
@@ -2045,7 +2045,7 @@ consequences
 
 ---
 
-# Decision Traceability
+## Decision Traceability
 
 A quality decision should answer:
 
@@ -2063,7 +2063,7 @@ What consequences were accepted?
 
 ---
 
-# Governance Audit Trail
+## Governance Audit Trail
 
 Significant quality governance actions should remain auditable.
 
@@ -2082,7 +2082,7 @@ Gate Changes
 
 ---
 
-# Governance Immutability
+## Governance Immutability
 
 Historical governance decisions should not be silently rewritten.
 
@@ -2090,7 +2090,7 @@ A changed decision should supersede the previous record while preserving history
 
 ---
 
-# Governance Versioning
+## Governance Versioning
 
 Policies, profiles, rules, and other normative quality artifacts should use controlled versioning.
 
@@ -2098,7 +2098,7 @@ Versioning enables historical reconstruction.
 
 ---
 
-# Governance Change Management
+## Governance Change Management
 
 Significant changes should follow:
 
@@ -2120,7 +2120,7 @@ Observation
 
 ---
 
-# Impact Analysis
+## Impact Analysis
 
 Quality governance changes should consider effects on:
 
@@ -2137,7 +2137,7 @@ Developer Workflow
 
 ---
 
-# Breaking Governance Change
+## Breaking Governance Change
 
 A governance change is effectively breaking when previously acceptable targets become blocked without implementation changes.
 
@@ -2145,7 +2145,7 @@ Such changes require careful migration planning.
 
 ---
 
-# Governance Migration
+## Governance Migration
 
 Migration may use:
 
@@ -2163,7 +2163,7 @@ Enforcement
 
 ---
 
-# Governance Documentation
+## Governance Documentation
 
 All significant quality governance mechanisms should be documented.
 
@@ -2187,7 +2187,7 @@ How can policy change?
 
 ---
 
-# Governance Discoverability
+## Governance Discoverability
 
 Governance should not depend on hidden knowledge.
 
@@ -2195,7 +2195,7 @@ Policy and ownership should be easy to locate.
 
 ---
 
-# Governance Registry
+## Governance Registry
 
 A future Quality Platform may maintain registries for:
 
@@ -2214,7 +2214,7 @@ This may provide a unified governance view.
 
 ---
 
-# Policy Registry
+## Policy Registry
 
 A Policy Registry may expose:
 
@@ -2229,7 +2229,7 @@ Effective Date
 
 ---
 
-# Requirement Registry
+## Requirement Registry
 
 A Requirement Registry may expose:
 
@@ -2245,7 +2245,7 @@ Status
 
 ---
 
-# Rule Registry
+## Rule Registry
 
 A Rule Registry may expose:
 
@@ -2261,7 +2261,7 @@ Status
 
 ---
 
-# Gate Registry
+## Gate Registry
 
 A Gate Registry may expose:
 
@@ -2277,7 +2277,7 @@ Status
 
 ---
 
-# Exception Registry
+## Exception Registry
 
 An Exception Registry may expose:
 
@@ -2294,7 +2294,7 @@ Status
 
 ---
 
-# Ownership Registry
+## Ownership Registry
 
 A future governance model may provide discoverable ownership.
 
@@ -2313,7 +2313,7 @@ Release Gate
 
 ---
 
-# Governance as Code
+## Governance as Code
 
 Machine-verifiable governance should increasingly be represented as version-controlled configuration.
 
@@ -2329,7 +2329,7 @@ Applicability Rules
 
 ---
 
-# Governance as Code Principle
+## Governance as Code Principle
 
 Governance as Code does not eliminate human authority.
 
@@ -2343,7 +2343,7 @@ It ensures that deterministic policy becomes:
 
 ---
 
-# Policy Validation
+## Policy Validation
 
 Governance configuration should itself be validated.
 
@@ -2361,7 +2361,7 @@ Invalid governance configuration must fail visibly.
 
 ---
 
-# Policy Testing
+## Policy Testing
 
 Quality policy should be testable where practical.
 
@@ -2380,7 +2380,7 @@ Expired Exception
 
 ---
 
-# Governance Security
+## Governance Security
 
 Quality Governance is part of the FamilyOS control plane.
 
@@ -2388,7 +2388,7 @@ Unauthorized modification may undermine the entire engineering assurance model.
 
 ---
 
-# Governance Threats
+## Governance Threats
 
 Potential threats include:
 
@@ -2403,7 +2403,7 @@ Override Abuse
 
 ---
 
-# Governance Authorization
+## Governance Authorization
 
 Sensitive governance operations should require appropriate authorization.
 
@@ -2416,7 +2416,7 @@ Examples include:
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Governance permissions should follow least privilege.
 
@@ -2424,7 +2424,7 @@ A contributor who can modify source code should not automatically have authority
 
 ---
 
-# Governance Integrity
+## Governance Integrity
 
 Important governance records should preserve:
 
@@ -2440,7 +2440,7 @@ Reason
 
 ---
 
-# Governance Availability
+## Governance Availability
 
 Critical governance systems should be available when required for engineering progression.
 
@@ -2448,7 +2448,7 @@ If unavailable, the failure behavior should be explicit.
 
 ---
 
-# Governance Failure
+## Governance Failure
 
 Governance mechanisms themselves may fail.
 
@@ -2467,7 +2467,7 @@ These should create visible governance findings.
 
 ---
 
-# Governance Finding
+## Governance Finding
 
 A Governance Finding represents a problem in the quality governance system itself.
 
@@ -2483,7 +2483,7 @@ Conflicting Active Policies
 
 ---
 
-# Governance Quality Debt
+## Governance Quality Debt
 
 Governance weaknesses may become Quality Debt.
 
@@ -2496,7 +2496,7 @@ Examples include:
 
 ---
 
-# Governance Metrics
+## Governance Metrics
 
 Potential governance metrics include:
 
@@ -2514,7 +2514,7 @@ Governance Review Findings
 
 ---
 
-# Governance Trend
+## Governance Trend
 
 Trend analysis may reveal systemic problems.
 
@@ -2530,7 +2530,7 @@ This should trigger governance review.
 
 ---
 
-# Exception Trend
+## Exception Trend
 
 A growing exception inventory may indicate:
 
@@ -2543,13 +2543,13 @@ Weak Enforcement
 
 ---
 
-# Unowned Work Trend
+## Unowned Work Trend
 
 The number of unowned risks, debt items, and exceptions should ideally approach zero for significant items.
 
 ---
 
-# Governance Dashboard
+## Governance Dashboard
 
 A future dashboard may expose:
 
@@ -2574,7 +2574,7 @@ Governance Health         HEALTHY
 
 ---
 
-# Governance Health
+## Governance Health
 
 A conceptual governance health model may include:
 
@@ -2590,7 +2590,7 @@ This state should summarize governance conditions without hiding detailed findin
 
 ---
 
-# Governance Review Cadence
+## Governance Review Cadence
 
 Governance should be reviewed:
 
@@ -2606,7 +2606,7 @@ The cadence should remain proportional to project maturity and activity.
 
 ---
 
-# Framework Governance
+## Framework Governance
 
 The Quality Framework itself requires governance.
 
@@ -2625,7 +2625,7 @@ should receive stronger review than local rule changes.
 
 ---
 
-# Framework Compatibility
+## Framework Compatibility
 
 Framework evolution should consider compatibility with:
 
@@ -2643,7 +2643,7 @@ Cross-framework contradictions should be resolved explicitly.
 
 ---
 
-# Framework Versioning
+## Framework Versioning
 
 Major semantic changes may require framework version changes.
 
@@ -2651,7 +2651,7 @@ Historical quality records should remain interpretable.
 
 ---
 
-# Framework Deprecation
+## Framework Deprecation
 
 Deprecated framework concepts should identify:
 
@@ -2661,7 +2661,7 @@ Deprecated framework concepts should identify:
 
 ---
 
-# Governance and Architecture
+## Governance and Architecture
 
 Architecture Governance defines architectural authority.
 
@@ -2678,7 +2678,7 @@ The two governance systems must remain aligned.
 
 ---
 
-# Governance and Testing
+## Governance and Testing
 
 The Testing Framework governs testing strategy.
 
@@ -2686,7 +2686,7 @@ Quality Governance determines how testing state contributes to broader quality d
 
 ---
 
-# Governance and Documentation
+## Governance and Documentation
 
 The Documentation Framework governs documentation requirements.
 
@@ -2694,7 +2694,7 @@ Quality Governance integrates documentation quality into broader assessments, co
 
 ---
 
-# Governance and Build
+## Governance and Build
 
 The Build Framework governs build behavior.
 
@@ -2702,7 +2702,7 @@ Quality Governance defines which build quality conditions affect engineering pro
 
 ---
 
-# Governance and Release
+## Governance and Release
 
 Release Governance and Quality Governance intersect strongly at Release Gates.
 
@@ -2714,7 +2714,7 @@ Neither should silently redefine the other.
 
 ---
 
-# Governance and Plugin Compliance
+## Governance and Plugin Compliance
 
 The Plugin Compliance Framework defines specialized plugin compliance requirements.
 
@@ -2722,7 +2722,7 @@ Quality Governance provides common authority, severity, evidence, exception, and
 
 ---
 
-# Governance and Security
+## Governance and Security
 
 Security may require specialized authority for security-sensitive risks, exceptions, and releases.
 
@@ -2730,7 +2730,7 @@ Quality Governance must preserve those authority boundaries.
 
 ---
 
-# Governance and Quality Metrics
+## Governance and Quality Metrics
 
 Metrics provide information.
 
@@ -2738,7 +2738,7 @@ Governance determines how that information influences decisions.
 
 ---
 
-# Governance and Quality Evidence
+## Governance and Quality Evidence
 
 Evidence provides factual support.
 
@@ -2746,7 +2746,7 @@ Governance determines which evidence is required and authoritative.
 
 ---
 
-# Governance and Quality Risk
+## Governance and Quality Risk
 
 Governance defines:
 
@@ -2759,19 +2759,19 @@ Review
 
 ---
 
-# Governance and Quality Debt
+## Governance and Quality Debt
 
 Governance prevents Quality Debt from becoming invisible permanent degradation.
 
 ---
 
-# Governance and Quality Reviews
+## Governance and Quality Reviews
 
 Quality Reviews provide evidence for governance decisions and policy evolution.
 
 ---
 
-# Governance and Quality Automation
+## Governance and Quality Automation
 
 Automation operationalizes governed policy.
 
@@ -2779,7 +2779,7 @@ Governance ensures automation remains aligned with authoritative intent.
 
 ---
 
-# Governance and Quality Observability
+## Governance and Quality Observability
 
 Observability makes governance state visible.
 
@@ -2797,13 +2797,13 @@ Governance Findings
 
 ---
 
-# Governance and Quality Gates
+## Governance and Quality Gates
 
 Quality Gates are the primary enforcement mechanism for many governance policies.
 
 ---
 
-# Governance and Quality Compliance
+## Governance and Quality Compliance
 
 Compliance operationalizes normative requirements.
 
@@ -2811,7 +2811,7 @@ Governance determines which requirements are authoritative and how exceptions ar
 
 ---
 
-# Governance and Continuous Improvement
+## Governance and Continuous Improvement
 
 Continuous Improvement provides feedback on governance effectiveness.
 
@@ -2833,61 +2833,61 @@ Governance Evolution
 
 ---
 
-# Governance Anti-Patterns
+## Governance Anti-Patterns
 
 The FamilyOS Quality Framework rejects several governance anti-patterns.
 
-## Governance by Memory
+### Governance by Memory
 
 Important rules must not depend on what individuals remember.
 
-## Authority Without Ownership
+### Authority Without Ownership
 
 Authority should have accountable responsibility.
 
-## Ownership Without Authority
+### Ownership Without Authority
 
 Owners must have enough authority to maintain their governed area.
 
-## Tool Configuration as Hidden Policy
+### Tool Configuration as Hidden Policy
 
 CI configuration must not silently define quality policy.
 
-## Permanent Exceptions
+### Permanent Exceptions
 
 Exceptions must not become invisible policy replacements.
 
-## Silent Overrides
+### Silent Overrides
 
 Progression overrides must remain traceable.
 
-## Approval Inflation
+### Approval Inflation
 
 Adding more approvals does not automatically improve quality.
 
-## Governance Everywhere
+### Governance Everywhere
 
 Low-risk work should not require high-cost governance.
 
-## Policy Without Enforcement
+### Policy Without Enforcement
 
 Mandatory policy should have a credible enforcement path.
 
-## Enforcement Without Policy
+### Enforcement Without Policy
 
 Automation should not impose undocumented requirements.
 
-## Metrics as Governance
+### Metrics as Governance
 
 A metric alone should not replace contextual engineering judgment.
 
-## Governance Without Feedback
+### Governance Without Feedback
 
 Policy that never adapts to engineering outcomes eventually becomes ineffective.
 
 ---
 
-# Initial Governance Model
+## Initial Governance Model
 
 An initial FamilyOS Quality Governance implementation may remain lightweight.
 
@@ -2906,7 +2906,7 @@ Change Governance
 
 ---
 
-# Initial Governance Records
+## Initial Governance Records
 
 The initial model may use existing repository artifacts such as:
 
@@ -2926,7 +2926,7 @@ A dedicated governance platform is not initially required.
 
 ---
 
-# Initial Authority Model
+## Initial Authority Model
 
 A practical initial model may distinguish:
 
@@ -2941,7 +2941,7 @@ As FamilyOS grows, more granular roles may be introduced.
 
 ---
 
-# Initial Enforcement
+## Initial Enforcement
 
 Initial enforcement should prioritize deterministic requirements already supported by the engineering toolchain.
 
@@ -2959,7 +2959,7 @@ Release Validation
 
 ---
 
-# Initial Exception Model
+## Initial Exception Model
 
 An initial exception record should contain at minimum:
 
@@ -2975,7 +2975,7 @@ Expiration
 
 ---
 
-# Initial Governance Review
+## Initial Governance Review
 
 A practical initial review may occur:
 
@@ -2988,7 +2988,7 @@ Before Major Quality Policy Change
 
 ---
 
-# Governance Maturity Model
+## Governance Maturity Model
 
 Quality Governance may mature through:
 
@@ -3029,7 +3029,7 @@ Adaptive Continuous Quality Governance
 
 ---
 
-# Adaptive Governance
+## Adaptive Governance
 
 At high maturity, governance may adapt based on:
 
@@ -3047,7 +3047,7 @@ It must not become opaque automated authority.
 
 ---
 
-# AI-Assisted Governance
+## AI-Assisted Governance
 
 AI may assist with:
 
@@ -3060,7 +3060,7 @@ AI may assist with:
 
 ---
 
-# AI Governance Restrictions
+## AI Governance Restrictions
 
 AI should not independently:
 
@@ -3079,7 +3079,7 @@ Human or formally delegated governance authority remains responsible for binding
 
 ---
 
-# Governance Intelligence
+## Governance Intelligence
 
 At advanced maturity, FamilyOS may use historical governance data to identify:
 
@@ -3096,7 +3096,7 @@ These insights should feed Continuous Improvement.
 
 ---
 
-# Governance Evolution Strategy
+## Governance Evolution Strategy
 
 Quality Governance should evolve incrementally:
 
@@ -3120,7 +3120,7 @@ Complex governance infrastructure should not be introduced before demonstrated n
 
 ---
 
-# Governance Success Criteria
+## Governance Success Criteria
 
 Quality Governance is successful when FamilyOS can answer:
 
@@ -3152,7 +3152,7 @@ If these questions cannot be answered for important quality controls, governance
 
 ---
 
-# Reference Quality Governance Flow
+## Reference Quality Governance Flow
 
 The complete FamilyOS Quality Governance flow can be represented as:
 
@@ -3204,7 +3204,7 @@ This creates a closed governance feedback system.
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Governance enables FamilyOS to move from:
 
@@ -3247,7 +3247,7 @@ This transforms quality from a collection of engineering practices into an insti
 
 ---
 
-# Final Quality Governance Principle
+## Final Quality Governance Principle
 
 Quality cannot remain sustainable when authority, responsibility, exceptions, risk acceptance, enforcement, and policy evolution are implicit.
 

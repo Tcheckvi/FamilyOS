@@ -1,8 +1,8 @@
 # Build Framework
 
-# 07 Build Inputs and Project Structure
+## 07 Build Inputs and Project Structure
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS project structure supports reliable, reproducible, and maintainable build engineering.
 
@@ -23,7 +23,7 @@ The purpose of this document is to establish the structural expectations that al
 
 ---
 
-# Purpose
+## Purpose
 
 The Build Inputs and Project Structure model defines how build-relevant content should be organized across the FamilyOS repository.
 
@@ -47,7 +47,7 @@ The central principle is:
 
 ---
 
-# Structural Objective
+## Structural Objective
 
 The FamilyOS project structure should allow an engineer to answer:
 
@@ -73,7 +73,7 @@ The repository should make these boundaries visible.
 
 ---
 
-# Canonical Structural Model
+## Canonical Structural Model
 
 A conceptual FamilyOS build-oriented project structure is:
 
@@ -97,7 +97,7 @@ The conceptual responsibilities should remain distinct.
 
 ---
 
-# Repository As Build Source Of Truth
+## Repository As Build Source Of Truth
 
 The FamilyOS repository is the primary authoritative source for build-relevant engineering state.
 
@@ -124,7 +124,7 @@ Resolved Build Context
 
 ---
 
-# Structural Principle 1 — Authoritative Inputs Must Be Discoverable
+## Structural Principle 1 — Authoritative Inputs Must Be Discoverable
 
 Authoritative build inputs should exist in predictable locations.
 
@@ -140,7 +140,7 @@ The build must not require engineers to search arbitrary filesystem locations.
 
 ---
 
-# Structural Principle 2 — Source And Generated Content Must Be Distinguishable
+## Structural Principle 2 — Source And Generated Content Must Be Distinguishable
 
 Authoritative source and generated content must not be confused.
 
@@ -160,7 +160,7 @@ Generated content must not silently replace authoritative source.
 
 ---
 
-# Structural Principle 3 — Temporary State Must Be Isolated
+## Structural Principle 3 — Temporary State Must Be Isolated
 
 Temporary build state should be structurally separated from source.
 
@@ -183,7 +183,7 @@ Temporary state should be safely removable.
 
 ---
 
-# Structural Principle 4 — Final Artifacts Must Have Predictable Destinations
+## Structural Principle 4 — Final Artifacts Must Have Predictable Destinations
 
 Build artifacts should be written into known locations.
 
@@ -199,7 +199,7 @@ Artifacts should not appear unpredictably throughout the repository.
 
 ---
 
-# Structural Principle 5 — Build Configuration Must Be Centralized Where Practical
+## Structural Principle 5 — Build Configuration Must Be Centralized Where Practical
 
 The project should avoid scattering equivalent build rules across multiple independent files.
 
@@ -225,7 +225,7 @@ with conflicting semantics.
 
 ---
 
-# Structural Principle 6 — Build Tooling Must Be Discoverable
+## Structural Principle 6 — Build Tooling Must Be Discoverable
 
 Custom build scripts or generators must exist in defined locations.
 
@@ -240,7 +240,7 @@ If tooling is required by the canonical build, it must be discoverable through t
 
 ---
 
-# Structural Principle 7 — Repository Layout Must Support Automation
+## Structural Principle 7 — Repository Layout Must Support Automation
 
 CI systems should be able to locate canonical build inputs without machine-specific logic.
 
@@ -258,7 +258,7 @@ Execute Canonical Build
 
 ---
 
-# Source Structure
+## Source Structure
 
 FamilyOS source code should remain organized according to the architectural conventions defined by the Engineering Foundation.
 
@@ -279,7 +279,7 @@ It defines how that structure participates in artifact production.
 
 ---
 
-# Source Structure Requirements
+## Source Structure Requirements
 
 Source directories should:
 
@@ -293,7 +293,7 @@ Build output must never become an implicit source dependency unless explicitly d
 
 ---
 
-# Package Structure
+## Package Structure
 
 Python package layout influences:
 
@@ -307,7 +307,7 @@ Package structure must therefore remain compatible with canonical packaging conf
 
 ---
 
-# Package Discovery
+## Package Discovery
 
 Package discovery should be explicit or based on predictable conventions.
 
@@ -324,7 +324,7 @@ Package boundaries must be intentional.
 
 ---
 
-# Test Structure
+## Test Structure
 
 Tests are not generally primary build artifacts, but they participate in build validation.
 
@@ -341,7 +341,7 @@ The Build Framework must be able to invoke testing without treating test outputs
 
 ---
 
-# Test Inputs
+## Test Inputs
 
 Test execution may consume:
 
@@ -355,7 +355,7 @@ The project structure must allow these dependencies to remain explicit.
 
 ---
 
-# Documentation Structure
+## Documentation Structure
 
 Documentation is both an engineering input and, potentially, a build output.
 
@@ -374,7 +374,7 @@ Documentation builds may consume this structure for generation or validation.
 
 ---
 
-# Documentation Inputs
+## Documentation Inputs
 
 Build-related documentation inputs may include:
 
@@ -389,7 +389,7 @@ Generated documentation should remain distinguishable from authored sources.
 
 ---
 
-# Project Configuration Structure
+## Project Configuration Structure
 
 Build configuration should use canonical project-level configuration wherever supported.
 
@@ -411,7 +411,7 @@ The Build Framework does not require all configuration to exist in one file, but
 
 ---
 
-# Tool Configuration
+## Tool Configuration
 
 Tool configuration may include:
 
@@ -428,7 +428,7 @@ This improves discoverability.
 
 ---
 
-# Dependency Structure
+## Dependency Structure
 
 Dependency declarations should have canonical locations.
 
@@ -448,7 +448,7 @@ Controlled Resolution
 
 ---
 
-# Lock Files
+## Lock Files
 
 When lock files are used, they must have clearly defined ownership and purpose.
 
@@ -458,7 +458,7 @@ For example, separate lock states for different purposes must be intentional and
 
 ---
 
-# Build Tool Structure
+## Build Tool Structure
 
 Custom build tooling should be grouped predictably.
 
@@ -476,7 +476,7 @@ The exact directory name is less important than consistency and discoverability.
 
 ---
 
-# Script Structure
+## Script Structure
 
 Build scripts should have narrow and explicit responsibilities.
 
@@ -492,7 +492,7 @@ Separation improves maintainability and governance.
 
 ---
 
-# Generator Structure
+## Generator Structure
 
 Generators should have explicit source and destination relationships.
 
@@ -510,7 +510,7 @@ The location of generator code and generated content should make that relationsh
 
 ---
 
-# Generated Source Structure
+## Generated Source Structure
 
 Generated source may require special treatment.
 
@@ -524,7 +524,7 @@ The selected strategy must be explicit.
 
 ---
 
-# Generated Source Requirements
+## Generated Source Requirements
 
 Generated source must have:
 
@@ -539,7 +539,7 @@ Generated source should not become manually edited shadow source.
 
 ---
 
-# Resource Structure
+## Resource Structure
 
 Resources may include:
 
@@ -553,7 +553,7 @@ If included in artifacts, their packaging rules must be explicit.
 
 ---
 
-# Resource Inclusion
+## Resource Inclusion
 
 The Build Framework must prevent accidental inclusion or omission.
 
@@ -561,7 +561,7 @@ Resource inclusion should be governed through explicit package or build configur
 
 ---
 
-# Plugin Structure
+## Plugin Structure
 
 FamilyOS official plugins have their own project structure.
 
@@ -587,7 +587,7 @@ The Build Framework consumes this structure as build input.
 
 ---
 
-# Plugin Build Inputs
+## Plugin Build Inputs
 
 Plugin-specific build inputs may include:
 
@@ -603,7 +603,7 @@ These inputs must remain discoverable within the plugin structure.
 
 ---
 
-# Plugin Artifact Structure
+## Plugin Artifact Structure
 
 Plugin artifacts should have predictable packaging boundaries.
 
@@ -621,7 +621,7 @@ What belongs only to documentation?
 
 ---
 
-# Compliance Structure
+## Compliance Structure
 
 Plugin compliance evidence may exist in:
 
@@ -634,7 +634,7 @@ Compliance output should not be mixed with authoritative plugin source.
 
 ---
 
-# Build Output Structure
+## Build Output Structure
 
 Build output should be isolated from source.
 
@@ -651,7 +651,7 @@ The requirement is predictable separation.
 
 ---
 
-# Build Output Categories
+## Build Output Categories
 
 Outputs may be classified as:
 
@@ -667,7 +667,7 @@ These categories should not be conflated.
 
 ---
 
-# Intermediate Output
+## Intermediate Output
 
 Intermediate outputs are produced during transformation but are not final artifacts.
 
@@ -682,7 +682,7 @@ They should be safely regenerable.
 
 ---
 
-# Final Artifact Output
+## Final Artifact Output
 
 Final artifacts are candidate technical outputs intended for validation and possible release handoff.
 
@@ -697,7 +697,7 @@ Final artifact directories must be stable and easy to collect.
 
 ---
 
-# Validation Output Structure
+## Validation Output Structure
 
 Validation may produce:
 
@@ -711,7 +711,7 @@ These outputs should be distinguishable from distributable artifacts.
 
 ---
 
-# Evidence Output Structure
+## Evidence Output Structure
 
 Build evidence may eventually be stored in a structured area.
 
@@ -729,7 +729,7 @@ The exact physical structure may evolve.
 
 ---
 
-# Release Input Structure
+## Release Input Structure
 
 Trusted artifacts intended for release should be handed off through a controlled boundary.
 
@@ -747,7 +747,7 @@ Release Input
 
 ---
 
-# Repository Cleanliness
+## Repository Cleanliness
 
 Build execution must not unnecessarily dirty the repository.
 
@@ -767,7 +767,7 @@ Artifacts Outside Source
 
 ---
 
-# Dirty Build State
+## Dirty Build State
 
 If build execution changes tracked files unexpectedly, that indicates one of:
 
@@ -780,7 +780,7 @@ Such behavior should be investigated.
 
 ---
 
-# Ignored Build Outputs
+## Ignored Build Outputs
 
 Temporary and generated build outputs should normally be represented appropriately in ignore configuration.
 
@@ -796,7 +796,7 @@ Ignore rules should not conceal authoritative files.
 
 ---
 
-# Version-Controlled Generated Outputs
+## Version-Controlled Generated Outputs
 
 Some generated content may intentionally remain version controlled.
 
@@ -811,7 +811,7 @@ This prevents ambiguity.
 
 ---
 
-# Build Path Portability
+## Build Path Portability
 
 Build paths should be portable.
 
@@ -829,7 +829,7 @@ It should avoid:
 
 ---
 
-# Path Resolution Model
+## Path Resolution Model
 
 The preferred model is:
 
@@ -843,7 +843,7 @@ Resolved Build Input
 
 ---
 
-# Repository Root Detection
+## Repository Root Detection
 
 Build tooling should have a reliable method for identifying project root.
 
@@ -851,7 +851,7 @@ It should not depend on arbitrary current working directory assumptions unless e
 
 ---
 
-# Working Directory Independence
+## Working Directory Independence
 
 Where practical, canonical build commands should behave predictably when invoked through their documented entry point.
 
@@ -859,7 +859,7 @@ Internal path resolution should not rely excessively on invocation location.
 
 ---
 
-# Monorepository Considerations
+## Monorepository Considerations
 
 FamilyOS may contain multiple components within one repository.
 
@@ -875,7 +875,7 @@ A build target should be able to identify:
 
 ---
 
-# Component Boundary
+## Component Boundary
 
 A component should not accidentally consume unrelated repository content.
 
@@ -897,7 +897,7 @@ Shared inputs must be explicit.
 
 ---
 
-# Cross-Component Inputs
+## Cross-Component Inputs
 
 Shared schemas, templates, or libraries may be legitimate cross-component inputs.
 
@@ -907,7 +907,7 @@ Cross-component dependencies should not emerge through relative path shortcuts w
 
 ---
 
-# Build Target Structure
+## Build Target Structure
 
 The build system may eventually define explicit build targets.
 
@@ -928,7 +928,7 @@ The current implementation may remain simpler.
 
 ---
 
-# Artifact Naming Structure
+## Artifact Naming Structure
 
 Artifacts should use predictable naming.
 
@@ -946,7 +946,7 @@ The exact naming convention should align with release standards.
 
 ---
 
-# Artifact Directory Isolation
+## Artifact Directory Isolation
 
 Different build profiles should avoid overwriting each other's outputs unexpectedly.
 
@@ -962,7 +962,7 @@ may need separate logical identities even if physical storage is shared.
 
 ---
 
-# Build Profile Structure
+## Build Profile Structure
 
 Profile-specific configuration should remain structured and predictable.
 
@@ -983,7 +983,7 @@ The conceptual separation matters more than the exact directory.
 
 ---
 
-# CI Structure
+## CI Structure
 
 CI configuration should remain easy to locate.
 
@@ -999,7 +999,7 @@ Canonical Build Entry Point
 
 ---
 
-# CI Artifact Collection
+## CI Artifact Collection
 
 CI should collect artifacts from canonical output locations.
 
@@ -1007,7 +1007,7 @@ It should not need to search the entire repository for generated files.
 
 ---
 
-# Local Development Structure
+## Local Development Structure
 
 Local development should use the same canonical project layout.
 
@@ -1017,7 +1017,7 @@ Virtual environments or local caches may exist outside authoritative source boun
 
 ---
 
-# Virtual Environment Structure
+## Virtual Environment Structure
 
 Virtual environments are execution environments, not project source.
 
@@ -1035,7 +1035,7 @@ Its installed state must not become the only record of required dependencies.
 
 ---
 
-# Cache Structure
+## Cache Structure
 
 Caches may include:
 
@@ -1050,7 +1050,7 @@ They must not become authoritative inputs.
 
 ---
 
-# Cache Independence
+## Cache Independence
 
 A valid clean build should remain possible without caches.
 
@@ -1070,7 +1070,7 @@ The semantic result should remain equivalent.
 
 ---
 
-# Temporary Directory Structure
+## Temporary Directory Structure
 
 Temporary directories should be:
 
@@ -1083,7 +1083,7 @@ The build should not depend on stale temporary state.
 
 ---
 
-# Clean Build Structure
+## Clean Build Structure
 
 The project structure should make clean builds straightforward.
 
@@ -1098,7 +1098,7 @@ without deleting authoritative source.
 
 ---
 
-# Structural Validation
+## Structural Validation
 
 The Build Framework may validate repository structure.
 
@@ -1115,7 +1115,7 @@ These checks should remain proportional to actual value.
 
 ---
 
-# Structural Drift
+## Structural Drift
 
 Structural drift occurs when build-related files accumulate outside the canonical model.
 
@@ -1130,7 +1130,7 @@ Structural drift should be treated as technical debt.
 
 ---
 
-# Repository And Reproducibility
+## Repository And Reproducibility
 
 A predictable project structure strengthens reproducibility.
 
@@ -1146,7 +1146,7 @@ Repeatable Build
 
 ---
 
-# Repository And Traceability
+## Repository And Traceability
 
 Project structure also supports traceability.
 
@@ -1164,7 +1164,7 @@ Repository Revision
 
 ---
 
-# Repository And Automation
+## Repository And Automation
 
 Automation benefits from structural consistency.
 
@@ -1174,7 +1174,7 @@ The canonical structure should expose enough information for deterministic autom
 
 ---
 
-# Repository And Security
+## Repository And Security
 
 Repository structure also influences security.
 
@@ -1190,7 +1190,7 @@ Build structure must support clear secret boundaries.
 
 ---
 
-# Repository And Governance
+## Repository And Governance
 
 Changes to canonical project structure may affect multiple frameworks.
 
@@ -1207,7 +1207,7 @@ Architectural changes may require ADR governance.
 
 ---
 
-# Structural Anti-Pattern — Build Outputs Inside Source
+## Structural Anti-Pattern — Build Outputs Inside Source
 
 The following pattern should be avoided:
 
@@ -1222,7 +1222,7 @@ unless the output is intentionally authoritative generated source.
 
 ---
 
-# Structural Anti-Pattern — Duplicate Configuration
+## Structural Anti-Pattern — Duplicate Configuration
 
 Avoid:
 
@@ -1237,7 +1237,7 @@ all redefining overlapping rules without an explicit precedence model.
 
 ---
 
-# Structural Anti-Pattern — Personal Tooling
+## Structural Anti-Pattern — Personal Tooling
 
 Avoid canonical build dependencies such as:
 
@@ -1249,7 +1249,7 @@ Required build tooling must belong to controlled project state or governed exter
 
 ---
 
-# Structural Anti-Pattern — Unclear Generated Content
+## Structural Anti-Pattern — Unclear Generated Content
 
 Avoid directories where engineers cannot determine whether files are:
 
@@ -1262,7 +1262,7 @@ Every important directory should have a clear role.
 
 ---
 
-# Structural Anti-Pattern — Release Discovery By Guessing
+## Structural Anti-Pattern — Release Discovery By Guessing
 
 The Release Framework should not need logic such as:
 
@@ -1276,7 +1276,7 @@ Artifact handoff must be explicit.
 
 ---
 
-# Structural Extensibility
+## Structural Extensibility
 
 The project structure must allow future build capabilities without uncontrolled growth.
 
@@ -1293,7 +1293,7 @@ New directories should have explicit responsibilities.
 
 ---
 
-# Structural Simplicity
+## Structural Simplicity
 
 The framework must avoid creating directories merely to mirror conceptual architecture.
 
@@ -1311,7 +1311,7 @@ Directory boundaries should exist where they improve clarity or tooling.
 
 ---
 
-# Current FamilyOS Context
+## Current FamilyOS Context
 
 The current FamilyOS repository already contains established areas such as:
 
@@ -1327,7 +1327,7 @@ The Build Framework should evolve from this existing structure rather than intro
 
 ---
 
-# Migration Principle
+## Migration Principle
 
 Existing project structure should be improved incrementally.
 
@@ -1349,7 +1349,7 @@ Large-scale restructuring should only occur when justified.
 
 ---
 
-# Structure Ownership
+## Structure Ownership
 
 Structural ownership should remain clear.
 
@@ -1376,7 +1376,7 @@ Shared ownership should be documented.
 
 ---
 
-# Structural Documentation
+## Structural Documentation
 
 Important repository structure must be documented.
 
@@ -1394,7 +1394,7 @@ This prevents architecture from becoming implicit.
 
 ---
 
-# Structural Success Criteria
+## Structural Success Criteria
 
 The project structure is build-ready when FamilyOS can answer:
 
@@ -1415,45 +1415,45 @@ The project structure is build-ready when FamilyOS can answer:
 
 ---
 
-# Structural Invariants
+## Structural Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Authoritative source must be distinguishable from generated build output.
 
-## Invariant 2
+### Invariant 2
 
 Temporary state must not become authoritative by accident.
 
-## Invariant 3
+### Invariant 3
 
 Canonical build configuration must remain discoverable.
 
-## Invariant 4
+### Invariant 4
 
 Required tooling must not depend on personal filesystem paths.
 
-## Invariant 5
+### Invariant 5
 
 Artifacts must have predictable output locations.
 
-## Invariant 6
+### Invariant 6
 
 Release handoff must use identified artifacts rather than arbitrary files.
 
-## Invariant 7
+### Invariant 7
 
 Caches must remain optional optimizations.
 
-## Invariant 8
+### Invariant 8
 
 Project structure must support clean builds.
 
 ---
 
-# Structural Model Summary
+## Structural Model Summary
 
 The FamilyOS Build Project Structure can be summarized as:
 
@@ -1485,7 +1485,7 @@ Repository
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Inputs and Project Structure model is founded on the following rule:
 

@@ -1,8 +1,8 @@
 # Release Framework
 
-# 09 Release Readiness
+## 09 Release Readiness
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines Release Readiness as the formal determination that a prepared FamilyOS release is sufficiently complete, stable, understood, and controlled to enter release candidate qualification.
 
@@ -26,7 +26,7 @@ It must demonstrate that all applicable prerequisites for candidate creation hav
 
 ---
 
-# Purpose
+## Purpose
 
 The Release Readiness model establishes:
 
@@ -46,7 +46,7 @@ The objective is to prevent incomplete or unstable release states from entering 
 
 ---
 
-# Readiness Principle
+## Readiness Principle
 
 The central principle is:
 
@@ -78,7 +78,7 @@ READY
 
 ---
 
-# Lifecycle Position
+## Lifecycle Position
 
 Release Readiness governs the transition:
 
@@ -108,7 +108,7 @@ Readiness therefore protects the candidate boundary.
 
 ---
 
-# Prepared vs Ready
+## Prepared vs Ready
 
 `PREPARED` and `READY` represent different states.
 
@@ -137,7 +137,7 @@ requirements satisfied
 
 ---
 
-# Readiness vs Release Validation
+## Readiness vs Release Validation
 
 Release Readiness and Release Validation MUST remain distinct.
 
@@ -165,7 +165,7 @@ candidate may be approved
 
 ---
 
-# Readiness Scope
+## Readiness Scope
 
 Readiness may evaluate several domains.
 
@@ -197,7 +197,7 @@ Applicable domains must be explicitly determined.
 
 ---
 
-# Readiness Profile
+## Readiness Profile
 
 A Release Readiness Profile defines the checks required for a particular release.
 
@@ -217,7 +217,7 @@ Profiles prevent every release from applying an identical checklist regardless o
 
 ---
 
-# Profile Principle
+## Profile Principle
 
 Release profiles may vary requirements.
 
@@ -236,7 +236,7 @@ However, it still requires:
 
 ---
 
-# Readiness Evaluation Model
+## Readiness Evaluation Model
 
 A readiness evaluation should produce an explicit result.
 
@@ -262,7 +262,7 @@ ready enough
 
 ---
 
-# READY
+## READY
 
 `READY` means:
 
@@ -274,7 +274,7 @@ ready enough
 
 ---
 
-# BLOCKED
+## BLOCKED
 
 `BLOCKED` means:
 
@@ -288,7 +288,7 @@ A blocked release MUST NOT become a formal release candidate.
 
 ---
 
-# EXCEPTION_REQUIRED
+## EXCEPTION_REQUIRED
 
 `EXCEPTION_REQUIRED` means:
 
@@ -304,7 +304,7 @@ release state != READY
 
 ---
 
-# Readiness Gate
+## Readiness Gate
 
 The Release Readiness Gate combines applicable readiness domains.
 
@@ -335,7 +335,7 @@ The exact set depends on release profile.
 
 ---
 
-# Scope Readiness
+## Scope Readiness
 
 Scope readiness verifies that the release scope is sufficiently defined and stable.
 
@@ -352,7 +352,7 @@ A release with uncertain scope is not ready.
 
 ---
 
-# Scope Readiness Example
+## Scope Readiness Example
 
 ```text
 Release Subject        Release Framework
@@ -365,7 +365,7 @@ Scope Stability        PASS
 
 ---
 
-# Repository Readiness
+## Repository Readiness
 
 Repository readiness verifies that the source repository is in an acceptable state for candidate creation.
 
@@ -381,7 +381,7 @@ Checks may include:
 
 ---
 
-# Repository Cleanliness
+## Repository Cleanliness
 
 For release profiles requiring a clean working tree:
 
@@ -402,7 +402,7 @@ Such conditions must be resolved or explicitly governed.
 
 ---
 
-# Repository Identity
+## Repository Identity
 
 The release process should know the exact source state intended for candidate creation.
 
@@ -426,7 +426,7 @@ The exact revision becomes increasingly important as the release approaches cand
 
 ---
 
-# Build Readiness
+## Build Readiness
 
 Where executable artifacts are involved, build readiness verifies that the release can be built successfully using the applicable Build Framework.
 
@@ -441,7 +441,7 @@ Checks may include:
 
 ---
 
-# Build Framework Relationship
+## Build Framework Relationship
 
 EPIC-BLD-001 — Build Framework establishes how FamilyOS builds should be produced.
 
@@ -461,7 +461,7 @@ The Release Framework must not redefine build architecture.
 
 ---
 
-# Build Readiness Example
+## Build Readiness Example
 
 ```text
 Build Configuration     PASS
@@ -475,7 +475,7 @@ BUILD READINESS         PASS
 
 ---
 
-# Testing Readiness
+## Testing Readiness
 
 Testing readiness verifies that required testing has completed successfully before candidate creation.
 
@@ -493,7 +493,7 @@ Testing requirements are defined by the release profile and Testing Framework.
 
 ---
 
-# Testing Framework Relationship
+## Testing Framework Relationship
 
 EPIC-TST-001 — Testing Framework defines testing architecture.
 
@@ -513,7 +513,7 @@ Release Readiness
 
 ---
 
-# Testing Readiness Example
+## Testing Readiness Example
 
 ```text
 Unit Tests            PASS
@@ -527,7 +527,7 @@ TEST READINESS        PASS
 
 ---
 
-# Quality Readiness
+## Quality Readiness
 
 Quality readiness verifies that applicable Quality Framework gates are satisfied.
 
@@ -543,7 +543,7 @@ Possible checks include:
 
 ---
 
-# Quality Framework Relationship
+## Quality Framework Relationship
 
 EPIC-QLT-001 — Quality Framework defines the authoritative quality model.
 
@@ -562,7 +562,7 @@ QUALITY          PASS
 
 ---
 
-# Security Readiness
+## Security Readiness
 
 Security readiness evaluates applicable release security requirements.
 
@@ -579,7 +579,7 @@ Security-sensitive releases may require stronger readiness controls.
 
 ---
 
-# Security Blocking Conditions
+## Security Blocking Conditions
 
 Examples of potential blockers include:
 
@@ -595,7 +595,7 @@ Security risk acceptance must follow governance.
 
 ---
 
-# Compliance Readiness
+## Compliance Readiness
 
 Compliance readiness verifies that applicable FamilyOS compliance requirements are satisfied.
 
@@ -615,7 +615,7 @@ PLUGIN COMPLIANCE      PASS
 
 ---
 
-# Compliance Findings
+## Compliance Findings
 
 Not every compliance finding necessarily blocks a release.
 
@@ -634,7 +634,7 @@ Blocking findings must be resolved or formally excepted.
 
 ---
 
-# Documentation Readiness
+## Documentation Readiness
 
 Documentation is part of the release, not an optional post-release activity.
 
@@ -651,7 +651,7 @@ Documentation readiness may verify:
 
 ---
 
-# Framework Documentation Readiness
+## Framework Documentation Readiness
 
 For a FamilyOS framework release, documentation readiness may include:
 
@@ -669,7 +669,7 @@ implementation checklist         READY
 
 ---
 
-# Documentation Framework Relationship
+## Documentation Framework Relationship
 
 EPIC-DOC-001 — Documentation Framework defines documentation architecture and standards.
 
@@ -677,7 +677,7 @@ Release Readiness consumes documentation validation results.
 
 ---
 
-# Dependency Readiness
+## Dependency Readiness
 
 Dependency readiness verifies that required dependencies are known, available, and compatible.
 
@@ -691,7 +691,7 @@ Checks may include:
 
 ---
 
-# Dependency Blocking Example
+## Dependency Blocking Example
 
 ```text
 Target Plugin:
@@ -711,7 +711,7 @@ The release cannot become stable-ready until the dependency condition is resolve
 
 ---
 
-# Compatibility Readiness
+## Compatibility Readiness
 
 Compatibility readiness verifies that release compatibility expectations are understood and tested where required.
 
@@ -728,7 +728,7 @@ Known compatibility breaks must align with versioning and release documentation.
 
 ---
 
-# Configuration Readiness
+## Configuration Readiness
 
 Configuration readiness verifies that release configuration is complete and valid.
 
@@ -746,7 +746,7 @@ Unresolved configuration ambiguity may block candidate creation.
 
 ---
 
-# Artifact Readiness
+## Artifact Readiness
 
 Where artifacts exist before candidate creation, artifact readiness verifies that expected artifact production is understood and successful.
 
@@ -762,7 +762,7 @@ Final artifact provenance is addressed in `11-Artifacts-and-Provenance.md`.
 
 ---
 
-# Version Readiness
+## Version Readiness
 
 Version readiness verifies that the intended release version is valid.
 
@@ -780,7 +780,7 @@ The version may still be candidate-specific at this stage.
 
 ---
 
-# Version Readiness Example
+## Version Readiness Example
 
 ```text
 Previous Version        4.7.0
@@ -795,7 +795,7 @@ VERSION READINESS       PASS
 
 ---
 
-# Tag Availability
+## Tag Availability
 
 Before final release tagging, readiness may verify that the intended tag does not already conflict with repository history.
 
@@ -811,7 +811,7 @@ Final tag creation occurs later in the lifecycle.
 
 ---
 
-# Risk Readiness
+## Risk Readiness
 
 Release risk must be sufficiently understood before candidate creation.
 
@@ -827,7 +827,7 @@ It requires:
 
 ---
 
-# Risk Outcomes
+## Risk Outcomes
 
 Possible risk states include:
 
@@ -842,7 +842,7 @@ A `BLOCKING` risk prevents readiness.
 
 ---
 
-# Governance Readiness
+## Governance Readiness
 
 Governance readiness verifies that required release responsibilities and authorities are known.
 
@@ -858,7 +858,7 @@ A release should not enter candidate qualification if no one has authority to co
 
 ---
 
-# Recovery Readiness
+## Recovery Readiness
 
 Recovery readiness verifies that the release has an appropriate response strategy if publication fails or the release proves defective.
 
@@ -876,7 +876,7 @@ The strategy must reflect the release type and operational environment.
 
 ---
 
-# Recovery Readiness Example
+## Recovery Readiness Example
 
 ```text
 Rollback Possible      YES
@@ -890,7 +890,7 @@ RECOVERY READINESS     PASS
 
 ---
 
-# Publication Readiness
+## Publication Readiness
 
 Publication readiness verifies that expected publication targets and mechanisms are understood.
 
@@ -907,7 +907,7 @@ Publication execution occurs later.
 
 ---
 
-# Publication Readiness Example
+## Publication Readiness Example
 
 ```text
 Git Branch Push       REQUIRED
@@ -922,7 +922,7 @@ PUBLICATION READY     PASS
 
 ---
 
-# Release Notes Readiness
+## Release Notes Readiness
 
 Release notes should be sufficiently prepared before candidate qualification.
 
@@ -940,7 +940,7 @@ This includes:
 
 ---
 
-# Changelog Readiness
+## Changelog Readiness
 
 The changelog should reflect the intended release scope.
 
@@ -956,7 +956,7 @@ scope matches candidate intent
 
 ---
 
-# Known Issue Readiness
+## Known Issue Readiness
 
 Known issues must be classified.
 
@@ -973,7 +973,7 @@ The release must not progress while blocking known issues remain unresolved.
 
 ---
 
-# Defect Readiness
+## Defect Readiness
 
 Open defects should be reviewed against release policy.
 
@@ -989,7 +989,7 @@ The exact thresholds belong to release and quality policy.
 
 ---
 
-# Readiness Evidence
+## Readiness Evidence
 
 Readiness decisions must be supported by evidence.
 
@@ -1007,7 +1007,7 @@ Evidence may include:
 
 ---
 
-# Evidence Principle
+## Evidence Principle
 
 The governing principle is:
 
@@ -1023,7 +1023,7 @@ should be supported by identifiable test execution evidence.
 
 ---
 
-# Evidence Freshness
+## Evidence Freshness
 
 Readiness evidence must correspond to the relevant release state.
 
@@ -1039,7 +1039,7 @@ Evidence freshness must be considered before reuse.
 
 ---
 
-# Evidence Invalidation
+## Evidence Invalidation
 
 Material release changes may invalidate readiness evidence.
 
@@ -1057,7 +1057,7 @@ The affected readiness domain must be reevaluated.
 
 ---
 
-# Readiness Dependency Graph
+## Readiness Dependency Graph
 
 Readiness domains are not always independent.
 
@@ -1081,7 +1081,7 @@ Future automation should model these relationships.
 
 ---
 
-# Blocking Conditions
+## Blocking Conditions
 
 A blocking condition is any unresolved state that prevents progression to `READY`.
 
@@ -1100,7 +1100,7 @@ Examples include:
 
 ---
 
-# Blocker Record
+## Blocker Record
 
 A blocker should identify:
 
@@ -1117,7 +1117,7 @@ This supports controlled release progression.
 
 ---
 
-# Blocker Resolution
+## Blocker Resolution
 
 A release may transition:
 
@@ -1141,7 +1141,7 @@ The relevant checks must be rerun.
 
 ---
 
-# Readiness Exceptions
+## Readiness Exceptions
 
 Some requirements may permit exceptions.
 
@@ -1157,7 +1157,7 @@ An exception MUST:
 
 ---
 
-# Exception Example
+## Exception Example
 
 ```text
 Requirement:
@@ -1180,7 +1180,7 @@ Exceptions must not become an informal mechanism for bypassing mandatory release
 
 ---
 
-# Non-Exceptionable Requirements
+## Non-Exceptionable Requirements
 
 Some requirements may be defined as non-exceptionable.
 
@@ -1196,7 +1196,7 @@ The exact set is governed by release policy.
 
 ---
 
-# Readiness Ownership
+## Readiness Ownership
 
 The Release Owner coordinates readiness.
 
@@ -1216,7 +1216,7 @@ Release          Release Owner
 
 ---
 
-# Readiness Approval
+## Readiness Approval
 
 Readiness confirmation is not necessarily the same as final release approval.
 
@@ -1238,7 +1238,7 @@ Final approval authorizes official release progression.
 
 ---
 
-# Manual Readiness Evaluation
+## Manual Readiness Evaluation
 
 At current FamilyOS maturity, some readiness checks may be manual.
 
@@ -1266,7 +1266,7 @@ Manual execution is acceptable when results remain explicit and reviewable.
 
 ---
 
-# Automated Readiness Evaluation
+## Automated Readiness Evaluation
 
 Future FamilyOS tooling should automate deterministic readiness checks.
 
@@ -1285,7 +1285,7 @@ Potential automated checks include:
 
 ---
 
-# Human Readiness Decisions
+## Human Readiness Decisions
 
 Not every readiness condition should be reduced to automation.
 
@@ -1304,7 +1304,7 @@ Governance should provide judgment where judgment is required.
 
 ---
 
-# Readiness Report
+## Readiness Report
 
 A release readiness evaluation should eventually produce a structured report.
 
@@ -1335,7 +1335,7 @@ RESULT               READY
 
 ---
 
-# Failed Readiness Report
+## Failed Readiness Report
 
 Example:
 
@@ -1360,7 +1360,7 @@ A failed readiness report must not be converted into a release candidate approva
 
 ---
 
-# Readiness Reassessment
+## Readiness Reassessment
 
 Readiness must be reassessed when relevant release state changes.
 
@@ -1384,7 +1384,7 @@ Affected domains must be identified.
 
 ---
 
-# Incremental Reassessment
+## Incremental Reassessment
 
 A mature release system should support incremental reassessment.
 
@@ -1404,7 +1404,7 @@ This avoids unnecessary work while preserving correctness.
 
 ---
 
-# Full Reassessment
+## Full Reassessment
 
 Full readiness reassessment may be required after:
 
@@ -1417,7 +1417,7 @@ Full readiness reassessment may be required after:
 
 ---
 
-# Readiness and Candidate Creation
+## Readiness and Candidate Creation
 
 Once the release reaches `READY`, candidate creation may proceed.
 
@@ -1441,7 +1441,7 @@ CANDIDATE
 
 ---
 
-# Ready Does Not Mean Immutable
+## Ready Does Not Mean Immutable
 
 A `READY` release may still require controlled changes before candidate creation.
 
@@ -1451,7 +1451,7 @@ Candidate creation establishes a stronger identity boundary.
 
 ---
 
-# Readiness and Release Freeze
+## Readiness and Release Freeze
 
 Readiness may establish or strengthen release freeze policies.
 
@@ -1469,7 +1469,7 @@ Only release-critical corrections may be accepted after this point according to 
 
 ---
 
-# Readiness and CI/CD
+## Readiness and CI/CD
 
 CI/CD should eventually enforce applicable readiness gates before release workflows can continue.
 
@@ -1491,7 +1491,7 @@ The Release Framework remains the policy authority.
 
 ---
 
-# Readiness and Local Execution
+## Readiness and Local Execution
 
 Local validation may provide useful early evidence.
 
@@ -1501,7 +1501,7 @@ The applicable release profile determines required evidence authority.
 
 ---
 
-# Readiness and Release Profiles
+## Readiness and Release Profiles
 
 A framework release may require:
 
@@ -1529,7 +1529,7 @@ A platform release may require the broadest readiness profile.
 
 ---
 
-# Framework Release Readiness
+## Framework Release Readiness
 
 For FamilyOS engineering framework releases, readiness should verify at least:
 
@@ -1550,7 +1550,7 @@ publication plan
 
 ---
 
-# Current EPIC-REL-001 Readiness Model
+## Current EPIC-REL-001 Readiness Model
 
 For EPIC-REL-001 itself, the expected final readiness evaluation should eventually include:
 
@@ -1576,7 +1576,7 @@ The actual final result must be determined from repository evidence at release t
 
 ---
 
-# Readiness Metrics
+## Readiness Metrics
 
 FamilyOS may eventually track readiness metrics such as:
 
@@ -1591,7 +1591,7 @@ Metrics should improve the release process rather than encourage bypassing contr
 
 ---
 
-# Readiness Quality
+## Readiness Quality
 
 A high-quality readiness process should be:
 
@@ -1607,93 +1607,93 @@ reviewable where judgment is required
 
 ---
 
-# Readiness Invariants
+## Readiness Invariants
 
 The following invariants apply.
 
-## RR1 — A release must satisfy applicable readiness requirements before candidate creation.
+### RR1 — A release must satisfy applicable readiness requirements before candidate creation.
 
-## RR2 — Readiness is distinct from final release validation.
+### RR2 — Readiness is distinct from final release validation.
 
-## RR3 — Readiness results must be explicit.
+### RR3 — Readiness results must be explicit.
 
-## RR4 — Blocking requirements cannot be silently ignored.
+### RR4 — Blocking requirements cannot be silently ignored.
 
-## RR5 — Exceptions require explicit governance.
+### RR5 — Exceptions require explicit governance.
 
-## RR6 — Readiness evidence must correspond to the relevant release state.
+### RR6 — Readiness evidence must correspond to the relevant release state.
 
-## RR7 — Material changes invalidate affected readiness evidence.
+### RR7 — Material changes invalidate affected readiness evidence.
 
-## RR8 — Release profiles determine applicable readiness domains.
+### RR8 — Release profiles determine applicable readiness domains.
 
-## RR9 — Readiness does not imply final release approval.
+### RR9 — Readiness does not imply final release approval.
 
-## RR10 — Repository and release identity must be sufficiently defined before candidate creation.
+### RR10 — Repository and release identity must be sufficiently defined before candidate creation.
 
-## RR11 — Recovery must be considered before publication.
+### RR11 — Recovery must be considered before publication.
 
-## RR12 — Readiness must remain auditable.
+### RR12 — Readiness must remain auditable.
 
 ---
 
-# Readiness Anti-Patterns
+## Readiness Anti-Patterns
 
-## Ready by Assumption
+### Ready by Assumption
 
 Declaring a release ready because development appears complete.
 
 ---
 
-## Test-Only Readiness
+### Test-Only Readiness
 
 Treating passing tests as sufficient evidence for the entire release.
 
 ---
 
-## Stale Evidence
+### Stale Evidence
 
 Using validation evidence generated before material release changes.
 
 ---
 
-## Hidden Blockers
+### Hidden Blockers
 
 Allowing known blocking defects to remain undocumented.
 
 ---
 
-## Exception by Silence
+### Exception by Silence
 
 Ignoring a failed requirement without recording an approved exception.
 
 ---
 
-## Candidate Before Readiness
+### Candidate Before Readiness
 
 Creating formal release candidates before prerequisites are satisfied.
 
 ---
 
-## One Checklist for Everything
+### One Checklist for Everything
 
 Applying identical readiness requirements to documentation, plugins, and platform releases regardless of scope.
 
 ---
 
-## CI Equals Policy
+### CI Equals Policy
 
 Assuming that whatever CI happens to execute automatically defines the complete readiness policy.
 
 ---
 
-## Local Success Equals Release Readiness
+### Local Success Equals Release Readiness
 
 Treating successful local execution as sufficient for every release profile.
 
 ---
 
-# Minimum Readiness Requirements
+## Minimum Readiness Requirements
 
 At minimum, every official FamilyOS release should verify:
 
@@ -1715,7 +1715,7 @@ Only then should the release progress to candidate creation.
 
 ---
 
-# Target Readiness Experience
+## Target Readiness Experience
 
 At higher maturity, a maintainer should be able to execute a release readiness evaluation and receive:
 
@@ -1751,7 +1751,7 @@ The report should be reproducible from stored evidence.
 
 ---
 
-# Relationship With Release Planning
+## Relationship With Release Planning
 
 `08-Release-Planning.md` determines what the release requires.
 
@@ -1769,7 +1769,7 @@ Ready Release
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 `10-Release-Candidates.md` defines the next lifecycle boundary.
 
@@ -1787,7 +1787,7 @@ The candidate then becomes the exact subject of final release validation.
 
 ---
 
-# Relationship With Artifacts and Provenance
+## Relationship With Artifacts and Provenance
 
 `11-Artifacts-and-Provenance.md` defines how candidate artifacts are identified and traced to source and build evidence.
 
@@ -1795,7 +1795,7 @@ Readiness ensures that artifact production can safely enter that stronger qualif
 
 ---
 
-# Relationship With Release Validation
+## Relationship With Release Validation
 
 `12-Release-Validation.md` performs final qualification against the actual release candidate.
 
@@ -1803,7 +1803,7 @@ Readiness must never be used as a substitute for candidate validation.
 
 ---
 
-# Relationship With Release Governance
+## Relationship With Release Governance
 
 `21-Release-Governance.md` defines:
 
@@ -1814,7 +1814,7 @@ Readiness must never be used as a substitute for candidate validation.
 
 ---
 
-# Relationship With Release Risk Management
+## Relationship With Release Risk Management
 
 `24-Release-Risk-Management.md` provides the detailed model for identifying, evaluating, mitigating, accepting, and monitoring release risk.
 
@@ -1822,7 +1822,7 @@ Readiness consumes the resulting risk state.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Readiness model establishes the formal boundary between release preparation and release candidate qualification.
 

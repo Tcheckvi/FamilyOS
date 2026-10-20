@@ -1,10 +1,10 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-## Context and Vision
+### Context and Vision
 
-## Overview
+### Overview
 
 This document defines the context, motivation, strategic vision, and architectural direction of the FamilyOS Security Framework.
 
@@ -20,7 +20,7 @@ The objective is to create a security foundation that protects FamilyOS without 
 
 ---
 
-# Context
+## Context
 
 FamilyOS has progressively established its engineering foundations.
 
@@ -45,7 +45,7 @@ Without a platform-level security architecture, the guarantees provided by the e
 
 ---
 
-# Strategic Position
+## Strategic Position
 
 The Security Framework sits between observability and future operations.
 
@@ -77,7 +77,7 @@ Operations will later maintain and respond to these guarantees during actual sys
 
 ---
 
-# Why Security Is Required Now
+## Why Security Is Required Now
 
 FamilyOS already contains architectural concepts that introduce security responsibilities.
 
@@ -105,7 +105,7 @@ That would create inconsistent behavior and make the platform difficult to secur
 
 ---
 
-# Security as Architecture
+## Security as Architecture
 
 Security is not simply:
 
@@ -139,7 +139,7 @@ Security must exist across this entire path.
 
 ---
 
-# FamilyOS Security Challenge
+## FamilyOS Security Challenge
 
 FamilyOS has a particular security challenge.
 
@@ -162,7 +162,7 @@ The architecture must support protection without making future evolution impossi
 
 ---
 
-# Long-Lived Information
+## Long-Lived Information
 
 Traditional applications may treat information as short-lived operational data.
 
@@ -192,7 +192,7 @@ It ensures that the security architecture does not prevent future solutions.
 
 ---
 
-# Family Trust Model
+## Family Trust Model
 
 FamilyOS operates in a domain where trust cannot be represented by a single binary state.
 
@@ -212,7 +212,7 @@ Family relationships may influence authorization policy, but they must not repla
 
 ---
 
-# Digital Family Boundaries
+## Digital Family Boundaries
 
 A FamilyOS family represents a logical domain boundary.
 
@@ -236,7 +236,7 @@ The Security Framework must support these distinctions without embedding specifi
 
 ---
 
-# Actors
+## Actors
 
 FamilyOS may eventually support multiple categories of actors.
 
@@ -259,7 +259,7 @@ The framework must support this diversity without creating separate security arc
 
 ---
 
-# Protected Resources
+## Protected Resources
 
 Security applies to more than persisted data.
 
@@ -281,7 +281,7 @@ Authorization should therefore be capability-aware rather than limited to file o
 
 ---
 
-# Capabilities as Security Boundaries
+## Capabilities as Security Boundaries
 
 FamilyOS already uses capabilities as architectural concepts.
 
@@ -307,7 +307,7 @@ It also avoids distributing permission logic throughout low-level implementation
 
 ---
 
-# Security and Domain Logic
+## Security and Domain Logic
 
 Security policy and domain logic must cooperate without becoming inseparable.
 
@@ -330,7 +330,7 @@ This separation preserves Clean Architecture principles.
 
 ---
 
-# Trust Is Explicit
+## Trust Is Explicit
 
 FamilyOS adopts explicit trust.
 
@@ -347,7 +347,7 @@ Every important trust boundary should have explicit assumptions.
 
 ---
 
-# Internal Does Not Mean Trusted
+## Internal Does Not Mean Trusted
 
 A common security mistake is assuming that internal components require no security boundaries.
 
@@ -367,7 +367,7 @@ Security architecture must limit the consequences of such failures where practic
 
 ---
 
-# Plugin Context
+## Plugin Context
 
 Plugins are fundamental to FamilyOS extensibility.
 
@@ -387,7 +387,7 @@ Plugin security must therefore be part of the platform architecture.
 
 ---
 
-# Official Plugins
+## Official Plugins
 
 Official plugins are maintained as part of the FamilyOS ecosystem.
 
@@ -401,7 +401,7 @@ Official plugins remain subject to platform security contracts.
 
 ---
 
-# Third-Party Plugins
+## Third-Party Plugins
 
 Third-party plugins represent stronger trust boundaries.
 
@@ -418,7 +418,7 @@ Future implementation may strengthen isolation as the plugin ecosystem evolves.
 
 ---
 
-# Existing Security Plugin
+## Existing Security Plugin
 
 FamilyOS already contains a Security Plugin associated with RFC-0010.
 
@@ -446,7 +446,7 @@ The plugin operates within those expectations.
 
 ---
 
-# Avoiding Security Duplication
+## Avoiding Security Duplication
 
 EPIC-SEC-001 MUST NOT duplicate capabilities already belonging to:
 
@@ -463,7 +463,7 @@ Instead, it defines how these capabilities participate in platform security.
 
 ---
 
-# Relationship With Identity
+## Relationship With Identity
 
 Identity establishes representation of actors.
 
@@ -483,7 +483,7 @@ Identity and security therefore cooperate while remaining architecturally distin
 
 ---
 
-# Relationship With Testing
+## Relationship With Testing
 
 Security requirements without tests are difficult to trust.
 
@@ -501,7 +501,7 @@ Security tests may verify:
 
 ---
 
-# Relationship With Quality
+## Relationship With Quality
 
 Security contributes directly to FamilyOS quality.
 
@@ -518,7 +518,7 @@ The Quality Framework may therefore consume security validation results as quali
 
 ---
 
-# Relationship With Build
+## Relationship With Build
 
 The Build Framework protects artifact creation and reproducibility.
 
@@ -532,7 +532,7 @@ Security extends these guarantees through concerns such as:
 
 ---
 
-# Relationship With Release
+## Relationship With Release
 
 The Release Framework controls publication.
 
@@ -549,7 +549,7 @@ permission regression tests
 
 ---
 
-# Relationship With Observability
+## Relationship With Observability
 
 Security depends on runtime evidence.
 
@@ -566,7 +566,7 @@ Security can consume this evidence to understand security-relevant runtime behav
 
 ---
 
-# Security Observability
+## Security Observability
 
 Security-relevant events may include:
 
@@ -583,7 +583,7 @@ These signals must remain privacy-safe and must never expose secrets merely beca
 
 ---
 
-# Relationship With Operations
+## Relationship With Operations
 
 The future Operations Framework will use security and observability together.
 
@@ -613,7 +613,7 @@ EPIC-SEC-001 establishes the contracts required for those future capabilities.
 
 ---
 
-# Security Vision
+## Security Vision
 
 The long-term security vision is:
 
@@ -639,7 +639,7 @@ Security should become a predictable property of the platform rather than an imp
 
 ---
 
-# Secure by Design
+## Secure by Design
 
 FamilyOS follows secure-by-design principles.
 
@@ -665,7 +665,7 @@ Security added only after implementation is more expensive and less reliable.
 
 ---
 
-# Secure by Default
+## Secure by Default
 
 FamilyOS should operate safely without requiring extensive manual hardening.
 
@@ -682,7 +682,7 @@ Users should not need to discover hidden security requirements to obtain safe be
 
 ---
 
-# Least Privilege Vision
+## Least Privilege Vision
 
 Privileges should be:
 
@@ -700,7 +700,7 @@ Where practical, permissions should correspond to meaningful FamilyOS capabiliti
 
 ---
 
-# Authorization Vision
+## Authorization Vision
 
 Authorization should answer:
 
@@ -718,7 +718,7 @@ Roles may still provide useful policy composition.
 
 ---
 
-# Policy Evolution
+## Policy Evolution
 
 Initial FamilyOS authorization may remain simple.
 
@@ -738,7 +738,7 @@ Only real requirements should justify additional complexity.
 
 ---
 
-# Data Protection Vision
+## Data Protection Vision
 
 FamilyOS should protect data according to:
 
@@ -754,7 +754,7 @@ This allows security controls to remain proportional.
 
 ---
 
-# Privacy Alignment
+## Privacy Alignment
 
 Security and privacy are closely related but not identical.
 
@@ -773,7 +773,7 @@ Broader privacy governance may evolve separately if required.
 
 ---
 
-# Secret Protection Vision
+## Secret Protection Vision
 
 Secrets should remain isolated from normal application configuration.
 
@@ -793,7 +793,7 @@ Application code should consume secrets without requiring knowledge of their phy
 
 ---
 
-# Cryptographic Vision
+## Cryptographic Vision
 
 Cryptography should be:
 
@@ -810,7 +810,7 @@ Cryptographic choices should remain replaceable because algorithms, libraries, a
 
 ---
 
-# Threat-Driven Security
+## Threat-Driven Security
 
 Security controls should exist because they mitigate identifiable risks.
 
@@ -840,7 +840,7 @@ This reduces unnecessary security complexity.
 
 ---
 
-# Proportional Security
+## Proportional Security
 
 Not every component requires identical controls.
 
@@ -859,7 +859,7 @@ However, fundamental invariants remain mandatory.
 
 ---
 
-# Fundamental Invariants
+## Fundamental Invariants
 
 Certain rules apply regardless of environment.
 
@@ -883,7 +883,7 @@ Environment configuration must not disable these fundamental protections.
 
 ---
 
-# Security Failure Philosophy
+## Security Failure Philosophy
 
 Security mechanisms must fail safely.
 
@@ -907,7 +907,7 @@ Security failures should remain diagnosable without exposing protected informati
 
 ---
 
-# Accountability
+## Accountability
 
 Important security decisions should produce sufficient evidence to understand what occurred.
 
@@ -931,7 +931,7 @@ Correlation
 
 ---
 
-# Explainable Security
+## Explainable Security
 
 FamilyOS values explainability.
 
@@ -951,7 +951,7 @@ This improves debugging, testing, governance, and future user experience.
 
 ---
 
-# Automation Vision
+## Automation Vision
 
 Security should increasingly become executable policy.
 
@@ -969,7 +969,7 @@ Automation reduces dependence on human memory.
 
 ---
 
-# Security Evidence Vision
+## Security Evidence Vision
 
 Security automation should produce evidence that can participate in the broader FamilyOS engineering lifecycle.
 
@@ -989,7 +989,7 @@ This connects security to existing FamilyOS engineering foundations.
 
 ---
 
-# Developer Experience
+## Developer Experience
 
 Security architecture must remain usable by developers.
 
@@ -1012,7 +1012,7 @@ Predictable
 
 ---
 
-# Avoiding Security Theater
+## Avoiding Security Theater
 
 The Security Framework should not introduce controls merely because they appear sophisticated.
 
@@ -1030,7 +1030,7 @@ Security must reduce actual risk.
 
 ---
 
-# Avoiding Premature Infrastructure
+## Avoiding Premature Infrastructure
 
 EPIC-SEC-001 does not require immediate deployment of:
 
@@ -1048,7 +1048,7 @@ The architecture may support future integration with such technologies without r
 
 ---
 
-# Local-First Development
+## Local-First Development
 
 FamilyOS should remain usable in local development environments.
 
@@ -1068,7 +1068,7 @@ This allows security behavior to be tested without external infrastructure.
 
 ---
 
-# Vendor Neutrality
+## Vendor Neutrality
 
 Core FamilyOS security architecture SHOULD remain independent of specific security vendors.
 
@@ -1088,7 +1088,7 @@ This preserves architectural control and future replaceability.
 
 ---
 
-# Security Maturity
+## Security Maturity
 
 FamilyOS security maturity should evolve incrementally.
 
@@ -1114,7 +1114,7 @@ Each stage should be driven by concrete requirements.
 
 ---
 
-# Initial Security Focus
+## Initial Security Focus
 
 The initial implementation should prioritize:
 
@@ -1131,7 +1131,7 @@ These provide high architectural value without requiring large infrastructure in
 
 ---
 
-# Non-Goals
+## Non-Goals
 
 The Security Framework is not intended to:
 
@@ -1147,7 +1147,7 @@ Its role is to establish the FamilyOS platform security foundation.
 
 ---
 
-# Documentation Philosophy
+## Documentation Philosophy
 
 EPIC-SEC-001 follows the compact framework model introduced for the later FamilyOS engineering foundations.
 
@@ -1174,7 +1174,7 @@ Once these documents establish sufficient architectural clarity, work moves to i
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 After EPIC-SEC-001, FamilyOS should have a security architecture capable of answering:
 
@@ -1208,7 +1208,7 @@ These answers provide the foundation required for secure platform implementation
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The context and vision are successfully established when FamilyOS security can be understood as a coherent platform capability rather than a collection of independent features.
 
@@ -1236,7 +1236,7 @@ Trustworthy FamilyOS Security
 
 ---
 
-# Conclusion
+## Conclusion
 
 FamilyOS is designed to become a long-lived digital platform for families.
 

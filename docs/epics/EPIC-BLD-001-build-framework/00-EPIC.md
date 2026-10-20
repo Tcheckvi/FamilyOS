@@ -1,10 +1,10 @@
 # Build Framework
 
-# 00 EPIC
+## 00 EPIC
 
-## EPIC-BLD-001 — Build Framework
+### EPIC-BLD-001 — Build Framework
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework establishes the official build engineering foundation for the FamilyOS ecosystem.
 
@@ -30,7 +30,7 @@ The Build Framework therefore forms the controlled transformation boundary betwe
 
 ---
 
-# Mission
+## Mission
 
 The mission of EPIC-BLD-001 is to establish a unified, reliable, reproducible, secure, observable, and governable build model for the complete FamilyOS engineering ecosystem.
 
@@ -58,7 +58,7 @@ Build engineering therefore becomes an explicit assurance capability within Fami
 
 ---
 
-# Context
+## Context
 
 FamilyOS is evolving from a conventional software project into a modular engineering platform composed of multiple architectural layers, frameworks, plugins, specifications, automation systems, domain capabilities, and governance mechanisms.
 
@@ -86,7 +86,7 @@ A build process must therefore be governed with the same architectural disciplin
 
 ---
 
-# Strategic Position
+## Strategic Position
 
 The Build Framework occupies a precise position within the FamilyOS Engineering Platform.
 
@@ -118,7 +118,7 @@ These responsibilities are complementary but intentionally separated.
 
 ---
 
-# Build Framework Responsibility
+## Build Framework Responsibility
 
 The Build Framework owns the transformation from build inputs to build outputs.
 
@@ -152,7 +152,7 @@ Instead, it consumes requirements and evidence from those engineering capabiliti
 
 ---
 
-# Build Philosophy
+## Build Philosophy
 
 FamilyOS adopts the following fundamental principle:
 
@@ -180,7 +180,7 @@ This distinction is foundational.
 
 ---
 
-# Build Trust Model
+## Build Trust Model
 
 The FamilyOS build trust model is based on several complementary assurance dimensions.
 
@@ -206,11 +206,11 @@ Trust emerges from the combination of controlled inputs, controlled execution, v
 
 ---
 
-# Objectives
+## Objectives
 
 EPIC-BLD-001 establishes the following primary objectives.
 
-## Reproducibility
+### Reproducibility
 
 Build processes SHOULD produce equivalent outputs when executed from equivalent controlled inputs under equivalent build conditions.
 
@@ -227,7 +227,7 @@ Reproducibility enables:
 
 ---
 
-## Determinism
+### Determinism
 
 Build behavior SHOULD be deterministic wherever technically feasible.
 
@@ -247,7 +247,7 @@ When strict determinism cannot be achieved, the source of variability MUST be ex
 
 ---
 
-## Traceability
+### Traceability
 
 Every trusted build artifact SHOULD be traceable to the inputs and process that produced it.
 
@@ -268,7 +268,7 @@ The objective is to make the origin of an artifact technically explainable.
 
 ---
 
-## Reliability
+### Reliability
 
 Build processes must behave consistently across supported execution environments.
 
@@ -284,7 +284,7 @@ Reliability includes:
 
 ---
 
-## Automation
+### Automation
 
 Build processes SHOULD be automation-friendly and MUST avoid unnecessary dependence on manual intervention.
 
@@ -300,7 +300,7 @@ FamilyOS build automation may operate in:
 
 ---
 
-## Validation
+### Validation
 
 Build output must be validated before it is considered trusted.
 
@@ -319,7 +319,7 @@ Validation may include:
 
 ---
 
-## Security
+### Security
 
 Build engineering must minimize the risk of uncontrolled or malicious influence over build outputs.
 
@@ -339,7 +339,7 @@ Security requirements remain aligned with the broader FamilyOS Security Architec
 
 ---
 
-## Observability
+### Observability
 
 Build operations must produce sufficient information to understand:
 
@@ -356,7 +356,7 @@ Observability is essential for both engineering efficiency and governance.
 
 ---
 
-## Governance
+### Governance
 
 Build rules must evolve under controlled engineering governance.
 
@@ -375,7 +375,7 @@ may require formal review through the appropriate FamilyOS governance mechanisms
 
 ---
 
-# Scope
+## Scope
 
 EPIC-BLD-001 governs the official FamilyOS build model.
 
@@ -383,7 +383,7 @@ Its scope includes the following domains.
 
 ---
 
-## Build Principles
+### Build Principles
 
 The framework defines the engineering principles governing FamilyOS builds.
 
@@ -402,7 +402,7 @@ These principles include:
 
 ---
 
-## Build Architecture
+### Build Architecture
 
 The framework defines the conceptual architecture through which build inputs are transformed into artifacts.
 
@@ -422,7 +422,7 @@ The build architecture defines responsibilities between:
 
 ---
 
-## Build Lifecycle
+### Build Lifecycle
 
 The framework defines the lifecycle of a build capability from design through execution, validation, maintenance, and improvement.
 
@@ -430,7 +430,7 @@ The lifecycle provides a common model for understanding build engineering work a
 
 ---
 
-## Build Inputs
+### Build Inputs
 
 Build inputs include all controlled information capable of influencing a build.
 
@@ -452,7 +452,7 @@ Build inputs must be explicit whenever technically feasible.
 
 ---
 
-## Build Environments
+### Build Environments
 
 The framework defines expectations for build environments.
 
@@ -469,7 +469,7 @@ This includes:
 
 ---
 
-## Dependency Management
+### Dependency Management
 
 The Build Framework defines build-specific dependency expectations.
 
@@ -488,7 +488,7 @@ Dependency policy may also interact with Security and Quality requirements.
 
 ---
 
-## Build Configuration
+### Build Configuration
 
 Build configuration must be explicit, inspectable, controlled, and version-aware.
 
@@ -504,7 +504,7 @@ The framework defines requirements for:
 
 ---
 
-## Build Toolchain
+### Build Toolchain
 
 The framework defines how build tools are selected, versioned, integrated, maintained, and governed.
 
@@ -523,7 +523,7 @@ Tool choice must remain subordinate to architectural requirements.
 
 ---
 
-## Build Execution
+### Build Execution
 
 The framework defines the execution model by which a build progresses from validated inputs to candidate artifacts.
 
@@ -538,7 +538,7 @@ Execution requirements include:
 
 ---
 
-## Artifact Management
+### Artifact Management
 
 The Build Framework defines the technical model for artifacts produced by FamilyOS builds.
 
@@ -556,7 +556,7 @@ Artifact management includes:
 
 ---
 
-## Build Validation
+### Build Validation
 
 The framework defines how a build and its outputs are validated.
 
@@ -566,7 +566,7 @@ Validation results form part of the evidence required to establish build trust.
 
 ---
 
-## Build Automation and CI
+### Build Automation and CI
 
 The framework defines how build capabilities integrate with automated engineering workflows.
 
@@ -586,7 +586,7 @@ The same conceptual build rules must apply regardless of execution context.
 
 ---
 
-## Build Governance
+### Build Governance
 
 The framework establishes responsibilities for maintaining and evolving the build model.
 
@@ -603,19 +603,19 @@ Governance addresses:
 
 ---
 
-# Out of Scope
+## Out of Scope
 
 EPIC-BLD-001 intentionally does not define the complete behavior of adjacent engineering frameworks.
 
 The following areas remain outside its primary ownership.
 
-## Software Testing
+### Software Testing
 
 The Build Framework may execute or require tests, but testing strategy, testing levels, fixtures, coverage, test architecture, and broader testing policy belong to EPIC-TST-001.
 
 ---
 
-## Quality Governance
+### Quality Governance
 
 The Build Framework consumes applicable quality requirements and may participate in quality gates.
 
@@ -623,7 +623,7 @@ The definition of the global FamilyOS quality model belongs to EPIC-QLT-001.
 
 ---
 
-## Release Management
+### Release Management
 
 The Build Framework produces artifacts suitable for release.
 
@@ -631,7 +631,7 @@ Version promotion, publication, release approval, distribution, release notes, a
 
 ---
 
-## Deployment
+### Deployment
 
 Deployment transforms released software into operational runtime environments.
 
@@ -639,13 +639,13 @@ Deployment architecture is governed separately from build engineering.
 
 ---
 
-## Runtime Operations
+### Runtime Operations
 
 Application runtime behavior, runtime orchestration, runtime observability, operational resilience, and production incident management are not defined by this framework.
 
 ---
 
-# Build Boundary
+## Build Boundary
 
 A clear boundary must exist between build and release responsibilities.
 
@@ -665,7 +665,7 @@ This distinction prevents build completion from automatically implying release a
 
 ---
 
-# Canonical Build Flow
+## Canonical Build Flow
 
 The canonical FamilyOS build flow is:
 
@@ -703,7 +703,7 @@ Individual implementations may optimize or combine internal steps, but the conce
 
 ---
 
-# Build Inputs Model
+## Build Inputs Model
 
 The build system must treat every significant input as part of the effective build context.
 
@@ -730,7 +730,7 @@ Therefore, sufficient contextual information must be captured for trusted builds
 
 ---
 
-# Build Artifact Model
+## Build Artifact Model
 
 A FamilyOS artifact is not merely a file.
 
@@ -758,7 +758,7 @@ The exact metadata representation may vary according to artifact type.
 
 ---
 
-# Artifact Classes
+## Artifact Classes
 
 FamilyOS builds may generate multiple artifact classes.
 
@@ -783,7 +783,7 @@ The Build Framework defines common expectations without requiring every artifact
 
 ---
 
-# Build Evidence
+## Build Evidence
 
 Build evidence provides information demonstrating how an artifact was produced and validated.
 
@@ -805,23 +805,23 @@ Evidence must be sufficient for the level of trust required by the artifact.
 
 ---
 
-# Reproducibility Model
+## Reproducibility Model
 
 FamilyOS distinguishes several levels of reproducibility.
 
-## Process Reproducibility
+### Process Reproducibility
 
 The same build process can be executed again using the same documented procedure.
 
-## Environment Reproducibility
+### Environment Reproducibility
 
 The required build environment can be reconstructed from controlled definitions.
 
-## Dependency Reproducibility
+### Dependency Reproducibility
 
 Equivalent dependency resolution can be obtained from controlled dependency declarations and locking mechanisms.
 
-## Artifact Reproducibility
+### Artifact Reproducibility
 
 Equivalent controlled inputs produce equivalent artifacts, subject to explicitly documented non-deterministic elements.
 
@@ -829,7 +829,7 @@ The framework SHOULD progressively increase reproducibility across these levels.
 
 ---
 
-# Build Profiles
+## Build Profiles
 
 FamilyOS may support multiple build profiles.
 
@@ -857,7 +857,7 @@ Each profile should define:
 
 ---
 
-# Local and CI Consistency
+## Local and CI Consistency
 
 A critical objective of the framework is to reduce divergence between developer and automated builds.
 
@@ -881,7 +881,7 @@ Execution environments may differ, but the underlying build semantics must remai
 
 ---
 
-# Validation Model
+## Validation Model
 
 Build validation follows the principle:
 
@@ -901,7 +901,7 @@ A build artifact must not become trusted solely because the build command return
 
 ---
 
-# Failure Model
+## Failure Model
 
 Build failures must be explicit and actionable.
 
@@ -928,7 +928,7 @@ Where possible, failures should identify:
 
 ---
 
-# Build Quality Gates
+## Build Quality Gates
 
 The Build Framework integrates with FamilyOS quality gates without duplicating the Quality Framework.
 
@@ -954,7 +954,7 @@ The exact implementation of gates may evolve as FamilyOS automation matures.
 
 ---
 
-# Build Security Principles
+## Build Security Principles
 
 The build process is part of the software supply chain and must therefore be treated as a security-sensitive engineering capability.
 
@@ -974,7 +974,7 @@ Security controls must remain proportional to FamilyOS architecture and risk.
 
 ---
 
-# Supply Chain Awareness
+## Supply Chain Awareness
 
 The FamilyOS build process exists within a broader software supply chain.
 
@@ -1004,7 +1004,7 @@ The Build Framework therefore establishes the foundation required for future str
 
 ---
 
-# Build Observability
+## Build Observability
 
 Build observability must support both human and automated interpretation.
 
@@ -1026,7 +1026,7 @@ Observability must improve understanding without leaking protected information.
 
 ---
 
-# Performance and Efficiency
+## Performance and Efficiency
 
 Build reliability has priority over premature optimization.
 
@@ -1046,7 +1046,7 @@ Optimizations must not compromise correctness, reproducibility, traceability, or
 
 ---
 
-# Build Governance Model
+## Build Governance Model
 
 Build governance establishes how build decisions are made and maintained.
 
@@ -1079,7 +1079,7 @@ Depending on scope, changes may require:
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 EPIC-ENG-001 provides the engineering principles, repository conventions, workflows, tooling philosophy, environment expectations, and governance foundation upon which the Build Framework operates.
 
@@ -1089,7 +1089,7 @@ Instead, it specializes them for build engineering.
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 EPIC-TST-001 defines how FamilyOS verifies behavior through testing.
 
@@ -1109,7 +1109,7 @@ Build Validation
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 EPIC-QLT-001 defines the broader FamilyOS quality model.
 
@@ -1127,7 +1127,7 @@ Quality Assessment
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 Build documentation must comply with FamilyOS documentation standards.
 
@@ -1135,7 +1135,7 @@ The Build Framework may also generate documentation artifacts, manifests, metada
 
 ---
 
-# Relationship With Plugin Architecture
+## Relationship With Plugin Architecture
 
 FamilyOS official plugins may participate in build operations through:
 
@@ -1150,7 +1150,7 @@ The Build Framework must therefore remain compatible with official plugin archit
 
 ---
 
-# Relationship With Release Framework
+## Relationship With Release Framework
 
 EPIC-REL-001 is the primary downstream framework.
 
@@ -1170,7 +1170,7 @@ The Release Framework may impose additional requirements before promotion or pub
 
 ---
 
-# Framework Architecture
+## Framework Architecture
 
 EPIC-BLD-001 is organized around the following conceptual domains:
 
@@ -1201,7 +1201,7 @@ These domains form the normative foundation for future build implementation and 
 
 ---
 
-# Documentation Structure
+## Documentation Structure
 
 The Build Framework documentation is organized as follows:
 
@@ -1248,7 +1248,7 @@ Temporary migration documents are not part of the normative framework structure.
 
 ---
 
-# Primary Deliverables
+## Primary Deliverables
 
 EPIC-BLD-001 delivers:
 
@@ -1273,7 +1273,7 @@ EPIC-BLD-001 delivers:
 
 ---
 
-# Acceptance Criteria
+## Acceptance Criteria
 
 EPIC-BLD-001 may be considered complete when:
 
@@ -1300,7 +1300,7 @@ EPIC-BLD-001 may be considered complete when:
 
 ---
 
-# Non-Goals
+## Non-Goals
 
 EPIC-BLD-001 does not attempt to:
 
@@ -1319,7 +1319,7 @@ The framework establishes durable engineering foundations while allowing impleme
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 The Build Framework is expected to evolve progressively.
 
@@ -1364,61 +1364,61 @@ FamilyOS should advance through these levels according to actual engineering nee
 
 ---
 
-# Foundational Rules
+## Foundational Rules
 
 The following rules govern the Build Framework.
 
-## Rule 1
+### Rule 1
 
 Build inputs MUST be explicit wherever technically feasible.
 
-## Rule 2
+### Rule 2
 
 Build configuration MUST be controlled and inspectable.
 
-## Rule 3
+### Rule 3
 
 Build dependencies MUST be declared and governable.
 
-## Rule 4
+### Rule 4
 
 Build environments MUST minimize uncontrolled variation.
 
-## Rule 5
+### Rule 5
 
 Build execution MUST expose meaningful failure information.
 
-## Rule 6
+### Rule 6
 
 Artifacts MUST be identifiable.
 
-## Rule 7
+### Rule 7
 
 Trusted artifacts MUST be traceable to their build context.
 
-## Rule 8
+### Rule 8
 
 Build validation MUST occur before release readiness is declared.
 
-## Rule 9
+### Rule 9
 
 Automation MUST preserve build controls.
 
-## Rule 10
+### Rule 10
 
 Local and CI build semantics SHOULD remain aligned.
 
-## Rule 11
+### Rule 11
 
 Significant build architecture changes MUST follow FamilyOS governance.
 
-## Rule 12
+### Rule 12
 
 A successful build MUST NOT automatically imply a releasable artifact.
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 When EPIC-BLD-001 is fully implemented, FamilyOS will have:
 
@@ -1440,7 +1440,7 @@ When EPIC-BLD-001 is fully implemented, FamilyOS will have:
 
 ---
 
-# Strategic Value
+## Strategic Value
 
 The Build Framework provides a critical transition in the maturity of FamilyOS.
 
@@ -1474,7 +1474,7 @@ This difference is fundamental for a platform intended to evolve over many years
 
 ---
 
-# Final Principle
+## Final Principle
 
 The Build Framework is founded on one final principle:
 

@@ -1,8 +1,8 @@
 # Build Framework
 
-# 20 Validation
+## 20 Validation
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework requires formal validation of the framework itself before it can be considered complete, stable, and ready to serve as the normative foundation for FamilyOS build engineering.
 
@@ -20,7 +20,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of framework validation is to determine whether EPIC-BLD-001 is sufficiently complete and internally coherent to become an authoritative FamilyOS engineering framework.
 
@@ -43,7 +43,7 @@ Validation covers:
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 Framework validation applies to the complete EPIC-BLD-001 documentation set.
 
@@ -92,7 +92,7 @@ Temporary migration files are not part of the final normative framework and must
 
 ---
 
-# Validation Objectives
+## Validation Objectives
 
 The framework validation process must establish that:
 
@@ -119,7 +119,7 @@ The framework validation process must establish that:
 
 ---
 
-# Validation Model
+## Validation Model
 
 Framework validation is organized into several domains.
 
@@ -144,7 +144,7 @@ A failure in a required domain prevents final framework closure.
 
 ---
 
-# Validation Principle 1 — Structure Before Content
+## Validation Principle 1 — Structure Before Content
 
 The framework structure must be stable before final content validation.
 
@@ -166,7 +166,7 @@ Final Validation
 
 ---
 
-# Validation Principle 2 — Names Must Match Responsibilities
+## Validation Principle 2 — Names Must Match Responsibilities
 
 Document names must reflect their actual content.
 
@@ -190,7 +190,7 @@ This prevents semantic drift.
 
 ---
 
-# Validation Principle 3 — No Hidden Duplicate Ownership
+## Validation Principle 3 — No Hidden Duplicate Ownership
 
 The Build Framework must not redefine responsibilities already owned by other frameworks.
 
@@ -205,7 +205,7 @@ Validation must specifically verify boundaries with:
 
 ---
 
-# Validation Principle 4 — Concepts Must Be Consistent Across Chapters
+## Validation Principle 4 — Concepts Must Be Consistent Across Chapters
 
 Core terms must retain stable meaning throughout the framework.
 
@@ -223,7 +223,7 @@ Terminology drift is a framework defect.
 
 ---
 
-# Validation Principle 5 — Strategic And Immediate Requirements Must Be Distinguishable
+## Validation Principle 5 — Strategic And Immediate Requirements Must Be Distinguishable
 
 Future maturity capabilities must not accidentally appear as mandatory immediate implementation requirements.
 
@@ -249,13 +249,13 @@ Examples of future capabilities may include:
 
 ---
 
-# Structural Validation
+## Structural Validation
 
 Structural validation verifies the physical organization of EPIC-BLD-001.
 
 ---
 
-# Required Numbered Documents
+## Required Numbered Documents
 
 The final structure must contain exactly one canonical document for each number from `00` through `23`.
 
@@ -292,7 +292,7 @@ No duplicate numbered files should remain.
 
 ---
 
-# Duplicate Number Validation
+## Duplicate Number Validation
 
 The framework must not contain cases such as:
 
@@ -314,7 +314,7 @@ Temporary migration copies must be removed before closure.
 
 ---
 
-# Legacy File Validation
+## Legacy File Validation
 
 Files named:
 
@@ -329,7 +329,7 @@ Final validation must confirm that all relevant content has been incorporated an
 
 ---
 
-# Empty File Validation
+## Empty File Validation
 
 No normative chapter should remain unintentionally empty.
 
@@ -337,7 +337,7 @@ In particular, new chapters introduced during restructuring must contain complet
 
 ---
 
-# Unexpected File Validation
+## Unexpected File Validation
 
 Unexpected files such as:
 
@@ -351,7 +351,7 @@ Temporary editor files, accidental output, or unrelated files must be removed.
 
 ---
 
-# Document Inventory Validation
+## Document Inventory Validation
 
 The final document inventory must match `MANIFEST.md`.
 
@@ -359,13 +359,13 @@ Any mismatch is a structural validation failure.
 
 ---
 
-# Documentation Validation
+## Documentation Validation
 
 Documentation validation determines whether each chapter fulfills its intended role.
 
 ---
 
-# 00-EPIC Validation
+## 00-EPIC Validation
 
 `00-EPIC.md` must define:
 
@@ -381,7 +381,7 @@ Documentation validation determines whether each chapter fulfills its intended r
 
 ---
 
-# 01-Context Validation
+## 01-Context Validation
 
 `01-Context.md` must explain:
 
@@ -394,85 +394,85 @@ Documentation validation determines whether each chapter fulfills its intended r
 
 ---
 
-# 02-Vision Validation
+## 02-Vision Validation
 
 `02-Vision.md` must define the strategic target state for FamilyOS build engineering.
 
 ---
 
-# 03-Build-Principles Validation
+## 03-Build-Principles Validation
 
 `03-Build-Principles.md` must define durable engineering principles independent from specific tools.
 
 ---
 
-# 04-Build-Architecture Validation
+## 04-Build-Architecture Validation
 
 `04-Build-Architecture.md` must define structural build layers and responsibility boundaries.
 
 ---
 
-# 05-Build-Lifecycle Validation
+## 05-Build-Lifecycle Validation
 
 `05-Build-Lifecycle.md` must define temporal build progression from design through trusted artifact handoff and improvement.
 
 ---
 
-# 06-Build-Input-Requirements Validation
+## 06-Build-Input-Requirements Validation
 
 This chapter must define what constitutes a build input and how such inputs are controlled.
 
 ---
 
-# 07-Build-Inputs-and-Project-Structure Validation
+## 07-Build-Inputs-and-Project-Structure Validation
 
 This chapter must connect build semantics with repository and project structure.
 
 ---
 
-# 08-Build-Toolchain Validation
+## 08-Build-Toolchain Validation
 
 This chapter must define toolchain governance without locking architecture unnecessarily to individual tools.
 
 ---
 
-# 09-Build-Environment-Management Validation
+## 09-Build-Environment-Management Validation
 
 This chapter must define environment control, reproducibility, validation, and isolation.
 
 ---
 
-# 10-Dependency-Management Validation
+## 10-Dependency-Management Validation
 
 This chapter must define dependency declaration, resolution, locking, updates, security, and traceability.
 
 ---
 
-# 11-Build-Configuration Validation
+## 11-Build-Configuration Validation
 
 This chapter must define canonical configuration, profiles, precedence, validation, and change governance.
 
 ---
 
-# 12-Build-Philosophy Validation
+## 12-Build-Philosophy Validation
 
 This chapter must explain the conceptual meaning of build trust and the distinction between execution and trust.
 
 ---
 
-# 13-Build-Execution Validation
+## 13-Build-Execution Validation
 
 This chapter must define the operational transformation stage from validated context to candidate artifacts.
 
 ---
 
-# 14-Artifact-Management Validation
+## 14-Artifact-Management Validation
 
 This chapter must define artifact identity, lifecycle, metadata, integrity, storage, and handoff.
 
 ---
 
-# 15-Build-Validation Validation
+## 15-Build-Validation Validation
 
 This chapter must define how individual builds and artifacts are validated.
 
@@ -480,43 +480,43 @@ It must remain distinct from this framework-validation chapter.
 
 ---
 
-# 16-Build-Governance Validation
+## 16-Build-Governance Validation
 
 This chapter must define ownership, decision classification, exceptions, debt, standards, and change governance.
 
 ---
 
-# 17-Build-Automation-and-CI Validation
+## 17-Build-Automation-and-CI Validation
 
 This chapter must define how automation executes canonical build semantics.
 
 ---
 
-# 18-Roadmap Validation
+## 18-Roadmap Validation
 
 This chapter must define incremental build maturity without prescribing unnecessary immediate infrastructure.
 
 ---
 
-# 19-References Validation
+## 19-References Validation
 
 This chapter must identify upstream, downstream, internal, and external references with appropriate ownership boundaries.
 
 ---
 
-# 20-Validation Validation
+## 20-Validation Validation
 
 This document must establish the criteria used to validate EPIC-BLD-001 itself.
 
 ---
 
-# 21-Summary Validation
+## 21-Summary Validation
 
 `21-Summary.md` must provide a concise but complete synthesis of the framework.
 
 ---
 
-# 22-Release Validation
+## 22-Release Validation
 
 `22-Release.md` must define conditions for releasing the Build Framework documentation itself.
 
@@ -524,13 +524,13 @@ It must not replace EPIC-REL-001.
 
 ---
 
-# 23-Implementation-Checklist Validation
+## 23-Implementation-Checklist Validation
 
 `23-Implementation-Checklist.md` must translate normative framework concepts into an actionable implementation readiness checklist.
 
 ---
 
-# Architectural Validation
+## Architectural Validation
 
 Architectural validation determines whether the complete framework defines one coherent system.
 
@@ -560,7 +560,7 @@ All chapters must support this model.
 
 ---
 
-# Architectural Boundary Validation
+## Architectural Boundary Validation
 
 The Build Framework must begin at controlled engineering state and end at trusted artifact handoff.
 
@@ -578,7 +578,7 @@ RELEASE FRAMEWORK
 
 ---
 
-# Build Versus Release Validation
+## Build Versus Release Validation
 
 The framework must consistently preserve:
 
@@ -592,7 +592,7 @@ Any chapter implying that successful build automatically means release authoriza
 
 ---
 
-# Build Versus Testing Validation
+## Build Versus Testing Validation
 
 The framework may invoke tests.
 
@@ -607,7 +607,7 @@ Those remain under EPIC-TST-001.
 
 ---
 
-# Build Versus Quality Validation
+## Build Versus Quality Validation
 
 The framework may produce quality evidence and participate in gates.
 
@@ -615,7 +615,7 @@ It must not redefine the complete FamilyOS Quality Framework.
 
 ---
 
-# Build Versus Documentation Validation
+## Build Versus Documentation Validation
 
 The framework may generate documentation artifacts.
 
@@ -623,7 +623,7 @@ Documentation standards and publishing governance remain under EPIC-DOC-001.
 
 ---
 
-# Build Versus Plugin Compliance Validation
+## Build Versus Plugin Compliance Validation
 
 The framework may execute or consume plugin compliance validation.
 
@@ -631,7 +631,7 @@ Compliance rules remain owned by EPIC-PLUGIN-002.
 
 ---
 
-# Build Trust Model Validation
+## Build Trust Model Validation
 
 The framework must consistently express Build Trust as a composition of controlled engineering properties.
 
@@ -653,7 +653,7 @@ Build Trust =
 
 ---
 
-# Lifecycle Validation
+## Lifecycle Validation
 
 The Build Lifecycle must remain consistent across architecture, execution, artifact, and validation chapters.
 
@@ -687,7 +687,7 @@ Improve
 
 ---
 
-# Lifecycle Completeness Validation
+## Lifecycle Completeness Validation
 
 Validation must confirm that the framework does not end artificially at:
 
@@ -699,7 +699,7 @@ The lifecycle must continue through artifact validation and evidence.
 
 ---
 
-# Build Context Validation
+## Build Context Validation
 
 The framework must consistently define Build Context as including relevant elements such as:
 
@@ -717,7 +717,7 @@ Different chapters may specialize this model but must not contradict it.
 
 ---
 
-# Build Profile Validation
+## Build Profile Validation
 
 Profiles such as:
 
@@ -734,7 +734,7 @@ must have consistent semantic meaning across chapters.
 
 ---
 
-# Artifact Model Validation
+## Artifact Model Validation
 
 The Artifact Management model must consistently distinguish:
 
@@ -749,7 +749,7 @@ These states must not be used interchangeably.
 
 ---
 
-# Artifact Identity Validation
+## Artifact Identity Validation
 
 Trusted artifacts must have enough identity to support traceability.
 
@@ -763,7 +763,7 @@ The framework should consistently support association with:
 
 ---
 
-# Artifact Immutability Validation
+## Artifact Immutability Validation
 
 The framework must maintain the rule:
 
@@ -777,7 +777,7 @@ Prior Trust Invalidated
 
 ---
 
-# Build-Once-Promote Validation
+## Build-Once-Promote Validation
 
 The framework should consistently prefer:
 
@@ -793,7 +793,7 @@ over downstream rebuilds.
 
 ---
 
-# Evidence Model Validation
+## Evidence Model Validation
 
 Build Evidence must be consistently associated with the build that produced it.
 
@@ -810,7 +810,7 @@ Evidence may include:
 
 ---
 
-# Evidence Scope Validation
+## Evidence Scope Validation
 
 The framework must distinguish proportional evidence requirements by profile.
 
@@ -818,7 +818,7 @@ Not every local build requires full release-candidate evidence.
 
 ---
 
-# Configuration Model Validation
+## Configuration Model Validation
 
 The Build Configuration model must define:
 
@@ -831,7 +831,7 @@ The Build Configuration model must define:
 
 ---
 
-# Dependency Model Validation
+## Dependency Model Validation
 
 Dependency Management must consistently define:
 
@@ -845,7 +845,7 @@ Dependency Management must consistently define:
 
 ---
 
-# Toolchain Model Validation
+## Toolchain Model Validation
 
 Build Toolchain must consistently distinguish architecture from implementation tools.
 
@@ -853,7 +853,7 @@ Tool changes must not redefine framework semantics.
 
 ---
 
-# Environment Model Validation
+## Environment Model Validation
 
 Build Environment Management must consistently preserve:
 
@@ -867,7 +867,7 @@ Equivalent Build Semantics
 
 ---
 
-# Automation Validation
+## Automation Validation
 
 The framework must consistently preserve:
 
@@ -883,13 +883,13 @@ CI must not be described as the source of build architecture.
 
 ---
 
-# Local And CI Alignment Validation
+## Local And CI Alignment Validation
 
 Validation must confirm that the framework expects local and CI builds to share canonical semantics.
 
 ---
 
-# CI Permissions Validation
+## CI Permissions Validation
 
 Automation documentation must preserve separation between:
 
@@ -899,13 +899,13 @@ Automation documentation must preserve separation between:
 
 ---
 
-# Release Candidate Automation Validation
+## Release Candidate Automation Validation
 
 The release-candidate profile should consistently represent stronger build controls without automatically granting release authority.
 
 ---
 
-# Governance Validation
+## Governance Validation
 
 Build Governance must define sufficient mechanisms for controlled framework evolution.
 
@@ -923,7 +923,7 @@ Validation should confirm the presence of:
 
 ---
 
-# Governance Proportionality Validation
+## Governance Proportionality Validation
 
 The framework must not require ADR or RFC for routine internal maintenance.
 
@@ -931,7 +931,7 @@ Governance should remain proportional to change impact.
 
 ---
 
-# Exception Validation
+## Exception Validation
 
 Any exception model must require explicit scope and justification.
 
@@ -939,7 +939,7 @@ The framework must not normalize permanent hidden exceptions.
 
 ---
 
-# Technical Debt Validation
+## Technical Debt Validation
 
 Build debt must be treated as real engineering debt.
 
@@ -947,7 +947,7 @@ This expectation should remain consistent across Governance, Roadmap, and Summar
 
 ---
 
-# Security Validation
+## Security Validation
 
 Security-related Build Framework requirements must remain consistent with Security Architecture.
 
@@ -962,19 +962,19 @@ Important principles include:
 
 ---
 
-# Secret Boundary Validation
+## Secret Boundary Validation
 
 The framework must consistently prohibit ordinary build artifacts or evidence from containing secrets.
 
 ---
 
-# Supply Chain Validation
+## Supply Chain Validation
 
 Future capabilities such as provenance, signing, SBOMs, and trusted builders must remain clearly identified as maturity extensions unless formally adopted.
 
 ---
 
-# Reference Validation
+## Reference Validation
 
 `19-References.md` must maintain accurate ownership boundaries.
 
@@ -982,7 +982,7 @@ Internal framework references should be prioritized over generic external guidan
 
 ---
 
-# Normative Reference Validation
+## Normative Reference Validation
 
 External standards must not become normative accidentally.
 
@@ -990,7 +990,7 @@ Formal adoption requires an explicit FamilyOS engineering decision.
 
 ---
 
-# Cross-Reference Validation
+## Cross-Reference Validation
 
 Document references must point to the correct current filenames.
 
@@ -1018,55 +1018,55 @@ Any remaining reference should be reviewed and corrected.
 
 ---
 
-# Terminology Validation
+## Terminology Validation
 
 The following terminology should be used consistently.
 
 ---
 
-## Build
+### Build
 
 A controlled process transforming engineering inputs into candidate artifacts.
 
 ---
 
-## Build Context
+### Build Context
 
 The effective state influencing a build.
 
 ---
 
-## Build ID
+### Build ID
 
 An identifier associated with a significant build execution.
 
 ---
 
-## Candidate Artifact
+### Candidate Artifact
 
 An output identified as an intended artifact but not yet fully trusted.
 
 ---
 
-## Trusted Artifact
+### Trusted Artifact
 
 An artifact that satisfied applicable build requirements.
 
 ---
 
-## Build Evidence
+### Build Evidence
 
 Information supporting the explanation of build origin, execution, validation, and trust.
 
 ---
 
-## Release Handoff
+### Release Handoff
 
 The boundary through which trusted Build outputs are provided to the Release Framework.
 
 ---
 
-# Terminology Conflict Validation
+## Terminology Conflict Validation
 
 The framework should not alternate between terms such as:
 
@@ -1083,7 +1083,7 @@ Context must remain explicit.
 
 ---
 
-# Documentation Quality Validation
+## Documentation Quality Validation
 
 Each chapter should demonstrate:
 
@@ -1096,7 +1096,7 @@ Each chapter should demonstrate:
 
 ---
 
-# Duplication Validation
+## Duplication Validation
 
 Some repetition across framework chapters is intentional for normative clarity.
 
@@ -1104,7 +1104,7 @@ However, duplicated text that creates inconsistent variants of the same rule is 
 
 ---
 
-# Contradiction Validation
+## Contradiction Validation
 
 The framework must be reviewed for contradictions such as:
 
@@ -1117,7 +1117,7 @@ without context or profile distinction.
 
 ---
 
-# Maturity Language Validation
+## Maturity Language Validation
 
 Terms such as:
 
@@ -1136,7 +1136,7 @@ Future-state capabilities must not be expressed as immediate mandatory requireme
 
 ---
 
-# Implementation Readiness Validation
+## Implementation Readiness Validation
 
 The framework must provide enough clarity to guide real implementation.
 
@@ -1151,7 +1151,7 @@ An engineer should be able to derive from EPIC-BLD-001:
 
 ---
 
-# Implementation Independence Validation
+## Implementation Independence Validation
 
 The framework must not require an unnecessary implementation architecture before FamilyOS needs it.
 
@@ -1166,7 +1166,7 @@ as immediate prerequisites.
 
 ---
 
-# Current Tooling Compatibility Validation
+## Current Tooling Compatibility Validation
 
 The framework should remain implementable with the current FamilyOS engineering stack.
 
@@ -1185,7 +1185,7 @@ The framework may allow future tooling evolution without requiring replacement n
 
 ---
 
-# Roadmap Consistency Validation
+## Roadmap Consistency Validation
 
 `18-Roadmap.md` must align future capabilities with the rest of the framework.
 
@@ -1213,13 +1213,13 @@ Supply Chain Assurance
 
 ---
 
-# Control Document Validation
+## Control Document Validation
 
 Framework control documents must remain synchronized.
 
 ---
 
-# EPIC.yaml Validation
+## EPIC.yaml Validation
 
 `EPIC.yaml` should accurately represent:
 
@@ -1233,7 +1233,7 @@ Framework control documents must remain synchronized.
 
 ---
 
-# EPIC-BLD-001.md Validation
+## EPIC-BLD-001.md Validation
 
 The summary EPIC document should align with `00-EPIC.md`.
 
@@ -1241,7 +1241,7 @@ Scope, acceptance criteria, and deliverables must not conflict.
 
 ---
 
-# README.md Validation
+## README.md Validation
 
 `README.md` should accurately describe:
 
@@ -1253,7 +1253,7 @@ Scope, acceptance criteria, and deliverables must not conflict.
 
 ---
 
-# MANIFEST.md Validation
+## MANIFEST.md Validation
 
 `MANIFEST.md` should list the final normative and control documents.
 
@@ -1261,19 +1261,19 @@ It must not include deleted legacy filenames.
 
 ---
 
-# CHANGELOG.md Validation
+## CHANGELOG.md Validation
 
 The changelog should record the structural migration and completion of the canonical Build Framework where appropriate.
 
 ---
 
-# Revision-History.md Validation
+## Revision-History.md Validation
 
 Revision history should record meaningful framework evolution, including restructuring from the inherited Engineering Foundation layout if retained as historical context.
 
 ---
 
-# VALIDATION.md Validation
+## VALIDATION.md Validation
 
 The top-level `VALIDATION.md` should record the final validation status of EPIC-BLD-001.
 
@@ -1281,7 +1281,7 @@ It should not claim completion before the validation criteria in this document a
 
 ---
 
-# Final Structure Validation
+## Final Structure Validation
 
 Before closure, the final tree should conceptually be:
 
@@ -1324,7 +1324,7 @@ This represents **24 numbered framework chapters + 7 control documents = 31 fina
 
 ---
 
-# Legacy Removal Validation
+## Legacy Removal Validation
 
 Final closure requires removal of:
 
@@ -1337,7 +1337,7 @@ after confirming all required content has been incorporated.
 
 ---
 
-# Git Cleanliness Validation
+## Git Cleanliness Validation
 
 The framework should reach a controlled Git state before release.
 
@@ -1351,7 +1351,7 @@ Validation should confirm:
 
 ---
 
-# Content Completeness Validation
+## Content Completeness Validation
 
 Every normative chapter should contain enough information to stand independently within its assigned responsibility.
 
@@ -1359,7 +1359,7 @@ A chapter should not depend on an undocumented assumption that another file will
 
 ---
 
-# Cross-Framework Integration Validation
+## Cross-Framework Integration Validation
 
 The framework should explicitly integrate with:
 
@@ -1376,7 +1376,7 @@ where appropriate.
 
 ---
 
-# Release Framework Readiness Validation
+## Release Framework Readiness Validation
 
 EPIC-BLD-001 is ready for downstream EPIC-REL-001 work when the Build Framework provides a stable definition of:
 
@@ -1389,7 +1389,7 @@ EPIC-BLD-001 is ready for downstream EPIC-REL-001 work when the Build Framework 
 
 ---
 
-# Acceptance Validation
+## Acceptance Validation
 
 The acceptance criteria defined in `00-EPIC.md` must be reviewed individually before closure.
 
@@ -1397,7 +1397,7 @@ No acceptance criterion should remain ambiguous or unassessed.
 
 ---
 
-# Implementation Checklist Alignment
+## Implementation Checklist Alignment
 
 `23-Implementation-Checklist.md` must map implementation work to the framework model.
 
@@ -1405,7 +1405,7 @@ The checklist should not introduce architectural requirements absent from normat
 
 ---
 
-# Validation Status Model
+## Validation Status Model
 
 Framework validation may use the following conceptual states:
 
@@ -1425,7 +1425,7 @@ VALIDATED
 
 ---
 
-# Validation Findings
+## Validation Findings
 
 Findings may be classified conceptually as:
 
@@ -1442,7 +1442,7 @@ The classification helps prioritize corrections.
 
 ---
 
-# Critical Finding
+## Critical Finding
 
 A critical finding prevents closure.
 
@@ -1455,7 +1455,7 @@ Examples include:
 
 ---
 
-# Major Finding
+## Major Finding
 
 A major finding materially weakens framework consistency.
 
@@ -1467,7 +1467,7 @@ Examples include:
 
 ---
 
-# Minor Finding
+## Minor Finding
 
 A minor finding may include:
 
@@ -1477,13 +1477,13 @@ A minor finding may include:
 
 ---
 
-# Observation
+## Observation
 
 An observation identifies possible future improvement without representing non-compliance.
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Framework validation evidence may include:
 
@@ -1499,7 +1499,7 @@ Framework validation evidence may include:
 
 ---
 
-# Structural Validation Commands
+## Structural Validation Commands
 
 A future validation workflow may use shell checks such as:
 
@@ -1519,19 +1519,19 @@ They do not replace semantic review.
 
 ---
 
-# Duplicate Heading And Filename Review
+## Duplicate Heading And Filename Review
 
 Automated checks should be supplemented by manual review to detect semantic duplicates that filename checks cannot identify.
 
 ---
 
-# Empty Document Review
+## Empty Document Review
 
 A zero-byte or nearly empty normative document should fail structural validation unless intentionally reserved and documented.
 
 ---
 
-# Reference Search
+## Reference Search
 
 The final framework should be searched for obsolete filenames and terminology.
 
@@ -1554,7 +1554,7 @@ Remaining occurrences must be reviewed.
 
 ---
 
-# Final Validation Sequence
+## Final Validation Sequence
 
 The recommended final validation sequence is:
 
@@ -1578,7 +1578,7 @@ The recommended final validation sequence is:
 
 ---
 
-# Closure Criteria
+## Closure Criteria
 
 EPIC-BLD-001 may be considered structurally and architecturally complete when:
 
@@ -1605,7 +1605,7 @@ EPIC-BLD-001 may be considered structurally and architecturally complete when:
 
 ---
 
-# Validation Outcome
+## Validation Outcome
 
 The final validation outcome should answer one question:
 
@@ -1619,53 +1619,53 @@ It requires architectural coherence.
 
 ---
 
-# Validation Invariants
+## Validation Invariants
 
 The following invariants must hold at final validation.
 
-## Invariant 1
+### Invariant 1
 
 There is exactly one canonical document for every numbered chapter.
 
-## Invariant 2
+### Invariant 2
 
 Document names and document responsibilities match.
 
-## Invariant 3
+### Invariant 3
 
 Build and Release responsibilities remain separated.
 
-## Invariant 4
+### Invariant 4
 
 Testing and Quality ownership remain external to the Build Framework.
 
-## Invariant 5
+### Invariant 5
 
 Trusted artifacts require validation.
 
-## Invariant 6
+### Invariant 6
 
 Trusted artifacts have traceable origin.
 
-## Invariant 7
+### Invariant 7
 
 Automation executes canonical build semantics.
 
-## Invariant 8
+### Invariant 8
 
 Future maturity capabilities are clearly distinguished from current requirements.
 
-## Invariant 9
+### Invariant 9
 
 Control documents reflect the same final framework state.
 
-## Invariant 10
+### Invariant 10
 
 Temporary migration state is removed before closure.
 
 ---
 
-# Validation Summary
+## Validation Summary
 
 The FamilyOS Build Framework validation model can be summarized as:
 
@@ -1693,7 +1693,7 @@ Authorize Framework Closure
 
 ---
 
-# Final Principle
+## Final Principle
 
 The validation of EPIC-BLD-001 is founded on the following rule:
 

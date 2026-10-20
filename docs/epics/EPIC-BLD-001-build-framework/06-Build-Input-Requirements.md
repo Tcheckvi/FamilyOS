@@ -1,8 +1,8 @@
 # Build Framework
 
-# 06 Build Input Requirements
+## 06 Build Input Requirements
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the requirements governing all engineering inputs capable of influencing a FamilyOS build.
 
@@ -18,7 +18,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The Build Input Requirements establish the minimum engineering expectations that must be satisfied before FamilyOS build execution can be considered reliable.
 
@@ -38,7 +38,7 @@ The objective is to prevent significant build behavior from depending on hidden 
 
 ---
 
-# Build Input Definition
+## Build Input Definition
 
 A build input is any element capable of materially affecting the result of a build.
 
@@ -67,7 +67,7 @@ If changing an element may change the resulting artifact or validation result, t
 
 ---
 
-# Build Input Model
+## Build Input Model
 
 The canonical FamilyOS build input model is:
 
@@ -89,7 +89,7 @@ Each category has different governance and validation requirements.
 
 ---
 
-# Requirement 1 — Inputs Must Be Identifiable
+## Requirement 1 — Inputs Must Be Identifiable
 
 Significant build inputs MUST be identifiable.
 
@@ -115,7 +115,7 @@ Build
 
 ---
 
-# Requirement 2 — Inputs Must Be Explicit Where Practical
+## Requirement 2 — Inputs Must Be Explicit Where Practical
 
 FamilyOS SHOULD make build inputs explicit wherever technically feasible.
 
@@ -132,7 +132,7 @@ Hidden state should be progressively eliminated.
 
 ---
 
-# Requirement 3 — Authoritative Inputs Must Be Controlled
+## Requirement 3 — Authoritative Inputs Must Be Controlled
 
 Authoritative build inputs SHOULD originate from controlled engineering sources.
 
@@ -153,7 +153,7 @@ Where possible, authoritative definitions should therefore be version controlled
 
 ---
 
-# Requirement 4 — Build Inputs Must Be Traceable
+## Requirement 4 — Build Inputs Must Be Traceable
 
 Significant inputs SHOULD be traceable to their origin.
 
@@ -180,7 +180,7 @@ Origin
 
 ---
 
-# Requirement 5 — Inputs Must Be Validated Before Use
+## Requirement 5 — Inputs Must Be Validated Before Use
 
 Invalid build inputs SHOULD be rejected before expensive execution begins.
 
@@ -198,7 +198,7 @@ Invalid inputs must not silently propagate into artifact generation.
 
 ---
 
-# Source Inputs
+## Source Inputs
 
 Source inputs represent implementation or content directly controlled by the FamilyOS repository.
 
@@ -217,7 +217,7 @@ Source inputs are typically the most visible build inputs.
 
 ---
 
-# Source Input Requirements
+## Source Input Requirements
 
 Source inputs SHOULD:
 
@@ -230,7 +230,7 @@ Source inputs SHOULD:
 
 ---
 
-# Source State
+## Source State
 
 The state of the repository may itself influence build trust.
 
@@ -246,7 +246,7 @@ Not every build profile requires the same source-state restrictions.
 
 ---
 
-# Development Source State
+## Development Source State
 
 Development builds may allow:
 
@@ -260,7 +260,7 @@ provided these inputs remain understandable.
 
 ---
 
-# Release Candidate Source State
+## Release Candidate Source State
 
 A release-candidate build SHOULD normally require stricter source state.
 
@@ -275,7 +275,7 @@ This strengthens reproducibility and traceability.
 
 ---
 
-# Configuration Inputs
+## Configuration Inputs
 
 Configuration controls build behavior.
 
@@ -292,7 +292,7 @@ Configuration is a first-class build input.
 
 ---
 
-# Configuration Input Requirements
+## Configuration Input Requirements
 
 Build configuration SHOULD be:
 
@@ -307,7 +307,7 @@ Configuration must not silently depend on undocumented machine state.
 
 ---
 
-# Configuration Source Priority
+## Configuration Source Priority
 
 When multiple configuration sources exist, precedence must be explicit.
 
@@ -327,7 +327,7 @@ Environment overrides should be used cautiously.
 
 ---
 
-# Dependency Inputs
+## Dependency Inputs
 
 Dependencies are external build inputs that materially influence output.
 
@@ -343,7 +343,7 @@ Dependency declarations form part of the effective build state.
 
 ---
 
-# Dependency Input Requirements
+## Dependency Input Requirements
 
 Dependencies MUST be:
 
@@ -358,7 +358,7 @@ Mutable, undeclared dependencies should not become hidden build requirements.
 
 ---
 
-# Dependency Lock State
+## Dependency Lock State
 
 Where dependency locking is supported and appropriate, lock state SHOULD participate in reproducible builds.
 
@@ -376,7 +376,7 @@ Release-oriented builds may require stricter dependency reproducibility than dev
 
 ---
 
-# Generated Inputs
+## Generated Inputs
 
 Generated inputs are build inputs produced by another controlled process.
 
@@ -392,7 +392,7 @@ Generated inputs require explicit governance because they introduce another tran
 
 ---
 
-# Generated Input Requirements
+## Generated Input Requirements
 
 A generated input SHOULD have:
 
@@ -413,7 +413,7 @@ Unknown Origin
 
 ---
 
-# Generated Input Freshness
+## Generated Input Freshness
 
 Generated inputs may become stale when their authoritative source changes.
 
@@ -430,7 +430,7 @@ The exact mechanism depends on implementation maturity.
 
 ---
 
-# Metadata Inputs
+## Metadata Inputs
 
 Build metadata influences artifact identity and packaging.
 
@@ -448,7 +448,7 @@ Metadata must be treated as controlled engineering input.
 
 ---
 
-# Metadata Requirements
+## Metadata Requirements
 
 Metadata SHOULD be:
 
@@ -462,7 +462,7 @@ Invalid metadata should fail before artifact publication.
 
 ---
 
-# Toolchain Inputs
+## Toolchain Inputs
 
 The build toolchain also acts as an input.
 
@@ -479,7 +479,7 @@ Different tool versions may produce different results.
 
 ---
 
-# Toolchain Input Requirements
+## Toolchain Input Requirements
 
 Significant toolchain elements SHOULD have:
 
@@ -492,7 +492,7 @@ Release-candidate builds may require stricter version identification.
 
 ---
 
-# Environment Inputs
+## Environment Inputs
 
 Environment state can influence build behavior.
 
@@ -511,7 +511,7 @@ Environment influence must be minimized and controlled.
 
 ---
 
-# Environment Input Requirements
+## Environment Input Requirements
 
 Environment inputs SHOULD be:
 
@@ -524,7 +524,7 @@ The build must avoid accidental dependency on developer-specific state.
 
 ---
 
-# Environment Variables
+## Environment Variables
 
 Environment variables may be used for:
 
@@ -539,7 +539,7 @@ Critical build semantics should not rely on undocumented variables.
 
 ---
 
-# Secret Inputs
+## Secret Inputs
 
 Secrets require special treatment.
 
@@ -561,7 +561,7 @@ They should:
 
 ---
 
-# Policy Inputs
+## Policy Inputs
 
 Policies may influence whether a build is valid.
 
@@ -577,7 +577,7 @@ Policies are build inputs when they influence validation decisions.
 
 ---
 
-# Policy Input Requirements
+## Policy Input Requirements
 
 Policy state SHOULD be:
 
@@ -590,7 +590,7 @@ A build should not silently apply an unknown policy set.
 
 ---
 
-# Profile Inputs
+## Profile Inputs
 
 Build profiles specialize build behavior.
 
@@ -607,7 +607,7 @@ The selected profile is itself a significant input.
 
 ---
 
-# Profile Requirements
+## Profile Requirements
 
 A build profile SHOULD define:
 
@@ -622,7 +622,7 @@ Profile selection must be explicit.
 
 ---
 
-# Input Classification
+## Input Classification
 
 Inputs should be classified according to their role.
 
@@ -640,7 +640,7 @@ Classification supports different handling requirements.
 
 ---
 
-# Authoritative Inputs
+## Authoritative Inputs
 
 Authoritative inputs represent engineering truth.
 
@@ -655,7 +655,7 @@ These are typically version controlled.
 
 ---
 
-# Derived Inputs
+## Derived Inputs
 
 Derived inputs are generated from authoritative inputs.
 
@@ -669,7 +669,7 @@ Derived inputs must not silently become new authoritative truth.
 
 ---
 
-# Environmental Inputs
+## Environmental Inputs
 
 Environmental inputs originate from execution context.
 
@@ -683,7 +683,7 @@ These should be controlled.
 
 ---
 
-# External Inputs
+## External Inputs
 
 External inputs originate outside the repository.
 
@@ -697,7 +697,7 @@ Their origin and integrity may require validation.
 
 ---
 
-# Sensitive Inputs
+## Sensitive Inputs
 
 Sensitive inputs include secrets or protected information.
 
@@ -705,7 +705,7 @@ These require special handling and should not become ordinary build evidence.
 
 ---
 
-# Input Ownership
+## Input Ownership
 
 Every significant build input category SHOULD have clear ownership.
 
@@ -722,7 +722,7 @@ Unowned inputs tend to become unmanaged dependencies.
 
 ---
 
-# Input Lifecycle
+## Input Lifecycle
 
 Build inputs have their own lifecycle.
 
@@ -746,7 +746,7 @@ This lifecycle should remain compatible with build governance.
 
 ---
 
-# Input Change Management
+## Input Change Management
 
 Changes to build inputs may affect artifact behavior.
 
@@ -762,7 +762,7 @@ Significant changes should be reviewed according to impact.
 
 ---
 
-# Input Compatibility
+## Input Compatibility
 
 Inputs may interact in incompatible combinations.
 
@@ -790,7 +790,7 @@ The build process should detect invalid combinations.
 
 ---
 
-# Input Validation Layers
+## Input Validation Layers
 
 Input validation may operate at multiple levels.
 
@@ -812,7 +812,7 @@ The required depth depends on input type.
 
 ---
 
-# Presence Validation
+## Presence Validation
 
 Presence validation confirms required input exists.
 
@@ -825,7 +825,7 @@ Examples include:
 
 ---
 
-# Syntax Validation
+## Syntax Validation
 
 Syntax validation confirms parsability.
 
@@ -839,7 +839,7 @@ Examples include:
 
 ---
 
-# Structural Validation
+## Structural Validation
 
 Structural validation confirms expected organization.
 
@@ -852,7 +852,7 @@ Examples include:
 
 ---
 
-# Semantic Validation
+## Semantic Validation
 
 Semantic validation confirms that valid syntax also represents meaningful state.
 
@@ -866,7 +866,7 @@ may be syntactically valid TOML but semantically invalid for packaging.
 
 ---
 
-# Compatibility Validation
+## Compatibility Validation
 
 Compatibility validation checks whether inputs can operate together.
 
@@ -878,7 +878,7 @@ Examples include:
 
 ---
 
-# Policy Validation
+## Policy Validation
 
 Policy validation ensures inputs comply with applicable governance requirements.
 
@@ -891,7 +891,7 @@ Examples may include:
 
 ---
 
-# Input Fingerprinting
+## Input Fingerprinting
 
 FamilyOS may eventually use fingerprints or hashes to identify build inputs.
 
@@ -910,7 +910,7 @@ It is a future capability rather than an immediate universal requirement.
 
 ---
 
-# Input Immutability
+## Input Immutability
 
 Inputs should remain stable during a build.
 
@@ -930,7 +930,7 @@ Where immutable infrastructure is not available, the build should at least avoid
 
 ---
 
-# Input Snapshot Concept
+## Input Snapshot Concept
 
 A build may conceptually operate on an input snapshot.
 
@@ -948,7 +948,7 @@ This snapshot may be logical rather than physical.
 
 ---
 
-# Network Inputs
+## Network Inputs
 
 Network access introduces mutable external state.
 
@@ -963,7 +963,7 @@ Network dependency should be explicit.
 
 ---
 
-# Network Input Requirements
+## Network Input Requirements
 
 Where network access influences build output:
 
@@ -974,7 +974,7 @@ Where network access influences build output:
 
 ---
 
-# External Artifact Inputs
+## External Artifact Inputs
 
 A build may consume artifacts produced by another build.
 
@@ -988,7 +988,7 @@ Such artifacts should be identifiable and validated before consumption.
 
 ---
 
-# Cross-Build Input Model
+## Cross-Build Input Model
 
 ```text id="e4qu3c"
 Build A
@@ -1002,7 +1002,7 @@ Build B must not assume upstream artifacts are trustworthy without evidence.
 
 ---
 
-# Input Path Requirements
+## Input Path Requirements
 
 Build input paths should be predictable.
 
@@ -1024,7 +1024,7 @@ This improves portability.
 
 ---
 
-# Input Naming
+## Input Naming
 
 Significant build inputs should follow clear naming conventions.
 
@@ -1039,7 +1039,7 @@ Ambiguous names reduce maintainability.
 
 ---
 
-# Input Documentation
+## Input Documentation
 
 Build input requirements must be documented where they are not self-evident.
 
@@ -1053,7 +1053,7 @@ Documentation should explain:
 
 ---
 
-# Input Discoverability
+## Input Discoverability
 
 Engineers should be able to determine the build inputs without reading every implementation detail.
 
@@ -1067,7 +1067,7 @@ Discoverability may be provided through:
 
 ---
 
-# Input Minimalism
+## Input Minimalism
 
 Builds should avoid unnecessary inputs.
 
@@ -1092,7 +1092,7 @@ Remove
 
 ---
 
-# Hidden Input Anti-Pattern
+## Hidden Input Anti-Pattern
 
 A hidden input influences behavior without being explicitly represented.
 
@@ -1108,7 +1108,7 @@ Hidden inputs are incompatible with strong build reproducibility.
 
 ---
 
-# Mutable External Input Anti-Pattern
+## Mutable External Input Anti-Pattern
 
 A build should avoid depending on remote content that can change without version identification.
 
@@ -1122,7 +1122,7 @@ retrieved dynamically without integrity or version control introduces uncontroll
 
 ---
 
-# Unvalidated Generated Input Anti-Pattern
+## Unvalidated Generated Input Anti-Pattern
 
 Generated content must not be consumed simply because a file exists.
 
@@ -1135,7 +1135,7 @@ The build should know:
 
 ---
 
-# Local-Only Input Anti-Pattern
+## Local-Only Input Anti-Pattern
 
 A required input must not exist only on one contributor's machine.
 
@@ -1143,7 +1143,7 @@ If the canonical build depends on it, it must be represented through controlled 
 
 ---
 
-# Duplicate Source Of Truth Anti-Pattern
+## Duplicate Source Of Truth Anti-Pattern
 
 The same build configuration should not be independently defined in multiple locations.
 
@@ -1160,7 +1160,7 @@ must not contain conflicting versions of the same rule.
 
 ---
 
-# Build Input Contract
+## Build Input Contract
 
 A build target SHOULD conceptually define an input contract.
 
@@ -1182,7 +1182,7 @@ The exact representation may remain documentation-based initially.
 
 ---
 
-# Input Contract Benefits
+## Input Contract Benefits
 
 An explicit contract improves:
 
@@ -1195,7 +1195,7 @@ An explicit contract improves:
 
 ---
 
-# Development Input Profile
+## Development Input Profile
 
 A development build may permit flexible state.
 
@@ -1210,7 +1210,7 @@ However, core input requirements still apply.
 
 ---
 
-# CI Input Profile
+## CI Input Profile
 
 CI builds should typically operate from more controlled input state.
 
@@ -1224,7 +1224,7 @@ Examples include:
 
 ---
 
-# Release Candidate Input Profile
+## Release Candidate Input Profile
 
 Release-candidate inputs should generally be the strictest.
 
@@ -1243,7 +1243,7 @@ This provides stronger artifact trust.
 
 ---
 
-# Plugin Input Requirements
+## Plugin Input Requirements
 
 Official plugin builds may require additional inputs such as:
 
@@ -1259,7 +1259,7 @@ These inputs must remain compatible with the Plugin Compliance Framework.
 
 ---
 
-# Documentation Build Inputs
+## Documentation Build Inputs
 
 Documentation builds may consume:
 
@@ -1273,7 +1273,7 @@ Documentation generation should not rely on uncontrolled local state.
 
 ---
 
-# Input Security
+## Input Security
 
 Build inputs form part of the software supply chain.
 
@@ -1289,7 +1289,7 @@ Input validation should therefore cooperate with security architecture.
 
 ---
 
-# Input Integrity
+## Input Integrity
 
 Where required, external or generated inputs may need integrity verification.
 
@@ -1305,7 +1305,7 @@ These controls can be introduced progressively.
 
 ---
 
-# Input Observability
+## Input Observability
 
 Build diagnostics should make relevant inputs visible.
 
@@ -1324,7 +1324,7 @@ Sensitive values must remain protected.
 
 ---
 
-# Input Failure Classification
+## Input Failure Classification
 
 Input-related failures may be classified as:
 
@@ -1341,7 +1341,7 @@ A formal implementation is optional, but the conceptual distinction improves dia
 
 ---
 
-# Input Quality
+## Input Quality
 
 High-quality build inputs are:
 
@@ -1358,7 +1358,7 @@ Poor input quality inevitably reduces build quality.
 
 ---
 
-# Input Governance
+## Input Governance
 
 Significant changes to input requirements may require governance.
 
@@ -1375,7 +1375,7 @@ Architectural impact should determine governance level.
 
 ---
 
-# Input Evolution
+## Input Evolution
 
 Build inputs will evolve as FamilyOS grows.
 
@@ -1391,7 +1391,7 @@ New input categories should only be introduced when existing categories are insu
 
 ---
 
-# Input Requirements Summary
+## Input Requirements Summary
 
 The canonical Build Input Requirements can be summarized as:
 
@@ -1415,7 +1415,7 @@ Every significant input should move through this model.
 
 ---
 
-# Mandatory Requirements
+## Mandatory Requirements
 
 For a trusted build:
 
@@ -1434,7 +1434,7 @@ For a trusted build:
 
 ---
 
-# Build Input Success Criteria
+## Build Input Success Criteria
 
 The Build Input model is successful when FamilyOS can answer:
 
@@ -1462,7 +1462,7 @@ If these questions cannot be answered for an important build, input control rema
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Input Requirements are founded on the following rule:
 

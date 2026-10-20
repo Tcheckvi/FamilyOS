@@ -1,10 +1,10 @@
 # Plugin Compliance Framework
 
-# MANIFEST
+## MANIFEST
 
-## EPIC-PLUGIN-002
+### EPIC-PLUGIN-002
 
-## Purpose
+### Purpose
 
 This manifest defines the official documentation inventory, normative hierarchy, completeness requirements, ownership model, and status rules for EPIC-PLUGIN-002 — Plugin Compliance Framework.
 
@@ -14,7 +14,7 @@ The manifest exists to ensure that the framework can be validated as a complete 
 
 ---
 
-# Manifest Principle
+## Manifest Principle
 
 The governing manifest principle is:
 
@@ -26,7 +26,7 @@ The files must collectively represent a coherent normative system.
 
 ---
 
-# EPIC Identity
+## EPIC Identity
 
 ```text
 EPIC ID:     EPIC-PLUGIN-002
@@ -40,7 +40,7 @@ Maturity:    Framework Definition
 
 ---
 
-# Framework Purpose
+## Framework Purpose
 
 EPIC-PLUGIN-002 establishes the official FamilyOS architecture for determining whether plugins conform to platform requirements.
 
@@ -61,7 +61,7 @@ It translates those requirements into governed and verifiable plugin compliance 
 
 ---
 
-# Normative Hierarchy
+## Normative Hierarchy
 
 The Plugin Compliance Framework exists within the broader FamilyOS normative hierarchy.
 
@@ -102,7 +102,7 @@ Lower layers must not silently redefine higher-level requirements.
 
 ---
 
-# Authority Principle
+## Authority Principle
 
 EPIC-PLUGIN-002 is authoritative for:
 
@@ -126,7 +126,7 @@ It is not automatically authoritative for the original meaning of requirements o
 
 ---
 
-# External Authority
+## External Authority
 
 Examples of requirements remaining authoritative outside this EPIC include:
 
@@ -162,7 +162,7 @@ It does not replace their source authority.
 
 ---
 
-# Deliverable Inventory
+## Deliverable Inventory
 
 EPIC-PLUGIN-002 contains 30 required deliverables.
 
@@ -178,11 +178,11 @@ They are divided into:
 
 ---
 
-# Numbered Framework Documents
+## Numbered Framework Documents
 
-## 00 — EPIC Definition
+### 00 — EPIC Definition
 
-### `00-EPIC.md`
+#### `00-EPIC.md`
 
 Defines:
 
@@ -204,9 +204,9 @@ Required
 
 ---
 
-## 01 — Context
+### 01 — Context
 
-### `01-Context.md`
+#### `01-Context.md`
 
 Defines:
 
@@ -227,9 +227,9 @@ Required
 
 ---
 
-## 02 — Vision
+### 02 — Vision
 
-### `02-Vision.md`
+#### `02-Vision.md`
 
 Defines the long-term target state for plugin compliance within FamilyOS.
 
@@ -243,9 +243,9 @@ Required
 
 ---
 
-## 03 — Principles
+### 03 — Principles
 
-### `03-Principles.md`
+#### `03-Principles.md`
 
 Defines the fundamental principles governing compliance architecture and implementation.
 
@@ -259,9 +259,9 @@ Required
 
 ---
 
-## 04 — Compliance Architecture
+### 04 — Compliance Architecture
 
-### `04-Compliance-Architecture.md`
+#### `04-Compliance-Architecture.md`
 
 Defines the architecture connecting:
 
@@ -287,9 +287,9 @@ Required
 
 ---
 
-## 05 — Compliance Domains
+### 05 — Compliance Domains
 
-### `05-Compliance-Domains.md`
+#### `05-Compliance-Domains.md`
 
 Defines the canonical organization of compliance requirements.
 
@@ -303,9 +303,9 @@ Required
 
 ---
 
-## 06 — Compliance Rule Model
+### 06 — Compliance Rule Model
 
-### `06-Compliance-Rule-Model.md`
+#### `06-Compliance-Rule-Model.md`
 
 Defines:
 
@@ -330,9 +330,9 @@ Required
 
 ---
 
-## 07 — Compliance Profiles
+### 07 — Compliance Profiles
 
-### `07-Compliance-Profiles.md`
+#### `07-Compliance-Profiles.md`
 
 Defines how compliance rules are composed for plugin classifications and lifecycle contexts.
 
@@ -346,9 +346,9 @@ Required
 
 ---
 
-## 08 — Validation Engine
+### 08 — Validation Engine
 
-### `08-Validation-Engine.md`
+#### `08-Validation-Engine.md`
 
 Defines:
 
@@ -372,9 +372,9 @@ Required
 
 ---
 
-## 09 — Evidence Model
+### 09 — Evidence Model
 
-### `09-Evidence-Model.md`
+#### `09-Evidence-Model.md`
 
 Defines:
 
@@ -398,9 +398,9 @@ Required
 
 ---
 
-## 10 — Findings and Severity Model
+### 10 — Findings and Severity Model
 
-### `10-Findings-and-Severity-Model.md`
+#### `10-Findings-and-Severity-Model.md`
 
 Defines:
 
@@ -422,9 +422,9 @@ Required
 
 ---
 
-## 11 — Compliance Reporting
+### 11 — Compliance Reporting
 
-### `11-Compliance-Reporting.md`
+#### `11-Compliance-Reporting.md`
 
 Defines:
 
@@ -445,9 +445,9 @@ Required
 
 ---
 
-## 12 — Automation and CI Integration
+### 12 — Automation and CI Integration
 
-### `12-Automation-and-CI-Integration.md`
+#### `12-Automation-and-CI-Integration.md`
 
 Defines compliance integration into:
 
@@ -469,9 +469,9 @@ Required
 
 ---
 
-## 13 — Compliance Gates
+### 13 — Compliance Gates
 
-### `13-Compliance-Gates.md`
+#### `13-Compliance-Gates.md`
 
 Defines lifecycle gate semantics for:
 
@@ -491,9 +491,9 @@ Required
 
 ---
 
-## 14 — Plugin Certification Integration
+### 14 — Plugin Certification Integration
 
-### `14-Plugin-Certification-Integration.md`
+#### `14-Plugin-Certification-Integration.md`
 
 Defines the boundary between:
 
@@ -515,9 +515,9 @@ Required
 
 ---
 
-## 15 — Governance and Rule Lifecycle
+### 15 — Governance and Rule Lifecycle
 
-### `15-Governance-and-Rule-Lifecycle.md`
+#### `15-Governance-and-Rule-Lifecycle.md`
 
 Defines:
 
@@ -541,9 +541,9 @@ Required
 
 ---
 
-## 16 — Security and Trust Model
+### 16 — Security and Trust Model
 
-### `16-Security-and-Trust-Model.md`
+#### `16-Security-and-Trust-Model.md`
 
 Defines:
 
@@ -566,9 +566,9 @@ Required
 
 ---
 
-## 17 — Framework Lifecycle
+### 17 — Framework Lifecycle
 
-### `17-Framework-Lifecycle.md`
+#### `17-Framework-Lifecycle.md`
 
 Defines the evolution of the compliance framework itself.
 
@@ -582,9 +582,9 @@ Required
 
 ---
 
-## 18 — Roadmap
+### 18 — Roadmap
 
-### `18-Roadmap.md`
+#### `18-Roadmap.md`
 
 Defines the implementation and maturity progression from architectural baseline to continuous compliance.
 
@@ -598,9 +598,9 @@ Required
 
 ---
 
-## 19 — References
+### 19 — References
 
-### `19-References.md`
+#### `19-References.md`
 
 Defines authoritative FamilyOS references consumed by the framework.
 
@@ -614,9 +614,9 @@ Required
 
 ---
 
-## 20 — Validation
+### 20 — Validation
 
-### `20-Validation.md`
+#### `20-Validation.md`
 
 Defines how the framework itself is validated.
 
@@ -630,9 +630,9 @@ Required
 
 ---
 
-## 21 — Summary
+### 21 — Summary
 
-### `21-Summary.md`
+#### `21-Summary.md`
 
 Provides the consolidated framework model.
 
@@ -646,9 +646,9 @@ Required
 
 ---
 
-## 22 — Release
+### 22 — Release
 
-### `22-Release.md`
+#### `22-Release.md`
 
 Defines framework release, versioning, compatibility, regression, migration, and adoption requirements.
 
@@ -662,9 +662,9 @@ Required
 
 ---
 
-## 23 — Checklist
+### 23 — Checklist
 
-### `23-Checklist.md`
+#### `23-Checklist.md`
 
 Defines final framework-definition and implementation-readiness criteria.
 
@@ -678,11 +678,11 @@ Required
 
 ---
 
-# Governance and Metadata Documents
+## Governance and Metadata Documents
 
-## README
+### README
 
-### `README.md`
+#### `README.md`
 
 Provides:
 
@@ -705,9 +705,9 @@ Required
 
 ---
 
-## EPIC Metadata
+### EPIC Metadata
 
-### `EPIC.yaml`
+#### `EPIC.yaml`
 
 Provides machine-readable metadata including:
 
@@ -734,9 +734,9 @@ Required
 
 ---
 
-## Manifest
+### Manifest
 
-### `MANIFEST.md`
+#### `MANIFEST.md`
 
 Provides:
 
@@ -756,9 +756,9 @@ Required
 
 ---
 
-## Validation Record
+### Validation Record
 
-### `VALIDATION.md`
+#### `VALIDATION.md`
 
 Records validation performed against the EPIC documentation and, where applicable, implementation.
 
@@ -771,9 +771,9 @@ Required
 
 ---
 
-## Changelog
+### Changelog
 
-### `CHANGELOG.md`
+#### `CHANGELOG.md`
 
 Records framework evolution by version.
 
@@ -786,9 +786,9 @@ Required
 
 ---
 
-## Revision History
+### Revision History
 
-### `Revision-History.md`
+#### `Revision-History.md`
 
 Records significant changes to normative documentation.
 
@@ -801,7 +801,7 @@ Required
 
 ---
 
-# Deliverable Matrix
+## Deliverable Matrix
 
 | #  | Deliverable                              | Classification            | Required |
 | -- | ---------------------------------------- | ------------------------- | -------- |
@@ -838,7 +838,7 @@ Required
 
 ---
 
-# Deliverable Count
+## Deliverable Count
 
 The expected deliverable count is:
 
@@ -852,7 +852,7 @@ Additional supporting artifacts may be introduced later without changing the req
 
 ---
 
-# Completeness Requirements
+## Completeness Requirements
 
 The framework documentation is structurally complete only when all required deliverables satisfy the following conditions:
 
@@ -870,7 +870,7 @@ File does not contradict higher authority
 
 ---
 
-# Required File Rule
+## Required File Rule
 
 All 30 manifest deliverables are required for framework-definition completion.
 
@@ -878,7 +878,7 @@ Missing required files must prevent final documentation validation from being ma
 
 ---
 
-# Empty File Rule
+## Empty File Rule
 
 A required file with zero meaningful content is considered missing for completeness purposes.
 
@@ -886,7 +886,7 @@ Placeholder-only content is also insufficient.
 
 ---
 
-# Content Quality Rule
+## Content Quality Rule
 
 File existence alone does not establish completeness.
 
@@ -894,7 +894,7 @@ A required document must contain enough information to fulfill its responsibilit
 
 ---
 
-# Internal Consistency
+## Internal Consistency
 
 Documents must use consistent definitions for core concepts including:
 
@@ -916,7 +916,7 @@ Contradictory definitions must be resolved before framework closure.
 
 ---
 
-# Cross-Document Consistency
+## Cross-Document Consistency
 
 The following relationships require particular consistency:
 
@@ -956,7 +956,7 @@ The following relationships require particular consistency:
 
 ---
 
-# Normative Conflict Rule
+## Normative Conflict Rule
 
 When documents within EPIC-PLUGIN-002 appear to conflict, resolution should follow:
 
@@ -969,7 +969,7 @@ Conflicts must not be resolved implicitly by implementation behavior.
 
 ---
 
-# External Conflict Rule
+## External Conflict Rule
 
 If EPIC-PLUGIN-002 conflicts with a higher-authority FamilyOS source, the conflict must be resolved through the appropriate architecture or governance mechanism.
 
@@ -983,7 +983,7 @@ Possible mechanisms include:
 
 ---
 
-# Implementation Authority
+## Implementation Authority
 
 Implementation must conform to the normative framework.
 
@@ -1012,7 +1012,7 @@ Retroactive Policy
 
 ---
 
-# Machine-Readable Authority
+## Machine-Readable Authority
 
 Future machine-readable rule or profile definitions may become executable policy artifacts.
 
@@ -1022,7 +1022,7 @@ Neither representation should silently contradict the other.
 
 ---
 
-# Ownership Model
+## Ownership Model
 
 The Plugin Compliance Framework belongs to the FamilyOS Engineering Platform governance domain.
 
@@ -1060,7 +1060,7 @@ Certification Governance
 
 ---
 
-# Rule Ownership
+## Rule Ownership
 
 Every active compliance rule must eventually identify an accountable owner.
 
@@ -1077,7 +1077,7 @@ Rules without ownership should not become stable blocking policy.
 
 ---
 
-# Framework Ownership
+## Framework Ownership
 
 Framework architecture changes require review appropriate to their impact.
 
@@ -1094,7 +1094,7 @@ Examples include changes to:
 
 ---
 
-# Status Model
+## Status Model
 
 EPIC-PLUGIN-002 may progress through documentation and implementation maturity independently.
 
@@ -1136,7 +1136,7 @@ Continuous Compliance
 
 ---
 
-# Documentation Status
+## Documentation Status
 
 Documentation status and implementation status must remain distinguishable.
 
@@ -1153,7 +1153,7 @@ Documentation completion must never be interpreted automatically as operational 
 
 ---
 
-# EPIC Status
+## EPIC Status
 
 The framework-definition baseline has completed its documentation validation.
 
@@ -1168,7 +1168,7 @@ The baseline status means that the normative framework definition represented by
 
 This status does not imply that every operational capability described by the framework has already been implemented.
 
-# Completion Transition
+## Completion Transition
 
 The framework-definition transition has been completed.
 
@@ -1186,7 +1186,7 @@ Version 1.0.0 is therefore the first governed framework-definition baseline.
 
 Operational implementation, CI enforcement, release enforcement, certification integration, third-party validation, and continuous compliance remain governed by the implementation roadmap and their respective maturity gates.
 
-# Implementation Status
+## Implementation Status
 
 Implementation readiness is defined by `23-Checklist.md`.
 
@@ -1196,7 +1196,7 @@ These states must not be inferred solely from the EPIC metadata status.
 
 ---
 
-# Validation Ownership
+## Validation Ownership
 
 Final documentation validation should verify:
 
@@ -1215,7 +1215,7 @@ Where implementation exists, repository engineering validation should additional
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Validation evidence should be recorded in:
 
@@ -1233,7 +1233,7 @@ The validation record should identify:
 
 ---
 
-# Versioning
+## Versioning
 
 This manifest belongs to the framework version declared in:
 
@@ -1256,7 +1256,7 @@ Changes to the required deliverable structure should be reflected in:
 
 ---
 
-# Manifest Evolution
+## Manifest Evolution
 
 This manifest may evolve when:
 
@@ -1270,7 +1270,7 @@ Manifest changes must remain versioned and traceable.
 
 ---
 
-# Historical Integrity
+## Historical Integrity
 
 Previously released manifests should not be rewritten to represent newer framework structures.
 
@@ -1278,7 +1278,7 @@ A new framework version should document the new manifest state.
 
 ---
 
-# Required Validation Commands
+## Required Validation Commands
 
 Before framework-definition closure, the repository should verify the directory structure.
 
@@ -1294,7 +1294,7 @@ Required empty-file checks should also be performed.
 
 ---
 
-# Expected Structural Result
+## Expected Structural Result
 
 The expected baseline is:
 
@@ -1308,7 +1308,7 @@ Additional explicitly governed supporting files may exist.
 
 ---
 
-# Manifest Validation Checklist
+## Manifest Validation Checklist
 
 Before declaring the manifest valid:
 
@@ -1329,7 +1329,7 @@ Before declaring the manifest valid:
 
 ---
 
-# Framework Definition Completion
+## Framework Definition Completion
 
 The framework-definition baseline is complete.
 
@@ -1354,7 +1354,7 @@ This completion applies to the normative framework definition.
 
 It does not claim completion of the future operational implementation.
 
-# Manifest Summary
+## Manifest Summary
 
 The EPIC-PLUGIN-002 manifest establishes the structural contract for the Plugin Compliance Framework documentation.
 
@@ -1372,7 +1372,7 @@ Together they define the architectural, policy, validation, governance, security
 
 ---
 
-# Final Manifest Principle
+## Final Manifest Principle
 
 The governing principle of this manifest is:
 

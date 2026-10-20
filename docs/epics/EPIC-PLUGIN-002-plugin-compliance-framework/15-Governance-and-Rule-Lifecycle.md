@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 15 Governance and Rule Lifecycle
+## 15 Governance and Rule Lifecycle
 
-## Introduction
+### Introduction
 
 Governance and Rule Lifecycle define how FamilyOS creates, reviews, activates, evolves, deprecates, and retires plugin compliance requirements.
 
@@ -24,7 +24,7 @@ For this reason, compliance evolution must remain explicit, reviewable, versione
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of governance is to ensure that compliance requirements remain trustworthy over time.
 
@@ -49,7 +49,7 @@ Governance protects both platform integrity and plugin authors from arbitrary co
 
 ---
 
-# Governance Principle
+## Governance Principle
 
 The governing principle is:
 
@@ -61,7 +61,7 @@ Every enforceable requirement must have an explicit governance path.
 
 ---
 
-# Governance Scope
+## Governance Scope
 
 Compliance governance applies to:
 
@@ -84,7 +84,7 @@ Implementation details that do not alter compliance semantics may evolve through
 
 ---
 
-# Governance Layers
+## Governance Layers
 
 The governance model separates several layers:
 
@@ -107,7 +107,7 @@ Each layer has clear ownership and review responsibilities.
 
 ---
 
-# Rule Ownership
+## Rule Ownership
 
 Every active compliance rule must have an explicit owner.
 
@@ -127,7 +127,7 @@ Ownership may be represented by a team, role, or governed subsystem.
 
 ---
 
-# Ownership Responsibilities
+## Ownership Responsibilities
 
 A rule owner is responsible for:
 
@@ -145,7 +145,7 @@ Ownership does not necessarily imply ownership of validator implementation.
 
 ---
 
-# Source Authority
+## Source Authority
 
 Every compliance rule should identify the platform requirement from which it derives.
 
@@ -170,7 +170,7 @@ It does not replace the authoritative source.
 
 ---
 
-# Rule Proposal
+## Rule Proposal
 
 New compliance rules should begin as explicit proposals.
 
@@ -192,7 +192,7 @@ A proposal should contain enough information for meaningful review before implem
 
 ---
 
-# Rule Proposal Flow
+## Rule Proposal Flow
 
 A conceptual governance flow is:
 
@@ -222,7 +222,7 @@ Not every proposed requirement must become an active compliance rule.
 
 ---
 
-# Domain Review
+## Domain Review
 
 The owning domain should first verify that the proposed rule:
 
@@ -237,7 +237,7 @@ Cross-domain impact should be identified during this review.
 
 ---
 
-# Compliance Review
+## Compliance Review
 
 Compliance review evaluates framework-wide implications.
 
@@ -257,7 +257,7 @@ This prevents domain-specific decisions from introducing global inconsistency.
 
 ---
 
-# Security Review
+## Security Review
 
 Rules affecting security boundaries may require dedicated security governance review.
 
@@ -279,7 +279,7 @@ Security-critical rules may receive:
 
 ---
 
-# Architecture Review
+## Architecture Review
 
 Architectural rules may require architecture governance approval.
 
@@ -295,7 +295,7 @@ Architecture review helps ensure that compliance enforcement reflects intentiona
 
 ---
 
-# Rule Draft State
+## Rule Draft State
 
 New rules should begin in:
 
@@ -309,7 +309,7 @@ Draft rules must not silently participate in stable compliance profiles.
 
 ---
 
-# Draft Rule Objectives
+## Draft Rule Objectives
 
 Draft state allows:
 
@@ -324,7 +324,7 @@ The rule should become active only when its semantics and enforcement are suffic
 
 ---
 
-# Rule Lifecycle
+## Rule Lifecycle
 
 The baseline lifecycle is:
 
@@ -345,7 +345,7 @@ Every transition must be explicit.
 
 ---
 
-# Active State
+## Active State
 
 `ACTIVE` means the rule is part of supported compliance policy.
 
@@ -362,7 +362,7 @@ Activation is therefore a governance event.
 
 ---
 
-# Activation Requirements
+## Activation Requirements
 
 Before activation, an automated rule should normally have:
 
@@ -383,7 +383,7 @@ Manual or hybrid rules require equivalent governance evidence appropriate to the
 
 ---
 
-# Activation Decision
+## Activation Decision
 
 A rule should become active only through explicit approval.
 
@@ -400,7 +400,7 @@ This metadata supports historical interpretation.
 
 ---
 
-# Rule Introduction Strategy
+## Rule Introduction Strategy
 
 New rules may be introduced progressively.
 
@@ -427,7 +427,7 @@ Critical security requirements may require immediate enforcement.
 
 ---
 
-# Shadow Validation
+## Shadow Validation
 
 The framework may support shadow validation for new rules.
 
@@ -449,7 +449,7 @@ Shadow validation helps measure ecosystem impact before enforcement.
 
 ---
 
-# Shadow Rule Governance
+## Shadow Rule Governance
 
 Shadow mode must be explicit.
 
@@ -459,7 +459,7 @@ A shadow rule must not be confused with an active advisory rule.
 
 ---
 
-# Rule Severity Governance
+## Rule Severity Governance
 
 Severity assignment must be reviewed centrally.
 
@@ -476,7 +476,7 @@ Severity should reflect consequence of violation rather than difficulty of remed
 
 ---
 
-# Severity Review Criteria
+## Severity Review Criteria
 
 Severity decisions should consider:
 
@@ -493,7 +493,7 @@ Severity must not be chosen simply to force developer attention.
 
 ---
 
-# Severity Changes
+## Severity Changes
 
 Changing severity may alter:
 
@@ -506,7 +506,7 @@ Severity changes therefore require version-aware governance and impact analysis.
 
 ---
 
-# Rule Applicability Governance
+## Rule Applicability Governance
 
 Applicability determines which plugins and contexts a rule affects.
 
@@ -530,7 +530,7 @@ Applicability changes require explicit review.
 
 ---
 
-# Mandatory Rule Governance
+## Mandatory Rule Governance
 
 Mandatory rules create ecosystem-wide constraints.
 
@@ -546,7 +546,7 @@ Mandatory status should require elevated review.
 
 ---
 
-# Exception Policy Governance
+## Exception Policy Governance
 
 Each rule must define whether exceptions are allowed.
 
@@ -565,7 +565,7 @@ Security-critical rules may prohibit exceptions entirely.
 
 ---
 
-# Validator Governance
+## Validator Governance
 
 Validators implement rule evaluation mechanisms.
 
@@ -579,7 +579,7 @@ A validator may be changed without a new Rule ID when:
 
 ---
 
-# Semantic Validator Changes
+## Semantic Validator Changes
 
 A validator change is compliance-significant when it changes:
 
@@ -593,7 +593,7 @@ Such changes require compliance governance review.
 
 ---
 
-# Validator Replacement
+## Validator Replacement
 
 A validator implementation may be replaced while preserving the rule identity if semantic equivalence is maintained.
 
@@ -611,7 +611,7 @@ The rule remains the stable policy identity.
 
 ---
 
-# Evidence Policy Governance
+## Evidence Policy Governance
 
 Changes to evidence requirements may strengthen or weaken compliance assurance.
 
@@ -631,7 +631,7 @@ Such changes require explicit governance and may require profile version changes
 
 ---
 
-# Profile Governance
+## Profile Governance
 
 Compliance Profiles are governed artifacts.
 
@@ -649,7 +649,7 @@ Profiles must therefore have their own review and version lifecycle.
 
 ---
 
-# Profile Change Review
+## Profile Change Review
 
 Before changing an active profile, governance should evaluate:
 
@@ -665,7 +665,7 @@ Profile changes can be more disruptive than individual rule changes.
 
 ---
 
-# Gate Governance
+## Gate Governance
 
 Compliance Gates convert compliance results into lifecycle decisions.
 
@@ -680,7 +680,7 @@ Gate changes require explicit engineering governance approval.
 
 ---
 
-# Certification Policy Boundary
+## Certification Policy Boundary
 
 Compliance governance owns technical certification eligibility requirements.
 
@@ -690,7 +690,7 @@ Changes to certification profiles should therefore be coordinated across both go
 
 ---
 
-# Versioning Strategy
+## Versioning Strategy
 
 Compliance governance must support explicit versioning.
 
@@ -707,7 +707,7 @@ These versions serve different purposes and must not be conflated.
 
 ---
 
-# Framework Version
+## Framework Version
 
 The Compliance Framework Version represents the overall supported compliance contract.
 
@@ -723,7 +723,7 @@ Breaking policy changes may require a major framework version.
 
 ---
 
-# Rule Catalog Version
+## Rule Catalog Version
 
 The Rule Catalog may expose its own version or digest.
 
@@ -738,7 +738,7 @@ It supports:
 
 ---
 
-# Rule Version Semantics
+## Rule Version Semantics
 
 A rule may retain one stable Rule ID while receiving non-semantic documentation or implementation updates.
 
@@ -751,7 +751,7 @@ The exact rule-versioning approach should prioritize historical clarity.
 
 ---
 
-# Non-Breaking Rule Change
+## Non-Breaking Rule Change
 
 Typical non-breaking changes include:
 
@@ -765,7 +765,7 @@ These may preserve current compliance semantics.
 
 ---
 
-# Breaking Rule Change
+## Breaking Rule Change
 
 Typical breaking changes include:
 
@@ -779,7 +779,7 @@ Breaking changes require explicit migration handling.
 
 ---
 
-# New Rule vs Modified Rule
+## New Rule vs Modified Rule
 
 When a requirement changes materially, creating a new Rule ID is often preferable.
 
@@ -799,7 +799,7 @@ This creates an unambiguous historical boundary.
 
 ---
 
-# Deprecation
+## Deprecation
 
 A rule enters `DEPRECATED` when it should no longer be used for new compliance policy but must remain available for compatibility or historical interpretation.
 
@@ -813,7 +813,7 @@ Deprecation must include:
 
 ---
 
-# Deprecation Warning
+## Deprecation Warning
 
 Compliance tooling should be able to report deprecated rules when they remain active through compatibility profiles.
 
@@ -821,7 +821,7 @@ Developers should be informed before retirement affects their workflow.
 
 ---
 
-# Rule Replacement
+## Rule Replacement
 
 Replacement relationships should be machine-readable.
 
@@ -839,7 +839,7 @@ Tooling may then provide automatic migration references.
 
 ---
 
-# Retirement
+## Retirement
 
 A rule enters `RETIRED` when it no longer participates in supported active profiles.
 
@@ -854,7 +854,7 @@ Retirement must not erase history.
 
 ---
 
-# Historical Rule Registry
+## Historical Rule Registry
 
 The framework should preserve enough rule metadata to interpret old results.
 
@@ -876,7 +876,7 @@ This registry may eventually be generated from version-controlled rule definitio
 
 ---
 
-# Profile Lifecycle
+## Profile Lifecycle
 
 Profiles should follow a similar lifecycle:
 
@@ -897,7 +897,7 @@ Deprecated profiles remain necessary for interpreting historical Compliance Resu
 
 ---
 
-# Gate Lifecycle
+## Gate Lifecycle
 
 Gate policies may also evolve through governed versions.
 
@@ -905,7 +905,7 @@ A historical Gate Decision must always identify the exact gate version that prod
 
 ---
 
-# Migration Guidance
+## Migration Guidance
 
 Breaking compliance changes require migration guidance.
 
@@ -923,7 +923,7 @@ Compliance evolution without migration guidance creates unnecessary ecosystem in
 
 ---
 
-# Migration Window
+## Migration Window
 
 Some breaking requirements may include a migration period.
 
@@ -946,7 +946,7 @@ The duration depends on urgency and ecosystem impact.
 
 ---
 
-# Immediate Enforcement
+## Immediate Enforcement
 
 Not every requirement should receive a migration window.
 
@@ -963,7 +963,7 @@ Immediate enforcement should be justified explicitly.
 
 ---
 
-# Compatibility Windows
+## Compatibility Windows
 
 The framework may support old and new profiles simultaneously during migration.
 
@@ -980,7 +980,7 @@ Compatibility windows should have clear expiration plans.
 
 ---
 
-# Rule Impact Analysis
+## Rule Impact Analysis
 
 Before activating a significant rule change, FamilyOS should evaluate affected plugins.
 
@@ -997,7 +997,7 @@ This is especially important for mandatory and blocking rules.
 
 ---
 
-# Ecosystem Dry Run
+## Ecosystem Dry Run
 
 The framework may support running proposed rules against existing plugins before activation.
 
@@ -1017,7 +1017,7 @@ This provides evidence for governance decisions.
 
 ---
 
-# Rule Rollback
+## Rule Rollback
 
 A newly activated rule may need to be rolled back if it produces unintended consequences.
 
@@ -1027,7 +1027,7 @@ Historical evaluations produced while the rule was active remain valid for their
 
 ---
 
-# Emergency Rule Changes
+## Emergency Rule Changes
 
 Security or integrity incidents may require expedited rule changes.
 
@@ -1044,7 +1044,7 @@ Emergency does not mean untraceable.
 
 ---
 
-# Exception Governance
+## Exception Governance
 
 Exceptions require their own lifecycle.
 
@@ -1067,7 +1067,7 @@ Exceptions must remain scoped and auditable.
 
 ---
 
-# Exception Request
+## Exception Request
 
 An exception request should identify:
 
@@ -1084,7 +1084,7 @@ The request should explain why remediation cannot occur immediately.
 
 ---
 
-# Exception Approval
+## Exception Approval
 
 Approval authority depends on rule ownership and severity.
 
@@ -1102,7 +1102,7 @@ Higher-risk exceptions require stronger approval.
 
 ---
 
-# Exception Expiration
+## Exception Expiration
 
 Exceptions should normally expire.
 
@@ -1112,7 +1112,7 @@ Expired exceptions must stop influencing current compliance decisions.
 
 ---
 
-# Exception Revocation
+## Exception Revocation
 
 An approved exception may be revoked before expiration.
 
@@ -1128,7 +1128,7 @@ Revocation must be traceable.
 
 ---
 
-# Suppression Governance
+## Suppression Governance
 
 Suppressions require lighter governance than exceptions in some contexts, but they must remain visible.
 
@@ -1144,7 +1144,7 @@ CRITICAL findings should rarely or never be suppressible.
 
 ---
 
-# Governance Evidence
+## Governance Evidence
 
 Governance actions should themselves produce structured evidence.
 
@@ -1160,7 +1160,7 @@ Governance evidence supports auditability.
 
 ---
 
-# Decision Authority
+## Decision Authority
 
 Every governance decision should identify its authority.
 
@@ -1178,7 +1178,7 @@ Authority must be distinct from ordinary plugin ownership when conflicts of inte
 
 ---
 
-# Conflict of Interest
+## Conflict of Interest
 
 The framework should avoid allowing plugin authors to unilaterally approve exceptions to requirements governing their own plugins when stronger authority is required.
 
@@ -1186,7 +1186,7 @@ Governance policy should define separation of responsibilities where appropriate
 
 ---
 
-# Change Traceability
+## Change Traceability
 
 Every semantic compliance change should be traceable through version control and governance metadata.
 
@@ -1202,7 +1202,7 @@ Which plugins were affected?
 
 ---
 
-# Changelog Integration
+## Changelog Integration
 
 The framework should maintain a changelog for compliance-relevant evolution.
 
@@ -1219,7 +1219,7 @@ Changelog entries should identify:
 
 ---
 
-# Release Notes
+## Release Notes
 
 Framework releases should communicate changes that plugin authors must understand.
 
@@ -1233,7 +1233,7 @@ Release notes should emphasize:
 
 ---
 
-# Governance Registry
+## Governance Registry
 
 The framework may eventually maintain an authoritative registry of governed artifacts.
 
@@ -1252,7 +1252,7 @@ The initial implementation may use version-controlled files rather than a dedica
 
 ---
 
-# Repository Governance
+## Repository Governance
 
 Compliance definitions stored in the repository should follow controlled review.
 
@@ -1262,7 +1262,7 @@ This helps prevent accidental compliance weakening.
 
 ---
 
-# Policy-as-Code Governance
+## Policy-as-Code Governance
 
 As the framework matures toward Compliance as Code, governance artifacts may become structured policy files.
 
@@ -1279,7 +1279,7 @@ Structured policy enables automation but increases the importance of review cont
 
 ---
 
-# Schema Validation
+## Schema Validation
 
 Governed policy artifacts should be schema-validated.
 
@@ -1296,7 +1296,7 @@ Examples include:
 
 ---
 
-# Governance CI
+## Governance CI
 
 Changes to compliance policy should themselves pass CI.
 
@@ -1314,7 +1314,7 @@ The compliance framework should apply strong engineering quality to its own poli
 
 ---
 
-# Rule Test Governance
+## Rule Test Governance
 
 A rule should not become active without adequate tests.
 
@@ -1331,7 +1331,7 @@ Tests are part of rule governance evidence.
 
 ---
 
-# Profile Test Governance
+## Profile Test Governance
 
 Profiles require tests confirming:
 
@@ -1347,7 +1347,7 @@ This prevents accidental weakening during evolution.
 
 ---
 
-# Gate Test Governance
+## Gate Test Governance
 
 Gate changes require tests proving expected decisions for:
 
@@ -1361,7 +1361,7 @@ Gate changes require tests proving expected decisions for:
 
 ---
 
-# Documentation Governance
+## Documentation Governance
 
 Rule and profile documentation should be generated or validated from structured policy wherever practical.
 
@@ -1371,7 +1371,7 @@ The authoritative source of semantics should remain clear.
 
 ---
 
-# Rule Documentation Requirements
+## Rule Documentation Requirements
 
 Every active rule should expose:
 
@@ -1393,7 +1393,7 @@ This should be discoverable by developers.
 
 ---
 
-# Governance Transparency
+## Governance Transparency
 
 Plugin authors should be able to understand current compliance requirements without inspecting internal implementation code.
 
@@ -1409,7 +1409,7 @@ discoverable through documentation or tooling.
 
 ---
 
-# Governance and Developer Experience
+## Governance and Developer Experience
 
 Good governance reduces surprise.
 
@@ -1425,7 +1425,7 @@ Compliance governance should support predictable evolution rather than sudden br
 
 ---
 
-# Rule Adoption Strategy
+## Rule Adoption Strategy
 
 The framework should prefer incremental adoption for broad non-critical rules.
 
@@ -1448,7 +1448,7 @@ This balances platform evolution and ecosystem stability.
 
 ---
 
-# Policy Compatibility
+## Policy Compatibility
 
 The framework should define compatibility expectations across framework versions.
 
@@ -1458,7 +1458,7 @@ Minor upgrades should generally avoid unexpected breaking enforcement changes un
 
 ---
 
-# Historical Reproducibility
+## Historical Reproducibility
 
 Old Compliance Results must remain interpretable after governance changes.
 
@@ -1475,7 +1475,7 @@ Historical interpretation must not depend solely on current policy.
 
 ---
 
-# Re-Evaluation Under New Policy
+## Re-Evaluation Under New Policy
 
 A plugin may be re-evaluated under a newer framework version.
 
@@ -1495,7 +1495,7 @@ Both results can be correct in their respective contexts.
 
 ---
 
-# Governance Metrics
+## Governance Metrics
 
 FamilyOS may track governance metrics such as:
 
@@ -1514,7 +1514,7 @@ They must not determine rule correctness automatically.
 
 ---
 
-# Governance Review Cadence
+## Governance Review Cadence
 
 The framework may establish periodic review of:
 
@@ -1529,7 +1529,7 @@ Regular review prevents policy accumulation without maintenance.
 
 ---
 
-# Exception Debt
+## Exception Debt
 
 Long-lived exceptions represent governance debt.
 
@@ -1548,7 +1548,7 @@ Frequent exceptions may indicate a poorly designed rule or unresolved ecosystem 
 
 ---
 
-# Deprecation Debt
+## Deprecation Debt
 
 Deprecated rules should not remain indefinitely without retirement planning.
 
@@ -1556,7 +1556,7 @@ Governance should periodically evaluate whether compatibility needs still justif
 
 ---
 
-# Rule Effectiveness Review
+## Rule Effectiveness Review
 
 Rules may be reviewed for effectiveness.
 
@@ -1573,41 +1573,41 @@ A rule may be revised, replaced, or retired based on evidence.
 
 ---
 
-# Governance Anti-Patterns
+## Governance Anti-Patterns
 
 The framework must avoid several governance anti-patterns.
 
-## Validator-Defined Policy
+### Validator-Defined Policy
 
 Do not allow implementation behavior to become undocumented compliance policy.
 
-## Silent Rule Activation
+### Silent Rule Activation
 
 Do not introduce blocking requirements without explicit activation.
 
-## Rule Identity Reuse
+### Rule Identity Reuse
 
 Do not reuse an existing Rule ID for a materially different requirement.
 
-## Permanent Exceptions
+### Permanent Exceptions
 
 Do not allow temporary exceptions to become invisible permanent policy.
 
-## Undocumented Severity Changes
+### Undocumented Severity Changes
 
 Do not change enforcement impact without traceability.
 
-## Profile Drift
+### Profile Drift
 
 Do not allow profile composition to change without versioning.
 
-## Historical Deletion
+### Historical Deletion
 
 Do not remove metadata required to interpret previous compliance results.
 
 ---
 
-# Governance Invariants
+## Governance Invariants
 
 The Governance and Rule Lifecycle model establishes the following invariants:
 
@@ -1634,7 +1634,7 @@ The Governance and Rule Lifecycle model establishes the following invariants:
 
 ---
 
-# Reference Governance Model
+## Reference Governance Model
 
 The complete governance lifecycle is:
 
@@ -1682,7 +1682,7 @@ This lifecycle ensures that compliance evolves deliberately rather than accident
 
 ---
 
-# Governance Summary
+## Governance Summary
 
 Compliance governance transforms plugin requirements into durable platform contracts.
 
@@ -1710,7 +1710,7 @@ This governance model allows FamilyOS to strengthen plugin requirements while pr
 
 ---
 
-# Final Governance Principle
+## Final Governance Principle
 
 The governing principle of compliance evolution is:
 

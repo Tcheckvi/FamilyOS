@@ -1,10 +1,10 @@
 # Security, Privacy, and Governance
 
-# EPIC-OBS-001
+## EPIC-OBS-001
 
-## Security, Privacy, and Governance
+### Security, Privacy, and Governance
 
-## Overview
+### Overview
 
 This document defines the security, privacy, and governance requirements for observability across FamilyOS.
 
@@ -20,7 +20,7 @@ The central rule is:
 
 ---
 
-# Objectives
+## Objectives
 
 The observability security, privacy, and governance model must:
 
@@ -37,7 +37,7 @@ The observability security, privacy, and governance model must:
 
 ---
 
-# Security by Design
+## Security by Design
 
 Security controls SHOULD exist before observability signals are emitted.
 
@@ -65,7 +65,7 @@ The safest sensitive telemetry is telemetry that was never emitted.
 
 ---
 
-# Privacy by Design
+## Privacy by Design
 
 FamilyOS may process highly personal family information.
 
@@ -84,7 +84,7 @@ Instrumentation SHOULD avoid recording the underlying personal content involved 
 
 ---
 
-# Content Versus Behavior
+## Content Versus Behavior
 
 FamilyOS distinguishes between observing an operation and observing its content.
 
@@ -108,7 +108,7 @@ The second unnecessarily exposes domain content.
 
 ---
 
-# Data Minimization
+## Data Minimization
 
 Every observability field SHOULD have a clear operational purpose.
 
@@ -127,7 +127,7 @@ If the information is not necessary for observability, it SHOULD NOT be emitted.
 
 ---
 
-# Prohibited Telemetry
+## Prohibited Telemetry
 
 The following information MUST NOT intentionally appear in normal observability signals:
 
@@ -144,7 +144,7 @@ Equivalent sensitive material is subject to the same prohibition regardless of i
 
 ---
 
-# Private Family Content
+## Private Family Content
 
 Private family content SHOULD NOT normally appear in:
 
@@ -159,7 +159,7 @@ Where exceptional diagnostic requirements exist, explicit security and privacy c
 
 ---
 
-# Personal Identifiers
+## Personal Identifiers
 
 Direct personal identifiers SHOULD be excluded when they are not operationally necessary.
 
@@ -178,7 +178,7 @@ Identifiers themselves must be treated according to their sensitivity.
 
 ---
 
-# Metric Privacy
+## Metric Privacy
 
 Metrics are particularly sensitive to accidental information exposure through dimensions.
 
@@ -208,7 +208,7 @@ This protects privacy while also preventing uncontrolled metric cardinality.
 
 ---
 
-# Trace Privacy
+## Trace Privacy
 
 Trace spans SHOULD describe execution behavior without capturing arbitrary operation payloads.
 
@@ -227,7 +227,7 @@ Request bodies, document contents, messages, and equivalent domain payloads SHOU
 
 ---
 
-# Logging Privacy
+## Logging Privacy
 
 Structured logging makes privacy controls easier because sensitive fields can be identified and filtered explicitly.
 
@@ -246,7 +246,7 @@ Instrumentation SHOULD NOT automatically serialize domain objects into log recor
 
 ---
 
-# Exception Safety
+## Exception Safety
 
 Exceptions may contain sensitive information in their messages.
 
@@ -264,7 +264,7 @@ Detailed exception information may remain available in appropriately controlled 
 
 ---
 
-# Diagnostic Security
+## Diagnostic Security
 
 Diagnostics can expose deeper internal state than standard telemetry.
 
@@ -282,7 +282,7 @@ Diagnostic mechanisms MUST NOT become unrestricted internal-state export interfa
 
 ---
 
-# Redaction
+## Redaction
 
 FamilyOS MAY apply redaction when sensitive values could appear in otherwise useful telemetry.
 
@@ -313,7 +313,7 @@ Avoiding sensitive-data emission entirely remains preferable.
 
 ---
 
-# Filtering
+## Filtering
 
 Telemetry filtering MAY occur at multiple levels:
 
@@ -331,7 +331,7 @@ Earlier filtering is preferred because it reduces the number of systems that eve
 
 ---
 
-# Access Control
+## Access Control
 
 Persisted observability data SHOULD be accessible only to authorized actors and systems.
 
@@ -348,7 +348,7 @@ Production observability access SHOULD NOT automatically imply access to all Fam
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Observability access SHOULD follow least-privilege principles.
 
@@ -374,7 +374,7 @@ Different observability consumers do not necessarily require identical access.
 
 ---
 
-# Environment Separation
+## Environment Separation
 
 Development, testing, staging, and production observability SHOULD remain logically distinguishable.
 
@@ -393,7 +393,7 @@ Environment identity may therefore be part of observability metadata where requi
 
 ---
 
-# Production Restrictions
+## Production Restrictions
 
 Production observability SHOULD apply stronger controls than local development.
 
@@ -410,7 +410,7 @@ Production configurations SHOULD normally:
 
 ---
 
-# Observability Data in Tests
+## Observability Data in Tests
 
 Tests MUST NOT require real family information to validate observability behavior.
 
@@ -420,7 +420,7 @@ Tests SHOULD explicitly verify that protected values do not appear in captured s
 
 ---
 
-# Data Retention
+## Data Retention
 
 Persisted observability information SHOULD have defined retention.
 
@@ -437,7 +437,7 @@ The default should not be indefinite retention.
 
 ---
 
-# Retention Categories
+## Retention Categories
 
 Different signal types MAY require different retention periods.
 
@@ -456,7 +456,7 @@ Exact durations belong to deployment and operational policy rather than this arc
 
 ---
 
-# Deletion
+## Deletion
 
 When observability information reaches the end of its approved retention period, it SHOULD be deleted.
 
@@ -471,7 +471,7 @@ Where external providers are used, their retention behavior must be understood a
 
 ---
 
-# Data Location
+## Data Location
 
 Future telemetry storage may introduce data-location or jurisdiction requirements.
 
@@ -481,7 +481,7 @@ External observability integrations SHOULD remain configurable and replaceable.
 
 ---
 
-# Transmission Security
+## Transmission Security
 
 Observability information transmitted between components or to external systems SHOULD use appropriate transport protection.
 
@@ -496,7 +496,7 @@ Telemetry is not automatically public merely because it is operational data.
 
 ---
 
-# Storage Security
+## Storage Security
 
 Persisted observability information SHOULD receive appropriate protection at rest.
 
@@ -512,7 +512,7 @@ Implementation strength should remain proportional to data classification and op
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Observability may become evidence for:
 
@@ -530,7 +530,7 @@ Controls should remain proportional.
 
 ---
 
-# Observability Governance
+## Observability Governance
 
 Observability requires governance because uncontrolled instrumentation creates technical, operational, privacy, and security debt.
 
@@ -552,7 +552,7 @@ Improvement
 
 ---
 
-# Governance Responsibilities
+## Governance Responsibilities
 
 Observability governance includes responsibility for:
 
@@ -571,7 +571,7 @@ These responsibilities belong to the FamilyOS engineering architecture rather th
 
 ---
 
-# Signal Ownership
+## Signal Ownership
 
 Important observability signals SHOULD have an identifiable architectural owner.
 
@@ -587,7 +587,7 @@ Signals without ownership tend to become inconsistent or obsolete.
 
 ---
 
-# Schema Governance
+## Schema Governance
 
 Structured observability contracts SHOULD evolve deliberately.
 
@@ -606,7 +606,7 @@ Silent semantic redefinition is prohibited.
 
 ---
 
-# Metric Governance
+## Metric Governance
 
 Metrics require particular governance because poorly designed metrics can create large operational costs.
 
@@ -624,7 +624,7 @@ Unbounded dimensions SHOULD be rejected.
 
 ---
 
-# Logging Governance
+## Logging Governance
 
 Logging review SHOULD consider:
 
@@ -639,7 +639,7 @@ Repeated high-volume logs with little diagnostic value SHOULD be removed or redu
 
 ---
 
-# Trace Governance
+## Trace Governance
 
 Tracing review SHOULD consider:
 
@@ -653,7 +653,7 @@ Tracing SHOULD describe architecture, not every implementation detail.
 
 ---
 
-# Alert Governance
+## Alert Governance
 
 Alerts require explicit quality expectations.
 
@@ -669,7 +669,7 @@ Persistent non-actionable alerts SHOULD be treated as observability defects.
 
 ---
 
-# Plugin Governance
+## Plugin Governance
 
 Plugins participating in FamilyOS observability MUST respect platform rules.
 
@@ -684,7 +684,7 @@ Plugins MUST NOT:
 
 ---
 
-# Plugin Compliance
+## Plugin Compliance
 
 The Plugin Compliance Framework MAY validate observability requirements.
 
@@ -704,7 +704,7 @@ Compliance requirements SHOULD remain proportional to plugin capabilities.
 
 ---
 
-# Third-Party Plugins
+## Third-Party Plugins
 
 Third-party plugins represent a stronger trust boundary.
 
@@ -723,7 +723,7 @@ The implementation may introduce these controls incrementally.
 
 ---
 
-# Telemetry Volume Governance
+## Telemetry Volume Governance
 
 Excessive telemetry creates cost and reduces signal quality.
 
@@ -739,7 +739,7 @@ Observability must remain proportional to operational value.
 
 ---
 
-# Failure Governance
+## Failure Governance
 
 Observability failures SHOULD be classified according to impact.
 
@@ -760,7 +760,7 @@ Not all observability failures have the same severity.
 
 ---
 
-# Configuration Governance
+## Configuration Governance
 
 Configuration may control:
 
@@ -777,7 +777,7 @@ Security invariants remain mandatory regardless of configuration.
 
 ---
 
-# Validation
+## Validation
 
 Security and privacy validation SHOULD verify:
 
@@ -793,7 +793,7 @@ These validations SHOULD be automated where practical.
 
 ---
 
-# Security Testing
+## Security Testing
 
 Tests SHOULD include deliberate sensitive values and confirm that they do not escape into observability signals.
 
@@ -815,7 +815,7 @@ This provides concrete evidence that observability controls work.
 
 ---
 
-# Governance Review
+## Governance Review
 
 Observability SHOULD be reviewed periodically as the platform evolves.
 
@@ -841,7 +841,7 @@ The objective is continuous reduction of unnecessary complexity and risk.
 
 ---
 
-# Minimal Initial Governance
+## Minimal Initial Governance
 
 EPIC-OBS-001 does not require a large governance bureaucracy.
 
@@ -863,7 +863,7 @@ Additional governance mechanisms should be introduced only when justified.
 
 ---
 
-# Relationship With Future Security Framework
+## Relationship With Future Security Framework
 
 EPIC-OBS-001 defines observability-specific security requirements.
 
@@ -885,7 +885,7 @@ Future security architecture may strengthen these controls without changing the 
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 This part of the Observability Framework is successful when:
 
@@ -903,7 +903,7 @@ This part of the Observability Framework is successful when:
 
 ---
 
-# Conclusion
+## Conclusion
 
 Observability creates operational visibility, but visibility must have boundaries.
 

@@ -6,6 +6,19 @@ from functools import cached_property
 from pathlib import Path
 
 from familyos_cli.application.build import RunPackageBuildUseCase
+from familyos_cli.application.family.activate_membership import ActivateMembership
+from familyos_cli.application.family.create_family import CreateFamily
+from familyos_cli.application.family.end_membership import EndMembership
+from familyos_cli.application.family.end_relationship import EndRelationship
+from familyos_cli.application.family.establish_membership import EstablishMembership
+from familyos_cli.application.family.establish_relationship import EstablishRelationship
+from familyos_cli.application.family.get_family import GetFamily
+from familyos_cli.application.family.get_membership import GetMembership
+from familyos_cli.application.family.get_relationship import GetRelationship
+from familyos_cli.application.family.resolve_family_boundary import (
+    ResolveFamilyBoundary,
+)
+from familyos_cli.application.family.suspend_membership import SuspendMembership
 from familyos_cli.application.generation.domain_generation_catalog_service import (
     DomainGenerationCatalogService,
 )
@@ -14,6 +27,14 @@ from familyos_cli.application.generation.generation_catalog_service import (
 )
 from familyos_cli.application.generation.recipe_catalog_service import (
     RecipeCatalogService,
+)
+from familyos_cli.application.person.create_person import CreatePerson
+from familyos_cli.application.person.get_person import GetPerson
+from familyos_cli.application.quality.quality_assessment_execution_service import (
+    QualityAssessmentExecutionService,
+)
+from familyos_cli.application.quality.quality_execution_service import (
+    QualityExecutionService,
 )
 from familyos_cli.application.specifications.domain_specification_loader_service import (
     DomainSpecificationLoaderService,
@@ -50,14 +71,29 @@ class CommandContext:
         self,
         container: ApplicationContainer | None = None,
         project_root: Path | None = None,
+        core_database_path: Path | None = None,
     ) -> None:
         """Initialize CLI context."""
 
         if container is not None:
+            if core_database_path is not None:
+                raise ValueError(
+                    "core_database_path cannot be combined with an explicit container",
+                )
             self._container = container
         elif project_root is not None:
-            self._container = ApplicationContainer(
-                project_root=project_root,
+            if core_database_path is None:
+                self._container = ApplicationContainer(
+                    project_root=project_root,
+                )
+            else:
+                self._container = ApplicationContainer(
+                    project_root=project_root,
+                    core_database_path=core_database_path,
+                )
+        elif core_database_path is not None:
+            self._container = ApplicationFactory.create(
+                core_database_path=core_database_path,
             )
         else:
             self._container = ApplicationFactory.create()
@@ -101,6 +137,84 @@ class CommandContext:
         return self._container.create_domain_use_case()
 
     @cached_property
+    def create_person(self) -> CreatePerson:
+        """Provide the durable Core Product Person creation use case."""
+
+        return self._container.create_person_use_case()
+
+    @cached_property
+    def get_person(self) -> GetPerson:
+        """Provide the durable Core Product Person query use case."""
+
+        return self._container.get_person_use_case()
+
+    @cached_property
+    def create_family(self) -> CreateFamily:
+        """Provide the durable Core Product Family creation use case."""
+
+        return self._container.create_family_use_case()
+
+    @cached_property
+    def get_family(self) -> GetFamily:
+        """Provide the durable Core Product Family query use case."""
+
+        return self._container.get_family_use_case()
+
+    @cached_property
+    def resolve_family_boundary(self) -> ResolveFamilyBoundary:
+        """Provide durable canonical Family boundary resolution."""
+
+        return self._container.resolve_family_boundary_use_case()
+
+    @cached_property
+    def establish_membership(self) -> EstablishMembership:
+        """Provide durable canonical Membership establishment."""
+
+        return self._container.establish_membership_use_case()
+
+    @cached_property
+    def get_membership(self) -> GetMembership:
+        """Provide durable canonical Membership retrieval."""
+
+        return self._container.get_membership_use_case()
+
+    @cached_property
+    def activate_membership(self) -> ActivateMembership:
+        """Provide durable canonical Membership activation."""
+
+        return self._container.activate_membership_use_case()
+
+    @cached_property
+    def suspend_membership(self) -> SuspendMembership:
+        """Provide durable canonical Membership suspension."""
+
+        return self._container.suspend_membership_use_case()
+
+    @cached_property
+    def end_membership(self) -> EndMembership:
+        """Provide durable canonical Membership ending."""
+
+        return self._container.end_membership_use_case()
+
+    @cached_property
+    def establish_relationship(self) -> EstablishRelationship:
+        """Provide durable canonical Relationship establishment."""
+
+        return self._container.establish_relationship_use_case()
+
+    @cached_property
+    def get_relationship(self) -> GetRelationship:
+        """Provide durable canonical Relationship retrieval."""
+
+        return self._container.get_relationship_use_case()
+
+    @cached_property
+    def end_relationship(self) -> EndRelationship:
+        """Provide durable canonical Relationship ending."""
+
+        return self._container.end_relationship_use_case()
+
+    @cached_property
     def generation_catalog(
         self,
     ) -> GenerationCatalogService:
@@ -139,6 +253,15 @@ class CommandContext:
         """Provide plugin compliance checking use case."""
 
         return self._container.check_plugin_compliance_use_case()
+
+    @cached_property
+    def quality_execution(self) -> QualityExecutionService:
+        "Provide the governed Phase 12 Quality execution service."
+        return self._container.quality_execution_service()
+
+    @cached_property
+    def quality_assessment(self) -> QualityAssessmentExecutionService:
+        return self._container.quality_assessment_execution_service()
 
     @cached_property
     def testing_evidence_freshness(

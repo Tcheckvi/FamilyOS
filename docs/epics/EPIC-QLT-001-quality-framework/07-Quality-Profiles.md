@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 07 Quality Profiles
+## 07 Quality Profiles
 
-## Overview
+### Overview
 
 The FamilyOS Quality Profile model defines how quality requirements are assembled, specialized, and applied to different categories of engineering targets.
 
@@ -24,7 +24,7 @@ Quality Profiles allow FamilyOS to preserve a common quality foundation while ad
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Profiles is to prevent two equally problematic extremes.
 
@@ -60,7 +60,7 @@ Target-Specific Application
 
 ---
 
-# Profile Definition
+## Profile Definition
 
 A Quality Profile is a versioned quality configuration that describes the assurance expectations for a defined category of target.
 
@@ -86,7 +86,7 @@ A profile defines what quality means for a specific engineering context.
 
 ---
 
-# Profile Principles
+## Profile Principles
 
 Quality Profiles must remain:
 
@@ -104,7 +104,7 @@ A profile must describe quality expectations rather than CI implementation detai
 
 ---
 
-# Profile Identity
+## Profile Identity
 
 Each profile should have a stable identifier.
 
@@ -130,7 +130,7 @@ Identifiers must remain stable and unique.
 
 ---
 
-# Profile Metadata
+## Profile Metadata
 
 A Quality Profile may contain metadata such as:
 
@@ -155,7 +155,7 @@ This metadata should eventually support both machine-readable and human-readable
 
 ---
 
-# Profile Scope
+## Profile Scope
 
 Profiles may apply to different scopes.
 
@@ -189,7 +189,7 @@ All Release Candidates
 
 ---
 
-# Baseline Quality Profile
+## Baseline Quality Profile
 
 FamilyOS should define a Baseline Quality Profile.
 
@@ -214,7 +214,7 @@ The baseline represents the minimum accepted FamilyOS engineering quality model.
 
 ---
 
-# Baseline Preservation
+## Baseline Preservation
 
 Specialized profiles may strengthen the baseline.
 
@@ -242,7 +242,7 @@ Any permitted weakening must require explicit governance.
 
 ---
 
-# Core Platform Profile
+## Core Platform Profile
 
 The Core Platform Profile applies to foundational FamilyOS components.
 
@@ -272,7 +272,7 @@ Strong Release Gates
 
 ---
 
-# Official Plugin Profile
+## Official Plugin Profile
 
 The Official Plugin Profile applies to FamilyOS maintained plugins.
 
@@ -303,7 +303,7 @@ Official Plugin Profile
 
 ---
 
-# Internal Component Profile
+## Internal Component Profile
 
 An Internal Component Profile may apply to non-public implementation components.
 
@@ -322,7 +322,7 @@ Risk still determines actual enforcement.
 
 ---
 
-# Documentation Profile
+## Documentation Profile
 
 The Documentation Profile applies to documentation-focused targets.
 
@@ -350,7 +350,7 @@ Runtime-specific rules may be `NOT_APPLICABLE`.
 
 ---
 
-# Infrastructure Profile
+## Infrastructure Profile
 
 The Infrastructure Profile applies to CI, deployment, development, or runtime infrastructure.
 
@@ -369,7 +369,7 @@ Infrastructure failures may affect the complete engineering platform and should 
 
 ---
 
-# Experimental Profile
+## Experimental Profile
 
 The Experimental Profile supports early-stage development.
 
@@ -395,7 +395,7 @@ Experimental must not mean uncontrolled.
 
 ---
 
-# Production Profile
+## Production Profile
 
 The Production Profile applies to components intended for normal operational use.
 
@@ -413,7 +413,7 @@ It may require:
 
 ---
 
-# Release Candidate Profile
+## Release Candidate Profile
 
 The Release Candidate Profile applies to artifacts approaching release.
 
@@ -435,7 +435,7 @@ Release Candidate profiles are typically associated with Release Gates.
 
 ---
 
-# Critical Component Profile
+## Critical Component Profile
 
 A Critical Component Profile may strengthen requirements for components with elevated risk.
 
@@ -458,7 +458,7 @@ A Critical Component Profile may require:
 
 ---
 
-# Profile Composition
+## Profile Composition
 
 Profiles should support composition where practical.
 
@@ -478,7 +478,7 @@ Composition should avoid duplicating rule definitions.
 
 ---
 
-# Profile Inheritance
+## Profile Inheritance
 
 A profile may inherit from one or more parent profiles.
 
@@ -496,7 +496,7 @@ Inheritance means child profiles receive parent requirements unless explicitly g
 
 ---
 
-# Multiple Inheritance
+## Multiple Inheritance
 
 If multiple profile inheritance is allowed, conflicts must be resolved deterministically.
 
@@ -521,7 +521,7 @@ are resolved.
 
 ---
 
-# Profile Precedence
+## Profile Precedence
 
 Profile configuration precedence must be explicit.
 
@@ -543,7 +543,7 @@ Lower-precedence configuration must not silently weaken mandatory requirements.
 
 ---
 
-# Profile Rules
+## Profile Rules
 
 A profile may declare:
 
@@ -558,7 +558,7 @@ However, mandatory baseline rules must be protected from unauthorized disabling.
 
 ---
 
-# Required Rules
+## Required Rules
 
 Required rules must execute when applicable.
 
@@ -573,7 +573,7 @@ Required does not necessarily mean blocking in every context.
 
 ---
 
-# Optional Rules
+## Optional Rules
 
 Optional rules may provide additional assurance.
 
@@ -588,7 +588,7 @@ Optional rules must remain explicit.
 
 ---
 
-# Advisory Rules
+## Advisory Rules
 
 Profiles may convert selected rules into advisory behavior.
 
@@ -605,7 +605,7 @@ Such behavior must remain traceable.
 
 ---
 
-# Rule Disabling
+## Rule Disabling
 
 Rule disabling must be controlled.
 
@@ -619,7 +619,7 @@ Disabling must not be used as an untracked substitute for exceptions.
 
 ---
 
-# Profile Domains
+## Profile Domains
 
 Profiles should specify applicable quality domains.
 
@@ -643,7 +643,7 @@ Domain selection improves clarity and quality reporting.
 
 ---
 
-# Domain Criticality in Profiles
+## Domain Criticality in Profiles
 
 A profile may assign different criticality levels to domains.
 
@@ -663,7 +663,7 @@ Domain criticality may influence gate behavior and evidence depth.
 
 ---
 
-# Profile Thresholds
+## Profile Thresholds
 
 Profiles may specialize thresholds.
 
@@ -686,7 +686,7 @@ Thresholds must be:
 
 ---
 
-# Threshold Inheritance
+## Threshold Inheritance
 
 A specialized profile may strengthen inherited thresholds.
 
@@ -704,7 +704,7 @@ Weakening inherited thresholds should require explicit authorization.
 
 ---
 
-# Profile Evidence Requirements
+## Profile Evidence Requirements
 
 Profiles may define the evidence required for an assessment.
 
@@ -730,7 +730,7 @@ Informational Evidence
 
 ---
 
-# Missing Evidence
+## Missing Evidence
 
 Missing required evidence must not silently imply success.
 
@@ -748,7 +748,7 @@ The exact result depends on gate semantics and risk.
 
 ---
 
-# Profile Gate Definitions
+## Profile Gate Definitions
 
 Profiles may activate quality gates.
 
@@ -773,7 +773,7 @@ Gate behavior should be reusable across profile categories.
 
 ---
 
-# Profile Severity Policy
+## Profile Severity Policy
 
 Profiles may define how finding severities affect decisions.
 
@@ -791,7 +791,7 @@ These semantics may differ by lifecycle stage.
 
 ---
 
-# Severity Escalation
+## Severity Escalation
 
 A profile may escalate the effective importance of certain findings.
 
@@ -809,7 +809,7 @@ The profile modifies decision behavior, not historical evidence.
 
 ---
 
-# Profile Criticality
+## Profile Criticality
 
 Profiles may define target criticality.
 
@@ -826,7 +826,7 @@ Criticality affects required assurance depth.
 
 ---
 
-# Criticality Resolution
+## Criticality Resolution
 
 Criticality may be derived from:
 
@@ -841,7 +841,7 @@ Criticality should not rely solely on manual guesswork.
 
 ---
 
-# Profile Applicability
+## Profile Applicability
 
 The system must determine which profiles apply to a target.
 
@@ -860,7 +860,7 @@ Applicability resolution must be deterministic.
 
 ---
 
-# Profile Resolution
+## Profile Resolution
 
 A target may resolve to one or more profiles.
 
@@ -880,7 +880,7 @@ The effective configuration must be inspectable.
 
 ---
 
-# Effective Profile
+## Effective Profile
 
 The Effective Profile is the final resolved quality configuration for a target.
 
@@ -903,7 +903,7 @@ The effective profile should be reproducible from configuration and profile vers
 
 ---
 
-# Profile Resolution Trace
+## Profile Resolution Trace
 
 FamilyOS should eventually be able to explain:
 
@@ -923,7 +923,7 @@ This trace is essential for debugging quality decisions.
 
 ---
 
-# Profile Conflict Detection
+## Profile Conflict Detection
 
 Profiles may create configuration conflicts.
 
@@ -953,7 +953,7 @@ Silent arbitrary resolution is not acceptable.
 
 ---
 
-# Conflict Resolution Strategy
+## Conflict Resolution Strategy
 
 For compatible constraints, the framework should generally prefer the stricter requirement.
 
@@ -973,7 +973,7 @@ Semantic conflicts should produce configuration errors requiring governance.
 
 ---
 
-# Profile Overrides
+## Profile Overrides
 
 Profiles may support authorized overrides.
 
@@ -991,7 +991,7 @@ Overrides must be version-controlled when authoritative.
 
 ---
 
-# Profile Override vs Exception
+## Profile Override vs Exception
 
 Overrides and exceptions serve different purposes.
 
@@ -1011,7 +1011,7 @@ Exceptions should be used for controlled non-compliance.
 
 ---
 
-# Exception Policies
+## Exception Policies
 
 A profile may define its default exception policy.
 
@@ -1028,7 +1028,7 @@ Critical profiles should normally require stronger governance.
 
 ---
 
-# Profile-Specific Exceptions
+## Profile-Specific Exceptions
 
 An exception may reference both a rule and the active profile.
 
@@ -1049,7 +1049,7 @@ This prevents an exception from unintentionally affecting other contexts.
 
 ---
 
-# Development Profile
+## Development Profile
 
 A Development Profile should optimize fast feedback while preserving essential protection.
 
@@ -1068,7 +1068,7 @@ Deep checks may execute less frequently.
 
 ---
 
-# Merge Profile
+## Merge Profile
 
 A Merge Profile may strengthen validation before code enters a protected branch.
 
@@ -1085,7 +1085,7 @@ No Blocking Findings
 
 ---
 
-# Integration Profile
+## Integration Profile
 
 An Integration Profile may emphasize component interaction.
 
@@ -1099,7 +1099,7 @@ Possible checks include:
 
 ---
 
-# Full Verification Profile
+## Full Verification Profile
 
 A Full Verification Profile executes the complete applicable quality suite.
 
@@ -1114,7 +1114,7 @@ This profile prioritizes assurance over immediate feedback speed.
 
 ---
 
-# Fast Profile
+## Fast Profile
 
 A Fast Profile prioritizes development feedback.
 
@@ -1128,7 +1128,7 @@ Fast profiles must not be confused with complete assurance.
 
 ---
 
-# Security-Sensitive Profile
+## Security-Sensitive Profile
 
 A Security-Sensitive Profile may strengthen:
 
@@ -1143,7 +1143,7 @@ Security-sensitive targets may permit fewer exceptions.
 
 ---
 
-# Public API Profile
+## Public API Profile
 
 A Public API Profile may strengthen compatibility requirements.
 
@@ -1159,7 +1159,7 @@ Breaking changes may trigger stronger release controls.
 
 ---
 
-# Persistent Data Profile
+## Persistent Data Profile
 
 A Persistent Data Profile may emphasize:
 
@@ -1174,7 +1174,7 @@ Targets that manage durable data require stronger assurance because failures may
 
 ---
 
-# Plugin Capability Profile
+## Plugin Capability Profile
 
 A Plugin Capability Profile may apply specifically to externally consumable capabilities.
 
@@ -1189,7 +1189,7 @@ It may require:
 
 ---
 
-# Profile Lifecycle
+## Profile Lifecycle
 
 Profiles must have a controlled lifecycle.
 
@@ -1211,7 +1211,7 @@ Profile lifecycle changes must be governed.
 
 ---
 
-# Draft Profiles
+## Draft Profiles
 
 Draft profiles are under design.
 
@@ -1219,7 +1219,7 @@ They should not define authoritative quality behavior unless explicitly enabled 
 
 ---
 
-# Experimental Profiles
+## Experimental Profiles
 
 Experimental profiles allow evaluation of new quality configurations.
 
@@ -1233,7 +1233,7 @@ They may be used to assess:
 
 ---
 
-# Active Profiles
+## Active Profiles
 
 Active profiles are part of the authoritative Quality Framework.
 
@@ -1241,7 +1241,7 @@ They must be versioned, documented, and supported.
 
 ---
 
-# Deprecated Profiles
+## Deprecated Profiles
 
 Deprecated profiles remain temporarily available for migration purposes.
 
@@ -1249,7 +1249,7 @@ They should identify a recommended replacement.
 
 ---
 
-# Retired Profiles
+## Retired Profiles
 
 Retired profiles are no longer active.
 
@@ -1259,7 +1259,7 @@ Historical quality evidence must remain interpretable.
 
 ---
 
-# Profile Versioning
+## Profile Versioning
 
 Profiles should be versioned when effective quality behavior changes materially.
 
@@ -1276,7 +1276,7 @@ Versioning is essential because the same source state may produce different resu
 
 ---
 
-# Profile Semantic Versioning
+## Profile Semantic Versioning
 
 A profile versioning model may eventually distinguish:
 
@@ -1295,7 +1295,7 @@ The exact versioning model should align with broader FamilyOS governance.
 
 ---
 
-# Profile Change Impact
+## Profile Change Impact
 
 Profile changes may affect many components simultaneously.
 
@@ -1317,7 +1317,7 @@ This supports controlled rollout.
 
 ---
 
-# Progressive Profile Rollout
+## Progressive Profile Rollout
 
 Stricter profiles may be introduced progressively.
 
@@ -1337,7 +1337,7 @@ Progressive rollout reduces disruption.
 
 ---
 
-# Profile Baselines
+## Profile Baselines
 
 Profiles may use quality baselines.
 
@@ -1357,7 +1357,7 @@ Baselining must support improvement rather than permanent debt acceptance.
 
 ---
 
-# Profile Metrics
+## Profile Metrics
 
 Profiles may define required quality metrics.
 
@@ -1378,7 +1378,7 @@ Metrics should support decisions rather than become arbitrary scoring systems.
 
 ---
 
-# Profile Quality Reports
+## Profile Quality Reports
 
 Quality reports should identify the profile used.
 
@@ -1399,7 +1399,7 @@ Without profile identification, results may be difficult to interpret.
 
 ---
 
-# Profile Comparison
+## Profile Comparison
 
 The framework should eventually support profile comparison.
 
@@ -1425,7 +1425,7 @@ A comparison should expose:
 
 ---
 
-# Profile Inspection
+## Profile Inspection
 
 Engineers should be able to inspect the effective profile before executing quality checks.
 
@@ -1450,7 +1450,7 @@ The specific CLI design remains an implementation decision.
 
 ---
 
-# Profile Discovery
+## Profile Discovery
 
 Profiles should be discoverable through the Quality Registry.
 
@@ -1470,7 +1470,7 @@ This improves governance and usability.
 
 ---
 
-# Profile Registry
+## Profile Registry
 
 Conceptually:
 
@@ -1491,7 +1491,7 @@ The registry should include historical versions where required for auditability.
 
 ---
 
-# Profile Ownership
+## Profile Ownership
 
 Every active profile must have ownership.
 
@@ -1509,7 +1509,7 @@ Unowned profiles must not become authoritative.
 
 ---
 
-# Profile Review
+## Profile Review
 
 Before activation, profiles should be reviewed for:
 
@@ -1528,7 +1528,7 @@ Reviews reduce unintended framework behavior.
 
 ---
 
-# Profile Validation
+## Profile Validation
 
 Machine-readable profile definitions should be validated.
 
@@ -1546,7 +1546,7 @@ Invalid profiles must not become active.
 
 ---
 
-# Inheritance Cycle Prevention
+## Inheritance Cycle Prevention
 
 Profile inheritance must never contain cycles.
 
@@ -1566,7 +1566,7 @@ Profile loaders must detect and reject such configurations.
 
 ---
 
-# Profile Testing
+## Profile Testing
 
 Profiles should be tested.
 
@@ -1584,7 +1584,7 @@ Golden profile fixtures may preserve expected behavior.
 
 ---
 
-# Profile Determinism
+## Profile Determinism
 
 Given equivalent:
 
@@ -1601,7 +1601,7 @@ Profile resolution must not depend on undocumented environmental state.
 
 ---
 
-# Profile Portability
+## Profile Portability
 
 Profiles should be reusable across repositories or components when their semantics match.
 
@@ -1611,7 +1611,7 @@ This improves ecosystem consistency.
 
 ---
 
-# Repository Quality Configuration
+## Repository Quality Configuration
 
 Repositories may select or extend approved profiles.
 
@@ -1629,7 +1629,7 @@ Repositories must not redefine core quality semantics arbitrarily.
 
 ---
 
-# Target-Level Profile Assignment
+## Target-Level Profile Assignment
 
 Specific targets may require stronger profiles.
 
@@ -1650,7 +1650,7 @@ Effective configuration becomes the composition of both.
 
 ---
 
-# Automatic Profile Assignment
+## Automatic Profile Assignment
 
 Some profiles may be assigned automatically based on metadata.
 
@@ -1674,7 +1674,7 @@ Automatic assignment rules must be explicit and inspectable.
 
 ---
 
-# Manual Profile Assignment
+## Manual Profile Assignment
 
 Manual assignment may be required for special cases.
 
@@ -1682,7 +1682,7 @@ Manual assignment should be version-controlled and reviewed where it affects aut
 
 ---
 
-# Profile Drift
+## Profile Drift
 
 Profile drift occurs when different repositories progressively customize profiles until common quality expectations disappear.
 
@@ -1696,7 +1696,7 @@ The framework must prevent uncontrolled profile drift through:
 
 ---
 
-# Profile Duplication
+## Profile Duplication
 
 Repositories should not copy profiles locally merely to make small modifications.
 
@@ -1720,7 +1720,7 @@ Duplication makes governance difficult.
 
 ---
 
-# Profile Security
+## Profile Security
 
 Quality profiles are security-sensitive configuration.
 
@@ -1735,7 +1735,7 @@ Authoritative profile changes must therefore be:
 
 ---
 
-# Profile Reliability
+## Profile Reliability
 
 Profile resolution failure must not silently fall back to weaker assurance.
 
@@ -1755,7 +1755,7 @@ unless an explicit failover policy exists.
 
 ---
 
-# Fail-Safe Profile Behavior
+## Fail-Safe Profile Behavior
 
 For critical contexts:
 
@@ -1771,7 +1771,7 @@ The framework should prefer visible configuration failure over silent weakening.
 
 ---
 
-# Profile Performance
+## Profile Performance
 
 Profiles influence execution cost.
 
@@ -1787,7 +1787,7 @@ This is why separate fast, standard, full, and release-oriented profiles may exi
 
 ---
 
-# Profile and Execution Mode Separation
+## Profile and Execution Mode Separation
 
 Quality Profiles and execution modes are related but different.
 
@@ -1807,7 +1807,7 @@ The framework must avoid conflating these concepts.
 
 ---
 
-# Example
+## Example
 
 A Production Profile may require thirty rules.
 
@@ -1819,7 +1819,7 @@ The authoritative merge or release decision must still ensure all required evide
 
 ---
 
-# Profile and Gate Separation
+## Profile and Gate Separation
 
 Profiles define expectations.
 
@@ -1839,7 +1839,7 @@ A single profile may participate in several gates.
 
 ---
 
-# Profile and Risk Model
+## Profile and Risk Model
 
 Profiles operationalize risk-based quality.
 
@@ -1857,7 +1857,7 @@ Higher risk generally results in stronger profiles.
 
 ---
 
-# Profile and Compliance
+## Profile and Compliance
 
 Compliance frameworks may contribute specialized profiles.
 
@@ -1877,7 +1877,7 @@ This allows compliance rules to integrate without duplicating the Quality Framew
 
 ---
 
-# Profile and Testing Framework
+## Profile and Testing Framework
 
 Testing expectations should be referenced through quality requirements derived from the Testing Framework.
 
@@ -1892,7 +1892,7 @@ They must not redefine testing methodology.
 
 ---
 
-# Profile and Documentation Framework
+## Profile and Documentation Framework
 
 Documentation profiles may consume requirements defined by the Documentation Framework.
 
@@ -1906,7 +1906,7 @@ Examples include:
 
 ---
 
-# Profile and Build Framework
+## Profile and Build Framework
 
 Build-related profiles may require:
 
@@ -1919,7 +1919,7 @@ These requirements become especially important for release profiles.
 
 ---
 
-# Profile and Release Framework
+## Profile and Release Framework
 
 Release profiles provide quality prerequisites for Release Framework transitions.
 
@@ -1939,7 +1939,7 @@ Release Framework Decision
 
 ---
 
-# Profile Observability
+## Profile Observability
 
 The framework should eventually expose profile usage metrics.
 
@@ -1957,7 +1957,7 @@ This information helps evaluate profile effectiveness.
 
 ---
 
-# Profile Effectiveness
+## Profile Effectiveness
 
 Profiles should be periodically assessed.
 
@@ -1981,7 +1981,7 @@ Profiles must evolve based on evidence.
 
 ---
 
-# Profile Complexity
+## Profile Complexity
 
 Profiles should remain understandable.
 
@@ -1999,41 +1999,41 @@ over deep configuration hierarchies.
 
 ---
 
-# Profile Anti-Patterns
+## Profile Anti-Patterns
 
 The Quality Profile model rejects several anti-patterns.
 
-## One Universal Profile
+### One Universal Profile
 
 A single profile cannot represent every quality context effectively.
 
-## Per-Repository Reinvention
+### Per-Repository Reinvention
 
 Repositories must not independently recreate quality standards.
 
-## Hidden Profile Overrides
+### Hidden Profile Overrides
 
 Effective behavior must remain inspectable.
 
-## Silent Weakening
+### Silent Weakening
 
 Specialized profiles must not silently remove mandatory baseline requirements.
 
-## Excessive Inheritance
+### Excessive Inheritance
 
 Complex inheritance chains reduce explainability.
 
-## Profile as Tool Configuration
+### Profile as Tool Configuration
 
 A profile defines quality expectations, not raw tool command lines.
 
-## Permanent Experimental Profile
+### Permanent Experimental Profile
 
 Experimental profiles must not become permanent substitutes for production assurance.
 
 ---
 
-# Example — Official Plugin
+## Example — Official Plugin
 
 Consider an official Finance plugin.
 
@@ -2065,7 +2065,7 @@ The effective profile determines all applicable quality verification.
 
 ---
 
-# Example — Documentation EPIC
+## Example — Documentation EPIC
 
 An EPIC documentation directory may resolve to:
 
@@ -2088,7 +2088,7 @@ Runtime performance rules may be `NOT_APPLICABLE`.
 
 ---
 
-# Example — Release Candidate
+## Example — Release Candidate
 
 A release candidate may resolve to:
 
@@ -2113,7 +2113,7 @@ The Release Gate then evaluates the resulting assessment.
 
 ---
 
-# Reference Profile Resolution Model
+## Reference Profile Resolution Model
 
 ```text id="ar58mm"
                 Target Metadata
@@ -2147,7 +2147,7 @@ This is the core runtime model of Quality Profiles.
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Profiles provide the mechanism required to scale quality assurance across a heterogeneous ecosystem.
 
@@ -2175,7 +2175,7 @@ With profiles, they become explicit and governable.
 
 ---
 
-# Final Profile Principle
+## Final Profile Principle
 
 Quality must be consistent without being inflexible.
 

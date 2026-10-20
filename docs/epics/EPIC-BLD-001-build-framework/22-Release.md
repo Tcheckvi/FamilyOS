@@ -1,8 +1,8 @@
 # Build Framework
 
-# 22 Release
+## 22 Release
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework must itself follow a controlled completion and release process before becoming the authoritative FamilyOS Build Framework.
 
@@ -28,7 +28,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the framework-level release process for EPIC-BLD-001.
 
@@ -48,7 +48,7 @@ It establishes requirements for:
 
 ---
 
-# Release Scope
+## Release Scope
 
 This release process applies to the complete EPIC-BLD-001 documentation baseline.
 
@@ -105,7 +105,7 @@ The expected final baseline therefore contains:
 
 ---
 
-# Release Boundary
+## Release Boundary
 
 Framework release must not be confused with implementation release.
 
@@ -133,7 +133,7 @@ It does not imply that every capability described by the framework is already im
 
 ---
 
-# Release Principle 1 — Architecture Before Implementation
+## Release Principle 1 — Architecture Before Implementation
 
 The Build Framework should be released as an architectural foundation before implementation expands significantly.
 
@@ -153,7 +153,7 @@ Evolution
 
 ---
 
-# Release Principle 2 — Completion Is Not File Existence
+## Release Principle 2 — Completion Is Not File Existence
 
 A framework is not complete merely because all expected filenames exist.
 
@@ -175,7 +175,7 @@ Evidence
 
 ---
 
-# Release Principle 3 — No Transitional Structure
+## Release Principle 3 — No Transitional Structure
 
 Temporary restructuring artifacts must not remain in the released baseline.
 
@@ -190,7 +190,7 @@ must be removed after confirming that any required content has been incorporated
 
 ---
 
-# Release Principle 4 — One Canonical Chapter Per Number
+## Release Principle 4 — One Canonical Chapter Per Number
 
 The released framework must contain exactly one canonical numbered chapter for each number from `00` through `23`.
 
@@ -198,7 +198,7 @@ Duplicate numbering is prohibited.
 
 ---
 
-# Release Principle 5 — Control Documents Must Agree
+## Release Principle 5 — Control Documents Must Agree
 
 The framework must not reach release with contradictory status information.
 
@@ -216,7 +216,7 @@ Revision-History.md
 
 ---
 
-# Release Principle 6 — Validation Precedes Release
+## Release Principle 6 — Validation Precedes Release
 
 Release cannot be used as a substitute for validation.
 
@@ -236,7 +236,7 @@ Release
 
 ---
 
-# Release Principle 7 — Framework Release Does Not Authorize Software Publication
+## Release Principle 7 — Framework Release Does Not Authorize Software Publication
 
 EPIC-BLD-001 release establishes Build Framework authority.
 
@@ -246,7 +246,7 @@ Software release remains governed by EPIC-REL-001.
 
 ---
 
-# Release Readiness Model
+## Release Readiness Model
 
 Framework release readiness is composed of:
 
@@ -268,7 +268,7 @@ All mandatory domains must pass before release.
 
 ---
 
-# Structural Readiness
+## Structural Readiness
 
 Structural readiness requires the final canonical tree.
 
@@ -311,7 +311,7 @@ EPIC-BLD-001-build-framework/
 
 ---
 
-# Structural Release Gate
+## Structural Release Gate
 
 The structural gate fails if:
 
@@ -324,7 +324,7 @@ The structural gate fails if:
 
 ---
 
-# Content Readiness
+## Content Readiness
 
 Every numbered chapter must fulfill its assigned responsibility.
 
@@ -356,7 +356,7 @@ Release review must confirm that the framework collectively defines:
 
 ---
 
-# Content Quality Gate
+## Content Quality Gate
 
 Release should fail if a chapter:
 
@@ -368,7 +368,7 @@ Release should fail if a chapter:
 
 ---
 
-# Architectural Readiness
+## Architectural Readiness
 
 The released framework must define one coherent Build Architecture.
 
@@ -398,7 +398,7 @@ Release Handoff
 
 ---
 
-# Architectural Release Gate
+## Architectural Release Gate
 
 The architectural gate requires agreement between:
 
@@ -414,7 +414,7 @@ The architectural gate requires agreement between:
 
 ---
 
-# Build Trust Release Gate
+## Build Trust Release Gate
 
 The framework must consistently preserve:
 
@@ -436,7 +436,7 @@ These distinctions are mandatory.
 
 ---
 
-# Artifact Model Readiness
+## Artifact Model Readiness
 
 Before release, EPIC-BLD-001 must consistently distinguish:
 
@@ -454,7 +454,7 @@ The terminology must not drift between chapters.
 
 ---
 
-# Build Evidence Readiness
+## Build Evidence Readiness
 
 The framework must provide a coherent evidence model.
 
@@ -478,13 +478,13 @@ The architecture must support proportional evidence.
 
 ---
 
-# Integration Readiness
+## Integration Readiness
 
 EPIC-BLD-001 must integrate cleanly with surrounding FamilyOS frameworks.
 
 ---
 
-# Engineering Foundation Integration
+## Engineering Foundation Integration
 
 EPIC-BLD-001 must remain aligned with:
 
@@ -496,7 +496,7 @@ The Build Framework specializes engineering principles rather than replacing the
 
 ---
 
-# Testing Integration
+## Testing Integration
 
 EPIC-BLD-001 must remain aligned with:
 
@@ -510,7 +510,7 @@ Testing semantics remain external.
 
 ---
 
-# Quality Integration
+## Quality Integration
 
 EPIC-BLD-001 must remain aligned with:
 
@@ -524,7 +524,7 @@ Quality governance remains external.
 
 ---
 
-# Documentation Integration
+## Documentation Integration
 
 EPIC-BLD-001 must remain aligned with:
 
@@ -536,7 +536,7 @@ Documentation standards remain externally governed.
 
 ---
 
-# Plugin Compliance Integration
+## Plugin Compliance Integration
 
 Official plugin builds must remain compatible with:
 
@@ -548,7 +548,7 @@ Build automation may invoke compliance validation without redefining compliance 
 
 ---
 
-# Release Framework Integration
+## Release Framework Integration
 
 The most important downstream integration is:
 
@@ -570,7 +570,7 @@ Release Decision + Publication
 
 ---
 
-# Governance Readiness
+## Governance Readiness
 
 `16-Build-Governance.md` must define sufficient governance for the released framework.
 
@@ -587,7 +587,7 @@ The release baseline must establish:
 
 ---
 
-# Validation Readiness
+## Validation Readiness
 
 Framework validation is governed by:
 
@@ -599,7 +599,7 @@ Release must not proceed until mandatory validation criteria pass.
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 The final validation may include evidence such as:
 
@@ -617,7 +617,7 @@ Automated structural checks do not replace manual architectural validation.
 
 ---
 
-# Validation Findings
+## Validation Findings
 
 Release must not proceed with unresolved:
 
@@ -637,7 +637,7 @@ Minor findings may only remain when explicitly accepted and recorded.
 
 ---
 
-# VALIDATION.md
+## VALIDATION.md
 
 The control document:
 
@@ -657,7 +657,7 @@ after validation is complete.
 
 ---
 
-# MANIFEST.md
+## MANIFEST.md
 
 `MANIFEST.md` must represent the canonical released file set.
 
@@ -665,7 +665,7 @@ It should contain no references to removed inherited or migration documents.
 
 ---
 
-# EPIC.yaml
+## EPIC.yaml
 
 Before release, `EPIC.yaml` should be reviewed for:
 
@@ -682,7 +682,7 @@ The status should reflect actual framework completion.
 
 ---
 
-# README.md
+## README.md
 
 `README.md` should provide correct navigation and framework status.
 
@@ -690,7 +690,7 @@ It should not describe obsolete structure.
 
 ---
 
-# CHANGELOG.md
+## CHANGELOG.md
 
 The changelog should record the completion of the Build Framework baseline.
 
@@ -698,7 +698,7 @@ The release entry should summarize significant framework changes, including rest
 
 ---
 
-# Revision-History.md
+## Revision-History.md
 
 Revision history should provide traceability of meaningful framework evolution.
 
@@ -712,7 +712,7 @@ It may record:
 
 ---
 
-# EPIC-BLD-001.md
+## EPIC-BLD-001.md
 
 The EPIC summary document should align with `00-EPIC.md`.
 
@@ -720,7 +720,7 @@ The two documents must not present conflicting scope or completion criteria.
 
 ---
 
-# Implementation Checklist Readiness
+## Implementation Checklist Readiness
 
 `23-Implementation-Checklist.md` must exist and be complete before framework release.
 
@@ -738,7 +738,7 @@ Those items do not necessarily block release of the architectural framework.
 
 ---
 
-# Framework Completion Versus Implementation Completion
+## Framework Completion Versus Implementation Completion
 
 This distinction is mandatory.
 
@@ -752,7 +752,7 @@ EPIC-BLD-001 may be closed as a framework while implementation work remains on t
 
 ---
 
-# Framework Versioning
+## Framework Versioning
 
 The Build Framework should participate in FamilyOS repository versioning conventions.
 
@@ -760,7 +760,7 @@ The framework release should correspond to an identifiable Git commit.
 
 ---
 
-# Release Commit
+## Release Commit
 
 The release commit should contain the complete validated Build Framework baseline.
 
@@ -768,7 +768,7 @@ It should not include unrelated accidental modifications where avoidable.
 
 ---
 
-# Release Commit Message
+## Release Commit Message
 
 A release commit message should clearly identify framework completion.
 
@@ -782,7 +782,7 @@ The exact repository convention remains governed by FamilyOS engineering standar
 
 ---
 
-# Git Tag
+## Git Tag
 
 A completed Build Framework baseline may receive an annotated Git tag.
 
@@ -792,7 +792,7 @@ The exact version must be selected from repository state at release time rather 
 
 ---
 
-# Tag Meaning
+## Tag Meaning
 
 The tag identifies:
 
@@ -804,7 +804,7 @@ It does not imply that all future Build Framework roadmap capabilities are imple
 
 ---
 
-# Annotated Tag
+## Annotated Tag
 
 An annotated tag is preferred where repository conventions require release metadata.
 
@@ -816,13 +816,13 @@ EPIC-BLD-001 Build Framework completed
 
 ---
 
-# Remote Publication
+## Remote Publication
 
 After the release commit and tag are verified locally, they may be pushed to the canonical repository according to normal FamilyOS Git governance.
 
 ---
 
-# Release Evidence
+## Release Evidence
 
 Framework release evidence should include at minimum:
 
@@ -844,7 +844,7 @@ Additional evidence may include:
 
 ---
 
-# Clean Working Tree
+## Clean Working Tree
 
 After final commit, the preferred repository state is:
 
@@ -856,7 +856,7 @@ This provides a clear framework release boundary.
 
 ---
 
-# Pre-Release Git Review
+## Pre-Release Git Review
 
 Before committing the final framework, review:
 
@@ -872,7 +872,7 @@ The purpose is to verify that all intended migrations and additions are represen
 
 ---
 
-# Structural Migration Review
+## Structural Migration Review
 
 Because EPIC-BLD-001 originated from an inherited generic framework structure, release review must specifically verify renamed and removed documents.
 
@@ -898,7 +898,7 @@ Historical references may remain only when intentionally describing migration hi
 
 ---
 
-# Legacy Removal
+## Legacy Removal
 
 Before final commit:
 
@@ -911,7 +911,7 @@ must be removed after confirming that required content has been preserved elsewh
 
 ---
 
-# Release Candidate State
+## Release Candidate State
 
 Before final framework release, EPIC-BLD-001 may conceptually enter:
 
@@ -925,7 +925,7 @@ This state is useful when documentation is complete but final validation is stil
 
 ---
 
-# Framework Status Lifecycle
+## Framework Status Lifecycle
 
 A conceptual lifecycle is:
 
@@ -947,7 +947,7 @@ Exact status values should remain consistent with FamilyOS EPIC governance.
 
 ---
 
-# Release Gate Model
+## Release Gate Model
 
 The complete release gate is:
 
@@ -973,7 +973,7 @@ EPIC-BLD-001 RELEASE READY
 
 ---
 
-# Release Failure
+## Release Failure
 
 Release must stop when a mandatory gate fails.
 
@@ -993,7 +993,7 @@ Release pressure must not bypass framework validation.
 
 ---
 
-# Post-Release Status
+## Post-Release Status
 
 After release, EPIC-BLD-001 becomes the authoritative Build Framework baseline.
 
@@ -1007,7 +1007,7 @@ Future changes should be classified as:
 
 ---
 
-# Post-Release Corrections
+## Post-Release Corrections
 
 Minor documentation corrections may be made without reopening the entire EPIC when they do not change architecture.
 
@@ -1020,7 +1020,7 @@ Examples include:
 
 ---
 
-# Compatible Extensions
+## Compatible Extensions
 
 New guidance may be added when it remains compatible with existing framework principles.
 
@@ -1028,7 +1028,7 @@ Such changes should update relevant control documents.
 
 ---
 
-# Significant Revisions
+## Significant Revisions
 
 Significant changes may require a new framework revision.
 
@@ -1042,7 +1042,7 @@ Examples include:
 
 ---
 
-# Architectural Changes
+## Architectural Changes
 
 Architectural changes may require:
 
@@ -1060,7 +1060,7 @@ depending on scope and FamilyOS governance.
 
 ---
 
-# Framework Evolution
+## Framework Evolution
 
 The released Build Framework should remain stable enough to guide implementation while still allowing controlled evolution.
 
@@ -1074,7 +1074,7 @@ Governed Evolution
 
 ---
 
-# Roadmap After Release
+## Roadmap After Release
 
 Framework release activates the implementation roadmap defined in:
 
@@ -1095,7 +1095,7 @@ The next maturity steps may include:
 
 ---
 
-# Relationship With EPIC-REL-001 After Closure
+## Relationship With EPIC-REL-001 After Closure
 
 Once EPIC-BLD-001 is validated, FamilyOS can proceed more confidently with EPIC-REL-001 because the upstream artifact contract is defined.
 
@@ -1113,37 +1113,37 @@ Can Define Release Lifecycle
 
 ---
 
-# Release Anti-Pattern — Tag Before Validation
+## Release Anti-Pattern — Tag Before Validation
 
 A framework must not be tagged as complete before mandatory validation passes.
 
 ---
 
-# Release Anti-Pattern — Tagging Transitional State
+## Release Anti-Pattern — Tagging Transitional State
 
 Temporary migration files or duplicate chapter numbers must not be included in the final framework tag.
 
 ---
 
-# Release Anti-Pattern — Version Guessing
+## Release Anti-Pattern — Version Guessing
 
 The framework documentation must not assume the next repository version without checking actual Git history.
 
 ---
 
-# Release Anti-Pattern — Hidden Uncommitted Changes
+## Release Anti-Pattern — Hidden Uncommitted Changes
 
 The final release boundary should not depend on unrelated or forgotten working-tree modifications.
 
 ---
 
-# Release Anti-Pattern — Closing With Placeholder Documents
+## Release Anti-Pattern — Closing With Placeholder Documents
 
 Every normative chapter must contain substantive framework content before closure.
 
 ---
 
-# Release Anti-Pattern — Framework Equals Implementation
+## Release Anti-Pattern — Framework Equals Implementation
 
 The architectural framework may be complete while implementation continues.
 
@@ -1151,7 +1151,7 @@ Conflating these states creates misleading project status.
 
 ---
 
-# Release Anti-Pattern — Build Framework Publishing Software
+## Release Anti-Pattern — Build Framework Publishing Software
 
 EPIC-BLD-001 does not own official software publication.
 
@@ -1159,7 +1159,7 @@ That boundary belongs to EPIC-REL-001.
 
 ---
 
-# Release Checklist
+## Release Checklist
 
 Before declaring EPIC-BLD-001 release-ready, confirm:
 
@@ -1196,7 +1196,7 @@ Before declaring EPIC-BLD-001 release-ready, confirm:
 
 ---
 
-# Release Success Criteria
+## Release Success Criteria
 
 EPIC-BLD-001 is ready for release when FamilyOS can confidently answer:
 
@@ -1216,53 +1216,53 @@ EPIC-BLD-001 is ready for release when FamilyOS can confidently answer:
 
 ---
 
-# Release Invariants
+## Release Invariants
 
 The following invariants must hold at release.
 
-## Invariant 1
+### Invariant 1
 
 The released framework has exactly one canonical chapter for every number from `00` through `23`.
 
-## Invariant 2
+### Invariant 2
 
 No temporary migration document remains.
 
-## Invariant 3
+### Invariant 3
 
 The framework has passed structural and semantic validation.
 
-## Invariant 4
+### Invariant 4
 
 Control documents describe the same framework state.
 
-## Invariant 5
+### Invariant 5
 
 Build trust remains distinct from release authorization.
 
-## Invariant 6
+### Invariant 6
 
 EPIC-REL-001 remains responsible for software release governance.
 
-## Invariant 7
+### Invariant 7
 
 The release baseline corresponds to an identifiable Git commit.
 
-## Invariant 8
+### Invariant 8
 
 The release tag corresponds to the validated framework state.
 
-## Invariant 9
+### Invariant 9
 
 Framework completion does not falsely claim implementation completion.
 
-## Invariant 10
+### Invariant 10
 
 Future framework evolution remains governed.
 
 ---
 
-# Final Release Model
+## Final Release Model
 
 The complete EPIC-BLD-001 release process can be summarized as:
 
@@ -1294,7 +1294,7 @@ EPIC-BLD-001 COMPLETED
 
 ---
 
-# Final Principle
+## Final Principle
 
 The release of EPIC-BLD-001 is founded on the following rule:
 

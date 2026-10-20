@@ -1,8 +1,8 @@
 # Release Framework
 
-# 19 Release Security
+## 19 Release Security
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines Release Security as the set of architectural, operational, and governance controls used to protect FamilyOS releases from unauthorized, unintended, ambiguous, or malicious modification.
 
@@ -52,7 +52,7 @@ Release Security therefore protects:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Release Security is to establish requirements for:
 
@@ -85,7 +85,7 @@ The objective is to ensure that an official FamilyOS release can be trusted not 
 
 ---
 
-# Core Security Principle
+## Core Security Principle
 
 The central principle is:
 
@@ -125,7 +125,7 @@ Release security must therefore protect both software correctness and release in
 
 ---
 
-# Security Scope
+## Security Scope
 
 Release Security covers the following domains:
 
@@ -153,11 +153,11 @@ No single control is sufficient by itself.
 
 ---
 
-# Security Objectives
+## Security Objectives
 
 FamilyOS Release Security has the following primary objectives.
 
-## Confidentiality
+### Confidentiality
 
 Sensitive release information must be protected where disclosure could create security risk.
 
@@ -170,7 +170,7 @@ Examples include:
 
 ---
 
-## Integrity
+### Integrity
 
 Release-related data and artifacts must be protected against unauthorized modification.
 
@@ -187,25 +187,25 @@ This includes:
 
 ---
 
-## Authenticity
+### Authenticity
 
 The release system should provide confidence that release operations were performed by authorized identities.
 
 ---
 
-## Authorization
+### Authorization
 
 Only explicitly authorized actors or automation should be able to perform privileged release operations.
 
 ---
 
-## Traceability
+### Traceability
 
 Security-relevant release activity should remain attributable and reconstructable.
 
 ---
 
-## Availability
+### Availability
 
 Release systems should remain sufficiently available to support release and recovery operations.
 
@@ -213,7 +213,7 @@ Availability failure must not cause insecure bypass.
 
 ---
 
-# Trust Model
+## Trust Model
 
 Release security relies on a chain of trust.
 
@@ -241,7 +241,7 @@ Trust in the final release depends on the integrity of this chain.
 
 ---
 
-# Trust Boundaries
+## Trust Boundaries
 
 Release operations cross several trust boundaries.
 
@@ -273,7 +273,7 @@ Crossing a boundary may require:
 
 ---
 
-# Threat Model
+## Threat Model
 
 FamilyOS release security must consider threats such as:
 
@@ -298,7 +298,7 @@ The framework should evolve as the threat model matures.
 
 ---
 
-# Release Identity Security
+## Release Identity Security
 
 Every privileged release operation should identify the release or candidate being affected.
 
@@ -321,7 +321,7 @@ This reduces accidental operation against the wrong release state.
 
 ---
 
-# Human Identity
+## Human Identity
 
 Privileged human release actions should originate from identifiable authorized accounts.
 
@@ -337,7 +337,7 @@ without relying only on informal team knowledge.
 
 ---
 
-# Automation Identity
+## Automation Identity
 
 Release automation should also have identifiable identities.
 
@@ -352,7 +352,7 @@ Automation actions should not appear indistinguishable from arbitrary users wher
 
 ---
 
-# Authentication
+## Authentication
 
 Privileged release systems must require appropriate authentication.
 
@@ -369,7 +369,7 @@ The exact mechanism may evolve.
 
 ---
 
-# Multi-Factor Authentication
+## Multi-Factor Authentication
 
 Maintainer accounts with direct release publication authority SHOULD use multi-factor authentication where supported.
 
@@ -382,7 +382,7 @@ This is especially important for:
 
 ---
 
-# Authorization
+## Authorization
 
 Authentication establishes identity.
 
@@ -394,7 +394,7 @@ An authenticated user MUST NOT automatically receive release publication authori
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Release systems MUST follow least privilege.
 
@@ -415,7 +415,7 @@ may represent separate privileges.
 
 ---
 
-# Separation of Duties
+## Separation of Duties
 
 Higher-risk release profiles SHOULD support separation between critical responsibilities where practical.
 
@@ -439,7 +439,7 @@ Separation may reduce the risk of a single compromised identity controlling the 
 
 ---
 
-# Small-Team Governance
+## Small-Team Governance
 
 FamilyOS may initially have a small maintainer group.
 
@@ -451,7 +451,7 @@ This preserves a path toward stronger governance later.
 
 ---
 
-# Privileged Release Operations
+## Privileged Release Operations
 
 Sensitive operations include:
 
@@ -467,7 +467,7 @@ These operations should receive stronger controls than ordinary development oper
 
 ---
 
-# Release Credentials
+## Release Credentials
 
 Release credentials include any secret or identity capable of performing privileged release operations.
 
@@ -483,7 +483,7 @@ Examples include:
 
 ---
 
-# Credential Principle
+## Credential Principle
 
 The central credential rule is:
 
@@ -500,7 +500,7 @@ Credentials MUST NOT be stored directly in:
 
 ---
 
-# Secret Storage
+## Secret Storage
 
 Release secrets should be stored using an appropriate secret-management capability.
 
@@ -515,7 +515,7 @@ The Release Framework does not require one provider.
 
 ---
 
-# Credential Scope
+## Credential Scope
 
 Credentials should be narrowly scoped.
 
@@ -536,7 +536,7 @@ Broad administrative credentials should not be used where narrower credentials a
 
 ---
 
-# Credential Lifetime
+## Credential Lifetime
 
 Short-lived credentials SHOULD be preferred for high-value release operations where supported.
 
@@ -549,7 +549,7 @@ Advantages include:
 
 ---
 
-# Credential Rotation
+## Credential Rotation
 
 Long-lived release credentials must be rotatable.
 
@@ -559,7 +559,7 @@ A release process that cannot rotate publication credentials safely creates oper
 
 ---
 
-# Credential Revocation
+## Credential Revocation
 
 When a credential is suspected of compromise:
 
@@ -577,7 +577,7 @@ should occur according to security incident policy.
 
 ---
 
-# Credential Logging
+## Credential Logging
 
 Release credentials MUST NOT appear in logs.
 
@@ -591,7 +591,7 @@ Automation should redact:
 
 ---
 
-# Environment Variables
+## Environment Variables
 
 Environment variables may be used to inject release credentials.
 
@@ -605,7 +605,7 @@ However, they must still be protected from:
 
 ---
 
-# Source Security
+## Source Security
 
 Release security begins with source integrity.
 
@@ -621,7 +621,7 @@ Relevant controls may include:
 
 ---
 
-# Repository Protection
+## Repository Protection
 
 The authoritative repository is a critical release security boundary.
 
@@ -635,7 +635,7 @@ Controls SHOULD protect:
 
 ---
 
-# Branch Protection
+## Branch Protection
 
 Release-relevant branches SHOULD use appropriate protections.
 
@@ -651,7 +651,7 @@ The exact policy depends on repository maturity.
 
 ---
 
-# Force Push Security
+## Force Push Security
 
 Force-pushing release history can undermine traceability.
 
@@ -659,7 +659,7 @@ Protected release branches SHOULD prevent casual history rewriting.
 
 ---
 
-# Tag Protection
+## Tag Protection
 
 Official release tags SHOULD receive strong protection.
 
@@ -674,7 +674,7 @@ A stable release tag is part of release integrity.
 
 ---
 
-# Tag Security Principle
+## Tag Security Principle
 
 The relationship:
 
@@ -689,7 +689,7 @@ Unauthorized movement of an official tag should be treated as a release security
 
 ---
 
-# Signed Tags
+## Signed Tags
 
 Future FamilyOS security policy MAY require cryptographically signed release tags.
 
@@ -704,7 +704,7 @@ They do not replace:
 
 ---
 
-# Signed Commits
+## Signed Commits
 
 Release commits MAY eventually require signatures for high-assurance release profiles.
 
@@ -714,7 +714,7 @@ The signing trust model must still define trusted keys or identities.
 
 ---
 
-# CI/CD Security
+## CI/CD Security
 
 CI/CD infrastructure is part of the release supply chain.
 
@@ -724,7 +724,7 @@ Release CI/CD therefore requires strong security controls.
 
 ---
 
-# Pipeline Definition Security
+## Pipeline Definition Security
 
 Release-critical pipeline definitions should be version-controlled and reviewed.
 
@@ -746,13 +746,13 @@ Pipeline modifications must not be treated as harmless configuration changes.
 
 ---
 
-# Workflow Review
+## Workflow Review
 
 High-impact workflow changes SHOULD receive appropriate review before they can affect official releases.
 
 ---
 
-# Trusted Runners
+## Trusted Runners
 
 Privileged release jobs should run on trusted environments.
 
@@ -764,7 +764,7 @@ Untrusted runners MUST NOT receive:
 
 ---
 
-# Ephemeral Runners
+## Ephemeral Runners
 
 Ephemeral runners SHOULD be preferred for sensitive release workflows where practical.
 
@@ -777,7 +777,7 @@ Benefits include:
 
 ---
 
-# Runner Isolation
+## Runner Isolation
 
 Release environments should isolate jobs from unrelated workloads where appropriate.
 
@@ -789,7 +789,7 @@ Shared mutable environments create opportunities for:
 
 ---
 
-# Untrusted Contributions
+## Untrusted Contributions
 
 Code originating from untrusted contributions must be isolated from privileged release credentials.
 
@@ -797,7 +797,7 @@ For example, pull request code MUST NOT normally execute with stable publication
 
 ---
 
-# Pipeline Trigger Security
+## Pipeline Trigger Security
 
 Release workflows must validate who or what may trigger privileged jobs.
 
@@ -805,7 +805,7 @@ The existence of a matching Git tag or branch name must not by itself provide un
 
 ---
 
-# Pipeline Dependency Security
+## Pipeline Dependency Security
 
 Release pipelines may depend on:
 
@@ -821,7 +821,7 @@ They SHOULD be version-controlled or pinned appropriately.
 
 ---
 
-# Mutable Pipeline Dependency Risk
+## Mutable Pipeline Dependency Risk
 
 A release workflow depending on mutable references such as:
 
@@ -835,7 +835,7 @@ Release-critical dependencies SHOULD use controlled versions where practical.
 
 ---
 
-# Candidate Security
+## Candidate Security
 
 A Release Candidate must be protected against unauthorized or ambiguous mutation.
 
@@ -849,7 +849,7 @@ Security objectives include:
 
 ---
 
-# Candidate Mutation
+## Candidate Mutation
 
 A material candidate change after validation begins should be visible and trigger requalification.
 
@@ -857,7 +857,7 @@ Silent candidate mutation is both a validation failure and a security concern.
 
 ---
 
-# Candidate Access Control
+## Candidate Access Control
 
 Candidate artifact stores should prevent unauthorized replacement.
 
@@ -865,7 +865,7 @@ Where candidate artifacts are promoted directly to stable release, candidate sto
 
 ---
 
-# Candidate Digest
+## Candidate Digest
 
 Checksums or digests SHOULD identify candidate artifacts where practical.
 
@@ -883,7 +883,7 @@ publication
 
 ---
 
-# Artifact Security
+## Artifact Security
 
 Release artifacts are the consumer-facing outputs of the release process.
 
@@ -897,7 +897,7 @@ They must be protected against:
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Cryptographic digests SHOULD be used for significant packaged artifacts where practical.
 
@@ -911,7 +911,7 @@ or another approved secure algorithm.
 
 ---
 
-# Integrity Verification
+## Integrity Verification
 
 The preferred relationship is:
 
@@ -927,7 +927,7 @@ where technically possible.
 
 ---
 
-# Artifact Signing
+## Artifact Signing
 
 FamilyOS MAY introduce artifact signing as release security matures.
 
@@ -935,7 +935,7 @@ Signing can establish stronger authenticity and integrity than checksums alone.
 
 ---
 
-# Signing Key Security
+## Signing Key Security
 
 Private signing keys are highly privileged release assets.
 
@@ -950,7 +950,7 @@ Potential mechanisms include:
 
 ---
 
-# Signing Authority
+## Signing Authority
 
 Governance must define who or what may sign official FamilyOS releases.
 
@@ -958,7 +958,7 @@ The existence of a signing key must not automatically establish release approval
 
 ---
 
-# Signature Verification
+## Signature Verification
 
 Where signing is required, release validation and consumer tooling should support signature verification.
 
@@ -966,7 +966,7 @@ A signature without a defined trust model provides limited assurance.
 
 ---
 
-# Provenance Security
+## Provenance Security
 
 Provenance itself is security-sensitive.
 
@@ -976,7 +976,7 @@ Provenance records should therefore be protected against unauthorized mutation.
 
 ---
 
-# Provenance Binding
+## Provenance Binding
 
 A strong provenance record binds:
 
@@ -992,7 +992,7 @@ This relationship should be difficult to alter silently.
 
 ---
 
-# Signed Provenance
+## Signed Provenance
 
 Future FamilyOS releases MAY use cryptographically signed provenance or attestations.
 
@@ -1000,7 +1000,7 @@ This provides stronger evidence that provenance claims originated from trusted r
 
 ---
 
-# Supply-Chain Provenance
+## Supply-Chain Provenance
 
 FamilyOS should progressively support standards-compatible supply-chain provenance.
 
@@ -1014,7 +1014,7 @@ Specific adoption requires dedicated implementation decisions.
 
 ---
 
-# Dependency Security
+## Dependency Security
 
 Release artifacts often depend on external packages.
 
@@ -1024,7 +1024,7 @@ Release security must therefore consider dependency integrity.
 
 ---
 
-# Dependency Locking
+## Dependency Locking
 
 Applicable releases SHOULD use controlled dependency resolution.
 
@@ -1037,7 +1037,7 @@ Potential mechanisms include:
 
 ---
 
-# Dependency Drift
+## Dependency Drift
 
 A build using:
 
@@ -1057,7 +1057,7 @@ Dependency drift must be prevented or captured through renewed provenance and va
 
 ---
 
-# Dependency Verification
+## Dependency Verification
 
 Future release policies may verify:
 
@@ -1070,7 +1070,7 @@ The required depth depends on release risk.
 
 ---
 
-# Software Bill of Materials
+## Software Bill of Materials
 
 An SBOM can improve security visibility by recording release dependencies.
 
@@ -1078,7 +1078,7 @@ FamilyOS MAY progressively require SBOM generation for significant executable re
 
 ---
 
-# Vulnerability Management
+## Vulnerability Management
 
 Release Security should integrate with vulnerability detection.
 
@@ -1093,7 +1093,7 @@ Findings must be classified by release policy.
 
 ---
 
-# Critical Vulnerability
+## Critical Vulnerability
 
 A known critical vulnerability affecting the candidate SHOULD normally block stable publication unless exceptional governance explicitly determines otherwise.
 
@@ -1101,7 +1101,7 @@ Some security controls may be defined as non-exceptionable.
 
 ---
 
-# Security Findings
+## Security Findings
 
 Security findings may be classified as:
 
@@ -1119,7 +1119,7 @@ The severity model must remain explicit.
 
 ---
 
-# Security Blocking Policy
+## Security Blocking Policy
 
 The release profile should define which security findings block publication.
 
@@ -1140,7 +1140,7 @@ This is illustrative rather than a universal threshold.
 
 ---
 
-# Secret Scanning
+## Secret Scanning
 
 Release readiness and validation SHOULD include secret exposure checks where applicable.
 
@@ -1155,7 +1155,7 @@ Removing the secret from a later commit alone may not eliminate exposure.
 
 ---
 
-# Approval Security
+## Approval Security
 
 Release approval is a privileged governance decision.
 
@@ -1163,7 +1163,7 @@ Approval records should be protected against unauthorized creation or modificati
 
 ---
 
-# Approval Binding
+## Approval Binding
 
 Approval must bind to:
 
@@ -1177,7 +1177,7 @@ An approval must not automatically apply to a materially changed candidate.
 
 ---
 
-# Approval Replay
+## Approval Replay
 
 A previously valid approval must not be replayed against a different release state.
 
@@ -1185,7 +1185,7 @@ Material candidate change invalidates approval.
 
 ---
 
-# Approval Audit
+## Approval Audit
 
 A privileged release should be able to identify:
 
@@ -1197,7 +1197,7 @@ A privileged release should be able to identify:
 
 ---
 
-# Publication Security
+## Publication Security
 
 Publication systems represent one of the highest-impact release security boundaries.
 
@@ -1205,7 +1205,7 @@ A compromised publication path can distribute malicious artifacts to consumers.
 
 ---
 
-# Publication Authorization
+## Publication Authorization
 
 Only authorized identities may publish official releases.
 
@@ -1220,7 +1220,7 @@ This applies to:
 
 ---
 
-# Registry Security
+## Registry Security
 
 Package and artifact registries should use controls such as:
 
@@ -1233,7 +1233,7 @@ Package and artifact registries should use controls such as:
 
 ---
 
-# Namespace Security
+## Namespace Security
 
 Official FamilyOS package and plugin namespaces should be protected from:
 
@@ -1244,7 +1244,7 @@ Official FamilyOS package and plugin namespaces should be protected from:
 
 ---
 
-# Dependency Confusion
+## Dependency Confusion
 
 FamilyOS should consider the risk of dependency confusion when package names may resolve from public and private registries.
 
@@ -1252,7 +1252,7 @@ Release tooling should use explicit repository configuration where appropriate.
 
 ---
 
-# Publication Target Verification
+## Publication Target Verification
 
 Before publication, tooling should verify that the intended target is correct.
 
@@ -1260,13 +1260,13 @@ Publishing an official package to the wrong registry may create both operational
 
 ---
 
-# Typographical Target Errors
+## Typographical Target Errors
 
 Publication configuration should avoid relying on manually typed high-impact URLs or namespaces where deterministic configured targets are possible.
 
 ---
 
-# Publication Immutability
+## Publication Immutability
 
 Official package versions should be immutable.
 
@@ -1274,7 +1274,7 @@ A registry that allows replacement should still be governed to prohibit silent o
 
 ---
 
-# Channel Security
+## Channel Security
 
 Mutable aliases such as:
 
@@ -1292,13 +1292,13 @@ Channel promotion authority must therefore be protected.
 
 ---
 
-# Stable Channel Protection
+## Stable Channel Protection
 
 Stable channel changes SHOULD require stronger authorization than development channel changes.
 
 ---
 
-# Distribution Security
+## Distribution Security
 
 Distribution systems must preserve official artifact identity.
 
@@ -1306,7 +1306,7 @@ Mirrors and caches must not alter immutable release content under the same versi
 
 ---
 
-# Transport Security
+## Transport Security
 
 Release artifacts SHOULD be distributed through secure transport mechanisms appropriate to the environment.
 
@@ -1316,7 +1316,7 @@ Artifact-level integrity still remains valuable.
 
 ---
 
-# Consumer Verification
+## Consumer Verification
 
 Future FamilyOS tooling SHOULD allow consumers to verify:
 
@@ -1330,7 +1330,7 @@ This reduces reliance solely on transport trust.
 
 ---
 
-# Security of Release Notes
+## Security of Release Notes
 
 Release communication may contain security-sensitive information.
 
@@ -1345,7 +1345,7 @@ unless disclosure is deliberate and governed.
 
 ---
 
-# Coordinated Security Release
+## Coordinated Security Release
 
 A security release may require coordinated timing between:
 
@@ -1361,7 +1361,7 @@ The release workflow must support these synchronized transitions.
 
 ---
 
-# Embargoed Release Information
+## Embargoed Release Information
 
 Security release preparation may involve embargoed information.
 
@@ -1369,7 +1369,7 @@ Access should be restricted to authorized participants until disclosure.
 
 ---
 
-# Security Advisory Integrity
+## Security Advisory Integrity
 
 Security advisories should accurately identify:
 
@@ -1383,7 +1383,7 @@ Incorrect advisory versioning can cause consumers to remain vulnerable.
 
 ---
 
-# Release Evidence Security
+## Release Evidence Security
 
 Release evidence may influence later security investigations.
 
@@ -1399,7 +1399,7 @@ Examples include:
 
 ---
 
-# Evidence Confidentiality
+## Evidence Confidentiality
 
 Some release evidence may contain sensitive information.
 
@@ -1419,7 +1419,7 @@ restricted security evidence
 
 ---
 
-# Audit Logs
+## Audit Logs
 
 Privileged release systems SHOULD retain suitable audit logs.
 
@@ -1436,7 +1436,7 @@ Audit logs must avoid secret disclosure.
 
 ---
 
-# Tamper Resistance
+## Tamper Resistance
 
 Higher-maturity release infrastructure should progressively strengthen tamper resistance for:
 
@@ -1447,7 +1447,7 @@ Higher-maturity release infrastructure should progressively strengthen tamper re
 
 ---
 
-# Security Incident Definition
+## Security Incident Definition
 
 A Release Security Incident is any event that creates credible uncertainty about release integrity, authenticity, authorization, or confidentiality.
 
@@ -1463,7 +1463,7 @@ Examples include:
 
 ---
 
-# Security Incident Response
+## Security Incident Response
 
 A release security incident should trigger a controlled process.
 
@@ -1489,7 +1489,7 @@ DOCUMENT
 
 ---
 
-# Credential Compromise
+## Credential Compromise
 
 When release credentials are compromised, the response should include:
 
@@ -1502,7 +1502,7 @@ When release credentials are compromised, the response should include:
 
 ---
 
-# Signing Key Compromise
+## Signing Key Compromise
 
 Signing key compromise has especially serious implications.
 
@@ -1518,7 +1518,7 @@ Key compromise handling must be defined before signing becomes mandatory.
 
 ---
 
-# CI/CD Compromise
+## CI/CD Compromise
 
 A compromised release pipeline may require reassessment of every release produced during the suspected compromise window.
 
@@ -1526,7 +1526,7 @@ Release evidence should enable identifying those releases.
 
 ---
 
-# Repository Compromise
+## Repository Compromise
 
 If unauthorized repository modification is detected, release tags and commits must be verified against trusted evidence.
 
@@ -1534,7 +1534,7 @@ Historical release integrity may need re-establishment.
 
 ---
 
-# Registry Compromise
+## Registry Compromise
 
 If a package or artifact registry is compromised, FamilyOS should verify:
 
@@ -1548,7 +1548,7 @@ against independent release evidence.
 
 ---
 
-# Release Withdrawal
+## Release Withdrawal
 
 If release integrity cannot be trusted, the release may need to be withdrawn.
 
@@ -1556,7 +1556,7 @@ Withdrawal should preserve historical identity while preventing normal consumpti
 
 ---
 
-# Security Withdrawal Example
+## Security Withdrawal Example
 
 ```text
 Release 5.2.0
@@ -1571,7 +1571,7 @@ Replacement:
 
 ---
 
-# Security Supersession
+## Security Supersession
 
 A corrected security release should receive a new immutable version.
 
@@ -1589,7 +1589,7 @@ The defective release must not be silently overwritten.
 
 ---
 
-# Emergency Security Release
+## Emergency Security Release
 
 Security incidents may require accelerated release.
 
@@ -1611,7 +1611,7 @@ Minimum controls should include:
 
 ---
 
-# Break-Glass Access
+## Break-Glass Access
 
 Future governance MAY define break-glass privileges for exceptional emergencies.
 
@@ -1627,7 +1627,7 @@ It must not become a routine release mechanism.
 
 ---
 
-# Security Exceptions
+## Security Exceptions
 
 Security requirements may permit exceptions only where policy explicitly allows them.
 
@@ -1645,7 +1645,7 @@ expiration
 
 ---
 
-# Non-Exceptionable Security Controls
+## Non-Exceptionable Security Controls
 
 Some controls may become non-exceptionable.
 
@@ -1660,7 +1660,7 @@ The exact policy belongs to Release Governance and Security Governance.
 
 ---
 
-# Release Security Profiles
+## Release Security Profiles
 
 Different release types may require different security controls.
 
@@ -1681,7 +1681,7 @@ Core security invariants must remain common.
 
 ---
 
-# Framework Release Security
+## Framework Release Security
 
 A FamilyOS documentation framework release may focus on:
 
@@ -1698,7 +1698,7 @@ Traditional binary signing may not be necessary.
 
 ---
 
-# Plugin Release Security
+## Plugin Release Security
 
 Plugin releases may additionally require:
 
@@ -1711,7 +1711,7 @@ Plugin releases may additionally require:
 
 ---
 
-# Platform Release Security
+## Platform Release Security
 
 A full platform release may require the strongest controls, including:
 
@@ -1726,7 +1726,7 @@ A full platform release may require the strongest controls, including:
 
 ---
 
-# Documentation Release Security
+## Documentation Release Security
 
 Documentation release security should protect against:
 
@@ -1739,7 +1739,7 @@ Documentation may influence security-sensitive operational behavior.
 
 ---
 
-# Security Release Security
+## Security Release Security
 
 Security releases may require:
 
@@ -1752,7 +1752,7 @@ Security releases may require:
 
 ---
 
-# Release Security Validation
+## Release Security Validation
 
 Before publication, the release process should evaluate security readiness.
 
@@ -1775,7 +1775,7 @@ SECURITY VALIDATION       PASS
 
 ---
 
-# Security Evidence
+## Security Evidence
 
 A release security evidence set may include:
 
@@ -1794,7 +1794,7 @@ Evidence requirements should scale with release risk.
 
 ---
 
-# Security Automation
+## Security Automation
 
 Deterministic security checks should be automated where practical.
 
@@ -1811,7 +1811,7 @@ Automation must not hide security findings.
 
 ---
 
-# Security Automation Failure
+## Security Automation Failure
 
 Security checks that cannot execute must not automatically be treated as passing.
 
@@ -1831,7 +1831,7 @@ according to policy.
 
 ---
 
-# Release Security Observability
+## Release Security Observability
 
 Security-sensitive release state should be observable.
 
@@ -1850,7 +1850,7 @@ Event details must avoid secret leakage.
 
 ---
 
-# Security Metrics
+## Security Metrics
 
 Future FamilyOS release security metrics may include:
 
@@ -1867,7 +1867,7 @@ Metrics should support risk reduction, not superficial compliance.
 
 ---
 
-# Release Security Maturity
+## Release Security Maturity
 
 FamilyOS may evolve through the following release security maturity levels.
 
@@ -1905,7 +1905,7 @@ verifiable end-to-end software supply chain
 
 ---
 
-# Supply-Chain Security Vision
+## Supply-Chain Security Vision
 
 The long-term FamilyOS goal is a release chain in which a consumer can establish:
 
@@ -1929,7 +1929,7 @@ This represents mature end-to-end release trust.
 
 ---
 
-# Security by Default
+## Security by Default
 
 Release tooling should make secure behavior the default.
 
@@ -1947,7 +1947,7 @@ Unsafe overrides should require explicit governance where allowed.
 
 ---
 
-# Fail Closed
+## Fail Closed
 
 When a critical security property cannot be established, release tooling SHOULD fail closed.
 
@@ -1967,7 +1967,7 @@ cannot verify artifact integrity
 
 ---
 
-# Security Usability
+## Security Usability
 
 Security controls must remain usable enough to be followed consistently.
 
@@ -1987,7 +1987,7 @@ rather than unnecessary ceremony.
 
 ---
 
-# Security Documentation
+## Security Documentation
 
 Security-sensitive release procedures should be documented.
 
@@ -2004,7 +2004,7 @@ Sensitive secrets themselves must never appear in documentation.
 
 ---
 
-# Release Security Review
+## Release Security Review
 
 High-impact changes to release security architecture SHOULD receive review.
 
@@ -2018,7 +2018,7 @@ Examples include:
 
 ---
 
-# Security Architecture Evolution
+## Security Architecture Evolution
 
 Security requirements will evolve.
 
@@ -2035,99 +2035,99 @@ These improvements should strengthen the existing Release Security model without
 
 ---
 
-# Security Invariants
+## Security Invariants
 
 The following invariants apply.
 
-## SEC1 — Privileged release actions require explicit authorization.
+### SEC1 — Privileged release actions require explicit authorization.
 
-## SEC2 — Release credentials must not be committed to source or documentation.
+### SEC2 — Release credentials must not be committed to source or documentation.
 
-## SEC3 — Least privilege applies to human and automated release identities.
+### SEC3 — Least privilege applies to human and automated release identities.
 
-## SEC4 — Candidate and artifact integrity must be protected.
+### SEC4 — Candidate and artifact integrity must be protected.
 
-## SEC5 — Official release tags must be protected against unauthorized mutation.
+### SEC5 — Official release tags must be protected against unauthorized mutation.
 
-## SEC6 — Untrusted workloads must not receive privileged release credentials.
+### SEC6 — Untrusted workloads must not receive privileged release credentials.
 
-## SEC7 — Published immutable release artifacts must not be silently replaced.
+### SEC7 — Published immutable release artifacts must not be silently replaced.
 
-## SEC8 — Security validation must correspond to the actual release candidate.
+### SEC8 — Security validation must correspond to the actual release candidate.
 
-## SEC9 — Release provenance must not be treated as trustworthy if it can be silently altered.
+### SEC9 — Release provenance must not be treated as trustworthy if it can be silently altered.
 
-## SEC10 — Security incidents affecting release trust must be investigated and recorded.
+### SEC10 — Security incidents affecting release trust must be investigated and recorded.
 
-## SEC11 — Compromised release identity may require withdrawal or corrective release.
+### SEC11 — Compromised release identity may require withdrawal or corrective release.
 
-## SEC12 — Security semantics remain independent from specific security vendors or CI/CD providers.
+### SEC12 — Security semantics remain independent from specific security vendors or CI/CD providers.
 
 ---
 
-# Security Anti-Patterns
+## Security Anti-Patterns
 
-## Shared Release Token
+### Shared Release Token
 
 Using one unrestricted token for every release operation and every maintainer.
 
 ---
 
-## Secrets in Repository
+### Secrets in Repository
 
 Committing registry tokens or private signing keys.
 
 ---
 
-## Privileged Pull Request Pipeline
+### Privileged Pull Request Pipeline
 
 Providing stable release credentials to untrusted contribution jobs.
 
 ---
 
-## Mutable Official Tag
+### Mutable Official Tag
 
 Allowing an official release tag to be moved after publication.
 
 ---
 
-## Unsigned Trust Assumption
+### Unsigned Trust Assumption
 
 Assuming an artifact is authentic solely because its filename and version look correct.
 
 ---
 
-## Pipeline Trust by Default
+### Pipeline Trust by Default
 
 Assuming every CI runner is trusted simply because it belongs to the CI platform.
 
 ---
 
-## Dependency Latest
+### Dependency Latest
 
 Using uncontrolled mutable dependency versions in release-critical workflows.
 
 ---
 
-## Security Scan Means Security
+### Security Scan Means Security
 
 Treating one automated scanner as proof that the complete release process is secure.
 
 ---
 
-## Silent Security Exception
+### Silent Security Exception
 
 Ignoring failed security controls without formal risk acceptance.
 
 ---
 
-## Compromise Without Historical Review
+### Compromise Without Historical Review
 
 Rotating a credential after compromise without determining which releases may have been affected.
 
 ---
 
-# Minimum Release Security Requirements
+## Minimum Release Security Requirements
 
 At minimum, a FamilyOS official release should establish:
 
@@ -2147,7 +2147,7 @@ Applicable executable releases should additionally consider dependency and artif
 
 ---
 
-# Minimum Framework Release Security
+## Minimum Framework Release Security
 
 For current FamilyOS framework releases, the minimum practical security model should include:
 
@@ -2167,7 +2167,7 @@ This provides a strong baseline without requiring premature signing infrastructu
 
 ---
 
-# Target Release Security Experience
+## Target Release Security Experience
 
 At higher maturity, a release security report may look like:
 
@@ -2197,7 +2197,7 @@ SECURITY STATUS        PASS
 
 ---
 
-# Target Consumer Security Experience
+## Target Consumer Security Experience
 
 A consumer should eventually be able to answer:
 
@@ -2217,7 +2217,7 @@ The framework should progressively make these answers independently verifiable.
 
 ---
 
-# Relationship With Release Architecture
+## Relationship With Release Architecture
 
 `04-Release-Architecture.md` defines the release domains and trust boundaries.
 
@@ -2225,7 +2225,7 @@ This document applies security controls across those boundaries.
 
 ---
 
-# Relationship With Release Lifecycle
+## Relationship With Release Lifecycle
 
 `05-Release-Lifecycle.md` defines protected transitions such as:
 
@@ -2239,7 +2239,7 @@ Release Security protects the identities and permissions controlling those trans
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 `10-Release-Candidates.md` defines candidate stability and identity.
 
@@ -2247,7 +2247,7 @@ Release Security protects candidates from unauthorized or ambiguous mutation.
 
 ---
 
-# Relationship With Artifacts and Provenance
+## Relationship With Artifacts and Provenance
 
 `11-Artifacts-and-Provenance.md` defines artifact identity and provenance.
 
@@ -2255,13 +2255,13 @@ This document defines their security and trust requirements.
 
 ---
 
-# Relationship With Release Validation
+## Relationship With Release Validation
 
 `12-Release-Validation.md` integrates applicable security checks into candidate qualification.
 
 ---
 
-# Relationship With Release Automation
+## Relationship With Release Automation
 
 `13-Release-Automation.md` defines safe automation.
 
@@ -2269,7 +2269,7 @@ Release Security governs credentials, identity, permissions, secrets, and truste
 
 ---
 
-# Relationship With CI/CD Integration
+## Relationship With CI/CD Integration
 
 `14-CI-CD-Integration.md` defines pipeline architecture.
 
@@ -2277,7 +2277,7 @@ This document establishes the security requirements for CI/CD workflows, runners
 
 ---
 
-# Relationship With Tagging and Repository State
+## Relationship With Tagging and Repository State
 
 `16-Tagging-and-Repository-State.md` defines release tags and repository state.
 
@@ -2285,7 +2285,7 @@ Release Security protects those release anchors against unauthorized manipulatio
 
 ---
 
-# Relationship With Publishing and Distribution
+## Relationship With Publishing and Distribution
 
 `17-Publishing-and-Distribution.md` defines external release side effects.
 
@@ -2293,7 +2293,7 @@ This document protects publication authority, registries, artifacts, channels, a
 
 ---
 
-# Relationship With Rollback and Recovery
+## Relationship With Rollback and Recovery
 
 `18-Rollback-and-Recovery.md` defines recovery behavior.
 
@@ -2301,31 +2301,31 @@ Security incidents may trigger withdrawal, rollback, or corrective release.
 
 ---
 
-# Relationship With Release Observability
+## Relationship With Release Observability
 
 `20-Release-Observability.md` defines the evidence and events required to detect and investigate release security incidents.
 
 ---
 
-# Relationship With Release Governance
+## Relationship With Release Governance
 
 `21-Release-Governance.md` defines who may authorize sensitive release actions and approve security exceptions.
 
 ---
 
-# Relationship With Release Compliance
+## Relationship With Release Compliance
 
 `22-Release-Compliance.md` may evaluate whether required release security controls were applied.
 
 ---
 
-# Relationship With Release Risk Management
+## Relationship With Release Risk Management
 
 `24-Release-Risk-Management.md` evaluates security risks together with other release risks and governs acceptance where permitted.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Security model establishes security as an end-to-end property of release engineering.
 

@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 12 Automation and CI Integration
+## 12 Automation and CI Integration
 
-## Introduction
+### Introduction
 
 Automation and CI Integration define how the FamilyOS Plugin Compliance Framework participates in day-to-day engineering workflows.
 
@@ -35,7 +35,7 @@ Each stage consumes the same governed compliance model while applying an appropr
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of automation is to make plugin compliance:
 
@@ -51,7 +51,7 @@ Automation reduces reliance on manual interpretation and makes compliance part o
 
 ---
 
-# Automation Principle
+## Automation Principle
 
 The governing automation principle is:
 
@@ -63,7 +63,7 @@ It must not replace automation for requirements that can be reliably evaluated b
 
 ---
 
-# Shift-Left Compliance
+## Shift-Left Compliance
 
 Compliance validation should begin during development.
 
@@ -92,7 +92,7 @@ This prevents developers from discovering fundamental compliance violations only
 
 ---
 
-# Local Development Integration
+## Local Development Integration
 
 Plugin authors should be able to run compliance validation directly from their development environment.
 
@@ -110,7 +110,7 @@ Local workflows should use the same underlying compliance engine as CI.
 
 ---
 
-# Local Validation Scope
+## Local Validation Scope
 
 Local validation may support several depths.
 
@@ -122,7 +122,7 @@ STANDARD
 FULL
 ```
 
-## FAST
+### FAST
 
 Prioritizes inexpensive checks suitable for frequent execution.
 
@@ -134,7 +134,7 @@ Typical checks may include:
 * dependency declarations;
 * capability schemas.
 
-## STANDARD
+### STANDARD
 
 Provides the default developer compliance evaluation.
 
@@ -145,7 +145,7 @@ It may include:
 * quality checks;
 * documentation checks.
 
-## FULL
+### FULL
 
 Attempts to evaluate the complete active compliance profile.
 
@@ -153,7 +153,7 @@ It is suitable before pushing or preparing a release candidate.
 
 ---
 
-# CLI Integration
+## CLI Integration
 
 The FamilyOS CLI should provide a standard developer interface for compliance automation.
 
@@ -174,7 +174,7 @@ The architectural requirement is that CLI commands delegate to shared compliance
 
 ---
 
-# CLI Exit Semantics
+## CLI Exit Semantics
 
 CLI commands must expose deterministic exit behavior for automation.
 
@@ -193,7 +193,7 @@ The exact numerical values should be specified separately.
 
 ---
 
-# Pre-Commit Integration
+## Pre-Commit Integration
 
 Fast compliance checks may eventually participate in local pre-commit workflows.
 
@@ -211,7 +211,7 @@ Expensive or environment-dependent checks belong in later stages.
 
 ---
 
-# Pre-Push Integration
+## Pre-Push Integration
 
 A stronger validation mode may be appropriate before pushing changes.
 
@@ -230,7 +230,7 @@ Pre-push checks should remain optional unless engineering policy makes them mand
 
 ---
 
-# Continuous Integration
+## Continuous Integration
 
 CI is a primary enforcement point for plugin compliance.
 
@@ -248,7 +248,7 @@ This ensures consistency between developer and pipeline results.
 
 ---
 
-# CI Pipeline Model
+## CI Pipeline Model
 
 A conceptual plugin CI pipeline is:
 
@@ -281,7 +281,7 @@ The exact order may vary according to evidence reuse and performance requirement
 
 ---
 
-# CI Evidence Reuse
+## CI Evidence Reuse
 
 Compliance should reuse authoritative evidence already produced by CI.
 
@@ -309,7 +309,7 @@ This prevents unnecessary duplicate execution.
 
 ---
 
-# CI Evidence Requirements
+## CI Evidence Requirements
 
 CI-produced evidence should identify:
 
@@ -325,7 +325,7 @@ This information allows the Compliance Engine to validate evidence compatibility
 
 ---
 
-# CI Profile Selection
+## CI Profile Selection
 
 The CI profile should be explicit.
 
@@ -344,7 +344,7 @@ The selected profile should appear in pipeline logs and compliance reports.
 
 ---
 
-# Pull Request Integration
+## Pull Request Integration
 
 Compliance validation should integrate with pull request workflows.
 
@@ -361,7 +361,7 @@ This gives reviewers immediate visibility into plugin conformance.
 
 ---
 
-# Pull Request Annotations
+## Pull Request Annotations
 
 Where supported, findings may be mapped to source annotations.
 
@@ -378,7 +378,7 @@ Annotations should use canonical rule IDs and finding severity.
 
 ---
 
-# Pull Request Summary
+## Pull Request Summary
 
 A concise pull request summary may include:
 
@@ -396,7 +396,7 @@ Detailed findings remain available as artifacts or expanded output.
 
 ---
 
-# Merge Gates
+## Merge Gates
 
 Compliance may participate in merge gates.
 
@@ -414,7 +414,7 @@ Merge gate semantics must remain centrally governed.
 
 ---
 
-# Mandatory Gate Protection
+## Mandatory Gate Protection
 
 Certain requirements may be non-bypassable in ordinary workflows.
 
@@ -429,7 +429,7 @@ Ordinary developer configuration must not disable mandatory compliance gates.
 
 ---
 
-# Quality Gate Integration
+## Quality Gate Integration
 
 Plugin compliance should integrate with the FamilyOS Quality Framework.
 
@@ -447,7 +447,7 @@ Quality tooling remains authoritative for its own validation semantics.
 
 ---
 
-# Testing Framework Integration
+## Testing Framework Integration
 
 The Testing Framework provides verification evidence required by plugin compliance.
 
@@ -469,7 +469,7 @@ It determines which testing evidence is required for the active plugin profile.
 
 ---
 
-# Documentation Framework Integration
+## Documentation Framework Integration
 
 Documentation checks may run during CI.
 
@@ -485,7 +485,7 @@ Human documentation quality review may remain separate where required.
 
 ---
 
-# Security Automation Integration
+## Security Automation Integration
 
 Security compliance may consume results from:
 
@@ -499,7 +499,7 @@ Security-critical failures may block subsequent lifecycle stages immediately.
 
 ---
 
-# Dependency Automation
+## Dependency Automation
 
 Dependency validation should be automatable.
 
@@ -516,7 +516,7 @@ Dependency evidence may be produced once and reused across architecture, securit
 
 ---
 
-# Build Integration
+## Build Integration
 
 Compliance should participate in determining build eligibility.
 
@@ -545,7 +545,7 @@ Release builds should.
 
 ---
 
-# Build Artifact Compliance
+## Build Artifact Compliance
 
 Compliance may be evaluated against both source and built artifacts.
 
@@ -569,7 +569,7 @@ Both may contribute to release readiness.
 
 ---
 
-# Artifact Binding
+## Artifact Binding
 
 Release-grade compliance should eventually bind results to an exact artifact.
 
@@ -592,7 +592,7 @@ This prevents source-only evidence from being applied to a different packaged ar
 
 ---
 
-# Release Pipeline Integration
+## Release Pipeline Integration
 
 The release pipeline should require an explicit Release Compliance Profile.
 
@@ -624,7 +624,7 @@ Release compliance must use complete and appropriately trusted evidence.
 
 ---
 
-# Release Blocking
+## Release Blocking
 
 A release should be blocked when the active release profile results in:
 
@@ -644,7 +644,7 @@ An `ERROR` state indicates that reliable compliance could not be established and
 
 ---
 
-# Release Candidate Revalidation
+## Release Candidate Revalidation
 
 Every materially changed release candidate should be revalidated.
 
@@ -661,7 +661,7 @@ Evidence reuse may optimize this process when context remains compatible.
 
 ---
 
-# Certification Workflow Integration
+## Certification Workflow Integration
 
 Certification workflows consume compliance results produced under a certification-appropriate profile.
 
@@ -686,7 +686,7 @@ The certification process determines certification.
 
 ---
 
-# Certification Evidence Requirements
+## Certification Evidence Requirements
 
 Certification workflows may require stronger evidence than ordinary CI.
 
@@ -704,7 +704,7 @@ These requirements are expressed through profile and certification policy.
 
 ---
 
-# Scheduled Revalidation
+## Scheduled Revalidation
 
 Stable plugins may require revalidation even without source changes.
 
@@ -720,7 +720,7 @@ Scheduled revalidation protects against compliance drift.
 
 ---
 
-# Event-Driven Revalidation
+## Event-Driven Revalidation
 
 Future automation may trigger compliance checks when specific ecosystem events occur.
 
@@ -752,7 +752,7 @@ This capability may emerge after the initial framework implementation.
 
 ---
 
-# Compliance Drift Detection
+## Compliance Drift Detection
 
 Automation should eventually detect differences between previous and current compliance state.
 
@@ -773,7 +773,7 @@ This helps maintainers distinguish code regressions from policy evolution.
 
 ---
 
-# Changed-Scope Validation
+## Changed-Scope Validation
 
 Incremental CI may validate only affected compliance areas where correctness can be preserved.
 
@@ -794,7 +794,7 @@ Full validation remains required when impact cannot be determined safely.
 
 ---
 
-# Incremental Validation Principle
+## Incremental Validation Principle
 
 The governing incremental principle is:
 
@@ -804,7 +804,7 @@ Optimization must never rely on guesswork.
 
 ---
 
-# Cache Integration
+## Cache Integration
 
 Automation may use caches for:
 
@@ -820,7 +820,7 @@ A cache hit is not automatically valid compliance evidence.
 
 ---
 
-# Cache Keys
+## Cache Keys
 
 Compliance-aware cache keys should incorporate relevant context such as:
 
@@ -838,7 +838,7 @@ Incomplete cache keys risk incorrect evidence reuse.
 
 ---
 
-# Parallel CI Execution
+## Parallel CI Execution
 
 Independent validation tasks may execute in parallel.
 
@@ -864,7 +864,7 @@ Parallel execution must not change result semantics.
 
 ---
 
-# CI Failure Isolation
+## CI Failure Isolation
 
 One validator failure should not necessarily prevent unrelated validators from completing.
 
@@ -886,7 +886,7 @@ while independent rules continue.
 
 ---
 
-# Fail-Fast Behavior
+## Fail-Fast Behavior
 
 Some failures may justify immediate pipeline termination.
 
@@ -903,7 +903,7 @@ It must not hide useful findings unnecessarily.
 
 ---
 
-# Pipeline Stage Separation
+## Pipeline Stage Separation
 
 CI may separate compliance work into stages.
 
@@ -920,7 +920,7 @@ This enables reuse of engineering outputs and clearer failure diagnosis.
 
 ---
 
-# Compliance Decision Stage
+## Compliance Decision Stage
 
 The final compliance decision should run only after all required evidence-producing stages have completed or explicitly failed.
 
@@ -937,7 +937,7 @@ It should not independently rerun all engineering tools unless required.
 
 ---
 
-# Machine-Readable Artifacts
+## Machine-Readable Artifacts
 
 CI should publish structured compliance artifacts.
 
@@ -953,7 +953,7 @@ Exact filenames belong to implementation specifications.
 
 ---
 
-# Human CI Output
+## Human CI Output
 
 Human logs should remain concise.
 
@@ -977,7 +977,7 @@ Detailed report:
 
 ---
 
-# Pipeline Determinism
+## Pipeline Determinism
 
 Equivalent commits evaluated under equivalent environments should produce equivalent compliance semantics.
 
@@ -987,7 +987,7 @@ Rule outcomes and policy interpretation should not.
 
 ---
 
-# Environment Reproducibility
+## Environment Reproducibility
 
 CI environments should minimize uncontrolled variation.
 
@@ -1003,7 +1003,7 @@ This improves reproducibility.
 
 ---
 
-# Dependency Locking
+## Dependency Locking
 
 Release-grade validation should use deterministic dependency resolution where possible.
 
@@ -1011,7 +1011,7 @@ Evidence produced with uncontrolled dependency drift may not be suitable for rel
 
 ---
 
-# Matrix Validation
+## Matrix Validation
 
 Some plugins may require validation against multiple platform or runtime versions.
 
@@ -1029,7 +1029,7 @@ Matrix results may feed Compatibility domain rules.
 
 ---
 
-# Platform Compatibility CI
+## Platform Compatibility CI
 
 Compatibility validation may use CI matrices to prove declared support.
 
@@ -1052,7 +1052,7 @@ Declared compatibility without verification may be insufficient for stronger pro
 
 ---
 
-# Plugin-to-Plugin Compatibility
+## Plugin-to-Plugin Compatibility
 
 Future CI workflows may validate combinations of dependent plugins.
 
@@ -1062,7 +1062,7 @@ Such validation should be targeted rather than requiring all possible ecosystem 
 
 ---
 
-# Manual Review Gates
+## Manual Review Gates
 
 Some compliance profiles may require manual review.
 
@@ -1081,7 +1081,7 @@ The system must not report full compliance before required manual evidence exist
 
 ---
 
-# Approval Integration
+## Approval Integration
 
 Governed approvals may later integrate with compliance workflows.
 
@@ -1095,7 +1095,7 @@ Approval evidence must retain authority, scope, and expiration metadata.
 
 ---
 
-# Exception Handling in CI
+## Exception Handling in CI
 
 CI should validate configured exceptions before applying them.
 
@@ -1110,7 +1110,7 @@ Invalid exceptions should generate governance findings.
 
 ---
 
-# Suppression Handling in CI
+## Suppression Handling in CI
 
 Suppressions may reduce annotation noise or allow temporary developer workflows.
 
@@ -1120,7 +1120,7 @@ A suppressed critical finding should not automatically become non-blocking unles
 
 ---
 
-# Automation Configuration
+## Automation Configuration
 
 Compliance automation may require configuration.
 
@@ -1137,7 +1137,7 @@ Configuration must not permit unauthorized weakening of mandatory rules.
 
 ---
 
-# Configuration Hierarchy
+## Configuration Hierarchy
 
 The framework should define predictable configuration precedence.
 
@@ -1160,7 +1160,7 @@ Mandatory governance policy remains authoritative over all levels.
 
 ---
 
-# Secure Configuration
+## Secure Configuration
 
 Compliance configuration is part of the trust boundary.
 
@@ -1174,7 +1174,7 @@ The engine should distinguish:
 
 ---
 
-# CI Security
+## CI Security
 
 CI compliance execution may process untrusted plugin code.
 
@@ -1190,7 +1190,7 @@ Compliance automation must not introduce an execution path that compromises CI i
 
 ---
 
-# Untrusted Plugin Execution
+## Untrusted Plugin Execution
 
 Static validation should be preferred where runtime execution is unnecessary.
 
@@ -1200,7 +1200,7 @@ Third-party plugin validation may require stronger isolation than trusted built-
 
 ---
 
-# Resource Limits
+## Resource Limits
 
 Validators should support resource controls such as:
 
@@ -1214,7 +1214,7 @@ Resource control is especially relevant for runtime and third-party validation.
 
 ---
 
-# Automation Observability
+## Automation Observability
 
 Compliance automation should expose operational metrics.
 
@@ -1233,7 +1233,7 @@ These metrics describe the compliance system, not plugin compliance itself.
 
 ---
 
-# Pipeline Diagnostics
+## Pipeline Diagnostics
 
 CI failures should clearly distinguish:
 
@@ -1251,7 +1251,7 @@ This distinction determines who must act and what remediation is appropriate.
 
 ---
 
-# Developer Feedback Loop
+## Developer Feedback Loop
 
 Automation should create a short remediation cycle:
 
@@ -1278,7 +1278,7 @@ The framework should optimize for this feedback loop.
 
 ---
 
-# Compliance Baselines
+## Compliance Baselines
 
 Existing ecosystems may require temporary compliance baselines during framework adoption.
 
@@ -1290,7 +1290,7 @@ It must not redefine baseline failures as PASS.
 
 ---
 
-# Baseline Model
+## Baseline Model
 
 A conceptual baseline workflow is:
 
@@ -1314,7 +1314,7 @@ Baselines may assist migration but should not become permanent substitutes for r
 
 ---
 
-# Baseline Expiration
+## Baseline Expiration
 
 Baselines should have migration plans and eventual removal targets.
 
@@ -1322,7 +1322,7 @@ The framework should avoid indefinite technical-debt baselines.
 
 ---
 
-# Branch Policy
+## Branch Policy
 
 Different branches may require different compliance profiles.
 
@@ -1340,7 +1340,7 @@ Branch policy belongs to engineering workflow governance, not rule semantics.
 
 ---
 
-# Monorepo Integration
+## Monorepo Integration
 
 FamilyOS may validate multiple plugins within one repository.
 
@@ -1356,7 +1356,7 @@ One plugin failure should remain distinguishable from another plugin's result.
 
 ---
 
-# Aggregate CI Reporting
+## Aggregate CI Reporting
 
 A repository-wide summary may look like:
 
@@ -1375,7 +1375,7 @@ Each plugin retains its own complete Compliance Result.
 
 ---
 
-# Aggregate Status
+## Aggregate Status
 
 Repository-level status may be derived from individual plugin results according to CI policy.
 
@@ -1392,7 +1392,7 @@ Aggregate status must not replace per-plugin details.
 
 ---
 
-# Automation API
+## Automation API
 
 Automation systems should call stable compliance interfaces.
 
@@ -1406,7 +1406,7 @@ CI-specific orchestration may wrap this interface but should not reimplement rul
 
 ---
 
-# Integration Contracts
+## Integration Contracts
 
 The framework should define stable integration contracts for:
 
@@ -1420,7 +1420,7 @@ Integration contracts should depend on structured requests and results rather th
 
 ---
 
-# Pipeline Portability
+## Pipeline Portability
 
 Compliance automation should avoid unnecessary dependence on one CI provider.
 
@@ -1437,7 +1437,7 @@ They must not change compliance meaning.
 
 ---
 
-# Reproducible Local CI
+## Reproducible Local CI
 
 Where practical, developers should be able to reproduce CI compliance behavior locally.
 
@@ -1452,7 +1452,7 @@ Perfect infrastructure equivalence is not always possible, but semantic differen
 
 ---
 
-# Automation Testing
+## Automation Testing
 
 Automation integration requires tests covering:
 
@@ -1472,7 +1472,7 @@ Automation integration requires tests covering:
 
 ---
 
-# CI Contract Tests
+## CI Contract Tests
 
 FamilyOS should provide tests proving that local and CI consumers receive equivalent semantic results for identical contexts.
 
@@ -1488,41 +1488,41 @@ Differences in evidence trust may be legitimate when profiles require them and m
 
 ---
 
-# Automation Anti-Patterns
+## Automation Anti-Patterns
 
 The framework must avoid several automation anti-patterns.
 
-## CI-Only Compliance
+### CI-Only Compliance
 
 Do not make fundamental compliance feedback available only after pushing code.
 
-## Duplicate Policy
+### Duplicate Policy
 
 Do not create separate local and CI rule definitions.
 
-## Silent Profile Fallback
+### Silent Profile Fallback
 
 Do not switch to a weaker profile when the requested profile fails.
 
-## Tool Output Parsing as Policy
+### Tool Output Parsing as Policy
 
 Do not derive compliance directly from fragile human-readable tool output when structured adapters are available.
 
-## Stale Evidence Reuse
+### Stale Evidence Reuse
 
 Do not reuse cached evidence without validating context.
 
-## Pipeline Success by Suppression
+### Pipeline Success by Suppression
 
 Do not hide findings simply to make CI green.
 
-## Build Before Compliance
+### Build Before Compliance
 
 Do not publish release artifacts before required compliance gates pass.
 
 ---
 
-# Automation Maturity Model
+## Automation Maturity Model
 
 Compliance automation may evolve through stages:
 
@@ -1549,7 +1549,7 @@ EPIC-PLUGIN-002 establishes the architecture required for this progression.
 
 ---
 
-# Initial Automation Baseline
+## Initial Automation Baseline
 
 The initial implementation should prioritize:
 
@@ -1565,7 +1565,7 @@ More advanced automation can follow incrementally.
 
 ---
 
-# Future Automation Capabilities
+## Future Automation Capabilities
 
 Future evolution may include:
 
@@ -1582,7 +1582,7 @@ These capabilities must extend the same central compliance model.
 
 ---
 
-# Automation Invariants
+## Automation Invariants
 
 The Automation and CI Integration model establishes the following invariants:
 
@@ -1609,7 +1609,7 @@ The Automation and CI Integration model establishes the following invariants:
 
 ---
 
-# Automation Reference Model
+## Automation Reference Model
 
 The complete automation model is:
 
@@ -1652,7 +1652,7 @@ This model turns compliance into a continuous engineering capability.
 
 ---
 
-# Automation Summary
+## Automation Summary
 
 FamilyOS plugin compliance must operate throughout the engineering lifecycle rather than only at its end.
 
@@ -1676,7 +1676,7 @@ Automation makes compliance consistent, scalable, and actionable.
 
 ---
 
-# Final Automation Principle
+## Final Automation Principle
 
 The governing principle of automation and CI integration is:
 

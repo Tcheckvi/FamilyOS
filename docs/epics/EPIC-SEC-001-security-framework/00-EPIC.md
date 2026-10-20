@@ -1,10 +1,10 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-## Security Framework
+### Security Framework
 
-## Overview
+### Overview
 
 EPIC-SEC-001 — Security Framework establishes the official cross-cutting security foundation for the FamilyOS ecosystem.
 
@@ -33,7 +33,7 @@ Its objective is to provide the smallest coherent security architecture required
 
 ---
 
-# Purpose
+## Purpose
 
 The Security Framework provides the foundation required to:
 
@@ -59,7 +59,7 @@ It defines the architectural contracts and security invariants upon which implem
 
 ---
 
-# Problem Statement
+## Problem Statement
 
 FamilyOS is designed as an extensible platform capable of managing long-lived digital family information and capabilities.
 
@@ -108,7 +108,7 @@ EPIC-SEC-001 prevents that fragmentation by defining common security behavior ac
 
 ---
 
-# Vision
+## Vision
 
 The FamilyOS security vision is:
 
@@ -126,7 +126,7 @@ Security must remain proportional to actual risk.
 
 ---
 
-# Core Security Model
+## Core Security Model
 
 FamilyOS security is built around the relationship:
 
@@ -162,7 +162,7 @@ Protected resources remain inaccessible without applicable authorization.
 
 ---
 
-# Core Security Properties
+## Core Security Properties
 
 FamilyOS security protects several fundamental properties:
 
@@ -188,7 +188,7 @@ No single mechanism provides complete security.
 
 ---
 
-# Confidentiality
+## Confidentiality
 
 Confidentiality protects information from unauthorized disclosure.
 
@@ -207,7 +207,7 @@ Protected information must only be exposed according to explicit security rules.
 
 ---
 
-# Integrity
+## Integrity
 
 Integrity protects information, configuration, software, security policy, and evidence against unauthorized or unintended modification.
 
@@ -215,7 +215,7 @@ FamilyOS SHOULD ensure that significant changes occur through controlled and val
 
 ---
 
-# Availability
+## Availability
 
 Security includes protecting FamilyOS capabilities against disruption.
 
@@ -233,7 +233,7 @@ Availability controls must remain proportional to real operational needs.
 
 ---
 
-# Explicit Trust
+## Explicit Trust
 
 FamilyOS uses an explicit-trust model.
 
@@ -250,7 +250,7 @@ Trust must be intentional, scoped, and justified.
 
 ---
 
-# Trust Boundaries
+## Trust Boundaries
 
 Important trust boundaries may include:
 
@@ -284,7 +284,7 @@ Security requirements should be applied where trust assumptions change.
 
 ---
 
-# Secure by Design
+## Secure by Design
 
 Security SHOULD be considered during:
 
@@ -308,7 +308,7 @@ Security introduced only after implementation is more difficult to enforce consi
 
 ---
 
-# Secure by Default
+## Secure by Default
 
 FamilyOS SHOULD select safe behavior when configuration or security context is incomplete.
 
@@ -330,7 +330,7 @@ Security should not depend on hidden hardening steps.
 
 ---
 
-# Deny by Default
+## Deny by Default
 
 Protected operations MUST NOT be executed unless authorization requirements are satisfied.
 
@@ -346,7 +346,7 @@ Uncertain security state must not silently become permission.
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Actors and components SHOULD receive only the privileges required for their responsibilities.
 
@@ -364,7 +364,7 @@ Broad permanent access should be avoided.
 
 ---
 
-# Authentication
+## Authentication
 
 Authentication establishes confidence in actor identity.
 
@@ -383,7 +383,7 @@ The framework remains independent of specific identity providers.
 
 ---
 
-# Authorization
+## Authorization
 
 Authorization determines whether an authenticated or otherwise recognized actor may perform a protected action.
 
@@ -407,7 +407,7 @@ Authorization must remain explicit and testable.
 
 ---
 
-# Permissions
+## Permissions
 
 Permissions SHOULD represent stable security concepts.
 
@@ -425,7 +425,7 @@ Actual permission names and semantics must be defined consistently by implementa
 
 ---
 
-# Security Context
+## Security Context
 
 Protected execution SHOULD use an explicit security context where required.
 
@@ -444,7 +444,7 @@ The security context should remain execution-scoped and must not become uncontro
 
 ---
 
-# Data Protection
+## Data Protection
 
 FamilyOS data protection spans the applicable data lifecycle:
 
@@ -468,7 +468,7 @@ Security controls should remain appropriate to the sensitivity and lifecycle of 
 
 ---
 
-# Data Minimization
+## Data Minimization
 
 FamilyOS SHOULD process and expose only the information necessary for a given operation.
 
@@ -482,7 +482,7 @@ Reducing unnecessary data propagation reduces:
 
 ---
 
-# Data Classification
+## Data Classification
 
 FamilyOS MAY classify data according to sensitivity.
 
@@ -499,7 +499,7 @@ Exact classifications may evolve with implementation requirements.
 
 ---
 
-# Secrets
+## Secrets
 
 Secrets include values that grant or protect access.
 
@@ -517,7 +517,7 @@ Secrets MUST NOT be treated as ordinary configuration.
 
 ---
 
-# Secret Management
+## Secret Management
 
 Components SHOULD access secrets through controlled contracts.
 
@@ -537,7 +537,7 @@ Secrets MUST NOT be committed to source control.
 
 ---
 
-# Cryptography
+## Cryptography
 
 FamilyOS may use cryptography to provide:
 
@@ -554,7 +554,7 @@ Established and reviewed implementations must be used.
 
 ---
 
-# Cryptographic Agility
+## Cryptographic Agility
 
 Cryptographic implementations and algorithms evolve over time.
 
@@ -572,7 +572,7 @@ Approved Implementation
 
 ---
 
-# Threat Model
+## Threat Model
 
 FamilyOS security is threat-driven.
 
@@ -593,7 +593,7 @@ Threat modeling should remain actionable and proportional.
 
 ---
 
-# Risk Model
+## Risk Model
 
 FamilyOS uses a lightweight risk model:
 
@@ -618,7 +618,7 @@ The objective is consistent prioritization rather than mathematical precision.
 
 ---
 
-# Risk Treatment
+## Risk Treatment
 
 Security risks may be:
 
@@ -635,7 +635,7 @@ Unresolved risk must not become accepted through silence.
 
 ---
 
-# Security Controls
+## Security Controls
 
 FamilyOS security controls may be:
 
@@ -661,7 +661,7 @@ Controls should map to identifiable threats.
 
 ---
 
-# Defense in Depth
+## Defense in Depth
 
 FamilyOS SHOULD apply layered protection where risks justify it.
 
@@ -685,7 +685,7 @@ Failure of one control should not automatically compromise the entire system.
 
 ---
 
-# Input Validation
+## Input Validation
 
 Input crossing a trust boundary MUST be treated as untrusted until validated.
 
@@ -702,7 +702,7 @@ Validation is not a substitute for authorization.
 
 ---
 
-# Output Protection
+## Output Protection
 
 Security applies to output as well as input.
 
@@ -717,7 +717,7 @@ FamilyOS SHOULD prevent unauthorized information exposure through:
 
 ---
 
-# Plugin Security
+## Plugin Security
 
 Plugins are important security boundaries.
 
@@ -734,7 +734,7 @@ Plugins MUST NOT automatically receive unrestricted platform access.
 
 ---
 
-# Official Plugins
+## Official Plugins
 
 Official plugins remain subject to platform security rules.
 
@@ -750,7 +750,7 @@ Official status may influence trust policy but does not bypass security invarian
 
 ---
 
-# Third-Party Plugins
+## Third-Party Plugins
 
 Third-party plugins SHOULD be treated as stronger trust boundaries.
 
@@ -765,7 +765,7 @@ Applicable controls may include:
 
 ---
 
-# Relationship With the Security Plugin
+## Relationship With the Security Plugin
 
 FamilyOS already contains a Security Plugin architecture associated with RFC-0010.
 
@@ -787,7 +787,7 @@ The Security Plugin operates under the Security Framework.
 
 ---
 
-# Plugin Compliance
+## Plugin Compliance
 
 The Plugin Compliance Framework may enforce security requirements established by EPIC-SEC-001.
 
@@ -806,7 +806,7 @@ This avoids creating a second compliance system.
 
 ---
 
-# External Integration Security
+## External Integration Security
 
 External systems represent independent trust domains.
 
@@ -826,7 +826,7 @@ External trust must never be assumed implicitly.
 
 ---
 
-# Configuration Security
+## Configuration Security
 
 Security-sensitive configuration MUST be validated.
 
@@ -850,7 +850,7 @@ Invalid Security Configuration
 
 ---
 
-# Dependency Security
+## Dependency Security
 
 External dependencies are part of the FamilyOS attack surface.
 
@@ -867,7 +867,7 @@ Existing Build and Quality mechanisms should be reused where applicable.
 
 ---
 
-# Supply-Chain Security
+## Supply-Chain Security
 
 FamilyOS security applies throughout:
 
@@ -889,7 +889,7 @@ EPIC-SEC-001 consumes the Build and Release frameworks instead of duplicating th
 
 ---
 
-# Security Observability
+## Security Observability
 
 The Observability Framework provides runtime mechanisms that security may consume.
 
@@ -908,7 +908,7 @@ Security telemetry must remain privacy-safe.
 
 ---
 
-# Security Events
+## Security Events
 
 Important security decisions SHOULD produce structured evidence where appropriate.
 
@@ -929,7 +929,7 @@ Sensitive values must remain excluded.
 
 ---
 
-# Security Findings
+## Security Findings
 
 Automated validation SHOULD support structured security findings.
 
@@ -949,7 +949,7 @@ Findings should support both human review and automated lifecycle decisions.
 
 ---
 
-# Security Testing
+## Security Testing
 
 Security requirements SHOULD become executable tests wherever practical.
 
@@ -968,7 +968,7 @@ Security must not rely exclusively on manual review.
 
 ---
 
-# Negative Testing
+## Negative Testing
 
 Testing denied behavior is essential.
 
@@ -992,7 +992,7 @@ Both positive and negative behavior provide security evidence.
 
 ---
 
-# Security Automation
+## Security Automation
 
 Stable security contracts enable automation.
 
@@ -1010,7 +1010,7 @@ Automation should consume structured security contracts.
 
 ---
 
-# Security Gates
+## Security Gates
 
 Security validation may affect lifecycle decisions.
 
@@ -1030,7 +1030,7 @@ Critical security findings SHOULD normally block release until resolved or expli
 
 ---
 
-# Integration With Quality
+## Integration With Quality
 
 Security findings may become Quality Framework evidence.
 
@@ -1038,7 +1038,7 @@ Security defects are quality defects with security-specific consequences.
 
 ---
 
-# Integration With Build
+## Integration With Build
 
 The Build Framework provides artifact and dependency foundations.
 
@@ -1051,7 +1051,7 @@ Security may add:
 
 ---
 
-# Integration With Release
+## Integration With Release
 
 The Release Framework provides publication control.
 
@@ -1059,7 +1059,7 @@ Security validation may act as a release gate for critical requirements.
 
 ---
 
-# Integration With Observability
+## Integration With Observability
 
 The Observability Framework provides security-relevant runtime evidence.
 
@@ -1067,7 +1067,7 @@ Security should use the existing observability architecture rather than inventin
 
 ---
 
-# Integration With Operations
+## Integration With Operations
 
 The future Operations Framework will consume both security and observability.
 
@@ -1088,7 +1088,7 @@ Controls   Evidence
 
 ---
 
-# Core Security Primitives
+## Core Security Primitives
 
 The initial implementation SHOULD prioritize a small set of stable primitives:
 
@@ -1106,7 +1106,7 @@ Additional abstractions should only be introduced when implementation requires t
 
 ---
 
-# Minimal Initial Implementation
+## Minimal Initial Implementation
 
 The minimum useful FamilyOS security implementation is:
 
@@ -1130,7 +1130,7 @@ This provides substantial protection without requiring enterprise-scale infrastr
 
 ---
 
-# Implementation Sequence
+## Implementation Sequence
 
 Security implementation SHOULD progress incrementally:
 
@@ -1154,7 +1154,7 @@ Release Gates
 
 ---
 
-# Vendor Neutrality
+## Vendor Neutrality
 
 Core FamilyOS security contracts SHOULD remain independent of specific security vendors.
 
@@ -1174,7 +1174,7 @@ Provider choice must not leak into domain architecture unnecessarily.
 
 ---
 
-# Local Development
+## Local Development
 
 Security architecture must remain usable in local development and automated tests.
 
@@ -1189,7 +1189,7 @@ Local development simplicity must not require disabling fundamental security inv
 
 ---
 
-# Engineering Quality
+## Engineering Quality
 
 Applicable security implementation must continue to satisfy FamilyOS engineering standards.
 
@@ -1207,7 +1207,7 @@ Security-specific tooling may be introduced only where it provides clear enginee
 
 ---
 
-# Documentation Strategy
+## Documentation Strategy
 
 EPIC-SEC-001 uses the compact FamilyOS documentation model.
 
@@ -1230,7 +1230,7 @@ No additional framework documents are required unless implementation reveals a c
 
 ---
 
-# Deliverables
+## Deliverables
 
 EPIC-SEC-001 delivers:
 
@@ -1254,7 +1254,7 @@ EPIC-SEC-001 delivers:
 
 ---
 
-# Out of Scope
+## Out of Scope
 
 EPIC-SEC-001 does not require immediate implementation of:
 
@@ -1272,7 +1272,7 @@ These capabilities may be introduced later when justified by concrete requiremen
 
 ---
 
-# Definition of Done
+## Definition of Done
 
 EPIC-SEC-001 is complete when:
 
@@ -1294,7 +1294,7 @@ EPIC-SEC-001 is complete when:
 
 ---
 
-# Post-EPIC Rule
+## Post-EPIC Rule
 
 After EPIC-SEC-001 is validated, documentation expansion stops unless implementation exposes a real architectural gap.
 
@@ -1318,7 +1318,7 @@ The objective is working, enforceable security.
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 EPIC-SEC-001 succeeds when FamilyOS can answer:
 
@@ -1352,7 +1352,7 @@ Can security affect release decisions?
 
 ---
 
-# Expected Outcome
+## Expected Outcome
 
 After EPIC-SEC-001, FamilyOS will possess a coherent platform security model that is:
 
@@ -1378,7 +1378,7 @@ This foundation prepares FamilyOS for secure implementation and future operation
 
 ---
 
-# Status
+## Status
 
 **EPIC Identifier:** EPIC-SEC-001
 

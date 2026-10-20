@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
+from uuid import uuid4
 
 from familyos_cli.application.build import (
     DiscoverPackageArtifactsUseCase,
@@ -13,6 +15,19 @@ from familyos_cli.application.build import (
 from familyos_cli.application.build.build_input_validator import (
     BuildInputValidator,
 )
+from familyos_cli.application.family.activate_membership import ActivateMembership
+from familyos_cli.application.family.create_family import CreateFamily
+from familyos_cli.application.family.end_membership import EndMembership
+from familyos_cli.application.family.end_relationship import EndRelationship
+from familyos_cli.application.family.establish_membership import EstablishMembership
+from familyos_cli.application.family.establish_relationship import EstablishRelationship
+from familyos_cli.application.family.get_family import GetFamily
+from familyos_cli.application.family.get_membership import GetMembership
+from familyos_cli.application.family.get_relationship import GetRelationship
+from familyos_cli.application.family.resolve_family_boundary import (
+    ResolveFamilyBoundary,
+)
+from familyos_cli.application.family.suspend_membership import SuspendMembership
 from familyos_cli.application.generation.application_recipe_registry_factory import (
     ApplicationRecipeRegistryFactory,
 )
@@ -45,6 +60,40 @@ from familyos_cli.application.generation.preset_recipe_resolver import (
 )
 from familyos_cli.application.generation.recipe_catalog_service import (
     RecipeCatalogService,
+)
+from familyos_cli.application.person.create_person import CreatePerson
+from familyos_cli.application.person.get_person import GetPerson
+from familyos_cli.application.quality.default_quality_profile_registry import (
+    build_default_quality_profile_registry,
+)
+from familyos_cli.application.quality.domain_boundary_quality_policy import (
+    ARCHITECTURE_CHECK_ID,
+    DOMAIN_BOUNDARY_RULE,
+)
+from familyos_cli.application.quality.initial_quality_rules import (
+    DOCUMENTATION_RULE,
+    PLUGIN_COMPLIANCE_INTEGRATION_RULE,
+    REQUIRED_TESTS_RULE,
+    STATIC_ANALYSIS_RULE,
+    TYPE_VERIFICATION_RULE,
+)
+from familyos_cli.application.quality.initial_repository_documentation_scope import (
+    INITIAL_REPOSITORY_DOCUMENTATION_ROOTS,
+)
+from familyos_cli.application.quality.quality_assessment_execution_service import (
+    QualityAssessmentExecutionService,
+)
+from familyos_cli.application.quality.quality_execution_binding import (
+    QualityExecutionBinding,
+)
+from familyos_cli.application.quality.quality_execution_service import (
+    QualityExecutionService,
+)
+from familyos_cli.application.quality.quality_profile_assessment_service import (
+    QualityProfileAssessmentService,
+)
+from familyos_cli.application.quality.quality_profile_resolver import (
+    QualityProfileResolver,
 )
 from familyos_cli.application.specifications import (
     DomainSpecificationLoaderService,
@@ -96,6 +145,12 @@ from familyos_cli.domain.generation.domain_generation_planner import (
 from familyos_cli.domain.generation.generation_preset_resolver import (
     GenerationPresetResolver,
 )
+from familyos_cli.domain.quality import (
+    QualityAssessmentId,
+    QualityCheckId,
+    QualityEvidenceId,
+    QualityFindingId,
+)
 from familyos_cli.domain.specifications.domain_specification_registry import (
     DomainSpecificationRegistry,
 )
@@ -104,8 +159,39 @@ from familyos_cli.infrastructure.build import (
     PythonPackageBuilder,
     PythonWheelFunctionalValidator,
 )
+from familyos_cli.infrastructure.family.sqlite_family_repository import (
+    SQLiteFamilyRepository,
+)
+from familyos_cli.infrastructure.family.sqlite_membership_repository import (
+    SQLiteMembershipRepository,
+)
+from familyos_cli.infrastructure.family.sqlite_relationship_repository import (
+    SQLiteRelationshipRepository,
+)
 from familyos_cli.infrastructure.generation.generation_engine import (
     GenerationEngine,
+)
+from familyos_cli.infrastructure.persistence.sqlite_database import SQLiteDatabase
+from familyos_cli.infrastructure.person.sqlite_person_repository import (
+    SQLitePersonRepository,
+)
+from familyos_cli.infrastructure.quality.documentation_quality_executor import (
+    DocumentationQualityExecutor,
+)
+from familyos_cli.infrastructure.quality.domain_boundary_quality_executor import (
+    DomainBoundaryQualityExecutor,
+)
+from familyos_cli.infrastructure.quality.mypy_quality_executor import (
+    MypyQualityExecutor,
+)
+from familyos_cli.infrastructure.quality.plugin_compliance_quality_executor import (
+    PluginComplianceQualityExecutor,
+)
+from familyos_cli.infrastructure.quality.pytest_quality_executor import (
+    PytestQualityExecutor,
+)
+from familyos_cli.infrastructure.quality.ruff_quality_executor import (
+    RuffQualityExecutor,
 )
 from familyos_cli.infrastructure.specifications import (
     YamlDomainSpecificationLoader,
@@ -161,6 +247,8 @@ class ApplicationContainer:
     def __init__(
         self,
         project_root: Path | None = None,
+        *,
+        core_database_path: Path | None = None,
     ) -> None:
         """Initialize application dependencies."""
 
@@ -169,6 +257,22 @@ class ApplicationContainer:
             if project_root is not None
             else Path(__file__).resolve().parents[3]
         )
+
+        self._core_database: SQLiteDatabase | None = None
+        self._core_person_repository: SQLitePersonRepository | None = None
+        self._core_family_repository: SQLiteFamilyRepository | None = None
+        self._core_membership_repository: SQLiteMembershipRepository | None = None
+        self._core_relationship_repository: SQLiteRelationshipRepository | None = None
+
+        if core_database_path is not None:
+            core_database = SQLiteDatabase(core_database_path)
+            self._core_database = core_database
+            self._core_person_repository = SQLitePersonRepository(core_database)
+            self._core_family_repository = SQLiteFamilyRepository(core_database)
+            self._core_membership_repository = SQLiteMembershipRepository(core_database)
+            self._core_relationship_repository = SQLiteRelationshipRepository(
+                core_database
+            )
 
         self._runtime = RuntimeFactory.create()
 
@@ -182,9 +286,7 @@ class ApplicationContainer:
         self._plugin_installer = PluginInstaller()
         self._plugin_lifecycle_manager = PluginLifecycleManager()
 
-        self._domain_specification_registry = (
-            DomainSpecificationRegistry()
-        )
+        self._domain_specification_registry = DomainSpecificationRegistry()
 
         self._specification_service = SpecificationService(
             self._domain_specification_registry,
@@ -267,6 +369,245 @@ class ApplicationContainer:
 
         return self._project_root
 
+    @staticmethod
+    def _core_product_clock() -> datetime:
+        """Return one timezone-aware Core Product occurrence time."""
+
+        return datetime.now(UTC)
+
+    @staticmethod
+    def _core_persistence_required() -> RuntimeError:
+        """Return the fail-closed error for absent durable Core Product storage."""
+
+        return RuntimeError(
+            "Core Product durable persistence requires an explicit core_database_path"
+        )
+
+    def core_database(self) -> SQLiteDatabase:
+        """Return the configured bounded Core Product SQLite database."""
+
+        if self._core_database is None:
+            raise self._core_persistence_required()
+        return self._core_database
+
+    def core_person_repository(self) -> SQLitePersonRepository:
+        """Return the durable Person repository for Core Product composition."""
+
+        if self._core_person_repository is None:
+            raise self._core_persistence_required()
+        return self._core_person_repository
+
+    def core_family_repository(self) -> SQLiteFamilyRepository:
+        """Return the durable Family repository for Core Product composition."""
+
+        if self._core_family_repository is None:
+            raise self._core_persistence_required()
+        return self._core_family_repository
+
+    def core_membership_repository(self) -> SQLiteMembershipRepository:
+        """Return the durable Membership repository for Core Product composition."""
+
+        if self._core_membership_repository is None:
+            raise self._core_persistence_required()
+        return self._core_membership_repository
+
+    def core_relationship_repository(self) -> SQLiteRelationshipRepository:
+        """Return the durable Relationship repository for Core Product composition."""
+
+        if self._core_relationship_repository is None:
+            raise self._core_persistence_required()
+        return self._core_relationship_repository
+
+    def create_person_use_case(self) -> CreatePerson:
+        """Compose durable canonical Person creation."""
+
+        return CreatePerson(
+            self.core_person_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def get_person_use_case(self) -> GetPerson:
+        """Compose durable canonical Person retrieval."""
+
+        return GetPerson(self.core_person_repository())
+
+    def create_family_use_case(self) -> CreateFamily:
+        """Compose durable canonical Family creation."""
+
+        return CreateFamily(
+            self.core_family_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def get_family_use_case(self) -> GetFamily:
+        """Compose durable canonical Family retrieval."""
+
+        return GetFamily(self.core_family_repository())
+
+    def resolve_family_boundary_use_case(self) -> ResolveFamilyBoundary:
+        """Compose durable canonical Family boundary resolution."""
+
+        return ResolveFamilyBoundary(self.core_family_repository())
+
+    def establish_membership_use_case(self) -> EstablishMembership:
+        """Compose durable canonical Membership establishment."""
+
+        return EstablishMembership(
+            self.core_family_repository(),
+            self.core_person_repository(),
+            self.core_membership_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def get_membership_use_case(self) -> GetMembership:
+        """Compose durable canonical Membership retrieval."""
+
+        return GetMembership(self.core_membership_repository())
+
+    def activate_membership_use_case(self) -> ActivateMembership:
+        """Compose durable canonical Membership activation."""
+
+        return ActivateMembership(
+            self.core_membership_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def suspend_membership_use_case(self) -> SuspendMembership:
+        """Compose durable canonical Membership suspension."""
+
+        return SuspendMembership(
+            self.core_membership_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def end_membership_use_case(self) -> EndMembership:
+        """Compose durable canonical Membership ending."""
+
+        return EndMembership(
+            self.core_membership_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def establish_relationship_use_case(self) -> EstablishRelationship:
+        """Compose durable canonical Relationship establishment."""
+
+        return EstablishRelationship(
+            self.core_family_repository(),
+            self.core_person_repository(),
+            self.core_relationship_repository(),
+            clock=self._core_product_clock,
+        )
+
+    def get_relationship_use_case(self) -> GetRelationship:
+        """Compose durable canonical Relationship retrieval."""
+
+        return GetRelationship(self.core_relationship_repository())
+
+    def end_relationship_use_case(self) -> EndRelationship:
+        """Compose durable canonical Relationship ending."""
+
+        return EndRelationship(
+            self.core_relationship_repository(),
+            clock=self._core_product_clock,
+        )
+
+    @staticmethod
+    def _quality_finding_id() -> QualityFindingId:
+        "Create one opaque runtime-local Quality finding identity."
+        return QualityFindingId(f"QLT-FIND-{uuid4()}")
+
+    @staticmethod
+    def _quality_evidence_id() -> QualityEvidenceId:
+        "Create one opaque runtime-local Quality evidence identity."
+        return QualityEvidenceId(f"QLT-EVID-{uuid4()}")
+
+    def quality_execution_service(self) -> QualityExecutionService:
+        "Create the governed Phase 12 Quality execution service."
+        finding_id_factory = self._quality_finding_id
+        evidence_id_factory = self._quality_evidence_id
+
+        bindings = (
+            QualityExecutionBinding(
+                QualityCheckId("QLT-CHECK-RUFF"),
+                STATIC_ANALYSIS_RULE,
+                RuffQualityExecutor(
+                    finding_id_factory=finding_id_factory,
+                    evidence_id_factory=evidence_id_factory,
+                ),
+            ),
+            QualityExecutionBinding(
+                QualityCheckId("QLT-CHECK-MYPY"),
+                TYPE_VERIFICATION_RULE,
+                MypyQualityExecutor(
+                    finding_id_factory=finding_id_factory,
+                    evidence_id_factory=evidence_id_factory,
+                ),
+            ),
+            QualityExecutionBinding(
+                QualityCheckId("QLT-CHECK-PYTEST"),
+                REQUIRED_TESTS_RULE,
+                PytestQualityExecutor(
+                    finding_id_factory=finding_id_factory,
+                    evidence_id_factory=evidence_id_factory,
+                ),
+            ),
+            QualityExecutionBinding(
+                QualityCheckId("QLT-CHECK-DOC"),
+                DOCUMENTATION_RULE,
+                DocumentationQualityExecutor(
+                    finding_id_factory=finding_id_factory,
+                    evidence_id_factory=evidence_id_factory,
+                    repository_epic_roots=INITIAL_REPOSITORY_DOCUMENTATION_ROOTS,
+                ),
+            ),
+            QualityExecutionBinding(
+                QualityCheckId("QLT-CHECK-PLUGIN-COMPLIANCE"),
+                PLUGIN_COMPLIANCE_INTEGRATION_RULE,
+                PluginComplianceQualityExecutor(
+                    engine=self._compliance_engine,
+                    plugin_loader=PluginLoader(),
+                    plugins_root=self._builtin_plugins_root,
+                    finding_id_factory=finding_id_factory,
+                    evidence_id_factory=evidence_id_factory,
+                ),
+            ),
+            QualityExecutionBinding(
+                ARCHITECTURE_CHECK_ID,
+                DOMAIN_BOUNDARY_RULE,
+                DomainBoundaryQualityExecutor(
+                    finding_id_factory=finding_id_factory,
+                    evidence_id_factory=evidence_id_factory,
+                ),
+            ),
+        )
+
+        resolver = QualityProfileResolver(
+            build_default_quality_profile_registry(),
+        )
+        return QualityExecutionService(
+            profile_resolver=resolver,
+            bindings=bindings,
+        )
+
+    @staticmethod
+    def _quality_assessment_id() -> QualityAssessmentId:
+        return QualityAssessmentId(f"QLT-ASMT-{uuid4()}")
+
+    @staticmethod
+    def _quality_assessment_clock() -> datetime:
+        return datetime.now(UTC)
+
+    def quality_assessment_execution_service(self) -> QualityAssessmentExecutionService:
+        profile_resolver = QualityProfileResolver(
+            build_default_quality_profile_registry()
+        )
+        return QualityAssessmentExecutionService(
+            execution_service=self.quality_execution_service(),
+            assessment_service=QualityProfileAssessmentService(profile_resolver),
+            assessment_id_factory=self._quality_assessment_id,
+            clock=self._quality_assessment_clock,
+        )
+
     def testing_evidence_freshness_use_case(
         self,
     ) -> EvaluateTestingEvidenceFreshnessUseCase:
@@ -312,15 +653,11 @@ class ApplicationContainer:
                         ),
                         normalizer=PytestResultNormalizer(),
                         evidence_producer=ProduceTestingEvidenceUseCase(
-                            source_state_provider=(
-                                GitTestingSourceStateProvider()
-                            ),
+                            source_state_provider=(GitTestingSourceStateProvider()),
                             clock=SystemTestingClock(),
                         ),
                     ),
-                    freshness_authority=(
-                        self.testing_evidence_freshness_use_case()
-                    ),
+                    freshness_authority=(self.testing_evidence_freshness_use_case()),
                     project_root=project_root,
                 ),
                 BuiltinPluginComplianceGate(
@@ -391,9 +728,7 @@ class ApplicationContainer:
         """Return generation catalog service."""
 
         return GenerationCatalogService(
-            generation_contributions=(
-                self._runtime.generation_contributions()
-            ),
+            generation_contributions=(self._runtime.generation_contributions()),
         )
 
     def domain_generation_catalog_service(
@@ -402,9 +737,7 @@ class ApplicationContainer:
         """Return domain generation catalog service."""
 
         return DomainGenerationCatalogService(
-            domain_contributions=(
-                self._runtime.domain_generation_contributions()
-            ),
+            domain_contributions=(self._runtime.domain_generation_contributions()),
         )
 
     def recipe_catalog_service(
@@ -425,16 +758,12 @@ class ApplicationContainer:
             self._specification_service,
         )
 
-        recipe_registry = (
-            ApplicationRecipeRegistryFactory.create(
-                self._runtime.generation_recipe_contributions(),
-            )
+        recipe_registry = ApplicationRecipeRegistryFactory.create(
+            self._runtime.generation_recipe_contributions(),
         )
 
-        strategy_registry = (
-            DefaultGenerationStrategyRegistry.create(
-                recipe_registry,
-            )
+        strategy_registry = DefaultGenerationStrategyRegistry.create(
+            recipe_registry,
         )
 
         template_directories = (
@@ -451,9 +780,7 @@ class ApplicationContainer:
             strategy_registry=strategy_registry,
         )
 
-        preset_registry = (
-            DefaultGenerationPresetRegistry.create()
-        )
+        preset_registry = DefaultGenerationPresetRegistry.create()
 
         PluginGenerationPresetContributor().contribute(
             preset_registry,
@@ -491,7 +818,10 @@ class ApplicationFactory:
     """Application factory."""
 
     @staticmethod
-    def create() -> ApplicationContainer:
+    def create(
+        *,
+        core_database_path: Path | None = None,
+    ) -> ApplicationContainer:
         """Create application container."""
 
-        return ApplicationContainer()
+        return ApplicationContainer(core_database_path=core_database_path)

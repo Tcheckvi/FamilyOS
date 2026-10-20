@@ -1,10 +1,10 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-# 04 Identity, Authentication and Authorization
+## 04 Identity, Authentication and Authorization
 
-## Overview
+### Overview
 
 Identity, authentication, and authorization form the primary access-control foundation of the FamilyOS Security Framework.
 
@@ -31,7 +31,7 @@ Authorization MUST NOT be granted without a sufficiently established identity wh
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to establish the FamilyOS architecture and requirements for:
 
@@ -58,7 +58,7 @@ The objective is to provide a consistent and extensible access-control model acr
 
 ---
 
-# Security Objectives
+## Security Objectives
 
 The FamilyOS identity and access architecture MUST support the following objectives:
 
@@ -79,7 +79,7 @@ Identity and access controls MUST be enforceable independently of presentation-l
 
 ---
 
-# Identity, Authentication and Authorization Model
+## Identity, Authentication and Authorization Model
 
 The core access-control flow is:
 
@@ -119,7 +119,7 @@ Failure at a required stage MUST prevent execution of the protected operation.
 
 ---
 
-# Identity Model
+## Identity Model
 
 An identity represents a security-relevant actor recognized by FamilyOS.
 
@@ -142,7 +142,7 @@ Display names MUST NOT be used as authoritative security identifiers.
 
 ---
 
-# Security Principals
+## Security Principals
 
 A security principal is an identity capable of participating in an authenticated or authorized operation.
 
@@ -166,7 +166,7 @@ A domain entity MAY correspond to a security principal without becoming responsi
 
 ---
 
-# Principal Identifier
+## Principal Identifier
 
 Each security principal MUST have a stable identifier.
 
@@ -182,7 +182,7 @@ Changing a person's name, email address, or other mutable profile attribute MUST
 
 ---
 
-# Identity Attributes
+## Identity Attributes
 
 An identity MAY contain security-relevant attributes.
 
@@ -208,7 +208,7 @@ Unverified user-supplied attributes MUST NOT be treated as authoritative authori
 
 ---
 
-# Identity Lifecycle
+## Identity Lifecycle
 
 Identity security applies throughout the complete identity lifecycle.
 
@@ -241,7 +241,7 @@ Each lifecycle transition MUST preserve security invariants.
 
 ---
 
-# Identity Provisioning
+## Identity Provisioning
 
 Identity creation MUST be controlled.
 
@@ -260,7 +260,7 @@ New identities MUST NOT receive unnecessary privileges by default.
 
 ---
 
-# Identity Activation
+## Identity Activation
 
 Provisioned identities SHOULD remain inactive until required activation conditions have been satisfied.
 
@@ -278,7 +278,7 @@ Activation MUST NOT implicitly grant privileges beyond those explicitly assigned
 
 ---
 
-# Identity Suspension
+## Identity Suspension
 
 FamilyOS MUST support temporary identity suspension where applicable.
 
@@ -297,7 +297,7 @@ Suspension SHOULD be reversible without requiring creation of a new identity.
 
 ---
 
-# Identity Revocation
+## Identity Revocation
 
 Identity access MUST be revocable.
 
@@ -315,7 +315,7 @@ Revocation MUST take effect within a security-appropriate timeframe.
 
 ---
 
-# Authentication
+## Authentication
 
 Authentication verifies that an actor is entitled to operate as a claimed identity.
 
@@ -327,7 +327,7 @@ Authentication MUST occur before authorization whenever an operation requires an
 
 ---
 
-# Authentication Factors
+## Authentication Factors
 
 Authentication factors generally belong to categories such as:
 
@@ -352,7 +352,7 @@ Authentication strength SHOULD reflect operation sensitivity.
 
 ---
 
-# Authentication Assurance
+## Authentication Assurance
 
 Not every authentication mechanism provides the same assurance.
 
@@ -383,7 +383,7 @@ Higher-risk operations MAY require re-authentication or stronger verification.
 
 ---
 
-# Multi-Factor Authentication
+## Multi-Factor Authentication
 
 FamilyOS SHOULD support multi-factor authentication for security-sensitive identities and operations where technically appropriate.
 
@@ -395,7 +395,7 @@ Administrative and highly privileged identities SHOULD use stronger authenticati
 
 ---
 
-# Credential Security
+## Credential Security
 
 Authentication credentials are security-sensitive assets.
 
@@ -416,7 +416,7 @@ Credentials MUST NOT be stored in plaintext when a secure alternative exists.
 
 ---
 
-# Password Security
+## Password Security
 
 Where passwords are supported, FamilyOS MUST apply secure password handling.
 
@@ -436,7 +436,7 @@ Application logs MUST NOT contain passwords.
 
 ---
 
-# Credential Transmission
+## Credential Transmission
 
 Credentials transmitted across a network MUST be protected by secure transport.
 
@@ -453,7 +453,7 @@ Credential transmission SHOULD minimize unnecessary intermediaries.
 
 ---
 
-# Authentication Failure Handling
+## Authentication Failure Handling
 
 Authentication failures MUST be handled securely.
 
@@ -468,7 +468,7 @@ Failure responses SHOULD provide sufficient usability without facilitating accou
 
 ---
 
-# Brute-Force Protection
+## Brute-Force Protection
 
 Authentication systems SHOULD include controls against repeated automated attempts.
 
@@ -485,7 +485,7 @@ Protection mechanisms MUST avoid creating trivial denial-of-service paths agains
 
 ---
 
-# Session Architecture
+## Session Architecture
 
 Successful authentication MAY establish a security session.
 
@@ -511,7 +511,7 @@ Sessions MUST have explicit lifecycle rules.
 
 ---
 
-# Session Security
+## Session Security
 
 Sessions SHOULD define:
 
@@ -529,7 +529,7 @@ Sensitive operations MAY require fresh authentication even when a valid session 
 
 ---
 
-# Session Expiration
+## Session Expiration
 
 Sessions MUST NOT remain valid indefinitely unless explicitly justified by the security model.
 
@@ -546,7 +546,7 @@ Expired sessions MUST NOT authorize new protected operations.
 
 ---
 
-# Session Revocation
+## Session Revocation
 
 FamilyOS MUST support session revocation.
 
@@ -564,7 +564,7 @@ Security-sensitive revocation SHOULD invalidate related authentication artifacts
 
 ---
 
-# Authentication Tokens
+## Authentication Tokens
 
 Authentication tokens MUST be treated as credentials.
 
@@ -581,7 +581,7 @@ Tokens MUST NOT provide broader access than necessary.
 
 ---
 
-# Authorization
+## Authorization
 
 Authorization determines whether a principal may perform a requested operation against a resource.
 
@@ -593,7 +593,7 @@ Authorization MUST be explicit for security-sensitive operations.
 
 ---
 
-# Authorization Request Model
+## Authorization Request Model
 
 A FamilyOS authorization decision SHOULD consider:
 
@@ -624,7 +624,7 @@ The context MAY include:
 
 ---
 
-# Default Deny
+## Default Deny
 
 FamilyOS authorization MUST follow a default-deny principle.
 
@@ -641,7 +641,7 @@ Missing policy information MUST NOT automatically produce permission.
 
 ---
 
-# Permissions
+## Permissions
 
 A permission represents authorization to perform a defined operation.
 
@@ -667,7 +667,7 @@ Broad permissions SHOULD be avoided when narrower permissions can express the in
 
 ---
 
-# Permission Model
+## Permission Model
 
 Permissions SHOULD describe:
 
@@ -683,7 +683,7 @@ The permission model SHOULD remain machine-verifiable.
 
 ---
 
-# Roles
+## Roles
 
 Roles group permissions according to organizational or domain responsibilities.
 
@@ -703,7 +703,7 @@ Roles MUST NOT become an uncontrolled mechanism for accumulating privileges.
 
 ---
 
-# Role-Based Access Control
+## Role-Based Access Control
 
 FamilyOS MAY use Role-Based Access Control where role semantics are appropriate.
 
@@ -731,7 +731,7 @@ Sensitive roles SHOULD receive additional governance.
 
 ---
 
-# Capability-Based Authorization
+## Capability-Based Authorization
 
 FamilyOS capabilities provide a natural mechanism for expressing functional authority.
 
@@ -759,7 +759,7 @@ Capability possession MUST NOT bypass resource-level authorization when addition
 
 ---
 
-# Resource-Based Authorization
+## Resource-Based Authorization
 
 Authorization MAY depend on the specific resource being accessed.
 
@@ -776,7 +776,7 @@ Resource authorization MUST use trusted ownership and relationship information.
 
 ---
 
-# Attribute-Based Authorization
+## Attribute-Based Authorization
 
 FamilyOS MAY use security attributes when authorization requires contextual decisions.
 
@@ -809,7 +809,7 @@ Attributes used for authorization MUST come from trusted sources.
 
 ---
 
-# Policy-Based Authorization
+## Policy-Based Authorization
 
 Complex authorization decisions SHOULD be expressible through explicit policies.
 
@@ -826,7 +826,7 @@ Policy decisions SHOULD be deterministic and auditable.
 
 ---
 
-# Authorization Enforcement
+## Authorization Enforcement
 
 Authorization MUST be enforced at appropriate Policy Enforcement Points.
 
@@ -844,7 +844,7 @@ User-interface visibility MUST NOT be considered sufficient authorization enforc
 
 ---
 
-# Authorization Decision Point
+## Authorization Decision Point
 
 FamilyOS SHOULD centralize common authorization decision semantics without creating an unrestricted security dependency.
 
@@ -874,7 +874,7 @@ The enforcement point remains responsible for honoring the decision.
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Every principal MUST receive only the privileges necessary for its intended responsibilities.
 
@@ -897,7 +897,7 @@ Privileges SHOULD be narrow in:
 
 ---
 
-# Privilege Elevation
+## Privilege Elevation
 
 Temporary privilege elevation MAY be used when an operation requires exceptional authority.
 
@@ -913,7 +913,7 @@ Privilege elevation MUST NOT silently become permanent access.
 
 ---
 
-# Administrative Access
+## Administrative Access
 
 Administrative identities represent high-value security principals.
 
@@ -932,7 +932,7 @@ Ordinary user identities SHOULD NOT receive administrative privileges by default
 
 ---
 
-# Family-Level Authorization
+## Family-Level Authorization
 
 FamilyOS operates around family contexts and therefore requires explicit family boundaries.
 
@@ -957,7 +957,7 @@ Cross-family access MUST require explicit authorization.
 
 ---
 
-# Resource Ownership
+## Resource Ownership
 
 Resources MAY have explicit ownership.
 
@@ -974,7 +974,7 @@ Ownership semantics MUST be defined by the relevant domain.
 
 ---
 
-# Delegated Access
+## Delegated Access
 
 FamilyOS MAY support delegated authority.
 
@@ -991,7 +991,7 @@ Delegated authority MUST NOT exceed the delegating principal's ability to delega
 
 ---
 
-# Service Identities
+## Service Identities
 
 Services MUST use explicit service identities when participating in protected operations.
 
@@ -1007,7 +1007,7 @@ Services MUST NOT use human credentials as their normal authentication mechanism
 
 ---
 
-# Plugin Identities
+## Plugin Identities
 
 Plugins MAY act as security principals when they access protected FamilyOS capabilities.
 
@@ -1024,7 +1024,7 @@ Plugin authorization MUST follow the Plugin Compliance Framework and FamilyOS se
 
 ---
 
-# Plugin Authorization
+## Plugin Authorization
 
 Plugin installation MUST NOT imply unrestricted platform access.
 
@@ -1056,7 +1056,7 @@ Unauthorized plugin capability requests MUST be denied.
 
 ---
 
-# Device Identity
+## Device Identity
 
 Devices MAY require explicit identity when they participate in trusted FamilyOS operations.
 
@@ -1072,7 +1072,7 @@ Device trust MUST NOT permanently replace user authentication for operations req
 
 ---
 
-# Integration Identity
+## Integration Identity
 
 External integrations MUST have explicit identities and credentials.
 
@@ -1088,7 +1088,7 @@ External integrations MUST NOT receive unrestricted FamilyOS access by default.
 
 ---
 
-# Machine-to-Machine Authentication
+## Machine-to-Machine Authentication
 
 Service-to-service and machine-to-machine interactions MUST use mechanisms appropriate for non-human identities.
 
@@ -1103,7 +1103,7 @@ Long-lived unrestricted shared credentials SHOULD be avoided.
 
 ---
 
-# External Identity Providers
+## External Identity Providers
 
 FamilyOS MAY integrate with trusted external identity providers.
 
@@ -1126,7 +1126,7 @@ External identity claims MUST be validated before use.
 
 ---
 
-# Identity Mapping
+## Identity Mapping
 
 External identities MUST map deterministically to FamilyOS principals.
 
@@ -1136,7 +1136,7 @@ Changes to external identity information MUST NOT accidentally transfer privileg
 
 ---
 
-# Access Revocation
+## Access Revocation
 
 All significant forms of access MUST have a revocation strategy.
 
@@ -1157,7 +1157,7 @@ Revocation mechanisms MUST be tested.
 
 ---
 
-# Permission Changes
+## Permission Changes
 
 Permission changes SHOULD take effect predictably.
 
@@ -1179,7 +1179,7 @@ Permission modifications MUST themselves require authorization.
 
 ---
 
-# Privilege Escalation Prevention
+## Privilege Escalation Prevention
 
 FamilyOS MUST prevent principals from granting themselves authority they do not already possess or control.
 
@@ -1195,7 +1195,7 @@ Privilege escalation attempts SHOULD generate security events.
 
 ---
 
-# Separation of Duties
+## Separation of Duties
 
 Sensitive operations MAY require separation of duties.
 
@@ -1212,7 +1212,7 @@ The requirement SHOULD reflect actual risk rather than unnecessary process compl
 
 ---
 
-# Authentication and Authorization Logging
+## Authentication and Authorization Logging
 
 Security-relevant identity and access events SHOULD be observable.
 
@@ -1233,7 +1233,7 @@ Sensitive credential material MUST NOT be included in logs.
 
 ---
 
-# Access Audit Model
+## Access Audit Model
 
 Access audit records SHOULD allow reconstruction of significant security decisions.
 
@@ -1255,7 +1255,7 @@ Audit records SHOULD be protected against unauthorized modification.
 
 ---
 
-# Privacy and Identity Data
+## Privacy and Identity Data
 
 Identity information is sensitive and MAY contain personal data.
 
@@ -1273,7 +1273,7 @@ Security logging MUST avoid unnecessary duplication of personal information.
 
 ---
 
-# Authentication Recovery
+## Authentication Recovery
 
 Authentication recovery mechanisms represent high-risk security paths.
 
@@ -1290,7 +1290,7 @@ Recovery events SHOULD be auditable.
 
 ---
 
-# Compromised Identity Response
+## Compromised Identity Response
 
 When an identity is suspected of compromise, FamilyOS SHOULD support:
 
@@ -1323,7 +1323,7 @@ Restoring access MUST include verification that the identity can again be truste
 
 ---
 
-# Fail-Safe Access Control
+## Fail-Safe Access Control
 
 Identity and access controls MUST fail safely.
 
@@ -1343,7 +1343,7 @@ System errors MUST NOT silently convert authorization failures into successful a
 
 ---
 
-# Identity and Clean Architecture
+## Identity and Clean Architecture
 
 Identity and access mechanisms MUST respect FamilyOS Clean Architecture boundaries.
 
@@ -1370,7 +1370,7 @@ Authentication infrastructure MUST NOT unnecessarily leak into domain models.
 
 ---
 
-# Identity and Domain-Driven Design
+## Identity and Domain-Driven Design
 
 Security concepts SHOULD align with bounded contexts.
 
@@ -1396,7 +1396,7 @@ A centralized authorization mechanism MUST NOT erase domain-specific security in
 
 ---
 
-# Identity and Security Architecture
+## Identity and Security Architecture
 
 This document implements the identity and access-control responsibilities established by `03-Security-Architecture.md`.
 
@@ -1425,7 +1425,7 @@ Identity and access control are therefore foundational services of the FamilyOS 
 
 ---
 
-# Identity and Plugin Compliance
+## Identity and Plugin Compliance
 
 Plugin identity and authorization MUST integrate with EPIC-PLUGIN-002 — Plugin Compliance Framework.
 
@@ -1442,7 +1442,7 @@ A plugin MUST NOT be considered compliant when its required privileges cannot be
 
 ---
 
-# Identity and Testing
+## Identity and Testing
 
 Identity, authentication, and authorization controls MUST be testable.
 
@@ -1466,7 +1466,7 @@ Negative authorization tests are mandatory for security-sensitive access paths.
 
 ---
 
-# Identity and Quality
+## Identity and Quality
 
 Identity and access controls MUST participate in FamilyOS quality governance.
 
@@ -1483,7 +1483,7 @@ Critical access-control failures MUST block release when they materially comprom
 
 ---
 
-# Identity and Observability
+## Identity and Observability
 
 Identity and access events MUST integrate with the FamilyOS Observability Framework.
 
@@ -1509,7 +1509,7 @@ Observability MUST preserve security and privacy requirements.
 
 ---
 
-# Identity Governance
+## Identity Governance
 
 Identity and access architecture MUST be governed as a security-critical platform capability.
 
@@ -1529,7 +1529,7 @@ Significant decisions SHOULD be documented through FamilyOS architectural govern
 
 ---
 
-# Access Reviews
+## Access Reviews
 
 Privileged access SHOULD be reviewed periodically.
 
@@ -1545,7 +1545,7 @@ Unused or obsolete privileges SHOULD be removed.
 
 ---
 
-# Identity Security Invariants
+## Identity Security Invariants
 
 The following invariants apply across FamilyOS:
 
@@ -1566,7 +1566,7 @@ The following invariants apply across FamilyOS:
 
 ---
 
-# Reference Access Flow
+## Reference Access Flow
 
 The canonical FamilyOS access flow is:
 
@@ -1617,7 +1617,7 @@ This flow provides the baseline authorization architecture for FamilyOS protecte
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 The FamilyOS Identity, Authentication and Authorization architecture enables:
 
@@ -1638,7 +1638,7 @@ The FamilyOS Identity, Authentication and Authorization architecture enables:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS identity and access control is based on the following principle:
 

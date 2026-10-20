@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 08 Documentation Versioning
+## 08 Documentation Versioning
 
-## Context
+### Context
 
 Documentation is a long-term asset of the FamilyOS ecosystem. As the platform evolves, documentation must remain understandable, traceable, and compatible with previous versions.
 
@@ -12,11 +12,11 @@ The objective is to ensure that every documented decision, capability, and archi
 
 ---
 
-# Documentation Versioning Principles
+## Documentation Versioning Principles
 
 Documentation versioning follows these fundamental principles:
 
-## Traceability
+### Traceability
 
 Every significant documentation change must be traceable to:
 
@@ -32,7 +32,7 @@ Documentation history must allow contributors to understand why a change happene
 
 ---
 
-## Stability
+### Stability
 
 Documentation versions must reflect the maturity level of the documented subject.
 
@@ -44,7 +44,7 @@ Stable documentation should not change without:
 
 ---
 
-## Compatibility
+### Compatibility
 
 Documentation changes must consider compatibility with:
 
@@ -57,7 +57,7 @@ Breaking changes require explicit documentation.
 
 ---
 
-# Documentation Version Format
+## Documentation Version Format
 
 FamilyOS documentation follows semantic versioning principles.
 
@@ -75,7 +75,7 @@ Example:
 
 ---
 
-# Major Documentation Version
+## Major Documentation Version
 
 A major version indicates a breaking documentation change.
 
@@ -100,7 +100,7 @@ A major version requires:
 
 ---
 
-# Minor Documentation Version
+## Minor Documentation Version
 
 A minor version introduces new information without breaking existing understanding.
 
@@ -121,7 +121,7 @@ Minor changes should preserve existing references whenever possible.
 
 ---
 
-# Patch Documentation Version
+## Patch Documentation Version
 
 A patch version contains corrections and improvements.
 
@@ -142,7 +142,7 @@ Patch updates do not change the meaning of the documented concepts.
 
 ---
 
-# Documentation Lifecycle Versioning
+## Documentation Lifecycle Versioning
 
 Documentation versions follow the lifecycle of the related artifact.
 
@@ -171,7 +171,7 @@ Each lifecycle transition may create a new documentation version.
 
 ---
 
-# Versioning During RFC Development
+## Versioning During RFC Development
 
 RFC documentation evolves through multiple stages.
 
@@ -195,7 +195,7 @@ Rules:
 
 ---
 
-# Versioning During SPEC Development
+## Versioning During SPEC Development
 
 Specifications require stronger stability guarantees.
 
@@ -216,11 +216,11 @@ SPEC-0005 v2.0.0
 
 ---
 
-# Documentation Change Classification
+## Documentation Change Classification
 
 Every documentation update must be classified.
 
-## Editorial Change
+### Editorial Change
 
 No semantic impact.
 
@@ -238,7 +238,7 @@ PATCH
 
 ---
 
-## Informative Change
+### Informative Change
 
 Adds explanation without changing requirements.
 
@@ -256,7 +256,7 @@ PATCH or MINOR
 
 ---
 
-## Normative Change
+### Normative Change
 
 Changes requirements, rules, or expected behavior.
 
@@ -274,7 +274,7 @@ MINOR or MAJOR
 
 ---
 
-# Documentation Changelog Requirements
+## Documentation Changelog Requirements
 
 Each versioned documentation artifact should maintain a changelog.
 
@@ -299,7 +299,7 @@ Related artifacts:
 
 ---
 
-# Version References
+## Version References
 
 Documentation references should always identify the version used.
 
@@ -321,7 +321,7 @@ Version references prevent ambiguity.
 
 ---
 
-# Archived Documentation
+## Archived Documentation
 
 Deprecated documentation must not be deleted immediately.
 
@@ -339,7 +339,7 @@ Archived documents must contain:
 
 ---
 
-# Documentation Repository Integration
+## Documentation Repository Integration
 
 Documentation versions are managed through:
 
@@ -358,7 +358,7 @@ Tags should identify important documentation milestones.
 
 ---
 
-# Governance Integration
+## Governance Integration
 
 Documentation versioning is controlled by the Documentation Framework governance rules.
 
@@ -373,7 +373,7 @@ Responsibilities:
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
 Documentation versioning integrates with:
 
@@ -388,7 +388,7 @@ Documentation versions must remain aligned with software and architecture evolut
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 A documentation artifact complies with FamilyOS versioning standards when:
 

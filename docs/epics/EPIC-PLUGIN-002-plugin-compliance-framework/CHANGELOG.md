@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# CHANGELOG
+## CHANGELOG
 
-## EPIC-PLUGIN-002
+### EPIC-PLUGIN-002
 
 All notable changes to the Plugin Compliance Framework documentation baseline are recorded in this file.
 
@@ -10,7 +10,7 @@ The changelog follows the FamilyOS principle that compliance policy evolution mu
 
 ---
 
-# Changelog Principle
+## Changelog Principle
 
 The governing changelog principle is:
 
@@ -27,7 +27,7 @@ It does not replace:
 
 ---
 
-# Versioning
+## Versioning
 
 The initial framework baseline uses:
 
@@ -54,7 +54,7 @@ The broader FamilyOS release strategy remains authoritative.
 
 ---
 
-# [Unreleased]
+## [Unreleased]
 
 No post-baseline framework changes are currently recorded.
 
@@ -62,9 +62,9 @@ Future normative, architectural, policy, governance, security, schema,
 validation, or lifecycle changes must be recorded here before the next
 framework release.
 
-# [1.0.0] — Initial Framework Definition
+## [1.0.0] — Initial Framework Definition
 
-## Status
+### Status
 
 ```text
 Planned Initial Baseline
@@ -76,9 +76,9 @@ The initial framework-definition release does not imply that all roadmap impleme
 
 ---
 
-# Added
+## Added
 
-## EPIC Foundation
+### EPIC Foundation
 
 Added:
 
@@ -99,7 +99,7 @@ These documents establish:
 
 ---
 
-## Compliance Architecture
+### Compliance Architecture
 
 Added:
 
@@ -155,7 +155,7 @@ Governance
 
 ---
 
-## Compliance Rule Model
+### Compliance Rule Model
 
 Added:
 
@@ -181,7 +181,7 @@ Defined rule concepts including:
 
 ---
 
-## Compliance Profiles
+### Compliance Profiles
 
 Added:
 
@@ -203,7 +203,7 @@ Defined the principle that profiles select rules without redefining rule semanti
 
 ---
 
-## Validation Engine
+### Validation Engine
 
 Added:
 
@@ -224,7 +224,7 @@ Established the architecture for:
 
 ---
 
-## Evidence Model
+### Evidence Model
 
 Added:
 
@@ -255,7 +255,7 @@ ATTESTED
 
 ---
 
-## Findings and Severity
+### Findings and Severity
 
 Added:
 
@@ -291,7 +291,7 @@ ERROR
 
 ---
 
-## Compliance Status
+### Compliance Status
 
 Established the canonical overall compliance states:
 
@@ -306,7 +306,7 @@ Defined overall compliance as a derived policy decision rather than a validator 
 
 ---
 
-## Compliance Reporting
+### Compliance Reporting
 
 Added:
 
@@ -327,7 +327,7 @@ Defined the canonical principle that all report representations derive from one 
 
 ---
 
-## Automation and CI
+### Automation and CI
 
 Added:
 
@@ -356,7 +356,7 @@ where evidence compatibility permits it.
 
 ---
 
-## Compliance Gates
+### Compliance Gates
 
 Added:
 
@@ -376,7 +376,7 @@ Established that gates consume Compliance Results rather than define independent
 
 ---
 
-## Certification Integration
+### Certification Integration
 
 Added:
 
@@ -401,7 +401,7 @@ Defined that a compliant plugin is not automatically certified.
 
 ---
 
-## Governance
+### Governance
 
 Added:
 
@@ -435,7 +435,7 @@ RETIRED
 
 ---
 
-## Security and Trust
+### Security and Trust
 
 Added:
 
@@ -464,7 +464,7 @@ Introduced architecture for:
 
 ---
 
-## Framework Lifecycle
+### Framework Lifecycle
 
 Added:
 
@@ -492,7 +492,7 @@ Defined expectations for:
 
 ---
 
-## Roadmap
+### Roadmap
 
 Added:
 
@@ -516,7 +516,7 @@ Established the recommended progression from framework definition through:
 
 ---
 
-## References
+### References
 
 Added:
 
@@ -539,7 +539,7 @@ Established normative relationships with FamilyOS engineering foundations includ
 
 ---
 
-## Framework Validation
+### Framework Validation
 
 Added:
 
@@ -565,7 +565,7 @@ Established the principle that validation claims require evidence.
 
 ---
 
-## Framework Summary
+### Framework Summary
 
 Added:
 
@@ -575,7 +575,7 @@ Provided a consolidated representation of the complete Plugin Compliance Framewo
 
 ---
 
-## Framework Release Model
+### Framework Release Model
 
 Added:
 
@@ -596,7 +596,7 @@ Defined:
 
 ---
 
-## Framework Checklist
+### Framework Checklist
 
 Added:
 
@@ -606,7 +606,7 @@ Established framework-definition, operational-readiness, release-enforcement, ce
 
 ---
 
-## Navigation and Metadata
+### Navigation and Metadata
 
 Added:
 
@@ -626,7 +626,7 @@ Established:
 
 ---
 
-# Defined
+## Defined
 
 The initial framework baseline defines 30 required deliverables:
 
@@ -640,7 +640,7 @@ The initial framework baseline defines 30 required deliverables:
 
 ---
 
-# Defined — Rule Outcomes
+## Defined — Rule Outcomes
 
 The initial canonical rule outcomes are:
 
@@ -654,7 +654,7 @@ ERROR
 
 ---
 
-# Defined — Severity
+## Defined — Severity
 
 The initial canonical severity levels are:
 
@@ -667,7 +667,7 @@ CRITICAL
 
 ---
 
-# Defined — Compliance Status
+## Defined — Compliance Status
 
 The initial overall compliance states are:
 
@@ -680,7 +680,7 @@ ERROR
 
 ---
 
-# Defined — Compliance Domains
+## Defined — Compliance Domains
 
 The initial compliance domains are:
 
@@ -704,7 +704,7 @@ Governance
 
 ---
 
-# Defined — Core Semantic Boundaries
+## Defined — Core Semantic Boundaries
 
 The initial framework explicitly separates:
 
@@ -719,7 +719,7 @@ Certification Eligibility != Certification
 
 ---
 
-# Defined — Trust Boundary
+## Defined — Trust Boundary
 
 The framework establishes that plugins may provide validation inputs but cannot control:
 
@@ -734,7 +734,7 @@ The framework establishes that plugins may provide validation inputs but cannot 
 
 ---
 
-# Defined — Initial Implementation Strategy
+## Defined — Initial Implementation Strategy
 
 The initial recommended implementation slice is:
 
@@ -754,7 +754,7 @@ JSON Report
 
 ---
 
-# Not Yet Implemented
+## Not Yet Implemented
 
 The `1.0.0` framework-definition baseline does not by itself claim production implementation of:
 
@@ -776,7 +776,7 @@ These capabilities are planned through the implementation roadmap.
 
 ---
 
-# Validation State
+## Validation State
 
 The initial `1.0.0` framework-definition baseline has completed
 documentation validation.
@@ -816,7 +816,7 @@ The historical documentation baseline did not itself imply operational implement
 
 ---
 
-# Post-Baseline Implementation — Canonical CI Integration
+## Post-Baseline Implementation — Canonical CI Integration
 
 Commit `1519670` implemented the initial Plugin Compliance runtime, including core models, registries, engine, initial rules, reporting, CLI integration, and official-plugin validation. Commit `d95a97b` added Ruff and MyPy compliance evidence.
 
@@ -838,7 +838,7 @@ This operational milestone does not implement Merge, Build, Release, or Certific
 
 ---
 
-# Migration
+## Migration
 
 No previous Plugin Compliance Framework baseline exists.
 
@@ -854,7 +854,7 @@ Future breaking releases must provide migration guidance.
 
 ---
 
-# Compatibility
+## Compatibility
 
 The initial baseline defines architecture rather than an executable compatibility promise.
 
@@ -869,7 +869,7 @@ mature.
 
 ---
 
-# Security
+## Security
 
 The initial baseline establishes security and trust architecture but does not claim that all advanced runtime isolation and attestation capabilities are implemented.
 
@@ -877,7 +877,7 @@ Security implementation must progress according to the roadmap before third-part
 
 ---
 
-# Release Notes Summary
+## Release Notes Summary
 
 Version `1.0.0` establishes the first complete architectural definition of FamilyOS plugin compliance.
 
@@ -900,7 +900,7 @@ Certification Eligibility
 
 ---
 
-# Future Changelog Requirements
+## Future Changelog Requirements
 
 Every future release should document, where applicable:
 
@@ -922,7 +922,7 @@ Revalidation Requirements
 
 ---
 
-# Final Changelog Principle
+## Final Changelog Principle
 
 The governing principle of this changelog is:
 

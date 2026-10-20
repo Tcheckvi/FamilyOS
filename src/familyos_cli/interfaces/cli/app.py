@@ -3,12 +3,14 @@
 import typer
 
 from familyos_cli.interfaces.cli.commands.build import build
+from familyos_cli.interfaces.cli.commands.core import core_app
 from familyos_cli.interfaces.cli.commands.create import create_app
 from familyos_cli.interfaces.cli.commands.generation import (
     generation_app,
 )
 from familyos_cli.interfaces.cli.commands.init import init
 from familyos_cli.interfaces.cli.commands.plugin import plugin_app
+from familyos_cli.interfaces.cli.commands.quality import quality_app
 from familyos_cli.interfaces.cli.commands.validation import validation_app
 from familyos_cli.interfaces.cli.commands.version import version
 
@@ -25,6 +27,11 @@ app.add_typer(
 )
 
 app.add_typer(
+    core_app,
+    name="core",
+)
+
+app.add_typer(
     generation_app,
     name="generation",
 )
@@ -32,6 +39,11 @@ app.add_typer(
 app.add_typer(
     plugin_app,
     name="plugin",
+)
+
+app.add_typer(
+    quality_app,
+    name="quality",
 )
 
 app.add_typer(

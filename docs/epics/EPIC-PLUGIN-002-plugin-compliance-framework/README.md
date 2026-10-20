@@ -22,7 +22,7 @@ The framework is designed to support built-in, official, first-party, and future
 
 ---
 
-# Scope
+## Scope
 
 EPIC-PLUGIN-002 covers:
 
@@ -51,7 +51,7 @@ Implementation maturity continues through the roadmap defined by this EPIC.
 
 ---
 
-# Core Principle
+## Core Principle
 
 The foundational principle of EPIC-PLUGIN-002 is:
 
@@ -59,7 +59,7 @@ The foundational principle of EPIC-PLUGIN-002 is:
 
 ---
 
-# Framework Model
+## Framework Model
 
 The framework follows this conceptual model:
 
@@ -96,7 +96,7 @@ Release / Certification
 
 ---
 
-# Document Structure
+## Document Structure
 
 The framework documentation is organized as follows:
 
@@ -136,29 +136,29 @@ EPIC-PLUGIN-002-plugin-compliance-framework/
 
 ---
 
-# Document Index
+## Document Index
 
-## Foundation
+### Foundation
 
-### `00-EPIC.md`
+#### `00-EPIC.md`
 
 Defines the purpose, scope, compliance philosophy, strategic impact, and success criteria of EPIC-PLUGIN-002.
 
-### `01-Context.md`
+#### `01-Context.md`
 
 Explains why FamilyOS requires formal plugin compliance as the plugin ecosystem matures.
 
-### `02-Vision.md`
+#### `02-Vision.md`
 
 Defines the long-term Compliance-as-Code vision and the target state for the FamilyOS plugin ecosystem.
 
-### `03-Principles.md`
+#### `03-Principles.md`
 
 Establishes the foundational and non-negotiable principles governing plugin compliance.
 
 ---
 
-# Architecture
+## Architecture
 
 ### `04-Compliance-Architecture.md`
 
@@ -182,7 +182,7 @@ Defines the orchestration model for deterministic plugin compliance evaluation.
 
 ---
 
-# Evidence and Results
+## Evidence and Results
 
 ### `09-Evidence-Model.md`
 
@@ -198,7 +198,7 @@ Defines human-readable and machine-readable compliance reporting.
 
 ---
 
-# Engineering Integration
+## Engineering Integration
 
 ### `12-Automation-and-CI-Integration.md`
 
@@ -214,7 +214,7 @@ Defines the architectural boundary between compliance and certification.
 
 ---
 
-# Governance and Trust
+## Governance and Trust
 
 ### `15-Governance-and-Rule-Lifecycle.md`
 
@@ -230,7 +230,7 @@ Defines how the framework itself evolves through implementation, adoption, enfor
 
 ---
 
-# Delivery and Evolution
+## Delivery and Evolution
 
 ### `18-Roadmap.md`
 
@@ -258,7 +258,7 @@ Provides the final framework-definition and implementation-readiness checklist.
 
 ---
 
-# Compliance Domains
+## Compliance Domains
 
 The initial compliance domains are:
 
@@ -284,7 +284,7 @@ Every compliance rule has one primary domain.
 
 ---
 
-# Rule Outcomes
+## Rule Outcomes
 
 The canonical rule outcome baseline is:
 
@@ -302,7 +302,7 @@ It is separate from severity.
 
 ---
 
-# Severity
+## Severity
 
 The baseline severity model is:
 
@@ -317,7 +317,7 @@ Severity expresses the consequence of a finding.
 
 ---
 
-# Compliance Status
+## Compliance Status
 
 The canonical overall compliance states are:
 
@@ -332,7 +332,7 @@ Overall compliance status is derived from rule outcomes, policy, evidence comple
 
 ---
 
-# Compliance Profiles
+## Compliance Profiles
 
 The architecture supports profiles such as:
 
@@ -352,7 +352,7 @@ They never redefine the semantic meaning of those rules.
 
 ---
 
-# Compliance and Certification
+## Compliance and Certification
 
 Compliance and certification are intentionally separate.
 
@@ -378,7 +378,7 @@ A compliant plugin is not automatically certified.
 
 ---
 
-# Relationships
+## Relationships
 
 EPIC-PLUGIN-002 builds on existing FamilyOS engineering foundations.
 
@@ -409,7 +409,7 @@ The compliance framework consumes existing authoritative requirements rather tha
 
 ---
 
-# Key References
+## Key References
 
 Important references include:
 
@@ -433,7 +433,7 @@ Where reference identifiers are ambiguous or duplicated in the repository, the a
 
 ---
 
-# Governance
+## Governance
 
 The Plugin Compliance Framework is governed as part of the FamilyOS Engineering Platform.
 
@@ -451,7 +451,7 @@ Compliance requirements must never emerge accidentally from validator implementa
 
 ---
 
-# Versioning
+## Versioning
 
 Framework releases must have explicit versions.
 
@@ -473,7 +473,7 @@ Historical results remain associated with their original context.
 
 ---
 
-# Validation
+## Validation
 
 Framework validation includes:
 
@@ -503,7 +503,7 @@ according to repository policy.
 
 ---
 
-# Initial Implementation Strategy
+## Initial Implementation Strategy
 
 The recommended first implementation slice is intentionally limited:
 
@@ -525,7 +525,7 @@ This allows the architecture to be proven before the rule catalog and enforcemen
 
 ---
 
-# Recommended Implementation Order
+## Recommended Implementation Order
 
 The recommended progression is:
 
@@ -580,7 +580,7 @@ Continuous Compliance
 
 ---
 
-# Framework Status
+## Framework Status
 
 EPIC-PLUGIN-002 currently defines the normative architecture and governance model for the Plugin Compliance Framework.
 
@@ -592,7 +592,7 @@ Operational maturity must be demonstrated through the validation and roadmap cri
 
 ---
 
-# Final Principle
+## Final Principle
 
 The Plugin Compliance Framework exists to establish one durable rule for the FamilyOS plugin ecosystem:
 

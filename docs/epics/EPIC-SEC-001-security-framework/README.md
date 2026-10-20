@@ -1,8 +1,8 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-## Overview
+### Overview
 
 The **FamilyOS Security Framework** defines the canonical security foundation for FamilyOS engineering, plugins, data, identities, release processes, and future runtime operation.
 
@@ -44,7 +44,7 @@ docs/epics/EPIC-SEC-001-security-framework/
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Security Framework is to ensure that FamilyOS security remains:
 
@@ -67,7 +67,7 @@ Security requirements apply throughout design, implementation, validation, relea
 
 ---
 
-# Core Principle
+## Core Principle
 
 The central principle of the Security Framework is:
 
@@ -84,7 +84,7 @@ Security SHALL NOT depend exclusively on:
 
 ---
 
-# Why the Security Framework Exists
+## Why the Security Framework Exists
 
 FamilyOS may progressively manage:
 
@@ -120,7 +120,7 @@ EPIC-SEC-001 provides a common security model.
 
 ---
 
-# Security Responsibilities
+## Security Responsibilities
 
 The Security Framework governs:
 
@@ -160,7 +160,7 @@ Release Security
 
 ---
 
-# Security Principles
+## Security Principles
 
 The framework establishes the following foundational security principles:
 
@@ -184,7 +184,7 @@ These principles guide architecture, implementation, testing, validation, and go
 
 ---
 
-# Deny by Default
+## Deny by Default
 
 Access SHOULD be denied unless explicitly authorized.
 
@@ -204,7 +204,7 @@ until sufficient authorization evidence exists.
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Users, services, plugins, automation, and operational identities SHOULD receive only the capabilities required for their legitimate responsibilities.
 
@@ -218,7 +218,7 @@ Privileges SHOULD remain:
 
 ---
 
-# Explicit Trust
+## Explicit Trust
 
 Trust SHALL be established through explicit evidence.
 
@@ -236,7 +236,7 @@ Trust SHALL NOT automatically result from location or implementation origin.
 
 ---
 
-# Security Architecture
+## Security Architecture
 
 The Security Architecture defines the structural organization of FamilyOS security.
 
@@ -262,7 +262,7 @@ Different boundaries may require different controls.
 
 ---
 
-# Identity
+## Identity
 
 Identity answers:
 
@@ -285,7 +285,7 @@ Identity SHALL remain separate from authorization.
 
 ---
 
-# Authentication
+## Authentication
 
 Authentication establishes confidence in an asserted identity.
 
@@ -302,7 +302,7 @@ Successful authentication does not automatically imply unrestricted authorizatio
 
 ---
 
-# Authorization
+## Authorization
 
 Authorization determines whether an identified subject is permitted to perform an action.
 
@@ -330,7 +330,7 @@ REQUIRE_ADDITIONAL_ASSURANCE
 
 ---
 
-# Permissions
+## Permissions
 
 Permissions SHOULD have stable and explicit semantics.
 
@@ -350,7 +350,7 @@ Permission meaning SHALL remain governed across component boundaries.
 
 ---
 
-# Data Protection
+## Data Protection
 
 FamilyOS data SHOULD be protected according to sensitivity and risk.
 
@@ -369,7 +369,7 @@ Security controls SHOULD remain proportional to actual data sensitivity.
 
 ---
 
-# Secret Management
+## Secret Management
 
 Secrets SHALL NOT be treated as ordinary configuration.
 
@@ -395,7 +395,7 @@ Secrets SHOULD be:
 
 ---
 
-# Cryptography
+## Cryptography
 
 Cryptographic mechanisms may protect:
 
@@ -413,7 +413,7 @@ Custom cryptographic algorithms SHOULD NOT be introduced without exceptional jus
 
 ---
 
-# Threat Modeling
+## Threat Modeling
 
 Threat modeling helps identify:
 
@@ -448,7 +448,7 @@ Threat analysis SHOULD remain proportional to system criticality.
 
 ---
 
-# Risk Management
+## Risk Management
 
 Security risk influences:
 
@@ -465,7 +465,7 @@ Critical risks SHOULD normally block release or activation until remediated or e
 
 ---
 
-# Trust Boundaries
+## Trust Boundaries
 
 Trust boundaries identify transitions where security assumptions change.
 
@@ -482,7 +482,7 @@ Crossing a trust boundary SHOULD trigger appropriate validation and authorizatio
 
 ---
 
-# Security Controls
+## Security Controls
 
 Security controls implement security requirements.
 
@@ -507,7 +507,7 @@ A control SHOULD define:
 
 ---
 
-# Security Compliance
+## Security Compliance
 
 Security compliance evaluates whether applicable security controls are satisfied.
 
@@ -526,7 +526,7 @@ Compliance SHALL NOT replace architectural security reasoning.
 
 ---
 
-# Security Validation
+## Security Validation
 
 Security validation verifies whether applicable requirements have been evaluated sufficiently.
 
@@ -552,7 +552,7 @@ Earlier validation SHOULD detect issues before privileged release operations.
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Security decisions SHOULD rely on trustworthy evidence.
 
@@ -573,7 +573,7 @@ Missing required evidence SHALL NOT automatically become successful validation.
 
 ---
 
-# Security Automation
+## Security Automation
 
 Repeatable security controls SHOULD be automated where practical.
 
@@ -592,7 +592,7 @@ Automation SHALL NOT silently bypass unresolved findings.
 
 ---
 
-# Plugin Security
+## Plugin Security
 
 Plugins are important FamilyOS trust boundaries.
 
@@ -612,7 +612,7 @@ Official plugin status SHALL NOT bypass mandatory security controls.
 
 ---
 
-# Security and Testing
+## Security and Testing
 
 EPIC-TST-001 owns the general Testing Framework.
 
@@ -630,7 +630,7 @@ Security consumes the Testing Framework instead of defining a separate testing a
 
 ---
 
-# Security and Quality
+## Security and Quality
 
 EPIC-QLT-001 owns the general Quality Framework.
 
@@ -646,7 +646,7 @@ Examples include:
 
 ---
 
-# Security and Build
+## Security and Build
 
 EPIC-BLD-001 owns the Build Framework.
 
@@ -663,7 +663,7 @@ A successful build alone does not prove security readiness.
 
 ---
 
-# Security and Release
+## Security and Release
 
 EPIC-REL-001 owns the canonical Release Framework.
 
@@ -689,7 +689,7 @@ Security SHALL NOT introduce a competing release lifecycle.
 
 ---
 
-# Security and Observability
+## Security and Observability
 
 EPIC-OBS-001 owns the Observability Framework.
 
@@ -706,7 +706,7 @@ Observability data SHALL itself respect security and privacy requirements.
 
 ---
 
-# Security and Plugin Compliance
+## Security and Plugin Compliance
 
 EPIC-PLUGIN-002 owns Plugin Compliance.
 
@@ -716,7 +716,7 @@ Plugin Compliance may provide structured evidence that a plugin conforms to requ
 
 ---
 
-# Canonical Numbered Documents
+## Canonical Numbered Documents
 
 The historical Security Framework consists of exactly ten numbered documents:
 
@@ -747,7 +747,7 @@ Numbered document count:
 
 ---
 
-# Control Documents
+## Control Documents
 
 The normalized current repository representation adds seven control documents:
 
@@ -769,7 +769,7 @@ Control document count:
 
 ---
 
-# Current Canonical Repository Structure
+## Current Canonical Repository Structure
 
 The normalized structure is:
 
@@ -792,7 +792,7 @@ Canonical Files:       17
 
 ---
 
-# Historical Structure
+## Historical Structure
 
 The historical publication used the earlier compact documentation model.
 
@@ -810,7 +810,7 @@ The seven control documents added later SHALL NOT be represented as having exist
 
 ---
 
-# Historical Publication
+## Historical Publication
 
 Framework version:
 
@@ -844,7 +844,7 @@ Immutable
 
 ---
 
-# Post-Release Normalization
+## Post-Release Normalization
 
 The current repository activity introduces the standard FamilyOS EPIC control-document layer.
 
@@ -862,7 +862,7 @@ Normalization does not redefine the framework's historical release.
 
 ---
 
-# Revalidation
+## Revalidation
 
 The normalized representation must be revalidated before its current control state may be considered fully validated.
 
@@ -886,7 +886,7 @@ Required validation includes:
 
 ---
 
-# Evidence Policy
+## Evidence Policy
 
 Validation SHALL follow:
 
@@ -906,7 +906,7 @@ Only actual validation evidence may establish successful revalidation.
 
 ---
 
-# Current State
+## Current State
 
 ```text
 EPIC:                    EPIC-SEC-001
@@ -936,7 +936,7 @@ Final Revalidation:      Validated
 
 ---
 
-# Navigation
+## Navigation
 
 Start with:
 
@@ -971,7 +971,7 @@ Revision-History.md
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Security Framework is based on the following principle:
 

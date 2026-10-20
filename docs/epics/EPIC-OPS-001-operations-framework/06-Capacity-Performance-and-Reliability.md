@@ -1,10 +1,10 @@
 # Operations Framework
 
-# EPIC-OPS-001
+## EPIC-OPS-001
 
-# 06 Capacity, Performance and Reliability
+## 06 Capacity, Performance and Reliability
 
-## Overview
+### Overview
 
 Capacity, performance, and reliability define the operational engineering practices required to ensure that FamilyOS continues to function predictably under expected and unexpected workload conditions.
 
@@ -30,7 +30,7 @@ These properties MUST be engineered, observed, validated, and continuously impro
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to establish FamilyOS requirements for:
 
@@ -61,7 +61,7 @@ The objective is to ensure that FamilyOS services remain usable, stable, efficie
 
 ---
 
-# Core Principle
+## Core Principle
 
 The fundamental FamilyOS principle for capacity, performance, and reliability is:
 
@@ -71,7 +71,7 @@ Performance MUST NOT be optimized independently of correctness, security, or rel
 
 ---
 
-# Operational Quality Model
+## Operational Quality Model
 
 Capacity, performance, and reliability interact as follows:
 
@@ -98,7 +98,7 @@ Insufficient capacity often becomes a performance problem before becoming a reli
 
 ---
 
-# Capacity Management
+## Capacity Management
 
 Capacity management ensures that sufficient resources exist to support current and expected workload.
 
@@ -119,7 +119,7 @@ Capacity SHOULD be based on measured or reasonably estimated demand.
 
 ---
 
-# Capacity Objectives
+## Capacity Objectives
 
 Capacity management SHOULD ensure that:
 
@@ -134,7 +134,7 @@ Capacity planning SHOULD occur before saturation becomes an incident.
 
 ---
 
-# Workload Model
+## Workload Model
 
 Operational capacity decisions SHOULD begin with a workload model.
 
@@ -161,7 +161,7 @@ Workload models SHOULD reflect actual usage patterns where evidence exists.
 
 ---
 
-# Workload Dimensions
+## Workload Dimensions
 
 Workload MAY be described using dimensions such as:
 
@@ -179,7 +179,7 @@ Relevant dimensions SHOULD be selected according to service behavior.
 
 ---
 
-# Baseline Workload
+## Baseline Workload
 
 Services SHOULD identify a normal operational workload.
 
@@ -194,7 +194,7 @@ Baseline workload SHOULD be updated when usage patterns materially change.
 
 ---
 
-# Peak Workload
+## Peak Workload
 
 Services SHOULD consider expected workload peaks.
 
@@ -212,7 +212,7 @@ Capacity planning SHOULD NOT assume average workload represents maximum demand.
 
 ---
 
-# Burst Workload
+## Burst Workload
 
 Short workload bursts MAY exceed ordinary operating levels.
 
@@ -227,7 +227,7 @@ Unbounded burst handling SHOULD be avoided.
 
 ---
 
-# Capacity Headroom
+## Capacity Headroom
 
 Critical services SHOULD maintain reasonable capacity headroom.
 
@@ -246,7 +246,7 @@ Operating continuously near maximum capacity increases incident risk.
 
 ---
 
-# Capacity Limits
+## Capacity Limits
 
 Operational services SHOULD understand important resource limits.
 
@@ -264,7 +264,7 @@ Unknown limits represent operational risk.
 
 ---
 
-# Resource Saturation
+## Resource Saturation
 
 Saturation occurs when a resource approaches or reaches its effective capacity.
 
@@ -281,7 +281,7 @@ Saturation SHOULD be observable.
 
 ---
 
-# Saturation Indicators
+## Saturation Indicators
 
 FamilyOS SHOULD monitor relevant saturation indicators.
 
@@ -301,7 +301,7 @@ Indicators SHOULD provide enough warning to allow corrective action where practi
 
 ---
 
-# Resource Exhaustion
+## Resource Exhaustion
 
 Resource exhaustion MUST fail predictably where possible.
 
@@ -316,7 +316,7 @@ Resource limits SHOULD be combined with appropriate failure handling.
 
 ---
 
-# Storage Capacity
+## Storage Capacity
 
 Storage capacity planning SHOULD consider:
 
@@ -332,7 +332,7 @@ Storage monitoring SHOULD distinguish usable capacity from nominal capacity.
 
 ---
 
-# Storage Growth
+## Storage Growth
 
 Storage growth SHOULD be measurable.
 
@@ -353,7 +353,7 @@ Unexpected growth SHOULD trigger investigation.
 
 ---
 
-# Log Capacity
+## Log Capacity
 
 Observability data can itself consume significant resources.
 
@@ -369,7 +369,7 @@ Unbounded logging MUST NOT be allowed to exhaust operational storage.
 
 ---
 
-# Queue Capacity
+## Queue Capacity
 
 Queues SHOULD have understood capacity behavior.
 
@@ -385,7 +385,7 @@ Unbounded queue growth SHOULD be avoided.
 
 ---
 
-# Connection Capacity
+## Connection Capacity
 
 Services using connection pools SHOULD define:
 
@@ -400,7 +400,7 @@ Increasing local connection limits MUST NOT overload downstream services.
 
 ---
 
-# Capacity Forecasting
+## Capacity Forecasting
 
 FamilyOS SHOULD forecast capacity where growth is meaningful.
 
@@ -416,7 +416,7 @@ Forecasts SHOULD be reviewed when assumptions change.
 
 ---
 
-# Capacity Review
+## Capacity Review
 
 Capacity SHOULD be reviewed:
 
@@ -430,7 +430,7 @@ Critical capacity assumptions SHOULD remain documented.
 
 ---
 
-# Performance Engineering
+## Performance Engineering
 
 Performance engineering ensures that FamilyOS responds within acceptable operational expectations.
 
@@ -446,7 +446,7 @@ Performance MUST be evaluated in realistic conditions.
 
 ---
 
-# Performance Objectives
+## Performance Objectives
 
 Performance objectives SHOULD be explicit for important services.
 
@@ -462,7 +462,7 @@ Objectives SHOULD reflect user or service needs rather than arbitrary numbers.
 
 ---
 
-# Latency
+## Latency
 
 Latency represents the time required to complete an operation.
 
@@ -485,7 +485,7 @@ End-to-end latency SHOULD be preferred when measuring user-visible behavior.
 
 ---
 
-# Latency Distribution
+## Latency Distribution
 
 Average latency alone is insufficient.
 
@@ -501,7 +501,7 @@ High-percentile latency often reveals operational problems hidden by averages.
 
 ---
 
-# Tail Latency
+## Tail Latency
 
 Tail latency represents unusually slow operations.
 
@@ -518,7 +518,7 @@ Critical user-facing services SHOULD monitor meaningful tail latency.
 
 ---
 
-# Throughput
+## Throughput
 
 Throughput represents the amount of useful work completed during a period.
 
@@ -536,7 +536,7 @@ Throughput SHOULD be evaluated together with latency and error rate.
 
 ---
 
-# Concurrency
+## Concurrency
 
 Concurrency represents simultaneous active work.
 
@@ -552,7 +552,7 @@ Concurrency limits SHOULD be explicit where necessary.
 
 ---
 
-# Performance Under Load
+## Performance Under Load
 
 Performance SHOULD be evaluated under increasing workload.
 
@@ -581,7 +581,7 @@ FamilyOS SHOULD understand where significant degradation begins.
 
 ---
 
-# Performance Baseline
+## Performance Baseline
 
 Important services SHOULD establish a performance baseline.
 
@@ -598,7 +598,7 @@ Baselines allow regression detection.
 
 ---
 
-# Performance Regression
+## Performance Regression
 
 A performance regression occurs when a change materially worsens operational behavior.
 
@@ -614,7 +614,7 @@ Significant regressions SHOULD be investigated before release.
 
 ---
 
-# Performance Testing
+## Performance Testing
 
 Performance testing SHOULD be performed where risk justifies it.
 
@@ -630,7 +630,7 @@ Tests SHOULD reflect realistic operational patterns.
 
 ---
 
-# Load Testing
+## Load Testing
 
 Load testing evaluates system behavior under expected workload.
 
@@ -645,7 +645,7 @@ Load testing SHOULD identify whether normal workload is sustainable.
 
 ---
 
-# Stress Testing
+## Stress Testing
 
 Stress testing intentionally exceeds expected workload to determine system limits.
 
@@ -660,7 +660,7 @@ Stress testing SHOULD occur in controlled environments.
 
 ---
 
-# Spike Testing
+## Spike Testing
 
 Spike testing evaluates rapid workload increases.
 
@@ -676,7 +676,7 @@ The system SHOULD avoid uncontrolled collapse during temporary spikes.
 
 ---
 
-# Endurance Testing
+## Endurance Testing
 
 Endurance testing evaluates behavior over extended periods.
 
@@ -692,7 +692,7 @@ Long-running services SHOULD receive endurance testing where appropriate.
 
 ---
 
-# Reliability
+## Reliability
 
 Reliability represents the ability of FamilyOS to provide correct service consistently over time.
 
@@ -710,7 +710,7 @@ Reliability MUST be treated as a system property.
 
 ---
 
-# Reliability Model
+## Reliability Model
 
 A simplified reliability model is:
 
@@ -735,7 +735,7 @@ No single component guarantees reliability.
 
 ---
 
-# Availability
+## Availability
 
 Availability describes whether a service is accessible and capable of providing required functionality.
 
@@ -745,7 +745,7 @@ A running process that cannot perform required work MUST NOT automatically count
 
 ---
 
-# Availability Calculation
+## Availability Calculation
 
 A simple availability model MAY be:
 
@@ -760,7 +760,7 @@ The exact measurement model SHOULD be documented.
 
 ---
 
-# Planned Maintenance
+## Planned Maintenance
 
 Availability calculations MAY distinguish planned maintenance from unexpected downtime.
 
@@ -770,7 +770,7 @@ Maintenance SHOULD NOT be excluded merely to improve reported availability.
 
 ---
 
-# Service Criticality
+## Service Criticality
 
 Availability and reliability expectations SHOULD depend on service criticality.
 
@@ -793,7 +793,7 @@ Higher criticality MAY require stronger:
 
 ---
 
-# Service-Level Indicators
+## Service-Level Indicators
 
 A Service-Level Indicator, or SLI, is a measurable representation of service behavior.
 
@@ -810,7 +810,7 @@ SLIs SHOULD represent meaningful user or service outcomes.
 
 ---
 
-# SLI Quality
+## SLI Quality
 
 An SLI SHOULD be:
 
@@ -824,7 +824,7 @@ Metrics that do not represent meaningful service behavior SHOULD NOT be promoted
 
 ---
 
-# Service-Level Objectives
+## Service-Level Objectives
 
 A Service-Level Objective, or SLO, defines a target for an SLI.
 
@@ -842,7 +842,7 @@ SLOs SHOULD reflect operational requirements rather than arbitrary industry targ
 
 ---
 
-# SLO Scope
+## SLO Scope
 
 Every SLO SHOULD define:
 
@@ -857,7 +857,7 @@ Ambiguous SLOs provide limited operational value.
 
 ---
 
-# Internal SLOs
+## Internal SLOs
 
 FamilyOS MAY use internal SLOs even when no external service commitment exists.
 
@@ -870,7 +870,7 @@ Internal SLOs help:
 
 ---
 
-# Error Budgets
+## Error Budgets
 
 An error budget represents the amount of acceptable unreliability implied by an SLO.
 
@@ -890,7 +890,7 @@ Error budgets MAY guide decisions between reliability work and feature delivery.
 
 ---
 
-# Error Budget Consumption
+## Error Budget Consumption
 
 Rapid error-budget consumption SHOULD trigger investigation.
 
@@ -906,7 +906,7 @@ Error budgets SHOULD NOT justify preventable failures.
 
 ---
 
-# Reliability Indicators
+## Reliability Indicators
 
 FamilyOS MAY monitor reliability indicators such as:
 
@@ -921,7 +921,7 @@ Indicators SHOULD support operational decisions.
 
 ---
 
-# Mean Time to Detect
+## Mean Time to Detect
 
 Mean Time to Detect, or MTTD, measures how quickly operational failures are discovered.
 
@@ -931,7 +931,7 @@ FamilyOS SHOULD improve detection through observability and meaningful alerting.
 
 ---
 
-# Mean Time to Recovery
+## Mean Time to Recovery
 
 Mean Time to Recovery, or MTTR, measures how quickly trusted service is restored after failure.
 
@@ -953,7 +953,7 @@ MTTR SHOULD be interpreted in operational context.
 
 ---
 
-# Failure Rate
+## Failure Rate
 
 Failure rate SHOULD measure meaningful service failures rather than only process crashes.
 
@@ -967,7 +967,7 @@ Failures MAY include:
 
 ---
 
-# Reliability Targets
+## Reliability Targets
 
 Reliability targets SHOULD be proportional to:
 
@@ -981,7 +981,7 @@ Not every component requires the same reliability level.
 
 ---
 
-# Resilience
+## Resilience
 
 Resilience is the ability to continue or restore useful operation despite failures.
 
@@ -999,7 +999,7 @@ Resilience MUST NOT create uncontrolled complexity.
 
 ---
 
-# Failure Containment
+## Failure Containment
 
 Failures SHOULD be contained to the smallest practical scope.
 
@@ -1025,7 +1025,7 @@ Failure propagation SHOULD be minimized.
 
 ---
 
-# Cascading Failure
+## Cascading Failure
 
 A cascading failure occurs when one failure causes additional components to fail.
 
@@ -1042,7 +1042,7 @@ FamilyOS SHOULD design explicitly against cascading failure.
 
 ---
 
-# Retry Storms
+## Retry Storms
 
 Retries MUST be bounded.
 
@@ -1057,7 +1057,7 @@ Retry policies SHOULD use:
 
 ---
 
-# Load Shedding
+## Load Shedding
 
 Services MAY reject lower-priority work when capacity is exhausted.
 
@@ -1077,7 +1077,7 @@ Load shedding MUST remain predictable.
 
 ---
 
-# Graceful Degradation
+## Graceful Degradation
 
 Where safe, services SHOULD degrade rather than fail completely.
 
@@ -1092,7 +1092,7 @@ Degradation MUST NOT weaken security or data-integrity guarantees.
 
 ---
 
-# Redundancy
+## Redundancy
 
 Critical services MAY use redundancy to improve availability.
 
@@ -1109,7 +1109,7 @@ Untested redundancy provides limited assurance.
 
 ---
 
-# Single Points of Failure
+## Single Points of Failure
 
 Critical operational paths SHOULD identify single points of failure.
 
@@ -1126,7 +1126,7 @@ Not every single point of failure must be eliminated, but significant ones SHOUL
 
 ---
 
-# Scalability
+## Scalability
 
 Scalability describes the ability to support increasing workload through additional resources or architectural adaptation.
 
@@ -1142,7 +1142,7 @@ The appropriate strategy depends on workload and architecture.
 
 ---
 
-# Vertical Scaling
+## Vertical Scaling
 
 Vertical scaling increases resources available to an existing instance.
 
@@ -1156,7 +1156,7 @@ Vertical scaling is often operationally simple but has practical limits.
 
 ---
 
-# Horizontal Scaling
+## Horizontal Scaling
 
 Horizontal scaling increases the number of service instances.
 
@@ -1172,7 +1172,7 @@ Stateless services are generally easier to scale horizontally.
 
 ---
 
-# Autoscaling
+## Autoscaling
 
 FamilyOS MAY support automatic scaling where justified.
 
@@ -1189,7 +1189,7 @@ Autoscaling SHOULD define minimum and maximum boundaries.
 
 ---
 
-# Scaling Lag
+## Scaling Lag
 
 Scaling is not instantaneous.
 
@@ -1204,7 +1204,7 @@ Sufficient headroom MAY be required to absorb demand during scaling.
 
 ---
 
-# Dependency Capacity
+## Dependency Capacity
 
 A service cannot scale safely beyond the capacity of its dependencies.
 
@@ -1222,7 +1222,7 @@ Scaling one layer MAY simply move the bottleneck elsewhere.
 
 ---
 
-# Bottleneck Analysis
+## Bottleneck Analysis
 
 Performance problems SHOULD be investigated using evidence.
 
@@ -1241,7 +1241,7 @@ Optimization SHOULD target measured bottlenecks.
 
 ---
 
-# Performance Optimization
+## Performance Optimization
 
 Optimization MUST preserve:
 
@@ -1254,7 +1254,7 @@ Premature optimization SHOULD be avoided when no meaningful performance requirem
 
 ---
 
-# Caching
+## Caching
 
 Caching MAY improve performance and reduce dependency load.
 
@@ -1270,7 +1270,7 @@ Cached data MUST respect security and privacy requirements.
 
 ---
 
-# Rate Limiting
+## Rate Limiting
 
 Rate limiting MAY protect services and dependencies from excessive demand.
 
@@ -1286,7 +1286,7 @@ Rate limiting SHOULD produce observable and understandable failure behavior.
 
 ---
 
-# Backpressure
+## Backpressure
 
 Backpressure SHOULD be used when downstream processing cannot keep pace with incoming workload.
 
@@ -1301,7 +1301,7 @@ Backpressure protects system stability.
 
 ---
 
-# Priority Management
+## Priority Management
 
 Workloads MAY have different operational priorities.
 
@@ -1324,7 +1324,7 @@ During capacity pressure, lower-priority work MAY be delayed before critical fun
 
 ---
 
-# Performance Observability
+## Performance Observability
 
 Performance MUST be observable.
 
@@ -1342,7 +1342,7 @@ These signals SHOULD integrate with EPIC-OBS-001 — Observability Framework.
 
 ---
 
-# Golden Signals
+## Golden Signals
 
 FamilyOS SHOULD consider the common operational signals:
 
@@ -1359,7 +1359,7 @@ Additional domain-specific signals MAY be required.
 
 ---
 
-# Performance Alerting
+## Performance Alerting
 
 Alerts SHOULD identify actionable performance conditions.
 
@@ -1375,7 +1375,7 @@ Short harmless spikes SHOULD NOT necessarily generate urgent alerts.
 
 ---
 
-# Capacity Alerting
+## Capacity Alerting
 
 Capacity alerts SHOULD provide sufficient time for corrective action.
 
@@ -1391,7 +1391,7 @@ Thresholds SHOULD reflect actual operational behavior rather than arbitrary perc
 
 ---
 
-# Reliability Alerting
+## Reliability Alerting
 
 Reliability alerts SHOULD focus on service impact.
 
@@ -1407,7 +1407,7 @@ Alerts MUST integrate with operational incident-management processes.
 
 ---
 
-# Performance and Logging
+## Performance and Logging
 
 Performance diagnostics MAY require detailed logs.
 
@@ -1423,7 +1423,7 @@ Logging levels SHOULD balance:
 
 ---
 
-# Performance and Tracing
+## Performance and Tracing
 
 Tracing MAY identify latency across distributed operations.
 
@@ -1439,7 +1439,7 @@ Sampling MAY be necessary to control overhead.
 
 ---
 
-# Performance and Security
+## Performance and Security
 
 Performance optimization MUST NOT bypass security controls.
 
@@ -1454,7 +1454,7 @@ Optimization SHOULD improve implementation efficiency rather than remove require
 
 ---
 
-# Reliability and Security
+## Reliability and Security
 
 Security failures MAY become reliability failures.
 
@@ -1469,7 +1469,7 @@ Operational reliability planning MUST therefore integrate with EPIC-SEC-001 — 
 
 ---
 
-# Reliability and Data Integrity
+## Reliability and Data Integrity
 
 Availability MUST NOT be preserved by sacrificing data integrity.
 
@@ -1477,7 +1477,7 @@ When forced to choose between unsafe processing and temporary unavailability, Fa
 
 ---
 
-# Reliability and Recovery
+## Reliability and Recovery
 
 Reliability includes the ability to recover.
 
@@ -1493,7 +1493,7 @@ Recovery MUST restore trusted service, not merely running processes.
 
 ---
 
-# Reliability Testing
+## Reliability Testing
 
 Reliability mechanisms SHOULD be tested.
 
@@ -1511,7 +1511,7 @@ Testing SHOULD verify both failure behavior and recovery.
 
 ---
 
-# Failure Injection
+## Failure Injection
 
 Controlled failure injection MAY be used to validate resilience.
 
@@ -1526,7 +1526,7 @@ Production experimentation requires explicit governance.
 
 ---
 
-# Chaos Engineering
+## Chaos Engineering
 
 FamilyOS MAY adopt controlled chaos-engineering practices when operational maturity justifies them.
 
@@ -1549,7 +1549,7 @@ Chaos engineering MUST NOT become uncontrolled disruption.
 
 ---
 
-# Performance Test Environments
+## Performance Test Environments
 
 Performance tests SHOULD execute in environments representative enough to produce meaningful results.
 
@@ -1559,7 +1559,7 @@ Performance results from unrealistic environments MUST NOT be treated as definit
 
 ---
 
-# Performance Test Data
+## Performance Test Data
 
 Test data SHOULD represent realistic:
 
@@ -1572,7 +1572,7 @@ Sensitive production data SHOULD NOT be copied into test environments without ap
 
 ---
 
-# Performance Regression Gates
+## Performance Regression Gates
 
 Important services MAY define automated performance gates.
 
@@ -1590,7 +1590,7 @@ Thresholds SHOULD account for measurement variability.
 
 ---
 
-# Reliability Gates
+## Reliability Gates
 
 Release readiness MAY include reliability requirements such as:
 
@@ -1603,7 +1603,7 @@ Reliability gates SHOULD integrate with EPIC-QLT-001 — Quality Framework.
 
 ---
 
-# Capacity and Release Planning
+## Capacity and Release Planning
 
 Major releases SHOULD consider capacity impact.
 
@@ -1619,7 +1619,7 @@ Significant capacity changes SHOULD be identified before production deployment.
 
 ---
 
-# Capacity and Deployment
+## Capacity and Deployment
 
 Deployments SHOULD be monitored for changes in:
 
@@ -1633,7 +1633,7 @@ Unexpected deterioration SHOULD trigger investigation or rollback consideration.
 
 ---
 
-# Reliability and Change Management
+## Reliability and Change Management
 
 Operational change is a major source of reliability risk.
 
@@ -1649,7 +1649,7 @@ High-risk changes SHOULD receive stronger operational supervision.
 
 ---
 
-# Reliability and Incident Management
+## Reliability and Incident Management
 
 Capacity or performance failures that materially affect service SHOULD enter the incident-management process.
 
@@ -1666,7 +1666,7 @@ Repeated incidents SHOULD trigger deeper problem analysis.
 
 ---
 
-# Reliability and Problem Management
+## Reliability and Problem Management
 
 Recurring performance or capacity incidents SHOULD NOT be repeatedly mitigated without addressing underlying causes.
 
@@ -1682,7 +1682,7 @@ Permanent improvement SHOULD be preferred over recurring manual intervention.
 
 ---
 
-# Operational Efficiency
+## Operational Efficiency
 
 FamilyOS SHOULD seek efficient use of resources without compromising required reliability.
 
@@ -1698,7 +1698,7 @@ Efficiency SHOULD be measured rather than assumed.
 
 ---
 
-# Cost Awareness
+## Cost Awareness
 
 Operational resources have cost.
 
@@ -1720,7 +1720,7 @@ Lowest cost MUST NOT automatically override reliability or security requirements
 
 ---
 
-# Capacity Documentation
+## Capacity Documentation
 
 Important capacity assumptions SHOULD be documented.
 
@@ -1736,7 +1736,7 @@ Documentation MUST follow EPIC-DOC-001 — Documentation Framework.
 
 ---
 
-# Performance Documentation
+## Performance Documentation
 
 Important services SHOULD document relevant performance expectations.
 
@@ -1751,7 +1751,7 @@ Performance claims SHOULD be supported by evidence.
 
 ---
 
-# Reliability Documentation
+## Reliability Documentation
 
 Reliability documentation SHOULD identify:
 
@@ -1766,7 +1766,7 @@ Critical services SHOULD have clear operational reliability expectations.
 
 ---
 
-# Capacity Evidence
+## Capacity Evidence
 
 Capacity evidence MAY include:
 
@@ -1780,7 +1780,7 @@ Evidence SHOULD support capacity decisions.
 
 ---
 
-# Performance Evidence
+## Performance Evidence
 
 Performance evidence MAY include:
 
@@ -1794,7 +1794,7 @@ Evidence SHOULD record enough context to reproduce or interpret results.
 
 ---
 
-# Reliability Evidence
+## Reliability Evidence
 
 Reliability evidence MAY include:
 
@@ -1809,7 +1809,7 @@ Reliability decisions SHOULD be evidence-based.
 
 ---
 
-# Operational Metrics
+## Operational Metrics
 
 FamilyOS MAY maintain metrics such as:
 
@@ -1831,7 +1831,7 @@ Metrics SHOULD be selected based on operational usefulness.
 
 ---
 
-# Metric Cardinality
+## Metric Cardinality
 
 Operational metrics SHOULD control label cardinality.
 
@@ -1845,7 +1845,7 @@ Identifiers such as individual request IDs SHOULD generally belong in traces or 
 
 ---
 
-# Measurement Integrity
+## Measurement Integrity
 
 Performance and reliability measurements MUST be trustworthy.
 
@@ -1861,7 +1861,7 @@ Misleading metrics can produce incorrect operational decisions.
 
 ---
 
-# Performance Review
+## Performance Review
 
 Performance SHOULD be reviewed when:
 
@@ -1875,7 +1875,7 @@ Reviews SHOULD produce actionable outcomes.
 
 ---
 
-# Reliability Review
+## Reliability Review
 
 Reliability SHOULD be reviewed periodically for critical services.
 
@@ -1892,7 +1892,7 @@ Persistent reliability problems SHOULD influence engineering priorities.
 
 ---
 
-# Capacity Review Flow
+## Capacity Review Flow
 
 The canonical capacity-review process is:
 
@@ -1928,7 +1928,7 @@ Capacity management is therefore continuous.
 
 ---
 
-# Performance Optimization Flow
+## Performance Optimization Flow
 
 Performance optimization SHOULD follow:
 
@@ -1959,7 +1959,7 @@ Optimization without measurement SHOULD be avoided.
 
 ---
 
-# Reliability Improvement Flow
+## Reliability Improvement Flow
 
 Reliability improvement follows:
 
@@ -1990,7 +1990,7 @@ Operational evidence feeds engineering improvement.
 
 ---
 
-# Integration With Runtime Management
+## Integration With Runtime Management
 
 This document extends the runtime requirements established by `04-Runtime-and-Service-Management.md`.
 
@@ -2006,7 +2006,7 @@ Capacity, performance, and reliability determine whether those runtime services 
 
 ---
 
-# Integration With Observability
+## Integration With Observability
 
 EPIC-OBS-001 — Observability Framework provides the telemetry required for capacity and reliability engineering.
 
@@ -2022,7 +2022,7 @@ Parallel incompatible reliability telemetry SHOULD be avoided.
 
 ---
 
-# Integration With Testing
+## Integration With Testing
 
 EPIC-TST-001 — Testing Framework provides standardized test mechanisms.
 
@@ -2038,7 +2038,7 @@ Performance tests SHOULD remain reproducible where practical.
 
 ---
 
-# Integration With Quality
+## Integration With Quality
 
 EPIC-QLT-001 — Quality Framework establishes overall quality governance.
 
@@ -2048,7 +2048,7 @@ A functionally correct release MAY still fail quality gates if it introduces una
 
 ---
 
-# Integration With Build
+## Integration With Build
 
 EPIC-BLD-001 — Build Framework ensures controlled artifact production.
 
@@ -2058,7 +2058,7 @@ Benchmark results SHOULD be traceable to build identity where significant.
 
 ---
 
-# Integration With Release
+## Integration With Release
 
 EPIC-REL-001 — Release Framework governs release readiness.
 
@@ -2072,7 +2072,7 @@ Release evidence MAY include:
 
 ---
 
-# Integration With Security
+## Integration With Security
 
 EPIC-SEC-001 — Security Framework remains authoritative for security requirements.
 
@@ -2089,7 +2089,7 @@ Security and reliability SHOULD reinforce each other.
 
 ---
 
-# Capacity Invariants
+## Capacity Invariants
 
 The following capacity invariants apply across FamilyOS:
 
@@ -2104,7 +2104,7 @@ The following capacity invariants apply across FamilyOS:
 
 ---
 
-# Performance Invariants
+## Performance Invariants
 
 The following performance invariants apply:
 
@@ -2117,7 +2117,7 @@ The following performance invariants apply:
 
 ---
 
-# Reliability Invariants
+## Reliability Invariants
 
 The following reliability invariants apply:
 
@@ -2134,7 +2134,7 @@ The following reliability invariants apply:
 
 ---
 
-# Canonical Capacity, Performance and Reliability Model
+## Canonical Capacity, Performance and Reliability Model
 
 The FamilyOS model is:
 
@@ -2187,7 +2187,7 @@ This model ensures that capacity, performance, and reliability remain connected 
 
 ---
 
-# Operational Readiness Criteria
+## Operational Readiness Criteria
 
 A service SHOULD NOT be considered fully operationally ready when significant capacity or reliability requirements exist unless:
 
@@ -2216,7 +2216,7 @@ The strength of each requirement SHOULD reflect service criticality.
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 The FamilyOS Capacity, Performance and Reliability model enables:
 
@@ -2239,7 +2239,7 @@ The FamilyOS Capacity, Performance and Reliability model enables:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS capacity, performance, and reliability engineering is based on the following principle:
 

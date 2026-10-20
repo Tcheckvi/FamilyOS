@@ -1,8 +1,8 @@
 # Operations Framework
 
-# 02 Operations Principles
+## 02 Operations Principles
 
-## Overview
+### Overview
 
 The FamilyOS Operations Framework is governed by a set of operational principles that define how the platform, services, plugins, infrastructure, environments, and supporting processes are operated throughout their lifecycle.
 
@@ -16,7 +16,7 @@ The principles defined in this document provide the normative foundation for all
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Operations Principles is to establish consistent rules for:
 
@@ -41,7 +41,7 @@ These principles SHOULD guide both technical architecture and operational decisi
 
 ---
 
-# Core Operations Principle
+## Core Operations Principle
 
 The primary FamilyOS operations principle is:
 
@@ -53,7 +53,7 @@ A feature that works but cannot be operated reliably is incomplete.
 
 ---
 
-# Operations as an Engineering Discipline
+## Operations as an Engineering Discipline
 
 FamilyOS treats operations as an engineering discipline.
 
@@ -72,7 +72,7 @@ Operational behavior MUST NOT depend exclusively on undocumented human knowledge
 
 ---
 
-# Principle 1 — Operational Responsibility Is Explicit
+## Principle 1 — Operational Responsibility Is Explicit
 
 Every operationally significant FamilyOS component SHOULD have defined responsibility.
 
@@ -100,7 +100,7 @@ Unowned operational components create unmanaged risk.
 
 ---
 
-# Service Ownership
+## Service Ownership
 
 Operational ownership SHOULD remain identifiable throughout the service lifecycle.
 
@@ -122,7 +122,7 @@ Ownership MAY be organizational or architectural depending on the FamilyOS opera
 
 ---
 
-# Shared Responsibility
+## Shared Responsibility
 
 Ownership does not imply that one individual performs every operational task.
 
@@ -147,7 +147,7 @@ Responsibilities MUST remain sufficiently clear to avoid gaps.
 
 ---
 
-# Principle 2 — Operational Readiness Begins During Design
+## Principle 2 — Operational Readiness Begins During Design
 
 Operational readiness MUST NOT begin only when deployment is imminent.
 
@@ -169,7 +169,7 @@ Operational concerns SHOULD influence design decisions from the beginning.
 
 ---
 
-# Design for Operations
+## Design for Operations
 
 Components SHOULD be designed so that operators can determine:
 
@@ -185,7 +185,7 @@ Systems that cannot answer these questions create operational uncertainty.
 
 ---
 
-# Principle 3 — Automation Is Preferred Over Repeated Manual Work
+## Principle 3 — Automation Is Preferred Over Repeated Manual Work
 
 Repeatable operational activities SHOULD be automated where reliable automation is practical.
 
@@ -205,7 +205,7 @@ Manual procedures SHOULD remain available where automation cannot safely handle 
 
 ---
 
-# Automation Objectives
+## Automation Objectives
 
 Operational automation SHOULD improve:
 
@@ -220,7 +220,7 @@ Automation MUST NOT merely make unsafe processes execute faster.
 
 ---
 
-# Safe Automation
+## Safe Automation
 
 Operational automation MUST include appropriate safeguards.
 
@@ -237,7 +237,7 @@ Automated operations MUST NOT silently ignore critical failures.
 
 ---
 
-# Principle 4 — Operations Must Be Repeatable
+## Principle 4 — Operations Must Be Repeatable
 
 The same operational procedure SHOULD produce predictable results when executed under equivalent conditions.
 
@@ -255,7 +255,7 @@ Repeatability reduces dependence on individual operator behavior.
 
 ---
 
-# Reproducible Operational State
+## Reproducible Operational State
 
 Where practical, FamilyOS SHOULD be capable of reconstructing operational state from controlled sources.
 
@@ -276,7 +276,7 @@ Unrecorded manual changes SHOULD be minimized.
 
 ---
 
-# Principle 5 — Desired State Must Be Explicit
+## Principle 5 — Desired State Must Be Explicit
 
 Operational systems SHOULD have an identifiable desired state.
 
@@ -293,7 +293,7 @@ Actual state SHOULD be comparable with desired state.
 
 ---
 
-# State Comparison
+## State Comparison
 
 A mature operational model supports:
 
@@ -311,7 +311,7 @@ Unexpected differences represent operational drift.
 
 ---
 
-# Principle 6 — Configuration Is Controlled Operational State
+## Principle 6 — Configuration Is Controlled Operational State
 
 Configuration materially affects runtime behavior and MUST therefore be governed.
 
@@ -328,7 +328,7 @@ Configuration MUST NOT be confused with secrets.
 
 ---
 
-# Configuration Separation
+## Configuration Separation
 
 FamilyOS SHOULD separate:
 
@@ -345,7 +345,7 @@ Mixing them unnecessarily increases operational risk.
 
 ---
 
-# Principle 7 — Environments Must Be Predictable
+## Principle 7 — Environments Must Be Predictable
 
 Operational environments SHOULD have clearly defined purposes.
 
@@ -364,7 +364,7 @@ Unexpected environmental differences create deployment and reliability risks.
 
 ---
 
-# Environment Parity
+## Environment Parity
 
 FamilyOS SHOULD maintain sufficient environment parity to make pre-production validation meaningful.
 
@@ -383,7 +383,7 @@ These MAY include:
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 Environments SHOULD remain appropriately isolated.
 
@@ -393,7 +393,7 @@ Production credentials MUST NOT be reused casually in lower-trust environments.
 
 ---
 
-# Principle 8 — Changes Must Be Controlled
+## Principle 8 — Changes Must Be Controlled
 
 Operational changes MUST be deliberate.
 
@@ -411,7 +411,7 @@ Important changes SHOULD have sufficient traceability.
 
 ---
 
-# Change Lifecycle
+## Change Lifecycle
 
 Operational changes SHOULD follow a controlled lifecycle.
 
@@ -438,7 +438,7 @@ High-risk changes MAY require additional approval.
 
 ---
 
-# Principle 9 — Small Changes Are Preferred
+## Principle 9 — Small Changes Are Preferred
 
 Smaller operational changes are generally easier to:
 
@@ -455,7 +455,7 @@ Large changes SHOULD receive proportionally stronger validation.
 
 ---
 
-# Principle 10 — Deployment Must Be Predictable
+## Principle 10 — Deployment Must Be Predictable
 
 Deployment MUST be treated as a controlled operational transition.
 
@@ -479,7 +479,7 @@ Deployment MUST NOT be considered successful solely because the deployment comma
 
 ---
 
-# Deployment Verification
+## Deployment Verification
 
 Deployment SHOULD verify:
 
@@ -495,7 +495,7 @@ Verification SHOULD occur before the deployment is considered complete.
 
 ---
 
-# Principle 11 — Rollback Must Be Considered Before Deployment
+## Principle 11 — Rollback Must Be Considered Before Deployment
 
 Operational changes SHOULD define failure and rollback considerations before execution.
 
@@ -513,7 +513,7 @@ Irreversible changes MUST be identified explicitly.
 
 ---
 
-# Rollback Safety
+## Rollback Safety
 
 Rollback MUST NOT restore an unsafe or compromised state.
 
@@ -533,7 +533,7 @@ Rollback is an operational recovery mechanism, not a substitute for incident res
 
 ---
 
-# Principle 12 — Observability Is an Operational Requirement
+## Principle 12 — Observability Is an Operational Requirement
 
 A component that cannot be observed cannot be operated reliably.
 
@@ -550,7 +550,7 @@ FamilyOS operational observability MUST integrate with the FamilyOS Observabilit
 
 ---
 
-# Operational Signals
+## Operational Signals
 
 Operational signals MAY include:
 
@@ -567,7 +567,7 @@ The appropriate signals depend on component risk and complexity.
 
 ---
 
-# Principle 13 — Health Must Be Explicit
+## Principle 13 — Health Must Be Explicit
 
 Operational components SHOULD expose meaningful health information.
 
@@ -583,7 +583,7 @@ A running process MUST NOT automatically be considered a healthy service.
 
 ---
 
-# Health Model
+## Health Model
 
 A simple operational health model MAY include:
 
@@ -600,7 +600,7 @@ Health semantics SHOULD be defined consistently.
 
 ---
 
-# Principle 14 — Failures Are Expected
+## Principle 14 — Failures Are Expected
 
 FamilyOS MUST assume that operational failures will occur.
 
@@ -620,7 +620,7 @@ Architecture SHOULD minimize the impact of predictable failure modes.
 
 ---
 
-# Failure-Oriented Design
+## Failure-Oriented Design
 
 Operational design SHOULD ask:
 
@@ -644,7 +644,7 @@ Failure planning MUST be part of operational architecture.
 
 ---
 
-# Principle 15 — Failures Must Be Contained
+## Principle 15 — Failures Must Be Contained
 
 Failure of one component SHOULD NOT unnecessarily propagate across the entire FamilyOS ecosystem.
 
@@ -662,7 +662,7 @@ Containment strategies MUST avoid creating secondary failures.
 
 ---
 
-# Principle 16 — Graceful Degradation Is Preferred
+## Principle 16 — Graceful Degradation Is Preferred
 
 Where appropriate, FamilyOS SHOULD continue providing safe reduced functionality when non-critical dependencies fail.
 
@@ -682,7 +682,7 @@ Degradation MUST NOT bypass security or data-integrity requirements.
 
 ---
 
-# Principle 17 — Recovery Must Be Designed and Tested
+## Principle 17 — Recovery Must Be Designed and Tested
 
 Recovery is not complete merely because a backup exists.
 
@@ -703,7 +703,7 @@ Recovery planning SHOULD identify:
 
 ---
 
-# Backup Is Not Recovery
+## Backup Is Not Recovery
 
 FamilyOS distinguishes:
 
@@ -723,7 +723,7 @@ A backup that has never been successfully restored provides limited assurance.
 
 ---
 
-# Principle 18 — Restored State Must Be Trusted
+## Principle 18 — Restored State Must Be Trusted
 
 Recovery MUST restore a valid and trusted operational state.
 
@@ -740,7 +740,7 @@ Availability alone is not sufficient evidence of successful recovery.
 
 ---
 
-# Principle 19 — Incidents Require Structured Response
+## Principle 19 — Incidents Require Structured Response
 
 Operational incidents MUST be handled systematically.
 
@@ -758,7 +758,7 @@ The immediate objective is to reduce impact while restoring trusted operation.
 
 ---
 
-# Incident Lifecycle
+## Incident Lifecycle
 
 A baseline FamilyOS incident lifecycle is:
 
@@ -791,7 +791,7 @@ Incident handling SHOULD remain traceable.
 
 ---
 
-# Principle 20 — Incident Severity Must Reflect Impact
+## Principle 20 — Incident Severity Must Reflect Impact
 
 Incidents SHOULD be classified consistently.
 
@@ -817,7 +817,7 @@ Severity MUST guide response urgency rather than merely describe technical compl
 
 ---
 
-# Principle 21 — Restore Service Before Perfect Diagnosis
+## Principle 21 — Restore Service Before Perfect Diagnosis
 
 During significant incidents, service restoration MAY take priority over complete root-cause analysis.
 
@@ -840,7 +840,7 @@ This principle MUST NOT override security requirements when restoration could re
 
 ---
 
-# Principle 22 — Problems Must Be Distinguished From Incidents
+## Principle 22 — Problems Must Be Distinguished From Incidents
 
 An incident is an operational disruption.
 
@@ -865,7 +865,7 @@ Repeated incidents SHOULD trigger problem-management activities.
 
 ---
 
-# Principle 23 — Post-Incident Learning Is Mandatory
+## Principle 23 — Post-Incident Learning Is Mandatory
 
 Significant incidents SHOULD produce structured learning.
 
@@ -884,7 +884,7 @@ Reviews SHOULD focus on improving systems and processes.
 
 ---
 
-# Principle 24 — Reliability Must Be Measurable
+## Principle 24 — Reliability Must Be Measurable
 
 Reliability SHOULD be expressed through measurable operational indicators.
 
@@ -901,7 +901,7 @@ Measurements SHOULD correspond to meaningful service behavior.
 
 ---
 
-# Principle 25 — Availability Has a Cost
+## Principle 25 — Availability Has a Cost
 
 Availability requirements SHOULD reflect actual business and family needs.
 
@@ -917,7 +917,7 @@ FamilyOS SHOULD avoid implementing unnecessary high-availability complexity with
 
 ---
 
-# Principle 26 — Capacity Must Be Managed
+## Principle 26 — Capacity Must Be Managed
 
 Operational systems SHOULD have sufficient capacity for expected workload.
 
@@ -934,7 +934,7 @@ Capacity exhaustion SHOULD be observable before it becomes catastrophic where pr
 
 ---
 
-# Resource Limits
+## Resource Limits
 
 Operational components SHOULD define resource limits where appropriate.
 
@@ -949,7 +949,7 @@ Resource controls SHOULD be appropriate to workload behavior.
 
 ---
 
-# Principle 27 — Operational Security Is Continuous
+## Principle 27 — Operational Security Is Continuous
 
 Security MUST remain active during operations.
 
@@ -967,7 +967,7 @@ Operational convenience MUST NOT silently bypass security controls.
 
 ---
 
-# Privileged Operations
+## Privileged Operations
 
 Privileged operational actions SHOULD be:
 
@@ -981,7 +981,7 @@ Permanent broad administrative access SHOULD be minimized.
 
 ---
 
-# Principle 28 — Secrets Are Not Configuration
+## Principle 28 — Secrets Are Not Configuration
 
 Secrets MUST be managed independently from ordinary configuration.
 
@@ -1003,7 +1003,7 @@ Operational workflows MUST avoid exposing secrets through:
 
 ---
 
-# Principle 29 — Maintenance Is Planned Work
+## Principle 29 — Maintenance Is Planned Work
 
 Maintenance SHOULD be treated as a controlled operational activity.
 
@@ -1020,7 +1020,7 @@ Maintenance SHOULD have validation and recovery considerations.
 
 ---
 
-# Principle 30 — Operational Drift Must Be Detectable
+## Principle 30 — Operational Drift Must Be Detectable
 
 Actual runtime state MAY diverge from intended state.
 
@@ -1036,7 +1036,7 @@ Significant drift SHOULD be detectable and corrected.
 
 ---
 
-# Principle 31 — Operational Evidence Must Be Preserved
+## Principle 31 — Operational Evidence Must Be Preserved
 
 Important operational decisions and events SHOULD produce evidence.
 
@@ -1053,7 +1053,7 @@ Evidence enables auditability and continuous improvement.
 
 ---
 
-# Principle 32 — Operational Documentation Is Part of the System
+## Principle 32 — Operational Documentation Is Part of the System
 
 Operational documentation MUST be treated as an engineering artifact.
 
@@ -1070,7 +1070,7 @@ Outdated operational documentation can itself create operational risk.
 
 ---
 
-# Runbooks
+## Runbooks
 
 Repeatable operational procedures SHOULD have runbooks where appropriate.
 
@@ -1090,7 +1090,7 @@ Runbooks SHOULD be executable by a qualified operator who was not the original a
 
 ---
 
-# Principle 33 — Human Actions Must Be Safe
+## Principle 33 — Human Actions Must Be Safe
 
 Operational interfaces SHOULD reduce the probability of accidental destructive actions.
 
@@ -1107,7 +1107,7 @@ High-impact actions SHOULD be difficult to execute accidentally.
 
 ---
 
-# Principle 34 — Production Must Be Clearly Identifiable
+## Principle 34 — Production Must Be Clearly Identifiable
 
 Operators MUST be able to distinguish production from lower environments.
 
@@ -1117,7 +1117,7 @@ A command intended for development MUST NOT accidentally affect production becau
 
 ---
 
-# Principle 35 — Operational Interfaces Must Be Predictable
+## Principle 35 — Operational Interfaces Must Be Predictable
 
 CLI commands, scripts, APIs, and automation used for operations SHOULD have consistent behavior.
 
@@ -1132,7 +1132,7 @@ Ambiguous operational output increases incident risk.
 
 ---
 
-# Principle 36 — Idempotency Is Preferred
+## Principle 36 — Idempotency Is Preferred
 
 Operational actions SHOULD be idempotent where appropriate.
 
@@ -1149,7 +1149,7 @@ Idempotency improves recovery from interrupted operations.
 
 ---
 
-# Principle 37 — Partial Failure Must Be Considered
+## Principle 37 — Partial Failure Must Be Considered
 
 Multi-step operational procedures MAY fail partway through execution.
 
@@ -1165,7 +1165,7 @@ Partial failure MUST NOT leave system state permanently ambiguous.
 
 ---
 
-# Principle 38 — Dependencies Must Be Operationally Visible
+## Principle 38 — Dependencies Must Be Operationally Visible
 
 Services depend on other services, infrastructure, data, and external systems.
 
@@ -1185,7 +1185,7 @@ Dependency failure SHOULD be distinguishable from local component failure where 
 
 ---
 
-# Principle 39 — External Dependencies Must Be Treated as Unreliable
+## Principle 39 — External Dependencies Must Be Treated as Unreliable
 
 External systems are outside direct FamilyOS operational control.
 
@@ -1201,7 +1201,7 @@ Integration design SHOULD account for these possibilities.
 
 ---
 
-# Principle 40 — Operational Risk Must Be Explicit
+## Principle 40 — Operational Risk Must Be Explicit
 
 Operational decisions SHOULD consider risk.
 
@@ -1219,7 +1219,7 @@ Higher-risk operations SHOULD receive stronger controls.
 
 ---
 
-# Blast Radius
+## Blast Radius
 
 Operational changes SHOULD minimize potential blast radius.
 
@@ -1229,7 +1229,7 @@ Smaller blast radius generally improves recoverability.
 
 ---
 
-# Principle 41 — Operational Readiness Must Be Validated
+## Principle 41 — Operational Readiness Must Be Validated
 
 A component SHOULD NOT be considered operationally ready merely because implementation is complete.
 
@@ -1249,7 +1249,7 @@ Readiness SHOULD produce evidence.
 
 ---
 
-# Principle 42 — Release and Operations Must Remain Connected
+## Principle 42 — Release and Operations Must Remain Connected
 
 Release completion represents the beginning of runtime responsibility.
 
@@ -1281,7 +1281,7 @@ Release and operations MUST NOT become disconnected processes.
 
 ---
 
-# Principle 43 — Security and Operations Must Reinforce Each Other
+## Principle 43 — Security and Operations Must Reinforce Each Other
 
 Operational practices MUST implement the controls established by EPIC-SEC-001 — Security Framework.
 
@@ -1298,7 +1298,7 @@ Operational shortcuts MUST NOT invalidate security architecture.
 
 ---
 
-# Principle 44 — Observability and Operations Must Share Signals
+## Principle 44 — Observability and Operations Must Share Signals
 
 EPIC-OPS-001 MUST use the common observability capabilities defined by the FamilyOS Observability Framework.
 
@@ -1314,7 +1314,7 @@ Parallel incompatible telemetry systems SHOULD be avoided without justification.
 
 ---
 
-# Principle 45 — Testing Must Include Operational Behavior
+## Principle 45 — Testing Must Include Operational Behavior
 
 Operational behavior SHOULD be tested where practical.
 
@@ -1332,7 +1332,7 @@ Operational requirements MUST integrate with EPIC-TST-001 — Testing Framework.
 
 ---
 
-# Principle 46 — Operations Is a Quality Dimension
+## Principle 46 — Operations Is a Quality Dimension
 
 Operational reliability is part of FamilyOS quality.
 
@@ -1350,7 +1350,7 @@ Operational quality SHOULD participate in release readiness.
 
 ---
 
-# Principle 47 — Operations Must Be Documented
+## Principle 47 — Operations Must Be Documented
 
 Operational architecture and procedures MUST follow EPIC-DOC-001 — Documentation Framework.
 
@@ -1360,7 +1360,7 @@ Significant operational changes SHOULD update relevant documentation in the same
 
 ---
 
-# Principle 48 — Operations Must Support Continuous Improvement
+## Principle 48 — Operations Must Support Continuous Improvement
 
 Operational processes SHOULD evolve based on evidence.
 
@@ -1378,7 +1378,7 @@ Repeated operational friction SHOULD be treated as an engineering problem.
 
 ---
 
-# Operational Feedback Loop
+## Operational Feedback Loop
 
 FamilyOS operations follows a continuous feedback model.
 
@@ -1410,7 +1410,7 @@ Operational knowledge MUST feed back into engineering.
 
 ---
 
-# Operational Simplicity
+## Operational Simplicity
 
 Operational architecture SHOULD prefer the simplest model capable of meeting required reliability, security, and scalability objectives.
 
@@ -1429,7 +1429,7 @@ Complexity SHOULD therefore be justified.
 
 ---
 
-# Operational Consistency
+## Operational Consistency
 
 Similar components SHOULD use consistent operational patterns where practical.
 
@@ -1447,7 +1447,7 @@ Consistency reduces cognitive load and operational errors.
 
 ---
 
-# Operational Transparency
+## Operational Transparency
 
 Operational state SHOULD be understandable.
 
@@ -1467,7 +1467,7 @@ These questions represent minimum operational visibility.
 
 ---
 
-# Operational Trust
+## Operational Trust
 
 Operational trust MUST be based on evidence.
 
@@ -1492,7 +1492,7 @@ Operational Confidence
 
 ---
 
-# Relationship With FamilyOS Frameworks
+## Relationship With FamilyOS Frameworks
 
 The Operations Principles integrate with the broader FamilyOS engineering foundation.
 
@@ -1515,7 +1515,7 @@ It defines how their guarantees are preserved and exercised during runtime opera
 
 ---
 
-# Operational Principle Hierarchy
+## Operational Principle Hierarchy
 
 FamilyOS operational decisions SHOULD follow this hierarchy:
 
@@ -1545,7 +1545,7 @@ Lower-priority concerns SHOULD NOT override higher-priority guarantees without e
 
 ---
 
-# Operations Invariants
+## Operations Invariants
 
 The following invariants apply across FamilyOS operations:
 
@@ -1572,7 +1572,7 @@ The following invariants apply across FamilyOS operations:
 
 ---
 
-# Reference Operations Model
+## Reference Operations Model
 
 The canonical FamilyOS operations model is:
 
@@ -1624,7 +1624,7 @@ This model establishes operations as a continuous lifecycle rather than the fina
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 Applying the FamilyOS Operations Principles enables:
 
@@ -1646,7 +1646,7 @@ Applying the FamilyOS Operations Principles enables:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS operations is based on the following principle:
 

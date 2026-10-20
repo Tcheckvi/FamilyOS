@@ -1,8 +1,8 @@
 # Release Framework
 
-# 26 Roadmap
+## 26 Roadmap
 
-## Overview
+### Overview
 
 The FamilyOS Release Framework roadmap defines the planned evolution of release engineering from a documented governance model into a fully integrated, automated, observable, and continuously improving platform capability.
 
@@ -33,7 +33,7 @@ The governing principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this roadmap is to define how the Release Framework should mature over time.
 
@@ -55,43 +55,43 @@ The roadmap is intended to guide implementation priorities while allowing adapta
 
 ---
 
-# Roadmap Principles
+## Roadmap Principles
 
 The Release Framework roadmap follows several principles.
 
-## Architecture Before Automation
+### Architecture Before Automation
 
 Automation must implement a defined release model.
 
 Automation must not become the architecture.
 
-## Safety Before Speed
+### Safety Before Speed
 
 Faster releases are valuable only when reliability, security, compliance, and recovery remain protected.
 
-## Evidence Before Assertion
+### Evidence Before Assertion
 
 Release success must increasingly be demonstrated through machine-verifiable evidence.
 
-## Incremental Adoption
+### Incremental Adoption
 
 The framework should mature in controlled stages rather than require all advanced capabilities immediately.
 
-## Integration Over Duplication
+### Integration Over Duplication
 
 The Release Framework should consume capabilities from existing FamilyOS frameworks rather than reimplement them.
 
-## Reversible Evolution
+### Reversible Evolution
 
 Where practical, roadmap changes should preserve compatibility and allow controlled migration.
 
-## Developer Usability
+### Developer Usability
 
 Release controls must remain understandable and usable by engineers.
 
 ---
 
-# Strategic Direction
+## Strategic Direction
 
 The long-term direction of the Release Framework is:
 
@@ -121,7 +121,7 @@ Each stage builds on the controls established by the previous stage.
 
 ---
 
-# Roadmap Dimensions
+## Roadmap Dimensions
 
 The roadmap evolves across the following dimensions:
 
@@ -147,7 +147,7 @@ Optimizing one while neglecting the others creates an unbalanced release system.
 
 ---
 
-# Phase 1 — Release Foundation
+## Phase 1 — Release Foundation
 
 The first phase establishes the normative Release Framework.
 
@@ -171,7 +171,7 @@ This phase is primarily architectural and documentary.
 
 ---
 
-# Phase 1 Deliverables
+## Phase 1 Deliverables
 
 Expected deliverables include:
 
@@ -193,7 +193,7 @@ The framework must be coherent before implementation becomes heavily automated.
 
 ---
 
-# Phase 1 Exit Criteria
+## Phase 1 Exit Criteria
 
 Phase 1 is complete when:
 
@@ -214,7 +214,7 @@ Completion means the release architecture is sufficiently stable to guide implem
 
 ---
 
-# Phase 2 — Standardized Release Workflow
+## Phase 2 — Standardized Release Workflow
 
 The second phase transforms the framework into a repeatable engineering workflow.
 
@@ -257,7 +257,7 @@ Each significant release should follow an identifiable path through this lifecyc
 
 ---
 
-# Phase 2 Priorities
+## Phase 2 Priorities
 
 Priorities include:
 
@@ -275,7 +275,7 @@ The objective is repeatability before advanced automation.
 
 ---
 
-# Release Manifest Introduction
+## Release Manifest Introduction
 
 A structured release manifest should become a central release artifact.
 
@@ -313,7 +313,7 @@ The principle is machine-readable release identity and state.
 
 ---
 
-# Phase 3 — CI Integration
+## Phase 3 — CI Integration
 
 The third phase integrates release controls into continuous integration.
 
@@ -333,7 +333,7 @@ The release system should consume this evidence directly.
 
 ---
 
-# CI Gate Integration
+## CI Gate Integration
 
 The target flow becomes:
 
@@ -363,7 +363,7 @@ Failed mandatory controls must prevent unauthorized release progression.
 
 ---
 
-# Phase 3 Exit Criteria
+## Phase 3 Exit Criteria
 
 Phase 3 should establish:
 
@@ -380,7 +380,7 @@ Manual review remains possible, but foundational evidence should no longer depen
 
 ---
 
-# Phase 4 — Artifact Promotion
+## Phase 4 — Artifact Promotion
 
 The next maturity step introduces explicit artifact promotion.
 
@@ -405,7 +405,7 @@ The artifact must not be rebuilt between release stages unless the release ident
 
 ---
 
-# Artifact Promotion Goals
+## Artifact Promotion Goals
 
 Artifact promotion should provide:
 
@@ -420,7 +420,7 @@ This significantly strengthens release confidence.
 
 ---
 
-# Phase 5 — Automated Release Gates
+## Phase 5 — Automated Release Gates
 
 The fifth phase introduces stronger automated release gating.
 
@@ -451,7 +451,7 @@ A release progresses only when required conditions are satisfied.
 
 ---
 
-# Gate Policy Model
+## Gate Policy Model
 
 Future implementation should support policy-driven evaluation such as:
 
@@ -468,7 +468,7 @@ This may eventually evolve toward policy-as-code.
 
 ---
 
-# Phase 6 — Release Observability
+## Phase 6 — Release Observability
 
 The next phase integrates release identity with runtime observability.
 
@@ -486,7 +486,7 @@ Runtime evidence must become part of release verification.
 
 ---
 
-# Observability Integration Goals
+## Observability Integration Goals
 
 The roadmap should introduce:
 
@@ -503,7 +503,7 @@ This establishes production release awareness.
 
 ---
 
-# Phase 7 — Automated Post-Deployment Verification
+## Phase 7 — Automated Post-Deployment Verification
 
 Post-deployment verification should progressively become automated.
 
@@ -522,7 +522,7 @@ A deployment should not automatically become a successful release.
 
 ---
 
-# Release Acceptance Automation
+## Release Acceptance Automation
 
 The future model should become:
 
@@ -547,7 +547,7 @@ Acceptance should increasingly depend on evidence rather than manual declaration
 
 ---
 
-# Phase 8 — Rollback Automation
+## Phase 8 — Rollback Automation
 
 Rollback should evolve from documented procedure to tested operational capability.
 
@@ -564,7 +564,7 @@ Rollback automation must remain governed.
 
 ---
 
-# Rollback Safety
+## Rollback Safety
 
 Automated rollback should only be introduced where recovery semantics are understood.
 
@@ -578,7 +578,7 @@ Rollback capability must remain classified per release.
 
 ---
 
-# Phase 9 — Risk-Aware Release Management
+## Phase 9 — Risk-Aware Release Management
 
 Release controls should evolve from static rules toward risk-aware behavior.
 
@@ -602,7 +602,7 @@ This allows control depth to match release impact.
 
 ---
 
-# Automated Risk Inputs
+## Automated Risk Inputs
 
 Risk classification may eventually incorporate objective signals such as:
 
@@ -620,7 +620,7 @@ Automation should support, not replace, engineering judgment.
 
 ---
 
-# Phase 10 — Progressive Delivery
+## Phase 10 — Progressive Delivery
 
 Progressive delivery should be introduced for releases where staged exposure provides meaningful risk reduction.
 
@@ -636,7 +636,7 @@ The release system should evaluate evidence between stages.
 
 ---
 
-# Progressive Release Model
+## Progressive Release Model
 
 A target model is:
 
@@ -664,7 +664,7 @@ This reduces blast radius.
 
 ---
 
-# Phase 11 — Compliance Automation
+## Phase 11 — Compliance Automation
 
 Release compliance should increasingly become machine-verifiable.
 
@@ -684,7 +684,7 @@ The release system should expose a formal compliance state.
 
 ---
 
-# Target Compliance States
+## Target Compliance States
 
 The long-term model should support explicit states such as:
 
@@ -699,7 +699,7 @@ These states should be derived from authoritative evidence where practical.
 
 ---
 
-# Phase 12 — Release Metrics Platform
+## Phase 12 — Release Metrics Platform
 
 Release metrics should become automatically derived from lifecycle events.
 
@@ -720,7 +720,7 @@ Metrics should no longer depend primarily on manual reporting.
 
 ---
 
-# Release Analytics
+## Release Analytics
 
 A future analytics capability should support:
 
@@ -739,7 +739,7 @@ This enables meaningful comparison without misleading aggregation.
 
 ---
 
-# Phase 13 — Release Intelligence
+## Phase 13 — Release Intelligence
 
 Once sufficient historical evidence exists, FamilyOS may introduce higher-level release intelligence.
 
@@ -756,7 +756,7 @@ These capabilities must remain advisory unless governed automation explicitly au
 
 ---
 
-# Predictive Release Risk
+## Predictive Release Risk
 
 A future system may infer:
 
@@ -778,7 +778,7 @@ It must remain explainable.
 
 ---
 
-# Phase 14 — Adaptive Release Controls
+## Phase 14 — Adaptive Release Controls
 
 At high maturity, release controls may adapt automatically to release context.
 
@@ -802,7 +802,7 @@ Adaptive policies must remain transparent and governable.
 
 ---
 
-# Developer Experience Roadmap
+## Developer Experience Roadmap
 
 Release maturity must improve developer experience as well as governance.
 
@@ -820,7 +820,7 @@ The objective is to make the compliant path the easiest path.
 
 ---
 
-# FamilyOS Release CLI
+## FamilyOS Release CLI
 
 A future FamilyOS CLI release interface may provide commands conceptually similar to:
 
@@ -841,7 +841,7 @@ The roadmap establishes the desired capability.
 
 ---
 
-# Release Validation Command
+## Release Validation Command
 
 A future command such as:
 
@@ -864,7 +864,7 @@ This would provide developers with early feedback before formal release gating.
 
 ---
 
-# Release Status Capability
+## Release Status Capability
 
 A release status command should eventually expose a concise view such as:
 
@@ -886,7 +886,7 @@ This reduces fragmented release information.
 
 ---
 
-# Release Evidence Aggregation
+## Release Evidence Aggregation
 
 The roadmap should move toward centralized evidence references.
 
@@ -905,7 +905,7 @@ the Release Framework should aggregate authoritative references.
 
 ---
 
-# Integration With Build Framework
+## Integration With Build Framework
 
 The Release Framework roadmap depends on the Build Framework for:
 
@@ -919,7 +919,7 @@ Release automation should consume Build Framework outputs directly.
 
 ---
 
-# Integration With Testing Framework
+## Integration With Testing Framework
 
 The Testing Framework provides:
 
@@ -933,7 +933,7 @@ The Release Framework must reference testing evidence rather than duplicate test
 
 ---
 
-# Integration With Quality Framework
+## Integration With Quality Framework
 
 The Quality Framework provides:
 
@@ -946,7 +946,7 @@ Release progression should increasingly consume quality gate results automatical
 
 ---
 
-# Integration With Plugin Compliance Framework
+## Integration With Plugin Compliance Framework
 
 Plugin releases should integrate Plugin Compliance Framework results.
 
@@ -975,7 +975,7 @@ Plugin compliance is an eligibility input, not a replacement for release governa
 
 ---
 
-# Integration With Security
+## Integration With Security
 
 Security validation should increasingly become part of release evidence.
 
@@ -991,7 +991,7 @@ Security requirements must remain independently governed.
 
 ---
 
-# Integration With Documentation Framework
+## Integration With Documentation Framework
 
 Release documentation should increasingly be generated and validated consistently.
 
@@ -1008,7 +1008,7 @@ Documentation should remain synchronized with actual release state.
 
 ---
 
-# Governance Roadmap
+## Governance Roadmap
 
 Release governance should evolve from manual review toward policy-backed governance.
 
@@ -1034,7 +1034,7 @@ Human authority remains necessary for contextual decisions and risk acceptance.
 
 ---
 
-# Policy-as-Code Roadmap
+## Policy-as-Code Roadmap
 
 Suitable release requirements may eventually become machine-enforced.
 
@@ -1052,7 +1052,7 @@ Policies must be versioned and reviewed.
 
 ---
 
-# Evidence Maturity Roadmap
+## Evidence Maturity Roadmap
 
 Release evidence should evolve through several stages.
 
@@ -1077,7 +1077,7 @@ This progression improves auditability and automation.
 
 ---
 
-# Observability Maturity Roadmap
+## Observability Maturity Roadmap
 
 Observability should evolve through:
 
@@ -1101,7 +1101,7 @@ Each stage increases runtime confidence.
 
 ---
 
-# Recovery Maturity Roadmap
+## Recovery Maturity Roadmap
 
 Recovery capability should evolve through:
 
@@ -1125,7 +1125,7 @@ Automation must only advance where recovery semantics are proven.
 
 ---
 
-# Metrics Maturity Roadmap
+## Metrics Maturity Roadmap
 
 Release measurement should evolve through:
 
@@ -1149,7 +1149,7 @@ Metrics must remain explainable.
 
 ---
 
-# Near-Term Priorities
+## Near-Term Priorities
 
 Near-term implementation should prioritize foundation capabilities with high leverage.
 
@@ -1171,7 +1171,7 @@ These provide the basis for later automation.
 
 ---
 
-# Medium-Term Priorities
+## Medium-Term Priorities
 
 Medium-term priorities should include:
 
@@ -1190,7 +1190,7 @@ These capabilities move the framework from documentation into active platform go
 
 ---
 
-# Long-Term Priorities
+## Long-Term Priorities
 
 Long-term priorities may include:
 
@@ -1207,7 +1207,7 @@ These should only be introduced after foundational release data and controls are
 
 ---
 
-# Release Evidence Graph
+## Release Evidence Graph
 
 A long-term goal is to establish end-to-end release traceability.
 
@@ -1248,7 +1248,7 @@ This graph provides a complete engineering history for each production change.
 
 ---
 
-# Cross-Framework Integration
+## Cross-Framework Integration
 
 The Release Framework should eventually act as the final orchestration layer across FamilyOS engineering foundations.
 
@@ -1280,7 +1280,7 @@ The Release Framework should consume validated outcomes from these systems rathe
 
 ---
 
-# Roadmap Dependencies
+## Roadmap Dependencies
 
 Roadmap execution depends on maturity in several areas.
 
@@ -1298,7 +1298,7 @@ Roadmap phases may therefore progress at different speeds.
 
 ---
 
-# Roadmap Sequencing
+## Roadmap Sequencing
 
 Not every capability must be implemented strictly one after another.
 
@@ -1330,7 +1330,7 @@ Architecture dependencies must guide sequencing.
 
 ---
 
-# Adoption Strategy
+## Adoption Strategy
 
 FamilyOS should adopt Release Framework capabilities progressively.
 
@@ -1362,7 +1362,7 @@ This limits implementation risk.
 
 ---
 
-# Migration of Existing Releases
+## Migration of Existing Releases
 
 Existing release practices may need migration toward the framework.
 
@@ -1380,7 +1380,7 @@ Historical release integrity should be preserved.
 
 ---
 
-# Backward Compatibility
+## Backward Compatibility
 
 Release tooling should evolve with compatibility in mind.
 
@@ -1397,7 +1397,7 @@ The Release Framework itself should follow controlled versioning.
 
 ---
 
-# Roadmap Governance
+## Roadmap Governance
 
 This roadmap is governed by the FamilyOS Release Framework.
 
@@ -1414,7 +1414,7 @@ Major changes may require ADRs or corresponding architectural decisions.
 
 ---
 
-# Roadmap Review
+## Roadmap Review
 
 The roadmap should be reviewed periodically.
 
@@ -1432,7 +1432,7 @@ The roadmap should remain stable enough to guide engineering while adaptable eno
 
 ---
 
-# Prioritization Model
+## Prioritization Model
 
 Roadmap priorities should consider:
 
@@ -1452,7 +1452,7 @@ Capabilities that substantially reduce release risk while enabling later work sh
 
 ---
 
-# Success Indicators
+## Success Indicators
 
 The roadmap is succeeding when FamilyOS demonstrates:
 
@@ -1473,7 +1473,7 @@ No single indicator defines maturity.
 
 ---
 
-# Target End State
+## Target End State
 
 The long-term target state is a Release Framework where:
 
@@ -1536,7 +1536,7 @@ This represents release engineering as a complete operational capability.
 
 ---
 
-# Non-Goals
+## Non-Goals
 
 The roadmap does not require:
 
@@ -1552,45 +1552,45 @@ The framework defines capabilities rather than unnecessarily coupling FamilyOS t
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The roadmap must avoid several failure modes.
 
-## Automating Undefined Processes
+### Automating Undefined Processes
 
 Building release automation before release states and rules are understood.
 
-## Tool-Driven Architecture
+### Tool-Driven Architecture
 
 Allowing CI or deployment products to define FamilyOS release architecture.
 
-## Maximum Automation Immediately
+### Maximum Automation Immediately
 
 Attempting advanced delivery before artifact, evidence, and recovery foundations exist.
 
-## Speed Without Recovery
+### Speed Without Recovery
 
 Optimizing deployment frequency before rollback and observability are reliable.
 
-## Metrics Without Decisions
+### Metrics Without Decisions
 
 Building dashboards that do not influence release improvement.
 
-## Compliance Without Developer Experience
+### Compliance Without Developer Experience
 
 Adding governance that engineers cannot understand or execute efficiently.
 
-## Predictive Systems Without Data
+### Predictive Systems Without Data
 
 Introducing release intelligence before sufficient reliable historical evidence exists.
 
-## Permanent Roadmap
+### Permanent Roadmap
 
 Treating the roadmap as immutable despite platform evolution.
 
 ---
 
-# Required Outcomes
+## Required Outcomes
 
 Execution of this roadmap must progressively ensure that:
 
@@ -1610,7 +1610,7 @@ Execution of this roadmap must progressively ensure that:
 
 ---
 
-# Final Roadmap Principle
+## Final Roadmap Principle
 
 The Release Framework must mature deliberately.
 

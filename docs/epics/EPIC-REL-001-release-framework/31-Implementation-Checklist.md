@@ -1,8 +1,8 @@
 # Release Framework
 
-# 31 Implementation Checklist
+## 31 Implementation Checklist
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework establishes a complete release engineering model for FamilyOS.
 
@@ -39,7 +39,7 @@ The distinction must remain explicit.
 
 ---
 
-# Purpose
+## Purpose
 
 The Implementation Checklist is used to determine whether EPIC-REL-001 is ready for closure and publication.
 
@@ -59,7 +59,7 @@ It verifies that:
 
 ---
 
-# Completion Principle
+## Completion Principle
 
 The central completion principle is:
 
@@ -81,7 +81,7 @@ may remain future capabilities unless explicitly declared mandatory for the curr
 
 ---
 
-# Completion Categories
+## Completion Categories
 
 The implementation checklist is organized into the following categories:
 
@@ -116,7 +116,7 @@ Future Implementation
 
 ---
 
-# Framework Structure
+## Framework Structure
 
 The canonical numbered document set MUST exist.
 
@@ -196,7 +196,7 @@ Checklist:
 
 ---
 
-# Numbering Integrity
+## Numbering Integrity
 
 The numbered structure MUST be unambiguous.
 
@@ -215,7 +215,7 @@ The historical duplicate `01` condition must not remain in the canonical framewo
 
 ---
 
-# Empty Document Validation
+## Empty Document Validation
 
 Required canonical documents MUST contain meaningful content.
 
@@ -230,7 +230,7 @@ Checklist:
 
 ---
 
-# Legacy Structure Migration
+## Legacy Structure Migration
 
 The original Engineering Foundation-style structure must not remain as the active canonical Release Framework structure.
 
@@ -251,7 +251,7 @@ The active directory must not.
 
 ---
 
-# Core Release Architecture
+## Core Release Architecture
 
 The framework MUST define a coherent release architecture.
 
@@ -271,7 +271,7 @@ Checklist:
 
 ---
 
-# Release Principles
+## Release Principles
 
 Core release principles MUST be explicit.
 
@@ -292,7 +292,7 @@ Checklist:
 
 ---
 
-# Lifecycle Model
+## Lifecycle Model
 
 The canonical lifecycle MUST be defined and consistent.
 
@@ -337,7 +337,7 @@ Checklist:
 
 ---
 
-# Versioning Strategy
+## Versioning Strategy
 
 Versioning MUST be explicit and stable.
 
@@ -358,7 +358,7 @@ Checklist:
 
 ---
 
-# Current Framework Version Intent
+## Current Framework Version Intent
 
 Before EPIC closure:
 
@@ -374,7 +374,7 @@ The final version must be determined from actual repository state.
 
 ---
 
-# Release Types
+## Release Types
 
 Checklist:
 
@@ -393,7 +393,7 @@ Checklist:
 
 ---
 
-# Release Channels
+## Release Channels
 
 Checklist:
 
@@ -410,7 +410,7 @@ Checklist:
 
 ---
 
-# Release Profiles
+## Release Profiles
 
 Checklist:
 
@@ -429,7 +429,7 @@ Full machine-readable profile implementation may remain deferred.
 
 ---
 
-# Release Planning
+## Release Planning
 
 Checklist:
 
@@ -451,7 +451,7 @@ Checklist:
 
 ---
 
-# Release Readiness
+## Release Readiness
 
 Checklist:
 
@@ -468,7 +468,7 @@ Checklist:
 
 ---
 
-# Release Candidate Model
+## Release Candidate Model
 
 Checklist:
 
@@ -487,7 +487,7 @@ Checklist:
 
 ---
 
-# Artifact Model
+## Artifact Model
 
 Checklist:
 
@@ -505,7 +505,7 @@ Checklist:
 
 ---
 
-# Provenance Model
+## Provenance Model
 
 Checklist:
 
@@ -523,7 +523,7 @@ Checklist:
 
 ---
 
-# Checksums
+## Checksums
 
 Current framework requirement:
 
@@ -537,7 +537,7 @@ Implementation status may remain profile-specific.
 
 ---
 
-# Release Manifest
+## Release Manifest
 
 Checklist:
 
@@ -551,7 +551,7 @@ Machine-readable release manifest implementation may remain deferred.
 
 ---
 
-# SBOM
+## SBOM
 
 Checklist:
 
@@ -565,7 +565,7 @@ SBOM generation is not required for EPIC-REL-001 documentation closure unless se
 
 ---
 
-# Signing
+## Signing
 
 Checklist:
 
@@ -581,7 +581,7 @@ Mandatory signing infrastructure may remain deferred.
 
 ---
 
-# Release Validation
+## Release Validation
 
 Checklist:
 
@@ -605,7 +605,7 @@ Checklist:
 
 ---
 
-# Validation Outcomes
+## Validation Outcomes
 
 Checklist:
 
@@ -622,7 +622,7 @@ Checklist:
 
 ---
 
-# Release Automation
+## Release Automation
 
 Checklist:
 
@@ -642,7 +642,7 @@ Checklist:
 
 ---
 
-# Current Automation Requirement
+## Current Automation Requirement
 
 EPIC-REL-001 closure does not require a full Release Orchestrator.
 
@@ -668,7 +668,7 @@ Checklist:
 
 ---
 
-# CI/CD Integration
+## CI/CD Integration
 
 Checklist:
 
@@ -689,7 +689,7 @@ Checklist:
 
 ---
 
-# CI/CD Current Status
+## CI/CD Current Status
 
 For EPIC closure:
 
@@ -701,7 +701,7 @@ For EPIC closure:
 
 ---
 
-# Changelog
+## Changelog
 
 Checklist:
 
@@ -717,7 +717,7 @@ Checklist:
 
 ---
 
-# Release Notes
+## Release Notes
 
 Checklist:
 
@@ -734,7 +734,7 @@ Checklist:
 
 ---
 
-# Repository State
+## Repository State
 
 Checklist:
 
@@ -751,7 +751,7 @@ Checklist:
 
 ---
 
-# Tagging
+## Tagging
 
 Checklist:
 
@@ -770,7 +770,7 @@ Checklist:
 
 ---
 
-# Current Framework Tagging Model
+## Current Framework Tagging Model
 
 Before release:
 
@@ -785,7 +785,7 @@ Before release:
 
 ---
 
-# Publishing
+## Publishing
 
 Checklist:
 
@@ -803,7 +803,7 @@ Checklist:
 
 ---
 
-# Distribution
+## Distribution
 
 Checklist:
 
@@ -820,7 +820,7 @@ Checklist:
 
 ---
 
-# Rollback and Recovery
+## Rollback and Recovery
 
 Checklist:
 
@@ -837,7 +837,7 @@ Checklist:
 
 ---
 
-# Release Security
+## Release Security
 
 Checklist:
 
@@ -862,7 +862,7 @@ Checklist:
 
 ---
 
-# Current Security Baseline
+## Current Security Baseline
 
 For framework release closure:
 
@@ -880,7 +880,7 @@ Advanced signing may remain future work.
 
 ---
 
-# Release Observability
+## Release Observability
 
 Checklist:
 
@@ -898,7 +898,7 @@ Checklist:
 
 ---
 
-# Release Governance
+## Release Governance
 
 Checklist:
 
@@ -920,7 +920,7 @@ Checklist:
 
 ---
 
-# Governance Semantics
+## Governance Semantics
 
 Checklist:
 
@@ -937,7 +937,7 @@ Checklist:
 
 ---
 
-# Release Compliance
+## Release Compliance
 
 Checklist:
 
@@ -955,7 +955,7 @@ Checklist:
 
 ---
 
-# Release Metrics
+## Release Metrics
 
 Checklist:
 
@@ -976,7 +976,7 @@ Metrics implementation may remain deferred.
 
 ---
 
-# Release Risk Management
+## Release Risk Management
 
 Checklist:
 
@@ -996,7 +996,7 @@ Checklist:
 
 ---
 
-# Framework Lifecycle
+## Framework Lifecycle
 
 Checklist:
 
@@ -1016,7 +1016,7 @@ Checklist:
 
 ---
 
-# Roadmap
+## Roadmap
 
 Checklist:
 
@@ -1034,7 +1034,7 @@ The roadmap must not make future capability appear currently complete.
 
 ---
 
-# References
+## References
 
 Checklist:
 
@@ -1055,7 +1055,7 @@ Checklist:
 
 ---
 
-# Validation Document
+## Validation Document
 
 `28-Validation.md` must provide the closure validation model.
 
@@ -1075,7 +1075,7 @@ Checklist:
 
 ---
 
-# Summary Document
+## Summary Document
 
 `29-Summary.md` must provide a coherent consolidated architecture summary.
 
@@ -1096,7 +1096,7 @@ Checklist:
 
 ---
 
-# Release Document
+## Release Document
 
 `30-Release.md` must record the actual release state of EPIC-REL-001.
 
@@ -1129,7 +1129,7 @@ Values must reflect actual final repository evidence.
 
 ---
 
-# Control Documents
+## Control Documents
 
 The following control documents must be aligned:
 
@@ -1144,7 +1144,7 @@ Revision-History.md
 
 ---
 
-# EPIC.yaml
+## EPIC.yaml
 
 Checklist:
 
@@ -1162,7 +1162,7 @@ Checklist:
 
 ---
 
-# README.md
+## README.md
 
 Checklist:
 
@@ -1177,7 +1177,7 @@ Checklist:
 
 ---
 
-# MANIFEST.md
+## MANIFEST.md
 
 Checklist:
 
@@ -1192,7 +1192,7 @@ Checklist:
 
 ---
 
-# CHANGELOG.md
+## CHANGELOG.md
 
 Checklist:
 
@@ -1206,7 +1206,7 @@ Checklist:
 
 ---
 
-# VALIDATION.md
+## VALIDATION.md
 
 Checklist:
 
@@ -1223,7 +1223,7 @@ Checklist:
 
 ---
 
-# Revision-History.md
+## Revision-History.md
 
 Checklist:
 
@@ -1237,7 +1237,7 @@ Checklist:
 
 ---
 
-# Obsolete Control Content
+## Obsolete Control Content
 
 Checklist:
 
@@ -1251,7 +1251,7 @@ Checklist:
 
 ---
 
-# Cross-Reference Validation
+## Cross-Reference Validation
 
 Every internal canonical reference must be checked.
 
@@ -1270,7 +1270,7 @@ Checklist:
 
 ---
 
-# Terminology Validation
+## Terminology Validation
 
 Release terminology must remain consistent.
 
@@ -1291,7 +1291,7 @@ Checklist:
 
 ---
 
-# Normative Language
+## Normative Language
 
 Checklist:
 
@@ -1305,7 +1305,7 @@ Checklist:
 
 ---
 
-# Framework Consistency
+## Framework Consistency
 
 The following relationships must remain consistent:
 
@@ -1347,7 +1347,7 @@ Checklist:
 
 ---
 
-# Repository Validation Before Release
+## Repository Validation Before Release
 
 The final repository validation must confirm:
 
@@ -1363,7 +1363,7 @@ The final repository validation must confirm:
 
 ---
 
-# Git Release State
+## Git Release State
 
 Before official tagging:
 
@@ -1377,7 +1377,7 @@ Before official tagging:
 
 ---
 
-# Remote Publication State
+## Remote Publication State
 
 After release publication:
 
@@ -1393,7 +1393,7 @@ After release publication:
 
 ---
 
-# Final Working Tree
+## Final Working Tree
 
 After publication:
 
@@ -1405,7 +1405,7 @@ A clean final working tree provides evidence that the published release state ha
 
 ---
 
-# Current Implementation Baseline
+## Current Implementation Baseline
 
 EPIC-REL-001 may be considered implementable at its initial maturity level when FamilyOS can execute a disciplined manual framework release that includes:
 
@@ -1431,7 +1431,7 @@ Checklist:
 
 ---
 
-# Deferred Implementation
+## Deferred Implementation
 
 The following capabilities may remain roadmap work unless separately made mandatory:
 
@@ -1460,7 +1460,7 @@ They represent future maturity objectives.
 
 ---
 
-# Deferred Capability Rule
+## Deferred Capability Rule
 
 A deferred capability is acceptable only when:
 
@@ -1473,7 +1473,7 @@ A deferred capability is acceptable only when:
 
 ---
 
-# No False Completion
+## No False Completion
 
 EPIC closure MUST NOT claim that a future capability is implemented merely because its architecture has been documented.
 
@@ -1495,7 +1495,7 @@ unless the actual implementation exists and is validated.
 
 ---
 
-# Framework Definition Completion
+## Framework Definition Completion
 
 The framework definition is complete when:
 
@@ -1514,7 +1514,7 @@ The framework definition is complete when:
 
 ---
 
-# Framework Package Completion
+## Framework Package Completion
 
 The framework package is complete when:
 
@@ -1530,7 +1530,7 @@ The framework package is complete when:
 
 ---
 
-# Framework Validation Completion
+## Framework Validation Completion
 
 Validation is complete when:
 
@@ -1546,7 +1546,7 @@ Validation is complete when:
 
 ---
 
-# Governance Completion
+## Governance Completion
 
 Governance is complete when:
 
@@ -1561,7 +1561,7 @@ Governance is complete when:
 
 ---
 
-# Release Completion
+## Release Completion
 
 EPIC-REL-001 is officially complete only when:
 
@@ -1582,7 +1582,7 @@ EPIC-REL-001 is officially complete only when:
 
 ---
 
-# Final Release Evidence
+## Final Release Evidence
 
 The final evidence should be sufficient to produce a release statement such as:
 
@@ -1606,7 +1606,7 @@ Actual values must be filled from the repository at release time.
 
 ---
 
-# Suggested Final Validation Commands
+## Suggested Final Validation Commands
 
 The exact validation script may evolve, but final closure should verify the framework directory explicitly.
 
@@ -1653,7 +1653,7 @@ The final release validation may add stronger checks defined in `28-Validation.m
 
 ---
 
-# Suggested Release Identity Checks
+## Suggested Release Identity Checks
 
 Before publication:
 
@@ -1683,7 +1683,7 @@ according to the applicable release sequence.
 
 ---
 
-# Checklist Status Model
+## Checklist Status Model
 
 Checklist items may use:
 
@@ -1705,7 +1705,7 @@ This prevents deferred implementation from appearing accidentally incomplete.
 
 ---
 
-# Blocking Checklist Items
+## Blocking Checklist Items
 
 The following categories are blocking for EPIC closure:
 
@@ -1722,7 +1722,7 @@ official release publication
 
 ---
 
-# Non-Blocking Future Items
+## Non-Blocking Future Items
 
 The following are non-blocking unless current policy explicitly promotes them to mandatory status:
 
@@ -1738,11 +1738,11 @@ multi-repository release coordination
 
 ---
 
-# Completion Decision
+## Completion Decision
 
 The final completion decision should answer three distinct questions.
 
-## Question 1
+### Question 1
 
 Is the Release Framework definition complete?
 
@@ -1752,7 +1752,7 @@ YES / NO
 
 ---
 
-## Question 2
+### Question 2
 
 Is the current required implementation sufficient to operate the framework at its declared maturity level?
 
@@ -1762,7 +1762,7 @@ YES / NO
 
 ---
 
-## Question 3
+### Question 3
 
 Is the framework release itself validated and published correctly?
 
@@ -1774,7 +1774,7 @@ Only when all three answers are `YES` should EPIC-REL-001 be considered official
 
 ---
 
-# Closure Gate
+## Closure Gate
 
 The final EPIC closure gate is:
 
@@ -1796,7 +1796,7 @@ EPIC-REL-001               COMPLETE
 
 ---
 
-# Post-Release Work
+## Post-Release Work
 
 After EPIC closure, future work may continue through:
 
@@ -1816,7 +1816,7 @@ They do not invalidate the completed foundational EPIC.
 
 ---
 
-# Relationship With 28-Validation.md
+## Relationship With 28-Validation.md
 
 `28-Validation.md` defines how framework closure is validated.
 
@@ -1836,7 +1836,7 @@ Validation
 
 ---
 
-# Relationship With 29-Summary.md
+## Relationship With 29-Summary.md
 
 `29-Summary.md` provides the consolidated architectural view.
 
@@ -1844,7 +1844,7 @@ This document converts that architecture into explicit completion obligations.
 
 ---
 
-# Relationship With 30-Release.md
+## Relationship With 30-Release.md
 
 `30-Release.md` records the actual official release state.
 
@@ -1852,7 +1852,7 @@ This checklist determines when that release record may legitimately declare EPIC
 
 ---
 
-# Relationship With Framework Lifecycle
+## Relationship With Framework Lifecycle
 
 `25-Framework-Lifecycle.md` defines how future EPIC-REL-001 versions evolve after this initial release.
 
@@ -1860,87 +1860,87 @@ This checklist closes the current framework milestone.
 
 ---
 
-# Implementation Checklist Invariants
+## Implementation Checklist Invariants
 
 The following invariants apply.
 
-## IC1 — Documentation completeness must not be confused with implementation completeness.
+### IC1 — Documentation completeness must not be confused with implementation completeness.
 
-## IC2 — Future roadmap capability must not be falsely marked as implemented.
+### IC2 — Future roadmap capability must not be falsely marked as implemented.
 
-## IC3 — Current mandatory release requirements must be satisfied before closure.
+### IC3 — Current mandatory release requirements must be satisfied before closure.
 
-## IC4 — Canonical structure must be unambiguous.
+### IC4 — Canonical structure must be unambiguous.
 
-## IC5 — Control documents must align with normative documents.
+### IC5 — Control documents must align with normative documents.
 
-## IC6 — Release validation must be evidence-based.
+### IC6 — Release validation must be evidence-based.
 
-## IC7 — Final version and tag must reflect actual repository state.
+### IC7 — Final version and tag must reflect actual repository state.
 
-## IC8 — Remote publication must be verified.
+### IC8 — Remote publication must be verified.
 
-## IC9 — Framework closure requires explicit governance.
+### IC9 — Framework closure requires explicit governance.
 
-## IC10 — Deferred capabilities must remain visible.
+### IC10 — Deferred capabilities must remain visible.
 
-## IC11 — Historical release identity must be preserved.
+### IC11 — Historical release identity must be preserved.
 
-## IC12 — EPIC closure must be reproducible from repository evidence.
+### IC12 — EPIC closure must be reproducible from repository evidence.
 
 ---
 
-# Implementation Anti-Patterns
+## Implementation Anti-Patterns
 
-## Architecture Equals Implementation
+### Architecture Equals Implementation
 
 Marking a capability complete merely because it is documented.
 
 ---
 
-## Everything Must Be Automated
+### Everything Must Be Automated
 
 Refusing to release the foundational framework until every future automation capability exists.
 
 ---
 
-## Future Capability Hidden
+### Future Capability Hidden
 
 Leaving major implementation gaps undocumented.
 
 ---
 
-## Checklist Theater
+### Checklist Theater
 
 Marking items complete without actual evidence.
 
 ---
 
-## Control Document Drift
+### Control Document Drift
 
 Closing the EPIC while metadata still reflects the old framework structure.
 
 ---
 
-## Tag Before Closure
+### Tag Before Closure
 
 Creating the official release tag before final control documents and release record are committed.
 
 ---
 
-## Remote Assumption
+### Remote Assumption
 
 Assuming publication succeeded without verifying authoritative remote state.
 
 ---
 
-## Dirty Final State
+### Dirty Final State
 
 Declaring the EPIC closed while local release-relevant changes remain uncommitted.
 
 ---
 
-# Minimum Closure State
+## Minimum Closure State
 
 The minimum acceptable EPIC-REL-001 closure state is:
 
@@ -1958,7 +1958,7 @@ Working Tree              CLEAN
 
 ---
 
-# Target Long-Term Implementation State
+## Target Long-Term Implementation State
 
 The long-term FamilyOS implementation target is substantially more advanced:
 
@@ -1994,7 +1994,7 @@ This is the target platform capability toward which EPIC-REL-001 provides the ar
 
 ---
 
-# Final Completion Statement
+## Final Completion Statement
 
 EPIC-REL-001 — Release Framework is ready for closure only when its canonical architecture, lifecycle, versioning strategy, readiness model, candidate model, artifact provenance, validation, automation model, CI/CD integration, release communication, repository state rules, publication model, recovery model, security, observability, governance, compliance, metrics, risk management, framework lifecycle, roadmap, references, validation, summary, release record, and control documents form one coherent and validated framework.
 

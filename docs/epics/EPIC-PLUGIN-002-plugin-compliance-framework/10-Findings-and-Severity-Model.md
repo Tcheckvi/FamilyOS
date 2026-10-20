@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 10 Findings and Severity Model
+## 10 Findings and Severity Model
 
-## Introduction
+### Introduction
 
 The Findings and Severity Model defines how FamilyOS represents compliance problems, validation uncertainty, infrastructure failures, and remediation guidance.
 
@@ -25,7 +25,7 @@ This separation is essential for deterministic compliance decisions and clear re
 
 ---
 
-# Purpose
+## Purpose
 
 The Findings and Severity Model provides a normalized representation for compliance conditions discovered during validation.
 
@@ -45,7 +45,7 @@ Findings must remain understandable to both humans and automated consumers.
 
 ---
 
-# Finding Principle
+## Finding Principle
 
 The governing principle is:
 
@@ -59,7 +59,7 @@ Policy determines the consequence.
 
 ---
 
-# Finding Definition
+## Finding Definition
 
 A Compliance Finding represents one identified compliance-relevant condition associated with an evaluation.
 
@@ -91,7 +91,7 @@ The semantic separation must remain stable.
 
 ---
 
-# Finding Identity
+## Finding Identity
 
 Every finding should have a unique identifier.
 
@@ -112,7 +112,7 @@ The finding identity is evaluation-specific.
 
 ---
 
-# Finding and Rule Relationship
+## Finding and Rule Relationship
 
 The canonical relationship is:
 
@@ -143,7 +143,7 @@ However, every compliance finding must have a clear origin.
 
 ---
 
-# Finding Categories
+## Finding Categories
 
 Findings should be categorized according to their meaning.
 
@@ -161,7 +161,7 @@ The exact vocabulary should remain compact and globally consistent.
 
 ---
 
-# Violation Findings
+## Violation Findings
 
 A VIOLATION finding represents evidence that an applicable compliance requirement was not satisfied.
 
@@ -181,7 +181,7 @@ FAIL
 
 ---
 
-# Incomplete Findings
+## Incomplete Findings
 
 An INCOMPLETE finding represents a requirement that could not be fully evaluated.
 
@@ -198,7 +198,7 @@ They indicate insufficient assurance rather than demonstrated non-conformance.
 
 ---
 
-# Validation Error Findings
+## Validation Error Findings
 
 A VALIDATION_ERROR finding represents a problem in the compliance infrastructure or validation execution.
 
@@ -216,7 +216,7 @@ They indicate that the framework could not complete reliable validation.
 
 ---
 
-# Governance Findings
+## Governance Findings
 
 A GOVERNANCE finding represents a governance-related compliance condition.
 
@@ -232,7 +232,7 @@ Governance findings may affect compliance or certification eligibility depending
 
 ---
 
-# Advisory Findings
+## Advisory Findings
 
 An ADVISORY finding communicates useful non-blocking information.
 
@@ -247,7 +247,7 @@ Advisory findings should not be confused with rule failures unless policy explic
 
 ---
 
-# Severity Model
+## Severity Model
 
 Severity expresses the importance of a finding.
 
@@ -280,7 +280,7 @@ represent different levels of consequence.
 
 ---
 
-# INFO
+## INFO
 
 INFO represents informational compliance feedback.
 
@@ -295,7 +295,7 @@ INFO findings should not normally block compliance.
 
 ---
 
-# WARNING
+## WARNING
 
 WARNING represents a condition requiring attention but not necessarily immediate compliance failure under every profile.
 
@@ -309,7 +309,7 @@ Profiles may decide whether warnings affect release or certification eligibility
 
 ---
 
-# ERROR
+## ERROR
 
 ERROR represents a material compliance violation.
 
@@ -325,7 +325,7 @@ ERROR findings normally prevent compliant status when the rule is blocking.
 
 ---
 
-# CRITICAL
+## CRITICAL
 
 CRITICAL represents a severe compliance condition affecting platform safety, security, trust, or foundational architecture.
 
@@ -347,7 +347,7 @@ Exceptions should be highly restricted or forbidden.
 
 ---
 
-# Severity Is Not Status
+## Severity Is Not Status
 
 Severity and rule outcome must remain separate.
 
@@ -373,7 +373,7 @@ This separation prevents ambiguous rule semantics.
 
 ---
 
-# Rule Outcome Model
+## Rule Outcome Model
 
 The canonical rule outcome model is:
 
@@ -393,7 +393,7 @@ Severity describes importance.
 
 ---
 
-# Finding Status
+## Finding Status
 
 Findings may have their own lifecycle status.
 
@@ -413,7 +413,7 @@ It must not rewrite the original rule outcome.
 
 ---
 
-# Open Findings
+## Open Findings
 
 OPEN means the finding remains active and unresolved.
 
@@ -421,7 +421,7 @@ It should participate normally in compliance decision policy.
 
 ---
 
-# Acknowledged Findings
+## Acknowledged Findings
 
 ACKNOWLEDGED means the finding has been reviewed or accepted for follow-up.
 
@@ -431,7 +431,7 @@ It simply records that the issue is known.
 
 ---
 
-# Suppressed Findings
+## Suppressed Findings
 
 SUPPRESSED means the finding remains valid but its workflow or presentation has been modified through an approved suppression mechanism.
 
@@ -441,7 +441,7 @@ The underlying rule outcome remains unchanged.
 
 ---
 
-# Excepted Findings
+## Excepted Findings
 
 EXCEPTED means an approved exception affects how the failed requirement influences compliance policy.
 
@@ -463,7 +463,7 @@ PASS
 
 ---
 
-# Resolved Findings
+## Resolved Findings
 
 RESOLVED means the underlying condition has been corrected in a later evaluation or explicitly closed according to governance policy.
 
@@ -473,7 +473,7 @@ They must not be deleted.
 
 ---
 
-# Finding Lifecycle
+## Finding Lifecycle
 
 A conceptual finding lifecycle is:
 
@@ -495,7 +495,7 @@ Governance determines allowed transitions.
 
 ---
 
-# Finding Title
+## Finding Title
 
 Every finding should provide a concise title.
 
@@ -509,7 +509,7 @@ The title should be understandable without reading raw evidence.
 
 ---
 
-# Finding Message
+## Finding Message
 
 The finding message explains the detected condition.
 
@@ -524,7 +524,7 @@ Messages should avoid unnecessary implementation detail when remediation guidanc
 
 ---
 
-# Finding Location
+## Finding Location
 
 Where possible, findings should identify the affected location.
 
@@ -550,7 +550,7 @@ Location information improves developer feedback.
 
 ---
 
-# Location Model
+## Location Model
 
 A structured location may include:
 
@@ -570,7 +570,7 @@ Logical locations are equally valid.
 
 ---
 
-# Evidence References
+## Evidence References
 
 Findings should reference the evidence supporting them.
 
@@ -589,7 +589,7 @@ This preserves explainability.
 
 ---
 
-# Remediation
+## Remediation
 
 Every actionable violation should include remediation guidance.
 
@@ -604,7 +604,7 @@ A good remediation answer should indicate:
 
 ---
 
-# Remediation Example
+## Remediation Example
 
 Weak remediation:
 
@@ -622,7 +622,7 @@ Actionable remediation is a core developer-experience requirement.
 
 ---
 
-# Remediation References
+## Remediation References
 
 Findings may reference:
 
@@ -638,7 +638,7 @@ These references should complement remediation rather than replace it.
 
 ---
 
-# Remediation Confidence
+## Remediation Confidence
 
 Some remediation can be deterministic.
 
@@ -660,7 +660,7 @@ required remediation
 
 ---
 
-# Suppression Model
+## Suppression Model
 
 A suppression changes how a known finding is handled without invalidating the finding.
 
@@ -683,7 +683,7 @@ Suppressions must always be explicit and traceable.
 
 ---
 
-# Suppression Scope
+## Suppression Scope
 
 A suppression may apply to:
 
@@ -699,7 +699,7 @@ Global wildcard suppression should be avoided.
 
 ---
 
-# Suppression Expiration
+## Suppression Expiration
 
 Suppressions should support expiration.
 
@@ -709,7 +709,7 @@ Expired suppressions must no longer influence current compliance behavior.
 
 ---
 
-# Suppression Authority
+## Suppression Authority
 
 Profiles or governance policy may define who can create a valid suppression.
 
@@ -724,7 +724,7 @@ Security-sensitive findings may prohibit ordinary suppressions entirely.
 
 ---
 
-# Exception Model
+## Exception Model
 
 An exception differs from a suppression.
 
@@ -749,7 +749,7 @@ The distinction must remain strict.
 
 ---
 
-# Exception Structure
+## Exception Structure
 
 A conceptual exception contains:
 
@@ -770,7 +770,7 @@ Exceptions must be independently auditable.
 
 ---
 
-# Exception Eligibility
+## Exception Eligibility
 
 Rules should define whether exceptions are allowed.
 
@@ -793,7 +793,7 @@ and therefore remain non-exemptible.
 
 ---
 
-# Exception Expiration
+## Exception Expiration
 
 Exceptions should normally be time-bound when they exist to support migration or temporary compatibility.
 
@@ -803,7 +803,7 @@ The framework should generate a governance finding when an exception expires.
 
 ---
 
-# Exception Conditions
+## Exception Conditions
 
 Exceptions may include explicit conditions.
 
@@ -823,7 +823,7 @@ Conditions must be machine-readable where practical.
 
 ---
 
-# Severity and Profile Policy
+## Severity and Profile Policy
 
 Severity meaning is global.
 
@@ -853,7 +853,7 @@ It must not rewrite the finding severity itself.
 
 ---
 
-# Blocking Semantics
+## Blocking Semantics
 
 Profiles must define which findings are blocking.
 
@@ -872,7 +872,7 @@ The authoritative behavior belongs to Compliance Policy.
 
 ---
 
-# Mandatory Rule Findings
+## Mandatory Rule Findings
 
 A finding associated with a mandatory rule requires stronger treatment.
 
@@ -895,7 +895,7 @@ Ordinary profile configuration must not disable the effect of mandatory rules.
 
 ---
 
-# Finding Aggregation
+## Finding Aggregation
 
 The framework may summarize findings by:
 
@@ -920,7 +920,7 @@ They must never replace individual findings.
 
 ---
 
-# Domain Aggregation
+## Domain Aggregation
 
 Reports may summarize findings by domain:
 
@@ -940,7 +940,7 @@ This helps identify areas requiring remediation.
 
 ---
 
-# Duplicate Findings
+## Duplicate Findings
 
 The framework should avoid unnecessary duplicate findings.
 
@@ -952,7 +952,7 @@ Grouping must not hide the affected rules.
 
 ---
 
-# Cascading Findings
+## Cascading Findings
 
 Prerequisite failures can cause misleading cascades.
 
@@ -979,7 +979,7 @@ rather than generating many duplicate violation findings.
 
 ---
 
-# Finding Fingerprints
+## Finding Fingerprints
 
 The framework may support stable finding fingerprints for comparison across evaluations.
 
@@ -996,7 +996,7 @@ A fingerprint must not replace Finding ID.
 
 ---
 
-# Finding Comparison
+## Finding Comparison
 
 Future tooling may classify findings between evaluations as:
 
@@ -1013,7 +1013,7 @@ Historical results must remain immutable.
 
 ---
 
-# Finding Ordering
+## Finding Ordering
 
 Finding presentation should be deterministic.
 
@@ -1033,7 +1033,7 @@ The canonical structured result may preserve its own stable sort order.
 
 ---
 
-# Severity Ordering
+## Severity Ordering
 
 The framework defines severity ordering as:
 
@@ -1053,7 +1053,7 @@ It must not be confused with overall compliance status precedence.
 
 ---
 
-# Compliance Status and Severity
+## Compliance Status and Severity
 
 Overall compliance status is not simply the highest finding severity.
 
@@ -1087,7 +1087,7 @@ because required evidence is missing.
 
 ---
 
-# Compliance Status Model
+## Compliance Status Model
 
 The baseline overall states remain:
 
@@ -1104,7 +1104,7 @@ They are not finding severities.
 
 ---
 
-# Non-Compliant Status
+## Non-Compliant Status
 
 NON_COMPLIANT means that one or more applicable blocking requirements were demonstrated to be violated.
 
@@ -1116,7 +1116,7 @@ Typical causes include:
 
 ---
 
-# Incomplete Status
+## Incomplete Status
 
 INCOMPLETE means that required assurance could not be obtained.
 
@@ -1131,7 +1131,7 @@ Incomplete is not equivalent to compliant.
 
 ---
 
-# Error Status
+## Error Status
 
 ERROR means the framework could not produce a reliable compliance decision due to validation infrastructure failure.
 
@@ -1145,7 +1145,7 @@ This status must remain distinguishable from plugin failure.
 
 ---
 
-# Finding and Status Example
+## Finding and Status Example
 
 Example:
 
@@ -1175,7 +1175,7 @@ Only policy differs.
 
 ---
 
-# Critical Finding Example
+## Critical Finding Example
 
 Example:
 
@@ -1198,7 +1198,7 @@ This remains true even if all other rules pass.
 
 ---
 
-# Validation Error Example
+## Validation Error Example
 
 Example:
 
@@ -1234,7 +1234,7 @@ unless actual evidence demonstrates a plugin violation.
 
 ---
 
-# Finding Serialization
+## Finding Serialization
 
 Findings must be serializable.
 
@@ -1251,7 +1251,7 @@ The canonical representation should preserve all semantic fields even when a hum
 
 ---
 
-# Human-Readable Findings
+## Human-Readable Findings
 
 Human-facing output should prioritize:
 
@@ -1280,7 +1280,7 @@ Raw validator diagnostics may be available separately.
 
 ---
 
-# Machine-Readable Findings
+## Machine-Readable Findings
 
 Machine-readable output should preserve fields such as:
 
@@ -1301,7 +1301,7 @@ This allows downstream systems to make deterministic decisions.
 
 ---
 
-# Exit Code Mapping
+## Exit Code Mapping
 
 CLI and CI tooling may map compliance results to exit codes.
 
@@ -1320,7 +1320,7 @@ Exact numerical codes belong to CLI specifications.
 
 ---
 
-# Finding Auditability
+## Finding Auditability
 
 Every finding must remain auditable.
 
@@ -1336,7 +1336,7 @@ A reviewer should be able to determine:
 
 ---
 
-# Finding Immutability
+## Finding Immutability
 
 Findings belonging to finalized evaluations should be immutable.
 
@@ -1358,7 +1358,7 @@ Finding F-001 remains part of Evaluation A.
 
 ---
 
-# Resolution Tracking
+## Resolution Tracking
 
 A separate historical comparison layer may later indicate that F-001 was resolved by Evaluation B.
 
@@ -1368,7 +1368,7 @@ This preserves audit integrity.
 
 ---
 
-# Severity Governance
+## Severity Governance
 
 Severity assignment is a compliance policy decision.
 
@@ -1382,7 +1382,7 @@ Governance reviews severity changes.
 
 ---
 
-# Severity Change Impact
+## Severity Change Impact
 
 Changing rule severity can materially affect compliance.
 
@@ -1398,7 +1398,7 @@ Severity changes therefore require impact analysis and version-aware governance.
 
 ---
 
-# Severity Downgrades
+## Severity Downgrades
 
 Lowering severity also requires governance.
 
@@ -1408,7 +1408,7 @@ Security-critical or mandatory rules should require elevated review before downg
 
 ---
 
-# Finding Governance
+## Finding Governance
 
 Governance must define:
 
@@ -1425,7 +1425,7 @@ These policies must be consistent across tools.
 
 ---
 
-# Finding Testing
+## Finding Testing
 
 The Findings and Severity Model requires dedicated tests.
 
@@ -1445,37 +1445,37 @@ Core test areas include:
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The framework must avoid several anti-patterns.
 
-## Severity as Outcome
+### Severity as Outcome
 
 Do not use `ERROR` both as rule outcome and severity without explicit semantic distinction.
 
-## Silent Suppression
+### Silent Suppression
 
 Do not hide findings without traceable suppression metadata.
 
-## Exception as Pass
+### Exception as Pass
 
 Do not convert excepted failures into ordinary PASS results.
 
-## Missing Evidence as Success
+### Missing Evidence as Success
 
 Do not treat absent findings as proof of compliance.
 
-## Validator Crash as Violation
+### Validator Crash as Violation
 
 Do not report infrastructure failure as plugin non-compliance.
 
-## Score-Only Reporting
+### Score-Only Reporting
 
 Do not replace explicit findings with an opaque compliance score.
 
 ---
 
-# Finding Invariants
+## Finding Invariants
 
 The Findings and Severity Model establishes the following invariants:
 
@@ -1502,7 +1502,7 @@ The Findings and Severity Model establishes the following invariants:
 
 ---
 
-# Reference Model
+## Reference Model
 
 The complete model is:
 
@@ -1542,7 +1542,7 @@ This architecture prevents compliance semantics from becoming ambiguous.
 
 ---
 
-# Findings Summary
+## Findings Summary
 
 The FamilyOS Findings and Severity Model provides a consistent language for explaining compliance conditions.
 
@@ -1568,7 +1568,7 @@ Findings then become inputs to policy-driven compliance decisions.
 
 ---
 
-# Final Findings Principle
+## Final Findings Principle
 
 The governing principle of the Findings and Severity Model is:
 

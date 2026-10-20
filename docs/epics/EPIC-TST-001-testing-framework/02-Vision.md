@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 02 Vision
+## 02 Vision
 
-## Vision Statement
+### Vision Statement
 
 The FamilyOS Testing Framework defines the long-term vision for testing across the entire FamilyOS ecosystem.
 
@@ -14,7 +14,7 @@ Testing is considered an integrated engineering discipline.
 
 ---
 
-# Long-Term Vision
+## Long-Term Vision
 
 FamilyOS aims to evolve as a reliable, modular, and continuously improving platform.
 
@@ -32,7 +32,7 @@ Every engineering change should be supported by appropriate validation strategie
 
 ---
 
-# Testing Philosophy
+## Testing Philosophy
 
 The Testing Framework is based on the principle that quality is created throughout the lifecycle.
 
@@ -48,13 +48,13 @@ Testing is a collaboration between engineering, quality, and delivery processes.
 
 ---
 
-# Strategic Goals
+## Strategic Goals
 
 The Testing Framework pursues several long-term goals.
 
 ---
 
-## Reliability
+### Reliability
 
 Testing must protect FamilyOS against unexpected regressions.
 
@@ -62,7 +62,7 @@ Validation processes should provide confidence that changes preserve expected be
 
 ---
 
-## Consistency
+### Consistency
 
 Testing practices should follow common principles across:
 
@@ -75,7 +75,7 @@ Consistency reduces uncertainty and improves maintainability.
 
 ---
 
-## Automation
+### Automation
 
 Whenever practical, testing activities should be automated.
 
@@ -88,7 +88,7 @@ Automation improves:
 
 ---
 
-## Scalability
+### Scalability
 
 The testing model must support future growth.
 
@@ -96,7 +96,7 @@ New domains and plugins should integrate into the testing ecosystem without requ
 
 ---
 
-## Transparency
+### Transparency
 
 Testing decisions and validation results should remain understandable.
 
@@ -104,7 +104,7 @@ Testing knowledge must be documented and traceable.
 
 ---
 
-# Testing As A Continuous Capability
+## Testing As A Continuous Capability
 
 FamilyOS considers testing a continuous activity throughout the engineering lifecycle.
 
@@ -140,7 +140,7 @@ Testing contributes at every stage.
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 The Testing Framework applies Engineering Foundation principles to validation activities.
 
@@ -166,7 +166,7 @@ The Testing Framework defines how engineering outcomes are validated.
 
 ---
 
-# Relationship With Quality
+## Relationship With Quality
 
 Testing provides evidence that supports quality management.
 
@@ -190,7 +190,7 @@ Testing results contribute to quality decisions but do not replace quality gover
 
 ---
 
-# Relationship With Build And Release
+## Relationship With Build And Release
 
 Testing is integrated with delivery processes.
 
@@ -214,7 +214,7 @@ Reliable delivery requires reliable validation.
 
 ---
 
-# Future Vision
+## Future Vision
 
 The Testing Framework will support:
 
@@ -227,7 +227,7 @@ The Testing Framework will support:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The Testing Framework is successful when:
 
@@ -240,7 +240,7 @@ The Testing Framework is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The Testing Framework establishes testing as a fundamental engineering capability within FamilyOS.
 

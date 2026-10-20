@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 07 Compliance Profiles
+## 07 Compliance Profiles
 
-## Introduction
+### Introduction
 
 Compliance Profiles define how FamilyOS composes compliance rules for specific plugin contexts.
 
@@ -29,7 +29,7 @@ Plugin Evaluation
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Compliance Profiles is to allow FamilyOS to apply different validation depths without creating fragmented compliance definitions.
 
@@ -49,7 +49,7 @@ Profiles must remain deterministic and versioned.
 
 ---
 
-# Profile Principle
+## Profile Principle
 
 The central principle is:
 
@@ -78,7 +78,7 @@ It must not alter the requirement itself.
 
 ---
 
-# Profile Model
+## Profile Model
 
 A conceptual Compliance Profile contains:
 
@@ -105,7 +105,7 @@ The final schema may evolve, but these concepts define the intended semantic mod
 
 ---
 
-# Profile Identity
+## Profile Identity
 
 Every published profile must have a stable identifier.
 
@@ -133,7 +133,7 @@ The exact naming format should be standardized before implementation.
 
 ---
 
-# Profile Versioning
+## Profile Versioning
 
 Profiles must be versioned independently from plugin implementations.
 
@@ -158,7 +158,7 @@ This enables reproducible historical evaluation.
 
 ---
 
-# Profile Resolution
+## Profile Resolution
 
 The framework must resolve the appropriate profile before rule evaluation begins.
 
@@ -193,7 +193,7 @@ Profile resolution must never silently select a weaker profile because a stronge
 
 ---
 
-# Plugin Classification
+## Plugin Classification
 
 Plugin classification is one of the primary inputs to profile selection.
 
@@ -216,7 +216,7 @@ It determines which profile family should normally apply.
 
 ---
 
-# Development Profile
+## Development Profile
 
 The Development Profile exists to provide fast, useful compliance feedback during active implementation.
 
@@ -235,7 +235,7 @@ It should not necessarily require all release or governance evidence.
 
 ---
 
-# Development Profile Characteristics
+## Development Profile Characteristics
 
 A conceptual Development Profile may require:
 
@@ -262,7 +262,7 @@ However, mandatory platform safety requirements remain enforced.
 
 ---
 
-# Experimental Profile
+## Experimental Profile
 
 The Experimental Profile supports plugins that are intentionally unstable or exploratory.
 
@@ -284,7 +284,7 @@ Experimental must mean unstable, not ungoverned.
 
 ---
 
-# Built-In Plugin Profile
+## Built-In Plugin Profile
 
 Built-in plugins are distributed as part of the FamilyOS platform.
 
@@ -309,7 +309,7 @@ Built-in origin does not exempt a plugin from compliance.
 
 ---
 
-# Official Plugin Profile
+## Official Plugin Profile
 
 The Official Plugin Profile represents a strong first-party compliance baseline.
 
@@ -339,7 +339,7 @@ Official plugin validation should produce sufficient evidence for release govern
 
 ---
 
-# Third-Party Plugin Profile
+## Third-Party Plugin Profile
 
 The Third-Party Profile applies to externally developed plugins intended to participate in the FamilyOS ecosystem.
 
@@ -360,7 +360,7 @@ It should avoid requirements that unnecessarily depend on internal FamilyOS engi
 
 ---
 
-# First-Party Extension Profile
+## First-Party Extension Profile
 
 FamilyOS may support first-party extensions that are maintained by the platform organization but are not distributed as core built-in plugins.
 
@@ -370,7 +370,7 @@ The important architectural principle is that profile selection remains explicit
 
 ---
 
-# Release Profile
+## Release Profile
 
 The Release Profile represents validation required before a plugin artifact can enter a release process.
 
@@ -398,7 +398,7 @@ The Release Profile may add requirements related to:
 
 ---
 
-# Certification Profile
+## Certification Profile
 
 The Certification Profile represents technical compliance expectations required before entering a certification process.
 
@@ -417,7 +417,7 @@ Certification may still require additional governance steps outside the complian
 
 ---
 
-# Profile Composition
+## Profile Composition
 
 Profiles should support composition.
 
@@ -440,7 +440,7 @@ Composition allows stronger profiles to extend existing requirements without dup
 
 ---
 
-# Profile Inheritance
+## Profile Inheritance
 
 Where profile inheritance is supported, it must remain simple and deterministic.
 
@@ -456,7 +456,7 @@ A child profile should not silently weaken mandatory requirements inherited from
 
 ---
 
-# Multiple Inheritance
+## Multiple Inheritance
 
 Complex multiple profile inheritance should be avoided unless there is a strong architectural need.
 
@@ -478,7 +478,7 @@ is easier to reason about than an uncontrolled inheritance graph.
 
 ---
 
-# Rule Inclusion
+## Rule Inclusion
 
 Profiles define which rules are included.
 
@@ -498,7 +498,7 @@ However, expanded rule membership must remain inspectable.
 
 ---
 
-# Rule Exclusion
+## Rule Exclusion
 
 Profiles may explicitly exclude rules that are not applicable to the profile context.
 
@@ -508,7 +508,7 @@ A profile exclusion should identify why a valid rule is not part of the current 
 
 ---
 
-# Mandatory Rule Enforcement
+## Mandatory Rule Enforcement
 
 Mandatory rules apply regardless of ordinary profile composition.
 
@@ -526,7 +526,7 @@ This protects foundational safety and architecture constraints.
 
 ---
 
-# Effective Rule Set
+## Effective Rule Set
 
 The effective rule set is the final collection of rules evaluated for a plugin.
 
@@ -548,7 +548,7 @@ This rule set must be visible in structured compliance output.
 
 ---
 
-# Severity Policy
+## Severity Policy
 
 Profiles may define how severity affects final compliance status.
 
@@ -568,7 +568,7 @@ The profile defines decision thresholds.
 
 ---
 
-# Severity Threshold Example
+## Severity Threshold Example
 
 Conceptually:
 
@@ -590,7 +590,7 @@ The exact behavior must be standardized in compliance policy.
 
 ---
 
-# Evidence Policy
+## Evidence Policy
 
 Profiles may define evidence strength requirements.
 
@@ -611,7 +611,7 @@ This allows stronger lifecycle contexts to require stronger provenance without r
 
 ---
 
-# Evidence Completeness
+## Evidence Completeness
 
 A profile may define whether all applicable rules must have complete evidence.
 
@@ -632,7 +632,7 @@ Incomplete evidence must remain visible.
 
 ---
 
-# Evidence Freshness Policy
+## Evidence Freshness Policy
 
 Profiles may define acceptable evidence freshness.
 
@@ -656,7 +656,7 @@ Evidence generated for a different source state should not satisfy stronger prof
 
 ---
 
-# Exception Policy
+## Exception Policy
 
 Profiles may restrict or prohibit exceptions.
 
@@ -681,7 +681,7 @@ NONE
 
 ---
 
-# Suppression Policy
+## Suppression Policy
 
 Profiles may also define whether suppressed findings affect compliance.
 
@@ -693,7 +693,7 @@ Suppression always remains visible in the compliance result.
 
 ---
 
-# Lifecycle-Aware Profiles
+## Lifecycle-Aware Profiles
 
 Profiles may correspond to lifecycle stages.
 
@@ -716,7 +716,7 @@ This progression allows validation depth to increase as the plugin approaches di
 
 ---
 
-# Validation Modes
+## Validation Modes
 
 Profiles may also influence execution mode.
 
@@ -740,7 +740,7 @@ Execution optimization must never change compliance meaning for the same effecti
 
 ---
 
-# Fast Profile Checks
+## Fast Profile Checks
 
 Fast validation should prioritize low-cost checks such as:
 
@@ -756,7 +756,7 @@ They should not be presented as full compliance validation unless the profile ex
 
 ---
 
-# Full Profile Checks
+## Full Profile Checks
 
 Full validation may include:
 
@@ -771,7 +771,7 @@ Full profile checks are suitable for CI, release, or certification contexts.
 
 ---
 
-# Profile and Domain Mapping
+## Profile and Domain Mapping
 
 Profiles may activate different compliance domains.
 
@@ -810,7 +810,7 @@ The authoritative mapping must be defined in profile configuration.
 
 ---
 
-# Profile Applicability
+## Profile Applicability
 
 A profile itself may define applicability.
 
@@ -830,7 +830,7 @@ A profile requested outside its permitted context should produce an explicit val
 
 ---
 
-# Explicit Profile Override
+## Explicit Profile Override
 
 Engineering tooling may allow explicit profile selection.
 
@@ -846,7 +846,7 @@ Tooling must not silently select a different profile than requested.
 
 ---
 
-# Profile Escalation
+## Profile Escalation
 
 The system may allow a stronger profile to be selected than required.
 
@@ -860,7 +860,7 @@ A plugin requiring the Official Profile must not silently fall back to Developme
 
 ---
 
-# Profile Resolution Failure
+## Profile Resolution Failure
 
 If no valid profile can be resolved, validation must stop with an explicit error.
 
@@ -880,7 +880,7 @@ Validation Error
 
 ---
 
-# Profile Reporting
+## Profile Reporting
 
 Every compliance report must identify the active profile.
 
@@ -895,7 +895,7 @@ Without profile context, a compliance status is ambiguous.
 
 ---
 
-# Comparing Results Across Profiles
+## Comparing Results Across Profiles
 
 Compliance results produced using different profiles are not directly equivalent.
 
@@ -915,7 +915,7 @@ Reports and tooling must preserve this distinction.
 
 ---
 
-# Profile Promotion
+## Profile Promotion
 
 A plugin may progress through stronger profiles.
 
@@ -938,7 +938,7 @@ Each stage requires successful evaluation against the corresponding profile.
 
 ---
 
-# Profile Downgrade
+## Profile Downgrade
 
 A profile downgrade must be explicit and governed.
 
@@ -962,7 +962,7 @@ Profile context must remain transparent.
 
 ---
 
-# Certification Eligibility
+## Certification Eligibility
 
 A profile may define criteria for deriving certification eligibility.
 
@@ -986,7 +986,7 @@ Eligibility is still distinct from certification.
 
 ---
 
-# Profile Governance
+## Profile Governance
 
 Compliance profiles are governed artifacts.
 
@@ -1006,7 +1006,7 @@ Governance must cover:
 
 ---
 
-# Profile Change Impact
+## Profile Change Impact
 
 A profile change can make previously compliant plugins non-compliant.
 
@@ -1024,7 +1024,7 @@ Breaking changes require migration guidance.
 
 ---
 
-# Profile Lifecycle
+## Profile Lifecycle
 
 Profiles should have explicit lifecycle states.
 
@@ -1047,7 +1047,7 @@ Draft profiles must not silently affect stable validation.
 
 ---
 
-# Profile Deprecation
+## Profile Deprecation
 
 Deprecated profiles should identify:
 
@@ -1061,7 +1061,7 @@ Historical compliance results must remain interpretable.
 
 ---
 
-# Profile Registry
+## Profile Registry
 
 The framework should maintain an authoritative profile registry.
 
@@ -1082,7 +1082,7 @@ Consumers must resolve profiles through this registry or equivalent governed mec
 
 ---
 
-# Profile Discovery
+## Profile Discovery
 
 Developer tooling should make profiles discoverable.
 
@@ -1102,7 +1102,7 @@ Profile discovery improves transparency and reduces hidden compliance expectatio
 
 ---
 
-# Profile Explanation
+## Profile Explanation
 
 Tooling should be capable of explaining why a rule is active under a profile.
 
@@ -1121,7 +1121,7 @@ This improves debugging and compliance understanding.
 
 ---
 
-# Profile Difference Analysis
+## Profile Difference Analysis
 
 The framework may eventually support profile comparison.
 
@@ -1146,7 +1146,7 @@ This would help developers prepare plugins for promotion.
 
 ---
 
-# Profile Composition Example
+## Profile Composition Example
 
 A conceptual model may be:
 
@@ -1188,37 +1188,37 @@ This model is illustrative, not yet a final implementation contract.
 
 ---
 
-# Profile Anti-Patterns
+## Profile Anti-Patterns
 
 The framework must avoid several profile anti-patterns.
 
-## Rule Duplication
+### Rule Duplication
 
 Do not copy rule definitions into multiple profiles.
 
-## Semantic Mutation
+### Semantic Mutation
 
 Do not change rule meaning based on profile.
 
-## Hidden Downgrade
+### Hidden Downgrade
 
 Do not silently switch to a weaker profile.
 
-## Unbounded Inheritance
+### Unbounded Inheritance
 
 Do not create complex inheritance graphs that make applicability impossible to understand.
 
-## Security Weakening
+### Security Weakening
 
 Do not allow ordinary profiles to disable mandatory security rules.
 
-## Ambiguous Evidence
+### Ambiguous Evidence
 
 Do not accept weaker evidence without explicit profile policy.
 
 ---
 
-# Profile Invariants
+## Profile Invariants
 
 The Compliance Profile model establishes the following invariants:
 
@@ -1240,7 +1240,7 @@ The Compliance Profile model establishes the following invariants:
 
 ---
 
-# Profile Summary
+## Profile Summary
 
 The FamilyOS compliance profile model can be summarized as:
 
@@ -1270,7 +1270,7 @@ Profiles allow FamilyOS to support progressive assurance while preserving one au
 
 ---
 
-# Final Profile Principle
+## Final Profile Principle
 
 The governing principle of Compliance Profiles is:
 
