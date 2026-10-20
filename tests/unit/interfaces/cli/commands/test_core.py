@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
@@ -22,6 +23,13 @@ from familyos_cli.interfaces.cli.commands.core import core_app
 
 runner = CliRunner()
 
+_ANSI_ESCAPE = re.compile(r"\x1b\[[0-9;]*m")
+
+
+def _plain(output: str) -> str:
+    """Strip ANSI styling that Typer/Rich forces under CI (e.g. GITHUB_ACTIONS)."""
+    return _ANSI_ESCAPE.sub("", output)
+
 PERSON_UUID = UUID("11111111-1111-4111-8111-111111111111")
 FAMILY_UUID = UUID("22222222-2222-4222-8222-222222222222")
 
@@ -38,7 +46,7 @@ def test_person_create_requires_explicit_database() -> None:
     result = runner.invoke(core_app, ["person", "create"])
 
     assert result.exit_code == 2
-    assert "--database" in result.output
+    assert "--database" in _plain(result.output)
 
 
 @patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
@@ -182,7 +190,7 @@ def test_membership_establish_requires_explicit_database() -> None:
     )
 
     assert result.exit_code == 2
-    assert "--database" in result.output
+    assert "--database" in _plain(result.output)
 
 
 @patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
@@ -254,7 +262,7 @@ def test_membership_activate_requires_explicit_database() -> None:
     )
 
     assert result.exit_code == 2
-    assert "--database" in result.output
+    assert "--database" in _plain(result.output)
 
 
 @patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
@@ -299,7 +307,7 @@ def test_membership_suspend_requires_explicit_database() -> None:
     )
 
     assert result.exit_code == 2
-    assert "--database" in result.output
+    assert "--database" in _plain(result.output)
 
 
 @patch("familyos_cli.interfaces.cli.commands.core.CommandContext")
@@ -386,7 +394,7 @@ def test_relationship_establish_requires_explicit_database() -> None:
     )
 
     assert result.exit_code == 2
-    assert "--database" in result.output
+    assert "--database" in _plain(result.output)
 
 
 def test_relationship_rejects_unknown_type(tmp_path: Path) -> None:
@@ -592,4 +600,4 @@ def test_family_resolve_boundary_requires_explicit_database() -> None:
     )
 
     assert result.exit_code == 2
-    assert "--database" in result.output
+    assert "--database" in _plain(result.output)
