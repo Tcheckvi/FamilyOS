@@ -1,8 +1,8 @@
 # Release Framework
 
-# 13 Release Automation
+## 13 Release Automation
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines Release Automation as the set of controlled mechanisms used to execute repeatable release operations with reduced manual variability.
 
@@ -33,7 +33,7 @@ Automation must preserve the semantics established by:
 
 ---
 
-# Purpose
+## Purpose
 
 The Release Automation model establishes:
 
@@ -55,7 +55,7 @@ The objective is to prevent FamilyOS release processes from becoming collections
 
 ---
 
-# Automation Principle
+## Automation Principle
 
 The central principle is:
 
@@ -87,7 +87,7 @@ Release semantics must remain documented independently from implementation.
 
 ---
 
-# Why Release Automation Is Necessary
+## Why Release Automation Is Necessary
 
 Manual release processes introduce several risks.
 
@@ -107,7 +107,7 @@ Automation reduces these risks when the underlying process is already well defin
 
 ---
 
-# Automation Does Not Remove Governance
+## Automation Does Not Remove Governance
 
 Automation may execute:
 
@@ -137,7 +137,7 @@ unless the applicable governance policy explicitly permits automatic approval.
 
 ---
 
-# Automation Domains
+## Automation Domains
 
 Release Automation may cover the following domains:
 
@@ -162,7 +162,7 @@ Automation may be introduced incrementally.
 
 ---
 
-# Planning Automation
+## Planning Automation
 
 Automation may assist Release Planning by:
 
@@ -177,7 +177,7 @@ Planning automation should remain advisory where human judgment is required.
 
 ---
 
-# Scope Detection
+## Scope Detection
 
 A future release tool may examine repository changes and infer:
 
@@ -198,7 +198,7 @@ It must not silently override explicit release intent.
 
 ---
 
-# Readiness Automation
+## Readiness Automation
 
 Release Readiness contains many deterministic checks suitable for automation.
 
@@ -218,7 +218,7 @@ Automated readiness should produce structured results.
 
 ---
 
-# Automated Readiness Example
+## Automated Readiness Example
 
 ```text id="iqd1xj"
 Release Readiness
@@ -239,7 +239,7 @@ Automation should preserve the evidence underneath this summary.
 
 ---
 
-# Candidate Creation Automation
+## Candidate Creation Automation
 
 Automation may create formal candidate metadata once readiness passes.
 
@@ -257,7 +257,7 @@ Candidate creation must be idempotent.
 
 ---
 
-# Candidate Automation Example
+## Candidate Automation Example
 
 Conceptually:
 
@@ -276,7 +276,7 @@ Before creation, automation should verify that `rc.3` is not already in use.
 
 ---
 
-# Validation Automation
+## Validation Automation
 
 Release Validation contains many automatable operations.
 
@@ -296,7 +296,7 @@ Automation should bind results to candidate identity.
 
 ---
 
-# Validation Result Binding
+## Validation Result Binding
 
 An automated validation result should identify:
 
@@ -313,7 +313,7 @@ This prevents evidence from drifting across candidates.
 
 ---
 
-# Version Automation
+## Version Automation
 
 Automation may assist with:
 
@@ -330,7 +330,7 @@ Final authority remains governed.
 
 ---
 
-# Version Validation Example
+## Version Validation Example
 
 ```text id="0zhwq6"
 Current Version      5.1.0
@@ -345,7 +345,7 @@ VERSION VALID
 
 ---
 
-# Tag Automation
+## Tag Automation
 
 Tagging is highly suitable for controlled automation.
 
@@ -363,7 +363,7 @@ Tag automation must fail before creation if source state is ambiguous.
 
 ---
 
-# Tagging Safety Sequence
+## Tagging Safety Sequence
 
 A safe automated sequence is:
 
@@ -387,7 +387,7 @@ verify remote tag
 
 ---
 
-# Artifact Automation
+## Artifact Automation
 
 Automation may handle:
 
@@ -402,7 +402,7 @@ Unexpected artifacts should trigger failure or review.
 
 ---
 
-# Artifact Discovery
+## Artifact Discovery
 
 Automated artifact discovery must not simply publish every file found in an output directory.
 
@@ -421,7 +421,7 @@ Unexpected files should remain visible.
 
 ---
 
-# Checksum Automation
+## Checksum Automation
 
 Checksum generation should occur before publication.
 
@@ -447,7 +447,7 @@ compare
 
 ---
 
-# Provenance Automation
+## Provenance Automation
 
 Automation may collect provenance from:
 
@@ -462,7 +462,7 @@ Provenance collection should minimize manual transcription.
 
 ---
 
-# Release Manifest Automation
+## Release Manifest Automation
 
 A future release workflow may generate a release manifest automatically.
 
@@ -482,7 +482,7 @@ Generated metadata must remain reviewable.
 
 ---
 
-# Release Notes Automation
+## Release Notes Automation
 
 Automation may generate draft release notes from structured change data.
 
@@ -498,7 +498,7 @@ Automatically generated release notes should be reviewed before final publicatio
 
 ---
 
-# Changelog Automation
+## Changelog Automation
 
 Automation may support:
 
@@ -512,7 +512,7 @@ The changelog remains governed by Documentation Framework rules.
 
 ---
 
-# Publication Automation
+## Publication Automation
 
 Release publication may be partially or fully automated.
 
@@ -530,7 +530,7 @@ Publication automation creates external side effects and therefore requires stro
 
 ---
 
-# Publication Safety
+## Publication Safety
 
 Before external publication, automation should verify:
 
@@ -548,7 +548,7 @@ This creates a final publication boundary.
 
 ---
 
-# Distribution Automation
+## Distribution Automation
 
 Automation may promote a published release to:
 
@@ -562,7 +562,7 @@ Promotion should not rebuild release artifacts unless explicitly required.
 
 ---
 
-# Verification Automation
+## Verification Automation
 
 Post-publication verification should be automated where practical.
 
@@ -578,7 +578,7 @@ Checks may include:
 
 ---
 
-# Evidence Automation
+## Evidence Automation
 
 Every automated release step should generate or preserve useful evidence.
 
@@ -598,7 +598,7 @@ Evidence should not exist only in transient terminal output.
 
 ---
 
-# Automation State
+## Automation State
 
 Release automation must maintain enough state to know what has already occurred.
 
@@ -616,7 +616,7 @@ This is essential for safe retry and recovery.
 
 ---
 
-# Stateless Automation Risk
+## Stateless Automation Risk
 
 A stateless script that executes:
 
@@ -632,7 +632,7 @@ If the second step fails, the script may not know how to resume safely.
 
 ---
 
-# Stateful Automation
+## Stateful Automation
 
 A more robust workflow records progress:
 
@@ -646,7 +646,7 @@ Recovery can then begin from the actual state.
 
 ---
 
-# Idempotency
+## Idempotency
 
 Release Automation SHOULD be idempotent where practical.
 
@@ -664,7 +664,7 @@ If the existing tag points elsewhere, the workflow must block.
 
 ---
 
-# Idempotent Tagging
+## Idempotent Tagging
 
 Example logic:
 
@@ -681,7 +681,7 @@ if tag exists and points elsewhere:
 
 ---
 
-# Idempotent Artifact Publishing
+## Idempotent Artifact Publishing
 
 Example:
 
@@ -700,7 +700,7 @@ Silent replacement is prohibited.
 
 ---
 
-# Retry Safety
+## Retry Safety
 
 Automation should classify operations by retry safety.
 
@@ -717,7 +717,7 @@ This classification improves failure handling.
 
 ---
 
-# Dry Run
+## Dry Run
 
 Release Automation SHOULD support dry-run behavior where practical.
 
@@ -747,13 +747,13 @@ External Changes   NONE
 
 ---
 
-# Dry-Run Principle
+## Dry-Run Principle
 
 The release system should discover as many errors as possible before performing irreversible or externally visible operations.
 
 ---
 
-# Preflight Validation
+## Preflight Validation
 
 A release automation workflow should include a preflight stage.
 
@@ -775,7 +775,7 @@ Preflight failure should occur before publication side effects.
 
 ---
 
-# Automation Failure Model
+## Automation Failure Model
 
 Automation must represent failures explicitly.
 
@@ -793,7 +793,7 @@ A failure should record:
 
 ---
 
-# Failure Example
+## Failure Example
 
 ```text id="zueoax"
 Release: 5.2.0
@@ -815,7 +815,7 @@ release failed
 
 ---
 
-# Partial Failure
+## Partial Failure
 
 Multi-system automation must assume partial failure is possible.
 
@@ -831,7 +831,7 @@ The workflow must preserve this state.
 
 ---
 
-# Compensation
+## Compensation
 
 Some release operations may support compensating actions.
 
@@ -846,7 +846,7 @@ Compensation is not always equivalent to true rollback.
 
 ---
 
-# Irreversible Operations
+## Irreversible Operations
 
 Some release operations may be difficult or impossible to reverse safely.
 
@@ -861,7 +861,7 @@ Automation should execute irreversible operations as late as practical.
 
 ---
 
-# Transactional Automation
+## Transactional Automation
 
 Where several external actions form one logical release transition, automation should treat them as a transaction-like workflow.
 
@@ -888,7 +888,7 @@ Stateful recovery must compensate.
 
 ---
 
-# Automation Logging
+## Automation Logging
 
 Release automation must produce sufficient logs for diagnosis.
 
@@ -906,7 +906,7 @@ Sensitive values such as secrets must not appear in logs.
 
 ---
 
-# Structured Logs
+## Structured Logs
 
 Structured logs are preferable for advanced automation.
 
@@ -923,7 +923,7 @@ Structured events improve observability and auditability.
 
 ---
 
-# Automation Evidence vs Logs
+## Automation Evidence vs Logs
 
 Logs and evidence are related but distinct.
 
@@ -935,7 +935,7 @@ Important release facts should not require parsing arbitrary logs years later.
 
 ---
 
-# Automation Credentials
+## Automation Credentials
 
 Release automation may require privileged credentials.
 
@@ -950,7 +950,7 @@ Credentials MUST be:
 
 ---
 
-# Credential Scope
+## Credential Scope
 
 Different operations should use the minimum necessary privilege.
 
@@ -971,7 +971,7 @@ One unrestricted token for all release operations should be avoided where practi
 
 ---
 
-# Short-Lived Credentials
+## Short-Lived Credentials
 
 Future FamilyOS release automation SHOULD prefer short-lived credentials when supported.
 
@@ -984,7 +984,7 @@ Benefits include:
 
 ---
 
-# Automation Identity
+## Automation Identity
 
 Automated release actions should have identifiable execution identity.
 
@@ -998,7 +998,7 @@ This allows audit records to distinguish automated actions from human actions.
 
 ---
 
-# Human Approval Integration
+## Human Approval Integration
 
 Automation should support explicit pause points for governance decisions.
 
@@ -1020,7 +1020,7 @@ This preserves automation efficiency without eliminating governance.
 
 ---
 
-# Approval Tokenization
+## Approval Tokenization
 
 A future system may represent approval as structured release evidence rather than a simple UI click.
 
@@ -1037,7 +1037,7 @@ The specific implementation is not defined here.
 
 ---
 
-# Automation Policy Evaluation
+## Automation Policy Evaluation
 
 Future release automation may evaluate machine-readable policies.
 
@@ -1057,7 +1057,7 @@ Opaque policy evaluation undermines trust.
 
 ---
 
-# Policy Failure
+## Policy Failure
 
 A failed policy should identify:
 
@@ -1072,7 +1072,7 @@ Generic `policy failed` messages are insufficient.
 
 ---
 
-# Automation and Release Profiles
+## Automation and Release Profiles
 
 Release profiles should drive automation selection.
 
@@ -1110,7 +1110,7 @@ registry publication
 
 ---
 
-# Profile-Driven Automation
+## Profile-Driven Automation
 
 The desired model is:
 
@@ -1128,7 +1128,7 @@ This reduces workflow duplication.
 
 ---
 
-# Automation Modularity
+## Automation Modularity
 
 Release Automation SHOULD use modular operations rather than one opaque script.
 
@@ -1153,7 +1153,7 @@ Modules improve:
 
 ---
 
-# Monolithic Script Risk
+## Monolithic Script Risk
 
 A single script containing all release semantics may become:
 
@@ -1167,7 +1167,7 @@ The framework should favor explicit stages.
 
 ---
 
-# Automation Interfaces
+## Automation Interfaces
 
 Release operations should expose clear inputs and outputs.
 
@@ -1186,7 +1186,7 @@ Clear interfaces support orchestration.
 
 ---
 
-# Release Orchestrator
+## Release Orchestrator
 
 At higher maturity, FamilyOS may introduce a Release Orchestrator.
 
@@ -1210,7 +1210,7 @@ complete release
 
 ---
 
-# Orchestrator Principle
+## Orchestrator Principle
 
 The orchestrator coordinates.
 
@@ -1220,7 +1220,7 @@ Its state machine must remain aligned with `05-Release-Lifecycle.md`.
 
 ---
 
-# Orchestrator State
+## Orchestrator State
 
 A future orchestrator may track:
 
@@ -1242,7 +1242,7 @@ This prevents automation state from diverging from framework lifecycle state.
 
 ---
 
-# CLI Automation
+## CLI Automation
 
 FamilyOS may expose release automation through CLI commands.
 
@@ -1263,7 +1263,7 @@ These commands are future interfaces, not current requirements.
 
 ---
 
-# Non-Interactive Execution
+## Non-Interactive Execution
 
 Automation should support non-interactive CI/CD execution where appropriate.
 
@@ -1279,7 +1279,7 @@ Hidden interactive prompts reduce reproducibility.
 
 ---
 
-# Interactive Execution
+## Interactive Execution
 
 Local tooling MAY offer interactive release assistance.
 
@@ -1289,7 +1289,7 @@ Interactive convenience must not create separate release semantics.
 
 ---
 
-# Configuration
+## Configuration
 
 Automation configuration should be version-controlled where safe and practical.
 
@@ -1305,7 +1305,7 @@ Secrets must remain outside committed configuration.
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Release automation must validate its configuration before execution.
 
@@ -1313,7 +1313,7 @@ Invalid or missing configuration should fail early.
 
 ---
 
-# Environment Isolation
+## Environment Isolation
 
 Release automation should minimize dependence on uncontrolled local environments.
 
@@ -1328,7 +1328,7 @@ This strengthens repeatability.
 
 ---
 
-# Toolchain Pinning
+## Toolchain Pinning
 
 Release-critical tools SHOULD have controlled versions.
 
@@ -1343,7 +1343,7 @@ Unexpected toolchain upgrades can change release behavior.
 
 ---
 
-# Automation Testing
+## Automation Testing
 
 Release automation itself must be tested.
 
@@ -1360,7 +1360,7 @@ A release system that cannot safely release itself is a platform risk.
 
 ---
 
-# Failure Injection
+## Failure Injection
 
 Mature release tooling SHOULD test failure scenarios.
 
@@ -1378,7 +1378,7 @@ This validates recovery behavior before real incidents occur.
 
 ---
 
-# Automation Recovery
+## Automation Recovery
 
 Automation should provide explicit recovery entry points.
 
@@ -1392,7 +1392,7 @@ A recovery operation should resume from the actual state rather than restart bli
 
 ---
 
-# Recovery Command Vision
+## Recovery Command Vision
 
 A future interface may support:
 
@@ -1409,7 +1409,7 @@ which could:
 
 ---
 
-# Automation Rollback
+## Automation Rollback
 
 Automation may assist rollback when rollback is technically safe.
 
@@ -1425,7 +1425,7 @@ Rollback authority remains governed.
 
 ---
 
-# Automation and Forward Recovery
+## Automation and Forward Recovery
 
 Where rollback is unsafe, automation should support corrective release workflows.
 
@@ -1433,7 +1433,7 @@ It must not assume that every failed release can simply be reverted.
 
 ---
 
-# Automation Observability
+## Automation Observability
 
 Automation must expose:
 
@@ -1450,7 +1450,7 @@ A user should not need to infer state from raw log volume.
 
 ---
 
-# Automation Metrics
+## Automation Metrics
 
 Future metrics may include:
 
@@ -1466,7 +1466,7 @@ Metrics should support improvement.
 
 ---
 
-# Automation Maturity Model
+## Automation Maturity Model
 
 FamilyOS release automation may evolve through:
 
@@ -1504,7 +1504,7 @@ fully observable release platform
 
 ---
 
-# Current FamilyOS Automation Context
+## Current FamilyOS Automation Context
 
 Current FamilyOS framework releases already use a partially standardized manual workflow.
 
@@ -1524,7 +1524,7 @@ EPIC-REL-001 provides the architecture required to gradually transform these com
 
 ---
 
-# Framework Release Automation Example
+## Framework Release Automation Example
 
 A future framework release workflow may execute:
 
@@ -1554,7 +1554,7 @@ verify remote
 
 ---
 
-# Plugin Release Automation Example
+## Plugin Release Automation Example
 
 A plugin release may automate:
 
@@ -1582,7 +1582,7 @@ verify
 
 ---
 
-# Platform Release Automation Example
+## Platform Release Automation Example
 
 A mature platform release may orchestrate:
 
@@ -1608,93 +1608,93 @@ post-release verification
 
 ---
 
-# Automation Invariants
+## Automation Invariants
 
 The following invariants apply.
 
-## RA1 — Automation implements documented release semantics.
+### RA1 — Automation implements documented release semantics.
 
-## RA2 — Automation must not silently bypass governance.
+### RA2 — Automation must not silently bypass governance.
 
-## RA3 — Automated actions must identify the release and candidate they affect.
+### RA3 — Automated actions must identify the release and candidate they affect.
 
-## RA4 — Automation must fail explicitly.
+### RA4 — Automation must fail explicitly.
 
-## RA5 — Partial failure must remain observable.
+### RA5 — Partial failure must remain observable.
 
-## RA6 — External side effects should occur only after applicable validation.
+### RA6 — External side effects should occur only after applicable validation.
 
-## RA7 — Automation should be idempotent where practical.
+### RA7 — Automation should be idempotent where practical.
 
-## RA8 — Automation must protect release credentials.
+### RA8 — Automation must protect release credentials.
 
-## RA9 — Automation should preserve durable release evidence.
+### RA9 — Automation should preserve durable release evidence.
 
-## RA10 — Retry behavior must be safe.
+### RA10 — Retry behavior must be safe.
 
-## RA11 — Release automation itself must be testable.
+### RA11 — Release automation itself must be testable.
 
-## RA12 — Automation semantics must remain tool-independent.
+### RA12 — Automation semantics must remain tool-independent.
 
 ---
 
-# Automation Anti-Patterns
+## Automation Anti-Patterns
 
-## Script as Policy
+### Script as Policy
 
 Treating release shell commands as the only authoritative release specification.
 
 ---
 
-## Blind Retry
+### Blind Retry
 
 Restarting a failed publication workflow without checking which external side effects already occurred.
 
 ---
 
-## Unconditional Tag Creation
+### Unconditional Tag Creation
 
 Creating tags without verifying candidate, approval, version, and existing tag state.
 
 ---
 
-## Publish Everything
+### Publish Everything
 
 Uploading every file in a build directory without validating the expected artifact set.
 
 ---
 
-## Hidden Credentials
+### Hidden Credentials
 
 Embedding tokens inside scripts or repository files.
 
 ---
 
-## Success by Exit Code Alone
+### Success by Exit Code Alone
 
 Declaring a release complete because the final command returned zero without verifying external state.
 
 ---
 
-## Automation Without State
+### Automation Without State
 
 Executing multi-step publication without recording progress.
 
 ---
 
-## Automated Governance Bypass
+### Automated Governance Bypass
 
 Allowing a pipeline to publish simply because validation jobs passed when policy requires release approval.
 
 ---
 
-## Local Environment Dependency
+### Local Environment Dependency
 
 Release automation that only works on one maintainer workstation due to undocumented configuration.
 
 ---
 
-# Minimum Automation Model
+## Minimum Automation Model
 
 The minimum useful FamilyOS Release Automation should eventually provide:
 
@@ -1712,7 +1712,7 @@ Even partial automation should preserve framework semantics.
 
 ---
 
-# Target Automation Experience
+## Target Automation Experience
 
 At higher maturity, a FamilyOS maintainer may initiate a release and receive:
 
@@ -1746,7 +1746,7 @@ The result must remain backed by detailed observable state and evidence.
 
 ---
 
-# Relationship With CI/CD Integration
+## Relationship With CI/CD Integration
 
 `14-CI-CD-Integration.md` defines how Release Automation is executed inside CI/CD environments.
 
@@ -1754,7 +1754,7 @@ Automation architecture remains broader than any CI/CD implementation.
 
 ---
 
-# Relationship With Versioning
+## Relationship With Versioning
 
 `06-Versioning-Strategy.md` defines version semantics.
 
@@ -1762,7 +1762,7 @@ Automation may validate and calculate versions but must follow those rules.
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 `10-Release-Candidates.md` defines candidate semantics.
 
@@ -1770,7 +1770,7 @@ Automation creates and manages candidate metadata according to those rules.
 
 ---
 
-# Relationship With Release Validation
+## Relationship With Release Validation
 
 `12-Release-Validation.md` defines validation requirements.
 
@@ -1778,7 +1778,7 @@ Automation executes deterministic parts of validation and records evidence.
 
 ---
 
-# Relationship With Tagging
+## Relationship With Tagging
 
 `16-Tagging-and-Repository-State.md` defines authoritative repository tag semantics.
 
@@ -1786,7 +1786,7 @@ Automation must protect those semantics.
 
 ---
 
-# Relationship With Publishing and Distribution
+## Relationship With Publishing and Distribution
 
 `17-Publishing-and-Distribution.md` defines publication rules.
 
@@ -1794,7 +1794,7 @@ Automation performs those operations within controlled boundaries.
 
 ---
 
-# Relationship With Rollback and Recovery
+## Relationship With Rollback and Recovery
 
 `18-Rollback-and-Recovery.md` defines release recovery semantics.
 
@@ -1802,19 +1802,19 @@ Automation should provide state and mechanisms that make recovery safe.
 
 ---
 
-# Relationship With Release Security
+## Relationship With Release Security
 
 `19-Release-Security.md` defines security controls for release automation, credentials, artifacts, provenance, and authorization.
 
 ---
 
-# Relationship With Release Observability
+## Relationship With Release Observability
 
 `20-Release-Observability.md` defines how automation state, events, evidence, and failures become visible.
 
 ---
 
-# Relationship With Release Governance
+## Relationship With Release Governance
 
 `21-Release-Governance.md` defines approval and authority.
 
@@ -1822,7 +1822,7 @@ Automation must implement those boundaries rather than bypass them.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Automation model establishes automation as a controlled execution layer for release engineering.
 

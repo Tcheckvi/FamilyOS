@@ -1,8 +1,8 @@
 # Engineering Foundation
 
-# 03 Engineering Principles
+## 03 Engineering Principles
 
-## Context
+### Context
 
 The Engineering Foundation defines the principles that guide how FamilyOS engineering activities are organized, aligned, and evolved.
 
@@ -12,7 +12,7 @@ Instead, they provide a common foundation ensuring that all engineering discipli
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Engineering Principles is to establish a shared engineering mindset across the FamilyOS ecosystem.
 
@@ -27,7 +27,7 @@ They ensure that engineering decisions consistently support:
 
 ---
 
-# Principle 1 — Architecture Before Implementation
+## Principle 1 — Architecture Before Implementation
 
 FamilyOS follows an architecture-driven approach.
 
@@ -49,7 +49,7 @@ Reference:
 
 ---
 
-# Principle 2 — Domain-Oriented Engineering
+## Principle 2 — Domain-Oriented Engineering
 
 FamilyOS engineering is organized around clear domains and responsibilities.
 
@@ -69,7 +69,7 @@ Reference:
 
 ---
 
-# Principle 3 — Design Before Code
+## Principle 3 — Design Before Code
 
 Code should be the result of intentional design.
 
@@ -84,7 +84,7 @@ Engineering should optimize for correctness and clarity rather than immediate im
 
 ---
 
-# Principle 4 — Documentation As An Engineering Artifact
+## Principle 4 — Documentation As An Engineering Artifact
 
 Documentation is part of the engineering process.
 
@@ -103,7 +103,7 @@ Reference:
 
 ---
 
-# Principle 5 — Quality By Design
+## Principle 5 — Quality By Design
 
 Quality must be integrated into engineering activities from the beginning.
 
@@ -123,7 +123,7 @@ Reference:
 
 ---
 
-# Principle 6 — Automation First
+## Principle 6 — Automation First
 
 Engineering processes should favor automation whenever practical.
 
@@ -139,7 +139,7 @@ Automation improves reliability and reduces repetitive manual work.
 
 ---
 
-# Principle 7 — Explicit Decisions
+## Principle 7 — Explicit Decisions
 
 Engineering decisions must be visible and traceable.
 
@@ -154,7 +154,7 @@ Implicit knowledge creates long-term engineering risk.
 
 ---
 
-# Principle 8 — Strong Contracts
+## Principle 8 — Strong Contracts
 
 FamilyOS components should communicate through clear and stable contracts.
 
@@ -169,7 +169,7 @@ Contracts allow independent evolution of components.
 
 ---
 
-# Principle 9 — Maintainability Over Short-Term Speed
+## Principle 9 — Maintainability Over Short-Term Speed
 
 Engineering decisions should optimize for long-term sustainability.
 
@@ -185,7 +185,7 @@ Maintainability includes:
 
 ---
 
-# Principle 10 — Continuous Improvement
+## Principle 10 — Continuous Improvement
 
 Engineering practices must evolve.
 
@@ -200,7 +200,7 @@ The engineering foundation is continuously improved as the ecosystem grows.
 
 ---
 
-# Relationship Between Engineering Domains
+## Relationship Between Engineering Domains
 
 The Engineering Foundation connects multiple engineering disciplines.
 
@@ -230,7 +230,7 @@ Each domain maintains its own detailed standards while following the same engine
 
 ---
 
-# Application Scope
+## Application Scope
 
 These principles apply to:
 
@@ -242,7 +242,7 @@ These principles apply to:
 
 ---
 
-# Governance
+## Governance
 
 Changes affecting engineering principles should be reviewed through the appropriate governance process.
 
@@ -255,7 +255,7 @@ Major changes may require:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The Engineering Principles are successful when:
 
@@ -266,7 +266,7 @@ The Engineering Principles are successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The Engineering Principles establish the foundation for how FamilyOS is engineered.
 

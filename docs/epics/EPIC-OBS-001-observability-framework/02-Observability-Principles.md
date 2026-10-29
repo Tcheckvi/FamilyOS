@@ -1,10 +1,10 @@
 # Observability Principles
 
-# EPIC-OBS-001
+## EPIC-OBS-001
 
-## Observability Principles
+### Observability Principles
 
-## Overview
+### Overview
 
 This document defines the engineering principles governing observability across the FamilyOS ecosystem.
 
@@ -18,7 +18,7 @@ The objective is to produce useful, structured, secure, and proportional runtime
 
 ---
 
-# Principle 1 — Observable by Design
+## Principle 1 — Observable by Design
 
 Observability SHOULD be considered during component design rather than added only after failures occur.
 
@@ -39,7 +39,7 @@ A component requiring operational understanding should not depend entirely on ad
 
 ---
 
-# Principle 2 — Structured by Default
+## Principle 2 — Structured by Default
 
 Operational signals SHOULD use structured representations whenever practical.
 
@@ -63,7 +63,7 @@ Human-readable messages may complement structured information but SHOULD NOT rep
 
 ---
 
-# Principle 3 — Correlatable by Design
+## Principle 3 — Correlatable by Design
 
 Signals belonging to the same logical operation SHOULD be correlatable.
 
@@ -84,7 +84,7 @@ Correlation identifiers MUST NOT expose sensitive information.
 
 ---
 
-# Principle 4 — Meaningful Signals Over Maximum Signals
+## Principle 4 — Meaningful Signals Over Maximum Signals
 
 More telemetry does not automatically produce better observability.
 
@@ -104,7 +104,7 @@ Telemetry without clear diagnostic, operational, security, or quality value SHOU
 
 ---
 
-# Principle 5 — Privacy by Design
+## Principle 5 — Privacy by Design
 
 FamilyOS observability MUST protect family information.
 
@@ -118,7 +118,7 @@ Sensitive data MUST be minimized, excluded, masked, or otherwise protected.
 
 ---
 
-# Principle 6 — Secrets Never Become Telemetry
+## Principle 6 — Secrets Never Become Telemetry
 
 Secrets MUST NOT intentionally appear in observability signals.
 
@@ -136,7 +136,7 @@ Instrumentation SHOULD be designed so that sensitive values are excluded before 
 
 ---
 
-# Principle 7 — Failures Must Leave Evidence
+## Principle 7 — Failures Must Leave Evidence
 
 Significant failures SHOULD produce sufficient runtime evidence for investigation.
 
@@ -158,7 +158,7 @@ The purpose is to make failures diagnosable.
 
 ---
 
-# Principle 8 — Observability Must Not Change Functional Behavior
+## Principle 8 — Observability Must Not Change Functional Behavior
 
 Instrumentation SHOULD remain operationally separate from business behavior.
 
@@ -180,7 +180,7 @@ Exceptions must be explicitly justified, particularly for mandatory security or 
 
 ---
 
-# Principle 9 — Proportional Instrumentation
+## Principle 9 — Proportional Instrumentation
 
 Instrumentation SHOULD be proportional to:
 
@@ -197,7 +197,7 @@ Critical operations may justify richer evidence.
 
 ---
 
-# Principle 10 — Stable Semantics
+## Principle 10 — Stable Semantics
 
 Observability contracts SHOULD use stable meanings.
 
@@ -215,7 +215,7 @@ Changes to important observability semantics SHOULD be governed like other engin
 
 ---
 
-# Principle 11 — Consistent Time
+## Principle 11 — Consistent Time
 
 Runtime signals SHOULD use consistent timestamp conventions.
 
@@ -232,7 +232,7 @@ Presentation layers may convert timestamps for human consumption.
 
 ---
 
-# Principle 12 — Explicit Severity
+## Principle 12 — Explicit Severity
 
 Logs and events requiring severity classification SHOULD use a defined severity model.
 
@@ -252,7 +252,7 @@ Severity SHOULD represent operational significance rather than developer prefere
 
 ---
 
-# Principle 13 — Metrics Must Have Meaning
+## Principle 13 — Metrics Must Have Meaning
 
 Metrics SHOULD represent clearly defined measurements.
 
@@ -273,7 +273,7 @@ Metrics SHOULD avoid uncontrolled dimensions that create excessive cardinality o
 
 ---
 
-# Principle 14 — Traces Represent Execution
+## Principle 14 — Traces Represent Execution
 
 Tracing SHOULD represent meaningful execution paths.
 
@@ -294,7 +294,7 @@ external dependency call
 
 ---
 
-# Principle 15 — Health Is Not Logging
+## Principle 15 — Health Is Not Logging
 
 Health signals represent current operational condition.
 
@@ -313,7 +313,7 @@ Health evaluation should remain predictable enough for automated consumption.
 
 ---
 
-# Principle 16 — Diagnostics Are Controlled
+## Principle 16 — Diagnostics Are Controlled
 
 Diagnostic information can expose deeper internal state than normal observability signals.
 
@@ -330,7 +330,7 @@ Debugging convenience must not override privacy or security.
 
 ---
 
-# Principle 17 — Vendor Neutrality
+## Principle 17 — Vendor Neutrality
 
 Core FamilyOS observability contracts MUST remain independent of specific monitoring vendors.
 
@@ -354,7 +354,7 @@ External observability technologies should remain replaceable.
 
 ---
 
-# Principle 18 — Local Development Must Remain Supported
+## Principle 18 — Local Development Must Remain Supported
 
 Observability must provide value without requiring production infrastructure.
 
@@ -370,7 +370,7 @@ A remote monitoring platform must not be required to understand basic FamilyOS e
 
 ---
 
-# Principle 19 — Observability Must Be Testable
+## Principle 19 — Observability Must Be Testable
 
 Important instrumentation behavior SHOULD be verifiable through automated tests.
 
@@ -388,7 +388,7 @@ Observability tests SHOULD focus on contracts rather than fragile textual format
 
 ---
 
-# Principle 20 — Plugins Participate in Platform Observability
+## Principle 20 — Plugins Participate in Platform Observability
 
 Plugins SHOULD integrate with the FamilyOS observability model rather than create incompatible parallel systems.
 
@@ -405,7 +405,7 @@ Plugin compliance rules may enforce required observability behavior.
 
 ---
 
-# Principle 21 — Observability Data Has a Lifecycle
+## Principle 21 — Observability Data Has a Lifecycle
 
 Telemetry is data and therefore requires lifecycle management.
 
@@ -433,7 +433,7 @@ Observability data SHOULD NOT be preserved indefinitely without a justified requ
 
 ---
 
-# Principle 22 — Operational Evidence Must Be Trustworthy
+## Principle 22 — Operational Evidence Must Be Trustworthy
 
 Runtime evidence should accurately represent what occurred.
 
@@ -449,7 +449,7 @@ Observability loses its value when operators cannot trust the evidence it provid
 
 ---
 
-# Principle 23 — Graceful Degradation
+## Principle 23 — Graceful Degradation
 
 Observability mechanisms SHOULD degrade gracefully when non-critical telemetry infrastructure is unavailable.
 
@@ -467,7 +467,7 @@ Telemetry failures may themselves generate local diagnostic evidence when practi
 
 ---
 
-# Principle 24 — Automation Consumes Contracts
+## Principle 24 — Automation Consumes Contracts
 
 Future automation SHOULD consume structured observability contracts rather than parse arbitrary human-readable log messages.
 
@@ -484,7 +484,7 @@ Machine consumption requires predictable semantics.
 
 ---
 
-# Principle 25 — Evolution Must Preserve Compatibility
+## Principle 25 — Evolution Must Preserve Compatibility
 
 Observability schemas and contracts will evolve.
 
@@ -501,7 +501,7 @@ Breaking observability contract changes SHOULD be explicit and versioned where r
 
 ---
 
-# Principle 26 — Observability Must Remain Simple
+## Principle 26 — Observability Must Remain Simple
 
 The first implementation of FamilyOS observability SHOULD remain intentionally lightweight.
 
@@ -527,7 +527,7 @@ FamilyOS should not adopt large observability infrastructure simply because such
 
 ---
 
-# Decision Hierarchy
+## Decision Hierarchy
 
 When observability requirements conflict, FamilyOS SHOULD prioritize:
 
@@ -551,7 +551,7 @@ No observability requirement justifies violating security or privacy boundaries.
 
 ---
 
-# Practical Design Test
+## Practical Design Test
 
 Before adding an observability signal, engineers should be able to answer:
 
@@ -567,7 +567,7 @@ If these questions cannot be answered, the signal may not belong in the system.
 
 ---
 
-# Principle Summary
+## Principle Summary
 
 The FamilyOS Observability Framework can be summarized as:
 
@@ -590,7 +590,7 @@ Together, these principles establish the constraints under which the FamilyOS ob
 
 ---
 
-# Conclusion
+## Conclusion
 
 FamilyOS observability exists to create trustworthy runtime understanding.
 

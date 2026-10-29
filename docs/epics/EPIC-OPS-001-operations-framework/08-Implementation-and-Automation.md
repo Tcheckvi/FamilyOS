@@ -1,10 +1,10 @@
 # Operations Framework
 
-# EPIC-OPS-001
+## EPIC-OPS-001
 
-# 08 Implementation and Automation
+## 08 Implementation and Automation
 
-## Overview
+### Overview
 
 Implementation and automation define how the FamilyOS Operations Framework is translated from operational principles and architectural requirements into executable, repeatable, observable, and governed operational mechanisms.
 
@@ -32,7 +32,7 @@ The objective is to ensure that frequent, important, error-prone, or security-se
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to establish FamilyOS requirements for:
 
@@ -65,7 +65,7 @@ The objective is to convert operational intent into controlled executable behavi
 
 ---
 
-# Core Principle
+## Core Principle
 
 The fundamental FamilyOS implementation and automation principle is:
 
@@ -77,7 +77,7 @@ The underlying operational intent MUST remain explicit.
 
 ---
 
-# Operations Implementation Model
+## Operations Implementation Model
 
 The canonical implementation model is:
 
@@ -113,7 +113,7 @@ Each layer SHOULD remain traceable to the operational requirement it implements.
 
 ---
 
-# Automation Objectives
+## Automation Objectives
 
 Operational automation SHOULD improve:
 
@@ -132,7 +132,7 @@ Automation SHOULD reduce unnecessary dependence on individual operator knowledge
 
 ---
 
-# Automation Is Not the Objective
+## Automation Is Not the Objective
 
 Automation itself is not an operational outcome.
 
@@ -149,7 +149,7 @@ Such decisions SHOULD remain explicit.
 
 ---
 
-# Automation Selection
+## Automation Selection
 
 Candidate activities for automation SHOULD be evaluated according to:
 
@@ -174,7 +174,7 @@ High-frequency and high-risk repeated operations SHOULD receive priority.
 
 ---
 
-# Automation Categories
+## Automation Categories
 
 FamilyOS operational automation MAY include:
 
@@ -195,7 +195,7 @@ These categories MAY share common infrastructure.
 
 ---
 
-# Automation Architecture
+## Automation Architecture
 
 Operational automation SHOULD follow a layered architecture.
 
@@ -231,7 +231,7 @@ Validation and authorization SHOULD occur before high-impact execution.
 
 ---
 
-# Operational Interfaces
+## Operational Interfaces
 
 Automation MAY be exposed through:
 
@@ -246,7 +246,7 @@ Interfaces SHOULD provide consistent semantics.
 
 ---
 
-# CLI Automation
+## CLI Automation
 
 CLI operations SHOULD support automation-friendly behavior.
 
@@ -262,7 +262,7 @@ Interactive prompts SHOULD NOT prevent controlled automation.
 
 ---
 
-# Structured Output
+## Structured Output
 
 Operational commands MAY provide machine-readable output.
 
@@ -280,7 +280,7 @@ Human-readable output MAY coexist with structured output.
 
 ---
 
-# Exit Codes
+## Exit Codes
 
 Automation MUST use meaningful exit status.
 
@@ -303,7 +303,7 @@ Exit-code semantics SHOULD remain documented.
 
 ---
 
-# Automation Ownership
+## Automation Ownership
 
 Every significant operational automation SHOULD have identifiable ownership.
 
@@ -321,7 +321,7 @@ Unowned automation creates operational risk.
 
 ---
 
-# Automation Source Control
+## Automation Source Control
 
 Operational automation MUST be version controlled where technically practical.
 
@@ -338,7 +338,7 @@ Production-affecting automation SHOULD NOT exist only on individual operator mac
 
 ---
 
-# Automation Review
+## Automation Review
 
 Significant automation changes SHOULD undergo engineering review.
 
@@ -357,7 +357,7 @@ High-impact operational automation MAY require additional review.
 
 ---
 
-# Infrastructure as Code
+## Infrastructure as Code
 
 Infrastructure SHOULD be represented declaratively where practical.
 
@@ -373,7 +373,7 @@ Manual infrastructure configuration SHOULD be minimized.
 
 ---
 
-# Desired Infrastructure State
+## Desired Infrastructure State
 
 Infrastructure automation SHOULD describe desired state.
 
@@ -394,7 +394,7 @@ Automation SHOULD detect significant differences between desired and actual stat
 
 ---
 
-# Provisioning Automation
+## Provisioning Automation
 
 Environment provisioning SHOULD be automated where repeated provisioning occurs.
 
@@ -412,7 +412,7 @@ Provisioning SHOULD be repeatable.
 
 ---
 
-# Provisioning Validation
+## Provisioning Validation
 
 Provisioning MUST be validated before an environment is considered operational.
 
@@ -429,7 +429,7 @@ Successful provisioning commands alone do not prove environment readiness.
 
 ---
 
-# Environment Automation
+## Environment Automation
 
 Environment automation SHOULD maintain explicit differences between:
 
@@ -446,7 +446,7 @@ Environment-specific behavior SHOULD be represented through explicit configurati
 
 ---
 
-# Environment Safety
+## Environment Safety
 
 Automation MUST clearly identify the target environment.
 
@@ -462,7 +462,7 @@ Safeguards MAY include:
 
 ---
 
-# Production Protection
+## Production Protection
 
 Production-affecting automation SHOULD require stronger controls than development automation.
 
@@ -479,7 +479,7 @@ Production automation MUST NOT depend on unrestricted developer credentials.
 
 ---
 
-# Configuration Automation
+## Configuration Automation
 
 Configuration SHOULD be applied through controlled automation where practical.
 
@@ -495,7 +495,7 @@ Secrets MUST remain separate from ordinary configuration.
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Automation MUST validate critical configuration before applying it.
 
@@ -511,7 +511,7 @@ Invalid configuration MUST fail before unsafe activation where possible.
 
 ---
 
-# Configuration as Code
+## Configuration as Code
 
 Non-secret operational configuration SHOULD be version controlled where appropriate.
 
@@ -537,7 +537,7 @@ Runtime-only emergency changes SHOULD later be reconciled with authoritative con
 
 ---
 
-# Configuration Reconciliation
+## Configuration Reconciliation
 
 Automation SHOULD compare intended and actual configuration where operationally important.
 
@@ -547,7 +547,7 @@ Automated reconciliation MAY correct drift when the correction is safe.
 
 ---
 
-# Secret Injection
+## Secret Injection
 
 Automation MAY inject secrets into runtime environments through approved secret-management mechanisms.
 
@@ -562,7 +562,7 @@ Automation SHOULD access only required secrets.
 
 ---
 
-# Deployment Automation
+## Deployment Automation
 
 Repeated deployments SHOULD be automated.
 
@@ -594,7 +594,7 @@ Deployment MUST remain connected to the authoritative release identity.
 
 ---
 
-# Deployment Preconditions
+## Deployment Preconditions
 
 Before deployment, automation SHOULD verify:
 
@@ -610,7 +610,7 @@ Precondition failure SHOULD stop deployment safely.
 
 ---
 
-# Immutable Artifact Deployment
+## Immutable Artifact Deployment
 
 Automation SHOULD deploy validated build artifacts without modifying their application contents.
 
@@ -633,7 +633,7 @@ Runtime
 
 ---
 
-# Deployment Strategies
+## Deployment Strategies
 
 Automation MAY support strategies including:
 
@@ -651,7 +651,7 @@ The selected strategy SHOULD reflect:
 
 ---
 
-# Staged Deployment
+## Staged Deployment
 
 High-risk changes MAY be deployed progressively.
 
@@ -677,7 +677,7 @@ Automatic progression SHOULD stop when required health conditions fail.
 
 ---
 
-# Deployment Verification
+## Deployment Verification
 
 Deployment automation MUST distinguish execution from success.
 
@@ -694,7 +694,7 @@ A completed deployment command MUST NOT automatically produce a successful deplo
 
 ---
 
-# Automatic Rollback
+## Automatic Rollback
 
 Automatic rollback MAY be used when reliable failure criteria exist.
 
@@ -709,7 +709,7 @@ Automatic rollback SHOULD itself be validated and observable.
 
 ---
 
-# Rollback Safety
+## Rollback Safety
 
 Rollback automation MUST understand whether the change is actually reversible.
 
@@ -724,7 +724,7 @@ Irreversible transitions MUST be explicitly identified.
 
 ---
 
-# Runtime Automation
+## Runtime Automation
 
 Runtime automation MAY manage:
 
@@ -741,7 +741,7 @@ Runtime automation MUST follow `04-Runtime-and-Service-Management.md`.
 
 ---
 
-# Service Lifecycle Automation
+## Service Lifecycle Automation
 
 Service lifecycle commands SHOULD use explicit operations.
 
@@ -762,7 +762,7 @@ Operations SHOULD produce meaningful status and evidence.
 
 ---
 
-# Restart Automation
+## Restart Automation
 
 Automated restart MAY recover transient runtime failures.
 
@@ -779,7 +779,7 @@ Repeated restart without recovery SHOULD become an incident signal.
 
 ---
 
-# Health Automation
+## Health Automation
 
 Health checks SHOULD be automated.
 
@@ -795,7 +795,7 @@ Health automation SHOULD use semantics defined by the service.
 
 ---
 
-# Maintenance Automation
+## Maintenance Automation
 
 Recurring maintenance SHOULD be automated where safe.
 
@@ -813,7 +813,7 @@ Maintenance MUST remain observable.
 
 ---
 
-# Maintenance Windows
+## Maintenance Windows
 
 Automation MAY schedule maintenance during defined windows.
 
@@ -829,7 +829,7 @@ Scheduled time alone MUST NOT determine successful completion.
 
 ---
 
-# Scheduled Operations
+## Scheduled Operations
 
 Recurring operational work MAY use scheduled automation.
 
@@ -846,7 +846,7 @@ Scheduled operations MUST NOT silently fail indefinitely.
 
 ---
 
-# Job Concurrency
+## Job Concurrency
 
 Scheduled jobs SHOULD define whether concurrent executions are permitted.
 
@@ -863,7 +863,7 @@ Concurrent execution MUST NOT occur accidentally when operations are not concurr
 
 ---
 
-# Job Timeouts
+## Job Timeouts
 
 Automated jobs SHOULD have bounded execution time.
 
@@ -878,7 +878,7 @@ Unbounded operational jobs SHOULD be avoided.
 
 ---
 
-# Backup Automation
+## Backup Automation
 
 Backups SHOULD be automated when backup requirements exist.
 
@@ -896,7 +896,7 @@ Backup success MUST be observable.
 
 ---
 
-# Backup Verification
+## Backup Verification
 
 Automated backup creation SHOULD include verification.
 
@@ -911,7 +911,7 @@ Backup creation without verification provides weaker assurance.
 
 ---
 
-# Recovery Automation
+## Recovery Automation
 
 Recovery procedures SHOULD be automated where reliable automation reduces recovery risk.
 
@@ -928,7 +928,7 @@ Recovery automation MUST NOT blindly restore compromised state.
 
 ---
 
-# Restore Testing
+## Restore Testing
 
 Automated recovery mechanisms SHOULD be tested periodically.
 
@@ -951,7 +951,7 @@ Successful backup generation alone is insufficient.
 
 ---
 
-# Operational Validation Automation
+## Operational Validation Automation
 
 FamilyOS SHOULD automate repeatable operational validation.
 
@@ -970,7 +970,7 @@ Validation SHOULD produce machine-readable results where practical.
 
 ---
 
-# Validation Status
+## Validation Status
 
 Automated operational validation MAY produce:
 
@@ -988,7 +988,7 @@ INCOMPLETE MUST NOT be treated as PASS.
 
 ---
 
-# Preflight Checks
+## Preflight Checks
 
 High-impact automation SHOULD perform preflight validation.
 
@@ -1006,7 +1006,7 @@ Preflight failure SHOULD prevent execution where continuation would be unsafe.
 
 ---
 
-# Post-Execution Validation
+## Post-Execution Validation
 
 Automation SHOULD verify results after execution.
 
@@ -1025,7 +1025,7 @@ Successful command execution alone is insufficient for important operational cha
 
 ---
 
-# Idempotency
+## Idempotency
 
 Operational automation SHOULD be idempotent where practical.
 
@@ -1053,7 +1053,7 @@ Idempotency simplifies retry and recovery.
 
 ---
 
-# Non-Idempotent Operations
+## Non-Idempotent Operations
 
 Some operations cannot be naturally idempotent.
 
@@ -1072,7 +1072,7 @@ Such operations SHOULD use safeguards such as:
 
 ---
 
-# Transactional Automation
+## Transactional Automation
 
 Multi-step automation SHOULD define what happens when only part of the workflow succeeds.
 
@@ -1090,7 +1090,7 @@ Partial execution MUST NOT leave important state permanently ambiguous.
 
 ---
 
-# Checkpoints
+## Checkpoints
 
 Long-running workflows MAY use checkpoints.
 
@@ -1105,7 +1105,7 @@ Checkpoint data SHOULD remain consistent with actual system state.
 
 ---
 
-# Workflow Orchestration
+## Workflow Orchestration
 
 Complex operational procedures MAY be represented as workflows.
 
@@ -1124,7 +1124,7 @@ Workflow state SHOULD be observable.
 
 ---
 
-# Workflow State Model
+## Workflow State Model
 
 A baseline automation workflow MAY use:
 
@@ -1141,7 +1141,7 @@ State transitions SHOULD remain traceable.
 
 ---
 
-# Dependency-Aware Automation
+## Dependency-Aware Automation
 
 Automation SHOULD understand required dependencies.
 
@@ -1151,7 +1151,7 @@ Dependency validation SHOULD use explicit checks rather than arbitrary delays.
 
 ---
 
-# Retry Automation
+## Retry Automation
 
 Retries MAY be appropriate for transient operational failures.
 
@@ -1167,7 +1167,7 @@ Unlimited retries are prohibited.
 
 ---
 
-# Backoff
+## Backoff
 
 Repeated retry SHOULD use appropriate backoff where failure persistence is likely.
 
@@ -1181,7 +1181,7 @@ Jitter MAY be added for distributed automation.
 
 ---
 
-# Timeout Management
+## Timeout Management
 
 Every remote or potentially blocking automation step SHOULD have an appropriate timeout.
 
@@ -1195,7 +1195,7 @@ Timeout failure MUST produce explicit status.
 
 ---
 
-# Dry-Run Mode
+## Dry-Run Mode
 
 High-impact automation SHOULD support dry-run where practical.
 
@@ -1210,7 +1210,7 @@ Dry-run MUST NOT perform the destructive operation it claims only to simulate.
 
 ---
 
-# Plan and Apply Model
+## Plan and Apply Model
 
 Declarative automation MAY use:
 
@@ -1234,7 +1234,7 @@ The applied change SHOULD correspond to the reviewed plan where practical.
 
 ---
 
-# Confirmation
+## Confirmation
 
 Interactive confirmation MAY protect rare destructive actions.
 
@@ -1249,7 +1249,7 @@ Automation pipelines SHOULD use explicit non-interactive authorization rather th
 
 ---
 
-# Destructive Operations
+## Destructive Operations
 
 Destructive operations require stronger safeguards.
 
@@ -1272,7 +1272,7 @@ Safeguards MAY include:
 
 ---
 
-# Operational Runbooks
+## Operational Runbooks
 
 Operational procedures SHOULD have runbooks where human execution or judgment remains necessary.
 
@@ -1294,7 +1294,7 @@ Runbooks MUST reflect actual operational behavior.
 
 ---
 
-# Executable Runbooks
+## Executable Runbooks
 
 Where appropriate, repeated runbook steps SHOULD become executable automation.
 
@@ -1320,7 +1320,7 @@ Human judgment SHOULD remain where necessary.
 
 ---
 
-# Runbook Safety
+## Runbook Safety
 
 Runbooks MUST clearly distinguish:
 
@@ -1333,7 +1333,7 @@ Critical commands SHOULD identify expected results.
 
 ---
 
-# Automation Testing
+## Automation Testing
 
 Operational automation MUST be tested according to risk.
 
@@ -1353,7 +1353,7 @@ Automation testing MUST integrate with EPIC-TST-001 — Testing Framework.
 
 ---
 
-# Unit Testing
+## Unit Testing
 
 Reusable automation logic SHOULD receive unit tests where practical.
 
@@ -1367,7 +1367,7 @@ Unit tests MAY validate:
 
 ---
 
-# Integration Testing
+## Integration Testing
 
 Automation SHOULD receive integration tests when behavior depends on external systems.
 
@@ -1384,7 +1384,7 @@ Test environments SHOULD be isolated.
 
 ---
 
-# Failure Testing
+## Failure Testing
 
 Automation MUST be tested for important failure paths.
 
@@ -1403,7 +1403,7 @@ Failure behavior is part of automation correctness.
 
 ---
 
-# Recovery Testing
+## Recovery Testing
 
 Automation that claims rollback or recovery capability SHOULD test that capability.
 
@@ -1411,7 +1411,7 @@ A rollback mechanism that has never been exercised provides limited assurance.
 
 ---
 
-# Automation Test Environments
+## Automation Test Environments
 
 Automation SHOULD be tested in environments representative enough to reveal meaningful operational behavior.
 
@@ -1419,7 +1419,7 @@ Production SHOULD NOT be the first environment where important automation is exe
 
 ---
 
-# Automation Observability
+## Automation Observability
 
 Operational automation MUST be observable.
 
@@ -1437,7 +1437,7 @@ Telemetry MUST integrate with EPIC-OBS-001 — Observability Framework.
 
 ---
 
-# Automation Logging
+## Automation Logging
 
 Logs SHOULD identify:
 
@@ -1457,7 +1457,7 @@ Sensitive values MUST NOT be logged.
 
 ---
 
-# Automation Metrics
+## Automation Metrics
 
 Useful automation metrics MAY include:
 
@@ -1473,7 +1473,7 @@ Metrics SHOULD support operational improvement.
 
 ---
 
-# Automation Tracing
+## Automation Tracing
 
 Complex multi-step workflows MAY use tracing.
 
@@ -1488,7 +1488,7 @@ Tracing MUST respect security and privacy requirements.
 
 ---
 
-# Automation Correlation
+## Automation Correlation
 
 Every significant automation execution SHOULD have a correlation or operation identifier.
 
@@ -1514,7 +1514,7 @@ Correlation improves incident investigation.
 
 ---
 
-# Automation Security
+## Automation Security
 
 Operational automation often possesses elevated privileges.
 
@@ -1531,7 +1531,7 @@ Automation security SHOULD include:
 
 ---
 
-# Automation Identity
+## Automation Identity
 
 Significant automation SHOULD execute under identifiable service or operator identities.
 
@@ -1541,7 +1541,7 @@ The acting identity SHOULD be visible in operational evidence.
 
 ---
 
-# Least Privilege
+## Least Privilege
 
 Automation SHOULD receive only the permissions required for its task.
 
@@ -1559,7 +1559,7 @@ Broad privileges SHOULD require justification.
 
 ---
 
-# Automation Secrets
+## Automation Secrets
 
 Secrets used by automation MUST be protected.
 
@@ -1574,7 +1574,7 @@ Credentials SHOULD be short-lived where practical.
 
 ---
 
-# Credential Rotation
+## Credential Rotation
 
 Automation credentials SHOULD support rotation without requiring uncontrolled manual changes.
 
@@ -1584,7 +1584,7 @@ Expired or revoked credentials SHOULD fail clearly.
 
 ---
 
-# Supply Chain Security
+## Supply Chain Security
 
 Operational automation dependencies MUST be controlled.
 
@@ -1601,7 +1601,7 @@ High-privilege automation SHOULD use trusted and appropriately pinned dependenci
 
 ---
 
-# Script Security
+## Script Security
 
 Operational scripts MUST validate external input.
 
@@ -1616,7 +1616,7 @@ Security review SHOULD reflect script privilege.
 
 ---
 
-# Auditability
+## Auditability
 
 High-impact automation MUST produce sufficient audit evidence.
 
@@ -1632,7 +1632,7 @@ Auditability MUST NOT require exposing secrets.
 
 ---
 
-# Approval Gates
+## Approval Gates
 
 High-risk automation MAY require approval before execution.
 
@@ -1647,7 +1647,7 @@ Approval MUST NOT become a meaningless routine click that provides no actual con
 
 ---
 
-# Separation of Duties
+## Separation of Duties
 
 High-risk operational workflows MAY separate:
 
@@ -1660,7 +1660,7 @@ The degree of separation SHOULD reflect actual operational and security risk.
 
 ---
 
-# Automation Failure Handling
+## Automation Failure Handling
 
 Automation MUST fail explicitly.
 
@@ -1693,7 +1693,7 @@ Silent failure is prohibited for significant operational automation.
 
 ---
 
-# Failure Classification
+## Failure Classification
 
 Automation failures MAY be classified as:
 
@@ -1712,7 +1712,7 @@ Classification SHOULD improve troubleshooting and metrics.
 
 ---
 
-# Partial Failure
+## Partial Failure
 
 Partial failure MUST be detectable.
 
@@ -1728,7 +1728,7 @@ Operators MUST NOT be forced to guess what executed.
 
 ---
 
-# Rollback Failure
+## Rollback Failure
 
 Rollback itself MAY fail.
 
@@ -1743,7 +1743,7 @@ Rollback failure SHOULD trigger:
 
 ---
 
-# Automation Recovery
+## Automation Recovery
 
 Failed automation SHOULD support controlled recovery.
 
@@ -1760,7 +1760,7 @@ The appropriate strategy depends on operation semantics.
 
 ---
 
-# Reconciliation
+## Reconciliation
 
 When automation state becomes uncertain, reconciliation SHOULD compare intended and actual state.
 
@@ -1781,7 +1781,7 @@ Reconciliation SHOULD precede blind re-execution of potentially destructive oper
 
 ---
 
-# Incident Automation
+## Incident Automation
 
 Automation MAY assist incident response.
 
@@ -1798,7 +1798,7 @@ Incident automation MUST remain safe under degraded conditions.
 
 ---
 
-# Automated Remediation
+## Automated Remediation
 
 FamilyOS MAY automatically remediate well-understood failure conditions.
 
@@ -1813,7 +1813,7 @@ Unknown failures SHOULD NOT trigger arbitrary automated changes.
 
 ---
 
-# Self-Healing
+## Self-Healing
 
 Self-healing MAY be used for narrowly defined failure conditions.
 
@@ -1843,7 +1843,7 @@ Self-healing MUST NOT hide recurring systemic problems.
 
 ---
 
-# Alert Automation
+## Alert Automation
 
 Automation MAY generate or route operational alerts.
 
@@ -1859,7 +1859,7 @@ Automated alerts SHOULD remain actionable.
 
 ---
 
-# Automation and Capacity
+## Automation and Capacity
 
 Automation SHOULD respect capacity constraints defined by `06-Capacity-Performance-and-Reliability.md`.
 
@@ -1874,7 +1874,7 @@ Automation itself is operational workload.
 
 ---
 
-# Concurrency Control
+## Concurrency Control
 
 Automation SHOULD limit concurrency where simultaneous operations may create risk.
 
@@ -1890,7 +1890,7 @@ Locking or coordination mechanisms MAY be required.
 
 ---
 
-# Distributed Automation
+## Distributed Automation
 
 Distributed automation SHOULD account for:
 
@@ -1904,7 +1904,7 @@ Exactly-once assumptions SHOULD be avoided unless technically guaranteed.
 
 ---
 
-# Operation Identifiers
+## Operation Identifiers
 
 Important distributed operations SHOULD use unique identifiers.
 
@@ -1920,7 +1920,7 @@ Operation identifiers SHOULD remain stable across retries of the same logical ac
 
 ---
 
-# Automation Versioning
+## Automation Versioning
 
 Operational automation SHOULD have identifiable versions.
 
@@ -1934,7 +1934,7 @@ This supports:
 
 ---
 
-# Automation Compatibility
+## Automation Compatibility
 
 Automation SHOULD verify compatibility with:
 
@@ -1948,7 +1948,7 @@ Incompatible automation MUST fail safely.
 
 ---
 
-# Automation Deprecation
+## Automation Deprecation
 
 Deprecated automation SHOULD be removed or clearly disabled.
 
@@ -1958,7 +1958,7 @@ Deprecation SHOULD identify the replacement path.
 
 ---
 
-# Automation Documentation
+## Automation Documentation
 
 Significant automation MUST be documented.
 
@@ -1978,7 +1978,7 @@ Documentation MUST follow EPIC-DOC-001 — Documentation Framework.
 
 ---
 
-# Implementation Standards
+## Implementation Standards
 
 Operational implementation SHOULD follow FamilyOS engineering standards.
 
@@ -1995,7 +1995,7 @@ Operational code MUST NOT be treated as lower-quality temporary code.
 
 ---
 
-# Python Automation
+## Python Automation
 
 Where Python is used for FamilyOS operational automation, code SHOULD follow repository engineering requirements.
 
@@ -2010,7 +2010,7 @@ Operational tooling SHOULD use shared libraries instead of unnecessary duplicate
 
 ---
 
-# Shell Automation
+## Shell Automation
 
 Shell scripts MAY be used for narrow operational tasks.
 
@@ -2020,7 +2020,7 @@ Shell scripts SHOULD use strict failure handling where appropriate.
 
 ---
 
-# Automation Repository Structure
+## Automation Repository Structure
 
 Operational automation SHOULD have a predictable repository location.
 
@@ -2041,7 +2041,7 @@ The exact structure SHOULD follow FamilyOS repository architecture.
 
 ---
 
-# Automation Evidence
+## Automation Evidence
 
 Significant automation executions SHOULD produce evidence.
 
@@ -2061,7 +2061,7 @@ Evidence SHOULD be sufficient to reconstruct important operational changes.
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Operational evidence SHOULD be protected from unauthorized modification.
 
@@ -2077,7 +2077,7 @@ Evidence integrity SHOULD reflect operation risk.
 
 ---
 
-# Implementation Validation
+## Implementation Validation
 
 Operational implementation SHOULD be validated before production use.
 
@@ -2104,7 +2104,7 @@ Production SHOULD NOT be the first meaningful test of high-impact automation.
 
 ---
 
-# Automation Readiness
+## Automation Readiness
 
 Automation SHOULD be considered operationally ready only when:
 
@@ -2121,7 +2121,7 @@ Critical automation SHOULD satisfy stronger evidence requirements.
 
 ---
 
-# Automation Quality Gates
+## Automation Quality Gates
 
 FamilyOS MAY define automation quality gates.
 
@@ -2141,7 +2141,7 @@ Quality gates SHOULD integrate with EPIC-QLT-001 — Quality Framework.
 
 ---
 
-# Automation Release
+## Automation Release
 
 Operational automation itself SHOULD follow controlled release practices.
 
@@ -2157,7 +2157,7 @@ High-impact automation SHOULD NOT change silently outside normal engineering gov
 
 ---
 
-# Automation Rollout
+## Automation Rollout
 
 Major automation changes MAY be rolled out gradually.
 
@@ -2174,7 +2174,7 @@ Progression SHOULD depend on successful validation.
 
 ---
 
-# Feature Flags for Automation
+## Feature Flags for Automation
 
 Operational automation MAY use feature flags when controlled rollout is useful.
 
@@ -2189,7 +2189,7 @@ Temporary automation flags SHOULD NOT become permanent undocumented behavior.
 
 ---
 
-# Manual Override
+## Manual Override
 
 Critical automation MAY require a manual override capability.
 
@@ -2204,7 +2204,7 @@ Overrides SHOULD NOT silently disable permanent controls.
 
 ---
 
-# Break-Glass Operations
+## Break-Glass Operations
 
 Emergency operational access MAY require break-glass procedures.
 
@@ -2220,7 +2220,7 @@ Emergency access MUST NOT become normal operational workflow.
 
 ---
 
-# Implementation and Observability Integration
+## Implementation and Observability Integration
 
 EPIC-OBS-001 — Observability Framework provides the telemetry architecture for operational automation.
 
@@ -2230,7 +2230,7 @@ Automation-specific telemetry SHOULD complement rather than duplicate platform t
 
 ---
 
-# Implementation and Security Integration
+## Implementation and Security Integration
 
 EPIC-SEC-001 — Security Framework defines security requirements for automation.
 
@@ -2254,7 +2254,7 @@ Automation is not exempt from security because it is internal.
 
 ---
 
-# Implementation and Testing Integration
+## Implementation and Testing Integration
 
 EPIC-TST-001 — Testing Framework provides testing requirements.
 
@@ -2270,7 +2270,7 @@ Failure-path testing is particularly important for operations.
 
 ---
 
-# Implementation and Quality Integration
+## Implementation and Quality Integration
 
 EPIC-QLT-001 — Quality Framework defines quality governance.
 
@@ -2287,7 +2287,7 @@ Automation defects SHOULD participate in quality-management processes.
 
 ---
 
-# Implementation and Build Integration
+## Implementation and Build Integration
 
 EPIC-BLD-001 — Build Framework governs build artifacts.
 
@@ -2297,7 +2297,7 @@ Automation MUST NOT modify validated application artifacts in uncontrolled ways.
 
 ---
 
-# Implementation and Release Integration
+## Implementation and Release Integration
 
 EPIC-REL-001 — Release Framework governs controlled release.
 
@@ -2307,7 +2307,7 @@ Operational automation changes SHOULD themselves follow appropriate release prac
 
 ---
 
-# Implementation and Documentation Integration
+## Implementation and Documentation Integration
 
 EPIC-DOC-001 — Documentation Framework governs automation documentation.
 
@@ -2315,7 +2315,7 @@ Runbooks, operational procedures, automation references, and recovery instructio
 
 ---
 
-# Implementation and Plugin Compliance
+## Implementation and Plugin Compliance
 
 Automation affecting plugins MUST respect EPIC-PLUGIN-002 — Plugin Compliance Framework.
 
@@ -2331,7 +2331,7 @@ Automation MUST NOT enable non-compliant plugin behavior silently.
 
 ---
 
-# Automation Governance
+## Automation Governance
 
 FamilyOS MUST govern significant operational automation.
 
@@ -2348,7 +2348,7 @@ Governance strength SHOULD reflect automation impact.
 
 ---
 
-# Automation Change Management
+## Automation Change Management
 
 Automation changes SHOULD follow:
 
@@ -2378,7 +2378,7 @@ Emergency changes SHOULD later receive normal review and reconciliation.
 
 ---
 
-# Automation Exceptions
+## Automation Exceptions
 
 Exceptions to automation requirements MUST be explicit where significant.
 
@@ -2395,7 +2395,7 @@ Manual operation MUST NOT become an undocumented permanent exception.
 
 ---
 
-# Automation Metrics
+## Automation Metrics
 
 FamilyOS MAY track:
 
@@ -2412,7 +2412,7 @@ Metrics SHOULD support improvement.
 
 ---
 
-# Manual Intervention Rate
+## Manual Intervention Rate
 
 Repeated manual intervention in an automated workflow SHOULD be treated as an engineering signal.
 
@@ -2428,7 +2428,7 @@ Automation SHOULD evolve when recurring manual correction is required.
 
 ---
 
-# Automation Debt
+## Automation Debt
 
 Automation debt MAY include:
 
@@ -2444,7 +2444,7 @@ Automation debt SHOULD remain visible and prioritized according to operational r
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Automation SHOULD improve through evidence.
 
@@ -2462,7 +2462,7 @@ Repeated failure patterns SHOULD result in implementation improvement.
 
 ---
 
-# Automation Improvement Loop
+## Automation Improvement Loop
 
 The canonical improvement loop is:
 
@@ -2494,7 +2494,7 @@ Automation maturity is therefore continuous.
 
 ---
 
-# Implementation Invariants
+## Implementation Invariants
 
 The following implementation invariants apply across FamilyOS operations:
 
@@ -2521,7 +2521,7 @@ The following implementation invariants apply across FamilyOS operations:
 
 ---
 
-# Canonical Operational Automation Flow
+## Canonical Operational Automation Flow
 
 The canonical FamilyOS automation flow is:
 
@@ -2576,7 +2576,7 @@ This flow ensures that operational automation remains controlled from trigger th
 
 ---
 
-# Automation Maturity Model
+## Automation Maturity Model
 
 FamilyOS operational processes MAY evolve through the following maturity stages:
 
@@ -2609,7 +2609,7 @@ Higher maturity SHOULD be pursued where operational value justifies it.
 
 ---
 
-# Operational Automation Readiness Model
+## Operational Automation Readiness Model
 
 An automation capability is ready for operational use when:
 
@@ -2642,7 +2642,7 @@ Execution capability alone is insufficient.
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 The FamilyOS Implementation and Automation model enables:
 
@@ -2667,7 +2667,7 @@ The FamilyOS Implementation and Automation model enables:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS operational implementation and automation are based on the following principle:
 

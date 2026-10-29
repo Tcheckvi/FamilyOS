@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 14 Documentation Repository Organization
+## 14 Documentation Repository Organization
 
-## Context
+### Context
 
 The FamilyOS documentation repository is a structured knowledge system that contains architectural decisions, specifications, engineering processes, plugin documentation, and operational references.
 
@@ -12,11 +12,11 @@ The Documentation Repository Organization defines the official structure, placem
 
 ---
 
-# Repository Organization Principles
+## Repository Organization Principles
 
 FamilyOS documentation organization follows these principles.
 
-## Discoverability
+### Discoverability
 
 Every document must have a predictable location.
 
@@ -24,7 +24,7 @@ Contributors should be able to find documentation without searching through unre
 
 ---
 
-## Separation of Concerns
+### Separation of Concerns
 
 Different documentation categories must remain separated.
 
@@ -37,7 +37,7 @@ Examples:
 
 ---
 
-## Scalability
+### Scalability
 
 The repository structure must support future growth:
 
@@ -48,7 +48,7 @@ The repository structure must support future growth:
 
 ---
 
-## Automation Compatibility
+### Automation Compatibility
 
 The structure must support:
 
@@ -59,7 +59,7 @@ The structure must support:
 
 ---
 
-# Official Documentation Root
+## Official Documentation Root
 
 The documentation root directory is:
 
@@ -71,7 +71,7 @@ All official FamilyOS documentation must be stored under this directory.
 
 ---
 
-# Top-Level Documentation Structure
+## Top-Level Documentation Structure
 
 Recommended structure:
 
@@ -92,7 +92,7 @@ docs/
 
 ---
 
-# ADR Organization
+## ADR Organization
 
 Architecture Decision Records are stored under:
 
@@ -118,7 +118,7 @@ Rules:
 
 ---
 
-# RFC Organization
+## RFC Organization
 
 Request For Comments documents are stored under:
 
@@ -147,7 +147,7 @@ Rules:
 
 ---
 
-# EPIC Organization
+## EPIC Organization
 
 Large engineering initiatives are stored under:
 
@@ -176,7 +176,7 @@ Rules:
 
 ---
 
-# SPEC Organization
+## SPEC Organization
 
 Specifications are stored under:
 
@@ -202,7 +202,7 @@ Rules:
 
 ---
 
-# Architecture Documentation
+## Architecture Documentation
 
 Architecture documentation is stored under:
 
@@ -223,7 +223,7 @@ docs/
 
 ---
 
-# Plugin Documentation Organization
+## Plugin Documentation Organization
 
 Plugin documentation follows the plugin ecosystem structure.
 
@@ -252,7 +252,7 @@ Validation.md
 
 ---
 
-# Template Organization
+## Template Organization
 
 Documentation templates are stored under:
 
@@ -276,7 +276,7 @@ Templates are version controlled.
 
 ---
 
-# Reference Documentation
+## Reference Documentation
 
 Stable reference information is stored under:
 
@@ -293,7 +293,7 @@ Examples:
 
 ---
 
-# Naming Rules
+## Naming Rules
 
 Documentation filenames must:
 
@@ -317,7 +317,7 @@ my_architecture_notes.md
 
 ---
 
-# Directory Naming Rules
+## Directory Naming Rules
 
 Directories must:
 
@@ -341,7 +341,7 @@ documentation-final-version
 
 ---
 
-# Documentation Indexing
+## Documentation Indexing
 
 The repository should provide indexes:
 
@@ -360,7 +360,7 @@ Indexes may be generated automatically.
 
 ---
 
-# Git Integration
+## Git Integration
 
 Documentation organization relies on Git capabilities:
 
@@ -373,7 +373,7 @@ Documentation moves must preserve history.
 
 ---
 
-# Repository Validation Rules
+## Repository Validation Rules
 
 Automation should verify:
 
@@ -384,7 +384,7 @@ Automation should verify:
 
 ---
 
-# Governance Integration
+## Governance Integration
 
 Repository organization is managed through:
 
@@ -395,7 +395,7 @@ Repository organization is managed through:
 
 ---
 
-# Relationship With Other Frameworks
+## Relationship With Other Frameworks
 
 Documentation repository organization integrates with:
 
@@ -407,7 +407,7 @@ Documentation repository organization integrates with:
 
 ---
 
-# Final Compliance
+## Final Compliance
 
 Documentation repository organization is compliant when:
 

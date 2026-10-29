@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 19 Quality Framework Lifecycle
+## 19 Quality Framework Lifecycle
 
-## Overview
+### Overview
 
 The FamilyOS Quality Framework Lifecycle defines how the Quality Framework is created, introduced, adopted, operated, evaluated, evolved, versioned, migrated, deprecated, and eventually retired.
 
@@ -46,7 +46,7 @@ The lifecycle ensures that quality mechanisms remain useful, coherent, enforceab
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Quality Framework Lifecycle is to ensure controlled evolution of FamilyOS quality capabilities.
 
@@ -83,7 +83,7 @@ Explicit Retirement
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -106,7 +106,7 @@ Nothing should become permanently authoritative merely because it once existed.
 
 ---
 
-# Lifecycle Scope
+## Lifecycle Scope
 
 The Quality Framework Lifecycle applies to the complete quality system.
 
@@ -132,7 +132,7 @@ Quality Governance
 
 ---
 
-# Framework Lifecycle States
+## Framework Lifecycle States
 
 At the highest level, the Quality Framework may move through:
 
@@ -154,7 +154,7 @@ Individual framework elements may have more detailed lifecycles.
 
 ---
 
-# PLANNED
+## PLANNED
 
 `PLANNED` means the framework or capability is being designed but is not yet authoritative.
 
@@ -168,7 +168,7 @@ Activities may include:
 
 ---
 
-# ACTIVE
+## ACTIVE
 
 `ACTIVE` means the framework is authoritative and used by FamilyOS engineering.
 
@@ -184,7 +184,7 @@ Release Decisions
 
 ---
 
-# EVOLVING
+## EVOLVING
 
 `EVOLVING` means the framework remains active while significant improvements or migrations are underway.
 
@@ -194,7 +194,7 @@ A healthy engineering framework evolves continuously.
 
 ---
 
-# DEPRECATED
+## DEPRECATED
 
 `DEPRECATED` means the framework or capability remains temporarily supported but should no longer be adopted for new work.
 
@@ -202,7 +202,7 @@ A replacement or migration path should normally exist.
 
 ---
 
-# RETIRED
+## RETIRED
 
 `RETIRED` means the framework or capability is no longer authoritative for current engineering work.
 
@@ -210,7 +210,7 @@ Historical records must remain interpretable.
 
 ---
 
-# Framework Introduction
+## Framework Introduction
 
 A new quality capability should begin with a demonstrated engineering need.
 
@@ -234,7 +234,7 @@ Implementation
 
 ---
 
-# Need Identification
+## Need Identification
 
 New framework capabilities should address real quality needs.
 
@@ -253,7 +253,7 @@ Governance Gaps
 
 ---
 
-# Capability Proposal
+## Capability Proposal
 
 A significant new capability should define:
 
@@ -270,7 +270,7 @@ Governance
 
 ---
 
-# Framework Design
+## Framework Design
 
 Framework design should consider:
 
@@ -285,7 +285,7 @@ Framework design should consider:
 
 ---
 
-# Framework Review
+## Framework Review
 
 Significant framework capabilities should be reviewed against:
 
@@ -304,7 +304,7 @@ The objective is ecosystem consistency.
 
 ---
 
-# Framework Approval
+## Framework Approval
 
 Approval authority should correspond to the scope of the change.
 
@@ -314,7 +314,7 @@ Fundamental quality semantics may require Quality Governance or broader architec
 
 ---
 
-# Framework Adoption
+## Framework Adoption
 
 Approval does not guarantee adoption.
 
@@ -334,7 +334,7 @@ Enforced
 
 ---
 
-# Adoption Principle
+## Adoption Principle
 
 A framework capability is not successfully adopted merely because it exists.
 
@@ -342,7 +342,7 @@ Successful adoption requires real engineering integration.
 
 ---
 
-# Adoption Indicators
+## Adoption Indicators
 
 Indicators may include:
 
@@ -357,7 +357,7 @@ Gates Consuming Results
 
 ---
 
-# Adoption Barriers
+## Adoption Barriers
 
 Potential barriers include:
 
@@ -372,7 +372,7 @@ These should become Continuous Improvement inputs.
 
 ---
 
-# Incremental Adoption
+## Incremental Adoption
 
 Large changes should generally use incremental adoption.
 
@@ -392,7 +392,7 @@ Mandatory
 
 ---
 
-# Pilot Phase
+## Pilot Phase
 
 A pilot validates the capability on limited scope.
 
@@ -412,7 +412,7 @@ What false positives exist?
 
 ---
 
-# Observation Phase
+## Observation Phase
 
 During observation, the capability operates without necessarily blocking progression.
 
@@ -420,7 +420,7 @@ This provides evidence about real-world behavior.
 
 ---
 
-# Warning Phase
+## Warning Phase
 
 During warning, violations become visible and remediation is expected.
 
@@ -428,7 +428,7 @@ The system may communicate a future enforcement date.
 
 ---
 
-# Enforcement Phase
+## Enforcement Phase
 
 During enforcement, authoritative policy may affect progression.
 
@@ -446,7 +446,7 @@ when applicable.
 
 ---
 
-# Stable Operation
+## Stable Operation
 
 Once adopted, the framework enters stable operation.
 
@@ -465,7 +465,7 @@ Governed
 
 ---
 
-# Operational Responsibilities
+## Operational Responsibilities
 
 Active framework capabilities require:
 
@@ -479,7 +479,7 @@ Active framework capabilities require:
 
 ---
 
-# Framework Health
+## Framework Health
 
 The health of the Quality Framework itself should be observable.
 
@@ -498,7 +498,7 @@ Developer Friction
 
 ---
 
-# Framework Health State
+## Framework Health State
 
 A conceptual state model may include:
 
@@ -512,37 +512,37 @@ UNKNOWN
 
 ---
 
-# HEALTHY
+## HEALTHY
 
 The framework is functioning within expected quality boundaries.
 
 ---
 
-# DEGRADED
+## DEGRADED
 
 Some capabilities are impaired, but core quality assurance remains functional.
 
 ---
 
-# AT_RISK
+## AT_RISK
 
 Important quality mechanisms are unreliable or incomplete.
 
 ---
 
-# CRITICAL
+## CRITICAL
 
 The framework cannot provide trustworthy quality assurance for critical decisions.
 
 ---
 
-# UNKNOWN
+## UNKNOWN
 
 Insufficient evidence exists to determine framework health.
 
 ---
 
-# Framework Observability
+## Framework Observability
 
 Quality Observability should monitor the framework itself.
 
@@ -559,7 +559,7 @@ Metric Pipeline Failures
 
 ---
 
-# Framework Assessment
+## Framework Assessment
 
 Periodic assessment should evaluate whether the Quality Framework remains effective.
 
@@ -585,7 +585,7 @@ Are exceptions increasing?
 
 ---
 
-# Framework Effectiveness
+## Framework Effectiveness
 
 Framework effectiveness should be judged by engineering outcomes.
 
@@ -603,7 +603,7 @@ Feedback Latency
 
 ---
 
-# Framework Efficiency
+## Framework Efficiency
 
 Effectiveness alone is insufficient.
 
@@ -621,7 +621,7 @@ Developer Waiting Time
 
 ---
 
-# Framework Sustainability
+## Framework Sustainability
 
 A framework that requires excessive maintenance may itself become Quality Debt.
 
@@ -637,7 +637,7 @@ Operational Burden
 
 ---
 
-# Framework Evolution
+## Framework Evolution
 
 Evolution should respond to evidence.
 
@@ -663,7 +663,7 @@ Operate
 
 ---
 
-# Evolution Triggers
+## Evolution Triggers
 
 Triggers may include:
 
@@ -681,7 +681,7 @@ Framework Limitation
 
 ---
 
-# Evolution Categories
+## Evolution Categories
 
 Framework evolution may be:
 
@@ -695,7 +695,7 @@ DEPRECATING
 
 ---
 
-# Corrective Evolution
+## Corrective Evolution
 
 Corrective evolution fixes defects in the framework without intentionally changing policy semantics.
 
@@ -707,7 +707,7 @@ Examples:
 
 ---
 
-# Compatible Evolution
+## Compatible Evolution
 
 Compatible evolution adds capabilities while preserving existing behavior.
 
@@ -721,7 +721,7 @@ Additional Non-Blocking Rule
 
 ---
 
-# Enhancing Evolution
+## Enhancing Evolution
 
 Enhancing evolution strengthens quality capability without necessarily breaking existing targets.
 
@@ -736,7 +736,7 @@ Additional Automation
 
 ---
 
-# Breaking Evolution
+## Breaking Evolution
 
 Breaking evolution changes authoritative semantics in a way that may make previously valid targets invalid.
 
@@ -754,7 +754,7 @@ Breaking evolution requires migration planning.
 
 ---
 
-# Deprecating Evolution
+## Deprecating Evolution
 
 Deprecating evolution marks a capability for eventual retirement.
 
@@ -762,7 +762,7 @@ A replacement should normally be identified.
 
 ---
 
-# Change Classification
+## Change Classification
 
 Every significant framework change should be classified.
 
@@ -778,7 +778,7 @@ The exact versioning strategy should align with FamilyOS release governance.
 
 ---
 
-# PATCH Change
+## PATCH Change
 
 A PATCH-level change generally preserves semantics.
 
@@ -790,7 +790,7 @@ Examples:
 
 ---
 
-# MINOR Change
+## MINOR Change
 
 A MINOR-level change may add backward-compatible capability.
 
@@ -802,7 +802,7 @@ Examples:
 
 ---
 
-# MAJOR Change
+## MAJOR Change
 
 A MAJOR-level change may alter normative semantics or require migration.
 
@@ -814,7 +814,7 @@ Examples:
 
 ---
 
-# Framework Versioning
+## Framework Versioning
 
 Framework versions should allow historical interpretation.
 
@@ -822,7 +822,7 @@ A quality result should be interpretable against the framework version that prod
 
 ---
 
-# Version Identity
+## Version Identity
 
 A formal assessment may conceptually preserve:
 
@@ -835,7 +835,7 @@ target_revision
 
 ---
 
-# Historical Reproducibility
+## Historical Reproducibility
 
 Historical quality records should answer:
 
@@ -851,7 +851,7 @@ Which evidence produced the result?
 
 ---
 
-# Framework Release
+## Framework Release
 
 Significant framework versions may be released as governed engineering artifacts.
 
@@ -870,7 +870,7 @@ Changelog
 
 ---
 
-# Release Readiness
+## Release Readiness
 
 A framework release should verify:
 
@@ -886,7 +886,7 @@ Governance Approval Complete
 
 ---
 
-# Framework Changelog
+## Framework Changelog
 
 Framework changes should be recorded.
 
@@ -904,7 +904,7 @@ Migration
 
 ---
 
-# Migration
+## Migration
 
 Migration moves engineering targets from an older framework state to a newer one.
 
@@ -926,13 +926,13 @@ New State
 
 ---
 
-# Migration Principle
+## Migration Principle
 
 Breaking quality changes should not be introduced without a credible migration path.
 
 ---
 
-# Migration Scope
+## Migration Scope
 
 Migration may affect:
 
@@ -951,7 +951,7 @@ Release Process
 
 ---
 
-# Migration Assessment
+## Migration Assessment
 
 Before migration, the impact should be assessed.
 
@@ -971,7 +971,7 @@ Can migration be automated?
 
 ---
 
-# Migration Plan
+## Migration Plan
 
 A migration plan should define:
 
@@ -988,7 +988,7 @@ Ownership
 
 ---
 
-# Migration Tooling
+## Migration Tooling
 
 Where practical, migration should be automated.
 
@@ -1004,13 +1004,13 @@ Rule Remediation
 
 ---
 
-# Migration Validation
+## Migration Validation
 
 Migration should verify that the target satisfies the new framework requirements.
 
 ---
 
-# Parallel Support
+## Parallel Support
 
 During significant migrations, multiple framework versions may temporarily coexist.
 
@@ -1026,7 +1026,7 @@ Parallel support should remain temporary.
 
 ---
 
-# Compatibility Window
+## Compatibility Window
 
 A compatibility window defines how long older behavior remains supported.
 
@@ -1034,7 +1034,7 @@ This should be documented.
 
 ---
 
-# Legacy Support
+## Legacy Support
 
 Legacy support should be explicit.
 
@@ -1042,7 +1042,7 @@ Hidden indefinite compatibility creates maintenance debt.
 
 ---
 
-# Legacy Profile
+## Legacy Profile
 
 Legacy targets may temporarily use dedicated profiles.
 
@@ -1056,7 +1056,7 @@ Legacy profiles should normally have a retirement strategy.
 
 ---
 
-# Deprecation
+## Deprecation
 
 Deprecation provides controlled notice that a framework capability will be removed.
 
@@ -1070,7 +1070,7 @@ RETIRED
 
 ---
 
-# Deprecation Requirements
+## Deprecation Requirements
 
 A deprecation should identify:
 
@@ -1085,7 +1085,7 @@ Expected Retirement
 
 ---
 
-# Deprecation Notice
+## Deprecation Notice
 
 Deprecation should be visible through relevant channels:
 
@@ -1097,7 +1097,7 @@ Deprecation should be visible through relevant channels:
 
 ---
 
-# Deprecation Warning
+## Deprecation Warning
 
 Automation may produce:
 
@@ -1112,13 +1112,13 @@ QLT-ARCH-012
 
 ---
 
-# Deprecation Period
+## Deprecation Period
 
 The deprecation period should provide reasonable migration time proportional to impact.
 
 ---
 
-# Deprecation Metrics
+## Deprecation Metrics
 
 Governance may track:
 
@@ -1130,7 +1130,7 @@ Time Until Retirement
 
 ---
 
-# Retirement
+## Retirement
 
 Retirement removes a capability from active authoritative use.
 
@@ -1148,7 +1148,7 @@ where applicable.
 
 ---
 
-# Retirement Effects
+## Retirement Effects
 
 Retirement may involve:
 
@@ -1163,7 +1163,7 @@ Gate Update
 
 ---
 
-# Historical Preservation
+## Historical Preservation
 
 Retirement must not destroy historical interpretability.
 
@@ -1178,7 +1178,7 @@ Framework Versions
 
 ---
 
-# Archival
+## Archival
 
 Retired normative artifacts may be archived.
 
@@ -1186,7 +1186,7 @@ Archived content should be clearly identified as non-current.
 
 ---
 
-# Framework Cleanup
+## Framework Cleanup
 
 Retirement should include cleanup of:
 
@@ -1200,7 +1200,7 @@ This prevents framework debt.
 
 ---
 
-# Rule Lifecycle
+## Rule Lifecycle
 
 Individual Quality Rules should follow a defined lifecycle.
 
@@ -1222,49 +1222,49 @@ RETIRED
 
 ---
 
-# PROPOSED Rule
+## PROPOSED Rule
 
 The rule exists as a design but is not active.
 
 ---
 
-# EXPERIMENTAL Rule
+## EXPERIMENTAL Rule
 
 The rule may execute in limited scope for validation.
 
 ---
 
-# OBSERVE Rule
+## OBSERVE Rule
 
 The rule collects findings without enforcement.
 
 ---
 
-# WARN Rule
+## WARN Rule
 
 The rule produces visible warnings and remediation expectations.
 
 ---
 
-# ENFORCE Rule
+## ENFORCE Rule
 
 The rule participates in authoritative quality decisions.
 
 ---
 
-# DEPRECATED Rule
+## DEPRECATED Rule
 
 The rule remains temporarily supported but should no longer be relied upon.
 
 ---
 
-# RETIRED Rule
+## RETIRED Rule
 
 The rule is removed from active enforcement.
 
 ---
 
-# Rule Promotion
+## Rule Promotion
 
 Promotion between states should depend on evidence.
 
@@ -1282,7 +1282,7 @@ WARN
 
 ---
 
-# Rule Rollback
+## Rule Rollback
 
 A problematic rule may be rolled back.
 
@@ -1300,7 +1300,7 @@ Rollback should preserve traceability.
 
 ---
 
-# Requirement Lifecycle
+## Requirement Lifecycle
 
 Requirements may follow:
 
@@ -1318,7 +1318,7 @@ RETIRED
 
 ---
 
-# Requirement Introduction
+## Requirement Introduction
 
 A requirement should identify:
 
@@ -1335,25 +1335,25 @@ before enforcement.
 
 ---
 
-# Requirement Modification
+## Requirement Modification
 
 Changing a requirement should trigger impact analysis.
 
 ---
 
-# Requirement Deprecation
+## Requirement Deprecation
 
 Deprecated requirements should identify replacement requirements where applicable.
 
 ---
 
-# Requirement Retirement
+## Requirement Retirement
 
 Retired requirements should no longer affect current compliance.
 
 ---
 
-# Profile Lifecycle
+## Profile Lifecycle
 
 Quality Profiles may follow:
 
@@ -1369,7 +1369,7 @@ RETIRED
 
 ---
 
-# Profile Introduction
+## Profile Introduction
 
 A new profile should define:
 
@@ -1383,25 +1383,25 @@ Gate Integration
 
 ---
 
-# Profile Evolution
+## Profile Evolution
 
 Profiles should be versioned when requirement membership changes significantly.
 
 ---
 
-# Profile Deprecation
+## Profile Deprecation
 
 Targets should migrate to replacement profiles.
 
 ---
 
-# Profile Retirement
+## Profile Retirement
 
 Retired profiles should remain available only for historical interpretation where necessary.
 
 ---
 
-# Metric Lifecycle
+## Metric Lifecycle
 
 Metrics should also have lifecycles.
 
@@ -1419,7 +1419,7 @@ RETIRED
 
 ---
 
-# Metric Introduction
+## Metric Introduction
 
 A metric should define:
 
@@ -1433,25 +1433,25 @@ Owner
 
 ---
 
-# Metric Validation
+## Metric Validation
 
 Experimental metrics should be validated before influencing governance decisions.
 
 ---
 
-# Metric Change
+## Metric Change
 
 Changes to calculation semantics may require a new metric version.
 
 ---
 
-# Metric Retirement
+## Metric Retirement
 
 Metrics should be retired when they no longer support meaningful decisions.
 
 ---
 
-# Gate Lifecycle
+## Gate Lifecycle
 
 Quality Gates may follow:
 
@@ -1471,13 +1471,13 @@ RETIRED
 
 ---
 
-# Gate Introduction
+## Gate Introduction
 
 New gates should be introduced gradually when they may affect significant engineering workflows.
 
 ---
 
-# Gate Evaluation
+## Gate Evaluation
 
 Gate effectiveness should be assessed using:
 
@@ -1491,13 +1491,13 @@ Feedback Latency
 
 ---
 
-# Gate Evolution
+## Gate Evolution
 
 Gate policy may evolve as quality maturity increases.
 
 ---
 
-# Gate Retirement
+## Gate Retirement
 
 A gate may be retired when:
 
@@ -1507,7 +1507,7 @@ A gate may be retired when:
 
 ---
 
-# Automation Lifecycle
+## Automation Lifecycle
 
 Quality Automation has its own lifecycle.
 
@@ -1533,13 +1533,13 @@ RETIRE
 
 ---
 
-# Automation Introduction
+## Automation Introduction
 
 Automation should not become authoritative before sufficient testing.
 
 ---
 
-# Automation Testing
+## Automation Testing
 
 Critical quality automation should include:
 
@@ -1550,13 +1550,13 @@ Critical quality automation should include:
 
 ---
 
-# Automation Deployment
+## Automation Deployment
 
 Deployment should preserve compatibility with active policy.
 
 ---
 
-# Automation Monitoring
+## Automation Monitoring
 
 Operational automation should expose:
 
@@ -1570,7 +1570,7 @@ Version
 
 ---
 
-# Automation Upgrade
+## Automation Upgrade
 
 Automation upgrades should be evaluated for semantic changes.
 
@@ -1578,19 +1578,19 @@ A tool upgrade that changes findings may effectively change policy behavior.
 
 ---
 
-# Automation Deprecation
+## Automation Deprecation
 
 Deprecated tooling should identify a replacement.
 
 ---
 
-# Automation Retirement
+## Automation Retirement
 
 Retired tooling should be removed from active quality workflows.
 
 ---
 
-# Evidence Lifecycle
+## Evidence Lifecycle
 
 Quality Evidence may follow:
 
@@ -1608,13 +1608,13 @@ ARCHIVED
 
 ---
 
-# Evidence Creation
+## Evidence Creation
 
 Evidence should bind to relevant target state.
 
 ---
 
-# Evidence Validity
+## Evidence Validity
 
 Evidence remains valid while:
 
@@ -1627,25 +1627,25 @@ Evidence Not Expired
 
 ---
 
-# Evidence Staleness
+## Evidence Staleness
 
 Evidence becomes stale when its relevance can no longer be assumed.
 
 ---
 
-# Evidence Invalidation
+## Evidence Invalidation
 
 Evidence becomes invalid when known conditions make it unsuitable for authoritative decisions.
 
 ---
 
-# Evidence Archival
+## Evidence Archival
 
 Historical evidence may be archived according to retention policy.
 
 ---
 
-# Assessment Lifecycle
+## Assessment Lifecycle
 
 Quality Assessments may follow:
 
@@ -1663,7 +1663,7 @@ ARCHIVED
 
 ---
 
-# Assessment Supersession
+## Assessment Supersession
 
 A new assessment may supersede an older assessment when:
 
@@ -1678,7 +1678,7 @@ The old assessment should remain historically available where required.
 
 ---
 
-# Risk Lifecycle Integration
+## Risk Lifecycle Integration
 
 Quality Framework evolution must account for existing risks.
 
@@ -1695,7 +1695,7 @@ Impact analysis should account for this.
 
 ---
 
-# Debt Lifecycle Integration
+## Debt Lifecycle Integration
 
 Framework evolution may create migration debt.
 
@@ -1703,7 +1703,7 @@ This debt should be explicit rather than hidden.
 
 ---
 
-# Exception Lifecycle Integration
+## Exception Lifecycle Integration
 
 Exceptions may reference specific framework versions or requirements.
 
@@ -1718,7 +1718,7 @@ Require Reapproval
 
 ---
 
-# Compliance Lifecycle Integration
+## Compliance Lifecycle Integration
 
 Compliance results depend on framework state.
 
@@ -1738,13 +1738,13 @@ when mandatory requirements changed.
 
 ---
 
-# Continuous Compliance During Migration
+## Continuous Compliance During Migration
 
 During migration, compliance reporting should clearly identify the profile and framework version used.
 
 ---
 
-# Gate Lifecycle Integration
+## Gate Lifecycle Integration
 
 Gate behavior should not change silently during framework upgrades.
 
@@ -1752,7 +1752,7 @@ Changes should be versioned and communicated.
 
 ---
 
-# Documentation Lifecycle Integration
+## Documentation Lifecycle Integration
 
 Framework documentation must evolve together with implementation.
 
@@ -1767,19 +1767,19 @@ when semantics differ.
 
 ---
 
-# Documentation Synchronization
+## Documentation Synchronization
 
 A framework change should identify required documentation updates.
 
 ---
 
-# Reference Synchronization
+## Reference Synchronization
 
 Cross-framework references should be validated after significant lifecycle changes.
 
 ---
 
-# Governance Lifecycle Integration
+## Governance Lifecycle Integration
 
 Governance determines:
 
@@ -1792,7 +1792,7 @@ Who Approves Retirement
 
 ---
 
-# Lifecycle Decision Record
+## Lifecycle Decision Record
 
 Significant lifecycle transitions should be traceable.
 
@@ -1808,7 +1808,7 @@ Framework Retirement
 
 ---
 
-# Lifecycle Audit
+## Lifecycle Audit
 
 Periodic audits may verify:
 
@@ -1823,7 +1823,7 @@ Unsupported Automation
 
 ---
 
-# Lifecycle Findings
+## Lifecycle Findings
 
 Examples include:
 
@@ -1838,7 +1838,7 @@ These should create Quality Findings.
 
 ---
 
-# Framework Support Policy
+## Framework Support Policy
 
 FamilyOS may define which Quality Framework versions are supported.
 
@@ -1859,7 +1859,7 @@ The exact policy may evolve.
 
 ---
 
-# Support Levels
+## Support Levels
 
 A conceptual support model may include:
 
@@ -1872,31 +1872,31 @@ UNSUPPORTED
 
 ---
 
-# CURRENT
+## CURRENT
 
 The recommended framework version for new engineering work.
 
 ---
 
-# SUPPORTED
+## SUPPORTED
 
 Still maintained and valid.
 
 ---
 
-# MIGRATION_ONLY
+## MIGRATION_ONLY
 
 Supported only to facilitate migration.
 
 ---
 
-# UNSUPPORTED
+## UNSUPPORTED
 
 No longer appropriate for active engineering use.
 
 ---
 
-# Compatibility Policy
+## Compatibility Policy
 
 Compatibility should be explicitly defined across framework versions.
 
@@ -1911,7 +1911,7 @@ INCOMPATIBLE
 
 ---
 
-# Backward Compatibility
+## Backward Compatibility
 
 Backward compatibility is desirable when it does not compromise quality objectives.
 
@@ -1919,13 +1919,13 @@ It should not preserve harmful legacy behavior indefinitely.
 
 ---
 
-# Forward Compatibility
+## Forward Compatibility
 
 Where practical, artifacts should avoid unnecessary coupling to one exact framework implementation.
 
 ---
 
-# Framework Dependencies
+## Framework Dependencies
 
 The Quality Framework depends on other FamilyOS engineering foundations.
 
@@ -1945,7 +1945,7 @@ Lifecycle changes must consider these dependencies.
 
 ---
 
-# Dependency Change
+## Dependency Change
 
 A major change in a dependency may trigger Quality Framework reassessment.
 
@@ -1961,7 +1961,7 @@ Quality Gate Review
 
 ---
 
-# Cross-Framework Lifecycle Coordination
+## Cross-Framework Lifecycle Coordination
 
 Related frameworks should coordinate major lifecycle changes.
 
@@ -1977,7 +1977,7 @@ Testing Framework v1 does not provide
 
 ---
 
-# Framework Dependency Matrix
+## Framework Dependency Matrix
 
 A future lifecycle registry may expose:
 
@@ -1991,7 +1991,7 @@ This improves lifecycle visibility.
 
 ---
 
-# Framework Validation
+## Framework Validation
 
 Every significant lifecycle transition should include validation.
 
@@ -2013,7 +2013,7 @@ Retirement
 
 ---
 
-# Lifecycle Quality Gates
+## Lifecycle Quality Gates
 
 The framework itself may use lifecycle gates.
 
@@ -2035,37 +2035,37 @@ These need not initially exist as automated systems.
 
 ---
 
-# Proposal Gate
+## Proposal Gate
 
 Checks whether the capability has sufficient justification and design.
 
 ---
 
-# Adoption Gate
+## Adoption Gate
 
 Checks whether the capability is ready for real engineering use.
 
 ---
 
-# Enforcement Gate
+## Enforcement Gate
 
 Checks whether the capability is reliable enough to become authoritative.
 
 ---
 
-# Migration Gate
+## Migration Gate
 
 Checks whether targets are ready to move to the new version.
 
 ---
 
-# Retirement Gate
+## Retirement Gate
 
 Checks whether the old capability can safely be removed.
 
 ---
 
-# Framework Rollback
+## Framework Rollback
 
 Framework changes should be reversible where practical.
 
@@ -2080,7 +2080,7 @@ Invalid Compliance Results
 
 ---
 
-# Rollback Principle
+## Rollback Principle
 
 Rollback should restore a known valid state.
 
@@ -2088,7 +2088,7 @@ It should not erase evidence of the failed change.
 
 ---
 
-# Emergency Framework Change
+## Emergency Framework Change
 
 Critical quality or security problems may require accelerated framework changes.
 
@@ -2108,7 +2108,7 @@ Mandatory Review
 
 ---
 
-# Post-Emergency Lifecycle Review
+## Post-Emergency Lifecycle Review
 
 After emergency changes, governance should determine:
 
@@ -2126,7 +2126,7 @@ What lifecycle process should improve?
 
 ---
 
-# Framework Lifecycle Metrics
+## Framework Lifecycle Metrics
 
 Potential metrics include:
 
@@ -2143,7 +2143,7 @@ Deprecation Age
 
 ---
 
-# Migration Completion
+## Migration Completion
 
 Migration completion may measure:
 
@@ -2157,19 +2157,19 @@ This should be supplemented by visibility into high-risk remaining targets.
 
 ---
 
-# Deprecation Age
+## Deprecation Age
 
 Long-lived deprecations may indicate incomplete lifecycle governance.
 
 ---
 
-# Legacy Usage
+## Legacy Usage
 
 Legacy usage should ideally decrease after replacement becomes available.
 
 ---
 
-# Rule Promotion Time
+## Rule Promotion Time
 
 Excessively long experimental states may indicate:
 
@@ -2180,7 +2180,7 @@ Excessively long experimental states may indicate:
 
 ---
 
-# Framework Lifecycle Dashboard
+## Framework Lifecycle Dashboard
 
 A future dashboard may expose:
 
@@ -2206,7 +2206,7 @@ Framework Health:         HEALTHY
 
 ---
 
-# Lifecycle Automation
+## Lifecycle Automation
 
 Automation may assist with:
 
@@ -2221,7 +2221,7 @@ Profile Validation
 
 ---
 
-# Lifecycle CLI
+## Lifecycle CLI
 
 A future CLI may conceptually provide:
 
@@ -2239,7 +2239,7 @@ familyos quality framework deprecated
 
 ---
 
-# Framework Status Example
+## Framework Status Example
 
 ```text
 $ familyos quality framework status
@@ -2265,7 +2265,7 @@ Migration Required:
 
 ---
 
-# Lifecycle Registry
+## Lifecycle Registry
 
 A future registry may contain:
 
@@ -2283,7 +2283,7 @@ Migration
 
 ---
 
-# AI-Assisted Lifecycle Management
+## AI-Assisted Lifecycle Management
 
 AI may assist with:
 
@@ -2295,7 +2295,7 @@ AI may assist with:
 
 ---
 
-# AI Lifecycle Restrictions
+## AI Lifecycle Restrictions
 
 AI must not independently:
 
@@ -2311,7 +2311,7 @@ unless future governance explicitly delegates such authority.
 
 ---
 
-# Lifecycle Security
+## Lifecycle Security
 
 Framework lifecycle mechanisms affect authoritative quality controls.
 
@@ -2327,7 +2327,7 @@ Deprecated Control Reactivation
 
 ---
 
-# Lifecycle Integrity
+## Lifecycle Integrity
 
 Authoritative lifecycle transitions should preserve:
 
@@ -2343,7 +2343,7 @@ Version
 
 ---
 
-# Lifecycle Traceability
+## Lifecycle Traceability
 
 The complete lifecycle history should answer:
 
@@ -2363,53 +2363,53 @@ What replaced it?
 
 ---
 
-# Framework Lifecycle Anti-Patterns
+## Framework Lifecycle Anti-Patterns
 
 The FamilyOS Quality Framework rejects several lifecycle anti-patterns.
 
-## Permanent Experimental State
+### Permanent Experimental State
 
 Experimental capabilities must eventually be promoted, redesigned, or retired.
 
-## Silent Enforcement
+### Silent Enforcement
 
 Rules must not become blocking without governed transition.
 
-## Silent Breaking Change
+### Silent Breaking Change
 
 Previously acceptable targets must not unexpectedly become invalid without migration consideration.
 
-## Eternal Backward Compatibility
+### Eternal Backward Compatibility
 
 Legacy behavior must not be maintained indefinitely without justification.
 
-## Deprecation Without Retirement
+### Deprecation Without Retirement
 
 Deprecation must lead toward migration and eventual retirement.
 
-## Retirement Without Migration
+### Retirement Without Migration
 
 Critical capabilities should not disappear without a replacement or explicit decision.
 
-## Version Without Meaning
+### Version Without Meaning
 
 Framework versions must represent understandable lifecycle states.
 
-## Documentation Lag
+### Documentation Lag
 
 Framework documentation must not remain materially behind implementation.
 
-## Legacy Accumulation
+### Legacy Accumulation
 
 Old rules, profiles, and tooling must not remain active indefinitely.
 
-## Framework Growth Without Simplification
+### Framework Growth Without Simplification
 
 New capabilities should periodically be balanced by consolidation and retirement.
 
 ---
 
-# Initial Lifecycle Model
+## Initial Lifecycle Model
 
 The initial FamilyOS implementation can remain lightweight.
 
@@ -2427,7 +2427,7 @@ Validation
 
 ---
 
-# Initial Rule States
+## Initial Rule States
 
 An initial implementation may use:
 
@@ -2442,7 +2442,7 @@ Additional observation and warning states may be introduced when enforcement bec
 
 ---
 
-# Initial Framework Metadata
+## Initial Framework Metadata
 
 A framework may initially expose:
 
@@ -2456,7 +2456,7 @@ dependencies
 
 ---
 
-# Initial Lifecycle Documentation
+## Initial Lifecycle Documentation
 
 The Quality Framework should maintain:
 
@@ -2471,7 +2471,7 @@ alongside its normative chapters and metadata.
 
 ---
 
-# Initial Migration Strategy
+## Initial Migration Strategy
 
 Early framework evolution should favor:
 
@@ -2491,7 +2491,7 @@ Release / Tag
 
 ---
 
-# Initial Retirement Strategy
+## Initial Retirement Strategy
 
 Before retiring a capability:
 
@@ -2511,7 +2511,7 @@ Update Documentation
 
 ---
 
-# Lifecycle Maturity Model
+## Lifecycle Maturity Model
 
 The Quality Framework Lifecycle may mature through:
 
@@ -2552,7 +2552,7 @@ Continuously Governed Quality Platform
 
 ---
 
-# Continuous Framework Evolution
+## Continuous Framework Evolution
 
 At high maturity, FamilyOS should continuously evolve the Quality Framework based on evidence while preserving stability.
 
@@ -2574,19 +2574,19 @@ Too much uncontrolled evolution creates instability.
 
 ---
 
-# Relationship With Quality Metrics
+## Relationship With Quality Metrics
 
 Metrics provide evidence about framework effectiveness and adoption.
 
 ---
 
-# Relationship With Quality Evidence
+## Relationship With Quality Evidence
 
 Evidence allows lifecycle decisions to be based on observed behavior rather than assumptions.
 
 ---
 
-# Relationship With Quality Risk
+## Relationship With Quality Risk
 
 Lifecycle changes may create or mitigate risk.
 
@@ -2594,37 +2594,37 @@ Risk should influence rollout and migration policy.
 
 ---
 
-# Relationship With Defect and Quality Debt Management
+## Relationship With Defect and Quality Debt Management
 
 Framework defects and framework debt should feed lifecycle evolution.
 
 ---
 
-# Relationship With Quality Reviews and Assessments
+## Relationship With Quality Reviews and Assessments
 
 Reviews and assessments provide major inputs to framework evolution decisions.
 
 ---
 
-# Relationship With Quality Automation
+## Relationship With Quality Automation
 
 Automation implements many framework capabilities and must evolve consistently with policy.
 
 ---
 
-# Relationship With Quality Observability
+## Relationship With Quality Observability
 
 Observability provides visibility into framework health, adoption, failures, and migration progress.
 
 ---
 
-# Relationship With Quality Gates
+## Relationship With Quality Gates
 
 Gate policies have explicit lifecycles and may change as framework maturity increases.
 
 ---
 
-# Relationship With Quality Compliance
+## Relationship With Quality Compliance
 
 Compliance semantics depend on framework versions, requirements, profiles, and rules.
 
@@ -2632,7 +2632,7 @@ Lifecycle management preserves historical interpretation.
 
 ---
 
-# Relationship With Continuous Improvement
+## Relationship With Continuous Improvement
 
 Continuous Improvement identifies what should change.
 
@@ -2652,7 +2652,7 @@ Framework Evolution
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Quality Governance defines the authority for lifecycle transitions.
 
@@ -2660,7 +2660,7 @@ The Quality Framework Lifecycle defines the mechanics of those transitions.
 
 ---
 
-# Relationship With Engineering Foundation
+## Relationship With Engineering Foundation
 
 The Engineering Foundation establishes broader FamilyOS engineering lifecycle principles.
 
@@ -2668,7 +2668,7 @@ The Quality Framework Lifecycle specializes those principles for quality capabil
 
 ---
 
-# Relationship With Testing Framework
+## Relationship With Testing Framework
 
 Testing changes may affect:
 
@@ -2683,25 +2683,25 @@ Cross-framework lifecycle coordination is therefore required.
 
 ---
 
-# Relationship With Documentation Framework
+## Relationship With Documentation Framework
 
 Documentation lifecycle rules ensure Quality Framework documentation evolves with implementation.
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 Build lifecycle changes may affect quality verification and evidence generation.
 
 ---
 
-# Relationship With Release Framework
+## Relationship With Release Framework
 
 Quality Framework releases should align with FamilyOS release governance, versioning, tagging, and changelog principles.
 
 ---
 
-# Relationship With Plugin Compliance Framework
+## Relationship With Plugin Compliance Framework
 
 Plugin compliance profiles and rules may evolve alongside the Quality Framework.
 
@@ -2709,7 +2709,7 @@ Compatibility between framework versions must remain explicit.
 
 ---
 
-# Reference Quality Framework Lifecycle
+## Reference Quality Framework Lifecycle
 
 The complete lifecycle can be represented as:
 
@@ -2763,7 +2763,7 @@ This lifecycle repeats for every significant evolution of the Quality Framework.
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 The Quality Framework Lifecycle enables FamilyOS to move from:
 
@@ -2802,7 +2802,7 @@ This allows FamilyOS to maintain a quality system that can survive long-term arc
 
 ---
 
-# Final Quality Framework Lifecycle Principle
+## Final Quality Framework Lifecycle Principle
 
 A quality framework that cannot evolve safely eventually becomes either obsolete or unstable.
 

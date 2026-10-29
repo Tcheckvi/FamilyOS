@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 19 Governance and Test Lifecycle
+## 19 Governance and Test Lifecycle
 
-## Overview
+### Overview
 
 Testing is not a static engineering activity.
 
@@ -25,7 +25,7 @@ Together, governance and lifecycle management ensure that the testing system rem
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the official FamilyOS governance model for testing and the lifecycle of testing assets.
 
@@ -55,7 +55,7 @@ The objective is to prevent the FamilyOS testing system from degrading as the pl
 
 ---
 
-# Core Principle
+## Core Principle
 
 The FamilyOS Testing Framework follows this principle:
 
@@ -67,7 +67,7 @@ It must continue to provide valid, reliable, relevant evidence for the behavior 
 
 ---
 
-# Testing Governance
+## Testing Governance
 
 Testing governance defines how testing decisions are made and maintained across FamilyOS.
 
@@ -88,7 +88,7 @@ Testing governance must remain consistent with broader FamilyOS engineering gove
 
 ---
 
-# Governance Objectives
+## Governance Objectives
 
 The testing governance model exists to ensure that:
 
@@ -105,7 +105,7 @@ The testing governance model exists to ensure that:
 
 ---
 
-# Governance Model
+## Governance Model
 
 The FamilyOS testing governance model can be represented as:
 
@@ -143,7 +143,7 @@ Evidence informs further governance.
 
 ---
 
-# Governance Scope
+## Governance Scope
 
 Testing governance applies to all FamilyOS engineering areas that produce or depend on software validation.
 
@@ -163,7 +163,7 @@ No component is automatically exempt from testing governance.
 
 ---
 
-# Testing Ownership
+## Testing Ownership
 
 Testing responsibilities must have identifiable ownership.
 
@@ -187,7 +187,7 @@ Different ownership levels serve different responsibilities.
 
 ---
 
-# Framework Ownership
+## Framework Ownership
 
 Framework-level ownership is responsible for maintaining:
 
@@ -204,7 +204,7 @@ Framework ownership should protect consistency across the FamilyOS ecosystem.
 
 ---
 
-# Component Ownership
+## Component Ownership
 
 Each significant component should own the tests protecting its behavior.
 
@@ -222,7 +222,7 @@ Tests should not become ownerless infrastructure.
 
 ---
 
-# Plugin Ownership
+## Plugin Ownership
 
 Official FamilyOS plugins are responsible for maintaining testing appropriate to their public behavior.
 
@@ -240,7 +240,7 @@ Plugin ownership must remain compatible with common FamilyOS testing standards.
 
 ---
 
-# Infrastructure Ownership
+## Infrastructure Ownership
 
 Testing infrastructure also requires ownership.
 
@@ -258,7 +258,7 @@ Broken testing infrastructure can compromise validation across the entire reposi
 
 ---
 
-# Shared Responsibility
+## Shared Responsibility
 
 Testing quality is a shared engineering responsibility.
 
@@ -268,7 +268,7 @@ Developers introducing behavior are expected to consider how that behavior will 
 
 ---
 
-# Policy Ownership
+## Policy Ownership
 
 Every enforced testing policy should have a clear governance source.
 
@@ -289,7 +289,7 @@ Policies without ownership tend to become inconsistent.
 
 ---
 
-# Test Lifecycle
+## Test Lifecycle
 
 Every test has a lifecycle.
 
@@ -327,7 +327,7 @@ Not every test will pass through every state explicitly, but the lifecycle model
 
 ---
 
-# Need Identification
+## Need Identification
 
 A test should exist because there is a meaningful behavior, risk, or contract to protect.
 
@@ -346,7 +346,7 @@ Tests should not be created merely to increase test counts.
 
 ---
 
-# Test Design
+## Test Design
 
 Before implementation, the intended validation should be understood.
 
@@ -366,7 +366,7 @@ Selecting the correct testing level is part of test design.
 
 ---
 
-# Test Implementation
+## Test Implementation
 
 Tests should follow the standards defined by the FamilyOS Testing Framework.
 
@@ -382,7 +382,7 @@ Implementation should prioritize:
 
 ---
 
-# Test Review
+## Test Review
 
 Tests should be reviewed as engineering code.
 
@@ -401,7 +401,7 @@ A test should not receive reduced review quality merely because it is not produc
 
 ---
 
-# Review of Test Changes
+## Review of Test Changes
 
 Changes to existing tests should be reviewed with the same care as application changes.
 
@@ -417,7 +417,7 @@ Test changes therefore require engineering scrutiny.
 
 ---
 
-# Test Activation
+## Test Activation
 
 Once accepted, a test should become part of the appropriate execution profile.
 
@@ -449,7 +449,7 @@ A test that exists but never executes provides no protection.
 
 ---
 
-# Execution Assignment
+## Execution Assignment
 
 Each test should have an understood execution location.
 
@@ -466,7 +466,7 @@ Tests should not become accidentally orphaned from execution.
 
 ---
 
-# Test Maintenance
+## Test Maintenance
 
 Active tests must be maintained as the system evolves.
 
@@ -483,7 +483,7 @@ Maintenance should preserve the original validation purpose unless that purpose 
 
 ---
 
-# Test Evolution
+## Test Evolution
 
 Some tests need to evolve with platform behavior.
 
@@ -503,7 +503,7 @@ Tests must reflect the intended current contract rather than preserve obsolete b
 
 ---
 
-# Behavioral Change
+## Behavioral Change
 
 When intended application behavior changes, related tests may need modification.
 
@@ -523,7 +523,7 @@ Changing tests merely to make failing implementations pass is prohibited.
 
 ---
 
-# Test Refactoring
+## Test Refactoring
 
 Tests may be refactored to improve:
 
@@ -537,7 +537,7 @@ Refactoring must preserve validation semantics unless behavior changes are inten
 
 ---
 
-# Test Duplication
+## Test Duplication
 
 Duplicate tests may increase maintenance cost without increasing meaningful confidence.
 
@@ -551,7 +551,7 @@ However, tests at different levels may legitimately validate the same behavior f
 
 ---
 
-# Test Relevance
+## Test Relevance
 
 Active tests should remain relevant to supported behavior.
 
@@ -567,7 +567,7 @@ Obsolete tests should not remain indefinitely merely because they still execute 
 
 ---
 
-# Test Deprecation
+## Test Deprecation
 
 A test may enter a deprecated state before removal when immediate deletion would reduce traceability or when related functionality is being phased out.
 
@@ -582,7 +582,7 @@ Deprecated tests should remain clearly identifiable.
 
 ---
 
-# Test Removal
+## Test Removal
 
 A test may be removed when its validation responsibility no longer exists or has been replaced.
 
@@ -596,7 +596,7 @@ Test removal should not create an accidental validation gap.
 
 ---
 
-# Test Removal Review
+## Test Removal Review
 
 Before removing a meaningful test, engineers should ask:
 
@@ -610,7 +610,7 @@ This is particularly important for regression tests.
 
 ---
 
-# Regression Test Lifecycle
+## Regression Test Lifecycle
 
 Regression tests have special lifecycle importance.
 
@@ -635,7 +635,7 @@ Regression tests should normally remain active while the affected behavior remai
 
 ---
 
-# Removing Regression Tests
+## Removing Regression Tests
 
 A regression test should only be removed when the underlying behavior is no longer relevant or when equivalent protection is demonstrably provided elsewhere.
 
@@ -643,7 +643,7 @@ Historical context should be preserved when useful.
 
 ---
 
-# Test Debt
+## Test Debt
 
 Testing debt represents weaknesses in the validation system that have accumulated over time.
 
@@ -663,7 +663,7 @@ Testing debt should be treated as engineering debt.
 
 ---
 
-# Test Debt Visibility
+## Test Debt Visibility
 
 Testing debt must remain visible.
 
@@ -679,7 +679,7 @@ Invisible testing debt is particularly dangerous because it creates false confid
 
 ---
 
-# Test Debt Prioritization
+## Test Debt Prioritization
 
 Not all testing debt has equal risk.
 
@@ -701,7 +701,7 @@ Critical validation gaps should receive higher priority than minor test-maintena
 
 ---
 
-# Test Debt Reduction
+## Test Debt Reduction
 
 Testing debt reduction may include:
 
@@ -717,7 +717,7 @@ Debt reduction should be continuous rather than postponed indefinitely.
 
 ---
 
-# Flaky Test Governance
+## Flaky Test Governance
 
 Flaky tests require explicit governance.
 
@@ -746,7 +746,7 @@ Restored
 
 ---
 
-# Flaky Test Ownership
+## Flaky Test Ownership
 
 Every known flaky test should have an identifiable responsible area.
 
@@ -754,7 +754,7 @@ Unowned flakiness tends to persist.
 
 ---
 
-# Flaky Test Priority
+## Flaky Test Priority
 
 Flaky tests protecting critical behavior should receive high remediation priority.
 
@@ -768,7 +768,7 @@ The cost of a flaky test includes:
 
 ---
 
-# Quarantine Governance
+## Quarantine Governance
 
 Quarantine is a temporary mechanism for isolating unstable tests.
 
@@ -784,7 +784,7 @@ Every quarantine entry should have:
 
 ---
 
-# Quarantine Lifecycle
+## Quarantine Lifecycle
 
 A quarantine lifecycle should follow:
 
@@ -811,7 +811,7 @@ Quarantine must not become a permanent test state.
 
 ---
 
-# Quarantine Review
+## Quarantine Review
 
 Quarantined tests should be reviewed periodically.
 
@@ -827,7 +827,7 @@ Long-lived quarantine indicates unresolved testing debt.
 
 ---
 
-# Skipped Test Governance
+## Skipped Test Governance
 
 Skipped tests also require lifecycle management.
 
@@ -843,7 +843,7 @@ Temporary skips should include a path toward resolution.
 
 ---
 
-# Permanent Skips
+## Permanent Skips
 
 A permanent skip should be questioned.
 
@@ -853,7 +853,7 @@ Permanent platform-specific skips may remain legitimate where clearly documented
 
 ---
 
-# Skip Review
+## Skip Review
 
 Skip counts and reasons should be reviewed periodically.
 
@@ -861,7 +861,7 @@ A growing skip population may indicate deterioration in validation quality.
 
 ---
 
-# Test Exception Governance
+## Test Exception Governance
 
 Exceptions to testing policies must remain explicit.
 
@@ -876,7 +876,7 @@ Exceptions must not become informal standard practice.
 
 ---
 
-# Exception Requirements
+## Exception Requirements
 
 A testing exception should record:
 
@@ -889,7 +889,7 @@ A testing exception should record:
 
 ---
 
-# Temporary Nature
+## Temporary Nature
 
 Exceptions should normally be temporary.
 
@@ -897,7 +897,7 @@ Where an exception becomes permanent, the underlying policy should be reviewed r
 
 ---
 
-# Emergency Changes
+## Emergency Changes
 
 Emergency engineering changes may require reduced validation.
 
@@ -912,7 +912,7 @@ Emergency handling must remain governed.
 
 ---
 
-# Testing Standards Governance
+## Testing Standards Governance
 
 Testing standards may evolve as FamilyOS matures.
 
@@ -929,7 +929,7 @@ Standards should not change arbitrarily.
 
 ---
 
-# Testing Policy Changes
+## Testing Policy Changes
 
 Significant testing policy changes should be reviewed before adoption.
 
@@ -946,7 +946,7 @@ Policy changes can affect large parts of the repository.
 
 ---
 
-# Progressive Policy Introduction
+## Progressive Policy Introduction
 
 New testing requirements may be introduced progressively.
 
@@ -972,7 +972,7 @@ Progressive adoption can reduce disruption while preserving strategic direction.
 
 ---
 
-# Policy Exceptions During Migration
+## Policy Exceptions During Migration
 
 Framework migrations may temporarily require exceptions.
 
@@ -985,7 +985,7 @@ These should be:
 
 ---
 
-# Test Architecture Governance
+## Test Architecture Governance
 
 Changes to common test architecture require broad consideration.
 
@@ -1002,7 +1002,7 @@ Shared architecture affects repository-wide maintainability.
 
 ---
 
-# Shared Fixture Governance
+## Shared Fixture Governance
 
 Shared fixtures should be introduced carefully.
 
@@ -1020,7 +1020,7 @@ Local fixtures should remain preferred when reuse does not justify global scope.
 
 ---
 
-# Test Utility Governance
+## Test Utility Governance
 
 Shared test utilities should provide stable value across multiple test areas.
 
@@ -1035,7 +1035,7 @@ Utilities should have:
 
 ---
 
-# Test Data Governance
+## Test Data Governance
 
 Test data should remain controlled.
 
@@ -1049,7 +1049,7 @@ Governance should ensure:
 
 ---
 
-# Test Configuration Governance
+## Test Configuration Governance
 
 Test configuration should be version-controlled where practical.
 
@@ -1066,7 +1066,7 @@ Such changes require review.
 
 ---
 
-# CI Governance
+## CI Governance
 
 CI testing configuration is part of testing governance.
 
@@ -1084,7 +1084,7 @@ should be reviewed as engineering infrastructure changes.
 
 ---
 
-# Testing Gate Governance
+## Testing Gate Governance
 
 Testing gates are governed according to:
 
@@ -1096,7 +1096,7 @@ Gate changes should be deliberate because they determine whether engineering pro
 
 ---
 
-# Gate Policy Review
+## Gate Policy Review
 
 Testing gate policies should be reviewed periodically to ensure they remain:
 
@@ -1109,7 +1109,7 @@ A gate that no longer reflects meaningful risk should be revised.
 
 ---
 
-# Coverage Governance
+## Coverage Governance
 
 Coverage expectations should evolve according to engineering needs.
 
@@ -1124,7 +1124,7 @@ A universal numerical target may not be appropriate for all components.
 
 ---
 
-# Performance Governance
+## Performance Governance
 
 Test performance should remain governed because slow test suites can damage the development lifecycle.
 
@@ -1140,7 +1140,7 @@ Performance optimizations must preserve validation quality.
 
 ---
 
-# Documentation Governance
+## Documentation Governance
 
 Testing standards and major testing architecture decisions should remain documented.
 
@@ -1150,7 +1150,7 @@ Undocumented testing policy creates inconsistent behavior.
 
 ---
 
-# Specification Alignment
+## Specification Alignment
 
 Where tests validate normative specifications, changes should remain synchronized with specification evolution.
 
@@ -1173,7 +1173,7 @@ Tests should not silently diverge from normative FamilyOS contracts.
 
 ---
 
-# Plugin Governance
+## Plugin Governance
 
 All official plugins should conform to the Testing Framework.
 
@@ -1189,7 +1189,7 @@ However, plugin-specific practices must not violate common principles such as:
 
 ---
 
-# New Plugin Lifecycle
+## New Plugin Lifecycle
 
 When a new official plugin is introduced, testing should evolve alongside it.
 
@@ -1215,7 +1215,7 @@ Testing must not be postponed until after plugin completion.
 
 ---
 
-# Shared Framework Changes
+## Shared Framework Changes
 
 Changes to shared testing infrastructure may affect all official plugins.
 
@@ -1223,7 +1223,7 @@ Such changes should receive broader review and validation than isolated plugin-l
 
 ---
 
-# Test Framework Self-Validation
+## Test Framework Self-Validation
 
 The Testing Framework itself must be validated.
 
@@ -1240,7 +1240,7 @@ Testing infrastructure is software and can contain defects.
 
 ---
 
-# Lifecycle Traceability
+## Lifecycle Traceability
 
 Important testing lifecycle events should remain traceable when useful.
 
@@ -1256,7 +1256,7 @@ Traceability should be proportional to engineering risk.
 
 ---
 
-# Historical Context
+## Historical Context
 
 Historical testing information can explain why certain tests or policies exist.
 
@@ -1272,7 +1272,7 @@ Tests should remain understandable even when the original author is no longer in
 
 ---
 
-# Test Naming and Lifecycle
+## Test Naming and Lifecycle
 
 Stable test naming improves historical analysis.
 
@@ -1288,7 +1288,7 @@ Tests should be renamed when clarity requires it, but not arbitrarily.
 
 ---
 
-# Ownership Changes
+## Ownership Changes
 
 As repository ownership evolves, testing ownership must evolve with it.
 
@@ -1302,7 +1302,7 @@ A component transfer should include responsibility for:
 
 ---
 
-# Framework Reviews
+## Framework Reviews
 
 The Testing Framework should be reviewed periodically.
 
@@ -1319,7 +1319,7 @@ Reviews may evaluate:
 
 ---
 
-# Review Triggers
+## Review Triggers
 
 Framework review may also be triggered by major events such as:
 
@@ -1332,7 +1332,7 @@ Framework review may also be triggered by major events such as:
 
 ---
 
-# Continuous Improvement
+## Continuous Improvement
 
 Testing governance should support continuous improvement.
 
@@ -1361,7 +1361,7 @@ Testing quality should evolve based on evidence.
 
 ---
 
-# Governance Metrics
+## Governance Metrics
 
 Governance may use testing metrics such as:
 
@@ -1378,7 +1378,7 @@ Metrics should guide decisions rather than become objectives by themselves.
 
 ---
 
-# Test Quality Review
+## Test Quality Review
 
 Tests themselves may occasionally require quality review.
 
@@ -1395,7 +1395,7 @@ Large test suites require maintenance just like production systems.
 
 ---
 
-# Lifecycle Automation
+## Lifecycle Automation
 
 Some lifecycle governance may be automated.
 
@@ -1411,7 +1411,7 @@ Automation can support governance but does not replace engineering judgment.
 
 ---
 
-# Deprecation of Testing Infrastructure
+## Deprecation of Testing Infrastructure
 
 Testing tools or infrastructure may themselves be deprecated.
 
@@ -1426,7 +1426,7 @@ Infrastructure deprecation should include a migration plan.
 
 ---
 
-# Migration Strategy
+## Migration Strategy
 
 Testing infrastructure migration should generally follow:
 
@@ -1453,7 +1453,7 @@ Where parallel operation is impractical, equivalent safeguards should be defined
 
 ---
 
-# Backward Compatibility
+## Backward Compatibility
 
 Testing framework changes should consider compatibility with existing repository tests.
 
@@ -1461,7 +1461,7 @@ Breaking changes may be justified, but migration impact must be understood.
 
 ---
 
-# Governance and Developer Experience
+## Governance and Developer Experience
 
 Governance should protect quality without creating unnecessary friction.
 
@@ -1477,7 +1477,7 @@ Good governance should provide:
 
 ---
 
-# Governance Complexity
+## Governance Complexity
 
 Governance should remain proportionate.
 
@@ -1497,77 +1497,77 @@ Reliable Enforcement
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following governance practices are discouraged or prohibited.
 
-## Ownerless Tests
+### Ownerless Tests
 
 Important tests must not become nobody's responsibility.
 
 ---
 
-## Write Once, Ignore Forever
+### Write Once, Ignore Forever
 
 Tests require maintenance throughout their lifecycle.
 
 ---
 
-## Changing Tests to Hide Defects
+### Changing Tests to Hide Defects
 
 Tests must not be weakened merely to make implementation failures disappear.
 
 ---
 
-## Permanent Quarantine
+### Permanent Quarantine
 
 Quarantine must remain temporary.
 
 ---
 
-## Unexplained Skips
+### Unexplained Skips
 
 Skipped tests require understandable reasons.
 
 ---
 
-## Silent Test Removal
+### Silent Test Removal
 
 Meaningful tests should not be removed without understanding the protection being lost.
 
 ---
 
-## Metrics as Targets
+### Metrics as Targets
 
 Test counts and coverage numbers should not become goals independent of validation quality.
 
 ---
 
-## Policy Without Enforcement
+### Policy Without Enforcement
 
 Mandatory policies should be automated where practical.
 
 ---
 
-## Enforcement Without Documentation
+### Enforcement Without Documentation
 
 Developers must understand the policies that block progression.
 
 ---
 
-## Permanent Exceptions
+### Permanent Exceptions
 
 Long-lived exceptions indicate that either implementation or policy requires review.
 
 ---
 
-## Governance Without Ownership
+### Governance Without Ownership
 
 Policies require responsible maintainers.
 
 ---
 
-# Relationship With Testing Principles
+## Relationship With Testing Principles
 
 Governance exists to preserve the principles defined throughout the Testing Framework.
 
@@ -1584,7 +1584,7 @@ remain true as the platform evolves.
 
 ---
 
-# Relationship With Automation
+## Relationship With Automation
 
 Testing governance controls the automation model defined in:
 
@@ -1596,7 +1596,7 @@ Automation converts testing policy into repeatable engineering behavior.
 
 ---
 
-# Relationship With Testing Gates
+## Relationship With Testing Gates
 
 Testing gate policy is governed according to:
 
@@ -1608,7 +1608,7 @@ Gate thresholds, exceptions, and lifecycle decisions must remain controlled.
 
 ---
 
-# Relationship With Framework Lifecycle
+## Relationship With Framework Lifecycle
 
 This document governs tests and testing policy throughout normal engineering operation.
 
@@ -1622,7 +1622,7 @@ That document defines how the overall framework is introduced, evolved, versione
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Testing governance operates within the broader FamilyOS Quality Framework.
 
@@ -1638,7 +1638,7 @@ Quality governance may combine testing evidence with:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 FamilyOS testing governance is considered effective when:
 
@@ -1658,7 +1658,7 @@ FamilyOS testing governance is considered effective when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS testing system is a living engineering capability.
 

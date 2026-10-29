@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 14 Quality Observability
+## 14 Quality Observability
 
-## Overview
+### Overview
 
 The FamilyOS Quality Observability model defines how the state, behavior, evolution, reliability, and effectiveness of quality across the FamilyOS engineering ecosystem are made visible through structured signals.
 
@@ -48,7 +48,7 @@ The objective is to create actionable engineering visibility.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Observability is to make quality state continuously understandable.
 
@@ -91,7 +91,7 @@ Quality Observability therefore provides the visibility layer of the Quality Fra
 
 ---
 
-# Foundational Principle
+## Foundational Principle
 
 The foundational principle is:
 
@@ -103,7 +103,7 @@ Observability should therefore accompany quality controls wherever practical.
 
 ---
 
-# Quality Observability Definition
+## Quality Observability Definition
 
 Quality Observability is the capability to infer and understand the quality state of FamilyOS from available engineering signals.
 
@@ -123,7 +123,7 @@ Metrics are one source of observability.
 
 ---
 
-# Observability vs Monitoring
+## Observability vs Monitoring
 
 Monitoring and observability are related but distinct.
 
@@ -153,7 +153,7 @@ Monitoring is therefore one capability within Quality Observability.
 
 ---
 
-# Observability vs Metrics
+## Observability vs Metrics
 
 Metrics provide measurements.
 
@@ -180,7 +180,7 @@ The second form provides greater engineering value.
 
 ---
 
-# Quality Signal
+## Quality Signal
 
 A Quality Signal is any structured information that contributes to understanding quality state.
 
@@ -205,7 +205,7 @@ Signals may be positive, negative, or neutral.
 
 ---
 
-# Positive Quality Signals
+## Positive Quality Signals
 
 Positive signals demonstrate expected quality behavior.
 
@@ -221,7 +221,7 @@ Positive signals are important because observability should represent confidence
 
 ---
 
-# Negative Quality Signals
+## Negative Quality Signals
 
 Negative signals indicate potential quality degradation.
 
@@ -240,7 +240,7 @@ Negative signals should be prioritized according to risk.
 
 ---
 
-# Neutral Quality Signals
+## Neutral Quality Signals
 
 Some signals provide context without directly representing success or failure.
 
@@ -256,7 +256,7 @@ These may become meaningful when correlated with other signals.
 
 ---
 
-# Quality Telemetry
+## Quality Telemetry
 
 Quality Telemetry is the structured stream of information produced by quality activities.
 
@@ -276,7 +276,7 @@ Telemetry should use stable identities where possible.
 
 ---
 
-# Observability Architecture
+## Observability Architecture
 
 A conceptual Quality Observability architecture is:
 
@@ -304,7 +304,7 @@ This architecture should remain decoupled from individual quality tools.
 
 ---
 
-# Observability Sources
+## Observability Sources
 
 Quality Observability may consume information from:
 
@@ -326,7 +326,7 @@ The Quality Framework provides normalization and interpretation.
 
 ---
 
-# Quality Event
+## Quality Event
 
 A Quality Event represents a meaningful change in quality state.
 
@@ -349,7 +349,7 @@ Events support continuous observability.
 
 ---
 
-# Event Metadata
+## Event Metadata
 
 A Quality Event may contain:
 
@@ -370,7 +370,7 @@ The exact schema may evolve.
 
 ---
 
-# Event Identity
+## Event Identity
 
 Events should have stable unique identifiers where persistence is required.
 
@@ -384,7 +384,7 @@ This enables traceability between events and quality state changes.
 
 ---
 
-# Event Ordering
+## Event Ordering
 
 Where ordering matters, events should preserve sufficient timing and sequence information.
 
@@ -404,7 +404,7 @@ Assessment Passed
 
 ---
 
-# Event Idempotency
+## Event Idempotency
 
 If events may be processed multiple times, consumers should avoid duplicate state changes.
 
@@ -412,7 +412,7 @@ Stable event identity can support idempotent processing.
 
 ---
 
-# Quality State
+## Quality State
 
 Quality State represents the current interpreted condition of a target.
 
@@ -434,7 +434,7 @@ The complete state should preserve these dimensions.
 
 ---
 
-# Target Quality State
+## Target Quality State
 
 A target quality state may conceptually contain:
 
@@ -455,7 +455,7 @@ This provides a consolidated view.
 
 ---
 
-# Quality State Timeline
+## Quality State Timeline
 
 Quality state should be observable over time.
 
@@ -482,7 +482,7 @@ Historical context helps distinguish temporary events from systemic trends.
 
 ---
 
-# Quality Timeline
+## Quality Timeline
 
 A quality timeline may combine events:
 
@@ -500,7 +500,7 @@ This enables rapid investigation.
 
 ---
 
-# Quality Metrics
+## Quality Metrics
 
 Quality Metrics provide quantitative observability.
 
@@ -525,7 +525,7 @@ Quality Observability defines how those metrics are exposed and interpreted.
 
 ---
 
-# Metric Dimensions
+## Metric Dimensions
 
 Metrics should support useful dimensions such as:
 
@@ -546,7 +546,7 @@ Dimensions enable investigation without creating separate metrics for every targ
 
 ---
 
-# Metric Labels
+## Metric Labels
 
 Labels or dimensions should remain controlled.
 
@@ -556,7 +556,7 @@ For example, using arbitrary error messages as metric labels should generally be
 
 ---
 
-# Quality Indicators
+## Quality Indicators
 
 A Quality Indicator is a metric or derived signal used to understand a meaningful quality condition.
 
@@ -575,7 +575,7 @@ Indicators should correspond to engineering decisions.
 
 ---
 
-# Leading Indicators
+## Leading Indicators
 
 Leading indicators may reveal future quality degradation before major failures occur.
 
@@ -591,7 +591,7 @@ Leading indicators support prevention.
 
 ---
 
-# Lagging Indicators
+## Lagging Indicators
 
 Lagging indicators describe quality outcomes that have already occurred.
 
@@ -606,7 +606,7 @@ Lagging indicators remain important for validating whether earlier quality contr
 
 ---
 
-# Leading and Lagging Balance
+## Leading and Lagging Balance
 
 A mature observability model should combine:
 
@@ -622,7 +622,7 @@ Only observing internal quality metrics may miss actual operational outcomes.
 
 ---
 
-# Quality Trends
+## Quality Trends
 
 A trend represents change over time.
 
@@ -643,7 +643,7 @@ Trends often provide more value than isolated values.
 
 ---
 
-# Trend Direction
+## Trend Direction
 
 A trend may be classified conceptually as:
 
@@ -658,7 +658,7 @@ Classification should be based on defined evidence rather than subjective interp
 
 ---
 
-# Trend Window
+## Trend Window
 
 Trend interpretation depends on the observation window.
 
@@ -675,7 +675,7 @@ Different windows may reveal different behavior.
 
 ---
 
-# Baseline Comparison
+## Baseline Comparison
 
 Observability may compare current state against a baseline.
 
@@ -696,7 +696,7 @@ This provides visibility into quality debt reduction.
 
 ---
 
-# Release Comparison
+## Release Comparison
 
 Quality may be compared between releases.
 
@@ -716,7 +716,7 @@ Release comparison supports continuous improvement.
 
 ---
 
-# Component Comparison
+## Component Comparison
 
 Components may also be compared.
 
@@ -731,7 +731,7 @@ Raw ranking can create misleading conclusions.
 
 ---
 
-# Quality Dashboard
+## Quality Dashboard
 
 A Quality Dashboard provides consolidated visibility into quality state.
 
@@ -764,7 +764,7 @@ The dashboard should support drill-down.
 
 ---
 
-# Dashboard Principle
+## Dashboard Principle
 
 Dashboards must summarize.
 
@@ -786,7 +786,7 @@ Every important conclusion should remain traceable.
 
 ---
 
-# Domain Dashboard
+## Domain Dashboard
 
 Quality dashboards may provide domain views.
 
@@ -804,7 +804,7 @@ Trend:                    IMPROVING
 
 ---
 
-# Plugin Dashboard
+## Plugin Dashboard
 
 An official plugin dashboard may include:
 
@@ -836,7 +836,7 @@ Open Risks:
 
 ---
 
-# Release Dashboard
+## Release Dashboard
 
 A release dashboard may display:
 
@@ -868,7 +868,7 @@ PASS
 
 ---
 
-# Quality Control Plane Dashboard
+## Quality Control Plane Dashboard
 
 The Quality Framework itself should have observability.
 
@@ -888,7 +888,7 @@ This helps detect degradation of the quality system.
 
 ---
 
-# Quality Query Model
+## Quality Query Model
 
 Observability should eventually support structured queries.
 
@@ -914,7 +914,7 @@ Queryable quality data enables investigation beyond dashboards.
 
 ---
 
-# Drill-Down
+## Drill-Down
 
 Observability should support progressive drill-down.
 
@@ -938,7 +938,7 @@ This enables both executive and engineering views without losing detail.
 
 ---
 
-# Traceability View
+## Traceability View
 
 A traceability query may answer:
 
@@ -966,7 +966,7 @@ This is a core observability capability.
 
 ---
 
-# Finding Observability
+## Finding Observability
 
 Findings should be observable by:
 
@@ -989,7 +989,7 @@ Recurring Findings
 
 ---
 
-# Finding Trend
+## Finding Trend
 
 Finding count alone can be misleading.
 
@@ -1009,7 +1009,7 @@ Severity and risk must remain visible.
 
 ---
 
-# Defect Observability
+## Defect Observability
 
 Defect observability should expose:
 
@@ -1026,7 +1026,7 @@ Root cause dimensions may provide additional insight.
 
 ---
 
-# Defect Flow
+## Defect Flow
 
 A defect flow view may show:
 
@@ -1048,7 +1048,7 @@ Bottlenecks become visible through state duration.
 
 ---
 
-# Quality Debt Observability
+## Quality Debt Observability
 
 Quality Debt should be observable by:
 
@@ -1076,7 +1076,7 @@ Which debt threatens sustainable evolution?
 
 ---
 
-# Debt Trend
+## Debt Trend
 
 A debt trend may show:
 
@@ -1093,7 +1093,7 @@ However, risk distribution should also be considered.
 
 ---
 
-# Debt Creation vs Remediation
+## Debt Creation vs Remediation
 
 A useful view is:
 
@@ -1107,7 +1107,7 @@ This helps evaluate whether quality debt is being controlled.
 
 ---
 
-# Risk Observability
+## Risk Observability
 
 Risk observability should expose:
 
@@ -1125,7 +1125,7 @@ Critical and High risks require prominent visibility.
 
 ---
 
-# Risk Heat Map
+## Risk Heat Map
 
 A risk heat map may visualize:
 
@@ -1139,7 +1139,7 @@ Heat maps should support drill-down to individual risk records.
 
 ---
 
-# Risk Trend
+## Risk Trend
 
 Risk trend may show:
 
@@ -1153,7 +1153,7 @@ This provides insight into risk management effectiveness.
 
 ---
 
-# Exception Observability
+## Exception Observability
 
 Quality exceptions should be observable.
 
@@ -1171,7 +1171,7 @@ Exceptions should not disappear from quality visibility simply because they supp
 
 ---
 
-# Exception Aging
+## Exception Aging
 
 Long-lived exceptions may indicate hidden quality debt.
 
@@ -1186,7 +1186,7 @@ This should trigger review according to governance policy.
 
 ---
 
-# Suppression Observability
+## Suppression Observability
 
 Local suppressions may also be monitored.
 
@@ -1201,7 +1201,7 @@ Suppression trends can therefore reveal systemic quality issues.
 
 ---
 
-# Assessment Observability
+## Assessment Observability
 
 Assessments should be observable by:
 
@@ -1219,7 +1219,7 @@ Historical assessment state supports trend analysis.
 
 ---
 
-# Assessment Failure Trend
+## Assessment Failure Trend
 
 Repeated assessment failure in the same domain may indicate structural problems.
 
@@ -1239,7 +1239,7 @@ This trend deserves attention even before release failure occurs.
 
 ---
 
-# Gate Observability
+## Gate Observability
 
 Quality Gates should expose:
 
@@ -1258,7 +1258,7 @@ This enables analysis of engineering flow.
 
 ---
 
-# Gate Failure Rate
+## Gate Failure Rate
 
 A metric may track:
 
@@ -1278,7 +1278,7 @@ Interpretation requires context.
 
 ---
 
-# Repeated Gate Failure
+## Repeated Gate Failure
 
 Repeated failures for the same rule may indicate:
 
@@ -1291,7 +1291,7 @@ Observability should support root cause investigation.
 
 ---
 
-# Automation Observability
+## Automation Observability
 
 Quality Automation must expose its own health.
 
@@ -1310,7 +1310,7 @@ Evidence Generation Rate
 
 ---
 
-# Automation Failure Observability
+## Automation Failure Observability
 
 Automation failures should be classified separately from quality failures.
 
@@ -1328,7 +1328,7 @@ This distinction protects interpretation.
 
 ---
 
-# Tool Reliability
+## Tool Reliability
 
 Tool reliability may be measured by:
 
@@ -1344,7 +1344,7 @@ An unreliable quality tool should not remain silently authoritative.
 
 ---
 
-# Check Reliability
+## Check Reliability
 
 A check may be considered unreliable when identical inputs frequently produce different results.
 
@@ -1352,7 +1352,7 @@ This is particularly relevant for flaky tests.
 
 ---
 
-# Flaky Test Observability
+## Flaky Test Observability
 
 Flaky tests should be visible through signals such as:
 
@@ -1369,7 +1369,7 @@ This allows systematic remediation.
 
 ---
 
-# Test Observability
+## Test Observability
 
 Testing observability may include:
 
@@ -1388,7 +1388,7 @@ The Testing Framework remains authoritative for testing semantics.
 
 ---
 
-# Skipped Test Observability
+## Skipped Test Observability
 
 Skipped tests should be visible.
 
@@ -1398,7 +1398,7 @@ Required tests must not silently become permanently skipped.
 
 ---
 
-# Test Duration Trend
+## Test Duration Trend
 
 Increasing test duration may create engineering productivity risk.
 
@@ -1415,7 +1415,7 @@ This trend may justify test performance optimization.
 
 ---
 
-# Coverage Observability
+## Coverage Observability
 
 Coverage should be observed as a trend and contextual indicator.
 
@@ -1434,7 +1434,7 @@ A declining trend may warrant investigation even if a minimum threshold has not 
 
 ---
 
-# Architecture Observability
+## Architecture Observability
 
 Architecture quality should be observable through:
 
@@ -1451,7 +1451,7 @@ Architecture degradation often occurs gradually, making observability especially
 
 ---
 
-# Architecture Drift
+## Architecture Drift
 
 Architecture drift occurs when implementation increasingly diverges from intended architecture.
 
@@ -1467,7 +1467,7 @@ Drift should trigger review before it becomes systemic.
 
 ---
 
-# Dependency Observability
+## Dependency Observability
 
 Dependency quality may expose:
 
@@ -1483,7 +1483,7 @@ Dependency trends can reveal maintenance risk.
 
 ---
 
-# Dependency Age
+## Dependency Age
 
 Dependency age may be useful where support policy matters.
 
@@ -1498,7 +1498,7 @@ The important condition is whether dependencies remain:
 
 ---
 
-# Documentation Observability
+## Documentation Observability
 
 Documentation quality may expose:
 
@@ -1514,7 +1514,7 @@ This provides visibility into documentation health.
 
 ---
 
-# Documentation Drift
+## Documentation Drift
 
 Documentation drift occurs when documentation no longer accurately reflects implementation or architecture.
 
@@ -1529,7 +1529,7 @@ Automated drift detection should increase over time.
 
 ---
 
-# Compliance Observability
+## Compliance Observability
 
 Compliance state may be exposed by:
 
@@ -1546,7 +1546,7 @@ This is particularly important for official plugins.
 
 ---
 
-# Build Observability
+## Build Observability
 
 Build quality may include:
 
@@ -1562,7 +1562,7 @@ Build degradation may affect release reliability.
 
 ---
 
-# Release Observability
+## Release Observability
 
 Release observability may include:
 
@@ -1580,7 +1580,7 @@ This connects pre-release quality with operational outcomes.
 
 ---
 
-# Post-Release Quality Signals
+## Post-Release Quality Signals
 
 Important post-release signals include:
 
@@ -1597,7 +1597,7 @@ These signals validate whether pre-release quality controls were effective.
 
 ---
 
-# Quality Escape
+## Quality Escape
 
 A Quality Escape occurs when a significant defect passes through expected quality controls and is discovered later.
 
@@ -1619,7 +1619,7 @@ Escapes should be observable and analyzed.
 
 ---
 
-# Escape Analysis
+## Escape Analysis
 
 For significant escapes, observability should support questions such as:
 
@@ -1639,7 +1639,7 @@ This supports continuous improvement.
 
 ---
 
-# Incident Correlation
+## Incident Correlation
 
 Quality observability should connect incidents with relevant historical quality signals.
 
@@ -1661,7 +1661,7 @@ This helps evaluate past decisions.
 
 ---
 
-# Change Observability
+## Change Observability
 
 Quality state should be correlated with engineering changes.
 
@@ -1679,7 +1679,7 @@ This supports rapid root cause identification.
 
 ---
 
-# Change Volume
+## Change Volume
 
 Large change volume may increase uncertainty.
 
@@ -1691,7 +1691,7 @@ It provides context.
 
 ---
 
-# Quality Regression
+## Quality Regression
 
 A Quality Regression occurs when quality state worsens relative to an accepted previous state.
 
@@ -1709,7 +1709,7 @@ Regression detection should become increasingly automated.
 
 ---
 
-# Regression Event
+## Regression Event
 
 A regression may generate an event such as:
 
@@ -1726,7 +1726,7 @@ with references to:
 
 ---
 
-# Quality Improvement
+## Quality Improvement
 
 Observability should also identify improvement.
 
@@ -1744,7 +1744,7 @@ Quality systems should make progress visible.
 
 ---
 
-# Improvement Trend
+## Improvement Trend
 
 A sustained improvement trend can demonstrate the effectiveness of engineering investment.
 
@@ -1762,7 +1762,7 @@ High-Risk Debt
 
 ---
 
-# Quality Alerts
+## Quality Alerts
 
 Quality Observability may generate alerts for significant conditions.
 
@@ -1781,7 +1781,7 @@ Alerts should be reserved for actionable conditions.
 
 ---
 
-# Alert Fatigue
+## Alert Fatigue
 
 Excessive alerts reduce effectiveness.
 
@@ -1798,7 +1798,7 @@ Deduplicated
 
 ---
 
-# Alert Severity
+## Alert Severity
 
 Alert severity may align with quality severity or use a separate operational classification.
 
@@ -1806,7 +1806,7 @@ The relationship must remain explicit.
 
 ---
 
-# Alert Ownership
+## Alert Ownership
 
 Every important alert should have an expected responder or ownership domain.
 
@@ -1814,7 +1814,7 @@ An alert without ownership may remain ignored.
 
 ---
 
-# Alert Deduplication
+## Alert Deduplication
 
 Repeated identical events should not create unnecessary alert storms.
 
@@ -1822,7 +1822,7 @@ The system may group related signals while preserving event history.
 
 ---
 
-# Alert Escalation
+## Alert Escalation
 
 Unresolved critical conditions may escalate according to governance policy.
 
@@ -1834,7 +1834,7 @@ Examples include:
 
 ---
 
-# Quality Thresholds
+## Quality Thresholds
 
 Thresholds may trigger warnings or alerts.
 
@@ -1850,7 +1850,7 @@ Thresholds should be based on engineering needs rather than arbitrary round numb
 
 ---
 
-# Static Thresholds
+## Static Thresholds
 
 Static thresholds define fixed limits.
 
@@ -1866,7 +1866,7 @@ They are appropriate for clear quality boundaries.
 
 ---
 
-# Dynamic Thresholds
+## Dynamic Thresholds
 
 Future observability may use historical baselines to detect unusual changes.
 
@@ -1883,7 +1883,7 @@ Dynamic thresholds should remain explainable.
 
 ---
 
-# Anomaly Detection
+## Anomaly Detection
 
 Quality telemetry may eventually support anomaly detection.
 
@@ -1898,7 +1898,7 @@ Anomaly detection should initially remain advisory.
 
 ---
 
-# Predictive Quality Signals
+## Predictive Quality Signals
 
 With sufficient historical data, FamilyOS may eventually identify predictive signals.
 
@@ -1918,7 +1918,7 @@ Predictive signals must remain evidence-based and explainable.
 
 ---
 
-# Quality Forecasting
+## Quality Forecasting
 
 A mature system may estimate future quality pressure.
 
@@ -1938,7 +1938,7 @@ Forecasts should support planning, not replace engineering judgment.
 
 ---
 
-# Quality SLOs
+## Quality SLOs
 
 FamilyOS may eventually define Quality Service Level Objectives for the quality system itself.
 
@@ -1953,7 +1953,7 @@ These are different from product runtime SLOs.
 
 ---
 
-# Quality Automation Availability
+## Quality Automation Availability
 
 A possible quality control objective may be:
 
@@ -1967,7 +1967,7 @@ Exact numerical objectives should be defined only when operational experience ju
 
 ---
 
-# Feedback Latency Observability
+## Feedback Latency Observability
 
 Feedback latency may be measured as:
 
@@ -1983,7 +1983,7 @@ This can reveal workflow bottlenecks.
 
 ---
 
-# Assessment Latency
+## Assessment Latency
 
 Assessment latency measures how long it takes to produce a quality state once required evidence begins processing.
 
@@ -1991,7 +1991,7 @@ Increasing latency may reduce developer productivity.
 
 ---
 
-# Gate Latency
+## Gate Latency
 
 Gate latency measures the time between readiness for evaluation and gate decision.
 
@@ -1999,7 +1999,7 @@ This helps distinguish slow checks from slow orchestration.
 
 ---
 
-# Quality Pipeline Duration
+## Quality Pipeline Duration
 
 Pipeline duration should be decomposable.
 
@@ -2021,7 +2021,7 @@ This enables targeted optimization.
 
 ---
 
-# Bottleneck Detection
+## Bottleneck Detection
 
 Quality Observability should reveal bottlenecks.
 
@@ -2039,7 +2039,7 @@ Optimization should focus on measured bottlenecks.
 
 ---
 
-# Quality Cost Observability
+## Quality Cost Observability
 
 Quality automation consumes engineering resources.
 
@@ -2057,7 +2057,7 @@ Cost should be considered alongside quality benefit.
 
 ---
 
-# Quality Efficiency
+## Quality Efficiency
 
 A mature system may evaluate quality efficiency as the relationship between:
 
@@ -2073,7 +2073,7 @@ The objective is sustainable assurance.
 
 ---
 
-# Manual Work Observability
+## Manual Work Observability
 
 Repeated manual quality work should be visible.
 
@@ -2087,7 +2087,7 @@ This helps identify Automation Debt.
 
 ---
 
-# Review Observability
+## Review Observability
 
 Human review activity may expose:
 
@@ -2103,7 +2103,7 @@ Metrics should improve review processes without creating incentives for superfic
 
 ---
 
-# Review Bottlenecks
+## Review Bottlenecks
 
 Observability may reveal:
 
@@ -2117,7 +2117,7 @@ This can support governance capacity planning.
 
 ---
 
-# Governance Observability
+## Governance Observability
 
 Quality governance should itself be observable.
 
@@ -2137,7 +2137,7 @@ Governance failures can create systemic quality risk.
 
 ---
 
-# Override Observability
+## Override Observability
 
 Manual assessment or gate overrides should be highly visible.
 
@@ -2157,7 +2157,7 @@ Silent overrides are prohibited.
 
 ---
 
-# Policy Change Observability
+## Policy Change Observability
 
 Changes to:
 
@@ -2173,7 +2173,7 @@ This allows teams to explain why quality results changed even when source code d
 
 ---
 
-# Rule Observability
+## Rule Observability
 
 Each rule may expose:
 
@@ -2190,7 +2190,7 @@ This supports rule effectiveness analysis.
 
 ---
 
-# Rule Failure Rate
+## Rule Failure Rate
 
 A high rule failure rate may indicate:
 
@@ -2202,7 +2202,7 @@ Interpretation requires context.
 
 ---
 
-# Rule Suppression Rate
+## Rule Suppression Rate
 
 A growing suppression rate may indicate that a rule requires review.
 
@@ -2220,7 +2220,7 @@ Migration Problem?
 
 ---
 
-# Rule Effectiveness
+## Rule Effectiveness
 
 A rule may be evaluated by whether it detects meaningful problems with acceptable noise.
 
@@ -2236,7 +2236,7 @@ Suppression Rate
 
 ---
 
-# Evidence Observability
+## Evidence Observability
 
 Quality Evidence should itself be observable.
 
@@ -2254,7 +2254,7 @@ Evidence health directly affects assessment confidence.
 
 ---
 
-# Evidence Completeness
+## Evidence Completeness
 
 An indicator may measure:
 
@@ -2270,7 +2270,7 @@ The exact metric should preserve critical missing evidence rather than relying o
 
 ---
 
-# Evidence Freshness
+## Evidence Freshness
 
 Observability should identify stale evidence.
 
@@ -2289,13 +2289,13 @@ STALE
 
 ---
 
-# Evidence Generation Reliability
+## Evidence Generation Reliability
 
 Repeated failures to generate a particular evidence type may indicate quality infrastructure debt.
 
 ---
 
-# Observability Data Quality
+## Observability Data Quality
 
 Quality observability depends on reliable telemetry.
 
@@ -2311,7 +2311,7 @@ Potential problems include:
 
 ---
 
-# Telemetry Completeness
+## Telemetry Completeness
 
 The observability system should know when expected telemetry is missing.
 
@@ -2319,7 +2319,7 @@ Missing telemetry must not automatically imply healthy quality.
 
 ---
 
-# Telemetry Freshness
+## Telemetry Freshness
 
 Dashboards should indicate when data is stale.
 
@@ -2343,7 +2343,7 @@ This prevents false confidence.
 
 ---
 
-# Telemetry Integrity
+## Telemetry Integrity
 
 Important quality telemetry should be protected from unauthorized modification.
 
@@ -2356,7 +2356,7 @@ This is especially important for:
 
 ---
 
-# Telemetry Retention
+## Telemetry Retention
 
 Retention policy should distinguish between:
 
@@ -2371,7 +2371,7 @@ Not all telemetry requires identical retention.
 
 ---
 
-# Historical Quality Store
+## Historical Quality Store
 
 A future Quality Platform may maintain a historical store containing:
 
@@ -2389,7 +2389,7 @@ This enables long-term analysis.
 
 ---
 
-# Quality Snapshot
+## Quality Snapshot
 
 A Quality Snapshot captures the quality state at a defined point.
 
@@ -2419,7 +2419,7 @@ Snapshots support release reconstruction.
 
 ---
 
-# Snapshot Immutability
+## Snapshot Immutability
 
 Published release quality snapshots should remain immutable where practical.
 
@@ -2427,7 +2427,7 @@ Later information should create new records rather than rewrite historical state
 
 ---
 
-# Quality Baseline
+## Quality Baseline
 
 A baseline defines a reference quality state.
 
@@ -2442,7 +2442,7 @@ Baselines should be versioned and traceable.
 
 ---
 
-# Quality Regression Detection
+## Quality Regression Detection
 
 A regression detector may compare:
 
@@ -2464,7 +2464,7 @@ Metric Threshold Regression
 
 ---
 
-# Regression Severity
+## Regression Severity
 
 Not every regression is equally significant.
 
@@ -2478,7 +2478,7 @@ Regression severity should reflect:
 
 ---
 
-# Quality Health
+## Quality Health
 
 The framework may provide a high-level Quality Health classification.
 
@@ -2498,7 +2498,7 @@ However, detailed domain state must remain available.
 
 ---
 
-# Quality Health Calculation
+## Quality Health Calculation
 
 A high-level state should not be based on blind averaging.
 
@@ -2514,7 +2514,7 @@ Quality Health must preserve blocking semantics.
 
 ---
 
-# Unknown Quality State
+## Unknown Quality State
 
 Unknown must remain a first-class state.
 
@@ -2529,7 +2529,7 @@ Unknown should never be displayed as healthy.
 
 ---
 
-# Quality Confidence
+## Quality Confidence
 
 Observability may eventually represent confidence in reported quality state.
 
@@ -2547,7 +2547,7 @@ Confidence should remain separate from quality itself.
 
 ---
 
-# Observability and Risk
+## Observability and Risk
 
 Quality Observability should make risk evolution visible.
 
@@ -2567,7 +2567,7 @@ This enables earlier intervention.
 
 ---
 
-# Observability and Quality Debt
+## Observability and Quality Debt
 
 Debt should be visible as both inventory and trajectory.
 
@@ -2587,7 +2587,7 @@ Which debt is blocking future work?
 
 ---
 
-# Observability and Automation
+## Observability and Automation
 
 Automation generates much of the telemetry consumed by Quality Observability.
 
@@ -2605,7 +2605,7 @@ Automation health must also be observed.
 
 ---
 
-# Observability and Assessments
+## Observability and Assessments
 
 Assessments provide normalized quality state.
 
@@ -2619,7 +2619,7 @@ Observability provides:
 
 ---
 
-# Observability and Quality Gates
+## Observability and Quality Gates
 
 Gate decisions are important observability signals.
 
@@ -2627,7 +2627,7 @@ Repeated gate failures may reveal systemic quality problems or workflow friction
 
 ---
 
-# Observability and Governance
+## Observability and Governance
 
 Governance consumes observability to determine whether quality policy remains effective.
 
@@ -2640,7 +2640,7 @@ Observability provides evidence for:
 
 ---
 
-# Observability and Continuous Improvement
+## Observability and Continuous Improvement
 
 The continuous improvement loop is:
 
@@ -2664,7 +2664,7 @@ Without observability, improvement becomes guesswork.
 
 ---
 
-# Quality Reviews
+## Quality Reviews
 
 Periodic Quality Reviews should use observability data.
 
@@ -2684,7 +2684,7 @@ The purpose is to identify systemic improvement opportunities.
 
 ---
 
-# Quality Review Questions
+## Quality Review Questions
 
 A mature review should ask:
 
@@ -2708,7 +2708,7 @@ What should change?
 
 ---
 
-# Quality Observability Reports
+## Quality Observability Reports
 
 Reports may be generated for:
 
@@ -2725,7 +2725,7 @@ Reports should provide both state and trend.
 
 ---
 
-# Periodic Quality Report
+## Periodic Quality Report
 
 A periodic report may contain:
 
@@ -2744,7 +2744,7 @@ Recommended Actions
 
 ---
 
-# Executive Quality View
+## Executive Quality View
 
 A high-level view may focus on:
 
@@ -2760,7 +2760,7 @@ This view must remain traceable to engineering detail.
 
 ---
 
-# Engineering Quality View
+## Engineering Quality View
 
 An engineering view may focus on:
 
@@ -2778,7 +2778,7 @@ Different audiences require different presentation without changing underlying t
 
 ---
 
-# Observability APIs
+## Observability APIs
 
 A future Quality Platform may expose APIs such as:
 
@@ -2796,7 +2796,7 @@ The exact API belongs to implementation architecture.
 
 ---
 
-# Quality Observability CLI
+## Quality Observability CLI
 
 A future CLI may conceptually support:
 
@@ -2831,7 +2831,7 @@ Critical      0
 
 ---
 
-# Observability Events API
+## Observability Events API
 
 Consumers may subscribe to significant quality events.
 
@@ -2847,7 +2847,7 @@ This may support integrations with notifications or workflow systems.
 
 ---
 
-# Notification Integration
+## Notification Integration
 
 Quality alerts may integrate with FamilyOS notification capabilities in the future.
 
@@ -2860,7 +2860,7 @@ Notifications should preserve:
 
 ---
 
-# Observability Security
+## Observability Security
 
 Quality telemetry may contain sensitive information.
 
@@ -2875,7 +2875,7 @@ Access should be proportional to sensitivity.
 
 ---
 
-# Sensitive Finding Visibility
+## Sensitive Finding Visibility
 
 Critical security findings may require restricted detail while still exposing high-level risk to authorized governance views.
 
@@ -2883,7 +2883,7 @@ Observability must balance transparency with security.
 
 ---
 
-# Observability Privacy
+## Observability Privacy
 
 Quality telemetry should avoid collecting unnecessary personal information.
 
@@ -2891,7 +2891,7 @@ The system should observe engineering artifacts and processes rather than indivi
 
 ---
 
-# No Developer Surveillance
+## No Developer Surveillance
 
 Quality Observability must not become employee surveillance.
 
@@ -2908,7 +2908,7 @@ not rank individual engineers by simplistic productivity or defect counts.
 
 ---
 
-# Responsible Metrics
+## Responsible Metrics
 
 Metrics should not be used in ways that create incentives to manipulate quality data.
 
@@ -2929,7 +2929,7 @@ Reduce meaningful quality risk.
 
 ---
 
-# Goodhart's Law
+## Goodhart's Law
 
 When a metric becomes a target, it may stop being a useful metric.
 
@@ -2939,7 +2939,7 @@ Multiple signals and engineering judgment remain necessary.
 
 ---
 
-# Observability Noise
+## Observability Noise
 
 Too much telemetry can reduce understanding.
 
@@ -2957,7 +2957,7 @@ rather than collecting every possible event indefinitely.
 
 ---
 
-# Signal-to-Noise Ratio
+## Signal-to-Noise Ratio
 
 Quality Observability should seek a high signal-to-noise ratio.
 
@@ -2965,7 +2965,7 @@ A system generating thousands of irrelevant warnings may be less observable than
 
 ---
 
-# Cardinality Control
+## Cardinality Control
 
 Telemetry dimensions should be designed carefully to avoid unbounded cardinality.
 
@@ -2973,7 +2973,7 @@ Detailed high-cardinality information may belong in logs or evidence records rat
 
 ---
 
-# Dashboard Overload
+## Dashboard Overload
 
 Dashboards should not display every available metric.
 
@@ -2981,7 +2981,7 @@ Each view should answer specific engineering questions.
 
 ---
 
-# Alert Overload
+## Alert Overload
 
 Alerts should represent conditions requiring attention.
 
@@ -2989,7 +2989,7 @@ Informational events belong in dashboards, reports, or history.
 
 ---
 
-# Observability Failure
+## Observability Failure
 
 The observability system itself may fail.
 
@@ -3007,7 +3007,7 @@ These failures should be observable.
 
 ---
 
-# Observability Health
+## Observability Health
 
 The framework may expose:
 
@@ -3023,7 +3023,7 @@ A degraded observability system should reduce confidence in quality status.
 
 ---
 
-# Fail-Safe Observability
+## Fail-Safe Observability
 
 When critical observability data is unavailable:
 
@@ -3037,7 +3037,7 @@ The system should not present stale information as current certainty.
 
 ---
 
-# Observability Testing
+## Observability Testing
 
 Quality Observability components should themselves be tested.
 
@@ -3052,7 +3052,7 @@ Potential tests include:
 
 ---
 
-# Observability Validation
+## Observability Validation
 
 The system should periodically validate that expected signals are actually produced.
 
@@ -3068,7 +3068,7 @@ Observability Defect
 
 ---
 
-# Observability Quality Debt
+## Observability Quality Debt
 
 Known weaknesses in observability should be tracked as Quality Debt.
 
@@ -3081,7 +3081,7 @@ Examples include:
 
 ---
 
-# Observability Automation
+## Observability Automation
 
 Most telemetry collection should be automated.
 
@@ -3089,7 +3089,7 @@ Manual observability data entry should be limited to information that genuinely 
 
 ---
 
-# Observability Versioning
+## Observability Versioning
 
 Telemetry schemas, metric definitions, and event contracts should be versioned where compatibility matters.
 
@@ -3097,7 +3097,7 @@ Historical data must remain interpretable.
 
 ---
 
-# Metric Definition Changes
+## Metric Definition Changes
 
 Changing the definition of a metric may invalidate historical comparisons.
 
@@ -3115,7 +3115,7 @@ Such changes should be documented.
 
 ---
 
-# Event Schema Changes
+## Event Schema Changes
 
 Quality event schemas should evolve compatibly where practical.
 
@@ -3123,13 +3123,13 @@ Consumers should not break unexpectedly because of uncontrolled telemetry change
 
 ---
 
-# Dashboard Versioning
+## Dashboard Versioning
 
 Important release or governance dashboards may require version-aware interpretation when underlying metrics evolve.
 
 ---
 
-# Observability Scalability
+## Observability Scalability
 
 Quality Observability must scale as FamilyOS grows across:
 
@@ -3147,7 +3147,7 @@ Aggregation and retention strategies should anticipate growth.
 
 ---
 
-# Aggregation Levels
+## Aggregation Levels
 
 Telemetry may be aggregated at different levels:
 
@@ -3165,7 +3165,7 @@ Aggregation must preserve access to important detail.
 
 ---
 
-# Pre-Aggregation
+## Pre-Aggregation
 
 Frequently queried historical metrics may eventually be pre-aggregated for efficiency.
 
@@ -3173,7 +3173,7 @@ Raw authoritative evidence should remain available according to retention policy
 
 ---
 
-# Quality Data Model
+## Quality Data Model
 
 A future unified quality data model may connect:
 
@@ -3198,7 +3198,7 @@ This relationship model is the foundation of advanced Quality Observability.
 
 ---
 
-# Quality Graph
+## Quality Graph
 
 The quality data model may eventually form a graph.
 
@@ -3232,7 +3232,7 @@ Graph relationships enable powerful investigation.
 
 ---
 
-# Quality Intelligence
+## Quality Intelligence
 
 At high maturity, observability may evolve toward Quality Intelligence.
 
@@ -3251,7 +3251,7 @@ to provide deeper insights.
 
 ---
 
-# AI-Assisted Observability
+## AI-Assisted Observability
 
 AI may assist with:
 
@@ -3266,7 +3266,7 @@ AI output should remain traceable to underlying quality data.
 
 ---
 
-# AI Guardrails
+## AI Guardrails
 
 AI must not invent quality signals.
 
@@ -3282,7 +3282,7 @@ Authoritative quality state remains determined by governed quality mechanisms.
 
 ---
 
-# Predictive Quality Intelligence
+## Predictive Quality Intelligence
 
 Future predictive capabilities may estimate:
 
@@ -3298,7 +3298,7 @@ These predictions should initially remain advisory.
 
 ---
 
-# Observability Maturity Model
+## Observability Maturity Model
 
 Quality Observability may mature through:
 
@@ -3339,7 +3339,7 @@ Quality Intelligence
 
 ---
 
-# Initial Implementation
+## Initial Implementation
 
 An initial FamilyOS Quality Observability implementation may begin with:
 
@@ -3369,7 +3369,7 @@ This provides immediate value without requiring a complex observability platform
 
 ---
 
-# Initial Quality Status
+## Initial Quality Status
 
 A first implementation may conceptually expose:
 
@@ -3392,7 +3392,7 @@ Assessment       PASS_WITH_WARNINGS
 
 ---
 
-# Initial History
+## Initial History
 
 A simple history may retain:
 
@@ -3408,7 +3408,7 @@ This is sufficient to begin trend analysis.
 
 ---
 
-# Initial Alerts
+## Initial Alerts
 
 Initial alerting should remain limited.
 
@@ -3425,7 +3425,7 @@ Additional alerts should be introduced only when operational value is demonstrat
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 Quality Observability should evolve incrementally:
 
@@ -3449,7 +3449,7 @@ The platform should not build complex observability infrastructure before suffic
 
 ---
 
-# Relationship With Quality Metrics
+## Relationship With Quality Metrics
 
 Quality Metrics define what is measured.
 
@@ -3457,7 +3457,7 @@ Quality Observability defines how those measurements become visible, contextual,
 
 ---
 
-# Relationship With Quality Evidence
+## Relationship With Quality Evidence
 
 Quality Evidence provides authoritative facts.
 
@@ -3473,7 +3473,7 @@ Observability must not modify evidence semantics.
 
 ---
 
-# Relationship With Quality Risk
+## Relationship With Quality Risk
 
 Observability exposes risk state and risk evolution.
 
@@ -3481,7 +3481,7 @@ Risk signals may also trigger alerts and governance review.
 
 ---
 
-# Relationship With Defect and Quality Debt Management
+## Relationship With Defect and Quality Debt Management
 
 Defects and Quality Debt provide long-lived quality state.
 
@@ -3495,7 +3495,7 @@ Observability exposes:
 
 ---
 
-# Relationship With Quality Reviews and Assessments
+## Relationship With Quality Reviews and Assessments
 
 Assessments produce normalized Quality State.
 
@@ -3503,7 +3503,7 @@ Observability provides history and comparative understanding of that state.
 
 ---
 
-# Relationship With Quality Automation
+## Relationship With Quality Automation
 
 Automation is a primary telemetry producer.
 
@@ -3511,7 +3511,7 @@ Observability measures both the results of automation and the health of the auto
 
 ---
 
-# Relationship With Quality Gates
+## Relationship With Quality Gates
 
 Quality Gates produce authoritative progression decisions.
 
@@ -3519,7 +3519,7 @@ Observability makes those decisions visible and analyzable over time.
 
 ---
 
-# Relationship With Quality Governance
+## Relationship With Quality Governance
 
 Governance uses observability to evaluate:
 
@@ -3533,7 +3533,7 @@ Observability therefore provides a primary evidence source for Quality Governanc
 
 ---
 
-# Relationship With Operational Observability
+## Relationship With Operational Observability
 
 Quality Observability and runtime observability are distinct but connected.
 
@@ -3553,7 +3553,7 @@ Operational failures should feed engineering quality analysis.
 
 ---
 
-# Reference Observability Flow
+## Reference Observability Flow
 
 The complete Quality Observability flow can be represented as:
 
@@ -3592,7 +3592,7 @@ Continuous Improvement
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Observability enables FamilyOS to move from:
 
@@ -3625,7 +3625,7 @@ This provides substantially stronger engineering confidence.
 
 ---
 
-# Final Observability Principle
+## Final Observability Principle
 
 Quality cannot be sustainably governed when its state is invisible.
 

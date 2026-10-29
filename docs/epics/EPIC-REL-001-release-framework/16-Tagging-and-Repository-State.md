@@ -1,8 +1,8 @@
 # Release Framework
 
-# 16 Tagging and Repository State
+## 16 Tagging and Repository State
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines the rules governing repository state and release tagging for FamilyOS.
 
@@ -29,7 +29,7 @@ The objective is to ensure that every official FamilyOS Git-based release can be
 
 ---
 
-# Purpose
+## Purpose
 
 This document establishes:
 
@@ -54,7 +54,7 @@ The model prevents ambiguous releases caused by incorrect or uncontrolled reposi
 
 ---
 
-# Core Principle
+## Core Principle
 
 The central principle is:
 
@@ -84,7 +84,7 @@ hope it is correct
 
 ---
 
-# Repository as Release Anchor
+## Repository as Release Anchor
 
 For Git-based FamilyOS releases, the repository provides a durable mapping between:
 
@@ -102,7 +102,7 @@ This mapping is foundational to historical release reconstruction.
 
 ---
 
-# Repository State Model
+## Repository State Model
 
 The release-relevant repository state includes:
 
@@ -124,7 +124,7 @@ The relevant assumptions must remain explicit.
 
 ---
 
-# Working Tree State
+## Working Tree State
 
 A stable release SHOULD normally originate from a clean working tree.
 
@@ -145,7 +145,7 @@ For a clean state, the expected output is empty.
 
 ---
 
-# Why Clean Working Tree Matters
+## Why Clean Working Tree Matters
 
 A dirty working tree creates ambiguity between:
 
@@ -165,7 +165,7 @@ This breaks source-to-release traceability.
 
 ---
 
-# Generated Files
+## Generated Files
 
 Generated build artifacts do not necessarily invalidate repository cleanliness if they are intentionally excluded from source control.
 
@@ -175,7 +175,7 @@ Generated files that alter tracked release source unexpectedly should block rele
 
 ---
 
-# Staged Changes
+## Staged Changes
 
 A staged but uncommitted change is still not part of a stable source revision.
 
@@ -191,7 +191,7 @@ The release process should require release-relevant changes to be committed befo
 
 ---
 
-# HEAD
+## HEAD
 
 `HEAD` identifies the currently checked-out source revision.
 
@@ -209,7 +209,7 @@ The exact commit should be recorded as release evidence.
 
 ---
 
-# Release Commit
+## Release Commit
 
 The Release Commit is the Git commit representing the source state associated with the official release.
 
@@ -226,7 +226,7 @@ For a framework release, this may include:
 
 ---
 
-# Release Commit Immutability
+## Release Commit Immutability
 
 Git commit identity is content-addressed and should remain a stable release anchor.
 
@@ -241,7 +241,7 @@ Release Commit:
 
 ---
 
-# Branch Context
+## Branch Context
 
 A release may originate from:
 
@@ -257,7 +257,7 @@ However, the intended release lineage must be understood.
 
 ---
 
-# Current Branch
+## Current Branch
 
 Before release, tooling SHOULD verify the expected branch where branch policy applies.
 
@@ -273,7 +273,7 @@ A release accidentally performed from an unrelated branch should block.
 
 ---
 
-# Branch Is Not Release Identity
+## Branch Is Not Release Identity
 
 A branch is mutable.
 
@@ -301,7 +301,7 @@ tag
 
 ---
 
-# Branch Synchronization
+## Branch Synchronization
 
 Where repository governance requires synchronization with an authoritative remote, the release process should verify that the intended release commit exists remotely.
 
@@ -317,7 +317,7 @@ before final release completion.
 
 ---
 
-# Local vs Remote State
+## Local vs Remote State
 
 A local repository may contain valid work that does not yet exist in the authoritative remote.
 
@@ -337,7 +337,7 @@ Release completion must distinguish local validity from authoritative remote pub
 
 ---
 
-# Authoritative Remote
+## Authoritative Remote
 
 Repository governance should define the authoritative release remote.
 
@@ -353,7 +353,7 @@ authoritative remote
 
 ---
 
-# Remote Verification
+## Remote Verification
 
 Before or after publication, the release process may verify remote state using commands such as:
 
@@ -369,7 +369,7 @@ The required outcome is explicit agreement between expected release state and au
 
 ---
 
-# Release Tag Definition
+## Release Tag Definition
 
 A Release Tag is an official Git reference identifying the repository commit associated with a release.
 
@@ -382,7 +382,7 @@ A release tag must communicate:
 
 ---
 
-# Tag Naming Strategy
+## Tag Naming Strategy
 
 FamilyOS framework releases may use the canonical pattern:
 
@@ -404,7 +404,7 @@ The suffix identifies the release subject.
 
 ---
 
-# Tag Name Components
+## Tag Name Components
 
 A tag name may contain:
 
@@ -431,7 +431,7 @@ subject = release-framework
 
 ---
 
-# Tag Naming Requirements
+## Tag Naming Requirements
 
 Official tag names MUST be:
 
@@ -455,7 +455,7 @@ are prohibited for official release identity.
 
 ---
 
-# Annotated Tags
+## Annotated Tags
 
 FamilyOS SHOULD use annotated Git tags for official framework and significant platform releases.
 
@@ -477,7 +477,7 @@ They provide stronger release semantics than lightweight tags.
 
 ---
 
-# Lightweight Tags
+## Lightweight Tags
 
 Lightweight tags MAY be used for internal or temporary workflows where policy permits.
 
@@ -485,7 +485,7 @@ They SHOULD NOT normally be preferred for significant official FamilyOS release 
 
 ---
 
-# Tag Message
+## Tag Message
 
 The annotated tag message should clearly identify the release.
 
@@ -501,7 +501,7 @@ They are not substitutes for release notes.
 
 ---
 
-# Tag Creation Preconditions
+## Tag Creation Preconditions
 
 Before creating an official release tag, the release process SHOULD verify:
 
@@ -520,7 +520,7 @@ Tag creation should occur only after these conditions are satisfied.
 
 ---
 
-# Tag Availability
+## Tag Availability
 
 Before creation, tooling must determine whether the intended tag already exists.
 
@@ -536,7 +536,7 @@ If present, its target must be examined.
 
 ---
 
-# Existing Matching Tag
+## Existing Matching Tag
 
 If the intended tag already exists and points to the expected release commit, automation may treat the tag operation as idempotently complete.
 
@@ -552,7 +552,7 @@ verify and continue
 
 ---
 
-# Existing Conflicting Tag
+## Existing Conflicting Tag
 
 If the intended tag exists but points to a different commit:
 
@@ -572,7 +572,7 @@ This indicates release identity conflict.
 
 ---
 
-# Tag Immutability
+## Tag Immutability
 
 Official release tags SHOULD be treated as immutable after publication.
 
@@ -594,7 +594,7 @@ v4.8.0-release-framework
 
 ---
 
-# Tag Movement
+## Tag Movement
 
 Moving an official published release tag is prohibited except under extraordinary governed repair conditions.
 
@@ -604,7 +604,7 @@ Normal corrections require a new release version and new tag.
 
 ---
 
-# Tag Deletion
+## Tag Deletion
 
 Deleting an official release tag can break historical references.
 
@@ -614,7 +614,7 @@ If a defective release must be withdrawn, withdrawal metadata is generally prefe
 
 ---
 
-# Candidate Tags
+## Candidate Tags
 
 Release Candidate tags MAY use a pre-release version.
 
@@ -629,7 +629,7 @@ Candidate tag usage is optional unless the release profile requires it.
 
 ---
 
-# Candidate Tag Stability
+## Candidate Tag Stability
 
 Where candidate tags are used as validation anchors, they should be treated as immutable.
 
@@ -647,7 +647,7 @@ rc.1
 
 ---
 
-# Stable Tags
+## Stable Tags
 
 Stable release tags identify final official releases.
 
@@ -662,7 +662,7 @@ Stable tags receive the strongest immutability expectations.
 
 ---
 
-# Tag and Candidate Relationship
+## Tag and Candidate Relationship
 
 The release record should allow the relationship:
 
@@ -680,7 +680,7 @@ or the FamilyOS subject-specific tag equivalent.
 
 ---
 
-# Tag and Version Consistency
+## Tag and Version Consistency
 
 The version embedded in the tag must match the official release version.
 
@@ -706,7 +706,7 @@ v4.8.0-release-framework
 
 ---
 
-# Tag and Changelog Consistency
+## Tag and Changelog Consistency
 
 The release version represented by the tag must align with:
 
@@ -720,7 +720,7 @@ Version inconsistency must block release completion.
 
 ---
 
-# Tag and Release Commit
+## Tag and Release Commit
 
 Before creation, the tag target should be explicit.
 
@@ -734,7 +734,7 @@ Even when tagging `HEAD`, tooling should know the exact resulting commit.
 
 ---
 
-# Explicit Commit Tagging
+## Explicit Commit Tagging
 
 For higher assurance, explicit commit targeting may be preferable:
 
@@ -747,7 +747,7 @@ This reduces ambiguity about what is being tagged.
 
 ---
 
-# Local Tag Creation
+## Local Tag Creation
 
 Creating a tag locally establishes a local release anchor.
 
@@ -767,7 +767,7 @@ tag published remotely
 
 ---
 
-# Tag Publication
+## Tag Publication
 
 Publishing an official tag may use:
 
@@ -781,7 +781,7 @@ Tag publication creates an externally visible release reference.
 
 ---
 
-# Branch Publication
+## Branch Publication
 
 The release branch or commit may also need to be pushed before or with the tag.
 
@@ -803,7 +803,7 @@ The exact order may be profile-specific.
 
 ---
 
-# Branch Before Tag
+## Branch Before Tag
 
 Publishing the branch before the tag may make release history easier to inspect because the tagged commit is already available on the authoritative branch.
 
@@ -811,7 +811,7 @@ This is a useful default for current FamilyOS framework releases.
 
 ---
 
-# Tag Before Branch Risk
+## Tag Before Branch Risk
 
 A tag may technically publish a commit not yet reachable through the expected remote branch.
 
@@ -821,7 +821,7 @@ The workflow must follow explicit repository governance.
 
 ---
 
-# Remote Tag Verification
+## Remote Tag Verification
 
 After tag publication, the release workflow should verify:
 
@@ -841,7 +841,7 @@ Successful `git push` output alone is weaker than direct state verification.
 
 ---
 
-# Local and Remote Tag Agreement
+## Local and Remote Tag Agreement
 
 The expected final relationship is:
 
@@ -855,7 +855,7 @@ release commit
 
 ---
 
-# HEAD and Remote Branch Agreement
+## HEAD and Remote Branch Agreement
 
 For release profiles requiring synchronized branch state:
 
@@ -871,7 +871,7 @@ This is the state FamilyOS has already been checking manually for framework rele
 
 ---
 
-# Release Repository State
+## Release Repository State
 
 A completed Git-based release may therefore require:
 
@@ -886,7 +886,7 @@ Version               consistent
 
 ---
 
-# Repository State Evidence
+## Repository State Evidence
 
 Release evidence may capture:
 
@@ -905,7 +905,7 @@ This makes release state reconstructable.
 
 ---
 
-# Framework Release Example
+## Framework Release Example
 
 A completed framework release may look like:
 
@@ -939,7 +939,7 @@ This is the exact type of repository state EPIC-REL-001 is intended to formalize
 
 ---
 
-# Repository Release Gate
+## Repository Release Gate
 
 The transition:
 
@@ -967,7 +967,7 @@ RELEASE IDENTITY     READY
 
 ---
 
-# Release Commit Timing
+## Release Commit Timing
 
 The final release commit should contain the release state required by the release profile.
 
@@ -983,7 +983,7 @@ Tagging should occur after this final committed state exists.
 
 ---
 
-# Release Commit Message
+## Release Commit Message
 
 Commit messages should clearly communicate release preparation or completion according to repository conventions.
 
@@ -999,7 +999,7 @@ This document does not define the full commit message convention.
 
 ---
 
-# Release Tag Timing
+## Release Tag Timing
 
 The official stable tag should be created after:
 
@@ -1014,7 +1014,7 @@ Creating it earlier weakens the meaning of the tag.
 
 ---
 
-# Release Tag as State Transition
+## Release Tag as State Transition
 
 The official tag should be treated as part of the transition to `RELEASED`.
 
@@ -1032,7 +1032,7 @@ RELEASED
 
 ---
 
-# Tag Is Not Publication Completion
+## Tag Is Not Publication Completion
 
 A tag may be created and pushed while later publication steps fail.
 
@@ -1052,7 +1052,7 @@ The full Release Lifecycle remains authoritative.
 
 ---
 
-# Tag Is Not Release Approval
+## Tag Is Not Release Approval
 
 Similarly, the ability to create a Git tag is not equivalent to governance approval.
 
@@ -1060,7 +1060,7 @@ Repository permissions and release authority must remain distinct concepts.
 
 ---
 
-# Repository Permissions
+## Repository Permissions
 
 The ability to:
 
@@ -1075,7 +1075,7 @@ Official release tag creation may require stronger authority than normal develop
 
 ---
 
-# Protected Tags
+## Protected Tags
 
 Where supported, official tag patterns SHOULD be protected.
 
@@ -1091,7 +1091,7 @@ Protection design must avoid blocking legitimate internal candidate workflows un
 
 ---
 
-# Signed Tags
+## Signed Tags
 
 Future FamilyOS releases MAY use cryptographically signed tags.
 
@@ -1109,7 +1109,7 @@ Signed tags are not required by the initial framework.
 
 ---
 
-# Signed Commit Relationship
+## Signed Commit Relationship
 
 Future high-assurance release policies MAY also require signed release commits.
 
@@ -1119,7 +1119,7 @@ The framework supports stronger source identity controls without requiring them 
 
 ---
 
-# Tag Verification by Consumers
+## Tag Verification by Consumers
 
 Consumers or automation may verify:
 
@@ -1133,7 +1133,7 @@ This helps establish end-to-end release trust.
 
 ---
 
-# Tag Namespace
+## Tag Namespace
 
 Repository governance should avoid conflicting tag namespaces.
 
@@ -1151,7 +1151,7 @@ Namespaces must remain understandable and predictable.
 
 ---
 
-# Component Tags
+## Component Tags
 
 Independently versioned components may use subject-specific tags.
 
@@ -1166,7 +1166,7 @@ The tag must clearly identify both version and release subject.
 
 ---
 
-# Platform Tags
+## Platform Tags
 
 Platform-wide releases may use simpler primary tags where appropriate.
 
@@ -1180,7 +1180,7 @@ if repository governance defines this as the authoritative platform release tag.
 
 ---
 
-# Framework Tags
+## Framework Tags
 
 Engineering framework milestones may continue using:
 
@@ -1192,7 +1192,7 @@ This provides clear historical meaning when several framework milestones share o
 
 ---
 
-# Tag Ordering
+## Tag Ordering
 
 Tag ordering must use semantic version parsing rather than arbitrary lexical order when determining version history.
 
@@ -1210,7 +1210,7 @@ v4.9.0
 
 ---
 
-# Tag Discovery
+## Tag Discovery
 
 Automation should be able to identify official tags according to known naming rules.
 
@@ -1223,7 +1223,7 @@ This supports:
 
 ---
 
-# Tag Filtering
+## Tag Filtering
 
 Not every Git tag may represent an official stable release.
 
@@ -1239,7 +1239,7 @@ The naming strategy must make this possible.
 
 ---
 
-# Repository History Integrity
+## Repository History Integrity
 
 Release history depends on preserving Git history.
 
@@ -1249,7 +1249,7 @@ Protected release branches and tags reduce this risk.
 
 ---
 
-# Force Push Risk
+## Force Push Risk
 
 Force-pushing history containing official release commits may detach expected branch lineage from existing release history.
 
@@ -1257,7 +1257,7 @@ Repository governance SHOULD restrict force pushes on release-relevant protected
 
 ---
 
-# Commit Reachability
+## Commit Reachability
 
 A historical tag preserves access to its commit even if branch structure later changes.
 
@@ -1265,7 +1265,7 @@ However, release governance should avoid unnecessary history rewriting because i
 
 ---
 
-# Repository Migration
+## Repository Migration
 
 If FamilyOS moves to a different authoritative repository or hosting provider, release tags and commit history should be preserved.
 
@@ -1280,7 +1280,7 @@ relationships.
 
 ---
 
-# Remote Renaming
+## Remote Renaming
 
 The local remote name may change.
 
@@ -1296,7 +1296,7 @@ Release semantics must remain tied to the authoritative remote concept rather th
 
 ---
 
-# Repository Mirroring
+## Repository Mirroring
 
 If multiple remotes or mirrors exist, governance must define which repository state is authoritative.
 
@@ -1310,7 +1310,7 @@ A mirror must not create divergent release identity.
 
 ---
 
-# Repository Failure
+## Repository Failure
 
 If repository publication fails after local tag creation:
 
@@ -1325,7 +1325,7 @@ Recovery should verify existing remote state before retrying.
 
 ---
 
-# Branch Push Failure
+## Branch Push Failure
 
 Example:
 
@@ -1341,7 +1341,7 @@ Retry may be safe after verifying local state.
 
 ---
 
-# Tag Push Failure
+## Tag Push Failure
 
 Example:
 
@@ -1358,7 +1358,7 @@ Recovery should:
 
 ---
 
-# Partial Remote Success
+## Partial Remote Success
 
 Network failures may make client output ambiguous.
 
@@ -1368,7 +1368,7 @@ Recovery MUST inspect remote state before repeating potentially conflicting oper
 
 ---
 
-# Repository Recovery Principle
+## Repository Recovery Principle
 
 The governing rule is:
 
@@ -1378,7 +1378,7 @@ Never assume that a failed command means no state change occurred.
 
 ---
 
-# Wrong Tag Recovery
+## Wrong Tag Recovery
 
 If an incorrect tag is created locally but not published, it may be corrected under local release procedure.
 
@@ -1386,7 +1386,7 @@ If the tag has already been published, correction becomes a governed release int
 
 ---
 
-# Published Wrong Tag
+## Published Wrong Tag
 
 A published tag pointing to the wrong commit should not be force-moved casually.
 
@@ -1400,7 +1400,7 @@ Possible responses include:
 
 ---
 
-# Wrong Version Tag
+## Wrong Version Tag
 
 If an incorrect version tag is published, the release process must not silently reuse or overwrite it.
 
@@ -1408,7 +1408,7 @@ A new valid release version may be required depending on exposure and policy.
 
 ---
 
-# Repository Dry Run
+## Repository Dry Run
 
 Release tooling SHOULD support repository preflight checks without creating tags.
 
@@ -1429,7 +1429,7 @@ READY FOR TAGGING
 
 ---
 
-# Repository Validation Automation
+## Repository Validation Automation
 
 Deterministic repository checks are strong candidates for automation.
 
@@ -1446,7 +1446,7 @@ Potential checks include:
 
 ---
 
-# Repository Validation Must Fail Closed
+## Repository Validation Must Fail Closed
 
 If the release tool cannot determine repository state reliably, it should block rather than guess.
 
@@ -1460,7 +1460,7 @@ Examples include:
 
 ---
 
-# Detached HEAD
+## Detached HEAD
 
 A detached `HEAD` is not inherently invalid.
 
@@ -1472,7 +1472,7 @@ The exact commit remains the authoritative source identity.
 
 ---
 
-# Shallow Clones
+## Shallow Clones
 
 Shallow CI clones may lack enough history for:
 
@@ -1484,7 +1484,7 @@ Release pipelines should fetch sufficient history for required release checks.
 
 ---
 
-# Submodules
+## Submodules
 
 If FamilyOS ever uses Git submodules, release repository state must include exact submodule revisions.
 
@@ -1492,7 +1492,7 @@ A release commit alone may not fully describe external source state unless submo
 
 ---
 
-# Multiple Repositories
+## Multiple Repositories
 
 Future platform releases may aggregate several repositories.
 
@@ -1508,7 +1508,7 @@ The same traceability principles apply.
 
 ---
 
-# Repository Evidence Record
+## Repository Evidence Record
 
 A future structured record may resemble:
 
@@ -1532,7 +1532,7 @@ This is illustrative.
 
 ---
 
-# Repository Completion Check
+## Repository Completion Check
 
 A completed framework release should eventually verify:
 
@@ -1547,7 +1547,7 @@ version                 consistent
 
 ---
 
-# Current FamilyOS Release Pattern
+## Current FamilyOS Release Pattern
 
 The current practical FamilyOS framework release pattern already approximates:
 
@@ -1575,7 +1575,7 @@ EPIC-REL-001 converts this operational discipline into explicit framework rules.
 
 ---
 
-# Recommended Framework Release Sequence
+## Recommended Framework Release Sequence
 
 For FamilyOS framework releases, the default sequence SHOULD be:
 
@@ -1599,7 +1599,7 @@ Governance may refine this sequence.
 
 ---
 
-# Alternative Tag-Before-Branch Sequence
+## Alternative Tag-Before-Branch Sequence
 
 Other repository models may safely use a different ordering.
 
@@ -1609,7 +1609,7 @@ The invariant is that final remote release state must be unambiguous and verifie
 
 ---
 
-# Repository State and Release Lifecycle
+## Repository State and Release Lifecycle
 
 Repository state interacts with several lifecycle stages.
 
@@ -1638,7 +1638,7 @@ final repository state verified
 
 ---
 
-# Repository State and Release Candidates
+## Repository State and Release Candidates
 
 `10-Release-Candidates.md` requires a candidate to map to an exact source revision.
 
@@ -1646,7 +1646,7 @@ This document defines how that source revision is represented and later anchored
 
 ---
 
-# Repository State and Versioning
+## Repository State and Versioning
 
 `06-Versioning-Strategy.md` defines release version semantics.
 
@@ -1654,7 +1654,7 @@ This document maps the version into repository tag identity.
 
 ---
 
-# Repository State and Release Automation
+## Repository State and Release Automation
 
 `13-Release-Automation.md` defines idempotent and safe execution.
 
@@ -1662,7 +1662,7 @@ Repository tagging must follow those automation rules.
 
 ---
 
-# Repository State and CI/CD
+## Repository State and CI/CD
 
 `14-CI-CD-Integration.md` defines trusted pipeline execution.
 
@@ -1670,13 +1670,13 @@ CI/CD release jobs must verify exact commit and tag state before privileged publ
 
 ---
 
-# Repository State and Publishing
+## Repository State and Publishing
 
 `17-Publishing-and-Distribution.md` treats remote tag publication as one possible official release publication action.
 
 ---
 
-# Repository State and Security
+## Repository State and Security
 
 `19-Release-Security.md` governs protection of:
 
@@ -1688,13 +1688,13 @@ CI/CD release jobs must verify exact commit and tag state before privileged publ
 
 ---
 
-# Repository State and Observability
+## Repository State and Observability
 
 `20-Release-Observability.md` defines how release repository transitions and failures become visible and auditable.
 
 ---
 
-# Repository State and Governance
+## Repository State and Governance
 
 `21-Release-Governance.md` defines who may:
 
@@ -1705,133 +1705,133 @@ CI/CD release jobs must verify exact commit and tag state before privileged publ
 
 ---
 
-# Tagging Invariants
+## Tagging Invariants
 
 The following invariants apply.
 
-## TAG1 — Every official Git-based release tag identifies one exact commit.
+### TAG1 — Every official Git-based release tag identifies one exact commit.
 
-## TAG2 — The tag version matches the official release version.
+### TAG2 — The tag version matches the official release version.
 
-## TAG3 — Official tag names are unique.
+### TAG3 — Official tag names are unique.
 
-## TAG4 — Published official tags are treated as immutable.
+### TAG4 — Published official tags are treated as immutable.
 
-## TAG5 — Tag creation follows applicable validation and approval.
+### TAG5 — Tag creation follows applicable validation and approval.
 
-## TAG6 — Existing conflicting tags block release progression.
+### TAG6 — Existing conflicting tags block release progression.
 
-## TAG7 — Remote tag publication is verified.
+### TAG7 — Remote tag publication is verified.
 
-## TAG8 — Tag presence alone does not imply release completion.
+### TAG8 — Tag presence alone does not imply release completion.
 
-## TAG9 — Candidate tags, when used as validation anchors, remain stable.
+### TAG9 — Candidate tags, when used as validation anchors, remain stable.
 
-## TAG10 — Tag repair requires governance when published history is affected.
-
----
-
-# Repository State Invariants
-
-## RS1 — The release source revision is explicitly identifiable.
-
-## RS2 — Release-relevant working tree ambiguity is eliminated before final release.
-
-## RS3 — The release commit represents the committed release state.
-
-## RS4 — Authoritative remote state is explicitly verified where required.
-
-## RS5 — Branch references never replace commit identity.
-
-## RS6 — Repository state conflicts block release progression.
-
-## RS7 — Release history must remain reconstructable from tags and commits.
-
-## RS8 — Retry operations inspect actual remote state.
-
-## RS9 — Protected repository history must not be rewritten casually.
-
-## RS10 — Repository semantics remain independent from hosting provider.
+### TAG10 — Tag repair requires governance when published history is affected.
 
 ---
 
-# Tagging Anti-Patterns
+## Repository State Invariants
 
-## Tag Current Whatever
+### RS1 — The release source revision is explicitly identifiable.
+
+### RS2 — Release-relevant working tree ambiguity is eliminated before final release.
+
+### RS3 — The release commit represents the committed release state.
+
+### RS4 — Authoritative remote state is explicitly verified where required.
+
+### RS5 — Branch references never replace commit identity.
+
+### RS6 — Repository state conflicts block release progression.
+
+### RS7 — Release history must remain reconstructable from tags and commits.
+
+### RS8 — Retry operations inspect actual remote state.
+
+### RS9 — Protected repository history must not be rewritten casually.
+
+### RS10 — Repository semantics remain independent from hosting provider.
+
+---
+
+## Tagging Anti-Patterns
+
+### Tag Current Whatever
 
 Creating a tag without verifying which commit is currently checked out.
 
 ---
 
-## Tag Before Validation
+### Tag Before Validation
 
 Creating a final official tag before candidate qualification is complete.
 
 ---
 
-## Force-Move Release Tag
+### Force-Move Release Tag
 
 Updating a published official tag to point to a new commit.
 
 ---
 
-## Reuse Version Tag
+### Reuse Version Tag
 
 Publishing different release content under an existing tag name.
 
 ---
 
-## Tag Equals Approval
+### Tag Equals Approval
 
 Assuming a tag is legitimate merely because someone had technical permission to create it.
 
 ---
 
-## Push Without Verification
+### Push Without Verification
 
 Assuming a successful push message proves the final remote state.
 
 ---
 
-# Repository Anti-Patterns
+## Repository Anti-Patterns
 
-## Dirty Release
+### Dirty Release
 
 Producing release content from uncommitted changes.
 
 ---
 
-## Branch as Identity
+### Branch as Identity
 
 Recording only a mutable branch name without commit identity.
 
 ---
 
-## Local-Only Release
+### Local-Only Release
 
 Treating a locally committed and tagged state as an official shared release.
 
 ---
 
-## Blind Retry
+### Blind Retry
 
 Repeating pushes or tag operations after network failure without verifying remote state.
 
 ---
 
-## Release from Unexpected Branch
+### Release from Unexpected Branch
 
 Tagging an approved version from an unrelated or unauthorized source lineage.
 
 ---
 
-## History Rewrite
+### History Rewrite
 
 Force-pushing release history after official tags are published without governed migration.
 
 ---
 
-# Minimum Repository Release Requirements
+## Minimum Repository Release Requirements
 
 At minimum, a FamilyOS Git-based official release should verify:
 
@@ -1848,7 +1848,7 @@ remote tag verified
 
 ---
 
-# Framework Release Minimum
+## Framework Release Minimum
 
 For current FamilyOS framework releases, the minimum should normally include:
 
@@ -1866,7 +1866,7 @@ remote tag verified
 
 ---
 
-# Target Repository Experience
+## Target Repository Experience
 
 At higher maturity, the release tooling should produce:
 
@@ -1892,7 +1892,7 @@ Repository State      VERIFIED
 
 ---
 
-# Historical Reconstruction
+## Historical Reconstruction
 
 Years after publication, maintainers should be able to start from:
 
@@ -1914,7 +1914,7 @@ This is one of the primary reasons official tag integrity matters.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Tagging and Repository State model establishes Git repository state as a formal part of release engineering.
 

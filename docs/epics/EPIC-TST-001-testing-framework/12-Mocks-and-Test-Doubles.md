@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 12 Mocks and Test Doubles
+## 12 Mocks and Test Doubles
 
-## Overview
+### Overview
 
 Mocks and test doubles provide controlled substitutes for dependencies that should not participate directly in a specific FamilyOS test.
 
@@ -16,7 +16,7 @@ The objective is to use the smallest and most appropriate substitute necessary f
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the FamilyOS mock and test-double strategy is to provide clear rules for replacing dependencies during automated testing.
 
@@ -34,7 +34,7 @@ Test doubles must support test intent rather than distort it.
 
 ---
 
-# Test Double Definition
+## Test Double Definition
 
 A test double is any controlled substitute used in place of a real dependency during testing.
 
@@ -50,7 +50,7 @@ These categories describe different purposes and should not be treated as interc
 
 ---
 
-# Test Double Taxonomy
+## Test Double Taxonomy
 
 The conceptual hierarchy is:
 
@@ -68,7 +68,7 @@ The correct test double depends on what the test needs to control or observe.
 
 ---
 
-# Dummy
+## Dummy
 
 A dummy is a value or object supplied only because an interface requires it.
 
@@ -88,7 +88,7 @@ Dummies should not accumulate hidden behavior.
 
 ---
 
-# Stub
+## Stub
 
 A stub returns predefined responses.
 
@@ -114,7 +114,7 @@ The test normally asserts behavior of the system under test rather than interact
 
 ---
 
-# Fake
+## Fake
 
 A fake is a lightweight but functional implementation of a dependency.
 
@@ -143,7 +143,7 @@ Fakes are often more maintainable than large mock configurations because they mo
 
 ---
 
-# Spy
+## Spy
 
 A spy records interactions while still allowing controlled behavior.
 
@@ -168,7 +168,7 @@ Spies are useful when interaction itself is part of the behavior being validated
 
 ---
 
-# Mock
+## Mock
 
 A mock is a test double configured with explicit expectations about interactions.
 
@@ -186,7 +186,7 @@ Mocks should therefore be used selectively.
 
 ---
 
-# Core Principle
+## Core Principle
 
 The preferred rule is:
 
@@ -196,7 +196,7 @@ This rule prevents test doubles from accidentally removing the behavior the test
 
 ---
 
-# Test Double Selection
+## Test Double Selection
 
 A useful selection model is:
 
@@ -226,7 +226,7 @@ The simplest adequate test double should be preferred.
 
 ---
 
-# Test Doubles and Unit Testing
+## Test Doubles and Unit Testing
 
 Unit tests are the primary context for test doubles.
 
@@ -261,7 +261,7 @@ The substituted dependencies should isolate the behavior under test.
 
 ---
 
-# Test Doubles and Integration Testing
+## Test Doubles and Integration Testing
 
 Integration tests should use fewer substitutes.
 
@@ -285,7 +285,7 @@ Substitutions should exist only outside the defined integration boundary.
 
 ---
 
-# Test Doubles and Functional Testing
+## Test Doubles and Functional Testing
 
 Functional tests should generally interact with real application components.
 
@@ -312,7 +312,7 @@ A remote third-party API may be replaced with a controlled fake server.
 
 ---
 
-# Test Doubles and System Testing
+## Test Doubles and System Testing
 
 System tests should minimize substitution of internal FamilyOS components.
 
@@ -324,7 +324,7 @@ External systems may still be replaced with controlled equivalents.
 
 ---
 
-# Architectural Boundaries
+## Architectural Boundaries
 
 Test doubles should usually be introduced at explicit architectural boundaries.
 
@@ -342,7 +342,7 @@ This aligns test substitution with FamilyOS Clean Architecture principles.
 
 ---
 
-# Ports and Adapters
+## Ports and Adapters
 
 A typical pattern is:
 
@@ -365,7 +365,7 @@ This avoids coupling application logic to testing mechanisms.
 
 ---
 
-# Repository Test Doubles
+## Repository Test Doubles
 
 In-memory repositories are useful test fakes.
 
@@ -377,7 +377,7 @@ Fake implementations should not drift from the contracts they represent.
 
 ---
 
-# Repository Mocking
+## Repository Mocking
 
 Mock repositories may be appropriate when testing orchestration behavior.
 
@@ -393,7 +393,7 @@ Mocks should not be used to simulate complex repository behavior across many tes
 
 ---
 
-# Clock Test Doubles
+## Clock Test Doubles
 
 Time is a common nondeterministic dependency.
 
@@ -414,7 +414,7 @@ This avoids patching global time functions throughout the test suite.
 
 ---
 
-# Identifier Test Doubles
+## Identifier Test Doubles
 
 Random identifier generation may also be substituted.
 
@@ -430,7 +430,7 @@ This makes outputs deterministic and easier to assert.
 
 ---
 
-# Configuration Test Doubles
+## Configuration Test Doubles
 
 Components requiring configuration should receive explicit test configuration.
 
@@ -440,7 +440,7 @@ When configuration integration is the subject of the test, the real provider sho
 
 ---
 
-# Event Publisher Doubles
+## Event Publisher Doubles
 
 Event publication may use a spy or fake.
 
@@ -459,7 +459,7 @@ This allows assertions about published events without introducing a real event b
 
 ---
 
-# Event Bus Fakes
+## Event Bus Fakes
 
 Integration or functional tests may use an in-memory event bus if the real distributed infrastructure is outside scope.
 
@@ -474,7 +474,7 @@ It should not pretend to validate network or broker behavior that it does not im
 
 ---
 
-# External Service Stubs
+## External Service Stubs
 
 External services should usually be substituted in normal automated tests.
 
@@ -498,7 +498,7 @@ These allow deterministic testing of external interaction handling.
 
 ---
 
-# Fake Servers
+## Fake Servers
 
 A local fake server is often preferable to mocking the HTTP client itself when protocol behavior matters.
 
@@ -524,7 +524,7 @@ This can validate:
 
 ---
 
-# Network Mocking
+## Network Mocking
 
 Low-level network mocking should be used cautiously.
 
@@ -534,7 +534,7 @@ Where possible, tests should substitute at the external service boundary rather 
 
 ---
 
-# Plugin Test Doubles
+## Plugin Test Doubles
 
 Plugins may require controlled substitutes for:
 
@@ -549,7 +549,7 @@ Mocking the plugin registration mechanism during a registration test would defea
 
 ---
 
-# Capability Test Doubles
+## Capability Test Doubles
 
 A capability consumer may use a stub capability provider when testing consumer behavior.
 
@@ -559,7 +559,7 @@ This reflects the provider-consumer distinction.
 
 ---
 
-# Runtime Test Doubles
+## Runtime Test Doubles
 
 Runtime internals should rarely be mocked broadly.
 
@@ -569,7 +569,7 @@ Tests validating runtime assembly should use the real runtime.
 
 ---
 
-# CLI Test Doubles
+## CLI Test Doubles
 
 CLI unit tests may mock or fake underlying application services if parsing behavior is the only concern.
 
@@ -579,7 +579,7 @@ The substitution strategy must match the test level.
 
 ---
 
-# Mocking Frameworks
+## Mocking Frameworks
 
 Mocking libraries can reduce boilerplate.
 
@@ -595,7 +595,7 @@ Use of a mocking framework does not remove the responsibility to choose an appro
 
 ---
 
-# autospec and Interface Safety
+## autospec and Interface Safety
 
 Where supported, mocks should be constrained to real interfaces.
 
@@ -611,7 +611,7 @@ This reduces false confidence caused by unrestricted dynamic mocks.
 
 ---
 
-# Strict Mocks
+## Strict Mocks
 
 Strict mocks can help validate narrow interaction contracts.
 
@@ -623,7 +623,7 @@ Strictness should correspond to an actual contract requirement.
 
 ---
 
-# Interaction Assertions
+## Interaction Assertions
 
 Interaction assertions are appropriate when the interaction itself matters.
 
@@ -638,7 +638,7 @@ They should not be used for incidental implementation behavior.
 
 ---
 
-# State vs Interaction Testing
+## State vs Interaction Testing
 
 FamilyOS should prefer state-based assertions when they provide sufficient confidence.
 
@@ -662,7 +662,7 @@ Interaction testing should be used when the interaction is itself part of the re
 
 ---
 
-# Overspecified Interaction Tests
+## Overspecified Interaction Tests
 
 This is fragile:
 
@@ -680,7 +680,7 @@ Refactoring may break them even when observable behavior remains correct.
 
 ---
 
-# Call Order Assertions
+## Call Order Assertions
 
 Call order should only be asserted when order is contractually meaningful.
 
@@ -695,7 +695,7 @@ Otherwise, call order assertions should be avoided.
 
 ---
 
-# Argument Assertions
+## Argument Assertions
 
 Arguments passed to dependencies may form part of behavior.
 
@@ -711,7 +711,7 @@ Assertions should focus on meaningful values rather than internal object constru
 
 ---
 
-# Exceptions From Test Doubles
+## Exceptions From Test Doubles
 
 Test doubles can reproduce dependency failures.
 
@@ -727,7 +727,7 @@ Failure simulations should use realistic error categories defined by the actual 
 
 ---
 
-# Failure Scenario Testing
+## Failure Scenario Testing
 
 Useful scenarios include:
 
@@ -744,7 +744,7 @@ Test doubles make such scenarios easy to reproduce deterministically.
 
 ---
 
-# Latency Simulation
+## Latency Simulation
 
 Artificial latency should be used only when timing behavior is part of the test.
 
@@ -754,7 +754,7 @@ Instead, explicit timeout behavior should be modeled through controlled interfac
 
 ---
 
-# Retry Testing
+## Retry Testing
 
 Retry behavior should be tested without real delays.
 
@@ -772,7 +772,7 @@ Injected clocks or retry schedulers should eliminate unnecessary waiting.
 
 ---
 
-# Side Effects
+## Side Effects
 
 Test doubles should make side effects controllable.
 
@@ -788,7 +788,7 @@ Tests should isolate or replace these effects when they are outside the intended
 
 ---
 
-# Global Patching
+## Global Patching
 
 Patching global functions should be minimized.
 
@@ -810,7 +810,7 @@ Global patching can create:
 
 ---
 
-# Monkeypatching
+## Monkeypatching
 
 `monkeypatch` may be appropriate for process-level dependencies such as:
 
@@ -824,7 +824,7 @@ If large portions of the system require repeated monkeypatching, the dependency 
 
 ---
 
-# Dependency Injection
+## Dependency Injection
 
 FamilyOS architecture should make testability possible through explicit dependency injection.
 
@@ -847,7 +847,7 @@ Production and test implementations can then be supplied without invasive patchi
 
 ---
 
-# Test-Specific Production Hooks
+## Test-Specific Production Hooks
 
 Production code should not contain special branches solely for tests.
 
@@ -862,7 +862,7 @@ Testability should come from architecture, interfaces, and dependency injection.
 
 ---
 
-# Fake Implementation Quality
+## Fake Implementation Quality
 
 Fakes are production-like code used for testing and must remain reliable.
 
@@ -878,7 +878,7 @@ Complex fakes should receive their own focused tests where necessary.
 
 ---
 
-# Contract Tests for Fakes
+## Contract Tests for Fakes
 
 When a fake and production adapter implement the same port, both may execute the same contract suite.
 
@@ -895,7 +895,7 @@ This reduces semantic drift between test and production behavior.
 
 ---
 
-# Do Not Mock What You Own Blindly
+## Do Not Mock What You Own Blindly
 
 Internal FamilyOS components should not automatically be mocked merely because they can be.
 
@@ -905,7 +905,7 @@ Mocking should solve a testing problem, not become a habit.
 
 ---
 
-# Do Not Mock Value Objects
+## Do Not Mock Value Objects
 
 Simple domain value objects should generally be real.
 
@@ -921,7 +921,7 @@ Mocking simple domain values reduces realism without meaningful isolation benefi
 
 ---
 
-# Do Not Mock Pure Functions
+## Do Not Mock Pure Functions
 
 Pure functions are deterministic by nature.
 
@@ -931,7 +931,7 @@ Mocking them tends to test implementation wiring rather than behavior.
 
 ---
 
-# Avoid Mock Chains
+## Avoid Mock Chains
 
 Deep chained mocks are a strong warning sign.
 
@@ -947,7 +947,7 @@ A focused fake or explicit adapter stub is usually clearer.
 
 ---
 
-# Mock Leakage
+## Mock Leakage
 
 Mocks must not leak between tests.
 
@@ -961,7 +961,7 @@ Mocks and spies should generally be created fresh for each test.
 
 ---
 
-# Resetting Mocks
+## Resetting Mocks
 
 Resetting shared mocks can hide poor fixture design.
 
@@ -969,7 +969,7 @@ Creating fresh mocks per test is usually safer than maintaining long-lived mocks
 
 ---
 
-# Async Test Doubles
+## Async Test Doubles
 
 Asynchronous dependencies require async-compatible test doubles.
 
@@ -984,7 +984,7 @@ Tests should preserve async contracts rather than replacing them with incompatib
 
 ---
 
-# Async Mocking
+## Async Mocking
 
 Async mocks may validate awaited interactions.
 
@@ -998,7 +998,7 @@ As with synchronous mocks, these assertions should only represent meaningful beh
 
 ---
 
-# Generator and Stream Doubles
+## Generator and Stream Doubles
 
 Stream-based interfaces may require controlled iterators or async generators.
 
@@ -1013,7 +1013,7 @@ They should avoid arbitrary timing unless timing is part of the contract.
 
 ---
 
-# Context Manager Doubles
+## Context Manager Doubles
 
 Dependencies implementing context-manager contracts should be substituted with context-manager-compatible doubles.
 
@@ -1021,7 +1021,7 @@ The fake should preserve lifecycle semantics such as acquire and release.
 
 ---
 
-# Transaction Test Doubles
+## Transaction Test Doubles
 
 Transactions may be represented with spies or fakes when testing orchestration.
 
@@ -1035,7 +1035,7 @@ When database transaction behavior itself is being validated, a real transaction
 
 ---
 
-# Security-Sensitive Doubles
+## Security-Sensitive Doubles
 
 Security-related test doubles require particular care.
 
@@ -1045,7 +1045,7 @@ Security tests should keep real security logic inside the test scope.
 
 ---
 
-# Authentication Doubles
+## Authentication Doubles
 
 A stub identity provider may be appropriate when testing downstream application behavior.
 
@@ -1053,7 +1053,7 @@ Tests validating authentication itself must use the real authentication implemen
 
 ---
 
-# Authorization Doubles
+## Authorization Doubles
 
 Authorization should not be mocked in tests asserting that protected behavior is correctly enforced.
 
@@ -1061,7 +1061,7 @@ In those scenarios, real authorization policies belong inside the test boundary.
 
 ---
 
-# Test Double Location
+## Test Double Location
 
 Reusable test doubles may reside in dedicated test support packages.
 
@@ -1083,7 +1083,7 @@ Test doubles specific to a single test module should remain local when practical
 
 ---
 
-# Naming Conventions
+## Naming Conventions
 
 Names should identify the double type and contract.
 
@@ -1102,7 +1102,7 @@ Clear naming makes substitution explicit.
 
 ---
 
-# Generic Mock Variables
+## Generic Mock Variables
 
 Generic names such as:
 
@@ -1127,7 +1127,7 @@ or explicit class names when reusable implementations exist.
 
 ---
 
-# Test Double Factories
+## Test Double Factories
 
 Factories may simplify creation of configurable doubles.
 
@@ -1151,7 +1151,7 @@ can improve readability when such scenarios recur frequently.
 
 ---
 
-# Mock Configuration Duplication
+## Mock Configuration Duplication
 
 Repeated complex mock setup indicates that a reusable fake or test helper may be more appropriate.
 
@@ -1159,7 +1159,7 @@ For example, repeated blocks of ten mock return-value assignments should trigger
 
 ---
 
-# Test Readability
+## Test Readability
 
 A test using doubles should make three things clear:
 
@@ -1188,71 +1188,71 @@ The intent remains visible.
 
 ---
 
-# Test Double Anti-Patterns
+## Test Double Anti-Patterns
 
 The following practices should be avoided.
 
-## Mock Everything
+### Mock Everything
 
 If every collaborator is mocked, the test may verify only its own mock configuration.
 
 ---
 
-## Mock the Subject Under Test
+### Mock the Subject Under Test
 
 The component whose behavior is being validated must not be replaced by a mock.
 
 ---
 
-## Mock Internal Details
+### Mock Internal Details
 
 Private helper methods should normally not be mocked.
 
 ---
 
-## Mock Across the Integration Boundary
+### Mock Across the Integration Boundary
 
 An integration test should not substitute the component it intends to integrate.
 
 ---
 
-## Deep Mock Chains
+### Deep Mock Chains
 
 They create fragile coupling to implementation structure.
 
 ---
 
-## Excessive Call Assertions
+### Excessive Call Assertions
 
 Not every method invocation is part of the contract.
 
 ---
 
-## Reimplementing Production Logic in Stubs
+### Reimplementing Production Logic in Stubs
 
 A stub should not duplicate complex production behavior.
 
 ---
 
-## Unrealistic Fakes
+### Unrealistic Fakes
 
 A fake that violates the real contract can create false confidence.
 
 ---
 
-## Persistent Shared Mocks
+### Persistent Shared Mocks
 
 Mock state must remain isolated.
 
 ---
 
-## Global Patch Dependence
+### Global Patch Dependence
 
 Large-scale patching often signals missing dependency boundaries.
 
 ---
 
-# Relationship With Test Data and Fixtures
+## Relationship With Test Data and Fixtures
 
 Fixtures may provide test doubles.
 
@@ -1268,7 +1268,7 @@ Fixture design should not hide whether a dependency is real or substituted when 
 
 ---
 
-# Relationship With Unit Testing
+## Relationship With Unit Testing
 
 Unit tests make the greatest use of test doubles.
 
@@ -1281,7 +1281,7 @@ They should prefer:
 
 ---
 
-# Relationship With Integration Testing
+## Relationship With Integration Testing
 
 Integration tests should preserve real behavior inside their declared integration boundary.
 
@@ -1289,13 +1289,13 @@ Substitutions belong outside that boundary.
 
 ---
 
-# Relationship With Functional Testing
+## Relationship With Functional Testing
 
 Functional tests should use real internal application components and substitute only intentionally excluded dependencies.
 
 ---
 
-# Relationship With System Testing
+## Relationship With System Testing
 
 System tests should minimize internal substitution.
 
@@ -1303,7 +1303,7 @@ External production services may be replaced with representative controlled envi
 
 ---
 
-# Relationship With Contract Testing
+## Relationship With Contract Testing
 
 Test doubles implementing formal ports should satisfy the same contracts as production implementations where practical.
 
@@ -1311,7 +1311,7 @@ Contract testing can validate fake correctness.
 
 ---
 
-# Relationship With Regression Testing
+## Relationship With Regression Testing
 
 Mocks and fakes can help reproduce historical failures deterministically.
 
@@ -1319,7 +1319,7 @@ However, the regression test must still represent the real failure condition clo
 
 ---
 
-# Relationship With Architecture
+## Relationship With Architecture
 
 Heavy mocking often reveals architectural coupling.
 
@@ -1329,7 +1329,7 @@ Testing difficulty can therefore act as an architecture quality signal.
 
 ---
 
-# Quality Requirements
+## Quality Requirements
 
 FamilyOS test doubles must be:
 
@@ -1345,7 +1345,7 @@ They must not create artificial confidence by replacing the behavior being valid
 
 ---
 
-# Review Requirements
+## Review Requirements
 
 Code review should examine test-double usage for:
 
@@ -1361,7 +1361,7 @@ Tests should be reviewed for behavioral value, not merely execution success.
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Test-double misuse may indirectly affect quality gates when it creates insufficient validation.
 
@@ -1371,7 +1371,7 @@ Plugin certification, release validation, and security-sensitive workflows may r
 
 ---
 
-# Governance
+## Governance
 
 Mocks and test-double practices are governed by the FamilyOS Testing Framework and architectural principles.
 
@@ -1390,7 +1390,7 @@ Testability should result from sound architecture rather than production-code ex
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 FamilyOS test-double infrastructure may evolve as the platform matures.
 
@@ -1411,7 +1411,7 @@ Evolution should reduce duplication while preserving test clarity and architectu
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 A FamilyOS test-double strategy is aligned with this framework when:
 
@@ -1439,7 +1439,7 @@ A FamilyOS test-double strategy is aligned with this framework when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 Mocks and test doubles exist to control test boundaries, not to manufacture passing tests.
 

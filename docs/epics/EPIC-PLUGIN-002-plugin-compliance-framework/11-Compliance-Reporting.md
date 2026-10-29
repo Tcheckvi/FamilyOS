@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 11 Compliance Reporting
+## 11 Compliance Reporting
 
-## Introduction
+### Introduction
 
 Compliance Reporting defines how FamilyOS exposes plugin compliance results to developers, CI systems, release workflows, certification systems, and governance processes.
 
@@ -33,7 +33,7 @@ Compliance Result
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Compliance Reporting is to transform structured compliance data into representations appropriate for different consumers while preserving one canonical meaning.
 
@@ -57,7 +57,7 @@ Reports must remain deterministic and traceable to the underlying evaluation.
 
 ---
 
-# Reporting Principle
+## Reporting Principle
 
 The governing reporting principle is:
 
@@ -78,7 +78,7 @@ It must not change:
 
 ---
 
-# Canonical Reporting Source
+## Canonical Reporting Source
 
 All report formats must derive from one structured Compliance Result.
 
@@ -101,7 +101,7 @@ Renderers must not independently rerun compliance policy.
 
 ---
 
-# Compliance Result Context
+## Compliance Result Context
 
 Every complete report must identify the validation context.
 
@@ -135,7 +135,7 @@ Without this context, a compliance result is incomplete.
 
 ---
 
-# Report Identity
+## Report Identity
 
 Every generated report should be associated with its Evaluation ID.
 
@@ -152,7 +152,7 @@ The evaluation remains the primary compliance identity.
 
 ---
 
-# Report Types
+## Report Types
 
 The framework should support several report categories.
 
@@ -173,7 +173,7 @@ They do not define different compliance results.
 
 ---
 
-# Developer Report
+## Developer Report
 
 The Developer Report prioritizes remediation and clarity.
 
@@ -191,7 +191,7 @@ The report should minimize irrelevant infrastructure detail while preserving acc
 
 ---
 
-# Developer Summary
+## Developer Summary
 
 A conceptual developer summary may look like:
 
@@ -215,7 +215,7 @@ The exact visual format belongs to CLI presentation design.
 
 ---
 
-# Developer Finding Detail
+## Developer Finding Detail
 
 A finding should be rendered with enough information to act.
 
@@ -240,7 +240,7 @@ The human report should not require developers to inspect raw serialized objects
 
 ---
 
-# Machine-Readable Report
+## Machine-Readable Report
 
 Machine-readable reports provide the canonical integration format for automated consumers.
 
@@ -271,7 +271,7 @@ The final serialization schema should be formally specified.
 
 ---
 
-# Report Schema Version
+## Report Schema Version
 
 Machine-readable reports must identify their schema version.
 
@@ -294,7 +294,7 @@ This allows representation changes without confusing them with compliance policy
 
 ---
 
-# Schema Compatibility
+## Schema Compatibility
 
 Report consumers should be able to determine whether they support a given report schema.
 
@@ -304,7 +304,7 @@ Backward-compatible additions should avoid changing the meaning of existing fiel
 
 ---
 
-# Machine-Readable Formats
+## Machine-Readable Formats
 
 The initial implementation may support JSON.
 
@@ -319,7 +319,7 @@ The canonical semantic model must remain format-independent.
 
 ---
 
-# JSON Reporting
+## JSON Reporting
 
 JSON is suitable for:
 
@@ -333,7 +333,7 @@ A JSON report should preserve structured values rather than embed important sema
 
 ---
 
-# Human and Machine Consistency
+## Human and Machine Consistency
 
 Human-readable and machine-readable reports must represent the same evaluation.
 
@@ -351,7 +351,7 @@ A renderer bug must not create contradictory compliance meaning.
 
 ---
 
-# Overall Status Reporting
+## Overall Status Reporting
 
 Every report must clearly expose the overall compliance status.
 
@@ -376,7 +376,7 @@ unless those labels are explicitly supplemental and never replace canonical stat
 
 ---
 
-# Status Explanation
+## Status Explanation
 
 Reports should explain why the overall status was derived.
 
@@ -402,7 +402,7 @@ This improves explainability.
 
 ---
 
-# Domain Summaries
+## Domain Summaries
 
 Reports should summarize compliance by domain.
 
@@ -426,7 +426,7 @@ Domain summaries provide navigation and risk concentration without replacing ind
 
 ---
 
-# Domain Metrics
+## Domain Metrics
 
 A domain summary may include:
 
@@ -444,7 +444,7 @@ These values must be derived from canonical rule outcomes.
 
 ---
 
-# Rule Reporting
+## Rule Reporting
 
 Machine-readable reports should preserve every applicable rule outcome.
 
@@ -466,7 +466,7 @@ Rules that are `NOT_APPLICABLE` should remain visible when full traceability is 
 
 ---
 
-# Findings Reporting
+## Findings Reporting
 
 Reports must preserve all relevant findings.
 
@@ -494,7 +494,7 @@ The structured report must preserve them.
 
 ---
 
-# Findings Summary
+## Findings Summary
 
 Reports may provide severity summaries such as:
 
@@ -509,7 +509,7 @@ A count summary is useful but cannot replace finding details.
 
 ---
 
-# Finding Grouping
+## Finding Grouping
 
 Human reports may group findings by:
 
@@ -525,7 +525,7 @@ The canonical report preserves individual findings.
 
 ---
 
-# Evidence Reporting
+## Evidence Reporting
 
 Reports should preserve references to evidence used during evaluation.
 
@@ -540,7 +540,7 @@ Large raw evidence should not necessarily be embedded directly.
 
 ---
 
-# Evidence Summary
+## Evidence Summary
 
 A report may summarize evidence such as:
 
@@ -556,7 +556,7 @@ Trust-level details should only be shown where meaningful to the active profile.
 
 ---
 
-# Evidence Redaction
+## Evidence Redaction
 
 Reports must avoid leaking secrets or unnecessary sensitive data.
 
@@ -574,7 +574,7 @@ The secret value itself must not appear in the report.
 
 ---
 
-# Exception Reporting
+## Exception Reporting
 
 Approved exceptions must remain visible.
 
@@ -594,7 +594,7 @@ The report must not present an excepted rule as an ordinary PASS.
 
 ---
 
-# Suppression Reporting
+## Suppression Reporting
 
 Suppressions must remain visible in structured reporting.
 
@@ -604,7 +604,7 @@ The canonical finding remains present.
 
 ---
 
-# Incomplete Evaluation Reporting
+## Incomplete Evaluation Reporting
 
 INCOMPLETE evaluations require clear explanation.
 
@@ -627,7 +627,7 @@ For example:
 
 ---
 
-# Validation Error Reporting
+## Validation Error Reporting
 
 Infrastructure failures must be separated from plugin compliance findings.
 
@@ -648,7 +648,7 @@ unless actual test evidence demonstrates non-compliance.
 
 ---
 
-# Diagnostic Reporting
+## Diagnostic Reporting
 
 Diagnostics belong to a separate report section.
 
@@ -666,7 +666,7 @@ Diagnostics should support debugging without polluting compliance semantics.
 
 ---
 
-# Certification Eligibility Reporting
+## Certification Eligibility Reporting
 
 Where applicable, reports may expose:
 
@@ -686,7 +686,7 @@ It must not be interpreted as certification itself.
 
 ---
 
-# Certification Report
+## Certification Report
 
 A Certification Report is a stronger representation intended for certification workflows.
 
@@ -705,7 +705,7 @@ Certification consumers should operate on structured data rather than screen-scr
 
 ---
 
-# Release Report
+## Release Report
 
 A Release Report provides the compliance information required by release governance.
 
@@ -727,7 +727,7 @@ Release reporting should bind compliance to the exact artifact being considered.
 
 ---
 
-# CI Report
+## CI Report
 
 CI reporting should provide concise automated feedback.
 
@@ -744,7 +744,7 @@ and expose detailed artifacts separately.
 
 ---
 
-# CI Annotations
+## CI Annotations
 
 Where CI platforms support annotations, findings may be mapped to:
 
@@ -757,7 +757,7 @@ CI annotation logic must preserve the canonical finding severity and rule identi
 
 ---
 
-# CI Exit Behavior
+## CI Exit Behavior
 
 CI should derive success or failure from overall Compliance Status and pipeline policy.
 
@@ -774,7 +774,7 @@ The exact exit-code mapping belongs to CLI and CI integration specifications.
 
 ---
 
-# Governance Report
+## Governance Report
 
 Governance reports may prioritize:
 
@@ -790,7 +790,7 @@ Governance reports are projections of canonical results and historical records.
 
 ---
 
-# Historical Reporting
+## Historical Reporting
 
 The reporting architecture should support comparison across evaluations.
 
@@ -819,7 +819,7 @@ Historical comparison must not mutate past results.
 
 ---
 
-# Compliance Drift Reporting
+## Compliance Drift Reporting
 
 A previously compliant plugin may become non-compliant because of rule, platform, or dependency evolution.
 
@@ -839,7 +839,7 @@ This helps separate code regressions from ecosystem policy changes.
 
 ---
 
-# Report Determinism
+## Report Determinism
 
 Given the same Compliance Result and renderer version, report output should be stable.
 
@@ -856,7 +856,7 @@ Semantic content must not.
 
 ---
 
-# Report Ordering
+## Report Ordering
 
 Reports should use stable ordering.
 
@@ -882,7 +882,7 @@ Structured formats should also define deterministic array ordering where practic
 
 ---
 
-# Rule Ordering
+## Rule Ordering
 
 Rules may be ordered by:
 
@@ -895,7 +895,7 @@ This creates stable and predictable report output.
 
 ---
 
-# Finding Ordering
+## Finding Ordering
 
 Human-readable reports should prioritize:
 
@@ -919,7 +919,7 @@ This allows high-impact issues to appear first.
 
 ---
 
-# Verbosity Levels
+## Verbosity Levels
 
 Human reporting may support verbosity levels such as:
 
@@ -929,15 +929,15 @@ standard
 verbose
 ```
 
-## Summary
+### Summary
 
 Shows overall status and major findings.
 
-## Standard
+### Standard
 
 Shows all actionable findings and essential context.
 
-## Verbose
+### Verbose
 
 Shows detailed evidence, diagnostics, and rule evaluation information.
 
@@ -945,7 +945,7 @@ Verbosity changes presentation only.
 
 ---
 
-# Explain Mode
+## Explain Mode
 
 Tooling should support explaining individual findings or rules.
 
@@ -968,7 +968,7 @@ Explain mode may display:
 
 ---
 
-# Report Portability
+## Report Portability
 
 Machine-readable reports should be portable between:
 
@@ -992,7 +992,7 @@ Portability requires schema stability and complete context.
 
 ---
 
-# Artifact Binding
+## Artifact Binding
 
 Release and certification reports should support binding to exact artifacts.
 
@@ -1012,7 +1012,7 @@ This prevents a report from being mistakenly applied to a different artifact.
 
 ---
 
-# Report Integrity
+## Report Integrity
 
 Future reporting may support integrity metadata such as:
 
@@ -1024,7 +1024,7 @@ This becomes important when reports cross organizational or infrastructure trust
 
 ---
 
-# Signed Reports
+## Signed Reports
 
 A future signed report could provide:
 
@@ -1044,7 +1044,7 @@ Signed reports are not required for the initial implementation.
 
 ---
 
-# Report Storage
+## Report Storage
 
 The framework should not require permanent storage in its core architecture.
 
@@ -1060,7 +1060,7 @@ Possible consumers include:
 
 ---
 
-# Report Retention
+## Report Retention
 
 Retention policy depends on workflow.
 
@@ -1072,7 +1072,7 @@ Retention requirements belong to governance and infrastructure policy.
 
 ---
 
-# Report Privacy
+## Report Privacy
 
 Reports may expose information about:
 
@@ -1089,7 +1089,7 @@ Public reports may require stronger redaction than internal reports.
 
 ---
 
-# Public Reporting
+## Public Reporting
 
 If FamilyOS later exposes plugin compliance publicly, public reports should reveal only information appropriate for ecosystem consumers.
 
@@ -1109,7 +1109,7 @@ Detailed security evidence may remain restricted.
 
 ---
 
-# Internal Reporting
+## Internal Reporting
 
 Internal reports may contain richer information including:
 
@@ -1124,7 +1124,7 @@ Access policy belongs to governance and infrastructure.
 
 ---
 
-# Report Generation API
+## Report Generation API
 
 The reporting layer should expose stable rendering contracts.
 
@@ -1148,7 +1148,7 @@ Renderers receive finalized Compliance Results.
 
 ---
 
-# Renderer Independence
+## Renderer Independence
 
 Renderers must not invoke validators or mutate results.
 
@@ -1158,7 +1158,7 @@ This preserves architectural separation.
 
 ---
 
-# Report Validation
+## Report Validation
 
 Machine-readable reports should themselves be validatable against a schema.
 
@@ -1173,7 +1173,7 @@ Report schema validation is an integration concern, not plugin compliance valida
 
 ---
 
-# Report Testing
+## Report Testing
 
 Reporting infrastructure requires dedicated tests.
 
@@ -1193,7 +1193,7 @@ Core test categories include:
 
 ---
 
-# Cross-Renderer Consistency Tests
+## Cross-Renderer Consistency Tests
 
 FamilyOS should test that different renderers preserve identical semantics.
 
@@ -1211,41 +1211,41 @@ Semantic divergence is not.
 
 ---
 
-# Report Anti-Patterns
+## Report Anti-Patterns
 
 The framework must avoid several reporting anti-patterns.
 
-## Recomputing Compliance
+### Recomputing Compliance
 
 Renderers must not derive their own overall status.
 
-## Hidden Context
+### Hidden Context
 
 Never report COMPLIANT without showing which profile was evaluated.
 
-## Score-Only Reporting
+### Score-Only Reporting
 
 Do not replace explicit rule outcomes with a percentage score.
 
-## Silent Findings
+### Silent Findings
 
 Do not omit blocking findings from standard human output.
 
-## Error Conflation
+### Error Conflation
 
 Do not mix validator infrastructure errors with plugin violations.
 
-## Exception Hiding
+### Exception Hiding
 
 Do not present excepted failures as ordinary passes.
 
-## Schema Ambiguity
+### Schema Ambiguity
 
 Do not change field meaning without schema versioning.
 
 ---
 
-# Compliance Score
+## Compliance Score
 
 The framework may eventually provide supplemental scoring or maturity indicators.
 
@@ -1264,7 +1264,7 @@ A high numerical score cannot override explicit policy.
 
 ---
 
-# Reporting Invariants
+## Reporting Invariants
 
 The Compliance Reporting model establishes the following invariants:
 
@@ -1291,7 +1291,7 @@ The Compliance Reporting model establishes the following invariants:
 
 ---
 
-# Reference Reporting Model
+## Reference Reporting Model
 
 The complete reporting flow is:
 
@@ -1326,7 +1326,7 @@ All projections preserve the same underlying compliance semantics.
 
 ---
 
-# Reporting Summary
+## Reporting Summary
 
 The FamilyOS Compliance Reporting model transforms structured compliance results into reliable interfaces for humans and automated systems.
 
@@ -1348,7 +1348,7 @@ It must never change meaning.
 
 ---
 
-# Final Reporting Principle
+## Final Reporting Principle
 
 The governing principle of Compliance Reporting is:
 

@@ -1,10 +1,10 @@
 # Security Framework
 
-# EPIC-SEC-001
+## EPIC-SEC-001
 
-## Security Principles
+### Security Principles
 
-## Overview
+### Overview
 
 This document defines the core security principles governing FamilyOS.
 
@@ -16,7 +16,7 @@ The objective is to make security behavior predictable across the entire FamilyO
 
 ---
 
-# Principle 1 — Secure by Design
+## Principle 1 — Secure by Design
 
 Security SHOULD be considered during architecture and design, not added only after implementation.
 
@@ -33,7 +33,7 @@ Security responsibilities should be visible in architecture rather than hidden i
 
 ---
 
-# Principle 2 — Secure by Default
+## Principle 2 — Secure by Default
 
 FamilyOS SHOULD choose secure behavior when configuration is absent or incomplete.
 
@@ -61,7 +61,7 @@ Secure operation should not require users or developers to discover undocumented
 
 ---
 
-# Principle 3 — Deny by Default
+## Principle 3 — Deny by Default
 
 Protected operations MUST NOT be allowed unless authorization requirements are satisfied.
 
@@ -86,7 +86,7 @@ Unknown or incomplete authorization state must not silently become permission.
 
 ---
 
-# Principle 4 — Least Privilege
+## Principle 4 — Least Privilege
 
 Actors and components SHOULD receive only the privileges required for their intended responsibilities.
 
@@ -104,7 +104,7 @@ Broad platform access should be avoided when narrower permissions can satisfy th
 
 ---
 
-# Principle 5 — Explicit Trust
+## Principle 5 — Explicit Trust
 
 Trust must be explicit.
 
@@ -121,7 +121,7 @@ Trust should derive from defined architectural relationships and validated contr
 
 ---
 
-# Principle 6 — Internal Does Not Mean Trusted
+## Principle 6 — Internal Does Not Mean Trusted
 
 Internal components may still be:
 
@@ -141,7 +141,7 @@ Automatically Trusted
 
 ---
 
-# Principle 7 — Authenticate Before Trusting Identity
+## Principle 7 — Authenticate Before Trusting Identity
 
 Security-sensitive identity claims MUST be established through appropriate authentication before they are trusted.
 
@@ -161,7 +161,7 @@ The strength of authentication should remain proportional to the protected opera
 
 ---
 
-# Principle 8 — Authentication and Authorization Are Separate
+## Principle 8 — Authentication and Authorization Are Separate
 
 Authentication establishes identity.
 
@@ -185,7 +185,7 @@ Successful authentication never implies unrestricted authorization.
 
 ---
 
-# Principle 9 — Authorization Is Explicit
+## Principle 9 — Authorization Is Explicit
 
 Security-sensitive operations SHOULD state their authorization requirements clearly.
 
@@ -207,7 +207,7 @@ Authorization Decision
 
 ---
 
-# Principle 10 — Capabilities Are Security-Relevant Boundaries
+## Principle 10 — Capabilities Are Security-Relevant Boundaries
 
 FamilyOS capabilities represent meaningful operations.
 
@@ -231,7 +231,7 @@ This prevents security logic from being fragmented across arbitrary low-level im
 
 ---
 
-# Principle 11 — Security Context Is Explicit
+## Principle 11 — Security Context Is Explicit
 
 Security-sensitive execution SHOULD use an explicit security context where required.
 
@@ -251,7 +251,7 @@ It exists to carry security-relevant execution information.
 
 ---
 
-# Principle 12 — Trust Boundaries Are Identified
+## Principle 12 — Trust Boundaries Are Identified
 
 Every significant transition between different trust levels SHOULD be identifiable.
 
@@ -269,7 +269,7 @@ Security decisions are strongest when trust transitions are visible.
 
 ---
 
-# Principle 13 — Inputs Are Untrusted
+## Principle 13 — Inputs Are Untrusted
 
 Input crossing a trust boundary MUST be treated as untrusted until validated.
 
@@ -287,7 +287,7 @@ Validation should occur near the relevant trust boundary.
 
 ---
 
-# Principle 14 — Validation Is Not Authorization
+## Principle 14 — Validation Is Not Authorization
 
 Valid input is not automatically authorized input.
 
@@ -303,7 +303,7 @@ Input validation and authorization solve different security problems and MUST NO
 
 ---
 
-# Principle 15 — Outputs Are Security-Relevant
+## Principle 15 — Outputs Are Security-Relevant
 
 Security applies to outputs as well as inputs.
 
@@ -319,7 +319,7 @@ Output protection is part of the trust boundary.
 
 ---
 
-# Principle 16 — Data Is Protected Throughout Its Lifecycle
+## Principle 16 — Data Is Protected Throughout Its Lifecycle
 
 FamilyOS SHOULD protect sensitive data through applicable lifecycle stages:
 
@@ -343,7 +343,7 @@ Security responsibility does not end when data reaches persistent storage.
 
 ---
 
-# Principle 17 — Data Protection Is Proportional
+## Principle 17 — Data Protection Is Proportional
 
 Not all information requires identical security controls.
 
@@ -360,7 +360,7 @@ More sensitive information justifies stronger controls.
 
 ---
 
-# Principle 18 — Data Minimization Reduces Risk
+## Principle 18 — Data Minimization Reduces Risk
 
 FamilyOS SHOULD process, propagate, store, and expose only the information required for an operation.
 
@@ -376,7 +376,7 @@ Data minimization is therefore both a privacy and security control.
 
 ---
 
-# Principle 19 — Secrets Are Not Configuration
+## Principle 19 — Secrets Are Not Configuration
 
 Secrets MUST NOT be treated like ordinary configuration values.
 
@@ -394,7 +394,7 @@ Secrets require stronger lifecycle and access controls.
 
 ---
 
-# Principle 20 — Secrets Are Never Committed
+## Principle 20 — Secrets Are Never Committed
 
 Secrets MUST NOT be committed to source control.
 
@@ -413,7 +413,7 @@ Test suites should use synthetic secrets.
 
 ---
 
-# Principle 21 — Secrets Are Accessed Through Controlled Interfaces
+## Principle 21 — Secrets Are Accessed Through Controlled Interfaces
 
 Components SHOULD retrieve secrets through dedicated security abstractions.
 
@@ -431,7 +431,7 @@ Components should not need to know where secrets are physically stored.
 
 ---
 
-# Principle 22 — Secret Exposure Is Minimized
+## Principle 22 — Secret Exposure Is Minimized
 
 Secrets SHOULD only be available:
 
@@ -443,7 +443,7 @@ Secrets SHOULD NOT be copied unnecessarily across process or component boundarie
 
 ---
 
-# Principle 23 — Cryptography Uses Established Implementations
+## Principle 23 — Cryptography Uses Established Implementations
 
 FamilyOS MUST NOT invent custom cryptographic algorithms.
 
@@ -453,7 +453,7 @@ Custom cryptography introduces unnecessary risk.
 
 ---
 
-# Principle 24 — Cryptography Has a Defined Purpose
+## Principle 24 — Cryptography Has a Defined Purpose
 
 Cryptography SHOULD be used only for clearly identified security objectives.
 
@@ -477,7 +477,7 @@ Using cryptography without a clear purpose creates false security.
 
 ---
 
-# Principle 25 — Cryptographic Agility
+## Principle 25 — Cryptographic Agility
 
 FamilyOS SHOULD avoid unnecessary dependence on one specific cryptographic algorithm or provider.
 
@@ -495,7 +495,7 @@ This allows cryptographic mechanisms to evolve over the lifetime of FamilyOS.
 
 ---
 
-# Principle 26 — Keys Have a Lifecycle
+## Principle 26 — Keys Have a Lifecycle
 
 Cryptographic keys require explicit lifecycle thinking.
 
@@ -519,7 +519,7 @@ EPIC-SEC-001 establishes the architectural requirement even if the initial imple
 
 ---
 
-# Principle 27 — Fail Securely
+## Principle 27 — Fail Securely
 
 When security controls cannot determine a safe result, FamilyOS SHOULD choose the safer outcome.
 
@@ -535,7 +535,7 @@ Security-critical failure should not silently downgrade protection.
 
 ---
 
-# Principle 28 — Security Failure Must Be Diagnosable
+## Principle 28 — Security Failure Must Be Diagnosable
 
 Failing securely must not mean failing invisibly.
 
@@ -555,7 +555,7 @@ Evidence must remain safe and avoid leaking sensitive details.
 
 ---
 
-# Principle 29 — Error Messages Do Not Reveal Excessive Detail
+## Principle 29 — Error Messages Do Not Reveal Excessive Detail
 
 Errors visible outside trusted engineering boundaries SHOULD avoid exposing:
 
@@ -570,7 +570,7 @@ Internal diagnostic channels may contain more information when appropriately con
 
 ---
 
-# Principle 30 — Security Decisions Are Explainable
+## Principle 30 — Security Decisions Are Explainable
 
 Important security decisions SHOULD provide stable reason categories where practical.
 
@@ -597,7 +597,7 @@ Explainable security improves:
 
 ---
 
-# Principle 31 — Security Is Observable
+## Principle 31 — Security Is Observable
 
 Important security events SHOULD produce structured runtime evidence.
 
@@ -615,7 +615,7 @@ Security observability must respect the Observability Framework.
 
 ---
 
-# Principle 32 — Observability Must Not Weaken Security
+## Principle 32 — Observability Must Not Weaken Security
 
 Security telemetry MUST NOT become a mechanism for exposing protected information.
 
@@ -627,7 +627,7 @@ The rule remains:
 
 ---
 
-# Principle 33 — Security Events Are Structured
+## Principle 33 — Security Events Are Structured
 
 Security-relevant runtime evidence SHOULD use structured events where practical.
 
@@ -648,7 +648,7 @@ Structured security events enable reliable testing and future automation.
 
 ---
 
-# Principle 34 — Security Controls Are Layered
+## Principle 34 — Security Controls Are Layered
 
 FamilyOS follows defense-in-depth principles.
 
@@ -676,7 +676,7 @@ Failure of one layer should not automatically compromise all protections.
 
 ---
 
-# Principle 35 — Security Controls Are Proportional
+## Principle 35 — Security Controls Are Proportional
 
 Defense in depth does not mean maximum complexity everywhere.
 
@@ -692,7 +692,7 @@ Security that is impossible to maintain can become insecure.
 
 ---
 
-# Principle 36 — Threats Drive Controls
+## Principle 36 — Threats Drive Controls
 
 FamilyOS SHOULD introduce controls because they mitigate identifiable threats.
 
@@ -718,7 +718,7 @@ Find somewhere to use it
 
 ---
 
-# Principle 37 — Risks Are Explicit
+## Principle 37 — Risks Are Explicit
 
 Important security risks SHOULD be recorded and evaluated.
 
@@ -738,7 +738,7 @@ The purpose is consistent decision-making.
 
 ---
 
-# Principle 38 — Risk Cannot Be Eliminated Completely
+## Principle 38 — Risk Cannot Be Eliminated Completely
 
 Security engineering manages risk.
 
@@ -757,7 +757,7 @@ Risk acceptance must be explicit when it concerns significant security exposure.
 
 ---
 
-# Principle 39 — Security Is Testable
+## Principle 39 — Security Is Testable
 
 Security requirements SHOULD be expressed in ways that automated tests can verify.
 
@@ -774,7 +774,7 @@ Security that cannot be tested is harder to trust.
 
 ---
 
-# Principle 40 — Negative Tests Are Essential
+## Principle 40 — Negative Tests Are Essential
 
 Security testing must verify denied and invalid behavior, not only successful paths.
 
@@ -796,7 +796,7 @@ Both are required evidence.
 
 ---
 
-# Principle 41 — Security Regression Is Prevented
+## Principle 41 — Security Regression Is Prevented
 
 Once a security invariant is established, automated tests SHOULD protect it against regression.
 
@@ -804,7 +804,7 @@ For example, a test demonstrating that a plugin cannot access an unauthorized ca
 
 ---
 
-# Principle 42 — Security Validation Is Automated Where Practical
+## Principle 42 — Security Validation Is Automated Where Practical
 
 Repeated manual security checks SHOULD be automated when reliable automation is possible.
 
@@ -821,7 +821,7 @@ Automation reduces dependence on memory and process discipline.
 
 ---
 
-# Principle 43 — Tooling Must Provide Clear Value
+## Principle 43 — Tooling Must Provide Clear Value
 
 FamilyOS SHOULD NOT continuously accumulate security tools without justification.
 
@@ -843,7 +843,7 @@ Tooling complexity itself creates operational risk.
 
 ---
 
-# Principle 44 — Plugins Follow Platform Security
+## Principle 44 — Plugins Follow Platform Security
 
 Plugins MUST NOT create independent security architectures that bypass platform rules.
 
@@ -857,7 +857,7 @@ Plugins SHOULD use FamilyOS security contracts for applicable concerns such as:
 
 ---
 
-# Principle 45 — Official Plugins Are Not Exempt
+## Principle 45 — Official Plugins Are Not Exempt
 
 Official plugins remain subject to platform security controls.
 
@@ -871,7 +871,7 @@ Unrestricted
 
 ---
 
-# Principle 46 — Third-Party Plugins Require Stronger Boundaries
+## Principle 46 — Third-Party Plugins Require Stronger Boundaries
 
 Third-party plugins SHOULD be treated as stronger trust boundaries.
 
@@ -888,7 +888,7 @@ Controls should evolve according to actual plugin risk.
 
 ---
 
-# Principle 47 — Plugin Permissions Are Explicit
+## Principle 47 — Plugin Permissions Are Explicit
 
 A plugin requiring protected operations SHOULD declare or obtain explicit permissions.
 
@@ -910,7 +910,7 @@ Hidden privilege acquisition should be avoided.
 
 ---
 
-# Principle 48 — Integrations Are External Trust Boundaries
+## Principle 48 — Integrations Are External Trust Boundaries
 
 External integrations MUST be treated as external systems regardless of how trusted their operator may appear.
 
@@ -926,7 +926,7 @@ FamilyOS SHOULD validate:
 
 ---
 
-# Principle 49 — External Data Is Untrusted
+## Principle 49 — External Data Is Untrusted
 
 Information received from external integrations MUST be validated before it is trusted.
 
@@ -934,7 +934,7 @@ A successful network connection does not establish semantic trust in the receive
 
 ---
 
-# Principle 50 — External Credentials Are Protected
+## Principle 50 — External Credentials Are Protected
 
 Integration credentials MUST follow the same secret-protection principles as other credentials.
 
@@ -947,7 +947,7 @@ They SHOULD NOT be:
 
 ---
 
-# Principle 51 — Configuration Is Security-Relevant
+## Principle 51 — Configuration Is Security-Relevant
 
 Configuration can change security behavior.
 
@@ -964,7 +964,7 @@ Examples include:
 
 ---
 
-# Principle 52 — Invalid Security Configuration Fails Clearly
+## Principle 52 — Invalid Security Configuration Fails Clearly
 
 FamilyOS SHOULD reject invalid security configuration rather than silently falling back to insecure behavior.
 
@@ -986,7 +986,7 @@ Invalid Security Configuration
 
 ---
 
-# Principle 53 — Security Defaults Cannot Be Disabled Accidentally
+## Principle 53 — Security Defaults Cannot Be Disabled Accidentally
 
 Mandatory security invariants must remain active regardless of normal verbosity or convenience settings.
 
@@ -1006,7 +1006,7 @@ Validation bypassed
 
 ---
 
-# Principle 54 — Dependencies Are Part of the Attack Surface
+## Principle 54 — Dependencies Are Part of the Attack Surface
 
 External packages, libraries, and build tools contribute to FamilyOS security risk.
 
@@ -1023,7 +1023,7 @@ Every unnecessary dependency increases attack surface.
 
 ---
 
-# Principle 55 — Supply-Chain Security Is Shared
+## Principle 55 — Supply-Chain Security Is Shared
 
 Security across:
 
@@ -1047,7 +1047,7 @@ It defines the security expectations applied to their outputs.
 
 ---
 
-# Principle 56 — Build Artifacts Must Be Trustworthy
+## Principle 56 — Build Artifacts Must Be Trustworthy
 
 Artifacts used for release SHOULD be traceable to the approved source and build process.
 
@@ -1055,7 +1055,7 @@ Where stronger integrity guarantees become necessary, FamilyOS may introduce add
 
 ---
 
-# Principle 57 — Security Evidence Is Trustworthy
+## Principle 57 — Security Evidence Is Trustworthy
 
 Security evidence used for release decisions, compliance, or incident investigation SHOULD accurately reflect what occurred.
 
@@ -1068,7 +1068,7 @@ FamilyOS SHOULD avoid:
 
 ---
 
-# Principle 58 — Security and Privacy Reinforce Each Other
+## Principle 58 — Security and Privacy Reinforce Each Other
 
 Security controls SHOULD support FamilyOS privacy objectives.
 
@@ -1084,7 +1084,7 @@ reduce both privacy exposure and security risk.
 
 ---
 
-# Principle 59 — Security Must Respect Domain Boundaries
+## Principle 59 — Security Must Respect Domain Boundaries
 
 Security infrastructure should not unnecessarily pollute domain models.
 
@@ -1094,7 +1094,7 @@ This preserves FamilyOS architecture.
 
 ---
 
-# Principle 60 — Security Providers Are Replaceable
+## Principle 60 — Security Providers Are Replaceable
 
 Core FamilyOS security contracts SHOULD remain vendor-neutral.
 
@@ -1114,7 +1114,7 @@ External vendors remain implementation details.
 
 ---
 
-# Principle 61 — Local Development Remains Possible
+## Principle 61 — Local Development Remains Possible
 
 Security architecture SHOULD support safe local development without requiring enterprise infrastructure.
 
@@ -1138,7 +1138,7 @@ Local simplicity must not require disabling core security invariants.
 
 ---
 
-# Principle 62 — Tests Use Synthetic Security Data
+## Principle 62 — Tests Use Synthetic Security Data
 
 Tests SHOULD NOT require real credentials or real family information.
 
@@ -1153,7 +1153,7 @@ This prevents test infrastructure from becoming a security liability.
 
 ---
 
-# Principle 63 — Security Performance Is Proportional
+## Principle 63 — Security Performance Is Proportional
 
 Security controls introduce execution cost.
 
@@ -1163,7 +1163,7 @@ Performance optimization must be based on evidence rather than assumptions.
 
 ---
 
-# Principle 64 — Security Complexity Is Minimized
+## Principle 64 — Security Complexity Is Minimized
 
 Every additional security abstraction introduces maintenance responsibility.
 
@@ -1173,7 +1173,7 @@ Simple security that is consistently enforced is preferable to complex security 
 
 ---
 
-# Principle 65 — Security APIs Are Predictable
+## Principle 65 — Security APIs Are Predictable
 
 Security APIs SHOULD remain:
 
@@ -1189,7 +1189,7 @@ Unexpected implicit security behavior should be avoided.
 
 ---
 
-# Principle 66 — Security Policy Is Separated From Mechanism
+## Principle 66 — Security Policy Is Separated From Mechanism
 
 Where practical, FamilyOS SHOULD separate:
 
@@ -1209,7 +1209,7 @@ This makes policies easier to evolve without replacing the entire enforcement ar
 
 ---
 
-# Principle 67 — Permissions Have Stable Meaning
+## Principle 67 — Permissions Have Stable Meaning
 
 Permissions SHOULD represent stable security concepts.
 
@@ -1228,7 +1228,7 @@ Actual permission design is defined by the authorization architecture.
 
 ---
 
-# Principle 68 — Permissions Should Be Composable
+## Principle 68 — Permissions Should Be Composable
 
 FamilyOS SHOULD support permission composition without forcing every authorization rule into independent special cases.
 
@@ -1238,7 +1238,7 @@ The underlying permission semantics should remain explicit.
 
 ---
 
-# Principle 69 — Roles Are Not the Security Model
+## Principle 69 — Roles Are Not the Security Model
 
 Roles may simplify policy management.
 
@@ -1256,7 +1256,7 @@ This allows future policy evolution beyond simple role-based control.
 
 ---
 
-# Principle 70 — Security State Is Not Global Mutable State
+## Principle 70 — Security State Is Not Global Mutable State
 
 Security contexts SHOULD NOT depend on uncontrolled global mutable variables.
 
@@ -1271,7 +1271,7 @@ This improves:
 
 ---
 
-# Principle 71 — Security Decisions Are Deterministic
+## Principle 71 — Security Decisions Are Deterministic
 
 Given equivalent security inputs and policy state, authorization decisions SHOULD produce equivalent results.
 
@@ -1279,7 +1279,7 @@ Unpredictable security behavior is difficult to validate.
 
 ---
 
-# Principle 72 — Security Boundaries Are Tested Directly
+## Principle 72 — Security Boundaries Are Tested Directly
 
 Tests SHOULD target security boundaries explicitly.
 
@@ -1296,7 +1296,7 @@ Testing only internal helper functions is insufficient for validating actual tru
 
 ---
 
-# Principle 73 — Security Controls Have Owners
+## Principle 73 — Security Controls Have Owners
 
 Important security controls SHOULD have identifiable architectural ownership.
 
@@ -1312,7 +1312,7 @@ Controls without ownership tend to become inconsistent.
 
 ---
 
-# Principle 74 — Security Changes Are Reviewed Proportionally
+## Principle 74 — Security Changes Are Reviewed Proportionally
 
 Changes affecting:
 
@@ -1329,7 +1329,7 @@ The process should remain proportional and practical.
 
 ---
 
-# Principle 75 — Security Contracts Evolve Deliberately
+## Principle 75 — Security Contracts Evolve Deliberately
 
 Stable security contracts SHOULD distinguish:
 
@@ -1344,7 +1344,7 @@ Breaking security behavior must not be introduced silently.
 
 ---
 
-# Principle 76 — Deprecated Security Behavior Is Removed
+## Principle 76 — Deprecated Security Behavior Is Removed
 
 Unsafe legacy security behavior should not remain indefinitely merely for compatibility.
 
@@ -1352,7 +1352,7 @@ When security and compatibility conflict, FamilyOS should explicitly assess the 
 
 ---
 
-# Principle 77 — Security Automation Consumes Contracts
+## Principle 77 — Security Automation Consumes Contracts
 
 Automation SHOULD operate on structured security contracts rather than fragile human-readable output.
 
@@ -1366,7 +1366,7 @@ Examples include:
 
 ---
 
-# Principle 78 — Security Gates Are Risk-Based
+## Principle 78 — Security Gates Are Risk-Based
 
 Security findings should not all produce identical lifecycle consequences.
 
@@ -1390,7 +1390,7 @@ Exact severity policy is defined by governance and risk management.
 
 ---
 
-# Principle 79 — Security Warnings Must Remain Actionable
+## Principle 79 — Security Warnings Must Remain Actionable
 
 Persistent warnings without clear action reduce trust in security tooling.
 
@@ -1398,7 +1398,7 @@ FamilyOS SHOULD avoid security noise that developers learn to ignore.
 
 ---
 
-# Principle 80 — Security Is Continuous
+## Principle 80 — Security Is Continuous
 
 Security is not complete when a release is produced.
 
@@ -1424,7 +1424,7 @@ Each stage contributes different security evidence.
 
 ---
 
-# Decision Hierarchy
+## Decision Hierarchy
 
 When security concerns conflict with convenience or implementation simplicity, FamilyOS SHOULD prioritize:
 
@@ -1450,7 +1450,7 @@ It establishes which properties take priority when genuine conflicts exist.
 
 ---
 
-# Practical Security Design Test
+## Practical Security Design Test
 
 Before introducing a security mechanism, engineers SHOULD be able to answer:
 
@@ -1469,7 +1469,7 @@ If these questions cannot be answered, the proposed security mechanism may not b
 
 ---
 
-# Principle Summary
+## Principle Summary
 
 The FamilyOS Security Framework can be summarized as:
 
@@ -1498,7 +1498,7 @@ Minimal Complexity
 
 ---
 
-# Conclusion
+## Conclusion
 
 FamilyOS security exists to protect family information, platform capabilities, and system trust without creating unnecessary complexity.
 

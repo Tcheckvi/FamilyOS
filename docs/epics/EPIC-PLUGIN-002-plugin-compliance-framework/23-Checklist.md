@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 23 Checklist
+## 23 Checklist
 
-## Introduction
+### Introduction
 
 This checklist provides the final completion criteria for EPIC-PLUGIN-002 — Plugin Compliance Framework.
 
@@ -20,7 +20,7 @@ A completed documentation EPIC does not imply that every future roadmap capabili
 
 ---
 
-# Completion Principle
+## Completion Principle
 
 The governing principle is:
 
@@ -30,7 +30,7 @@ Operational maturity continues through the implementation roadmap.
 
 ---
 
-# Core EPIC Files
+## Core EPIC Files
 
 Verify that all primary framework documents exist:
 
@@ -63,7 +63,7 @@ Verify that all primary framework documents exist:
 
 ---
 
-# File Integrity
+## File Integrity
 
 Verify:
 
@@ -79,7 +79,7 @@ Verify:
 
 ---
 
-# Naming Validation
+## Naming Validation
 
 Verify:
 
@@ -93,7 +93,7 @@ Verify:
 
 ---
 
-# Structural Consistency
+## Structural Consistency
 
 Verify that the documentation progresses logically through:
 
@@ -127,7 +127,7 @@ No major architectural concept should depend on a concept that is undefined else
 
 ---
 
-# Terminology
+## Terminology
 
 Verify consistent use of:
 
@@ -149,7 +149,7 @@ Verify consistent use of:
 
 ---
 
-# Semantic Boundaries
+## Semantic Boundaries
 
 Verify that the framework consistently preserves:
 
@@ -168,7 +168,7 @@ These distinctions are mandatory.
 
 ---
 
-# Compliance Status Model
+## Compliance Status Model
 
 Verify that the canonical overall status model is consistently defined as:
 
@@ -183,7 +183,7 @@ No conflicting status vocabulary should exist in stable framework semantics.
 
 ---
 
-# Rule Outcome Model
+## Rule Outcome Model
 
 Verify that rule evaluation uses the canonical baseline:
 
@@ -197,7 +197,7 @@ Verify that rule evaluation uses the canonical baseline:
 
 ---
 
-# Severity Model
+## Severity Model
 
 Verify the severity hierarchy:
 
@@ -212,7 +212,7 @@ Verify that severity remains independent from rule outcome.
 
 ---
 
-# Compliance Domains
+## Compliance Domains
 
 Verify that the initial domain baseline includes:
 
@@ -236,7 +236,7 @@ Verify that the initial domain baseline includes:
 
 ---
 
-# Rule Model
+## Rule Model
 
 Verify that every production rule is expected to define:
 
@@ -259,7 +259,7 @@ Verify that every production rule is expected to define:
 
 ---
 
-# Rule Identity
+## Rule Identity
 
 Verify:
 
@@ -273,7 +273,7 @@ Verify:
 
 ---
 
-# Rule Lifecycle
+## Rule Lifecycle
 
 Verify the baseline lifecycle:
 
@@ -288,7 +288,7 @@ Verify that activation and retirement require explicit governance.
 
 ---
 
-# Rule Governance
+## Rule Governance
 
 Verify:
 
@@ -305,7 +305,7 @@ Verify:
 
 ---
 
-# Compliance Profiles
+## Compliance Profiles
 
 Verify expected profile concepts:
 
@@ -323,7 +323,7 @@ Not every profile must be implemented immediately, but the model must support th
 
 ---
 
-# Profile Semantics
+## Profile Semantics
 
 Verify:
 
@@ -339,7 +339,7 @@ Verify:
 
 ---
 
-# Validation Engine
+## Validation Engine
 
 Verify that the architecture defines:
 
@@ -361,7 +361,7 @@ Verify that the architecture defines:
 
 ---
 
-# Validator Model
+## Validator Model
 
 Verify:
 
@@ -376,7 +376,7 @@ Verify:
 
 ---
 
-# Determinism
+## Determinism
 
 Verify:
 
@@ -390,7 +390,7 @@ Verify:
 
 ---
 
-# Evidence Model
+## Evidence Model
 
 Verify evidence supports:
 
@@ -413,7 +413,7 @@ Verify evidence supports:
 
 ---
 
-# Evidence Trust
+## Evidence Trust
 
 Verify the architecture can distinguish evidence trust levels conceptually such as:
 
@@ -428,7 +428,7 @@ Exact implementation names may evolve, but stronger profiles must be able to req
 
 ---
 
-# Evidence Reuse
+## Evidence Reuse
 
 Verify:
 
@@ -443,7 +443,7 @@ Verify:
 
 ---
 
-# Evidence Integrity
+## Evidence Integrity
 
 Verify:
 
@@ -457,7 +457,7 @@ Verify:
 
 ---
 
-# Findings
+## Findings
 
 Verify each actionable finding may expose:
 
@@ -479,7 +479,7 @@ Verify each actionable finding may expose:
 
 ---
 
-# Finding Categories
+## Finding Categories
 
 Verify the conceptual categories remain clear:
 
@@ -495,7 +495,7 @@ The final implementation vocabulary may be refined, but categories must remain s
 
 ---
 
-# Remediation
+## Remediation
 
 Verify:
 
@@ -508,7 +508,7 @@ Verify:
 
 ---
 
-# Suppressions
+## Suppressions
 
 Verify:
 
@@ -523,7 +523,7 @@ Verify:
 
 ---
 
-# Exceptions
+## Exceptions
 
 Verify:
 
@@ -539,7 +539,7 @@ Verify:
 
 ---
 
-# Reporting
+## Reporting
 
 Verify that all reports derive from the canonical Compliance Result.
 
@@ -556,7 +556,7 @@ Supported reporting concepts should include:
 
 ---
 
-# Machine-Readable Reporting
+## Machine-Readable Reporting
 
 Verify:
 
@@ -572,7 +572,7 @@ Verify:
 
 ---
 
-# Renderer Consistency
+## Renderer Consistency
 
 Verify:
 
@@ -585,7 +585,7 @@ Verify:
 
 ---
 
-# Automation
+## Automation
 
 Verify integration architecture exists for:
 
@@ -603,7 +603,7 @@ Verify integration architecture exists for:
 
 ---
 
-# Local and CI Consistency
+## Local and CI Consistency
 
 Verify:
 
@@ -617,7 +617,7 @@ Verify:
 
 ---
 
-# Existing Toolchain Integration
+## Existing Toolchain Integration
 
 Verify the roadmap supports reuse of:
 
@@ -631,7 +631,7 @@ where those tools already produce authoritative FamilyOS engineering evidence.
 
 ---
 
-# Compliance Gates
+## Compliance Gates
 
 Verify conceptual gate support for:
 
@@ -647,7 +647,7 @@ Not every gate must exist in the first implementation.
 
 ---
 
-# Gate Semantics
+## Gate Semantics
 
 Verify:
 
@@ -664,7 +664,7 @@ Verify:
 
 ---
 
-# Gate Decisions
+## Gate Decisions
 
 Verify Gate Decisions can preserve:
 
@@ -681,7 +681,7 @@ Verify Gate Decisions can preserve:
 
 ---
 
-# Certification Boundary
+## Certification Boundary
 
 Verify:
 
@@ -695,7 +695,7 @@ Verify:
 
 ---
 
-# Certification Evidence
+## Certification Evidence
 
 Verify the architecture supports:
 
@@ -711,7 +711,7 @@ Verify the architecture supports:
 
 ---
 
-# Artifact Binding
+## Artifact Binding
 
 Verify strong lifecycle contexts can bind:
 
@@ -727,7 +727,7 @@ This prevents compliance evidence from being reused for the wrong artifact.
 
 ---
 
-# Security and Trust
+## Security and Trust
 
 Verify the framework explicitly assumes:
 
@@ -743,7 +743,7 @@ Verify the framework explicitly assumes:
 
 ---
 
-# Runtime Isolation
+## Runtime Isolation
 
 Verify the architecture supports future isolated execution for untrusted plugins, including concepts such as:
 
@@ -757,7 +757,7 @@ Verify the architecture supports future isolated execution for untrusted plugins
 
 ---
 
-# Anti-Tampering
+## Anti-Tampering
 
 Verify the framework addresses:
 
@@ -773,7 +773,7 @@ Verify the framework addresses:
 
 ---
 
-# Secret Handling
+## Secret Handling
 
 Verify:
 
@@ -785,7 +785,7 @@ Verify:
 
 ---
 
-# Framework Lifecycle
+## Framework Lifecycle
 
 Verify the framework defines controlled evolution through:
 
@@ -800,7 +800,7 @@ Verify the framework defines controlled evolution through:
 
 ---
 
-# Framework Versioning
+## Framework Versioning
 
 Verify:
 
@@ -814,7 +814,7 @@ Verify:
 
 ---
 
-# Framework Release
+## Framework Release
 
 Verify:
 
@@ -829,7 +829,7 @@ Verify:
 
 ---
 
-# Deprecation
+## Deprecation
 
 Verify support for deprecation of:
 
@@ -846,7 +846,7 @@ Deprecated artifacts must remain historically interpretable.
 
 ---
 
-# Migration
+## Migration
 
 Verify:
 
@@ -860,7 +860,7 @@ Verify:
 
 ---
 
-# Revalidation
+## Revalidation
 
 Verify:
 
@@ -874,7 +874,7 @@ Verify:
 
 ---
 
-# Compliance Drift
+## Compliance Drift
 
 Verify the architecture can support future detection of:
 
@@ -888,7 +888,7 @@ Verify the architecture can support future detection of:
 
 ---
 
-# Roadmap
+## Roadmap
 
 Verify that implementation proceeds incrementally through:
 
@@ -913,7 +913,7 @@ Verify that implementation proceeds incrementally through:
 
 ---
 
-# Initial Implementation Slice
+## Initial Implementation Slice
 
 Verify that the recommended first implementation remains intentionally constrained:
 
@@ -930,7 +930,7 @@ The first implementation should prove semantics rather than maximize rule count.
 
 ---
 
-# Official Plugin Pilot
+## Official Plugin Pilot
 
 Verify the framework intends to validate representative official plugins.
 
@@ -949,7 +949,7 @@ The final pilot set may evolve.
 
 ---
 
-# Pilot Quality
+## Pilot Quality
 
 Verify:
 
@@ -963,7 +963,7 @@ Verify:
 
 ---
 
-# Third-Party Readiness
+## Third-Party Readiness
 
 Before external plugin adoption, verify:
 
@@ -978,7 +978,7 @@ Before external plugin adoption, verify:
 
 ---
 
-# References
+## References
 
 Verify the framework references authoritative FamilyOS foundations, including:
 
@@ -1000,7 +1000,7 @@ Verify the framework references authoritative FamilyOS foundations, including:
 
 ---
 
-# Normative Traceability
+## Normative Traceability
 
 Verify:
 
@@ -1013,7 +1013,7 @@ Verify:
 
 ---
 
-# Framework Validation
+## Framework Validation
 
 Verify readiness checks include:
 
@@ -1036,7 +1036,7 @@ Verify readiness checks include:
 
 ---
 
-# Engineering Quality
+## Engineering Quality
 
 Where implementation exists, verify:
 
@@ -1050,7 +1050,7 @@ according to current FamilyOS repository policy.
 
 ---
 
-# Governance Files
+## Governance Files
 
 Before final EPIC closure, verify creation and completion of:
 
@@ -1067,7 +1067,7 @@ Additional repository-standard governance files may be added if required.
 
 ---
 
-# README
+## README
 
 Verify README includes:
 
@@ -1084,7 +1084,7 @@ Verify README includes:
 
 ---
 
-# EPIC Metadata
+## EPIC Metadata
 
 Verify `EPIC.yaml` includes required repository metadata such as:
 
@@ -1102,7 +1102,7 @@ The exact schema must follow current repository conventions.
 
 ---
 
-# Manifest
+## Manifest
 
 Verify `MANIFEST.md` describes:
 
@@ -1116,7 +1116,7 @@ Verify `MANIFEST.md` describes:
 
 ---
 
-# Validation Record
+## Validation Record
 
 Verify `VALIDATION.md` records:
 
@@ -1130,19 +1130,19 @@ Verify `VALIDATION.md` records:
 
 ---
 
-# Changelog
+## Changelog
 
 Verify `CHANGELOG.md` records the initial framework baseline and future version evolution.
 
 ---
 
-# Revision History
+## Revision History
 
 Verify `Revision-History.md` records significant normative documentation changes.
 
 ---
 
-# Repository Check
+## Repository Check
 
 Before commit, run repository-level inspection such as:
 
@@ -1160,7 +1160,7 @@ No required document should be missing.
 
 ---
 
-# Empty File Check
+## Empty File Check
 
 Use an appropriate repository command to identify empty files before finalization.
 
@@ -1174,7 +1174,7 @@ Expected result:
 
 ---
 
-# Heading Review
+## Heading Review
 
 Review primary headings across the EPIC to detect:
 
@@ -1185,7 +1185,7 @@ Review primary headings across the EPIC to detect:
 
 ---
 
-# Reference Review
+## Reference Review
 
 Review references for:
 
@@ -1198,7 +1198,7 @@ Any reference ambiguity should be resolved before the framework becomes normativ
 
 ---
 
-# Duplication Review
+## Duplication Review
 
 Because the EPIC is intentionally comprehensive, perform a final duplication review.
 
@@ -1214,7 +1214,7 @@ The review should eliminate only:
 
 ---
 
-# Architecture Review
+## Architecture Review
 
 Before closure, verify that all major concepts fit the reference architecture:
 
@@ -1251,7 +1251,7 @@ Release / Certification
 
 ---
 
-# Trust Review
+## Trust Review
 
 Verify the final architecture answers:
 
@@ -1269,7 +1269,7 @@ All answers should be explicit.
 
 ---
 
-# Implementation Readiness
+## Implementation Readiness
 
 EPIC-PLUGIN-002 is implementation-ready when:
 
@@ -1291,7 +1291,7 @@ EPIC-PLUGIN-002 is implementation-ready when:
 
 ---
 
-# Documentation Completion Criteria
+## Documentation Completion Criteria
 
 The EPIC documentation is complete when:
 
@@ -1306,7 +1306,7 @@ The EPIC documentation is complete when:
 
 ---
 
-# Operational Readiness Criteria
+## Operational Readiness Criteria
 
 Operational readiness is a later implementation milestone.
 
@@ -1329,7 +1329,7 @@ This distinction prevents documentation completion from being mistaken for imple
 
 ---
 
-# Release-Enforced Readiness
+## Release-Enforced Readiness
 
 Release enforcement requires additional maturity:
 
@@ -1345,7 +1345,7 @@ Release enforcement requires additional maturity:
 
 ---
 
-# Certification Readiness
+## Certification Readiness
 
 Certification integration requires:
 
@@ -1361,7 +1361,7 @@ Certification integration requires:
 
 ---
 
-# Third-Party Readiness
+## Third-Party Readiness
 
 Third-party readiness requires:
 
@@ -1377,11 +1377,11 @@ Third-party readiness requires:
 
 ---
 
-# Final Review
+## Final Review
 
 Before marking EPIC-PLUGIN-002 complete, review the entire framework against three questions.
 
-## Question 1
+### Question 1
 
 Can a developer understand exactly what FamilyOS means by plugin compliance?
 
@@ -1391,7 +1391,7 @@ Expected answer:
 Yes
 ```
 
-## Question 2
+### Question 2
 
 Can an implementation team build the compliance engine without inventing missing foundational semantics?
 
@@ -1401,7 +1401,7 @@ Expected answer:
 Yes
 ```
 
-## Question 3
+### Question 3
 
 Can governance evolve compliance requirements without destroying historical traceability?
 
@@ -1415,7 +1415,7 @@ If any answer is uncertain, the framework requires additional refinement.
 
 ---
 
-# Final Completion Checklist
+## Final Completion Checklist
 
 The final framework-definition checklist is:
 
@@ -1448,7 +1448,7 @@ The final framework-definition checklist is:
 
 ---
 
-# Final Checklist Principle
+## Final Checklist Principle
 
 The governing principle of this checklist is:
 

@@ -1,8 +1,8 @@
 # Documentation Framework
 
-# 03 Documentation Architecture
+## 03 Documentation Architecture
 
-## Purpose
+### Purpose
 
 This document defines the official documentation architecture model for the
 FamilyOS ecosystem.
@@ -17,7 +17,7 @@ frameworks, specifications, and engineering initiatives.
 
 ---
 
-# Context
+## Context
 
 FamilyOS is designed as a long-term engineering platform.
 
@@ -41,12 +41,12 @@ maintain a coherent engineering knowledge ecosystem.
 
 ---
 
-# Architecture Principles
+## Architecture Principles
 
 The Documentation Architecture follows fundamental principles that guarantee
 long-term maintainability.
 
-## Clear Responsibility Separation
+### Clear Responsibility Separation
 
 Every document type must have a clearly defined purpose.
 
@@ -60,7 +60,7 @@ Examples:
 - EPICs define engineering initiatives.
 
 
-## Single Source of Truth
+### Single Source of Truth
 
 Each important concept should have one authoritative location.
 
@@ -71,7 +71,7 @@ This principle prevents information divergence and reduces maintenance cost.
 
 ---
 
-## Traceability
+### Traceability
 
 Documentation artifacts must maintain relationships between engineering
 activities.

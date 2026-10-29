@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 13 Compliance Gates
+## 13 Compliance Gates
 
-## Introduction
+### Introduction
 
 Compliance Gates define the enforcement points at which FamilyOS determines whether a plugin may progress to the next engineering or lifecycle stage.
 
@@ -32,7 +32,7 @@ Each gate provides a stronger level of assurance.
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Compliance Gates is to convert compliance results into controlled lifecycle decisions.
 
@@ -52,7 +52,7 @@ Compliance gates must remain deterministic and policy-driven.
 
 ---
 
-# Gate Principle
+## Gate Principle
 
 The governing gate principle is:
 
@@ -68,7 +68,7 @@ It must not answer this question through undocumented judgment.
 
 ---
 
-# Gate Model
+## Gate Model
 
 A conceptual gate contains:
 
@@ -93,7 +93,7 @@ The semantic model must remain explicit.
 
 ---
 
-# Gate Identity
+## Gate Identity
 
 Every governed gate should have a stable identity.
 
@@ -117,7 +117,7 @@ Gate identities allow:
 
 ---
 
-# Gate Versioning
+## Gate Versioning
 
 Gate policy must be versioned.
 
@@ -134,7 +134,7 @@ This allows historical decisions to remain interpretable after governance evolve
 
 ---
 
-# Gate Evaluation
+## Gate Evaluation
 
 A gate consumes a finalized Compliance Result.
 
@@ -158,7 +158,7 @@ A gate must not rerun compliance rules independently.
 
 ---
 
-# Gate Decision Model
+## Gate Decision Model
 
 A conceptual Gate Decision contains:
 
@@ -180,7 +180,7 @@ The decision should be machine-readable and auditable.
 
 ---
 
-# Gate Decisions
+## Gate Decisions
 
 The baseline gate decision vocabulary should remain compact.
 
@@ -192,21 +192,21 @@ BLOCK
 ERROR
 ```
 
-## PASS
+### PASS
 
 The plugin satisfies the gate policy.
 
-## BLOCK
+### BLOCK
 
 The compliance result does not provide sufficient assurance for progression.
 
-## ERROR
+### ERROR
 
 The gate itself cannot determine a reliable decision because of invalid policy or infrastructure failure.
 
 ---
 
-# Compliance Status Handling
+## Compliance Status Handling
 
 Gates must define how canonical compliance states are treated.
 
@@ -231,7 +231,7 @@ should normally permit progression.
 
 ---
 
-# Non-Compliant Handling
+## Non-Compliant Handling
 
 A `NON_COMPLIANT` result normally causes the gate to block.
 
@@ -251,7 +251,7 @@ A governed exception may alter the gate decision only where both the affected ru
 
 ---
 
-# Incomplete Handling
+## Incomplete Handling
 
 `INCOMPLETE` means required assurance has not been demonstrated.
 
@@ -273,7 +273,7 @@ Absence of evidence must never be treated as permission to progress.
 
 ---
 
-# Error Handling
+## Error Handling
 
 A compliance result of:
 
@@ -289,7 +289,7 @@ The problem may be infrastructure rather than plugin behavior, but progression r
 
 ---
 
-# Mandatory Rule Enforcement
+## Mandatory Rule Enforcement
 
 Mandatory rules participate in every applicable gate.
 
@@ -308,7 +308,7 @@ unless the rule explicitly permits a governed exception and the gate accepts tha
 
 ---
 
-# Severity-Based Blocking
+## Severity-Based Blocking
 
 Gate policies may consider finding severity.
 
@@ -327,7 +327,7 @@ The gate defines lifecycle consequence.
 
 ---
 
-# Development Gate
+## Development Gate
 
 The Development Gate provides the lightest formal assurance level.
 
@@ -346,7 +346,7 @@ The Development Gate should remain fast enough for frequent use.
 
 ---
 
-# Development Gate Policy
+## Development Gate Policy
 
 A conceptual policy may permit:
 
@@ -367,7 +367,7 @@ Some non-critical rules may remain unevaluated under a development profile.
 
 ---
 
-# Merge Gate
+## Merge Gate
 
 The Merge Gate determines whether plugin changes may enter a protected integration branch.
 
@@ -386,7 +386,7 @@ Typical requirements include:
 
 ---
 
-# Merge Gate Policy
+## Merge Gate Policy
 
 A protected branch may require:
 
@@ -402,7 +402,7 @@ Blocking findings must be visible to reviewers.
 
 ---
 
-# Pull Request Gate
+## Pull Request Gate
 
 The Merge Gate may be implemented through pull request status checks.
 
@@ -426,7 +426,7 @@ The gate should expose blocking reasons directly in the pull request workflow.
 
 ---
 
-# Build Gate
+## Build Gate
 
 The Build Gate determines whether a plugin may produce a governed build artifact.
 
@@ -444,7 +444,7 @@ Typical requirements include:
 
 ---
 
-# Build Eligibility
+## Build Eligibility
 
 The Build Gate may distinguish between:
 
@@ -466,7 +466,7 @@ The selected gate must remain explicit.
 
 ---
 
-# Artifact Gate
+## Artifact Gate
 
 After build completion, FamilyOS may evaluate the generated artifact itself.
 
@@ -483,7 +483,7 @@ This produces assurance that the built artifact still conforms to expectations.
 
 ---
 
-# Release Gate
+## Release Gate
 
 The Release Gate determines whether a plugin may enter an official release workflow.
 
@@ -503,7 +503,7 @@ It should normally require:
 
 ---
 
-# Release Gate Model
+## Release Gate Model
 
 Conceptually:
 
@@ -530,7 +530,7 @@ It does not itself publish the plugin.
 
 ---
 
-# Release Gate and Warnings
+## Release Gate and Warnings
 
 The treatment of warnings at release time must be explicit.
 
@@ -547,7 +547,7 @@ The framework should avoid a universal assumption that all warnings are equivale
 
 ---
 
-# Release Evidence Requirements
+## Release Evidence Requirements
 
 Release gates should require stronger evidence provenance.
 
@@ -563,7 +563,7 @@ Local unverified evidence may be insufficient.
 
 ---
 
-# Certification Gate
+## Certification Gate
 
 The Certification Gate determines whether a plugin may proceed into or complete a certification workflow.
 
@@ -582,7 +582,7 @@ Typical requirements include:
 
 ---
 
-# Certification Gate Boundary
+## Certification Gate Boundary
 
 The Certification Gate must remain separate from certification approval.
 
@@ -608,7 +608,7 @@ Passing the gate does not automatically grant certification.
 
 ---
 
-# Certification Eligibility
+## Certification Eligibility
 
 A compliance result may expose:
 
@@ -631,7 +631,7 @@ Certification may still require:
 
 ---
 
-# Gate Profiles
+## Gate Profiles
 
 Each gate should identify the exact profile required.
 
@@ -649,7 +649,7 @@ The exact mapping may vary by plugin classification.
 
 ---
 
-# Gate Profile Escalation
+## Gate Profile Escalation
 
 A gate may require a stronger profile than the one previously evaluated.
 
@@ -668,7 +668,7 @@ A weaker prior result must not be reused as proof of stronger assurance.
 
 ---
 
-# Gate Profile Downgrade
+## Gate Profile Downgrade
 
 A gate must never silently downgrade its required profile.
 
@@ -690,7 +690,7 @@ Profile requirements are gate policy.
 
 ---
 
-# Evidence Completeness
+## Evidence Completeness
 
 Gates may define required evidence completeness.
 
@@ -711,7 +711,7 @@ The gate should clearly identify missing assurance.
 
 ---
 
-# Evidence Trust Requirements
+## Evidence Trust Requirements
 
 Gate policy may define minimum evidence trust.
 
@@ -737,7 +737,7 @@ The final trust hierarchy must be governed explicitly.
 
 ---
 
-# Artifact Binding Requirements
+## Artifact Binding Requirements
 
 Release and certification gates should be capable of requiring exact artifact binding.
 
@@ -755,7 +755,7 @@ A compliance result that cannot be connected to the artifact being released may 
 
 ---
 
-# Gate Exceptions
+## Gate Exceptions
 
 Gate exceptions must be governed explicitly.
 
@@ -782,7 +782,7 @@ Gate exceptions should be rare at stronger assurance levels.
 
 ---
 
-# Rule Exceptions vs Gate Exceptions
+## Rule Exceptions vs Gate Exceptions
 
 Rule exceptions and gate exceptions are distinct.
 
@@ -796,7 +796,7 @@ A release gate may choose not to accept certain valid rule exceptions.
 
 ---
 
-# Exception Constraints
+## Exception Constraints
 
 A gate exception should define:
 
@@ -814,7 +814,7 @@ The decision must remain visible in lifecycle records.
 
 ---
 
-# Non-Exemptible Gates
+## Non-Exemptible Gates
 
 Some gate policies may prohibit exceptions for particular conditions.
 
@@ -829,7 +829,7 @@ Such constraints protect the platform trust boundary.
 
 ---
 
-# Temporary Gate Overrides
+## Temporary Gate Overrides
 
 Temporary migration periods may require controlled gate overrides.
 
@@ -845,7 +845,7 @@ Temporary overrides must not become permanent hidden policy.
 
 ---
 
-# Gate Expiration
+## Gate Expiration
 
 Gate decisions should be contextual and may expire when underlying evidence becomes stale.
 
@@ -867,7 +867,7 @@ A gate decision is not a permanent plugin property.
 
 ---
 
-# Revalidation Before Progression
+## Revalidation Before Progression
 
 A gate may require fresh evaluation immediately before progression.
 
@@ -881,7 +881,7 @@ Revalidation should use current policy and evidence.
 
 ---
 
-# Gate and Compliance Drift
+## Gate and Compliance Drift
 
 A previously passed gate may no longer be valid after compliance drift.
 
@@ -906,7 +906,7 @@ They do not override current requirements.
 
 ---
 
-# Gate Ordering
+## Gate Ordering
 
 Lifecycle gates form a progressive assurance chain.
 
@@ -934,7 +934,7 @@ The framework should not rely on this assumption without explicit profile compos
 
 ---
 
-# Gate Independence
+## Gate Independence
 
 Each gate must remain independently evaluable.
 
@@ -946,7 +946,7 @@ This prevents stale lifecycle approvals.
 
 ---
 
-# Gate Short-Circuiting
+## Gate Short-Circuiting
 
 Some failures may justify stopping a workflow early.
 
@@ -965,7 +965,7 @@ However, validation should still collect useful findings when practical.
 
 ---
 
-# Gate Failure Reasons
+## Gate Failure Reasons
 
 A blocked gate must expose clear reasons.
 
@@ -990,7 +990,7 @@ without actionable context.
 
 ---
 
-# Gate Reporting
+## Gate Reporting
 
 Compliance reports should expose gate evaluation where relevant.
 
@@ -1008,7 +1008,7 @@ Gate reporting remains separate from canonical rule outcomes.
 
 ---
 
-# Gate and CI Status
+## Gate and CI Status
 
 CI systems may expose gate decisions as status checks.
 
@@ -1023,7 +1023,7 @@ The CI provider should not independently redefine pass or failure semantics.
 
 ---
 
-# Branch Protection
+## Branch Protection
 
 Protected branches may require a Merge Gate pass before changes can be integrated.
 
@@ -1045,7 +1045,7 @@ The gate supplies the compliance decision.
 
 ---
 
-# Build System Integration
+## Build System Integration
 
 Build systems may require a Build Gate pass before generating distributable artifacts.
 
@@ -1055,7 +1055,7 @@ Developer-local builds may use separate policy.
 
 ---
 
-# Release System Integration
+## Release System Integration
 
 Release automation should require an accepted Release Gate decision associated with the exact release candidate.
 
@@ -1070,7 +1070,7 @@ The release system should verify:
 
 ---
 
-# Certification Integration
+## Certification Integration
 
 Certification systems should consume a Certification Gate decision and underlying Compliance Result.
 
@@ -1085,7 +1085,7 @@ Certification must not depend only on human-readable gate output.
 
 ---
 
-# Gate Audit Trail
+## Gate Audit Trail
 
 Every gate evaluation should produce an audit trail including:
 
@@ -1108,7 +1108,7 @@ This supports lifecycle traceability.
 
 ---
 
-# Gate Decision Immutability
+## Gate Decision Immutability
 
 A finalized Gate Decision should be immutable.
 
@@ -1125,7 +1125,7 @@ Both remain valid historical records of their respective contexts.
 
 ---
 
-# Gate History
+## Gate History
 
 A plugin lifecycle may eventually expose:
 
@@ -1142,7 +1142,7 @@ Each decision should reference the compliance evaluation that produced it.
 
 ---
 
-# Gate Metrics
+## Gate Metrics
 
 Operational systems may track metrics such as:
 
@@ -1160,7 +1160,7 @@ They must not redefine compliance semantics.
 
 ---
 
-# Gate Quality
+## Gate Quality
 
 Gate policy itself requires validation.
 
@@ -1179,7 +1179,7 @@ Invalid gate policy should produce a gate infrastructure error.
 
 ---
 
-# Gate Testing
+## Gate Testing
 
 Compliance Gates require dedicated tests.
 
@@ -1201,7 +1201,7 @@ Core test categories include:
 
 ---
 
-# Cross-Gate Tests
+## Cross-Gate Tests
 
 FamilyOS should test expected progression across lifecycle gates.
 
@@ -1226,41 +1226,41 @@ when stronger requirements apply.
 
 ---
 
-# Gate Anti-Patterns
+## Gate Anti-Patterns
 
 The framework must avoid several gate anti-patterns.
 
-## Gate Defines Rules
+### Gate Defines Rules
 
 A gate must not invent compliance requirements outside the Rule Catalog.
 
-## Silent Downgrade
+### Silent Downgrade
 
 A failing strong gate must not fall back to a weaker profile.
 
-## Missing Evidence as Pass
+### Missing Evidence as Pass
 
 A strong gate must not accept incomplete validation as compliance.
 
-## Exception Without Traceability
+### Exception Without Traceability
 
 No lifecycle progression should occur through an undocumented exception.
 
-## CI Success Equals Compliance
+### CI Success Equals Compliance
 
 A generic successful CI pipeline must not be assumed to mean a compliance gate passed.
 
-## Historical Pass Reuse
+### Historical Pass Reuse
 
 A prior gate pass must not be reused after relevant context changes without freshness validation.
 
-## Manual Override Without Policy
+### Manual Override Without Policy
 
 Human authority must operate through governed exception mechanisms.
 
 ---
 
-# Initial Gate Baseline
+## Initial Gate Baseline
 
 The initial framework implementation should establish at least:
 
@@ -1276,7 +1276,7 @@ The initial baseline should prioritize official plugin enforcement.
 
 ---
 
-# Official Plugin Gate Baseline
+## Official Plugin Gate Baseline
 
 For official plugins, the target progression is:
 
@@ -1300,7 +1300,7 @@ Certification requirements may be introduced as the certification system matures
 
 ---
 
-# Future Gate Capabilities
+## Future Gate Capabilities
 
 Future evolution may include:
 
@@ -1316,7 +1316,7 @@ These extensions must consume the same canonical compliance model.
 
 ---
 
-# Gate Invariants
+## Gate Invariants
 
 The Compliance Gate model establishes the following invariants:
 
@@ -1343,7 +1343,7 @@ The Compliance Gate model establishes the following invariants:
 
 ---
 
-# Reference Gate Model
+## Reference Gate Model
 
 The complete lifecycle model is:
 
@@ -1391,7 +1391,7 @@ Each stage increases the required level of assurance.
 
 ---
 
-# Gate Summary
+## Gate Summary
 
 Compliance Gates convert compliance evidence into lifecycle enforcement.
 
@@ -1411,7 +1411,7 @@ A Gate Decision controls progression but never changes the meaning of the underl
 
 ---
 
-# Final Gate Principle
+## Final Gate Principle
 
 The governing principle of Compliance Gates is:
 

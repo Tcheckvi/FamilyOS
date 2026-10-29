@@ -27,7 +27,7 @@ Documentation is therefore part of the engineering system itself rather than a s
 
 ---
 
-# Framework Identity
+## Framework Identity
 
 | Field                   | Value                                     |
 | ----------------------- | ----------------------------------------- |
@@ -47,7 +47,7 @@ Documentation is therefore part of the engineering system itself rather than a s
 
 ---
 
-# Purpose
+## Purpose
 
 The Documentation Framework provides the common rules required to manage engineering knowledge throughout the FamilyOS lifecycle.
 
@@ -85,7 +85,7 @@ The framework supports engineering activities across:
 
 ---
 
-# Vision
+## Vision
 
 The FamilyOS Documentation Framework establishes a scalable engineering knowledge system.
 
@@ -117,17 +117,17 @@ Documentation SHALL evolve together with the system it describes.
 
 ---
 
-# Core Documentation Principles
+## Core Documentation Principles
 
 The framework is based on the following principles.
 
-## Documentation Is an Engineering Artifact
+### Documentation Is an Engineering Artifact
 
 Documentation SHALL receive engineering discipline appropriate to its importance.
 
 ---
 
-## Single Source of Truth
+### Single Source of Truth
 
 Canonical information SHOULD have one authoritative location.
 
@@ -135,13 +135,13 @@ Uncontrolled normative duplication SHOULD be avoided.
 
 ---
 
-## Explicit Ownership
+### Explicit Ownership
 
 Important documentation SHALL have identifiable ownership or an explicit governance responsibility.
 
 ---
 
-## Traceability
+### Traceability
 
 Documentation SHOULD be traceable to related engineering artifacts where applicable.
 
@@ -161,35 +161,35 @@ Operational Evidence
 
 ---
 
-## Maintainability
+### Maintainability
 
 Documentation SHALL remain understandable and safely maintainable by contributors other than its original author.
 
 ---
 
-## Version Control
+### Version Control
 
 Canonical FamilyOS documentation SHALL be managed through repository version control.
 
 ---
 
-## Validation
+### Validation
 
 Documentation SHALL be validated before it is treated as authoritative.
 
 ---
 
-## Controlled Evolution
+### Controlled Evolution
 
 Documentation changes SHALL preserve appropriate historical traceability.
 
 ---
 
-# Documentation Architecture
+## Documentation Architecture
 
 FamilyOS documentation is organized conceptually into four major layers.
 
-## Strategic Documentation
+### Strategic Documentation
 
 Strategic documentation expresses engineering direction and intent.
 
@@ -202,7 +202,7 @@ Examples include:
 
 ---
 
-## Governance Documentation
+### Governance Documentation
 
 Governance documentation defines engineering rules and decision structures.
 
@@ -216,7 +216,7 @@ Examples include:
 
 ---
 
-## Specification Documentation
+### Specification Documentation
 
 Specification documentation defines technical contracts and expected behavior.
 
@@ -230,7 +230,7 @@ Examples include:
 
 ---
 
-## Implementation Documentation
+### Implementation Documentation
 
 Implementation documentation supports practical execution.
 
@@ -245,7 +245,7 @@ Examples include:
 
 ---
 
-# Canonical Repository Structure
+## Canonical Repository Structure
 
 EPIC-DOC-001 currently uses the canonical numbered range:
 
@@ -263,7 +263,7 @@ The normalized framework consists of:
 
 ---
 
-# Canonical Numbered Documents
+## Canonical Numbered Documents
 
 ```text
 00-EPIC.md
@@ -294,7 +294,7 @@ The normalized framework consists of:
 
 ---
 
-# Control Documents
+## Control Documents
 
 The framework uses the standard FamilyOS control-document set:
 
@@ -322,7 +322,7 @@ These documents serve different repository-governance roles.
 
 ---
 
-# Historical Structural Condition
+## Historical Structural Condition
 
 Before the current normalization, the EPIC directory contained:
 
@@ -344,7 +344,7 @@ This produced ten duplicate-number groups.
 
 ---
 
-# Historical Duplicate Groups
+## Historical Duplicate Groups
 
 The historical mixed structure contained:
 
@@ -392,7 +392,7 @@ The historical mixed structure contained:
 
 ---
 
-# Duplicate Skeleton Classification
+## Duplicate Skeleton Classification
 
 Repository audit showed that ten of these files were short generic framework skeletons.
 
@@ -426,7 +426,7 @@ The duplicate skeleton documents identified for removal are:
 
 ---
 
-# Canonical Substantive Documents
+## Canonical Substantive Documents
 
 The substantive documents retained from the duplicate range are:
 
@@ -447,17 +447,17 @@ These documents contain dedicated context, principles, architecture, rules, resp
 
 ---
 
-# Structural Normalization
+## Structural Normalization
 
 The current structural normalization performs two principal actions.
 
-## Remove Duplicate Skeleton Documents
+### Remove Duplicate Skeleton Documents
 
 Ten duplicate generic skeleton files are removed from the canonical structure.
 
 ---
 
-## Introduce `00-EPIC.md`
+### Introduce `00-EPIC.md`
 
 A canonical numbered EPIC document is introduced at:
 
@@ -496,7 +496,7 @@ This produces a deterministic numbered sequence:
 
 ---
 
-# Structural Target
+## Structural Target
 
 After normalization:
 
@@ -510,7 +510,7 @@ Canonical Files:        31
 
 ---
 
-# Documentation Lifecycle
+## Documentation Lifecycle
 
 The framework defines a controlled documentation lifecycle.
 
@@ -548,7 +548,7 @@ The fundamental requirements remain:
 
 ---
 
-# Documentation Metadata
+## Documentation Metadata
 
 Canonical documentation SHOULD expose metadata appropriate to its role.
 
@@ -573,7 +573,7 @@ Machine-readable formats may be used where useful.
 
 ---
 
-# Documentation Versioning
+## Documentation Versioning
 
 Documentation SHALL evolve through controlled versioning.
 
@@ -583,7 +583,7 @@ Version semantics may vary according to document category, but changes SHALL rem
 
 ---
 
-# Documentation Governance
+## Documentation Governance
 
 Governance responsibilities include:
 
@@ -601,7 +601,7 @@ Governance SHOULD be proportional to document importance and engineering impact.
 
 ---
 
-# Documentation Automation
+## Documentation Automation
 
 The framework supports automation in areas such as:
 
@@ -619,7 +619,7 @@ Automation SHALL NOT eliminate required engineering ownership or review.
 
 ---
 
-# Documentation Quality Gates
+## Documentation Quality Gates
 
 Documentation SHOULD pass appropriate quality gates before becoming canonical.
 
@@ -641,7 +641,7 @@ Quality gates SHOULD prevent defective documentation from becoming an official e
 
 ---
 
-# Repository Organization
+## Repository Organization
 
 Documentation SHOULD have predictable locations.
 
@@ -664,7 +664,7 @@ Actual repository organization may evolve through controlled migration.
 
 ---
 
-# Review Process
+## Review Process
 
 Documentation review SHOULD evaluate:
 
@@ -683,7 +683,7 @@ Review rigor SHOULD be proportional to engineering impact.
 
 ---
 
-# Maintenance
+## Maintenance
 
 Published documentation requires continued maintenance.
 
@@ -699,7 +699,7 @@ Maintenance may include:
 
 ---
 
-# Migration
+## Migration
 
 Documentation migrations SHALL preserve important engineering knowledge.
 
@@ -723,7 +723,7 @@ Migration SHALL NOT silently destroy relevant history.
 
 ---
 
-# Deprecation
+## Deprecation
 
 Deprecated documentation SHOULD remain clearly identifiable.
 
@@ -738,7 +738,7 @@ Deprecated documentation MAY remain available for historical purposes.
 
 ---
 
-# Metrics
+## Metrics
 
 Documentation metrics may help evaluate framework health.
 
@@ -757,7 +757,7 @@ Metrics SHALL support decisions rather than replace engineering judgment.
 
 ---
 
-# Validation
+## Validation
 
 EPIC-DOC-001 requires evidence-based validation.
 
@@ -792,7 +792,7 @@ A requirement being documented does not itself establish `PASS`.
 
 ---
 
-# Current Release Evidence
+## Current Release Evidence
 
 The existing numbered release document declares:
 
@@ -817,7 +817,7 @@ No historical Git identity SHALL be invented.
 
 ---
 
-# Historical Release Preservation
+## Historical Release Preservation
 
 If repository history confirms an existing release tag or release commit, that identity SHALL remain immutable.
 
@@ -832,7 +832,7 @@ The normalization SHALL NOT:
 
 ---
 
-# Framework Boundaries
+## Framework Boundaries
 
 EPIC-DOC-001 owns documentation-framework semantics.
 
@@ -856,7 +856,7 @@ It does not replace their authoritative domain semantics.
 
 ---
 
-# Current Revalidation State
+## Current Revalidation State
 
 Current framework state:
 
@@ -877,7 +877,7 @@ Final Revalidation:      Validated
 
 ---
 
-# Current Normalization Requirements
+## Current Normalization Requirements
 
 Current normalization remains incomplete until:
 
@@ -898,7 +898,7 @@ Current normalization remains incomplete until:
 
 ---
 
-# Validation Target
+## Validation Target
 
 The target normalized repository contract is:
 
@@ -913,7 +913,7 @@ Empty Canonical Files:  0
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 Current repository validation SHALL include:
 
@@ -928,7 +928,7 @@ Actual results SHALL be recorded by `VALIDATION.md`.
 
 ---
 
-# Navigation
+## Navigation
 
 For framework definition, start with:
 
@@ -986,7 +986,7 @@ For closure and release:
 
 ---
 
-# Definition of Done
+## Definition of Done
 
 EPIC-DOC-001 reaches validated closure when:
 
@@ -1015,7 +1015,7 @@ Final Revalidation:    Validated
 
 ---
 
-# Summary
+## Summary
 
 EPIC-DOC-001 establishes the canonical FamilyOS Documentation Framework.
 

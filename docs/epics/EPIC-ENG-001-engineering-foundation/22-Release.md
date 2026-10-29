@@ -21,7 +21,7 @@ Publication remains separate from EPIC implementation completion.
 
 ---
 
-# Release Objectives
+## Release Objectives
 
 The objective of the Engineering Foundation release is to establish:
 
@@ -38,9 +38,9 @@ The release provides a controlled engineering baseline upon which specialized Fa
 
 ---
 
-# Release Principles
+## Release Principles
 
-## Stability
+### Stability
 
 A released Engineering Foundation MUST represent an approved and reliable engineering baseline.
 
@@ -48,7 +48,7 @@ Unvalidated or partially validated states MUST NOT be published as official rele
 
 ---
 
-## Traceability
+### Traceability
 
 Every release MUST remain connected to:
 
@@ -62,7 +62,7 @@ Every release MUST remain connected to:
 
 ---
 
-## Reproducibility
+### Reproducibility
 
 The released state MUST be identifiable, reproducible, and recoverable from repository history.
 
@@ -70,7 +70,7 @@ The repository commit and publication tag MUST identify the exact approved Engin
 
 ---
 
-## Validation Before Release
+### Validation Before Release
 
 Validation MUST precede publication.
 
@@ -78,7 +78,7 @@ An official release MUST NOT be published while required documentation, engineer
 
 ---
 
-## Controlled Evolution
+### Controlled Evolution
 
 The Engineering Foundation establishes a stable baseline that evolves through governed and traceable improvements.
 
@@ -86,7 +86,7 @@ Future revisions MUST preserve the engineering governance and validation princip
 
 ---
 
-# Release Lifecycle
+## Release Lifecycle
 
 Every Engineering Foundation release follows a controlled lifecycle.
 
@@ -133,7 +133,7 @@ Verify       PENDING PUBLICATION
 
 ---
 
-# Release Preparation
+## Release Preparation
 
 Release preparation ensures that the Engineering Foundation has a complete and coherent candidate state.
 
@@ -156,7 +156,7 @@ Release Preparation: PASS
 
 ---
 
-# Release Version
+## Release Version
 
 The Engineering Foundation EPIC document version is:
 
@@ -184,11 +184,11 @@ v5.2.0-engineering-foundation
 
 ---
 
-# Release Readiness Criteria
+## Release Readiness Criteria
 
 The Engineering Foundation is eligible for publication because all mandatory release-readiness criteria have been satisfied.
 
-## Documentation Readiness
+### Documentation Readiness
 
 Validated documentation conditions:
 
@@ -226,7 +226,7 @@ PASS
 
 ---
 
-# Canonical Structure Readiness
+## Canonical Structure Readiness
 
 The release structure contains:
 
@@ -245,7 +245,7 @@ PASS
 
 ---
 
-# Release Validation
+## Release Validation
 
 Release validation uses objective repository evidence.
 
@@ -271,7 +271,7 @@ The authoritative validation record is maintained in `VALIDATION.md`.
 
 ---
 
-# Current Release State
+## Current Release State
 
 The current Engineering Foundation release state is:
 
@@ -305,7 +305,7 @@ The repository release is not considered published until the final commit, tag, 
 
 ---
 
-# Quality Gates
+## Quality Gates
 
 The Engineering Foundation release is subject to the quality gates declared by `EPIC.yaml`.
 
@@ -335,7 +335,7 @@ The final clean-working-tree check occurs after repository publication operation
 
 ---
 
-# Ruff Validation
+## Ruff Validation
 
 Canonical command:
 
@@ -357,7 +357,7 @@ PASS
 
 ---
 
-# MyPy Validation
+## MyPy Validation
 
 Canonical command:
 
@@ -385,7 +385,7 @@ PASS
 
 ---
 
-# Pytest Validation
+## Pytest Validation
 
 Canonical command:
 
@@ -411,7 +411,7 @@ The authoritative condition is that all 1243 tests pass.
 
 ---
 
-# Diff Validation
+## Diff Validation
 
 Canonical command:
 
@@ -429,7 +429,7 @@ No whitespace errors or conflict markers were detected.
 
 ---
 
-# Release Evidence
+## Release Evidence
 
 Release approval is supported by evidence including:
 
@@ -452,9 +452,9 @@ Evidence is maintained across the Engineering Foundation control documents.
 
 ---
 
-# Release Changelog
+## Release Changelog
 
-## Version 1.0.0
+### Version 1.0.0
 
 Version `1.0.0` is the canonical Engineering Foundation EPIC document version.
 
@@ -487,7 +487,7 @@ The completed baseline is approved for publication.
 
 ---
 
-# Release Artifacts
+## Release Artifacts
 
 The official publication is expected to identify:
 
@@ -510,7 +510,7 @@ The release commit and publication tag are created during the final repository p
 
 ---
 
-# Release Approval
+## Release Approval
 
 Release approval confirms that EPIC-ENG-001 satisfies its engineering objectives and required quality gates.
 
@@ -531,7 +531,7 @@ APPROVED
 
 ---
 
-# Release Decision
+## Release Decision
 
 The current release decision is:
 
@@ -554,7 +554,7 @@ Publication remains the final repository operation.
 
 ---
 
-# Blocked Release Rule
+## Blocked Release Rule
 
 Future Engineering Foundation releases MUST remain blocked when:
 
@@ -571,11 +571,11 @@ This rule describes future release governance and does not describe the current 
 
 ---
 
-# Versioning Model
+## Versioning Model
 
 EPIC-ENG-001 uses two related but distinct version identities.
 
-## EPIC Document Version
+### EPIC Document Version
 
 ```text
 1.0.0
@@ -585,7 +585,7 @@ This identifies the Engineering Foundation document contract.
 
 ---
 
-## Repository Publication Version
+### Repository Publication Version
 
 Repository release tags follow the FamilyOS repository-wide release sequence.
 
@@ -608,7 +608,7 @@ v5.2.0-engineering-foundation
 
 ---
 
-# Historical Engineering Tags
+## Historical Engineering Tags
 
 Historical Engineering Foundation and Engineering Platform tags include:
 
@@ -627,7 +627,7 @@ The current normalized Engineering Foundation baseline is published separately t
 
 ---
 
-# Target Publication Tag
+## Target Publication Tag
 
 Target:
 
@@ -641,7 +641,7 @@ The tag MUST be created only after the final closure commit exists.
 
 ---
 
-# Git Integration
+## Git Integration
 
 The final approved Engineering Foundation publication is represented through Git.
 
@@ -664,7 +664,7 @@ These commands MUST NOT be executed until:
 
 ---
 
-# Publication Sequence
+## Publication Sequence
 
 The final publication sequence is:
 
@@ -701,7 +701,7 @@ Verify clean working tree
 
 ---
 
-# Post-Release Maintenance
+## Post-Release Maintenance
 
 Following successful publication:
 
@@ -715,7 +715,7 @@ Following successful publication:
 
 ---
 
-# Future Evolution
+## Future Evolution
 
 Future Engineering Foundation releases may introduce:
 
@@ -730,7 +730,7 @@ Such evolution MUST remain compatible with the principles and governance model e
 
 ---
 
-# Integration With Specialized EPICs
+## Integration With Specialized EPICs
 
 The Engineering Foundation provides the baseline for specialized FamilyOS engineering frameworks, including:
 
@@ -755,7 +755,7 @@ EPIC-ENG-001 establishes the common engineering baseline without replacing these
 
 ---
 
-# Release Governance
+## Release Governance
 
 Engineering Foundation releases follow Technical Governance.
 
@@ -772,7 +772,7 @@ Major engineering changes SHOULD follow the established governance process befor
 
 ---
 
-# Final Release Readiness Matrix
+## Final Release Readiness Matrix
 
 ```text
 Structural validation     PASS
@@ -810,7 +810,7 @@ v5.2.0-engineering-foundation
 
 ---
 
-# Final Release Statement
+## Final Release Statement
 
 EPIC-ENG-001 — Engineering Foundation v1.0.0 establishes the canonical shared engineering operating model of FamilyOS.
 

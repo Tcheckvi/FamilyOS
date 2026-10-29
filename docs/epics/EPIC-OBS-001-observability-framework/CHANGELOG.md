@@ -1,6 +1,6 @@
 # Observability Framework
 
-# Changelog
+## Changelog
 
 This document records the evolution of **EPIC-OBS-001 — Observability Framework**.
 
@@ -8,9 +8,9 @@ It preserves the historical publication of the framework and provides a structur
 
 ---
 
-# Unreleased
+## Unreleased
 
-## Added
+### Added
 
 * Standardized EPIC control-document layer.
 * Machine-readable `EPIC.yaml`.
@@ -20,7 +20,7 @@ It preserves the historical publication of the framework and provides a structur
 * Human-readable `README.md`.
 * Canonical control summary in `EPIC-OBS-001.md`.
 
-## Changed
+### Changed
 
 * Normalized the current repository representation from the historical compact documentation model to the current FamilyOS controlled EPIC model.
 * Distinguished the historical ten-document release structure from the current seventeen-file repository representation.
@@ -29,7 +29,7 @@ It preserves the historical publication of the framework and provides a structur
 * Added explicit post-release revalidation state.
 * Added explicit repository structure and validation contracts.
 
-## Validation
+### Validation
 
 Current normalized repository state:
 
@@ -42,9 +42,9 @@ No current PASS result is recorded until supported by actual repository executio
 
 ---
 
-# 4.9.0 — Observability Framework
+## 4.9.0 — Observability Framework
 
-## Historical Status
+### Historical Status
 
 ```text
 PUBLISHED
@@ -70,7 +70,7 @@ IMMUTABLE
 
 ---
 
-# Historical Documentation Model
+## Historical Documentation Model
 
 The original Observability Framework release used the compact FamilyOS framework documentation model.
 
@@ -89,9 +89,9 @@ This historical fact SHALL remain preserved.
 
 ---
 
-# Added in 4.9.0
+## Added in 4.9.0
 
-## Observability Framework Foundation
+### Observability Framework Foundation
 
 Established **EPIC-OBS-001 — Observability Framework** as the canonical FamilyOS observability engineering foundation.
 
@@ -119,7 +119,7 @@ The framework introduced a dedicated observability model covering:
 
 ---
 
-# Canonical Historical Documents
+## Canonical Historical Documents
 
 The historical release established the following numbered-document structure:
 
@@ -144,7 +144,7 @@ Historical numbered-document count:
 
 ---
 
-# Observability Principles
+## Observability Principles
 
 Version `4.9.0` established the foundational FamilyOS Observability Principles.
 
@@ -168,7 +168,7 @@ Operationally Actionable
 
 ---
 
-# Structured Telemetry
+## Structured Telemetry
 
 The framework established structured telemetry as the preferred model where practical.
 
@@ -186,7 +186,7 @@ Free-form messages may still supplement structured signals.
 
 ---
 
-# Correlation
+## Correlation
 
 Version `4.9.0` established correlation as a first-class observability requirement.
 
@@ -206,7 +206,7 @@ Related telemetry SHOULD be reconstructable into a meaningful execution story.
 
 ---
 
-# Context-Rich Telemetry
+## Context-Rich Telemetry
 
 Telemetry SHOULD carry sufficient context to explain system behavior.
 
@@ -225,7 +225,7 @@ Useful context may include:
 
 ---
 
-# Privacy-Aware Observability
+## Privacy-Aware Observability
 
 The framework established privacy-aware telemetry design.
 
@@ -241,7 +241,7 @@ Observability SHOULD avoid unnecessary exposure of:
 
 ---
 
-# Security-Aware Observability
+## Security-Aware Observability
 
 The framework recognized observability as an important source of security evidence.
 
@@ -258,7 +258,7 @@ Telemetry itself SHALL remain appropriately protected.
 
 ---
 
-# Observability Architecture
+## Observability Architecture
 
 Version `4.9.0` established the canonical Observability Architecture.
 
@@ -284,7 +284,7 @@ The architecture separates application semantics from telemetry infrastructure.
 
 ---
 
-# Vendor Neutrality
+## Vendor Neutrality
 
 The framework established vendor neutrality as an important architectural principle.
 
@@ -294,7 +294,7 @@ Adapters may connect canonical observability abstractions to external systems.
 
 ---
 
-# Logging
+## Logging
 
 Version `4.9.0` established logging guidance covering:
 
@@ -310,7 +310,7 @@ Logging SHALL NOT become an uncontrolled storage mechanism for arbitrary applica
 
 ---
 
-# Log Severity
+## Log Severity
 
 Typical severity semantics may include:
 
@@ -327,7 +327,7 @@ Severity SHOULD represent operational significance.
 
 ---
 
-# Metrics
+## Metrics
 
 The framework introduced canonical metric guidance.
 
@@ -345,7 +345,7 @@ Metrics may represent:
 
 ---
 
-# Metric Cardinality
+## Metric Cardinality
 
 Version `4.9.0` established cardinality awareness as an important metric-design requirement.
 
@@ -361,7 +361,7 @@ Metric labels SHOULD remain bounded where practical.
 
 ---
 
-# Tracing
+## Tracing
 
 The framework established tracing as a mechanism for understanding causal and temporal execution relationships.
 
@@ -379,7 +379,7 @@ Tracing SHOULD support cross-component diagnosis without unnecessary vendor coup
 
 ---
 
-# Spans
+## Spans
 
 A span may contain:
 
@@ -397,7 +397,7 @@ Span data SHALL remain subject to privacy and security requirements.
 
 ---
 
-# Structured Events
+## Structured Events
 
 Version `4.9.0` established structured operational events.
 
@@ -416,7 +416,7 @@ Stable event names support automation, testing, and diagnosis.
 
 ---
 
-# Health
+## Health
 
 The framework established explicit health semantics.
 
@@ -433,7 +433,7 @@ Health SHOULD communicate meaningful operational state.
 
 ---
 
-# Readiness
+## Readiness
 
 Readiness was established as distinct from simple process existence.
 
@@ -447,7 +447,7 @@ A component may be running but not ready because:
 
 ---
 
-# Liveness
+## Liveness
 
 Liveness indicates whether a component remains alive enough to continue execution.
 
@@ -455,7 +455,7 @@ Liveness SHALL NOT automatically imply readiness or full health.
 
 ---
 
-# Diagnostics
+## Diagnostics
 
 Version `4.9.0` established diagnostics as a deeper troubleshooting capability.
 
@@ -473,7 +473,7 @@ Diagnostics SHALL avoid unnecessary secret or private-data exposure.
 
 ---
 
-# Alerting
+## Alerting
 
 The framework introduced alerting guidance.
 
@@ -489,7 +489,7 @@ Alert volume alone SHALL NOT represent observability quality.
 
 ---
 
-# Alert Ownership
+## Alert Ownership
 
 An alert SHOULD have identifiable ownership or routing expectations.
 
@@ -497,7 +497,7 @@ Unowned alerts create operational ambiguity and tend to become ignored.
 
 ---
 
-# Observability Data
+## Observability Data
 
 The framework established observability data as governed operational data.
 
@@ -513,7 +513,7 @@ This includes:
 
 ---
 
-# Time and Ordering
+## Time and Ordering
 
 Version `4.9.0` established consistent time representation as an important telemetry requirement.
 
@@ -527,7 +527,7 @@ Observability systems SHOULD account for:
 
 ---
 
-# Telemetry Correlation
+## Telemetry Correlation
 
 Telemetry correlation enables signals across different layers to be associated with common execution contexts.
 
@@ -547,7 +547,7 @@ Diagnostics
 
 ---
 
-# Retention
+## Retention
 
 Observability data SHOULD be retained according to legitimate operational need.
 
@@ -562,7 +562,7 @@ Retention SHOULD consider:
 
 ---
 
-# Data Minimization
+## Data Minimization
 
 Version `4.9.0` established telemetry minimization as an explicit observability requirement.
 
@@ -570,7 +570,7 @@ Observability SHALL NOT become a secondary uncontrolled replica of FamilyOS doma
 
 ---
 
-# Secret Protection
+## Secret Protection
 
 Secrets SHALL NOT intentionally appear in telemetry.
 
@@ -590,7 +590,7 @@ Redaction may provide defense in depth but does not replace safe instrumentation
 
 ---
 
-# Security and Privacy
+## Security and Privacy
 
 The framework integrated security and privacy into observability design.
 
@@ -606,7 +606,7 @@ Governance may cover:
 
 ---
 
-# Observability Governance
+## Observability Governance
 
 Version `4.9.0` established governance for:
 
@@ -624,7 +624,7 @@ Governance reduces fragmentation across FamilyOS components.
 
 ---
 
-# Implementation Direction
+## Implementation Direction
 
 The framework established implementation direction while remaining vendor-neutral.
 
@@ -645,7 +645,7 @@ Exact implementation remains subject to engineering evolution.
 
 ---
 
-# Automation
+## Automation
 
 Observability automation may include:
 
@@ -662,7 +662,7 @@ Automation SHOULD expose failures explicitly.
 
 ---
 
-# Testing Integration
+## Testing Integration
 
 EPIC-OBS-001 integrates with the FamilyOS Testing Framework.
 
@@ -679,7 +679,7 @@ Observability-specific tests may verify:
 
 ---
 
-# Quality Integration
+## Quality Integration
 
 The framework integrates with the Quality Framework.
 
@@ -693,7 +693,7 @@ Observability may provide quality evidence such as:
 
 ---
 
-# Build Integration
+## Build Integration
 
 Observability may provide build-related evidence such as:
 
@@ -706,7 +706,7 @@ EPIC-BLD-001 remains authoritative for build engineering.
 
 ---
 
-# Release Integration
+## Release Integration
 
 Version `4.9.0` integrated observability with release engineering.
 
@@ -725,7 +725,7 @@ EPIC-REL-001 remains authoritative for the release lifecycle.
 
 ---
 
-# Security Integration
+## Security Integration
 
 The Observability Framework integrates with the Security Framework.
 
@@ -741,7 +741,7 @@ EPIC-SEC-001 remains authoritative for security architecture.
 
 ---
 
-# Validation
+## Validation
 
 Version `4.9.0` defined observability validation requirements covering:
 
@@ -756,7 +756,7 @@ Version `4.9.0` defined observability validation requirements covering:
 
 ---
 
-# Historical Validation State
+## Historical Validation State
 
 The historical numbered framework contains pre-publication states such as:
 
@@ -770,7 +770,7 @@ These values reflect the historical release workflow and SHALL NOT automatically
 
 ---
 
-# Historical Release Completion
+## Historical Release Completion
 
 Version `4.9.0` was historically completed and published under:
 
@@ -788,7 +788,7 @@ The framework is therefore historically published.
 
 ---
 
-# Historical Tag Integrity
+## Historical Tag Integrity
 
 The historical release tag SHALL remain immutable.
 
@@ -806,7 +806,7 @@ Current normalization changes belong to later forward repository history.
 
 ---
 
-# Post-Release Normalization
+## Post-Release Normalization
 
 After historical publication, the FamilyOS framework-governance model evolved.
 
@@ -834,7 +834,7 @@ This changes the current repository representation to:
 
 ---
 
-# Historical vs Current Repository State
+## Historical vs Current Repository State
 
 Historical release:
 
@@ -858,7 +858,7 @@ The normalized structure SHALL NOT be retroactively attributed to the historical
 
 ---
 
-# Current Revalidation
+## Current Revalidation
 
 The normalized repository representation requires evidence-based revalidation.
 
@@ -902,7 +902,7 @@ Final Repository State
 
 ---
 
-# Validation Evidence Policy
+## Validation Evidence Policy
 
 The required model is:
 
@@ -930,7 +930,7 @@ No current validation check SHALL be declared successful without actual evidence
 
 ---
 
-# Current Normalization State
+## Current Normalization State
 
 ```text
 Framework Version:       4.9.0
@@ -957,7 +957,7 @@ Final Revalidation:      Validated
 
 ---
 
-# Future Changes
+## Future Changes
 
 Future Observability Framework revisions may introduce:
 
@@ -978,7 +978,7 @@ Such changes SHALL follow normal FamilyOS framework versioning and release gover
 
 ---
 
-# Final Changelog Principle
+## Final Changelog Principle
 
 The canonical historical statement for EPIC-OBS-001 is:
 

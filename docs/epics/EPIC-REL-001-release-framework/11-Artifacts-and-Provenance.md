@@ -1,8 +1,8 @@
 # Release Framework
 
-# 11 Artifacts and Provenance
+## 11 Artifacts and Provenance
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework defines the artifact and provenance model used to establish trust in FamilyOS releases.
 
@@ -28,7 +28,7 @@ The objective is to ensure that FamilyOS can answer, for every significant offic
 
 ---
 
-# Purpose
+## Purpose
 
 This document establishes:
 
@@ -51,7 +51,7 @@ The model provides the foundation for trustworthy candidate validation and publi
 
 ---
 
-# Artifact Principle
+## Artifact Principle
 
 The central artifact principle is:
 
@@ -79,7 +79,7 @@ artifact integrity
 
 ---
 
-# Provenance Principle
+## Provenance Principle
 
 The central provenance principle is:
 
@@ -111,7 +111,7 @@ The conceptual chain must exist from the beginning.
 
 ---
 
-# Artifact Definition
+## Artifact Definition
 
 A Release Artifact is any immutable or versioned output intentionally included in an official release.
 
@@ -134,7 +134,7 @@ Not every file generated during development is a release artifact.
 
 ---
 
-# Build Artifact vs Release Artifact
+## Build Artifact vs Release Artifact
 
 Build artifacts and release artifacts are related but distinct.
 
@@ -162,7 +162,7 @@ The Release Framework owns the selection and qualification of release artifacts.
 
 ---
 
-# Release Artifact Set
+## Release Artifact Set
 
 Every release involving artifacts SHOULD have an explicit artifact set.
 
@@ -183,7 +183,7 @@ The artifact set must correspond to the release candidate.
 
 ---
 
-# Artifact Inventory
+## Artifact Inventory
 
 A release artifact inventory lists all artifacts intended for publication.
 
@@ -204,7 +204,7 @@ The exact artifact types depend on release profile.
 
 ---
 
-# Artifact Inventory Principle
+## Artifact Inventory Principle
 
 A release MUST NOT publish unidentified artifacts.
 
@@ -214,7 +214,7 @@ Unexpected artifact presence is a release integrity concern.
 
 ---
 
-# Artifact Classification
+## Artifact Classification
 
 Artifacts may be classified by role.
 
@@ -234,7 +234,7 @@ Only appropriate artifact classes should be distributed publicly.
 
 ---
 
-# Primary Artifacts
+## Primary Artifacts
 
 Primary artifacts represent the main consumable outputs of a release.
 
@@ -250,7 +250,7 @@ Primary artifacts require the strongest identity and integrity guarantees.
 
 ---
 
-# Supporting Artifacts
+## Supporting Artifacts
 
 Supporting artifacts help consumers use or verify a release.
 
@@ -265,7 +265,7 @@ They remain part of release identity where officially distributed.
 
 ---
 
-# Metadata Artifacts
+## Metadata Artifacts
 
 Metadata artifacts describe the release.
 
@@ -283,7 +283,7 @@ Metadata should be treated as part of the release evidence model.
 
 ---
 
-# Documentation Artifacts
+## Documentation Artifacts
 
 Documentation may itself be released as an artifact.
 
@@ -298,7 +298,7 @@ Documentation artifacts should remain traceable to the release they describe.
 
 ---
 
-# Artifact Identity
+## Artifact Identity
 
 An artifact should have sufficient identity to distinguish it from other artifacts.
 
@@ -332,7 +332,7 @@ sha256:<digest>
 
 ---
 
-# Filename Identity
+## Filename Identity
 
 Artifact filenames may communicate identity.
 
@@ -350,7 +350,7 @@ Stronger identity should use metadata and integrity evidence.
 
 ---
 
-# Artifact Version
+## Artifact Version
 
 Artifacts should expose or reference the release version where appropriate.
 
@@ -370,7 +370,7 @@ The release manifest should preserve the relationship.
 
 ---
 
-# Artifact Build Identity
+## Artifact Build Identity
 
 Where artifacts originate from a build, they SHOULD identify or reference the build execution that produced them.
 
@@ -391,7 +391,7 @@ This creates direct source-to-artifact traceability.
 
 ---
 
-# Artifact Checksum
+## Artifact Checksum
 
 FamilyOS SHOULD use cryptographic checksums for releasable binary or packaged artifacts where practical.
 
@@ -409,7 +409,7 @@ The exact checksum algorithm may be governed by future security policy.
 
 ---
 
-# Checksum Purpose
+## Checksum Purpose
 
 Checksums provide evidence that:
 
@@ -429,7 +429,7 @@ They support:
 
 ---
 
-# Checksum Limitations
+## Checksum Limitations
 
 A checksum proves content identity.
 
@@ -445,7 +445,7 @@ Checksums are one part of provenance.
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Artifact integrity means that the artifact has not been unintentionally or unauthorizedly altered relative to its recorded identity.
 
@@ -467,7 +467,7 @@ FamilyOS may adopt stronger mechanisms over time.
 
 ---
 
-# Artifact Immutability
+## Artifact Immutability
 
 Published release artifacts SHOULD be immutable.
 
@@ -489,7 +489,7 @@ without an explicit governed correction model.
 
 ---
 
-# Artifact Replacement
+## Artifact Replacement
 
 Silent artifact replacement is prohibited for official immutable releases.
 
@@ -511,7 +511,7 @@ This preserves historical trust.
 
 ---
 
-# Artifact Promotion
+## Artifact Promotion
 
 The preferred release model promotes the same artifacts through qualification stages.
 
@@ -531,7 +531,7 @@ This minimizes the gap between tested and published content.
 
 ---
 
-# Artifact Promotion Invariant
+## Artifact Promotion Invariant
 
 Where possible:
 
@@ -545,7 +545,7 @@ This is the strongest simple evidence that the validated artifact was the artifa
 
 ---
 
-# Rebuilt Stable Artifacts
+## Rebuilt Stable Artifacts
 
 If stable release artifacts must be rebuilt after candidate validation, the new artifacts must not automatically inherit the candidate's validation status.
 
@@ -558,7 +558,7 @@ The release process must perform:
 
 ---
 
-# Reproducible Build Relationship
+## Reproducible Build Relationship
 
 The Build Framework may eventually provide reproducible artifacts.
 
@@ -578,7 +578,7 @@ If outputs are identical, release confidence increases.
 
 ---
 
-# Provenance Definition
+## Provenance Definition
 
 Provenance is the evidence describing the origin and transformation history of an artifact.
 
@@ -596,7 +596,7 @@ A mature provenance record may include substantially more detail.
 
 ---
 
-# Minimal Provenance
+## Minimal Provenance
 
 At minimum, significant release artifacts SHOULD be traceable to:
 
@@ -611,7 +611,7 @@ This establishes baseline release traceability.
 
 ---
 
-# Extended Provenance
+## Extended Provenance
 
 Extended provenance may include:
 
@@ -630,7 +630,7 @@ Extended provenance may include:
 
 ---
 
-# Provenance Chain
+## Provenance Chain
 
 The canonical provenance chain is:
 
@@ -658,7 +658,7 @@ Each link should remain reconstructable at the maturity level required by govern
 
 ---
 
-# Source Provenance
+## Source Provenance
 
 Source provenance identifies where the release source came from.
 
@@ -675,7 +675,7 @@ The commit identity is normally the primary source anchor in Git-based workflows
 
 ---
 
-# Build Provenance
+## Build Provenance
 
 Build provenance describes how source became artifacts.
 
@@ -696,7 +696,7 @@ EPIC-REL-001 consumes this information as release provenance.
 
 ---
 
-# Dependency Provenance
+## Dependency Provenance
 
 Dependencies can materially affect release artifacts.
 
@@ -711,7 +711,7 @@ This supports software supply-chain analysis.
 
 ---
 
-# Configuration Provenance
+## Configuration Provenance
 
 Release-relevant build configuration may affect artifacts.
 
@@ -727,7 +727,7 @@ Material configuration must remain identifiable.
 
 ---
 
-# Environment Provenance
+## Environment Provenance
 
 Some release artifacts may depend on the build environment.
 
@@ -744,7 +744,7 @@ Reproducible environments reduce provenance ambiguity.
 
 ---
 
-# Candidate Provenance
+## Candidate Provenance
 
 Release Candidate provenance binds the candidate to its artifact set.
 
@@ -763,7 +763,7 @@ This record becomes the basis of final release qualification.
 
 ---
 
-# Release Provenance
+## Release Provenance
 
 Final release provenance binds:
 
@@ -783,7 +783,7 @@ A stable release should not lose the provenance information established during c
 
 ---
 
-# Publication Provenance
+## Publication Provenance
 
 Publication provenance records where and how release artifacts were published.
 
@@ -801,7 +801,7 @@ This supports post-release verification.
 
 ---
 
-# Provenance Evidence
+## Provenance Evidence
 
 Provenance evidence may be stored in:
 
@@ -817,7 +817,7 @@ The conceptual relationship is more important than immediate storage choice.
 
 ---
 
-# Release Manifest
+## Release Manifest
 
 A future FamilyOS release may contain a release manifest describing the artifact set and provenance.
 
@@ -842,7 +842,7 @@ This is conceptual and not yet a mandatory schema.
 
 ---
 
-# Manifest Authority
+## Manifest Authority
 
 If a release manifest is introduced, governance must define whether it becomes:
 
@@ -855,7 +855,7 @@ The role must not remain ambiguous.
 
 ---
 
-# Artifact Inventory Validation
+## Artifact Inventory Validation
 
 Before release approval, the artifact inventory should be verified.
 
@@ -874,7 +874,7 @@ unexpected artifact presence
 
 ---
 
-# Artifact Completeness
+## Artifact Completeness
 
 A release must not be considered complete if mandatory artifacts are missing.
 
@@ -896,7 +896,7 @@ BLOCKED
 
 ---
 
-# Unexpected Artifacts
+## Unexpected Artifacts
 
 Unexpected artifacts should trigger review.
 
@@ -919,7 +919,7 @@ The additional artifact may represent:
 
 ---
 
-# Artifact Naming
+## Artifact Naming
 
 Artifact names should be deterministic and descriptive where practical.
 
@@ -941,7 +941,7 @@ release-new.pkg
 
 ---
 
-# Artifact Metadata
+## Artifact Metadata
 
 Release artifacts SHOULD expose enough metadata to identify their purpose and release relationship.
 
@@ -959,7 +959,7 @@ checksum
 
 ---
 
-# Metadata Consistency
+## Metadata Consistency
 
 Artifact metadata must be consistent with:
 
@@ -974,7 +974,7 @@ Conflicting version metadata is a release blocker.
 
 ---
 
-# Artifact Storage
+## Artifact Storage
 
 Release artifacts may be stored in:
 
@@ -989,7 +989,7 @@ Storage technology must not redefine artifact semantics.
 
 ---
 
-# Artifact Retention
+## Artifact Retention
 
 Retention policy should preserve official release artifacts for as long as required by support, governance, or reconstruction needs.
 
@@ -999,7 +999,7 @@ Official stable artifacts should generally have strong retention expectations.
 
 ---
 
-# Artifact Deletion
+## Artifact Deletion
 
 Deleting an official historical artifact can damage release reproducibility and supportability.
 
@@ -1016,7 +1016,7 @@ Deletion must preserve historical metadata where possible.
 
 ---
 
-# Artifact Withdrawal
+## Artifact Withdrawal
 
 Withdrawal is generally preferable to silent deletion when an artifact should no longer be consumed.
 
@@ -1024,7 +1024,7 @@ A withdrawn artifact may remain identifiable while being removed from normal dis
 
 ---
 
-# Provenance Retention
+## Provenance Retention
 
 Provenance evidence should remain available for at least as long as the corresponding release remains relevant under FamilyOS governance.
 
@@ -1032,7 +1032,7 @@ A release without retained provenance becomes harder to verify over time.
 
 ---
 
-# Software Bill of Materials
+## Software Bill of Materials
 
 At higher maturity, FamilyOS MAY generate a Software Bill of Materials for applicable releases.
 
@@ -1048,7 +1048,7 @@ SBOM generation belongs to the evolution of release provenance.
 
 ---
 
-# SBOM Relationship
+## SBOM Relationship
 
 An SBOM is part of provenance and supply-chain evidence.
 
@@ -1063,7 +1063,7 @@ It complements them.
 
 ---
 
-# Artifact Signing
+## Artifact Signing
 
 Future FamilyOS releases MAY use cryptographic artifact signing.
 
@@ -1085,7 +1085,7 @@ Signing policy must define:
 
 ---
 
-# Signed Checksums
+## Signed Checksums
 
 A simpler intermediate maturity step may be:
 
@@ -1101,7 +1101,7 @@ This can strengthen integrity without requiring every artifact format to support
 
 ---
 
-# Attestations
+## Attestations
 
 Future FamilyOS release infrastructure may generate signed attestations describing build or release claims.
 
@@ -1117,7 +1117,7 @@ Attestation format is not defined by this EPIC.
 
 ---
 
-# Provenance Standards
+## Provenance Standards
 
 FamilyOS should remain compatible with evolving software supply-chain standards.
 
@@ -1133,7 +1133,7 @@ Specific adoption requires separate architectural and security decisions.
 
 ---
 
-# Provenance Trust
+## Provenance Trust
 
 Provenance is only as trustworthy as the systems generating and protecting it.
 
@@ -1153,7 +1153,7 @@ for provenance generation.
 
 ---
 
-# Artifact Trust Chain
+## Artifact Trust Chain
 
 The desired long-term trust chain is:
 
@@ -1179,7 +1179,7 @@ Consumer Verification
 
 ---
 
-# Consumer Verification
+## Consumer Verification
 
 Future FamilyOS consumers should be able to verify release artifacts where appropriate.
 
@@ -1195,7 +1195,7 @@ This strengthens end-to-end release trust.
 
 ---
 
-# Publication Verification
+## Publication Verification
 
 After publication, the release process should verify artifact integrity.
 
@@ -1211,7 +1211,7 @@ A publication system returning success is not sufficient if the published conten
 
 ---
 
-# Multi-Target Publication
+## Multi-Target Publication
 
 The same artifact may be published to multiple targets.
 
@@ -1228,7 +1228,7 @@ Each target should preserve the same artifact identity where the target is inten
 
 ---
 
-# Mirror Integrity
+## Mirror Integrity
 
 Mirrors or secondary distribution systems should not modify artifact contents under the same release identity.
 
@@ -1236,7 +1236,7 @@ If transformation occurs, the resulting object should be considered a distinct a
 
 ---
 
-# Platform-Specific Artifacts
+## Platform-Specific Artifacts
 
 A release may contain different artifacts for different targets.
 
@@ -1252,7 +1252,7 @@ Each artifact requires independent integrity identity while belonging to the sam
 
 ---
 
-# Aggregate Release Provenance
+## Aggregate Release Provenance
 
 A platform release may aggregate multiple independently versioned components.
 
@@ -1270,7 +1270,7 @@ The platform release evidence should preserve these component identities.
 
 ---
 
-# Plugin Artifact Provenance
+## Plugin Artifact Provenance
 
 Official plugin releases should be traceable through:
 
@@ -1292,7 +1292,7 @@ Plugin compliance evidence becomes part of the plugin release provenance context
 
 ---
 
-# Documentation Provenance
+## Documentation Provenance
 
 Documentation releases also require provenance.
 
@@ -1307,7 +1307,7 @@ Generated documentation should not become detached from its source state.
 
 ---
 
-# Specification Provenance
+## Specification Provenance
 
 Versioned specifications should likewise identify:
 
@@ -1319,7 +1319,7 @@ This allows implementation compatibility to reference precise specification hist
 
 ---
 
-# Artifact Evidence Record
+## Artifact Evidence Record
 
 A future artifact evidence record may contain:
 
@@ -1350,7 +1350,7 @@ The schema is illustrative.
 
 ---
 
-# Provenance Validation
+## Provenance Validation
 
 Release validation should verify provenance consistency.
 
@@ -1366,7 +1366,7 @@ artifact inventory matches release manifest
 
 ---
 
-# Provenance Failure
+## Provenance Failure
 
 A provenance inconsistency is a release blocker unless explicitly governed and safely resolved.
 
@@ -1380,7 +1380,7 @@ Examples include:
 
 ---
 
-# Missing Provenance
+## Missing Provenance
 
 The severity of missing provenance depends on release profile.
 
@@ -1392,7 +1392,7 @@ A high-risk security release may require stronger controls still.
 
 ---
 
-# Provenance Maturity Model
+## Provenance Maturity Model
 
 FamilyOS may evolve through:
 
@@ -1426,7 +1426,7 @@ Each level strengthens the same underlying provenance model.
 
 ---
 
-# Artifact Lifecycle
+## Artifact Lifecycle
 
 A release artifact may progress through states such as:
 
@@ -1458,7 +1458,7 @@ Artifact state should align with release lifecycle.
 
 ---
 
-# Artifact Promotion Record
+## Artifact Promotion Record
 
 Promotion should preserve:
 
@@ -1473,7 +1473,7 @@ This enables channel history reconstruction.
 
 ---
 
-# Artifact Rollback
+## Artifact Rollback
 
 Rollback should generally select a previously valid artifact rather than mutate a defective one.
 
@@ -1489,7 +1489,7 @@ Both artifacts remain historically identifiable.
 
 ---
 
-# Artifact Recovery
+## Artifact Recovery
 
 When publication fails, recovery should use artifact evidence to determine:
 
@@ -1501,7 +1501,7 @@ When publication fails, recovery should use artifact evidence to determine:
 
 ---
 
-# Artifact Idempotency
+## Artifact Idempotency
 
 Publication tooling should identify already-published artifacts safely.
 
@@ -1521,7 +1521,7 @@ Silent overwrite is prohibited.
 
 ---
 
-# Artifact Collision
+## Artifact Collision
 
 If a publication target already contains:
 
@@ -1543,7 +1543,7 @@ This indicates release identity collision.
 
 ---
 
-# Artifact Authorization
+## Artifact Authorization
 
 Not every actor capable of producing an artifact should be capable of publishing it.
 
@@ -1553,7 +1553,7 @@ This supports least privilege.
 
 ---
 
-# Provenance Authorization
+## Provenance Authorization
 
 Provenance generation should be performed by systems whose identity and trust level are appropriate for the release profile.
 
@@ -1561,7 +1561,7 @@ Highly sensitive release evidence should not rely solely on unverified local met
 
 ---
 
-# Local vs Authoritative Provenance
+## Local vs Authoritative Provenance
 
 Local provenance may assist development.
 
@@ -1571,7 +1571,7 @@ The distinction becomes more important as release assurance increases.
 
 ---
 
-# Release Evidence Integration
+## Release Evidence Integration
 
 Artifact and provenance evidence should integrate with the broader Release Evidence model.
 
@@ -1591,7 +1591,7 @@ Release Evidence
 
 ---
 
-# Artifact Metrics
+## Artifact Metrics
 
 Future FamilyOS metrics may include:
 
@@ -1606,93 +1606,93 @@ Metrics should improve release trust.
 
 ---
 
-# Artifact and Provenance Invariants
+## Artifact and Provenance Invariants
 
 The following invariants apply.
 
-## AP1 — Every significant published release artifact has explicit identity.
+### AP1 — Every significant published release artifact has explicit identity.
 
-## AP2 — Release artifact sets are known and reviewable.
+### AP2 — Release artifact sets are known and reviewable.
 
-## AP3 — Release artifacts are traceable to controlled source state.
+### AP3 — Release artifacts are traceable to controlled source state.
 
-## AP4 — Build identity is preserved where applicable.
+### AP4 — Build identity is preserved where applicable.
 
-## AP5 — Artifact integrity is verifiable where practical.
+### AP5 — Artifact integrity is verifiable where practical.
 
-## AP6 — Candidate artifacts remain stable during final validation.
+### AP6 — Candidate artifacts remain stable during final validation.
 
-## AP7 — Published artifacts are not silently replaced.
+### AP7 — Published artifacts are not silently replaced.
 
-## AP8 — Artifact version metadata is consistent with release identity.
+### AP8 — Artifact version metadata is consistent with release identity.
 
-## AP9 — Publication preserves artifact identity.
+### AP9 — Publication preserves artifact identity.
 
-## AP10 — Provenance remains available for historical reconstruction.
+### AP10 — Provenance remains available for historical reconstruction.
 
-## AP11 — Artifact promotion should reuse validated artifacts where practical.
+### AP11 — Artifact promotion should reuse validated artifacts where practical.
 
-## AP12 — Stronger provenance mechanisms may be added without changing release semantics.
+### AP12 — Stronger provenance mechanisms may be added without changing release semantics.
 
 ---
 
-# Artifact Anti-Patterns
+## Artifact Anti-Patterns
 
-## Latest Artifact Release
+### Latest Artifact Release
 
 Publishing whichever build artifact happens to be newest.
 
 ---
 
-## Filename Trust
+### Filename Trust
 
 Assuming an artifact is valid because its filename contains the expected version.
 
 ---
 
-## Mutable Package
+### Mutable Package
 
 Replacing a package under an existing official version.
 
 ---
 
-## Lost Build Identity
+### Lost Build Identity
 
 Publishing an artifact without knowing which build produced it.
 
 ---
 
-## Lost Source Identity
+### Lost Source Identity
 
 Publishing an artifact that cannot be tied to a controlled source revision.
 
 ---
 
-## Rebuild After Validation
+### Rebuild After Validation
 
 Validating one artifact and publishing another without equivalence verification.
 
 ---
 
-## Checksum-Free Multi-Step Publication
+### Checksum-Free Multi-Step Publication
 
 Publishing important binary artifacts to multiple targets without a reliable way to confirm content equality.
 
 ---
 
-## Manifest Drift
+### Manifest Drift
 
 Allowing release manifests to list artifacts different from the actual published set.
 
 ---
 
-## Provenance as Decoration
+### Provenance as Decoration
 
 Generating provenance files that are not tied to artifact identity or release decisions.
 
 ---
 
-# Minimum Artifact Model
+## Minimum Artifact Model
 
 At minimum, a stable FamilyOS release involving packaged artifacts should know:
 
@@ -1710,7 +1710,7 @@ This provides a usable baseline.
 
 ---
 
-# Framework Release Artifact Model
+## Framework Release Artifact Model
 
 A documentation framework release may have no traditional compiled package.
 
@@ -1739,7 +1739,7 @@ The release provenance remains meaningful even without a binary package.
 
 ---
 
-# Current FamilyOS Framework Provenance
+## Current FamilyOS Framework Provenance
 
 For current framework releases, the practical provenance chain is:
 
@@ -1761,7 +1761,7 @@ This represents an initial provenance implementation compatible with the broader
 
 ---
 
-# Target Artifact Experience
+## Target Artifact Experience
 
 At higher maturity, a maintainer should be able to inspect a release and see:
 
@@ -1798,7 +1798,7 @@ COMPLETE
 
 ---
 
-# Target Consumer Experience
+## Target Consumer Experience
 
 A consumer should eventually be able to determine:
 
@@ -1818,7 +1818,7 @@ The framework should progressively make these questions easier to answer.
 
 ---
 
-# Relationship With Build Framework
+## Relationship With Build Framework
 
 EPIC-BLD-001 defines artifact generation.
 
@@ -1840,7 +1840,7 @@ Release Candidate
 
 ---
 
-# Relationship With Release Candidates
+## Relationship With Release Candidates
 
 `10-Release-Candidates.md` binds the selected artifact set to a formal candidate.
 
@@ -1848,13 +1848,13 @@ This document defines the identity and provenance of those artifacts.
 
 ---
 
-# Relationship With Release Validation
+## Relationship With Release Validation
 
 `12-Release-Validation.md` verifies artifact integrity and provenance before approval.
 
 ---
 
-# Relationship With Release Security
+## Relationship With Release Security
 
 `19-Release-Security.md` defines stronger security requirements for:
 
@@ -1866,7 +1866,7 @@ This document defines the identity and provenance of those artifacts.
 
 ---
 
-# Relationship With Publishing and Distribution
+## Relationship With Publishing and Distribution
 
 `17-Publishing-and-Distribution.md` governs movement of release artifacts into authoritative publication and consumer distribution systems.
 
@@ -1874,13 +1874,13 @@ Artifact identity must survive that transition.
 
 ---
 
-# Relationship With Release Observability
+## Relationship With Release Observability
 
 `20-Release-Observability.md` defines how artifact publication and provenance status become observable.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Artifacts and Provenance model establishes the chain of trust connecting source code to official release outputs.
 

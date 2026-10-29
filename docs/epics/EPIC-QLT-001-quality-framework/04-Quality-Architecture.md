@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 04 Quality Architecture
+## 04 Quality Architecture
 
-## Overview
+### Overview
 
 The FamilyOS Quality Architecture defines the structural model used to transform quality principles into executable engineering capabilities.
 
@@ -29,7 +29,7 @@ Instead, FamilyOS quality must operate as an integrated engineering system.
 
 ---
 
-# Architectural Objective
+## Architectural Objective
 
 The primary architectural objective is to create a consistent path from engineering expectations to quality decisions.
 
@@ -71,7 +71,7 @@ This separation improves:
 
 ---
 
-# Architectural Principles
+## Architectural Principles
 
 The Quality Architecture must remain consistent with the Quality Principles defined by this EPIC.
 
@@ -92,7 +92,7 @@ No quality capability should depend unnecessarily on a specific execution techno
 
 ---
 
-# Quality Architecture Layers
+## Quality Architecture Layers
 
 The architecture is divided into several conceptual layers.
 
@@ -120,7 +120,7 @@ Each layer has a specific responsibility.
 
 ---
 
-# Governance Layer
+## Governance Layer
 
 The Governance Layer controls how quality expectations evolve.
 
@@ -140,7 +140,7 @@ It ensures that the rules governing those checks remain controlled and traceable
 
 ---
 
-# Policy Layer
+## Policy Layer
 
 Quality policies define broad engineering expectations.
 
@@ -162,7 +162,7 @@ They are typically broader than individual technical rules.
 
 ---
 
-# Requirement Layer
+## Requirement Layer
 
 Quality requirements translate policies into specific expectations.
 
@@ -188,7 +188,7 @@ Requirements create a stable reference for downstream rules and checks.
 
 ---
 
-# Rule Layer
+## Rule Layer
 
 Quality rules define how requirements are evaluated.
 
@@ -214,7 +214,7 @@ Rules should be:
 
 ---
 
-# Execution Layer
+## Execution Layer
 
 The Execution Layer contains quality checks.
 
@@ -248,7 +248,7 @@ Checks may run:
 
 ---
 
-# Evidence Layer
+## Evidence Layer
 
 Every quality check should produce structured evidence.
 
@@ -282,7 +282,7 @@ Possible evidence attributes include:
 
 ---
 
-# Assessment Layer
+## Assessment Layer
 
 The Assessment Layer interprets evidence.
 
@@ -315,7 +315,7 @@ Assessment may evaluate:
 
 ---
 
-# Decision Layer
+## Decision Layer
 
 The Decision Layer converts assessments into engineering decisions.
 
@@ -335,7 +335,7 @@ Decisions must be explainable and traceable to their evidence.
 
 ---
 
-# Reporting Layer
+## Reporting Layer
 
 The Reporting Layer exposes quality state to engineers and governance processes.
 
@@ -355,7 +355,7 @@ It presents information produced by lower layers.
 
 ---
 
-# Quality Domain Model
+## Quality Domain Model
 
 The Quality Architecture defines several core domain concepts.
 
@@ -379,7 +379,7 @@ These concepts form the vocabulary of the framework.
 
 ---
 
-# Quality Policy Model
+## Quality Policy Model
 
 A Quality Policy represents a broad quality expectation.
 
@@ -400,7 +400,7 @@ Policies may reference multiple requirements.
 
 ---
 
-# Quality Requirement Model
+## Quality Requirement Model
 
 A Quality Requirement represents a specific expectation.
 
@@ -423,7 +423,7 @@ Requirements must remain stable enough to support traceability across framework 
 
 ---
 
-# Quality Rule Model
+## Quality Rule Model
 
 A Quality Rule defines an evaluable constraint.
 
@@ -449,7 +449,7 @@ Rules may be:
 
 ---
 
-# Quality Check Model
+## Quality Check Model
 
 A Quality Check represents an executable verification capability.
 
@@ -470,7 +470,7 @@ A check may evaluate multiple related rules when appropriate.
 
 ---
 
-# Quality Evidence Model
+## Quality Evidence Model
 
 Quality Evidence captures verification results.
 
@@ -493,7 +493,7 @@ Evidence should be immutable after publication whenever practical.
 
 ---
 
-# Quality Finding Model
+## Quality Finding Model
 
 A Quality Finding represents a quality concern detected from evidence.
 
@@ -518,7 +518,7 @@ Findings must be actionable.
 
 ---
 
-# Quality Metric Model
+## Quality Metric Model
 
 A Quality Metric represents a measurable quality signal.
 
@@ -540,7 +540,7 @@ Metrics may be aggregated over time to produce trends.
 
 ---
 
-# Quality Assessment Model
+## Quality Assessment Model
 
 A Quality Assessment interprets a set of evidence.
 
@@ -575,7 +575,7 @@ Platform
 
 ---
 
-# Quality Gate Model
+## Quality Gate Model
 
 A Quality Gate defines transition criteria.
 
@@ -596,7 +596,7 @@ A gate evaluates an assessment and produces a decision.
 
 ---
 
-# Quality Profile Model
+## Quality Profile Model
 
 A Quality Profile defines quality expectations for a specific class of component.
 
@@ -623,7 +623,7 @@ A profile may define:
 
 ---
 
-# Quality Exception Model
+## Quality Exception Model
 
 A Quality Exception represents an approved temporary deviation.
 
@@ -647,7 +647,7 @@ Exceptions must never silently disable quality controls.
 
 ---
 
-# Quality Decision Model
+## Quality Decision Model
 
 A Quality Decision represents the final outcome of an evaluation.
 
@@ -668,7 +668,7 @@ The decision must remain traceable to its inputs.
 
 ---
 
-# Quality Report Model
+## Quality Report Model
 
 A Quality Report presents quality information.
 
@@ -691,7 +691,7 @@ Reports should be generated from structured quality data whenever practical.
 
 ---
 
-# Quality Scope
+## Quality Scope
 
 Quality checks may operate at different scopes.
 
@@ -721,7 +721,7 @@ Evidence generated at lower levels may contribute to higher-level assessments.
 
 ---
 
-# Quality Aggregation
+## Quality Aggregation
 
 Higher-level quality state should be derived from lower-level evidence.
 
@@ -745,7 +745,7 @@ A high-level PASS must not hide unresolved blocking findings from lower levels.
 
 ---
 
-# Quality Categories
+## Quality Categories
 
 The architecture should support standardized quality categories.
 
@@ -773,7 +773,7 @@ Categories enable consistent reporting and ownership.
 
 ---
 
-# Severity Model
+## Severity Model
 
 Findings require a standardized severity model.
 
@@ -793,7 +793,7 @@ Tool outputs may need normalization into this common model.
 
 ---
 
-# Result Model
+## Result Model
 
 Quality checks and assessments should use standardized results.
 
@@ -820,7 +820,7 @@ These states must have defined semantics.
 
 ---
 
-# Tool Adapters
+## Tool Adapters
 
 The Quality Architecture must isolate tool-specific implementations.
 
@@ -860,7 +860,7 @@ Adapters normalize tool-specific outputs into FamilyOS quality evidence.
 
 ---
 
-# Tool Independence
+## Tool Independence
 
 The framework must allow tools to be replaced without redefining the conceptual quality architecture.
 
@@ -880,7 +880,7 @@ This separation is critical for long-term maintainability.
 
 ---
 
-# Quality Execution Engine
+## Quality Execution Engine
 
 The architecture may introduce a Quality Execution Engine.
 
@@ -913,7 +913,7 @@ The engine should orchestrate quality capabilities without embedding tool-specif
 
 ---
 
-# Quality Assessment Engine
+## Quality Assessment Engine
 
 A Quality Assessment Engine may evaluate collected evidence.
 
@@ -941,7 +941,7 @@ Quality State
 
 ---
 
-# Quality Gate Engine
+## Quality Gate Engine
 
 A Quality Gate Engine may evaluate assessments against transition criteria.
 
@@ -961,7 +961,7 @@ The gate engine must produce explainable outcomes.
 
 ---
 
-# Quality Registry
+## Quality Registry
 
 The framework may maintain a registry containing:
 
@@ -991,7 +991,7 @@ Registry entries should be versioned.
 
 ---
 
-# Quality Configuration
+## Quality Configuration
 
 Quality behavior requires configuration.
 
@@ -1012,7 +1012,7 @@ Hidden local configuration must not determine authoritative quality state.
 
 ---
 
-# Default Quality Configuration
+## Default Quality Configuration
 
 The framework should provide safe defaults.
 
@@ -1028,7 +1028,7 @@ Projects may extend these defaults according to documented rules.
 
 ---
 
-# Configuration Precedence
+## Configuration Precedence
 
 If multiple configuration sources exist, precedence must be deterministic.
 
@@ -1048,7 +1048,7 @@ Environment-specific configuration must not silently weaken mandatory quality re
 
 ---
 
-# Quality Discovery
+## Quality Discovery
 
 The architecture should support automatic discovery of applicable quality capabilities.
 
@@ -1078,7 +1078,7 @@ Discovery rules must remain predictable.
 
 ---
 
-# Execution Modes
+## Execution Modes
 
 Quality checks may support several execution modes.
 
@@ -1101,7 +1101,7 @@ Execution modes must not create ambiguity about authoritative results.
 
 ---
 
-# Local Execution
+## Local Execution
 
 Important quality checks should be executable locally.
 
@@ -1116,7 +1116,7 @@ The local quality environment should approximate authoritative CI behavior as cl
 
 ---
 
-# CI Execution
+## CI Execution
 
 CI is the primary shared execution environment for automated quality checks.
 
@@ -1138,7 +1138,7 @@ CI output should remain consistent with local execution.
 
 ---
 
-# Release Execution
+## Release Execution
 
 Release validation may activate stronger quality requirements.
 
@@ -1163,7 +1163,7 @@ Release controls should build upon normal quality mechanisms rather than create 
 
 ---
 
-# Incremental Quality Execution
+## Incremental Quality Execution
 
 Large systems require efficient validation.
 
@@ -1183,7 +1183,7 @@ Full verification must remain available where required.
 
 ---
 
-# Parallel Quality Execution
+## Parallel Quality Execution
 
 Independent checks should be capable of parallel execution.
 
@@ -1201,7 +1201,7 @@ Parallelization reduces feedback time while preserving independent evidence.
 
 ---
 
-# Quality Evidence Store
+## Quality Evidence Store
 
 The architecture may include a Quality Evidence Store.
 
@@ -1226,7 +1226,7 @@ Evidence retention enables:
 
 ---
 
-# Evidence Immutability
+## Evidence Immutability
 
 Published evidence should not be silently modified.
 
@@ -1246,7 +1246,7 @@ rather than destructive modification.
 
 ---
 
-# Evidence Identity
+## Evidence Identity
 
 Evidence should have stable identifiers.
 
@@ -1270,7 +1270,7 @@ Stable identity is essential for traceability.
 
 ---
 
-# Quality Baselines
+## Quality Baselines
 
 The architecture should support baselines.
 
@@ -1296,7 +1296,7 @@ Baselines must be explicit and controlled.
 
 ---
 
-# Baseline Evolution
+## Baseline Evolution
 
 Baselines should improve over time.
 
@@ -1314,7 +1314,7 @@ A baseline must not become a permanent mechanism for ignoring quality debt.
 
 ---
 
-# Quality Risk Integration
+## Quality Risk Integration
 
 Quality assessment should integrate risk information.
 
@@ -1342,7 +1342,7 @@ Risk-based evaluation prevents uniform rules from creating inappropriate outcome
 
 ---
 
-# Criticality Model
+## Criticality Model
 
 Components may have different criticality levels.
 
@@ -1367,7 +1367,7 @@ Quality profiles may inherit criticality-specific requirements.
 
 ---
 
-# Quality Profile Inheritance
+## Quality Profile Inheritance
 
 Profiles should support controlled inheritance.
 
@@ -1387,7 +1387,7 @@ It must not silently remove mandatory inherited rules.
 
 ---
 
-# Profile Composition
+## Profile Composition
 
 Where appropriate, profiles may compose quality domains.
 
@@ -1409,7 +1409,7 @@ Composition reduces duplication.
 
 ---
 
-# Quality Gate Hierarchy
+## Quality Gate Hierarchy
 
 Gates may exist at multiple lifecycle stages.
 
@@ -1431,7 +1431,7 @@ Each gate should evaluate only the evidence relevant to its transition.
 
 ---
 
-# Developer Gate
+## Developer Gate
 
 The Developer Gate focuses on fast local feedback.
 
@@ -1447,7 +1447,7 @@ It should be optimized for speed.
 
 ---
 
-# Merge Gate
+## Merge Gate
 
 The Merge Gate protects shared branches.
 
@@ -1464,7 +1464,7 @@ The Merge Gate should prevent predictable regressions from entering the main dev
 
 ---
 
-# Integration Gate
+## Integration Gate
 
 The Integration Gate evaluates interactions between components.
 
@@ -1478,7 +1478,7 @@ It may include:
 
 ---
 
-# Build Gate
+## Build Gate
 
 The Build Gate verifies artifact creation.
 
@@ -1492,7 +1492,7 @@ It may evaluate:
 
 ---
 
-# Release Gate
+## Release Gate
 
 The Release Gate determines whether a release candidate satisfies required quality conditions.
 
@@ -1512,7 +1512,7 @@ Release decisions must remain traceable.
 
 ---
 
-# Deployment Gate
+## Deployment Gate
 
 Where applicable, deployment may require additional validation.
 
@@ -1527,7 +1527,7 @@ Deployment gates must remain aligned with the broader quality model.
 
 ---
 
-# Exception Processing
+## Exception Processing
 
 Exceptions must participate explicitly in gate evaluation.
 
@@ -1547,7 +1547,7 @@ Expired exceptions must no longer apply.
 
 ---
 
-# Quality Architecture Boundaries
+## Quality Architecture Boundaries
 
 The Quality Framework must not absorb responsibilities owned by other frameworks.
 
@@ -1569,7 +1569,7 @@ This separation avoids duplication.
 
 ---
 
-# Integration With Testing Framework
+## Integration With Testing Framework
 
 The integration model is:
 
@@ -1587,7 +1587,7 @@ The Quality Architecture does not redefine test levels or testing methodology.
 
 ---
 
-# Integration With Documentation Framework
+## Integration With Documentation Framework
 
 The Documentation Framework may provide:
 
@@ -1601,7 +1601,7 @@ The Quality Framework consumes these outputs as documentation quality evidence.
 
 ---
 
-# Integration With Build Framework
+## Integration With Build Framework
 
 The Build Framework provides evidence related to:
 
@@ -1614,7 +1614,7 @@ These signals may contribute to quality gates.
 
 ---
 
-# Integration With Release Framework
+## Integration With Release Framework
 
 The Release Framework defines release lifecycle mechanics.
 
@@ -1630,7 +1630,7 @@ Release Framework
 
 ---
 
-# Integration With Plugin Compliance Framework
+## Integration With Plugin Compliance Framework
 
 Plugin Compliance is a specialized quality domain.
 
@@ -1645,7 +1645,7 @@ The Quality Framework provides the common assessment and gate architecture.
 
 ---
 
-# Integration With Security
+## Integration With Security
 
 Security tools and frameworks may generate findings.
 
@@ -1665,7 +1665,7 @@ Quality Assessment
 
 ---
 
-# Integration With Observability
+## Integration With Observability
 
 Runtime observability provides post-release quality evidence.
 
@@ -1680,7 +1680,7 @@ These signals should feed continuous quality improvement.
 
 ---
 
-# Quality Events
+## Quality Events
 
 The architecture may emit quality lifecycle events.
 
@@ -1702,7 +1702,7 @@ Events may support integration with reporting, automation, or observability syst
 
 ---
 
-# Quality APIs
+## Quality APIs
 
 The architecture should allow quality capabilities to be exposed through stable APIs.
 
@@ -1723,7 +1723,7 @@ These interfaces should remain independent from individual tools.
 
 ---
 
-# CLI Integration
+## CLI Integration
 
 FamilyOS may expose quality operations through the CLI.
 
@@ -1744,7 +1744,7 @@ The architecture only defines the capability boundary.
 
 ---
 
-# Quality Automation Interface
+## Quality Automation Interface
 
 Automation systems must be able to invoke quality capabilities consistently.
 
@@ -1764,7 +1764,7 @@ Automation should not require direct knowledge of every underlying tool.
 
 ---
 
-# Quality Reporting Architecture
+## Quality Reporting Architecture
 
 Reports should be generated from structured quality data.
 
@@ -1795,7 +1795,7 @@ Output formats may eventually include:
 
 ---
 
-# Machine-Readable Quality Data
+## Machine-Readable Quality Data
 
 Machine-readable quality data is important for automation.
 
@@ -1811,7 +1811,7 @@ Machine-readable output must preserve the same semantic model as human-readable 
 
 ---
 
-# Human-Readable Quality Data
+## Human-Readable Quality Data
 
 Human-readable reports must prioritize:
 
@@ -1826,7 +1826,7 @@ Engineers should not need to inspect raw tool output to understand a quality fai
 
 ---
 
-# Quality Architecture Security
+## Quality Architecture Security
 
 The quality system itself must be protected against manipulation.
 
@@ -1842,7 +1842,7 @@ Security-sensitive quality configuration should therefore be version-controlled 
 
 ---
 
-# Quality Architecture Reliability
+## Quality Architecture Reliability
 
 Quality infrastructure must be reliable.
 
@@ -1864,7 +1864,7 @@ An ERROR must not automatically become PASS.
 
 ---
 
-# Fail-Safe Behavior
+## Fail-Safe Behavior
 
 Critical quality mechanisms should prefer fail-safe behavior.
 
@@ -1880,7 +1880,7 @@ The exact behavior may depend on risk and gate policy.
 
 ---
 
-# Quality Architecture Performance
+## Quality Architecture Performance
 
 Quality validation must remain operationally practical.
 
@@ -1897,7 +1897,7 @@ Performance optimization must not weaken required assurance.
 
 ---
 
-# Quality Architecture Extensibility
+## Quality Architecture Extensibility
 
 New quality domains must be addable without redesigning the complete framework.
 
@@ -1925,7 +1925,7 @@ This extensibility is a primary architectural goal.
 
 ---
 
-# Plugin-Based Quality Capabilities
+## Plugin-Based Quality Capabilities
 
 FamilyOS may eventually allow quality capabilities to be implemented as plugins.
 
@@ -1943,7 +1943,7 @@ Such extensibility must remain controlled by the Plugin Architecture and Plugin 
 
 ---
 
-# Quality Architecture Versioning
+## Quality Architecture Versioning
 
 The Quality Architecture itself must evolve through controlled versions.
 
@@ -1961,7 +1961,7 @@ Versioned contracts may be required.
 
 ---
 
-# Compatibility Requirements
+## Compatibility Requirements
 
 Quality automation may depend on stable output formats and APIs.
 
@@ -1980,7 +1980,7 @@ Compatibility must be considered as part of framework evolution.
 
 ---
 
-# Quality Architecture Testing
+## Quality Architecture Testing
 
 The quality system itself must be tested.
 
@@ -1999,7 +1999,7 @@ Quality infrastructure must not be exempt from the quality standards it enforces
 
 ---
 
-# Quality Architecture Observability
+## Quality Architecture Observability
 
 The quality system should expose its own operational state.
 
@@ -2017,7 +2017,7 @@ This helps improve the Quality Framework itself.
 
 ---
 
-# Quality Architecture Maturity
+## Quality Architecture Maturity
 
 The architecture should support progressive implementation.
 
@@ -2062,7 +2062,7 @@ The framework must allow this evolution without requiring all capabilities immed
 
 ---
 
-# Initial Implementation Boundary
+## Initial Implementation Boundary
 
 The first implementation of the Quality Architecture does not need to implement every conceptual component.
 
@@ -2079,7 +2079,7 @@ More advanced capabilities may follow progressively.
 
 ---
 
-# Future Quality Intelligence
+## Future Quality Intelligence
 
 As the architecture matures, structured quality data may support advanced analysis.
 
@@ -2096,7 +2096,7 @@ These capabilities depend on reliable foundational quality data.
 
 ---
 
-# AI Integration Boundary
+## AI Integration Boundary
 
 AI-assisted quality capabilities must operate above authoritative deterministic evidence.
 
@@ -2116,41 +2116,41 @@ AI must not silently modify authoritative results.
 
 ---
 
-# Architectural Anti-Patterns
+## Architectural Anti-Patterns
 
 The Quality Architecture explicitly rejects several patterns.
 
-## Tool-Centric Architecture
+### Tool-Centric Architecture
 
 Quality must not be structured around individual tools.
 
-## Hidden Quality Logic
+### Hidden Quality Logic
 
 Mandatory requirements must not exist only inside CI scripts.
 
-## Unstructured Evidence
+### Unstructured Evidence
 
 Raw command output alone is insufficient as a long-term evidence model.
 
-## Silent Exceptions
+### Silent Exceptions
 
 Bypasses must be explicit and traceable.
 
-## Inconsistent Severity
+### Inconsistent Severity
 
 Tool-specific severity must be normalized.
 
-## Non-Reproducible Gates
+### Non-Reproducible Gates
 
 Gate decisions must be reproducible from defined evidence and rules.
 
-## Monolithic Quality Engine
+### Monolithic Quality Engine
 
 Quality capabilities should remain modular and extensible.
 
 ---
 
-# Reference Architecture
+## Reference Architecture
 
 The target conceptual architecture is:
 
@@ -2214,7 +2214,7 @@ This architecture provides the structural foundation for the complete Quality Fr
 
 ---
 
-# Architectural Outcome
+## Architectural Outcome
 
 The Quality Architecture transforms FamilyOS quality from:
 
@@ -2246,7 +2246,7 @@ This transition is essential for quality management at platform scale.
 
 ---
 
-# Final Architecture Principle
+## Final Architecture Principle
 
 The Quality Architecture must make quality executable without making quality opaque.
 

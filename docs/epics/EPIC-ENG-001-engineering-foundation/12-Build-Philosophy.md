@@ -16,7 +16,7 @@ A build system is not only a technical mechanism. It is an engineering capabilit
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Build Philosophy within the Engineering Foundation is to define the principles that guide software construction.
 
@@ -30,9 +30,9 @@ The build process must ensure that FamilyOS artifacts are:
 
 ---
 
-# Build Philosophy Principles
+## Build Philosophy Principles
 
-## Principle 1 — Build Is a Reproducible Process
+### Principle 1 — Build Is a Reproducible Process
 
 A build should produce predictable results from known inputs.
 
@@ -47,7 +47,7 @@ A contributor should be able to understand how an artifact is created.
 
 ---
 
-## Principle 2 — Automation First
+### Principle 2 — Automation First
 
 Build activities should be automated whenever practical.
 
@@ -61,7 +61,7 @@ Automated builds provide faster and more reliable feedback.
 
 ---
 
-## Principle 3 — Build Early and Frequently
+### Principle 3 — Build Early and Frequently
 
 Build validation should happen throughout development.
 
@@ -75,7 +75,7 @@ Build should not only occur at release time.
 
 ---
 
-## Principle 4 — Traceable Artifacts
+### Principle 4 — Traceable Artifacts
 
 Generated artifacts must remain connected to their origin.
 
@@ -90,7 +90,7 @@ An artifact without traceability is difficult to trust.
 
 ---
 
-## Principle 5 — Build Integrity
+### Principle 5 — Build Integrity
 
 Build processes must protect software integrity.
 
@@ -102,7 +102,7 @@ A reliable build should ensure:
 
 ---
 
-# Build Lifecycle
+## Build Lifecycle
 
 FamilyOS build activities follow the complete engineering lifecycle.
 
@@ -135,17 +135,17 @@ Every stage contributes to the reliability and traceability of the final softwar
 
 ---
 
-# Build Inputs
+## Build Inputs
 
 A build depends on controlled inputs.
 
-## Source Code
+### Source Code
 
 The implementation to be transformed into software artifacts.
 
 ---
 
-## Dependencies
+### Dependencies
 
 External and internal components required for construction.
 
@@ -155,7 +155,7 @@ Reference:
 
 ---
 
-## Configuration
+### Configuration
 
 Settings controlling build behavior.
 
@@ -165,7 +165,7 @@ Reference:
 
 ---
 
-## Toolchain
+### Toolchain
 
 The tools responsible for executing the build process.
 
@@ -175,7 +175,7 @@ Reference:
 
 ---
 
-# Build Validation
+## Build Validation
 
 A build should include appropriate validation.
 
@@ -189,7 +189,7 @@ Validation may include:
 
 ---
 
-# Build Reproducibility
+## Build Reproducibility
 
 Reproducible builds require:
 
@@ -204,7 +204,7 @@ Reference:
 
 ---
 
-# Build Provenance
+## Build Provenance
 
 Every build artifact should retain sufficient provenance information to support engineering traceability.
 
@@ -221,7 +221,7 @@ Build provenance improves auditing, debugging, reproducibility, and release conf
 
 ---
 
-# Build and Quality
+## Build and Quality
 
 Build processes contribute to software quality by ensuring:
 
@@ -235,7 +235,7 @@ Reference:
 
 ---
 
-# Build and Testing
+## Build and Testing
 
 Testing is an integrated part of reliable build processes.
 
@@ -251,7 +251,7 @@ Reference:
 
 ---
 
-# Build and Release
+## Build and Release
 
 Build processes prepare the artifacts required for controlled delivery.
 
@@ -267,7 +267,7 @@ Reference:
 
 ---
 
-# Build Automation
+## Build Automation
 
 Build automation should support:
 
@@ -283,7 +283,7 @@ Automation should remain:
 
 ---
 
-# Build Evolution
+## Build Evolution
 
 Build processes evolve with the platform.
 
@@ -302,7 +302,7 @@ Significant changes may require:
 
 ---
 
-# Governance
+## Governance
 
 Build decisions follow engineering governance.
 
@@ -316,7 +316,7 @@ Changes affecting build reproducibility, artifact integrity, or build provenance
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Build Philosophy is successful when:
 
@@ -328,7 +328,7 @@ Build Philosophy is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 The Build Philosophy establishes software construction as a disciplined engineering capability.
 

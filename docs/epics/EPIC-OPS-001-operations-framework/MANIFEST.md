@@ -18,7 +18,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 1. Purpose
+## 1. Purpose
 
 This manifest defines the canonical repository inventory for:
 
@@ -43,7 +43,7 @@ It does not replace the normative authority of the numbered Operations Framework
 
 ---
 
-# 2. Repository Location
+## 2. Repository Location
 
 The canonical repository location is:
 
@@ -55,7 +55,7 @@ All canonical Operations Framework documents SHALL reside directly within this d
 
 ---
 
-# 3. Framework Identity
+## 3. Framework Identity
 
 ```text
 EPIC ID:                 EPIC-OPS-001
@@ -70,7 +70,7 @@ The framework establishes the canonical FamilyOS operational foundation.
 
 ---
 
-# 4. Historical Publication
+## 4. Historical Publication
 
 EPIC-OPS-001 was historically published before the current standardized FamilyOS EPIC control-document model was applied.
 
@@ -89,7 +89,7 @@ The current repository representation may therefore differ structurally from the
 
 ---
 
-# 5. Historical Repository Structure
+## 5. Historical Repository Structure
 
 At historical publication time, EPIC-OPS-001 consisted of ten numbered documents.
 
@@ -108,7 +108,7 @@ This distinction SHALL remain explicit.
 
 ---
 
-# 6. Current Canonical Structure
+## 6. Current Canonical Structure
 
 The normalized current repository representation consists of:
 
@@ -131,7 +131,7 @@ Canonical repository equation:
 
 ---
 
-# 7. Canonical Numbered Documents
+## 7. Canonical Numbered Documents
 
 The canonical numbered-document set is:
 
@@ -152,7 +152,7 @@ The numbered sequence SHALL contain exactly ten documents.
 
 ---
 
-# 8. Numbering Contract
+## 8. Numbering Contract
 
 The canonical numbered range is:
 
@@ -184,7 +184,7 @@ The sequence SHALL contain:
 
 ---
 
-# 9. Numbered Document Inventory
+## 9. Numbered Document Inventory
 
 | Number | Document                                     | Responsibility                                            |
 | ------ | -------------------------------------------- | --------------------------------------------------------- |
@@ -201,7 +201,7 @@ The sequence SHALL contain:
 
 ---
 
-# 10. `00-EPIC.md`
+## 10. `00-EPIC.md`
 
 Purpose:
 
@@ -226,7 +226,7 @@ This document is the primary numbered entry point for EPIC-OPS-001.
 
 ---
 
-# 11. `01-Context-and-Vision.md`
+## 11. `01-Context-and-Vision.md`
 
 Purpose:
 
@@ -247,7 +247,7 @@ Primary responsibilities include:
 
 ---
 
-# 12. `02-Operations-Principles.md`
+## 12. `02-Operations-Principles.md`
 
 Purpose:
 
@@ -271,7 +271,7 @@ Primary responsibilities include:
 
 ---
 
-# 13. `03-Operations-Architecture.md`
+## 13. `03-Operations-Architecture.md`
 
 Purpose:
 
@@ -293,7 +293,7 @@ Primary responsibilities include:
 
 ---
 
-# 14. `04-Runtime-and-Service-Management.md`
+## 14. `04-Runtime-and-Service-Management.md`
 
 Purpose:
 
@@ -317,7 +317,7 @@ Primary responsibilities include:
 
 ---
 
-# 15. `05-Incident-Response-and-Recovery.md`
+## 15. `05-Incident-Response-and-Recovery.md`
 
 Purpose:
 
@@ -342,7 +342,7 @@ Primary responsibilities include:
 
 ---
 
-# 16. `06-Capacity-Performance-and-Reliability.md`
+## 16. `06-Capacity-Performance-and-Reliability.md`
 
 Purpose:
 
@@ -366,7 +366,7 @@ Primary responsibilities include:
 
 ---
 
-# 17. `07-Operational-Security-and-Governance.md`
+## 17. `07-Operational-Security-and-Governance.md`
 
 Purpose:
 
@@ -389,7 +389,7 @@ Primary responsibilities include:
 
 ---
 
-# 18. `08-Implementation-and-Automation.md`
+## 18. `08-Implementation-and-Automation.md`
 
 Purpose:
 
@@ -414,7 +414,7 @@ Primary responsibilities include:
 
 ---
 
-# 19. `09-Validation-and-Release.md`
+## 19. `09-Validation-and-Release.md`
 
 Purpose:
 
@@ -438,7 +438,7 @@ EPIC-REL-001 remains authoritative for the general FamilyOS release lifecycle.
 
 ---
 
-# 20. Canonical Control Documents
+## 20. Canonical Control Documents
 
 The normalized canonical control-document set is:
 
@@ -456,7 +456,7 @@ Exactly seven control documents are expected.
 
 ---
 
-# 21. Control Document Inventory
+## 21. Control Document Inventory
 
 | Document              | Responsibility                                 |
 | --------------------- | ---------------------------------------------- |
@@ -470,7 +470,7 @@ Exactly seven control documents are expected.
 
 ---
 
-# 22. `EPIC-OPS-001.md`
+## 22. `EPIC-OPS-001.md`
 
 Purpose:
 
@@ -493,7 +493,7 @@ It SHOULD summarize:
 
 ---
 
-# 23. `EPIC.yaml`
+## 23. `EPIC.yaml`
 
 Purpose:
 
@@ -522,7 +522,7 @@ Markdown fences SHALL NOT wrap the physical YAML file.
 
 ---
 
-# 24. `README.md`
+## 24. `README.md`
 
 Purpose:
 
@@ -549,7 +549,7 @@ It SHOULD explain:
 
 ---
 
-# 25. `MANIFEST.md`
+## 25. `MANIFEST.md`
 
 Purpose:
 
@@ -561,7 +561,7 @@ This document is authoritative for current repository inventory.
 
 ---
 
-# 26. `CHANGELOG.md`
+## 26. `CHANGELOG.md`
 
 Purpose:
 
@@ -579,7 +579,7 @@ Historical publication SHALL NOT be rewritten as though current control document
 
 ---
 
-# 27. `VALIDATION.md`
+## 27. `VALIDATION.md`
 
 Purpose:
 
@@ -607,7 +607,7 @@ Validation results SHALL be evidence-based.
 
 ---
 
-# 28. `Revision-History.md`
+## 28. `Revision-History.md`
 
 Purpose:
 
@@ -627,7 +627,7 @@ It SHOULD preserve:
 
 ---
 
-# 29. Canonical Deliverables
+## 29. Canonical Deliverables
 
 The current normalized canonical deliverable inventory consists of exactly seventeen files:
 
@@ -659,7 +659,7 @@ Expected count:
 
 ---
 
-# 30. Inventory Contract
+## 30. Inventory Contract
 
 For the normalized repository state:
 
@@ -680,7 +680,7 @@ These values SHALL only become validated after actual repository execution confi
 
 ---
 
-# 31. Historical vs Current Structure
+## 31. Historical vs Current Structure
 
 Two repository states SHALL remain explicitly distinguishable.
 
@@ -705,7 +705,7 @@ The normalized repository SHALL NOT imply that the seven control documents exist
 
 ---
 
-# 32. Historical Tag Integrity
+## 32. Historical Tag Integrity
 
 Historical release tag:
 
@@ -733,7 +733,7 @@ The historical tag remains an immutable reference to the original published Oper
 
 ---
 
-# 33. Repository Synchronization
+## 33. Repository Synchronization
 
 The following documents SHALL remain structurally synchronized:
 
@@ -762,7 +762,7 @@ Synchronization includes:
 
 ---
 
-# 34. Structure Contract
+## 34. Structure Contract
 
 Current expected structure:
 
@@ -778,7 +778,7 @@ Any deviation requires investigation before current repository revalidation may 
 
 ---
 
-# 35. Historical Structure Contract
+## 35. Historical Structure Contract
 
 Historical publication structure:
 
@@ -795,7 +795,7 @@ This structure belongs specifically to the published historical state.
 
 ---
 
-# 36. Numbered Document Contract
+## 36. Numbered Document Contract
 
 A canonical numbered document SHALL match:
 
@@ -813,7 +813,7 @@ Exactly one canonical document SHALL exist for each number.
 
 ---
 
-# 37. Control Document Contract
+## 37. Control Document Contract
 
 Expected control documents:
 
@@ -831,7 +831,7 @@ Missing or unexpected control documents SHALL prevent structural validation from
 
 ---
 
-# 38. Empty File Policy
+## 38. Empty File Policy
 
 Canonical files SHALL NOT be empty.
 
@@ -845,7 +845,7 @@ A zero-byte canonical file SHALL fail repository validation.
 
 ---
 
-# 39. Reference Integrity
+## 39. Reference Integrity
 
 Local Markdown references SHOULD resolve to existing canonical content where they represent active repository links.
 
@@ -860,7 +860,7 @@ Historical text SHALL NOT automatically fail reference validation merely because
 
 ---
 
-# 40. Placeholder Policy
+## 40. Placeholder Policy
 
 Potential unresolved markers may include:
 
@@ -885,7 +885,7 @@ Only genuine unresolved blocking placeholders SHALL fail validation.
 
 ---
 
-# 41. Join Defect Policy
+## 41. Join Defect Policy
 
 Documentation SHALL be checked for accidental malformed word joins.
 
@@ -914,7 +914,7 @@ Historical correction, if required, SHALL be governed separately from control-do
 
 ---
 
-# 42. Operations Semantic Integrity
+## 42. Operations Semantic Integrity
 
 Repository validation SHALL confirm that normalization preserves core Operations Framework semantics.
 
@@ -942,7 +942,7 @@ Normalization SHALL NOT silently weaken these requirements.
 
 ---
 
-# 43. Ownership Integrity
+## 43. Ownership Integrity
 
 Operational responsibilities SHOULD have explicit ownership where appropriate.
 
@@ -960,7 +960,7 @@ Ambiguous ownership SHOULD be treated as operational risk.
 
 ---
 
-# 44. Controlled Change Integrity
+## 44. Controlled Change Integrity
 
 Operational changes SHOULD remain intentional and reviewable.
 
@@ -977,7 +977,7 @@ High-impact change SHOULD receive proportionally stronger control and validation
 
 ---
 
-# 45. Runtime State Integrity
+## 45. Runtime State Integrity
 
 Runtime state SHOULD remain explicit.
 
@@ -999,7 +999,7 @@ Exact state models may vary, but ambiguous state SHOULD be avoided.
 
 ---
 
-# 46. Configuration Integrity
+## 46. Configuration Integrity
 
 Critical operational configuration MUST be validated before unsafe execution.
 
@@ -1015,7 +1015,7 @@ Invalid critical configuration SHOULD fail safely.
 
 ---
 
-# 47. Health Integrity
+## 47. Health Integrity
 
 Health SHOULD describe meaningful operational condition.
 
@@ -1025,7 +1025,7 @@ A process may exist while operationally unhealthy.
 
 ---
 
-# 48. Readiness Integrity
+## 48. Readiness Integrity
 
 Readiness indicates whether a component can perform its intended responsibilities.
 
@@ -1042,7 +1042,7 @@ Readiness may depend on:
 
 ---
 
-# 49. Dependency Integrity
+## 49. Dependency Integrity
 
 Operational dependencies SHALL remain explicit.
 
@@ -1060,7 +1060,7 @@ Dependency handling SHOULD consider:
 
 ---
 
-# 50. Incident Response Integrity
+## 50. Incident Response Integrity
 
 Significant incidents SHOULD follow structured response.
 
@@ -1088,7 +1088,7 @@ Incident response SHOULD produce appropriate evidence.
 
 ---
 
-# 51. Recovery Integrity
+## 51. Recovery Integrity
 
 Recovery SHALL remain incomplete until resulting state has been validated.
 
@@ -1106,7 +1106,7 @@ Restart alone SHALL NOT prove recovery.
 
 ---
 
-# 52. Rollback Integrity
+## 52. Rollback Integrity
 
 Rollback SHALL be treated as a controlled recovery action.
 
@@ -1124,7 +1124,7 @@ Rollback completion SHALL NOT automatically imply successful restoration.
 
 ---
 
-# 53. Capacity Integrity
+## 53. Capacity Integrity
 
 Capacity decisions SHOULD remain evidence-based.
 
@@ -1143,7 +1143,7 @@ Infrastructure complexity SHOULD remain proportional to demonstrated need.
 
 ---
 
-# 54. Performance Integrity
+## 54. Performance Integrity
 
 Performance SHOULD remain measurable.
 
@@ -1161,7 +1161,7 @@ Performance validation SHOULD identify the relevant artifact or build where prac
 
 ---
 
-# 55. Reliability Integrity
+## 55. Reliability Integrity
 
 Reliability mechanisms may include:
 
@@ -1178,7 +1178,7 @@ Reliability SHALL NOT bypass correctness or security.
 
 ---
 
-# 56. Operational Security Integrity
+## 56. Operational Security Integrity
 
 Operations SHALL preserve Security Framework controls.
 
@@ -1192,7 +1192,7 @@ Operational convenience SHALL NOT bypass:
 
 ---
 
-# 57. Governance Integrity
+## 57. Governance Integrity
 
 Operational governance may define:
 
@@ -1209,7 +1209,7 @@ Governance SHOULD remain proportional to operational impact.
 
 ---
 
-# 58. Automation Integrity
+## 58. Automation Integrity
 
 Operational automation SHALL remain controlled.
 
@@ -1235,7 +1235,7 @@ Automation SHALL NOT bypass security or required validation.
 
 ---
 
-# 59. Infrastructure Neutrality Integrity
+## 59. Infrastructure Neutrality Integrity
 
 Core operations concepts SHALL remain infrastructure-neutral.
 
@@ -1252,7 +1252,7 @@ Adapters may implement canonical operational interfaces for specific environment
 
 ---
 
-# 60. Testing Boundary
+## 60. Testing Boundary
 
 EPIC-TST-001 remains authoritative for general testing architecture.
 
@@ -1272,7 +1272,7 @@ The Operations Framework SHALL NOT establish a competing general testing lifecyc
 
 ---
 
-# 61. Quality Boundary
+## 61. Quality Boundary
 
 EPIC-QLT-001 remains authoritative for quality governance.
 
@@ -1286,7 +1286,7 @@ Operations may provide quality evidence regarding:
 
 ---
 
-# 62. Build Boundary
+## 62. Build Boundary
 
 EPIC-BLD-001 remains authoritative for build engineering.
 
@@ -1296,7 +1296,7 @@ Operational automation SHALL NOT modify application artifacts in uncontrolled wa
 
 ---
 
-# 63. Release Boundary
+## 63. Release Boundary
 
 EPIC-REL-001 remains authoritative for release engineering.
 
@@ -1313,7 +1313,7 @@ Operations SHALL NOT redefine general release lifecycle semantics.
 
 ---
 
-# 64. Observability Boundary
+## 64. Observability Boundary
 
 EPIC-OBS-001 remains authoritative for observability architecture.
 
@@ -1328,7 +1328,7 @@ Operations consumes observability evidence such as:
 
 ---
 
-# 65. Security Boundary
+## 65. Security Boundary
 
 EPIC-SEC-001 remains authoritative for security architecture and policy.
 
@@ -1336,7 +1336,7 @@ Operations consumes security controls but SHALL NOT redefine their authoritative
 
 ---
 
-# 66. Evidence Model
+## 66. Evidence Model
 
 Operations revalidation follows:
 
@@ -1358,7 +1358,7 @@ Evidence SHALL NOT be inferred merely from documentation intent.
 
 ---
 
-# 67. Validation Categories
+## 67. Validation Categories
 
 The normalized repository SHOULD be validated across:
 
@@ -1401,7 +1401,7 @@ Final Repository State
 
 ---
 
-# 68. Validation State
+## 68. Validation State
 
 The current normalization activity SHALL initially use:
 
@@ -1415,7 +1415,7 @@ These values SHALL remain pending until current repository evidence is actually 
 
 ---
 
-# 69. Revalidation Transition
+## 69. Revalidation Transition
 
 Permitted transition:
 
@@ -1445,7 +1445,7 @@ Revalidation
 
 ---
 
-# 70. Historical Publication State
+## 70. Historical Publication State
 
 Historical publication is already complete.
 
@@ -1463,7 +1463,7 @@ Only the current normalized repository validation state remains subject to reval
 
 ---
 
-# 71. Historical Validation Text
+## 71. Historical Validation Text
 
 Historical numbered documents may contain states such as:
 
@@ -1479,7 +1479,7 @@ Such text SHALL NOT automatically be treated as the active current lifecycle sta
 
 ---
 
-# 72. Change Governance
+## 72. Change Governance
 
 Changes to current canonical repository membership require synchronized updates to:
 
@@ -1497,7 +1497,7 @@ Changes affecting numbered-document membership require explicit framework revisi
 
 ---
 
-# 73. Future Structural Changes
+## 73. Future Structural Changes
 
 Future versions may extend or reorganize the Operations Framework.
 
@@ -1513,7 +1513,7 @@ Such changes SHALL:
 
 ---
 
-# 74. Repository Inventory Summary
+## 74. Repository Inventory Summary
 
 ```text
 EPIC:                    EPIC-OPS-001
@@ -1548,7 +1548,7 @@ Final Revalidation:      Validated
 
 ---
 
-# 75. Canonical File List
+## 75. Canonical File List
 
 ```text
 docs/epics/EPIC-OPS-001-operations-framework/
@@ -1573,7 +1573,7 @@ docs/epics/EPIC-OPS-001-operations-framework/
 
 ---
 
-# 76. Manifest Final State
+## 76. Manifest Final State
 
 The canonical normalized Operations Framework repository contract is:
 

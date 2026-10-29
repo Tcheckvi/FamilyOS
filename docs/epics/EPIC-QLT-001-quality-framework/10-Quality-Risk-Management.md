@@ -1,8 +1,8 @@
 # Quality Framework
 
-# 10 Quality Risk Management
+## 10 Quality Risk Management
 
-## Overview
+### Overview
 
 The FamilyOS Quality Risk Management model defines how quality-related risks are identified, classified, evaluated, prioritized, mitigated, accepted, monitored, and governed.
 
@@ -25,7 +25,7 @@ The purpose of Quality Risk Management is to ensure that FamilyOS applies qualit
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Quality Risk Management is to transform quality concerns into explicit engineering risk decisions.
 
@@ -69,7 +69,7 @@ Decision
 
 ---
 
-# Risk Principle
+## Risk Principle
 
 The foundational principle is:
 
@@ -88,7 +88,7 @@ Lower-risk targets may use lighter controls where this does not compromise impor
 
 ---
 
-# Quality Risk Definition
+## Quality Risk Definition
 
 A Quality Risk is a potential negative outcome associated with an identified quality condition.
 
@@ -112,7 +112,7 @@ A risk may exist even when no defect has yet occurred.
 
 ---
 
-# Risk vs Finding
+## Risk vs Finding
 
 A finding and a risk are related but distinct.
 
@@ -136,7 +136,7 @@ One risk may also be supported by several findings.
 
 ---
 
-# Risk Identity
+## Risk Identity
 
 Significant quality risks should have stable identifiers.
 
@@ -165,7 +165,7 @@ Stable identities support:
 
 ---
 
-# Risk Metadata
+## Risk Metadata
 
 A Quality Risk record may contain:
 
@@ -195,7 +195,7 @@ The exact implementation structure may evolve.
 
 ---
 
-# Risk Sources
+## Risk Sources
 
 Quality risks may originate from many sources.
 
@@ -219,7 +219,7 @@ Risk identification should not depend on findings alone.
 
 ---
 
-# Risk Domains
+## Risk Domains
 
 Risks may be classified according to the Quality Domains.
 
@@ -243,7 +243,7 @@ A risk should have one primary domain and may reference related domains.
 
 ---
 
-# Risk Context
+## Risk Context
 
 Risk exists in context.
 
@@ -271,7 +271,7 @@ Risk evaluation must therefore consider:
 
 ---
 
-# Risk Likelihood
+## Risk Likelihood
 
 Likelihood represents the probability that the potential negative outcome may occur.
 
@@ -289,7 +289,7 @@ Likelihood should be based on available evidence rather than arbitrary perceptio
 
 ---
 
-# Likelihood Factors
+## Likelihood Factors
 
 Likelihood may consider:
 
@@ -317,7 +317,7 @@ Higher Failure Likelihood
 
 ---
 
-# Risk Impact
+## Risk Impact
 
 Impact represents the consequence if the risk materializes.
 
@@ -335,7 +335,7 @@ Impact should consider the worst credible consequence rather than only the most 
 
 ---
 
-# Impact Dimensions
+## Impact Dimensions
 
 Impact may include:
 
@@ -355,7 +355,7 @@ The relevant dimensions depend on the context.
 
 ---
 
-# User Impact
+## User Impact
 
 User impact evaluates consequences for users.
 
@@ -369,7 +369,7 @@ Examples include:
 
 ---
 
-# Data Impact
+## Data Impact
 
 Data impact considers:
 
@@ -383,7 +383,7 @@ Persistent data failures often require stronger risk treatment because recovery 
 
 ---
 
-# Security Impact
+## Security Impact
 
 Security impact may include:
 
@@ -397,7 +397,7 @@ Security impact may elevate otherwise ordinary findings into high-risk issues.
 
 ---
 
-# Operational Impact
+## Operational Impact
 
 Operational impact may include:
 
@@ -409,7 +409,7 @@ Operational impact may include:
 
 ---
 
-# Architecture Impact
+## Architecture Impact
 
 Architecture impact considers long-term consequences such as:
 
@@ -423,7 +423,7 @@ Architecture risks may not immediately cause runtime failure but can create subs
 
 ---
 
-# Compatibility Impact
+## Compatibility Impact
 
 Compatibility impact evaluates consequences for existing consumers.
 
@@ -437,7 +437,7 @@ Potential outcomes include:
 
 ---
 
-# Risk Severity
+## Risk Severity
 
 Risk severity combines likelihood and impact.
 
@@ -455,7 +455,7 @@ The exact implementation may use a matrix rather than literal multiplication.
 
 ---
 
-# Risk Matrix
+## Risk Matrix
 
 A baseline conceptual matrix may be:
 
@@ -474,7 +474,7 @@ The exact matrix should be calibrated through governance.
 
 ---
 
-# Risk Levels
+## Risk Levels
 
 The FamilyOS Quality Framework may normalize risk into:
 
@@ -495,7 +495,7 @@ Risk level should influence:
 
 ---
 
-# Risk vs Finding Severity
+## Risk vs Finding Severity
 
 Finding severity and risk level are distinct.
 
@@ -516,7 +516,7 @@ The Quality Framework must preserve both values.
 
 ---
 
-# Target Criticality
+## Target Criticality
 
 Risk evaluation must consider target criticality.
 
@@ -533,7 +533,7 @@ Criticality represents the importance of the component independent of a specific
 
 ---
 
-# Criticality Factors
+## Criticality Factors
 
 Criticality may depend on:
 
@@ -547,7 +547,7 @@ Criticality may depend on:
 
 ---
 
-# Core Component Criticality
+## Core Component Criticality
 
 Core platform components often require higher assurance because failures may propagate widely.
 
@@ -561,7 +561,7 @@ Examples include:
 
 ---
 
-# Plugin Criticality
+## Plugin Criticality
 
 Official plugins may have different criticality depending on their responsibilities.
 
@@ -579,7 +579,7 @@ Criticality must be defined through explicit profile or metadata rather than ass
 
 ---
 
-# Change Risk
+## Change Risk
 
 Quality risk may also originate from change itself.
 
@@ -597,7 +597,7 @@ Large or cross-cutting changes generally require stronger assurance.
 
 ---
 
-# Change Risk Classification
+## Change Risk Classification
 
 A conceptual classification may include:
 
@@ -626,7 +626,7 @@ Authentication Architecture Change
 
 ---
 
-# Risk-Based Quality Profiles
+## Risk-Based Quality Profiles
 
 Risk classification should influence Quality Profile selection.
 
@@ -658,7 +658,7 @@ Security-Sensitive Profile
 
 ---
 
-# Risk-Based Rule Selection
+## Risk-Based Rule Selection
 
 Higher-risk contexts may activate additional rules.
 
@@ -683,7 +683,7 @@ Risk-based rule activation must remain explicit.
 
 ---
 
-# Risk-Based Thresholds
+## Risk-Based Thresholds
 
 Quality thresholds may be stronger for higher-risk targets.
 
@@ -701,7 +701,7 @@ Threshold changes must reflect real assurance needs rather than arbitrary strict
 
 ---
 
-# Risk-Based Gate Behavior
+## Risk-Based Gate Behavior
 
 Risk may affect which findings block progression.
 
@@ -723,7 +723,7 @@ The original finding severity remains unchanged.
 
 ---
 
-# Risk-Based Evidence Requirements
+## Risk-Based Evidence Requirements
 
 Higher-risk targets may require more evidence.
 
@@ -747,7 +747,7 @@ Manual Review Evidence
 
 ---
 
-# Risk Identification
+## Risk Identification
 
 Risk identification should occur throughout the lifecycle.
 
@@ -769,7 +769,7 @@ Risk management must not begin only when defects are found.
 
 ---
 
-# Architecture Risk Identification
+## Architecture Risk Identification
 
 Architecture design may reveal risks such as:
 
@@ -783,7 +783,7 @@ These risks should be documented before implementation when practical.
 
 ---
 
-# Implementation Risk Identification
+## Implementation Risk Identification
 
 Implementation may introduce risks through:
 
@@ -797,7 +797,7 @@ Quality checks and review provide risk signals.
 
 ---
 
-# Release Risk Identification
+## Release Risk Identification
 
 Release risk may include:
 
@@ -812,7 +812,7 @@ Release readiness assessment must consider the combined risk state.
 
 ---
 
-# Operational Risk Identification
+## Operational Risk Identification
 
 Operational systems may reveal risks through:
 
@@ -826,7 +826,7 @@ Operational evidence must feed quality risk management.
 
 ---
 
-# Risk Register
+## Risk Register
 
 The framework may maintain a Quality Risk Register.
 
@@ -846,7 +846,7 @@ The register should focus on meaningful risks rather than every minor finding.
 
 ---
 
-# Risk Register Entry
+## Risk Register Entry
 
 A risk register entry may contain:
 
@@ -867,7 +867,7 @@ Related Findings
 
 ---
 
-# Risk Ownership
+## Risk Ownership
 
 Every significant open risk must have an owner.
 
@@ -883,7 +883,7 @@ Unowned high-risk issues are incompatible with effective governance.
 
 ---
 
-# Risk Status
+## Risk Status
 
 A baseline lifecycle may include:
 
@@ -913,7 +913,7 @@ These states must have defined semantics.
 
 ---
 
-# Risk Acceptance
+## Risk Acceptance
 
 Not every risk can or should be eliminated immediately.
 
@@ -928,7 +928,7 @@ Risk acceptance must be explicit and governed.
 
 ---
 
-# Risk Acceptance Record
+## Risk Acceptance Record
 
 An accepted risk should record:
 
@@ -947,7 +947,7 @@ High and Critical risks should require stronger approval.
 
 ---
 
-# Accepted Risk vs Exception
+## Accepted Risk vs Exception
 
 Risk acceptance and quality exceptions are related but different.
 
@@ -965,7 +965,7 @@ An exception may require an associated risk acceptance.
 
 ---
 
-# Risk Mitigation
+## Risk Mitigation
 
 Mitigation reduces likelihood, impact, or both.
 
@@ -984,7 +984,7 @@ Mitigation strategies may include:
 
 ---
 
-# Preventive Mitigation
+## Preventive Mitigation
 
 Preventive controls reduce likelihood.
 
@@ -1000,7 +1000,7 @@ Test Automation
 
 ---
 
-# Detective Mitigation
+## Detective Mitigation
 
 Detective controls identify failures early.
 
@@ -1015,7 +1015,7 @@ Runtime Alerts
 
 ---
 
-# Containment Mitigation
+## Containment Mitigation
 
 Containment reduces impact after failure.
 
@@ -1030,7 +1030,7 @@ Examples:
 
 ---
 
-# Recovery Mitigation
+## Recovery Mitigation
 
 Recovery controls improve response after failure.
 
@@ -1044,7 +1044,7 @@ Examples include:
 
 ---
 
-# Compensating Controls
+## Compensating Controls
 
 When the preferred control is unavailable, an alternative control may reduce risk.
 
@@ -1062,7 +1062,7 @@ Compensating controls should usually be temporary and traceable.
 
 ---
 
-# Risk Reduction
+## Risk Reduction
 
 Mitigation should reduce the assessed risk.
 
@@ -1080,7 +1080,7 @@ Residual risk must be evaluated explicitly.
 
 ---
 
-# Residual Risk
+## Residual Risk
 
 Residual risk is the risk remaining after mitigation.
 
@@ -1103,7 +1103,7 @@ Residual risk may still require acceptance.
 
 ---
 
-# Risk Closure
+## Risk Closure
 
 A risk may be closed when:
 
@@ -1116,7 +1116,7 @@ Closure must be supported by evidence.
 
 ---
 
-# Risk Review
+## Risk Review
 
 Open risks should be reviewed periodically.
 
@@ -1142,7 +1142,7 @@ Exact schedules may be defined by governance.
 
 ---
 
-# Risk Aging
+## Risk Aging
 
 Long-lived risks may indicate quality debt.
 
@@ -1160,7 +1160,7 @@ High-risk items should not remain unresolved indefinitely without explicit accep
 
 ---
 
-# Risk Escalation
+## Risk Escalation
 
 Risk may increase over time.
 
@@ -1177,7 +1177,7 @@ The risk record should be reassessed when context changes.
 
 ---
 
-# Risk De-Escalation
+## Risk De-Escalation
 
 Risk may decrease after:
 
@@ -1192,7 +1192,7 @@ De-escalation must also be evidence-based.
 
 ---
 
-# Risk Trends
+## Risk Trends
 
 Risk trends provide insight beyond individual records.
 
@@ -1217,7 +1217,7 @@ Trend analysis can guide investment.
 
 ---
 
-# Risk Metrics
+## Risk Metrics
 
 Possible risk metrics include:
 
@@ -1235,7 +1235,7 @@ These metrics should support governance.
 
 ---
 
-# Risk Heat Map
+## Risk Heat Map
 
 The framework may eventually provide a risk heat map.
 
@@ -1251,7 +1251,7 @@ Heat maps are useful for visualization but must preserve individual risk details
 
 ---
 
-# Risk Aggregation
+## Risk Aggregation
 
 Risk may be aggregated by:
 
@@ -1278,7 +1278,7 @@ One Critical Security Risk
 
 ---
 
-# Release Risk
+## Release Risk
 
 A release should have an explicit risk state.
 
@@ -1298,7 +1298,7 @@ A release quality gate should consider these factors.
 
 ---
 
-# Release Risk Classification
+## Release Risk Classification
 
 A release may be classified conceptually as:
 
@@ -1316,7 +1316,7 @@ Release risk must not be reduced to a single arbitrary score if critical conditi
 
 ---
 
-# Quality Gate Risk Policy
+## Quality Gate Risk Policy
 
 Quality Gates should define acceptable risk.
 
@@ -1342,7 +1342,7 @@ Gate risk policy must be explicit.
 
 ---
 
-# Risk and Quality Findings
+## Risk and Quality Findings
 
 A finding may create a new risk automatically when:
 
@@ -1355,7 +1355,7 @@ Not every minor finding requires a separate risk record.
 
 ---
 
-# Finding-to-Risk Promotion
+## Finding-to-Risk Promotion
 
 A conceptual promotion process may be:
 
@@ -1373,7 +1373,7 @@ This avoids flooding the risk register.
 
 ---
 
-# Risk and Metrics
+## Risk and Metrics
 
 Metrics may indicate emerging risk before individual findings exist.
 
@@ -1397,7 +1397,7 @@ Trend-based risks should remain evidence-driven.
 
 ---
 
-# Risk and Technical Debt
+## Risk and Technical Debt
 
 Technical debt often represents deferred risk.
 
@@ -1412,7 +1412,7 @@ Debt should be prioritized according to risk rather than age alone.
 
 ---
 
-# Risk and Quality Debt
+## Risk and Quality Debt
 
 Quality debt may be categorized by risk.
 
@@ -1433,7 +1433,7 @@ This supports rational remediation order.
 
 ---
 
-# Risk and Documentation
+## Risk and Documentation
 
 Documentation gaps can create real quality risk.
 
@@ -1448,7 +1448,7 @@ Documentation risk should not automatically be considered low.
 
 ---
 
-# Risk and Security
+## Risk and Security
 
 Security risks require special attention because:
 
@@ -1461,7 +1461,7 @@ Security risk assessments should be updated when relevant information changes.
 
 ---
 
-# Risk and Compatibility
+## Risk and Compatibility
 
 Compatibility risks may remain hidden until external consumers upgrade.
 
@@ -1476,7 +1476,7 @@ Potential mitigation includes:
 
 ---
 
-# Risk and Architecture
+## Risk and Architecture
 
 Architecture risks often accumulate slowly.
 
@@ -1491,7 +1491,7 @@ Architecture risk management should consider long-term platform sustainability.
 
 ---
 
-# Risk and Reliability
+## Risk and Reliability
 
 Reliability risk may be informed by:
 
@@ -1505,7 +1505,7 @@ Production evidence is particularly valuable.
 
 ---
 
-# Risk and Performance
+## Risk and Performance
 
 Performance risk is contextual.
 
@@ -1520,7 +1520,7 @@ Performance risk should be evaluated against intended usage.
 
 ---
 
-# Risk and Build
+## Risk and Build
 
 Build risk may include:
 
@@ -1533,7 +1533,7 @@ Build failures can compromise release reliability even when application tests pa
 
 ---
 
-# Risk and Infrastructure
+## Risk and Infrastructure
 
 Infrastructure risk may affect the quality system itself.
 
@@ -1548,7 +1548,7 @@ Quality infrastructure must therefore participate in risk management.
 
 ---
 
-# Risk and Governance
+## Risk and Governance
 
 Governance failures can create systemic risk.
 
@@ -1565,7 +1565,7 @@ These risks may undermine the complete quality system.
 
 ---
 
-# Risk Discovery from Incidents
+## Risk Discovery from Incidents
 
 Incidents should trigger risk analysis.
 
@@ -1587,7 +1587,7 @@ The objective is to prevent recurrence.
 
 ---
 
-# Risk Discovery from Trends
+## Risk Discovery from Trends
 
 Quality metrics may reveal systemic risks.
 
@@ -1605,7 +1605,7 @@ This demonstrates why metrics and risk management must be connected.
 
 ---
 
-# Risk Discovery from Reviews
+## Risk Discovery from Reviews
 
 Human review may identify risks not detectable automatically.
 
@@ -1620,7 +1620,7 @@ These should be recorded when materially significant.
 
 ---
 
-# Risk Assessment Evidence
+## Risk Assessment Evidence
 
 Every significant risk assessment should identify supporting evidence.
 
@@ -1640,7 +1640,7 @@ This makes the assessment explainable.
 
 ---
 
-# Risk Confidence
+## Risk Confidence
 
 Risk estimates involve uncertainty.
 
@@ -1658,7 +1658,7 @@ Uncertainty must not be hidden.
 
 ---
 
-# Risk Uncertainty
+## Risk Uncertainty
 
 When insufficient evidence exists, the framework should explicitly represent uncertainty.
 
@@ -1675,7 +1675,7 @@ Missing information may itself require additional verification.
 
 ---
 
-# Conservative Risk Handling
+## Conservative Risk Handling
 
 For critical contexts, uncertainty should favor additional assurance rather than optimistic assumptions.
 
@@ -1691,7 +1691,7 @@ Additional Verification Required
 
 ---
 
-# Risk Review Gates
+## Risk Review Gates
 
 High-risk changes may require explicit review gates.
 
@@ -1709,7 +1709,7 @@ This moves risk management earlier in the lifecycle.
 
 ---
 
-# Risk-Based Testing
+## Risk-Based Testing
 
 Testing depth should reflect risk.
 
@@ -1735,7 +1735,7 @@ The Quality Framework determines assurance expectations.
 
 ---
 
-# Risk-Based Review
+## Risk-Based Review
 
 Review requirements may increase with risk.
 
@@ -1750,7 +1750,7 @@ Low-risk changes may use normal peer review.
 
 ---
 
-# Risk-Based Automation
+## Risk-Based Automation
 
 Repeated high-risk failure patterns should be candidates for automation.
 
@@ -1766,7 +1766,7 @@ This transforms learned risk into preventive quality control.
 
 ---
 
-# Risk Mitigation Prioritization
+## Risk Mitigation Prioritization
 
 Mitigation should prioritize:
 
@@ -1786,7 +1786,7 @@ Prioritization decisions must remain explicit.
 
 ---
 
-# Risk Remediation SLA
+## Risk Remediation SLA
 
 The framework may eventually define target remediation windows based on risk level.
 
@@ -1810,7 +1810,7 @@ Exact durations should be governed separately rather than embedded as arbitrary 
 
 ---
 
-# Risk Exceptions
+## Risk Exceptions
 
 A rule exception may create or modify risk.
 
@@ -1830,7 +1830,7 @@ Exceptions must not erase the underlying risk.
 
 ---
 
-# Exception Expiration
+## Exception Expiration
 
 When an exception expires:
 
@@ -1846,7 +1846,7 @@ The associated risk may become blocking again.
 
 ---
 
-# Risk Escalation on Expired Exceptions
+## Risk Escalation on Expired Exceptions
 
 Expired exceptions associated with high-risk findings should trigger visible escalation.
 
@@ -1854,7 +1854,7 @@ They must not silently continue.
 
 ---
 
-# Risk Acceptance Expiration
+## Risk Acceptance Expiration
 
 Accepted risk should be periodically reviewed.
 
@@ -1862,7 +1862,7 @@ Time-bounded acceptance prevents temporary decisions from becoming permanent by 
 
 ---
 
-# Risk Treatment Options
+## Risk Treatment Options
 
 The framework may recognize standard risk treatment strategies:
 
@@ -1876,7 +1876,7 @@ MONITOR
 
 ---
 
-# Avoid
+## Avoid
 
 Avoidance removes the risk source.
 
@@ -1890,7 +1890,7 @@ Remove Dependency
 
 ---
 
-# Mitigate
+## Mitigate
 
 Mitigation reduces likelihood or impact.
 
@@ -1904,7 +1904,7 @@ Isolation + Tests + Monitoring
 
 ---
 
-# Accept
+## Accept
 
 Acceptance acknowledges residual risk and allows continued operation.
 
@@ -1912,7 +1912,7 @@ Acceptance requires governance proportional to risk.
 
 ---
 
-# Transfer
+## Transfer
 
 Transfer shifts part of the risk to another controlled mechanism or provider.
 
@@ -1922,7 +1922,7 @@ Transfer does not eliminate accountability.
 
 ---
 
-# Monitor
+## Monitor
 
 Some risks require observation rather than immediate intervention.
 
@@ -1936,7 +1936,7 @@ Monitoring must define what would trigger escalation.
 
 ---
 
-# Risk Trigger
+## Risk Trigger
 
 A monitored risk should define triggers.
 
@@ -1953,7 +1953,7 @@ Triggers convert monitoring into actionable governance.
 
 ---
 
-# Risk Review Board
+## Risk Review Board
 
 The framework may eventually define a Quality Risk Review function for significant risks.
 
@@ -1969,7 +1969,7 @@ The exact organizational form may vary.
 
 ---
 
-# Risk Governance
+## Risk Governance
 
 Risk management must itself be governed.
 
@@ -1987,7 +1987,7 @@ Without governance, risk ratings may become inconsistent.
 
 ---
 
-# Risk Authority
+## Risk Authority
 
 Different risk levels may require different approval authority.
 
@@ -2011,7 +2011,7 @@ Exact roles must be defined by FamilyOS governance structures.
 
 ---
 
-# Risk Auditability
+## Risk Auditability
 
 A risk decision should be reconstructable.
 
@@ -2033,7 +2033,7 @@ When was it reviewed?
 
 ---
 
-# Risk Reporting
+## Risk Reporting
 
 Quality reports should expose meaningful risks.
 
@@ -2052,7 +2052,7 @@ High-level summaries must allow drill-down to individual risks.
 
 ---
 
-# Release Risk Report
+## Release Risk Report
 
 A release risk report may contain:
 
@@ -2072,7 +2072,7 @@ This supports release governance.
 
 ---
 
-# Domain Risk Reporting
+## Domain Risk Reporting
 
 Reports may group risks by domain.
 
@@ -2089,7 +2089,7 @@ This helps identify risk concentration.
 
 ---
 
-# Risk Dashboards
+## Risk Dashboards
 
 Future dashboards may show:
 
@@ -2105,7 +2105,7 @@ Dashboards remain reporting mechanisms, not risk authorities.
 
 ---
 
-# Risk Metrics and Trends
+## Risk Metrics and Trends
 
 The framework should monitor:
 
@@ -2122,7 +2122,7 @@ These metrics indicate quality management effectiveness.
 
 ---
 
-# Systemic Risk
+## Systemic Risk
 
 Some risks affect multiple components simultaneously.
 
@@ -2138,7 +2138,7 @@ These should be classified as systemic risks.
 
 ---
 
-# Systemic Risk Scope
+## Systemic Risk Scope
 
 A systemic risk may affect:
 
@@ -2153,7 +2153,7 @@ Systemic risks usually require higher governance attention.
 
 ---
 
-# Cascading Risk
+## Cascading Risk
 
 One failure may create additional risks.
 
@@ -2171,7 +2171,7 @@ The risk model should support relationships between risks.
 
 ---
 
-# Risk Relationships
+## Risk Relationships
 
 Risks may be linked as:
 
@@ -2187,7 +2187,7 @@ Relationships may support more advanced risk analysis later.
 
 ---
 
-# Risk Graph
+## Risk Graph
 
 A future risk graph may connect:
 
@@ -2207,7 +2207,7 @@ and cross-links between dependent risks.
 
 ---
 
-# Risk Scoring
+## Risk Scoring
 
 The framework may use numeric scores internally if useful.
 
@@ -2225,7 +2225,7 @@ The resulting risk classification must preserve meaning.
 
 ---
 
-# No Blind Numeric Risk
+## No Blind Numeric Risk
 
 Risk must not be reduced to unexplained numbers such as:
 
@@ -2239,7 +2239,7 @@ Categorical classifications are often more understandable.
 
 ---
 
-# Risk Model Calibration
+## Risk Model Calibration
 
 The risk model should be calibrated through real engineering experience.
 
@@ -2255,7 +2255,7 @@ The model should evolve if classifications consistently fail to reflect real con
 
 ---
 
-# Risk Model Consistency
+## Risk Model Consistency
 
 Equivalent situations should receive similar risk evaluations.
 
@@ -2270,9 +2270,9 @@ Risk management must avoid arbitrary personal interpretation.
 
 ---
 
-# Risk Examples
+## Risk Examples
 
-## Example — Architecture
+### Example — Architecture
 
 ```text id="m4r5h8"
 Finding:
@@ -2293,7 +2293,7 @@ Restore architecture boundary and add automated dependency validation.
 
 ---
 
-# Example — Security
+## Example — Security
 
 ```text id="7j7vut"
 Finding:
@@ -2314,7 +2314,7 @@ Upgrade dependency immediately or block release.
 
 ---
 
-# Example — Documentation
+## Example — Documentation
 
 ```text id="e1eq59"
 Finding:
@@ -2334,7 +2334,7 @@ The same documentation gap for a breaking public migration could be High risk.
 
 ---
 
-# Example — Testing
+## Example — Testing
 
 ```text id="mtxs84"
 Finding:
@@ -2357,7 +2357,7 @@ The testing gap is evaluated in context rather than through coverage alone.
 
 ---
 
-# Example — Build
+## Example — Build
 
 ```text id="m3vt40"
 Finding:
@@ -2378,7 +2378,7 @@ Release blocked until mitigation or approved acceptance.
 
 ---
 
-# Risk Automation
+## Risk Automation
 
 Risk identification and classification may be partially automated.
 
@@ -2394,7 +2394,7 @@ However, high-impact risk decisions may still require human judgment.
 
 ---
 
-# Automated Risk Suggestions
+## Automated Risk Suggestions
 
 A Quality Assessment Engine may suggest:
 
@@ -2414,7 +2414,7 @@ The final risk classification may remain reviewable.
 
 ---
 
-# AI-Assisted Risk Analysis
+## AI-Assisted Risk Analysis
 
 AI may assist with:
 
@@ -2428,7 +2428,7 @@ AI should not autonomously accept critical risk or override authoritative qualit
 
 ---
 
-# Risk Explainability
+## Risk Explainability
 
 Every significant risk should be explainable.
 
@@ -2450,7 +2450,7 @@ What residual risk remains?
 
 ---
 
-# Risk Decision Trace
+## Risk Decision Trace
 
 A decision trace may look like:
 
@@ -2474,7 +2474,7 @@ This preserves governance context.
 
 ---
 
-# Risk Data Integrity
+## Risk Data Integrity
 
 Risk records may influence release decisions.
 
@@ -2489,7 +2489,7 @@ Risk data must remain traceable.
 
 ---
 
-# Risk Retention
+## Risk Retention
 
 Significant historical risks may provide valuable engineering knowledge.
 
@@ -2505,7 +2505,7 @@ Closed risks should not always be immediately deleted.
 
 ---
 
-# Risk Knowledge Base
+## Risk Knowledge Base
 
 Recurring risks may eventually form a knowledge base.
 
@@ -2526,7 +2526,7 @@ This helps convert historical experience into preventive quality engineering.
 
 ---
 
-# Risk and Continuous Improvement
+## Risk and Continuous Improvement
 
 Risk management should improve the Quality Framework.
 
@@ -2548,45 +2548,45 @@ This turns individual problems into systemic improvement.
 
 ---
 
-# Risk Anti-Patterns
+## Risk Anti-Patterns
 
 The Quality Risk Management model rejects several anti-patterns.
 
-## Risk Equals Severity
+### Risk Equals Severity
 
 Finding severity alone is not sufficient risk analysis.
 
-## All Risks Are Critical
+### All Risks Are Critical
 
 Over-classification destroys prioritization.
 
-## Risk Without Owner
+### Risk Without Owner
 
 Significant risks require ownership.
 
-## Permanent Acceptance
+### Permanent Acceptance
 
 Accepted risk must remain reviewable.
 
-## Risk Without Evidence
+### Risk Without Evidence
 
 Important classifications must be supported by context and evidence.
 
-## Risk Hidden by Exception
+### Risk Hidden by Exception
 
 Exceptions do not eliminate underlying risk.
 
-## Average Risk Hiding Critical Risk
+### Average Risk Hiding Critical Risk
 
 Aggregation must preserve critical individual conditions.
 
-## Risk Register as Backlog Dump
+### Risk Register as Backlog Dump
 
 Only meaningful engineering risks should enter the formal register.
 
 ---
 
-# Initial Implementation
+## Initial Implementation
 
 An initial FamilyOS implementation may begin with:
 
@@ -2607,7 +2607,7 @@ This is sufficient to establish structured risk management.
 
 ---
 
-# Initial Risk Workflow
+## Initial Risk Workflow
 
 A practical initial workflow may be:
 
@@ -2631,7 +2631,7 @@ Significant Risk?
 
 ---
 
-# Risk Maturity Model
+## Risk Maturity Model
 
 Quality Risk Management may mature progressively.
 
@@ -2672,7 +2672,7 @@ Predictive Quality Risk Management
 
 ---
 
-# Predictive Risk Management
+## Predictive Risk Management
 
 As historical quality data grows, FamilyOS may eventually predict elevated risk.
 
@@ -2688,7 +2688,7 @@ Predictive output should remain advisory until sufficient evidence and governanc
 
 ---
 
-# Reference Risk Flow
+## Reference Risk Flow
 
 The complete Quality Risk Management flow can be represented as:
 
@@ -2722,7 +2722,7 @@ Engineering Change / Finding / Metric / Incident
 
 ---
 
-# Strategic Outcome
+## Strategic Outcome
 
 Quality Risk Management enables FamilyOS to move from:
 
@@ -2747,7 +2747,7 @@ This creates a stronger and more disciplined engineering decision model.
 
 ---
 
-# Final Risk Principle
+## Final Risk Principle
 
 Quality cannot be managed effectively without understanding risk.
 

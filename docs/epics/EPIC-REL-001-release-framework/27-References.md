@@ -1,8 +1,8 @@
 # Release Framework
 
-# 27 References
+## 27 References
 
-## Overview
+### Overview
 
 EPIC-REL-001 — Release Framework depends on a broader set of FamilyOS engineering foundations, architecture decisions, specifications, governance documents, and external industry standards.
 
@@ -26,25 +26,25 @@ Where conflicts exist, the applicable FamilyOS normative hierarchy and governanc
 
 ---
 
-# Reference Principles
+## Reference Principles
 
 The Release Framework follows several reference principles.
 
-## R1 — Internal FamilyOS sources take precedence for FamilyOS-specific behavior.
+### R1 — Internal FamilyOS sources take precedence for FamilyOS-specific behavior.
 
-## R2 — Architecture decisions constrain framework implementation where applicable.
+### R2 — Architecture decisions constrain framework implementation where applicable.
 
-## R3 — Specifications define formal contracts where such contracts exist.
+### R3 — Specifications define formal contracts where such contracts exist.
 
-## R4 — External standards inform implementation but do not automatically become FamilyOS requirements.
+### R4 — External standards inform implementation but do not automatically become FamilyOS requirements.
 
-## R5 — Referenced standards must not silently override FamilyOS governance.
+### R5 — Referenced standards must not silently override FamilyOS governance.
 
-## R6 — Reference changes may require Release Framework review.
+### R6 — Reference changes may require Release Framework review.
 
 ---
 
-# Normative Reference Hierarchy
+## Normative Reference Hierarchy
 
 A conceptual reference hierarchy is:
 
@@ -70,7 +70,7 @@ The exact precedence is governed by FamilyOS documentation and architecture gove
 
 ---
 
-# FamilyOS Foundation References
+## FamilyOS Foundation References
 
 The Release Framework is part of the broader FamilyOS engineering platform and should remain aligned with the foundation documentation under:
 
@@ -94,7 +94,7 @@ Important foundation areas include:
 
 ---
 
-# Engineering Constitution
+## Engineering Constitution
 
 The FamilyOS Engineering Constitution provides the highest-level engineering principles that guide platform design and development.
 
@@ -108,7 +108,7 @@ EPIC-REL-001 must remain compatible with the engineering principles defined ther
 
 ---
 
-# Architecture Vision
+## Architecture Vision
 
 The Architecture Vision defines the long-term structural direction of FamilyOS.
 
@@ -122,7 +122,7 @@ Release architecture must support the platform's long-term modular and extensibl
 
 ---
 
-# Architecture Map
+## Architecture Map
 
 The Architecture Map provides a high-level representation of FamilyOS architecture domains.
 
@@ -136,7 +136,7 @@ The Release Framework should integrate with existing architectural domains rathe
 
 ---
 
-# Framework Lifecycle Foundation
+## Framework Lifecycle Foundation
 
 The general FamilyOS framework lifecycle provides broader context for engineering framework evolution.
 
@@ -150,7 +150,7 @@ docs/00-foundation/Framework-Lifecycle.md
 
 ---
 
-# Release Strategy Foundation
+## Release Strategy Foundation
 
 The FamilyOS foundation release strategy provides historical and architectural context for versioning and release progression.
 
@@ -164,7 +164,7 @@ EPIC-REL-001 formalizes and expands these release concepts into a complete engin
 
 ---
 
-# Deployment Architecture
+## Deployment Architecture
 
 Deployment and release are related but distinct concepts.
 
@@ -186,7 +186,7 @@ unless a specific implementation intentionally combines them.
 
 ---
 
-# Security Architecture
+## Security Architecture
 
 Release security must remain aligned with the FamilyOS security foundation.
 
@@ -207,7 +207,7 @@ Relevant areas include:
 
 ---
 
-# Observability Architecture
+## Observability Architecture
 
 Release observability should integrate with the platform's broader observability architecture.
 
@@ -221,7 +221,7 @@ Release state, events, failures, and evidence should eventually participate in t
 
 ---
 
-# Configuration Architecture
+## Configuration Architecture
 
 Release configuration should remain consistent with FamilyOS configuration principles.
 
@@ -235,7 +235,7 @@ Release automation must avoid hidden or uncontrolled configuration.
 
 ---
 
-# Infrastructure Architecture
+## Infrastructure Architecture
 
 Release infrastructure may rely on CI/CD systems, registries, signing services, or storage infrastructure.
 
@@ -249,7 +249,7 @@ Release infrastructure should remain replaceable and avoid unnecessary provider 
 
 ---
 
-# Integration Architecture
+## Integration Architecture
 
 Release workflows may integrate with repositories, registries, CI/CD systems, documentation platforms, and future distribution systems.
 
@@ -263,7 +263,7 @@ These integrations should preserve stable release semantics.
 
 ---
 
-# Plugin Architecture
+## Plugin Architecture
 
 Official plugin release behavior must remain compatible with the FamilyOS Plugin Architecture.
 
@@ -284,7 +284,7 @@ Relevant release concerns include:
 
 ---
 
-# Documentation Architecture
+## Documentation Architecture
 
 Release documentation must remain aligned with the FamilyOS documentation architecture.
 
@@ -298,7 +298,7 @@ Changelogs, release notes, validation reports, and framework documents are docum
 
 ---
 
-# Engineering Foundation
+## Engineering Foundation
 
 EPIC-ENG-001 — Engineering Foundation establishes engineering practices upon which Release Framework behavior depends.
 
@@ -324,7 +324,7 @@ Important topics include:
 
 ---
 
-# Testing Framework
+## Testing Framework
 
 EPIC-TST-001 — Testing Framework defines FamilyOS testing architecture and methodology.
 
@@ -340,7 +340,7 @@ The Release Framework does not redefine testing methodology.
 
 ---
 
-# Quality Framework
+## Quality Framework
 
 EPIC-QLT-001 — Quality Framework defines FamilyOS quality architecture and governance.
 
@@ -360,7 +360,7 @@ Release Readiness and Release Validation may consume:
 
 ---
 
-# Documentation Framework
+## Documentation Framework
 
 EPIC-DOC-001 — Documentation Framework defines documentation architecture, standards, lifecycle, metadata, versioning, validation, automation, and governance.
 
@@ -382,7 +382,7 @@ EPIC-REL-001 relies on this framework for:
 
 ---
 
-# Build Framework
+## Build Framework
 
 EPIC-BLD-001 — Build Framework defines how FamilyOS transforms controlled source into reproducible and identifiable build outputs.
 
@@ -410,7 +410,7 @@ Release Candidate
 
 ---
 
-# Plugin Compliance Framework
+## Plugin Compliance Framework
 
 EPIC-PLUGIN-002 — Plugin Compliance Framework defines the compliance architecture for FamilyOS plugins.
 
@@ -424,7 +424,7 @@ Official plugin release profiles may consume compliance evidence from this frame
 
 ---
 
-# Architecture Decision Records
+## Architecture Decision Records
 
 FamilyOS Architecture Decision Records provide authoritative architectural decisions that may constrain Release Framework behavior.
 
@@ -434,7 +434,7 @@ Release Framework maintainers must review applicable ADRs before significant fra
 
 ---
 
-# ADR-0007 — Official Plugins Architecture
+## ADR-0007 — Official Plugins Architecture
 
 ADR-0007 defines the architecture of official FamilyOS plugins.
 
@@ -450,7 +450,7 @@ Official plugin release profiles must remain consistent with this ADR.
 
 ---
 
-# Other Applicable ADRs
+## Other Applicable ADRs
 
 EPIC-REL-001 may also depend on later ADRs governing areas such as:
 
@@ -466,7 +466,7 @@ The authoritative ADR index should be used to determine current applicability.
 
 ---
 
-# Request for Comments
+## Request for Comments
 
 FamilyOS RFCs provide detailed design proposals for major platform capabilities.
 
@@ -485,7 +485,7 @@ Release profiles for these domains may need to respect their documented compatib
 
 ---
 
-# Specification References
+## Specification References
 
 FamilyOS specifications define formal contracts that may influence release qualification.
 
@@ -499,13 +499,13 @@ Specifications should be consulted where release validity depends on formal cont
 
 ---
 
-# SPEC-0001 — Structure
+## SPEC-0001 — Structure
 
 Where applicable, structural specifications may define requirements that release validation must enforce.
 
 ---
 
-# Identifier Specifications
+## Identifier Specifications
 
 Identifier specifications may constrain:
 
@@ -516,7 +516,7 @@ Identifier specifications may constrain:
 
 ---
 
-# Metadata Specifications
+## Metadata Specifications
 
 Metadata specifications may influence future machine-readable:
 
@@ -528,7 +528,7 @@ Metadata specifications may influence future machine-readable:
 
 ---
 
-# Versioning Specifications
+## Versioning Specifications
 
 Where formal FamilyOS versioning specifications exist, they should take precedence over informal implementation conventions.
 
@@ -536,13 +536,13 @@ Where formal FamilyOS versioning specifications exist, they should take preceden
 
 ---
 
-# Document Format Specifications
+## Document Format Specifications
 
 Release documents and machine-readable release metadata must comply with applicable FamilyOS document format specifications.
 
 ---
 
-# Repository References
+## Repository References
 
 The FamilyOS Git repository is the authoritative source repository for current Release Framework development.
 
@@ -556,7 +556,7 @@ The release process relies on Git concepts including:
 
 ---
 
-# Git Documentation
+## Git Documentation
 
 Git is the primary source control mechanism currently used by FamilyOS.
 
@@ -576,7 +576,7 @@ Implementation should rely on official Git behavior rather than undocumented ass
 
 ---
 
-# Semantic Versioning
+## Semantic Versioning
 
 FamilyOS uses semantic version concepts as the default versioning model defined in `06-Versioning-Strategy.md`.
 
@@ -603,7 +603,7 @@ FamilyOS may apply additional repository-specific tag conventions.
 
 ---
 
-# Keep a Changelog
+## Keep a Changelog
 
 The FamilyOS changelog approach is conceptually compatible with widely adopted structured changelog practices such as Keep a Changelog.
 
@@ -622,7 +622,7 @@ External conventions are informative unless explicitly adopted as normative Fami
 
 ---
 
-# Conventional Commits
+## Conventional Commits
 
 Conventional Commits MAY inform future automated change classification.
 
@@ -642,7 +642,7 @@ Formal adoption should be governed separately.
 
 ---
 
-# CI/CD References
+## CI/CD References
 
 FamilyOS Release Automation should remain provider-independent.
 
@@ -658,7 +658,7 @@ Provider documentation is implementation reference material, not normative relea
 
 ---
 
-# GitHub Actions
+## GitHub Actions
 
 Where GitHub Actions is used, relevant capabilities may include:
 
@@ -676,7 +676,7 @@ FamilyOS release semantics must remain independent from GitHub Actions.
 
 ---
 
-# Package Registry References
+## Package Registry References
 
 Future FamilyOS releases may publish artifacts to package or artifact registries.
 
@@ -692,7 +692,7 @@ Each target must be governed through release publication profiles.
 
 ---
 
-# Python Packaging References
+## Python Packaging References
 
 For Python-based FamilyOS components, relevant external packaging references may include:
 
@@ -706,7 +706,7 @@ Packaging rules must remain aligned with the Build Framework and applicable Fami
 
 ---
 
-# PEP 440
+## PEP 440
 
 Python package versions may need compatibility with PEP 440 where Python packaging infrastructure requires it.
 
@@ -716,7 +716,7 @@ PEP 440 is an implementation compatibility reference, not necessarily the author
 
 ---
 
-# Software Supply-Chain References
+## Software Supply-Chain References
 
 Release provenance and artifact security should remain compatible with mature software supply-chain approaches.
 
@@ -732,7 +732,7 @@ These are reference frameworks and standards unless formally adopted.
 
 ---
 
-# SLSA
+## SLSA
 
 Supply-chain Levels for Software Artifacts provides concepts related to:
 
@@ -745,7 +745,7 @@ FamilyOS provenance architecture should remain capable of adopting SLSA-compatib
 
 ---
 
-# in-toto
+## in-toto
 
 in-toto provides concepts for securing software supply-chain steps through attestations and verified workflow metadata.
 
@@ -753,7 +753,7 @@ Its model may inform future FamilyOS provenance and release evidence design.
 
 ---
 
-# Sigstore
+## Sigstore
 
 Sigstore provides technologies and patterns for software artifact signing and verification.
 
@@ -767,7 +767,7 @@ Specific adoption requires separate security architecture decisions.
 
 ---
 
-# SPDX
+## SPDX
 
 SPDX provides standardized software package and Software Bill of Materials representations.
 
@@ -775,7 +775,7 @@ FamilyOS may use SPDX-compatible SBOM formats in future executable release profi
 
 ---
 
-# CycloneDX
+## CycloneDX
 
 CycloneDX provides software bill of materials and supply-chain metadata formats.
 
@@ -783,7 +783,7 @@ FamilyOS may support CycloneDX where useful for dependency and security visibili
 
 ---
 
-# SBOM References
+## SBOM References
 
 Software Bill of Materials standards may support:
 
@@ -796,7 +796,7 @@ SBOM generation is a future maturity capability unless made mandatory by a relea
 
 ---
 
-# Cryptographic Hash References
+## Cryptographic Hash References
 
 Artifact integrity may use secure cryptographic hashes such as SHA-256.
 
@@ -806,7 +806,7 @@ The Release Framework intentionally does not hard-code one algorithm permanently
 
 ---
 
-# Signing References
+## Signing References
 
 Release signing mechanisms may include:
 
@@ -820,7 +820,7 @@ Signing architecture must include key or identity governance.
 
 ---
 
-# NIST References
+## NIST References
 
 Where security and software supply-chain governance mature, FamilyOS may consult applicable NIST guidance.
 
@@ -835,7 +835,7 @@ External security guidance must be evaluated against FamilyOS architecture befor
 
 ---
 
-# OWASP References
+## OWASP References
 
 OWASP guidance may inform:
 
@@ -849,7 +849,7 @@ OWASP recommendations are external references rather than automatic Release Fram
 
 ---
 
-# Secure Software Development Framework
+## Secure Software Development Framework
 
 The NIST Secure Software Development Framework may provide useful reference concepts for:
 
@@ -862,7 +862,7 @@ FamilyOS may progressively align where appropriate.
 
 ---
 
-# Risk Management References
+## Risk Management References
 
 Release risk management may draw on general engineering risk concepts such as:
 
@@ -885,7 +885,7 @@ External risk frameworks remain advisory unless formally adopted.
 
 ---
 
-# Security Severity References
+## Security Severity References
 
 Security vulnerability severity may use industry-standard concepts such as CVSS where relevant.
 
@@ -893,7 +893,7 @@ CVSS scoring should not automatically determine release governance decisions wit
 
 ---
 
-# Compliance References
+## Compliance References
 
 External compliance standards may eventually affect FamilyOS release processes depending on deployment context.
 
@@ -908,7 +908,7 @@ Such obligations must be introduced through explicit FamilyOS compliance governa
 
 ---
 
-# Release Evidence References
+## Release Evidence References
 
 Future release evidence models may draw on:
 
@@ -924,7 +924,7 @@ The Release Framework should prefer structured evidence over long-term dependenc
 
 ---
 
-# Observability References
+## Observability References
 
 Release observability may use common telemetry standards in future implementation.
 
@@ -938,7 +938,7 @@ The exact observability implementation is outside this document.
 
 ---
 
-# OpenTelemetry
+## OpenTelemetry
 
 OpenTelemetry may provide a common model for:
 
@@ -951,7 +951,7 @@ Release telemetry should remain consistent with FamilyOS Observability Architect
 
 ---
 
-# Release Event References
+## Release Event References
 
 Future FamilyOS release events may include conceptual event names such as:
 
@@ -970,7 +970,7 @@ These names are conceptual until defined by a formal specification.
 
 ---
 
-# Artifact Repository References
+## Artifact Repository References
 
 Artifact registries typically provide concepts such as:
 
@@ -985,7 +985,7 @@ FamilyOS should use these capabilities where they reinforce Release Framework se
 
 ---
 
-# Container References
+## Container References
 
 If FamilyOS later distributes container images, release architecture may use:
 
@@ -1000,7 +1000,7 @@ Mutable container tags such as `latest` must remain separate from immutable rele
 
 ---
 
-# OCI References
+## OCI References
 
 Open Container Initiative standards may become relevant to container artifact formats and distribution.
 
@@ -1008,7 +1008,7 @@ Specific OCI adoption belongs to future implementation architecture.
 
 ---
 
-# Documentation References
+## Documentation References
 
 FamilyOS reference documentation under:
 
@@ -1033,7 +1033,7 @@ EPIC-REL-001 terminology should remain aligned with these references.
 
 ---
 
-# Glossary
+## Glossary
 
 Reference:
 
@@ -1045,7 +1045,7 @@ Release-specific terminology should eventually be added or aligned with the cent
 
 ---
 
-# Acronyms
+## Acronyms
 
 Reference:
 
@@ -1068,7 +1068,7 @@ CLI
 
 ---
 
-# Language
+## Language
 
 Reference:
 
@@ -1080,7 +1080,7 @@ EPIC-REL-001 should follow official FamilyOS documentation language rules.
 
 ---
 
-# Naming Conventions
+## Naming Conventions
 
 Reference:
 
@@ -1098,7 +1098,7 @@ This applies to:
 
 ---
 
-# Reserved Words
+## Reserved Words
 
 Reference:
 
@@ -1110,7 +1110,7 @@ Future release metadata and CLI interfaces should avoid conflicts with reserved 
 
 ---
 
-# Reference Index
+## Reference Index
 
 Reference:
 
@@ -1122,7 +1122,7 @@ The central reference index should eventually include EPIC-REL-001 and its assoc
 
 ---
 
-# EPIC-REL-001 Internal References
+## EPIC-REL-001 Internal References
 
 The canonical Release Framework document set is:
 
@@ -1165,7 +1165,7 @@ These documents collectively define EPIC-REL-001.
 
 ---
 
-# Control Document References
+## Control Document References
 
 The Release Framework package also includes control documents such as:
 
@@ -1182,7 +1182,7 @@ These documents provide metadata, lifecycle status, validation evidence, change 
 
 ---
 
-# 00-EPIC.md
+## 00-EPIC.md
 
 `00-EPIC.md` provides the high-level definition, scope, objectives, and deliverables of EPIC-REL-001.
 
@@ -1190,187 +1190,187 @@ All specialized documents should remain aligned with the EPIC definition.
 
 ---
 
-# 01-Context.md
+## 01-Context.md
 
 `01-Context.md` explains why FamilyOS requires a formal Release Framework and the limitations of informal release processes.
 
 ---
 
-# 02-Vision.md
+## 02-Vision.md
 
 `02-Vision.md` defines the long-term target state for FamilyOS release engineering.
 
 ---
 
-# 03-Release-Principles.md
+## 03-Release-Principles.md
 
 `03-Release-Principles.md` defines durable release invariants that constrain all implementation choices.
 
 ---
 
-# 04-Release-Architecture.md
+## 04-Release-Architecture.md
 
 `04-Release-Architecture.md` defines the structural domains and boundaries of the Release Framework.
 
 ---
 
-# 05-Release-Lifecycle.md
+## 05-Release-Lifecycle.md
 
 `05-Release-Lifecycle.md` defines release states, transitions, gates, and exceptional outcomes.
 
 ---
 
-# 06-Versioning-Strategy.md
+## 06-Versioning-Strategy.md
 
 `06-Versioning-Strategy.md` defines release version identity and semantic progression.
 
 ---
 
-# 07-Release-Types-and-Channels.md
+## 07-Release-Types-and-Channels.md
 
 `07-Release-Types-and-Channels.md` defines release classification, maturity, and channel semantics.
 
 ---
 
-# 08-Release-Planning.md
+## 08-Release-Planning.md
 
 `08-Release-Planning.md` defines release intent, scope, dependency, risk, validation, and publication planning.
 
 ---
 
-# 09-Release-Readiness.md
+## 09-Release-Readiness.md
 
 `09-Release-Readiness.md` defines prerequisites for formal candidate creation.
 
 ---
 
-# 10-Release-Candidates.md
+## 10-Release-Candidates.md
 
 `10-Release-Candidates.md` defines candidate identity, stability, mutation, iteration, and promotion.
 
 ---
 
-# 11-Artifacts-and-Provenance.md
+## 11-Artifacts-and-Provenance.md
 
 `11-Artifacts-and-Provenance.md` defines release artifact identity, integrity, and source-to-release traceability.
 
 ---
 
-# 12-Release-Validation.md
+## 12-Release-Validation.md
 
 `12-Release-Validation.md` defines final technical and policy qualification of the actual candidate.
 
 ---
 
-# 13-Release-Automation.md
+## 13-Release-Automation.md
 
 `13-Release-Automation.md` defines automation responsibilities, idempotency, failure handling, and orchestration.
 
 ---
 
-# 14-CI-CD-Integration.md
+## 14-CI-CD-Integration.md
 
 `14-CI-CD-Integration.md` defines how release automation operates within CI/CD environments.
 
 ---
 
-# 15-Changelog-and-Release-Notes.md
+## 15-Changelog-and-Release-Notes.md
 
 `15-Changelog-and-Release-Notes.md` defines release communication and historical change records.
 
 ---
 
-# 16-Tagging-and-Repository-State.md
+## 16-Tagging-and-Repository-State.md
 
 `16-Tagging-and-Repository-State.md` defines Git release anchors, branch state, remote state, and tag integrity.
 
 ---
 
-# 17-Publishing-and-Distribution.md
+## 17-Publishing-and-Distribution.md
 
 `17-Publishing-and-Distribution.md` defines publication targets, distribution channels, verification, and partial failure behavior.
 
 ---
 
-# 18-Rollback-and-Recovery.md
+## 18-Rollback-and-Recovery.md
 
 `18-Rollback-and-Recovery.md` defines rollback, withdrawal, forward recovery, and interrupted release recovery.
 
 ---
 
-# 19-Release-Security.md
+## 19-Release-Security.md
 
 `19-Release-Security.md` defines security controls across the complete release supply chain.
 
 ---
 
-# 20-Release-Observability.md
+## 20-Release-Observability.md
 
 `20-Release-Observability.md` defines lifecycle visibility, telemetry, release state, evidence, and diagnostic requirements.
 
 ---
 
-# 21-Release-Governance.md
+## 21-Release-Governance.md
 
 `21-Release-Governance.md` defines authority, ownership, approvals, risk acceptance, exceptions, and framework governance.
 
 ---
 
-# 22-Release-Compliance.md
+## 22-Release-Compliance.md
 
 `22-Release-Compliance.md` defines how release conformance to applicable framework requirements is evaluated.
 
 ---
 
-# 23-Release-Metrics.md
+## 23-Release-Metrics.md
 
 `23-Release-Metrics.md` defines measurements used to assess release performance, reliability, automation, and framework effectiveness.
 
 ---
 
-# 24-Release-Risk-Management.md
+## 24-Release-Risk-Management.md
 
 `24-Release-Risk-Management.md` defines release risk identification, evaluation, mitigation, acceptance, and monitoring.
 
 ---
 
-# 25-Framework-Lifecycle.md
+## 25-Framework-Lifecycle.md
 
 `25-Framework-Lifecycle.md` defines evolution and governance of the Release Framework itself.
 
 ---
 
-# 26-Roadmap.md
+## 26-Roadmap.md
 
 `26-Roadmap.md` describes future Release Framework capability evolution and implementation maturity.
 
 ---
 
-# 28-Validation.md
+## 28-Validation.md
 
 `28-Validation.md` records the final validation model and evidence required to close EPIC-REL-001.
 
 ---
 
-# 29-Summary.md
+## 29-Summary.md
 
 `29-Summary.md` provides the consolidated architectural summary of the Release Framework.
 
 ---
 
-# 30-Release.md
+## 30-Release.md
 
 `30-Release.md` records the concrete official release state of the EPIC-REL-001 milestone.
 
 ---
 
-# 31-Implementation-Checklist.md
+## 31-Implementation-Checklist.md
 
 `31-Implementation-Checklist.md` records framework completion and implementation obligations.
 
 ---
 
-# Reference Stability
+## Reference Stability
 
 References should use stable identifiers wherever possible.
 
@@ -1395,7 +1395,7 @@ Stable identifiers improve long-term traceability.
 
 ---
 
-# Reference Versioning
+## Reference Versioning
 
 Where a referenced document is itself versioned, release decisions should identify the applicable version where necessary.
 
@@ -1410,7 +1410,7 @@ This becomes increasingly important as FamilyOS frameworks evolve.
 
 ---
 
-# External Reference Adoption
+## External Reference Adoption
 
 An external standard becomes a normative FamilyOS requirement only through explicit adoption.
 
@@ -1430,7 +1430,7 @@ Reference alone does not imply mandatory compliance.
 
 ---
 
-# External Standard Evolution
+## External Standard Evolution
 
 External standards may evolve independently.
 
@@ -1440,7 +1440,7 @@ Where necessary, FamilyOS should reference a specific standard version.
 
 ---
 
-# Deprecated References
+## Deprecated References
 
 If a referenced FamilyOS document is superseded:
 
@@ -1450,7 +1450,7 @@ If a referenced FamilyOS document is superseded:
 
 ---
 
-# Broken References
+## Broken References
 
 Broken references reduce framework usability and traceability.
 
@@ -1463,7 +1463,7 @@ Framework validation should eventually detect:
 
 ---
 
-# Reference Validation
+## Reference Validation
 
 Before EPIC-REL-001 release, reference validation should confirm that:
 
@@ -1480,7 +1480,7 @@ External web availability should not be required for every framework validation 
 
 ---
 
-# Reference Governance
+## Reference Governance
 
 Changes to important normative references may require Release Framework review.
 
@@ -1500,7 +1500,7 @@ may require reassessment.
 
 ---
 
-# Dependency Between Frameworks
+## Dependency Between Frameworks
 
 The relationship between FamilyOS engineering frameworks may be represented conceptually as:
 
@@ -1520,7 +1520,7 @@ The Release Framework consumes evidence from these frameworks and coordinates fi
 
 ---
 
-# Release Framework as Integration Layer
+## Release Framework as Integration Layer
 
 EPIC-REL-001 should be understood as an integration framework across several engineering domains.
 
@@ -1544,7 +1544,7 @@ Official Release
 
 ---
 
-# Tool References
+## Tool References
 
 Specific tools may appear in implementation examples, including:
 
@@ -1563,7 +1563,7 @@ The Release Framework must remain meaningful if tooling changes.
 
 ---
 
-# Current FamilyOS Toolchain Context
+## Current FamilyOS Toolchain Context
 
 Current FamilyOS engineering commonly uses:
 
@@ -1581,7 +1581,7 @@ Their exact versions and configuration are governed by the appropriate engineeri
 
 ---
 
-# Reference Portability
+## Reference Portability
 
 The Release Framework must avoid depending on assumptions that only hold on one operating system, CI/CD provider, package registry, or Git hosting platform.
 
@@ -1589,7 +1589,7 @@ External reference material should support portability.
 
 ---
 
-# Future Reference Categories
+## Future Reference Categories
 
 As FamilyOS matures, additional reference categories may become necessary.
 
@@ -1607,7 +1607,7 @@ These should be added explicitly rather than embedded informally in automation.
 
 ---
 
-# Reference Maintenance
+## Reference Maintenance
 
 This document should be reviewed when:
 
@@ -1620,67 +1620,67 @@ This document should be reviewed when:
 
 ---
 
-# Reference Invariants
+## Reference Invariants
 
 The following invariants apply.
 
-## REF1 — FamilyOS-specific release behavior is governed by FamilyOS normative sources.
+### REF1 — FamilyOS-specific release behavior is governed by FamilyOS normative sources.
 
-## REF2 — External standards are informative unless explicitly adopted.
+### REF2 — External standards are informative unless explicitly adopted.
 
-## REF3 — Stable identifiers should be used for internal references.
+### REF3 — Stable identifiers should be used for internal references.
 
-## REF4 — Historical reference meaning must remain reconstructable.
+### REF4 — Historical reference meaning must remain reconstructable.
 
-## REF5 — Referenced framework changes may trigger Release Framework reassessment.
+### REF5 — Referenced framework changes may trigger Release Framework reassessment.
 
-## REF6 — Implementation tools must not become normative merely because they are referenced.
+### REF6 — Implementation tools must not become normative merely because they are referenced.
 
-## REF7 — Internal cross-references must remain consistent with the canonical Release Framework structure.
+### REF7 — Internal cross-references must remain consistent with the canonical Release Framework structure.
 
-## REF8 — Reference changes must not silently redefine release policy.
+### REF8 — Reference changes must not silently redefine release policy.
 
 ---
 
-# Reference Anti-Patterns
+## Reference Anti-Patterns
 
-## Link Equals Policy
+### Link Equals Policy
 
 Assuming an external webpage automatically defines FamilyOS behavior.
 
 ---
 
-## Mutable External Dependency
+### Mutable External Dependency
 
 Depending on an unspecified latest version of an external standard for normative meaning.
 
 ---
 
-## Tool Documentation as Architecture
+### Tool Documentation as Architecture
 
 Treating GitHub Actions, registry, or package-manager documentation as the Release Framework.
 
 ---
 
-## Broken Internal Reference
+### Broken Internal Reference
 
 Renaming a canonical framework document without updating dependent references.
 
 ---
 
-## Historical Reference Rewrite
+### Historical Reference Rewrite
 
 Changing old release records to point to new framework rules that did not govern those releases.
 
 ---
 
-## Duplicate Normative Definition
+### Duplicate Normative Definition
 
 Copying rules from another framework and redefining them differently inside EPIC-REL-001.
 
 ---
 
-# Minimum Reference Set
+## Minimum Reference Set
 
 At minimum, EPIC-REL-001 should remain traceable to:
 
@@ -1701,7 +1701,7 @@ software supply-chain references
 
 ---
 
-# Target Reference Experience
+## Target Reference Experience
 
 A future maintainer reviewing EPIC-REL-001 should be able to determine:
 
@@ -1723,7 +1723,7 @@ This document provides the reference map required to answer those questions.
 
 ---
 
-# Final Statement
+## Final Statement
 
 The FamilyOS Release Framework does not exist in isolation.
 

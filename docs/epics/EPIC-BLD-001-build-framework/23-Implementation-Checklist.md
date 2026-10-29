@@ -1,8 +1,8 @@
 # Build Framework
 
-# 23 Implementation Checklist
+## 23 Implementation Checklist
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the architecture, principles, lifecycle, governance, validation model, artifact model, automation model, and roadmap required to establish build engineering as an official FamilyOS platform capability.
 
@@ -30,7 +30,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The implementation checklist defines practical work required to realize EPIC-BLD-001.
 
@@ -63,7 +63,7 @@ The checklist distinguishes foundational implementation from progressive maturit
 
 ---
 
-# Checklist Status Model
+## Checklist Status Model
 
 Each implementation item may use the following status model:
 
@@ -79,7 +79,7 @@ Where used in repository planning, status should reflect actual implementation s
 
 ---
 
-# Implementation Priority Model
+## Implementation Priority Model
 
 Checklist items are grouped into three implementation levels.
 
@@ -99,13 +99,13 @@ Advanced Capability Introduced When Justified
 
 ---
 
-# Level 1 — Framework Baseline
+## Level 1 — Framework Baseline
 
-## Objective
+### Objective
 
 Finalize EPIC-BLD-001 as the normative architecture before significant build implementation proceeds.
 
-### Checklist
+#### Checklist
 
 * [x] Confirm all 24 numbered Build Framework chapters exist.
 * [x] Confirm all seven control documents exist.
@@ -126,15 +126,15 @@ Finalize EPIC-BLD-001 as the normative architecture before significant build imp
 
 ---
 
-# Level 2 — Canonical Build Entry Point
+## Level 2 — Canonical Build Entry Point
 
-## Objective
+### Objective
 
 Establish one canonical build interface for FamilyOS.
 
 The implementation should eliminate dependence on undocumented command sequences.
 
-### Checklist
+#### Checklist
 
 * [x] Identify the current canonical Python package build mechanism.
 * [x] Define one official FamilyOS build entry point.
@@ -164,7 +164,7 @@ GitHub Actions now invokes the same canonical `familyos build` entry point using
 
 ---
 
-# Canonical Build Interface Acceptance
+## Canonical Build Interface Acceptance
 
 The canonical interface should eventually support a model conceptually similar to:
 
@@ -184,13 +184,13 @@ Implementation syntax may differ.
 
 ---
 
-# Level 3 — Build Target Model
+## Level 3 — Build Target Model
 
-## Objective
+### Objective
 
 Make build scope explicit.
 
-### Checklist
+#### Checklist
 
 * [x] Identify current build target or targets.
 * [x] Define the FamilyOS CLI package as an explicit build target.
@@ -225,13 +225,13 @@ independent packaging requirements make those targets necessary.
 
 ---
 
-# Level 4 — Build Profiles
+## Level 4 — Build Profiles
 
-## Objective
+### Objective
 
 Introduce explicit profiles representing build purpose.
 
-### Initial Recommended Profiles
+#### Initial Recommended Profiles
 
 ```text id="et3svt"
 development
@@ -242,7 +242,7 @@ release-candidate
 
 Additional profiles should only be introduced when necessary.
 
-### Checklist
+#### Checklist
 
 * [x] Define `development` profile purpose.
 * [x] Define `validation` profile purpose.
@@ -282,13 +282,13 @@ enforcement.
 
 ---
 
-# Level 5 — Build Context
+## Level 5 — Build Context
 
-## Objective
+### Objective
 
 Create a stable effective Build Context for execution and evidence.
 
-### Checklist
+#### Checklist
 
 * [x] Define the minimum Build Context model.
 * [x] Capture source revision when Git is available.
@@ -308,7 +308,7 @@ Create a stable effective Build Context for execution and evidence.
 
 ---
 
-# Minimum Build Context
+## Minimum Build Context
 
 An initial implementation may use:
 
@@ -389,13 +389,13 @@ concrete canonical build input.
 
 ---
 
-# Level 6 — Build Identity
+## Level 6 — Build Identity
 
-## Objective
+### Objective
 
 Associate significant build execution with stable identity.
 
-### Checklist
+#### Checklist
 
 * [x] Define Build ID semantics.
 * [x] Generate a Build ID for CI and release-candidate builds.
@@ -443,13 +443,13 @@ Level 6 is complete at the current Build Framework maturity.
 
 ---
 
-# Level 7 — Build Input Validation
+## Level 7 — Build Input Validation
 
-## Objective
+### Objective
 
 Validate build-relevant source state before transformation.
 
-### Checklist
+#### Checklist
 
 * [x] Validate required source directories.
 * [x] Validate required project configuration.
@@ -525,13 +525,13 @@ Level 7 is complete at the current Build Framework maturity.
 
 ---
 
-# Level 8 — Repository Structure Validation
+## Level 8 — Repository Structure Validation
 
-## Objective
+### Objective
 
 Ensure project structure supports deterministic build discovery.
 
-### Checklist
+#### Checklist
 
 * [x] Define repository-root detection.
 * [x] Avoid developer-specific absolute paths.
@@ -596,13 +596,13 @@ destinations.
 
 ---
 
-# Level 9 — Build Toolchain
+## Level 9 — Build Toolchain
 
-## Objective
+### Objective
 
 Make required build tooling explicit and verifiable.
 
-### Checklist
+#### Checklist
 
 * [x] Confirm canonical Python runtime requirement.
 * [x] Define supported runtime versions.
@@ -673,13 +673,13 @@ covered by focused automated tests.
 
 ---
 
-# Level 10 — Environment Management
+## Level 10 — Environment Management
 
-## Objective
+### Objective
 
 Ensure builds can be reconstructed from supported environment requirements.
 
-### Checklist
+#### Checklist
 
 * [x] Document supported development environment.
 * [x] Document supported CI environment.
@@ -788,13 +788,13 @@ Declared Dependencies
 Canonical Build
       ↓
 Valid Artifact
-# Level 11 — Dependency Management
+## Level 11 — Dependency Management
 
-## Objective
+### Objective
 
 Make dependency state sufficiently explicit and reproducible.
 
-### Checklist
+#### Checklist
 
 * [x] Inventory runtime dependencies.
 * [x] Inventory build dependencies.
@@ -903,7 +903,7 @@ evidence-output selection mandatory based on profile policy.
 
 ---
 
-# Dependency Reproducibility Milestone
+## Dependency Reproducibility Milestone
 
 Level 11 demonstrates the implemented flow:
 
@@ -922,13 +922,13 @@ release authority.
 
 ---
 
-# Level 12 — Build Configuration
+## Level 12 — Build Configuration
 
-## Objective
+### Objective
 
 Provide explicit and deterministic configuration behavior.
 
-### Checklist
+#### Checklist
 
 * [x] Inventory existing build configuration sources.
 * [x] Identify canonical project configuration.
@@ -948,7 +948,7 @@ Provide explicit and deterministic configuration behavior.
 
 ---
 
-# Configuration Resolution Acceptance
+## Configuration Resolution Acceptance
 
 Equivalent configuration sources should resolve to equivalent effective configuration.
 
@@ -1058,13 +1058,13 @@ override mechanism was introduced by Level 12.1 through Level 12.4.
 
 ---
 
-# Level 13 — Build Execution
+## Level 13 — Build Execution
 
-## Objective
+### Objective
 
 Implement predictable and observable transformation from validated context to candidate artifacts.
 
-### Checklist
+#### Checklist
 
 * [x] Define build execution stages.
 * [x] Define workspace initialization.
@@ -1097,7 +1097,7 @@ and `familyos validation ci`; tracked Git status was clean after every workflow.
 This directly closes the source-mutation item without assigning Artifact
 Discovery, validation, identity, integrity, trust, or Build Evidence semantics.
 
-## Level 13.2 — Current Execution Contract Reconciliation
+### Level 13.2 — Current Execution Contract Reconciliation
 
 Status: DOCUMENTATION RECONCILED.
 
@@ -1133,7 +1133,7 @@ No production code, test behavior, artifact semantics, validation semantics,
 Build Evidence semantics, release behavior, or publication behavior changes in
 Level 13.2.
 
-## Level 13.3 — Canonical Execution Observability
+### Level 13.3 — Canonical Execution Observability
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -1170,7 +1170,7 @@ Level 13.3 does not introduce Build Evidence, artifact trust, release,
 publication, retry, cancellation, or general-purpose distributed tracing
 semantics.
 
-## Level 13.4 — Canonical Build Workspace Initialization
+### Level 13.4 — Canonical Build Workspace Initialization
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -1229,7 +1229,7 @@ publication, retry, cancellation, cleanup, or distributed tracing semantics.
 
 ---
 
-## Level 13.5 — Canonical Build Input Staging
+### Level 13.5 — Canonical Build Input Staging
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -1294,7 +1294,7 @@ publication, cleanup, cancellation, retry, or distributed tracing semantics.
 
 ---
 
-## Level 13.6 — Canonical Generation Requirement Resolution
+### Level 13.6 — Canonical Generation Requirement Resolution
 
 Status: DEFINED AND VALIDATED.
 
@@ -1341,7 +1341,7 @@ cleanup, cancellation, retry, or distributed tracing semantics.
 
 ---
 
-## Level 13.7 — Canonical Package Assembly
+### Level 13.7 — Canonical Package Assembly
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -1385,7 +1385,7 @@ Level 13.7 does not introduce Build Evidence, artifact trust, release, publicati
 
 ---
 
-## Level 13.8 — Canonical Execution Finalization
+### Level 13.8 — Canonical Execution Finalization
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -1445,7 +1445,7 @@ publication, cancellation, retry, or distributed tracing semantics.
 
 ---
 
-## Level 13.9 — Canonical Partial-Output Handling
+### Level 13.9 — Canonical Partial-Output Handling
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -1502,7 +1502,7 @@ cancellation, retry, or distributed tracing semantics.
 
 ---
 
-## Level 13.10 — Canonical Failure Cleanup
+### Level 13.10 — Canonical Failure Cleanup
 
 Status: IMPLEMENTED AND VALIDATED.
 
@@ -1562,7 +1562,7 @@ publication, cancellation, retry, or distributed tracing semantics.
 
 ---
 
-## Level 13.11 — Canonical Cancellation Semantics
+### Level 13.11 — Canonical Cancellation Semantics
 
 Status: DEFINED AND DEFERRED BY DESIGN.
 
@@ -1607,7 +1607,7 @@ Level 13.11 introduces no runtime production-code change.
 
 ---
 
-## Level 13.12 — Canonical Retry Policy
+### Level 13.12 — Canonical Retry Policy
 
 Status: DEFINED AND DEFERRED BY DESIGN.
 
@@ -1649,7 +1649,7 @@ Level 13.12 introduces no production runtime-code change.
 
 ---
 
-# Build Execution Acceptance
+## Build Execution Acceptance
 
 Execution should produce:
 
@@ -1665,13 +1665,13 @@ not trusted artifacts directly.
 
 ---
 
-# Level 14 — Artifact Discovery
+## Level 14 — Artifact Discovery
 
-## Objective
+### Objective
 
 Explicitly identify the output of each build.
 
-### Checklist
+#### Checklist
 
 * [x] Define expected artifact classes.
 * [x] Define expected artifact count.
@@ -1716,13 +1716,13 @@ Level 14 — Artifact Discovery is complete.
 
 ---
 
-# Level 15 — Artifact Identity
+## Level 15 — Artifact Identity
 
-## Objective
+### Objective
 
 Make artifacts independently identifiable.
 
-### Checklist
+#### Checklist
 
 * [x] Define artifact logical name.
 * [x] Define artifact type.
@@ -1738,13 +1738,13 @@ Make artifacts independently identifiable.
 
 ---
 
-# Level 16 — Python Package Validation
+## Level 16 — Python Package Validation
 
-## Objective
+### Objective
 
 Validate current FamilyOS Python artifacts directly.
 
-### Checklist
+#### Checklist
 
 * [x] Build wheel artifact.
 * [x] Build source distribution where required.
@@ -1822,13 +1822,13 @@ readiness.
 
 ---
 
-# Level 17 — Artifact Integrity
+## Level 17 — Artifact Integrity
 
-## Objective
+### Objective
 
 Protect artifact identity through cryptographic integrity.
 
-### Checklist
+#### Checklist
 
 * [x] Select approved digest algorithm.
 * [x] Calculate digest from final candidate bytes.
@@ -1895,13 +1895,13 @@ Level 17 — Artifact Integrity is complete.
 
 ---
 
-# Level 18 — Artifact Manifest
+## Level 18 — Artifact Manifest
 
-## Objective
+### Objective
 
 Provide a structured record of generated artifact sets.
 
-### Checklist
+#### Checklist
 
 * [x] Define artifact manifest structure.
 * [x] Include Build ID.
@@ -1960,13 +1960,13 @@ Level 18 — Artifact Manifest is complete.
 
 ---
 
-# Level 19 — Build Validation Orchestration
+## Level 19 — Build Validation Orchestration
 
-## Objective
+### Objective
 
 Implement layered validation aligned with `15-Build-Validation.md`.
 
-### Checklist
+#### Checklist
 
 * [x] Implement input validation.
 * [x] Implement configuration validation.
@@ -1986,7 +1986,7 @@ Implement layered validation aligned with `15-Build-Validation.md`.
 
 ---
 
-# Validation Decision Acceptance
+## Validation Decision Acceptance
 
 The implementation should provide a clear result such as:
 
@@ -2118,13 +2118,13 @@ semantics are introduced.
 
 ---
 
-# Level 20 — Testing Framework Integration
+## Level 20 — Testing Framework Integration
 
-## Objective
+### Objective
 
 Integrate EPIC-TST-001 without duplicating testing ownership.
 
-### Checklist
+#### Checklist
 
 * [x] Identify tests required before build.
 * [x] Identify tests required after artifact creation.
@@ -2137,7 +2137,7 @@ Integrate EPIC-TST-001 without duplicating testing ownership.
 * [x] Ensure failed mandatory tests fail Build Validation.
 * [x] Preserve test reports as evidence where needed.
 
-### Implementation evidence
+#### Implementation evidence
 
 Testing execution and Testing Evidence remain owned by EPIC-TST-001.
 The Build Framework consumes canonical testing authority rather than
@@ -2171,13 +2171,13 @@ application layer.
 
 ---
 
-# Level 21 — Quality Framework Integration
+## Level 21 — Quality Framework Integration
 
-## Objective
+### Objective
 
 Expose Build Evidence to EPIC-QLT-001.
 
-### Checklist
+#### Checklist
 
 * [x] Identify build-specific quality signals.
 * [x] Expose validation results.
@@ -2188,7 +2188,7 @@ Expose Build Evidence to EPIC-QLT-001.
 * [x] Document ownership boundaries.
 * [x] Integrate quality-gate failure with CI where applicable.
 
-### Implementation evidence
+#### Implementation evidence
 
 The Build Framework exposes build-specific quality signals through canonical
 Build Validation and Build Evidence rather than defining an independent
@@ -2239,14 +2239,14 @@ layer.
 
 ---
 
-# Level 22 — Plugin Compliance Integration
+## Level 22 — Plugin Compliance Integration
 
-## Objective
+### Objective
 
 Integrate EPIC-PLUGIN-002 compliance authority without duplicating
 plugin-compliance ownership inside the Build Framework.
 
-### Checklist
+#### Checklist
 
 * [x] Consume canonical builtin-plugin compliance authority.
 * [x] Preserve EPIC-PLUGIN-002 ownership of compliance rules.
@@ -2257,7 +2257,7 @@ plugin-compliance ownership inside the Build Framework.
 * [x] Preserve plugin-compliance results in Build Validation and Build Evidence.
 * [x] Avoid introducing a separate plugin build target without architectural need.
 
-### Implementation evidence
+#### Implementation evidence
 
 Plugin compliance execution, rules, profiles, validators, findings, and
 compliance decisions remain owned by EPIC-PLUGIN-002. The Build Framework
@@ -2297,13 +2297,13 @@ inside the Build application layer.
 
 ---
 
-# Level 23 — Documentation Build Integration
+## Level 23 — Documentation Build Integration
 
-## Objective
+### Objective
 
 Support documentation as controlled build input and output where appropriate.
 
-### Checklist
+#### Checklist
 
 * [x] Identify generated documentation activities.
 * [x] Identify authoritative documentation sources.
@@ -2314,7 +2314,7 @@ Support documentation as controlled build input and output where appropriate.
 * [x] Keep Documentation Framework ownership boundaries.
 * [x] Avoid undocumented local documentation tooling.
 
-### Implementation Status
+#### Implementation Status
 
 Level 23 is complete as a documentation/build authority reconciliation level.
 
@@ -2378,13 +2378,13 @@ path that the repository does not currently implement.
 
 ---
 
-# Level 24 — Build Evidence
+## Level 24 — Build Evidence
 
-## Objective
+### Objective
 
 Create evidence sufficient to explain important builds.
 
-### Initial Evidence Checklist
+#### Initial Evidence Checklist
 
 * [x] Build ID.
 * [x] source revision.
@@ -2421,7 +2421,7 @@ This completion does not introduce dependency-graph fingerprinting, synthetic
 environment fingerprints, stage-result aggregation, reproducibility decisions,
 provenance, signing, publication, promotion, or deployment semantics.
 
-### Mature Evidence Checklist
+#### Mature Evidence Checklist
 
 * [ ] dependency graph identity.
 * [x] environment identity.
@@ -2429,7 +2429,7 @@ provenance, signing, publication, promotion, or deployment semantics.
 * [x] reproducibility status.
 * [x] provenance data.
 
-### Mature Evidence Status
+#### Mature Evidence Status
 
 Stage-result evidence is now implemented by preserving the canonical ordered
 `BuildExecutionObservation` sequence already produced by package-build
@@ -2466,7 +2466,7 @@ fingerprinting, reproducibility assessment, and provenance.
 
 ---
 
-# Build Evidence Bundle
+## Build Evidence Bundle
 
 A mature conceptual structure may be:
 
@@ -2486,13 +2486,13 @@ BuildEvidence
 
 ---
 
-# Level 25 — Build Result
+## Level 25 — Build Result
 
-## Objective
+### Objective
 
 Provide one coherent final result for automation and diagnostics.
 
-### Checklist
+#### Checklist
 
 * [x] Define Build Result representation.
 * [x] Include Build ID.
@@ -2521,13 +2521,13 @@ contract, avoiding a redundant second result authority.
 
 ---
 
-# Level 26 — Local Developer Workflow
+## Level 26 — Local Developer Workflow
 
-## Objective
+### Objective
 
 Keep canonical build behavior practical for developers.
 
-### Checklist
+#### Checklist
 
 * [x] Document local environment setup.
 * [x] Document dependency installation.
@@ -2570,7 +2570,7 @@ Level 26 — Local Developer Workflow is complete.
 
 ---
 
-# Developer Experience Acceptance
+## Developer Experience Acceptance
 
 A contributor should be able to answer:
 
@@ -2590,13 +2590,13 @@ without relying on tribal knowledge.
 
 ---
 
-# Level 27 — CI Foundation
+## Level 27 — CI Foundation
 
-## Objective
+### Objective
 
 Use CI as an independent executor of canonical build semantics.
 
-### Checklist
+#### Checklist
 
 * [x] Check out known source revision.
 * [x] Provision explicit runtime.
@@ -2651,7 +2651,7 @@ records. The observed working-tree state was preserved as `dirty: true`.
 
 ---
 
-# CI Foundation Flow
+## CI Foundation Flow
 
 ```text id="3arvku"
 Checkout
@@ -2675,13 +2675,13 @@ Parallelization may be introduced after correctness is established.
 
 ---
 
-# Level 28 — CI Permissions
+## Level 28 — CI Permissions
 
-## Objective
+### Objective
 
 Apply least privilege to automation.
 
-### Checklist
+#### Checklist
 
 * [x] Review default workflow permissions.
 * [x] Use read-only repository permissions where sufficient.
@@ -2721,13 +2721,13 @@ Level 28 — CI Permissions is complete.
 
 ---
 
-# Level 29 — CI Caching
+## Level 29 — CI Caching
 
-## Objective
+### Objective
 
 Improve performance without changing semantics.
 
-### Checklist
+#### Checklist
 
 * [x] Identify safe dependency caches.
 * [x] Define cache key inputs.
@@ -2773,13 +2773,13 @@ Level 29 — CI Caching is complete at 8/8.
 
 ---
 
-# Level 30 — Artifact Transfer Across CI Jobs
+## Level 30 — Artifact Transfer Across CI Jobs
 
-## Objective
+### Objective
 
 Preserve exact artifact identity across automation stages.
 
-### Checklist
+#### Checklist
 
 * [x] Build artifact once.
 * [x] Calculate digest.
@@ -2790,7 +2790,7 @@ Preserve exact artifact identity across automation stages.
 * [x] Reject changed artifact.
 * [x] Avoid rebuilding between build and validation jobs.
 
-### Implementation Evidence
+#### Implementation Evidence
 
 * The canonical `validate` job performs the package build once and
   uploads the resulting `dist/` candidates without rebuilding them.
@@ -2818,13 +2818,13 @@ Level 30 — Artifact Transfer Across CI Jobs is complete at 8/8.
 
 ---
 
-# Level 31 — Build-Once-Promote
+## Level 31 — Build-Once-Promote
 
-## Objective
+### Objective
 
 Prepare strong Build/Release integration.
 
-### Checklist
+#### Checklist
 
 * [x] Identify trusted artifact after Build Validation.
 * [x] Preserve trusted artifact bytes.
@@ -2836,7 +2836,7 @@ Prepare strong Build/Release integration.
 * [x] Prevent downstream silent rebuild.
 * [x] Verify artifact integrity before promotion.
 
-### Implementation Evidence
+#### Implementation Evidence
 
 * `CanonicalBuildResult.release_handoff_eligible` identifies Build
   results whose execution, Build Validation, Build ID, artifact manifest,
@@ -2865,7 +2865,7 @@ Level 31 — Build-Once-Promote is complete at 9/9.
 
 ---
 
-# Release Handoff Acceptance
+## Release Handoff Acceptance
 
 The Build Framework should provide conceptually:
 
@@ -2882,13 +2882,13 @@ ReleaseHandoff
 
 ---
 
-# Level 32 — Release Candidate Profile
+## Level 32 — Release Candidate Profile
 
-## Objective
+### Objective
 
 Implement the strongest Build Framework profile required before EPIC-REL-001 evaluation.
 
-### Checklist
+#### Checklist
 
 * [x] Require identifiable source revision.
 * [x] Require appropriate clean working-tree state.
@@ -2906,13 +2906,13 @@ Implement the strongest Build Framework profile required before EPIC-REL-001 eva
 
 ---
 
-# Level 33 — Observability
+## Level 33 — Observability
 
-## Objective
+### Objective
 
 Make build execution understandable.
 
-### Checklist
+#### Checklist
 
 * [x] Log Build ID.
 * [x] Log target.
@@ -2927,7 +2927,7 @@ Make build execution understandable.
 * [x] Distinguish warning from error.
 * [x] Ensure CI failure points remain visible.
 
-### Implementation Status
+#### Implementation Status
 
 Level 33 observability is complete for the current Build Framework scope.
 
@@ -2964,13 +2964,13 @@ or deployment authority.
 
 ---
 
-# Level 34 — Build Metrics
+## Level 34 — Build Metrics
 
-## Objective
+### Objective
 
 Introduce metrics only where they support decisions.
 
-### Potential Metrics
+#### Potential Metrics
 
 * [ ] total build duration;
 * [x] stage duration;
@@ -2985,7 +2985,7 @@ Introduce metrics only where they support decisions.
 
 Metrics should not become requirements merely because they can be measured.
 
-### Current Metrics Status
+#### Current Metrics Status
 
 Stage duration is already established as canonical Build execution evidence.
 Each completed `BuildExecutionStage` produces an immutable
@@ -3022,13 +3022,13 @@ abstraction.
 
 ---
 
-# Level 35 — Failure Classification
+## Level 35 — Failure Classification
 
-## Objective
+### Objective
 
 Improve diagnostics through consistent failure categories.
 
-### Checklist
+#### Checklist
 
 * [x] Define input failure category.
 * [x] Define configuration failure category.
@@ -3042,7 +3042,7 @@ Improve diagnostics through consistent failure categories.
 * [x] Ensure diagnostics include corrective information.
 * [x] Add failure-path tests.
 
-### Implementation Status
+#### Implementation Status
 
 Level 35 failure classification is complete for the current Build Framework
 scope.
@@ -3087,13 +3087,13 @@ execution fallback, corrective-information projection, and CLI rendering.
 
 ---
 
-# Level 36 — Build Security
+## Level 36 — Build Security
 
-## Objective
+### Objective
 
 Integrate secure build principles from the beginning.
 
-### Checklist
+#### Checklist
 
 * [x] Minimize build-process privileges.
 * [x] Keep production credentials out of normal builds.
@@ -3109,7 +3109,7 @@ Integrate secure build principles from the beginning.
 * [x] Avoid unsafe shell command construction.
 * [x] Document build security assumptions.
 
-### Current Build Security Boundary
+#### Current Build Security Boundary
 
 The canonical Build path operates without production or release-publication
 credentials. Publication remains outside ordinary package construction, and
@@ -3175,13 +3175,13 @@ Level 36 — Build Security is complete at 13/13.
 
 ---
 
-# Level 37 — Build Governance Implementation
+## Level 37 — Build Governance Implementation
 
-## Objective
+### Objective
 
 Make `16-Build-Governance.md` operational.
 
-### Checklist
+#### Checklist
 
 * [x] Define Build Framework ownership.
 * [x] Define build implementation ownership.
@@ -3199,7 +3199,7 @@ Make `16-Build-Governance.md` operational.
 * [x] Define validation-weakening review.
 * [x] Document governance process.
 
-### Implementation Status
+#### Implementation Status
 
 Level 37 operationalizes the governance architecture already defined by
 `16-Build-Governance.md` without introducing a runtime governance subsystem.
@@ -3266,13 +3266,13 @@ manifest updates, and synchronized EPIC lifecycle metadata as applicable.
 Level 37 — Build Governance Implementation is complete at 15/15.
 
 ---
-# Level 38 — Documentation Synchronization
+## Level 38 — Documentation Synchronization
 
-## Objective
+### Objective
 
 Ensure implementation and documentation remain aligned.
 
-### Checklist
+#### Checklist
 
 * [x] Update Build Framework when architecture changes.
 * [x] Update developer build instructions.
@@ -3286,7 +3286,7 @@ Ensure implementation and documentation remain aligned.
 * [x] Update ADRs/RFCs when applicable.
 * [x] Prevent permanent implementation/documentation drift.
 
-### Implementation Status
+#### Implementation Status
 
 Level 38 reconciles the Build Framework documentation with the implemented
 state established through the preceding Build Framework levels.
@@ -3343,13 +3343,13 @@ documentation before drift becomes permanent.
 Level 38 — Documentation Synchronization is complete at 11/11.
 
 ---
-# Level 39 — Build Technical Debt
+## Level 39 — Build Technical Debt
 
-## Objective
+### Objective
 
 Identify and reduce legacy build behavior.
 
-### Checklist
+#### Checklist
 
 * [x] Inventory legacy build scripts.
 * [x] Inventory duplicate build commands.
@@ -3363,7 +3363,7 @@ Identify and reduce legacy build behavior.
 * [x] Remove obsolete paths after migration.
 * [x] Document accepted temporary debt.
 
-### Current Technical-Debt State
+#### Current Technical-Debt State
 
 The Level 39 repository audit found no active legacy Build script, duplicate
 canonical Build command, independent CI-only Build semantic path, unowned
@@ -3393,7 +3393,7 @@ The canonical documentation baseline reports zero duplicate numbered documents
 and zero legacy files. No active legacy Build-named path was found by the
 repository audit.
 
-### Accepted Temporary Debt
+#### Accepted Temporary Debt
 
 One known maintenance debt remains accepted:
 
@@ -3417,13 +3417,13 @@ are planned maturity work and are not classified as current technical debt.
 Level 39 — Build Technical Debt is complete at 11/11.
 
 ---
-# Level 40 — Reproducibility Baseline
+## Level 40 — Reproducibility Baseline
 
-## Objective
+### Objective
 
 Move from repeatable procedure toward reconstructable Build Context.
 
-### Checklist
+#### Checklist
 
 * [x] Establish canonical source identity.
 * [x] Establish deterministic configuration resolution.
@@ -3439,7 +3439,7 @@ Move from repeatable procedure toward reconstructable Build Context.
 
 ---
 
-# Reproducibility Acceptance
+## Reproducibility Acceptance
 
 The initial target is:
 
@@ -3475,13 +3475,13 @@ Level 40 currently stands at 11/11.
 
 ---
 
-# Level 41 — Build Context Fingerprint
+## Level 41 — Build Context Fingerprint
 
-## Objective
+### Objective
 
 Provide stronger context identity for reproducibility and caching.
 
-### Checklist
+#### Checklist
 
 * [x] Define canonical fingerprint inputs.
 * [x] Include source identity.
@@ -3496,7 +3496,7 @@ Provide stronger context identity for reproducibility and caching.
 
 This is a maturity capability and may remain deferred initially.
 
-### Current Build Context Fingerprint
+#### Current Build Context Fingerprint
 
 Canonical Build Context fingerprinting is implemented as a deterministic
 semantic projection of the resolved Build Context.
@@ -3548,13 +3548,13 @@ Level 41 — Build Context Fingerprint is complete at 10/10.
 
 ---
 
-# Level 42 — Reproducibility Testing
+## Level 42 — Reproducibility Testing
 
-## Objective
+### Objective
 
 Test whether equivalent contexts produce equivalent artifacts.
 
-### Checklist
+#### Checklist
 
 * [x] Execute equivalent build twice.
 * [x] Compare artifact count.
@@ -3566,7 +3566,7 @@ Test whether equivalent contexts produce equivalent artifacts.
 * [x] Investigate unexplained variability.
 * [x] Add periodic CI reproducibility checks if justified.
 
-### Current Baseline
+#### Current Baseline
 
 Canonical repeated-build validation now establishes artifact reproducibility
 semantics for equivalent Build Contexts.
@@ -3606,13 +3606,13 @@ Level 42 maturity decision rather than an unassessed checklist item.
 
 ---
 
-# Level 43 — Supply Chain Evidence
+## Level 43 — Supply Chain Evidence
 
-## Objective
+### Objective
 
 Progressively strengthen artifact provenance.
 
-### Checklist
+#### Checklist
 
 * [x] Record dependency-source information.
 * [x] Record toolchain identity.
@@ -3623,7 +3623,7 @@ Progressively strengthen artifact provenance.
 * [x] Evaluate industry-standard provenance formats.
 * [x] Avoid creating a proprietary format without clear need.
 
-### Dependency Source Evidence Boundary
+#### Dependency Source Evidence Boundary
 
 At the current Supply Chain Evidence maturity level, dependency-source
 information is limited to dependency input authorities that the canonical
@@ -3653,7 +3653,7 @@ evidence.
 No `DependencySourceState`, inferred registry identity, package-origin claim,
 or network-resolution provenance is introduced by Level 43.
 
-### Builder Identity Boundary
+#### Builder Identity Boundary
 
 Builder identity is intentionally deferred at the current Supply Chain
 Evidence maturity level.
@@ -3684,13 +3684,13 @@ attestation, or SLSA provenance statement is introduced by Level 43.
 
 ---
 
-# Level 44 — SBOM Evaluation
+## Level 44 — SBOM Evaluation
 
-## Objective
+### Objective
 
 Evaluate whether Software Bill of Materials generation provides operational value.
 
-### Checklist
+#### Checklist
 
 * [x] Identify SBOM use cases.
 * [x] Identify target artifacts.
@@ -3701,7 +3701,7 @@ Evaluate whether Software Bill of Materials generation provides operational valu
 * [x] Evaluate release evidence integration.
 * [x] Decide through architecture governance before adoption.
 
-### Current Evaluation
+#### Current Evaluation
 
 SBOM generation has clear potential operational value for FamilyOS.
 
@@ -3744,7 +3744,7 @@ durable supply-chain evidence associated with applicable release artifacts,
 while remaining complementary to Build Provenance, Artifact Integrity,
 release manifests, and release validation.
 
-### Architecture Governance Decision
+#### Architecture Governance Decision
 
 SBOM implementation is intentionally deferred at the current Build Framework
 maturity level.
@@ -3788,13 +3788,13 @@ profile.
 
 ---
 
-# Level 45 — Artifact Signing Evaluation
+## Level 45 — Artifact Signing Evaluation
 
-## Objective
+### Objective
 
 Evaluate cryptographic artifact signing when Release Framework maturity requires it.
 
-### Checklist
+#### Checklist
 
 * [x] Define signing objective.
 * [x] Define signing authority.
@@ -3810,7 +3810,7 @@ Evaluate cryptographic artifact signing when Release Framework maturity requires
 Signing should generally represent release authority rather than ordinary build execution.
 
 
-### Artifact Signing Architecture Decision
+#### Artifact Signing Architecture Decision
 
 Level 45 evaluates artifact signing as a future supply-chain trust control.
 The evaluation is complete, but artifact-signing adoption is intentionally
@@ -3870,13 +3870,13 @@ Therefore Level 45 closes as an evaluation milestone:
 
 ---
 
-# Level 46 — Controlled Builder Evaluation
+## Level 46 — Controlled Builder Evaluation
 
-## Objective
+### Objective
 
 Evaluate stronger build isolation only when justified.
 
-### Potential Options
+#### Potential Options
 
 ```text id="63ikde"
 Containerized Build
@@ -3885,7 +3885,7 @@ Immutable Build Image
 Remote Build Worker
 ```
 
-### Checklist
+#### Checklist
 
 * [x] Identify current environment reproducibility limitation.
 * [x] Determine whether isolation solves the actual problem.
@@ -3896,7 +3896,7 @@ Remote Build Worker
 * [x] Record architecture decision before introduction.
 
 
-### Controlled Builder Architecture Decision
+#### Controlled Builder Architecture Decision
 
 Level 46 evaluates whether FamilyOS currently requires a stronger controlled
 builder boundary. The evaluation is complete, but adoption is intentionally
@@ -3967,13 +3967,13 @@ Level 46 therefore closes as an evaluation milestone.
 
 ---
 
-# Level 47 — Artifact Registry Evaluation
+## Level 47 — Artifact Registry Evaluation
 
-## Objective
+### Objective
 
 Introduce dedicated artifact infrastructure only when required by scale or release workflows.
 
-### Checklist
+#### Checklist
 
 * [x] Identify current artifact storage limitation.
 * [x] Define registry use cases.
@@ -3986,7 +3986,7 @@ Introduce dedicated artifact infrastructure only when required by scale or relea
 * [x] Record architectural decision.
 
 
-### Artifact Registry Architecture Decision
+#### Artifact Registry Architecture Decision
 
 Level 47 evaluates whether FamilyOS currently requires a dedicated persistent
 artifact registry. The evaluation is complete, but registry adoption is
@@ -4056,13 +4056,13 @@ Level 47 therefore closes as an evaluation milestone.
 
 ---
 
-# Level 48 — Remote Build Execution Evaluation
+## Level 48 — Remote Build Execution Evaluation
 
-## Objective
+### Objective
 
 Avoid premature distributed build complexity.
 
-### Checklist
+#### Checklist
 
 * [x] Measure current build performance.
 * [x] Identify scalability limitation.
@@ -4075,7 +4075,7 @@ Avoid premature distributed build complexity.
 
 Remote execution should remain deferred until a demonstrated need exists.
 
-## Evaluation Result
+### Evaluation Result
 
 Level 48 evaluates remote build execution without introducing remote or
 distributed build infrastructure.
@@ -4139,13 +4139,13 @@ Level 48 — Remote Build Execution Evaluation is complete at 8/8.
 
 ---
 
-# Level 49 — Performance Optimization
+## Level 49 — Performance Optimization
 
-## Objective
+### Objective
 
 Improve build speed without weakening correctness.
 
-### Checklist
+#### Checklist
 
 * [x] Establish baseline duration.
 * [x] Identify slow stages.
@@ -4161,7 +4161,7 @@ Improve build speed without weakening correctness.
 
 ---
 
-# Performance Priority
+## Performance Priority
 
 Optimization must preserve:
 
@@ -4182,7 +4182,7 @@ Performance
 ---
 
 
-# Level 49 Decision
+## Level 49 Decision
 
 **Performance Optimization Adoption: No Additional Optimization Justified At Current Measured Scale.**
 
@@ -4251,13 +4251,13 @@ Level 49 — Performance Optimization is complete at 11/11.
 
 ---
 
-# Level 50 — Final Build Framework Implementation Validation
+## Level 50 — Final Build Framework Implementation Validation
 
-## Objective
+### Objective
 
 Determine whether the Build Framework has been materially realized in FamilyOS engineering.
 
-### Checklist
+#### Checklist
 
 * [x] Canonical build interface exists.
 * [x] Build profiles exist.
@@ -4281,7 +4281,7 @@ Determine whether the Build Framework has been materially realized in FamilyOS e
 
 ---
 
-# Minimum Viable Build Framework Implementation
+## Minimum Viable Build Framework Implementation
 
 The initial implementation does not need every advanced capability.
 
@@ -4309,7 +4309,7 @@ This provides a strong foundation for later maturity.
 
 ---
 
-# Recommended First Implementation Milestone
+## Recommended First Implementation Milestone
 
 The first practical milestone should likely establish:
 
@@ -4328,7 +4328,7 @@ This creates immediate engineering value without unnecessary infrastructure.
 
 ---
 
-# Recommended Second Implementation Milestone
+## Recommended Second Implementation Milestone
 
 The next milestone should establish:
 
@@ -4343,7 +4343,7 @@ The next milestone should establish:
 
 ---
 
-# Recommended Third Implementation Milestone
+## Recommended Third Implementation Milestone
 
 A later milestone may introduce:
 
@@ -4355,7 +4355,7 @@ A later milestone may introduce:
 
 ---
 
-# Deferred By Default
+## Deferred By Default
 
 The following should remain deferred unless a demonstrated requirement appears:
 
@@ -4373,7 +4373,7 @@ Dedicated Build Cluster
 
 ---
 
-# Implementation Review Questions
+## Implementation Review Questions
 
 Before implementing a new Build Framework capability, ask:
 
@@ -4399,7 +4399,7 @@ How will it be validated?
 
 ---
 
-# Implementation Anti-Patterns
+## Implementation Anti-Patterns
 
 The implementation must avoid:
 
@@ -4416,7 +4416,7 @@ The implementation must avoid:
 
 ---
 
-# Implementation Evidence
+## Implementation Evidence
 
 Implementation progress should be supported by evidence.
 
@@ -4439,7 +4439,7 @@ Framework implementation should remain measurable.
 
 ---
 
-# Definition Of Done — Framework Documentation
+## Definition Of Done — Framework Documentation
 
 The EPIC documentation is complete when:
 
@@ -4453,7 +4453,7 @@ The EPIC documentation is complete when:
 
 ---
 
-# Definition Of Done — Initial Implementation
+## Definition Of Done — Initial Implementation
 
 The first Build Framework implementation is complete when:
 
@@ -4470,7 +4470,7 @@ The first Build Framework implementation is complete when:
 
 ---
 
-# Definition Of Done — Trusted Artifact Capability
+## Definition Of Done — Trusted Artifact Capability
 
 Trusted artifact capability is complete when:
 
@@ -4484,7 +4484,7 @@ Trusted artifact capability is complete when:
 
 ---
 
-# Definition Of Done — Release Integration
+## Definition Of Done — Release Integration
 
 Build/Release integration is complete when:
 
@@ -4497,7 +4497,7 @@ Build/Release integration is complete when:
 
 ---
 
-# Definition Of Done — Reproducibility
+## Definition Of Done — Reproducibility
 
 Strong reproducibility capability is complete when:
 
@@ -4513,7 +4513,7 @@ Bit-for-bit reproducibility may remain a separate higher maturity target.
 
 ---
 
-# Framework Implementation Order
+## Framework Implementation Order
 
 The recommended order is:
 
@@ -4551,7 +4551,7 @@ This ordering minimizes architectural rework.
 
 ---
 
-# Implementation Governance
+## Implementation Governance
 
 Implementation must remain subordinate to EPIC-BLD-001.
 
@@ -4571,7 +4571,7 @@ The implementation should not silently diverge from the framework.
 
 ---
 
-# Implementation Success Criteria
+## Implementation Success Criteria
 
 The implementation checklist is successfully fulfilled when FamilyOS can demonstrate:
 
@@ -4593,7 +4593,7 @@ The implementation checklist is successfully fulfilled when FamilyOS can demonst
 
 ---
 
-# Final Checklist Summary
+## Final Checklist Summary
 
 The complete implementation progression is:
 
@@ -4623,7 +4623,7 @@ Supply Chain Assurance
 
 ---
 
-# Final Principle
+## Final Principle
 
 The EPIC-BLD-001 Implementation Checklist is founded on the following rule:
 

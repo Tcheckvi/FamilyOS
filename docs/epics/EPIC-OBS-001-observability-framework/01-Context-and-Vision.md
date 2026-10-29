@@ -1,10 +1,10 @@
 # Observability Context and Vision
 
-# EPIC-OBS-001
+## EPIC-OBS-001
 
-## Context and Vision
+### Context and Vision
 
-## Overview
+### Overview
 
 FamilyOS is evolving from an architectural and engineering foundation toward an increasingly executable, integrated, and operational platform.
 
@@ -18,7 +18,7 @@ The objective is to make runtime behavior understandable, diagnosable, measurabl
 
 ---
 
-# Context
+## Context
 
 FamilyOS already establishes engineering foundations for:
 
@@ -60,7 +60,7 @@ That information is the responsibility of observability.
 
 ---
 
-# Why Observability Is Required
+## Why Observability Is Required
 
 Testing can demonstrate that expected behavior works under known conditions.
 
@@ -90,7 +90,7 @@ FamilyOS therefore requires a mechanism for producing trustworthy evidence about
 
 ---
 
-# The Observability Gap
+## The Observability Gap
 
 Without a unified observability framework, individual components may independently implement logging, metrics, diagnostics, or health checks.
 
@@ -114,7 +114,7 @@ FamilyOS must prevent this fragmentation before the platform becomes operational
 
 ---
 
-# Vision
+## Vision
 
 The FamilyOS observability vision is:
 
@@ -128,7 +128,7 @@ It means producing the right evidence at the right architectural boundaries.
 
 ---
 
-# Observable FamilyOS
+## Observable FamilyOS
 
 A fully observable FamilyOS should make it possible to move from a system-level symptom to the responsible execution path.
 
@@ -163,7 +163,7 @@ No single signal should be expected to provide complete operational understandin
 
 ---
 
-# Observability as an Engineering Capability
+## Observability as an Engineering Capability
 
 Observability is not considered exclusively an infrastructure concern.
 
@@ -184,7 +184,7 @@ A component that cannot communicate meaningful runtime state is operationally in
 
 ---
 
-# Runtime Evidence
+## Runtime Evidence
 
 The Observability Framework introduces the concept of **runtime evidence**.
 
@@ -208,7 +208,7 @@ Runtime evidence complements the static engineering evidence produced by existin
 
 ---
 
-# Engineering Evidence and Runtime Evidence
+## Engineering Evidence and Runtime Evidence
 
 FamilyOS uses multiple forms of evidence throughout its lifecycle.
 
@@ -238,53 +238,53 @@ Observability therefore extends the FamilyOS evidence model into execution.
 
 ---
 
-# Primary Observability Questions
+## Primary Observability Questions
 
 The framework is designed to help answer several fundamental questions.
 
-## What Happened?
+### What Happened?
 
 Logs and events provide records of significant activity.
 
 ---
 
-## Where Did It Happen?
+### Where Did It Happen?
 
 Component, plugin, capability, and operation metadata identify the responsible execution boundary.
 
 ---
 
-## When Did It Happen?
+### When Did It Happen?
 
 Consistent timestamps establish temporal ordering.
 
 ---
 
-## How Long Did It Take?
+### How Long Did It Take?
 
 Metrics and trace spans provide duration information.
 
 ---
 
-## What Was Affected?
+### What Was Affected?
 
 Context and correlation metadata identify impacted operations and dependencies.
 
 ---
 
-## Why Did It Fail?
+### Why Did It Fail?
 
 Errors, traces, structured logs, and diagnostics provide evidence for root-cause investigation.
 
 ---
 
-## Is the System Healthy?
+### Is the System Healthy?
 
 Health signals expose the current operational condition of components and dependencies.
 
 ---
 
-# Observability Boundaries
+## Observability Boundaries
 
 Not every internal operation should generate externally visible telemetry.
 
@@ -308,7 +308,7 @@ This keeps observability useful without producing unnecessary noise.
 
 ---
 
-# Signal Model
+## Signal Model
 
 FamilyOS organizes runtime evidence around five principal signal categories.
 
@@ -340,7 +340,7 @@ The framework favors correlation over isolated telemetry.
 
 ---
 
-# Structured Observability
+## Structured Observability
 
 FamilyOS should prefer structured operational signals.
 
@@ -372,7 +372,7 @@ The architectural principle is that important operational context should be mach
 
 ---
 
-# Correlation Vision
+## Correlation Vision
 
 Correlation is central to the FamilyOS observability model.
 
@@ -413,7 +413,7 @@ the complete execution path can be reconstructed.
 
 ---
 
-# Plugin Ecosystem Context
+## Plugin Ecosystem Context
 
 FamilyOS is designed around an extensible plugin architecture.
 
@@ -442,7 +442,7 @@ Third-party plugins may also be required to satisfy observability requirements t
 
 ---
 
-# Privacy Context
+## Privacy Context
 
 FamilyOS may operate on highly personal family information.
 
@@ -466,7 +466,7 @@ rather than recording the document content itself.
 
 ---
 
-# Security Context
+## Security Context
 
 Observability systems can become security-sensitive because they may contain:
 
@@ -483,7 +483,7 @@ Credentials and secrets must never be intentionally emitted as telemetry.
 
 ---
 
-# Performance Context
+## Performance Context
 
 Observability introduces runtime cost.
 
@@ -503,7 +503,7 @@ FamilyOS should prefer useful, intentional telemetry over indiscriminate collect
 
 ---
 
-# Development Context
+## Development Context
 
 Observability should provide value before production deployment.
 
@@ -522,7 +522,7 @@ Core observability contracts must remain usable in local development and automat
 
 ---
 
-# Testing Context
+## Testing Context
 
 Observability itself must be testable.
 
@@ -539,7 +539,7 @@ Observability should therefore expose stable contracts rather than relying exclu
 
 ---
 
-# Release Context
+## Release Context
 
 Observability can strengthen release validation.
 
@@ -572,7 +572,7 @@ Release Confidence
 
 ---
 
-# Future Operations Context
+## Future Operations Context
 
 The Observability Framework prepares FamilyOS for a future Operations Framework.
 
@@ -596,7 +596,7 @@ Observability should be established before operational automation becomes extens
 
 ---
 
-# Future Automation
+## Future Automation
 
 Standardized runtime evidence enables future automation.
 
@@ -615,7 +615,7 @@ Automation must be built on stable observability contracts rather than arbitrary
 
 ---
 
-# Design Constraint: Simplicity
+## Design Constraint: Simplicity
 
 FamilyOS does not require enterprise-scale observability infrastructure at this stage.
 
@@ -643,7 +643,7 @@ Complex infrastructure should only be introduced when justified by actual operat
 
 ---
 
-# Vendor Neutrality
+## Vendor Neutrality
 
 The Observability Framework must remain vendor-neutral.
 
@@ -655,7 +655,7 @@ Those technologies must remain replaceable behind stable FamilyOS contracts.
 
 ---
 
-# Target State
+## Target State
 
 After implementation of EPIC-OBS-001, FamilyOS should possess:
 
@@ -676,7 +676,7 @@ This establishes the minimum architecture required for reliable operational visi
 
 ---
 
-# Long-Term Vision
+## Long-Term Vision
 
 The long-term goal is not simply to collect telemetry.
 
@@ -704,7 +704,7 @@ Observability therefore becomes a foundation for future intelligent operations w
 
 ---
 
-# Conclusion
+## Conclusion
 
 FamilyOS already defines how software should be engineered, tested, validated, built, and released.
 

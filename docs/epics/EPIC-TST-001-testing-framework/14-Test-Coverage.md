@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 14 Coverage Model
+## 14 Coverage Model
 
-## Overview
+### Overview
 
 The FamilyOS Coverage Model defines how automated test coverage is measured, interpreted, governed, and improved across the platform.
 
@@ -27,7 +27,7 @@ The purpose of the Coverage Model is to identify validation gaps, prevent covera
 
 ---
 
-# Purpose
+## Purpose
 
 The Coverage Model establishes a consistent approach for measuring and evaluating automated validation across FamilyOS.
 
@@ -48,7 +48,7 @@ Coverage must always be interpreted together with test quality, architectural im
 
 ---
 
-# Core Principle
+## Core Principle
 
 The fundamental coverage principle is:
 
@@ -70,7 +70,7 @@ Both questions are necessary for meaningful validation.
 
 ---
 
-# Coverage Model
+## Coverage Model
 
 FamilyOS uses a multidimensional coverage model.
 
@@ -111,7 +111,7 @@ These dimensions provide complementary evidence.
 
 ---
 
-# Code Coverage
+## Code Coverage
 
 Code coverage measures which executable portions of the implementation are exercised during automated test execution.
 
@@ -128,7 +128,7 @@ It must not be interpreted as complete behavioral validation.
 
 ---
 
-# Line Coverage
+## Line Coverage
 
 Line coverage measures whether executable lines were reached during test execution.
 
@@ -155,7 +155,7 @@ Line coverage is therefore useful but insufficient on its own.
 
 ---
 
-# Statement Coverage
+## Statement Coverage
 
 Statement coverage determines whether executable statements have been executed.
 
@@ -172,7 +172,7 @@ It does not prove that meaningful assertions exist for every executed statement.
 
 ---
 
-# Branch Coverage
+## Branch Coverage
 
 Branch coverage measures whether alternative decision paths have been exercised.
 
@@ -191,7 +191,7 @@ Branch coverage should be enabled for FamilyOS wherever practical because it pro
 
 ---
 
-# Conditional Coverage
+## Conditional Coverage
 
 Complex Boolean expressions can contain several meaningful states.
 
@@ -217,7 +217,7 @@ Tests should cover semantically meaningful conditions rather than blindly maximi
 
 ---
 
-# Function Coverage
+## Function Coverage
 
 Function coverage identifies functions or methods that are executed by the automated test suite.
 
@@ -227,7 +227,7 @@ Function coverage therefore supplements rather than replaces behavioral and bran
 
 ---
 
-# Module Coverage
+## Module Coverage
 
 Module-level analysis identifies areas of the FamilyOS source tree receiving insufficient validation.
 
@@ -247,7 +247,7 @@ Completely uncovered production modules should normally trigger engineering revi
 
 ---
 
-# Behavioral Coverage
+## Behavioral Coverage
 
 Behavioral coverage measures whether meaningful platform behavior is represented by tests.
 
@@ -265,7 +265,7 @@ Behavioral coverage is generally more valuable than maximizing numerical code co
 
 ---
 
-# Positive Coverage
+## Positive Coverage
 
 Positive coverage validates supported successful behavior.
 
@@ -282,7 +282,7 @@ Positive paths are necessary but do not provide complete validation.
 
 ---
 
-# Negative Coverage
+## Negative Coverage
 
 Negative coverage validates expected behavior under invalid conditions.
 
@@ -300,7 +300,7 @@ Critical platform components must include negative-path validation.
 
 ---
 
-# Boundary Coverage
+## Boundary Coverage
 
 Boundary conditions frequently reveal defects.
 
@@ -322,7 +322,7 @@ Coverage reports can help expose untested branches corresponding to these condit
 
 ---
 
-# Error-Path Coverage
+## Error-Path Coverage
 
 Critical error handling should receive explicit validation.
 
@@ -341,7 +341,7 @@ Error handling that exists only as uncovered defensive code should be reviewed t
 
 ---
 
-# Lifecycle Coverage
+## Lifecycle Coverage
 
 Components with lifecycle behavior require lifecycle-oriented validation.
 
@@ -377,7 +377,7 @@ Coverage should include meaningful:
 
 ---
 
-# Architectural Coverage
+## Architectural Coverage
 
 Architectural coverage evaluates whether significant FamilyOS boundaries receive automated validation.
 
@@ -397,7 +397,7 @@ High code coverage without architectural coverage can still leave critical compa
 
 ---
 
-# Contract Coverage
+## Contract Coverage
 
 Contract coverage determines whether explicit architectural agreements are validated.
 
@@ -416,7 +416,7 @@ Critical contracts should have explicit tests rather than relying on incidental 
 
 ---
 
-# Capability Coverage
+## Capability Coverage
 
 Capabilities represent important public or internal platform contracts.
 
@@ -435,7 +435,7 @@ Official plugin certification should include coverage of declared capabilities.
 
 ---
 
-# Plugin Coverage
+## Plugin Coverage
 
 Plugin coverage must extend beyond source-code percentages.
 
@@ -461,7 +461,7 @@ The exact requirements depend on the plugin's responsibilities.
 
 ---
 
-# Official Plugin Coverage
+## Official Plugin Coverage
 
 Official FamilyOS plugins require stronger coverage expectations.
 
@@ -480,7 +480,7 @@ A high line-coverage percentage alone does not establish plugin certification re
 
 ---
 
-# Contribution Coverage
+## Contribution Coverage
 
 Plugin contributions may include:
 
@@ -498,7 +498,7 @@ Tests should verify both contribution validity and integration with the platform
 
 ---
 
-# Integration Coverage
+## Integration Coverage
 
 Integration coverage evaluates whether significant collaboration boundaries are validated.
 
@@ -517,7 +517,7 @@ Coverage should focus on meaningful architectural interactions rather than every
 
 ---
 
-# Workflow Coverage
+## Workflow Coverage
 
 Workflow coverage evaluates whether important complete behaviors are protected.
 
@@ -548,7 +548,7 @@ Higher-level workflow tests should not duplicate every lower-level branch.
 
 ---
 
-# Requirement Coverage
+## Requirement Coverage
 
 Requirements should have identifiable validation evidence.
 
@@ -580,7 +580,7 @@ Critical requirements should not depend solely on code coverage metrics.
 
 ---
 
-# Specification Coverage
+## Specification Coverage
 
 Normative specifications should have corresponding validation where applicable.
 
@@ -597,7 +597,7 @@ Future specification-driven tooling may automate part of this traceability.
 
 ---
 
-# Acceptance Criteria Coverage
+## Acceptance Criteria Coverage
 
 Acceptance criteria represent explicit completion conditions.
 
@@ -613,7 +613,7 @@ Acceptance criteria without validation evidence should be visible during EPIC or
 
 ---
 
-# Regression Coverage
+## Regression Coverage
 
 Regression coverage asks whether known historical failures remain protected.
 
@@ -630,7 +630,7 @@ Regression coverage should therefore include:
 
 ---
 
-# Coverage Across Testing Levels
+## Coverage Across Testing Levels
 
 FamilyOS coverage is produced collectively by multiple testing levels.
 
@@ -656,7 +656,7 @@ Coverage analysis must not encourage redundant tests merely to increase numerica
 
 ---
 
-# Unit Coverage
+## Unit Coverage
 
 Unit tests should provide dense validation of:
 
@@ -672,7 +672,7 @@ Most fine-grained branch coverage should normally come from unit tests.
 
 ---
 
-# Integration Coverage
+## Integration Coverage
 
 Integration tests should validate important component interactions.
 
@@ -682,7 +682,7 @@ Their value lies in boundary validation.
 
 ---
 
-# Contract Coverage
+## Contract Coverage
 
 Contract tests may execute relatively small amounts of code while providing significant architectural assurance.
 
@@ -690,7 +690,7 @@ This demonstrates why code coverage percentages cannot represent total validatio
 
 ---
 
-# Functional Coverage
+## Functional Coverage
 
 Functional tests should protect meaningful user-facing and business-facing behaviors.
 
@@ -698,7 +698,7 @@ Their primary purpose remains behavioral verification rather than maximizing exe
 
 ---
 
-# System Coverage
+## System Coverage
 
 System tests provide evidence about representative platform assembly.
 
@@ -714,7 +714,7 @@ Critical system scenarios may include:
 
 ---
 
-# Coverage Collection
+## Coverage Collection
 
 Coverage should be collected automatically through the FamilyOS testing toolchain.
 
@@ -738,7 +738,7 @@ Exact execution commands should remain centralized in project configuration and 
 
 ---
 
-# Coverage Configuration
+## Coverage Configuration
 
 Coverage configuration must be version controlled.
 
@@ -765,7 +765,7 @@ Configuration may define:
 
 ---
 
-# Branch Coverage Configuration
+## Branch Coverage Configuration
 
 Branch coverage should be enabled where supported.
 
@@ -781,7 +781,7 @@ This provides visibility into decision paths missed by automated testing.
 
 ---
 
-# Coverage Reports
+## Coverage Reports
 
 FamilyOS may generate:
 
@@ -796,7 +796,7 @@ Each report serves a different engineering purpose.
 
 ---
 
-# Terminal Reports
+## Terminal Reports
 
 Terminal reports provide immediate developer feedback.
 
@@ -816,7 +816,7 @@ The percentage should lead to investigation rather than automatic conclusions.
 
 ---
 
-# Missing-Line Reports
+## Missing-Line Reports
 
 Missing-line reporting helps developers identify uncovered code.
 
@@ -838,7 +838,7 @@ Possible explanations include:
 
 ---
 
-# HTML Reports
+## HTML Reports
 
 HTML coverage reports provide detailed visual inspection.
 
@@ -853,7 +853,7 @@ Generated HTML reports should normally be treated as artifacts rather than commi
 
 ---
 
-# XML Reports
+## XML Reports
 
 Machine-readable reports such as:
 
@@ -873,7 +873,7 @@ Generated reports should normally remain build artifacts.
 
 ---
 
-# Coverage Baseline
+## Coverage Baseline
 
 FamilyOS should maintain an approved coverage baseline.
 
@@ -885,7 +885,7 @@ It can then be improved progressively.
 
 ---
 
-# Coverage Thresholds
+## Coverage Thresholds
 
 Coverage thresholds may enforce minimum acceptable coverage.
 
@@ -901,7 +901,7 @@ They must not become substitutes for engineering review.
 
 ---
 
-# Global Coverage Threshold
+## Global Coverage Threshold
 
 A global threshold protects the overall project.
 
@@ -917,7 +917,7 @@ It cannot detect every local quality problem.
 
 ---
 
-# Component Coverage Expectations
+## Component Coverage Expectations
 
 Critical components may require stronger coverage expectations.
 
@@ -935,7 +935,7 @@ Expectations should correspond to architectural risk.
 
 ---
 
-# New Code Coverage
+## New Code Coverage
 
 New behavior should normally introduce corresponding automated validation.
 
@@ -947,7 +947,7 @@ New-code analysis allows FamilyOS to improve incrementally even when historical 
 
 ---
 
-# Changed Code Coverage
+## Changed Code Coverage
 
 Modified code should receive appropriate test validation.
 
@@ -970,7 +970,7 @@ Changed-code coverage can become an important pull request quality signal.
 
 ---
 
-# Coverage Regression
+## Coverage Regression
 
 Unexpected coverage reductions should be investigated.
 
@@ -987,7 +987,7 @@ A coverage reduction may occasionally be legitimate, but it should be understood
 
 ---
 
-# Differential Coverage
+## Differential Coverage
 
 Future FamilyOS tooling may calculate differential coverage for each change.
 
@@ -1002,7 +1002,7 @@ This can prevent historical coverage debt from blocking incremental improvements
 
 ---
 
-# Coverage Improvement Strategy
+## Coverage Improvement Strategy
 
 Coverage improvement should prioritize engineering risk.
 
@@ -1021,7 +1021,7 @@ Coverage work should maximize validation value rather than percentages.
 
 ---
 
-# Risk-Based Coverage
+## Risk-Based Coverage
 
 FamilyOS should apply stronger validation expectations to higher-risk areas.
 
@@ -1048,7 +1048,7 @@ Risk may depend on:
 
 ---
 
-# Critical Components
+## Critical Components
 
 Components that can affect large portions of the platform deserve stronger validation.
 
@@ -1066,7 +1066,7 @@ These components should not contain significant unexplained coverage gaps.
 
 ---
 
-# Domain Coverage
+## Domain Coverage
 
 Domain invariants should receive particularly strong behavioral validation.
 
@@ -1082,7 +1082,7 @@ Domain correctness should not depend on high-level system tests alone.
 
 ---
 
-# Security Coverage
+## Security Coverage
 
 Security-sensitive behavior requires explicit tests.
 
@@ -1099,7 +1099,7 @@ A code coverage percentage cannot independently establish security assurance.
 
 ---
 
-# Data Integrity Coverage
+## Data Integrity Coverage
 
 Operations capable of modifying persistent data should be validated for:
 
@@ -1114,7 +1114,7 @@ Data integrity failures carry higher risk and should receive corresponding cover
 
 ---
 
-# Configuration Coverage
+## Configuration Coverage
 
 Configuration logic should include validation for:
 
@@ -1130,7 +1130,7 @@ Configuration defects can affect the complete platform and deserve deliberate co
 
 ---
 
-# Generated Code
+## Generated Code
 
 Generated code requires explicit coverage policy.
 
@@ -1152,7 +1152,7 @@ Coverage exclusions must not hide unvalidated business logic merely because the 
 
 ---
 
-# Coverage Exclusions
+## Coverage Exclusions
 
 Some code may legitimately be excluded from numerical coverage calculations.
 
@@ -1172,7 +1172,7 @@ Exclusions should remain:
 
 ---
 
-# pragma: no cover
+## pragma: no cover
 
 Coverage directives such as:
 
@@ -1189,7 +1189,7 @@ Every exclusion should have a defensible engineering reason.
 
 ---
 
-# Dead Code
+## Dead Code
 
 Uncovered code should not automatically receive a new test.
 
@@ -1211,7 +1211,7 @@ Removing unnecessary code is preferable to creating artificial tests for dead be
 
 ---
 
-# Defensive Code
+## Defensive Code
 
 Some defensive code may be difficult or impossible to execute through valid platform states.
 
@@ -1225,7 +1225,7 @@ The decision should remain explicit.
 
 ---
 
-# Coverage and Assertions
+## Coverage and Assertions
 
 Executed code with weak assertions can produce misleading coverage.
 
@@ -1241,7 +1241,7 @@ Coverage review should therefore consider assertion quality.
 
 ---
 
-# Assertion Quality
+## Assertion Quality
 
 Meaningful assertions should verify:
 
@@ -1256,7 +1256,7 @@ Assertions should focus on behavior rather than incidental implementation detail
 
 ---
 
-# Mutation Testing
+## Mutation Testing
 
 Future FamilyOS quality tooling may introduce mutation testing.
 
@@ -1281,7 +1281,7 @@ Mutation testing can provide evidence about assertion strength beyond code cover
 
 ---
 
-# Coverage and Test Duplication
+## Coverage and Test Duplication
 
 Additional coverage must not automatically mean additional high-level tests.
 
@@ -1291,7 +1291,7 @@ The lowest effective testing level should remain preferred.
 
 ---
 
-# Coverage and Test Pyramid
+## Coverage and Test Pyramid
 
 Coverage should reflect the FamilyOS testing model.
 
@@ -1309,7 +1309,7 @@ Higher-level tests contribute broader behavioral confidence but should remain fe
 
 ---
 
-# Coverage and Regression Testing
+## Coverage and Regression Testing
 
 Regression tests strengthen coverage by preserving historical failure conditions.
 
@@ -1327,7 +1327,7 @@ This distinction reinforces that execution coverage and behavioral protection ar
 
 ---
 
-# Escaped Defects
+## Escaped Defects
 
 Escaped defects should trigger a coverage-gap analysis.
 
@@ -1344,7 +1344,7 @@ The resulting improvement should strengthen the Coverage Model.
 
 ---
 
-# Coverage Trend
+## Coverage Trend
 
 Coverage trends are often more useful than isolated percentages.
 
@@ -1359,7 +1359,7 @@ Trend interpretation should consider architectural changes.
 
 ---
 
-# Historical Comparison
+## Historical Comparison
 
 CI or quality tooling may compare coverage between:
 
@@ -1374,7 +1374,7 @@ This allows reviewers to identify coverage changes introduced by a pull request.
 
 ---
 
-# Coverage Artifacts
+## Coverage Artifacts
 
 CI may produce coverage artifacts such as:
 
@@ -1394,7 +1394,7 @@ Generated artifacts should not normally be committed unless governance explicitl
 
 ---
 
-# Pull Request Coverage
+## Pull Request Coverage
 
 Pull request validation should provide enough coverage information to evaluate the impact of a change.
 
@@ -1409,7 +1409,7 @@ Coverage should support code review rather than replace it.
 
 ---
 
-# CI Coverage
+## CI Coverage
 
 CI should collect coverage in a reproducible environment.
 
@@ -1419,7 +1419,7 @@ Coverage results generated through significantly different test selections shoul
 
 ---
 
-# Release Coverage
+## Release Coverage
 
 Release validation should confirm that mandatory coverage expectations remain satisfied.
 
@@ -1435,7 +1435,7 @@ Release approval should never depend on a single percentage alone.
 
 ---
 
-# Plugin Certification Coverage
+## Plugin Certification Coverage
 
 Official plugin certification may include coverage requirements.
 
@@ -1452,7 +1452,7 @@ The plugin's risk and architectural role determine appropriate expectations.
 
 ---
 
-# Coverage Gates
+## Coverage Gates
 
 Coverage may participate in automated testing gates.
 
@@ -1470,7 +1470,7 @@ Gates should be simple enough to understand and difficult to game.
 
 ---
 
-# Gate Failure
+## Gate Failure
 
 A coverage gate failure indicates that validation evidence has fallen below an accepted requirement.
 
@@ -1486,7 +1486,7 @@ Artificially weakening thresholds without investigation is not acceptable.
 
 ---
 
-# Coverage Debt
+## Coverage Debt
 
 Coverage gaps may be tracked as quality debt.
 
@@ -1502,7 +1502,7 @@ Coverage debt should be prioritized according to risk rather than raw percentage
 
 ---
 
-# Coverage Metrics
+## Coverage Metrics
 
 Potential metrics include:
 
@@ -1519,7 +1519,7 @@ Metrics should support decisions rather than become objectives in isolation.
 
 ---
 
-# Metric Interpretation
+## Metric Interpretation
 
 The following comparison is important:
 
@@ -1537,7 +1537,7 @@ Percentages require engineering context.
 
 ---
 
-# Coverage Targets
+## Coverage Targets
 
 Coverage targets should evolve with FamilyOS maturity.
 
@@ -1554,7 +1554,7 @@ Targets should increase only when they improve real validation quality.
 
 ---
 
-# 100 Percent Coverage
+## 100 Percent Coverage
 
 FamilyOS does not require universal 100% numerical coverage.
 
@@ -1569,65 +1569,65 @@ Critical domain components may legitimately approach or achieve complete coverag
 
 ---
 
-# Coverage Anti-Patterns
+## Coverage Anti-Patterns
 
 The following practices should be avoided.
 
-## Percentage-Only Quality
+### Percentage-Only Quality
 
 A high percentage does not prove correct behavior.
 
 ---
 
-## Testing Only for Coverage
+### Testing Only for Coverage
 
 Tests must protect behavior, not merely execute lines.
 
 ---
 
-## Artificial Coverage Inflation
+### Artificial Coverage Inflation
 
 Executing code without meaningful assertions creates misleading confidence.
 
 ---
 
-## Excessive Exclusions
+### Excessive Exclusions
 
 Coverage exclusions must not hide meaningful testing gaps.
 
 ---
 
-## Ignoring Branches
+### Ignoring Branches
 
 Line coverage alone can hide important untested decisions.
 
 ---
 
-## Ignoring Critical Low-Coverage Components
+### Ignoring Critical Low-Coverage Components
 
 A high global percentage may conceal poorly tested critical modules.
 
 ---
 
-## Duplicate High-Level Tests
+### Duplicate High-Level Tests
 
 System tests should not be added solely to increase coverage.
 
 ---
 
-## Threshold Reduction Without Analysis
+### Threshold Reduction Without Analysis
 
 Quality gates should not be weakened simply to restore pipeline success.
 
 ---
 
-## Treating Generated Code Uniformly
+### Treating Generated Code Uniformly
 
 Generated artifacts require deliberate coverage policy according to their behavior.
 
 ---
 
-# Relationship With Test Isolation
+## Relationship With Test Isolation
 
 Coverage results are only trustworthy when test execution is deterministic and isolated.
 
@@ -1637,7 +1637,7 @@ The Test Isolation and Determinism strategy therefore supports reliable coverage
 
 ---
 
-# Relationship With Unit Testing
+## Relationship With Unit Testing
 
 Unit tests should provide most fine-grained implementation coverage.
 
@@ -1645,7 +1645,7 @@ Domain and application behavior should normally receive strong unit-level valida
 
 ---
 
-# Relationship With Integration Testing
+## Relationship With Integration Testing
 
 Integration tests contribute coverage of architectural boundaries.
 
@@ -1653,7 +1653,7 @@ Their value is determined by interaction validation rather than line percentages
 
 ---
 
-# Relationship With Functional and System Testing
+## Relationship With Functional and System Testing
 
 Functional and system tests cover broader workflows and platform assemblies.
 
@@ -1661,7 +1661,7 @@ They should be scenario-driven rather than coverage-driven.
 
 ---
 
-# Relationship With Contract Testing
+## Relationship With Contract Testing
 
 Contract tests provide coverage of compatibility guarantees that may not be visible through code coverage metrics.
 
@@ -1669,7 +1669,7 @@ Contract coverage must therefore be evaluated separately.
 
 ---
 
-# Relationship With Regression Testing
+## Relationship With Regression Testing
 
 Regression coverage protects known historical failures.
 
@@ -1677,7 +1677,7 @@ A strong coverage model ensures defects become permanent validation knowledge wh
 
 ---
 
-# Relationship With Quality Framework
+## Relationship With Quality Framework
 
 The Coverage Model provides measurable evidence used by the FamilyOS Quality Framework.
 
@@ -1693,7 +1693,7 @@ Quality governance determines how these signals influence promotion decisions.
 
 ---
 
-# Relationship With Testing Gates
+## Relationship With Testing Gates
 
 Coverage requirements may be enforced through Testing Gates.
 
@@ -1703,7 +1703,7 @@ Testing Gates define when specific requirements become mandatory.
 
 ---
 
-# Governance
+## Governance
 
 Coverage practices are governed by the FamilyOS Testing Framework and broader engineering governance.
 
@@ -1723,7 +1723,7 @@ Changes to mandatory coverage thresholds or gates should be reviewed through app
 
 ---
 
-# Evolution Strategy
+## Evolution Strategy
 
 The FamilyOS Coverage Model should evolve as the platform and tooling mature.
 
@@ -1745,7 +1745,7 @@ Evolution should increase the usefulness of coverage evidence without reducing e
 
 ---
 
-# Validation Checklist
+## Validation Checklist
 
 A FamilyOS coverage implementation is aligned with this framework when:
 
@@ -1775,7 +1775,7 @@ A FamilyOS coverage implementation is aligned with this framework when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 Coverage provides visibility into the reach of FamilyOS automated testing, but meaningful quality depends on what those tests actually prove.
 

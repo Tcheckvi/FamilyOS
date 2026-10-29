@@ -18,7 +18,7 @@ Configuration Management establishes the principles required to create, maintain
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Configuration Management is to ensure that configurations are:
 
@@ -32,9 +32,9 @@ Configuration must be treated as an engineering asset rather than an invisible i
 
 ---
 
-# Configuration Management Principles
+## Configuration Management Principles
 
-## Principle 1 — Configuration Is an Engineering Artifact
+### Principle 1 — Configuration Is an Engineering Artifact
 
 Important configuration must be:
 
@@ -47,7 +47,7 @@ Configuration changes represent engineering changes.
 
 ---
 
-## Principle 2 — Explicit Configuration
+### Principle 2 — Explicit Configuration
 
 Important behavior should be controlled through explicit configuration.
 
@@ -61,7 +61,7 @@ Explicit configuration improves understanding and reliability.
 
 ---
 
-## Principle 3 — Separation of Configuration and Code
+### Principle 3 — Separation of Configuration and Code
 
 Configuration and implementation should have clear responsibilities.
 
@@ -81,7 +81,7 @@ This separation improves flexibility and maintainability.
 
 ---
 
-## Principle 4 — Reproducible Configuration
+### Principle 4 — Reproducible Configuration
 
 A contributor should be able to understand and recreate the required configuration state.
 
@@ -97,7 +97,7 @@ Reference:
 
 ---
 
-## Principle 5 — Secure Configuration Handling
+### Principle 5 — Secure Configuration Handling
 
 Configuration management must consider security.
 
@@ -114,7 +114,7 @@ Secure configuration practices must be applied.
 
 ---
 
-# Configuration Categories
+## Configuration Categories
 
 FamilyOS configurations may include:
 
@@ -140,7 +140,7 @@ Each category has its own engineering responsibilities and validation requiremen
 
 ---
 
-# Application Configuration
+## Application Configuration
 
 Application configuration defines runtime behavior.
 
@@ -152,7 +152,7 @@ It should remain:
 
 ---
 
-# Environment Configuration
+## Environment Configuration
 
 Environment configuration defines execution contexts.
 
@@ -169,7 +169,7 @@ Reference:
 
 ---
 
-# Tool Configuration
+## Tool Configuration
 
 Tool configuration defines engineering tool behavior.
 
@@ -184,7 +184,7 @@ Tool configuration should remain consistent across contributors.
 
 ---
 
-# Build Configuration
+## Build Configuration
 
 Build configuration defines how software is constructed.
 
@@ -200,7 +200,7 @@ Reference:
 
 ---
 
-# Test Configuration
+## Test Configuration
 
 Test configuration defines validation behavior.
 
@@ -216,7 +216,7 @@ Reference:
 
 ---
 
-# Plugin Configuration
+## Plugin Configuration
 
 Plugin configuration defines plugin behavior and integration.
 
@@ -228,7 +228,7 @@ It should respect:
 
 ---
 
-# Release Configuration
+## Release Configuration
 
 Release configuration supports controlled delivery.
 
@@ -244,7 +244,7 @@ Reference:
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Configuration should be validated whenever possible.
 
@@ -257,7 +257,7 @@ Validation may include:
 
 ---
 
-# Configuration Lifecycle
+## Configuration Lifecycle
 
 Configuration is managed throughout its lifecycle.
 
@@ -287,7 +287,7 @@ Lifecycle management ensures configuration remains consistent, traceable, secure
 
 ---
 
-# Configuration Versioning
+## Configuration Versioning
 
 Configuration changes should be traceable.
 
@@ -299,7 +299,7 @@ Version control provides:
 
 ---
 
-# Configuration Changes
+## Configuration Changes
 
 Configuration changes should follow the engineering workflow.
 
@@ -313,7 +313,7 @@ Depending on impact, changes may require:
 
 ---
 
-# Configuration and Dependencies
+## Configuration and Dependencies
 
 Configuration often defines dependency behavior.
 
@@ -329,7 +329,7 @@ Reference:
 
 ---
 
-# Configuration and Automation
+## Configuration and Automation
 
 Automation relies on predictable configuration.
 
@@ -341,7 +341,7 @@ Well-managed configuration enables:
 
 ---
 
-# Configuration Documentation
+## Configuration Documentation
 
 Important configurations should explain:
 
@@ -358,7 +358,7 @@ Reference:
 
 ---
 
-# Governance
+## Governance
 
 Configuration changes should follow engineering governance.
 
@@ -372,7 +372,7 @@ Major configuration changes affecting engineering workflows or architecture shou
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 Configuration Management is successful when:
 
@@ -384,7 +384,7 @@ Configuration Management is successful when:
 
 ---
 
-# Final Statement
+## Final Statement
 
 Configuration Management provides the engineering discipline required to control the operational behavior of FamilyOS systems.
 

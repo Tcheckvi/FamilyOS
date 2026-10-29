@@ -1,8 +1,8 @@
 # Build Framework
 
-# 12 Build Philosophy
+## 12 Build Philosophy
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the philosophy that governs how FamilyOS understands build engineering as a permanent platform capability.
 
@@ -18,7 +18,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of the Build Philosophy is to provide a stable conceptual foundation for all FamilyOS build decisions.
 
@@ -42,7 +42,7 @@ The philosophy should remain valid even as tooling changes.
 
 ---
 
-# Build As An Engineering Capability
+## Build As An Engineering Capability
 
 FamilyOS considers build engineering to be a first-class engineering capability.
 
@@ -76,7 +76,7 @@ The distinction is important because reliability comes from the complete system,
 
 ---
 
-# From Source To Artifact
+## From Source To Artifact
 
 The fundamental Build Framework transformation is:
 
@@ -118,7 +118,7 @@ This complete transformation defines the FamilyOS build philosophy.
 
 ---
 
-# Build Success Is Not Build Trust
+## Build Success Is Not Build Trust
 
 A successful command does not automatically imply that the resulting output is trustworthy.
 
@@ -154,7 +154,7 @@ Trust
 
 ---
 
-# Build Philosophy Principle 1 — Reliability
+## Build Philosophy Principle 1 — Reliability
 
 A FamilyOS build should behave predictably.
 
@@ -170,7 +170,7 @@ Reliability is a prerequisite for automation.
 
 ---
 
-# Reliability Model
+## Reliability Model
 
 ```text id="lx3vs6"
 Defined Inputs
@@ -194,7 +194,7 @@ The Build Framework exists to eliminate the second model.
 
 ---
 
-# Build Philosophy Principle 2 — Reproducibility
+## Build Philosophy Principle 2 — Reproducibility
 
 Builds SHOULD be reproducible.
 
@@ -213,7 +213,7 @@ The Build Framework treats reproducibility as a maturity continuum rather than a
 
 ---
 
-# Reproducibility Philosophy
+## Reproducibility Philosophy
 
 FamilyOS may progress through:
 
@@ -233,7 +233,7 @@ Each stage strengthens engineering confidence.
 
 ---
 
-# Build Philosophy Principle 3 — Determinism
+## Build Philosophy Principle 3 — Determinism
 
 Where technically practical, a build should behave deterministically.
 
@@ -258,7 +258,7 @@ These may include:
 
 ---
 
-# Determinism And Practicality
+## Determinism And Practicality
 
 Perfect binary determinism may not always be necessary.
 
@@ -270,7 +270,7 @@ If two valid builds differ materially, FamilyOS should be able to explain why.
 
 ---
 
-# Build Philosophy Principle 4 — Transparency
+## Build Philosophy Principle 4 — Transparency
 
 Build behavior should remain understandable.
 
@@ -294,7 +294,7 @@ Transparency strengthens maintainability and trust.
 
 ---
 
-# Build Transparency Model
+## Build Transparency Model
 
 ```text id="1h2k1c"
 Inputs
@@ -310,7 +310,7 @@ Hidden logic should be minimized.
 
 ---
 
-# Build Philosophy Principle 5 — Explicitness
+## Build Philosophy Principle 5 — Explicitness
 
 FamilyOS build engineering prefers explicit definitions over implicit assumptions.
 
@@ -334,7 +334,7 @@ Predictable Behavior
 
 ---
 
-# Build Philosophy Principle 6 — Traceability
+## Build Philosophy Principle 6 — Traceability
 
 A trusted artifact should be traceable to its origin.
 
@@ -354,7 +354,7 @@ This traceability makes artifact origin explainable.
 
 ---
 
-# Build Philosophy Principle 7 — Validation
+## Build Philosophy Principle 7 — Validation
 
 Validation is a core part of build engineering.
 
@@ -381,7 +381,7 @@ Validation may include:
 
 ---
 
-# Build Philosophy Principle 8 — Evidence
+## Build Philosophy Principle 8 — Evidence
 
 Trust should be supported by evidence.
 
@@ -401,7 +401,7 @@ The amount of evidence may vary by build profile.
 
 ---
 
-# Evidence Philosophy
+## Evidence Philosophy
 
 The target state is:
 
@@ -425,7 +425,7 @@ Evidence should emerge from the lifecycle.
 
 ---
 
-# Build Philosophy Principle 9 — Artifact Identity
+## Build Philosophy Principle 9 — Artifact Identity
 
 An artifact should be understood as an engineering object.
 
@@ -445,7 +445,7 @@ A file path alone is not sufficient identity for high-trust artifacts.
 
 ---
 
-# Build Philosophy Principle 10 — Separation Of Build And Release
+## Build Philosophy Principle 10 — Separation Of Build And Release
 
 Build and release are distinct capabilities.
 
@@ -465,7 +465,7 @@ This boundary must remain explicit.
 
 ---
 
-# Build Philosophy Principle 11 — Automation
+## Build Philosophy Principle 11 — Automation
 
 Automation is important, but it is not the primary goal.
 
@@ -487,7 +487,7 @@ It should not conceal undefined behavior.
 
 ---
 
-# Automation Philosophy
+## Automation Philosophy
 
 The Build Framework rejects:
 
@@ -509,7 +509,7 @@ This distinction protects architecture from CI-specific drift.
 
 ---
 
-# Build Philosophy Principle 12 — Local And CI Alignment
+## Build Philosophy Principle 12 — Local And CI Alignment
 
 Local development and CI should share the same canonical build semantics.
 
@@ -528,7 +528,7 @@ Build meaning should not.
 
 ---
 
-# Build Philosophy Principle 13 — Simplicity
+## Build Philosophy Principle 13 — Simplicity
 
 Build systems must remain simpler than the problems they solve.
 
@@ -546,7 +546,7 @@ until real engineering needs require them.
 
 ---
 
-# Simplicity Philosophy
+## Simplicity Philosophy
 
 The progression should be:
 
@@ -564,7 +564,7 @@ This prevents infrastructure-driven architecture.
 
 ---
 
-# Build Philosophy Principle 14 — Maintainability
+## Build Philosophy Principle 14 — Maintainability
 
 Build systems are long-lived engineering assets.
 
@@ -581,7 +581,7 @@ Build logic should be:
 
 ---
 
-# Build Logic Philosophy
+## Build Logic Philosophy
 
 Build scripts should not become permanent repositories of undocumented operational knowledge.
 
@@ -606,7 +606,7 @@ One Person
 
 ---
 
-# Build Philosophy Principle 15 — Failure Is Useful
+## Build Philosophy Principle 15 — Failure Is Useful
 
 Build failure can be valuable when it correctly rejects invalid engineering state.
 
@@ -628,7 +628,7 @@ The second requires engineering improvement.
 
 ---
 
-# Failure Philosophy
+## Failure Philosophy
 
 A good failure should provide:
 
@@ -641,7 +641,7 @@ Failure should reduce uncertainty.
 
 ---
 
-# Build Philosophy Principle 16 — Fail Early
+## Build Philosophy Principle 16 — Fail Early
 
 Invalid state should be detected as early as practical.
 
@@ -665,7 +665,7 @@ This improves both developer experience and CI efficiency.
 
 ---
 
-# Build Philosophy Principle 17 — Clean Builds Matter
+## Build Philosophy Principle 17 — Clean Builds Matter
 
 FamilyOS should retain the capability to build from clean state.
 
@@ -688,7 +688,7 @@ Valid Build
 
 ---
 
-# Build Philosophy Principle 18 — Caches Are Optional
+## Build Philosophy Principle 18 — Caches Are Optional
 
 Caches improve performance.
 
@@ -710,7 +710,7 @@ This protects reproducibility.
 
 ---
 
-# Build Philosophy Principle 19 — Performance Is Secondary To Trust
+## Build Philosophy Principle 19 — Performance Is Secondary To Trust
 
 Build performance matters because slow builds reduce engineering productivity.
 
@@ -732,7 +732,7 @@ A fast unreliable build is not an engineering improvement.
 
 ---
 
-# Build Philosophy Principle 20 — Security Is Structural
+## Build Philosophy Principle 20 — Security Is Structural
 
 Build security cannot be added only at release time.
 
@@ -750,7 +750,7 @@ The build system participates directly in the software supply chain.
 
 ---
 
-# Supply Chain Philosophy
+## Supply Chain Philosophy
 
 The build exists within:
 
@@ -774,7 +774,7 @@ Trust must be protected across the chain.
 
 ---
 
-# Build Philosophy Principle 21 — Least Privilege
+## Build Philosophy Principle 21 — Least Privilege
 
 Build execution should require only the permissions necessary to build.
 
@@ -788,7 +788,7 @@ Privilege boundaries reinforce architecture.
 
 ---
 
-# Build Philosophy Principle 22 — Build Outputs Are Immutable After Trust
+## Build Philosophy Principle 22 — Build Outputs Are Immutable After Trust
 
 Once an artifact has been validated and declared trusted, modifying it should invalidate that trust.
 
@@ -810,7 +810,7 @@ This principle is important for release integrity.
 
 ---
 
-# Build Philosophy Principle 23 — Generated State Is Derived State
+## Build Philosophy Principle 23 — Generated State Is Derived State
 
 Generated content should remain conceptually derived from authoritative inputs.
 
@@ -828,7 +828,7 @@ Generated state must not silently become a second source of truth.
 
 ---
 
-# Build Philosophy Principle 24 — Repository State Matters
+## Build Philosophy Principle 24 — Repository State Matters
 
 Build trust is closely linked to repository state.
 
@@ -843,7 +843,7 @@ This anchors the build in controlled engineering history.
 
 ---
 
-# Build Philosophy Principle 25 — Profiles Represent Purpose
+## Build Philosophy Principle 25 — Profiles Represent Purpose
 
 Build profiles exist because different build contexts have different needs.
 
@@ -862,7 +862,7 @@ Profiles should remain explicit.
 
 ---
 
-# Development Build Philosophy
+## Development Build Philosophy
 
 A development build prioritizes:
 
@@ -877,7 +877,7 @@ It must still obey canonical build semantics.
 
 ---
 
-# CI Build Philosophy
+## CI Build Philosophy
 
 A CI build prioritizes:
 
@@ -890,7 +890,7 @@ CI should act as a trusted execution environment for the same build model.
 
 ---
 
-# Release Candidate Build Philosophy
+## Release Candidate Build Philosophy
 
 A release candidate build prioritizes:
 
@@ -904,7 +904,7 @@ It represents the strongest build trust state before release evaluation.
 
 ---
 
-# Plugin Build Philosophy
+## Plugin Build Philosophy
 
 Plugin builds must remain part of the same platform philosophy.
 
@@ -918,7 +918,7 @@ The build may also need:
 
 ---
 
-# Documentation Build Philosophy
+## Documentation Build Philosophy
 
 Generated documentation should be treated as a build artifact where appropriate.
 
@@ -933,7 +933,7 @@ Documentation generation should not be an uncontrolled side process.
 
 ---
 
-# Multi-Artifact Philosophy
+## Multi-Artifact Philosophy
 
 A build may produce an artifact set.
 
@@ -954,7 +954,7 @@ The Build Framework should treat these outputs as related products of one build 
 
 ---
 
-# Build Identity Philosophy
+## Build Identity Philosophy
 
 A significant build should eventually have a unique identity.
 
@@ -974,7 +974,7 @@ Build identity strengthens observability and traceability.
 
 ---
 
-# Build Context Philosophy
+## Build Context Philosophy
 
 A build is defined not only by source.
 
@@ -997,7 +997,7 @@ This is one of the central concepts of EPIC-BLD-001.
 
 ---
 
-# Build Context Stability
+## Build Context Stability
 
 Once a build begins significant execution, its effective context should remain stable.
 
@@ -1017,7 +1017,7 @@ This prevents mid-build ambiguity.
 
 ---
 
-# Philosophy Of Build Evidence Strength
+## Philosophy Of Build Evidence Strength
 
 Not every build requires identical evidence.
 
@@ -1041,7 +1041,7 @@ Proportionality preserves usability without weakening high-trust workflows.
 
 ---
 
-# Philosophy Of Artifact Trust
+## Philosophy Of Artifact Trust
 
 Artifact trust is contextual.
 
@@ -1061,7 +1061,7 @@ Trust must therefore be interpreted relative to its profile and validation state
 
 ---
 
-# Philosophy Of Build Evidence Retention
+## Philosophy Of Build Evidence Retention
 
 Evidence should be retained according to downstream value.
 
@@ -1075,7 +1075,7 @@ The framework defines evidence semantics rather than prescribing a particular st
 
 ---
 
-# Philosophy Of Observability
+## Philosophy Of Observability
 
 Build systems should expose enough information to reduce uncertainty.
 
@@ -1097,7 +1097,7 @@ Observability must remain useful without exposing secrets.
 
 ---
 
-# Philosophy Of Build Metrics
+## Philosophy Of Build Metrics
 
 Metrics should support decisions.
 
@@ -1113,7 +1113,7 @@ Metrics should not exist merely because they can be collected.
 
 ---
 
-# Philosophy Of Build Optimization
+## Philosophy Of Build Optimization
 
 Optimization should be evidence-driven.
 
@@ -1135,7 +1135,7 @@ Optimization must preserve build semantics.
 
 ---
 
-# Philosophy Of Build Portability
+## Philosophy Of Build Portability
 
 The build model should not depend unnecessarily on a single workstation, OS, or CI provider.
 
@@ -1150,7 +1150,7 @@ However, portability should not be pursued beyond actual platform requirements.
 
 ---
 
-# Philosophy Of Technology Independence
+## Philosophy Of Technology Independence
 
 Build concepts should remain more stable than tools.
 
@@ -1168,7 +1168,7 @@ A specific package builder or CI provider is an implementation choice.
 
 ---
 
-# Philosophy Of Governance
+## Philosophy Of Governance
 
 Build governance should protect architecture while remaining proportional.
 
@@ -1190,7 +1190,7 @@ But foundational build semantics must not drift accidentally.
 
 ---
 
-# Philosophy Of Evolution
+## Philosophy Of Evolution
 
 The Build Framework must support gradual improvement.
 
@@ -1218,7 +1218,7 @@ Each stage should provide clear value.
 
 ---
 
-# Philosophy Of Backward Compatibility
+## Philosophy Of Backward Compatibility
 
 Build workflows become dependencies for developers, CI, plugins, and release processes.
 
@@ -1228,7 +1228,7 @@ Internal implementation may change more freely than public build interfaces.
 
 ---
 
-# Philosophy Of Build Interfaces
+## Philosophy Of Build Interfaces
 
 A build interface should be simple enough to use without exposing unnecessary internal complexity.
 
@@ -1244,7 +1244,7 @@ This allows the system to evolve without constant workflow disruption.
 
 ---
 
-# Philosophy Of Build Orchestration
+## Philosophy Of Build Orchestration
 
 Orchestration should coordinate responsibilities.
 
@@ -1266,7 +1266,7 @@ Each responsibility should remain understandable.
 
 ---
 
-# Philosophy Of Build State
+## Philosophy Of Build State
 
 A build should have explicit state.
 
@@ -1290,7 +1290,7 @@ Explicit state helps observability and error handling.
 
 ---
 
-# Philosophy Of Failure State
+## Philosophy Of Failure State
 
 A failed build should still produce a meaningful final state.
 
@@ -1309,7 +1309,7 @@ A failed build is still an engineering event that should be understandable.
 
 ---
 
-# Philosophy Of Clean State
+## Philosophy Of Clean State
 
 Clean-state execution is an important verification mechanism.
 
@@ -1322,7 +1322,7 @@ The ability to rebuild without historical local state confirms that:
 
 ---
 
-# Philosophy Of Build Debt
+## Philosophy Of Build Debt
 
 Build debt must be treated as real technical debt.
 
@@ -1339,7 +1339,7 @@ Build debt reduces platform reliability even when application code remains clean
 
 ---
 
-# Philosophy Of Standardization
+## Philosophy Of Standardization
 
 Standardization is valuable where it reduces unnecessary variation.
 
@@ -1355,7 +1355,7 @@ It should avoid standardizing arbitrary implementation details without benefit.
 
 ---
 
-# Philosophy Of Extensibility
+## Philosophy Of Extensibility
 
 The Build Framework should allow future capabilities such as:
 
@@ -1370,7 +1370,7 @@ These should extend the framework through existing concepts rather than bypass t
 
 ---
 
-# Philosophy Of Supply Chain Maturity
+## Philosophy Of Supply Chain Maturity
 
 FamilyOS should strengthen supply-chain assurance incrementally.
 
@@ -1386,7 +1386,7 @@ None of these should be introduced solely for appearance of maturity.
 
 ---
 
-# Philosophy Of Trust
+## Philosophy Of Trust
 
 Build trust emerges from multiple dimensions.
 
@@ -1412,7 +1412,7 @@ No single dimension creates sufficient trust alone.
 
 ---
 
-# Philosophy Of Explainability
+## Philosophy Of Explainability
 
 A trusted build should ultimately be explainable.
 
@@ -1438,7 +1438,7 @@ Inputs
 
 ---
 
-# Philosophy Of Developer Experience
+## Philosophy Of Developer Experience
 
 Developer experience is part of build engineering.
 
@@ -1458,7 +1458,7 @@ Predictability improves both productivity and quality.
 
 ---
 
-# Philosophy Of Documentation
+## Philosophy Of Documentation
 
 Build behavior must be documented at the appropriate level.
 
@@ -1476,7 +1476,7 @@ The build system should not require tribal knowledge.
 
 ---
 
-# Philosophy Of Framework Boundaries
+## Philosophy Of Framework Boundaries
 
 EPIC-BLD-001 must remain focused.
 
@@ -1493,55 +1493,55 @@ Strong boundaries reduce duplicated governance.
 
 ---
 
-# Build Philosophy Anti-Patterns
+## Build Philosophy Anti-Patterns
 
 The Build Framework rejects several philosophies.
 
 ---
 
-## Build Equals Command
+### Build Equals Command
 
 A command alone does not define a governed build capability.
 
 ---
 
-## Successful Build Equals Trusted Artifact
+### Successful Build Equals Trusted Artifact
 
 Execution success does not replace validation.
 
 ---
 
-## CI Equals Build Architecture
+### CI Equals Build Architecture
 
 CI is an execution environment, not the source of build semantics.
 
 ---
 
-## More Automation Equals More Maturity
+### More Automation Equals More Maturity
 
 Automation without control can increase risk.
 
 ---
 
-## More Infrastructure Equals Better Engineering
+### More Infrastructure Equals Better Engineering
 
 Infrastructure must solve actual problems.
 
 ---
 
-## Local Success Equals Reproducibility
+### Local Success Equals Reproducibility
 
 A successful local build does not prove that another environment can reconstruct it.
 
 ---
 
-## Artifact Exists Equals Artifact Valid
+### Artifact Exists Equals Artifact Valid
 
 Generated output requires validation.
 
 ---
 
-# Philosophical Decision Test
+## Philosophical Decision Test
 
 When evaluating a build design, FamilyOS should ask:
 
@@ -1569,7 +1569,7 @@ A design that repeatedly answers no should be reconsidered.
 
 ---
 
-# Build Philosophy Success Criteria
+## Build Philosophy Success Criteria
 
 The Build Philosophy is correctly reflected in FamilyOS when:
 
@@ -1591,7 +1591,7 @@ The Build Philosophy is correctly reflected in FamilyOS when:
 
 ---
 
-# Philosophy Summary
+## Philosophy Summary
 
 The FamilyOS Build Philosophy can be summarized as:
 
@@ -1615,7 +1615,7 @@ This sequence represents the conceptual core of EPIC-BLD-001.
 
 ---
 
-# Final Principle
+## Final Principle
 
 The Build Framework is founded on the following final philosophy:
 

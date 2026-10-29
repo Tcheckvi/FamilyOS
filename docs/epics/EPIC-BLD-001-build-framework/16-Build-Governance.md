@@ -1,8 +1,8 @@
 # Build Framework
 
-# 16 Build Governance
+## 16 Build Governance
 
-## Overview
+### Overview
 
 EPIC-BLD-001 — Build Framework defines the governance model used to control the evolution, ownership, compliance, review, and maintenance of FamilyOS build engineering.
 
@@ -18,7 +18,7 @@ The central principle is:
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of Build Governance is to define how FamilyOS manages:
 
@@ -42,7 +42,7 @@ Governance provides the decision structure that keeps build engineering coherent
 
 ---
 
-# Governance Objectives
+## Governance Objectives
 
 Build Governance aims to ensure that:
 
@@ -61,7 +61,7 @@ Build Governance aims to ensure that:
 
 ---
 
-# Governance Model
+## Governance Model
 
 The canonical governance model is:
 
@@ -89,7 +89,7 @@ Not every change requires the same level of governance.
 
 ---
 
-# Governance Principle 1 — Governance Must Be Proportional
+## Governance Principle 1 — Governance Must Be Proportional
 
 Routine build maintenance should remain lightweight.
 
@@ -115,7 +115,7 @@ This keeps governance effective without slowing ordinary engineering unnecessari
 
 ---
 
-# Governance Principle 2 — Ownership Must Be Clear
+## Governance Principle 2 — Ownership Must Be Clear
 
 Every major build capability should have identifiable ownership.
 
@@ -133,7 +133,7 @@ Unowned build behavior tends to become unmanaged technical debt.
 
 ---
 
-# Governance Principle 3 — Architecture Decisions Must Be Explicit
+## Governance Principle 3 — Architecture Decisions Must Be Explicit
 
 Significant build architecture changes must not emerge through incremental implementation alone.
 
@@ -151,7 +151,7 @@ require explicit architectural consideration.
 
 ---
 
-# Governance Principle 4 — Framework Boundaries Must Be Preserved
+## Governance Principle 4 — Framework Boundaries Must Be Preserved
 
 Build Governance must respect ownership boundaries with:
 
@@ -169,7 +169,7 @@ It must not silently absorb their governance responsibilities.
 
 ---
 
-# Governance Principle 5 — Canonical Behavior Must Have One Authority
+## Governance Principle 5 — Canonical Behavior Must Have One Authority
 
 FamilyOS should avoid conflicting build rules defined independently across:
 
@@ -183,7 +183,7 @@ Each build concern should have a clear canonical authority.
 
 ---
 
-# Governance Principle 6 — Exceptions Must Be Explicit
+## Governance Principle 6 — Exceptions Must Be Explicit
 
 Temporary deviations may sometimes be necessary.
 
@@ -200,7 +200,7 @@ A governed exception should identify:
 
 ---
 
-# Governance Principle 7 — Build Debt Must Be Visible
+## Governance Principle 7 — Build Debt Must Be Visible
 
 Technical debt in build systems must be treated as real engineering debt.
 
@@ -218,7 +218,7 @@ Debt should be tracked and deliberately reduced.
 
 ---
 
-# Governance Principle 8 — Significant Changes Require Evidence
+## Governance Principle 8 — Significant Changes Require Evidence
 
 Major build changes should be validated through evidence appropriate to their risk.
 
@@ -235,7 +235,7 @@ Change approval should not rely only on intention.
 
 ---
 
-# Governance Scope
+## Governance Scope
 
 Build Governance applies to:
 
@@ -257,7 +257,7 @@ Build Governance
 
 ---
 
-# Build Ownership
+## Build Ownership
 
 Build ownership should be divided by responsibility rather than concentrated in one person.
 
@@ -287,7 +287,7 @@ Exact organizational ownership may evolve.
 
 ---
 
-# Build Architecture Ownership
+## Build Architecture Ownership
 
 Build architecture ownership includes responsibility for:
 
@@ -301,7 +301,7 @@ Architectural ownership should remain stable even if implementation ownership ch
 
 ---
 
-# Build Maintenance Ownership
+## Build Maintenance Ownership
 
 Maintenance ownership includes:
 
@@ -313,7 +313,7 @@ Maintenance ownership includes:
 
 ---
 
-# Component Ownership
+## Component Ownership
 
 Individual FamilyOS components may own their component-specific build definitions.
 
@@ -321,7 +321,7 @@ However, component build behavior must comply with platform Build Framework rule
 
 ---
 
-# Plugin Ownership
+## Plugin Ownership
 
 Plugin teams may own plugin-specific build content.
 
@@ -336,7 +336,7 @@ outside platform governance.
 
 ---
 
-# Decision Classification
+## Decision Classification
 
 Build changes should be classified according to impact.
 
@@ -351,7 +351,7 @@ Class 4 — Strategic
 
 ---
 
-# Class 1 — Routine Changes
+## Class 1 — Routine Changes
 
 Examples include:
 
@@ -365,7 +365,7 @@ These generally require normal engineering review.
 
 ---
 
-# Class 2 — Significant Changes
+## Class 2 — Significant Changes
 
 Examples include:
 
@@ -379,7 +379,7 @@ These require explicit technical review.
 
 ---
 
-# Class 3 — Architectural Changes
+## Class 3 — Architectural Changes
 
 Examples include:
 
@@ -393,7 +393,7 @@ These may require an ADR.
 
 ---
 
-# Class 4 — Strategic Changes
+## Class 4 — Strategic Changes
 
 Examples include:
 
@@ -408,12 +408,12 @@ These may require RFC and EPIC evolution.
 
 ---
 
-# Current Operational Governance Contract
+## Current Operational Governance Contract
 
 The following contract makes the Build Governance model operational for the
 current EPIC-BLD-001 implementation.
 
-## Operational Ownership
+### Operational Ownership
 
 Build Framework architecture is governed through EPIC-BLD-001 and its
 authoritative architecture and governance documents.
@@ -433,7 +433,7 @@ and Build Evidence semantics. Release owns downstream promotion and release
 policy. Changes crossing that boundary require review by both owning
 frameworks.
 
-## Operational Change Review
+### Operational Change Review
 
 Routine changes are Class 1 changes. They follow normal code or documentation
 review together with the validation appropriate to the affected surface.
@@ -456,7 +456,7 @@ An RFC may incorporate or supersede the need for a separate ADR when the
 architectural decision is fully captured by the RFC and repository governance
 makes that relationship explicit.
 
-## Operational Exception Process
+### Operational Exception Process
 
 An exception to a normative Build requirement must be explicit and recorded.
 The exception record must identify:
@@ -474,7 +474,7 @@ An exception must not silently redefine the canonical standard. Repeated or
 structural exceptions must be evaluated as technical debt or as a proposal to
 change the governing architecture.
 
-## Operational Technical-Debt Tracking
+### Operational Technical-Debt Tracking
 
 Known Build debt must remain visible in an appropriate repository-owned
 tracking surface such as the EPIC checklist, revision history, issue tracking,
@@ -484,7 +484,7 @@ Debt records should identify the affected Build concern, impact or risk, and
 the expected remediation or review path. High-risk debt receives priority over
 cosmetic cleanup.
 
-## Operational Security Escalation
+### Operational Security Escalation
 
 Changes involving credentials, new trust boundaries, dependency sources,
 network authority, signing, privileged execution, or comparable
@@ -493,7 +493,7 @@ security-sensitive Build behavior require Security Architecture review.
 Build Governance coordinates integration of the resulting requirements but
 does not replace Security Architecture as the security-policy authority.
 
-## Operational Artifact-Contract Review
+### Operational Artifact-Contract Review
 
 Changes to artifact contents, identity, metadata, integrity semantics, naming,
 or release handoff must receive compatibility review against known downstream
@@ -502,7 +502,7 @@ consumers.
 Breaking artifact-contract changes must include rationale, migration impact,
 documentation, and appropriate version or release handling.
 
-## Operational Validation-Weakening Review
+### Operational Validation-Weakening Review
 
 Removal, bypass, disabling, or weakening of mandatory Build validation requires
 explicit technical justification and review before adoption.
@@ -511,7 +511,7 @@ A change must not weaken mandatory validation solely to make local or CI
 execution pass. Security-sensitive or cross-framework weakening must also be
 reviewed by the corresponding owning framework.
 
-## Operational Governance Traceability
+### Operational Governance Traceability
 
 The required governance path is:
 
@@ -543,7 +543,7 @@ with EPIC.yaml and related control documents.
 Governance evidence remains repository-visible and may include ADRs, RFCs,
 review records, exception records, validation reports, and change history.
 
-# Governance Decision Flow
+## Governance Decision Flow
 
 The decision flow is:
 
@@ -561,7 +561,7 @@ Select Governance Mechanism
 
 ---
 
-# Governance Mechanisms
+## Governance Mechanisms
 
 FamilyOS may use:
 
@@ -578,7 +578,7 @@ The mechanism should fit the change.
 
 ---
 
-# ADR Relationship
+## ADR Relationship
 
 Architecture Decision Records are appropriate when a change establishes or modifies a significant build architecture decision.
 
@@ -591,7 +591,7 @@ Examples include:
 
 ---
 
-# RFC Relationship
+## RFC Relationship
 
 RFCs are appropriate when changes affect multiple platform areas or require broader architectural agreement.
 
@@ -604,7 +604,7 @@ Examples include:
 
 ---
 
-# EPIC Relationship
+## EPIC Relationship
 
 EPIC-BLD-001 should evolve when framework-level responsibilities, structure, or long-term requirements change.
 
@@ -612,7 +612,7 @@ Implementation changes that do not affect the framework do not require EPIC revi
 
 ---
 
-# Governance And Documentation
+## Governance And Documentation
 
 Significant build decisions must be reflected in documentation.
 
@@ -630,7 +630,7 @@ Governance without documentation is incomplete.
 
 ---
 
-# Governance And Traceability
+## Governance And Traceability
 
 A significant build decision should be traceable from:
 
@@ -650,7 +650,7 @@ This traceability supports future maintenance.
 
 ---
 
-# Build Standards Governance
+## Build Standards Governance
 
 Build standards define the expected behavior of FamilyOS build capabilities.
 
@@ -668,7 +668,7 @@ Standards must remain consistent across components.
 
 ---
 
-# Standard Evolution
+## Standard Evolution
 
 Build standards may evolve.
 
@@ -683,7 +683,7 @@ A standard change should consider:
 
 ---
 
-# Standard Exceptions
+## Standard Exceptions
 
 Exceptions should be rare and deliberate.
 
@@ -691,7 +691,7 @@ An exception should never silently redefine the standard.
 
 ---
 
-# Toolchain Governance
+## Toolchain Governance
 
 Toolchain governance controls:
 
@@ -703,7 +703,7 @@ Toolchain governance controls:
 
 ---
 
-# Tool Introduction Governance
+## Tool Introduction Governance
 
 Before adopting a significant new tool, FamilyOS should assess:
 
@@ -716,7 +716,7 @@ Before adopting a significant new tool, FamilyOS should assess:
 
 ---
 
-# Tool Upgrade Governance
+## Tool Upgrade Governance
 
 Tool upgrades should be validated according to impact.
 
@@ -729,7 +729,7 @@ High-impact tools include:
 
 ---
 
-# Tool Removal Governance
+## Tool Removal Governance
 
 Obsolete tools should be retired deliberately.
 
@@ -742,7 +742,7 @@ Removal should confirm:
 
 ---
 
-# Dependency Governance
+## Dependency Governance
 
 Dependency governance controls how dependencies are introduced, updated, replaced, and removed.
 
@@ -757,7 +757,7 @@ A dependency change should consider:
 
 ---
 
-# Dependency Exception
+## Dependency Exception
 
 An otherwise prohibited dependency may require an explicit exception if no suitable alternative exists.
 
@@ -765,7 +765,7 @@ The exception should be documented and reviewed.
 
 ---
 
-# Configuration Governance
+## Configuration Governance
 
 Configuration governance controls:
 
@@ -779,7 +779,7 @@ Configuration changes that weaken validation or alter artifacts require stronger
 
 ---
 
-# Profile Governance
+## Profile Governance
 
 Build profiles are part of the framework contract.
 
@@ -787,7 +787,7 @@ New profiles should only be introduced when they represent a genuinely distinct 
 
 ---
 
-# Environment Governance
+## Environment Governance
 
 Environment governance controls:
 
@@ -799,7 +799,7 @@ Environment governance controls:
 
 ---
 
-# Runtime Governance
+## Runtime Governance
 
 Changing the canonical runtime may affect the complete engineering ecosystem.
 
@@ -807,7 +807,7 @@ Such changes require coordinated validation.
 
 ---
 
-# Platform Governance
+## Platform Governance
 
 Adding or dropping a supported platform may affect:
 
@@ -820,7 +820,7 @@ Platform support must be explicit.
 
 ---
 
-# Execution Governance
+## Execution Governance
 
 Execution governance controls:
 
@@ -833,7 +833,7 @@ Execution governance controls:
 
 ---
 
-# Entry Point Governance
+## Entry Point Governance
 
 Canonical build commands should remain stable.
 
@@ -841,13 +841,13 @@ Breaking changes require migration documentation.
 
 ---
 
-# Stage Governance
+## Stage Governance
 
 Adding or removing a mandatory build stage changes lifecycle semantics and requires review.
 
 ---
 
-# Retry Governance
+## Retry Governance
 
 Retry behavior must not weaken failure transparency.
 
@@ -855,7 +855,7 @@ Automatically retrying deterministic errors should not become canonical behavior
 
 ---
 
-# Artifact Governance
+## Artifact Governance
 
 Artifact governance controls:
 
@@ -869,7 +869,7 @@ Artifact governance controls:
 
 ---
 
-# New Artifact Type
+## New Artifact Type
 
 Introducing a new official artifact type should define:
 
@@ -882,13 +882,13 @@ Introducing a new official artifact type should define:
 
 ---
 
-# Artifact Contract Change
+## Artifact Contract Change
 
 Changing artifact contents or metadata may affect downstream consumers and requires compatibility review.
 
 ---
 
-# Integrity Governance
+## Integrity Governance
 
 Standard integrity algorithms should be chosen deliberately.
 
@@ -896,7 +896,7 @@ Changes may affect stored evidence and release processes.
 
 ---
 
-# Validation Governance
+## Validation Governance
 
 Validation governance determines:
 
@@ -907,7 +907,7 @@ Validation governance determines:
 
 ---
 
-# Validation Weakening
+## Validation Weakening
 
 Removing or weakening mandatory validation requires explicit justification.
 
@@ -915,7 +915,7 @@ The default assumption is that trust controls should not be reduced casually.
 
 ---
 
-# Validation Addition
+## Validation Addition
 
 New validation should be evaluated for:
 
@@ -927,7 +927,7 @@ New validation should be evaluated for:
 
 ---
 
-# Quality Gate Relationship
+## Quality Gate Relationship
 
 Quality gates remain governed by the Quality Framework.
 
@@ -935,7 +935,7 @@ Build Governance ensures that build-specific evidence is available for those gat
 
 ---
 
-# Security Governance
+## Security Governance
 
 Security-sensitive build changes may require dedicated review.
 
@@ -949,19 +949,19 @@ Examples include:
 
 ---
 
-# Security Escalation
+## Security Escalation
 
 A change that introduces new trust boundaries or credentials should receive Security Architecture review.
 
 ---
 
-# Automation Governance
+## Automation Governance
 
 Automation governance controls how CI and other automation invoke canonical build behavior.
 
 ---
 
-# CI Governance
+## CI Governance
 
 CI workflows should not become independent build authorities.
 
@@ -969,7 +969,7 @@ CI changes that alter semantics must update canonical build definitions first.
 
 ---
 
-# CI Provider Changes
+## CI Provider Changes
 
 Changing CI provider should not require redesigning Build Framework semantics.
 
@@ -977,7 +977,7 @@ Provider-specific logic belongs at the integration layer.
 
 ---
 
-# Automation Permissions
+## Automation Permissions
 
 CI permissions should remain minimal.
 
@@ -985,7 +985,7 @@ Build jobs should not receive release or deployment permissions unless explicitl
 
 ---
 
-# Evidence Governance
+## Evidence Governance
 
 Build evidence should remain consistent and meaningful.
 
@@ -993,7 +993,7 @@ Evidence requirements may increase as platform maturity grows.
 
 ---
 
-# Evidence Retention Governance
+## Evidence Retention Governance
 
 Retention requirements depend on:
 
@@ -1008,7 +1008,7 @@ Storage duration may belong to operational policy.
 
 ---
 
-# Provenance Governance
+## Provenance Governance
 
 Formal provenance may eventually require:
 
@@ -1021,7 +1021,7 @@ This would likely require architecture-level governance.
 
 ---
 
-# Build Exception Model
+## Build Exception Model
 
 A build exception represents a controlled deviation from a framework rule.
 
@@ -1044,7 +1044,7 @@ A formal implementation may come later.
 
 ---
 
-# Exception Rules
+## Exception Rules
 
 Exceptions SHOULD:
 
@@ -1056,7 +1056,7 @@ Exceptions SHOULD:
 
 ---
 
-# Permanent Exceptions
+## Permanent Exceptions
 
 A permanent exception may indicate that the framework rule itself should be revisited.
 
@@ -1064,7 +1064,7 @@ Governance should prefer updating the standard over accumulating permanent excep
 
 ---
 
-# Technical Debt Governance
+## Technical Debt Governance
 
 Build technical debt should be identifiable.
 
@@ -1081,7 +1081,7 @@ Skipped Validation
 
 ---
 
-# Debt Classification
+## Debt Classification
 
 Build debt may be classified by:
 
@@ -1092,7 +1092,7 @@ Build debt may be classified by:
 
 ---
 
-# Debt Remediation
+## Debt Remediation
 
 Debt remediation should follow priority rather than arbitrary cleanup.
 
@@ -1100,7 +1100,7 @@ High-risk debt should be addressed first.
 
 ---
 
-# Build Risk Governance
+## Build Risk Governance
 
 Build risk may originate from:
 
@@ -1116,7 +1116,7 @@ Risk assessment should remain proportional.
 
 ---
 
-# Risk Levels
+## Risk Levels
 
 A simple conceptual model may include:
 
@@ -1131,7 +1131,7 @@ A formal risk system should only be introduced if needed.
 
 ---
 
-# High-Risk Build Changes
+## High-Risk Build Changes
 
 Examples include:
 
@@ -1145,7 +1145,7 @@ These require stronger review.
 
 ---
 
-# Change Management
+## Change Management
 
 Build changes should follow a controlled lifecycle.
 
@@ -1169,7 +1169,7 @@ Monitor
 
 ---
 
-# Backward Compatibility
+## Backward Compatibility
 
 Build changes should consider compatibility with:
 
@@ -1181,7 +1181,7 @@ Build changes should consider compatibility with:
 
 ---
 
-# Breaking Build Change
+## Breaking Build Change
 
 A breaking change should include:
 
@@ -1192,7 +1192,7 @@ A breaking change should include:
 
 ---
 
-# Deprecation
+## Deprecation
 
 Deprecated build behavior should follow a transition process.
 
@@ -1210,7 +1210,7 @@ Removal
 
 ---
 
-# Emergency Change Governance
+## Emergency Change Governance
 
 Urgent fixes may require expedited review.
 
@@ -1224,7 +1224,7 @@ Urgency does not remove accountability.
 
 ---
 
-# Governance Reviews
+## Governance Reviews
 
 Periodic build reviews may evaluate:
 
@@ -1240,7 +1240,7 @@ Reviews should be evidence-driven.
 
 ---
 
-# Build Architecture Review
+## Build Architecture Review
 
 Architecture review should ask:
 
@@ -1260,7 +1260,7 @@ Is complexity proportional?
 
 ---
 
-# Toolchain Review
+## Toolchain Review
 
 Toolchain review should assess:
 
@@ -1272,7 +1272,7 @@ Toolchain review should assess:
 
 ---
 
-# Dependency Review
+## Dependency Review
 
 Dependency review should assess:
 
@@ -1284,7 +1284,7 @@ Dependency review should assess:
 
 ---
 
-# Artifact Review
+## Artifact Review
 
 Artifact review should assess:
 
@@ -1296,13 +1296,13 @@ Artifact review should assess:
 
 ---
 
-# Automation Review
+## Automation Review
 
 Automation review should determine whether CI still reflects canonical local build semantics.
 
 ---
 
-# Governance Evidence
+## Governance Evidence
 
 Governance may produce evidence such as:
 
@@ -1315,31 +1315,31 @@ Governance may produce evidence such as:
 
 ---
 
-# Governance And Revision History
+## Governance And Revision History
 
 Significant framework changes should update `Revision-History.md`.
 
 ---
 
-# Governance And Changelog
+## Governance And Changelog
 
 Release-relevant framework changes should update `CHANGELOG.md`.
 
 ---
 
-# Governance And Manifest
+## Governance And Manifest
 
 Changes to document inventory or normative status should update `MANIFEST.md`.
 
 ---
 
-# Governance And EPIC Metadata
+## Governance And EPIC Metadata
 
 Framework lifecycle status should remain synchronized with `EPIC.yaml` and related control documents.
 
 ---
 
-# Compliance With Build Framework
+## Compliance With Build Framework
 
 Build implementations should conform to the normative expectations established by EPIC-BLD-001.
 
@@ -1349,7 +1349,7 @@ Not every future-state capability is immediately mandatory.
 
 ---
 
-# Compliance Categories
+## Compliance Categories
 
 A conceptual model may distinguish:
 
@@ -1363,7 +1363,7 @@ This avoids treating strategic goals as immediate defects.
 
 ---
 
-# Non-Compliance
+## Non-Compliance
 
 Material non-compliance may require:
 
@@ -1374,7 +1374,7 @@ Material non-compliance may require:
 
 ---
 
-# Governance Enforcement
+## Governance Enforcement
 
 Governance should increasingly be supported through automation where practical.
 
@@ -1389,7 +1389,7 @@ Automation must implement governance rather than replace judgment.
 
 ---
 
-# Governance And Local Development
+## Governance And Local Development
 
 Governance should not make local development unnecessarily difficult.
 
@@ -1399,7 +1399,7 @@ Strong controls may be applied progressively in CI and release profiles.
 
 ---
 
-# Governance And CI
+## Governance And CI
 
 CI is an important enforcement environment.
 
@@ -1415,7 +1415,7 @@ CI should not introduce undocumented governance rules.
 
 ---
 
-# Governance And Release
+## Governance And Release
 
 The Release Framework is a major downstream governance partner.
 
@@ -1431,7 +1431,7 @@ Release Governance decides whether those outputs are promoted.
 
 ---
 
-# Governance And Quality
+## Governance And Quality
 
 The Quality Framework may use build evidence to enforce quality expectations.
 
@@ -1439,7 +1439,7 @@ Build Governance ensures the evidence remains reliable.
 
 ---
 
-# Governance And Testing
+## Governance And Testing
 
 Testing governance remains owned by EPIC-TST-001.
 
@@ -1447,7 +1447,7 @@ Build Governance determines how test evidence participates in build trust.
 
 ---
 
-# Governance And Documentation
+## Governance And Documentation
 
 Documentation governance ensures Build Framework documents remain:
 
@@ -1458,7 +1458,7 @@ Documentation governance ensures Build Framework documents remain:
 
 ---
 
-# Governance And Plugin Compliance
+## Governance And Plugin Compliance
 
 Plugin-specific build behavior may require compliance validation.
 
@@ -1466,7 +1466,7 @@ Build Governance must preserve Plugin Compliance Framework authority over compli
 
 ---
 
-# Governance And Security
+## Governance And Security
 
 Security Architecture governs broader security requirements.
 
@@ -1474,55 +1474,55 @@ Build Governance ensures those requirements are integrated into build processes 
 
 ---
 
-# Governance Anti-Pattern — Architecture By Script
+## Governance Anti-Pattern — Architecture By Script
 
 A build script must not silently introduce architectural behavior without review.
 
 ---
 
-# Governance Anti-Pattern — CI As Authority
+## Governance Anti-Pattern — CI As Authority
 
 CI configuration must not become the only place where build policy exists.
 
 ---
 
-# Governance Anti-Pattern — Permanent Exception
+## Governance Anti-Pattern — Permanent Exception
 
 Exceptions must not become invisible permanent architecture.
 
 ---
 
-# Governance Anti-Pattern — Unowned Tool
+## Governance Anti-Pattern — Unowned Tool
 
 A critical build tool without clear ownership becomes operational risk.
 
 ---
 
-# Governance Anti-Pattern — Validation Removal For Convenience
+## Governance Anti-Pattern — Validation Removal For Convenience
 
 Mandatory validation must not be weakened solely to make pipelines pass.
 
 ---
 
-# Governance Anti-Pattern — Tool Proliferation
+## Governance Anti-Pattern — Tool Proliferation
 
 New build tools should not be added without considering existing capabilities.
 
 ---
 
-# Governance Anti-Pattern — Silent Artifact Change
+## Governance Anti-Pattern — Silent Artifact Change
 
 Artifact contract changes must not occur unnoticed through packaging configuration updates.
 
 ---
 
-# Governance Anti-Pattern — Documentation Drift
+## Governance Anti-Pattern — Documentation Drift
 
 Build architecture, implementation, and documentation must not diverge.
 
 ---
 
-# Governance Maturity Model
+## Governance Maturity Model
 
 FamilyOS Build Governance may evolve through:
 
@@ -1560,7 +1560,7 @@ Each level should be adopted according to real engineering needs.
 
 ---
 
-# Governance Success Criteria
+## Governance Success Criteria
 
 Build Governance is successful when FamilyOS can answer:
 
@@ -1581,53 +1581,53 @@ Build Governance is successful when FamilyOS can answer:
 
 ---
 
-# Governance Invariants
+## Governance Invariants
 
 The following invariants should remain true.
 
-## Invariant 1
+### Invariant 1
 
 Significant build architecture changes must be explicit.
 
-## Invariant 2
+### Invariant 2
 
 Canonical build responsibilities must have clear ownership.
 
-## Invariant 3
+### Invariant 3
 
 CI must not become an independent build authority.
 
-## Invariant 4
+### Invariant 4
 
 Mandatory validation must not be weakened accidentally.
 
-## Invariant 5
+### Invariant 5
 
 Artifact contract changes must remain reviewable.
 
-## Invariant 6
+### Invariant 6
 
 Exceptions must be documented.
 
-## Invariant 7
+### Invariant 7
 
 Build debt must not remain invisible.
 
-## Invariant 8
+### Invariant 8
 
 Framework boundaries must remain respected.
 
-## Invariant 9
+### Invariant 9
 
 High-risk build changes must receive proportional review.
 
-## Invariant 10
+### Invariant 10
 
 Governance decisions must remain traceable.
 
 ---
 
-# Governance Model Summary
+## Governance Model Summary
 
 The canonical FamilyOS Build Governance model is:
 
@@ -1657,7 +1657,7 @@ This model allows build engineering to evolve without losing architectural coher
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Build Governance model is founded on the following rule:
 

@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 20 Framework Lifecycle
+## 20 Framework Lifecycle
 
-## Overview
+### Overview
 
 The FamilyOS Testing Framework is itself an engineering asset.
 
@@ -28,7 +28,7 @@ The objective is to preserve testing consistency without preventing engineering 
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the lifecycle of the FamilyOS Testing Framework itself.
 
@@ -54,7 +54,7 @@ The objective is to ensure that the Testing Framework remains a stable but adapt
 
 ---
 
-# Core Principle
+## Core Principle
 
 The FamilyOS Testing Framework follows this principle:
 
@@ -68,7 +68,7 @@ A framework that never changes becomes obsolete.
 
 ---
 
-# Framework Lifecycle Model
+## Framework Lifecycle Model
 
 The lifecycle of the Testing Framework can be represented as:
 
@@ -103,7 +103,7 @@ This cycle continues throughout the lifetime of FamilyOS.
 
 ---
 
-# Lifecycle Stages
+## Lifecycle Stages
 
 The Testing Framework may move through several maturity stages.
 
@@ -135,7 +135,7 @@ These stages describe framework maturity rather than software release states.
 
 ---
 
-# Draft Stage
+## Draft Stage
 
 During the draft stage, framework concepts are being defined.
 
@@ -151,7 +151,7 @@ Draft rules should not automatically be treated as fully enforced platform contr
 
 ---
 
-# Defined Stage
+## Defined Stage
 
 The framework becomes defined when its primary architecture and policies are documented.
 
@@ -167,7 +167,7 @@ Implementation may still be incomplete.
 
 ---
 
-# Adopted Stage
+## Adopted Stage
 
 The framework becomes adopted when FamilyOS engineering governance formally accepts it as the standard testing model.
 
@@ -175,7 +175,7 @@ Adoption means that new engineering work should align with the framework unless 
 
 ---
 
-# Implemented Stage
+## Implemented Stage
 
 The framework becomes implemented when its major requirements are represented in actual repository tooling and workflows.
 
@@ -193,7 +193,7 @@ Documentation alone does not constitute complete implementation.
 
 ---
 
-# Operational Stage
+## Operational Stage
 
 The framework is operational when it is used continuously during normal engineering activities.
 
@@ -209,7 +209,7 @@ At this stage, framework quality can be evaluated using real engineering evidenc
 
 ---
 
-# Mature Stage
+## Mature Stage
 
 A mature Testing Framework demonstrates:
 
@@ -229,7 +229,7 @@ It means that change becomes increasingly deliberate and evidence-based.
 
 ---
 
-# Evolution Stage
+## Evolution Stage
 
 The framework remains in continuous evolution as FamilyOS changes.
 
@@ -247,7 +247,7 @@ Evolution should preserve established principles whenever those principles remai
 
 ---
 
-# Framework Adoption
+## Framework Adoption
 
 Adoption should occur progressively across FamilyOS.
 
@@ -276,7 +276,7 @@ Different areas may reach full compliance at different times.
 
 ---
 
-# New Development
+## New Development
 
 New FamilyOS development should align with the current Testing Framework from the beginning.
 
@@ -284,7 +284,7 @@ New components should not intentionally introduce obsolete testing practices tha
 
 ---
 
-# Existing Components
+## Existing Components
 
 Existing components may require migration toward current framework standards.
 
@@ -300,7 +300,7 @@ Legacy testing debt may be addressed progressively.
 
 ---
 
-# Framework Implementation Strategy
+## Framework Implementation Strategy
 
 Framework implementation should follow a staged approach.
 
@@ -332,7 +332,7 @@ Not every capability must appear simultaneously.
 
 ---
 
-# Framework as Architecture
+## Framework as Architecture
 
 The Testing Framework is part of the FamilyOS architecture.
 
@@ -349,7 +349,7 @@ Changes to the framework can therefore have broad engineering consequences.
 
 ---
 
-# Stable Foundation
+## Stable Foundation
 
 Core principles should remain relatively stable.
 
@@ -366,7 +366,7 @@ These principles should change only when there is strong architectural justifica
 
 ---
 
-# Evolvable Mechanisms
+## Evolvable Mechanisms
 
 Implementation mechanisms may evolve more frequently.
 
@@ -383,7 +383,7 @@ The framework should distinguish stable principles from replaceable tooling.
 
 ---
 
-# Principle Versus Tooling
+## Principle Versus Tooling
 
 The distinction can be represented as:
 
@@ -414,7 +414,7 @@ The principle should not depend permanently on one tool.
 
 ---
 
-# Framework Versioning
+## Framework Versioning
 
 Significant Testing Framework evolution should be versioned or historically traceable.
 
@@ -429,7 +429,7 @@ The exact versioning model should align with broader FamilyOS documentation and 
 
 ---
 
-# Version Scope
+## Version Scope
 
 A Testing Framework version may represent changes to:
 
@@ -444,7 +444,7 @@ Minor editorial documentation changes do not necessarily require framework versi
 
 ---
 
-# Semantic Evolution
+## Semantic Evolution
 
 Framework versioning should communicate the significance of change.
 
@@ -465,7 +465,7 @@ The precise versioning convention should remain aligned with FamilyOS standards.
 
 ---
 
-# Breaking Framework Changes
+## Breaking Framework Changes
 
 A breaking framework change may alter:
 
@@ -481,7 +481,7 @@ Breaking changes require migration planning.
 
 ---
 
-# Compatibility
+## Compatibility
 
 Framework evolution should consider compatibility with existing testing assets.
 
@@ -499,7 +499,7 @@ Changes should avoid unnecessary repository-wide disruption.
 
 ---
 
-# Compatibility Principle
+## Compatibility Principle
 
 The preferred approach is:
 
@@ -511,7 +511,7 @@ Permanent technical stagnation is not.
 
 ---
 
-# Compatibility Layers
+## Compatibility Layers
 
 Temporary compatibility mechanisms may support migration.
 
@@ -526,7 +526,7 @@ Compatibility layers should have an explicit removal strategy.
 
 ---
 
-# Framework Change Categories
+## Framework Change Categories
 
 Framework changes may be classified by impact.
 
@@ -544,7 +544,7 @@ Different categories may require different levels of review.
 
 ---
 
-# Editorial Changes
+## Editorial Changes
 
 Editorial changes include:
 
@@ -557,7 +557,7 @@ These changes should not alter framework behavior.
 
 ---
 
-# Minor Changes
+## Minor Changes
 
 Minor changes may include:
 
@@ -570,7 +570,7 @@ Minor changes should preserve existing compliant behavior.
 
 ---
 
-# Operational Changes
+## Operational Changes
 
 Operational changes affect execution without fundamentally changing testing architecture.
 
@@ -585,7 +585,7 @@ Operational changes require validation because they can affect engineering workf
 
 ---
 
-# Architectural Changes
+## Architectural Changes
 
 Architectural changes alter the structure of the Testing Framework.
 
@@ -600,7 +600,7 @@ Architectural changes require broader review.
 
 ---
 
-# Breaking Changes
+## Breaking Changes
 
 Breaking changes invalidate previously supported testing practices or contracts.
 
@@ -614,7 +614,7 @@ They require:
 
 ---
 
-# Change Proposal
+## Change Proposal
 
 Significant framework changes should begin with an explicit proposal.
 
@@ -629,7 +629,7 @@ A proposal should explain:
 
 ---
 
-# Change Review
+## Change Review
 
 Framework changes should be reviewed according to their impact.
 
@@ -645,7 +645,7 @@ Broad-impact changes require broader review.
 
 ---
 
-# Change Validation
+## Change Validation
 
 Framework changes must themselves be validated.
 
@@ -661,7 +661,7 @@ A testing framework change should never be assumed safe simply because it concer
 
 ---
 
-# Dogfooding
+## Dogfooding
 
 FamilyOS should use its own Testing Framework to validate changes to the Testing Framework whenever practical.
 
@@ -681,7 +681,7 @@ The framework should demonstrate the standards it defines.
 
 ---
 
-# Migration Planning
+## Migration Planning
 
 Breaking or broad framework changes require migration planning.
 
@@ -697,7 +697,7 @@ A migration plan should identify:
 
 ---
 
-# Migration Phases
+## Migration Phases
 
 A migration may follow:
 
@@ -724,7 +724,7 @@ This reduces unnecessary disruption.
 
 ---
 
-# Migration Ownership
+## Migration Ownership
 
 Framework migrations require identifiable ownership.
 
@@ -738,7 +738,7 @@ Ownership includes responsibility for:
 
 ---
 
-# Migration Completeness
+## Migration Completeness
 
 A migration is not complete until obsolete behavior is intentionally removed or formally retained.
 
@@ -746,7 +746,7 @@ Leaving permanent transitional infrastructure creates framework complexity.
 
 ---
 
-# Deprecation
+## Deprecation
 
 Framework features may be deprecated when:
 
@@ -760,7 +760,7 @@ Deprecation provides a controlled path toward removal.
 
 ---
 
-# Deprecation Requirements
+## Deprecation Requirements
 
 A deprecated framework capability should define:
 
@@ -772,7 +772,7 @@ A deprecated framework capability should define:
 
 ---
 
-# Deprecation Visibility
+## Deprecation Visibility
 
 Deprecated behavior must remain visible.
 
@@ -780,7 +780,7 @@ Developers should not unknowingly build new functionality on obsolete framework 
 
 ---
 
-# New Usage of Deprecated Features
+## New Usage of Deprecated Features
 
 New code should generally not adopt deprecated framework capabilities.
 
@@ -788,7 +788,7 @@ Exceptions require explicit justification.
 
 ---
 
-# Deprecation Period
+## Deprecation Period
 
 Deprecation periods should be long enough for reasonable migration but not indefinite.
 
@@ -801,7 +801,7 @@ The appropriate period depends on:
 
 ---
 
-# Removal
+## Removal
 
 A deprecated capability may be removed once:
 
@@ -814,7 +814,7 @@ Removal should be intentional and traceable.
 
 ---
 
-# Framework Replacement
+## Framework Replacement
 
 In exceptional cases, the Testing Framework architecture itself may require replacement.
 
@@ -829,7 +829,7 @@ Framework replacement requires especially careful migration.
 
 ---
 
-# Replacement Strategy
+## Replacement Strategy
 
 A full replacement should generally avoid abrupt transition.
 
@@ -855,7 +855,7 @@ Parallel operation may be useful when feasible.
 
 ---
 
-# Framework Review
+## Framework Review
 
 The Testing Framework should be reviewed periodically.
 
@@ -870,7 +870,7 @@ Review should determine whether it remains:
 
 ---
 
-# Review Areas
+## Review Areas
 
 A framework review may evaluate:
 
@@ -887,7 +887,7 @@ A framework review may evaluate:
 
 ---
 
-# Review Frequency
+## Review Frequency
 
 The framework should not require arbitrary frequent revision.
 
@@ -901,7 +901,7 @@ Reviews may occur:
 
 ---
 
-# Review Triggers
+## Review Triggers
 
 Specific conditions may trigger framework review.
 
@@ -920,7 +920,7 @@ These signals may indicate that existing framework rules require evolution.
 
 ---
 
-# Framework Health
+## Framework Health
 
 The Testing Framework itself has health indicators.
 
@@ -939,7 +939,7 @@ Framework health should be evaluated using multiple signals.
 
 ---
 
-# Adoption Metrics
+## Adoption Metrics
 
 Adoption may be measured through indicators such as:
 
@@ -953,7 +953,7 @@ Metrics should guide migration rather than become vanity targets.
 
 ---
 
-# Compliance
+## Compliance
 
 Framework compliance indicates whether engineering areas follow mandatory Testing Framework rules.
 
@@ -970,7 +970,7 @@ The exact classification may evolve.
 
 ---
 
-# Compliance Validation
+## Compliance Validation
 
 Some framework rules may be automatically validated.
 
@@ -986,7 +986,7 @@ Automation should be used where it provides reliable value.
 
 ---
 
-# Exceptions
+## Exceptions
 
 Temporary framework exceptions may be necessary.
 
@@ -1005,7 +1005,7 @@ They should remain:
 
 ---
 
-# Framework Debt
+## Framework Debt
 
 The Testing Framework may accumulate its own technical debt.
 
@@ -1022,7 +1022,7 @@ Framework debt should be identified and managed deliberately.
 
 ---
 
-# Framework Debt Prioritization
+## Framework Debt Prioritization
 
 Framework debt should be prioritized based on:
 
@@ -1036,7 +1036,7 @@ Shared testing infrastructure problems may justify high priority because they af
 
 ---
 
-# Documentation Lifecycle
+## Documentation Lifecycle
 
 Testing Framework documentation must evolve together with implementation.
 
@@ -1050,7 +1050,7 @@ as if they were still current.
 
 ---
 
-# Documentation Synchronization
+## Documentation Synchronization
 
 Framework changes should update relevant documentation as part of the same engineering change whenever practical.
 
@@ -1069,7 +1069,7 @@ All parts should remain synchronized.
 
 ---
 
-# Reference Integrity
+## Reference Integrity
 
 Cross-references between Testing Framework documents should remain valid as documents evolve.
 
@@ -1077,7 +1077,7 @@ Renaming or restructuring framework documents requires updating dependent refere
 
 ---
 
-# Framework Validation
+## Framework Validation
 
 The framework should include explicit validation of its own implementation.
 
@@ -1092,7 +1092,7 @@ Validation may confirm:
 
 ---
 
-# Validation Levels
+## Validation Levels
 
 Framework validation may occur at several levels.
 
@@ -1116,7 +1116,7 @@ The exact implementation may evolve.
 
 ---
 
-# Release Alignment
+## Release Alignment
 
 Testing Framework evolution should align with FamilyOS release strategy.
 
@@ -1124,7 +1124,7 @@ A major framework change should not be introduced unpredictably during a critica
 
 ---
 
-# Release Readiness
+## Release Readiness
 
 Before a major FamilyOS release, the current Testing Framework should provide sufficient confidence for the release lifecycle.
 
@@ -1138,7 +1138,7 @@ This may require review of:
 
 ---
 
-# Framework Stability During Release
+## Framework Stability During Release
 
 Framework configuration should normally remain stable during late release validation.
 
@@ -1146,7 +1146,7 @@ Large testing infrastructure changes during release stabilization can invalidate
 
 ---
 
-# Post-Release Review
+## Post-Release Review
 
 Major releases may provide useful evidence for framework improvement.
 
@@ -1162,7 +1162,7 @@ These lessons should feed future framework evolution.
 
 ---
 
-# Incident-Driven Evolution
+## Incident-Driven Evolution
 
 Significant defects or incidents may reveal gaps in the Testing Framework.
 
@@ -1179,7 +1179,7 @@ Framework improvements may follow from these findings.
 
 ---
 
-# Learning Loop
+## Learning Loop
 
 The framework should support a continuous learning loop.
 
@@ -1206,7 +1206,7 @@ This is how the Testing Framework becomes stronger over time.
 
 ---
 
-# Developer Feedback
+## Developer Feedback
 
 Developer experience is an important source of framework lifecycle information.
 
@@ -1223,7 +1223,7 @@ Developer feedback should be evaluated alongside quality evidence.
 
 ---
 
-# Framework Usability
+## Framework Usability
 
 A Testing Framework that engineers cannot use effectively will not produce reliable quality.
 
@@ -1231,7 +1231,7 @@ Framework usability should therefore be considered part of lifecycle evaluation.
 
 ---
 
-# Complexity Control
+## Complexity Control
 
 Framework evolution tends to introduce complexity.
 
@@ -1251,7 +1251,7 @@ The framework should avoid adding mechanisms merely because they are technically
 
 ---
 
-# Removing Complexity
+## Removing Complexity
 
 Lifecycle reviews should identify unnecessary framework complexity.
 
@@ -1267,7 +1267,7 @@ Simplification is a valid form of framework evolution.
 
 ---
 
-# Tool Independence
+## Tool Independence
 
 The Testing Framework should avoid unnecessary dependence on any single external tool.
 
@@ -1277,7 +1277,7 @@ Stable framework principles should survive tooling replacement.
 
 ---
 
-# Tool Evaluation
+## Tool Evaluation
 
 New testing tools should be evaluated based on:
 
@@ -1292,7 +1292,7 @@ Tool adoption should solve a real problem.
 
 ---
 
-# Tool Migration
+## Tool Migration
 
 Tool migration should preserve validation continuity.
 
@@ -1306,7 +1306,7 @@ Before replacing an existing tool, FamilyOS should determine:
 
 ---
 
-# Dependency Lifecycle
+## Dependency Lifecycle
 
 Testing dependencies also evolve.
 
@@ -1316,7 +1316,7 @@ Testing infrastructure must not rely indefinitely on obsolete unsupported depend
 
 ---
 
-# Runtime Evolution
+## Runtime Evolution
 
 Changes to supported runtime versions may affect the Testing Framework.
 
@@ -1332,7 +1332,7 @@ Runtime transitions require appropriate validation.
 
 ---
 
-# Platform Evolution
+## Platform Evolution
 
 If FamilyOS expands to new platforms or environments, testing architecture may require extension.
 
@@ -1347,7 +1347,7 @@ Framework evolution should remain aligned with actual supported platform scope.
 
 ---
 
-# Plugin Ecosystem Evolution
+## Plugin Ecosystem Evolution
 
 As the plugin ecosystem grows, the Testing Framework may need stronger support for:
 
@@ -1361,7 +1361,7 @@ Framework expansion should preserve consistent testing expectations across plugi
 
 ---
 
-# Third-Party Ecosystem
+## Third-Party Ecosystem
 
 If FamilyOS later supports third-party plugins or integrations, Testing Framework requirements may need to define external conformance expectations.
 
@@ -1376,7 +1376,7 @@ These capabilities should be introduced only when ecosystem maturity requires th
 
 ---
 
-# Framework Governance
+## Framework Governance
 
 The lifecycle of the Testing Framework is governed by FamilyOS engineering governance.
 
@@ -1393,7 +1393,7 @@ The exact governance mechanism should match change impact.
 
 ---
 
-# Framework Decision Traceability
+## Framework Decision Traceability
 
 Important Testing Framework decisions should remain traceable.
 
@@ -1408,7 +1408,7 @@ Traceability supports future architectural understanding.
 
 ---
 
-# Relationship With Governance and Test Lifecycle
+## Relationship With Governance and Test Lifecycle
 
 This document operates together with:
 
@@ -1422,7 +1422,7 @@ This document governs the lifecycle of the overall Testing Framework itself.
 
 ---
 
-# Relationship With Testing Gates
+## Relationship With Testing Gates
 
 Framework evolution may change the testing gate architecture defined in:
 
@@ -1434,7 +1434,7 @@ Such changes require careful compatibility and enforcement planning.
 
 ---
 
-# Relationship With Automation
+## Relationship With Automation
 
 Framework lifecycle evolution may affect CI architecture defined in:
 
@@ -1446,7 +1446,7 @@ CI migration must preserve required validation throughout framework transitions.
 
 ---
 
-# Relationship With Validation
+## Relationship With Validation
 
 The concrete framework validation model is documented further in:
 
@@ -1458,7 +1458,7 @@ That document defines how FamilyOS determines that the Testing Framework has bee
 
 ---
 
-# Relationship With Roadmap
+## Relationship With Roadmap
 
 Planned Testing Framework evolution is documented in:
 
@@ -1472,7 +1472,7 @@ The lifecycle model defined here governs how those objectives become controlled 
 
 ---
 
-# Relationship With Implementation Checklist
+## Relationship With Implementation Checklist
 
 Implementation progress is tracked through:
 
@@ -1484,7 +1484,7 @@ The checklist translates framework requirements into concrete implementation ver
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The FamilyOS Testing Framework lifecycle is considered effective when:
 
@@ -1505,7 +1505,7 @@ The FamilyOS Testing Framework lifecycle is considered effective when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 The FamilyOS Testing Framework must remain stable enough to create trust and flexible enough to survive platform evolution.
 

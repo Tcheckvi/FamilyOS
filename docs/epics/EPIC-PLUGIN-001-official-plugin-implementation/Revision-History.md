@@ -13,9 +13,9 @@
 
 ---
 
-# Revision Timeline
+## Revision Timeline
 
-## 2026-08-05 — Related Implementation Milestone
+### 2026-08-05 — Related Implementation Milestone
 
 Tag:
 
@@ -33,7 +33,7 @@ as the documentary baseline of the current EPIC directory.
 
 ---
 
-## 2026-08-07 — Canonical Governance Baseline
+### 2026-08-07 — Canonical Governance Baseline
 
 Tag:
 
@@ -59,7 +59,7 @@ The historical tag and peeled commit have been verified locally and remotely.
 
 ---
 
-## 2026-08-11 — Repository Normalization
+### 2026-08-11 — Repository Normalization
 
 The control-document model is normalized from five historical files to seven
 canonical files by adding:
@@ -76,7 +76,7 @@ and repository-state gates pass.
 
 ---
 
-# Current Canonical Structure
+## Current Canonical Structure
 
 ```text
 Numbered Documents: 0
@@ -84,7 +84,7 @@ Control Documents:  7
 Canonical Files:    7
 ```
 
-# Current State
+## Current State
 
 ```text
 Documentation Status:      Completed

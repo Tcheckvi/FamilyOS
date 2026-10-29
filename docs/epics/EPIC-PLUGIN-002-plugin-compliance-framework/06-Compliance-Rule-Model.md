@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 06 Compliance Rule Model
+## 06 Compliance Rule Model
 
-## Introduction
+### Introduction
 
 The Compliance Rule Model defines how FamilyOS represents individual plugin compliance requirements.
 
@@ -23,7 +23,7 @@ The rule model must ensure that every requirement can be:
 
 ---
 
-# Rule Definition
+## Rule Definition
 
 A compliance rule represents one explicit requirement that applies to one or more plugin contexts.
 
@@ -51,7 +51,7 @@ The exact physical schema may evolve, but these semantic elements form the core 
 
 ---
 
-# Rule Identity
+## Rule Identity
 
 Every rule must have a stable identifier.
 
@@ -83,7 +83,7 @@ The final grammar must be standardized before implementation.
 
 ---
 
-# Rule Identity Stability
+## Rule Identity Stability
 
 A published rule identifier must never silently acquire a materially different meaning.
 
@@ -112,7 +112,7 @@ This preserves historical compliance records.
 
 ---
 
-# Rule Domain
+## Rule Domain
 
 Every rule belongs to one primary compliance domain.
 
@@ -128,7 +128,7 @@ A rule may consume evidence related to multiple domains, but it must retain one 
 
 ---
 
-# Rule Title
+## Rule Title
 
 The rule title provides a concise human-readable description of the requirement.
 
@@ -147,7 +147,7 @@ Plugin identifiers must use the reserved plugin namespace format.
 
 ---
 
-# Rule Description
+## Rule Description
 
 The description explains the requirement in greater detail.
 
@@ -163,7 +163,7 @@ The description should explain what the rule means without requiring developers 
 
 ---
 
-# Rule Requirement
+## Rule Requirement
 
 The requirement is the normative statement that determines compliance.
 
@@ -187,7 +187,7 @@ Requirements should avoid ambiguous wording when the rule is intended for determ
 
 ---
 
-# Normative Language
+## Normative Language
 
 Compliance rules should use standardized normative terminology.
 
@@ -209,7 +209,7 @@ The exact semantic mapping must be defined by compliance governance.
 
 ---
 
-# Rule Rationale
+## Rule Rationale
 
 Every rule should explain why the requirement exists.
 
@@ -234,7 +234,7 @@ The rationale should connect the requirement to a platform objective such as:
 
 ---
 
-# Rule Severity
+## Rule Severity
 
 Every enforceable rule has a severity.
 
@@ -269,27 +269,27 @@ represent different compliance impact.
 
 ---
 
-# Severity Semantics
+## Severity Semantics
 
 Severity semantics must be globally consistent.
 
 Conceptually:
 
-## INFO
+### INFO
 
 Provides informative compliance feedback.
 
 INFO findings generally do not block compliance.
 
-## WARNING
+### WARNING
 
 Represents a concern that should be corrected but may not block lower compliance profiles.
 
-## ERROR
+### ERROR
 
 Represents a compliance violation that normally prevents compliant status.
 
-## CRITICAL
+### CRITICAL
 
 Represents a severe violation involving platform safety, security, architecture, or mandatory governance.
 
@@ -299,7 +299,7 @@ The exact enforcement behavior belongs to policy and profile definitions.
 
 ---
 
-# Rule Applicability
+## Rule Applicability
 
 Not every rule applies to every plugin.
 
@@ -334,7 +334,7 @@ Applicability must be explicit and deterministic where practical.
 
 ---
 
-# Applicability Conditions
+## Applicability Conditions
 
 Applicability conditions should use structured predicates rather than arbitrary validator logic.
 
@@ -360,7 +360,7 @@ The implementation language may differ, but applicability must remain inspectabl
 
 ---
 
-# Rule Profiles
+## Rule Profiles
 
 Rules are activated through compliance profiles.
 
@@ -387,7 +387,7 @@ Profiles compose existing rules rather than redefining them.
 
 ---
 
-# Mandatory Rules
+## Mandatory Rules
 
 A rule may be classified as mandatory.
 
@@ -405,7 +405,7 @@ Mandatory status must be governed explicitly.
 
 ---
 
-# Validation Binding
+## Validation Binding
 
 Every automated rule must define how it is evaluated.
 
@@ -435,7 +435,7 @@ The validator implements the evaluation mechanism.
 
 ---
 
-# Validator Independence
+## Validator Independence
 
 Rule meaning must not depend on one validator implementation.
 
@@ -449,7 +449,7 @@ This allows compliance tooling to improve while preserving policy stability.
 
 ---
 
-# Manual Validation Rules
+## Manual Validation Rules
 
 Some rules may require human review.
 
@@ -479,7 +479,7 @@ The result must show that human evidence or approval is required.
 
 ---
 
-# Hybrid Validation
+## Hybrid Validation
 
 Some compliance requirements may combine machine evaluation and human judgment.
 
@@ -502,7 +502,7 @@ Hybrid rules should preserve both evidence sources separately.
 
 ---
 
-# Evidence Requirements
+## Evidence Requirements
 
 A rule should define which evidence is required to make a decision.
 
@@ -533,7 +533,7 @@ A rule cannot pass if required evidence is unavailable unless policy explicitly 
 
 ---
 
-# Evidence Optionality
+## Evidence Optionality
 
 Evidence may be:
 
@@ -558,7 +558,7 @@ Alternative evidence paths must be governed explicitly.
 
 ---
 
-# Evidence Freshness
+## Evidence Freshness
 
 Rules may require evidence produced within a defined validation context.
 
@@ -575,7 +575,7 @@ Evidence from a previous plugin version must not silently satisfy a current rule
 
 ---
 
-# Rule Evaluation Status
+## Rule Evaluation Status
 
 A canonical rule evaluation should support explicit outcome states.
 
@@ -596,7 +596,7 @@ These statuses are separate from severity.
 
 ---
 
-# PASS
+## PASS
 
 PASS means that the available evidence demonstrates that the requirement is satisfied.
 
@@ -604,7 +604,7 @@ A pass must be traceable to evidence.
 
 ---
 
-# FAIL
+## FAIL
 
 FAIL means that validation demonstrates that the requirement is violated.
 
@@ -612,7 +612,7 @@ A failed rule should normally produce a compliance finding.
 
 ---
 
-# WARNING
+## WARNING
 
 WARNING may represent partial or advisory non-conformance when the framework chooses to model this directly as a status.
 
@@ -627,7 +627,7 @@ The framework should select one canonical semantic model and avoid ambiguity.
 
 ---
 
-# NOT_APPLICABLE
+## NOT_APPLICABLE
 
 NOT_APPLICABLE means that the rule is valid but does not apply to the current plugin context.
 
@@ -635,7 +635,7 @@ The applicability decision must remain visible.
 
 ---
 
-# NOT_EVALUATED
+## NOT_EVALUATED
 
 NOT_EVALUATED means the rule applies but was not evaluated.
 
@@ -650,7 +650,7 @@ NOT_EVALUATED must never be interpreted as PASS.
 
 ---
 
-# ERROR
+## ERROR
 
 ERROR means that the validation mechanism failed to produce a valid compliance decision.
 
@@ -665,7 +665,7 @@ ERROR represents framework execution failure, not necessarily plugin non-complia
 
 ---
 
-# Finding Generation
+## Finding Generation
 
 Rules define when findings should be generated.
 
@@ -692,7 +692,7 @@ The exact mapping may vary according to framework semantics.
 
 ---
 
-# Rule Remediation
+## Rule Remediation
 
 Every rule that can fail should provide remediation guidance.
 
@@ -711,7 +711,7 @@ Good remediation reduces compliance friction.
 
 ---
 
-# Remediation Quality
+## Remediation Quality
 
 Remediation guidance should avoid vague instructions such as:
 
@@ -729,7 +729,7 @@ The framework should treat remediation clarity as part of rule quality.
 
 ---
 
-# Rule Ownership
+## Rule Ownership
 
 Every published rule should have an explicit governance owner.
 
@@ -746,7 +746,7 @@ Ownership determines who is responsible for reviewing rule evolution.
 
 ---
 
-# Rule Source Authority
+## Rule Source Authority
 
 Rules should identify the authoritative requirement source.
 
@@ -768,7 +768,7 @@ This provides traceability between compliance enforcement and platform governanc
 
 ---
 
-# Rule References
+## Rule References
 
 A compliance rule may include references to supporting documents.
 
@@ -785,7 +785,7 @@ References explain where the requirement originates and where developers can lea
 
 ---
 
-# Rule Lifecycle
+## Rule Lifecycle
 
 Rules themselves have lifecycle states.
 
@@ -808,7 +808,7 @@ Additional states should only be introduced when governance requires them.
 
 ---
 
-# Draft Rules
+## Draft Rules
 
 DRAFT rules may be used for experimentation or review.
 
@@ -816,7 +816,7 @@ They must not silently affect stable compliance profiles unless explicitly enabl
 
 ---
 
-# Active Rules
+## Active Rules
 
 ACTIVE rules participate in normal compliance evaluation.
 
@@ -824,7 +824,7 @@ Their semantics must be considered stable according to framework versioning poli
 
 ---
 
-# Deprecated Rules
+## Deprecated Rules
 
 DEPRECATED rules remain valid for compatibility or historical reasons but are scheduled for replacement or removal.
 
@@ -837,7 +837,7 @@ A deprecated rule should identify:
 
 ---
 
-# Retired Rules
+## Retired Rules
 
 RETIRED rules no longer participate in active validation.
 
@@ -847,7 +847,7 @@ Rule metadata should remain available for audit and report interpretation.
 
 ---
 
-# Rule Versioning
+## Rule Versioning
 
 Rule evolution must be version-aware.
 
@@ -865,7 +865,7 @@ Not all changes have equal compatibility impact.
 
 ---
 
-# Non-Breaking Rule Changes
+## Non-Breaking Rule Changes
 
 Examples may include:
 
@@ -878,7 +878,7 @@ These changes may preserve the existing rule identity.
 
 ---
 
-# Breaking Rule Changes
+## Breaking Rule Changes
 
 Examples include:
 
@@ -897,7 +897,7 @@ The governance model must define the correct strategy.
 
 ---
 
-# Rule Deprecation
+## Rule Deprecation
 
 Deprecation must be explicit and observable.
 
@@ -921,7 +921,7 @@ Compliance reports should remain able to interpret previous results.
 
 ---
 
-# Rule Replacement
+## Rule Replacement
 
 A replacement relation should be machine-readable where possible.
 
@@ -935,7 +935,7 @@ This allows tooling to provide migration guidance automatically.
 
 ---
 
-# Exception Eligibility
+## Exception Eligibility
 
 Not every rule should permit exceptions.
 
@@ -958,7 +958,7 @@ or require elevated governance authority.
 
 ---
 
-# Suppression Eligibility
+## Suppression Eligibility
 
 Rules may define whether individual findings may be suppressed.
 
@@ -972,7 +972,7 @@ The rule model must keep these semantics separate.
 
 ---
 
-# Rule Dependencies
+## Rule Dependencies
 
 Some rules may depend on prerequisite rules.
 
@@ -992,7 +992,7 @@ Dependencies should be explicit rather than encoded implicitly inside validators
 
 ---
 
-# Rule Dependency Semantics
+## Rule Dependency Semantics
 
 When a prerequisite fails, the dependent rule may become:
 
@@ -1006,7 +1006,7 @@ This improves report clarity and avoids cascading noise.
 
 ---
 
-# Rule Ordering
+## Rule Ordering
 
 The rule catalog should not rely on arbitrary execution order.
 
@@ -1016,7 +1016,7 @@ Validation planning can then construct a deterministic evaluation graph.
 
 ---
 
-# Rule Evaluation Graph
+## Rule Evaluation Graph
 
 Conceptually:
 
@@ -1038,7 +1038,7 @@ This allows the engine to skip or defer rules whose prerequisites are unresolved
 
 ---
 
-# Rule Families
+## Rule Families
 
 Related rules may belong to a common family.
 
@@ -1055,7 +1055,7 @@ Families improve documentation and navigation but do not replace individual stab
 
 ---
 
-# Rule Tags
+## Rule Tags
 
 Rules may carry governed tags for discovery and automation.
 
@@ -1074,7 +1074,7 @@ Tags must not silently replace formal domain, severity, or applicability semanti
 
 ---
 
-# Rule Metadata Example
+## Rule Metadata Example
 
 A conceptual rule representation might look like:
 
@@ -1101,7 +1101,7 @@ The detailed schema will be defined separately.
 
 ---
 
-# Rule Validation Example
+## Rule Validation Example
 
 Conceptually:
 
@@ -1127,7 +1127,7 @@ This demonstrates the separation between rule definition, evidence, validator, a
 
 ---
 
-# Rule Quality Requirements
+## Rule Quality Requirements
 
 A compliance rule is itself a governed engineering artifact.
 
@@ -1149,7 +1149,7 @@ A poorly defined rule weakens the entire compliance system.
 
 ---
 
-# Rule Test Requirements
+## Rule Test Requirements
 
 Automated rules should have dedicated tests.
 
@@ -1172,7 +1172,7 @@ Where applicable, tests should also cover:
 
 ---
 
-# Rule Documentation
+## Rule Documentation
 
 The rule catalog should be documentable automatically.
 
@@ -1188,7 +1188,7 @@ This reduces divergence between implementation and documentation.
 
 ---
 
-# Rule Discovery
+## Rule Discovery
 
 Developers should be able to inspect active rules.
 
@@ -1208,7 +1208,7 @@ Rule discovery is a core developer-experience requirement.
 
 ---
 
-# Rule Governance Flow
+## Rule Governance Flow
 
 A conceptual rule lifecycle process is:
 
@@ -1244,7 +1244,7 @@ Rules must not enter stable profiles without review and validation.
 
 ---
 
-# Rule Catalog Invariants
+## Rule Catalog Invariants
 
 The Compliance Rule Model establishes the following invariants:
 
@@ -1266,7 +1266,7 @@ The Compliance Rule Model establishes the following invariants:
 
 ---
 
-# Rule Model Summary
+## Rule Model Summary
 
 The FamilyOS compliance rule model can be summarized as:
 
@@ -1300,7 +1300,7 @@ This model provides the smallest reusable building block of the Plugin Complianc
 
 ---
 
-# Final Rule Principle
+## Final Rule Principle
 
 The governing principle of the Compliance Rule Model is:
 

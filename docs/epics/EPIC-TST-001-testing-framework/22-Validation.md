@@ -1,8 +1,8 @@
 # Testing Framework
 
-# 22 Validation
+## 22 Validation
 
-## Overview
+### Overview
 
 The FamilyOS Testing Framework defines a comprehensive testing architecture, but documentation alone does not demonstrate that the framework is correctly implemented.
 
@@ -33,7 +33,7 @@ The purpose of validation is to establish objective evidence that the FamilyOS T
 
 ---
 
-# Purpose
+## Purpose
 
 The purpose of this document is to define the official validation model for EPIC-TST-001.
 
@@ -59,7 +59,7 @@ This document provides the formal bridge between Testing Framework architecture 
 
 ---
 
-# Core Principle
+## Core Principle
 
 The FamilyOS Testing Framework follows this validation principle:
 
@@ -73,7 +73,7 @@ Validation proves that realization.
 
 ---
 
-# Validation Model
+## Validation Model
 
 The FamilyOS Testing Framework validation model is:
 
@@ -104,7 +104,7 @@ Validation should produce evidence that can be reviewed independently of impleme
 
 ---
 
-# Validation Objectives
+## Validation Objectives
 
 Framework validation must determine whether:
 
@@ -123,7 +123,7 @@ Framework validation must determine whether:
 
 ---
 
-# Validation Scope
+## Validation Scope
 
 Validation applies to the complete Testing Framework.
 
@@ -163,7 +163,7 @@ Not every requirement must use the same validation technique.
 
 ---
 
-# Validation Categories
+## Validation Categories
 
 FamilyOS framework validation is divided into several categories:
 
@@ -185,7 +185,7 @@ Together these categories provide framework-level confidence.
 
 ---
 
-# Structural Validation
+## Structural Validation
 
 Structural validation determines whether required testing structures exist.
 
@@ -206,7 +206,7 @@ It does not by itself prove that the structure behaves correctly.
 
 ---
 
-# Repository Structure Validation
+## Repository Structure Validation
 
 The repository should be inspected for expected testing structures.
 
@@ -222,7 +222,7 @@ Where rules are stable and machine-verifiable, structural checks should eventual
 
 ---
 
-# Test Discovery Validation
+## Test Discovery Validation
 
 Test discovery must be validated.
 
@@ -237,7 +237,7 @@ Unexpected reductions in discovered tests should be investigated.
 
 ---
 
-# Configuration Validation
+## Configuration Validation
 
 Testing configuration should be checked for:
 
@@ -252,7 +252,7 @@ Invalid configuration must fail visibly.
 
 ---
 
-# Behavioral Validation
+## Behavioral Validation
 
 Behavioral validation determines whether testing capabilities behave according to their documented semantics.
 
@@ -271,7 +271,7 @@ Behavioral validation answers:
 
 ---
 
-# Testing Level Validation
+## Testing Level Validation
 
 Each supported testing level should demonstrate its intended purpose.
 
@@ -290,7 +290,7 @@ Their behavior should correspond to their architectural role.
 
 ---
 
-# Unit Testing Validation
+## Unit Testing Validation
 
 Unit testing validation should demonstrate that representative tests:
 
@@ -304,7 +304,7 @@ Unit testing should provide the shortest reliable behavioral feedback loop.
 
 ---
 
-# Integration Testing Validation
+## Integration Testing Validation
 
 Integration testing validation should demonstrate that important component boundaries can be tested reliably.
 
@@ -319,13 +319,13 @@ Representative boundaries may include:
 
 ---
 
-# Functional Testing Validation
+## Functional Testing Validation
 
 Where functional testing is used, validation should confirm that tests evaluate meaningful user- or capability-level behavior rather than implementation details.
 
 ---
 
-# System Testing Validation
+## System Testing Validation
 
 System tests should demonstrate that significant end-to-end platform behavior can be validated in an appropriately controlled environment.
 
@@ -333,7 +333,7 @@ System testing may belong to extended validation rather than routine local execu
 
 ---
 
-# Contract Testing Validation
+## Contract Testing Validation
 
 Contract validation is particularly important for FamilyOS platform and plugin architecture.
 
@@ -349,7 +349,7 @@ A deliberately incompatible test fixture or controlled mutation may be used to p
 
 ---
 
-# Regression Testing Validation
+## Regression Testing Validation
 
 Regression testing should demonstrate that corrected defects remain protected.
 
@@ -370,7 +370,7 @@ The test must be capable of detecting the behavior it claims to protect.
 
 ---
 
-# Test Data Validation
+## Test Data Validation
 
 Test data mechanisms should be validated for:
 
@@ -386,7 +386,7 @@ Production personal information should not be required for normal testing.
 
 ---
 
-# Fixture Validation
+## Fixture Validation
 
 Fixtures should be validated to ensure that they:
 
@@ -400,7 +400,7 @@ Shared fixtures deserve particular attention because defects can affect large po
 
 ---
 
-# Test Double Validation
+## Test Double Validation
 
 Mocks, stubs, fakes, spies, and other test doubles should be used according to their intended roles.
 
@@ -410,7 +410,7 @@ Where possible, critical test-double assumptions should also be protected by int
 
 ---
 
-# Isolation Validation
+## Isolation Validation
 
 Test isolation must be verified.
 
@@ -425,7 +425,7 @@ A test that succeeds only because another test executed first violates the frame
 
 ---
 
-# Order Independence Validation
+## Order Independence Validation
 
 The framework should periodically demonstrate that tests do not depend on stable ordering.
 
@@ -435,7 +435,7 @@ Failures caused by ordering should be treated as test defects.
 
 ---
 
-# Determinism Validation
+## Determinism Validation
 
 Representative test suites should produce consistent results across repeated executions under equivalent conditions.
 
@@ -452,7 +452,7 @@ Inconsistent outcomes require investigation.
 
 ---
 
-# Time-Dependent Validation
+## Time-Dependent Validation
 
 Tests involving time should demonstrate controlled behavior.
 
@@ -465,7 +465,7 @@ They should avoid unnecessary dependency on:
 
 ---
 
-# Randomness Validation
+## Randomness Validation
 
 Tests using randomness should remain reproducible where deterministic diagnosis is required.
 
@@ -473,7 +473,7 @@ Seeds or deterministic generators should be used appropriately.
 
 ---
 
-# Temporary Resource Validation
+## Temporary Resource Validation
 
 Tests using:
 
@@ -489,7 +489,7 @@ Residual resources after test completion indicate lifecycle defects.
 
 ---
 
-# Execution Validation
+## Execution Validation
 
 The framework must validate that supported execution profiles work as documented.
 
@@ -504,7 +504,7 @@ This may include:
 
 ---
 
-# Targeted Execution Validation
+## Targeted Execution Validation
 
 Developers should be able to execute a selected:
 
@@ -518,7 +518,7 @@ Targeted execution must not require unrelated tests to execute first.
 
 ---
 
-# Full-Suite Validation
+## Full-Suite Validation
 
 The complete applicable test suite must execute successfully as a coherent validation mechanism.
 
@@ -526,7 +526,7 @@ Full-suite execution verifies interactions that selective testing may not expose
 
 ---
 
-# Test Selection Validation
+## Test Selection Validation
 
 Where selective execution is introduced, the selection mechanism must itself be validated.
 
@@ -536,7 +536,7 @@ False omission of required tests is a serious framework defect.
 
 ---
 
-# Parallel Execution Validation
+## Parallel Execution Validation
 
 If tests execute in parallel, validation must demonstrate that concurrency does not introduce:
 
@@ -550,7 +550,7 @@ Parallelism is only valid when test isolation supports it.
 
 ---
 
-# Sharding Validation
+## Sharding Validation
 
 If sharding is used, validation should confirm that:
 
@@ -561,7 +561,7 @@ If sharding is used, validation should confirm that:
 
 ---
 
-# Performance Validation
+## Performance Validation
 
 The performance of the testing system must be measurable.
 
@@ -577,7 +577,7 @@ Exact performance thresholds may evolve.
 
 ---
 
-# Performance Regression Validation
+## Performance Regression Validation
 
 Where baselines exist, significant execution-time regressions should be detectable.
 
@@ -585,7 +585,7 @@ The framework should distinguish meaningful regression from ordinary measurement
 
 ---
 
-# Timeout Validation
+## Timeout Validation
 
 Timeout mechanisms should be tested where they form part of execution policy.
 
@@ -593,7 +593,7 @@ A deliberately blocked test scenario may be used to verify that automation termi
 
 ---
 
-# Reporting Validation
+## Reporting Validation
 
 Reporting must be validated according to:
 
@@ -612,7 +612,7 @@ Validation should confirm that reports expose:
 
 ---
 
-# Failure Reporting Validation
+## Failure Reporting Validation
 
 A controlled failing test may be used to verify that reporting provides:
 
@@ -626,7 +626,7 @@ A reporting system should be validated under failure, not only successful execut
 
 ---
 
-# Skip Reporting Validation
+## Skip Reporting Validation
 
 Controlled skipped tests should demonstrate that:
 
@@ -636,7 +636,7 @@ Controlled skipped tests should demonstrate that:
 
 ---
 
-# Retry Reporting Validation
+## Retry Reporting Validation
 
 Where retries exist, validation must confirm that retry behavior remains visible.
 
@@ -644,7 +644,7 @@ A retried pass must not become indistinguishable from a deterministic first-atte
 
 ---
 
-# Quarantine Reporting Validation
+## Quarantine Reporting Validation
 
 Where quarantine exists, validation should confirm that quarantined tests remain:
 
@@ -654,7 +654,7 @@ Where quarantine exists, validation should confirm that quarantined tests remain
 
 ---
 
-# Structured Report Validation
+## Structured Report Validation
 
 Machine-readable reports should be checked for:
 
@@ -666,7 +666,7 @@ Machine-readable reports should be checked for:
 
 ---
 
-# Artifact Validation
+## Artifact Validation
 
 Where test artifacts are produced, validation should confirm that:
 
@@ -677,7 +677,7 @@ Where test artifacts are produced, validation should confirm that:
 
 ---
 
-# Coverage Validation
+## Coverage Validation
 
 If coverage is part of the Testing Framework implementation, validation should confirm that:
 
@@ -691,7 +691,7 @@ Coverage numbers themselves are not proof of testing quality.
 
 ---
 
-# Automation Validation
+## Automation Validation
 
 CI automation must be validated according to:
 
@@ -703,7 +703,7 @@ Validation should demonstrate that relevant repository events trigger expected t
 
 ---
 
-# Pull Request Automation Validation
+## Pull Request Automation Validation
 
 A representative pull request should demonstrate:
 
@@ -727,13 +727,13 @@ Failure in required validation should prevent normal protected progression.
 
 ---
 
-# Protected Branch Validation
+## Protected Branch Validation
 
 Protected branch configuration should demonstrate that required testing status is enforced where repository governance requires it.
 
 ---
 
-# CI Failure Validation
+## CI Failure Validation
 
 Controlled CI failure scenarios should confirm that:
 
@@ -744,7 +744,7 @@ Controlled CI failure scenarios should confirm that:
 
 ---
 
-# CI Environment Validation
+## CI Environment Validation
 
 CI should demonstrate controlled runtime and dependency environments.
 
@@ -752,7 +752,7 @@ Validation should confirm that execution does not depend on undocumented machine
 
 ---
 
-# Cache Validation
+## Cache Validation
 
 Where caching is used, validation should ensure that stale caches cannot create incorrect test results.
 
@@ -760,7 +760,7 @@ Cache invalidation behavior should correspond to relevant inputs.
 
 ---
 
-# Matrix Validation
+## Matrix Validation
 
 If compatibility matrices are implemented, validation should confirm that expected supported combinations execute.
 
@@ -768,7 +768,7 @@ Missing required matrix entries must remain detectable.
 
 ---
 
-# Testing Gate Validation
+## Testing Gate Validation
 
 Testing gates must be validated according to:
 
@@ -780,7 +780,7 @@ Gate validation must verify both passing and failing behavior.
 
 ---
 
-# Positive Gate Validation
+## Positive Gate Validation
 
 When all mandatory evidence satisfies policy:
 
@@ -798,7 +798,7 @@ The protected operation should be allowed.
 
 ---
 
-# Negative Gate Validation
+## Negative Gate Validation
 
 When mandatory evidence fails:
 
@@ -816,7 +816,7 @@ The protected operation must not proceed normally.
 
 ---
 
-# Missing Evidence Validation
+## Missing Evidence Validation
 
 A gate must not pass when required evidence is absent.
 
@@ -834,25 +834,25 @@ This protects against false confidence.
 
 ---
 
-# Stale Evidence Validation
+## Stale Evidence Validation
 
 Gate validation should demonstrate that results associated with an older source revision cannot incorrectly satisfy current-source requirements.
 
 ---
 
-# Skip Policy Validation
+## Skip Policy Validation
 
 Where mandatory-test skip policies exist, controlled scenarios should demonstrate the correct gate result.
 
 ---
 
-# Flaky Policy Validation
+## Flaky Policy Validation
 
 If gate logic distinguishes flaky results, validation should demonstrate that unstable outcomes remain visible and receive the intended policy treatment.
 
 ---
 
-# Waiver Validation
+## Waiver Validation
 
 Where waivers are supported, validation should ensure that a waived gate remains distinguishable from a normal pass.
 
@@ -860,7 +860,7 @@ Waivers should remain traceable.
 
 ---
 
-# Governance Validation
+## Governance Validation
 
 Governance requirements from:
 
@@ -876,7 +876,7 @@ Some require review evidence.
 
 ---
 
-# Ownership Validation
+## Ownership Validation
 
 Important testing infrastructure should have identifiable ownership.
 
@@ -890,7 +890,7 @@ Validation may review ownership for:
 
 ---
 
-# Quarantine Governance Validation
+## Quarantine Governance Validation
 
 Known quarantines should contain the required governance information.
 
@@ -903,7 +903,7 @@ This may include:
 
 ---
 
-# Exception Validation
+## Exception Validation
 
 Testing exceptions should be:
 
@@ -916,7 +916,7 @@ Undocumented bypasses should be treated as governance defects.
 
 ---
 
-# Test Removal Validation
+## Test Removal Validation
 
 Significant test removal should be reviewable.
 
@@ -927,7 +927,7 @@ Where a test protected a known regression or contract, removal should demonstrat
 
 ---
 
-# Lifecycle Validation
+## Lifecycle Validation
 
 The Testing Framework lifecycle defined in:
 
@@ -939,7 +939,7 @@ requires validation of framework evolution mechanisms.
 
 ---
 
-# Version Validation
+## Version Validation
 
 Where framework versioning is implemented, validation should confirm that:
 
@@ -949,7 +949,7 @@ Where framework versioning is implemented, validation should confirm that:
 
 ---
 
-# Deprecation Validation
+## Deprecation Validation
 
 Deprecated framework mechanisms should:
 
@@ -960,7 +960,7 @@ Deprecated framework mechanisms should:
 
 ---
 
-# Migration Validation
+## Migration Validation
 
 Framework migrations should demonstrate that required validation remains operational throughout transition.
 
@@ -968,7 +968,7 @@ A migration must not create an unprotected period where critical testing silentl
 
 ---
 
-# Documentation Validation
+## Documentation Validation
 
 The Testing Framework documentation itself must be validated.
 
@@ -982,7 +982,7 @@ Validation should confirm that:
 
 ---
 
-# Documentation Completeness
+## Documentation Completeness
 
 EPIC-TST-001 documentation should cover the complete intended Testing Framework architecture.
 
@@ -990,7 +990,7 @@ Missing framework documents should be detectable before the EPIC is considered c
 
 ---
 
-# Cross-Reference Validation
+## Cross-Reference Validation
 
 References such as:
 
@@ -1009,7 +1009,7 @@ should correspond to actual framework files.
 
 ---
 
-# Terminology Validation
+## Terminology Validation
 
 Key terminology should remain consistent across framework documentation.
 
@@ -1026,7 +1026,7 @@ Conflicting terminology should be corrected.
 
 ---
 
-# Security Validation
+## Security Validation
 
 Testing infrastructure must respect FamilyOS security architecture.
 
@@ -1039,7 +1039,7 @@ Validation should confirm that tests and CI do not expose:
 
 ---
 
-# Secret Leakage Validation
+## Secret Leakage Validation
 
 Where appropriate, controlled validation should confirm that sensitive CI values are masked or excluded from:
 
@@ -1049,7 +1049,7 @@ Where appropriate, controlled validation should confirm that sensitive CI values
 
 ---
 
-# Privacy Validation
+## Privacy Validation
 
 Testing should not depend on uncontrolled production personal data.
 
@@ -1064,7 +1064,7 @@ for inappropriate sensitive information.
 
 ---
 
-# Plugin Validation
+## Plugin Validation
 
 Official FamilyOS plugins should demonstrate compliance with the Testing Framework.
 
@@ -1081,7 +1081,7 @@ Representative plugin validation may include:
 
 ---
 
-# Shared Framework Validation
+## Shared Framework Validation
 
 Changes to shared platform infrastructure should trigger sufficiently broad validation.
 
@@ -1089,7 +1089,7 @@ This should include affected official plugins where relevant.
 
 ---
 
-# Testing Framework Self-Validation
+## Testing Framework Self-Validation
 
 Testing infrastructure should have tests where appropriate.
 
@@ -1106,7 +1106,7 @@ The Testing Framework must not assume its own infrastructure is defect-free.
 
 ---
 
-# Validation Evidence
+## Validation Evidence
 
 Framework validation should produce evidence.
 
@@ -1124,7 +1124,7 @@ Evidence may include:
 
 ---
 
-# Evidence Quality
+## Evidence Quality
 
 Validation evidence should be:
 
@@ -1138,7 +1138,7 @@ Evidence from obsolete source revisions should not establish current framework c
 
 ---
 
-# Evidence Retention
+## Evidence Retention
 
 Important framework validation evidence may require retention.
 
@@ -1146,7 +1146,7 @@ Release-level or framework-baseline validation may justify longer retention than
 
 ---
 
-# Validation Result States
+## Validation Result States
 
 Framework validation may use states such as:
 
@@ -1162,25 +1162,25 @@ Each state should have clear meaning.
 
 ---
 
-# PASS
+## PASS
 
 PASS means the requirement is implemented and sufficient evidence demonstrates expected behavior.
 
 ---
 
-# FAIL
+## FAIL
 
 FAIL means implementation exists or was expected, but validation demonstrates non-conformance.
 
 ---
 
-# PARTIAL
+## PARTIAL
 
 PARTIAL means some required capability exists but full conformance has not yet been demonstrated.
 
 ---
 
-# NOT IMPLEMENTED
+## NOT IMPLEMENTED
 
 NOT IMPLEMENTED means the roadmap capability has not yet been introduced.
 
@@ -1188,7 +1188,7 @@ This may be acceptable for future roadmap features but not for mandatory EPIC co
 
 ---
 
-# NOT APPLICABLE
+## NOT APPLICABLE
 
 NOT APPLICABLE means a requirement legitimately does not apply to the current FamilyOS architecture.
 
@@ -1196,7 +1196,7 @@ The reason should be understandable.
 
 ---
 
-# Validation Matrix
+## Validation Matrix
 
 A framework validation matrix may track requirements systematically.
 
@@ -1214,7 +1214,7 @@ The implementation checklist provides a more detailed operational structure.
 
 ---
 
-# Validation Frequency
+## Validation Frequency
 
 Different validation activities may occur at different frequencies.
 
@@ -1244,7 +1244,7 @@ Framework Change
 
 ---
 
-# Continuous Validation
+## Continuous Validation
 
 Where practical, framework conformance should be validated continuously rather than only during EPIC completion.
 
@@ -1252,7 +1252,7 @@ Continuous validation prevents framework drift.
 
 ---
 
-# Framework Drift
+## Framework Drift
 
 Framework drift occurs when implementation gradually diverges from documented standards.
 
@@ -1268,7 +1268,7 @@ Validation should help detect drift.
 
 ---
 
-# Validation Failures
+## Validation Failures
 
 Framework validation failures should be treated as engineering issues.
 
@@ -1285,7 +1285,7 @@ The appropriate layer should then be corrected.
 
 ---
 
-# Validation Exceptions
+## Validation Exceptions
 
 A validation requirement may occasionally require temporary exception.
 
@@ -1295,7 +1295,7 @@ An exception must not silently convert failed validation into compliance.
 
 ---
 
-# EPIC Completion Validation
+## EPIC Completion Validation
 
 Before EPIC-TST-001 is considered complete, the framework should undergo a final validation review.
 
@@ -1326,7 +1326,7 @@ It means the framework foundation is complete, coherent, actionable, and ready f
 
 ---
 
-# Framework Acceptance Criteria
+## Framework Acceptance Criteria
 
 The Testing Framework documentation baseline may be accepted when:
 
@@ -1347,7 +1347,7 @@ The Testing Framework documentation baseline may be accepted when:
 
 ---
 
-# Implementation Acceptance
+## Implementation Acceptance
 
 Implementation acceptance is stronger than documentation acceptance.
 
@@ -1380,7 +1380,7 @@ Operational
 
 ---
 
-# Validation Ownership
+## Validation Ownership
 
 Framework validation requires ownership.
 
@@ -1395,7 +1395,7 @@ Validation rules without ownership eventually become obsolete.
 
 ---
 
-# Validation Evolution
+## Validation Evolution
 
 Validation must evolve together with the Testing Framework.
 
@@ -1417,7 +1417,7 @@ A mandatory framework capability without a way to verify it creates weak governa
 
 ---
 
-# Automation of Validation
+## Automation of Validation
 
 Validation should be automated when:
 
@@ -1437,7 +1437,7 @@ Human review remains appropriate for architectural and governance judgments.
 
 ---
 
-# Human Validation
+## Human Validation
 
 Some requirements cannot be reduced responsibly to automated checks.
 
@@ -1454,7 +1454,7 @@ It does not eliminate it.
 
 ---
 
-# Validation and Quality
+## Validation and Quality
 
 Testing Framework validation contributes to the broader FamilyOS Quality Framework.
 
@@ -1464,65 +1464,65 @@ If the testing system is unreliable, downstream quality decisions are also weake
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 The following validation practices are discouraged or prohibited.
 
-## Documentation Equals Validation
+### Documentation Equals Validation
 
 Written requirements alone do not demonstrate implementation.
 
 ---
 
-## Test Suite Pass Equals Framework Validation
+### Test Suite Pass Equals Framework Validation
 
 A passing test suite does not prove that all Testing Framework requirements are implemented.
 
 ---
 
-## Only Validating Success
+### Only Validating Success
 
 Failure behavior, skip behavior, gates, and reporting should also be validated.
 
 ---
 
-## Manual Validation of Everything
+### Manual Validation of Everything
 
 Stable objective rules should be automated where practical.
 
 ---
 
-## Automating Subjective Judgment
+### Automating Subjective Judgment
 
 Not every architectural quality question should be converted into a numerical check.
 
 ---
 
-## Stale Evidence
+### Stale Evidence
 
 Old results must not establish current framework conformance.
 
 ---
 
-## Missing Evidence Treated as Pass
+### Missing Evidence Treated as Pass
 
 Absence of required validation must remain visible.
 
 ---
 
-## Validation Without Ownership
+### Validation Without Ownership
 
 Validation mechanisms require maintenance.
 
 ---
 
-## Permanent Exceptions
+### Permanent Exceptions
 
 Repeated validation exceptions indicate unresolved implementation or policy problems.
 
 ---
 
-# Relationship With Framework Lifecycle
+## Relationship With Framework Lifecycle
 
 Validation provides the evidence required by:
 
@@ -1534,7 +1534,7 @@ Framework lifecycle decisions should be based on demonstrated implementation sta
 
 ---
 
-# Relationship With Roadmap
+## Relationship With Roadmap
 
 The roadmap defined in:
 
@@ -1548,7 +1548,7 @@ Validation determines when those capabilities have actually reached their intend
 
 ---
 
-# Relationship With Testing Gates
+## Relationship With Testing Gates
 
 Testing gates defined in:
 
@@ -1562,7 +1562,7 @@ A gate cannot be trusted until both its positive and negative behavior have been
 
 ---
 
-# Relationship With Governance
+## Relationship With Governance
 
 Validation findings feed governance defined in:
 
@@ -1579,7 +1579,7 @@ Failures may create:
 
 ---
 
-# Relationship With Implementation Checklist
+## Relationship With Implementation Checklist
 
 The detailed operational verification of Testing Framework implementation is defined in:
 
@@ -1593,7 +1593,7 @@ The implementation checklist records whether those requirements have been addres
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The FamilyOS Testing Framework validation model is considered effective when:
 
@@ -1613,7 +1613,7 @@ The FamilyOS Testing Framework validation model is considered effective when:
 
 ---
 
-# Final Principle
+## Final Principle
 
 FamilyOS must be able to test its testing system.
 

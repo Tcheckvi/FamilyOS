@@ -1,8 +1,8 @@
 # Plugin Compliance Framework
 
-# 16 Security and Trust Model
+## 16 Security and Trust Model
 
-## Introduction
+### Introduction
 
 The Security and Trust Model defines the trust boundaries required to evaluate FamilyOS plugins safely and reliably.
 
@@ -40,7 +40,7 @@ Trusted Compliance Result
 
 ---
 
-# Purpose
+## Purpose
 
 The Security and Trust Model provides the foundation required to:
 
@@ -59,7 +59,7 @@ The compliance framework must itself be trustworthy if it is expected to make tr
 
 ---
 
-# Trust Principle
+## Trust Principle
 
 The governing principle is:
 
@@ -83,7 +83,7 @@ It must not control the interpretation of those inputs.
 
 ---
 
-# Trust Boundary
+## Trust Boundary
 
 The compliance trust boundary separates plugin-controlled state from compliance-controlled state.
 
@@ -124,7 +124,7 @@ The boundary must remain explicit.
 
 ---
 
-# Plugin Trust Levels
+## Plugin Trust Levels
 
 Plugins may have different ecosystem trust levels.
 
@@ -145,7 +145,7 @@ They must not eliminate fundamental validation.
 
 ---
 
-# Origin Does Not Equal Trust
+## Origin Does Not Equal Trust
 
 A plugin maintained by the FamilyOS project may have stronger organizational trust than an external plugin.
 
@@ -165,7 +165,7 @@ It must not replace technical evidence.
 
 ---
 
-# Untrusted Plugin Inputs
+## Untrusted Plugin Inputs
 
 The following plugin-provided inputs must be treated as untrusted or partially trusted until validated:
 
@@ -184,7 +184,7 @@ The compliance framework must verify these inputs before using them as authorita
 
 ---
 
-# Self-Declared Evidence
+## Self-Declared Evidence
 
 A plugin may declare:
 
@@ -216,7 +216,7 @@ Evidence
 
 ---
 
-# Compliance Infrastructure Trust
+## Compliance Infrastructure Trust
 
 The compliance infrastructure itself forms part of the platform trust base.
 
@@ -235,7 +235,7 @@ Compromise of these components can invalidate compliance decisions.
 
 ---
 
-# Trusted Computing Base
+## Trusted Computing Base
 
 The minimal set of components required to trust compliance outcomes forms the compliance Trusted Computing Base.
 
@@ -259,7 +259,7 @@ The framework should minimize unnecessary components inside this trust base.
 
 ---
 
-# Rule Integrity
+## Rule Integrity
 
 Compliance rules must be protected from unauthorized modification.
 
@@ -276,7 +276,7 @@ Rule definitions belong to governed platform policy.
 
 ---
 
-# Profile Integrity
+## Profile Integrity
 
 Compliance profiles must also remain protected.
 
@@ -292,7 +292,7 @@ Profile composition, mandatory rules, and policy constraints belong to the compl
 
 ---
 
-# Validator Integrity
+## Validator Integrity
 
 Validators responsible for mandatory or security-sensitive rules must come from trusted sources.
 
@@ -308,7 +308,7 @@ Validator resolution must therefore occur through a governed registry.
 
 ---
 
-# Validator Registration
+## Validator Registration
 
 Validator registration must distinguish between:
 
@@ -320,7 +320,7 @@ Only trusted validator categories should be eligible to produce authoritative ev
 
 ---
 
-# Validator Provenance
+## Validator Provenance
 
 Validators should expose provenance information such as:
 
@@ -335,7 +335,7 @@ Stronger profiles may require validators to originate from accepted FamilyOS too
 
 ---
 
-# Compliance Engine Integrity
+## Compliance Engine Integrity
 
 The Compliance Engine must not accept plugin-controlled hooks that can modify:
 
@@ -349,7 +349,7 @@ Extension points must remain constrained to clearly defined interfaces.
 
 ---
 
-# Evidence Trust Boundary
+## Evidence Trust Boundary
 
 Evidence enters the compliance system from multiple sources.
 
@@ -374,7 +374,7 @@ Every evidence source must be evaluated for provenance, freshness, scope, and in
 
 ---
 
-# Evidence Trust Levels
+## Evidence Trust Levels
 
 A conceptual trust hierarchy may include:
 
@@ -391,7 +391,7 @@ They do not describe whether the evidence is positive or negative.
 
 ---
 
-# Unverified Evidence
+## Unverified Evidence
 
 UNVERIFIED evidence may originate from:
 
@@ -406,7 +406,7 @@ It should not satisfy high-assurance profiles without independent verification.
 
 ---
 
-# Local Evidence
+## Local Evidence
 
 LOCAL evidence is generated through recognized tooling in a developer environment.
 
@@ -423,7 +423,7 @@ Release or certification profiles may require stronger provenance.
 
 ---
 
-# Trusted Evidence
+## Trusted Evidence
 
 TRUSTED evidence originates from controlled FamilyOS engineering infrastructure.
 
@@ -438,7 +438,7 @@ Trusted evidence must preserve enough metadata for later verification.
 
 ---
 
-# Attested Evidence
+## Attested Evidence
 
 ATTESTED evidence includes a verifiable integrity or producer assertion.
 
@@ -458,7 +458,7 @@ Attested evidence may become important for distributed plugin registries and cer
 
 ---
 
-# Evidence Integrity Validation
+## Evidence Integrity Validation
 
 Evidence must be checked for integrity before use.
 
@@ -476,7 +476,7 @@ It must not be silently ignored.
 
 ---
 
-# Artifact Integrity
+## Artifact Integrity
 
 Release-grade and certification-grade compliance should support exact artifact identity.
 
@@ -499,7 +499,7 @@ If the artifact changes, its previous bound evidence may no longer apply.
 
 ---
 
-# Artifact Tampering
+## Artifact Tampering
 
 The framework should detect or reject conditions where:
 
@@ -513,7 +513,7 @@ This must invalidate artifact-bound assurance.
 
 ---
 
-# Compliance Result Integrity
+## Compliance Result Integrity
 
 Finalized Compliance Results should be immutable.
 
@@ -527,7 +527,7 @@ A compliance consumer should be able to detect unauthorized result modification.
 
 ---
 
-# Report Integrity
+## Report Integrity
 
 Human-readable reports are secondary representations.
 
@@ -537,7 +537,7 @@ A modified text report must not override the canonical Compliance Result.
 
 ---
 
-# Policy Tampering
+## Policy Tampering
 
 Policy tampering represents a critical threat.
 
@@ -553,7 +553,7 @@ Policy definitions must therefore be protected through governance and repository
 
 ---
 
-# Repository Protection
+## Repository Protection
 
 Where compliance policy is stored in version control, the repository should protect it through mechanisms such as:
 
@@ -567,7 +567,7 @@ The exact implementation belongs to engineering governance.
 
 ---
 
-# Compliance Policy CI
+## Compliance Policy CI
 
 Changes to compliance policy should pass dedicated validation.
 
@@ -587,7 +587,7 @@ Invalid policy must not become active.
 
 ---
 
-# Mandatory Security Rules
+## Mandatory Security Rules
 
 Security-critical requirements may be designated mandatory.
 
@@ -603,7 +603,7 @@ Mandatory security rules should normally block all strong profiles.
 
 ---
 
-# Non-Exemptible Rules
+## Non-Exemptible Rules
 
 Some rules may define:
 
@@ -624,7 +624,7 @@ Candidates include requirements protecting:
 
 ---
 
-# Security Severity
+## Security Severity
 
 Security findings may use the common severity model:
 
@@ -641,7 +641,7 @@ The Security domain must not create a separate incompatible severity language.
 
 ---
 
-# Critical Compliance Threats
+## Critical Compliance Threats
 
 CRITICAL compliance threats may include:
 
@@ -662,7 +662,7 @@ and unsuitable for release or certification.
 
 ---
 
-# Execution Isolation
+## Execution Isolation
 
 Some validation requires executing plugin code.
 
@@ -686,7 +686,7 @@ Runtime execution should not occur with unnecessary privileges.
 
 ---
 
-# Static Validation Preference
+## Static Validation Preference
 
 Where a requirement can be validated statically, the framework should prefer static inspection over executing untrusted plugin code.
 
@@ -703,7 +703,7 @@ This reduces the attack surface of compliance infrastructure.
 
 ---
 
-# Runtime Validation
+## Runtime Validation
 
 Some requirements require runtime behavior.
 
@@ -718,7 +718,7 @@ Runtime validation environments should provide appropriate containment.
 
 ---
 
-# Runtime Sandbox
+## Runtime Sandbox
 
 Future third-party validation may require sandboxing controls such as:
 
@@ -734,7 +734,7 @@ The specific sandbox mechanism belongs to implementation and infrastructure desi
 
 ---
 
-# Credential Isolation
+## Credential Isolation
 
 Validation environments should not expose unnecessary platform credentials to plugins.
 
@@ -750,7 +750,7 @@ Credential scope should follow least privilege.
 
 ---
 
-# Network Isolation
+## Network Isolation
 
 Third-party or untrusted plugin validation may require restricted network access.
 
@@ -760,7 +760,7 @@ External communication itself may also be subject to compliance rules.
 
 ---
 
-# Filesystem Isolation
+## Filesystem Isolation
 
 Runtime validation should prevent plugins from accessing unrelated host data.
 
@@ -770,7 +770,7 @@ Unrestricted filesystem access creates unnecessary validation risk.
 
 ---
 
-# Resource Exhaustion
+## Resource Exhaustion
 
 Plugins may accidentally or intentionally consume excessive resources.
 
@@ -786,7 +786,7 @@ Timeouts and resource controls are part of safe execution.
 
 ---
 
-# Validator Timeouts
+## Validator Timeouts
 
 Every validator that may block indefinitely should support controlled timeout behavior.
 
@@ -794,7 +794,7 @@ A timeout must remain distinct from plugin non-compliance unless the rule explic
 
 ---
 
-# Third-Party Plugin Validation
+## Third-Party Plugin Validation
 
 Third-party plugins represent the strongest trust-boundary case.
 
@@ -823,7 +823,7 @@ This model enables extensibility without granting external code implicit trust.
 
 ---
 
-# Built-In Plugin Validation
+## Built-In Plugin Validation
 
 Built-in plugins may execute within more trusted engineering environments.
 
@@ -838,7 +838,7 @@ The difference is operational trust, not compliance semantics.
 
 ---
 
-# Official Plugin Validation
+## Official Plugin Validation
 
 Official plugins should provide a high-assurance baseline for the ecosystem.
 
@@ -846,7 +846,7 @@ They should demonstrate that FamilyOS applies the same compliance principles to 
 
 ---
 
-# Plugin-Supplied Validators
+## Plugin-Supplied Validators
 
 Plugins may potentially provide test helpers or domain-specific diagnostic tooling.
 
@@ -862,7 +862,7 @@ until the framework explicitly recognizes and governs it.
 
 ---
 
-# Trusted Validator Extensions
+## Trusted Validator Extensions
 
 The framework may eventually support trusted validator extensions.
 
@@ -880,7 +880,7 @@ Validator extensibility must not weaken the compliance trust boundary.
 
 ---
 
-# Compliance Bypass Detection
+## Compliance Bypass Detection
 
 The Security domain should consider explicit compliance bypass attempts.
 
@@ -896,7 +896,7 @@ Detected tampering should produce strong security findings.
 
 ---
 
-# Rule Catalog Tampering
+## Rule Catalog Tampering
 
 If rule integrity cannot be established, the framework must not issue a trustworthy compliance decision.
 
@@ -910,7 +910,7 @@ rather than attempting validation under unknown policy.
 
 ---
 
-# Profile Tampering
+## Profile Tampering
 
 If the requested or resolved profile has been modified outside accepted governance, evaluation must fail.
 
@@ -918,7 +918,7 @@ The system must not proceed under a potentially weakened profile.
 
 ---
 
-# Evidence Forgery
+## Evidence Forgery
 
 Evidence claiming trusted provenance without valid proof must be rejected.
 
@@ -934,7 +934,7 @@ Trust is derived from the evidence source and verification process.
 
 ---
 
-# Manual Review Trust
+## Manual Review Trust
 
 Manual evidence requires trusted reviewer identity and authority.
 
@@ -944,7 +944,7 @@ Review authority must be validated separately from ordinary plugin ownership.
 
 ---
 
-# Separation of Duties
+## Separation of Duties
 
 High-assurance workflows may require separation between:
 
@@ -960,7 +960,7 @@ The architecture must support these distinctions.
 
 ---
 
-# Conflict of Interest
+## Conflict of Interest
 
 Governance should prevent one actor from unilaterally controlling all stages when independent assurance is required.
 
@@ -976,7 +976,7 @@ for security-critical cases.
 
 ---
 
-# Exception Security
+## Exception Security
 
 Exceptions represent intentional policy deviations.
 
@@ -995,7 +995,7 @@ Forged or invalid exceptions must not affect compliance.
 
 ---
 
-# Suppression Security
+## Suppression Security
 
 Suppressions must not become a covert mechanism for hiding critical findings.
 
@@ -1009,7 +1009,7 @@ Suppressed findings remain visible in structured results.
 
 ---
 
-# Gate Security
+## Gate Security
 
 Gate policy must be protected from plugin-controlled configuration.
 
@@ -1025,7 +1025,7 @@ Gate acceptance semantics belong to trusted governance.
 
 ---
 
-# Release Trust
+## Release Trust
 
 Release-grade compliance should rely on trusted evidence associated with the release candidate.
 
@@ -1048,7 +1048,7 @@ This chain should remain auditable.
 
 ---
 
-# Certification Trust
+## Certification Trust
 
 Certification-grade assurance requires the strongest trust model.
 
@@ -1065,7 +1065,7 @@ Certification must not rely on unverified plugin-controlled claims.
 
 ---
 
-# Trust Escalation
+## Trust Escalation
 
 Evidence requirements may strengthen through the lifecycle.
 
@@ -1089,7 +1089,7 @@ The exact trust hierarchy must be governed.
 
 ---
 
-# Trust Downgrade
+## Trust Downgrade
 
 A stronger evidence source may become untrusted if:
 
@@ -1103,7 +1103,7 @@ Trust is contextual and must be re-evaluated where necessary.
 
 ---
 
-# Compromised Producer
+## Compromised Producer
 
 If an evidence producer becomes compromised, evidence previously generated by that producer may require review or revalidation.
 
@@ -1111,7 +1111,7 @@ The framework should support invalidating evidence by producer identity or versi
 
 ---
 
-# Revocation of Trust
+## Revocation of Trust
 
 Future systems may maintain trust registries capable of marking:
 
@@ -1126,7 +1126,7 @@ This can trigger compliance revalidation.
 
 ---
 
-# Supply Chain Security
+## Supply Chain Security
 
 Plugin compliance intersects with software supply chain security.
 
@@ -1143,7 +1143,7 @@ The compliance framework may consume evidence from future supply-chain security 
 
 ---
 
-# Dependency Trust
+## Dependency Trust
 
 Dependency compliance should evaluate more than declaration correctness where stronger profiles require it.
 
@@ -1159,7 +1159,7 @@ Dependency trust requirements belong to relevant FamilyOS security and governanc
 
 ---
 
-# Plugin Package Integrity
+## Plugin Package Integrity
 
 Packaged plugins should support validation that:
 
@@ -1173,7 +1173,7 @@ This creates a reliable distribution boundary.
 
 ---
 
-# Secure Defaults
+## Secure Defaults
 
 Compliance infrastructure should fail safely.
 
@@ -1205,7 +1205,7 @@ Conservative semantics protect the integrity of the framework.
 
 ---
 
-# Fail-Closed Policy
+## Fail-Closed Policy
 
 Strong lifecycle gates should generally fail closed when required trust cannot be established.
 
@@ -1224,7 +1224,7 @@ Gate policy defines the assurance level required.
 
 ---
 
-# Availability vs Integrity
+## Availability vs Integrity
 
 Compliance infrastructure must distinguish availability failures from integrity failures.
 
@@ -1246,7 +1246,7 @@ The second represents a stronger trust failure and may require security escalati
 
 ---
 
-# Audit Logging
+## Audit Logging
 
 Security-sensitive compliance operations should support audit logging.
 
@@ -1264,7 +1264,7 @@ Audit logs are operational governance records.
 
 ---
 
-# Security Diagnostics
+## Security Diagnostics
 
 Security-related diagnostics should provide enough detail to remediate issues without unnecessarily exposing sensitive information.
 
@@ -1277,7 +1277,7 @@ Diagnostic output must avoid leaking:
 
 ---
 
-# Secret Redaction
+## Secret Redaction
 
 If a validator detects a secret, evidence should record:
 
@@ -1296,7 +1296,7 @@ but not copy the secret value into:
 
 ---
 
-# Data Minimization
+## Data Minimization
 
 Compliance should collect only the information required to establish a rule outcome.
 
@@ -1311,7 +1311,7 @@ Evidence collection should therefore follow least-data principles.
 
 ---
 
-# Sensitive Evidence
+## Sensitive Evidence
 
 Some evidence may require restricted visibility.
 
@@ -1326,7 +1326,7 @@ Structured evidence should support access-controlled storage where necessary.
 
 ---
 
-# Public Compliance Metadata
+## Public Compliance Metadata
 
 Future public plugin registries should expose only safe compliance metadata.
 
@@ -1345,7 +1345,7 @@ Sensitive finding detail should remain internal when appropriate.
 
 ---
 
-# Security Incident Response
+## Security Incident Response
 
 A compliance-related security incident may require:
 
@@ -1360,7 +1360,7 @@ The framework architecture should support these responses without rewriting hist
 
 ---
 
-# Emergency Security Rules
+## Emergency Security Rules
 
 Critical vulnerabilities may require rapid activation of a new compliance rule.
 
@@ -1377,7 +1377,7 @@ Urgency does not eliminate governance.
 
 ---
 
-# Revalidation After Security Changes
+## Revalidation After Security Changes
 
 Security changes may trigger ecosystem-wide compliance revalidation.
 
@@ -1407,7 +1407,7 @@ Revalidation
 
 ---
 
-# Trust Drift
+## Trust Drift
 
 Trust can change even when plugin code does not.
 
@@ -1423,7 +1423,7 @@ The framework should treat trust drift as a valid revalidation trigger.
 
 ---
 
-# Security Testing
+## Security Testing
 
 The Security and Trust Model requires dedicated tests.
 
@@ -1445,7 +1445,7 @@ Core test categories include:
 
 ---
 
-# Adversarial Testing
+## Adversarial Testing
 
 High-assurance compliance infrastructure should include adversarial tests.
 
@@ -1462,7 +1462,7 @@ Compliance tooling should assume that future third-party plugins may be actively
 
 ---
 
-# Trust Model Maturity
+## Trust Model Maturity
 
 The trust architecture may mature through stages:
 
@@ -1488,7 +1488,7 @@ The architecture must leave room for them.
 
 ---
 
-# Initial Security Baseline
+## Initial Security Baseline
 
 The initial implementation should prioritize:
 
@@ -1507,7 +1507,7 @@ This creates a strong foundation before third-party plugin distribution expands.
 
 ---
 
-# Future Trust Capabilities
+## Future Trust Capabilities
 
 Future evolution may include:
 
@@ -1525,45 +1525,45 @@ These capabilities should strengthen the existing model without changing its fun
 
 ---
 
-# Security Anti-Patterns
+## Security Anti-Patterns
 
 The framework must avoid several trust anti-patterns.
 
-## Plugin Self-Trust
+### Plugin Self-Trust
 
 Do not accept plugin claims as authoritative evidence without validation.
 
-## Validator Self-Registration
+### Validator Self-Registration
 
 Do not let a plugin replace validators governing its own mandatory compliance.
 
-## Mutable Policy
+### Mutable Policy
 
 Do not permit runtime mutation of active compliance rules by evaluated plugins.
 
-## Secret Exposure
+### Secret Exposure
 
 Do not store sensitive secret values in findings or reports.
 
-## Unisolated Untrusted Execution
+### Unisolated Untrusted Execution
 
 Do not execute third-party plugin code with unnecessary host privileges.
 
-## Trust by Origin
+### Trust by Origin
 
 Do not treat first-party ownership as proof of compliance.
 
-## Silent Trust Downgrade
+### Silent Trust Downgrade
 
 Do not accept weaker evidence when a stronger profile requires trusted provenance.
 
-## Integrity Failure as Warning
+### Integrity Failure as Warning
 
 Do not downgrade artifact or evidence integrity failures into ordinary advisory findings.
 
 ---
 
-# Security Invariants
+## Security Invariants
 
 The Security and Trust Model establishes the following invariants:
 
@@ -1590,7 +1590,7 @@ The Security and Trust Model establishes the following invariants:
 
 ---
 
-# Reference Trust Model
+## Reference Trust Model
 
 The complete reference model is:
 
@@ -1635,7 +1635,7 @@ Each boundary progressively strengthens assurance.
 
 ---
 
-# Security Summary
+## Security Summary
 
 The FamilyOS compliance trust model protects both the platform and the integrity of compliance decisions.
 
@@ -1659,7 +1659,7 @@ A compliance system that cannot protect its own trust boundaries cannot reliably
 
 ---
 
-# Final Security Principle
+## Final Security Principle
 
 The governing principle of the Security and Trust Model is:
 

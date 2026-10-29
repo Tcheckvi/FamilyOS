@@ -1,8 +1,8 @@
 # Quality Framework
 
-# EPIC-QLT-001
+## EPIC-QLT-001
 
-## Quality Framework
+### Quality Framework
 
 Version: 1.0.0
 
@@ -12,7 +12,7 @@ Owner: FamilyOS Engineering
 
 ---
 
-# Overview
+## Overview
 
 EPIC-QLT-001 establishes the official Quality Framework for the FamilyOS Engineering Platform.
 
@@ -26,7 +26,7 @@ This framework provides the common language and operating model used by every en
 
 ---
 
-# Purpose
+## Purpose
 
 The Quality Framework exists to:
 
@@ -45,7 +45,7 @@ Quality becomes a permanent engineering responsibility shared by everyone involv
 
 ---
 
-# Scope
+## Scope
 
 The Quality Framework defines:
 
@@ -79,7 +79,7 @@ The framework applies to:
 
 ---
 
-# Relationship With FamilyOS Foundations
+## Relationship With FamilyOS Foundations
 
 The Quality Framework extends and integrates with:
 
@@ -96,7 +96,7 @@ Quality acts as the transversal capability connecting all engineering discipline
 
 ---
 
-# Quality Vision
+## Quality Vision
 
 The FamilyOS quality vision is based on one principle:
 
@@ -114,11 +114,11 @@ Quality is never considered complete.
 
 ---
 
-# Core Principles
+## Core Principles
 
 The framework is built around several engineering principles.
 
-## Built-in Quality
+### Built-in Quality
 
 Quality is designed from the beginning.
 
@@ -126,43 +126,43 @@ It cannot be added after implementation.
 
 ---
 
-## Continuous Validation
+### Continuous Validation
 
 Every modification is validated continuously through automated processes.
 
 ---
 
-## Shift Left
+### Shift Left
 
 Quality activities happen as early as possible.
 
 ---
 
-## Shift Right
+### Shift Right
 
 Operational feedback continuously improves engineering quality.
 
 ---
 
-## Automation First
+### Automation First
 
 Every repeatable quality activity should be automated whenever possible.
 
 ---
 
-## Measurable Quality
+### Measurable Quality
 
 Quality must always be measurable using objective indicators.
 
 ---
 
-## Continuous Improvement
+### Continuous Improvement
 
 Processes evolve through feedback and measurement.
 
 ---
 
-## Engineering Responsibility
+### Engineering Responsibility
 
 Quality belongs to every contributor.
 
@@ -170,7 +170,7 @@ It is never delegated to a single team.
 
 ---
 
-# Framework Structure
+## Framework Structure
 
 The Quality Framework is organized into 26 canonical numbered documents.
 
@@ -229,7 +229,7 @@ The authoritative structural inventory is maintained in `MANIFEST.md`.
 
 ---
 
-# Expected Outcomes
+## Expected Outcomes
 
 After implementing this framework, FamilyOS will provide:
 
@@ -244,7 +244,7 @@ After implementing this framework, FamilyOS will provide:
 
 ---
 
-# Deliverables
+## Deliverables
 
 This EPIC produces:
 
@@ -259,7 +259,7 @@ This EPIC produces:
 
 ---
 
-# Success Criteria
+## Success Criteria
 
 The framework is considered complete when:
 
@@ -273,7 +273,7 @@ The framework is considered complete when:
 
 ---
 
-# Dependencies
+## Dependencies
 
 This EPIC depends on:
 
@@ -285,7 +285,7 @@ Subsequent engineering frameworks build upon this Quality Framework.
 
 ---
 
-# Future Evolution
+## Future Evolution
 
 Future versions may include:
 
@@ -298,7 +298,7 @@ Future versions may include:
 
 ---
 
-# Conclusion
+## Conclusion
 
 The Quality Framework transforms quality into a permanent engineering capability.
 
